@@ -1,0 +1,25 @@
+{
+  "name": "desk-to-markdown",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "live": "node index.js",
+    "local": "node index.js --local"
+  },
+  "author": "Avi Goldman <me@avigoldman.com> (http://avigoldman.com)",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.15.3",
+    "bluebird": "^3.4.7",
+    "cheerio": "^0.22.0",
+    "follow-redirects": "^1.2.1",
+    "lodash": "^4.17.4",
+    "random-id": "0.0.2",
+    "remove-markdown": "^0.1.0",
+    "rimraf": "^2.6.1",
+    "slug": "^0.9.1",
+    "striptags": "^3.0.1",
+    "to-markdown": "^3.0.3"
+  }
+}
