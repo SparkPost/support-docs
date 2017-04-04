@@ -6,16 +6,19 @@ install:
 - brew install jq
 - cd ./bin && npm install
 script:
-- ./bin/deploy-categories.sh
-- ./bin/deploy-articles.sh
+- "./bin/deploy-categories.sh"
+- "./bin/deploy-articles.sh"
 addons:
--ssh_known_hosts: 104.197.69.102
+  ssh_known_hosts:
+  - 104.197.69.102
 branches:
   only:
   - master
 notifications:
+  email: false
   slack:
     secure: OatG7bKStSPReP6a3qMHZvIT5GGuW3Dd8UL+0y9wlGxMEVCzfsl633CVTrywnSyDAqYp7Fc4IT9H4pI9FlnR8JJxxiPvHTdyfXtux2JqX08LEwYoRogwA4JQ3LbOwz4+JcM3kqvkXDYcQvpp9sJuRMeh1KYq3rAfmq+yfHU1/PqKnKs8yDrYxOi+dLXVqjCB/+oEsEMjdUBr2wgqKsTq53u8kSxgJ1kllEG0DiylKjIEuXXfRcpCwh/1jXQ4gubaV9FmUfkrpHHupNmYTHfUj8eDiAsnaMqUAi8VJvFDJ+y/gYCUsGThunToVdoE8mfB2mgL4FEj54dEmbYPsE0nrm6RcDnax6fbizksYNEB6ab6nPPmjD9H/HT0KXQSf7P6AJp1IL6LJU0KNzKFVVDkzMgX1+lin/9Zqe0j6DzZ+HzJ01qB257iFbgIV4KJx4pOpLwUfBp6Kann+IQ+cCAMzcqju3zInjW2KdVMkb2I/NiaPhiInGtt8jMLsKT07VsPB+O4RuK7dPEoKvMklXOrQ3ydKC8cw1zhHDrDuISwJdUJjUyCYm1EJBq51qyNHgXCaWJhFGPZmf7QGVNeg3WiqZM/dqYzDPZjqFVKOQAJ2zrxho13sXHL+W8GsLdbt+Cyuhtxwege9F10u1M+FV3hCQ+/MX6RT6H7Vi0DeTuQtPc=
 before_install:
-- openssl aes-256-cbc -K $encrypted_e85ef5fe888e_key -iv $encrypted_e85ef5fe888e_iv -in deploy-key.enc -out deploy-key -d
-- ./bin/setup.sh
+- openssl aes-256-cbc -K $encrypted_e85ef5fe888e_key -iv $encrypted_e85ef5fe888e_iv
+  -in deploy-key.enc -out deploy-key -d
+- "./bin/setup.sh"
