@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source utils.sh
+source ./bin/utils.sh
 
 function import_related_media() {
   local post_id="$1"

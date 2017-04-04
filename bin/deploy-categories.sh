@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source utils.sh
+source ./bin/utils.sh
 
 # get the changed directories by their index file
 CHANGED_DIRECTORIES=()
