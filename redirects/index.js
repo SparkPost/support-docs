@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const _ = require('lodash');
 const YAML = require('js-yaml');
+const escapeStringRegexp = require('escape-string-regexp');
 
 const articlesFolder = './articles/';
 const redirects = {};
@@ -10,10 +11,9 @@ _.each(fs.readdirSync(articlesFolder), (topic) => {
   console.log(`Processing "${topic}"`);
 
   _.each(fs.readdirSync(path.join(articlesFolder, topic)), (article) => {
+    console.log(`Processing "${topic}/${article}"`);
     processArticle(topic, article);
   });
-
-  return false;
 });
 
 fs.writeFileSync(path.join(__dirname, '/redirects.conf'), _.map(redirects, (toUrl, fromUrl) => {
@@ -47,9 +47,8 @@ function getMetadata(path) {
       break;
     }
 
-    metaLines.push(fileLines[i]);
+    metaLines.push(fileLines[i].replace(/%22/g, '\\\"'));
   }
   
-
   return YAML.safeLoad(metaLines.join('\n'));
 }
