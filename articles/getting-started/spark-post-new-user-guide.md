@@ -62,7 +62,7 @@ Campaign_id is best suited for attributes that you will use for filtering on the
 
 *   Note: If you routinely re-use the same campaign, it is recommended that you do not name each individual campaign by date, e.g. "Christmas_Campaign_2015-Dec-21". Instead, keep your campaign names generic (e.g. "Christmas_Campaign) and use a combination of metadata and date-time stamps to identify messages belonging to campaigns in either webhook data or Message Events API data.
 
-If you are using SMTP injection, you can set metadata on your messages by including the X-MSYS-API header. More information on how to formulate this header.
+If you are using SMTP injection, you can set metadata on your messages by including the X-MSYS-API header. More information on how to formulate this header can be found [here](https://developers.sparkpost.com/api/smtp-api.html).
 ​ 
 
 ### Webhook Best Practices

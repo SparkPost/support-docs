@@ -1,12 +1,12 @@
 ---
 title: "SparkPost Event and Metrics Definitions"
 redirect_from: "https://support.sparkpost.com/customer/portal/articles/2232381-sparkpost-event-and-metrics-definitions"
-description: "Spark Post Event Definitions The follow table contains the definition of each type of event that exists for activity through Spark Post and Spark Post Elite NOTE Inbound relay events are only available in Spark Post Elite i e they are not available in Spark Post Individual events are provided..."
+description: "Spark Post Event Definitions The follow table contains the definition of each type of event that exists for activity through Spark Post and Spark Post Enterprise NOTE Inbound relay events are only available in Spark Post Enterprise i e they are not available in Spark Post Individual events are provided..."
 ---
 
 ## SparkPost Event Definitions 
 
-### The follow table contains the definition of each type of event that exists for activity through SparkPost and SparkPost Elite. NOTE: Inbound relay events are only available in SparkPost Elite, i.e., they are not available in SparkPost.Individual events are provided via the webhook data stream and can be retrieved on an on-demand basis using the Message Events API.
+### The follow table contains the definition of each type of event that exists for activity through SparkPost and SparkPost Enterprise. NOTE: Inbound relay events are only available in SparkPost Enterprise, i.e., they are not available in SparkPost.Individual events are provided via the webhook data stream and can be retrieved on an on-demand basis using the Message Events API.
 
 | **Event Name**      | **Belongs to the following Event Group**                              | **Other Names for this Event**                      | **Event Generated When:**                 |
 | Injection | Injection | Reception | Message is received by or injected into SparkPost/SparkPost Elite. |
