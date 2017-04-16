@@ -4,6 +4,7 @@ const _ = require('lodash');
 const YAML = require('js-yaml');
 const escapeStringRegexp = require('escape-string-regexp');
 
+const newBaseUrl = 'https://www.sparkpost.com/docs/help';
 const articlesFolder = './articles/';
 const redirects = {};
 
@@ -29,12 +30,12 @@ function processArticle(topic, article) {
   let metadata = getMetadata(path.join(articlesFolder, topic, article));
 
   if (article === 'index.md') {
-    return redirects[`^\/customer\/portal\/topics\/${metadata.desk_id}[\S]*`] = `https://www.sparkpost.com/docs/${topic}`;
+    return redirects[`^\/customer\/portal\/topics\/${metadata.desk_id}[\S]*`] = `${newBaseUrl}/${topic}`;
   }
 
   let deskId = _.last(metadata.redirect_from.match(/articles\/(\d+)/));
 
-  return redirects[`^\/customer\/portal\/articles\/${deskId}[\S]*`] = `https://www.sparkpost.com/docs/${topic}/${article.replace('.md', '')}`;
+  return redirects[`^\/customer\/portal\/articles\/${deskId}[\S]*`] = `${newBaseUrl}/${topic}/${article.replace('.md', '')}`;
 }
 
 function getMetadata(path) {
