@@ -62,11 +62,17 @@ function downloadTopic(topic) {
       baseUrl: 'https://support.sparkpost.com/',
     }).then((markdown) => {
       console.log(`Converted "${topic.name} > ${article.subject}"`);
-      markdown = `---\ntitle: "${article.subject}"\nredirect_from: "${article.public_url}"\ndescription: "${_.slice(_.words(removeMarkdown(markdown)), 0, 50).join(' ')}..."\n---\n\n${markdown}`;
+      markdown = `---\ntitle: "${escape(article.subject)}"\nredirect_from: "${article.public_url}"\ndescription: "${escape(_.slice(_.words(removeMarkdown(markdown)), 0, 50).join(' '))}..."\n---\n\n${markdown}`;
 
       fs.writeFileSync(articleFile, markdown);
     }));
   });
 
   return Promise.all(processArticlePromises).then(() => topic);
+}
+
+
+
+function escape(str) {
+  return str.replace(/"/g, "\\\"");
 }
