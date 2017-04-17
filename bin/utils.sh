@@ -1,3 +1,5 @@
+set -e
+
 WP_USER="${WP_USER:-Support}"
 WP_POST_TYPE="${WP_POST_TYPE:-support_article}"
 WP_CUSTOM_TAX="${WP_CUSTOM_TAX:-support_category}"
