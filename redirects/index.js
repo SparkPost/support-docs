@@ -4,7 +4,7 @@ const _ = require('lodash');
 const YAML = require('js-yaml');
 const escapeStringRegexp = require('escape-string-regexp');
 
-const newBaseUrl = 'https://www.sparkpost.com/docs/help';
+const newBaseUrl = 'https://www.sparkpost.com/docs';
 const articlesFolder = './articles/';
 const redirects = {};
 
