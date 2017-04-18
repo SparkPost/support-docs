@@ -1,5 +1,5 @@
 ---
-title: "When sending to Gmail subscribers I see this error: "We've found that lots of messages from sparkpostmail.com are spam""
+title: "When sending to Gmail subscribers I see this error: \"We've found that lots of messages from sparkpostmail.com are spam\""
 redirect_from: "https://support.sparkpost.com/customer/portal/articles/2133774-when-sending-to-gmail-subscribers-i-see-this-error-%22we-ve-found-that-lots-of-messages-from-sparkpostmail-com-are-spam%22"
 description: "You are receiving this error because Gmail uses the return path domain for that error message However it is your from domain that the reputation is actually referencing We have clients sending to Gmail from the same return path and I Ps that are not experiencing inbox issues Steps Towards..."
 ---

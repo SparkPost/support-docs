@@ -1,3 +1,5 @@
+set -e
+
 WP_USER="${WP_USER:-Support}"
 WP_POST_TYPE="${WP_POST_TYPE:-support_article}"
 WP_CUSTOM_TAX="${WP_CUSTOM_TAX:-support_category}"
@@ -47,12 +49,10 @@ function index_of() {
 
         if [ "${!i}" == "${value}" ]; then
           echo $(expr $i - 1)
-          return 0
         fi
     }
 
-    echo -1
-    return 1
+    echo "-1"
 }
 
 function get_ext() {  

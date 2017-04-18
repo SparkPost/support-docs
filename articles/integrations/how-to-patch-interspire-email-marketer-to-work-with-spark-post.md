@@ -245,5 +245,3 @@ You should be all set now, but in case you run into any issues remember the foll
 
 *   Your Sparkpost account is configured with a valid sending domain, and you use that sending domain in your User Settings of Interspire
 *   If you're test sending to a list, make sure that the Contact List is configured to use your associated Sparkpost verified sending domain
-
-If you have exhausted all options and continue experiencing issues, make sure to ask for help on [stackoverflow using the sparkpost tag](https://stackoverflow.com/questions/new/sparkpost?show=all&sort=recentlyactive "Ask a question on Stackoverflow with Sparkpost tag").

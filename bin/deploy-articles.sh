@@ -77,9 +77,8 @@ for filepath in "${CHANGED_FILES[@]}"; do
   md_post_images=("$(echo $md_post | jq --compact-output --raw-output '.images')")
   md_post_title="$(echo $md_post | jq '.meta.title' --raw-output)"
 
-
   # create
-  if [ -n "$md_post" ] && [ "-1" -eq "$wp_post_index" ]; then
+  if [ -n "$md_post" ] && [ "-1" == "$wp_post_index" ]; then
     echo " - Creating post"
     wp_post_id=$(do_wp post create --post_name=$slug --post_status="publish" --post_title="$md_post_title" --post_type=$WP_POST_TYPE --porcelain)
     
@@ -102,7 +101,7 @@ for filepath in "${CHANGED_FILES[@]}"; do
   fi
 
   # update
-  if [ -n "$md_post" ] && [ "-1" -ne "$wp_post_index" ]; then
+  if [ -n "$md_post" ] && [ "-1" != "$wp_post_index" ]; then
     wp_post_id=${WP_POST_IDS[$wp_post_index]}
     echo " - Updating post"
 
@@ -120,7 +119,7 @@ for filepath in "${CHANGED_FILES[@]}"; do
   fi
 
   # delete
-  if [ -z "$md_post" ] && [ "-1" -ne "$wp_post_index" ]; then
+  if [ -z "$md_post" ] && [ "-1" != "$wp_post_index" ]; then
     wp_post_id=${WP_POST_IDS[$wp_post_index]}
     echo " - Deleting post"
 
@@ -132,7 +131,7 @@ for filepath in "${CHANGED_FILES[@]}"; do
   fi
 
   # somethin' broke
-  if [ -z "$md_post" ] && [ "-1" -eq "$wp_post_index" ]; then
+  if [ -z "$md_post" ] && [ "-1" == "$wp_post_index" ]; then
     echo " - No post markdown and no ID with $slug...idk what to do"
   fi
 

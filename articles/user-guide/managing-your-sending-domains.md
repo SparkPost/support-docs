@@ -17,7 +17,7 @@ A sending domain is a domain that is used to indicate who an email is from via t
 3.  Complete the Sending Domain information on the screen to create the same. In this example we will be using myexample.com.
 4.  Click the Add Domain button to add the Sending Domain to your account.
 
-    ![](media/managing-your-sending-domains/SBJgXk7t8qVqy75aZtH0qARySUh1A5.png)
+    ![](media/managing-your-sending-domains/K4sURG2UIL0hMxEzvS559Vf8q88364.png)
 
  ### Sending Domain Verification 
 

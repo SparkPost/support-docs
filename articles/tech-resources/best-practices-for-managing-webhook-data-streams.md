@@ -16,7 +16,7 @@ Generally speaking, four events are recorded for each message: injection, delive
 
 *   The webhook service will reattempt to post patches for which it receives a non 2xx response code.
 *   A timeout for any particular batch posting attempt will occur after **10 seconds**         if the endpoint does not successfully accept a given batch.
-*   The retry logic for the posting of batches gradually increases in a logarithmic fashion and will cease retrying altogether after 4 hours.  (This means you can potentially lose event data if your webhook consumer is completely down for 4 hours or longer.)
+*   The retry logic for the posting of batches gradually increases in a logarithmic fashion and will cease retrying altogether after 8 hours.  (This means you can potentially lose event data if your webhook consumer is completely down for 8 hours or longer.)
 
  ### Helpful Tips on Webhook Consumers 
 
@@ -28,4 +28,4 @@ Generally speaking, four events are recorded for each message: injection, delive
 
  ### ​Monitoring Webhooks 
 
-If you have issues with your webhooks, it would be wise to monitor them either on your endpoint, or via the batch-status API, which is detailed [here](https://developers.sparkpost.com/api/webhooks?_ga=1.68410897.1033930248.1481562971#webhooks-batch-status-get). This will help inform you if there is a problem with the webhooks so it can be remedied before batches hit the 4 hour limit as described in the retry logic above.
+If you have issues with your webhooks, it would be wise to monitor them either on your endpoint, or via the batch-status API, which is detailed [here](https://developers.sparkpost.com/api/webhooks?_ga=1.68410897.1033930248.1481562971#webhooks-batch-status-get). This will help inform you if there is a problem with the webhooks so it can be remedied before batches hit the 8 hour limit as described in the retry logic above.
