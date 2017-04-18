@@ -2,7 +2,7 @@ language: php
 php:
 - '7.1'
 install:
-- sudo npm install -g n
+- npm install -g n
 - sudo n stable
 - curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
 - chmod +x wp-cli.phar
