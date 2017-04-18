@@ -49,12 +49,10 @@ function index_of() {
 
         if [ "${!i}" == "${value}" ]; then
           echo $(expr $i - 1)
-          return 0
         fi
     }
 
-    echo -1
-    return 1
+    echo "-1"
 }
 
 function get_ext() {  
