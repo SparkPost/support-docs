@@ -2,8 +2,9 @@ language: php
 php:
 - '7.1'
 install:
-- npm install -g n
-- sudo n stable
+- . $HOME/.nvm/nvm.sh
+- nvm install stable
+- nvm use stable
 - curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
 - chmod +x wp-cli.phar
 - sudo mv wp-cli.phar /usr/local/bin/wp
