@@ -4,7 +4,7 @@ redirect_from: "https://support.sparkpost.com/customer/portal/articles/2756679-a
 description: "A B Testing in Spark Post An A B test in summary is a common method of comparing templates to see which one performs better Spark Post provides the means to create new A B tests and view completed results through our A B Testing API What benefits do I..."
 ---
 
-### A/B Testing in SparkPost
+### A/B Testing in SparkPost is super cool!
 
 An A/B test, in summary, is a common method of comparing templates to see which one performs better. SparkPost provides the means to create new A/B tests and view completed results through our A/B Testing API.
 
