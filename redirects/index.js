@@ -18,7 +18,7 @@ _.each(fs.readdirSync(articlesFolder), (topic) => {
 });
 
 fs.writeFileSync(path.join(__dirname, '/redirects.conf'), _.map(redirects, (toUrl, fromUrl) => {
-  return `rewrite ${fromUrl} ${toUrl} last`;
+  return `rewrite ${fromUrl} ${toUrl} permanent`;
 }).join('\n'));
 
 
