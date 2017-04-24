@@ -49,7 +49,7 @@ To configure one or more custom tracking domains through the SparkPost user inte
 
 ![](media/enabling-multiple-custom-tracking-domains-old/thefirststep_addingasendingdomain_original.png)
 
-![](media/enabling-multiple-custom-tracking-domains-old/2SK73jKjc0CQT0yhkOtdfuwNQ6DtHG.png)
+![](media/enabling-multiple-custom-tracking-domains-old/BuPGC9syL02DiowroP0CvyuF2hRB7Y.png)
 
 3\. Complete the **Sending Domain Name**             for each sending domain and select the **Linked Tracking Domain**                 you want to associate with it.
 
