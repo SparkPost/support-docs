@@ -22,7 +22,7 @@ function import_related_media() {
       echo "listing contents of current directory"
       ls -la `pwd`
 
-      new_id=$(do_wp media import "$(pwd)/$path_base/$src" --title="$title" --alt="$alt" --post_id="$post_id" --porcelain)
+      new_id=$(do_wp media import $(pwd)/$path_base/$src --title="$title" --alt="$alt" --post_id="$post_id" --porcelain)
       image_ids+=("$new_id")
     done
 
