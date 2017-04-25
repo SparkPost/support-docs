@@ -10,7 +10,7 @@ Since this can be an onerous task, SparkPost includes an CSS inlining feature to
 
 ### Using CSS Inlining With The REST API
 
-To enable CSS inlining with the SparkPost REST API, set options.inline_css=true when submitting your transmissions:
+To enable CSS inlining with the SparkPost REST API, set `options.inline_css=true` when submitting your transmissions:
 ```
 {
     "recipients": [ ... ],
@@ -23,9 +23,9 @@ To enable CSS inlining with the SparkPost REST API, set options.inline_css=true
 
 ### Using CSS Inlining with SMTP
 
-The enable CSS inlining when using SparkPost's SMTP service, set options.inline_css=true to the X-MSYS-API header when submitting your messages:
+The enable CSS inlining when using SparkPost's SMTP service, set `options.inline_css=true` to the `X-MSYS-API` header when submitting your messages:
 ```
-X-MSYS-API: {"options": {"inline_css": true}}
+X-MSYS-API: {"options": { "inline_css": true } }
 From: you@yourdomain.com
 Subject: Inline CSS Message
 
