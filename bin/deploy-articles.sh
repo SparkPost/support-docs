@@ -18,6 +18,9 @@ function import_related_media() {
       local alt="$(echo "$image" | jq '.alt' --raw-output)"
       local title="$(echo "$image" | jq '.title' --raw-output)"
 
+      echo "working directory is $(pwd)"
+      echo "build directory is $TRAVIS_BUILD_DIR"
+
       new_id=$(do_wp media import "$(pwd)/$path_base/$src" --title="$title" --alt="$alt" --post_id="$post_id" --porcelain)
       image_ids+=("$new_id")
     done
@@ -58,7 +61,7 @@ fi
 for filepath in "${CHANGED_FILES[@]}"; do
   slug=$(slugify "$(get_filename $filepath)")
   print_title "$slug"
-  
+
   if [ $(get_ext "$filepath") != "md" ]; then
     echo "Unknown extension - skipping"
     echo ""
@@ -81,7 +84,7 @@ for filepath in "${CHANGED_FILES[@]}"; do
   if [ -n "$md_post" ] && [ "-1" == "$wp_post_index" ]; then
     echo " - Creating post"
     wp_post_id=$(do_wp post create --post_name=$slug --post_status="publish" --post_title="$md_post_title" --post_type=$WP_POST_TYPE --porcelain)
-    
+
     if [[ $wp_post_id =~ $NUMBER_PATTERN ]]; then
       echo " - Success: Created post $wp_post_id."
 
