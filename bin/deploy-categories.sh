@@ -31,27 +31,27 @@ for directory in "${CHANGED_DIRECTORIES[@]}"; do
   [ "$md_cat_description" == "null" ] && md_cat_description="" || md_cat_description=$md_cat_description
 
   # create
-  if [ "-1" -eq "$wp_cat_index" ] && [ -f "$directory/index.md" ]; then
+  if [[ -1 -eq $wp_cat_index && -f $directory/index.md ]]; then
       echo " - Creating category"
       echo " - $(do_wp term create "$WP_CUSTOM_TAX" "$md_cat_name" --slug="$slug" --description="$md_cat_description")"
   fi
 
   # update
-  if [ "-1" -ne "$wp_cat_index" ] && [ -f "$directory/index.md" ]; then
+  if [[ -1 -ne $wp_cat_index && -f $directory/index.md ]]; then
     wp_cat_id=${WP_CATEGORY_IDS[$wp_cat_index]}
     echo " - Updating category"
-    echo " - $(do_wp term update "$WP_CUSTOM_TAX" "$wp_cat_id" --name="$md_cat_name" --slug="$slug" --description="$md_cat_description")"
+    echo " - $(do_wp term update "$WP_CUSTOM_TAX" "$wp_cat_id" --name="$md_cat_name" --description="$md_cat_description")"
   fi
 
   # delete
-  if [ "-1" -ne "$wp_cat_index" ] && [ ! -f "$directory/index.md" ]; then
+  if [[ -1 -ne $wp_cat_index && ! -f $directory/index.md ]]; then
     wp_cat_id=${WP_CATEGORY_IDS[$wp_cat_index]}
     echo " - Deleting category"
     echo " - $(do_wp term delete "$WP_CUSTOM_TAX" "$wp_cat_id")"
   fi
 
   # somethin' broke
-  if [ "-1" -eq "$wp_cat_index" ] && [ ! -f "$directory/index.md" ]; then
+  if [[ -1 -eq $wp_cat_index && ! -f $directory/index.md ]]; then
     echo " - No index file and no category with $slug...idk what to do"
   fi
 
