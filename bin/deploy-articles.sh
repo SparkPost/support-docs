@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 source ./bin/utils.sh
 
+echo "working directory is $(pwd)"
+echo "build directory is $TRAVIS_BUILD_DIR"
+
 function import_related_media() {
   local post_id="$1"
   local path_base="$2"
@@ -17,9 +20,6 @@ function import_related_media() {
       local src="$(echo "$image" | jq '.src' --raw-output)"
       local alt="$(echo "$image" | jq '.alt' --raw-output)"
       local title="$(echo "$image" | jq '.title' --raw-output)"
-
-      echo "working directory is $(pwd)"
-      echo "build directory is $TRAVIS_BUILD_DIR"
 
       new_id=$(do_wp media import "$(pwd)/$path_base/$src" --title="$title" --alt="$alt" --post_id="$post_id" --porcelain)
       image_ids+=("$new_id")
