@@ -18,7 +18,7 @@ function import_related_media() {
       local alt="$(echo "$image" | jq '.alt' --raw-output)"
       local title="$(echo "$image" | jq '.title' --raw-output)"
 
-      new_id=$(do_wp media import "$(pwd)/$path_base/$src" --title="$title" --alt="$alt" --post_id="$post_id" --porcelain)
+      new_id=$(do_wp media import "$(pwd)$path_base/$src" --title="$title" --alt="$alt" --post_id="$post_id" --porcelain)
       image_ids+=("$new_id")
     done
 
@@ -104,12 +104,6 @@ for filepath in "${CHANGED_FILES[@]}"; do
   if [ -n "$md_post" ] && [ "-1" != "$wp_post_index" ]; then
     wp_post_id=${WP_POST_IDS[$wp_post_index]}
     echo " - Updating post"
-
-    if [[ -d "./$(dirname "$filepath")/media/$slug" ]]; then
-      ls "./$(dirname "$filepath")/media/$slug"
-    else 
-      echo "no media"
-    fi
 
     echo " - Deleting related media"
     deleted_image_ids=($(delete_related_media "$wp_post_id"))
