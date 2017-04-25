@@ -4,19 +4,17 @@ redirect_from: "https://support.sparkpost.com/customer/portal/articles/2030894-d
 description: "Each Spark Post account has a daily and monthly quota based on the current plan level These represent the number of messages you can send within each time period and is provided for your protection You can view your current quota limits on the Account Usage page Daily Limits The..."
 ---
 
-Each SparkPost account has a daily and monthly quota based on the current plan level.  These represent the number of messages you can send within each time period and is provided for your protection.
+Each SparkPost account has a daily and monthly quota based on the current plan level. These represent the number of messages you can send within each time period and is provided for your protection.
 
 You can view your current quota limits on the [Account Usage](http://app.sparkpost.com/account/usage) page.
 
- ### DailyLimits 
+ ### Daily Limits 
 
 The daily quota limits the number of messages that can be sent during a rolling 24 hour period.  For example, if you reached your daily limit at 3:05 pm yesterday, you will be able to send again after 3:05 pm today.
 
-*   For free plans, the daily message limit will increase automatically from 5,000 to a maximum of 20,000 as you begin using our service and establish a good sending reputation.  If you need a higher daily limit, upgrade to a paid plan on the [Billing](https://app.sparkpost.com/account/billing) page.
-
-    *   **Note**: Make sure you verify the email address used to create your account by clicking the link in the welcome email - this will ensure your account is eligible for the increase.
-
-*   For paid plans, you can request an increase to your daily limit on the [Account Usage](http://app.sparkpost.com/account/usage) page.
+* For free plans, the daily message limit will increase automatically from 5,000 to a maximum of 20,000 as you begin using our service and establish a good sending reputation.  If you need a higher daily limit, upgrade to a paid plan on the [Billing](https://app.sparkpost.com/account/billing) page.
+	* **Note**: Make sure you verify the email address used to create your account by clicking the link in the welcome email - this will ensure your account is eligible for the increase.
+* For paid plans, you can request an increase to your daily limit on the [Account Usage](http://app.sparkpost.com/account/usage) page.
 
 ### Monthly Limit Overages
 

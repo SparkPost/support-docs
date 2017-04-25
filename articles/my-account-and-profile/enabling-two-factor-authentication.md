@@ -18,7 +18,7 @@ Click on 'Enable' and you'll see a screen like this:
 
 Open up your chosen Authenticator App and scan the QR code. If you can’t, or don’t want to scan the QR code, you can also type the 23-character key into your App. 
 
-**NOTE: It is essential that you do store the authentication token somewhere safe! We are unable to reset or remove Two-Factor Authentication from your account should you lose your device.** 
+**NOTE: It is essential that you do store the authentication token somewhere safe! We are unable to reset or remove Two-Factor Authentication from your account should you lose your device.**
 
 ![](media/enabling-two-factor-authentication/py50w0ttoy84js77szesn96pzqh2fyzson1wevne_qqbwuzio7coxe9_vmquovlppsjasiygou57qq70-1ndh33b_hroopf3dv6y8sgpop0nfj1pwfevctysj9d4it_c48vqfecoundefined)
 

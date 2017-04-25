@@ -6,19 +6,19 @@ description: "Note This article is for Spark Post Enterprise only Table of Conte
 
 **Note:** This article is for SparkPost Enterprise *only.*
 
-### Table of Contents 
+## Table of Contents
 
 Use these quick links to jump to certain sections of this article:
 
-[Introduction](#Introduction)
-[What are the potential benefits to configuring Android digital asset links?](#What are the potential benefits to configuring Android digital asset links?)
-[As a SparkPost Enterprise customer, what steps do I need to take to implement digital asset links?](#As a SparkPost Enterprise customer, what steps do I need to implement digital asset links?)
+* [Introduction](#lnk-introduction)
+* [What are the potential benefits to configuring Android digital asset links?](#lnk-potential-benefits)
+* [As a SparkPost Enterprise customer, what steps do I need to take to implement digital asset links?](#lnk-implement)
 
-### Introduction
+## <a id="lnk-introduction">Introduction</a>
 
 Android digital asset links allow recipients who click on a link in an email on their mobile device to be directed to the mobile app (assuming it's installed) rather than the default browser on the user's Android device. The purpose of this article is to explain how to integrate digital asset links with SparkPost Enterprise, but does not go into in-depth detail on how to configure the backend of your mobile app to accept these links, nor the formation of your digital asset link statements. Please refer to the official [Google Digital Asset Links](https://developers.google.com/digital-asset-links/v1/getting-started) page for further documentation.
 
-### What are the potential benefits to configuring Android digital asset links? 
+## <a id="lnk-potential-benefits">What are the potential benefits to configuring Android digital asset links?</a>
 
 The Digital Asset Links protocol and API enable an app or website to make public, verifiable *statements* about other apps or websites. For example, a website can declare that it is associated with a specific Android app, or it can declare that it wants to share user credentials with another website.
 
@@ -30,22 +30,22 @@ Here are some possible uses for Digital Asset Links:
 
 Android digital asset links can not only push tracked links to your mobile app, but can also share credentials and settings from their browser/device, which improves the overall end user experience dramatically over standard link formatting.
 
-### As a SparkPost Enterprise customer, what steps do I need to take to implement digital asset links?
+## <a id="lnk-implement">As a SparkPost Enterprise customer, what steps do I need to take to implement digital asset links?</a>
 
-**Get familiar with Android digital asset links by referring to their documentation.**                                                                               
+**Get familiar with Android digital asset links by referring to their documentation.**
 
 Google has two separate documentation endpoints for the two different types of digital asset links:
 
-[Handling App Links](https://developer.android.com/training/app-links/index.html)
-[Enabling automatic sign in across apps and websites](https://developers.google.com/identity/smartlock-passwords/android/associate-apps-and-sites)
+* [Handling App Links](https://developer.android.com/training/app-links/index.html)
+* [Enabling automatic sign in across apps and websites](https://developers.google.com/identity/smartlock-passwords/android/associate-apps-and-sites)
 
-**Create / Prepare your Android app.**                            
+**Create / Prepare your Android app.**
 
 You may already have a mobile app that supports deep asset links – if that is the case, great! You can go through the following steps to configure an assetlinks.json file for use with your SparkPost Enterprise engagement tracking domain.
 
 As a customer you will need to develop and/or prepare your app according to Google instructions for handling digital asset links. Please refer to the Android developer link above and any other resources that may pertain to app development.
 
-**Create an assetlinks.json file for use with your SPE engagement tracking domain(s).**                                                                             
+**Create an assetlinks.json file for use with your SPE engagement tracking domain(s).**
 
 Referring to the digital asset links documentation, your engagement tracking domain will be acting as the **principal,** which will host your assetlinks.json file as in the following example, where "click.customer.com" is the engagement tracking domain:
 

@@ -6,13 +6,14 @@ description: "When developing to the REST api you should be prepared to handle f
 
 When developing to the REST api, you should be prepared to handle failed requests, understand their meaning and what actions are needed to resolve them. The following table is a complete list of extended error code responses, organized by the four elements included in the response array.
 
-**Component**: The related service that the error has sourced from
-**Error Code:**       The numeric code of the extended error
-**Notes:** The human readable description of the error
-**HTTP Status Code:**              The server level response
+* **Component**: The related service that the error has sourced from
+* **Error Code:** The numeric code of the extended error
+* **Notes:** The human readable description of the error
+* **HTTP Status Code:** The server level response
 
-| **Component** | **Error Code**      | **Notes** | **HTTP Status Code**             | **Corrective Action**        |
-| *API Service*         | *1000-1999* |   |   |   |
+| Component | Error Code | Notes | HTTP Status Code | Corrective Action |
+| --- | --- | --- | --- | --- |
+| *API Service* | *1000-1999* |   |   |   |
 |   | 1000 | OK | 200 |   |
 |   | 1001 | OK (delete) | 204 |   |
 |   | 1100 | permission denied | 403 | check API key, retry |

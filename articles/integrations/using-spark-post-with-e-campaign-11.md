@@ -18,12 +18,12 @@ Click on 'Delivery Settings' to set the following:
 
 ![](media/using-spark-post-with-e-campaign-11/eCampSettings_original.jpg)
 
-*   Set the SMTP Server to smtp.sparkpostmail.com
-*   Set the port to 587
-*   Check the box that says "This SMTP Server Requires Authentication"
-*   Set the username to SMTP_Injection
-*   Set the password to an API key you've created on your SparkPost account with the 'Send via SMTP' permission enabled
-*   Check the box that says "Requires an encrypted connection (SSL/TLS)"
-*   Click "OK"
+* Set the SMTP Server to smtp.sparkpostmail.com
+* Set the port to 587
+* Check the box that says "This SMTP Server Requires Authentication"
+* Set the username to SMTP_Injection
+* Set the password to an API key you've created on your SparkPost account with the 'Send via SMTP' permission enabled
+* Check the box that says "Requires an encrypted connection (SSL/TLS)"
+* Click "OK"
 
 Now you're ready to send!

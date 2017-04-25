@@ -16,6 +16,6 @@ If you operate a preference center, where your users can fine tune their email o
 
 Suggested logic:
 
-*   Register for the webhook event type: unsubscribe. Find more on registering for webhooks [here](https://support.sparkpost.com/customer/portal/articles/1929974-defining-webhooks).
-*   Update your internal user preference database entry according to what message stream the customer acted on.
-*   Update the specific suppression record accordingly. Find more on suppression list updates [here](https://www.sparkpost.com/api?_ga=1.131135883.529467721.1432232143#/reference/suppression-list/insertupdate-retrieve-delete).
+* Register for the webhook event type: unsubscribe. Find more on registering for webhooks [here](https://support.sparkpost.com/customer/portal/articles/1929974-defining-webhooks).
+* Update your internal user preference database entry according to what message stream the customer acted on.
+* Update the specific suppression record accordingly. Find more on suppression list updates [here](https://www.sparkpost.com/api?_ga=1.131135883.529467721.1432232143#/reference/suppression-list/insertupdate-retrieve-delete).

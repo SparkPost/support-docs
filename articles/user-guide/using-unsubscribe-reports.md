@@ -8,27 +8,39 @@ description: "How to Implement Link Unsubscribe and List Unsubscribe Events Usin
 
 Using the link unsubscribe and list unsubscribe events is super-easy.
 
-*   **Link Unsubscribe Example:**                      To use the link unsubscribe, simply add a link in your email in the following format:`<a data-msys-unsubscribe="1" href="YOUR_APP_UNSUBSCRIBE_HANDLER" title="USEFUL_NAME">UNSUBSCRIBE_LINK_DISPLAY_NAME</a>`
+### Link Unsubscribe Example
 
-    That's it. When users click on this link to unsubscribe, your webhook consumer will receive a **link_unsubscribe** event.
+To use the link unsubscribe, simply add a link in your email in the following format:
 
-*   **List Unsubscribe Example:**                      List unsubscribes are triggered from within the ***email client***           when a customer clicks on the "Unsubscribe" button in the email client. **Every** email from SparkPost has a properly formatted List-Unsubscribe entry in the email's header. To use this feature, you just need to listen to the link-unsubscribe webhook events.
+```html
+<a data-msys-unsubscribe="1"
+   href="YOUR_APP_UNSUBSCRIBE_HANDLER"
+   title="USEFUL_NAME">UNSUBSCRIBE_LINK_DISPLAY_NAME</a>
+```
+
+That's it. When users click on this link to unsubscribe, your webhook consumer will receive a `link_unsubscribe` event.
+
+### List Unsubscribe Example:
+
+List unsubscribes are triggered from within the ***email client*** when a customer clicks on the "Unsubscribe" button in the email client. **Every** email from SparkPost has a properly formatted List-Unsubscribe entry in the email's header. To use this feature, you just need to listen to the link-unsubscribe webhook events.
 
 ## Example Implementation
 
-**Scenario**
+### Scenario
+
 You have one or more recipients who have opted-in to your one-to-many emails (such as a newsletter). You are good email citizens and have included CAN-SPAM information in your one-to-many (bulk) email transmissions. The CAN-SPAM information contains an "Unsubscribe" link as required.
 
-1.  **A targeted recipient no longer wishes to receive email and clicks on the "Unsubscribe" link in your email (opt-out).**                                                                                                                   
-2.  **A targeted recipient no longer wishes to be part of a distribution list and clicks on their email client's "Unsubscribe" feature to stop receiving (opt-out) of messages from this list.**                                                                                                                                                                                       
+1. A targeted recipient no longer wishes to receive email and clicks on the "Unsubscribe" link in your email (opt-out).
+1. A targeted recipient no longer wishes to be part of a distribution list and clicks on their email client's "Unsubscribe" feature to stop receiving (opt-out) of messages from this list.
 
-**A Solution**         
+### A Solution
 
-Our new [Suppression List API](https://www.sparkpost.com/api#/reference/suppression-list "Suppression List API Documentation") provides an easy way for developers to manage the list of people who SHOULD NOT be delivered email during non-transactional transmissions. SparkPost's new **List Unsubscribe**             and **Link Unsubscribe**             Events Types added to the Message Category Webhook (see [Webhooks API](https://www.sparkpost.com/api#/reference/webhooks) for more information, in particular the Event-To-Field Mapping for Message Events Category) make it easy for your mobile/web application to monitor for these events and take the appropriate action for that recipient.
+Our new [Suppression List API](https://www.sparkpost.com/api#/reference/suppression-list "Suppression List API Documentation") provides an easy way for developers to manage the list of people who SHOULD NOT be delivered email during non-transactional transmissions. SparkPost's new **List Unsubscribe** and **Link Unsubscribe** Events Types added to the Message Category Webhook (see [Webhooks API](https://www.sparkpost.com/api#/reference/webhooks) for more information, in particular the Event-To-Field Mapping for Message Events Category) make it easy for your mobile/web application to monitor for these events and take the appropriate action for that recipient.
 
-*   [Create a webhook](https://support.sparkpost.com/customer/portal/articles/1929974-defining-webhooks "Create Webhooks") or update an existing webhook to include the **List Unsubscribe**             (and/or) the **Link Unsubscribe**             event types in the Message Category.
-    *   **In the SparkPost UI: TODO ADD IMAGE HERE**                                      
-    *   **Creating a Webhook using the API:**                         ```
+* [Create a webhook](https://support.sparkpost.com/customer/portal/articles/1929974-defining-webhooks "Create Webhooks") or update an existing webhook to include the **List Unsubscribe** (and/or) the **Link Unsubscribe** event types in the Message Category.
+    * **In the SparkPost UI: TODO ADD IMAGE HERE**
+    * **Creating a Webhook using the API:**
+        ```
         POST HTTP/1.1 /api/v1/webhooks
         HOST https://api.sparkpost.com
         HEADERS
@@ -46,8 +58,10 @@ Our new [Suppression List API](https://www.sparkpost.com/api#/reference/suppres
           ]
         }</your_api_key>
         ```
-    *   **Updating an existing Webhook using the API:**                                   ```
-        PUT HTTP/1.1 /api/v1/webhooks/ <replace_with_your_webhook_id>HOST https://api.sparkpost.com
+    * **Updating an existing Webhook using the API:**
+        ```
+        PUT HTTP/1.1 /api/v1/webhooks/<replace_with_your_webhook_id>
+        HOST https://api.sparkpost.com
         HEADERS
             - Content-Type: application/json
             - Authorization: YOUR KEY HERE <your_api_key>BODY
@@ -62,7 +76,8 @@ Our new [Suppression List API](https://www.sparkpost.com/api#/reference/suppres
           ]
         }</list_of_all_previous_events_associated_with_this_webhook></your_api_key></replace_with_your_webhook_id>
         ```
-*   Once your webhook has been created or updated, you will want to verify the webhook is validated and the consumer is ready to start receiving the updated payload. (*We're just sending an empty message object in the POST request*                                                         )```
+* Once your webhook has been created or updated, you will want to verify the webhook is validated and the consumer is ready to start receiving the updated payload. (*We're just sending an empty message object in the POST request*)
+    ```
     POST HTTP/1.1 /api/v1/webhooks/<replace_with_your_webhook_id>/validate
     HOST https://api.sparkpost.com
     HEADERS
@@ -75,10 +90,10 @@ Our new [Suppression List API](https://www.sparkpost.com/api#/reference/suppres
     }</your_api_key></replace_with_your_webhook_id>
     ```
 
-    **A successfully validated webhook API Response example:**                                                     
-
-    ```
-    {"results":
+    **A successfully validated webhook API Response example:**
+    ```json
+    {
+      "results":
         {
             "message":"Test POST to endpoint succeeded",
             "response":{
@@ -97,10 +112,11 @@ Our new [Suppression List API](https://www.sparkpost.com/api#/reference/suppres
         }
     }
     ```
-*   Now that your webhook is configured to start sending out the link_unsubscribe and list_unsubscribe events, your webhook consumer should be configured to start listening for these unsubscribe events. When one of these events comes through it will have the following data footprint:
-    ### Link Unsubscribe Webhook Event Example
+*   Now that your webhook is configured to start sending out the `link_unsubscribe` and `list_unsubscribe` events, your webhook consumer should be configured to start listening for these unsubscribe events. When one of these events comes through it will have the following data footprint:
 
-    ```
+### Link Unsubscribe Webhook Event Example
+
+```json
     {
         "msys": {
             "unsubscribe_event": {
@@ -126,10 +142,11 @@ Our new [Suppression List API](https://www.sparkpost.com/api#/reference/suppres
             }
         }
     }
-    ```
-    ### List-Unsubscribe Webhook Event Example
+```
 
-    ```
+### List-Unsubscribe Webhook Event Example
+
+```json
     {   "msys":{
             "unsubscribe_event":{
                 "type":"list_unsubscribe",
@@ -151,6 +168,6 @@ Our new [Suppression List API](https://www.sparkpost.com/api#/reference/suppres
             }
         }
     }
-    ```
+```
 
 Once you have either the List-Unsubscribe or Link Unsubscribe webhook events flowing to your webhook consumer, you just need to handle those events and [use your suppression list](https://www.sparkpost.com/api#/reference/suppression-list) to keep your recipient list healthy and your sending reputation in top form!

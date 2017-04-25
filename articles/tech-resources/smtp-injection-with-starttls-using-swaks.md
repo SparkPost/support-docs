@@ -8,25 +8,27 @@ One of our customers recently ran into issues attempting to send a test email vi
 
 Prerequisites:
 
-*   A valid SparkPost API key with the "send with SMTP" permission enabled
-*   A valid sending domain configured
+* A valid SparkPost API key with the "send with SMTP" permission enabled
+* A valid sending domain configured
 
- ### Sending a Test Email Using swaks 
+## Sending a Test Email Using swaks
 
 Once you have swaks downloaded (optionally available in your PATH), you can send a test email using SparkPost SMTP injection by running the following command in a terminal window:
- `swaks -server smtp.sparkpostmail.com:587 -tls --auth-user SMTP_Injection --auth-password <**API_KEY>** --to <**TO_EMAIL>** --from <**FROM_EMAIL>**`
+
+```
+swaks -server smtp.sparkpostmail.com:587 -tls --auth-user SMTP_Injection --auth-password <**API_KEY>** --to <**TO_EMAIL>** --from <**FROM_EMAIL>**
+```
 
 ​**Substitutions**:
 
-*   **API_KEY** - An api key created in app.sparkpost.com with "Send via SMTP" permission
-*   **TO_EMAIL** - The email address of the test email recipient
-*   **FROM_EMAIL** - An email address on a configured Sending Domain
+* **API_KEY** - An api key created in app.sparkpost.com with "Send via SMTP" permission
+* **TO_EMAIL** - The email address of the test email recipient
+* **FROM_EMAIL** - An email address on a configured Sending Domain
 
-**If you ever need the [SMTP Connection information for SparkPost](https://app.sparkpost.com/#/account/credentials), it is available in the Account section of the SparkPost UI.**                                                                                                                                                                            
+**If you ever need the [SMTP Connection information for SparkPost](https://app.sparkpost.com/#/account/credentials), it is available in the Account section of the SparkPost UI.**
 
-### Sample Response
+## Sample Response
 
-(Scroll to see more)
 ```
 === Trying smtp.sparkpostmail.com:587...
 === Connected to smtp.sparkpostmail.com.
