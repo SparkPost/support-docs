@@ -18,7 +18,7 @@ function import_related_media() {
       local alt="$(echo "$image" | jq '.alt' --raw-output)"
       local title="$(echo "$image" | jq '.title' --raw-output)"
 
-      new_id=$(do_wp media import "$(pwd)$path_base/$src" --title="$title" --alt="$alt" --post_id="$post_id" --porcelain)
+      new_id=$(do_wp media import "$(pwd)/$path_base/$src" --title="$title" --alt="$alt" --post_id="$post_id" --porcelain)
       image_ids+=("$new_id")
     done
 
