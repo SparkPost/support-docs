@@ -4,30 +4,32 @@ redirect_from: "https://support.sparkpost.com/customer/portal/articles/2676543-e
 description: "psparkpost a href https developers sparkpost com api relay webhooks html relay webhooks are a way to receive email to your own HTTP endpoints For each email sent to your inbound domain Spark Post will call your endpoint with a JSON request containing the message with headers already parsed out..."
 ---
 
-<psparkpost<a href="https://developers.sparkpost.com/api/relay-webhooks.html">relay webhooks are a way to receive email to your own HTTP endpoints. For each email sent to your [inbound domain](https://developers.sparkpost.com/api/inbound-domains.html), SparkPost will call your endpoint with a [JSON request](https://developers.sparkpost.com/api/relay-webhooks.html#header-example-payloads) containing the message with headers already parsed out into an array.
+[Relay webhooks](https://developers.sparkpost.com/api/relay-webhooks.html) are a way to receive email to your own HTTP endpoints. For each email sent to your [inbound domain](https://developers.sparkpost.com/api/inbound-domains.html), SparkPost will call your endpoint with a [JSON request](https://developers.sparkpost.com/api/relay-webhooks.html#header-example-payloads) containing the message with headers already parsed out into an array.
 
 Many of our users also need to extract file attachments from the email.  Here are some outline steps and sample code showing how to receive emails via relay webhooks and extract any attached files.
 
- <h3prerequisites< h3="">Before receiving email via relay webhook, the following setup steps are required:
+ ## Prerequisites
 
-1.  Register your domain name in the DNS
-2.  Configure your domain as an inbound domain on your SparkPost account ([details here](https://developers.sparkpost.com/api/inbound-domains.html))
-3.  Prepare a publicly-accessible HTTP endpoint capable of receiving POST requests with JSON-formatted bodies. Sample code for this step is provided below.
+ Before receiving email via relay webhook, the following setup steps are required:
 
-### Retrieving Attachments Through Your Relay Webhook
+1. Register your domain name in the DNS
+1. Configure your domain as an inbound domain on your SparkPost account ([details here](https://developers.sparkpost.com/api/inbound-domains.html))
+1. Prepare a publicly-accessible HTTP endpoint capable of receiving POST requests with JSON-formatted bodies. Sample code for this step is provided below.
 
-1.  Receive POST request from SparkPost relay webhook service
-2.  Parse email body using MIME library for your chosen language / framework
-3.  Extract attachments from MIME email structure
+## Retrieving Attachments Through Your Relay Webhook
 
-### PHP Relay Webhook Attachments Sample Code
+1. Receive POST request from SparkPost relay webhook service
+1. Parse email body using MIME library for your chosen language / framework
+1. Extract attachments from MIME email structure
 
-```
+## PHP Relay Webhook Attachments Sample Code
+
+```php
 <?php
 /* Dependencies:
  * - php-mime-mail-parser (https://github.com/php-mime-mail-parser/php-mime-mail-parser)
  * - The mailparse extension  (http://php.net/manual/en/book.mailparse.php)
- */ 
+ */
 require 'vendor/autoload.php';
 
 $messages = json_decode(file_get_contents('php://input'));
@@ -53,9 +55,9 @@ foreach ($messages as $msg) {
 ?>
 ```
 
-### Python Relay Webhook Attachments Sample Code
+## Python Relay Webhook Attachments Sample Code
 
-```
+```python
 """Receive an extract email attachments using SparkPost relay webhooks.
 
 Prerequisites:
@@ -66,7 +68,7 @@ Dependencies:
  - flask
 """
 
-from flask import Flask, request 
+from flask import Flask, request
 from base64 import b64decode
 from email import message_from_string
 
@@ -100,8 +102,9 @@ def receive_messages():
     return 'Received %d message(s)' % len(messages)
 ```
 
-### Node.js Relay Webhook Attachments Sample Code
+## Node.js Relay Webhook Attachments Sample Code
 
+```javascript
 'use strict';
 
 /* Receive and extract email attachments using SparkPost relay webhooks.
@@ -137,7 +140,7 @@ app.post('/', (req, res) => {
 
     if (content.email_rfc822_is_base64) {
       body = Buffer.from(body, 'base64');
-    } 
+    }
 
     parser.on('attachment', (attachment, mail) => {
       console.log(`Writing ${attachment.fileName}...`);
@@ -156,3 +159,4 @@ app.post('/', (req, res) => {
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);
 });</h3prerequisites<></psparkpost<a>
+```

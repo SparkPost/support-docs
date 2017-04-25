@@ -10,4 +10,4 @@ Detailed instructions for creating groups can be found [here](https://support.go
 
 Once you’ve created your groups you should be able to receive emails sent to postmaster@ or abuse@ email addresses and verify them for your sending domain in SparkPost.
 
-* *Google creates and owns their own abuse@ and postmaster@ email accounts for each domain they host. They monitor your domain usage with their abuse@ and postmaster@ email addresses that you cannot access.*
+*Google creates and owns their own abuse@ and postmaster@ email accounts for each domain they host. They monitor your domain usage with their abuse@ and postmaster@ email addresses that you cannot access.
