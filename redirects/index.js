@@ -5,16 +5,20 @@ const YAML = require('js-yaml');
 const escapeStringRegexp = require('escape-string-regexp');
 
 const newBaseUrl = 'https://www.sparkpost.com/docs';
-const articlesFolder = './articles/';
+const articlesFolder = path.resolve(__dirname, '../articles');
 const redirects = {};
 
 _.each(fs.readdirSync(articlesFolder), (topic) => {
-  console.log(`Processing "${topic}"`);
+  const topicFolder = path.join(articlesFolder, topic);
 
-  _.each(fs.readdirSync(path.join(articlesFolder, topic)), (article) => {
-    console.log(`Processing "${topic}/${article}"`);
-    processArticle(topic, article);
-  });
+  if(fs.lstatSync(topicFolder).isDirectory()) {
+    console.log(`Processing "${topic}"`);
+
+    _.each(fs.readdirSync(topicFolder), (article) => {
+      console.log(`Processing "${topic}/${article}"`);
+      processArticle(topic, article);
+    });
+  }
 });
 
 fs.writeFileSync(path.join(__dirname, '/redirects.conf'), _.map(redirects, (toUrl, fromUrl) => {
@@ -23,7 +27,7 @@ fs.writeFileSync(path.join(__dirname, '/redirects.conf'), _.map(redirects, (toUr
 
 
 function processArticle(topic, article) {
-  if (article === 'media') {
+  if (article === 'media' || article === '.DS_Store') {
     return;
   }
 
@@ -41,7 +45,7 @@ function processArticle(topic, article) {
 function getMetadata(path) {
   const fileLines = fs.readFileSync(path,  'utf8').split('\n');
   let metaLines = [];
- 
+
   // skip the first line
   for (var i = 1; i < fileLines.length; i++) {
     if (fileLines[i].match(/^---$/)) {
@@ -50,6 +54,6 @@ function getMetadata(path) {
 
     metaLines.push(fileLines[i].replace(/%22/g, '\\\"'));
   }
-  
+
   return YAML.safeLoad(metaLines.join('\n'));
 }

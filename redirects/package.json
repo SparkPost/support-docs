@@ -9,6 +9,7 @@
   "author": "Avi Goldman <me@avigoldman.com> (http://avigoldman.com)",
   "license": "ISC",
   "dependencies": {
+    "escape-string-regexp": "^1.0.5",
     "js-yaml": "^3.8.3",
     "lodash": "^4.17.4"
   }
