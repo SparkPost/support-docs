@@ -18,7 +18,7 @@ function import_related_media() {
       local alt="$(echo "$image" | jq '.alt' --raw-output)"
       local title="$(echo "$image" | jq '.title' --raw-output)"
 
-      new_id=$(do_wp media import "$path_base/$src" --title="$title" --alt="$alt" --post_id="$post_id" --porcelain)
+      new_id=$(do_wp media import "$(pwd)/$path_base/$src" --title="$title" --alt="$alt" --post_id="$post_id" --porcelain)
       image_ids+=("$new_id")
     done
 
@@ -89,7 +89,7 @@ for filepath in "${CHANGED_FILES[@]}"; do
       echo " - $(do_wp post term add "$wp_post_id" "$WP_CUSTOM_TAX" "$cat_slug")"
 
       echo " - Importing related media"
-      imported_image_ids=($(import_related_media "$wp_post_id" "../$(dirname "$filepath")" "$md_post_images"))
+      imported_image_ids=($(import_related_media "$wp_post_id" "$(dirname "$filepath")" "$md_post_images"))
       echo " - Imported ${#imported_image_ids[@]} files"
 
       md_post_content=$(generate_html "$filepath" "${imported_image_ids[@]}")
@@ -105,12 +105,18 @@ for filepath in "${CHANGED_FILES[@]}"; do
     wp_post_id=${WP_POST_IDS[$wp_post_index]}
     echo " - Updating post"
 
+    if [[ -d "./$(dirname "$filepath")/media/$slug" ]]; then
+      ls "./$(dirname "$filepath")/media/$slug"
+    else 
+      echo "no media"
+    fi
+
     echo " - Deleting related media"
     deleted_image_ids=($(delete_related_media "$wp_post_id"))
     echo " - Deleted ${#deleted_image_ids[@]} files"
 
     echo " - Importing related media"
-    imported_image_ids=($(import_related_media "$wp_post_id" "../$(dirname "$filepath")" "$md_post_images"))
+    imported_image_ids=($(import_related_media "$wp_post_id" "$(dirname "$filepath")" "$md_post_images"))
     echo " - Imported ${#imported_image_ids[@]} files"
 
     md_post_content=$(generate_html "$filepath" "${imported_image_ids[@]}")
