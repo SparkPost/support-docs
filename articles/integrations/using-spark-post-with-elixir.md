@@ -4,7 +4,7 @@ redirect_from: "https://support.sparkpost.com/customer/portal/articles/2278407-u
 description: "This article assumes you are familiar with Elixir and the mix and iex CL Is We also assume that you have created an API key with the Send via SMTP permission This article will show you how to use Spark Post via SMTP with Elixir and the Mailman library mix..."
 ---
 
-**This article assumes you are familiar with Elixir and the `mix` and `iex` CLIs. We also assume that you have [created an API key](https://support.sparkpost.com/customer/portal/articles/1933377-create-api-keys) with the "Send via SMTP" permission.**                                                                                                                                                                                                                                                  
+**This article assumes you are familiar with Elixir and the `mix` and `iex` CLIs. We also assume that you have [created an API key](https://support.sparkpost.com/customer/portal/articles/1933377-create-api-keys) with the "Send via SMTP" permission.**
 
 This article will show you how to use SparkPost via SMTP with Elixir and the [Mailman](https://github.com/kamilc/mailman) library.
 
@@ -15,7 +15,7 @@ cd myapp
 
 Add the dependencies to your `mix.exs` file:
 
-```
+```elixir
 defmodule MyApp.Mixfile do
   # ... omitted for brevity
 
@@ -30,13 +30,15 @@ end
 
 Install the dependencies:
 
-`mix deps.get`
+```
+mix deps.get
+```
 
 Next up, create an Elixir module that uses Mailman, an abstraction on top of Erlang's `gen_smtp` library. With Mailman you create a context and an email. Think of the context as the configuration you use to connect to SparkPost, and the email as the message you are going to send. You then invoke the `Mailman.deliver` method and pass it both the email and the context.
 
 Create a new file called `mailer.ex` with the following contents and save it in `lib/myapp/mailer.ex`, replacing the values with your information:  
 
-```
+```elixir
 defmodule MyApp.Mailer do
   @moduledoc """
   Sample module for sending email through SparkPost using Mailman.

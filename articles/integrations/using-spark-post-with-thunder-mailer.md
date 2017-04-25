@@ -14,10 +14,10 @@ Click on the green '+' symbol to create a new SMTP server profile and enter the 
 
 ![](media/using-spark-post-with-thunder-mailer/ThunderSettings_original.jpg)
 
-*   Set the SMTP Mail Server name to smtp.sparkpostmail.com
-*   Set the user name to SMTP_Injection
-*   Set the password to an API key you have created from your SparkPost account that has the 'Send via SMTP' permission enabled.
-*   Set the SMTP port to 587 (TLS will be enabled automatically by Thunder Mailer)
+* Set the SMTP Mail Server name to smtp.sparkpostmail.com
+* Set the user name to SMTP_Injection
+* Set the password to an API key you have created from your SparkPost account that has the 'Send via SMTP' permission enabled.
+* Set the SMTP port to 587 (TLS will be enabled automatically by Thunder Mailer)
 
 Also remember that your "From address" needs to be from a domain that you've set up as a valid sending domain in SparkPost and is listed as 'Ready to Send'
 
