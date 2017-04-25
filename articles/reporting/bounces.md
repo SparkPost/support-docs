@@ -10,16 +10,16 @@ Below that, you will see 4 categories:
 
 ![](media/bounces/bounces1_original.jpg)
 
-1.  Targeted: number of emails you sent to SparkPost
-2.  Accepted: number of emails that was accepted by the recipient server  (250ok)
-3.  Bounces: emails that were rejected from the recipient server 
-4.  Bounce Rate: the percentage of bounces for the particular date range selected. Again, you can also select domain, campaign or template.  
+1. Targeted: number of emails you sent to SparkPost
+1. Accepted: number of emails that was accepted by the recipient server  (250ok)
+1. Bounces: emails that were rejected from the recipient server 
+1. Bounce Rate: the percentage of bounces for the particular date range selected. Again, you can also select domain, campaign or template.  
 
 Bounces can fall in to two different sections: Category and Type.
 
 ![](media/bounces/bounce2_original.jpg)
 
-### Category
+## Category
 
 When a recipient email server rejects or bounces an email, they will provide us with reasons that we parse and further classify in to one of five sub-categories:
 
@@ -33,14 +33,15 @@ When a recipient email server rejects or bounces an email, they will provide us 
 
 **Undetermined** – In rare cases, the failure code provided from the recipient server is either unparsable or so generic that we cannot determine the exact cause for the failure. 
 
-### Type
+## Type
 
 There are 2 different Types of bounces, In-Band and Out-of-Band:
 
-1.  In-Band – The recipient server has rejected the email immediately.  This signal is received during the message transmission.  This is also known in the industry as 'in-protocol'.  In-Band bounces make up the majority of all bounce types
-2.  Out-of-Band – Some recipient servers will initially accept the emails, then determine at a downstream process to rejected it.  In this case, you may not get a report of the bounces right away.  You will receive a delivered event AND a bounce event. 
+1. In-Band – The recipient server has rejected the email immediately. This signal is received during the message transmission.  This is also known in the industry as 'in-protocol'.  In-Band bounces make up the majority of all bounce types
+1. Out-of-Band – Some recipient servers will initially accept the emails, then determine at a downstream process to rejected it.  In this case, you may not get a report of the bounces right away. You will receive a delivered event AND a bounce event. 
 
-**Bounced Messages**         
+**Bounced Messages**
+
 Further down the page, you will see more detail on the various types of bounces your sends have encountered.  This chart can be downloaded for further evaluation.  
 
 ![](media/bounces/bounce3_original.jpg)
