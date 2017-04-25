@@ -58,7 +58,7 @@ fi
 for filepath in "${CHANGED_FILES[@]}"; do
   slug=$(slugify "$(get_filename $filepath)")
   print_title "$slug"
-  
+
   if [ $(get_ext "$filepath") != "md" ]; then
     echo "Unknown extension - skipping"
     echo ""
@@ -76,12 +76,13 @@ for filepath in "${CHANGED_FILES[@]}"; do
   md_post=$(node bin/markdown.js "$filepath")
   md_post_images=("$(echo $md_post | jq --compact-output --raw-output '.images')")
   md_post_title="$(echo $md_post | jq '.meta.title' --raw-output)"
+  md_post_excerpt="$(echo $md_post | jq '.meta.description' --raw-output)"
 
   # create
   if [ -n "$md_post" ] && [ "-1" == "$wp_post_index" ]; then
     echo " - Creating post"
     wp_post_id=$(do_wp post create --post_name=$slug --post_status="publish" --post_title="$md_post_title" --post_type=$WP_POST_TYPE --porcelain)
-    
+
     if [[ $wp_post_id =~ $NUMBER_PATTERN ]]; then
       echo " - Success: Created post $wp_post_id."
 
@@ -94,7 +95,7 @@ for filepath in "${CHANGED_FILES[@]}"; do
 
       md_post_content=$(generate_html "$filepath" "${imported_image_ids[@]}")
 
-      echo " - $(do_wp post update $wp_post_id --post_content="$md_post_content")"
+      echo " - $(do_wp post update $wp_post_id --post_content="$md_post_content" --post_excerpt="$md_post_excerpt")"
     else
       echo " - $wp_post_id"
     fi
@@ -115,7 +116,7 @@ for filepath in "${CHANGED_FILES[@]}"; do
 
     md_post_content=$(generate_html "$filepath" "${imported_image_ids[@]}")
 
-    echo " - $(do_wp post update $wp_post_id --post_title="$md_post_title" --post_content="$md_post_content")"
+    echo " - $(do_wp post update $wp_post_id --post_title="$md_post_title" --post_content="$md_post_content" --post_excerpt="$md_post_excerpt")"
   fi
 
   # delete
