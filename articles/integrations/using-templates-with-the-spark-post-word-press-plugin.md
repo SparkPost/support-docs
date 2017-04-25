@@ -6,14 +6,14 @@ description: "When using stored templates with the Spark Post Word Press plugin 
 
 When using stored templates with the [SparkPost WordPress plugin](https://wordpress.org/plugins/sparkpost/), we pass through substitution data that you can use as variables in your template to specify some dynamic settings:
 
-*   content - the main body of the email
-*   subject - the subject of the email
-*   from - the email address of the sender (e.g. Rick Sanchez <rick.sanchez@DimensionC-137.com>)
-*   reply_to - the email address to use when users reply to your email
+* content - the main body of the email
+* subject - the subject of the email
+* from - the email address of the sender (e.g. Rick Sanchez <rick.sanchez@DimensionC-137.com>)
+* reply_to - the email address to use when users reply to your email
 
 To use these variables in your templates, you'll have to use our [Templates API](https://developers.sparkpost.com/api/#/reference/templates). Our web UI does not currently support using variables for from or reply_to. When you create or update your template, you can supply a payload that looks like this:
 
-```
+```json
 {
   "id" : "wordpress-testing",
   "name" : "wordpress testing",

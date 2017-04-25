@@ -14,11 +14,11 @@ Click on the green '+' sign to set up a new SMTP account and enter the informati
 
 ![](media/using-spark-post-with-atomic-mail-sender/IRA_Dev_original.jpg)
 
-*   Set the SMTP server name to "smtp.sparkpostmail.com"
-*   Set the port to 587
-*   For encryption, select TLS
-*   Set login in as "SMTP_Injection"
-*   Set the password to a valid API key you have generated from your account with the 'Send via SMTP' permission enabled
-*   You can also set the hourly send limit to be your quota on SparkPost (see the Usage page under your Account tab to see your current limits)
+* Set the SMTP server name to "smtp.sparkpostmail.com"
+* Set the port to 587
+* For encryption, select TLS
+* Set login in as "SMTP_Injection"
+* Set the password to a valid API key you have generated from your account with the 'Send via SMTP' permission enabled
+* You can also set the hourly send limit to be your quota on SparkPost (see the Usage page under your Account tab to see your current limits)
 
 Happy Sending!

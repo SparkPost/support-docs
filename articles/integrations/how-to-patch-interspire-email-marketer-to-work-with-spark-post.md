@@ -6,29 +6,29 @@ description: "We had several customers using Interspire Email Marketer reporting
 
 We had several customers using [Interspire Email Marketer](http://www.interspire.com/ "Interspire Email Marketer") reporting an issue blocking them from using [SparkPost](https://sparkpost.com "Sparkpost Email Service") to send email via SMTP. This article will address:
 
-*   [What issue was experienced?](#experience)
-*   [Test-harness Environment Configuration](#environment)
-*   [Root cause of the issue](#issue)
-*   [What code overcame the issue?](#fix)
-*   [Applying the patch to your Interspire instance](#patch)
+* [What issue was experienced?](#lnk-experience)
+* [Test-harness Environment Configuration](#lnk-environment)
+* [Root cause of the issue](#lnk-issue)
+* [What code overcame the issue?](#lnk-fix)
+* [Applying the patch to your Interspire instance](#lnk-patch)
 
 NOTE: If you are interested in using something similar to Interspire but has a fully supported integration with SparkPost, we recommend you take a look at [MailWizz](http://www.mailwizz.com). Additionally, the information below is for Interspire version 6.15, it has not been tested on any other version. Please be sure to keep backup copies of any modified files in case you run into issues.
 
-### What issue was experienced?
+## <a id="lnk-experience" name="What issue was experienced?">What issue was experienced?</a>
 
 More than a handful of customers were reporting that during setup of SMTP server in Interspire to use Sparkpost SMTP servers they were receiving a ["Relaying Denied"](https://support.sparkpost.com/customer/portal/articles/1955060 "Relaying Denied error debugging support on support.sparkpost.com") or other similar SMTP setup error messages while trying to do something as simple as send a test email using Interspire.
 
 Our support team ran the gamut with our customers (thank you for being so very patient) trying to resolve this error. In each case, the customers had followed all the proper steps and configured everything as expected, but were still unable to get things to work:
 
-1.  Each customer had a [new Sparkpost.com account](https://app.sparkpost.com/sign-up?_ga=1.238584512.1501089354.1437574465)
-2.  In each case, the customer had [created a Sending Domain in Sparkpost](https://support.sparkpost.com/customer/portal/articles/1933318-creating-sending-domains) properly
-3.  All of their DNS records were configured properly by [setting up DKIM to verify their sending domain for use with Sparkpost](https://support.sparkpost.com/customer/portal/articles/1933360-verify-sending-domains)
-4.  We tested they had [created a valid Sparkpost API Key](https://support.sparkpost.com/customer/portal/articles/1933377-create-api-keys) with the **Send via SMTP**          permission enabled
-5.  We worked with each customer ensuring they had [set up SMTP for use Sparkpost Email Service](https://support.sparkpost.com/customer/portal/articles/2051794-setting-up-smtp-video-walkthrough)
+1. Each customer had a [new Sparkpost.com account](https://app.sparkpost.com/sign-up?_ga=1.238584512.1501089354.1437574465)
+1. In each case, the customer had [created a Sending Domain in Sparkpost](https://support.sparkpost.com/customer/portal/articles/1933318-creating-sending-domains) properly
+1. All of their DNS records were configured properly by [setting up DKIM to verify their sending domain for use with Sparkpost](https://support.sparkpost.com/customer/portal/articles/1933360-verify-sending-domains)
+1. We tested they had [created a valid Sparkpost API Key](https://support.sparkpost.com/customer/portal/articles/1933377-create-api-keys) with the **Send via SMTP**          permission enabled
+1. We worked with each customer ensuring they had [set up SMTP for use Sparkpost Email Service](https://support.sparkpost.com/customer/portal/articles/2051794-setting-up-smtp-video-walkthrough)
 
 Interspire is PHP software running on customer-deployed LAMP (Linux, Apache, MySQL, PHP) stacks, and after several failed attempts to get in contact with Interspire to debug the issue, we decided the best course of action was to purchase a license and find out for ourselves.
 
-### Test-Harness Environment Configuration
+## <a id="lnk-environment" name="Test-Harness Environment Configuration">Test-Harness Environment Configuration</a>
 
 First I needed somewhere to install my instance, so I whipped up a new EC2 LAMP Stack, here's a handy little article I found to get me started: [http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/install-LAMP.html](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/install-LAMP.html "Install LAMP on EC2"). But that wasn't quite enough since [Sparkpost](https://sparkpost.com "Sparkpost") uses the improved and recommended security of [TLS (Transport Layer Security)](https://en.wikipedia.org/wiki/Transport_Layer_Security "Learn more about TLS") for sending email via SMTP we needed to make sure that PHP was compiled with openssl support by making sure that mod_ssl was enabled in the php.ini.
 
@@ -117,9 +117,11 @@ test success
 
 // Server says it could send email WOOT WOOT!
 250 2.0.0 OK EB/D8-12371-C6B1C955</put_your_sparkpost_api_key_here>
-```So now that I've finished a cursory test that I'm able to send email from this machine using TLS, it is time to try it with Interspire.
+```
 
-### Root cause of the issue
+So now that I've finished a cursory test that I'm able to send email from this machine using TLS, it is time to try it with Interspire.
+
+## <a id="lnk-issue" name="Root cause of the issue">Root cause of the issue</a>
 
 After following Interspire's documentation on configuring an external SMTP service, I tried to test...but I received the same error message as our customers. Good, now we can get down to the issue.
 
@@ -133,9 +135,11 @@ I did a bit of Googling and saw that one of our competitors had recommended usin
 
 AHA! So the issue was that **STARTTLS** was never actually being sent (because the SMTP connection code for Interspire wasn't issuing it appropriately). I also determined that during the authentication phase of the STARTTLS SMTP communications, it is best to set the tunnel to execute in blocking (synchronous) mode.
 
-### What code overcame the issue?
+## <a id="lnk-fix" name="What code overcame the issue?">What code overcame the issue?</a>
 
-Interspire is using PHP's`**fsockopen() method**`to establish the SMTP connection, but it wasn't looking for the STARTTLS command to be returned by the SMTP server after initiating the first *EHLO* command. Here's the diff (patch) on the email.php file```
+Interspire is using PHP's `fsockopen()` method to establish the SMTP connection, but it wasn't looking for the STARTTLS command to be returned by the SMTP server after initiating the first *EHLO* command. Here's the diff (patch) on the email.php file
+
+```
 2030a
 
       // Must use STARTTLS and modify the stream, added by Sparkpost.com Developer Relations
@@ -223,25 +227,27 @@ Interspire is using PHP's`**fsockopen() method**`to establish the SMTP connectio
 w
 ```
 
-### Applying the patch to your Interspire instance
+## <a id="lnk-patch" name="Applying the patch to your Interspire instanc">Applying the patch to your Interspire instance</a>
 
 WARNING FROM INTERSPIRE: Please take note if you modify IEM SMTP connection code then we will not able to support any future issue that will be raised on email sending. Additionally, this patch has only been tested on Interspire version 6.15
 
 I'm sure if you're this far into the article, you are ready to just apply the patch, so here's how you can use this to successfully get Interspire to send email via Sparkpost:
 
-1.  Make sure your environment is setup properly, you can test php by creating a temp web page with:```
+1. Make sure your environment is setup properly, you can test php by creating a temp web page with:
+
+    ```
     <?php
     php_info();
     ?>
     ```
-2.  Make a copy of `cp /admin/com/ext/interspire_email/email.php ~/interspire_email.php.old`
-3.  Create copy of the above linix diff file to your Interspire instance user's home directory
-4.  Apply the above patch to the original file`ed - /admin/com/ext/interspire_email/email.php < REPLACE/WITH/PATH/AND/NAME/OF/PATCH/FILE.txt`
-5.  Make sure that the changes were applied (look around line 1999 for // Variable to store if STARTTLS is required`cat /admin/com/ext/interspire_email/email.php`
-6.  If the change is in place, then log in to Interspire and modify the "Settings" => "Email Settings" => "SMTP" => "Let me specify my own SMTP server details" to match the following image: 
-7.  Include your email address, and then click the "Test SMTP Settings"
+1. Make a copy of `cp /admin/com/ext/interspire_email/email.php ~/interspire_email.php.old`
+1. Create copy of the above linix diff file to your Interspire instance user's home directory
+1. Apply the above patch to the original file `ed - /admin/com/ext/interspire_email/email.php < REPLACE/WITH/PATH/AND/NAME/OF/PATCH/FILE.txt`
+1. Make sure that the changes were applied (look around line 1999 for // Variable to store if STARTTLS is required `cat /admin/com/ext/interspire_email/email.php`
+1. If the change is in place, then log in to Interspire and modify the "Settings" => "Email Settings" => "SMTP" => "Let me specify my own SMTP server details" to match the following image:
+1. Include your email address, and then click the "Test SMTP Settings"
 
 You should be all set now, but in case you run into any issues remember the following troubleshooting list:
 
-*   Your Sparkpost account is configured with a valid sending domain, and you use that sending domain in your User Settings of Interspire
-*   If you're test sending to a list, make sure that the Contact List is configured to use your associated Sparkpost verified sending domain
+* Your Sparkpost account is configured with a valid sending domain, and you use that sending domain in your User Settings of Interspire
+* If you're test sending to a list, make sure that the Contact List is configured to use your associated Sparkpost verified sending domain
