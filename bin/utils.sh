@@ -49,6 +49,7 @@ function index_of() {
 
         if [ "${!i}" == "${value}" ]; then
           echo $(expr $i - 1)
+          return
         fi
     }
 
