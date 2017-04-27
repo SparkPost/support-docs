@@ -17,11 +17,11 @@ Use these links to jump to certain sections of this article
 * [Master Account: Operating on Behalf of a Subaccount](#lnk-operating-subaccount)
 * [Subaccount Self Service​](#lnk-subaccount-self-service)
 
- ### <a id="lnk-overview" name="Overview">Overview</a>
+### <a id="lnk-overview" name="Overview">Overview</a>
 
 This article is intended for master account administrators (not subaccount users).  It introduces our subaccount functionality in SparkPost and SparkPost Enterprise. The subaccount functionality will allow you to support separate business units, mailstreams, or customers (if you are an email service provider) all from within your SparkPost account. Subaccounts enable you to give each of these units direct access to the SparkPost messaging service APIs. (Subaccount users will not have separate access in the UI.)
 
- ### <a id="lnk-terminology" name="Terminology">Terminology</a>
+### <a id="lnk-terminology" name="Terminology">Terminology</a>
 
 **Master Account** - This refers to the top-level organization from which all subaccounts originate.
 
@@ -68,7 +68,7 @@ Administrators within your business can create as many subaccounts as needed. Cr
 
 This is how subaccount creation appears in the UI:
 
-![subaccount create screenshot](media/subaccounts-in-sparkpost-and-spark-post-enterprise/Screen_Shot_2016-04-19_at_10.55.20_AM_original.png)
+![subaccount create screenshot](media/subaccounts/Screen_Shot_2016-04-19_at_10.55.20_AM_original.png)
 
 The following is a list of permissions supported for subaccount API keys:
 
@@ -166,7 +166,7 @@ The master account may send as the subaccount with the transmission API by inclu
 
 The master account may submit traffic on behalf of the subaccount SMTP by providing the subaccount's API key with an SMTP grant in the TLS auth-password field. **Note**: The master account can send using a master account API key by appending the standard "SMTP_Injection" user with the subaccount ID. Please refer to [the documentation](https://developers.sparkpost.com/api/?_ga=1.144252341.1033930248.1481562971#/introduction/smtp-relay-endpoints) for specifics on how to perform this operation.
 
-### <a id="lnk-subaccount-self-service" name="Subaccount Self Service">### Subaccount Self Service</a>
+### <a id="lnk-subaccount-self-service" name="Subaccount Self Service">Subaccount Self Service</a>
 
 Subaccounts have limited access to system operations, data, and assets. The access will be limited to the API key permissions you provide to the subaccount. Subaccounts can only retrieve their own message events data, which is sourced from the message events API.
 
