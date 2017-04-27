@@ -21,7 +21,7 @@ function import_related_media() {
       if [[ $src = http* ]] ; then
         path="$src"
       else
-        path="$path_base/$src"
+        path="https://raw.githubusercontent.com/$TRAVIS_PULL_REQUEST_SLUG/$TRAVIS_PULL_REQUEST_BRANCH/$path_base/$src"
       fi
 
       new_id=$(do_wp media import "$path" --title="$title" --alt="$alt" --post_id="$post_id" --porcelain)
