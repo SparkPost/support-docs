@@ -20,7 +20,7 @@ The skip suppression feature can be enabled in any transmission however, it cann
 * **HTTP Method:** POST
 
 In this example the recipient “msys_test@messagesystems.com” is on the suppression list.  With “skip_suppression” key pair set to true, the e-mail will not be suppressed and the message will be sent to the recipient, i.e., this will “skip” the suppression.
-![](media/sending-transmission-with-skip-suppression-functionality/1_Skip_Suppression_original.png)
+![](media/skip-suppression-functionality/1_Skip_Suppression_original.png)
 
 ***Note:** By default, the value of the skip_suppression key pair is "false", and does NOT need to be included in the options object if skipping suppression isn't needed for a transmission.*
 
@@ -32,6 +32,6 @@ The skip suppression option has been honored and the message will be sent to the
 
 The expected result should be:
 
-![](media/sending-transmission-with-skip-suppression-functionality/1_Skip_Suppression_Results_original.png)
+![](media/skip-suppression-functionality/1_Skip_Suppression_Results_original.png)
 
 ***Note:** Regardless of the values of the “non_transactional” and “transactional” options (true/false), if “skip_suppression” option is set to true, the message **WILL** be sent to the recipients.*

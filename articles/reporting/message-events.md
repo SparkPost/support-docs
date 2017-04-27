@@ -21,9 +21,9 @@ Complete the following steps from the main menu in SparkPost.
 1.  Select Message Events from the Sub-menu to view the same.
 1.  Perform a filtered search for message event data - the response is sorted by descending timestamp.
 
-![](media/message-events-reporting-in-the-ui/message_events_original.jpg)
+![](media/message-events/message_events_original.jpg)
 
-![](media/message-events-reporting-in-the-ui/filters_original.jpg)
+![](media/message-events/filters_original.jpg)
 
 ## Use Cases: How can I use Message Events?
 
