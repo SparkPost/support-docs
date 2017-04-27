@@ -21,9 +21,9 @@ function do_wp() {
     wp "$@" --user="$WP_USER" --path="$WP_CONNECTION" --url="http://www.sparkpost.dev:8900"
   else
     if [ "$DEPLOY_ENV" == "STAGING" ]; then
-      wp "$@" --user="$WP_USER" --ssh="$WP_CONNECTION" --url="https://staging.sparkpost.com"
+      ./wp-cli.phar "$@" --user="$WP_USER" --ssh="$WP_CONNECTION" --url="https://staging.sparkpost.com"
     else
-      wp "$@" --user="$WP_USER" --ssh="$WP_CONNECTION" --url="https://www.sparkpost.com"
+      ./wp-cli.phar "$@" --user="$WP_USER" --ssh="$WP_CONNECTION" --url="https://www.sparkpost.com"
     fi
   fi
 }

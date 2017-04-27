@@ -18,7 +18,13 @@ function import_related_media() {
       local alt="$(echo "$image" | jq '.alt' --raw-output)"
       local title="$(echo "$image" | jq '.title' --raw-output)"
 
-      new_id=$(do_wp media import "$path_base/$src" --title="$title" --alt="$alt" --post_id="$post_id" --porcelain)
+      echo "$(pwd)/$path_base/$src"
+      echo "listing contents of current directory"
+      ls -la `pwd`
+      echo "listing specific file"
+      ls -la $(pwd)/$path_base/$src
+
+      new_id=$(do_wp media import $(pwd)/$path_base/$src --title="$title" --alt="$alt" --post_id="$post_id" --porcelain)
       image_ids+=("$new_id")
     done
 
@@ -90,8 +96,10 @@ for filepath in "${CHANGED_FILES[@]}"; do
       echo " - $(do_wp post term add "$wp_post_id" "$WP_CUSTOM_TAX" "$cat_slug")"
 
       echo " - Importing related media"
-      imported_image_ids=($(import_related_media "$wp_post_id" "$(dirname "$filepath")" "$md_post_images"))
-      echo " - Imported ${#imported_image_ids[@]} files"
+      import_related_media "$wp_post_id" "$(dirname "$filepath")" "$md_post_images"
+      echo " - Done importing related media"
+      #imported_image_ids=($(import_related_media "$wp_post_id" "$(dirname "$filepath")" "$md_post_images"))
+      #echo " - Imported ${#imported_image_ids[@]} files"
 
       md_post_content=$(generate_html "$filepath" "${imported_image_ids[@]}")
 
@@ -111,8 +119,10 @@ for filepath in "${CHANGED_FILES[@]}"; do
     echo " - Deleted ${#deleted_image_ids[@]} files"
 
     echo " - Importing related media"
-    imported_image_ids=($(import_related_media "$wp_post_id" "$(dirname "$filepath")" "$md_post_images"))
-    echo " - Imported ${#imported_image_ids[@]} files"
+    import_related_media "$wp_post_id" "$(dirname "$filepath")" "$md_post_images"
+      echo " - Done importing related media"
+    #imported_image_ids=($(import_related_media "$wp_post_id" "$(dirname "$filepath")" "$md_post_images"))
+    #echo " - Imported ${#imported_image_ids[@]} files"
 
     md_post_content=$(generate_html "$filepath" "${imported_image_ids[@]}")
 

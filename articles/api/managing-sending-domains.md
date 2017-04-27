@@ -6,7 +6,7 @@ description: "Note This Knowledge Base Article Is For Spark Post Enterprise Only
 
 #### Note: This Knowledge Base Article Is For SparkPost Enterprise Only
 
-### Table of Contents
+### Table of Contents 
 
 * [Introduction](#introduction)
 * [Why is this Important?](#why-is-this-important)
