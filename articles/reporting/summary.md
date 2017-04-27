@@ -4,7 +4,7 @@ redirect_from: "https://support.sparkpost.com/customer/portal/articles/2035510-s
 description: "The Reports tab will load in the summary screen view with a default time range of the last hour For large senders there may be a short delay while the data is being compiled The Calendar drop down provides preset time ranges and an optional custom date time picker You..."
 ---
 
-The Reports tab will load in the summary screen view, with a default time range of the last hour.  For large senders, there may be a short delay while the data is being compiled. The Calendar drop down provides preset time ranges and an optional custom date/time picker. You can also apply additional search criteria like recipient domain, campaign or template name in the search bar in the upper right.
+The Reports tab will load in the summary screen view, with a default time range of the last hour.  For large senders, there may be a short delay while the data is being compiled. The Calendar drop down provides preset time ranges and an optional custom date/time picker. You can also apply additional search criteria like recipient domain, campaign or template name in the search bar in the upper right. 
 
 ![](media/summary/calendar_original.jpg)
 

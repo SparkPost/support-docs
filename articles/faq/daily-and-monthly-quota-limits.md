@@ -4,7 +4,7 @@ redirect_from: "https://support.sparkpost.com/customer/portal/articles/2030894-d
 description: "Each Spark Post account has a daily and monthly quota based on the current plan level These represent the number of messages you can send within each time period and is provided for your protection You can view your current quota limits on the Account Usage page Daily Limits The..."
 ---
 
-Each SparkPost account has a daily and monthly quota based on the current plan level. These represent the number of messages you can send within each time period and is provided for your protection.
+Each SparkPost account has a daily and monthly quota based on the current plan level. These represent the number of messages you can send within each time period and is provided for your protection. 
 
 You can view your current quota limits on the [Account Usage](http://app.sparkpost.com/account/usage) page.
 

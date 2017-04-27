@@ -4,7 +4,7 @@ redirect_from: "https://support.sparkpost.com/customer/portal/articles/2035563-b
 description: "When you first click on this tab you have the drop down date like in Summary where you can select which time frame to look at You can also further select a domain campaign or template for more granular evaluation Below that you will see 4 categories Targeted number of..."
 ---
 
-When you first click on this tab, you have the drop down date like in Summary, where you can select which time frame to look at.  You can also further select a domain, campaign or template for more granular evaluation.
+When you first click on this tab, you have the drop down date like in Summary, where you can select which time frame to look at.  You can also further select a domain, campaign or template for more granular evaluation. 
 
 Below that, you will see 4 categories:
 

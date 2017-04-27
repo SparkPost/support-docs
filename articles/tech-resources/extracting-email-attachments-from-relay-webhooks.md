@@ -4,7 +4,7 @@ redirect_from: "https://support.sparkpost.com/customer/portal/articles/2676543-e
 description: "psparkpost a href https developers sparkpost com api relay webhooks html relay webhooks are a way to receive email to your own HTTP endpoints For each email sent to your inbound domain Spark Post will call your endpoint with a JSON request containing the message with headers already parsed out..."
 ---
 
-[Relay webhooks](https://developers.sparkpost.com/api/relay-webhooks.html) are a way to receive email to your own HTTP endpoints. For each email sent to your [inbound domain](https://developers.sparkpost.com/api/inbound-domains.html), SparkPost will call your endpoint with a [JSON request](https://developers.sparkpost.com/api/relay-webhooks.html#header-example-payloads) containing the message with headers already parsed out into an array.
+[Relay webhooks](https://developers.sparkpost.com/api/relay-webhooks.html) are a way to receive email to your own HTTP endpoints. For each email sent to your [inbound domain](https://developers.sparkpost.com/api/inbound-domains.html), SparkPost will call your endpoint with a [JSON request](https://developers.sparkpost.com/api/relay-webhooks.html#header-example-payloads) containing the message with headers already parsed out into an array. 
 
 Many of our users also need to extract file attachments from the email.  Here are some outline steps and sample code showing how to receive emails via relay webhooks and extract any attached files.
 

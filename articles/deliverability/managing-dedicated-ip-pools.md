@@ -4,7 +4,7 @@ redirect_from: "https://support.sparkpost.com/customer/portal/articles/2460212-m
 description: "So now you have dedicated I Ps In which IP pools would you like them Would you like a marketing pool Would you like a transaction pool You can manage this in the user interface In the user interface select account IP Pools The default pool is already there for..."
 ---
 
-So now you have dedicated IPs. In which IP pools would you like them. Would you like a marketing pool? Would you like a transaction pool? You can manage this in the user interface.
+So now you have dedicated IPs. In which IP pools would you like them. Would you like a marketing pool? Would you like a transaction pool? You can manage this in the user interface. 
 
 In the user interface select account> IP Pools. The default pool is already there for you.
 

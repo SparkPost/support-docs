@@ -4,7 +4,7 @@ redirect_from: "https://support.sparkpost.com/customer/portal/articles/1929890-c
 description: "Create a Template Once you understand how to send an email transmission you'll want to know how to create templates in Spark Post Currently there are two ways you can create templates in Spark Post Create templates in Spark Post using the App Create templates in Spark Post using the..."
 ---
 
-## Create a Template
+## Create a Template 
 
 Once you understand how to [send an email (transmission)](https://support.sparkpost.com/customer/portal/articles/1929887-sending-your-first-email "Sending an email (transmission)"), you'll want to know how to create templates in SparkPost.
 
@@ -28,43 +28,43 @@ Creating a template using the SparkPost Application (UI) is super simple. To get
 
 1. **Open the templates view:** Click on "Templates" in the main SparkPost navigation.
 
-    ![Templates navigation element](media/creating-a-template/templates-navigation-element.png)
+    ![Templates navigation element](media/creating-template/templates-navigation-element.png)
 
 1. **Make a new template:** Click on the "New Template" button to open the SparkPost template editor.
 
-    ![Create New Template button](media/creating-a-template/create-new-template-button.png)
+    ![Create New Template button](media/creating-template/create-new-template-button.png)
 
 1. **Name your template:** Input a human-friendly name for your template in the "Template Name" field. This field will NOT appear to your recipients and is used to help remind you of the purpose of the template.
 
-    ![](media/creating-a-template/template-name-field-highlighted.jpg)
+    ![](media/creating-template/template-name-field-highlighted.jpg)
 
 1. **Provide an ID for your template [optional]:** Input an ID for your template, this is used when referencing the template via the API. *If you do not provide an ID, SparkPost will create an ID for you*. This field will NOT appear to your recipients and is used to help remind you of the purpose of the template.
 
-    ![](media/creating-a-template/template-id-field-highlighted.jpg)
+    ![](media/creating-template/template-id-field-highlighted.jpg)
 
 1. **Define the From Name of the template:** Input the name of the person or group this email will appear "from" to your recipients. This is the name displayed in your recipient's email client.
 
-    ![](media/creating-a-template/template-fromname-field-highlighted.jpg)
+    ![](media/creating-template/template-fromname-field-highlighted.jpg)
 
 1. **Define the From Email of the template:** Input the user and choose the domain that this email will appear to come from. This is the email address that users will target if they reply to your email transmission.
 
-    ![](media/creating-a-template/template-fromemail-field-highlighted.jpg)
+    ![](media/creating-template/template-fromemail-field-highlighted.jpg)
 
 1. **Define the Subject of the template:** Input the subject line of the email. This will appear in your recipient's email client.
 
-    ![](media/creating-a-template/template-subject-field-highlighted.jpg)
+    ![](media/creating-template/template-subject-field-highlighted.jpg)
 
 1. **Provide a description of the template:** Input a description of this email. This field will NOT appear to your recipients and is used to help remind you of the purpose of the template.
 
-    ![](media/creating-a-template/template-description-field-highlighted.jpg)
+    ![](media/creating-template/template-description-field-highlighted.jpg)
 
 1. **Choose Engagement Tracking Options:** If you would like this template to have open and click tracking enabled, click on either of these buttons. Orange === Enabled, Grey === Disabled
 
-    ![](media/creating-a-template/template-engagementtracking-field-highlighted.jpg)*
+    ![](media/creating-template/template-engagementtracking-field-highlighted.jpg)*
 
 1. **Define the content of the template:**
-    * **[Creating HTML Content](https://support.sparkpost.com/customer/portal/articles/1929890-creating-a-template#sparkpost-templates-html-content "Creating HTML content for SparkPost Email Templates")**
-    * **[Creating TEXT Content](https://support.sparkpost.com/customer/portal/articles/1929890-creating-a-template#sparkpost-templates-text-content "Creating TEXT content for SparkPost Email Templates")**
+    * **[Creating HTML Content](https://support.sparkpost.com/customer/portal/articles/1929890-creating-template#sparkpost-templates-html-content "Creating HTML content for SparkPost Email Templates")**
+    * **[Creating TEXT Content](https://support.sparkpost.com/customer/portal/articles/1929890-creating-template#sparkpost-templates-text-content "Creating TEXT content for SparkPost Email Templates")**
     * **[How to Use Substitution Data](https://www.sparkpost.com/api#/reference/substitutions-reference "How to use Substitution Data to Create Dynamic Email Transmissions")**
 
 At this point, we are *technically* done with our template and we could "Save" or "Save and Publish"...but let's take a few minutes to test this template and make sure it is behaving as we expect.
@@ -73,11 +73,11 @@ At this point, we are *technically* done with our template and we could "Save"
 
 To test an email is pretty easy, you simply make sure all the above steps are completed and then click the "Preview" button. This allows you to view your email template.
 
-![](media/creating-a-template/template-editor-preview-link-highlighted_0.jpg)
+![](media/creating-template/template-editor-preview-link-highlighted_0.jpg)
 
 To send yourself (or approvers) a test transmission of your email template, enter the email addresses (comma separated) into the "To" field and click on the "Send Email" button.
 
-![](media/creating-a-template/test-send-interface-tofields-and-sendtestbutton-highlighted_0.jpg)
+![](media/creating-template/test-send-interface-tofields-and-sendtestbutton-highlighted_0.jpg)
 
 **Please be aware that sending a test email is an actual transmission (so make sure you don't have any LIVE customer email addresses in the "To" field).**
 

@@ -4,7 +4,7 @@ redirect_from: "https://support.sparkpost.com/customer/portal/articles/2456522-h
 description: "This guide will help you find the best resource for your inquiry and fastest resolution As a general rule first search in the latest API docs and knowledge base articles and then try the following Service Status Find out whether the service is up down sideways on vacation or going..."
 ---
 
-This guide will help you find the best resource for your inquiry and fastest resolution. As a general rule first search in the latest [API docs](https://developers.sparkpost.com/api/) and **[knowledge base articles](http://support.sparkpost.com)** and then try the following. 
+This guide will help you find the best resource for your inquiry and fastest resolution. As a general rule first search in the latest [API docs](https://developers.sparkpost.com/api/) and **[knowledge base articles](http://support.sparkpost.com)** and then try the following.
 
 ## Service Status
 
@@ -12,31 +12,31 @@ Find out whether the service is up, down, sideways, on vacation or going slow by
 
 ## Account Services
 
-| Task | How to get help |
-|---|---|
-| **Upgrades, Downgrades (standard plans)**  | See the **[Billing](https://app.sparkpost.com/account/billing)** page under Account in the SparkPost UI |
-| **Upgrades - Large Plans & Add-ons**  | **[Contact Sales](mailto:insidesales@sparkpost.com?subject=Account%20Change)**|
-| **Cancel your Service**  | **[Submit a support request](https://support.sparkpost.com/customer/portal/emails/new?email[subject]=Web:%20Cancel%20Service%20Request:%20Selfserve%20Account)**|
-| **Cancel your Service - Large Plans >2M/month**  | **[Submit a support request](https://support.sparkpost.com/customer/portal/emails/new?email[subject]=Web:%20Cancel%20Service%20Request:%20Large%20Account)**|
-| **Billing Inquiries**  | **[Submit a support request](https://support.sparkpost.com/customer/portal/emails/new?email[subject]=Web:%20Billing%20Enquiry%20Selfserve%20Account)**|
+| Task                                            | How to get help                                                                                                                                                  |
+|:------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Upgrades, Downgrades (standard plans)**       | See the **[Billing](https://app.sparkpost.com/account/billing)** page under Account in the SparkPost UI                                                          |
+| **Upgrades - Large Plans & Add-ons**            | **[Contact Sales](mailto:insidesales@sparkpost.com?subject=Account%20Change)**                                                                                   |
+| **Cancel your Service**                         | **[Submit a support request](https://support.sparkpost.com/customer/portal/emails/new?email[subject]=Web:%20Cancel%20Service%20Request:%20Selfserve%20Account)** |
+| **Cancel your Service - Large Plans >2M/month** | **[Submit a support request](https://support.sparkpost.com/customer/portal/emails/new?email[subject]=Web:%20Cancel%20Service%20Request:%20Large%20Account)**     |
+| **Billing Inquiries**                           | **[Submit a support request](https://support.sparkpost.com/customer/portal/emails/new?email[subject]=Web:%20Billing%20Enquiry%20Selfserve%20Account)**           |
 
 ## Account Setup & Requests
 
-| Task | How to get help |
-|---|---|
-| **First Time Setup Support**  | See the video guides in the **[Getting Started Section](https://support.sparkpost.com/customer/en/portal/topics/770787-getting-started/articles)** of the support center, if you are still having issues **[Submit a support request](https://support.sparkpost.com/customer/portal/emails/new?email[subject]=Web:%20Setup%20Support)**|
-|  **Dedicated IP Address Requests (for paid plans)**  | See the [IP Pools](https://app.sparkpost.com/account/ip-pools) page under Account to request your IP(s) |
-| **Sending Limit Request**  | See the [Usage](https://app.sparkpost.com/account/usage) page in the UI and complete the form under 'Contact support' |
-| **Custom Bounce Domain**  | See **[Setting up Custom Bounce Domain](http://support.sparkpostelite.com/customer/en/portal/articles/2371794-requesting-a-custom-bounce-domain)** article for instructions |
-| **Inbound Relay Webhook Setup** | See **[Enable Inbound Relay Webhook](http://support.sparkpost.com/customer/en/portal/articles/2039614-enabling-inbound-email-relaying-relay-webhooks)** for instructions |
+| Task                                               | How to get help                                                                                                                                                                                                                                                                                                                         |
+|:---------------------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **First Time Setup Support**                       | See the video guides in the **[Getting Started Section](https://support.sparkpost.com/customer/en/portal/topics/770787-getting-started/articles)** of the support center, if you are still having issues **[Submit a support request](https://support.sparkpost.com/customer/portal/emails/new?email[subject]=Web:%20Setup%20Support)** |
+| **Dedicated IP Address Requests (for paid plans)** | See the [IP Pools](https://app.sparkpost.com/account/ip-pools) page under Account to request your IP(s)                                                                                                                                                                                                                                 |
+| **Sending Limit Request**                          | See the [Usage](https://app.sparkpost.com/account/usage) page in the UI and complete the form under 'Contact support'                                                                                                                                                                                                                   |
+| **Custom Bounce Domain**                           | See **[Setting up Custom Bounce Domain](http://support.sparkpostelite.com/customer/en/portal/articles/2371794-requesting-a-custom-bounce-domain)** article for instructions                                                                                                                                                             |
+| **Inbound Relay Webhook Setup**                    | See **[Enable Inbound Relay Webhook](http://support.sparkpost.com/customer/en/portal/articles/2039614-enabling-inbound-email-relaying-relay-webhooks)** for instructions                                                                                                                                                                |
 
 ## Technical Support
 
-| Task | How to get help |
-|---|---|
-| **DKIM Verification Issues** | **[Submit a support request](https://support.sparkpost.com/customer/portal/emails/new?email[subject]=Web:%20DKIM%20Verification%20Issue)**|
+| Task                           | How to get help                                                                                                                                                       |
+|:-------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **DKIM Verification Issues**   | **[Submit a support request](https://support.sparkpost.com/customer/portal/emails/new?email[subject]=Web:%20DKIM%20Verification%20Issue)**                            |
 | **Finding Bounce Information** | See **[Getting Bounce Information](https://support.sparkpost.com/customer/en/portal/articles/2461190-how-do-i-retrieve-bounce-info-from-sparkpost)** for instructions |
-| **Policy Rejections** | See the **[Suppressions](https://support.sparkpost.com/customer/en/portal/articles/1929891-using-suppression-lists)** Article |
+| **Policy Rejections**          | See the **[Suppressions](https://support.sparkpost.com/customer/en/portal/articles/1929891-using-suppression-lists)** Article                                         |
 
 ## Support Team Hours
 

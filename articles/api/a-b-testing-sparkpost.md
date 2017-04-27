@@ -40,4 +40,4 @@ Please refer to the [A/B testing API documentation](https://developers.sparkpost
   * Subject line (*this is often the testing variable in the majority of tests*)
   * CTA (call to action)
   * Offer language/different offers
-  * Header image
+  * Header image 

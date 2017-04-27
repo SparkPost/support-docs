@@ -4,15 +4,15 @@ redirect_from: "https://support.sparkpost.com/customer/portal/articles/2092471-u
 description: "The following steps will walk you through using Spark Post with Atom Park Software's Atomic Mail Sender Click on Common Settings under the Settings menu and select the SMTP Tab Click on the green sign to set up a new SMTP account and enter the information in as shown Set..."
 ---
 
-The following steps will walk you through using SparkPost with AtomPark Software's [Atomic Mail Sender](http://www.atompark.com).
+The following steps will walk you through using SparkPost with AtomPark Software's [Atomic Mail Sender](http://www.atompark.com). 
 
 Click on 'Common Settings' under the Settings menu and select the SMTP Tab:
 
-![](media/using-spark-post-with-atomic-mail-sender/Setup_original.jpg)
+![](media/atomic-mail-sender/Setup_original.jpg)
 
 Click on the green '+' sign to set up a new SMTP account and enter the information in as shown:
 
-![](media/using-spark-post-with-atomic-mail-sender/IRA_Dev_original.jpg)
+![](media/atomic-mail-sender/IRA_Dev_original.jpg)
 
 * Set the SMTP server name to "smtp.sparkpostmail.com"
 * Set the port to 587

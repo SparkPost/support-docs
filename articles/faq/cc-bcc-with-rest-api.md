@@ -4,7 +4,7 @@ redirect_from: "https://support.sparkpost.com/customer/portal/articles/2432290-u
 description: "Before getting started please read What are the differences between CC BCC and archive recipients Note to use CC BCC and Archiving with SMTP check out our SMTP API reference documentation Note Please be advised that CC and BCC messages count towards your usage What is CC CC is a..."
 ---
 
-Before getting started please read [What are the differences between CC, BCC, and archive recipients?](https://support.sparkpost.com/customer/en/portal/articles/2164371)
+Before getting started please read [What are the differences between CC, BCC, and archive recipients?](https://support.sparkpost.com/customer/en/portal/articles/2164371) 
 
 Note: to use CC, BCC, and Archiving with SMTP, check out our [SMTP API reference documentation](https://developers.sparkpost.com/api/#/reference/smtp-api).
 Note: Please be advised that CC and BCC  messages count towards your usage.

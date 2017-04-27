@@ -4,7 +4,7 @@ redirect_from: "https://support.sparkpost.com/customer/portal/articles/2120938-w
 description: "In order to explain what Out Of Band bounces or OBB sometimes also called Asynchronous Bounces are we first need to understand how a recipient server accepts email In most cases a recipient server will either accept or reject an email as it comes in In those cases it will..."
 ---
 
-In order to explain what Out Of Band bounces (or OBB, sometimes also called Asynchronous Bounces) are, we first need to understand how a recipient server accepts email.
+In order to explain what Out Of Band bounces (or OBB, sometimes also called Asynchronous Bounces) are, we first need to understand how a recipient server accepts email. 
 
 In most cases, a recipient server will either accept or reject an email as it comes in. In those cases it will look at the email, and issue a code 250, which means the message is accepted. If it’s going to bounce, it will issue a code in the 400’s or 500’s, such as a 550.
 

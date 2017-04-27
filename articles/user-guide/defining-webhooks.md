@@ -4,7 +4,7 @@ redirect_from: "https://support.sparkpost.com/customer/portal/articles/1929974-d
 description: "The Spark Post web hooks interface allows you to push web hook events of your choice to your own endpoint for processing You can also retrieve event level data through the Message Events API There are three 3 main categories of webhook events in Spark Post Message Events Describe the..."
 ---
 
-The SparkPost webhooks interface allows you to push web hook events of your choice to your own endpoint for processing.  You can also retrieve event level data through the [Message Events API](https://developers.sparkpost.com/api/message-events).
+The SparkPost webhooks interface allows you to push web hook events of your choice to your own endpoint for processing.  You can also retrieve event level data through the [Message Events API](https://developers.sparkpost.com/api/message-events). 
 
 There are three (3) main categories of webhook events in SparkPost:
 

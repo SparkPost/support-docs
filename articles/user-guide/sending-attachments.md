@@ -4,7 +4,7 @@ redirect_from: "https://support.sparkpost.com/customer/portal/articles/2214831-s
 description: "A transmission is a collection of messages belonging to the same campaign It is also known as a mailing The Transmissions API provides the means to manage transmissions Messages in the transmissions are generated and sent to a specified list of recipients using a specified message template The recipient list..."
 ---
 
-A transmission is a collection of messages belonging to the same campaign. It is also known as a mailing. The Transmissions API provides the means to manage transmissions.
+A transmission is a collection of messages belonging to the same campaign. It is also known as a mailing. The Transmissions API provides the means to manage transmissions. 
 
 * Messages in the transmissions are generated and sent to a specified list of recipients using a specified message template.
 * The recipient list can be a stored list created using the Recipient Lists API, or it can be created "inline" as part of a transmission.

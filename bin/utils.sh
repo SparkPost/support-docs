@@ -11,6 +11,7 @@ COLOR_NONE="\033[0m"
 NUMBER_PATTERN="^[0-9]+$"
 
 CHANGED_FILES=($(git diff --name-only $TRAVIS_COMMIT_RANGE -- ./articles))
+CHANGED_FILES=("./articles/api/managing-sending-domains.md")
 
 if [ "$1" == "--all" ]; then
   CHANGED_FILES=($(find articles -type f))
@@ -49,7 +50,6 @@ function index_of() {
 
         if [ "${!i}" == "${value}" ]; then
           echo $(expr $i - 1)
-          return
         fi
     }
 

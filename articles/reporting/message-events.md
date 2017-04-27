@@ -4,7 +4,7 @@ redirect_from: "https://support.sparkpost.com/customer/portal/articles/2240051-m
 description: "Introduction With the addition of the Message Events API we have added the power searching for message event data based on recipients campaigns and more This new API endpoint provides our customers with a way to pull data on demand for use in internal reporting triggering message generation or other..."
 ---
 
-With the addition of the Message Events API we have added the power searching for message event data based on recipients, campaigns, and more.  This new API endpoint provides our customers with a way to pull data – on demand – for use in internal reporting, triggering message generation, or other programmatic processing of event data.
+With the addition of the Message Events API we have added the power searching for message event data based on recipients, campaigns, and more.  This new API endpoint provides our customers with a way to pull data – on demand – for use in internal reporting, triggering message generation, or other programmatic processing of event data. 
 
 Message Events provides you with the ability to:
 

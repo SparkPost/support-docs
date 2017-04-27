@@ -4,7 +4,7 @@ redirect_from: "https://support.sparkpost.com/customer/portal/articles/2458146-w
 description: "When you create a new webhook in the Spark Post UI you may see an error similar to the following This error occurs when Spark Post sends a test batch to your webhook endpoint and if an error is detected during that test this error is shown There are a..."
 ---
 
-When you create a new webhook in the SparkPost UI, you may see an error similar to the following:
+When you create a new webhook in the SparkPost UI, you may see an error similar to the following: 
 
 ![](media/webhook-error-post-to-webhook-target-url-failed/webhookcreateerror_original.png)
 

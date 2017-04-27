@@ -4,7 +4,7 @@ redirect_from: "https://support.sparkpost.com/customer/portal/articles/2782409-u
 description: "You can configure PHPBB to use Spark Post either while setting up a fresh new forum or by modifying settings of an existing forum For a new forum we recommend you to configure it after the forum installation is completed as the E mail Configuration step in the installation process..."
 ---
 
-You can configure [PHPBB](https://www.phpbb.com/) to use SparkPost either while setting up a fresh new forum or by modifying settings of an existing forum. For a new forum, we recommend you to configure it after the forum installation is completed as the **E-mail Configuration** step in the installation process is incomplete.
+You can configure [PHPBB](https://www.phpbb.com/) to use SparkPost either while setting up a fresh new forum or by modifying settings of an existing forum. For a new forum, we recommend you to configure it after the forum installation is completed as the **E-mail Configuration** step in the installation process is incomplete. 
 
 ## Staying Safe With Email And Public Forums
 
@@ -22,14 +22,14 @@ It is important to recognize that public forums are a common source of unwanted 
 * ​Go to Client Communication -> Email Settings
 * There are two sections in Email Settings page. Configure **General** **settings** as follows​
 
-    ![](media/using-spark-post-with-phpbb/0dtlwb7lx24r2hkskb1vnikxhmtvmvhsvkymkaf7caagosyqiyc79a_026ufx2ruqq3bpcjec1e-4pkzdvrzplw_ubduggca0s-s6xeub1if639udmtqpu_zkycxpnfetyfhognuundefined)
+    ![](media/phpbb/phpbb-general-settings.png)
 
     * **Enable board-wide emails:** Enabled
     * **Contact email address:** `<email>`@`<domain.com>`
     (Replace `<domain.com>` with the verified sending domain)
     * **Return email address:** This can be same contact email address. You can however use different value as long as your domain is verified to send through sparkpost.
 
-* Configure **SMTP settings** section as follows![](media/using-spark-post-with-phpbb/n8fj6ark39vozj6ls_5rifrihn1ojimim5b84nciiqgnvrmhdoud0czlmdahicvhsjfm-tsn3aqda5ibmblgato6ljxwdi4x2zr3x_p-ehkhnmthewdz-79-6uaiqeybu4wf7bbiundefined)
+* Configure **SMTP settings** section as follows![](media/phpbb/phpbb-smtp-settings.png)
 
     * **Use SMTP server for email:** Yes
     * **SMTP server address:** smtp.sparkpostmail.com

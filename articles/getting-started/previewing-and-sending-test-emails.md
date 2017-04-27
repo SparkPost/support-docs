@@ -19,7 +19,7 @@ The following example code is used to illustrate our preview and test send funct
 * **Description:** This is a simple test template used to test SparkPost's Preview Functionality
 * **Engagement Tracking:** Turn on Track Opens and Track Clicks
 
-## The Test HTML Content
+## The Test HTML Content 
 
 ```
 <h1>SparkPost Test Template</h1>
@@ -94,10 +94,10 @@ If you are not the intended recipient, please contact SparkPost Support via emai
 
 The last thing we want to do is "Save" our template. The difference between "Save" and "Save & Publish" is:
 
-|   | Usable in Production | Requires Override to Use in API | Editable | State |
-| --- | --- | --- | --- | --- |
-| Save | YES | YES | YES | Draft |
-| Save & Publish | YES | NO | NO | Published |
+|                | Usable in Production | Requires Override to Use in API | Editable | State     |
+|:---------------|:---------------------|:--------------------------------|:---------|:----------|
+| Save           | YES                  | YES                             | YES      | Draft     |
+| Save & Publish | YES                  | NO                              | NO       | Published |
 
 Click the "Save" button (for this example, so we can easily edit it if something is incorrect).
 

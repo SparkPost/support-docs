@@ -4,7 +4,7 @@ redirect_from: "https://support.sparkpost.com/customer/portal/articles/1950126-w
 description: "Q I tried sending after configuring my sending domain but it didn't go through I m getting the error that it's not configured I did not configure DKIM because I was sending via SMTP Why is it necessary A As a leader in the sending industry your sending reputation and..."
 ---
 
-Q: I tried sending after configuring my sending domain but it didn't go through. I'm getting the error that it's not configured. I did not configure DKIM because I was sending via SMTP. Why is it necessary?
+Q: I tried sending after configuring my sending domain but it didn't go through. I'm getting the error that it's not configured. I did not configure DKIM because I was sending via SMTP. Why is it necessary? 
 
 A: As a leader in the sending industry, your sending reputation - and ours - is extremely important to us. We want to do everything we can to ensure that your emails get into the recipient inboxes every time. The best way to do this is by requesting all of our customers configure their DKIM. There are 2 main reasons for this:
 

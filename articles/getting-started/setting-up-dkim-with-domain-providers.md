@@ -4,7 +4,7 @@ redirect_from: "https://support.sparkpost.com/customer/portal/articles/2034498-s
 description: "Every DNS provider handles the input of DNS records in their own way However there are three pieces to setting up DNS records that are common across all providers the hostname the record type and the value The record type for DKIM will be TXT The hostname sometimes just called..."
 ---
 
-Every DNS provider handles the input of DNS records in their own way. However, there are three pieces to setting up DNS records that are common across all providers - the hostname, the record type, and the value. The record type for DKIM will be TXT. The hostname (sometimes just called name) and value are both displayed in the SparkPost UI on [the sending domains page](https://app.sparkpost.com/account/sending-domains).
+Every DNS provider handles the input of DNS records in their own way. However, there are three pieces to setting up DNS records that are common across all providers - the hostname, the record type, and the value. The record type for DKIM will be TXT. The hostname (sometimes just called name) and value are both displayed in the SparkPost UI on [the sending domains page](https://app.sparkpost.com/account/sending-domains). 
 
 Below are links to how-to documents on the various providers' sites:
 

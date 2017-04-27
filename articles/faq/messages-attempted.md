@@ -4,7 +4,7 @@ redirect_from: "https://support.sparkpost.com/customer/portal/articles/2537369-h
 description: "Injection Phase For all messages you pass to Spark Post defined as accepted in REST transmissions or 250 Ok for SMTP injections an injection event OR one of three error events is logged An injection event is recorded if Spark Post is able to generate a message and queue it..."
 ---
 
-### Injection Phase 
+### Injection Phase
 
 For all messages you pass to SparkPost (defined as “accepted” in REST transmissions or 250Ok for SMTP injections), an **injection** event OR one of three error events is logged.  An **injection** event is recorded if SparkPost is able to generate a message and queue it for delivery. The three error situations occur when a message cannot be generated and queued for delivery; in these cases a corresponding error event is logged rather than an **injection** event as follows:
 

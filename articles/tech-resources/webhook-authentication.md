@@ -4,7 +4,7 @@ redirect_from: "https://support.sparkpost.com/customer/portal/articles/2112385-w
 description: "Spark Post offers 2 optional but highly recommended security measures that can be implemented when setting up a webhook namely OAuth 2.0 and Basic Authentication These measures increase the security of your webhook event data and ensure that the data delivered originates from Spark Post OAuth 2..."
 ---
 
-SparkPost offers 2 optional (but highly recommended) security measures that can be implemented when setting up a webhook, namely **OAuth 2.0** and **Basic Authentication**. These measures increase the security of your webhook event data and ensure that the data delivered originates from SparkPost.
+SparkPost offers 2 optional (but highly recommended) security measures that can be implemented when setting up a webhook, namely **OAuth 2.0** and **Basic Authentication**. These measures increase the security of your webhook event data and ensure that the data delivered originates from SparkPost. 
 
 **OAuth 2.0**
 
