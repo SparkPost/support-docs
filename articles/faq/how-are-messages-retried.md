@@ -4,7 +4,7 @@ redirect_from: "https://support.sparkpost.com/customer/portal/articles/2241721-h
 description: "Both Spark Post and Spark Post Enterprise employ the same settings for message retries including message expiration settings i e the maximum amount of time we will retry a message before we fail it for max attempts and retry intervals which is the time between successive delivery attempts Messages that..."
 ---
 
-Both SparkPost and SparkPost Enterprise employ the same settings for message retries, including message expiration settings (i.e., the maximum amount of time we will retry a message before we fail it for max attempts) and retry intervals, which is the time between successive delivery attempts. 
+Both SparkPost and SparkPost Enterprise employ the same settings for message retries, including message expiration settings (i.e., the maximum amount of time we will retry a message before we fail it for max attempts) and retry intervals, which is the time between successive delivery attempts.
 
 Messages that fail delivery with a **non-permanent** failure code returned by the receiving MTA will continue to be retried from the delayed queue until the message is either:
 
