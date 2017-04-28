@@ -4,7 +4,7 @@ redirect_from: "https://support.sparkpost.com/customer/portal/articles/2046445-u
 description: "The following steps will walk you through using Spark Post with Infacta's Hoolie NOTE Please make sure you have upgraded your version of Hoolie to the latest version that includes updated SSL and TLS support Version 1 9389 or later When running Hoolie click on Preferences and go to the..."
 ---
 
-The following steps will walk you through using SparkPost with Infacta's [Hoolie](http://hool.ie). 
+The following steps will walk you through using SparkPost with Infacta's [Hoolie](http://hool.ie).
 
 NOTE: Please make sure you have upgraded your version of [Hoolie](http://hool.ie) to the latest version that includes updated SSL and TLS support (Version 1.9389 or later)
 

@@ -4,7 +4,7 @@ redirect_from: "https://support.sparkpost.com/customer/portal/articles/2409547-u
 description: "When using stored templates with the Spark Post Word Press plugin we pass through substitution data that you can use as variables in your template to specify some dynamic settings content the main body of the email subject the subject of the email from the email address of the sender..."
 ---
 
-When using stored templates with the [SparkPost WordPress plugin](https://wordpress.org/plugins/sparkpost/), we pass through substitution data that you can use as variables in your template to specify some dynamic settings: 
+When using stored templates with the [SparkPost WordPress plugin](https://wordpress.org/plugins/sparkpost/), we pass through substitution data that you can use as variables in your template to specify some dynamic settings:
 
 * content - the main body of the email
 * subject - the subject of the email

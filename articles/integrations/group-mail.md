@@ -4,7 +4,7 @@ redirect_from: "https://support.sparkpost.com/customer/portal/articles/2032944-u
 description: "The following steps will walk you through using Spark Post with Infacta's Group Mail Go to the Accounts dialog and set up a New Account Enter your details on the main account settings page as appropriate IMPORTANT The email address and reply to address MUST be set to an address..."
 ---
 
-The following steps will walk you through using SparkPost with Infacta's [Group-Mail](http://group-mail.com). 
+The following steps will walk you through using SparkPost with Infacta's [Group-Mail](http://group-mail.com).
 
 Go to the Accounts dialog and set up a New Account.  Enter your details on the main account settings page as appropriate:
 ![](media/group-mail/Banners_and_Alerts_and_IRA_Dev_original.jpg)
