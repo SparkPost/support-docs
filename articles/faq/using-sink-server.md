@@ -4,7 +4,7 @@ redirect_from: "https://support.sparkpost.com/customer/portal/articles/2560839-h
 description: "Sink testing allows you to send messages through Spark Post for integration testing without the messages being attempted for delivery to actual email addresses Any messages using the sink server email address format will automatically fail as intended To use the sink server you will need to append the email..."
 ---
 
-Sink testing allows you to send messages through SparkPost for integration testing without the messages being attempted for delivery to actual email addresses. Any messages using the sink server email address format will automatically fail as intended. 
+Sink testing allows you to send messages through SparkPost for integration testing without the messages being attempted for delivery to actual email addresses. Any messages using the sink server email address format will automatically fail as intended.
 
 To use the sink server, you will need to append the email addresses you are injecting into our system with `.sink.sparkpostmail.com`. Please note, the asterisk (`*`) is a wildcard, where you will place the domain portion of your injected email address.
 

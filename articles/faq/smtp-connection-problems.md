@@ -4,7 +4,7 @@ redirect_from: "https://support.sparkpost.com/customer/portal/articles/1988470-s
 description: "If you are having problems connecting to Spark Post over SMTP here's a checklist of things to verify The SMTP server name should be smtp sparkpostmail com or on some systems tls smtp sparkpostmail com The port should be 587 Alternately port 2525 can be used in environments where port..."
 ---
 
-If you are having problems connecting to SparkPost over SMTP, here's a checklist of things to verify: 
+If you are having problems connecting to SparkPost over SMTP, here's a checklist of things to verify:
 
 * The SMTP server name should be smtp.sparkpostmail.com or on some systems tls://smtp.sparkpostmail.com
 * The port should be 587

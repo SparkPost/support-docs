@@ -4,7 +4,7 @@ redirect_from: "https://support.sparkpost.com/customer/portal/articles/1929979-i
 description: "There are a few reasons why you may not be seeing open click data for your transmissions Please review the following list of conditions and configurations to debug your open click data not displaying If you're using a Template in your transmissions does the template have the Open Tracking and..."
 ---
 
-There are a few reasons why you may not be seeing open/click data for your transmissions. Please review the following list of conditions and configurations to debug your open/click data not displaying: 
+There are a few reasons why you may not be seeing open/click data for your transmissions. Please review the following list of conditions and configurations to debug your open/click data not displaying:
 
 If you're using a Template in your transmissions, does the template have the "Open Tracking" and/or "Click Tracking" features enabled? The Template setting for these properties will be overridden by the Template's settings.
 

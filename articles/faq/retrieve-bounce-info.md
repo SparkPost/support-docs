@@ -4,7 +4,7 @@ redirect_from: "https://support.sparkpost.com/customer/portal/articles/2461190-h
 description: "Spark Post provides two options for pulling bounce info from Spark Post a push mechanism and a pull mechanism This article will explain both solutions in detail so that you may choose the one most appropriate to your use case and expertise Push Mechanism Webhooks The push mechanism that Spark..."
 ---
 
-SparkPost provides two options for pulling bounce info from SparkPost - a push mechanism, and a pull mechanism. This article will explain both solutions in detail, so that you may choose the one most appropriate to your use case and expertise.
+SparkPost provides two options for pulling bounce info from SparkPost - a push mechanism, and a pull mechanism. This article will explain both solutions in detail, so that you may choose the one most appropriate to your use case and expertise. 
 
 ### Push Mechanism - Webhooks
 
