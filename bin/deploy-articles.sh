@@ -21,7 +21,7 @@ function import_related_media() {
       if [[ $src = http* ]] ; then
         path="$src"
       else
-        if [[ $TRAVIS_PULL_REQUEST == "false" ]]
+        if [[ $TRAVIS_PULL_REQUEST = "false" ]]; then
           path="https://raw.githubusercontent.com/$TRAVIS_REPO_SLUG/master/$path_base/$src"
         else
           path="https://raw.githubusercontent.com/$TRAVIS_PULL_REQUEST_SLUG/$TRAVIS_PULL_REQUEST_BRANCH/$path_base/$src"
