@@ -4,7 +4,7 @@ redirect_from: "https://support.sparkpost.com/customer/portal/articles/2253608-m
 description: "Note This Knowledge Base Article Is For Spark Post Enterprise Only Managing Sending Domains Table of Contents Introduction Why is this Important What it does How it Works Guidelines Sending Domains Functionality The Set up Process What Happens with Existing Spark Post Elite Customers Frequently Asked Questions FA Qs a..."
 ---
 
-#### Note: This Knowledge Base Article Is For SparkPost Enterprise Only
+#### Note: This Knowledge Base Article Is For SparkPost Enterprise Only 
 
 ### Table of Contents
 
