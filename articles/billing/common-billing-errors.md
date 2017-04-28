@@ -4,7 +4,7 @@ redirect_from: "https://support.sparkpost.com/customer/portal/articles/2463012-c
 description: "Common Billing Errors If you have found your way here you are probably experiencing a problem with either adding or updating your billing information to your Spark Post account and will have seen the following alert in the UI This means that your credit card issuer has declined payment this..."
 ---
 
-If you have found your way here you are probably experiencing a problem with either adding or updating your billing information to your SparkPost account and will have seen the following alert in the UI. 
+If you have found your way here you are probably experiencing a problem with either adding or updating your billing information to your SparkPost account and will have seen the following alert in the UI.
 
 ![](media/common-billing-errors/Screenshot_2017-03-21_09.49.44_original.png)
 
