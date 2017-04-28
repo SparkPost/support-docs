@@ -4,7 +4,7 @@ redirect_from: "https://support.sparkpost.com/customer/portal/articles/2521756-s
 description: "Unfortunately we do not have the luxury of being assigned large blocks of IP space by our provider and so we cannot use the ip 4 mechanism in our SPF records this has meant we've had to look for more creative approaches ones that require extra DNS queries It would..."
 ---
 
-Unfortunately, we do not have the luxury of being assigned large blocks of IP space by our provider, and so we cannot use the ip4 mechanism in our SPF records; this has meant we've had to look for more creative approaches, ones that require extra DNS queries. 
+Unfortunately, we do not have the luxury of being assigned large blocks of IP space by our provider, and so we cannot use the ip4 mechanism in our SPF records; this has meant we've had to look for more creative approaches, ones that require extra DNS queries.
 
 It would be our preference to not use the ptr mechanism, but there is at least one large mailbox provider that does not support the expansion of the %{i} macro in the exists mechanism, and so we not only use the exists mechanism, but also the ptr mechanism in order to ensure that SPF passes wherever our customers send mail.
 
