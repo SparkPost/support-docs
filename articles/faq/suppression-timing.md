@@ -4,7 +4,7 @@ redirect_from: "https://support.sparkpost.com/customer/portal/articles/2087911-s
 description: "It can take a minute for suppression events like spam complaints unsubscribe requests and hard bounces permanent failure variety to be collected and processed Once a recipient is added to the suppression list subsequent attempts to deliver to that recipient will result in a Admin Failure code 25 In the..."
 ---
 
-It can take a minute for suppression events like spam complaints, unsubscribe requests, and hard bounces (permanent failure variety) to be collected and processed. 
+It can take a minute for suppression events like spam complaints, unsubscribe requests, and hard bounces (permanent failure variety) to be collected and processed.
 
 Once a recipient is added to the suppression list, subsequent attempts to deliver to that recipient will result in a "Admin Failure" (code 25).
 

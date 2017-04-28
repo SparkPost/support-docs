@@ -4,7 +4,7 @@ redirect_from: "https://support.sparkpost.com/customer/portal/articles/2003491-w
 description: "SparkPost doesn't store images for you If you are not using a front end application such as On Gage where you can store your images we recommend the following Upload images to a publicly accessible server or a reputable image hosting service Then link to the image URL in..."
 ---
 
-SparkPost doesn't store images for you. If you are not using a front end application such as OnGage where you can store your images, we recommend the following: 
+SparkPost doesn't store images for you. If you are not using a front end application such as OnGage where you can store your images, we recommend the following:
 
 Upload images to a publicly-accessible server or a reputable image hosting service. Then, link to the image URL in your message HTML or template:
 `<img src="http://photosite.com/image.jpg" alt="My image" />`

@@ -4,7 +4,7 @@ redirect_from: "https://support.sparkpost.com/customer/portal/articles/1955060-r
 description: "If you are getting a Relaying denied error while trying to connect to smtp sparkpostmail com it is likely because you are not connecting to our SMTP endpoint using SSL STARTTLS and AUTH LOGIN Please check that You are using port 587 or port 2525 when connecting from a Google..."
 ---
 
-If you are getting a 'Relaying denied' error while trying to connect to smtp.sparkpostmail.com, it is likely because you are not connecting to our SMTP endpoint using SSL/STARTTLS and AUTH LOGIN.
+If you are getting a 'Relaying denied' error while trying to connect to smtp.sparkpostmail.com, it is likely because you are not connecting to our SMTP endpoint using SSL/STARTTLS and AUTH LOGIN. 
 
 Please check that: 
 
