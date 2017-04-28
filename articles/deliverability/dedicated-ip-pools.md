@@ -4,7 +4,7 @@ redirect_from: "https://support.sparkpost.com/customer/portal/articles/2002977-d
 description: "Dedicated IP addresses are available for any account with the exception of the FREE plan with no credit card details on file Any new dedicated IP address added to your account will have a neutral initial reputation which means that you will be responsible for properly warming up your new..."
 ---
 
-Dedicated IP addresses are available for any account with the exception of the FREE plan with no credit card details on file. Any new dedicated IP address added to your account will have a neutral initial reputation, which means that you will be responsible for properly warming up your new IP. You can refer to our <u>[IP Warmup Overview](https://support.sparkpost.com/customer/en/portal/articles/1972209-ip-warm-up-overview?b_id=7411)</u> for a comprehensive guide to warming up your new IP. 
+Dedicated IP addresses are available for any account with the exception of the FREE plan with no credit card details on file. Any new dedicated IP address added to your account will have a neutral initial reputation, which means that you will be responsible for properly warming up your new IP. You can refer to our <u>[IP Warmup Overview](https://support.sparkpost.com/customer/en/portal/articles/1972209-ip-warm-up-overview?b_id=7411)</u> for a comprehensive guide to warming up your new IP.
 
 ## Purchasing Dedicated IPs
 
