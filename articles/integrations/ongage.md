@@ -4,7 +4,7 @@ redirect_from: "https://support.sparkpost.com/customer/portal/articles/1930046-u
 description: "To connect your Spark Post account into the Ongage platform log into your Spark Post account and do the following Set up your desired Sending Domain the domain you want to send email from on Ongage such as myawesomedomain com make sure the domain is verified after you've set up..."
 ---
 
-**To connect your SparkPost account into the Ongage platform, log into your SparkPost account and do the following:**
+**To connect your SparkPost account into the Ongage platform, log into your SparkPost account and do the following:** 
 
 1. Set up your [desired Sending Domain](http://support.sparkpost.com/customer/portal/articles/1933318-create-sending-domains) (the domain you want to send email from on Ongage, such as 'myawesomedomain.com') - make sure the domain is verified after you've set up your DKIM information with your DNS provider.  Your domain should be listed as 'ready to send' on the SparkPost Sending Domains page on your account.  It is best to send a test message through your new domain using the SparkPost template page to verify your domain is set up correctly.
 

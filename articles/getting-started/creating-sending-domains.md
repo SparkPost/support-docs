@@ -4,7 +4,7 @@ redirect_from: "https://support.sparkpost.com/customer/portal/articles/1933318-c
 description: "Prerequisites To create a sending domain in Spark Post you will need ownership or administrative access to your domain name for example myawesomedomain com You will also need access to make DNS configuration changes through your domain registrar or DNS provider for your Sending Domain If you do not have..."
 ---
 
-## Prerequisites
+## Prerequisites 
 
 To create a sending domain in SparkPost, you will need ownership or administrative access to your domain name, for example: *myawesomedomain.com.* You will also need access to make DNS configuration changes through your domain registrar (or DNS provider) for your Sending Domain.
 

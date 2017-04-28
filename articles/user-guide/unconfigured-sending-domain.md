@@ -6,7 +6,7 @@ description: "A sending domain is a domain that is used to indicate who an email
 
 A sending domain is a domain that is used to indicate who an email is from via the `From:` header. Using a custom sending domain enables you to control what recipients see as the `From:` value in their email clients. DNS records can be configured for a sending domain, which allows recipient mail servers to authenticate your messages. The Sending Domains API provides the means to create, list, retrieve, update, and verify a custom sending domain.
 
- ## Improperly Configured Sending Domain
+## Improperly Configured Sending Domain
 
 If you receive the following error message `550 5.7.1 Unconfigured Sending Domain` as a response when sending a transmission, it is because you used a from address whose domain is not one of the sending domains that you created in your account.
 

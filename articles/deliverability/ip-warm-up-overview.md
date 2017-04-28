@@ -4,7 +4,7 @@ redirect_from: "https://support.sparkpost.com/customer/portal/articles/1972209-i
 description: "IP Warm up Definition IP warming is the process of methodically adding campaign volume week over week to a new IP Address to establish a positive sending reputation with Internet Services Providers IS Ps IP Warm up Summary IS Ps view email from a new IP Address as suspicious until..."
 ---
 
-### IP Warm-up Definition 
+### IP Warm-up Definition
 
 IP warming is the process of methodically adding campaign volume week-over-week to a new IP Address to establish a positive sending reputation with Internet Services Providers. (ISPs)
 

@@ -4,7 +4,7 @@ redirect_from: "https://support.sparkpost.com/customer/portal/articles/2039925-u
 description: "Configuring Exim 4 to use Spark Post as the SMTP relay is very similar to the process described in this Ask Ubuntu com article Instead of your Gmail username use SMTP Injection and for your password use an API key you have generated from your Spark Post account with the..."
 ---
 
-Configuring Exim 4 to use SparkPost as the SMTP relay is very similar to the process described in [this AskUbuntu.com article](http://askubuntu.com/questions/167043/how-do-i-configure-exim4-to-send-mail-through-a-password-protected-ssl-smtp-mail).
+Configuring Exim 4 to use SparkPost as the SMTP relay is very similar to the process described in [this AskUbuntu.com article](http://askubuntu.com/questions/167043/how-do-i-configure-exim4-to-send-mail-through-a-password-protected-ssl-smtp-mail). 
 
 Instead of your Gmail username, use 'SMTP_Injection' and for your password use an API key you have generated from your SparkPost account with the 'Send via SMTP' permission enabled. The mail server name should be smtp.sparkpostmail.com and the port is 587, with STARTTLS enabled.
 

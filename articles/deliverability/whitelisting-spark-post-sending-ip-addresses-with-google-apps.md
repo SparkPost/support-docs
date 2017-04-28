@@ -4,7 +4,7 @@ redirect_from: "https://support.sparkpost.com/customer/portal/articles/2790342-w
 description: "If you are experiencing delays or other deliverability issues to your domains hosted by Google Apps please whitelist the Spark Post sending I Ps using the Google documentation https support google com a answer 60751 To find out what Spark Post sending I Ps to whitelist depends on whether you..."
 ---
 
-If you are experiencing delays or other deliverability issues to your domains hosted by Google Apps please whitelist the SparkPost sending IPs using the Google documentation [https://support.google.com/a/answer/60751](https://support.google.com/a/answer/60751)
+If you are experiencing delays or other deliverability issues to your domains hosted by Google Apps please whitelist the SparkPost sending IPs using the Google documentation [https://support.google.com/a/answer/60751](https://support.google.com/a/answer/60751) 
 
 To find out what SparkPost sending IPs to whitelist depends on whether you are using dedicated IPs or shared IPs.
 

@@ -4,7 +4,7 @@ redirect_from: "https://support.sparkpost.com/customer/portal/articles/2039614-e
 description: "What is a Relay Webhook A Relay Webhook calls your consumer when a user sends an email to one of your domains Spark Post will receive an email sent to your Inbound Domain e g any local part your inbounddomain com format that email as a JSON payload and POST..."
 ---
 
-## What is a Relay Webhook?
+## What is a Relay Webhook? 
 
 A Relay Webhook calls your consumer when a user sends an email to one of your domains. SparkPost will receive an email sent to your Inbound Domain (e.g., any.local.part@your.inbounddomain.com), format that email as a JSON payload, and POST it to your consumer. A Relay Webhook is not a mailbox; if you need a mailbox you should sign up for a service like gmail, yahoo, live, etc.
 
@@ -40,11 +40,11 @@ Once you have these, there are three steps to setting up your Relay Webhook:
 
 DNS changes can take a while to propagate so you should do this first; your Inbound Domain and Relay Webhook won't work until SparkPost can find your new MX records. Every provider is slightly different in how you do this, but you will need to create 3 MX records with the following values (subsitute your domain name for “your.inbounddomain.com”):
 
-| Name | Type | Data | Priority |
-| --- | --- | --- | --- |
-| your.inbounddomain.com | MX | rx1.sparkpostmail.com |10 |
-| your.inbounddomain.com | MX | rx2.sparkpostmail.com | 10 |
-|your.inbounddomain.com | MX | rx3.sparkpostmail.com | 10 |
+| Name                   | Type | Data                  | Priority |
+|:-----------------------|:-----|:----------------------|:---------|
+| your.inbounddomain.com | MX   | rx1.sparkpostmail.com | 10       |
+| your.inbounddomain.com | MX   | rx2.sparkpostmail.com | 10       |
+| your.inbounddomain.com | MX   | rx3.sparkpostmail.com | 10       |
 
 You can check your MX record propagation [here](https://www.whatsmydns.net/#MX).
 

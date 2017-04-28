@@ -4,7 +4,7 @@ redirect_from: "https://support.sparkpost.com/customer/portal/articles/2396826-o
 description: "In order to get the best deliverability and inbox placement rates you need to establish yourself as a legitimate sender by developing a good reputation with mailbox providers like Gmail and Hotmail Here’s how Permission only email to the people who have subscribed to receive your mail Transparency make sure..."
 ---
 
-In order to get the best deliverability and inbox placement rates, you need to establish yourself as a legitimate sender by developing a good reputation with mailbox providers (like Gmail and Hotmail). Here’s how:
+In order to get the best deliverability and inbox placement rates, you need to establish yourself as a legitimate sender by developing a good reputation with mailbox providers (like Gmail and Hotmail). Here’s how: 
 
 1. Permission - only email to the people who have subscribed to receive your mail
 2. Transparency - make sure your content is relevant to the recipient. Display meaningful information in the Subject, From, and Reply-to headers

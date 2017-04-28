@@ -4,7 +4,7 @@ redirect_from: "https://support.sparkpost.com/customer/portal/articles/1933360-v
 description: "A sending domain is a domain that is used to indicate who an email is from via the you guessed it From header DKIM DNS records should be configured for a sending domain which allows recipient mail servers to authenticate your messages content The Sending Domains API provides the means..."
 ---
 
-A sending domain is a domain that is used to indicate who an email is from via the (you guessed it) "From:" header. DKIM DNS records should be configured for a sending domain, which allows recipient mail servers to authenticate your messages' content. The Sending Domains API provides the means to create, list, retrieve, update, and verify a custom sending domain. This article outlines how to complete sending domain verification.
+A sending domain is a domain that is used to indicate who an email is from via the (you guessed it) "From:" header. DKIM DNS records should be configured for a sending domain, which allows recipient mail servers to authenticate your messages' content. The Sending Domains API provides the means to create, list, retrieve, update, and verify a custom sending domain. This article outlines how to complete sending domain verification. 
 
 Setting up DKIM DNS records for your sending domain is the best practice for validation, and it does double duty. First, it verifies to SparkPost that you own this domain. DKIM also verifies the content of your email to inbox providers receiving email from your domain. If DKIM DNS records cannot be configured, domains may be verified by confirming access to admin email accounts (abuse@ or postmaster@).
 
@@ -14,7 +14,7 @@ Setting up DKIM DNS records for your sending domain is the best practice for val
 
 Before you can verify a sending domain, you must first [Create a Sending Domain](https://support.sparkpost.com/customer/portal/articles/1933318-create-and-verify-sending-domains).
 
-![](media/verify-sending-domains/sdpsmuwi_8nhfyqxz05fzwopbrmzwkjjdm9rgbbulbrp2zoxqzryuvsemmkzlp48sqjkb3tlltvjxspb-bn2yfkst5ttxdaxbb4r5shineartk_rsjm_powgkpru3gy45kfjuftiundefined)
+![](media/verify-sending-domains/domain-pending.png)
 
 After creation, you will notice that there are warning indicators that show that the new sending domain is "Not Ready to Send". That is because we still have a few things left to configure. We have to add a new DKIM TXT record to our DNS that helps improve deliverability rates into our recipient's inboxes. This is the [DKIM TXT record](http://en.wikipedia.org/wiki/DomainKeys_Identified_Mail).
 
@@ -42,7 +42,7 @@ If you do not see the "verified" icon, then your DKIM record is NOT verified. Pl
 
 Below is an example of how a domain with a DKIM Record that has been configured correctly will look in the UI.
 
-![](media/verify-sending-domains/iekdtwohhsp7cgupm5oqoxlah6almmod81xhuk_fhe56fh3osnebfy3okoopb18zikggttnadnouhqdr00jcpc8t_0e2agdufgmc-5mus4fpbpaxrombzo6re1w08snpibt14xnuundefined)
+![](media/verify-sending-domains/domain-ready-to-send.png)
 
 **Note**: ​If you see the message "Ready to Send" next to your Sending Domain, including green check marks next to DKIM record, then verification of your Sending Domain is complete. Moreover, green check marks next to **abuse@** and **postmaster@** indicate that these domains have been verified.  Congratulations!
 

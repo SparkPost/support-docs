@@ -4,7 +4,7 @@ redirect_from: "https://support.sparkpost.com/customer/portal/articles/2340644-u
 description: "To use Spark Post with Discourse you’ll need to Sign up for a Spark Post account Create and verify a sending domain in Spark Post Create an API key in Spark Post Install Discourse Update the SMTP credentials in your Discourse config Change the default from email Discourse uses to..."
 ---
 
-To use SparkPost with Discourse you’ll need to:
+To use SparkPost with Discourse you’ll need to: 
 
 *   Sign up for a SparkPost account
 *   Create and verify a sending domain in SparkPost
@@ -31,7 +31,7 @@ Choose the method that works best for you. View [this support article](https://s
 
 Visit the [API Keys](https://app.sparkpost.com/account/credentials) page and create an API key with the “Send via SMTP” permission:
 
-![](media/using-spark-post-with-discourse/q2djblv71b70hvpfgt8trhzpn92ykjafwevqwmfbdg1kmvro5citzgxie67kglwdbceqinldabtsabxlbmmlprwuiqdjgihjh6pmdnyjrhp_adkepq-ghkrjojo6j0t6tpriqt-iundefined)
+![](media/discourse/create-key.png)
 
 ## Install Discourse
 

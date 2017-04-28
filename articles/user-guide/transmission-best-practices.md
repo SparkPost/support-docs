@@ -6,7 +6,7 @@ description: "This is a guide to best practices for sending transmissions and mo
 
 This is a guide to best practices for sending transmissions and monitoring the results for errors. It is intended for a technical audience.
 
- ## Multiple Recipient Transmissions
+## Multiple Recipient Transmissions
 
 Generally, when sending promotional mailings to a large number of recipients, it makes sense to send multi-recipient transmissions to maximize performance. For best results, each transmission request should contain no more than 10,000 recipients, and in some cases, smaller transmissions (like 2000 recipients) may be more efficient if large amounts of unique personalization are being done on unique messages.
 

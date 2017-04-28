@@ -4,7 +4,7 @@ redirect_from: "https://support.sparkpost.com/customer/portal/articles/1929984-m
 description: "Q Why won't my DKIM record verify A While configuring your Sending Domains you need to verify that the DNS entries you have made are available to Spark Post and ES Ps for use The DNS TXT records you create have a TTL Time To Live value associated with them..."
 ---
 
-Q: Why won't my DKIM record verify?
+Q: Why won't my DKIM record verify? 
 
 A: [While configuring your Sending Domains](https://support.sparkpost.com/customer/en/portal/articles/2034498-setting-up-dkim-with-domain-providers?b_id=7411), you need to "verify" that the DNS entries you have made are available to SparkPost and ESPs for use. The DNS TXT records you create have a TTL (Time To Live) value associated with them. This value is important (in cases where you have been unable to verify your Sending Domain's DNS DKIM record). The TTL is typically measured in seconds. For example a TTL value of 60 = 1 minute.
 

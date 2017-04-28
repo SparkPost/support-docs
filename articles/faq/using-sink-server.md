@@ -10,7 +10,7 @@ To use the sink server, you will need to append the email addresses you are inje
 
 ***Please note, any messages injected into our service, including those to the sink server, count against your plan's message allowance.**                                                                                                                               
 
-**Example**:
+**Example**: 
 
 *Email Address* - john.doe@email.com
 

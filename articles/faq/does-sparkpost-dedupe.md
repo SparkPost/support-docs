@@ -4,7 +4,7 @@ redirect_from: "https://support.sparkpost.com/customer/portal/articles/1940360-d
 description: "List management is pretty important to senders and Spark Post customers are no different Because Spark Post is largely transactional there is no dedupe function when you are sending messages Thus if you have duplicates in a list they will be sent additional emails There are a few reasons why..."
 ---
 
-List management is pretty important to senders, and SparkPost customers are no different. Because SparkPost is largely transactional, there is no dedupe function when you are sending messages. Thus, if you have duplicates in a list, they will be sent additional emails. There are a few reasons why we opted to do it this way:
+List management is pretty important to senders, and SparkPost customers are no different. Because SparkPost is largely transactional, there is no dedupe function when you are sending messages. Thus, if you have duplicates in a list, they will be sent additional emails. There are a few reasons why we opted to do it this way: 
 
 1. All transactional emails are considered to be operational, so even if they have identical information (or almost identical), each does need to be sent. 
 2. Pulling batches to check and dedupe would impact performance

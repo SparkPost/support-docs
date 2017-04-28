@@ -4,7 +4,7 @@ redirect_from: "https://support.sparkpost.com/customer/portal/articles/2455133-c
 description: "Background API Keys Spark Post uses API keys as authentication tokens you include an API key in each of your requests to identify yourself with Spark Post and for us serve you appropriately As a result your API keys must be considered secret since they identify you and enable API..."
 ---
 
-## Background: API Keys
+## Background: API Keys 
 
 SparkPost uses API keys as authentication tokens: you include an API key in each of your requests to identify yourself with SparkPost and for us serve you appropriately.  As a result, **your API keys must be considered secret** since they identify you and enable API access to your SparkPost account.  Someone with your API key could use it to act on your behalf.  Depending on the privileges you grant a given key, that could mean accessing your reporting data, changing account settings or sending unsolicited mail which seems it came from you.  This type of illicit API key use could cost you money, damage your online reputation, leak sensitive information or put your recipients at risk.
 

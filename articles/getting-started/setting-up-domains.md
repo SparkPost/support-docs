@@ -4,7 +4,7 @@ redirect_from: "https://support.sparkpost.com/customer/portal/articles/2034521-s
 description: "In Spark Post go into Account and then Sending Domains Put in your Domain Name leaving off the http s and click on Add Domain When you get to the next screen you will see that your domain has been created but now you will see little notifications that your..."
 ---
 
-1. In SparkPost, go into Account, and then Sending Domains
+1. In SparkPost, go into Account, and then Sending Domains 
 1. Put in your Domain Name, leaving off the http(s)://, and click on Add Domain
 1. When you get to the next screen you will see that your domain has been created, but now, you will see little notifications that your domain is not ready to send, and DKIM Record appears. Click on Configure below DKIM, and you will see what you need to put into the DNS of your domain server. 
 

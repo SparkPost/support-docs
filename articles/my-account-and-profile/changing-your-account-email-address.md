@@ -4,7 +4,7 @@ redirect_from: "https://support.sparkpost.com/customer/portal/articles/2467929-c
 description: "There may be situations when you need to change your primary email address associated with your Spark Post account All you need to do it add a new admin user and then delete the old account Adding a new Administrator To add a new address follow these steps Login to..."
 ---
 
-There may be situations when you need to change your primary email address associated with your SparkPost account. All you need to do it add a new admin user and then delete the old account.
+There may be situations when you need to change your primary email address associated with your SparkPost account. All you need to do it add a new admin user and then delete the old account.  
 
 ## Adding a new Administrator
 

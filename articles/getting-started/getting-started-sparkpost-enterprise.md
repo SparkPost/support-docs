@@ -4,7 +4,7 @@ redirect_from: "https://support.sparkpost.com/customer/portal/articles/2162798-g
 description: "Note This Knowledge Base Article Is For Spark Post Enterprise Only The following article is a collection of helpful introductory topics regarding getting started on migrating traffic to Spark Post Enterprise from your previous email provider Knowing and understanding how to operate your Spark Post Enterprise environment efficiently from the..."
 ---
 
-**Note:** This Knowledge Base Article Is For SparkPost Enterprise Only 
+**Note:** This Knowledge Base Article Is For SparkPost Enterprise Only
 
 The following article is a collection of helpful introductory topics regarding getting started on migrating traffic to SparkPost Enterprise from your previous email provider. Knowing and understanding how to operate your SparkPost Enterprise environment efficiently from the outset with some of the helpful pointers below will be key to getting you up and running as quickly as possible.
 

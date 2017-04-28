@@ -4,7 +4,7 @@ redirect_from: "https://support.sparkpost.com/customer/portal/articles/1980377-s
 description: "One of our customers recently ran into issues attempting to send a test email via SMTP injection using STARTTLS while working with the openssl client Our resolution is to utilize the swaks Swiss Army Knife for SMTP This command line utility makes it easy to send a test email via..."
 ---
 
-One of our customers recently ran into issues attempting to send a test email via SMTP injection using STARTTLS while working with the openssl client. Our resolution is to utilize the "swaks" ([Swiss Army Knife for SMTP](http://www.jetmore.org/john/code/swaks/)). This command line utility makes it easy to send a test email via SMPTP and provides verbose output so you're able to view the commands and responses issued by the utility and received from the server.
+One of our customers recently ran into issues attempting to send a test email via SMTP injection using STARTTLS while working with the openssl client. Our resolution is to utilize the "swaks" ([Swiss Army Knife for SMTP](http://www.jetmore.org/john/code/swaks/)). This command line utility makes it easy to send a test email via SMPTP and provides verbose output so you're able to view the commands and responses issued by the utility and received from the server. 
 
 Prerequisites:
 

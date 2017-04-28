@@ -4,7 +4,7 @@ redirect_from: "https://support.sparkpost.com/customer/portal/articles/2216798-m
 description: "A sending domain is a domain that is used to indicate who an email is from via the From header Using a custom sending domain enables you to control what recipients see as the From value in their email clients DNS records can be configured for a sending domain which..."
 ---
 
-A sending domain is a domain that is used to indicate who an email is from via the `From:` header. Using a custom sending domain enables you to control what recipients see as the `From:` value in their email clients. DNS records can be configured for a sending domain, which allows recipient mail servers to authenticate your messages. The Sending Domains API provides the means to create, list, retrieve, update, and verify a custom sending domain.
+A sending domain is a domain that is used to indicate who an email is from via the `From:` header. Using a custom sending domain enables you to control what recipients see as the `From:` value in their email clients. DNS records can be configured for a sending domain, which allows recipient mail servers to authenticate your messages. The Sending Domains API provides the means to create, list, retrieve, update, and verify a custom sending domain. 
 
 **Note**: A Sending Domain can be used to submit a customer-generated DKIM key for that sending domain in sparkpost.com
 
@@ -13,11 +13,11 @@ A sending domain is a domain that is used to indicate who an email is from via t
 1.  In the SparkPost Dashboard, select Account > Sending Domain from the main menu.
 1.  Click on the Add Domain button to continue.
 
-    ![add sending domain screenshot](media/managing-your-sending-domains/Screen_Shot_2017-01-18_at_4.17.31_PM_original.png)
+    ![add sending domain screenshot](media/managing-sending-domains/Screen_Shot_2017-01-18_at_4.17.31_PM_original.png)
 1.  Complete the Sending Domain information on the screen to create the same. In this example we will be using myexample.com.
 1.  Click the Add Domain button to add the Sending Domain to your account.
 
-    ![filled out form screenshot](media/managing-your-sending-domains/M155l31DrL8o2PPSbQAQEdudqFFOPX.png)
+    ![filled out form screenshot](media/managing-sending-domains/M155l31DrL8o2PPSbQAQEdudqFFOPX.png)
 
 ## Sending Domain Verification
 
@@ -31,7 +31,7 @@ There are three different statuses for a sending domain and they are:
 
 To verify your Sending Domain you need to add the text information for DKIM to your Sending Domains DNS Record. 
 
-![created domain screenshot](media/managing-your-sending-domains/image00_original.png)
+![created domain screenshot](media/managing-sending-domains/image00_original.png)
 
 1. Click on the Settings link for the DKIM text information that needs to be added to your DNS Record.
 1. Add the Host Name and Text Value information for both the SPF and DKIM to your DNS records for your sending domain.  Adjust the Time to Live (TTL) setting as necessary.

@@ -4,7 +4,7 @@ redirect_from: "https://support.sparkpost.com/customer/portal/articles/2207582-u
 description: "The Spark Post add on in Heroku provides developers an easily accessible application to leverage for email delivery Spark Post is available via a modern RES Tful API and has supported client libraries for Node js Python PHP Java Ruby Go C and Elixir as well as documented examples in..."
 ---
 
-The [SparkPost add-on in Heroku](https://devcenter.heroku.com/articles/sparkpost) provides developers an easily accessible application to leverage for email delivery.
+The [SparkPost add-on in Heroku](https://devcenter.heroku.com/articles/sparkpost) provides developers an easily accessible application to leverage for email delivery. 
 
 SparkPost is available via a modern RESTful API and has supported client libraries for [Node.js](https://github.com/SparkPost/node-sparkpost), [Python](https://github.com/SparkPost/python-sparkpost), [PHP](https://github.com/SparkPost/php-sparkpost), [Java](https://github.com/SparkPost/java-sparkpost), [Go](https://github.com/SparkPost/go-sparkpost), and [Elixir](https://github.com/SparkPost/elixir-sparkpost) as well as documented examples in all those languages plus Swift, Objective-C and VB.
 
@@ -12,7 +12,7 @@ SparkPost is available via a modern RESTful API and has supported client librari
 
 If you’re in a hurry, here’s a video tutorial to get you up and running quickly:
 
-[![How To The SparkPost Heroku Email Add-On](https://img.youtube.com/vi/Yg4z3vVcfhI/0.jpg)](media/using-the-spark-post-heroku-add-on/how-to-the-sparkpost-heroku-email-add-onhttpsimgyoutubecomviyg4z3vvcfhi0jpgundefined)
+[![How To The SparkPost Heroku Email Add-On](https://img.youtube.com/vi/Yg4z3vVcfhI/0.jpg)](media/using-sparkpost-heroku-add-on/how-to-the-sparkpost-heroku-email-add-onhttpsimgyoutubecomviyg4z3vvcfhi0.jpg)
 
 ## Provisioning The Add-On
 
@@ -30,15 +30,15 @@ $ heroku config:get SPARKPOST_API_KEY
 
 The following settings are available in the app configuration:
 
-|Config Setting|Description|
-| --- | --- |
-| SPARKPOST_API_KEY | The API key for the SparkPost API |
-| SPARKPOST_API_URL | The base URI for the SparkPost API |
-| SPARKPOST_SANDBOX_DOMAIN | Sandbox domain |
-| SPARKPOST_SMTP_HOST | SMTP Host |
-| SPARKPOST_SMTP_PASSWORD | SMTP Password |
-| SPARKPOST_SMTP_PORT | SMTP Port |
-| SPARKPOST_SMTP_USERNAME | SMTP Username |
+| Config Setting           | Description                        |
+|:-------------------------|:-----------------------------------|
+| SPARKPOST_API_KEY        | The API key for the SparkPost API  |
+| SPARKPOST_API_URL        | The base URI for the SparkPost API |
+| SPARKPOST_SANDBOX_DOMAIN | Sandbox domain                     |
+| SPARKPOST_SMTP_HOST      | SMTP Host                          |
+| SPARKPOST_SMTP_PASSWORD  | SMTP Password                      |
+| SPARKPOST_SMTP_PORT      | SMTP Port                          |
+| SPARKPOST_SMTP_USERNAME  | SMTP Username                      |
 
 After installing SparkPost the application should be configured to fully integrate with the add-on.
 
@@ -183,7 +183,7 @@ For more information on the features available within the SparkPost dashboard pl
 
 The SparkPost dashboard allows you to view metrics and create sending domains and templates.
 
-![Description: https://s3.amazonaws.com/heroku-devcenter-files/article-images/2554-imported-1443570616-Screen-20Shot-202014-11-06-20at-208.04.40-20PM.png](media/using-the-spark-post-heroku-add-on/description-httpss3amazonawscomheroku-devcenter-filesarticle-images2554-imported-1443570616-screen-20shot-202014-11-06-20at-2080440-20pmpngg)
+![Description: https://s3.amazonaws.com/heroku-devcenter-files/article-images/2554-imported-1443570616-Screen-20Shot-202014-11-06-20at-208.04.40-20PM.png](media/using-sparkpost-heroku-add-on/screen-20shot-202014-11-06-20at-2080440-20pm.png)
 
 The dashboard can be accessed via the CLI:`$ heroku addons:open sparkpost Opening sparkpost for sharp-mountain-4005`or by visiting the [Heroku Dashboard](https://dashboard.heroku.com/apps) and selecting the application in question. Select SparkPost from the Add-ons menu.
 

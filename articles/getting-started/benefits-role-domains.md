@@ -4,7 +4,7 @@ redirect_from: "https://support.sparkpost.com/customer/portal/articles/2179779-t
 description: "What are Role Based Domains Role based domains like admin help sales are email addresses that are not associated with a particular person but rather with a company department position or group of recipients Spark Post now provides the capability to verify your sending domains using abuse and postmaster role..."
 ---
 
-**What are Role Based Domains?**
+**What are Role Based Domains?** 
 
 Role-based domains (like admin@, help@, sales@) are email addresses that are not associated with a particular person, but rather with a company, department, position or group of recipients. SparkPost now provides the capability to verify your sending domains using abuse@ and postmaster@ role based domains. 
 

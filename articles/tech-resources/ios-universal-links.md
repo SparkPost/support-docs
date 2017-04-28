@@ -4,18 +4,18 @@ redirect_from: "https://support.sparkpost.com/customer/portal/articles/2231112-u
 description: "Note This Knowledge Base Article Is For Spark Post Enterprise Only Table of Contents Use these quick links to jump to certain sections of this article Introduction Benefits of Universal Links Summarized Workflow of Universal Links Setup and Operation As a Spark Post Enterprise Customer What Steps Do I Need..."
 ---
 
-**Note**: This Knowledge Base Article Is For SparkPost Enterprise Only
+**Note**: This Knowledge Base Article Is For SparkPost Enterprise Only 
 
 ## Table of Contents
 
 Use these quick links to jump to certain sections of this article:
 
 * [Introduction](#Introduction)
-* [Benefits of Universal Links](#Benefits of Universal Links)
-* [Summarized Workflow of Universal Links Setup and Operation](#Summarized Workflow of Universal Links Setup and Operation)
-* [As a SparkPost Enterprise Customer, What Steps Do I Need to Take?](#As a SparkPost Enterprise Customer, What Steps Do I Need to Take?)
-* [Creating Universal Links in Templates with Sub-Pathing](#Creating Universal Links in Templates with Sub-Pathing)
-* [End User Caveats with Universal Links](#End User Caveats with Universal Links)
+* [Benefits of Universal Links](#Benefits-of-Universal-Links)
+* [Summarized Workflow of Universal Links Setup and Operation](#Summarized-Workflow-of-Universal-Links-Setup-and-Operation)
+* [As a SparkPost Enterprise Customer, What Steps Do I Need to Take?](#As-a-SparkPost-Enterprise-Customer-What-Steps-Do-I-Need-to-Take)
+* [Creating Universal Links in Templates with Sub-Pathing](#Creating-Universal-Links-in-Templates-with-Sub-Pathing)
+* [End User Caveats with Universal Links](#End-User-Caveats-with-Universal-Links)
 
 ## Introduction
 
@@ -39,7 +39,7 @@ Universal Links give you several key benefits that you don’t get using traditi
 
 The following is a diagram of how the flow of Universal Links occurs, from initial setup to continual operation. Your responsibilities are in **blue** boxes, Enterprise responsibilities are in **orange**, and user interactions/iOS functionality are found in **gray**.
 
- ![](media/using-i-os-universal-links-with-spark-post-enterprise/UL-workflow-final_original.png)
+ ![](media/ios-universal-links/UL-workflow-final_original.png)
 
 ## As a SparkPost Enterprise Customer, What Steps Do I Need to Take?
 

@@ -4,7 +4,7 @@ redirect_from: "https://support.sparkpost.com/customer/portal/articles/2670627-s
 description: "Welcome to Spark Post The purpose of this article is provide you with a series of setup steps to get you started using our service and continue forward using our recommended best practices This article will detail the configuration steps necessary to start sending messages through Spark Post as well..."
 ---
 
-Welcome to SparkPost! The purpose of this article is provide you with a series of setup steps to get you started using our service, and continue forward using our recommended best practices. This article will detail the configuration steps necessary to start sending messages through SparkPost, as well as important operational considerations to have in place before you begin sending. Reading this document carefully will ensure that your success on SparkPost is maximized and is as easy to use as possible.
+Welcome to SparkPost! The purpose of this article is provide you with a series of setup steps to get you started using our service, and continue forward using our recommended best practices. This article will detail the configuration steps necessary to start sending messages through SparkPost, as well as important operational considerations to have in place before you begin sending. Reading this document carefully will ensure that your success on SparkPost is maximized and is as easy to use as possible.  
 
 Note: It is highly recommended that you follow the following steps in order to ensure that proper operational practices are in place prior to sending production traffic through SparkPost. This will ensure that all bounce processing, suppression list management, and message event/webhook data management is configured correctly.
 

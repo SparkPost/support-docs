@@ -18,4 +18,4 @@ It is critical that the Billing address matches what your issuer has on file, so
 
 Incorrect details can be submitted either by a simple typo or on occasion certain browsers can auto-insert phone numbers for ZIP codes as part of the auto-fill functionality. It is worth trying again and carefully checking each entry and resubmitting or alternatively trying a second card if you have one available.
 
-If you continue to get an error, try checking with your credit card issuer, it is not something that SparkPost is able to fix on your behalf. Often times the issuer can remove the block which will allow you to successfully submit your information or provide advice on exactly what details you need to enter.
+If you continue to get an error, try checking with your credit card issuer, it is not something that SparkPost is able to fix on your behalf. Often times the issuer can remove the block which will allow you to successfully submit your information or provide advice on exactly what details you need to enter. 

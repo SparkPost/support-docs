@@ -4,19 +4,19 @@ redirect_from: "https://support.sparkpost.com/customer/portal/articles/2092525-u
 description: "The following steps will walk you through using Spark Post with Lmh Soft's e Campaign 11 Click on Accounts to go to the Email Account Manager Click on the New button to set up a new SMTP profile and enter your name email address and reply to note that the..."
 ---
 
-The following steps will walk you through using SparkPost with LmhSoft's [eCampaign 11](https://www.lmhsoft.com/ecamp/).
+The following steps will walk you through using SparkPost with LmhSoft's [eCampaign 11](https://www.lmhsoft.com/ecamp/). 
 
 Click on 'Accounts' to go to the Email Account Manager:
 
-![](media/using-spark-post-with-e-campaign-11/New_original.jpg)
+![](media/e-campaign-11/New_original.jpg)
 
 Click on the 'New' button to set up a new SMTP profile and enter your name, email address and reply-to (note that the domains for the email addresses should be ones that you have set up on your SparkPost account):
 
-![](media/using-spark-post-with-e-campaign-11/AccountProps_original.jpg)
+![](media/e-campaign-11/AccountProps_original.jpg)
 
 Click on 'Delivery Settings' to set the following:
 
-![](media/using-spark-post-with-e-campaign-11/eCampSettings_original.jpg)
+![](media/e-campaign-11/eCampSettings_original.jpg)
 
 * Set the SMTP Server to smtp.sparkpostmail.com
 * Set the port to 587

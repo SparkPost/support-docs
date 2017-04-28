@@ -4,7 +4,7 @@ redirect_from: "https://support.sparkpost.com/customer/portal/articles/2458291-r
 description: "If you’re not familiar with the difference between a transactional email and a non transactional email you can find out more by clicking here By default every email Spark Post sends contains a List Unsubscribe header so email clients like Gmail know when to include an Unsubscribe button when viewing..."
 ---
 
-If you’re not familiar with the difference between a transactional email and a non-transactional email, you can find out more by clicking [here](https://www.sparkpost.com/blog/commercial-transactional-emails-infographic/).
+If you’re not familiar with the difference between a transactional email and a non-transactional email, you can find out more by clicking [here](https://www.sparkpost.com/blog/commercial-transactional-emails-infographic/). 
 
 By default, every email SparkPost sends contains a `List-Unsubscribe` header, so email clients like Gmail know when to include an Unsubscribe button when viewing the email (you can handle unsubscribe actions with our [API](https://developers.sparkpost.com/api/suppression-list)).
 

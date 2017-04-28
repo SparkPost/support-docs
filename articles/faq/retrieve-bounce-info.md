@@ -6,7 +6,7 @@ description: "Spark Post provides two options for pulling bounce info from Spark
 
 SparkPost provides two options for pulling bounce info from SparkPost - a push mechanism, and a pull mechanism. This article will explain both solutions in detail, so that you may choose the one most appropriate to your use case and expertise.
 
-### Push Mechanism - Webhooks 
+### Push Mechanism - Webhooks
 
 The push mechanism that SparkPost has for providing message event data is called "webhooks." Webhooks provide message event data to an HTTP endpoint in JSON format. Webhook setup can be done via the Webhooks API, or within the UI, under Account > Webhooks. Creation of a webhook only asks for a few configuration paramaters:
 

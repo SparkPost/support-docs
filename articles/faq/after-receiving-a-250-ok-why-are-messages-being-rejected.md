@@ -4,7 +4,7 @@ redirect_from: "https://support.sparkpost.com/customer/portal/articles/1929982-a
 description: "Q I receive a 250 OK when injecting into the system through SMTP but the message shows up as rejected in the reports Why is my message being rejected A The 250 OK response indicates that the connection was properly authenticated and that the message was accepted by Spark Post..."
 ---
 
-Q: I receive a 250 OK when injecting into the system through SMTP, but the message shows up as rejected in the reports. Why is my message being rejected? 
+Q: I receive a 250 OK when injecting into the system through SMTP, but the message shows up as rejected in the reports. Why is my message being rejected?
 
 A: The 250 OK response indicates that the connection was properly authenticated and that the message was accepted by SparkPost. The subsequent rejection of the message may be due to:
 

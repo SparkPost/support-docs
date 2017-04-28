@@ -4,7 +4,7 @@ redirect_from: "https://support.sparkpost.com/customer/portal/articles/2661031-r
 description: "At Spark Post we strive to ensure that all of our customers are Responsible Senders We do this by providing guidance on udeliverability best practices for inbox placement u providing real time feedback on your sends and by enforcing policies that protect our sending reputation and the reputation of our..."
 ---
 
-At SparkPost we strive to ensure that all of our customers are **Responsible Senders**.  We do this by providing guidance on [deliverability best practices for inbox placement](https://support.sparkpost.com/customer/portal/articles/2396826), providing real-time feedback on your sends and by enforcing policies that protect our sending reputation and the reputation of our customers.
+At SparkPost we strive to ensure that all of our customers are **Responsible Senders**.  We do this by providing guidance on [deliverability best practices for inbox placement](https://support.sparkpost.com/customer/portal/articles/2396826), providing real-time feedback on your sends and by enforcing policies that protect our sending reputation and the reputation of our customers. 
 
 The gold standard for a **Responsible Sender** is one who sends only to those recipients who want and expect the content, and one who practices good list hygiene as follows:
 
@@ -19,7 +19,7 @@ As part of being a **Responsible Sender,** we ask all customers to complete the 
 1. Ownership Verification (DKIM or Abuse/Postmaster setup)
 1. Compliance Review
 
-Once ownership of your sending domain has been verified, the details are passed to our Compliance team who complete the review of your domain.  At this point your sending domain will have a status of "pending" (![](/customer/portal/attachments/724884)) for up to an hour until our compliance checks are complete. Once the review is complete and your sending domain passes the checks, a nice green tick (![](media/requirements-for-sending-domains/customerportalattachments724884-for-up-to-an-hour-until-our-compliance-checks-are-complete-once-the-review-is-complete-and-your-sending-domain-passes-the-checks-a-nice-green-tickg) and ‘ready to send’ is displayed under your sending domain.
+Once ownership of your sending domain has been verified, the details are passed to our Compliance team who complete the review of your domain.  At this point your sending domain will have a status of "pending" (![](media/requirements-for-sending-domains/pending-icon.png)) for up to an hour until our compliance checks are complete. Once the review is complete and your sending domain passes the checks, a nice green tick (![](media/requirements-for-sending-domains/green-tick.png) and ‘ready to send’ is displayed under your sending domain.
 
 ## If Your Sending Domain Is Blocked...
 
