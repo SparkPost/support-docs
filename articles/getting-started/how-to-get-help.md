@@ -4,7 +4,7 @@ redirect_from: "https://support.sparkpost.com/customer/portal/articles/2456522-h
 description: "This guide will help you find the best resource for your inquiry and fastest resolution As a general rule first search in the latest API docs and knowledge base articles and then try the following Service Status Find out whether the service is up down sideways on vacation or going..."
 ---
 
-This guide will help you find the best resource for your inquiry and fastest resolution. As a general rule first search in the latest [API docs](https://developers.sparkpost.com/api/) and **[knowledge base articles](http://support.sparkpost.com)** and then try the following.
+This guide will help you find the best resource for your inquiry and fastest resolution. As a general rule first search in the latest [API docs](https://developers.sparkpost.com/api/) and **[knowledge base articles](http://support.sparkpost.com)** and then try the following. 
 
 ## Service Status
 
