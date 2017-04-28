@@ -40,7 +40,7 @@ for directory in "${CHANGED_DIRECTORIES[@]}"; do
   if [ "-1" != "$wp_cat_index" ] && [ -f "$directory/index.md" ]; then
     wp_cat_id=${WP_CATEGORY_IDS[$wp_cat_index]}
     echo " - Updating category"
-    echo " - $(do_wp term update "$WP_CUSTOM_TAX" "$wp_cat_id" --name="$md_cat_name" --slug="$slug" --description="$md_cat_description")"
+    echo " - $(do_wp term update "$WP_CUSTOM_TAX" "$wp_cat_id" --name="$md_cat_name" --description="$md_cat_description")"
   fi
 
   # delete
