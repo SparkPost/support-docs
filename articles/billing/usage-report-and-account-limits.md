@@ -8,4 +8,4 @@ The [Usage Report](https://app.sparkpost.com/#/reports/usage) allows you to ea
 
 As your sending reputation develops, your hourly and daily limits will grow to be a higher percentage of your overall monthly plan limit - the more you focus on sending great content that your customers love to receive, the faster your reputation will be established.
 
-If you wish to send more emails than your account currently provides, please [contact sales](https://www.sparkpost.com/sales/) to upgrade your account to a higher paid plan.
+If you wish to send more emails than your account currently provides, please [contact sales](https://www.sparkpost.com/sales/) to upgrade your account to a higher paid plan. 
