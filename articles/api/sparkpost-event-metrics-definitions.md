@@ -4,7 +4,7 @@ redirect_from: "https://support.sparkpost.com/customer/portal/articles/2232381-s
 description: "Spark Post Event Definitions The follow table contains the definition of each type of event that exists for activity through Spark Post and Spark Post Enterprise NOTE Inbound relay events are only available in Spark Post Enterprise i e they are not available in Spark Post Individual events are provided..."
 ---
 
-## SparkPost Event Definitions
+## SparkPost Event Definitions 
 
 The following table contains the definition of each type of event that exists for activity through SparkPost and SparkPost Enterprise. NOTE: Inbound relay events are only available in SparkPost Enterprise, i.e., they are not available in SparkPost.Individual events are provided via the webhook data stream and can be retrieved on an on-demand basis using the Message Events API.
 
