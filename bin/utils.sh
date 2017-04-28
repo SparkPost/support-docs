@@ -1,4 +1,5 @@
-set -e
+#!/usr/bin/env bash
+#set -e
 
 WP_USER="${WP_USER:-Support}"
 WP_POST_TYPE="${WP_POST_TYPE:-support_article}"
@@ -46,9 +47,9 @@ function index_of() {
     local value=${!n}
 
     for ((i=1;i < $#;i++)) {
-
         if [ "${!i}" == "${value}" ]; then
           echo $(expr $i - 1)
+          return 1
         fi
     }
 
