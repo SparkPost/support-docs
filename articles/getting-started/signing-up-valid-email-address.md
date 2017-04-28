@@ -4,7 +4,7 @@ redirect_from: "https://support.sparkpost.com/customer/portal/articles/2778789-s
 description: "When signing up for a Spark Post account it’s important to us that you use an email address where we’ll be able to reach you We use your email address to communicate with you about things like Resetting your password in case you lose it Issues related to billing and..."
 ---
 
-When signing up for a SparkPost account, it’s important to us that you use an email address where we’ll be able to reach you. We use your email address to communicate with you about things like: 
+When signing up for a SparkPost account, it’s important to us that you use an email address where we’ll be able to reach you. We use your email address to communicate with you about things like:
 
 * Resetting your password in case you lose it
 * Issues related to billing and payments

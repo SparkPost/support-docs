@@ -4,7 +4,7 @@ redirect_from: "https://support.sparkpost.com/customer/portal/articles/1929887-s
 description: "Sending an Email Transmission API SMTP Injection There are two ways to send email transmissions using Spark Post Send email via SMTP Send email via REST API Sending email via SMTP What you'll need Your account configured A verified Sending Domain An API Key with the Send via SMTP permission..."
 ---
 
-## Sending an Email (Transmission API/SMTP Injection) 
+## Sending an Email (Transmission API/SMTP Injection)
 
 There are two ways to send email (transmissions) using SparkPost:
 

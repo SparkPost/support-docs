@@ -4,7 +4,7 @@ redirect_from: "https://support.sparkpost.com/customer/portal/articles/1933360-v
 description: "A sending domain is a domain that is used to indicate who an email is from via the you guessed it From header DKIM DNS records should be configured for a sending domain which allows recipient mail servers to authenticate your messages content The Sending Domains API provides the means..."
 ---
 
-A sending domain is a domain that is used to indicate who an email is from via the (you guessed it) "From:" header. DKIM DNS records should be configured for a sending domain, which allows recipient mail servers to authenticate your messages' content. The Sending Domains API provides the means to create, list, retrieve, update, and verify a custom sending domain. This article outlines how to complete sending domain verification. 
+A sending domain is a domain that is used to indicate who an email is from via the (you guessed it) "From:" header. DKIM DNS records should be configured for a sending domain, which allows recipient mail servers to authenticate your messages' content. The Sending Domains API provides the means to create, list, retrieve, update, and verify a custom sending domain. This article outlines how to complete sending domain verification.
 
 Setting up DKIM DNS records for your sending domain is the best practice for validation, and it does double duty. First, it verifies to SparkPost that you own this domain. DKIM also verifies the content of your email to inbox providers receiving email from your domain. If DKIM DNS records cannot be configured, domains may be verified by confirming access to admin email accounts (abuse@ or postmaster@).
 

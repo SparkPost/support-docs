@@ -4,7 +4,7 @@ redirect_from: "https://support.sparkpost.com/customer/portal/articles/1929890-c
 description: "Create a Template Once you understand how to send an email transmission you'll want to know how to create templates in Spark Post Currently there are two ways you can create templates in Spark Post Create templates in Spark Post using the App Create templates in Spark Post using the..."
 ---
 
-## Create a Template 
+## Create a Template
 
 Once you understand how to [send an email (transmission)](https://support.sparkpost.com/customer/portal/articles/1929887-sending-your-first-email "Sending an email (transmission)"), you'll want to know how to create templates in SparkPost.
 

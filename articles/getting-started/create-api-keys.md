@@ -4,7 +4,7 @@ redirect_from: "https://support.sparkpost.com/customer/portal/articles/1933377-c
 description: "Before you can use the Spark Post REST AP Is or SMTP injection you will need to have a valid Spark Post API key Below are the steps you will need to create a Spark Post API key IMPORTANT Make sure to copy and paste the API key when it..."
 ---
 
-Before you can use the SparkPost REST APIs or SMTP injection, you will need to have a valid SparkPost API key. Below are the steps you will need to create a SparkPost API key. 
+Before you can use the SparkPost REST APIs or SMTP injection, you will need to have a valid SparkPost API key. Below are the steps you will need to create a SparkPost API key.
 
 **IMPORTANT!** Make sure to copy and paste the API key when it is displayed after saving. The whole API key is shown **ONE TIME ONLY**. After navigating away from that page recovery of a lost key is impossible. Keep your API keys in a safe and secure place. Treat them like passwords and never share them with anyone.
 

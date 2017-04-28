@@ -4,7 +4,7 @@ redirect_from: "https://support.sparkpost.com/customer/portal/articles/2661031-r
 description: "At Spark Post we strive to ensure that all of our customers are Responsible Senders We do this by providing guidance on udeliverability best practices for inbox placement u providing real time feedback on your sends and by enforcing policies that protect our sending reputation and the reputation of our..."
 ---
 
-At SparkPost we strive to ensure that all of our customers are **Responsible Senders**.  We do this by providing guidance on [deliverability best practices for inbox placement](https://support.sparkpost.com/customer/portal/articles/2396826), providing real-time feedback on your sends and by enforcing policies that protect our sending reputation and the reputation of our customers. 
+At SparkPost we strive to ensure that all of our customers are **Responsible Senders**.  We do this by providing guidance on [deliverability best practices for inbox placement](https://support.sparkpost.com/customer/portal/articles/2396826), providing real-time feedback on your sends and by enforcing policies that protect our sending reputation and the reputation of our customers.
 
 The gold standard for a **Responsible Sender** is one who sends only to those recipients who want and expect the content, and one who practices good list hygiene as follows:
 
