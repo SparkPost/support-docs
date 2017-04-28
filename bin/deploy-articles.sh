@@ -21,10 +21,14 @@ function import_related_media() {
       if [[ $src = http* ]] ; then
         path="$src"
       else
-        if [[ $TRAVIS_PULL_REQUEST = "false" ]]; then
-          path="https://raw.githubusercontent.com/$TRAVIS_REPO_SLUG/master/$path_base/$src"
+        if [[ $DEPLOY_ENV = "DEVELOPMENT" ]]; then
+          path="$path_base/$src"
         else
-          path="https://raw.githubusercontent.com/$TRAVIS_PULL_REQUEST_SLUG/$TRAVIS_PULL_REQUEST_BRANCH/$path_base/$src"
+          if [[ $TRAVIS_PULL_REQUEST = "false" ]]; then
+            path="https://raw.githubusercontent.com/$TRAVIS_REPO_SLUG/master/$path_base/$src"
+          else
+            path="https://raw.githubusercontent.com/$TRAVIS_PULL_REQUEST_SLUG/$TRAVIS_PULL_REQUEST_BRANCH/$path_base/$src"
+          fi
         fi
       fi
 
@@ -49,7 +53,7 @@ function delete_related_media() {
 
 function generate_html() {
   local filepath="$1"
-  local imported_image_ids=("$2")
+  local imported_image_ids=("${@:2}")
 
   replace_images_array=""
   for image_id in "${imported_image_ids[@]}"; do
