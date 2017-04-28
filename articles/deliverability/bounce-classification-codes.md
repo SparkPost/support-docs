@@ -4,7 +4,7 @@ redirect_from: "https://support.sparkpost.com/customer/portal/articles/1929896-b
 description: "Bounce Classification Codes Following is a list of bounce classification codes and their meanings Classification Name Description Category 1 Undetermined The response text could not be identified Undetermined 10 Invalid Recipient The recipient is invalid Hard 20 Soft Bounce The message soft bounced Soft 21 DNS Failure The message bounced..."
 ---
 
-Following is a list of bounce classification codes and their meanings:
+Following is a list of bounce classification codes and their meanings: 
 
 | Classification | Name                    | Description                                                                 | Category     |
 |:---------------|:------------------------|:----------------------------------------------------------------------------|:-------------|
