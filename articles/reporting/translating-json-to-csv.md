@@ -4,7 +4,7 @@ redirect_from: "https://support.sparkpost.com/customer/portal/articles/2474861-t
 description: "If you've ever run the Metrics Transmissions or Message Events AP Is you've seen the results displayed in JSON like this type delivery campaign id Example Campaign Name customer id 1 delv method esmtp device token 45 c 19189783 f 867973 f 6 e 6 a 5 cca 60061 ffe..."
 ---
 
-If you've ever run the Metrics, Transmissions, or Message Events APIs, you've seen the results displayed in JSON like this: 
+If you've ever run the Metrics, Transmissions, or Message Events APIs, you've seen the results displayed in JSON like this:
 
 ```json
 {

@@ -4,7 +4,7 @@ redirect_from: "https://support.sparkpost.com/customer/portal/articles/1948449-e
 description: "At Spark Post we take the security of your account very seriously which is why for example we make it easy to apply the principle of least privilege when assigning grants to API keys and even restricting API keys based on source IP address In order to provide you with..."
 ---
 
-At SparkPost, we take the security of your account very seriously, which is why, for example, we make it easy to apply the [principle of least privilege](https://www.us-cert.gov/bsi/articles/knowledge/principles/least-privilege) when assigning grants to API keys, and even restricting API keys based on source IP address.  
+At SparkPost, we take the security of your account very seriously, which is why, for example, we make it easy to apply the [principle of least privilege](https://www.us-cert.gov/bsi/articles/knowledge/principles/least-privilege) when assigning grants to API keys, and even restricting API keys based on source IP address. 
 
 In order to provide you with even greater security, we have introduced Two-Factor Authentication. This allows you to use your account in conjunction with a standard 3rd party Authenticator app such as [Google Authenticator](https://support.google.com/accounts/answer/1066447), [Duo](https://duo.com/product/trusted-users/two-factor-authentication/duo-mobile), or [Authy](https://www.authy.com/app/mobile/) available for iOS, Android, etc.
 
