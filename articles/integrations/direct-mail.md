@@ -4,7 +4,7 @@ redirect_from: "https://support.sparkpost.com/customer/portal/articles/2040317-u
 description: "The following steps will walk you through using Spark Post with e 3 Software's Direct Mail for Mac First you need to enable SMTP Access check out Direct Mail's article here http directmailmac com support article 232 Set up a new Mail Server profile and configure as below The password..."
 ---
 
-The following steps will walk you through using SparkPost with [e3 Software's DirectMail for Mac](http://directmailmac.com). 
+The following steps will walk you through using SparkPost with [e3 Software's DirectMail for Mac](http://directmailmac.com).
 
 First you need to enable SMTP Access - check out DirectMail's article here: [http://directmailmac.com/support/article/232](http://directmailmac.com/support/article/232)
 
