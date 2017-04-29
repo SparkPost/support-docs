@@ -4,7 +4,7 @@ redirect_from: "https://support.sparkpost.com/customer/portal/articles/2754251-h
 description: "Note This article is for Spark Post Enterprise only Table of Contents Use these quick links to jump to certain sections of this article Introduction What are the potential benefits to configuring Android digital asset links As a Spark Post Enterprise customer what steps do I need to take to..."
 ---
 
-**Note:** This article is for SparkPost Enterprise *only.* 
+**Note:** This article is for SparkPost Enterprise *only.*
 
 ## Table of Contents
 

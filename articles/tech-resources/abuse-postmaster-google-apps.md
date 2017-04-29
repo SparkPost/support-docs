@@ -4,7 +4,7 @@ redirect_from: "https://support.sparkpost.com/customer/portal/articles/2314148-s
 description: "If you’re using Google Apps to host your corporate email you won’t be able to create abuse or postmaster emails under your domain To get around this you need to create groups named abuse and postmaster Users that are members of these groups will receive emails sent to those addresses..."
 ---
 
-If you’re using Google Apps to host your corporate email, you won’t be able to create abuse@ or postmaster@ emails under your domain*. To get around this, you need to create groups named “abuse” and “postmaster”. Users that are members of these groups will receive emails sent to those addresses (i.e. postmaster@domain.com). 
+If you’re using Google Apps to host your corporate email, you won’t be able to create abuse@ or postmaster@ emails under your domain*. To get around this, you need to create groups named “abuse” and “postmaster”. Users that are members of these groups will receive emails sent to those addresses (i.e. postmaster@domain.com).
 
 Detailed instructions for creating groups can be found [here](https://support.google.com/a/answer/33343#adminconsole).
 

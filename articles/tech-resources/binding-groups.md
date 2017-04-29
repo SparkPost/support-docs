@@ -4,7 +4,7 @@ redirect_from: "https://support.sparkpost.com/customer/portal/articles/2085201-h
 description: "Note This Knowledge Base Article Is For Spark Post Enterprise Only Introduction Your Spark Post Elite environment was provisioned with your specific messaging needs and industry segmentation best practices in mind Bindings enable the ability to route individual messages over a designated group of IP addresses Each message sent must..."
 ---
 
-### Note: This Knowledge Base Article Is For SparkPost Enterprise Only 
+### Note: This Knowledge Base Article Is For SparkPost Enterprise Only
 
 **Introduction**
 

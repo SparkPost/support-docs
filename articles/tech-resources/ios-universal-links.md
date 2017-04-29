@@ -4,7 +4,7 @@ redirect_from: "https://support.sparkpost.com/customer/portal/articles/2231112-u
 description: "Note This Knowledge Base Article Is For Spark Post Enterprise Only Table of Contents Use these quick links to jump to certain sections of this article Introduction Benefits of Universal Links Summarized Workflow of Universal Links Setup and Operation As a Spark Post Enterprise Customer What Steps Do I Need..."
 ---
 
-**Note**: This Knowledge Base Article Is For SparkPost Enterprise Only 
+**Note**: This Knowledge Base Article Is For SparkPost Enterprise Only
 
 ## Table of Contents
 
