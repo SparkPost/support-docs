@@ -4,7 +4,7 @@ redirect_from: "https://support.sparkpost.com/customer/portal/articles/1929976-u
 description: "How to Implement Link Unsubscribe and List Unsubscribe Events Using the link unsubscribe and list unsubscribe events is super easy Link Unsubscribe Example To use the link unsubscribe simply add a link in your email in the following format a data msys unsubscribe 1 href YOURAPPUNSUBSCRIBEHANDLER title USEFULNAME UNSUBSCRIBELINKDISPLAY NAME..."
 ---
 
-## How to Implement Link Unsubscribe and List Unsubscribe Events 
+## How to Implement Link Unsubscribe and List Unsubscribe Events
 
 Using the link unsubscribe and list unsubscribe events is super-easy.
 

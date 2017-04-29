@@ -4,7 +4,7 @@ redirect_from: "https://support.sparkpost.com/customer/portal/articles/2351320-u
 description: "Adding a New Recipient List In the Spark Post Dashboard first go to Lists Recipients the click the orange button that says New Recipient List Fill in the Label The ID Field will self fill and the Description Field Choose the File you would like to upload with the Choose..."
 ---
 
-## Adding a New Recipient List
+## Adding a New Recipient List 
 
 In the SparkPost Dashboard, first go to Lists -> Recipients the click the orange button that says "New Recipient List".
 

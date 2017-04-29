@@ -4,7 +4,7 @@ redirect_from: "https://support.sparkpost.com/customer/portal/articles/2558436-c
 description: "Subaccounts As you start utilizing subaccounts it will be essential to become more familiar with how management will work with this feature Please read through this article before determining how you would like to set up your account u Subaccounts in Spark Post and Spark Post Elite u Determine what..."
 ---
 
-As you start utilizing subaccounts it will be essential to become familiar with management of this feature. Please read through this article before determining how you would like to set up your account: [Subaccounts in SparkPost and SparkPost Enterprise](https://support.sparkpost.com/customer/en/portal/articles/2360320-subaccounts-in-sparkpost-and-sparkpost-elite?b_id=7411). 
+As you start utilizing subaccounts it will be essential to become familiar with management of this feature. Please read through this article before determining how you would like to set up your account: [Subaccounts in SparkPost and SparkPost Enterprise](https://support.sparkpost.com/customer/en/portal/articles/2360320-subaccounts-in-sparkpost-and-sparkpost-elite?b_id=7411).
 
 Determine what account you want to be your remaining account or create a new account if applicable.
 
