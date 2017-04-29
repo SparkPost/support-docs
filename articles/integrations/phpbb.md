@@ -4,7 +4,7 @@ redirect_from: "https://support.sparkpost.com/customer/portal/articles/2782409-u
 description: "You can configure PHPBB to use Spark Post either while setting up a fresh new forum or by modifying settings of an existing forum For a new forum we recommend you to configure it after the forum installation is completed as the E mail Configuration step in the installation process..."
 ---
 
-You can configure [PHPBB](https://www.phpbb.com/) to use SparkPost either while setting up a fresh new forum or by modifying settings of an existing forum. For a new forum, we recommend you to configure it after the forum installation is completed as the **E-mail Configuration** step in the installation process is incomplete. 
+You can configure [PHPBB](https://www.phpbb.com/) to use SparkPost either while setting up a fresh new forum or by modifying settings of an existing forum. For a new forum, we recommend you to configure it after the forum installation is completed as the **E-mail Configuration** step in the installation process is incomplete.
 
 ## Staying Safe With Email And Public Forums
 

@@ -4,7 +4,7 @@ redirect_from: "https://support.sparkpost.com/customer/portal/articles/2160178-s
 description: "Setting up Marketing Rocket to use the Spark Post integration is simple and takes only a couple of minutes To correctly authenticate setup Spark Post to send emails with your domain follow these steps Log Into your Spark Post account Go to ACCOUNT Sending Domains ADD NEW DOMAIN Enter the..."
 ---
 
-Setting up Marketing Rocket to use the SparkPost integration is simple, and takes only a couple of minutes! 
+Setting up Marketing Rocket to use the SparkPost integration is simple, and takes only a couple of minutes!
 
 ***To correctly authenticate/setup SparkPost to send emails with your domain follow these steps:***
 
