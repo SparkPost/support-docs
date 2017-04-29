@@ -4,7 +4,7 @@ redirect_from: "https://support.sparkpost.com/customer/portal/articles/2371794-c
 description: "You can improve your deliverability and email branding by adding a custom bounce domain A custom bounce domain provides another layer to the branding that some IS Ps care about Note Only one custom bounce domain is permitted per account at this time By adding a bounce domain to your..."
 ---
 
-You can improve your deliverability and email branding by adding a custom bounce domain. A custom bounce domain provides another layer to the branding that some ISPs care about. 
+You can improve your deliverability and email branding by adding a custom bounce domain. A custom bounce domain provides another layer to the branding that some ISPs care about.
 
 **Note**: Only one custom bounce domain is permitted per account at this time.
 

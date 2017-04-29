@@ -4,7 +4,7 @@ redirect_from: "https://support.sparkpost.com/customer/portal/articles/2140916-e
 description: "When developing to the REST api you should be prepared to handle failed requests understand their meaning and what actions are needed to resolve them The following table is a complete list of extended error code responses organized by the four elements included in the response array Component The related..."
 ---
 
-When developing to the REST api, you should be prepared to handle failed requests, understand their meaning and what actions are needed to resolve them. The following table is a complete list of extended error code responses, organized by the four elements included in the response array.
+When developing to the REST api, you should be prepared to handle failed requests, understand their meaning and what actions are needed to resolve them. The following table is a complete list of extended error code responses, organized by the four elements included in the response array. 
 
 * **Component**: The related service that the error has sourced from
 * **Error Code:** The numeric code of the extended error

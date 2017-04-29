@@ -4,7 +4,7 @@ redirect_from: "https://support.sparkpost.com/customer/portal/articles/2115678-s
 description: "Note This Knowledge Base Article Is For Spark Post Enterprise Only Introduction The skip suppression feature provides the ability to override the suppression of recipient addresses that are listed in the suppression list Moreover this feature allows you to override the intended functionality of the suppression list namely the checking..."
 ---
 
-**Note: This Knowledge Base Article Is For SparkPost Enterprise Only** 
+**Note: This Knowledge Base Article Is For SparkPost Enterprise Only**
 
 The skip suppression feature provides the ability to override the suppression of recipient addresses that are listed in the suppression list.  Moreover, this feature allows you to override the intended functionality of the suppression list – namely the checking of recipient addresses on the list before delivery.  This option should be used sparingly and only for those rare circumstances, for example sending legal notices for which you want to guarantee that a delivery has been attempted.  Skip suppression will completely ignore the contents of the suppression list, i.e., messages will be sent whether is has been designated as `non_transactional` or `transactional`.
 
