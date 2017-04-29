@@ -4,7 +4,7 @@ redirect_from: "https://support.sparkpost.com/customer/portal/articles/2661260-e
 description: "If you send mail through SMTP rather than REST there are a few errors that are specific to Spark Post The list below covers each of them as well as what to do when you receive them For error messages that are not listed below see one of the popular..."
 ---
 
-If you send mail through SMTP rather than REST, there are a few errors that are specific to SparkPost. The list below covers each of them, as well as what to do when you receive them.
+If you send mail through SMTP rather than REST, there are a few errors that are specific to SparkPost. The list below covers each of them, as well as what to do when you receive them. 
 
 For error messages that are not listed below, see one of the popular SMTP reply code guides, like [http://www.greenend.org.uk/rjk/tech/smtpreplies.html](http://www.greenend.org.uk/rjk/tech/smtpreplies.html)
 
