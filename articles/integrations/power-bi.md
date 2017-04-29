@@ -4,7 +4,7 @@ redirect_from: "https://support.sparkpost.com/customer/portal/articles/2177799-p
 description: "The Power BI content pack for Spark Post allows you to extract valuable datasets from your Spark Post account all into one insightful dashboard Using the Spark Post content pack you can visualize your overall email statistics including domains campaigns and engagement by ISP Connect to the Spark Post content..."
 ---
 
-The Power BI content pack for SparkPost allows you to extract valuable datasets from your SparkPost account all into one insightful dashboard. Using the SparkPost content pack you can visualize your overall email statistics, including domains, campaigns, and engagement by ISP. 
+The Power BI content pack for SparkPost allows you to extract valuable datasets from your SparkPost account all into one insightful dashboard. Using the SparkPost content pack you can visualize your overall email statistics, including domains, campaigns, and engagement by ISP.
 
 Connect to the [SparkPost content pack](https://app.powerbi.com/getdata/services/sparkpost) for Power BI.
 **Import data from your SparkPost account**

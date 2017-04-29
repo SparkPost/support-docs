@@ -4,7 +4,7 @@ redirect_from: "https://support.sparkpost.com/customer/portal/articles/2477781-u
 description: "Note This Knowledge Base Article Is For Spark Post Enterprise Only Using Push Notifications in Spark Post Enterprise Spark Post Enterprise customers have the option of sending push notifications through the transmissions API by including optional channel strings nested beneath the recipients array This article will explain in brief overview..."
 ---
 
-**Note:** This Knowledge Base Article Is For SparkPost Enterprise Only
+**Note:** This Knowledge Base Article Is For SparkPost Enterprise Only 
 
 ### Using Push Notifications in SparkPost Enterprise 
 

@@ -4,7 +4,7 @@ redirect_from: "https://support.sparkpost.com/customer/portal/articles/2155339-u
 description: "If you’re interested in relaying mail through Power MTA to Spark Post there are only a few things you need to do First create a Spark Post account if you don't already have one Next create an API key with the Send via SMTP permission Now create and verify the..."
 ---
 
-If you’re interested in relaying mail through PowerMTA to SparkPost, there are only a few things you need to do. First, [create a SparkPost account](https://app.sparkpost.com/sign-up) if you don't already have one. 
+If you’re interested in relaying mail through PowerMTA to SparkPost, there are only a few things you need to do. First, [create a SparkPost account](https://app.sparkpost.com/sign-up) if you don't already have one.
 
 Next, [create an API key](https://app.sparkpost.com/account/credentials) with the "Send via SMTP" permission:
 

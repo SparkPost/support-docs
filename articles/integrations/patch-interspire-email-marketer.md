@@ -4,7 +4,7 @@ redirect_from: "https://support.sparkpost.com/customer/portal/articles/2082477-h
 description: "We had several customers using Interspire Email Marketer reporting an issue blocking them from using Spark Post to send email via SMTP This article will address What issue was experienced Test harness Environment Configuration Root cause of the issue What code overcame the issue Applying the patch to your Interspire..."
 ---
 
-We had several customers using [Interspire Email Marketer](http://www.interspire.com/ "Interspire Email Marketer") reporting an issue blocking them from using [SparkPost](https://sparkpost.com "Sparkpost Email Service") to send email via SMTP. This article will address: 
+We had several customers using [Interspire Email Marketer](http://www.interspire.com/ "Interspire Email Marketer") reporting an issue blocking them from using [SparkPost](https://sparkpost.com "Sparkpost Email Service") to send email via SMTP. This article will address:
 
 * [What issue was experienced?](#lnk-experience)
 * [Test-harness Environment Configuration](#lnk-environment)

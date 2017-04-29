@@ -4,7 +4,7 @@ redirect_from: "https://support.sparkpost.com/customer/portal/articles/2092518-u
 description: "The following steps will walk you through using Spark Post with Thunder Mailer Click on Connections and bring up the list of SMTP servers Click on the green symbol to create a new SMTP server profile and enter the information as shown Set the SMTP Mail Server name to smtp..."
 ---
 
-The following steps will walk you through using SparkPost with [Thunder Mailer](http://thundermailer.com). 
+The following steps will walk you through using SparkPost with [Thunder Mailer](http://thundermailer.com).
 
 Click on 'Connections' and bring up the list of SMTP servers:
 

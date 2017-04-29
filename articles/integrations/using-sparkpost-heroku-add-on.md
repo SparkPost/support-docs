@@ -4,7 +4,7 @@ redirect_from: "https://support.sparkpost.com/customer/portal/articles/2207582-u
 description: "The Spark Post add on in Heroku provides developers an easily accessible application to leverage for email delivery Spark Post is available via a modern RES Tful API and has supported client libraries for Node js Python PHP Java Ruby Go C and Elixir as well as documented examples in..."
 ---
 
-The [SparkPost add-on in Heroku](https://devcenter.heroku.com/articles/sparkpost) provides developers an easily accessible application to leverage for email delivery. 
+The [SparkPost add-on in Heroku](https://devcenter.heroku.com/articles/sparkpost) provides developers an easily accessible application to leverage for email delivery.
 
 SparkPost is available via a modern RESTful API and has supported client libraries for [Node.js](https://github.com/SparkPost/node-sparkpost), [Python](https://github.com/SparkPost/python-sparkpost), [PHP](https://github.com/SparkPost/php-sparkpost), [Java](https://github.com/SparkPost/java-sparkpost), [Go](https://github.com/SparkPost/go-sparkpost), and [Elixir](https://github.com/SparkPost/elixir-sparkpost) as well as documented examples in all those languages plus Swift, Objective-C and VB.
 
