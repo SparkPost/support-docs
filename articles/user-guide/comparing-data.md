@@ -4,7 +4,7 @@ redirect_from: "https://support.sparkpost.com/customer/portal/articles/2311698-c
 description: "Webhooks are a way to push real time events from Spark Post or Spark Post Elite to a consumer of your choice If there is a problem receiving data at the consumer end the webhook will retry a number of times but eventually it will stop attempting to send the..."
 ---
 
-Webhooks are a way to push real-time events from SparkPost or SparkPost Enterprise to a consumer of your choice. If there is a problem receiving data at the consumer end, the webhook will retry a number of times, but eventually, it will stop attempting to send the data. You can request the same event data, but using the API's message events endpoint. 
+Webhooks are a way to push real-time events from SparkPost or SparkPost Enterprise to a consumer of your choice. If there is a problem receiving data at the consumer end, the webhook will retry a number of times, but eventually, it will stop attempting to send the data. You can request the same event data, but using the API's message events endpoint.
 
 There are a few differences between the format of data received in webhooks and the data retrieved using the API's message events endpoint. You should keep these differences in mind when deciding how to process the message event data.
 
