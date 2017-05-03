@@ -22,23 +22,23 @@ Once you have configured your DNS settings, register and verify the domain with 
 1. Register the domain with SparkPost by using the sending domains [create endpoint](https://developers.sparkpost.com/api/sending-domains.html#sending-domains-create-post)
 1. CNAME-verify the domain by using the sending domains [verify endpoint](https://developers.sparkpost.com/api/sending-domains.html#sending-domains-verify-post).  Here's an example API call to CNAME-verify the mail.example.com domain:
 
-  ```
-  POST /api/v1/sending-domains/mail.example.com/verify
+    ```
+    POST /api/v1/sending-domains/mail.example.com/verify
 
-  {
-    "cname_verify" : true
-  }
-  ```
+    {
+      "cname_verify" : true
+    }
+    ```
 
 1. Optionally set the domain as your account default bounce domain so that it is automatically used as the bounce domain for all messages sent through the account.  Here's an example API call to set mail.example.com as the account default bounce domain:
 
-  ```
-  PUT /api/v1/sending-domains/mail.example.com
+    ```
+    PUT /api/v1/sending-domains/mail.example.com
 
-  {
-    "is_default_bounce_domain" : true
-  }
-  ```
+    {
+      "is_default_bounce_domain" : true
+    }
+    ```
 
 Alternately, you may configure multiple CNAME-verified sending domains and select one as the bounce domain on a per message basis by including it in the [transmission `return_path`](https://developers.sparkpost.com/api/transmissions.html#header-transmission-attributes) field for transmission requests using the REST API, or by specifying it in the SMTP MAIL FROM command for SMTP injections.
 
