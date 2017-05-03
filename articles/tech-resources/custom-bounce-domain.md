@@ -4,7 +4,7 @@ redirect_from: "https://support.sparkpost.com/customer/portal/articles/2371794-c
 description: "You can improve your deliverability and email branding by adding a custom bounce domain A custom bounce domain provides another layer to the branding that some IS Ps care about Note Only one custom bounce domain is permitted per account at this time By adding a bounce domain to your..."
 ---
 
-You can improve your deliverability and email branding by adding a bounce domain to each of your sending domains. A bounce domain provides another layer to the branding that some ISPs care about.
+You can improve your deliverability and email branding by configuring each of your sending domains as bounce domains. A bounce domain provides another layer to the branding that some ISPs care about.
 
 By using your sending domain as your bounce domain, you can customize the address that is used for the Return-Path header (which denotes the destination for out-of-band bounces). This bounce domain overrides the default Return-Path (also known as the envelope FROM) value of "sparkpostmail.com" for all messages sent.
 
