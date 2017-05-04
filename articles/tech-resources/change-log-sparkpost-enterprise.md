@@ -1,28 +1,26 @@
 ---
-title: "Change Log"
+title: "SparkPost Enterprise Change Log"
 redirect_from: "https://support.sparkpost.com/customer/portal/articles/2247030-change-log"
 description: "Note This Change Log is for Spark Post Enterprise Only A running log of new features and capabilities that have been rolled out on the Spark Post Enterprise service The API reference can be found here https www sparkpost com api reference Next scheduled upgrade date coming soon 27 February..."
 ---
 
-## Note: This Change Log is for SparkPost Enterprise Only
+<div class="alert alert-info"><i class="fa fa-info-circle"></i> This Change Log is for SparkPost Enterprise Only</div>
 
-A running log of new features and capabilities that have been rolled out on the SparkPost Enterprise service. The API reference can be found here: [https://developers.sparkpost.com/api](https://developers.sparkpost.com/api)
+A running log of new features and capabilities that have been rolled out on the SparkPost Enterprise service. The API reference can be found [here](https://developers.sparkpost.com/api).
 
-Next scheduled upgrade: date coming soon.
-
-27 February, 2017
+### 27 February, 2017
 
 * **Change:** "Delay" message events generated when messages are temporarily suspended
     * Previously, if a binding/domain is suspended, and we do not attempt to deliver the message until the suspension is lifted, there is no message event created.
 
     With this change, SparkPost will tempfail the message until the suspension is lifted, generate a "delay" event: "Sending IP temporarily suspended", and then attempt to deliver the message once the suspension is lifted (as before.)
 
-27 January, 2017
+### 27 January, 2017
 
 * **Enhancement:** Advanced Filtering of Message Events in the UI
     * Customers can now filter the message events UI by: Recipients, Timestamp, From Addresses, Events, Template IDs, Subaccounts, Campaigns and Message IDs
 
-18 November, 2016
+### 18 November, 2016
 
 * **Enhancement:** Test Data in the Template Screen
     * Test data will now accept metadata and options, in addition to substitution data
@@ -37,7 +35,7 @@ Next scheduled upgrade: date coming soon.
 * **Enhancement:** Spam Complaint Rate
     * The Summary Report will now display the Spam Complaint Rate ( # of spam complaints/# of messages delivered)
 
-21 October, 2016
+### 21 October, 2016
 
 * **New:** Inbound Relay Webhooks for SMS messages
     * Inbound SMS messages, such as STOP requests, will be forwarded to customers' HTTP endpoints as JSON-formatted events
@@ -47,7 +45,7 @@ Next scheduled upgrade: date coming soon.
 * **Enhancement:** Additional DKIM validation in the Sending Domains API
     * We have added additional validation to DKIM to check that the public and private key match.
 
-12 August, 2016
+### 12 August, 2016
 
 * **New:** UI for Managing Suppression List
     * Customers can now use the web UI to manage their suppression list (in addition to the API).
@@ -59,7 +57,7 @@ Next scheduled upgrade: date coming soon.
 * **Enhancement:** View Json Event Detail
     * Customers can now view the json for a specific event in the Message Events web UI (located in the Reports section)
 
-07 July, 2016
+### 07 July, 2016
 
 * **Enhancement:** Push Notifications in Transmissions API
     * Customers can now use the Transmissions API to submit content for both APNs (Apple Push Notifications Service) and GCM (Google's Cloud Messaging service)
@@ -67,7 +65,7 @@ Next scheduled upgrade: date coming soon.
 * **Enhancement:** Subaccounts
     * Master account can share sending domains with subaccounts
 
-30 May, 2016
+### 30 May, 2016
 
 * **Enhancement:** Tracking Domains for Subaccounts
     * Service providers are now able to create (or give their subaccounts permission to create) tracking domains for their subaccounts.
@@ -83,7 +81,7 @@ Next scheduled upgrade: date coming soon.
     * DKIM validation: Updated sending domains verification rules so that k= and h= are now optional in the DKIM record. Updated API docs:
         [https://developers.sparkpost.com/api/sending-domains.html#sending-domains-verify](https://developers.sparkpost.com/api/sending-domains.html#sending-domains-verify)
 
-02 May, 2016
+### 02 May, 2016
 
 * **Enhancement:** Ability to group/filter reports by sending domains
 * **Enhancement:** A master account (service provider) can create a sending domain and flag it to be shared/used by all of its subaccounts
@@ -93,13 +91,13 @@ Next scheduled upgrade: date coming soon.
     * This enhancement reduces the delay for the user to be redirected to the app since it is no longer necessary to do base 64 decoding.
     * Knowledge Base Article: [iOS Univesal links](https://support.sparkpostelite.com/customer/portal/articles/2231112-using-ios-universal-links-with-sparkpost-elite)
 
-18 April, 2016
+### 18 April, 2016
 
 * **New Feature:** Subaccounts
     * Service providers will be able to manage multiple customers within a single SparkPost account. This includes API keys, sending domains, data,  suppression lists, and more
     * Knowledge Base Article: [Subaccount in SparkPost and SparkPost Elite](https://support.sparkpost.com/customer/en/portal/articles/2360320-sub-accounts-in-sparkpost-and-sparkpost-elite)
 
-17 March, 2016
+### 17 March, 2016
 
 * **New Feature:** Recipient List is now in the UI
     * Customers can now create, replace or delete their recipient list(s) in the web UI. You can upload a csv file to create a new list or replace an existing list.
@@ -107,23 +105,23 @@ Next scheduled upgrade: date coming soon.
 * **Change:** Template UI shows verified sending domains only
     * Now that SPE customers are required to have verified sending domains, the "Email From Domain" dropdown in the Template UI shows only verified sending domains.
 
-25 February, 2016
+### 25 February, 2016
 
 * **Enhancement:** iOS Universal Links will now support using different paths for web browser vs. mobile app while maintaining click-tracking functionality
     * Knowledge Base Article: [iOS9 Universal Links](https://support.sparkpostelite.com/customer/portal/articles/2231112-ios9-universal-links-support)
 
-4 February, 2016
+### 4 February, 2016
 
 * **Enhancement:** Reporting-Only User will be able to see (though not edit) individual message templates
 
-21 January, 2016
+### 21 January, 2016
 
 * **New Feature:** Reporting-Only User
     * Users can be assigned a Reporting-Only role which limits their access to viewing reports and the list of templates in the user interface.
 * **Change:** Changed the metric used to update the dynamic watched domain list in the Summary Report
     * Previously it was based on injected/receptions, and now it will be based on the Targeted metric (receptions + rejections) for the past 30 days and will be updated daily.
 
-06 January, 2016
+### 06 January, 2016
 
 * **New Feature:** Single Sign On (SSO) using One-Login
     * SparkPost Elite Customers who would like to use SSO using One-Login (onelogin.com) should contract their TAM for configuration instructions.
@@ -139,7 +137,7 @@ Next scheduled upgrade: date coming soon.
     * API documentation here [https://www.sparkpost.com/api#/reference/transmissions/create/create-a-transmission](https://www.sparkpost.com/api#/reference/transmissions/create/create-a-transmission)
 * **Change:** This change will only effect those customers that use the "Top domains only" option in the Summary report. Previously the watched domain list was a static list of the top ISPs. This has been changed so that it is updated weekly based on the each Elite customer's sending volumes. It is now the top 100 domains based on the injected/receptions for the past month.
 
-17 December, 2015
+### 17 December, 2015
 
 * **New Report:** Message Events
     * Search for events for a specific recipient email address
