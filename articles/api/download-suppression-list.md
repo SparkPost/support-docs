@@ -1,6 +1,6 @@
 ---
-Title:  How Do I Download My Entire Suppression List
-Description: How to retrieve an entire suppression list using cursor based paging.
+title:  How Do I Download My Entire Suppression List
+description: How to retrieve an entire suppression list using cursor based paging.
 ---
 
 #  How Do I Download My Entire Suppression List?
