@@ -30,7 +30,7 @@ function getSuppressions (link, cb) {
   request(requestOptions, (err, res) => {
     cb(err || res.errors, res.body.results); // do things with the data
     let nextLink =  _.find(res.body.links, {rel: 'next'});// undefined if it doesn't exist
-    if (nextLink) {
+    if (nextLink && res.body.results.length > 0) {
       getSuppressions(nextLink.href, cb);
     }
   });
