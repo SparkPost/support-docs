@@ -15,6 +15,8 @@ As a workaround, you may use a Content Delivery Network (CDN) service, such as C
 
 ## Step by Step Guide with CloudFlare
 
+The following is a sample guide for use with CloudFlare; please note, the steps to configure your chosen CDN will likely differ from CloudFlare in workflow. Please refer to your CDN's documentation and contact their respective support departments if you have any questions.
+
 1.	Create CloudFlare account
 2.	Go to “DNS” tab on the CloudFlare UI
 3.	Add domain and then add the following Cloudflare NS records:
