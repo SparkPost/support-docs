@@ -19,7 +19,8 @@ let request = require('request')
   , _ = require('lodash')
   , apiKey = '<keys>'
   , requestOptions = {
-      json:true,
+      json: true,
+      gzip: true, 
       headers: {
         Authorization: apiKey
       }
