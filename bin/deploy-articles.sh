@@ -113,12 +113,19 @@ for filepath in "${CHANGED_FILES[@]}"; do
     else
       echo " - $wp_post_id"
     fi
+
+    continue;
   fi
 
   # update
   if [ -n "$md_post" ] && [ "-1" != "$wp_post_index" ]; then
     wp_post_id=${WP_POST_IDS[$wp_post_index]}
+    cat_slug=$(slugify "$(basename "$(dirname "$filepath")")")
+    
     echo " - Updating post"
+
+    echo " - $(do_wp post term remove "$wp_post_id" "$WP_CUSTOM_TAX" $(do_wp post term list "$wp_post_id" "$WP_CUSTOM_TAX" --format=ids))"
+    echo " - $(do_wp post term add "$wp_post_id" "$WP_CUSTOM_TAX" "$cat_slug")"
 
     echo " - Deleting related media"
     deleted_image_ids=($(delete_related_media "$wp_post_id"))
@@ -131,6 +138,8 @@ for filepath in "${CHANGED_FILES[@]}"; do
     md_post_content=$(generate_html "$filepath" "${imported_image_ids[@]}")
 
     echo " - $(do_wp post update $wp_post_id --post_title="$md_post_title" --post_content="$md_post_content" --post_excerpt="$md_post_excerpt")"
+
+    continue;
   fi
 
   # delete
@@ -143,6 +152,8 @@ for filepath in "${CHANGED_FILES[@]}"; do
     echo " - Deleted ${#deleted_image_ids[@]} files"
 
     echo " - $(do_wp post delete $wp_post_id --force)"
+
+    continue;
   fi
 
   # somethin' broke
