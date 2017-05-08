@@ -15,9 +15,9 @@ As a workaround, you may use a Content Delivery Network (CDN) service, such as C
 
 ## Step by Step Guide with CloudFlare
 
-	1.	Create CloudFlare account
-	2.	Go to “DNS” tab on the CloudFlare UI
-	3.	Add domain and then add the following Cloudflare NS records:
+1.	Create CloudFlare account
+2.	Go to “DNS” tab on the CloudFlare UI
+3.	Add domain and then add the following Cloudflare NS records:
   
   NS	aron.ns.cloudflare.com 
   NS	peyton.ns.cloudflare.com (these values can be found under the DNS tab on the Cloudflare UI) 
@@ -28,19 +28,19 @@ As a workaround, you may use a Content Delivery Network (CDN) service, such as C
 
 ![](media/ios-universal-links/UL-workflow-final_original.png)
 
-	4. Add a new CNAME entry that points your domain to sparkpost.com
+4. Add a new CNAME entry that points your domain to sparkpost.com
 
 Example:
 
 Using an engagement tracking domain of "isaackim.info" in SparkPost, the appropriate CNAME record under the DNS tab of CloudFlare has been added.
 
-	5. Navigate to the Page Rules settings for the domain.
-	6. Create a page rule for the domain that sets SSL to “Full”. This is required for how CloudFlare will validate the certificate on the origin. 
+5. Navigate to the Page Rules settings for the domain.
+6. Create a page rule for the domain that sets SSL to “Full”. This is required for how CloudFlare will validate the certificate on the origin. 
 	
 More information on SSL options can be found [here](https://support.cloudflare.com/hc/en-us/articles/200170416). 
 
-	7. Turn the page rule "on."
-	8. Reach out to SparkPost Support and request that HTTPS engagement tracking be enabled on your account. They will verify the configuration and enable the setting on your account.
+7. Turn the page rule "on."
+8. Reach out to SparkPost Support and request that HTTPS engagement tracking be enabled on your account. They will verify the configuration and enable the setting on your account.
 
 ## Additional Resources for Content Delivery Networks
 
