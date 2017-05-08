@@ -120,8 +120,12 @@ for filepath in "${CHANGED_FILES[@]}"; do
   # update
   if [ -n "$md_post" ] && [ "-1" != "$wp_post_index" ]; then
     wp_post_id=${WP_POST_IDS[$wp_post_index]}
-
+    cat_slug=$(slugify "$(basename "$(dirname "$filepath")")")
+    
     echo " - Updating post"
+
+    echo " - $(do_wp post term remove "$wp_post_id" "$WP_CUSTOM_TAX" $(do_wp post term list "$wp_post_id" "$WP_CUSTOM_TAX" --format=ids))"
+    echo " - $(do_wp post term add "$wp_post_id" "$WP_CUSTOM_TAX" "$cat_slug")"
 
     echo " - Deleting related media"
     deleted_image_ids=($(delete_related_media "$wp_post_id"))
