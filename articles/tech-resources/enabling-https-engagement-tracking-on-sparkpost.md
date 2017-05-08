@@ -1,11 +1,11 @@
 ---
 title: "Enabling HTTPS Engagement Tracking on SparkPost"
-description: " "
+description: "SparkPost supports HTTPS engagement tracking for customers via self-service for all SparkPost customers. To enable SSL engagement tracking for a domain, additional configuration for SSL keys is required."
 ---
 
 ## Overview
 
-SparkPost supports HTTPS engagement tracking for customers via self-service for all SparkPost customers except Enterprise customers, who still require setup through reliability engineering. To enable SSL engagement tracking for a domain, additional configuration for SSL keys is required.
+SparkPost supports HTTPS engagement tracking for customers via self-service for all SparkPost customers. To enable SSL engagement tracking for a domain, additional configuration for SSL keys is required.
 
 ## Configuring SSL Certificates
 
@@ -22,9 +22,15 @@ As a workaround, you may use a Content Delivery Network (CDN) service, such as C
   NS	aron.ns.cloudflare.com 
   NS	peyton.ns.cloudflare.com (these values can be found under the DNS tab on the Cloudflare UI) 
 
-Example: 
+	Example: 
 
-Using the domain "isaackim.info", below is a command line DIG command to confirm that the NS records have been updated to reflect the required changes:
-
+	Using the domain "isaackim.info", below is a command line DIG command to confirm that the NS records have been updated to reflect the required changes:
 
 ![](media/ios-universal-links/UL-workflow-final_original.png)
+
+	4. Add a new CNAME entry that points your domain to sparkpost.com
+
+Example:
+
+Using an engagement tracking domain of "isaackim.info" in SparkPost, the appropriate CNAME record under the DNS tab of CloudFlare has been added.
+
