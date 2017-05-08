@@ -34,3 +34,6 @@ Example:
 
 Using an engagement tracking domain of "isaackim.info" in SparkPost, the appropriate CNAME record under the DNS tab of CloudFlare has been added.
 
+	5. Navigate to the Page Rules settings for the domain.
+	6. Create a page rule for the domain that sets SSL to “Full”. This is required for how CloudFlare will validate the certificate 	on the origin. More information on SSL options can be found [here](https://support.cloudflare.com/hc/en-us/articles/200170416). 
+
