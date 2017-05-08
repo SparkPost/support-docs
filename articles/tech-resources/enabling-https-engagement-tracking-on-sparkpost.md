@@ -19,8 +19,9 @@ As a workaround, you may use a Content Delivery Network (CDN) service, such as C
 2.	Go to “DNS” tab on the CloudFlare UI
 3.	Add domain and then add the following Cloudflare NS records:
   
-  NS	aron.ns.cloudflare.com 
-  NS	peyton.ns.cloudflare.com (these values can be found under the DNS tab on the Cloudflare UI) 
+  	NS	aron.ns.cloudflare.com
+	
+  	NS	peyton.ns.cloudflare.com(these values can be found under the DNS tab on the Cloudflare UI) 
 
 	Example: 
 
