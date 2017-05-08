@@ -21,9 +21,9 @@ As a workaround, you may use a Content Delivery Network (CDN) service, such as C
   
   	NS	aron.ns.cloudflare.com
 	
-  	NS	peyton.ns.cloudflare.com(these values can be found under the DNS tab on the Cloudflare UI) 
+  	NS	peyton.ns.cloudflare.com (these values can be found under the DNS tab on the Cloudflare UI) 
 
-	Example: 
+	**Example:**
 
 	Using the domain "isaackim.info", below is a command line DIG command to confirm that the NS records have been updated to reflect the required changes:
 
@@ -31,7 +31,7 @@ As a workaround, you may use a Content Delivery Network (CDN) service, such as C
 
 4. Add a new CNAME entry that points your domain to sparkpost.com
 
-Example:
+**Example:**
 
 Using an engagement tracking domain of "isaackim.info" in SparkPost, the appropriate CNAME record under the DNS tab of CloudFlare has been added.
 
