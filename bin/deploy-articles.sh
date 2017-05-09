@@ -102,6 +102,10 @@ for filepath in "${CHANGED_FILES[@]}"; do
   md_post_excerpt="$(echo $md_post | jq '.meta.description' --raw-output)"
   md_post_notification="$(echo $md_post | jq '.meta.notification' --raw-output)"
 
+  if [ $md_post_notification == 'null' ]; then
+    md_post_notification=''
+  fi
+
   # create
   if [ -n "$md_post" ] && [ "-1" == "$wp_post_index" ]; then
     echo " - Creating post"
