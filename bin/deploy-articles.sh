@@ -52,9 +52,16 @@ function delete_related_media() {
 }
 
 function get_contributors() {
-  filepath="$1"
+  local filepath="$1"
+  local curl_url="https://api.github.com/repos/SparkPost/support-docs/commits?path=$filepath"
 
-  echo $(curl -s https://api.github.com/repos/SparkPost/support-docs/commits?path=$filepath | jq '[ .[] | {name: .commit.committer.name, html_url: .committer.html_url, avatar_url: .committer.avatar_url} ] | unique')
+  if [  -z ${GITHUB_TOKEN+x} ]; then
+    result=$(curl -s $curl_url)
+  else
+    result=$(curl -s -H "Authorization: token $GITHUB_TOKEN" $curl_url)
+  fi
+
+  echo $(echo $result | jq '[ .[] | {name: .commit.committer.name, html_url: .committer.html_url, avatar_url: .committer.avatar_url} ] | unique')
 }
 
 function generate_html() {
@@ -78,8 +85,7 @@ fi
 for filepath in "${CHANGED_FILES[@]}"; do
   slug=$(slugify "$(get_filename $filepath)")
   cat_slug=$(slugify "$(basename "$(dirname "$filepath")")")
-  contributors=$(get_contributors "$filepath")
-
+  
   print_title "$cat_slug/$slug"
 
   if [ $(get_ext "$filepath") != "md" ]; then
@@ -94,6 +100,7 @@ for filepath in "${CHANGED_FILES[@]}"; do
     continue
   fi
 
+  contributors=$(get_contributors "$filepath")
   wp_post_index=$(index_of "${WP_POST_SLUGS[@]}" "$slug")
 
   md_post=$(node bin/markdown.js "$filepath")
