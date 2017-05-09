@@ -105,6 +105,7 @@ To run the import locally you'll need to define a couple of environment variable
 ```bash
 export WP_DEVELOPMENT="/my_wp/path" # This needs to be set to the absolute path to the wordpress core directory
 export WP_USER="my.account@example.com" # Defaults to the Wordpress Support account
+export GITHUB_TOKEN="some_access_token" # This is set to raise the rate limiting to get the contributors
 ```
 
 Run the `deploy-categories.sh` script followed by the `deploy-articles.sh` script.
