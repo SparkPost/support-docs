@@ -51,6 +51,12 @@ function delete_related_media() {
   echo "${image_ids[@]}"
 }
 
+function get_contributors() {
+  filepath="$1"
+
+  echo $(curl -s https://api.github.com/repos/SparkPost/support-docs/commits?path=$filepath | jq '[ .[] | {name: .commit.committer.name, html_url: .committer.html_url, avatar_url: .committer.avatar_url} ] | unique')
+}
+
 function generate_html() {
   local filepath="$1"
   local imported_image_ids=("${@:2}")
