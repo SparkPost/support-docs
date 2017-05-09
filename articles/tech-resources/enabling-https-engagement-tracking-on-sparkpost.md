@@ -19,6 +19,9 @@ The following is a sample guide for use with CloudFlare; please note, the steps 
 
 1.	Create CloudFlare account
 2.	Go to “DNS” tab on the CloudFlare UI
+
+![](media/enabling-https-engagement-tracking-on-sparkpost/cloudflare UI.png)
+
 3.	Add domain and then add the following Cloudflare NS records:
   
   	NS	aron.ns.cloudflare.com
@@ -29,7 +32,26 @@ The following is a sample guide for use with CloudFlare; please note, the steps 
 
 	Using the domain "isaackim.info", below is a command line DIG command to confirm that the NS records have been updated to reflect the required changes:
 
-![](media/ios-universal-links/UL-workflow-final_original.png)
+```dig isaackim.info NS
+
+; <<>> DiG 9.8.3-P1 <<>> isaackim.info NS
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 25635
+;; flags: qr rd ra; QUERY: 1, ANSWER: 2, AUTHORITY: 0, ADDITIONAL: 0
+
+;; QUESTION SECTION:
+;isaackim.info.			IN	NS
+
+;; ANSWER SECTION:
+isaackim.info.		86400	IN	NS	peyton.ns.cloudflare.com.
+isaackim.info.		86400	IN	NS	aron.ns.cloudflare.com.
+
+;; Query time: 128 msec
+;; SERVER: 10.76.3.194#53(10.76.3.194)
+;; WHEN: Tue May  9 10:15:20 2017
+;; MSG SIZE  rcvd: 88```
+
 
 4. Add a new CNAME entry that points your domain to sparkpost.com
 
