@@ -51,6 +51,19 @@ function delete_related_media() {
   echo "${image_ids[@]}"
 }
 
+function get_contributors() {
+  local filepath="$1"
+  local curl_url="https://api.github.com/repos/SparkPost/support-docs/commits?path=$filepath"
+
+  if [  -z ${GITHUB_TOKEN+x} ]; then
+    result=$(curl -s $curl_url)
+  else
+    result=$(curl -s -H "Authorization: token $GITHUB_TOKEN" $curl_url)
+  fi
+
+  echo $(echo $result | jq '[ .[] | {name: .commit.committer.name, html_url: .committer.html_url, avatar_url: .committer.avatar_url} ] | unique')
+}
+
 function generate_html() {
   local filepath="$1"
   local imported_image_ids=("${@:2}")
@@ -71,7 +84,9 @@ fi
 
 for filepath in "${CHANGED_FILES[@]}"; do
   slug=$(slugify "$(get_filename $filepath)")
-  print_title "$slug"
+  cat_slug=$(slugify "$(basename "$(dirname "$filepath")")")
+  
+  print_title "$cat_slug/$slug"
 
   if [ $(get_ext "$filepath") != "md" ]; then
     echo "Unknown extension - skipping"
@@ -85,6 +100,7 @@ for filepath in "${CHANGED_FILES[@]}"; do
     continue
   fi
 
+  contributors=$(get_contributors "$filepath")
   wp_post_index=$(index_of "${WP_POST_SLUGS[@]}" "$slug")
 
   md_post=$(node bin/markdown.js "$filepath")
@@ -100,13 +116,18 @@ for filepath in "${CHANGED_FILES[@]}"; do
     if [[ $wp_post_id =~ $NUMBER_PATTERN ]]; then
       echo " - Success: Created post $wp_post_id."
 
-      cat_slug=$(slugify "$(basename "$(dirname "$filepath")")")
+      # add category
       echo " - $(do_wp post term add "$wp_post_id" "$WP_CUSTOM_TAX" "$cat_slug")"
 
+      # add contributors
+      echo " - $(do_wp post meta add "$wp_post_id" "contributors" "$contributors")"
+
+      # add media
       echo " - Importing related media"
       imported_image_ids=($(import_related_media "$wp_post_id" "$(dirname "$filepath")" "$md_post_images"))
       echo " - Imported ${#imported_image_ids[@]} files"
 
+      # update the content with the images in it
       md_post_content=$(generate_html "$filepath" "${imported_image_ids[@]}")
 
       echo " - $(do_wp post update $wp_post_id --post_content="$md_post_content" --post_excerpt="$md_post_excerpt")"
@@ -120,13 +141,17 @@ for filepath in "${CHANGED_FILES[@]}"; do
   # update
   if [ -n "$md_post" ] && [ "-1" != "$wp_post_index" ]; then
     wp_post_id=${WP_POST_IDS[$wp_post_index]}
-    cat_slug=$(slugify "$(basename "$(dirname "$filepath")")")
     
     echo " - Updating post"
 
+    # update category
     echo " - $(do_wp post term remove "$wp_post_id" "$WP_CUSTOM_TAX" $(do_wp post term list "$wp_post_id" "$WP_CUSTOM_TAX" --format=ids))"
     echo " - $(do_wp post term add "$wp_post_id" "$WP_CUSTOM_TAX" "$cat_slug")"
 
+    # update the contributors
+    echo " - $(do_wp post meta update "$wp_post_id" "contributors" "$contributors")"
+
+    # update media
     echo " - Deleting related media"
     deleted_image_ids=($(delete_related_media "$wp_post_id"))
     echo " - Deleted ${#deleted_image_ids[@]} files"
@@ -135,6 +160,7 @@ for filepath in "${CHANGED_FILES[@]}"; do
     imported_image_ids=($(import_related_media "$wp_post_id" "$(dirname "$filepath")" "$md_post_images"))
     echo " - Imported ${#imported_image_ids[@]} files"
 
+    # update the content
     md_post_content=$(generate_html "$filepath" "${imported_image_ids[@]}")
 
     echo " - $(do_wp post update $wp_post_id --post_title="$md_post_title" --post_content="$md_post_content" --post_excerpt="$md_post_excerpt")"
