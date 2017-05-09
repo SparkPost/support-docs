@@ -136,9 +136,14 @@ for filepath in "${CHANGED_FILES[@]}"; do
     
     echo " - Updating post"
 
+    # update category
     echo " - $(do_wp post term remove "$wp_post_id" "$WP_CUSTOM_TAX" $(do_wp post term list "$wp_post_id" "$WP_CUSTOM_TAX" --format=ids))"
     echo " - $(do_wp post term add "$wp_post_id" "$WP_CUSTOM_TAX" "$cat_slug")"
 
+    # update the contributors
+    echo " - $(do_wp post meta update "$wp_post_id" "contributors" "$contributors")"
+
+    # update media
     echo " - Deleting related media"
     deleted_image_ids=($(delete_related_media "$wp_post_id"))
     echo " - Deleted ${#deleted_image_ids[@]} files"
@@ -147,6 +152,7 @@ for filepath in "${CHANGED_FILES[@]}"; do
     imported_image_ids=($(import_related_media "$wp_post_id" "$(dirname "$filepath")" "$md_post_images"))
     echo " - Imported ${#imported_image_ids[@]} files"
 
+    # update the content
     md_post_content=$(generate_html "$filepath" "${imported_image_ids[@]}")
 
     echo " - $(do_wp post update $wp_post_id --post_title="$md_post_title" --post_content="$md_post_content" --post_excerpt="$md_post_excerpt")"
