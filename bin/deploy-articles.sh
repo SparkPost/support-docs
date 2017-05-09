@@ -77,7 +77,10 @@ fi
 
 for filepath in "${CHANGED_FILES[@]}"; do
   slug=$(slugify "$(get_filename $filepath)")
-  print_title "$slug"
+  cat_slug=$(slugify "$(basename "$(dirname "$filepath")")")
+  contributors=$(get_contributors "$filepath")
+
+  print_title "$cat_slug/$slug"
 
   if [ $(get_ext "$filepath") != "md" ]; then
     echo "Unknown extension - skipping"
@@ -107,7 +110,6 @@ for filepath in "${CHANGED_FILES[@]}"; do
       echo " - Success: Created post $wp_post_id."
 
       # add category
-      cat_slug=$(slugify "$(basename "$(dirname "$filepath")")")
       echo " - $(do_wp post term add "$wp_post_id" "$WP_CUSTOM_TAX" "$cat_slug")"
 
       # add contributors
@@ -132,7 +134,6 @@ for filepath in "${CHANGED_FILES[@]}"; do
   # update
   if [ -n "$md_post" ] && [ "-1" != "$wp_post_index" ]; then
     wp_post_id=${WP_POST_IDS[$wp_post_index]}
-    cat_slug=$(slugify "$(basename "$(dirname "$filepath")")")
     
     echo " - Updating post"
 
