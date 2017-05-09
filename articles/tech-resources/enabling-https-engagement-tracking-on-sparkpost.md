@@ -60,12 +60,19 @@ isaackim.info.		86400	IN	NS	aron.ns.cloudflare.com.
 
 Using an engagement tracking domain of "isaackim.info" in SparkPost, the appropriate CNAME record under the DNS tab of CloudFlare has been added.
 
+![](media/enabling-https-engagement-tracking-on-sparkpost/CNAMEtospgoio.png)
+
 5. Navigate to the Page Rules settings for the domain.
-6. Create a page rule for the domain that sets SSL to “Full”. This is required for how CloudFlare will validate the certificate on the origin. 
+6. Create a page rule for the domain that sets SSL to “Full”. This is required for how CloudFlare will validate the certificate on the origin.
+
+![](media/enabling-https-engagement-tracking-on-sparkpost/page%20rule.png)
 	
 More information on SSL options for Cloudflare can be found [here](https://support.cloudflare.com/hc/en-us/articles/200170416). 
 
 7. Turn the page rule "on."
+
+![](media/enabling-https-engagement-tracking-on-sparkpost/SSL%20full.png)
+
 8. Reach out to SparkPost Support and request that HTTPS engagement tracking be enabled on your account. They will verify the configuration and enable the setting on your account.
 
 ## Additional Resources for Content Delivery Networks
