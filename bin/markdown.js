@@ -2,11 +2,10 @@
 
 const fs = require('fs');
 const path = require('path');
-const highlightParser = require('markdown-it-highlightjs');
-const metaParser = require('markdown-it-meta');
 const markdownIt = require('markdown-it');
+const metaParser = require('markdown-it-meta');
+const anchorTitles = require('markdown-it-anchor');
 const handleImages = require('./handle-images');
-const compact = require('lodash.compact');
 let replaceImagesArray = undefined;
 
 if (process.argv.length < 3)
@@ -31,6 +30,12 @@ const md = markdownIt({
   }
 })
 .use(metaParser)
+.use(anchorTitles, {
+  permalink: true,
+  permalinkClass: 'h-and-a-anchor',
+  permalinkBefore: true,
+  permalinkSymbol: '#'
+})
 .use(handleImages({ replaceImagesArray }));
 
 try {
