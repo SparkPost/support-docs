@@ -5,6 +5,8 @@ description: "Description of the article here"
 
 ## Heading
 
+To predict the ID for the heading use [this tool](https://codepen.io/avrahamgoldman/full/XRZxrz).
+
 This is a block of text. You can do things like **bold** and *italic*.
 
 ### Lists
