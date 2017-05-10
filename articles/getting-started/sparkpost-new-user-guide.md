@@ -33,14 +33,14 @@ Note: SparkPost Support does not directly support any third party application or
 
 After you have completed the steps above, your SparkPost account will be ready to send email, but there are a few best practices you should have in place before you begin sending email. These fall into several categories, explained further below. Use these quick links to jump to a specific section:
 
-* [REST API Injection Performance Best Practices](#link-api)
-* [Metadata and Other Attributes](#lnk-metadata)
-* [Webhook Best Practices](#lnk-webhooks)
-* [List Hygiene Activities](#lnk-list-hygiene)
-* [Global Suppression List + Customer-Specific Suppression List Functionalit](#lnk-suppression)
-* [FAQ](#lnk-faq)
+* [REST API Injection Performance Best Practices](#rest-api-injection-performance-best-practices)
+* [Metadata and Other Attributes](#metadata-and-other-attributes)
+* [Webhook Best Practices](#webhook-best-practices)
+* [List Hygiene Activities](#list-hygiene-activities)
+* [Global Suppression List + Customer-Specific Suppression List Functionalit](#global-suppression-list-customer-specific-suppression-list-functionality)
+* [FAQ](#faq)
 
-## <a id="lnk-api">REST API Injection Performance Best Practices</a>
+## REST API Injection Performance Best Practices
 
 Sizing considerations for multiple recipient transmissions:
 
@@ -49,7 +49,7 @@ Sizing considerations for multiple recipient transmissions:
 * Performance of the transmission API is better when there are more transmissions and fewer recipients per transmission. Five transmissions of 10,000 recipients generally has better throughput than one transmission with 50,000 recipients.
 * We recommend you inject transmissions in parallel with up to 50 open concurrent connections.  
 
-## <a id="lnk-metadata">Metadata and Other Attributes</a>
+## Metadata and Other Attributes
 
 Total size of metadata per message (recipient level metadata + transmission-level metadata) cannot exceed 1000 bytes/characters (if it exceeds this limit the data will be truncated within open and click events).
 
@@ -65,11 +65,11 @@ Tagging links – group or mark links using the “data-msys-linkname” custom 
 If you are using SMTP injection, you can set metadata on your messages by including the X-MSYS-API header. More information on how to formulate this header can be found [here](https://developers.sparkpost.com/api/smtp-api.html).
 ​ 
 
-## <a id="lnk-webhooks">Webhook Best Practices</a>
+## Webhook Best Practices
 
 [This article](https://support.sparkpost.com/customer/en/portal/articles/2220552-best-practices-for-managing-webhook-data-streams#Webhook) explains best practices for digesting webhook event data and explains our webhook retry logic.
 
-## <a id="lnk-list-hygiene">List Hygiene Activities</a>
+## List Hygiene Activities
 
 All SparkPost Elite should take action on the following web hook events and mark the recipients appropriately:
 
@@ -91,11 +91,11 @@ All SparkPost Elite should take action on the following web hook events and mark
 
 *   ​These events are a result of one of four conditions.  Previous Hard Bounce (10, 30, 90), previous Link/List Unsubscribe, previous Spam Complaint, or if therecipient matches a proprietary list of know bad domains (eg. gmai.cm, yaho.com, etc.).  The 'raw_reason' is provided in the json payload. These should not be retried. 
 
-## <a id="lnk-suppression">Global Suppression List + Customer-Specific Suppression List Functionality</a>
+## Global Suppression List + Customer-Specific Suppression List Functionality
 
 A general overview of our suppression list functionality can be found [here](https://support.sparkpost.com/customer/portal/articles/1929891). It is highly recommended that you become familiar with this system to ensure your messages are appropriately suppressed when needed.
 
-## <a id="lnk-faq">FAQ</a>
+## FAQ
 
 Q: How do I check how many messages I've sent or have left? What happens if I go over my limit?
 

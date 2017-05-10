@@ -10,12 +10,12 @@ description: "Note This Knowledge Base Article Is For Spark Post Enterprise Only
 
 Use these quick links to jump to certain sections of this article:
 
-* [Introduction](#Introduction)
-* [Benefits of Universal Links](#Benefits-of-Universal-Links)
-* [Summarized Workflow of Universal Links Setup and Operation](#Summarized-Workflow-of-Universal-Links-Setup-and-Operation)
-* [As a SparkPost Enterprise Customer, What Steps Do I Need to Take?](#As-a-SparkPost-Enterprise-Customer-What-Steps-Do-I-Need-to-Take)
-* [Creating Universal Links in Templates with Sub-Pathing](#Creating-Universal-Links-in-Templates-with-Sub-Pathing)
-* [End User Caveats with Universal Links](#End-User-Caveats-with-Universal-Links)
+* [Introduction](#introduction)
+* [Benefits of Universal Links](#benefits-of-universal-links)
+* [Summarized Workflow of Universal Links Setup and Operation](#summarized-workflow-of-universal-links-setup-and-operation)
+* [As a SparkPost Enterprise Customer, What Steps Do I Need to Take?](#as-a-sparkpost-enterprise-customer-what-steps-do-i-need-to-take)
+* [Creating Universal Links in Templates with Sub-Pathing](#creating-universal-links-in-templates-with-sub-pathing)
+* [End User Caveats with Universal Links](#end-user-caveats-with-universal-links)
 
 ## Introduction
 
