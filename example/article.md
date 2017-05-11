@@ -1,6 +1,7 @@
 ---
 title: "Article Title Here"
 description: "Description of the article here"
+notification: "I will show up at the top of the article to call something out"
 ---
 
 ## Heading

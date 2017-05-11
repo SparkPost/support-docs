@@ -107,6 +107,12 @@ for filepath in "${CHANGED_FILES[@]}"; do
   md_post_images=("$(echo $md_post | jq --compact-output --raw-output '.images')")
   md_post_title="$(echo $md_post | jq '.meta.title' --raw-output)"
   md_post_excerpt="$(echo $md_post | jq '.meta.description' --raw-output)"
+  md_post_notification="$(echo $md_post | jq '.meta.notification' --raw-output)"
+  
+  if [ "$md_post_notification" == "null" ]; then
+    md_post_notification=''
+  fi
+  
 
   # create
   if [ -n "$md_post" ] && [ "-1" == "$wp_post_index" ]; then
@@ -121,6 +127,9 @@ for filepath in "${CHANGED_FILES[@]}"; do
 
       # add contributors
       echo " - $(do_wp post meta add "$wp_post_id" "contributors" "$contributors")"
+
+      # add notification
+      echo " - $(do_wp post meta add "$wp_post_id" "notification" "$md_post_notification")"
 
       # add media
       echo " - Importing related media"
@@ -148,8 +157,11 @@ for filepath in "${CHANGED_FILES[@]}"; do
     echo " - $(do_wp post term remove "$wp_post_id" "$WP_CUSTOM_TAX" $(do_wp post term list "$wp_post_id" "$WP_CUSTOM_TAX" --format=ids))"
     echo " - $(do_wp post term add "$wp_post_id" "$WP_CUSTOM_TAX" "$cat_slug")"
 
-    # update the contributors
+    # update contributors
     echo " - $(do_wp post meta update "$wp_post_id" "contributors" "$contributors")"
+
+    # add notification
+    echo " - $(do_wp post meta update "$wp_post_id" "notification" "$md_post_notification")"
 
     # update media
     echo " - Deleting related media"
