@@ -4,7 +4,7 @@ redirect_from: "https://support.sparkpost.com/customer/portal/articles/2360320-s
 description: "Table of Contents Use these links to jump to certain sections of this article Overview Terminology Summary of Subaccount Features Use Cases Master Account Managing Subaccounts Master Account Reporting by Subaccount Master Account Operating on Behalf of a Subaccount Subaccount Self Service a id Overview name Overview Overview a This..."
 ---
 
-## Table of Contents 
+## Table of Contents
 
 Use these links to jump to certain sections of this article
 
@@ -37,8 +37,9 @@ You will have the ability to:
 * Run reports in the UI by subaccount
 * Get raw message event data by subaccount
 * Get aggregated statistics by subaccount using the Metrics API
+* Separate suppression lists by subaccount automatically
+* Create a webhook that will only receive raw event data for a subaccount
 * Identify the subaccount on each raw event in the webhook data stream
-* Separate suppression lists by subaccount automatically​
 
 In addition, your subaccount users will be able to:
 
@@ -47,6 +48,7 @@ In addition, your subaccount users will be able to:
 * Set up their own sending domains via the API
 * Get raw message event data via the API
 * View and manage the suppression list via the API​
+* Set up their own webhook via the API
 
 ### Use Cases
 
@@ -78,6 +80,7 @@ The following is a list of permissions supported for subaccount API keys:
 * Tracking domains (read/write)
 * Message Events API (read only)
 * Suppression list (read/write) 
+* Event Webhooks (read/write)
 
 **Default IP Pool/Binding Group Configuration**
 
@@ -166,6 +169,10 @@ The master account may send as the subaccount with the transmission API by inclu
 
 The master account may submit traffic on behalf of the subaccount SMTP by providing the subaccount's API key with an SMTP grant in the TLS auth-password field. **Note**: The master account can send using a master account API key by appending the standard "SMTP_Injection" user with the subaccount ID. Please refer to [the documentation](https://developers.sparkpost.com/api/?_ga=1.144252341.1033930248.1481562971#/introduction/smtp-relay-endpoints) for specifics on how to perform this operation.
 
+**Event Webhooks**
+
+The master account may create a webhook as the subaccount with the webhooks API by including the X-MSYS-SUBACCOUNT HTTP header. If the header is not present, the webhook will be executed as the master account.
+
 ### Subaccount Self Service
 
 Subaccounts have limited access to system operations, data, and assets. The access will be limited to the API key permissions you provide to the subaccount. Subaccounts can only retrieve their own message events data, which is sourced from the message events API.
@@ -176,7 +183,8 @@ Subaccounts have limited access to system operations, data, and assets. The acce
 * Message Events API
 * Sending Domains API
 * Tracking Domains API
-* Suppression List API​
+* Suppression List API
+* Event Webhooks API
 
 Sending domain and tracking domain functionality afforded to subaccount users are create, edit, and delete, as well as being able to verify their own sending domain/tracking domain. Subaccounts can also edit and retrieve their unique suppression lists.
 
