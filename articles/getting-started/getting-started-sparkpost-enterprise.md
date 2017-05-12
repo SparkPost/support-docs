@@ -10,17 +10,17 @@ The following article is a collection of helpful introductory topics regarding g
 
 The topics discussed in this article include:
 
-* [SMTP Injection](#lnk-smtp-injection)
-* [REST API Injection](#lnk-rest-injection)
-* [META Data and Other Attributes](#lnk-metadata)
-* [Webhooks](#lnk-webhooks)
-* [System Monitoring Events](#lnk-monitoring)
-* [List Hygiene Activities](#lnk-list-hygiene)
-* [Global Suppression List + Customer-Specific Exclusion List Functionality](#lnk-suppression)
-* [Transactional / Non-transactional Message Designation](#lnk-message-designation)
-* [Subaccounts](#lnk-subaccounts)
+* [SMTP Injection](#smtp-injection)
+* [REST API Injection](#rest-api-injection)
+* [META Data and Other Attributes](#metadata-and-other-attributes)
+* [Webhooks](#webhooks)
+* [System Monitoring Events](#system-monitoring-events)
+* [List Hygiene Activities](#list-hygiene-activities)
+* [Global Suppression List + Customer-Specific Exclusion List Functionality](#global-suppression-list-customer-specific-exclusion-list-functionality)
+* [Transactional / Non-transactional Message Designation](#transactionalnon-transactional-message-designation)
+* [Subaccounts](#subaccounts)
 
-## <a id="lnk-smtp-injection">SMTP Injection</a>
+## SMTP Injection
 
 SMTP injections typically use two headers, though only one is required (X-Binding), whereas the other (X-MSYS-API header) is optional. The X-MSYS-API header is a JSON-formatted header which will allow you to set open and click tracking options, set metadata, and designate a campaign ID if one is desired. The other, “X-Binding”, is used to set which binding you will use for outgoing mail.  Failure to set the "X-Binding" will result in the message being blackholed.
 
@@ -29,7 +29,7 @@ Examples:
 * `X-Binding: marketing`
 * `X-MSYS-API: {"options" : {"open_tracking" : true, "click_tracking" : true}, "metadata" :  {"promotions" : "sales"}, "campaign_id" : "summer_clearance_2015"}`
 
-## <a id="lnk-rest-injection">REST API Injection</a>
+## REST API Injection
 
 * Use the metadata "binding" key for binding assignment (preferred to header-based method, if using REST)
     * Example: "binding" : "marketing"
@@ -39,7 +39,7 @@ Examples:
     * Performance of the transmission API is better when there are more transmissions and fewer recipients per transmission. Five transmissions of 10,000 recipients generally has better throughput than one transmission with 50,000 recipients.
     * We recommend you inject transmissions in parallel with up to 50 open concurrent connections.
 
-## <a id="lnk-metadata">Metadata and Other Attributes</a>
+## Metadata and Other Attributes
 
 * Total size of metadata per message (recipient level metadata + transmission-level metadata) cannot exceed 1000 bytes/characters (if it exceeds this limit the data will be truncated within open and click events).
 * Tagging links – group or mark links using the “data-msys-linkname” custom attribute for optimal UI experience and performance.
@@ -48,16 +48,16 @@ Examples:
 * `campaign_id` is best suited for attributes that you will use for filtering on the user interface.  The total number of unique campaign_ids should be in the 100s — not in the 10k range.
     * If you routinely re-use the same campaign, it is recommended that you do not name each individual campaign by date, e.g. "Christmas_Campaign_2015-Dec-21". Instead, keep your campaign names generic (e.g. "Christmas_Campaign) and use a combination of metadata and date-time stamps to identify messages belonging to campaigns in either webhook data or Message Events API data.
 
-## <a id="lnk-webhooks">Webhooks</a>
+## Webhooks
 
 In order to respond as quickly to a batch of events, subscribers should defer any processing until after the response to our webhooks system is made. With a 2xx, any non 2xx errors will be eventually retried.
 Avoid retries by listening to http close events. These events will notify when SparkPost Enterprise webhooks timeout. Stopping any executing code on a particular batch that timed out will help overall performance since that particular batch will be retried.
 
-## <a id="lnk-monitoring">System Monitoring Events</a>
+## System Monitoring Events
 
 You can expect to see a number of events that are created for purposes of monitoring your SparkPost Enterprise environment - it will be in the range of several thousand per day. **All of these events for monitoring have a campaign_id that starts with “msys*”** (please note the asterisk is a wildcard for a single character or string of characters) – you can easily filter these from your event data.
 
-## <a id="lnk-list-hygiene">List Hygiene Activities</a>
+## List Hygiene Activities
 
 All SparkPost Enterprise customers should take action on the following web hook events and mark the recipients appropriately:
 
@@ -71,7 +71,7 @@ All SparkPost Enterprise customers should take action on the following web hook 
 * "Generation Failure"
     * These events are a result of one of four conditions.  Previous Hard Bounce (10, 30, 90), previous Link/List Unsubscribe, previous Spam Complaint or recipient matches a proprietary list of know bad domains (eg. gmai.cm, yaho.com, etc.).  The 'raw_reason' is provided in the json payload. These should not be retried.
 
-## <a id="lnk-suppression">Global Suppression List + Customer-Specific Exclusion List Functionality</a>
+## Global Suppression List + Customer-Specific Exclusion List Functionality
 
 SparkPost Enterprise maintains a proprietary global suppression list that is on by default for all customers designed to automatically suppress messages targeting addresses that are known spam traps or role accounts (e.g. "postmaster@" or "admin@"). Any message that is attempted which is on the global suppression list will automatically fail. The event data associated with a global suppression will always look like this - ***554 5.7.1 recipient address was suppressed due to system policy.***
 
@@ -81,7 +81,7 @@ If any address present on the given suppression list for the type of message you
 
 **Note**: For single recipient transmissions, if a given email address is suppressed, the API response for the rejection will appear inline. However, if you are using multiple recipient transmissions, the API response will initially accept addresses which will be suppressed later in the message generation process. For multiple recipient transmissions which contain a suppressed address, you will notice that an injection event is recorded before the ultimate suppression, but an injection event is not recorded for a single recipient, inline suppression.
 
-## <a id="lnk-message-designation">Transactional/Non-Transactional Message Designation</a>
+## Transactional/Non-Transactional Message Designation
 
 Because SparkPost Enterprise maintains two separate exclusion lists specific to your environment based upon a transactional and non-transactional message designation, it's a good idea to appropriately mark your messages by setting this flag either using the REST API or via the X-MSYSAPI header for SMTP transactions. This is set as a boolean value nested beneath the options object.
 
@@ -101,6 +101,6 @@ Example:
 
 Ensuring that you set the value properly for all messages from the start will prevent situations from occurring whereby an important transactional message (such as an order confirmation, legal notice, etc.) can still reach a recipient even if they might have complained or unsubscribed from your marketing communications, and thus are present in your non-transactional exclusion list.
 
-## <a id="lnk-subaccounts">Subaccounts</a>
+## Subaccounts
 
 Subaccounts allow you to support separate business units, mailstreams, or customers (if you are an email service provider) all from within your SparkPost account. Subaccounts enable you to give each of these units direct access to the SparkPost messaging service APIs. If you would like to set up subaccounts in your Enterprise environment, it is strongly recommended that you first review [this article](https://support.sparkpostelite.com/customer/en/portal/articles/2360320-subaccounts-in-sparkpost-and-sparkpost-elite?b_id=8730) first. If you have subsequent questions, please reach out to your TAM.

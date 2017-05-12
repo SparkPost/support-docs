@@ -29,7 +29,7 @@ A recipient's address attribute can now be a JSON array to allow for easier mult
 
 **Note: Any platform-specific features need to be added in their own part of the push object.**
 
-The [simple example below](#lnk-simple-example) shows "color" was given in the GCM push object. Once this push information was received by the end user's mobile device, any phone notification light with the appropriate permissions set would flash SparkPost orange. Our use of "badge" in the [simple example](#lnk-simple-example) APN block will make the app icon on the home screen of the iOS device show one notification.
+The [simple example below](#simple-push-notification-example) shows "color" was given in the GCM push object. Once this push information was received by the end user's mobile device, any phone notification light with the appropriate permissions set would flash SparkPost orange. Our use of "badge" in the [simple example](#simple-push-notification-example) APN block will make the app icon on the home screen of the iOS device show one notification.
 
 **Note:** Substitution data is **not** supported for push content. When all recipients are email channels, do **not** include the push object, as this will break email substitution. 
 
@@ -53,7 +53,7 @@ Since all push notifications are sent out of the same binding group/IP pool, we 
 
 ## Example Transmissions API Code for Push Notifications
 
-### <a id="lnk-simple-example" name="Simple Example">Simple Push Notification Example:</a>
+### Simple Push Notification Example:
 
 ```json
 {

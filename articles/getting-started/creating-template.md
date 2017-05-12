@@ -95,7 +95,7 @@ Once you have all the prerequisites on-hand, you're ready to read the [Template
 
 ## Authoring HTML Content for your Templates
 
-If your email template requires any type of customized data to be displayed, please take a moment and read [How to use substitution data to create dynamic email transmissions](http://docs.sparkpostapi.apiary.io/#reference/substitutions-reference "How to use Substitution Data to Create Dynamic Email Transmissions").
+If your email template requires any type of customized data to be displayed, please take a moment and read [How to use substitution data to create dynamic email transmissions](https://developers.sparkpost.com/api/substitutions-reference.html "How to use Substitution Data to Create Dynamic Email Transmissions").
 
 * **Choose HTML in the Template Editor:** Choose "HTML" in the drop-down (note this may be labeled "Text" if you were [authoring the text version of your email template](https://support.sparkpost.com/customer/portal/articles/1929890-creating-a-template#sparkpost-templates-text-content "Authoring TEXT Content in Email Templates").
 * **Insert your HTML:** You can either use the SparkPost HTML editor or you can copy and paste your HTML into the Template Editor.

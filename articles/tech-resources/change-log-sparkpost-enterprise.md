@@ -2,11 +2,18 @@
 title: "SparkPost Enterprise Change Log"
 redirect_from: "https://support.sparkpost.com/customer/portal/articles/2247030-change-log"
 description: "Note This Change Log is for Spark Post Enterprise Only A running log of new features and capabilities that have been rolled out on the Spark Post Enterprise service The API reference can be found here https www sparkpost com api reference Next scheduled upgrade date coming soon 27 February..."
+notification: "This Change Log is for SparkPost Enterprise Only"
 ---
 
-<div class="alert alert-info"><i class="fa fa-info-circle"></i> This Change Log is for SparkPost Enterprise Only</div>
-
 A running log of new features and capabilities that have been rolled out on the SparkPost Enterprise service. The API reference can be found [here](https://developers.sparkpost.com/api).
+
+### 28 April, 2017
+
+* **New:** Support for GCM (Android) Deep Linking
+  * Similar to support for iOS Universal links, SparkPost now supports Android's deep linking feature that links the mobile push recepient into a specific page of the sender's app (if one is installed), rather than the mobile browser.
+  * [Knowledge Base article](https://www.sparkpost.com/docs/tech-resources/android-digital-asset-links/)
+* **Enhancement:** Improve suppression list lookups
+  * Customers can now view their suppression list changes in a more 'real-time' manner by using the x-msys-subaccount header to perform the lookup against a specific suppression list (master or subaccount). The broader search across all lists (master + subaccount) is still available.
 
 ### 27 February, 2017
 

@@ -8,20 +8,20 @@ description: "Table of Contents Use these links to jump to certain sections of t
 
 Use these links to jump to certain sections of this article
 
-* [Overview](#lnk-overview)
-* [Terminology](#lnk-terminology)
-* [Summary of Subaccount Features](#lnk-subaccount-features)
-* [Use Cases](#lnk-use-cases)
-* [Master Account: Managing Subaccounts](#lnk-managing-subaccounts)
-* [Master Account: Reporting by Subaccount](#lnk-reporting-subaccount)
-* [Master Account: Operating on Behalf of a Subaccount](#lnk-operating-subaccount)
-* [Subaccount Self Service​](#lnk-subaccount-self-service)
+* [Overview](#overview)
+* [Terminology](#terminology)
+* [Summary of Subaccount Features](#summary-of-subaccount-features)
+* [Use Cases](#use-cases)
+* [Master Account: Managing Subaccounts](#master-account-managing-subaccounts)
+* [Master Account: Reporting by Subaccount](#master-account-reporting-by-subaccount)
+* [Master Account: Operating on Behalf of a Subaccount](#master-account-operating-on-behalf-of-a-subaccount)
+* [Subaccount Self Service​](#subaccount-self-service)
 
-### <a id="lnk-overview" name="Overview">Overview</a>
+### Overview
 
 This article is intended for master account administrators (not subaccount users).  It introduces our subaccount functionality in SparkPost and SparkPost Enterprise. The subaccount functionality will allow you to support separate business units, mailstreams, or customers (if you are an email service provider) all from within your SparkPost account. Subaccounts enable you to give each of these units direct access to the SparkPost messaging service APIs. (Subaccount users will not have separate access in the UI.)
 
-### <a id="lnk-terminology" name="Terminology">Terminology</a>
+### Terminology
 
 **Master Account** - This refers to the top-level organization from which all subaccounts originate.
 
@@ -29,7 +29,7 @@ This article is intended for master account administrators (not subaccount users
 
 **Subaccount Assets** - Data elements that belong solely to a subaccount, such as suppression lists, API keys, sending domains, etc.
 
-### <a id="lnk-subaccount-features" name="Summary of Subaccount Features">Summary of Subaccount Features</a>
+### Summary of Subaccount Features
 
 You will have the ability to:
 
@@ -48,7 +48,7 @@ In addition, your subaccount users will be able to:
 * Get raw message event data via the API
 * View and manage the suppression list via the API​
 
-### <a id="lnk-use-cases" name="Use Cases">Use Cases</a>
+### Use Cases
 
 Subaccounts can be used in a variety of ways depending on your needs. The most common reason to set up subaccounts is to give each unit the ability to access/use SparkPost separately (using different sending domains and API keys) and to separate their reporting data accordingly.
 
@@ -58,7 +58,7 @@ The following is a list of potential, common use cases for using subaccounts:
 *   You have unique internal business units who operate independently from one another.
 *   You have a particular mailstream/campaign that is mission critical and you wish to track and sequester its data separately from other mailstreams/campaigns.
 
-### <a id="lnk-managing-subaccounts" name="Master Account: Managing Subaccounts">Master Account: Managing Subaccounts</a>
+### Master Account: Managing Subaccounts
 
 **Creating Subaccounts**
 
@@ -106,7 +106,7 @@ Administrators can also choose to edit the subaccount name, or change the subacc
 
 All that you need to give your customer/subaccount user(s) is the subaccount API key - they will use it for all operations afforded via the default API key created upon subaccount creation.
 
-### <a id="lnk-reporting-subaccount" name="Master Account: Reporting by Subaccount">Master Account: Reporting by Subaccount</a>
+### Master Account: Reporting by Subaccount
 
 Master accounts can filter reporting by a single subaccount in the UI. These reports include:
 
@@ -124,7 +124,7 @@ The master account can also filter reporting by a single subaccount in the API i
 
 Subaccount event data is provided via webhooks and the message events API. The subaccount_id key/value pair indicates which subaccount the event is attributed. You can use this attribute to filter/manage raw events by subaccount outside of SparkPost. Please note, you cannot create a webhook to stream only raw event data for a specific subaccount.
 
-### <a id="lnk-operating-subaccount" name="Master Account: Operating on Behalf of a Subaccount">Master Account: Operating on Behalf of a Subaccount</a>
+### Master Account: Operating on Behalf of a Subaccount
 
 For each of the APIs listed below, the master account may perform several operations on behalf of the subaccount. If you wish to perform an action on behalf of a subaccount, you must include the X-MSYS-SUBACCOUNT HTTP header (SMTP injection is an exception; see below) with the value set to the subaccount ID associated with the selected subaccount.
 
@@ -166,7 +166,7 @@ The master account may send as the subaccount with the transmission API by inclu
 
 The master account may submit traffic on behalf of the subaccount SMTP by providing the subaccount's API key with an SMTP grant in the TLS auth-password field. **Note**: The master account can send using a master account API key by appending the standard "SMTP_Injection" user with the subaccount ID. Please refer to [the documentation](https://developers.sparkpost.com/api/?_ga=1.144252341.1033930248.1481562971#/introduction/smtp-relay-endpoints) for specifics on how to perform this operation.
 
-### <a id="lnk-subaccount-self-service" name="Subaccount Self Service">Subaccount Self Service</a>
+### Subaccount Self Service
 
 Subaccounts have limited access to system operations, data, and assets. The access will be limited to the API key permissions you provide to the subaccount. Subaccounts can only retrieve their own message events data, which is sourced from the message events API.
 
