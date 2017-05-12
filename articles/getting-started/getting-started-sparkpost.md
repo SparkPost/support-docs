@@ -66,7 +66,9 @@ Note: SparkPost's Compliance team expect to see a [legitimate web presence](http
 
 To create your sending domain, visit the [Account -> Sending Domains](https://app.sparkpost.com/account/sending-domains) section of your SparkPost account and click the New Domain button. Enter your domain name and click Add Domain.
 
-TODO: ADD IMAGE - caption: Adding a sending domain
+![Adding a sending domain](media/getting-started-sparkpost/add-sending-domain.png)
+
+*Adding a sending domain*
 
 ### Step 2: Verifying Domain Ownership
 
@@ -78,7 +80,9 @@ Note: you will need admin access to your DNS configuration to complete this step
 
 To generate the DKIM DNS record for your sending domain, click the DKIM record *Settings* link under your domain on the [Sending Domains](https://app.sparkpost.com/account/sending-domains) list. Then use the revealed domain name, record type and value to update your DNS configuration. Each DNS provider has a slightly different interface; you'll want to create a "TXT" record with the hostname and value SparkPost shows you.
 
-TODO: ADD IMAGE - caption: Sending domain DKIM record
+![Sending domain DKIM record](media/getting-started-sparkpost/dkim-record.png)
+
+*Sending domain DKIM record*
 
 Here are some how-to documents for common DNS providers:
 
@@ -100,7 +104,9 @@ Alternately, you can verify ownership by receiving an email to an *admin account
 
 Your domain is now almost ready to send. Once ownership verification completes, your domain will be submitted to our Compliance robots for a few additional checks. Once they complete, you'll see a green tick beside your domain with the message "Ready to send".
 
-TODO: ADD IMAGE - caption: Ready to send
+![Ready to send](media/getting-started-sparkpost/ready-to-send.png)
+
+*Ready to send*
 
 ## Important: Coming From Other Email Services
 
@@ -210,13 +216,17 @@ SparkPost changes each link in your email to add tracking information, replacing
 
 You can use message events, metrics, and webhooks to keep track of your SparkPost account activity and email delivery performance. Metrics and message events are both available visually and through the SparkPost API, while webhooks offer an efficient way to have SparkPost push message events directly to your own app.
 
-TODO: ADD IMAGE - caption: Summary report
+![Summary report](media/getting-started-sparkpost/summary-report.png)
+
+*Summary report*
 
 ### Message Events
 
 Message events offer fine grained, per-recipient details, useful for checking the status of a single message or recipient. When you ask SparkPost to send an email, it emits a sequence of events so you can see when it's delivered, when the recipient opens it and clicks on links, and various related events. Here's a diagrammatic view of SparkPost's major message events in sequence:
 
-TODO: ADD IMAGE - caption: SparkPost message events in sequence
+![SparkPost message events in sequence](media/getting-started-sparkpost/message-events.png)
+
+*SparkPost message events in sequence*
 
 You can search 10 days of message events from your account in Reports -> [Message Events](https://app.sparkpost.com/reports/message-events) with the same data available through the [message events API endpoint](https://developers.sparkpost.com/api/message-events.html).
 
