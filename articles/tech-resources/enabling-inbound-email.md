@@ -1,6 +1,5 @@
 ---
 title: "Enabling Inbound Email Relaying & Relay Webhooks"
-redirect_from: "https://support.sparkpost.com/customer/portal/articles/2039614-enabling-inbound-email-relaying-relay-webhooks"
 description: "What is a Relay Webhook A Relay Webhook calls your consumer when a user sends an email to one of your domains Spark Post will receive an email sent to your Inbound Domain e g any local part your inbounddomain com format that email as a JSON payload and POST..."
 ---
 

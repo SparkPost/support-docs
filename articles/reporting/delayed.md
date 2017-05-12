@@ -1,6 +1,5 @@
 ---
 title: "Delayed"
-redirect_from: "https://support.sparkpost.com/customer/portal/articles/2035633-delayed"
 description: "This is a deeper dive into emails that have been delayed Here you will be able to see how many emails were automatically accepted how many were delayed how many were delivered on the very first attempt and what that converts to as a percentage It will also show you..."
 ---
 

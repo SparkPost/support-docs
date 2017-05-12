@@ -1,6 +1,5 @@
 ---
 title: "Using CC and BCC with the REST API"
-redirect_from: "https://support.sparkpost.com/customer/portal/articles/2432290-using-cc-and-bcc-with-the-rest-api"
 description: "Before getting started please read What are the differences between CC BCC and archive recipients Note to use CC BCC and Archiving with SMTP check out our SMTP API reference documentation Note Please be advised that CC and BCC messages count towards your usage What is CC CC is a..."
 ---
 

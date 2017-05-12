@@ -1,6 +1,5 @@
 ---
 title: "Subaccounts in Sparkpost and SparkPost Enterprise"
-redirect_from: "https://support.sparkpost.com/customer/portal/articles/2360320-subaccounts-in-sparkpost-and-sparkpost-enterprise"
 description: "Table of Contents Use these links to jump to certain sections of this article Overview Terminology Summary of Subaccount Features Use Cases Master Account Managing Subaccounts Master Account Reporting by Subaccount Master Account Operating on Behalf of a Subaccount Subaccount Self Service a id Overview name Overview Overview a This..."
 ---
 

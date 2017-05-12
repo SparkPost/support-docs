@@ -1,6 +1,5 @@
 ---
 title: "Enabling Multiple Custom Tracking Domains"
-redirect_from: "https://support.sparkpost.com/customer/portal/articles/2707424-enabling-multiple-custom-tracking-domains"
 description: "A tracking domain also referred to as an engagement tracking domain is the domain that a tracked link will redirect through before reaching the final URL path of the original link It is also used as the path for the tracking pixel to track message opens A recipient will see..."
 ---
 

@@ -1,6 +1,5 @@
 ---
 title: "Using Suppression Lists"
-redirect_from: "https://support.sparkpost.com/customer/portal/articles/1929891-using-suppression-lists"
 description: "Protecting your sender reputation is essential to maximizing your email deliverability Many inbox providers e g Yahoo Gmail Hotmail Outlook com or AOL opt to limit or refuse message traffic based on it Continuing to send messages to invalid email addresses or to recipients who no longer want to receive..."
 ---
 

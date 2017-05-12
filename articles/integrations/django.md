@@ -1,6 +1,5 @@
 ---
 title: "Using SparkPost with Django"
-redirect_from: "https://support.sparkpost.com/customer/portal/articles/2169630-using-sparkpost-with-django"
 description: "Note this article covers using Spark Post via SMTP with Django We also offer a Python client library that includes a Django email backend The simplest way to use Spark Post in your Django project is to configure its SMTP backend To configure Django’s SMTP backend put the following lines..."
 ---
 

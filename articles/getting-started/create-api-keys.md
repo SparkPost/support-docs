@@ -1,6 +1,5 @@
 ---
 title: "Create API Keys"
-redirect_from: "https://support.sparkpost.com/customer/portal/articles/1933377-create-api-keys"
 description: "Before you can use the Spark Post REST AP Is or SMTP injection you will need to have a valid Spark Post API key Below are the steps you will need to create a Spark Post API key IMPORTANT Make sure to copy and paste the API key when it..."
 ---
 

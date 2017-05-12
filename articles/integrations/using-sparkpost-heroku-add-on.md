@@ -1,6 +1,5 @@
 ---
 title: "Using The SparkPost Heroku Add-On"
-redirect_from: "https://support.sparkpost.com/customer/portal/articles/2207582-using-the-sparkpost-heroku-add-on"
 description: "The Spark Post add on in Heroku provides developers an easily accessible application to leverage for email delivery Spark Post is available via a modern RES Tful API and has supported client libraries for Node js Python PHP Java Ruby Go C and Elixir as well as documented examples in..."
 ---
 

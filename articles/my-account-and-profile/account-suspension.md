@@ -1,6 +1,5 @@
 ---
 title: "Account Suspension"
-redirect_from: "https://support.sparkpost.com/customer/portal/articles/2455201-account-suspension"
 description: "Spark Post monitors customer traffic sent through our service in a number of ways These monitoring checks are built in such a way to stop potential issues which can damage the reputation of our IP pools or the platform itself These systems are in place for the protection of our..."
 ---
 

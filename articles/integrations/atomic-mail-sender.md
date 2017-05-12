@@ -1,6 +1,5 @@
 ---
 title: "Using SparkPost with Atomic Mail Sender"
-redirect_from: "https://support.sparkpost.com/customer/portal/articles/2092471-using-sparkpost-with-atomic-mail-sender"
 description: "The following steps will walk you through using Spark Post with Atom Park Software's Atomic Mail Sender Click on Common Settings under the Settings menu and select the SMTP Tab Click on the green sign to set up a new SMTP account and enter the information in as shown Set..."
 ---
 

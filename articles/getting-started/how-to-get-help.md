@@ -1,6 +1,5 @@
 ---
 title: "How to get Help"
-redirect_from: "https://support.sparkpost.com/customer/portal/articles/2456522-how-to-get-help"
 description: "This guide will help you find the best resource for your inquiry and fastest resolution As a general rule first search in the latest API docs and knowledge base articles and then try the following Service Status Find out whether the service is up down sideways on vacation or going..."
 ---
 

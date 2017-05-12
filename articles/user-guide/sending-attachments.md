@@ -1,6 +1,5 @@
 ---
 title: "Sending Attachments in SparkPost and SparkPost Enterprise"
-redirect_from: "https://support.sparkpost.com/customer/portal/articles/2214831-sending-attachments-in-sparkpost-and-sparkpost-enterprise"
 description: "A transmission is a collection of messages belonging to the same campaign It is also known as a mailing The Transmissions API provides the means to manage transmissions Messages in the transmissions are generated and sent to a specified list of recipients using a specified message template The recipient list..."
 ---
 

@@ -1,6 +1,5 @@
 ---
 title: "Abuse@sparkpost.com is Not Returning My Emails"
-redirect_from: "https://support.sparkpost.com/customer/portal/articles/2124161-abuse-sparkpost-com-is-not-returning-my-emails"
 description: "If you have received an email from abuse sparkpost com and sent your reply but never heard back it could be because the email wasn't received for some reason This can sometimes happen if there is a problem with your IP reputation or if perhaps there are bad links in..."
 ---
 

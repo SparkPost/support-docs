@@ -1,6 +1,5 @@
 ---
 title: "Using SparkPost with eCampaign 11"
-redirect_from: "https://support.sparkpost.com/customer/portal/articles/2092525-using-sparkpost-with-ecampaign-11"
 description: "The following steps will walk you through using Spark Post with Lmh Soft's e Campaign 11 Click on Accounts to go to the Email Account Manager Click on the New button to set up a new SMTP profile and enter your name email address and reply to note that the..."
 ---
 

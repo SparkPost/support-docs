@@ -1,6 +1,5 @@
 ---
 title: "I'm Missing Click/Open Data"
-redirect_from: "https://support.sparkpost.com/customer/portal/articles/1929979-i-m-missing-click-open-data"
 description: "There are a few reasons why you may not be seeing open click data for your transmissions Please review the following list of conditions and configurations to debug your open click data not displaying If you're using a Template in your transmissions does the template have the Open Tracking and..."
 ---
 

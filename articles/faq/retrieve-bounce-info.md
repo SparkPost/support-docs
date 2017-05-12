@@ -1,6 +1,5 @@
 ---
 title: "How Do I Retrieve Bounce Info from SparkPost?"
-redirect_from: "https://support.sparkpost.com/customer/portal/articles/2461190-how-do-i-retrieve-bounce-info-from-sparkpost-"
 description: "Spark Post provides two options for pulling bounce info from Spark Post a push mechanism and a pull mechanism This article will explain both solutions in detail so that you may choose the one most appropriate to your use case and expertise Push Mechanism Webhooks The push mechanism that Spark..."
 ---
 

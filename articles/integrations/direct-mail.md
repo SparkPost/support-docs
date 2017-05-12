@@ -1,6 +1,5 @@
 ---
 title: "Using SparkPost with DirectMail"
-redirect_from: "https://support.sparkpost.com/customer/portal/articles/2040317-using-sparkpost-with-directmail"
 description: "The following steps will walk you through using Spark Post with e 3 Software's Direct Mail for Mac First you need to enable SMTP Access check out Direct Mail's article here http directmailmac com support article 232 Set up a new Mail Server profile and configure as below The password..."
 ---
 

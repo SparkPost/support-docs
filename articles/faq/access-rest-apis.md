@@ -1,6 +1,5 @@
 ---
 title: "How Do I Access the REST APIs?"
-redirect_from: "https://support.sparkpost.com/customer/portal/articles/1929977-how-do-i-access-the-rest-apis-"
 description: "Q What URL do I use to access the REST AP Is A The REST AP Is can be accessed at https api sparkpost com api v 1 so for example the Transmissions API can be accessed by POS Ting to https api sparkpost com api v 1 transmissions you'll..."
 ---
 

@@ -1,6 +1,5 @@
 ---
 title: "Using iOS Universal Links with SparkPost Enterprise"
-redirect_from: "https://support.sparkpost.com/customer/portal/articles/2231112-using-ios-universal-links-with-sparkpost-enterprise"
 description: "Note This Knowledge Base Article Is For Spark Post Enterprise Only Table of Contents Use these quick links to jump to certain sections of this article Introduction Benefits of Universal Links Summarized Workflow of Universal Links Setup and Operation As a Spark Post Enterprise Customer What Steps Do I Need..."
 ---
 

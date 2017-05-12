@@ -1,6 +1,5 @@
 ---
 title: "Reporting Metrics - Definitions"
-redirect_from: "https://support.sparkpost.com/customer/portal/articles/2524845-reporting-metrics---definitions"
 description: "Spark Post's aggregated time series statistics are referred to as Metrics This type of reporting data is available in the dashboard or through the Metrics API This document outlines the definition of each metric Standard Metrics Targeted Number of messages passed to Spark Post some will be accepted and others..."
 ---
 

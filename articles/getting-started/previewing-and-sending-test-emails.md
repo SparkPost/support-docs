@@ -1,6 +1,5 @@
 ---
 title: "Previewing and Sending Test Emails"
-redirect_from: "https://support.sparkpost.com/customer/portal/articles/1929893-previewing-and-sending-test-emails"
 description: "In the Spark Post UI you can use the Preview mode of the template editor to render your HTML or text templates and send tests of your template There are some limitations on test sends you can only send up to five 5 people at a time DO NOT USE..."
 ---
 

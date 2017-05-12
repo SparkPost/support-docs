@@ -1,6 +1,5 @@
 ---
 title: "Error messages when using SMTP"
-redirect_from: "https://support.sparkpost.com/customer/portal/articles/2661260-error-messages-when-using-smtp"
 description: "If you send mail through SMTP rather than REST there are a few errors that are specific to Spark Post The list below covers each of them as well as what to do when you receive them For error messages that are not listed below see one of the popular..."
 ---
 

@@ -1,6 +1,5 @@
 ---
 title: "Requirements For Sending Domains"
-redirect_from: "https://support.sparkpost.com/customer/portal/articles/2661031-requirements-for-sending-domains"
 description: "At Spark Post we strive to ensure that all of our customers are Responsible Senders We do this by providing guidance on udeliverability best practices for inbox placement u providing real time feedback on your sends and by enforcing policies that protect our sending reputation and the reputation of our..."
 ---
 

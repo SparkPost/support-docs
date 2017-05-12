@@ -1,6 +1,5 @@
 ---
 title: "I Never Received My Verification Email Sent to info@"
-redirect_from: "https://support.sparkpost.com/customer/portal/articles/2020686-i-never-received-my-verification-email-sent-to-info-"
 description: "Q I signed up using the alias info because we have a few people working in Spark Post but I never received my verification email I even checked my spam and had it re sent several times What's going on A Spark Post has a global suppression list that includes..."
 ---
 

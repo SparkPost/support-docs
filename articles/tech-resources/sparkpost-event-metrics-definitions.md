@@ -1,6 +1,5 @@
 ---
 title: "SparkPost Event and Metrics Definitions"
-redirect_from: "https://support.sparkpost.com/customer/portal/articles/2232381-sparkpost-event-and-metrics-definitions"
 description: "Spark Post Event Definitions The follow table contains the definition of each type of event that exists for activity through Spark Post and Spark Post Enterprise NOTE Inbound relay events are only available in Spark Post Enterprise i e they are not available in Spark Post Individual events are provided..."
 ---
 

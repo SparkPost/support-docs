@@ -1,6 +1,5 @@
 ---
 title: "Consolidating/Migrating SparkPost Accounts"
-redirect_from: "https://support.sparkpost.com/customer/portal/articles/2558436-consolidating-migrating-sparkpost-accounts"
 description: "Subaccounts As you start utilizing subaccounts it will be essential to become more familiar with how management will work with this feature Please read through this article before determining how you would like to set up your account u Subaccounts in Spark Post and Spark Post Elite u Determine what..."
 ---
 

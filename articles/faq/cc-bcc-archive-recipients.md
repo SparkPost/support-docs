@@ -1,6 +1,5 @@
 ---
 title: "What are the differences between CC, BCC, and archive recipients?"
-redirect_from: "https://support.sparkpost.com/customer/portal/articles/2164371-what-are-the-differences-between-cc-bcc-and-archive-recipients-"
 description: "Spark Post and Spark Post Elite SPE allow you to designate recipients with the X MSYS API header as cc bcc or archive recipients Each system will generate a unique message for each valid CC BCC and Archive recipient This means that CC BCC and Archive recipients have the same..."
 ---
 

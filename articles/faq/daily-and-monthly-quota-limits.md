@@ -1,6 +1,5 @@
 ---
 title: "Daily and Monthly Quota Limits"
-redirect_from: "https://support.sparkpost.com/customer/portal/articles/2030894-daily-and-monthly-quota-limits"
 description: "Each Spark Post account has a daily and monthly quota based on the current plan level These represent the number of messages you can send within each time period and is provided for your protection You can view your current quota limits on the Account Usage page Daily Limits The..."
 ---
 

@@ -1,6 +1,5 @@
 ---
 title: "Using SparkPost with MailWizz"
-redirect_from: "https://support.sparkpost.com/customer/portal/articles/2036581-using-sparkpost-with-mailwizz"
 description: "To use Spark Post with Mail Wizz click on the Servers section of the Mail Wizz interface Then click on Delivery Servers Click on Create new server and select Sparkpost Web Api from the drop down menu and enter the following information Your Name A valid API key you have..."
 ---
 

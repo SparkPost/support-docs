@@ -1,6 +1,5 @@
 ---
 title: "What are Out of Band Bounces (OBB)?"
-redirect_from: "https://support.sparkpost.com/customer/portal/articles/2120938-what-are-out-of-band-bounces-obb-"
 description: "In order to explain what Out Of Band bounces or OBB sometimes also called Asynchronous Bounces are we first need to understand how a recipient server accepts email In most cases a recipient server will either accept or reject an email as it comes in In those cases it will..."
 ---
 

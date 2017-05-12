@@ -1,6 +1,5 @@
 ---
 title: "SMTP Engagement Tracking"
-redirect_from: "https://support.sparkpost.com/customer/portal/articles/2539063-smtp-engagement-tracking"
 description: "You can control your account’s default setting for tracking of messages submitted via SMTP to be enabled or disabled The option is in the Account SMTP Relay page of your Spark Post user interface Before you make a selection the system default Disabled will apply to your account This is..."
 ---
 

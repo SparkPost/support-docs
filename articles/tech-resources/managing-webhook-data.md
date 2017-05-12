@@ -1,6 +1,5 @@
 ---
 title: "Best Practices for Managing Webhook Data Streams"
-redirect_from: "https://support.sparkpost.com/customer/portal/articles/2220552-best-practices-for-managing-webhook-data-streams"
 description: "Spark Post and Spark Post Enterprise provide data streams of raw event data via webhooks There are several points of consideration to take into account in order to ensure you correctly receive the event data This article details how our webhooks function so you can successfully set up your endpoint..."
 ---
 

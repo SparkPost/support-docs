@@ -1,6 +1,5 @@
 ---
 title: "Dedicated IP Pools"
-redirect_from: "https://support.sparkpost.com/customer/portal/articles/2002977-dedicated-ip-pools"
 description: "Dedicated IP addresses are available for any account with the exception of the FREE plan with no credit card details on file Any new dedicated IP address added to your account will have a neutral initial reputation which means that you will be responsible for properly warming up your new..."
 ---
 

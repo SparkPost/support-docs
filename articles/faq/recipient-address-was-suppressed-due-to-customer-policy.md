@@ -1,6 +1,5 @@
 ---
 title: "554 5.7.1 - Recipient address was suppressed due to customer policy"
-redirect_from: "https://support.sparkpost.com/customer/portal/articles/1974248-554-5-7-1---recipient-address-was-suppressed-due-to-customer-policy"
 description: "Question I received this error 554 5 7 1 recipient address was suppressed due to customer policy What does it mean How can I send to this email address Answer So the error message in the response you received is actually telling you why that particular email address is not..."
 ---
 

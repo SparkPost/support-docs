@@ -1,6 +1,5 @@
 ---
 title: "Can attachments be sent when using templates?"
-redirect_from: "https://support.sparkpost.com/customer/portal/articles/2458261-can-attachments-be-sent-when-using-templates-"
 description: "When send messages using the Spark Post REST API the message body can be specified either inline as part of the transmission request or by referring to a stored template When using an inline template you can specify attachments to include in the final message through the content attachments attribute..."
 ---
 

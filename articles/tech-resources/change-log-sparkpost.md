@@ -1,6 +1,5 @@
 ---
 title: "SparkPost Change Log"
-redirect_from: "https://support.sparkpost.com/customer/portal/articles/1936102-change-log"
 description: "A running log of what's new, what's been fixed, and what's been changed in SparkPost."
 ---
 

@@ -1,6 +1,5 @@
 ---
 title: "International SMTP Performance"
-redirect_from: "https://support.sparkpost.com/customer/portal/articles/2456461-international-smtp-performance"
 description: "Our servers are currently hosted in the US so chatty protocols like SMTP with a lot of round trips between client and server may be subject to greater than expected latency In performance sensitive situations we recommend that you use our RES Tful interface if possible or if you have..."
 ---
 

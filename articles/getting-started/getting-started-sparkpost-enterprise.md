@@ -1,6 +1,5 @@
 ---
 title: "Getting Started on SparkPost Enterprise"
-redirect_from: "https://support.sparkpost.com/customer/portal/articles/2162798-getting-started-on-sparkpost-enterprise"
 description: "Note This Knowledge Base Article Is For Spark Post Enterprise Only The following article is a collection of helpful introductory topics regarding getting started on migrating traffic to Spark Post Enterprise from your previous email provider Knowing and understanding how to operate your Spark Post Enterprise environment efficiently from the..."
 ---
 

@@ -1,6 +1,5 @@
 ---
 title: "How to patch Interspire Email Marketer to work with SparkPost"
-redirect_from: "https://support.sparkpost.com/customer/portal/articles/2082477-how-to-patch-interspire-email-marketer-to-work-with-sparkpost"
 description: "We had several customers using Interspire Email Marketer reporting an issue blocking them from using Spark Post to send email via SMTP This article will address What issue was experienced Test harness Environment Configuration Root cause of the issue What code overcame the issue Applying the patch to your Interspire..."
 ---
 

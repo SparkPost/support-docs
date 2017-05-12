@@ -1,6 +1,5 @@
 ---
 title: "Setting up Domains for SparkPost"
-redirect_from: "https://support.sparkpost.com/customer/portal/articles/2034521-setting-up-domains-for-sparkpost"
 description: "In Spark Post go into Account and then Sending Domains Put in your Domain Name leaving off the http s and click on Add Domain When you get to the next screen you will see that your domain has been created but now you will see little notifications that your..."
 ---
 

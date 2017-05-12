@@ -1,6 +1,5 @@
 ---
 title: "Using SMS in SparkPost Enterprise"
-redirect_from: "https://support.sparkpost.com/customer/portal/articles/2523469-using-sms-in-sparkpost-enterprise"
 description: "Note This Knowledge Base Article Is For Spark Post Enterprise Only Using Outbound SMS in Spark Post Enterprise Spark Post Enterprise can be configured to send text messages SMS to mobile devices The following article details the necessary items needed to complete the configuration as well as the execution of..."
 ---
 

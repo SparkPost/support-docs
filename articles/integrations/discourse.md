@@ -1,6 +1,5 @@
 ---
 title: "Using SparkPost with Discourse"
-redirect_from: "https://support.sparkpost.com/customer/portal/articles/2340644-using-sparkpost-with-discourse"
 description: "To use Spark Post with Discourse you’ll need to Sign up for a Spark Post account Create and verify a sending domain in Spark Post Create an API key in Spark Post Install Discourse Update the SMTP credentials in your Discourse config Change the default from email Discourse uses to..."
 ---
 

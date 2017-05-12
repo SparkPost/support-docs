@@ -1,6 +1,5 @@
 ---
 title: "Calling SparkPost From The Browser"
-redirect_from: "https://support.sparkpost.com/customer/portal/articles/2455133-calling-sparkpost-from-the-browser"
 description: "Background API Keys Spark Post uses API keys as authentication tokens you include an API key in each of your requests to identify yourself with Spark Post and for us serve you appropriately As a result your API keys must be considered secret since they identify you and enable API..."
 ---
 

@@ -1,6 +1,5 @@
 ---
 title: "Global Suppression List"
-redirect_from: "https://support.sparkpost.com/customer/portal/articles/2039628-global-suppression-list"
 description: "When deploying an email campaign you may notice that the number of recipients injected may not match the number of recipients targeted This is due to suppressions that are applied prior to the actual deployment Your injection list is first bounced against your own suppression list opt outs hard bounces..."
 ---
 

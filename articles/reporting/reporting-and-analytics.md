@@ -1,6 +1,5 @@
 ---
 title: "Reporting and Analytics"
-redirect_from: "https://support.sparkpost.com/customer/portal/articles/1929895-reporting-and-analytics"
 description: "One of the major benefits of Spark Post is the vast amount of reporting metrics we allow you to gather about your email transmissions We offer over forty 40 different metrics about the entire lifecycle of your email transmissions Spark Post Reporting The Summary View Login to Spark Post com..."
 ---
 
