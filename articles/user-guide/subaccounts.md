@@ -48,7 +48,7 @@ In addition, your subaccount users will be able to:
 * Set up their own sending domains via the API
 * Get raw message event data via the API
 * View and manage the suppression list via the API​
-* Set up their own webhook via the API
+* Create their own webhook via the API
 
 ### Use Cases
 
@@ -171,7 +171,7 @@ The master account may submit traffic on behalf of the subaccount SMTP by provid
 
 **Event Webhooks**
 
-The master account may create a webhook as the subaccount with the webhooks API by including the X-MSYS-SUBACCOUNT HTTP header. If the header is not present, the webhook will be executed as the master account.
+The master account may create a webhook as the subaccount with the webhooks API by including the X-MSYS-SUBACCOUNT HTTP header. If the header is 0 only events for non-subaccounts will be posted.  If the header is not present, the webhook contain all events for the account.
 
 ### Subaccount Self Service
 
