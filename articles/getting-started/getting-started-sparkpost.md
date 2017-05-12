@@ -9,32 +9,13 @@ Note: SparkPost is a developer-centric email delivery service. That means pretty
 
 * [Signing Up And In](#signing-up-and-in)
 * [Preparing Your "From:" Address](#preparing-your-from-address)
-  * [Prerequisites](#prerequisites)
-  * [Step 1: Creating A Sending Domain](#step-1-creating-a-sending-domain)
-  * [Step 2: Verifying Domain Ownership](#step-2-verifying-domain-ownership)
-  * [Step 3: Compliance Checks](#step-3-compliance-checks)
 * [Important: Coming From Other Email Services](#important-coming-from-other-email-services)
 * [Sending Email](#sending-email)
-  * [Authentication](#authentication)
-  * [Sending With The REST API](#sending-with-the-rest-api)
-  * [SparkPost API Client Libraries](#sparkpost-api-client-libraries)
-  * [Sending With SMTP](#sending-with-smtp)
 * [Tracking Recipient Behavior](#tracking-recipient-behavior)
-  * [Tracking With The REST API](#tracking-with-the-rest-api)
-  * [Tracking With SMTP](#tracking-with-smtp)
 * [Improving Reputation And Branding](#improving-reputation-and-branding)
-  * [Custom Bounce Domain](#custom-bounce-domain)
-  * [Tracking Domain](#tracking-domain)
 * [Reports, Analytics and Tracking](#reports-analytics-and-tracking)
-  * [Message Events](#message-events)
-  * [Webhooks](#webhooks)
-  * [Metrics](#metrics)
 * [Where To Next?](#where-to-next)
-  * [Email Templates And Personalization](#email-templates-and-personalization)
-  * [Service Providers](#service-providers)
-  * [Receiving Email](#receiving-email)
 * [How To Get Help](#how-to-get-help)
-
 
 ## Signing Up And In
 
