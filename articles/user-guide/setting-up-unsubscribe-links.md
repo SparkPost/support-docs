@@ -42,7 +42,7 @@ You have one or more recipients who have opted-in to your one-to-many emails (su
 
 Our [Suppression List API](https://www.sparkpost.com/api#/reference/suppression-list "Suppression List API Documentation") provides an easy way for developers to manage the list of people who SHOULD NOT be delivered email during non-transactional transmissions. SparkPost's **List Unsubscribe** and **Link Unsubscribe** event types added to the Message Category Webhook (see [Webhooks API](https://www.sparkpost.com/api#/reference/webhooks) for more information, in particular the Event-To-Field Mapping for Message Events Category) make it easy for your mobile/web application to monitor for these events and take the appropriate action for that recipient.
 
-[Create a webhook](https://support.sparkpost.com/customer/portal/articles/1929974-defining-webhooks "Create Webhooks") or update an existing webhook to include the **List Unsubscribe** (and/or) the **Link Unsubscribe** event types in the Message Category.
+[Create a webhook](https://www.sparkpost.com/docs/user-guide/defining-webhooks/) or update an existing webhook to include the **List Unsubscribe** (and/or) the **Link Unsubscribe** event types in the Message Category.
 
 #### In the SparkPost UI
 

@@ -48,7 +48,7 @@ To configure one or more custom tracking domains through the SparkPost user inte
 1. Complete the Sending Domain Name for each sending domain and select the Linked Tracking Domain you want to associate with it.
 1. Click the Add Domain or Update Domain button to complete the association.
 
-**Note for SparkPost.com customers**: for information on how to configure your Sending Domains, please see [this article](https://support.sparkpost.com/customer/en/portal/articles/1933318-creating-sending-domains).
+**Note for SparkPost.com customers**: for information on how to configure your Sending Domains, please see [this article](https://www.sparkpost.com/docs/getting-started/getting-started-sparkpost/#preparing-your-from-address).
 
 **Note**: As a general reminder, any newly configured tracking domains have to route back, either through delegation or use of CNAME records, to SparkPost or your SparkPost Elite instance in order for us to be able to report on opens and clicks. Misconfiguration of your tracking domain(s) could mean link redirection could fail, so please ensure you test prior to placing any new domains into production!
 

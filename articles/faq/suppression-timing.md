@@ -13,4 +13,4 @@ In the dashboard, you will see one of the following reasons in the 'Bounces' mod
 554 5.7.1 recipient address was suppressed due to customer policy (Bounce Rule)
 554 5.7.1 recipient address was suppressed due to customer policy (Unsubscribe Rule)
 
-[This article](https://support.sparkpost.com/customer/en/portal/articles/1929891-using-suppression-lists) offers more detail on working with suppression lists.
+[This article](https://www.sparkpost.com/docs/user-guide/using-suppression-lists/) offers more detail on working with suppression lists.

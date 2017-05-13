@@ -11,8 +11,8 @@ It is important to recognize that public forums are a common source of unwanted 
 
 ## Preparation
 
-* [Add a Sending Domain](https://support.sparkpost.com/customer/portal/articles/1933318-creating-sending-domains) to SparkPost
-* [Create an API Key](https://support.sparkpost.com/customer/portal/articles/1933377-create-api-keys) with “Send via SMTP” permission
+* [Add a Sending Domain](https://www.sparkpost.com/docs/getting-started/getting-started-sparkpost/#preparing-your-from-address) to SparkPost
+* [Create an API Key](https://www.sparkpost.com/docs/getting-started/create-api-keys/) with “Send via SMTP” permission
 * Keep a note of your API key
 
 ## Configuring PHPBB

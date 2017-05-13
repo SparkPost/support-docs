@@ -3,7 +3,7 @@ title: "550. 5.7.1 Unconfigured Sending Domain"
 description: "A sending domain is a domain that is used to indicate who an email is from via the From header Using a custom sending domain enables you to control what recipients see as the From value in their email clients DNS records can be configured for a sending domain which..."
 ---
 
-A sending domain is a domain that is used to indicate who an email is from via the `From:` header. Using a custom sending domain enables you to control what recipients see as the `From:` value in their email clients. DNS records can be configured for a sending domain, which allows recipient mail servers to authenticate your messages. The Sending Domains API provides the means to create, list, retrieve, update, and verify a custom sending domain. 
+A sending domain is a domain that is used to indicate who an email is from via the `From:` header. Using a custom sending domain enables you to control what recipients see as the `From:` value in their email clients. DNS records can be configured for a sending domain, which allows recipient mail servers to authenticate your messages. The Sending Domains API provides the means to create, list, retrieve, update, and verify a custom sending domain.
 
 ## Improperly Configured Sending Domain
 
@@ -19,4 +19,4 @@ Changing the from address to sales@autos.example.com will correct the error, bec
 
 ## Additional Information
 
-Refer to [this Knowledge Base Article](https://support.sparkpost.com/customer/en/portal/articles/1933318-creating-sending-domains) to learn more about how to configure Sending Domains.
+Refer to [this Knowledge Base Article](https://www.sparkpost.com/docs/getting-started/getting-started-sparkpost/#preparing-your-from-address) to learn more about how to configure Sending Domains.

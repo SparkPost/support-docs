@@ -9,7 +9,7 @@ description: "In Spark Post go into Account and then Sending Domains Put in your
 
     ![](media/setting-up-domains/settingupdomains1_original.jpg)
 
-4. Depending on what domain provider you are using, their DNS may look different, but it’s all essentially the same. There will be a TEXT field, and you can put DKIM in the text fields. We have provided you with many domain provider’s steps to go through to put your SPF and DKIM into their settings, [here](https://support.sparkpost.com/customer/portal/articles/2034498-setting-up-spf-and-dkim-with-domain-providers).
+4. Depending on what domain provider you are using, their DNS may look different, but it’s all essentially the same. There will be a TEXT field, and you can put DKIM in the text fields. We have provided you with many domain provider’s steps to go through to put your SPF and DKIM into their settings, [here](https://www.sparkpost.com/docs/getting-started/getting-started-sparkpost/#prerequisites).
 
     ![](media/setting-up-domains/image02_original.png)
 

@@ -17,4 +17,4 @@ With that in mind, we restrict the email addresses used to sign up for SparkPost
 * Don’t use a role account. Role accounts are emails that are typically sent to groups and have a generic local part, like info@example.com, admin@example.com, sales@example.com, and similar addresses.
 * Make sure the email you provide can actually receive email. This may sound like a no-brainer, but we see enough undeliverable email addresses it’s worth mentioning.
 
-Of course, our automation isn’t perfect and sometimes we incorrectly classify email addresses. If you’re still unable to sign up for a SparkPost account after taking into account all of the criteria, please let us know by [submitting a support ticket](https://support.sparkpost.com/customer/portal/emails/new).
+Of course, our automation isn’t perfect and sometimes we incorrectly classify email addresses. If you’re still unable to sign up for a SparkPost account after taking into account all of the criteria, please let us know by [submitting a support ticket](https://www.sparkpost.com/submit-a-ticket).

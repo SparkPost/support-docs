@@ -12,4 +12,4 @@ This error occurs when SparkPost sends a test batch to your webhook endpoint and
 * Webhooks require you to publish an HTTP service (the "target URL" above) to receive event data.  Your service must be in place *before* you register the webhook with SparkPost.
 * Your receiving HTTP service must return a 200 status code when it successfully receives an event batch.  Any non 200 response is treated as an error.
 
-For more details on managing your webhooks and handling webhook event data, check out [this support article](https://support.sparkpost.com/customer/en/portal/articles/2220552-best-practices-for-managing-webhook-data-streams) and [this blog post](https://www.sparkpost.com/blog/webhooks-beyond-the-basics/) on the topic.
+For more details on managing your webhooks and handling webhook event data, check out [this support article](https://www.sparkpost.com/docs/tech-resources/managing-webhook-data/) and [this blog post](https://www.sparkpost.com/blog/webhooks-beyond-the-basics/) on the topic.

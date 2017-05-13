@@ -3,9 +3,9 @@ title: "Using Push Notifications in SparkPost Enterprise"
 description: "Note This Knowledge Base Article Is For Spark Post Enterprise Only Using Push Notifications in Spark Post Enterprise Spark Post Enterprise customers have the option of sending push notifications through the transmissions API by including optional channel strings nested beneath the recipients array This article will explain in brief overview..."
 ---
 
-**Note:** This Knowledge Base Article Is For SparkPost Enterprise Only 
+**Note:** This Knowledge Base Article Is For SparkPost Enterprise Only
 
-### Using Push Notifications in SparkPost Enterprise 
+### Using Push Notifications in SparkPost Enterprise
 
 SparkPost Enterprise customers have the option of sending push notifications through the transmissions API by including optional "channel" strings nested beneath the recipients array. This article will explain in brief overview the attributes that must be added to a transmission call, illustrated by a few examples of sample code.
 
@@ -48,7 +48,7 @@ Since all push notifications are sent out of the same binding group/IP pool, we 
 
 1. Use a campaign ID that is unique for each application ID and device. For example, if you had an application that supported both APNs and GCM, you could name your campaigns "marketing_apns" and "marketing_gcm". These values will be carried through on all message events.
 
-1. Use subaccounts. You will need to send transmissions from the master account and [send on behalf of the subaccount](https://support.sparkpost.com/customer/portal/articles/2360320#Master Account: Operating on Behalf of a Subaccount). The subaccount_id field will be included in all message event data, allowing you to segment your reporting based upon this field.
+1. Use subaccounts. You will need to send transmissions from the master account and [send on behalf of the subaccount](https://www.sparkpost.com/docs/user-guide/subaccounts/#master-account-operating-on-behalf-of-a-subaccount). The subaccount_id field will be included in all message event data, allowing you to segment your reporting based upon this field.
 
 ## Example Transmissions API Code for Push Notifications
 

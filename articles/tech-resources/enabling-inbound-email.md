@@ -68,7 +68,7 @@ If your webhook doesn’t seem to be working, you can try these steps: 
 * Check your consumer logs to see if there are any errors.
 * You can subscribe to events broadcast by Relay Webhooks using SparkPost’s [Event Webhooks](https://developers.sparkpost.com/api/webhooks.html). These will help you troubleshoot errors from your consumer endpoint.
 * Inbound emails (including attachments) are limited to 20MB.​
-* To extract attachments follow [these instructions](https://support.sparkpost.com/customer/portal/articles/2676543).
+* To extract attachments follow [these instructions](https://www.sparkpost.com/docs/tech-resources/extracting-email-attachments-from-relay-webhooks/).
 * Speed up integration time by reviewing this [example app](https://github.com/SparkPost/sp-forwarding-service).
 
 Unlike webhooks, relay webhooks do not batch - individual messages are pushed to the relay webhook endpoints when received.

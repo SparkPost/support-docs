@@ -9,7 +9,7 @@ Next, [create an API key](https://app.sparkpost.com/account/credentials) with th
 
 ![](media/power-mta/pmta-key_original.png)
 
-Now [create and verify](https://app.sparkpost.com/account/sending-domains) the domain you want to use for sending. The setup process should take about 5-10 minutes if you have access to your DNS server. See [Verify Sending Domains](https://support.sparkpost.com/customer/portal/articles/1933360) for more information.
+Now [create and verify](https://app.sparkpost.com/account/sending-domains) the domain you want to use for sending. The setup process should take about 5-10 minutes if you have access to your DNS server. See [Verify Sending Domains](https://www.sparkpost.com/docs/getting-started/getting-started-sparkpost/#step-2-verifying-domain-ownership) for more information.
 
 Add the following to your PowerMTA config, changing the value for auth-password to the SparkPost API key you created above:
 

@@ -3,9 +3,9 @@ title: "Webhook Event Reference"
 description: "This is a reference guide for developers who are consuming Spark Post Webhook Events and need to understand the structure of the events being sent If you would like Spark Post to begin transmitting events to a server for your web or mobile application to begin receiving near real time..."
 ---
 
-This is a reference guide for developers who are consuming SparkPost Webhook Events and need to understand the structure of the events being sent. If you would like SparkPost to begin transmitting events to a server for your web or mobile application to begin receiving near real-time detailed information about your SparkPost Email Transmissions, learn about [Defining Webhooks](https://support.sparkpost.com/customer/portal/articles/1929974-defining-webhooks).
+This is a reference guide for developers who are consuming SparkPost Webhook Events and need to understand the structure of the events being sent. If you would like SparkPost to begin transmitting events to a server for your web or mobile application to begin receiving near real-time detailed information about your SparkPost Email Transmissions, learn about [Defining Webhooks](https://www.sparkpost.com/docs/user-guide/defining-webhooks/).
 
-There are several types of events that SparkPost is able to send which provide you data concerning your email's life cycle. They are organized by Event Types which contain various Events with each Event being composed of Event Properties. You can use the [SparkPost API Webhook Resource](https://developers.sparkpost.com/api/#/reference/webhooks) to discover sample payloads of selected events, and the sample values and event descriptions. To list descriptions of the events, event types, and event fields that could be included in a Webhooks post to your target URL, run the following call in a REST API client like Postman:
+There are several types of events that SparkPost is able to send which provide you data concerning your email's life cycle. They are organized by Event Types which contain various Events with each Event being composed of Event Properties. You can use the [SparkPost API Webhook Resource](https://developers.sparkpost.com/api/webhooks.html) to discover sample payloads of selected events, and the sample values and event descriptions. To list descriptions of the events, event types, and event fields that could be included in a Webhooks post to your target URL, run the following call in a REST API client like Postman:
  https://api.sparkpost.com/api/v1/webhooks/events/documentation
 
 ## Event Types
@@ -49,11 +49,11 @@ Each event which SparkPost sends you about your email transmissions has some val
 
 ## Event Properties
 
-Each event has different properties which are described below for your reference. You can also use the SparkPost API Webhook resource's "[List sample values and event descriptions](https://developers.sparkpost.com/api/#/reference/webhooks/events-documentation)" to see a complete set of event properties mapped to each event type. 
+Each event has different properties which are described below for your reference. You can also use the SparkPost API Webhook resource's "[List sample values and event descriptions](https://developers.sparkpost.com/api/webhooks.html#webhooks-events-documentation)" to see a complete set of event properties mapped to each event type. 
 
 |JSON Key|Description|Sample Value|
 | --- | --- | --- |
-|bounce_class|Classification code for a given message (see [Bounce Classification Codes](https://support.sparkpost.com/customer/portal/articles/1929896))|1|
+|bounce_class|Classification code for a given message (see [Bounce Classification Codes](https://www.sparkpost.com/docs/deliverability/bounce-classification-codes/))|1|
 |campaign_id|Campaign of which this message was a part|Example Campaign Name|
 |customer_id|SparkPost-customer identifier through which this message was sent|1|
 |delv_method|Protocol by which SparkPost delivered this message|esmtp|
