@@ -173,6 +173,8 @@ The master account may submit traffic on behalf of the subaccount SMTP by provid
 
 The master account may create a webhook as the subaccount with the webhooks API by including the X-MSYS-SUBACCOUNT HTTP header. If the header is 0 only events for non-subaccounts will be posted.  If the header is not present, the webhook contain all events for the account.
 
+When creating new webhooks within the UI, leaving the subaccount field blank will cause the created webhook to contain all events for the account. When selecting Master Account, the webhook will only contain events for non-subaccounts. Selecting a subaccount will result in the webhook containing events from that subaccount only.
+
 ![subaccount management for webhooks screenshot](media/subaccounts/Screen_Shot_2017-05-23_at_1.46.55_PM.png)
 
 ### Subaccount Self Service
