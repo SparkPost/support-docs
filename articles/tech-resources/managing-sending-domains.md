@@ -93,4 +93,4 @@ A1: You need to set up each one using the UI or API. It's a separate call to the
 
 **Q2: How do I set up double-DKIM signing?**
 
-A2: It depends on what the other signature is. Assuming the second signature is something like customer.sparkpostelite.com, it is still done via our Operations Team during the customer build-out process. This means each of the sending domains for a customer will have the same second DKIM signature.
+A2: It depends on what the other signature is. Assuming the second signature is something like customer.sparkpostelite.com, it is still done via our Operations Team during the customer build-out process. This means each of the sending domains for a customer will have the same second DKIM signature.  
