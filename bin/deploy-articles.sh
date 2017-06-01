@@ -61,7 +61,7 @@ function get_contributors() {
     result=$(curl -s -H "Authorization: token $GITHUB_TOKEN" $curl_url)
   fi
 
-  echo $(echo $result | jq '[ .[] | {name: .commit.committer.name, html_url: .committer.html_url, avatar_url: .committer.avatar_url} ] | unique')
+  echo $(echo $result | jq '[ .[] | {name: .commit.author.name, html_url: .author.html_url, avatar_url: .author.avatar_url} ] | unique')
 }
 
 function generate_html() {
