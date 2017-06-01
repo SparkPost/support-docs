@@ -43,7 +43,7 @@ After installing SparkPost the application should be configured to fully integra
 
 In order to use the API key, it’s necessary to accept the terms of use via the SparkPost dashboard.
 
-SparkPost is setup with a sandbox domain which can be used to send up to 50 messages. To send more messages, create a sending domain via the SparkPost dashboard or the API.
+SparkPost is setup with a sandbox domain which can be used to send up to 5 messages. To send more messages, create a sending domain via the SparkPost dashboard or the API.
 
 ## Local Setup
 
