@@ -7,7 +7,7 @@ notification: "This Change Log is for SparkPost Enterprise Only"
 A running log of new features and capabilities that have been rolled out on the SparkPost Enterprise service. The API reference can be found [here](https://developers.sparkpost.com/api).
 
 
-### 01 June, 2017
+### 01 June, 2017 
 
 * **Enhancement:** Webhooks by Subaccount
   * Users of Subaccounts can now set up individual endpoints for each subacccount's data
