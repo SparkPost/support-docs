@@ -150,7 +150,7 @@ A running log of new features and capabilities that have been rolled out on the 
     * The SparkPost code changed from from 1100 to 7001 in the Transmissions and Templates APIs.
     * The HTTP code changed from HTTP 403 and now it is HTTP 400.
     * API documentation here [https://www.sparkpost.com/api#/reference/transmissions/create/create-a-transmission](https://www.sparkpost.com/api#/reference/transmissions/create/create-a-transmission)
-* **Change:** This change will only effect those customers that use the "Top domains only" option in the Summary report. Previously the watched domain list was a static list of the top ISPs. This has been changed so that it is updated weekly based on the each Elite customer's sending volumes. It is now the top 100 domains based on the injected/receptions for the past month.
+* **Change:** This change will only effect those customers that use the "Top domains only" option in the Summary report. Previously the watched domain list was a static list of the top ISPs. This has been changed so that it is updated weekly based on the each Elite customer's sending volumes. It is now the top 100 domains based on the injected/receptions for the past month. 
 
 ### 17 December, 2015
 
