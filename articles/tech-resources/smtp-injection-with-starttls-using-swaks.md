@@ -1,6 +1,5 @@
 ---
 title: "SMTP Injection with STARTTLS using swaks"
-redirect_from: "https://support.sparkpost.com/customer/portal/articles/1980377-smtp-injection-with-starttls-using-swaks"
 description: "One of our customers recently ran into issues attempting to send a test email via SMTP injection using STARTTLS while working with the openssl client Our resolution is to utilize the swaks Swiss Army Knife for SMTP This command line utility makes it easy to send a test email via..."
 ---
 

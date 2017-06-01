@@ -1,6 +1,5 @@
 ---
 title: "Using SparkPost with Discourse"
-redirect_from: "https://support.sparkpost.com/customer/portal/articles/2340644-using-sparkpost-with-discourse"
 description: "To use Spark Post with Discourse you’ll need to Sign up for a Spark Post account Create and verify a sending domain in Spark Post Create an API key in Spark Post Install Discourse Update the SMTP credentials in your Discourse config Change the default from email Discourse uses to..."
 ---
 
@@ -25,7 +24,7 @@ Visit the [Sending Domains](https://app.sparkpost.com/account/sending-domains) p
 * Sending a verification email to postmaster@yourdomain.com
 * Setting up a valid DKIM DNS record
 
-Choose the method that works best for you. View [this support article](https://support.sparkpost.com/customer/en/portal/articles/1933318-creating-sending-domains?b_id=7411) for more detailed information on setting up sending domains.
+Choose the method that works best for you. View [this support article](https://www.sparkpost.com/docs/getting-started/getting-started-sparkpost/#preparing-your-from-address) for more detailed information on setting up sending domains.
 
 ## Create an API key in SparkPost
 

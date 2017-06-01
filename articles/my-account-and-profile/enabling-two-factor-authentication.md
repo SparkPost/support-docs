@@ -1,6 +1,5 @@
 ---
 title: "Enabling Two-Factor Authentication"
-redirect_from: "https://support.sparkpost.com/customer/portal/articles/1948449-enabling-two-factor-authentication"
 description: "At Spark Post we take the security of your account very seriously which is why for example we make it easy to apply the principle of least privilege when assigning grants to API keys and even restricting API keys based on source IP address In order to provide you with..."
 ---
 

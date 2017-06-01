@@ -1,6 +1,5 @@
 ---
 title: "Create API Keys"
-redirect_from: "https://support.sparkpost.com/customer/portal/articles/1933377-create-api-keys"
 description: "Before you can use the Spark Post REST AP Is or SMTP injection you will need to have a valid Spark Post API key Below are the steps you will need to create a Spark Post API key IMPORTANT Make sure to copy and paste the API key when it..."
 ---
 
@@ -20,8 +19,8 @@ Click on the Account section of the dashboard and then 'API & SMTP' to create an
 
     ​**Note**: After the key has been created, you will only be able to see the name of the key, it's permissions, and the first four characters.
 
-1. You do not need to configure the API key for subaccounts, unless you wish to use subaccounts. More information on subaccounts can be found in [this article](https://support.sparkpost.com/customer/portal/articles/2360320).
+1. You do not need to configure the API key for subaccounts, unless you wish to use subaccounts. More information on subaccounts can be found in [this article](https://www.sparkpost.com/docs/user-guide/subaccounts/).
 
-You have now completed the account configuration and obtained an API Key. If your sending domain has been verified you are ready to [send your first email using SparkPost](https://support.sparkpost.com/customer/portal/articles/1929887-sending-your-first-email)!
+You have now completed the account configuration and obtained an API Key. If your sending domain has been verified you are ready to [send your first email using SparkPost](https://www.sparkpost.com/docs/getting-started/getting-started-sparkpost/#sending-email)!
 
 **Note**: If you are using the "Allowed IPs" feature, not all web hosting services will let you determine what IP API calls are made from, even if you subscribe to 'dedicated IP' services they provide. Please make sure you have control over the outgoing IP before utilizing this feature.

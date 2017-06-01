@@ -1,6 +1,5 @@
 ---
 title: "Signing up with a valid email address"
-redirect_from: "https://support.sparkpost.com/customer/portal/articles/2778789-signing-up-with-a-valid-email-address"
 description: "When signing up for a Spark Post account it’s important to us that you use an email address where we’ll be able to reach you We use your email address to communicate with you about things like Resetting your password in case you lose it Issues related to billing and..."
 ---
 
@@ -18,4 +17,4 @@ With that in mind, we restrict the email addresses used to sign up for SparkPost
 * Don’t use a role account. Role accounts are emails that are typically sent to groups and have a generic local part, like info@example.com, admin@example.com, sales@example.com, and similar addresses.
 * Make sure the email you provide can actually receive email. This may sound like a no-brainer, but we see enough undeliverable email addresses it’s worth mentioning.
 
-Of course, our automation isn’t perfect and sometimes we incorrectly classify email addresses. If you’re still unable to sign up for a SparkPost account after taking into account all of the criteria, please let us know by [submitting a support ticket](https://support.sparkpost.com/customer/portal/emails/new).
+Of course, our automation isn’t perfect and sometimes we incorrectly classify email addresses. If you’re still unable to sign up for a SparkPost account after taking into account all of the criteria, please let us know by [submitting a support ticket](https://www.sparkpost.com/submit-a-ticket).

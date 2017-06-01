@@ -1,6 +1,5 @@
 ---
 title: "Sending Transmission with Skip Suppression Functionality"
-redirect_from: "https://support.sparkpost.com/customer/portal/articles/2115678-sending-transmission-with-skip-suppression-functionality"
 description: "Note This Knowledge Base Article Is For Spark Post Enterprise Only Introduction The skip suppression feature provides the ability to override the suppression of recipient addresses that are listed in the suppression list Moreover this feature allows you to override the intended functionality of the suppression list namely the checking..."
 ---
 

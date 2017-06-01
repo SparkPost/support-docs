@@ -1,6 +1,5 @@
 ---
 title: "Power BI Content Pack and SparkPost"
-redirect_from: "https://support.sparkpost.com/customer/portal/articles/2177799-power-bi-content-pack-and-sparkpost"
 description: "The Power BI content pack for Spark Post allows you to extract valuable datasets from your Spark Post account all into one insightful dashboard Using the Spark Post content pack you can visualize your overall email statistics including domains campaigns and engagement by ISP Connect to the Spark Post content..."
 ---
 

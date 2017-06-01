@@ -1,6 +1,5 @@
 ---
 title: "Using SparkPost with Magento"
-redirect_from: "https://support.sparkpost.com/customer/portal/articles/2356667-using-sparkpost-with-magento"
 description: "This article will show how to send email from Magento through Spark Post These instructions assume that you are using the excellent SMTP Pro extension and have a Spark Post account with a verified sending domain Follow these steps to configure Magento and SMTP Pro to send through your Spark..."
 ---
 
@@ -12,7 +11,7 @@ Follow these steps to configure Magento and SMTP Pro to send through your SparkP
 
 ## Configure Magento
 
-**Note**: to send with SparkPost, Magento needs to use *From* addresses with a *verified sending domain* from your SparkPost account. Learn about configuring [SparkPost sending domains](https://support.sparkpost.com/customer/portal/articles/2216798).
+**Note**: to send with SparkPost, Magento needs to use *From* addresses with a *verified sending domain* from your SparkPost account. Learn about configuring [SparkPost sending domains](https://www.sparkpost.com/docs/user-guide/managing-sending-domains/).
 
 To configure Magento to use your sending domain in its *From* addresses, log into your **Magento Admin Panel** and navigate to **System -> Configuration** in the top menu.
 
@@ -36,7 +35,7 @@ Apply the following settings in the **General Settings** tab:
 * Authentication: Login
 * Username: SMTP_Injection
 * Password: `<your SparkPost API key>`
-    * [How to create a SparkPost API key](https://support.sparkpost.com/customer/portal/articles/1933377)
+    * [How to create a SparkPost API key](https://www.sparkpost.com/docs/getting-started/create-api-keys/)
     * Remember to enable the 'Send via SMTP' privilege on your key.
 * Host: smtp.sparkpostmail.com
 * Port: 587

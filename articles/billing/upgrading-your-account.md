@@ -1,6 +1,5 @@
 ---
 title: "Upgrading Your Account"
-redirect_from: "https://support.sparkpost.com/customer/portal/articles/2035665-upgrading-your-account"
 description: "On the dashboard go to Account Billing There you will be able to see the plan you are currently on as well as all of the other plans we provide Once you decide on the plan you would like to upgrade to click on it A window will drop down..."
 ---
 

@@ -1,6 +1,5 @@
 ---
 title: "Where do I find my Username, Account ID (Customer ID), or Email Address?"
-redirect_from: "https://support.sparkpost.com/customer/portal/articles/2142595-where-do-i-find-my-username-account-id-customer-id-or-email-address-"
 description: "When you're submitting a Support ticket or communicating with us via our community Slack channel we ask you to identify your account by providing either your Username Account ID Customer ID or Email Address used to create the Spark Post account Having this info allows us to help you faster..."
 ---
 

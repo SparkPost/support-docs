@@ -1,6 +1,5 @@
 ---
 title: "Managing your Sending Domains"
-redirect_from: "https://support.sparkpost.com/customer/portal/articles/2216798-managing-your-sending-domains"
 description: "A sending domain is a domain that is used to indicate who an email is from via the From header Using a custom sending domain enables you to control what recipients see as the From value in their email clients DNS records can be configured for a sending domain which..."
 ---
 

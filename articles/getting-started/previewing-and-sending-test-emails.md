@@ -1,10 +1,9 @@
 ---
 title: "Previewing and Sending Test Emails"
-redirect_from: "https://support.sparkpost.com/customer/portal/articles/1929893-previewing-and-sending-test-emails"
 description: "In the Spark Post UI you can use the Preview mode of the template editor to render your HTML or text templates and send tests of your template There are some limitations on test sends you can only send up to five 5 people at a time DO NOT USE..."
 ---
 
-In the SparkPost UI, you can use the "Preview" mode of the template editor to render your HTML or text templates and send tests of your template. 
+In the SparkPost UI, you can use the "Preview" mode of the template editor to render your HTML or text templates and send tests of your template.
 
 There are some limitations on test sends; you can only send up to five (5) people at a time. **DO NOT USE THIS FOR PRODUCTION TRANSMISSIONS!**
 
@@ -14,12 +13,12 @@ The following example code is used to illustrate our preview and test send funct
 * **ID:** my-preview-test-template
 * **From Name:** This is the "human friendly" name that is shown to recipients in their email client
 * **From Email (sender):** Your user on the valid sending domain
-* **From Email (@domain):** Must be one of your **valid** sending domains. [Learn how to configure a sending domain in SparkPost](https://support.sparkpost.com/customer/portal/articles/1933318-create-sending-domains "Learn how to configure a sending domain in SparkPost")
+* **From Email (@domain):** Must be one of your **valid** sending domains. [Learn how to configure a sending domain in SparkPost](https://www.sparkpost.com/docs/getting-started/getting-started-sparkpost/#preparing-your-from-address)
 * **Subject:** Test Email, Please do not respond
 * **Description:** This is a simple test template used to test SparkPost's Preview Functionality
 * **Engagement Tracking:** Turn on Track Opens and Track Clicks
 
-## The Test HTML Content 
+## The Test HTML Content
 
 ```
 <h1>SparkPost Test Template</h1>

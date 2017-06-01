@@ -1,6 +1,5 @@
 ---
 title: "Client Libraries, Resources and Examples"
-redirect_from: "https://support.sparkpost.com/customer/portal/articles/1936101-client-libraries-resources-and-examples"
 description: "Check out our Developer Hub for an up to date list of client libraries resources and sample code If you'd like to report a bug in a Spark Post client library please file an issue in the library Git Hub project You can find all the library projects under the..."
 ---
 

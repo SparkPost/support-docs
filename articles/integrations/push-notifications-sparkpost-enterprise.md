@@ -1,12 +1,11 @@
 ---
 title: "Using Push Notifications in SparkPost Enterprise"
-redirect_from: "https://support.sparkpost.com/customer/portal/articles/2477781-using-push-notifications-in-sparkpost-enterprise"
 description: "Note This Knowledge Base Article Is For Spark Post Enterprise Only Using Push Notifications in Spark Post Enterprise Spark Post Enterprise customers have the option of sending push notifications through the transmissions API by including optional channel strings nested beneath the recipients array This article will explain in brief overview..."
 ---
 
-**Note:** This Knowledge Base Article Is For SparkPost Enterprise Only 
+**Note:** This Knowledge Base Article Is For SparkPost Enterprise Only
 
-### Using Push Notifications in SparkPost Enterprise 
+### Using Push Notifications in SparkPost Enterprise
 
 SparkPost Enterprise customers have the option of sending push notifications through the transmissions API by including optional "channel" strings nested beneath the recipients array. This article will explain in brief overview the attributes that must be added to a transmission call, illustrated by a few examples of sample code.
 
@@ -29,7 +28,7 @@ A recipient's address attribute can now be a JSON array to allow for easier mult
 
 **Note: Any platform-specific features need to be added in their own part of the push object.**
 
-The [simple example below](#lnk-simple-example) shows "color" was given in the GCM push object. Once this push information was received by the end user's mobile device, any phone notification light with the appropriate permissions set would flash SparkPost orange. Our use of "badge" in the [simple example](#lnk-simple-example) APN block will make the app icon on the home screen of the iOS device show one notification.
+The [simple example below](#simple-push-notification-example) shows "color" was given in the GCM push object. Once this push information was received by the end user's mobile device, any phone notification light with the appropriate permissions set would flash SparkPost orange. Our use of "badge" in the [simple example](#simple-push-notification-example) APN block will make the app icon on the home screen of the iOS device show one notification.
 
 **Note:** Substitution data is **not** supported for push content. When all recipients are email channels, do **not** include the push object, as this will break email substitution. 
 
@@ -49,11 +48,11 @@ Since all push notifications are sent out of the same binding group/IP pool, we 
 
 1. Use a campaign ID that is unique for each application ID and device. For example, if you had an application that supported both APNs and GCM, you could name your campaigns "marketing_apns" and "marketing_gcm". These values will be carried through on all message events.
 
-1. Use subaccounts. You will need to send transmissions from the master account and [send on behalf of the subaccount](https://support.sparkpost.com/customer/portal/articles/2360320#Master Account: Operating on Behalf of a Subaccount). The subaccount_id field will be included in all message event data, allowing you to segment your reporting based upon this field.
+1. Use subaccounts. You will need to send transmissions from the master account and [send on behalf of the subaccount](https://www.sparkpost.com/docs/user-guide/subaccounts/#master-account-operating-on-behalf-of-a-subaccount). The subaccount_id field will be included in all message event data, allowing you to segment your reporting based upon this field.
 
 ## Example Transmissions API Code for Push Notifications
 
-### <a id="lnk-simple-example" name="Simple Example">Simple Push Notification Example:</a>
+### Simple Push Notification Example:
 
 ```json
 {

@@ -1,6 +1,5 @@
 ---
 title: "Usage Report and Account Limits"
-redirect_from: "https://support.sparkpost.com/customer/portal/articles/1929897-usage-report-and-account-limits"
 description: "The Usage Report allows you to easily keep track of how many emails you've sent over the last month day and hour It also displays your sending limits for each time period along with any overages above your monthly limit Note that free accounts are not permitted any overage Attempts..."
 ---
 

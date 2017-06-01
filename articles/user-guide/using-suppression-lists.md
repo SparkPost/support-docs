@@ -1,6 +1,5 @@
 ---
 title: "Using Suppression Lists"
-redirect_from: "https://support.sparkpost.com/customer/portal/articles/1929891-using-suppression-lists"
 description: "Protecting your sender reputation is essential to maximizing your email deliverability Many inbox providers e g Yahoo Gmail Hotmail Outlook com or AOL opt to limit or refuse message traffic based on it Continuing to send messages to invalid email addresses or to recipients who no longer want to receive..."
 ---
 
@@ -21,7 +20,7 @@ When a message is injected either using SMTP or HTTP, SparkPost will check the e
 * **Suppression List API:** Using the REST API, you can insert/update a single entry or multiple entries in your suppression list, check the suppression status for a specific recipient, or remove a recipient from your suppression list. For more information, see the [SparkPost Suppression List API](https://www.sparkpost.com/api#/reference/suppression-list "SparkPost Suppression List API").
 * **Suppression list UI:** In the User Interface choose lists and suppression list.
 
-**If you want to learn how your application can be notified of list pruning events, read our [using unsubscribe events](https://support.sparkpost.com/customer/portal/articles/1929976-using-unsubscribe-reports) guide.**
+**If you want to learn how your application can be notified of list pruning events, read our [using unsubscribe events](https://www.sparkpost.com/docs/user-guide/using-unsubscribe-reports/) guide.**
 
 ## Managing Suppression Lists with SparkPost
 

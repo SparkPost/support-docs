@@ -1,6 +1,5 @@
 ---
 title: "SparkPost abuse@  and postmaster@ Verification and Google Apps"
-redirect_from: "https://support.sparkpost.com/customer/portal/articles/2314148-sparkpost-abuse-and-postmaster-verification-and-google-apps"
 description: "If you’re using Google Apps to host your corporate email you won’t be able to create abuse or postmaster emails under your domain To get around this you need to create groups named abuse and postmaster Users that are members of these groups will receive emails sent to those addresses..."
 ---
 

@@ -1,6 +1,5 @@
 ---
 title: "Using SparkPost with EasyMail"
-redirect_from: "https://support.sparkpost.com/customer/portal/articles/2039973-using-sparkpost-with-easymail"
 description: "Using Spark Post with G Lock Software's Easy Mail 7 is easy Just click on Add Outgoing Mail Server Account in the Getting Started window Then set up a new profile for your Spark Post account entering your From Name Email address Reply E mail address and Organization name don't..."
 ---
 

@@ -1,6 +1,5 @@
 ---
 title: "Accepted"
-redirect_from: "https://support.sparkpost.com/customer/portal/articles/2035624-accepted"
 description: "This reporting tab showcases statistics surrounding messages that were accepted With regard to the Accepted Rate the higher the better Targeted The number of messages you sent Spark Post Sent The number of messages that have been delivered or attempted to deliver by Spark Post includes multiple delivery attempts including..."
 ---
 

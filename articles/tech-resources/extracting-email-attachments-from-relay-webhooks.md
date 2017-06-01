@@ -1,6 +1,5 @@
 ---
 title: "Extracting Email Attachments From Relay Webhooks"
-redirect_from: "https://support.sparkpost.com/customer/portal/articles/2676543-extracting-email-attachments-from-relay-webhooks"
 description: "psparkpost a href https developers sparkpost com api relay webhooks html relay webhooks are a way to receive email to your own HTTP endpoints For each email sent to your inbound domain Spark Post will call your endpoint with a JSON request containing the message with headers already parsed out..."
 ---
 

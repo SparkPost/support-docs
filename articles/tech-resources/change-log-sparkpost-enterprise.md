@@ -1,12 +1,19 @@
 ---
 title: "SparkPost Enterprise Change Log"
-redirect_from: "https://support.sparkpost.com/customer/portal/articles/2247030-change-log"
-description: "Note This Change Log is for Spark Post Enterprise Only A running log of new features and capabilities that have been rolled out on the Spark Post Enterprise service The API reference can be found here https www sparkpost com api reference Next scheduled upgrade date coming soon 27 February..."
+description: "Note This Change Log is for SparkPost Enterprise Only. This is a running log of new features and capabilities that have been rolled out on the SparkPost Enterprise service. The API reference can be found here https://developers.sparkpost.com/api/ 
+notification: "This Change Log is for SparkPost Enterprise Only"
 ---
 
-<div class="alert alert-info"><i class="fa fa-info-circle"></i> This Change Log is for SparkPost Enterprise Only</div>
-
 A running log of new features and capabilities that have been rolled out on the SparkPost Enterprise service. The API reference can be found [here](https://developers.sparkpost.com/api).
+
+
+### 01 June, 2017
+
+* **Enhancement:** Webhooks by Subaccount
+  * Users of Subaccounts can now set up individual endpoints for each subacccount's data
+  * The Subaccount [Support article](https://www.sparkpost.com/docs/user-guide/subaccounts/#master-account-operating-on-behalf-of-a-subaccount/) has been updated to reflect the additional functionality
+  * NOTE: This is currently available only to Enterprise customers in the US. This change log will be updated when this enhancement becomes available in the EU.
+
 
 ### 28 April, 2017
 
@@ -34,7 +41,7 @@ A running log of new features and capabilities that have been rolled out on the 
     * Test data will now accept metadata and options, in addition to substitution data
         * This allows Enterprise customers to include the binding value in metadata to specify from which binding the test messages should be sent.
         * This addresses the known bug of test messages not working in the Enterprise environment
-    * Updated Knowledge Base Article: [Previewing and Sending Test Emails](https://support.sparkpost.com/customer/portal/articles/1929893-previewing-and-sending-test-emails)
+    * Updated Knowledge Base Article: [Previewing and Sending Test Emails](https://www.sparkpost.com/docs/getting-started/previewing-and-sending-test-emails/)
     * Updated API Documentation: https://developers.sparkpost.com/api/transmissions.html#header-transmission-attributes
 * **Enhancement:** DKIM keys in PKCS#8 format
     * SparkPost now accepts DKIM keys in PKCS#8 format and uses them for signing; this is in addition to DKIM keys in PKCS#1 format
@@ -48,7 +55,7 @@ A running log of new features and capabilities that have been rolled out on the 
 * **New:** Inbound Relay Webhooks for SMS messages
     * Inbound SMS messages, such as STOP requests, will be forwarded to customers' HTTP endpoints as JSON-formatted events
     * Once the inbound esme_address is configured by SparkPost, customers can  use the relay webhooks API to create the HTTP destination.
-    * Knowledge Base article: [Using SMS in SparkPost Enterprise](https://support.sparkpostelite.com/customer/en/portal/articles/2523469-using-sms-in-sparkpost-elite)
+    * Knowledge Base article: [Using SMS in SparkPost Enterprise](https://www.sparkpost.com/docs/tech-resources/using-sms/)
 * **Enhancement:** Stored template generation failure with a single recipient will now generate a generation failure event
 * **Enhancement:** Additional DKIM validation in the Sending Domains API
     * We have added additional validation to DKIM to check that the public and private key match.
@@ -57,9 +64,9 @@ A running log of new features and capabilities that have been rolled out on the 
 
 * **New:** UI for Managing Suppression List
     * Customers can now use the web UI to manage their suppression list (in addition to the API).
-    * Knowledge base article: [Using Suppression Lists](https://support.sparkpost.com/customer/portal/articles/1929891-using-suppression-lists)
+    * Knowledge base article: [Using Suppression Lists](https://www.sparkpost.com/docs/user-guide/using-suppression-lists/)
 * **Enhancement:** Master Account can share tracking domains with subaccounts
-    * Knowledge base article: [Subaccounts in SparkPost and SparkPost Elite](https://support.sparkpost.com/customer/portal/articles/2360320-subaccounts-in-sparkpost-and-sparkpost-elite)
+    * Knowledge base article: [Subaccounts in SparkPost and SparkPost Elite](https://www.sparkpost.com/docs/user-guide/subaccounts/)
 * **Enhancement:** content.reply_to in stored templates
     * The reply-to can now be added via the UI for stored templates
 * **Enhancement:** View Json Event Detail
@@ -69,7 +76,7 @@ A running log of new features and capabilities that have been rolled out on the 
 
 * **Enhancement:** Push Notifications in Transmissions API
     * Customers can now use the Transmissions API to submit content for both APNs (Apple Push Notifications Service) and GCM (Google's Cloud Messaging service)
-    * Knowledge Base Article: [Using Push Notifications in SparkPost Elite](https://support.sparkpost.com/customer/portal/articles/2477781-using-push-notifications-in-sparkpost-elite)
+    * Knowledge Base Article: [Using Push Notifications in SparkPost Elite](https://www.sparkpost.com/docs/integrations/push-notifications-sparkpost-enterprise/)
 * **Enhancement:** Subaccounts
     * Master account can share sending domains with subaccounts
 
@@ -77,11 +84,11 @@ A running log of new features and capabilities that have been rolled out on the 
 
 * **Enhancement:** Tracking Domains for Subaccounts
     * Service providers are now able to create (or give their subaccounts permission to create) tracking domains for their subaccounts.
-    * Knowledge Base article on [Subaccounts](http://support.sparkpost.com/customer/en/portal/articles/2360320-sub-accounts-in-sparkpost-and-sparkpost-elite)
+    * Knowledge Base article on [Subaccounts](https://www.sparkpost.com/docs/user-guide/subaccounts/)
 * **Change:** Some previously classified Timeouts will be classified into other bounce categories
     * Some bounces that were previously coded as “bounce_class”:”24” - “Exceeded max time without delivery” may now be classified into other categories in cases where the ISP is using a soft bounce as a spam block
     * The expected impact is that while the overall bounce percentage won’t change, the number of messages classified as bounced due to a timeout will decrease, while the number of messages classified into other - more accurate - bounce categories will increase. 
-    * Full list of SparkPost Bounce Codes for reference: [https://support.sparkpost.com/customer/portal/articles/1929896](https://support.sparkpost.com/customer/portal/articles/1929896)
+    * [Full list of SparkPost Bounce Codes](https://www.sparkpost.com/docs/deliverability/bounce-classification-codes/) for reference
 * **Change:** Renamed Bindings / Binding Groups to "Sending IPs" and "IP Pools"
     * We have relabeled Binding and Binding Group to Sending IP and IP Pools. This a label change only in Elite, and is being done in preparation for future upgrades in functionality
 * **Changes:** Domain Verification
@@ -97,19 +104,19 @@ A running log of new features and capabilities that have been rolled out on the 
     * Previously, in order for the master account to send on behalf of their subaccount via SMTP, the master account had to use the subaccounts API key and impersonate the subaccount. Now, the master account can do it by modifying the SMTP injection username to include the subaccount ID. See API docs [https://developers.sparkpost.com/api/#/introduction/smtp-relay-endpoints](https://developers.sparkpost.com/api/#/introduction/smtp-relay-endpoints)
 * **Enhancement:** Optionally not base 64 encode target URLs in tracking links foriOS Universal Links
     * This enhancement reduces the delay for the user to be redirected to the app since it is no longer necessary to do base 64 decoding.
-    * Knowledge Base Article: [iOS Univesal links](https://support.sparkpostelite.com/customer/portal/articles/2231112-using-ios-universal-links-with-sparkpost-elite)
+    * Knowledge Base Article: [iOS Univesal links](https://www.sparkpost.com/docs/tech-resources/ios-universal-links/)
 
 ### 18 April, 2016
 
 * **New Feature:** Subaccounts
     * Service providers will be able to manage multiple customers within a single SparkPost account. This includes API keys, sending domains, data,  suppression lists, and more
-    * Knowledge Base Article: [Subaccount in SparkPost and SparkPost Elite](https://support.sparkpost.com/customer/en/portal/articles/2360320-sub-accounts-in-sparkpost-and-sparkpost-elite)
+    * Knowledge Base Article: [Subaccount in SparkPost and SparkPost Elite](https://www.sparkpost.com/docs/user-guide/subaccounts/)
 
 ### 17 March, 2016
 
 * **New Feature:** Recipient List is now in the UI
     * Customers can now create, replace or delete their recipient list(s) in the web UI. You can upload a csv file to create a new list or replace an existing list.
-    * Knowledge Base Article: [Uploading and Storing a Recipient List as a CSV File](https://support.sparkpost.com/customer/en/portal/articles/2351320-uploading-and-storing-a-recipient-list-as-a-csv-file?b_id=7411)
+    * Knowledge Base Article: [Uploading and Storing a Recipient List as a CSV File](https://www.sparkpost.com/docs/user-guide/uploading-recipient-list/)
 * **Change:** Template UI shows verified sending domains only
     * Now that SPE customers are required to have verified sending domains, the "Email From Domain" dropdown in the Template UI shows only verified sending domains.
 

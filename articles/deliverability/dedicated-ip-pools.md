@@ -1,12 +1,11 @@
 ---
 title: "Dedicated IP Pools"
-redirect_from: "https://support.sparkpost.com/customer/portal/articles/2002977-dedicated-ip-pools"
 description: "Dedicated IP addresses are available for any account with the exception of the FREE plan with no credit card details on file Any new dedicated IP address added to your account will have a neutral initial reputation which means that you will be responsible for properly warming up your new..."
 ---
 
-Dedicated IP addresses are available for any account with the exception of the FREE plan with no credit card details on file. Any new dedicated IP address added to your account will have a neutral initial reputation, which means that you will be responsible for properly warming up your new IP. You can refer to our <u>[IP Warmup Overview](https://support.sparkpost.com/customer/en/portal/articles/1972209-ip-warm-up-overview?b_id=7411)</u> for a comprehensive guide to warming up your new IP. 
+Dedicated IP addresses are available for any account with the exception of the FREE plan with no credit card details on file. Any new dedicated IP address added to your account will have a neutral initial reputation, which means that you will be responsible for properly warming up your new IP. You can refer to our [IP Warmup Overview](https://www.sparkpost.com/docs/deliverability/ip-warm-up-overview/) for a comprehensive guide to warming up your new IP.
 
-## Purchasing Dedicated IPs 
+## Purchasing Dedicated IPs
 
 You can provision new dedicated IPs directly to your Account via the UI.
 
@@ -24,7 +23,7 @@ You can provision new dedicated IPs directly to your Account via the UI.
 
 You can view and manage your dedicated IPs and their associated IP Pools in the UI by selecting Account **->** IP Pools
 
-From here, you can create, delete, or edit IP Pools. You can also move dedicated IPs between pools. Read this article to understand more about __[managing your existing dedicated IP pools](https://support.sparkpost.com/customer/en/portal/articles/2460212-managing-dedicated-ips)__.
+From here, you can create, delete, or edit IP Pools. You can also move dedicated IPs between pools. Read this article to understand more about __[managing your existing dedicated IP pools](https://www.sparkpost.com/docs/deliverability/managing-dedicated-ip-pools/)__.
 
 ## Using Your Dedicated IPs
 

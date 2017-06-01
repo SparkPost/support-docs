@@ -1,6 +1,5 @@
 ---
 title: "Using SparkPost with PowerMTA"
-redirect_from: "https://support.sparkpost.com/customer/portal/articles/2155339-using-sparkpost-with-powermta"
 description: "If you’re interested in relaying mail through Power MTA to Spark Post there are only a few things you need to do First create a Spark Post account if you don't already have one Next create an API key with the Send via SMTP permission Now create and verify the..."
 ---
 
@@ -10,7 +9,7 @@ Next, [create an API key](https://app.sparkpost.com/account/credentials) with th
 
 ![](media/power-mta/pmta-key_original.png)
 
-Now [create and verify](https://app.sparkpost.com/account/sending-domains) the domain you want to use for sending. The setup process should take about 5-10 minutes if you have access to your DNS server. See [Verify Sending Domains](https://support.sparkpost.com/customer/portal/articles/1933360) for more information.
+Now [create and verify](https://app.sparkpost.com/account/sending-domains) the domain you want to use for sending. The setup process should take about 5-10 minutes if you have access to your DNS server. See [Verify Sending Domains](https://www.sparkpost.com/docs/getting-started/getting-started-sparkpost/#step-2-verifying-domain-ownership) for more information.
 
 Add the following to your PowerMTA config, changing the value for auth-password to the SparkPost API key you created above:
 

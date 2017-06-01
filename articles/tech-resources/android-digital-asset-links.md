@@ -1,6 +1,5 @@
 ---
 title: "How do I use Android digital asset links with SparkPost Enterprise?"
-redirect_from: "https://support.sparkpost.com/customer/portal/articles/2754251-how-do-i-use-android-digital-asset-links-with-sparkpost-enterprise-"
 description: "Note This article is for Spark Post Enterprise only Table of Contents Use these quick links to jump to certain sections of this article Introduction What are the potential benefits to configuring Android digital asset links As a Spark Post Enterprise customer what steps do I need to take to..."
 ---
 
@@ -10,15 +9,15 @@ description: "Note This article is for Spark Post Enterprise only Table of Conte
 
 Use these quick links to jump to certain sections of this article:
 
-* [Introduction](#lnk-introduction)
-* [What are the potential benefits to configuring Android digital asset links?](#lnk-potential-benefits)
-* [As a SparkPost Enterprise customer, what steps do I need to take to implement digital asset links?](#lnk-implement)
+* [Introduction](#introduction)
+* [What are the potential benefits to configuring Android digital asset links?](#what-are-the-potential-benefits-to-configuring-android-digital-asset-links)
+* [As a SparkPost Enterprise customer, what steps do I need to take to implement digital asset links?](#as-a-sparkpost-enterprise-customer-what-steps-do-i-need-to-take-to-implement-digital-asset-links)
 
-## <a id="lnk-introduction">Introduction</a>
+## Introduction
 
 Android digital asset links allow recipients who click on a link in an email on their mobile device to be directed to the mobile app (assuming it's installed) rather than the default browser on the user's Android device. The purpose of this article is to explain how to integrate digital asset links with SparkPost Enterprise, but does not go into in-depth detail on how to configure the backend of your mobile app to accept these links, nor the formation of your digital asset link statements. Please refer to the official [Google Digital Asset Links](https://developers.google.com/digital-asset-links/v1/getting-started) page for further documentation.
 
-## <a id="lnk-potential-benefits">What are the potential benefits to configuring Android digital asset links?</a>
+## What are the potential benefits to configuring Android digital asset links?
 
 The Digital Asset Links protocol and API enable an app or website to make public, verifiable *statements* about other apps or websites. For example, a website can declare that it is associated with a specific Android app, or it can declare that it wants to share user credentials with another website.
 
@@ -30,7 +29,7 @@ Here are some possible uses for Digital Asset Links:
 
 Android digital asset links can not only push tracked links to your mobile app, but can also share credentials and settings from their browser/device, which improves the overall end user experience dramatically over standard link formatting.
 
-## <a id="lnk-implement">As a SparkPost Enterprise customer, what steps do I need to take to implement digital asset links?</a>
+## As a SparkPost Enterprise customer, what steps do I need to take to implement digital asset links?
 
 **Get familiar with Android digital asset links by referring to their documentation.**
 

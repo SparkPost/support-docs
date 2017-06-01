@@ -1,6 +1,5 @@
 ---
 title: "Using iOS Universal Links with SparkPost Enterprise"
-redirect_from: "https://support.sparkpost.com/customer/portal/articles/2231112-using-ios-universal-links-with-sparkpost-enterprise"
 description: "Note This Knowledge Base Article Is For Spark Post Enterprise Only Table of Contents Use these quick links to jump to certain sections of this article Introduction Benefits of Universal Links Summarized Workflow of Universal Links Setup and Operation As a Spark Post Enterprise Customer What Steps Do I Need..."
 ---
 
@@ -10,12 +9,12 @@ description: "Note This Knowledge Base Article Is For Spark Post Enterprise Only
 
 Use these quick links to jump to certain sections of this article:
 
-* [Introduction](#Introduction)
-* [Benefits of Universal Links](#Benefits-of-Universal-Links)
-* [Summarized Workflow of Universal Links Setup and Operation](#Summarized-Workflow-of-Universal-Links-Setup-and-Operation)
-* [As a SparkPost Enterprise Customer, What Steps Do I Need to Take?](#As-a-SparkPost-Enterprise-Customer-What-Steps-Do-I-Need-to-Take)
-* [Creating Universal Links in Templates with Sub-Pathing](#Creating-Universal-Links-in-Templates-with-Sub-Pathing)
-* [End User Caveats with Universal Links](#End-User-Caveats-with-Universal-Links)
+* [Introduction](#introduction)
+* [Benefits of Universal Links](#benefits-of-universal-links)
+* [Summarized Workflow of Universal Links Setup and Operation](#summarized-workflow-of-universal-links-setup-and-operation)
+* [As a SparkPost Enterprise Customer, What Steps Do I Need to Take?](#as-a-sparkpost-enterprise-customer-what-steps-do-i-need-to-take)
+* [Creating Universal Links in Templates with Sub-Pathing](#creating-universal-links-in-templates-with-sub-pathing)
+* [End User Caveats with Universal Links](#end-user-caveats-with-universal-links)
 
 ## Introduction
 
@@ -73,7 +72,7 @@ SparkPost Enterprise will automatically add the `/f/a/` subdirectories to your e
 http://<engagement tracking domain>/f/<customsubpath>/<base64 encoded redirection link>
 ```
 
-Custom sub-paths can be set using the `data-msys-sublink` URL attribute in your HTML code. By using this attribute, you can segment your website content to push links to either your mobile app, or to the end user's default browser. Detailed info on how to properly use the  `data-msys-sublink` URL attribute to create sub-pathed links is illustrated in this article [here](https://support.sparkpost.com/customer/portal/articles/2231112-using-ios-universal-links-with-sparkpost-elite#Creating Universal Links in Templates & Sub-Pathing).
+Custom sub-paths can be set using the `data-msys-sublink` URL attribute in your HTML code. By using this attribute, you can segment your website content to push links to either your mobile app, or to the end user's default browser. Detailed info on how to properly use the  `data-msys-sublink` URL attribute to create sub-pathed links is illustrated in this article [here](https://www.sparkpost.com/docs/tech-resources/ios-universal-links/#creating-universal-links-in-templates-with-sub-pathing).
 
 **Note**: SparkPost Enterprise sub-pathed links are limited to one subdirectory deep in a URL pathway beyond the two subdirectories that SparkPost Enterprise automatically adds (whether using a custom sub-path or not) to the beginning of your links during message generation. Due to this restriction, all of your paths set in your apple-app-site-assocation file should **never** be longer be longer than 2 subdirectories deep plus a wildcard character (`*`), and will always be of the format `/f/<customsubpath>/*` or `*`, if you wish all links on your website to route to your app. Adding any other character(s) beyond the custom sub-path other than a wildcard (`*`) will cause the link to fail and route to the end user's default browser. As an example, you cannot set a path like this in your apple-app-site-assocation file:
 

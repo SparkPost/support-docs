@@ -1,6 +1,5 @@
 ---
 title: "Managing Sending Domains"
-redirect_from: "https://support.sparkpost.com/customer/portal/articles/2253608-managing-sending-domains"
 description: "Note This Knowledge Base Article Is For Spark Post Enterprise Only Managing Sending Domains Table of Contents Introduction Why is this Important What it does How it Works Guidelines Sending Domains Functionality The Set up Process What Happens with Existing Spark Post Elite Customers Frequently Asked Questions FA Qs a..."
 ---
 
@@ -10,16 +9,16 @@ description: "Note This Knowledge Base Article Is For Spark Post Enterprise Only
 
 * [Introduction](#introduction)
 * [Why is this Important?](#why-is-this-important)
-* [What it does / How it Works](#what-it-does)
-* [Guidelines: Sending Domains Functionality](#guidelines)
-* [The Set up Process](#the-setup-process)
-* [What Happens with Existing SparkPost Elite Customers?](#exisiting-customers)
-* [Frequently Asked Questions (FAQs)](#faqs)
+* [What it does / How it Works](#what-it-does-how-it-works)
+* [Guidelines: Sending Domains Functionality](#guidelines-sending-domains-functionality)
+* [The Set up Process](#the-set-up-process)
+* [What Happens with Existing SparkPost Elite Customers?](#note-to-existing-sparkpost-elite-customers)
+* [Frequently Asked Questions (FAQs)](#frequently-asked-questions-faqs)
 
- ### Introduction
+### Introduction
 The Sending Domains API and corresponding User Interface (UI) allows a user to add a sending domain to SparkPost Elite. To that end, Sending Domains API provides self-service functionality for customers and Technical Account Managers (TAMs) to set up Sending Domains within SparkPost Elite. The documentation for the Sending Domains API can be found [here](https://developers.sparkpost.com/api/sending-domains.html).
 
- ### Why is this Important?
+### Why is this Important?
 An important strategic initiative for SparkPost is to make it easier for service providers to do business with us. For the purpose of this document, this means customers who send email on behalf of other companies/entities as part of the services they provide. It may include Email Service Providers (ESPs), or it may include Enterprises sending email on behalf of several business units. The common factor is the need to manage multiple sending domains in an efficient manner, while ensuring that they are properly set up and ready for sending.
 
 ### What it Does / How it Works
@@ -81,7 +80,7 @@ Here is an example JSON script for creating the Sending Domain mydomain.com - fo
 }
 ```
 
- ### Note to Existing SparkPost Elite Customers
+### Note to Existing SparkPost Elite Customers
 For existing Elite customers, there will be a migration process to enable this functionality. There should not be any interruption to the sending of mail while customer domains are migrated to the new policy and all existing sending domains will continue to work and will be set to verified automatically.
 
 For customers who would like any __new__ sending domains to be automatically set to verified contact your TAM to have your account set auto-verify = ON.
@@ -94,4 +93,4 @@ A1: You need to set up each one using the UI or API. It's a separate call to the
 
 **Q2: How do I set up double-DKIM signing?**
 
-A2: It depends on what the other signature is. Assuming the second signature is something like customer.sparkpostelite.com, it is still done via our Operations Team during the customer build-out process. This means each of the sending domains for a customer will have the same second DKIM signature.
+A2: It depends on what the other signature is. Assuming the second signature is something like customer.sparkpostelite.com, it is still done via our Operations Team during the customer build-out process. This means each of the sending domains for a customer will have the same second DKIM signature.  

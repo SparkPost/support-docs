@@ -1,6 +1,5 @@
 ---
 title: "What counts towards your daily and monthly usage?"
-redirect_from: "https://support.sparkpost.com/customer/portal/articles/2750871-what-counts-towards-your-daily-and-monthly-usage-"
 description: "What counts towards your daily and monthly usage All targeted injections including messages you send and attempt to send count toward your daily and monthly usage and sending limits These include Messages that are accepted by Spark Post including those sent to a sinkhole address This is the Injected count..."
 ---
 

@@ -1,6 +1,5 @@
 ---
 title: "How can I account for all messages attempted through SparkPost?"
-redirect_from: "https://support.sparkpost.com/customer/portal/articles/2537369-how-can-i-account-for-all-messages-attempted-through-sparkpost-"
 description: "Injection Phase For all messages you pass to Spark Post defined as accepted in REST transmissions or 250 Ok for SMTP injections an injection event OR one of three error events is logged An injection event is recorded if Spark Post is able to generate a message and queue it..."
 ---
 

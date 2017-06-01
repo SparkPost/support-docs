@@ -1,6 +1,5 @@
 ---
 title: "SMTP and REST API Injection Best Practices for Improved Performance"
-redirect_from: "https://support.sparkpost.com/customer/portal/articles/2429473-smtp-and-rest-api-injection-best-practices-for-improved-performance"
 description: "Spark Post wants to make sure all of our customers have the best sending experience through our service We have a few recommendations to ensure you are injecting in the most efficient manner and to optimize overall message throughput Sending via the Transmission REST API We recommend that you send..."
 ---
 
@@ -31,4 +30,4 @@ Follow these best practices in order to optimize SMTP injection rates (and ove
 * For optimal deliverability, the total size of each message should not exceed 100kb.
 * For messages with inline images and attachments, keep the total message size to less than 20MB - total size limit includes the **body** PLUS **images** PLUS **attachments**
 
-Need help or advice with technical issues?  Check out our community Slack channel at [slack.sparkpost.com](http://slack.sparkpost.com/) or [submit a support request](https://support.sparkpost.com/customer/portal/emails/new?email[subject]=Injection%20Best%20Practices).
+Need help or advice with technical issues?  Check out our community Slack channel at [slack.sparkpost.com](http://slack.sparkpost.com/) or [submit a support request](https://www.sparkpost.com/submit-a-ticket?email[subject]=Injection%20Best%20Practices).

@@ -1,8 +1,34 @@
 ---
 title: "SparkPost Change Log"
-redirect_from: "https://support.sparkpost.com/customer/portal/articles/1936102-change-log"
 description: "A running log of what's new, what's been fixed, and what's been changed in SparkPost."
 ---
+
+## May 26, 2017
+
+### What’s New?
+
+* Subaccount news! You can now create separate webhook endpoints for each [subaccount](https://www.sparkpost.com/docs/user-guide/subaccounts/#master-account-operating-on-behalf-of-a-subaccount). 
+
+
+## May 12, 2017
+
+### What’s New?
+
+* Looking for some assistance to get started using SparkPost? We published a brand new [getting started guide](https://www.sparkpost.com/docs/getting-started/getting-started-sparkpost/). 
+* Need help converting your SendGrid Templates? Check out our SendGrid to SparkPost [template converter](https://github.com/SparkPost/sendgrid-sparkpost-templates).
+
+
+## May 8, 2017
+
+### What’s New?
+
+* Improved support documentation with a cleaner look and better search. We also open sourced the documentation- pull requests welcome!
+* You can now create multiple bounce domains for your sending domains using the sending domain [REST API](https://developer.sparkpost.com/api/sending-domains.html). [More Info](https://www.sparkpost.com/docs/tech-resources/custom-bounce-domain/)
+
+### Fixed
+
+* A defect was fixed to ensure when customers inject a multi-recipient transmission using REST, the Message-ID header in the email will be unique.
+
 
 ## April 21, 2017
 

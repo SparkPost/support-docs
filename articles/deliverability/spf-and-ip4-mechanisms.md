@@ -1,6 +1,5 @@
 ---
 title: "SPF and ip4 Mechanisms"
-redirect_from: "https://support.sparkpost.com/customer/portal/articles/2521756-spf-and-ip4-mechanisms"
 description: "Unfortunately we do not have the luxury of being assigned large blocks of IP space by our provider and so we cannot use the ip 4 mechanism in our SPF records this has meant we've had to look for more creative approaches ones that require extra DNS queries It would..."
 ---
 

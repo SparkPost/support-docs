@@ -1,6 +1,5 @@
 ---
 title: "How to Use Binding Groups"
-redirect_from: "https://support.sparkpost.com/customer/portal/articles/2085201-how-to-use-binding-groups"
 description: "Note This Knowledge Base Article Is For Spark Post Enterprise Only Introduction Your Spark Post Elite environment was provisioned with your specific messaging needs and industry segmentation best practices in mind Bindings enable the ability to route individual messages over a designated group of IP addresses Each message sent must..."
 ---
 

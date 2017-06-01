@@ -1,6 +1,5 @@
 ---
 title: "Comparing Webhook and Message Event Data"
-redirect_from: "https://support.sparkpost.com/customer/portal/articles/2311698-comparing-webhook-and-message-event-data"
 description: "Webhooks are a way to push real time events from Spark Post or Spark Post Elite to a consumer of your choice If there is a problem receiving data at the consumer end the webhook will retry a number of times but eventually it will stop attempting to send the..."
 ---
 

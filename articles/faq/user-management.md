@@ -1,6 +1,5 @@
 ---
 title: "User Management: How to Add or Delete Users from your Account"
-redirect_from: "https://support.sparkpost.com/customer/portal/articles/2218176-user-management-how-to-add-or-delete-users-from-your-account"
 description: "Spark Post and Spark Post Elite provide the ability to add or delete an additional user s to your account This self service feature is available via the user interface in the Account Users section of the UI Moreover there are also two role based features available in the Web..."
 ---
 

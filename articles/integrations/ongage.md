@@ -1,14 +1,13 @@
 ---
 title: "Using SparkPost with the Ongage Email Marketing Platform"
-redirect_from: "https://support.sparkpost.com/customer/portal/articles/1930046-using-sparkpost-with-the-ongage-email-marketing-platform"
 description: "To connect your Spark Post account into the Ongage platform log into your Spark Post account and do the following Set up your desired Sending Domain the domain you want to send email from on Ongage such as myawesomedomain com make sure the domain is verified after you've set up..."
 ---
 
 **To connect your SparkPost account into the Ongage platform, log into your SparkPost account and do the following:**
 
-1. Set up your [desired Sending Domain](http://support.sparkpost.com/customer/portal/articles/1933318-create-sending-domains) (the domain you want to send email from on Ongage, such as 'myawesomedomain.com') - make sure the domain is verified after you've set up your DKIM information with your DNS provider.  Your domain should be listed as 'ready to send' on the SparkPost Sending Domains page on your account.  It is best to send a test message through your new domain using the SparkPost template page to verify your domain is set up correctly.
+1. Set up your [desired Sending Domain](https://www.sparkpost.com/docs/getting-started/getting-started-sparkpost/#preparing-your-from-address) (the domain you want to send email from on Ongage, such as 'myawesomedomain.com') - make sure the domain is verified after you've set up your DKIM information with your DNS provider.  Your domain should be listed as 'ready to send' on the SparkPost Sending Domains page on your account.  It is best to send a test message through your new domain using the SparkPost template page to verify your domain is set up correctly.
 
-1. Create a  [new SparkPost API Key](https://support.sparkpost.com/customer/portal/articles/1933377-create-api-keys) (do a 'Select All' to enable ALL the permissions) - save that API key somewhere safe as SparkPost only displays it once for security reasons.
+1. Create a  [new SparkPost API Key](https://www.sparkpost.com/docs/getting-started/create-api-keys/) (do a 'Select All' to enable ALL the permissions) - save that API key somewhere safe as SparkPost only displays it once for security reasons.
 
 1. Log on to your Ongage account and add 'SparkPost' as a new ESP to your Ongage account using the OngageConnect Setup Wizard.
 
@@ -31,4 +30,4 @@ description: "To connect your Spark Post account into the Ongage platform log in
 * Make sure your sending domain is set up properly in SparkPost and shows the status of 'Ready to Send'
 * Your 'From' and 'Reply' addresses that you set in the Ongage platform for your campaigns must exactly match the sending domain you set up on your SparkPost account
 * The API key you create on your SparkPost account must have ALL of the permissions checked
-* If Ongage returns the error of 'Over Quota', send a [note to support](http://support.sparkpost.com) to request your SparkPost's account sending limits to be increased in order to allow higher message sending rates
+* If Ongage returns the error of 'Over Quota', send a [note to support](https://www.sparkpost.com/docs/) to request your SparkPost's account sending limits to be increased in order to allow higher message sending rates

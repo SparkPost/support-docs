@@ -1,6 +1,5 @@
 ---
 title: "Message Events Reporting in the UI"
-redirect_from: "https://support.sparkpost.com/customer/portal/articles/2240051-message-events-reporting-in-the-ui"
 description: "Introduction With the addition of the Message Events API we have added the power searching for message event data based on recipients campaigns and more This new API endpoint provides our customers with a way to pull data on demand for use in internal reporting triggering message generation or other..."
 ---
 

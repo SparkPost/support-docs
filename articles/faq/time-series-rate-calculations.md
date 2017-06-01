@@ -1,6 +1,5 @@
 ---
 title: "Why do time series graphs on the summary page sometimes display inaccurate rate calculations?"
-redirect_from: "https://support.sparkpost.com/customer/portal/articles/2423371-why-do-time-series-graphs-on-the-summary-page-sometimes-display-inaccurate-rate-calculations-"
 description: "Time series graphs on the summary page calculate most rate metrics against the number of targeted messages Rolling your mouse cursor over a specific point in time on the graph will display the results exactly at that point in time As an example if you have previously sent out a..."
 ---
 
