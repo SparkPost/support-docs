@@ -1,6 +1,6 @@
 ---
 title: "SparkPost Enterprise Change Log"
-description: "Note This Change Log is for SparkPost Enterprise Only. This is a running log of new features and capabilities that have been rolled out on the SparkPost Enterprise service. The API reference can be found here https://developers.sparkpost.com/api/ 
+description: "Note This Change Log is for SparkPost Enterprise Only. This is a running log of new features and capabilities that have been rolled out on the SparkPost Enterprise service. The API reference can be found here https://developers.sparkpost.com/api/"
 notification: "This Change Log is for SparkPost Enterprise Only"
 ---
 
