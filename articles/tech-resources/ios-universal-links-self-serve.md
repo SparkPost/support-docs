@@ -95,7 +95,7 @@ The setup steps are as follows:
 
 When an iOS email client recognises that your recipient has tapped on a universal link, it sends your application delegate an `NSUserActivity`. To allow SparkPost to track this universal link "click" event, you must call the SparkPost click tracking service to tell it about the activity. The click tracker will respond with a "3xx" redirect to the original URL from your email which may be useful to control app behaviour.
 
-Important: remember that the universal link uses your tracking domain but the SparkPost click tracker lives on `spgo.io`. As a result, your app must swap out the tracking domain in your universal link with `spgo.io` before_ making the HTTP call.
+Important: remember that the universal link uses your tracking domain but the SparkPost click tracker lives on `spgo.io`. As a result, your app must swap out the tracking domain in your universal link with `spgo.io` _before_ making the HTTP call.
 
 Here's a sample `application:continueUserActivity:restorationHandler` method which calls the SparkPost click tracker to register a click event and also retrieves the original URL:
 
@@ -130,5 +130,5 @@ Here's a sample `application:continueUserActivity:restorationHandler` method whi
 }
 ```
 
-With a little configuration, a single additional handler in your app but without any additional hosting requirements, you can enable and track iOS universal links through your SparkPost account just as if they were any other link.
+With a little configuration, a single additional handler in your app, and no additional hosting requirements, you can enable and track iOS universal links through your SparkPost account just as if they were any other link.
 
