@@ -5,13 +5,13 @@ description: "SparkPost supports HTTPS engagement tracking for customers via sel
 
 ## Overview
 
-SparkPost supports HTTPS engagement tracking for customers via self-service for all SparkPost customers. To enable SSL engagement tracking for a domain, additional configuration for SSL keys is required.
+SparkPost supports HTTPS engagement tracking for all self-service customers. This article describes how to use a Content Delivery Network (CDN) to enable SSL engagement tracking for your domain. After completing the steps below, your email recipients will see HTTPS links in the email you send. When they visit a tracked link, your CDN will handle the SSL connection, then pass the HTTP request on to SparkPost. SparkPost will record the click event and redirect the recipient to the original URL.
 
 ## Configuring SSL Certificates
 
 In order for HTTPS engagement tracking to be enabled on SparkPost, our service needs to present a valid certificate that will be trusted by the email recipient’s browser.  SparkPost does not manage certificates for customer engagement tracking domains, as we are not the record owner for our customers’ domains. 
 
-As a workaround, you may use a Content Delivery Network (CDN) service, such as CloudFlare or Fastly to manage certificates and keys for any custom engagement tracking domains you configure.  These services forward traffic onwards to SparkPost so that HTTPS tracking can be performed. 
+As a workaround, you may use a Content Delivery Network (CDN) service, such as [Cloudflare](http://www.cloudflare.com) or [Fastly](http://www.fastly.com) to manage certificates and keys for any custom engagement tracking domains you configure.  These services forward traffic onwards to SparkPost so that HTTPS tracking can be performed. 
 
 ## Step by Step Guide with CloudFlare
 
@@ -24,13 +24,13 @@ The following is a sample guide for use with CloudFlare **only**; please note, t
 
 3.	Add domain and then add the following Cloudflare NS records (**please note**, for other providers, the NS records to be used will differ):
   
-  	NS	aron.ns.cloudflare.com
+```  	NS	aron.ns.cloudflare.com
 	
-  	NS	peyton.ns.cloudflare.com (these values can be found under the DNS tab on the Cloudflare UI) 
+  	NS	peyton.ns.cloudflare.com (these values can be found under the DNS tab on the Cloudflare UI)  ```
 
 	**Example:**
 
-	Using the domain "isaackim.info", below is a command line DIG command to confirm that the NS records have been updated to reflect the required changes:
+		Using the domain "isaackim.info", below is a command line DIG command to confirm that the NS records have been updated to reflect the required changes:
 
 ```
 dig isaackim.info NS
@@ -58,20 +58,20 @@ isaackim.info.		86400	IN	NS	aron.ns.cloudflare.com.
 
 **Example:**
 
-Using an engagement tracking domain of "isaackim.info" in SparkPost, the appropriate CNAME record under the DNS tab of CloudFlare has been added.
+	Using an engagement tracking domain of "isaackim.info" in SparkPost, the appropriate CNAME record under the DNS tab of CloudFlare has been added.
 
-![](media/enabling-https-engagement-tracking-on-sparkpost/CNAMEtospgoio.png)
+	![](media/enabling-https-engagement-tracking-on-sparkpost/CNAMEtospgoio.png)
 
 5. Navigate to the Page Rules settings for the domain.
 6. Create a page rule for the domain that sets SSL to “Full”. This is required for how CloudFlare will validate the certificate on the origin.
 
-![](media/enabling-https-engagement-tracking-on-sparkpost/page%20rule.png)
+	![](media/enabling-https-engagement-tracking-on-sparkpost/page%20rule.png)
 	
-More information on SSL options for Cloudflare can be found [here](https://support.cloudflare.com/hc/en-us/articles/200170416). 
+	More information on SSL options for Cloudflare can be found [here](https://support.cloudflare.com/hc/en-us/articles/200170416). 
 
 7. Turn the page rule "on."
 
-![](media/enabling-https-engagement-tracking-on-sparkpost/SSL%20full.png)
+	![](media/enabling-https-engagement-tracking-on-sparkpost/SSL%20full.png)
 
 8. Reach out to SparkPost Support and request that HTTPS engagement tracking be enabled on your account. They will verify the configuration and enable the setting on your account.
 
