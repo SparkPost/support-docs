@@ -28,7 +28,7 @@ The following is a sample guide for use with CloudFlare **only**; please note, t
 	
   	NS	peyton.ns.cloudflare.com (these values can be found under the DNS tab on the Cloudflare UI)  ```
 
-	**Example:**
+**Example:**
 
 Using the domain "isaackim.info", below is a command line DIG command to confirm that the NS records have been updated to reflect the required changes:
 
