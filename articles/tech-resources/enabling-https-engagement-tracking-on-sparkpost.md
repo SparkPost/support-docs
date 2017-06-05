@@ -35,7 +35,7 @@ Using the domain "isaackim.info", below is a command line DIG command to confirm
 	
 	dig isaackim.info NS
 
-	; <<>> DiG 9.8.3-P1 <<>> isaackim.info NS
+```; <<>> DiG 9.8.3-P1 <<>> isaackim.info NS
 	;; global options: +cmd
 	;; Got answer:
 	;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 25635
@@ -51,7 +51,7 @@ Using the domain "isaackim.info", below is a command line DIG command to confirm
 	;; Query time: 128 msec
 	;; SERVER: 10.76.3.194#53(10.76.3.194)
 	;; WHEN: Tue May  9 10:15:20 2017
-	;; MSG SIZE  rcvd: 88
+	;; MSG SIZE  rcvd: 88```
 	
 4. Add a new CNAME entry that points your domain to sparkpost.com
 
