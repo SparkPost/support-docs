@@ -32,27 +32,27 @@ The following is a sample guide for use with CloudFlare **only**; please note, t
 
 	Using the domain "isaackim.info", below is a command line DIG command to confirm that the NS records have been updated to reflect the required changes:
 
-```
-dig isaackim.info NS
+	```
+	dig isaackim.info NS
 
-; <<>> DiG 9.8.3-P1 <<>> isaackim.info NS
-;; global options: +cmd
-;; Got answer:
-;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 25635
-;; flags: qr rd ra; QUERY: 1, ANSWER: 2, AUTHORITY: 0, ADDITIONAL: 0
+	; <<>> DiG 9.8.3-P1 <<>> isaackim.info NS
+	;; global options: +cmd
+	;; Got answer:
+	;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 25635
+	;; flags: qr rd ra; QUERY: 1, ANSWER: 2, AUTHORITY: 0, ADDITIONAL: 0
 
-;; QUESTION SECTION:
-;isaackim.info.			IN	NS
+	;; QUESTION SECTION:
+	;isaackim.info.			IN	NS
 
-;; ANSWER SECTION:
-isaackim.info.		86400	IN	NS	peyton.ns.cloudflare.com.
-isaackim.info.		86400	IN	NS	aron.ns.cloudflare.com.
+	;; ANSWER SECTION:
+	isaackim.info.		86400	IN	NS	peyton.ns.cloudflare.com.
+	isaackim.info.		86400	IN	NS	aron.ns.cloudflare.com.
 
-;; Query time: 128 msec
-;; SERVER: 10.76.3.194#53(10.76.3.194)
-;; WHEN: Tue May  9 10:15:20 2017
-;; MSG SIZE  rcvd: 88
-```
+	;; Query time: 128 msec
+	;; SERVER: 10.76.3.194#53(10.76.3.194)
+	;; WHEN: Tue May  9 10:15:20 2017
+	;; MSG SIZE  rcvd: 88
+	```
 
 4. Add a new CNAME entry that points your domain to sparkpost.com
 
