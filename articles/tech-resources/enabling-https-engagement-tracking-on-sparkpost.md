@@ -56,7 +56,7 @@ The following is a sample guide for use with CloudFlare **only**; please note, t
 
 4. Add a new CNAME entry that points your domain to sparkpost.com
 
-**Example:**
+	**Example:**
 
 	Using an engagement tracking domain of "isaackim.info" in SparkPost, the appropriate CNAME record under the DNS tab of CloudFlare has been added.
 
