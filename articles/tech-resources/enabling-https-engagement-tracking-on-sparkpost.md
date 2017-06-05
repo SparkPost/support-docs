@@ -35,7 +35,7 @@ Using the domain "isaackim.info", below is a command line DIG command to confirm
 	
 	dig isaackim.info NS
 
-```; <<>> DiG 9.8.3-P1 <<>> isaackim.info NS
+; ```<<>> DiG 9.8.3-P1 <<>> isaackim.info NS
 	;; global options: +cmd
 	;; Got answer:
 	;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 25635
