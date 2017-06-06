@@ -76,3 +76,4 @@ When developing to the REST api, you should be prepared to handle failed request
 | *Bounce Domain*       | *8000-8999* |                                                  |                  |                                              |
 |                       | 8000        | Bounce domain exists                             | 400              |                                              |
 |                       | 8001        | Bounce domain does not exist                     | 404              |                                              |
+| *Message Events*      |             | Too many requests                                | 429              | Rate limiting - pause and retry
