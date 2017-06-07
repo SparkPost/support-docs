@@ -20,7 +20,7 @@ The following is a sample guide for use with CloudFlare **only**; please note, t
 1. Create CloudFlare account
 2. Go to “DNS” tab on the CloudFlare UI:
 
-    ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudflare%20UI.png)
+    ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudflare_UI.png)
 
 3. Add domain and then add the following Cloudflare NS records (**please note**, for other providers, the NS records to be used will differ):
 
@@ -29,7 +29,7 @@ The following is a sample guide for use with CloudFlare **only**; please note, t
     NS	peyton.ns.cloudflare.com
     ```
     These values can be found under the DNS tab on the Cloudflare UI.
-    
+
     **Example:**
 
     Using the domain `track.example.com`, below is a command line DIG command to confirm that the NS records have been updated to reflect the required changes:
@@ -67,13 +67,13 @@ The following is a sample guide for use with CloudFlare **only**; please note, t
 5. Navigate to the Page Rules settings for the domain.
 6. Create a page rule for the domain that sets SSL to “Full”. This is required for how CloudFlare will validate the certificate on the origin.
 
-    ![](media/enabling-https-engagement-tracking-on-sparkpost/page%20rule.png)
+    ![](media/enabling-https-engagement-tracking-on-sparkpost/page_rule.png)
 
     More information on SSL options for Cloudflare can be found [here](https://support.cloudflare.com/hc/en-us/articles/200170416).
 
 7. Turn the page rule "on."
 
-    ![](media/enabling-https-engagement-tracking-on-sparkpost/SSL%20full.png)
+    ![](media/enabling-https-engagement-tracking-on-sparkpost/SSL_full.png)
 
 8. Reach out to SparkPost Support and request that HTTPS engagement tracking be enabled on your account. They will verify the configuration and enable the setting on your account.
 
