@@ -56,7 +56,7 @@ The following is a sample guide for use with CloudFlare **only**; please note, t
     	;; MSG SIZE  rcvd: 88
     ```
 
-4. Add a new CNAME entry that points your domain to `sparkpost.com`:
+4. Add a new CNAME entry that points your domain to `spgo.io`:
 
     **Example:**
 
