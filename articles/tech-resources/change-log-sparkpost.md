@@ -12,11 +12,11 @@ Many customers commonly (and quite undertandably!) misinterpreted the previous m
 
 The previous failure reason was:
 
-4.4.0 [internal] no MXs for this domain could be reached at this time
+> 4.4.0 [internal] no MXs for this domain could be reached at this time
 
 This has been replaced with:
 
-4.4.0 [internal] no mail servers for this domain could be reached at this time
+> 4.4.0 [internal] no mail servers for this domain could be reached at this time
 
 ## June 2, 2017
 
