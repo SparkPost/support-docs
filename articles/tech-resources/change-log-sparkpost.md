@@ -2,6 +2,28 @@
 title: "SparkPost Change Log"
 description: "A running log of what's new, what's been fixed, and what's been changed in SparkPost."
 ---
+## June 23, 2017
+
+### What’s New?
+
+* We are rewording one of our SMTP delivery temporary failure messages, to better reflect the reason for the error. Namely, that our system could not connect to the receiving mail servers for a domain, because the host was down or otherwise unreachable.
+
+Many customers commonly (and quite undertandably!) misinterpreted the previous message as a problem resolving the mail servers’ host names in DNS, rather than difficulty reaching the destination server.
+
+The previous failure reason was:
+
+> 4.4.0 [internal] no MXs for this domain could be reached at this time
+
+This has been replaced with:
+
+> 4.4.0 [internal] no mail servers for this domain could be reached at this time
+
+## June 2, 2017
+
+### What’s New?
+
+* Looking to add iOS universal links into your your emails? [This writeup](https://www.sparkpost.com/docs/tech-resources/ios-universal-links-self-serve/) shows you how!
+
 
 ## May 26, 2017
 
