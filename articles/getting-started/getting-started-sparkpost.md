@@ -129,6 +129,15 @@ For SMTP delivery, the API key is used as an SMTP authentication password. You c
 
 The modern way to send email with SparkPost is using the REST API's transmissions endpoint which supports high volume, multi-recipient delivery, [personalized message templates](https://developers.sparkpost.com/api/substitutions-reference.html), per-recipient metadata and a [slew of other capabilities](https://developers.sparkpost.com/api/transmissions.html) besides. Here's a simple transmission request:
 
+```bash
+# e.g. if your new sending domain was mail.example.com
+curl -XPOST \
+  https://api.sparkpost.com/api/v1/transmissions \
+  -H "Authorization: <YOUR API KEY>" \
+  -H "Content-Type: application/json" \
+  -d '{"content": {"from": "ernest@mail.example.com", "subject": "Don't you like to write emails?", "text": "It's such a swell way to keep from working and yet feel you've done something."}, "recipients": [{"address": "F. Scott <developers+curl@sparkpost.com>"}]}'
+```
+
 ### SparkPost API Client Libraries
 
 SparkPost provides libraries, add-ons and plugins for various environments, to simplify your integration:
