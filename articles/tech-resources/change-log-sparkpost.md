@@ -3,6 +3,13 @@ title: "SparkPost Change Log"
 description: "A running log of what's new, what's been fixed, and what's been changed in SparkPost."
 ---
 ## June 23, 2017
+ 
+### What’s New?
+ 
+* You now can analyze and report engagement activity by domain, beginning with data from 5/10/2017 forward.
+* API keys are now optional when creating a subaccount
+
+## June 21, 2017
 
 ### What’s New?
 
