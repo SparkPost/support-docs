@@ -9,9 +9,9 @@ IP warming is the process of methodically adding campaign volume week-over-week 
 
 ### IP Warm-up Summary 
 
-ISPs view email from a new IP Address as suspicious until they establish a positive sending reputation. It takes 4 to 8 weeks to achieve maximum deliverability (depending on targeted volume and engagement). Warming could take longer if receivers don’t perceive an email as opt-in. Certain ISPs limit senders to thresholds until they build a sender reputation. For example AOL limits new senders to 5k/day and Outlook limits to 20k/day for the first week.
+ISPs view email from a new IP address as suspicious until they establish a positive sending reputation.  It takes 4-8 weeks to achieve maximum deliverability (depending on targeted volume and engagement).  Warming could take longer if receivers don’t perceive an email as opt-in.  Certain receivers limit senders to thresholds until they build a sender reputation.
 
-SparkPost recommends starting off on the right foot with the cleanest data first. Focus warming your most engaged subscribers and then add in the older segments as you progress. Older segments should be added to the engaged segments in chunks of 10% to 25% as not to tip your reputation from good to bad. Send a re-engagement or win-back campaign to the segments that are older than six months to a year (depending on your sending frequency). Be sure to change up the content to try to re-engage. The goal during your warm-up process is to send to subscribers who are least likely to complain and bounce. This would include those that have opted-in most recently and are consistent openers/clickers.
+SparkPost recommends starting off on the right foot with the cleanest data first.  Focus warming your most engaged subscribers and then add in the older segments as you progress.  Older segments should be added to the engaged segments in chunks of 15% of your existing volume as not to tip your reputation from good to bad. The goal during your warm-up process is to send to subscribers who are least likely to complain and bounce.  This would include those that have opted-in most recently and are consistent openers/clickers.
 
 During the Warm-up phase the more consistent you are with volume, frequency, complaint and bounce levels, the faster you will establish a positive sending reputation.  If you send infrequently, anything less than weekly it will take more time to build a positive sender reputation.
 
@@ -19,14 +19,32 @@ During the Warm-up phase the more consistent you are with volume, frequency, com
 
 **Key to Success**           
 
-![](media/ip-warm-up-overview/Key_to_Success_Chart_original.png) 
+<table class="tableizer-table"> 
+<thead><tr class="tableizer-firstrow"><th>Week 1</th><th>Daily Volume</th><th>Notes</th></tr></thead><tbody>
+ <tr><td>Day 1</td><td>200</td><td>•During weeks 1-2 send to the most </td></tr>
+ <tr><td>Day 2</td><td>500</td><td>active subscribers.  30 days active.</td></tr>
+ <tr><td>Day 3</td><td>1000</td><td>&nbsp;</td></tr>
+ <tr><td>Day 4</td><td>2000</td><td>•During weeks 3-4 send to 60 days</td></tr>
+ <tr><td>Day 5</td><td>5000</td><td> active subscribers.</td></tr>
+ <tr><td>Day 6</td><td>10,000</td><td>&nbsp;</td></tr>
+ <tr><td>Day 7</td><td>20,000</td><td>•Do not send to subscribers that have </td></tr>
+ <tr><td><strong>Week 2</strong></td><td>&nbsp;</td><td>not opened or clicked in the past 90 </td></tr>
+ <tr><td>Day 8</td><td>40,000</td><td>during the first 45 days of warmup.</td></tr>
+ <tr><td>Day 9</td><td>100,000</td><td>&nbsp;</td></tr>
+ <tr><td>Day 10</td><td>250,000</td><td>•If warming above 5 Million do not </td></tr>
+ <tr><td>Day 11</td><td>500,000</td><td>send more than double the previous</td></tr>
+ <tr><td>Day 12</td><td>1,000,000</td><td>days volume.</td></tr>
+ <tr><td>Day 13</td><td>2,000,000</td><td>&nbsp;</td></tr>
+ <tr><td>Day 14</td><td>5,000,000</td><td></td></tr>
+</tbody></table>
 
 **What to Expect**          
 
 Once you begin warming up your IPs you can expect some bulking and blocking to occur.  It is key to stick with the plan. Below are details of what you can expect and actions to take.
 
-* **Bulking** at Yahoo, AOL, Gmail. Typically clears up after a few sends with solid positive metrics, but it can take time to get inbox delivery. **The key is to keep sending.**                        
-* Possible **blocking** by ISPs can occur if the list isn’t engaged enough or if you are going over those daily caps per ISP. The key is to segment carefully and potentially pull back on volume to the number of allowed delivered for a week and then begin ramping back up the ISP effected. **Again the key is to keep sending.**                            
+* **Bulking** at Yahoo, AOL, Gmail. Typically clears up after a few sends with solid positive metrics, but it can take time to get inbox delivery. **The key is to keep sending.**   
+* **Delays** at AOL, Microsoft and Comcast.  The delays (421 bounces) will retry for 72 hours and if not delivered will bounce as a 5XX with the original 421 error in the bounce record.  *Delays are normal, and will lessen each day as reputation developes.  As long as they are ultimately delivering there is no concern.*  However if they are timing out in large quantities you should back down your volumes to that ISP by tightening up your engagement
+* Possible **blocking** by ISPs can occur if the list isn’t engaged enough.  The key is to segment carfully and tighten up engagement **Again the key is to keep sending.**                            
 * It is important to monitor your metrics and adjust the plan accordingly during the Warm-up period.
 
 ### Why is an IP Warm-up important?
