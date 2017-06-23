@@ -102,7 +102,8 @@ Permission is the cornerstone of building a good sender reputation.
   * Are you sending content other than what you said you would?
 * Are you following best practices by staying up on the Can-Spam Act and the CASAL laws?
 
-**Why is Engagement Important?**                         
+**Why is Engagement Important?**   
+
 ISPs track how engaged subscribers are with an email and its sender, and the nature of the engagement.
 * Positive actions may include opening a message, adding an email address to the contact list, clicking through links, clicking to enable images, and read rate such as scrolling through the message.
 * Negative actions may include reporting the email as spam, deleting it, moving it to the junk folder, or ignoring it.
