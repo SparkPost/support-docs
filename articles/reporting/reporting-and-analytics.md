@@ -30,7 +30,7 @@ One of the major benefits of SparkPost is the vast amount of reporting metrics w
 
 1. The domain/campaign filtered tabular report data is viewable at the bottom of the screen
 
-    ![Domain-Campaign Tabular Report Data Filtered in SparkPost](media/reporting-and-analytics/domain-campaign-tabular-report-data-filtered-in-sparkpost.png)
+    ![Domain-Campaign Tabular Report Data Filtered in SparkPost](media/reporting-and-analytics/domains-campaign-filtering-data-by-domain.png)
 
 ## SparkPost Reporting - The Bounces View
 
