@@ -7,7 +7,7 @@ This article describes the weekly deliverability report card email that SparkPos
 
 ![Deliverability Report Card](media/report-card/d12y-report-card.png)
 
-### Reporting Period
+### Reporting Period
 
 The report gives details of the previous 7 days sending on your account along with similar details from the 7 days before that for comparison.
 
