@@ -5,6 +5,8 @@ description: "A short overview of the weekly deliverability report card email"
 
 This article describes the weekly deliverability report card email that SparkPost sends to it's users. The report provides an at-a-glance weekly review of each SparkPost account with health metrics, usage details and tips on being a better sender. You can also review your account details in the [summary report](https://app.sparkpost.com/reports/summary) and [read about the various metrics here](https://www.sparkpost.com/docs/reporting/metrics-definitions/).
 
+![Deliverability Report Card](media/report-card/d12y-report-card.png)
+
 ### Reporting Period
 
 The report gives details of the previous 7 days sending on your account along with similar details from the 7 days before that for comparison.
