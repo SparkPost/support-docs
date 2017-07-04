@@ -11,7 +11,7 @@ The report gives details of the previous 7 days sending on your account along wi
 
 ## Account Health Metrics 
 
-The health metrics are important because SparkPost uses them to assess sending reputation. In extreme cases, SparkPost may warn you or even suspend your account based on these metrics. The report card will colour any unusually high health metrics to hilight any issues.
+The health metrics are important because SparkPost uses them to assess sending reputation. In extreme cases, SparkPost may warn you or even suspend your account based on these metrics. The report card will colour any unusually high health metrics to highlight any issues.
 
 ### Hard Bounce Rate
 
@@ -27,12 +27,14 @@ You _spam complaint rate_ is the percentage of your messages that result in spam
 
 ## Other Report Metrics
 
- - Emails sent - volume of messages injected into SparkPost or rejected by it
+ - Emails Sent - volume of messages injected into SparkPost or rejected by it
    - See also `count_targeted`
  - Accepted - the percentage of emails accepted by a remote domain excluding out-of-band bounces
    - See also `count_accepted`
  - Opens - the percentage of messages that were opened or had a link clicked
  - Clicks - the percentage of messages that had at least 1 link clicks
+
+You can find [definitions of all of SparkPost's metrics here](https://developers.sparkpost.com/api/metrics.html#header-metrics-api-deliverability-glossary).
 
 ## Improving Your Account Health And Reputation
 
