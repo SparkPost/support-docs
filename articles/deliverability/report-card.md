@@ -30,9 +30,9 @@ You _spam complaint rate_ is the percentage of your messages that result in spam
 ## Other Report Metrics
 
  - Emails Sent - volume of messages injected into SparkPost or rejected by it
-   - See also `count_targeted`
+   - See also `count_targeted` in your [summary report](https://app.sparkpost.com/reports/summary)
  - Accepted - the percentage of emails accepted by a remote domain excluding out-of-band bounces
-   - See also `count_accepted`
+   - See also `count_accepted` in the [summary report](https://app.sparkpost.com/reports/summary)
  - Opens - the percentage of messages that were opened or had a link clicked
  - Clicks - the percentage of messages that had at least 1 link clicks
 
