@@ -1,5 +1,5 @@
 ---
-title: "Deliverabiliy Report Card Overview"
+title: "Deliverability Report Card Overview"
 description: "A short overview of the weekly deliverability report card email"
 ---
 
@@ -38,5 +38,5 @@ You can find [definitions of all of SparkPost's metrics here](https://developers
 
 ## Improving Your Account Health And Reputation
 
-The [SparkPost Deliverability documentation](https://www.sparkpost.com/docs/deliverability/) includes details on [optimizing deliverability](https://www.sparkpost.com/docs/deliverability/optimizing-deliverability-and-inbox-placement/), [managing dedicated IPs](https://www.sparkpost.com/docs/deliverability/dedicated-ip-pools/), [IP warmup](https://www.sparkpost.com/docs/deliverability/ip-warm-up-overview/) and many other tasks related to improving your reputation.
+The [SparkPost Deliverability documentation](https://www.sparkpost.com/docs/deliverability/) includes details on [optimizing deliverability](https://www.sparkpost.com/docs/deliverability/optimizing-deliverability-and-inbox-placement/), [managing dedicated IPs](https://www.sparkpost.com/docs/deliverability/dedicated-ip-pools/), [IP warm-up](https://www.sparkpost.com/docs/deliverability/ip-warm-up-overview/) and many other tasks related to improving your reputation.
 
