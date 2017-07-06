@@ -7,6 +7,15 @@ notification: "This Change Log is for SparkPost Enterprise Only"
 A running log of new features and capabilities that have been rolled out on the SparkPost Enterprise service. The API reference can be found [here](https://developers.sparkpost.com/api).
 
 
+### 06 July, 2017 
+
+* **Enhancement:** Subaccount API Key is now optionally (not automatically) created with new Subaccounts
+  * When creating a new subaccount, users now have the option to NOT create a subaccount-specific API key for it
+  * Default behavior has not changed: new subaccounts will have an API key created by default
+  * For customers (typically service providers) with many subaccounts but who send using the master account API key, this may improve UI performance
+  * The Subaccount [API documentation](https://developer.sparkpost.com/api/subaccounts.html#subaccounts-subaccounts-collection-post) has been updated to reflect the new functionality
+
+
 ### 01 June, 2017 
 
 * **Enhancement:** Webhooks by Subaccount
