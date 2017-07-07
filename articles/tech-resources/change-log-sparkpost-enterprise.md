@@ -9,7 +9,7 @@ A running log of new features and capabilities that have been rolled out on the 
 
 ### 06 July, 2017 
 
-* **Enhancement:** Subaccount API Key is now optionally (not automatically) created with new Subaccounts
+* **Enhancement:** Subaccount API key is now optionally (not automatically) created with new Subaccounts
   * When creating a new subaccount, users now have the option to NOT create a subaccount-specific API key for it
   * Default behavior has not changed: new subaccounts will have an API key created by default
   * For customers (typically service providers) with many subaccounts but who send using the master account API key, this may improve UI performance
