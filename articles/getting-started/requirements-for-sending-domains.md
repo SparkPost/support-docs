@@ -18,11 +18,16 @@ As part of being a **Responsible Sender,** we ask all customers to complete the 
 1. Ownership Verification (DKIM or Abuse/Postmaster setup)
 1. Compliance Review
 
-Once ownership of your sending domain has been verified, the details are passed to our Compliance team who complete the review of your domain.  At this point your sending domain will have a status of "pending" (![](media/requirements-for-sending-domains/pending-icon.png)) for up to an hour until our compliance checks are complete. Once the review is complete and your sending domain passes the checks, a nice green tick (![](media/requirements-for-sending-domains/green-tick.png) and ‘ready to send’ is displayed under your sending domain.
+![Pending icon](media/requirements-for-sending-domains/pending-icon.png)
+Once ownership of your sending domain has been verified, the details are passed to our Compliance team who complete the review of your domain.  At this point your sending domain will have a status of "pending" for up to an hour until our compliance checks are complete. 
+
+![Ready to send icon](media/requirements-for-sending-domains/green-tick.png)
+Once the review is complete and your sending domain passes the checks, a nice green tick and ‘ready to send’ is displayed under your sending domain.
 
 ## If Your Sending Domain Is Blocked...
 
-If your sending domain is blocked (![](media/requirements-for-sending-domains/Screen_Shot_2016-12-09_at_12.08.26_PM_original.png), it's generally because the requirements below are not met, your domain is already in use on another SparkPost account or your domain has been previously blocked for sending abusive traffic through our service or another provider.
+![Blocked icon](media/requirements-for-sending-domains/Screen_Shot_2016-12-09_at_12.08.26_PM_original.png)
+If your sending domain is blocked, it's generally because the requirements below are not met, your domain is already in use on another SparkPost account or your domain has been previously blocked for sending abusive traffic through our service or another provider.
 
 ## Domain Requirements
 
