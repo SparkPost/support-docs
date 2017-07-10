@@ -69,7 +69,7 @@ Administrators within your business can create as many subaccounts as needed. Cr
 
 ![subaccount api key option](media/subaccounts/apikey.png)
 
-For documentation on how to skip API key genration upon initial subaccount creation by using the "setup_api_key" boolean string, please click [here](https://developers.sparkpost.com/api/subaccounts.html#subaccounts-subaccounts-collection-post)
+For documentation on how to skip API key genration upon initial subaccount creation by using the "setup_api_key" boolean string, please click [here.](https://developers.sparkpost.com/api/subaccounts.html#subaccounts-subaccounts-collection-post)
 
 **Note**: Subaccounts cannot be nested beneath other subaccounts.
 
@@ -99,8 +99,7 @@ After creating a subaccount, the master account has the option of assigning a de
 ​
 **Permissions**
 
-Only master account users can create subaccounts
-If you create a UI user, they will have access to both the master account and subaccounts, so it is critical that be taken into account when provisioning UI accounts on your system.
+Only master account users can create subaccounts. If you create a UI user, they will have access to both the master account and subaccounts, so it is critical that be taken into account when provisioning UI accounts on your system.
 
 **Subaccount Statuses**
 
