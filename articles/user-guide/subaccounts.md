@@ -63,7 +63,9 @@ The following is a list of potential, common use cases for using subaccounts:
 
 **Creating Subaccounts**
 
-Administrators within your business can create as many subaccounts as needed. Creating a subaccount can be done either via the UI or the subaccounts API. When a subaccount is initially created, an API key (unique to that subaccount) will be created with your chosen permissions. Additional subaccount API keys must be created using the UI.
+Administrators within your business can create as many subaccounts as needed. Creating a subaccount can be done either via the UI or the subaccounts API. When a subaccount is initially created, an API key (unique to that subaccount) will be created with your chosen permissions, unless you have elected to not create an initial API key via the UI or API (see note immediately below). Additional subaccount API keys must be created using the UI.
+
+**Note**: You have the option of 
 
 **Note**: Subaccounts cannot be nested beneath other subaccounts.
 
