@@ -41,4 +41,4 @@ Validation rules will be enforced as follows:
 * Custom_headers on POST body must be properly formatted as an object with keys as strings or numbers (alphanumeric)
 * Total header size must be smaller than 3000 bytes
 
-More information about webhooks creation through the webhooks API can be found [here](https://dev.sparkpost.com/api/webhooks.html#webhooks-create-post)
+More information about webhooks creation through the webhooks API can be found [here].(https://dev.sparkpost.com/api/webhooks.html#webhooks-create-post)
