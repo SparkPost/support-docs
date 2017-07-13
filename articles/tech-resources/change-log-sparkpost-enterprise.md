@@ -7,6 +7,15 @@ notification: "This Change Log is for SparkPost Enterprise Only"
 A running log of new features and capabilities that have been rolled out on the SparkPost Enterprise service. The API reference can be found [here](https://developers.sparkpost.com/api).
 
 
+### (Week of) 28 July, 2017 
+
+* **Enhancement:** Self Service for Bounce (Return-Path) Domains in SparkPost Enterprise
+  * Enterprise customers can now create and verify Bounce Domains (aka Return-Path Domains) in addition to Sending (aka FROM) Domains via an API without calling their TAM or submitting a Support ticket. 
+  * Enterprise customers can call the Sending Domains API to Create the Domain, CNAME it to customerID.mail.e.sparkpost.com, and call the API again to verify that the DNS entry is correct. This will allow OOB bounces to be processed correctly.
+  * Service providers that have auto_verify turned on will be flagged as "CNAME verified" without doing the DNS check as we assume the customer is doing the correct DNS updates.
+  * This [Support article](https://www.sparkpost.com/docs/tech-resources/custom-bounce-domain/) describes the process for creating Bounce Domains, including the create and verify endpoints. 
+ 
+
 ### 06 July, 2017 
 
 * **Enhancement:** Subaccount API key is now optionally (not automatically) created with new Subaccounts
