@@ -196,7 +196,7 @@ Each email you send will have 2 main sender addresses:
 * The header from address is the one that appears in the From: field. The header from address includes one of your sending domains.
 * The bounce address is used by mail software to return undeliverable mail, report on errors and it is also associated with your reputation as a sender.
 
-By default SparkPost uses a generic bounce domain for your email, such as *sparkpostmail.com*. Setting up a custom bounce domain on your account causes your mail to use a bounce address on your own domain name, such as *bounce.myawesomedomain.com*. You can create your bounce domain from Account -> [Bounce Domains](https://app.sparkpost.com/account/bounce-domains) or [through the API](https://developers.sparkpost.com/api/bounce-domains.html) if you prefer.
+By default SparkPost uses a generic bounce domain for your email, such as *sparkpostmail.com*. By using the [Sending Domains API CNAME verify endpoing](https://developers.sparkpost.com/api/sending-domains.html#sending-domains-verify-post) or the UI, you can configure your sending domain as a bounce domain as well, which will allow for a deliverability best practice called *strict alignment*. This is when the domains used for a sending domain and a bounce domain are the same. We highly recommend you add the CNAME record provided in the API documentation or the UI to your DNS records, and then verifying it via the API or UI. The following is a screenshot of the UI showing the CNAME verification in addition to the DKIM verification process. 
 
 ### Tracking Domain
 
