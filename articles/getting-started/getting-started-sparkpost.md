@@ -47,7 +47,7 @@ Note: SparkPost's Compliance team expect to see a [legitimate web presence](http
 
 To create your sending domain, visit the [Account -> Sending Domains](https://app.sparkpost.com/account/sending-domains) section of your SparkPost account and click the New Domain button. Enter your domain name and click Add Domain.
 
-![Adding a sending domain](media/getting-started-sparkpost/add-sending-domain.png)
+![Adding a sending domain](media/getting-started-sparkpost/addding-sending-domains.png)
 
 *Adding a sending domain*
 
@@ -61,7 +61,7 @@ Note: you will need admin access to your DNS configuration to complete this step
 
 To generate the DKIM DNS record for your sending domain, click the DKIM record *Settings* link under your domain on the [Sending Domains](https://app.sparkpost.com/account/sending-domains) list. Then use the revealed domain name, record type and value to update your DNS configuration. Each DNS provider has a slightly different interface; you'll want to create a "TXT" record with the hostname and value SparkPost shows you.
 
-![Sending domain DKIM record](media/getting-started-sparkpost/dkim-record.png)
+![Sending domain DKIM record](media/getting-started-sparkpost/domain-verification.png)
 
 *Sending domain DKIM record*
 
@@ -83,9 +83,9 @@ Alternately, you can verify ownership by receiving an email to an *admin account
 
 ### Step 3: Compliance Checks
 
-Your domain is now almost ready to send. Once ownership verification completes, your domain will be submitted to our Compliance robots for a few additional checks. Once they complete, you'll see a green tick beside your domain with the message "Ready to send".
+Your domain is now almost ready to send. Once ownership verification completes, your domain will be submitted to our Compliance robots for a few additional checks. Once they complete, you'll see "sending, DKIM signing" next to the green "ready for" text.
 
-![Ready to send](media/getting-started-sparkpost/ready-to-send.png)
+![Ready to send](media/getting-started-sparkpost/ready-for.png)
 
 *Ready to send*
 
