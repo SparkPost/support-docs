@@ -47,7 +47,7 @@ Note: SparkPost's Compliance team expect to see a [legitimate web presence](http
 
 To create your sending domain, visit the [Account -> Sending Domains](https://app.sparkpost.com/account/sending-domains) section of your SparkPost account and click the New Domain button. Enter your domain name and click Add Domain.
 
-![Adding a sending domain](media/getting-started-sparkpost/addding-sending-domains.png)
+![Adding a sending domain](media/getting-started-sparkpost/adding-sending-domains.png)
 
 *Adding a sending domain*
 
