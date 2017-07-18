@@ -47,9 +47,7 @@ Note: SparkPost's Compliance team expect to see a [legitimate web presence](http
 
 To create your sending domain, visit the [Account -> Sending Domains](https://app.sparkpost.com/account/sending-domains) section of your SparkPost account and click the New Domain button. Enter your domain name and click Add Domain.
 
-![Adding a sending domain](media/getting-started-sparkpost/add-sending-domain.png)
-
-*Adding a sending domain*
+![Adding a sending domain](media/getting-started-sparkpost/adding-sending-domains.png)
 
 ### Step 2: Verifying Domain Ownership
 
@@ -61,9 +59,7 @@ Note: you will need admin access to your DNS configuration to complete this step
 
 To generate the DKIM DNS record for your sending domain, click the DKIM record *Settings* link under your domain on the [Sending Domains](https://app.sparkpost.com/account/sending-domains) list. Then use the revealed domain name, record type and value to update your DNS configuration. Each DNS provider has a slightly different interface; you'll want to create a "TXT" record with the hostname and value SparkPost shows you.
 
-![Sending domain DKIM record](media/getting-started-sparkpost/dkim-record.png)
-
-*Sending domain DKIM record*
+![Sending domain DKIM record](media/getting-started-sparkpost/domain-verification.png)
 
 Here are some how-to documents for common DNS providers:
 
@@ -83,11 +79,9 @@ Alternately, you can verify ownership by receiving an email to an *admin account
 
 ### Step 3: Compliance Checks
 
-Your domain is now almost ready to send. Once ownership verification completes, your domain will be submitted to our Compliance robots for a few additional checks. Once they complete, you'll see a green tick beside your domain with the message "Ready to send".
+Your domain is now almost ready to send. Once ownership verification completes, your domain will be submitted to our Compliance robots for a few additional checks. Once they complete, you'll see "sending, DKIM signing" next to the green "ready for" text.
 
-![Ready to send](media/getting-started-sparkpost/ready-to-send.png)
-
-*Ready to send*
+![Ready to send](media/getting-started-sparkpost/ready-for.png)
 
 ## Important: Coming From Other Email Services
 
@@ -196,7 +190,9 @@ Each email you send will have 2 main sender addresses:
 * The header from address is the one that appears in the From: field. The header from address includes one of your sending domains.
 * The bounce address is used by mail software to return undeliverable mail, report on errors and it is also associated with your reputation as a sender.
 
-By default SparkPost uses a generic bounce domain for your email, such as *sparkpostmail.com*. Setting up a custom bounce domain on your account causes your mail to use a bounce address on your own domain name, such as *bounce.myawesomedomain.com*. You can create your bounce domain from Account -> [Bounce Domains](https://app.sparkpost.com/account/bounce-domains) or [through the API](https://developers.sparkpost.com/api/bounce-domains.html) if you prefer.
+By default SparkPost uses a generic bounce domain for your email, such as *sparkpostmail.com*. By using the [Sending Domains API verify endpoint](https://developers.sparkpost.com/api/sending-domains.html#sending-domains-verify-post) or the UI, you can configure your sending domain as a bounce domain as well, which will allow for a deliverability best practice called *strict alignment*. This is when the domains used for a sending domain and a bounce domain are the same. We highly recommend creating bounce domains for all of your sending domains if possible to establish the best possible reputation with the ISPs. To set this up, add the CNAME record provided in the API documentation or the UI to your DNS records, and then verify it via the sending domains API or UI. The following is a screenshot of the UI showing the CNAME verification in addition to the DKIM verification process.
+
+![Bounce Domain Verification](media/getting-started-sparkpost/bounce-domains.png)
 
 ### Tracking Domain
 
