@@ -18,9 +18,9 @@ The following are instructions for creating sending domains via the SparkPost UI
 
 4. Paste the "value" portion DKIM into your DNS TXT record for the hostname provided in the UI. Please note that the hostname for this record will be "domainkey._yoursendingdomain", and not the domain itself.
 
-4. Though the DKIM (or domain key) looks long, do not break it into 2 or more lines. It may not look like it can handle all of the characters, but it can. As well, the DNS might also require your Hostname.
+4. Though the DKIM record (or domain key) looks long, do not break it into 2 or more lines. It may not look like DNS can't handle all of the characters, but it can.
 
-4. It can take a bit of time for these to propagate. You can check the TTL (time to live) amount within your DNS – usually they are beside the record type. It can take up to that time both to be completed, and ready to go. Once they do, this is what it should look like:
+4. It can take a bit of time for DKIM records to propagate. You can check the TTL (time to live) amount within your DNS provider – usually they are beside the record type. It can take up to that time both to be propagated and ready to go. Once they do, you may click the orange "Verify DNS Records" in the UI. If the domain validates successfully, this is what it should look like:
 
     ![](media/setting-up-domains/sending-domain-complete.png)
 
