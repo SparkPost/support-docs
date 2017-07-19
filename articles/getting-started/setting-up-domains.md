@@ -10,7 +10,7 @@ The following are instructions for creating sending domains via the SparkPost UI
 
 ![](media/setting-up-domains/sending-domains-subaccounts-2.png)
 
-3. The next screen will display your newly created domain, but a red "Unverified" status will show in the upper right box. A sending domain must be verified before it can be used on SparkPost. In order to verify the domain, you must place the displayed DKIM TXT record displayed in the middle box into DNS.
+3. The next screen will display your newly created domain, but a red "Unverified" status will show in the upper right box. A sending domain must be verified before it can be used on SparkPost. In order to verify the domain, you must place the DKIM TXT record displayed in the middle box into DNS.
 
 ![](media/setting-up-domains/sending-domains-verification.png)
 
