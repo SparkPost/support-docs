@@ -8,7 +8,7 @@ The following are instructions for creating sending domains via the SparkPost UI
 1. In the SparkPost UI, click Account, and then click Sending Domains.
 1. Type your sending domain in the box, and then choose your subaccount options for the sending domain. For more information on subaccounts, please see [this support article](https://www.sparkpost.com/docs/user-guide/subaccounts/). Click "Add Domain" when you are finished. 
 
-![](media/setting-up-domains/sending-domains/sending-domains-subaccounts.png)
+![](media/setting-up-domains/sending-domains/sending-domains-subaccounts-2.png)
 
 1. The next screen will display your newly created domain, but a red "Unverified" status will show in the upper right box. A sending domain must be verified before it can be used on SparkPost. In order to verify the domain, you must place the displayed DKIM TXT record displayed in the middle box into DNS.
 
