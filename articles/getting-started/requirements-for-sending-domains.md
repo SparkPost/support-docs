@@ -15,14 +15,16 @@ The gold standard for a **Responsible Sender** is one who sends only to those re
 
 As part of being a **Responsible Sender,** we ask all customers to complete the sending domain validation process -- after which your domain(s) will be activated and ready for sending.  This process has two steps:
 
-1. Ownership Verification (DKIM or Abuse/Postmaster setup)
+1. Ownership Verification (DKIM)
 1. Compliance Review
 
 ![Pending icon](media/requirements-for-sending-domains/pending-icon.png)
 Once ownership of your sending domain has been verified, the details are passed to our Compliance team who complete the review of your domain.  At this point your sending domain will have a status of "pending" for up to an hour until our compliance checks are complete. 
 
-![Ready to send icon](media/requirements-for-sending-domains/green-tick.png)
-Once the review is complete and your sending domain passes the checks, a nice green tick and ‘ready to send’ is displayed under your sending domain.
+![Ready to send icon](media/requirements-for-sending-domains/sending-domains-complete.png)
+Once the review is complete and your sending domain passes the checks, a green checkmark and is displayed next your sending domain. You will also notice that the main sending domains page displays that the domain is ready for sending and DKIM signing.
+
+![](media/requirements-for-sending-domains/sending-domains-UI.png)
 
 ## If Your Sending Domain Is Blocked...
 
