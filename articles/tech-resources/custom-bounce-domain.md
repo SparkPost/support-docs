@@ -29,7 +29,7 @@ Once you have configured your DNS settings, register and verify the domain with 
     }
     ```
 
-1. Optionally set the domain as your account default bounce domain so that it is automatically used as the bounce domain for all messages sent through the account.  Here's an example API call to set mail.example.com as the account default bounce domain:
++3. Optionally set the domain as your account default bounce domain so that it is automatically used as the bounce domain for all messages sent through the account.  Here's an example API call to set mail.example.com as the account default bounce domain:
 
     ```
     PUT /api/v1/sending-domains/mail.example.com
