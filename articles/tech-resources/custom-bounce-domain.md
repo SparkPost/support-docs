@@ -26,7 +26,7 @@ If you prefer to use the SparkPost UI, you can create multiple bounce domains or
 1. Select the "verify DNS records" orange text in the CNAME record box.
 1. Make sure the domain is verified by the green check mark.
 
- ![](media/custom-bounce-domain/CNAME-verification.png)
+ ![](media/custom-bounce-domain/CNAME-verification-2.png)
 
 If you prefer to set up a sending domain as a bounce domain via the API, use the following instructions:
 
