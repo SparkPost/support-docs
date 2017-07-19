@@ -14,7 +14,7 @@ The following are instructions for creating sending domains via the SparkPost UI
 
 ![](media/setting-up-domains/sending-domains-verification.png)
 
-4. Depending on what domain provider you are using, their DNS may look different, but how it works is essentially the same across all providers. There will be a TEXT field, and you can put DKIM in the text fields. We have provided you with many domain provider’s steps to go through to put your DKIM into their settings, [here](https://www.sparkpost.com/docs/getting-started/getting-started-sparkpost/#prerequisites).
+4. Depending on what domain provider you are using, their DNS may look different, but how it works is essentially the same across all providers. There will be a TEXT field, and you can put the DKIM record in the text fields. We have provided you with many domain provider’s steps to go through to put your DKIM record into their records [here](https://www.sparkpost.com/docs/getting-started/getting-started-sparkpost/#prerequisites).
 
 4. Paste the "value" portion DKIM into your DNS TXT record for the hostname provided in the UI. Please note that the hostname for this record will be "domainkey._yoursendingdomain", and not the domain itself.
 
