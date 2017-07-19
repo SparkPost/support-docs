@@ -7,12 +7,12 @@ You can improve your deliverability and email branding by configuring each of yo
 
 By using your sending domain as your bounce domain, you can customize the address that is used for the Return-Path header (which is the destination for out-of-band bounces). This bounce domain overrides the default Return-Path (also known as the envelope FROM) value of "sparkpostmail.com" for all messages sent.
 
-To configure a bounce domain, choose the subdomain you would like to use (e.g. mail.yourdomain.com) and add the following CNAME record to your DNS settings:
+To configure a bounce domain, choose the subdomain you would like to use (e.g. example.com) and add the following CNAME record to your DNS settings:
 
 
 | Hostname | Type | Value |
 | --- | --- | --- |
-| mail.yourdomain.com | CNAME | sparkpostmail.com |
+| example.com | CNAME | sparkpostmail.com |
 
 This DNS record will ensure that out-of-band/asynchronous bounces are routed to SparkPost for processing.
 
@@ -22,7 +22,7 @@ Once you have configured your DNS settings, register and verify the domain with 
 2. CNAME-verify the domain by using the sending domains [verify endpoint](https://developers.sparkpost.com/api/sending-domains.html#sending-domains-verify-post).  Here's an example API call to CNAME-verify the mail.example.com domain:
 
     ```
-    POST /api/v1/sending-domains/mail.yourdomain.com/verify
+    POST /api/v1/sending-domains/example.com/verify
 
     {
       "cname_verify" : true
@@ -32,7 +32,7 @@ Once you have configured your DNS settings, register and verify the domain with 
 3. Optionally set the domain as your account default bounce domain so that it is automatically used as the bounce domain for all messages sent through the account.  Here's an example API call to set mail.example.com as the account default bounce domain:
 
     ```
-    PUT /api/v1/sending-domains/mail.yourdomain.com
+    PUT /api/v1/sending-domains/example.com
 
     {
       "is_default_bounce_domain" : true
