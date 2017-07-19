@@ -14,13 +14,13 @@ The following are instructions for creating sending domains via the SparkPost UI
 
 ![](media/setting-up-domains/sending-domains-verification.png)
 
-1. Depending on what domain provider you are using, their DNS may look different, but how it works is essentially the same across all providers. There will be a TEXT field, and you can put DKIM in the text fields. We have provided you with many domain provider’s steps to go through to put your DKIM into their settings, [here](https://www.sparkpost.com/docs/getting-started/getting-started-sparkpost/#prerequisites).
+4. Depending on what domain provider you are using, their DNS may look different, but how it works is essentially the same across all providers. There will be a TEXT field, and you can put DKIM in the text fields. We have provided you with many domain provider’s steps to go through to put your DKIM into their settings, [here](https://www.sparkpost.com/docs/getting-started/getting-started-sparkpost/#prerequisites).
 
-1. Paste the "value" portion DKIM into your DNS TXT record.
+4. Paste the "value" portion DKIM into your DNS TXT record.
 
-1. Though the DKIM (or domain key) looks long, do not break it into 2 or more lines. It may not look like it can handle all of the characters, but it can. As well, the DNS might also require your Hostname.
+4. Though the DKIM (or domain key) looks long, do not break it into 2 or more lines. It may not look like it can handle all of the characters, but it can. As well, the DNS might also require your Hostname.
 
-1. It can take a bit of time for these to propagate. You can check the TTL (time to live) amount within your DNS – usually they are beside the record type. It can take up to that time both to be completed, and ready to go. Once they do, this is what it should look like:
+4. It can take a bit of time for these to propagate. You can check the TTL (time to live) amount within your DNS – usually they are beside the record type. It can take up to that time both to be completed, and ready to go. Once they do, this is what it should look like:
 
     ![](media/setting-up-domains/sending-domain-complete.png)
 
