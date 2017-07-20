@@ -6,7 +6,7 @@ description: "A running log of what's new, what's been fixed, and what's been ch
  
 ### What’s New?
  
-* You now can analyze and report engagement activity by domain, beginning with data from 5/10/2017 forward.
+* You now can analyze and report engagement activity by domain, sending domain, sending ip, and ip pool; beginning with data from 5/10/2017 forward.
 * API keys are now optional when creating a subaccount
 
 ## June 21, 2017
