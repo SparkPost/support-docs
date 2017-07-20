@@ -1,6 +1,6 @@
 ---
-title: "Requirements For Sending Domains"
-description: "At Spark Post we strive to ensure that all of our customers are Responsible Senders We do this by providing guidance on udeliverability best practices for inbox placement u providing real time feedback on your sends and by enforcing policies that protect our sending reputation and the reputation of our..."
+title: "Requirements For Sending and Bounce Domains"
+description: "To protect the sending reputation of all of our customers, SparkPost sending and bounce domains must be officially verified and validated."
 ---
 
 At SparkPost we strive to ensure that all of our customers are **Responsible Senders**.  We do this by providing guidance on [deliverability best practices for inbox placement](https://www.sparkpost.com/docs/deliverability/optimizing-deliverability-and-inbox-placement/), providing real-time feedback on your sends and by enforcing policies that protect our sending reputation and the reputation of our customers.
@@ -13,31 +13,38 @@ The gold standard for a **Responsible Sender** is one who sends only to those re
 * Stops sending to recipients who have unsubscribed
 * Has a clear web presence, usually where a customer can sign up and manage their experience
 
-As part of being a **Responsible Sender,** we ask all customers to complete the sending domain validation process -- after which your domain(s) will be activated and ready for sending.  This process has two steps:
+As part of being a **Responsible Sender,** we ask all customers to complete the domain validation process -- after which your domain(s) will be activated and ready for use.  This process has two steps:
 
-1. Ownership Verification (DKIM)
-1. Compliance Review
+### Step One: Ownership Verification
+
+First, we need to make sure you own the domain you want to set up. *Adding a DNS record* is the recommended way to show that you own your domain. Depending on how you plan to use the domain, you'll want to add different DNS records so you can verify ownership and get the domain properly set up all at once. [Learn why you should set up both a sending and a bounce domain]().
+
+* For a domain that you plan to use as a *sending domain* (From), you should add a TXT record with the provided DKIM information. This will make this domain "ready for sending and DKIM-signing", verifying ownership and at the same time resulting in better DKIM alignment.
+* For a domain that you plan to use as a *bounce domain* (Return Path), you should add a CNAME record with the provided hostname value. This will verify ownership and make this domain "ready for bounce".
+* If you don't have access to the domain's DNS records, you can verify ownership by requesting an email be sent to abuse@ or postmaster@ and then clicking the link in the received email. (Note: this email verification option is not available for bounce domains which _must_ be CNAME-verified.)
+
+### Step Two: Compliance Review
 
 ![Pending icon](media/requirements-for-sending-domains/pending-icon.png)
-Once ownership of your sending domain has been verified, the details are passed to our Compliance team who complete the review of your domain.  At this point your sending domain will have a status of "pending" for up to an hour until our compliance checks are complete. 
+Once ownership of your domain has been verified through any one of the above methods, the details are passed to our Compliance team who begin their review of your domain. At this point your sending domain will have a status of "Pending" for up to an hour until our compliance checks are complete. 
 
 ![Ready to send icon](media/requirements-for-sending-domains/sending-domains-complete.png)
-Once the review is complete and your sending domain passes the checks, a green checkmark and is displayed next your sending domain. You will also notice that the main sending domains page displays that the domain is ready for sending and DKIM signing.
+Once the review is complete and your sending domain passes the checks, your domain will be marked as "Verified" and ready for use (for sending, bounce, or both).
 
 ![](media/requirements-for-sending-domains/sending-domains-UI.png)
 
 ## If Your Sending Domain Is Blocked...
 
 ![Blocked icon](media/requirements-for-sending-domains/Screen_Shot_2016-12-09_at_12.08.26_PM_original.png)
-If your sending domain is blocked, it's generally because the requirements below are not met, your domain is already in use on another SparkPost account or your domain has been previously blocked for sending abusive traffic through our service or another provider.
+If your sending domain is blocked, it's generally because your domain is already in use by another SparkPost account, your domain has been previously blocked for sending abusive traffic through our service or another provider, or because one or more of the requirements below are not met:
 
-## Domain Requirements
+### Domain Requirements
 
 * You must own or have administrative access to your domain -- that is confirmed when you complete the [Sending Domain Verification Steps](https://www.sparkpost.com/docs/getting-started/getting-started-sparkpost/#step-2-verifying-domain-ownership)
 * An A record or MX record in DNS must exist for your domain
 * The organizational domain cannot be used across more than one SparkPost account (for example, you cannot have mail.acme.com associated with one account while alert.acme.com belongs to another account)
 
-## Website Requirements  
+### Website Requirements  
 
 Your domain must have a live and working website at `http://<sending-domain>` or `http://www.<canonical-domain>`. Note that the canonical domain is the main domain name including TLD but without any subdomain elements. For instance, a sending domain of *mail.example.com* has the canonical domain *example.com*.
 
