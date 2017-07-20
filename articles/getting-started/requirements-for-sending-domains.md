@@ -26,7 +26,7 @@ First, we need to make sure you own the domain you want to set up. *Adding a DNS
 ### Step Two: Compliance Review
 
 ![Pending icon](media/requirements-for-sending-domains/pending-icon.png)
-Once ownership of your domain has been verified through any one of the above methods, the details are passed to our Compliance team who begin their review of your domain. At this point your sending domain will have a status of "Pending" for up to an hour until our compliance checks are complete. 
+Once ownership of your domain has been verified through any one of the above methods, the domain enters our compliance process. At this point your sending domain will have a status of "Pending" for up to an hour until our compliance checks are complete. 
 
 ![Ready to send icon](media/requirements-for-sending-domains/sending-domains-complete.png)
 Once the review is complete and your sending domain passes the checks, your domain will be marked as "Verified" and ready for use (for sending, bounce, or both).
