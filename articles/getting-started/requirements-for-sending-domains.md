@@ -19,7 +19,7 @@ As part of being a **Responsible Sender,** we ask all customers to complete the 
 
 First, we need to make sure you own the domain you want to set up. *Adding a DNS record* is the recommended way to show that you own your domain. Depending on how you plan to use the domain, you'll want to add different DNS records so you can verify ownership and get the domain properly set up all at once. [Learn why you should set up both a sending and a bounce domain]().
 
-* For a domain that you plan to use as a *sending domain* (From), you should add a TXT record with the provided DKIM information. This will make this domain "ready for sending and DKIM-signing", verifying ownership and at the same time resulting in better DKIM alignment.
+* For a domain that you plan to use as a *sending domain* (From), you should add a TXT record with the provided DKIM information. This will make this domain ready for sending and DKIM-signing, verifying ownership and at the same time resulting in better DKIM alignment.
 * For a domain that you plan to use as a *bounce domain* (Return Path), you should add a CNAME record with the provided hostname value. This will verify ownership and make this domain "ready for bounce".
 * If you don't have access to the domain's DNS records, you can verify ownership by requesting an email be sent to abuse@ or postmaster@ and then clicking the link in the received email. (Note: this email verification option is not available for bounce domains which _must_ be CNAME-verified.)
 
