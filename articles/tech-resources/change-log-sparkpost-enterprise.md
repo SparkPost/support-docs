@@ -7,7 +7,7 @@ notification: "This Change Log is for SparkPost Enterprise Only"
 A running log of new features and capabilities that have been rolled out on the SparkPost Enterprise service. The API reference can be found [here](https://developers.sparkpost.com/api).
 
 
-### (Week of) 28 July, 2017 
+### (Week of) 24 July, 2017 
 
 * **Enhancement:** Self Service for Bounce (Return-Path) Domains in SparkPost Enterprise
   * Enterprise customers can now create and verify Bounce Domains (aka Return-Path Domains) in addition to Sending (aka FROM) Domains via an API without calling their TAM or submitting a ticket to Support. 
