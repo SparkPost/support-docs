@@ -21,7 +21,7 @@ Note: SparkPost is a developer-centric email delivery service. That means pretty
 
 First things first: sign up for your free SparkPost account [here](https://app.sparkpost.com/sign-up). After sign-up, SparkPost will send you a verification email; please do verify your email address so SparkPost can contact you if you need support later on and send you important service announcements.
 
-## Preparing Your "From:" Address
+## Preparing Your "From:" Address, or Sending Domain
 
 The very first thing your recipients see when they open your email is your address in the From field so it's important to set it properly from the get-go. In SparkPost, that means creating a sending domain, the domain name you'll use to send email from. You can either use a top-level domain such as *myawesomedomain.com* or, if you prefer, a subdomain like *mail.myawesomedomain.com*. You can register as many sending domains as you need on your SparkPost account.
 
@@ -43,25 +43,25 @@ To set up your sending domain, you add the domain to your SparkPost account, ver
 
 Note: SparkPost's Compliance team expect to see a [legitimate web presence](https://www.sparkpost.com/docs/getting-started/requirements-for-sending-domains/#website-requirements) on each sending domain so please ensure your website is accessible before adding a domain to your SparkPost account.
 
-### Step 1: Creating A Sending Domain
+### Sending Domain Step 1: Creating the Domain
 
-To create your sending domain, visit the [Account -> Sending Domains](https://app.sparkpost.com/account/sending-domains) section of your SparkPost account and click the New Domain button. Enter your domain name and click Add Domain.
+If you didn't create a sending domain during your sign up process, you can [add one now in the SparkPost app](https://app.sparkpost.com/account/sending-domains/add). If you already added a domain, visit the [Sending Domains page](https://app.sparkpost.com/account/sending-domains) to find your existing domain and click "View Settings" to complete the domain set up. In both cases, you should now be on your domain's edit page and see that it has a status of "Unverified".
 
-![Adding a sending domain](media/getting-started-sparkpost/adding-sending-domains.png)
+![Editing domain settings](media/getting-started-sparkpost/domain-edit-screen.png)
 
-### Step 2: Verifying Domain Ownership
+### Sending Domain Step 2: Verifying Domain Ownership
 
-Your new sending domain should now be visible in the [Sending Domains](https://app.sparkpost.com/account/sending-domains) list on your account. Before you can send mail using your sending domain, SparkPost needs to verify that you own it.
+Before you can send mail using your sending domain, SparkPost needs to verify that you own it. Adding a DNS record to your domain is the recommended way to complete this verification. On the edit screen, there will be a TXT record value along with a funny-looking hostname where SparkPost expects to find that TXT record. For example, the demo hostname shown below is `scph0717._domainkey.mail.customer.com` and the value of the TXT record begins with "v=DKIM1;". For now you can ignore the CNAME instructions. [We'll explain those later](#custom-bounce-domain).
 
-To do that, you'll publish a type of DNS record called a DKIM record on your domain and ask SparkPost to check it for you. As a convenient side-effect, that DKIM record will also help your reputation as an email sender. DKIM is useful to your recipients to verify that mail that looks like it came from you was in fact sent by you and it arrived intact.
+![Domain DNS verification section](media/getting-started-sparkpost/domain-verification.png)
 
-Note: you will need admin access to your DNS configuration to complete this step.
+Once you've set up the DNS TXT record, come back to the edit screen and click "Verify DNS Records". Unfortunately, some DNS records take longer to update than others, so you may have to try this a few times or, in rare cases, come back up to 24 hours later and click "Verify DNS Records" again. If you want, you can check to see if the DNS value has updated using a service like https://whatsmydns.net. Just be sure to use the correct hostname there, too.
 
-To generate the DKIM DNS record for your sending domain, click the DKIM record *Settings* link under your domain on the [Sending Domains](https://app.sparkpost.com/account/sending-domains) list. Then use the revealed domain name, record type and value to update your DNS configuration. Each DNS provider has a slightly different interface; you'll want to create a "TXT" record with the hostname and value SparkPost shows you.
+You're almost done! While you've been verifying ownership of your domain, the addition of this DKIM DNS record will [also help your reputation as an email sender](https://www.sparkpost.com/docs/faq/why-configure-dkim/). DKIM is a widely-used email standard that most email services will use to verify that your emails were in fact sent by you and weren't intercepted or changed along the way. Your hard work is paying off already.
 
-![Sending domain DKIM record](media/getting-started-sparkpost/domain-verification.png)
+*Note:* if you don't have access to update your DNS records for this domain, you can click "verify ownership through email" to ask SparkPost to send an email to abuse@ or postmaster@ for your domain, and then click on the link in the received email. This will allow you to send email from this domain, but the DKIM "alignment" will be off which could cause deliverability issues, so we recommend DNS verification whenever possible.
 
-Here are some how-to documents for common DNS providers:
+Here are some how-to documents for editing DNS records with common DNS providers:
 
 * [CloudFlare](https://support.cloudflare.com/hc/en-us/articles/200168626-How-do-I-add-a-SPF-record-)
 * [GoDaddy](https://www.godaddy.com/help/manage-dns-for-your-domain-names-680)
@@ -71,15 +71,9 @@ Here are some how-to documents for common DNS providers:
 * [DNSSimple](https://support.dnsimple.com/articles/dkim-record/)
 * [BlueHost](https://my.bluehost.com/hosting/help/txt_record)
 
-Once your DKIM DNS record is configured and published, go back to your [Sending Domains](https://app.sparkpost.com/account/sending-domains) account settings and click *Test* under the DKIM settings for your domain. Once SparkPost is able to retrieve your DKIM record, you'll see a green tick beside the DKIM record section.
+### Sending Domain Step 3: Final Review
 
-Note: DNS changes can take between a few minutes and 24 hours to propagate so a little patience might be required before SparkPost is able to verify your DKIM record.
-
-Alternately, you can verify ownership by receiving an email to an *admin account* on your domain. From Account -> [Sending Domains](https://app.sparkpost.com/account/sending-domains), the "email options" link under your sending domain will walk you through that process.
-
-### Step 3: Compliance Checks
-
-Your domain is now almost ready to send. Once ownership verification completes, your domain will be submitted to our Compliance robots for a few additional checks. Once they complete, you'll see "sending, DKIM signing" next to the green "ready for" text.
+Once your DNS record has been found, your domain's status will change to "Pending". This means the domain has been picked up by our final review process which will verify that the domain meets [our best practice requirements](https://www.sparkpost.com/docs/getting-started/requirements-for-sending-domains/#if-your-domain-is-blocked). This usually takes just a few minutes, but can sometimes take up to an hour. Once the review is complete, the domain's status will change to "Verified" and "Ready for: Sending" (and DKIM-signing if you set up your DKIM DNS record).
 
 ![Ready to send](media/getting-started-sparkpost/ready-for.png)
 
@@ -188,15 +182,17 @@ To maintain your sending reputation and ensure the mail you send is branded as y
 Each email you send will have 2 main sender addresses:
 
 * The header from address is the one that appears in the From: field. The header from address includes one of your sending domains.
-* The bounce address is used by mail software to return undeliverable mail, report on errors and it is also associated with your reputation as a sender.
+* The bounce address appears in the `Return-Path` header and is used by mail software to return undeliverable mail and report on errors.
 
-By default SparkPost uses a generic bounce domain for your email, such as *sparkpostmail.com*. By using the [Sending Domains API verify endpoint](https://developers.sparkpost.com/api/sending-domains.html#sending-domains-verify-post) or the UI, you can configure your sending domain as a bounce domain as well, which will allow for a deliverability best practice called *strict alignment*. This is when the domains used for a sending domain and a bounce domain are the same. We highly recommend creating bounce domains for all of your sending domains if possible to establish the best possible reputation with the ISPs. To set this up, add the CNAME record provided in the API documentation or the UI to your DNS records, and then verify it via the sending domains API or UI. The following is a screenshot of the UI showing the CNAME verification in addition to the DKIM verification process.
+By default, SparkPost uses a generic bounce domain for your email, such as *sparkpostmail.com*. In SparkPost, you can create custom bounce domains to control the branding of your emails more fully as well as to create a deliverability best practice known as SPF alignment. Creating a related bounce domain creates "relaxed alignment", which is good (e.g. mail.example.com and bounces.example.com), while setting up an existing sending domain as a bounce domain creates "strict alignment", which is even better (e.g. mail.example.com used as both).
 
-![Bounce Domain Verification](media/getting-started-sparkpost/bounce-domains.png)
+To do this, visit [the Sending Domains page](https://app.sparkpost.com/account/sending-domains) and either create a new domain or edit an existing sending domain. In either case, **you will need to edit DNS records to set up your bounce domain** (no other verification methods are available for bounce domain setup). Add the CNAME record with the provided value, click "Verify DNS Records" (DNS updates can take up to 24 hours to complete, but are usually available within an hour), and the domain will show up as "Ready for: Bounce" (along with anything else it was already ready for).
+
+![Domain DNS verification section](media/getting-started-sparkpost/domain-verification.png)
 
 ### Tracking Domain
 
-SparkPost changes each link in your email to add tracking information, replacing each URL with a tracking service URL using the generic SparkPost domain name: spgo.io. You can create your own tracking domains from Account -> [Tracking Domains](https://app.sparkpost.com/account/tracking-domains) and also [through the API](https://developers.sparkpost.com/api/tracking-domains.html).
+If you have click-tracking turned on, SparkPost will wrap each link in your emails to add tracking information, replacing each URL with a tracking service URL using the generic SparkPost domain name: spgo.io. You can create your own custom tracking domains from Account -> [Tracking Domains](https://app.sparkpost.com/account/tracking-domains) and also [through the API](https://developers.sparkpost.com/api/tracking-domains.html) and then assign them to be used with specific sending domains. You can assign a tracking domain to a sending domain [in the SparkPost app under Sending Domains](https://app.sparkpost.com/account/sending-domains).
 
 ## Reports, Analytics and Tracking
 
