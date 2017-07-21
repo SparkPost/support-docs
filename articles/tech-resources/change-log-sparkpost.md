@@ -2,6 +2,19 @@
 title: "SparkPost Change Log"
 description: "A running log of what's new, what's been fixed, and what's been changed in SparkPost."
 ---
+
+## July 21,2017
+### What’s New?
+
+* Improved sending domains page in the UI, now allowing for the creation of multiple bounce domains in the UI. More info
+* You can now submit custom headers for SparkPost to send to your webhook endpoints. Check out the custom_headers field on the webhooks API endpoint.
+* We have improved the performance of initial test messages on new accounts
+
+## Fixed
+
+* Mask sensitive information in email headers
+
+
 ## June 23, 2017
  
 ### What’s New?
