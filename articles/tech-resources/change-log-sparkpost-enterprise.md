@@ -15,6 +15,14 @@ A running log of new features and capabilities that have been rolled out on the 
   * Service Providers that have auto_verify turned on will be flagged as "CNAME verified" without doing the DNS check as we assume the customer is doing the correct DNS updates.
   * This [support article](https://www.sparkpost.com/docs/tech-resources/custom-bounce-domain/) describes the process for creating Bounce Domains, including the create and verify endpoints. 
  
+* **New:** Pass Custom Headers For Webhook Delivery
+  * When creating/editing a webhook via the API, customers can now define up to 5 additional custom headers that will be included when webhooks batches are delivered to their HTTP endpoint. 
+  * More information is available in this [support article](https://www.sparkpost.com/docs/user-guide/posting-custom-headers-with-webhooks-delivery/)
+
+* **Change:** Limit pages in the UI with long lists to 1000 items
+  * For some customers, who have long lists of API keys, sending domains, tracking domains, and subaccounts, the UI pages would take too long too load. As a temporary measure we have limited those pages to display up to 1000 items. 
+  * Customers can still create new API keys, sending domains, tracking domains, and subaccounts
+
 
 ### 06 July, 2017 
 
