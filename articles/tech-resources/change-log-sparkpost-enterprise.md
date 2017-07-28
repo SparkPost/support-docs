@@ -11,8 +11,8 @@ A running log of new features and capabilities that have been rolled out on the 
 
 * **Enhancement:** Self Service for Bounce (Return-Path) Domains in SparkPost Enterprise
   * Enterprise customers can now create and verify Bounce Domains (aka Return-Path Domains) in addition to Sending (aka FROM) Domains via an API without calling their TAM or submitting a ticket to Support. 
-  * Enterprise customers can call the Sending Domains API to Create the Domain, CNAME it to customerID.mail.e.sparkpost.com, and call the API again to verify that the DNS entry is correct. This will allow OOB bounces to be processed correctly.
-  * Service Providers that have auto_verify turned on will be flagged as "CNAME verified" without doing the DNS check as we assume the customer is doing the correct DNS updates.
+  * Enterprise customers can call the Sending Domains API to create the Domain, CNAME it to customerID.mail.e.sparkpost.com, and call the API again to verify that the DNS entry is correct. This will allow OOB bounces to be processed correctly.
+  * Service Providers that have auto_verify turned on will be flagged as "CNAME verified" without doing the DNS check as we assume the customer is doing the correct DNS updates themselves.
   * This [support article](https://www.sparkpost.com/docs/tech-resources/custom-bounce-domain/) describes the process for creating Bounce Domains, including the create and verify endpoints. 
  
 * **New:** Pass Custom Headers For Webhook Delivery
@@ -20,8 +20,7 @@ A running log of new features and capabilities that have been rolled out on the 
   * More information is available in this [support article](https://www.sparkpost.com/docs/user-guide/posting-custom-headers-with-webhooks-delivery/)
 
 * **Change:** Limit pages in the UI with long lists to 1000 items
-  * For some customers, who have long lists of API keys, sending domains, tracking domains, and subaccounts, the UI pages would take too long too load. As a temporary measure we have limited those pages to display up to 1000 items. 
-  * Customers can still create new API keys, sending domains, tracking domains, and subaccounts
+  * For some customers who have long lists of API keys, sending domains, tracking domains, or subaccounts, the UI pages would take too long too load. As a temporary measure, we have limited those pages to display up to 1000 items. Customers can still create new API keys, sending domains, tracking domains, and subaccounts as normal.
 
 
 ### 06 July, 2017 
