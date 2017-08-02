@@ -15,6 +15,15 @@ define('PHPMAILERHOST', 'smtp.sparkpostmail.com');
 $phpmailer_smtpuser = 'SMTP_Injection';
 $phpmailer_smtppassword = '<API_KEY>';
 define('PHPMAILERPORT', 587);
+// maybe required if you are on PHP 5.6+
+define('PHPMAILER_SECURE','tls');
+$GLOBALS['phpmailer_smtpoptions'] = array(
+        'ssl' => array(
+        'verify_peer' => false,
+        'verify_peer_name' => false,
+        'allow_self_signed' => true
+        )
+);
 ```
 
 * In your PHPList Campaign, use correct *From Line*. For example, if your Sending Domain is xyz.com, you can set From Line to <NAME>@xyz.com. 
