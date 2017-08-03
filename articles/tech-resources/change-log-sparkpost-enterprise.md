@@ -27,7 +27,7 @@ A running log of new features and capabilities that have been rolled out on the 
 
 * **Enhancement:** Subaccount API key is now optionally (not automatically) created with new Subaccounts
   * When creating a new subaccount, users now have the option to NOT create a subaccount-specific API key for it by setting the `setup_api_key` field in the create request to false.
-  * Default behavior has not changed: new subaccounts will have an API key created by default
+  * Default behavior for the API has not changed: new subaccounts created via the API will still have an API key created by default
   * For customers (typically service providers) with many subaccounts but who send using the master account API key, this may improve UI performance
   * The Subaccount [API documentation](https://developer.sparkpost.com/api/subaccounts.html#subaccounts-subaccounts-collection-post) has been updated to reflect the new functionality
 
