@@ -25,12 +25,13 @@ If you prefer to use the SparkPost UI, you can create multiple bounce domains or
 1. Select Account and then [Sending Domains](https://app.sparkpost.com/account/sending-domains).
 1. Click the New Domain button to add a sending domain.
 1. Add the displayed CNAME record to your sending domain.
-1. Select the "verify DNS records" orange text in the CNAME record box.
+1. Select the "Verify CNAME record" orange text in the _Setup For Bounce_ record box.
 1. Make sure the domain is verified by the green check mark.
 
  ![](media/custom-bounce-domain/CNAME-verification-2.png)
 
-## Using The SparkPost API
+
+## Using The SparkPost API
 
 If you prefer to set up a sending domain as a bounce domain via the API, use the following instructions:
 
