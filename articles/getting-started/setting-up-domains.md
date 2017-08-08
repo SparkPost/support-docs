@@ -20,7 +20,7 @@ The following are instructions for creating sending domains via the SparkPost UI
 
 1. Though the DKIM record (or domain key) looks long, do not break it into 2 or more lines. It may not look like DNS can't handle all of the characters, but it can.
 
-1. It can take a bit of time for DKIM records to propagate. You can check the TTL (time to live) amount within your DNS provider – usually they are beside the record type. It can take up to that time both to be propagated and ready to go. Once they do, you may click the orange "Verify DNS Records" in the UI. If the domain validates successfully, this is what it should look like:
+1. It can take a bit of time for DKIM records to propagate. You can check the TTL (time to live) amount within your DNS provider – usually they are beside the record type. It can take up to that time both to be propagated and ready to go. Once they do, you may click the orange "Verify TXT Record" in the UI. If the domain validates successfully, this is what it should look like:
 
     ![](media/setting-up-domains/sending-domain-complete.png)
 
