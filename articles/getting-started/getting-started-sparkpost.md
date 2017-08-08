@@ -21,7 +21,7 @@ Note: SparkPost is a developer-centric email delivery service. That means pretty
 
 First things first: sign up for your free SparkPost account [here](https://app.sparkpost.com/sign-up). After sign-up, SparkPost will send you a verification email; please do verify your email address so SparkPost can contact you if you need support later on and send you important service announcements.
 
-## Preparing Your "From:" Address, or Sending Domain
+## Preparing Your "From:" Address
 
 The very first thing your recipients see when they open your email is your address in the From field so it's important to set it properly from the get-go. In SparkPost, that means creating a sending domain, the domain name you'll use to send email from. You can either use a top-level domain such as *myawesomedomain.com* or, if you prefer, a subdomain like *mail.myawesomedomain.com*. You can register as many sending domains as you need on your SparkPost account.
 
@@ -51,11 +51,12 @@ If you didn't create a sending domain during your sign up process, you can [add 
 
 ### Sending Domain Step 2: Verifying Domain Ownership
 
-Before you can send mail using your sending domain, SparkPost needs to verify that you own it. Adding a DNS record to your domain is the recommended way to complete this verification. On the edit screen, there will be a TXT record value along with a funny-looking hostname where SparkPost expects to find that TXT record. For example, the demo hostname shown below is `scph0717._domainkey.mail.customer.com` and the value of the TXT record begins with "v=DKIM1;". For now you can ignore the CNAME instructions. [We'll explain those later](#custom-bounce-domain).
+Before you can send mail using your sending domain, SparkPost needs to verify that you own it. Adding a DNS record to your domain is the recommended way to complete this verification. The edit screen, under _Set Up For Sending_, shows a TXT record value along with a funny-looking hostname where SparkPost expects to find that TXT record. For example, the demo hostname shown below is `scph0717._domainkey.mail.customer.com` and the value of the TXT record begins with "v=DKIM1;".
 
 ![Domain DNS verification section](media/getting-started-sparkpost/domain-verification.png)
 
-Once you've set up the DNS TXT record, come back to the edit screen and click "Verify DNS Records". Unfortunately, some DNS records take longer to update than others, so you may have to try this a few times or, in rare cases, come back up to 24 hours later and click "Verify DNS Records" again. If you want, you can check to see if the DNS value has updated using a service like https://whatsmydns.net. Just be sure to use the correct hostname there, too.
+
+Once you've set up the DNS TXT record, come back to the edit screen and click "Verify TXT Record". Unfortunately, some DNS records take longer to update than others, so you may have to try this a few times or, in rare cases, come back up to 24 hours later and click "Verify TXT Record" again. If you want, you can check to see if the DNS value has updated using a service like https://whatsmydns.net. Just be sure to use the correct hostname there, too.
 
 You're almost done! While you've been verifying ownership of your domain, the addition of this DKIM DNS record will [also help your reputation as an email sender](https://www.sparkpost.com/docs/faq/why-configure-dkim/). DKIM is a widely-used email standard that most email services will use to verify that your emails were in fact sent by you and weren't intercepted or changed along the way. Your hard work is paying off already.
 
@@ -186,7 +187,7 @@ Each email you send will have 2 main sender addresses:
 
 By default, SparkPost uses a generic bounce domain for your email, such as *sparkpostmail.com*. In SparkPost, you can create custom bounce domains to control the branding of your emails more fully as well as to create a deliverability best practice known as SPF alignment. Creating a related bounce domain creates "relaxed alignment", which is good (e.g. mail.example.com and bounces.example.com), while setting up an existing sending domain as a bounce domain creates "strict alignment", which is even better (e.g. mail.example.com used as both).
 
-To do this, visit [the Sending Domains page](https://app.sparkpost.com/account/sending-domains) and either create a new domain or edit an existing sending domain. In either case, **you will need to edit DNS records to set up your bounce domain** (no other verification methods are available for bounce domain setup). Add the CNAME record with the provided value, click "Verify DNS Records" (DNS updates can take up to 24 hours to complete, but are usually available within an hour), and the domain will show up as "Ready for: Bounce" (along with anything else it was already ready for).
+To do this, visit [the Sending Domains page](https://app.sparkpost.com/account/sending-domains) and either create a new domain or edit an existing sending domain. In either case, **you will need to edit DNS records to set up your bounce domain** (no other verification methods are available for bounce domain setup). Add the CNAME record with the value shown under _Set Up For Bounce_, click "Verify CNAME Record" (DNS updates can take up to 24 hours to complete, but are usually available within an hour), and the domain will show up as "Ready for: Bounce" (along with anything else it was already ready for).
 
 ![Domain DNS verification section](media/getting-started-sparkpost/domain-verification.png)
 
@@ -200,7 +201,7 @@ You can use message events, metrics, and webhooks to keep track of your SparkPos
 
 ![Summary report](media/getting-started-sparkpost/summary-report.png)
 
-*Summary report*
+<div align="center"><em>Summary report</em></div>
 
 ### Message Events
 
@@ -208,7 +209,7 @@ Message events offer fine grained, per-recipient details, useful for checking th
 
 ![SparkPost message events in sequence](media/getting-started-sparkpost/message-events.png)
 
-*SparkPost message events in sequence*
+<div align="center"><em>SparkPost message events in sequence</em></div>
 
 You can search 10 days of message events from your account in Reports -> [Message Events](https://app.sparkpost.com/reports/message-events) with the same data available through the [message events API endpoint](https://developers.sparkpost.com/api/message-events.html).
 
