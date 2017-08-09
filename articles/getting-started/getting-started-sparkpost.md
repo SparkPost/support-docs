@@ -51,7 +51,7 @@ If you didn't create a sending domain during your sign up process, you can [add 
 
 ### Sending Domain Step 2: Verifying Domain Ownership
 
-Before you can send mail using your sending domain, SparkPost needs to verify that you own it. Adding a DNS record to your domain is the recommended way to complete this verification. The edit screen, under _Set Up For Sending_, shows a TXT record value along with a funny-looking hostname where SparkPost expects to find that TXT record. For example, the demo hostname shown below is `scph0717._domainkey.mail.customer.com` and the value of the TXT record begins with "v=DKIM1;".
+Before you can send mail using your sending domain, SparkPost needs to verify that you own it. Adding a DNS record to your domain is the recommended way to complete this verification. The edit screen, under _Set Up For Sending_, shows a TXT record value along with a funny-looking hostname where SparkPost expects to find that TXT record. For example, the demo hostname shown below is `scph0717._domainkey.mail.example.com` and the value of the TXT record begins with "v=DKIM1;".
 
 ![Domain DNS verification section](media/getting-started-sparkpost/domain-verification.png)
 
