@@ -195,6 +195,7 @@ This has been replaced with:
 * We added advanced filtering to the [message events](https://app.sparkpost.com/reports/message-events) in the app, which allows you to filter by from addresses, event types, templates, subaccounts, campaigns, and message IDs.
 * Migrating from SendGrid to SparkPost? We put together a [SendGrid migration guide](https://www.sparkpost.com/migration-guides/sendgrid/) to help you along the way.
 * Released [python-sparkpost 1.3.2](https://github.com/SparkPost/python-sparkpost/releases), with fixes to cc/bcc handling and instructions for use with Google App Engine.
+* [Updates](https://www.sparkpost.com/blog/suppression-list-api-updates/) to suppression list for API and UI
 
 ### Fixed
 
