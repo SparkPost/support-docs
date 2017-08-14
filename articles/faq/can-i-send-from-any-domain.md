@@ -5,7 +5,7 @@ description: "Domain Ownership And Control You can send mail through Spark Post 
 
 ## Domain Ownership And Control
 
-You can send mail through SparkPost from any domain *that you or your customers control*. By verifying your sending domains with SparkPost, you're letting us know that you control them and that you authorize delivery from those domains. The SPF and DKIM domain verification procedures are the best option here since they also bring deliverability best practice with them. [There are instructions here how to verify your sending domains](https://www.sparkpost.com/docs/getting-started/getting-started-sparkpost/#step-2-verifying-domain-ownership). 
+You can send mail through SparkPost from any domain *that you or your customers control*. By verifying your sending domains with SparkPost, you're letting us know that you control them and that you authorize delivery from those domains. The SPF and DKIM domain verification procedures are the best option here since they also bring deliverability best practice with them. Please note the mail you send through SparkPost is already covered by sparkpostmail.com SPF record so there is no need for you to publish your own. [There are instructions here how to verify your sending domains](https://www.sparkpost.com/docs/getting-started/getting-started-sparkpost/#step-2-verifying-domain-ownership). 
 
 ## Why Can't I Just Send From Any Domain?
 
