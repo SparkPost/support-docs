@@ -17,7 +17,7 @@ Find out whether the service is up, down, sideways, on vacation or going slow by
 | **Upgrades - Large Plans & Add-ons**            | **[Contact Sales](mailto:insidesales@sparkpost.com?subject=Account%20Change)**                                                                                   |
 | **Cancel your Service**                         | **[Submit a support request](https://www.sparkpost.com/submit-a-ticket?email[subject]=Web:%20Cancel%20Service%20Request:%20Selfserve%20Account)** |
 | **Cancel your Service - Large Plans >2M/month** | **[Submit a support request](https://www.sparkpost.com/submit-a-ticket?email[subject]=Web:%20Cancel%20Service%20Request:%20Large%20Account)**     |
-| **Billing Inquiries**                           | **[Submit a support request](https://www.sparkpost.com/submit-a-ticket?email[subject]=Web:%20Billing%20Enquiry%20Selfserve%20Account)**           |
+| **Billing Inquiries**                           | **[Contact our Billing Team](mailto:billing@sparkpost.com?subject=Billing%20Request)**           |
 
 ## Account Setup & Requests
 
@@ -33,7 +33,7 @@ Find out whether the service is up, down, sideways, on vacation or going slow by
 
 | Task                           | How to get help                                                                                                                                                       |
 |:-------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **DKIM Verification Issues**   | **[Submit a support request](https://www.sparkpost.com/submit-a-ticket?email[subject]=Web:%20DKIM%20Verification%20Issue)**                            |
+| **DKIM Verification Issues**   | **[Contact our Compliance Team](mailto:compliance@sparkpost.com?subject=DKIM Verification%20Issue)**                            |
 | **Finding Bounce Information** | See **[Getting Bounce Information](https://www.sparkpost.com/docs/faq/retrieve-bounce-info/)** for instructions |
 | **Policy Rejections**          | See the **[Suppressions](https://www.sparkpost.com/docs/user-guide/using-suppression-lists/)** Article                                         |
 
