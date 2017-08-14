@@ -11,9 +11,9 @@ You can view your current quota limits on the [Account Usage](http://app.sparkp
 
 The daily quota limits the number of messages that can be sent during a rolling 24 hour period.  For example, if you reached your daily limit at 3:05 pm yesterday, you will be able to send again after 3:05 pm today.
 
-* For free plans, the daily message allowance is limited to 750 messages per day once you’ve verified your email address. Account's without a verified email address are limited to 100 messages per day. Be sure you verify the email address used to create your account by clicking the link in the welcome email—this will ensure you are eligible for the maximum sending limit.
+* For free plans, the daily message allowance is limited to 750 messages per day once you’ve verified your email address. Accounts without a verified email address are limited to 100 messages per day. Be sure you verify the email address used to create your account by clicking the link in the welcome email—this will ensure you are eligible for the maximum sending limit.
 * If you need a higher daily limit, upgrade to a paid plan on the [Billing](https://app.sparkpost.com/account/billing) page.
-* For paid plans, you can request an increase to your daily limit on the [Account Usage](http://app.sparkpost.com/account/usage) page. All limit requests are reviewed based upon your accounts sending performance and history with SparkPost.
+* For paid plans, you can request an increase to your daily limit on the [Account Usage](http://app.sparkpost.com/account/usage) page. All limit requests are reviewed based upon your account's sending performance and history with SparkPost.
 
 ### Monthly Limit Overages
 
