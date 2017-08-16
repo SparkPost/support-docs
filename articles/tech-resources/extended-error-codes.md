@@ -77,3 +77,7 @@ When developing to the REST api, you should be prepared to handle failed request
 |                       | 8000        | Bounce domain exists                             | 400              |                                              |
 |                       | 8001        | Bounce domain does not exist                     | 404              |                                              |
 | *Message Events*      |             | Too many requests                                | 429              | Rate limiting - pause and retry
+| *Relay Webhooks*       | *10000-10002* |                                                  |                  |                                              |
+|                       | 10000        | Using a restricted custom header                             | 422              | remove the restricted header and retry                                             |
+|                       | 10001        | Total size of custom headers is too large                     | 413              | reduce the size of the custom headers and retry                                             |
+|                       | 10002        | Using more than the maximum amount of headers allowed                     | 422              | reduce the number of custom headers and retry                                             |
