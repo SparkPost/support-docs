@@ -3,6 +3,15 @@ title: "SparkPost Change Log"
 description: "A running log of what's new, what's been fixed, and what's been changed in SparkPost."
 ---
 
+## August 21, 2017
+### What’s New?
+
+* [New pricing options](http://sparkpost.com/pricing) with phone support included on all paid plans.
+* You can now submit custom headers for SparkPost to send to your relay webhook endpoints. Check out the custom_headers field on [the relay webhooks API endpoint](https://developers.sparkpost.com/api/relay-webhooks.html).
+* We just released a new version of the [Java SparkPost client library](https://github.com/SparkPost/java-sparkpost). The current version is 0.19. The main change was adding support for Message Events API endpoint. As always you can find more details [on GitHub](https://github.com/SparkPost/java-sparkpost).
+* We added advanced filtering on the [tracking domains page](https://app.sparkpost.com/account/tracking-domains) for people with lots of tracking domains.
+
+
 ## July 21,2017
 ### What’s New?
 
@@ -195,6 +204,7 @@ This has been replaced with:
 * We added advanced filtering to the [message events](https://app.sparkpost.com/reports/message-events) in the app, which allows you to filter by from addresses, event types, templates, subaccounts, campaigns, and message IDs.
 * Migrating from SendGrid to SparkPost? We put together a [SendGrid migration guide](https://www.sparkpost.com/migration-guides/sendgrid/) to help you along the way.
 * Released [python-sparkpost 1.3.2](https://github.com/SparkPost/python-sparkpost/releases), with fixes to cc/bcc handling and instructions for use with Google App Engine.
+* [Updates](https://www.sparkpost.com/blog/suppression-list-api-updates/) to suppression list for API and UI
 
 ### Fixed
 

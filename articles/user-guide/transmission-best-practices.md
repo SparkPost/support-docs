@@ -9,11 +9,6 @@ This is a guide to best practices for sending transmissions and monitoring the r
 
 Generally, when sending promotional mailings to a large number of recipients, it makes sense to send multi-recipient transmissions to maximize performance. For best results, each transmission request should contain no more than 10,000 recipients, and in some cases, smaller transmissions (like 2000 recipients) may be more efficient if large amounts of unique personalization are being done on unique messages.
 
-## Restrictions and Caveats
-
-Only multi-recipient transmissions appear in the transmission summary list. For more information on how to list an array of transmission summary objects, see the API documentation on transmissions.
-You can schedule transmissions up to 31 days ahead by setting `options.start_time` when you create your transmission. If `options.start_time` is set greater than 31 days from the time of submission, the transmission is not accepted. For more information, see the API documentation on scheduled transmissions.
-
 ## Understanding Failure Scenarios & Monitoring for Errors
 
 In nearly all cases, your API request will receive a response that contains a clear description of the results. A 200 OK message indicates a successful call, but you should inspect the response output for “errors” and “results” like this example:
