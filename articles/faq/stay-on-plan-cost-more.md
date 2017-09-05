@@ -9,4 +9,11 @@ For example if you are on a 1M plan and have the following sending pattern for t
 * Aug 19 to Sep 18: 1,136,456
 * Jul 20 to Aug 18: 1,232,012
 * Jun 20 to Jul 19: 986,472
+
 We would set your max monthly limit to 1,232,012 as this is the larger value than the plan value.
+
+
+**Please Note**
+Free accounts which have never overaged or have not added a credit card to their account are not affected by this change. These accounts will continue with a maximum monthly limit of 100K and their current daily limit.
+
+
