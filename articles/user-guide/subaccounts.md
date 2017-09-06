@@ -129,7 +129,7 @@ The master account can also filter reporting by a single subaccount in the API i
 * Message Events API
 * Metrics API 
 
-Subaccount event data is provided via webhooks and the message events API. The subaccount_id key/value pair indicates which subaccount the event is attributed. You can use this attribute to filter/manage raw events by subaccount outside of SparkPost. Please note, you cannot create a webhook to stream only raw event data for a specific subaccount.
+Subaccount event data is provided via webhooks and the message events API. The subaccount_id key/value pair indicates which subaccount the event is attributed. You can use this attribute to filter/manage raw events by subaccount outside of SparkPost. Please note, you can create a webhook to stream only raw event data for a specific subaccount.
 
 ### Master Account: Operating on Behalf of a Subaccount
 
