@@ -21,6 +21,6 @@ We would set your max monthly cap to 1,601,615 (1,232,012 x1.3).
 ###FREE ACCOUNTS
 Free accounts which have never overaged or have not added a credit card to their account are not affected by this change. These accounts will continue with a maximum monthly limit of 100K and their current daily limit.
 
-**Note: ** Daily limits are **NOT** impacted by this change.
+**NOTE: ** Daily limits are NOT impacted by this change.
 
 
