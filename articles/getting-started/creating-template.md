@@ -68,6 +68,10 @@ Creating a template using the SparkPost UI is simple. To get started, let's go s
 1. **Choose Engagement Tracking Options:** If you would like this template to have open and click tracking enabled, click on either of these buttons. Orange is enabled, and grey is disabled.
 
     ![](media/creating-template/new-template-engagement-tracking-highlight.jpg)
+    
+1. **Choose Transactional Message Option:** Choose whether to mark this template as a transactional message. Orange is enabled, grey is disabled (and therefore "non_transactional".) Appropriately categorizing your templates is important because both "transactional" and "non-transactional" templates have separate suppression lists. For more information on suppression lists, see this article [here](https://www.sparkpost.com/docs/user-guide/using-suppression-lists/).
+
+    ![](media/creating-template/new-template-transactional-message-highlight.jpg)    
 
 1. **Define the content of the template:**
     * **[Creating HTML Content](https://www.sparkpost.com/docs/getting-started/creating-template/#authoring-html-content-for-your-templates)**
