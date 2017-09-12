@@ -77,7 +77,7 @@ For documentation on how to skip API key genration upon initial subaccount creat
 
 This is how subaccount creation appears in the UI:
 
-![subaccount create screenshot](media/subaccounts/Screen_Shot_2016-04-19_at_10.55.20_AM_original.png)
+![subaccount create screenshot](media/subaccounts/subaccount-creation-UI.png)
 
 The following is a list of permissions supported for subaccount API keys:
 
@@ -186,7 +186,9 @@ When creating new webhooks within the UI, leaving the subaccount field blank wil
 
 **Templates**
 
-The master account can create templates via the API by including the X-MSYS-SUBACCOUNT header. CRUD (create/retrieve/update/delete) operations against templates created in this manner can only be performed by the master account or a subaccount key with appropriate permissions.
+The master account can create templates via the API and assign it to a single subaccount by using the X-MSYS-SUBACCOUNT HTTP header, or share it with all subaccounts using a master account API key. Templates can also be created on behalf of subaccounts using the SparkPost UI in the "Templates" page, as per the screenshot below:
+
+![subaccount management for webhooks screenshot](media/subaccounts/new-template-subaccount-highlight.jpg)
 
 ### Subaccount Self Service
 
@@ -202,7 +204,7 @@ Subaccounts have limited access to system operations, data, and assets. The acce
 * Event Webhooks API
 * Templates API
 
-Sending domain and tracking domain functionality afforded to subaccount users are create, edit, and delete, as well as being able to verify their own sending domain/tracking domain. Subaccounts can also edit and retrieve their unique suppression lists.
+Sending domain and tracking domain functionality afforded to subaccount users are create, edit, and delete, as well as being able to verify their own sending domain/tracking domain. Subaccounts can also edit and retrieve their unique suppression lists, as well as create, edit, and delete their own templates.
 
 **Note**: When making API requests for the above reports, the subaccount does not need to specify the subaccount ID in their payloads. Even if this is included, no matter the value, it will always be overwritten since the subaccount ID is tied to the API key associated with it. Due to this restriction, a subaccount will not be able to spoof a different subaccount ID and get access to any other subaccount's or master account's data or assets.
 
