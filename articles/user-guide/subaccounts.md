@@ -86,6 +86,7 @@ The following is a list of permissions supported for subaccount API keys:
 * Message Events API (read only)
 * Suppression list (read/write) 
 * Event Webhooks (read/write)
+* Templates (read/write)
 
 **Default IP Pool/Binding Group Configuration**
 
@@ -181,6 +182,10 @@ When creating new webhooks within the UI, leaving the subaccount field blank wil
 
 ![subaccount management for webhooks screenshot](media/subaccounts/Screen_Shot_2017-05-23_at_1.46.55_PM.png)
 
+**Templates**
+
+The master account can create templates via the API by including the X-MSYS-SUBACCOUNT header. CRUD (create/retrieve/update/delete) operations against templates created in this manner can only be performed by the master account or a subaccount key with appropriate permissions.
+
 ### Subaccount Self Service
 
 Subaccounts have limited access to system operations, data, and assets. The access will be limited to the API key permissions you provide to the subaccount. Subaccounts can only retrieve their own message events data, which is sourced from the message events API.
@@ -193,6 +198,7 @@ Subaccounts have limited access to system operations, data, and assets. The acce
 * Tracking Domains API
 * Suppression List API
 * Event Webhooks API
+* Templates API
 
 Sending domain and tracking domain functionality afforded to subaccount users are create, edit, and delete, as well as being able to verify their own sending domain/tracking domain. Subaccounts can also edit and retrieve their unique suppression lists.
 
