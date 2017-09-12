@@ -80,11 +80,11 @@ Creating a template using the SparkPost UI is simple. To get started, let's go s
 
 At this point, we are *technically* done with our template and we could "Save" or "Save and Publish", but let's take a few minutes to test this template and make sure it is behaving as we expect.
 
-## How to Test and Preview templates with the SparkPost UI
+## How to Test and Preview templates in the SparkPost UI
 
 To test an email, you simply make sure all the above steps are completed and then click the "Preview" button. This allows you to view your email template.
 
-![](media/creating-template/template-editor-preview-link-highlighted_0.jpg)
+![](media/creating-template/new-template-preview-and-send.jpg)
 
 To send yourself (or approvers) a test transmission of your email template, enter the email addresses (comma separated) into the "To" field and click on the "Send Email" button.
 
