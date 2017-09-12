@@ -84,7 +84,7 @@ To test an email is pretty easy, you simply make sure all the above steps are co
 
 To send yourself (or approvers) a test transmission of your email template, enter the email addresses (comma separated) into the "To" field and click on the "Send Email" button.
 
-![](media/creating-template/new-send-test-highlight.jpg)
+![](media/creating-template/new-send-test-highlight.png)
 
 **Please be aware that sending a test email is an actual transmission (make sure you don't have any LIVE customer email addresses in the "To" field).**
 
