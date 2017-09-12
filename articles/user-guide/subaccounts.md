@@ -88,7 +88,7 @@ The following is a list of permissions supported for subaccount API keys:
 * Message Events API (read only)
 * Suppression list (read/write) 
 * Event Webhooks (read/write)
-* Templates (read/write)
+* Templates (read/write/preview)
 
 **Default IP Pool/Binding Group Configuration**
 
