@@ -99,7 +99,7 @@ After creating a subaccount, the master account has the option of assigning a de
 **Note**: Minimal validation is done against the value set in the IP pool ID key/field. If a mismatch error occurs, all attempted messages from that subaccount will be rejected.
 
 **Note**: If you do not set a default IP pool/binding group for a subaccount, it will use the system level default setting for your default IP pool/binding group. This is likely the safest configuration option unless there is a compelling business requirement to do otherwise.
-​
+
 **Permissions**
 
 Only master account users can create subaccounts. If you create a UI user, they will have access to both the master account and subaccounts, so it is critical that be taken into account when provisioning UI accounts on your system.
