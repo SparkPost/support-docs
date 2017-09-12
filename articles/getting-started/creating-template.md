@@ -35,7 +35,7 @@ Creating a template using the SparkPost UI is simple. To get started, let's go s
 
 1. **Name your template:** Input a human-friendly name for your template in the "Template Name" field. This field will NOT appear to your recipients.
 
-    ![](media/creating-template/new-template-name-highlight.jpg)
+    ![](media/creating-template/new-template-name-highlight.png)
 
 1. **Provide an ID for your template [optional]:** Input an ID for your template (note that if you do not provide an ID, SparkPost will create an ID for you). This field will NOT appear to your recipients and is used to help remind you of the purpose of the template. *Note: The template ID is used when referencing the template via the API - When using a given template for an outbound message, you will reference the template ID, not the template name itself.
 
