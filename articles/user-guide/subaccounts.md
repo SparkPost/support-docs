@@ -26,7 +26,7 @@ This article is intended for master account administrators (not subaccount users
 
 **Subaccounts** - The individual entities you create in order to support separate business units, mail streams or individual customers.
 
-**Subaccount Assets** - Data elements that belong solely to a subaccount, such as suppression lists, API keys, sending domains, etc.
+**Subaccount Assets** - Data elements that belong solely to a subaccount, such as suppression lists, API keys, sending domains, templates, etc.
 
 ### Summary of Subaccount Features
 
@@ -39,6 +39,7 @@ You will have the ability to:
 * Separate suppression lists by subaccount automatically
 * Create a webhook that will only receive raw event data for a subaccount
 * Identify the subaccount on each raw event in the webhook data stream
+* Create, edit, view, and use templates by subaccount
 
 In addition, your subaccount users will be able to:
 
@@ -48,6 +49,7 @@ In addition, your subaccount users will be able to:
 * Get raw message event data via the API
 * View and manage the suppression list via the API​
 * Create their own webhook via the API
+* Create, edit, view, and use templates
 
 ### Use Cases
 
