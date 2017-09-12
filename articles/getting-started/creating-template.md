@@ -41,7 +41,7 @@ Creating a template using the SparkPost UI is simple. To get started, let's go s
 
     ![](media/creating-template/new-template-ID-highlight.jpg)
     
-1. **Define subaccount usage of the template:** Choose whether or not to share this template with subaccounts by clicking the checkbox titled "Share with all subaccounts". If you leave this field blank, it will permanently assign the template to the master account, and subaccounts will not be able to use it. Read more about using subaccounts in SparkPost[here](https://www.sparkpost.com/docs/user-guide/subaccounts/).
+1. **Define subaccount usage of the template:** Choose whether or not to share this template with subaccounts by clicking the checkbox titled "Share with all subaccounts". If you leave this field blank, it will permanently assign the template to the master account, and subaccounts will not be able to use it. Read more about using subaccounts in SparkPost [here](https://www.sparkpost.com/docs/user-guide/subaccounts/).
 
     ![](media/creating-template/new-template-subaccount-highlight.jpg)    
 
