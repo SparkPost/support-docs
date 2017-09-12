@@ -27,11 +27,11 @@ Creating a template using the SparkPost UI is simple. To get started, let's go s
 
 1. **Open the templates view:** Click on "Templates" in the main SparkPost navigation.
 
-    ![Templates navigation element](media/creating-template/templates-navigation-element.png)
+    ![Templates navigation element](media/creating-template/new-template-button.png)
 
 1. **Make a new template:** Click on the "New Template" button to open the SparkPost template editor.
 
-    ![Create New Template button](media/creating-template/create-new-template-button.png)
+    ![Create New Template button](media/creating-template/templates-button.png)
 
 1. **Name your template:** Input a human-friendly name for your template in the "Template Name" field. This field will *not* be displayed to recipients.
 
