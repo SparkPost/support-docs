@@ -16,7 +16,7 @@ Currently there are two ways you can create templates in SparkPost:
 
 * **Reference:** Easily communicate with your team by having a set of named templates to reference.
 * **Error Reduction:** Reduce duplicated efforts and potential embarrassing emails with typos or errors.
-* **Simplification:** Building a library of "go-to" templates for recurrent use-cases simpler reduces workload for your development team.
+* **Simplification:** Building a library of "go-to" templates for recurrent use-cases reduces workload for your development team.
 * **Systemize:** Using SparkPost templates in concert with substitution data can make it easy to create re-usable templates that allow for one to one personalized content.
 
 ## Creating templates with the UI
