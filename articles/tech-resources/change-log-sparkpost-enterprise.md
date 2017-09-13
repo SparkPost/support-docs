@@ -9,7 +9,7 @@ A running log of new features and capabilities that have been rolled out on the 
 ### (Week of) 11 September, 2017 
 
 * **Change:** Message Scheduling
-  *  We have changed the behavior of the scheduled send function. Prior to the change schedule time kicked off message *generation* and then the immediate send of the generated messages. With this change, message injected into SparkPost will begin generating immediately and held in queue. The scheduled time will being message *sending.*
+  *  We have changed the behaviour of the scheduled send function. Prior to this change, message *generation* began at the scheduled time, followed by immediate send of the generated messages. With this change, messages for scheduled transmissions will be generated and queued *when the transmission is created*. At the scheduled time, those queued messages will be *sent*.
   * This change will result the actual sending time to be much closer to the scheduled time because of the pre-generation.
    * In the UI, message injection will be more distinguishable from message sending and therefore easier to see.
    * Customers who would like to schedule messages more than 12 hours in advance, please see your TAM.
