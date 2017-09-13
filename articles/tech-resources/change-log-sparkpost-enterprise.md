@@ -6,6 +6,23 @@ notification: "This Change Log is for SparkPost Enterprise Only"
 
 A running log of new features and capabilities that have been rolled out on the SparkPost Enterprise service. The API reference can be found [here](https://developers.sparkpost.com/api).
 
+### (Week of) 11 September, 2017 
+
+* **Change:** Message Scheduling
+  *  We have changed the behavior of the scheduled send function. Prior to the change schedule time kicked off message *generation* and then the immediate send of the generated messages. With this change, message injected into SparkPost will begin generating immediately and held in queue. The scheduled time will being message *sending.*
+  * This change will result the actual sending time to be much closer to the scheduled time because of the pre-generation.
+   * In the UI, message injection will be more distinguishable from message sending and therefore easier to see.
+   * Customers who would like to schedule messages more than 12 hours in advance, please see your TAM.
+
+### (Week of) 04 September, 2017 
+
+* **Enhancement:** Stored Templates by Subaccount
+  *  Customers can now limit the use of a stored template to just the Master account or share it and make it available for use by all subaccounts.
+  *  Master accounts can also copy stored templates to specific subaccount(s) to create fully editable copies. Subaccounts can create stored templates for their own use as well.
+  *  This enhancement will start rolling out this week and continue through the first week of October
+  *  This [support article](https://www.sparkpost.com/docs/getting-started/creating-template/) has been updated to include information on sharing stored templates with subaccounts
+  *  This [support article] (https://www.sparkpost.com/docs/user-guide/subaccounts/) has been updated to include information on stored templates and subaccounts
+  * SparkPost [Blog Post] (https://www.sparkpost.com/blog/stored-templates-subaccount/) announcing the new feature.
 
 ### (Week of) 24 July, 2017 
 
