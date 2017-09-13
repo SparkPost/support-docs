@@ -17,7 +17,7 @@ A running log of new features and capabilities that have been rolled out on the 
 ### (Week of) 04 September, 2017 
 
 * **Enhancement:** Stored Templates by Subaccount
-  *  Customers can now limit the use of a stored template to just the Master account or share it and make it available for use by all subaccounts.
+  *  Customers can now limit the use of a stored template to just the Master account or share it with all subaccounts.
   *  Master accounts can also copy stored templates to specific subaccount(s) to create fully editable copies. Subaccounts can create stored templates for their own use as well.
   *  This enhancement will start rolling out this week and continue through the first week of October
   *  This [support article](https://www.sparkpost.com/docs/getting-started/creating-template/) has been updated to include information on sharing stored templates with subaccounts
