@@ -10,7 +10,7 @@ A running log of new features and capabilities that have been rolled out on the 
 
 * **Change:** Message Scheduling
   *  We have changed the behaviour of the scheduled send function. Prior to this change, message *generation* began at the scheduled time, followed by immediate send of the generated messages. With this change, messages for scheduled transmissions will be generated and queued *when the transmission is created*. At the scheduled time, those queued messages will be *sent*.
-  * This change will result the actual sending time to be much closer to the scheduled time because of the pre-generation.
+  * This change will bring actual sending much closer to the scheduled time because of the new pre-generation step.
    * In the UI, message injection will be more distinguishable from message sending and therefore easier to see.
    * Customers who would like to schedule messages more than 12 hours in advance, please see your TAM.
 
@@ -19,10 +19,10 @@ A running log of new features and capabilities that have been rolled out on the 
 * **Enhancement:** Stored Templates by Subaccount
   *  Customers can now limit the use of a stored template to just the Master account or share it with all subaccounts.
   *  Master accounts can also copy stored templates to specific subaccount(s) to create fully editable copies. Subaccounts can create stored templates for their own use as well.
-  *  This enhancement will start rolling out this week and continue through the first week of October
-  *  This [support article](https://www.sparkpost.com/docs/getting-started/creating-template/) has been updated to include information on sharing stored templates with subaccounts
-  *  This [support article] (https://www.sparkpost.com/docs/user-guide/subaccounts/) has been updated to include information on stored templates and subaccounts
-  * SparkPost [Blog Post] (https://www.sparkpost.com/blog/stored-templates-subaccount/) announcing the new feature.
+  *  This enhancement will start rolling out this week and continue through the first week of October.
+  *  This [support article](https://www.sparkpost.com/docs/getting-started/creating-template/) has been updated to include information on sharing stored templates with subaccounts.
+  *  This [support article](https://www.sparkpost.com/docs/user-guide/subaccounts/) has been updated to include information on stored templates and subaccounts.
+  * SparkPost [Blog Post](https://www.sparkpost.com/blog/stored-templates-subaccount/) announcing the new feature.
 
 ### (Week of) 24 July, 2017 
 
