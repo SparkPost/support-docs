@@ -26,7 +26,7 @@ This article is intended for master account administrators (not subaccount users
 
 **Subaccounts** - The individual entities you create in order to support separate business units, mail streams or individual customers.
 
-**Subaccount Assets** - Data elements that belong solely to a subaccount, such as suppression lists, API keys, sending domains, etc.
+**Subaccount Assets** - Data elements that belong solely to a subaccount, such as suppression lists, API keys, sending domains, templates, etc.
 
 ### Summary of Subaccount Features
 
@@ -39,6 +39,7 @@ You will have the ability to:
 * Separate suppression lists by subaccount automatically
 * Create a webhook that will only receive raw event data for a subaccount
 * Identify the subaccount on each raw event in the webhook data stream
+* Create, edit, view, and use templates by subaccount
 
 In addition, your subaccount users will be able to:
 
@@ -48,6 +49,7 @@ In addition, your subaccount users will be able to:
 * Get raw message event data via the API
 * View and manage the suppression list via the API​
 * Create their own webhook via the API
+* Create, edit, view, and use templates
 
 ### Use Cases
 
@@ -75,7 +77,7 @@ For documentation on how to skip API key genration upon initial subaccount creat
 
 This is how subaccount creation appears in the UI:
 
-![subaccount create screenshot](media/subaccounts/Screen_Shot_2016-04-19_at_10.55.20_AM_original.png)
+![subaccount create screenshot](media/subaccounts/subaccount-creation-UI.png)
 
 The following is a list of permissions supported for subaccount API keys:
 
@@ -86,6 +88,7 @@ The following is a list of permissions supported for subaccount API keys:
 * Message Events API (read only)
 * Suppression list (read/write) 
 * Event Webhooks (read/write)
+* Templates (read/write/preview)
 
 **Default IP Pool/Binding Group Configuration**
 
@@ -96,7 +99,7 @@ After creating a subaccount, the master account has the option of assigning a de
 **Note**: Minimal validation is done against the value set in the IP pool ID key/field. If a mismatch error occurs, all attempted messages from that subaccount will be rejected.
 
 **Note**: If you do not set a default IP pool/binding group for a subaccount, it will use the system level default setting for your default IP pool/binding group. This is likely the safest configuration option unless there is a compelling business requirement to do otherwise.
-​
+
 **Permissions**
 
 Only master account users can create subaccounts. If you create a UI user, they will have access to both the master account and subaccounts, so it is critical that be taken into account when provisioning UI accounts on your system.
@@ -181,6 +184,12 @@ When creating new webhooks within the UI, leaving the subaccount field blank wil
 
 ![subaccount management for webhooks screenshot](media/subaccounts/Screen_Shot_2017-05-23_at_1.46.55_PM.png)
 
+**Templates**
+
+The master account can create templates via the API and assign it to a single subaccount by using the X-MSYS-SUBACCOUNT HTTP header, or share it with all subaccounts using a master account API key. Templates can also be created on behalf of subaccounts using the SparkPost UI in the "Templates" page, as per the screenshot below:
+
+![subaccount management for templates screenshot](media/subaccounts/new-template-subaccount-highlight.jpg)
+
 ### Subaccount Self Service
 
 Subaccounts have limited access to system operations, data, and assets. The access will be limited to the API key permissions you provide to the subaccount. Subaccounts can only retrieve their own message events data, which is sourced from the message events API.
@@ -193,8 +202,9 @@ Subaccounts have limited access to system operations, data, and assets. The acce
 * Tracking Domains API
 * Suppression List API
 * Event Webhooks API
+* Templates API
 
-Sending domain and tracking domain functionality afforded to subaccount users are create, edit, and delete, as well as being able to verify their own sending domain/tracking domain. Subaccounts can also edit and retrieve their unique suppression lists.
+Sending domain and tracking domain functionality afforded to subaccount users are create, edit, and delete, as well as being able to verify their own sending domain/tracking domain. Subaccounts can also edit and retrieve their unique suppression lists, as well as create, edit, and delete their own templates.
 
 **Note**: When making API requests for the above reports, the subaccount does not need to specify the subaccount ID in their payloads. Even if this is included, no matter the value, it will always be overwritten since the subaccount ID is tied to the API key associated with it. Due to this restriction, a subaccount will not be able to spoof a different subaccount ID and get access to any other subaccount's or master account's data or assets.
 
