@@ -6,7 +6,7 @@ notification: "This Change Log is for SparkPost Enterprise Only"
 
 A running log of new features and capabilities that have been rolled out on the SparkPost Enterprise service. The API reference can be found [here](https://developers.sparkpost.com/api).
 
-### (Week of) 11 September, 2017 
+### (Week of) 18 September, 2017 
 
 * **Change:** Message Scheduling
   *  We have changed the behaviour of the scheduled send function. Prior to this change, message *generation* began at the scheduled time, followed by immediate send of the generated messages. With this change, messages for scheduled transmissions will be generated and queued *when the transmission is created*. At the scheduled time, those queued messages will be *sent*.
