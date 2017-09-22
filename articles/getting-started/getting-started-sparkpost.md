@@ -56,7 +56,9 @@ Before you can send mail using your sending domain, SparkPost needs to verify th
 ![Domain DNS verification section](media/getting-started-sparkpost/domain-verification.png)
 
 
-Once you've set up the DNS TXT record, come back to the edit screen and click "Verify TXT Record". Unfortunately, some DNS records take longer to update than others, so you may have to try this a few times or, in rare cases, come back up to 24 hours later and click "Verify TXT Record" again. If you want, you can check to see if the DNS value has updated using a service like https://whatsmydns.net. Just be sure to use the correct hostname there, too.
+Once you've set up the DNS TXT record, come back to the edit screen and click "Verify TXT Record". Unfortunately, some DNS records take longer to update than others, so you may have to try this a few times or, in rare cases, come back up to 24 hours later and click "Verify TXT Record" again. If you want, you can check to see if the DNS value has updated using a service like [Whats My DNS](https://whatsmydns.net). Just be sure to use the correct hostname there, too. 
+
+Also, please note that some providers are particular about how the hostname is entered, so you may need to remove the domain from the end of the "Hostname" record and enter it as `scphxxxx._domainkey` (where xxxx is the number provided in the "Hostname" record in the SparkPost UI). If the record still does not verify, then please check with your domain provider if there are any special requirements for entering your DNS TXT record.
 
 You're almost done! While you've been verifying ownership of your domain, the addition of this DKIM DNS record will [also help your reputation as an email sender](https://www.sparkpost.com/docs/faq/why-configure-dkim/). DKIM is a widely-used email standard that most email services will use to verify that your emails were in fact sent by you and weren't intercepted or changed along the way. Your hard work is paying off already.
 
