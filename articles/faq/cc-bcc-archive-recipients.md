@@ -1,9 +1,9 @@
 ---
 title: "What are the differences between CC, BCC, and archive recipients?"
-description: "Spark Post and Spark Post Elite SPE allow you to designate recipients with the X MSYS API header as cc bcc or archive recipients Each system will generate a unique message for each valid CC BCC and Archive recipient This means that CC BCC and Archive recipients have the same..."
+description: "SparkPost and SparkPost Enterprise allow you to designate recipients with the X MSYS API header as cc bcc or archive recipients Each system will generate a unique message for each valid CC BCC and Archive recipient This means that CC BCC and Archive recipients have the same..."
 ---
 
-SparkPost and SparkPost Elite (SPE) allow you to designate recipients with the [X-MSYS-API](https://www.sparkpost.com/api#/reference/smtp-api) header as cc, bcc, or archive recipients. Each system will generate a unique message for each valid CC, BCC, and Archive recipient.  This means that CC, BCC, and Archive recipients have the same reporting events as "regular" recipients (i.e., deliveries, clicks, and opens).  Furthermore, "regular" recipients will see the CC recipients in the CC field and will NOT see the BCC recipients in the BCC field.  However, there are subtle differences between these messages in the headers which you should be aware of and they include:
+SparkPost and SparkPost Enterprise (SPE) allow you to designate recipients with the [X-MSYS-API](https://www.sparkpost.com/api#/reference/smtp-api) header as cc, bcc, or archive recipients. Each system will generate a unique message for each valid CC, BCC, and Archive recipient.  This means that CC, BCC, and Archive recipients have the same reporting events as "regular" recipients (i.e., deliveries, clicks, and opens).  Furthermore, "regular" recipients will see the CC recipients in the CC field and will NOT see the BCC recipients in the BCC field.  However, there are subtle differences between these messages in the headers which you should be aware of and they include:
 
 ### The List-Unsubscribe and X-MSFBL Headers
 
