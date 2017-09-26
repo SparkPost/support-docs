@@ -1,6 +1,6 @@
 ---
 title: "Getting Started on SparkPost Enterprise"
-description: "Note This Knowledge Base Article Is For Spark Post Enterprise Only The following article is a collection of helpful introductory topics regarding getting started on migrating traffic to Spark Post Enterprise from your previous email provider Knowing and understanding how to operate your Spark Post Enterprise environment efficiently from the..."
+description: "Note This Knowledge Base Article Is For SparkPost Enterprise Only The following article is a collection of helpful introductory topics regarding getting started on migrating traffic to SparkPost Enterprise from your previous email provider Knowing and understanding how to operate your SparkPost Enterprise environment efficiently from the..."
 ---
 
 **Note:** This Knowledge Base Article Is For SparkPost Enterprise Only 
