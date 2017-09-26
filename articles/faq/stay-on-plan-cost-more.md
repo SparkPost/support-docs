@@ -7,7 +7,7 @@ Your monthly cost will remain the same for the lifetime of your account. However
 
 
 ### Example 1 - No Overage
-If you are on a 1M plan and have not overaged in the last 90 days your max monthly cap will be set to 1.3M (1M x1.3).
+If you are on a 1M plan and have not overaged in the last 90 days your max monthly cap will be set to the plan value (1Million).
 
 ### Example 2 - Overage
 If you are on a 1M plan and have the following sending pattern for the last 90 days:
