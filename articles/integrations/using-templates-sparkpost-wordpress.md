@@ -30,8 +30,8 @@ To use these variables in your templates, you'll have to use our [Templates API
 }
 ```
 
-Note that `content` is enclosed in triple curly braces - this allows HTML content to be substituted without escaping. In the WordPress admin, on the settings screen for the SparkPost plugin, remember to fill in the Template field (in this example wordpress-testing):
+Note that `content` is enclosed in triple curly braces - this allows HTML content to be substituted without escaping. 
+
+Remember to fill in the Template field (in this example `wordpress-testing`) on the settings screen of the SparkPost plugin. You can modify the template name and/or substitution tags dynamically using [hooks supported by SparkPost plugin](https://github.com/SparkPost/wordpress-sparkpost/blob/master/docs/hooks.md). 
 
 ![](media/using-templates-sparkpost-wordpress/wordpress_templates_screenshot_original.png)
-
-You can modify template name and/or substitution tags dynamically using [hooks supported by SparkPost plugin](https://github.com/SparkPost/wordpress-sparkpost/blob/master/docs/hooks.md). 
