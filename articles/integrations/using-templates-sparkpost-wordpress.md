@@ -10,7 +10,7 @@ When using stored templates with the [SparkPost WordPress plugin](https://wordpr
 * from - the email address of the sender (e.g. Rick Sanchez <rick.sanchez@DimensionC-137.com>)
 * reply_to - the email address to use when users reply to your email
 
-To use these variables in your templates, you'll have to use our [Templates API](https://developers.sparkpost.com/api/#/reference/templates). Our web UI does not currently support using variables for from or reply_to. When you create or update your template, you can supply a payload that looks like this:
+To use these variables in your templates, you'll have to use our [Templates API](https://developers.sparkpost.com/api/#/reference/templates) or use our [UI](https://app.sparkpost.com). When you create or update your template, you can supply a payload that looks like this:
 
 ```json
 {
@@ -30,6 +30,8 @@ To use these variables in your templates, you'll have to use our [Templates API
 }
 ```
 
-Note that content is enclosed in triple curly braces - this allows HTML content to be substituted. In the WordPress admin, on the settings screen for the SparkPost plugin, remember to fill in the Template field (in this example wordpress-testing):
+Note that `content` is enclosed in triple curly braces - this allows HTML content to be substituted without escaping. 
+
+Remember to fill in the Template field (in this example `wordpress-testing`) on the settings screen of the SparkPost plugin. You can modify the template name and/or substitution tags dynamically using [hooks supported by SparkPost plugin](https://github.com/SparkPost/wordpress-sparkpost/blob/master/docs/hooks.md). 
 
 ![](media/using-templates-sparkpost-wordpress/wordpress_templates_screenshot_original.png)
