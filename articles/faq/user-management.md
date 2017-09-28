@@ -3,7 +3,7 @@ title: "User Management: How to Add or Delete Users from your Account"
 description: "SparkPost provides the ability to add or delete an additional user(s) to your account. This self service feature is available via the user interface in the Account Users section of the UI Moreover there are also two role based features available in the Web..."
 ---
 
-SparkPost provides the ability to add or delete an additional user(s) to your account. This self-service feature is available via the user interface in the Account > Users section of the UI.  Moreover, there are also two role-based features available in the Web UI and they are: Admin and Reporting.
+SparkPost provides the ability to add or delete additional users to your account. This self-service feature is available via the user interface in the Account > Users section of the UI.  Moreover, there are also two role-based features available in the Web UI and they are: Admin and Reporting.
 
 **Admin Role**: Has access to all functionality in the UI and the ability to add additional administrators and create / invite users with a role of Reporting.
 
