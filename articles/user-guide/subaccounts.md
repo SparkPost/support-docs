@@ -186,9 +186,12 @@ When creating new webhooks within the UI, leaving the subaccount field blank wil
 
 **Templates**
 
+
 The master account can create templates via the API and assign it to a single subaccount by using the X-MSYS-SUBACCOUNT HTTP header, or share it with all subaccounts using a master account API key. Templates can also be created on behalf of subaccounts using the SparkPost UI in the "Templates" page, as per the screenshot below:
 
 ![subaccount management for templates screenshot](media/subaccounts/new-template-subaccount-highlight.jpg)
+
+**Notes on subaccount template usage:** If a master account creates a template and does not elect to share it with subaccounts, only the master account may use that template. If the template is shared with all subaccounts, every subaccount has access to use the template, but only the master account has edit permissions. If the master account creates a template on behalf of a subaccount and assigns it to a single subaccount, both the master account and subaccount can use and edit that template.
 
 ### Subaccount Self Service
 
