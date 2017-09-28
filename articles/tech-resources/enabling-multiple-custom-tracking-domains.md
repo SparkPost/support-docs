@@ -1,6 +1,6 @@
 ---
 title: "Enabling Multiple Custom Tracking Domains"
-description: "A tracking domain also referred to as an engagement tracking domain is the domain that a tracked link will redirect through before reaching the final URL path of the original link It is also used as the path for the tracking pixel to track message opens A recipient will see..."
+description: "A tracking domain also referred to as an engagement tracking domain is the domain that a tracked link will redirect through before reaching the final URL path of the original link. It is also used as the path for the tracking pixel to track message opens."
 ---
 
 A tracking domain (also referred to as an "engagement tracking domain") is the domain that a tracked link will redirect through before reaching the final URL path of the original link. It is also used as the path for the tracking pixel to track message opens. A recipient will see this domain if they mouse over a tracked link in an HTML message or if they receive a plain text message. SparkPost offers the option to configure one or multiple tracking domains per account.
