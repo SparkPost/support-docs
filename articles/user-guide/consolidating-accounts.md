@@ -1,6 +1,6 @@
 ---
 title: "Consolidating/Migrating SparkPost Accounts"
-description: "As you start utilizing subaccounts it will be essential to become more familiar with how management will work with this feature Please read through this article before determining how you would like to set up your account"
+description: "Guidance for consolidating SparkPost accounts. It is important to also become familiar with the subaccounts feature before beginning consolidation."
 ---
 
 As you start utilizing subaccounts it will be essential to become familiar with management of this feature. Please read through this article before determining how you would like to set up your account: [Subaccounts in SparkPost](https://www.sparkpost.com/docs/user-guide/subaccounts/).
