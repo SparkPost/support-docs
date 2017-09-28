@@ -1,9 +1,9 @@
 ---
 title: "User Management: How to Add or Delete Users from your Account"
-description: "SparkPost and SparkPost Enterprise provide the ability to add or delete an additional user(s) to your account This self service feature is available via the user interface in the Account Users section of the UI Moreover there are also two role based features available in the Web..."
+description: "SparkPost provides the ability to add or delete an additional user(s) to your account. This self service feature is available via the user interface in the Account Users section of the UI Moreover there are also two role based features available in the Web..."
 ---
 
-SparkPost and SparkPost Enterprise provide the ability to add or delete an additional user(s) to your account. This self-service feature is available via the user interface in the Account > Users section of the UI.  Moreover, there are also two role-based features available in the Web UI and they are: Admin and Reporting.
+SparkPost provides the ability to add or delete an additional user(s) to your account. This self-service feature is available via the user interface in the Account > Users section of the UI.  Moreover, there are also two role-based features available in the Web UI and they are: Admin and Reporting.
 
 **Admin Role**: Has access to all functionality in the UI and the ability to add additional administrators and create / invite users with a role of Reporting.
 
@@ -39,7 +39,7 @@ Once the user has registered as a new user to your SparkPost or SparkPost Enterp
 
 ![](media/user-management/newuseradded_original.png)
 
-### Deleting a User from your SparkPost or SparkPost Enterprise Account 
+### Deleting a User from your Account 
 
 1. Click on the trash can icon to the right of the users name.
 
