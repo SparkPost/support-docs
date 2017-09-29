@@ -62,7 +62,8 @@ Also, please note that some providers are particular about how the hostname is e
 
 You're almost done! While you've been verifying ownership of your domain, the addition of this DKIM DNS record will [also help your reputation as an email sender](https://www.sparkpost.com/docs/faq/why-configure-dkim/). DKIM is a widely-used email standard that most email services will use to verify that your emails were in fact sent by you and weren't intercepted or changed along the way. Your hard work is paying off already.
 
-*Note:* if you don't have access to update your DNS records for this domain, you can click "verify ownership through email" to ask SparkPost to send an email to abuse@, postmaster@ or any mailbox that you control on your domain, and then click on the link in the received email. This will allow you to send email from this domain, but the DKIM "alignment" will be off which could cause deliverability issues, so we recommend DNS verification whenever possible.
+*Note:* if you don't have access to update your DNS records for this domain, you can click "verify ownership through email" to ask SparkPost to send an email to abuse@, postmaster@ or any mailbox that you control on your domain, and then click on the link in the received email. This will allow you to send email from this domain, but SparkPost will not be able to DKIM-sign the mail it sends on your behalf, which could cause deliverability issues. We recommend using DNS verification whenever possible for this reason.
+
 
 Here are some how-to documents for editing DNS records with common DNS providers:
 
