@@ -7,7 +7,7 @@ description: "A running log of what's new, what's been fixed, and what's been ch
 ### What’s New?
 
 * We have added the option of stored templates by subaccount. [Check it out](https://www.sparkpost.com/blog/stored-templates-subaccount/)
-* You can now verify you sending domain with any mailbox that you control on your domain.
+* You can now verify your sending domain with any mailbox that you control on your domain.
 
 ## August 21, 2017
 ### What’s New?
