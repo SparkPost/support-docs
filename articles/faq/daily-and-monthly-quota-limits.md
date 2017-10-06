@@ -17,7 +17,7 @@ The daily quota limits the number of messages that can be sent during a rolling 
 
 ### Monthly Limit Overages
 
-If you are on any of our currently-offered paid plans, you can exceed your monthly allowance and you will be charged for the additional usage at your overage CPM rate. Free plans are not permitted to go over the monthly limit.
+If you are on any of our currently-offered paid plans, you can exceed your monthly plan volume up to your monthly limit and you will be charged for the additional usage at your overage CPM rate. Free plans are not permitted to go over the monthly plan volume.
 
 ### What happens if I exceed a quota?
 
