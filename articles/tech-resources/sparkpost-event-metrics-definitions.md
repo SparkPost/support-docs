@@ -1,15 +1,19 @@
 ---
 title: "SparkPost Event and Metrics Definitions"
-description: "Spark Post Event Definitions The follow table contains the definition of each type of event that exists for activity through Spark Post and Spark Post Enterprise NOTE Inbound relay events are only available in Spark Post Enterprise i e they are not available in Spark Post Individual events are provided..."
+description: "SparkPost Event Definitions. The follow table contains the definition of each type of event that exists for activity through SparkPost. NOTE Inbound relay events are only available in SparkPost Enterprise."
 ---
 
 ## SparkPost Event Definitions 
 
-The following table contains the definition of each type of event that exists for activity through SparkPost and SparkPost Enterprise. NOTE: Inbound relay events are only available in SparkPost Enterprise, i.e., they are not available in SparkPost.Individual events are provided via the webhook data stream and can be retrieved on an on-demand basis using the Message Events API.
+The following table contains the definition of each type of event that exists for activity through SparkPost.
+
+*NOTE*: Inbound relay events are only available in SparkPost Enterprise.
+
+Individual events are provided via the webhook data stream and can be retrieved on an on-demand basis using the Message Events API.
 
 | Event Name           | Belongs to the following Event Group | Other Names for this Event         | Event Generated When:                                                                                                                          |
 |:---------------------|:-------------------------------------|:-----------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------|
-| Injection            | Injection                            | Reception                          | Message is received by or injected into SparkPost/SparkPost Elite.                                                                             |
+| Injection            | Injection                            | Reception                          | Message is received by or injected into SparkPost.                                                                                             |
 | Delivery             | Delivery                             | 250 OK                             | The remote mail server (of the recipient) acknowledges receipt of message.                                                                     |
 | Policy_Rejection     | Bounce                               | In Band Bounce: Admin type failure | Due to policy, SparkPost rejects message or fails to generate message. (This is most often due to suppression list activity.)                  |
 | Delay                | Delay                                | Tempfail/Transfail, 4xx error code | The remote mail server (of the recipient) temporarily rejects a message (asks for delivery to be tried again later).                           |
@@ -31,7 +35,7 @@ The following table contains the definition of each type of event that exists fo
 
 ## SparkPost Metrics Definitions
 
-The following contains the definition for each metric that is displayed in the SparkPost and SparkPost Elite UI. The Metrics API uses these same definitions, so results from the Metrics API will match the data displayed in the UI for the same date-time range interval.
+The following contains the definition for each metric that is displayed in the SparkPost UI. The Metrics API uses these same definitions, so results from the Metrics API will match the data displayed in the UI for the same date-time range interval.
 
 | Metric                           | Definition                                                                                                                      | Formula                                                            | Notes                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 |:---------------------------------|:--------------------------------------------------------------------------------------------------------------------------------|:-------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
