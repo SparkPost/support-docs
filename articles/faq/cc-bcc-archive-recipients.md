@@ -1,9 +1,9 @@
 ---
 title: "What are the differences between CC, BCC, and archive recipients?"
-description: "Spark Post and Spark Post Elite SPE allow you to designate recipients with the X MSYS API header as cc bcc or archive recipients Each system will generate a unique message for each valid CC BCC and Archive recipient This means that CC BCC and Archive recipients have the same..."
+description: "SparkPost allows you to designate recipients with the X MSYS API header as cc bcc or archive recipients. SparkPost will generate a unique message for each valid CC BCC and Archive recipient."
 ---
 
-SparkPost and SparkPost Elite (SPE) allow you to designate recipients with the [X-MSYS-API](https://www.sparkpost.com/api#/reference/smtp-api) header as cc, bcc, or archive recipients. Each system will generate a unique message for each valid CC, BCC, and Archive recipient.  This means that CC, BCC, and Archive recipients have the same reporting events as "regular" recipients (i.e., deliveries, clicks, and opens).  Furthermore, "regular" recipients will see the CC recipients in the CC field and will NOT see the BCC recipients in the BCC field.  However, there are subtle differences between these messages in the headers which you should be aware of and they include:
+SparkPost allows you to designate recipients with the [X-MSYS-API](https://www.sparkpost.com/api#/reference/smtp-api) header as cc, bcc, or archive recipients. SparkPost will generate a unique message for each valid CC, BCC, and Archive recipient.  This means that CC, BCC, and Archive recipients have the same reporting events as "regular" recipients (i.e., deliveries, clicks, and opens).  Furthermore, "regular" recipients will see the CC recipients in the CC field and will NOT see the BCC recipients in the BCC field.  However, there are subtle differences between these messages in the headers which you should be aware of and they include:
 
 ### The List-Unsubscribe and X-MSFBL Headers
 
@@ -21,7 +21,7 @@ It is possible to specify a list of one or more recipients who will receive a co
 ### Notes
 
 *   The “rcpt_type” field present in webhook/Message Events API data is used to specify whether the recipient is a CC, BCC or Archive recipient.
-	* If the [REST API is used to send cc or bcc messages](https://www.sparkpost.com/docs/faq/cc-bcc-with-rest-api/) (please note that archive is **not** supported via the REST API), the "rcpt_type" field **does not appear**            in the webhook or Message Events API data. We recommend that you include recipient-level metadata for tracking which type each recipient address belongs to.
+	* If the [REST API is used to send cc or bcc messages](https://www.sparkpost.com/docs/faq/cc-bcc-with-rest-api/) (please note that archive is **not** supported via the REST API), the "rcpt_type" field **does not appear** in the webhook or Message Events API data. We recommend that you include recipient-level metadata for tracking which type each recipient address belongs to.
 *   Each Archive, CC, and BCC recipient is counted in the standard targeted and accepted metrics.
 *   Archive messages do not include a BCC header.
 *   The total number of CC, BCC and archive recipients cannot exceed 1000.
