@@ -1,9 +1,9 @@
 ---
 title: "User Management: How to Add or Delete Users from your Account"
-description: "Spark Post and Spark Post Elite provide the ability to add or delete an additional user s to your account This self service feature is available via the user interface in the Account Users section of the UI Moreover there are also two role based features available in the Web..."
+description: "SparkPost provides the ability to add or delete an additional user(s) to your account. This self service feature is available via the user interface in the Account Users section of the UI Moreover there are also two role based features available in the Web..."
 ---
 
-SparkPost and SparkPost Elite provide the ability to add or delete an additional user(s) to your account. This self-service feature is available via the user interface in the Account > Users section of the UI.  Moreover, there are also two role-based features available in the Web UI and they are: Admin and Reporting.
+SparkPost provides the ability to add or delete additional users to your account. This self-service feature is available via the user interface in the Account > Users section of the UI.  Moreover, there are also two role-based features available in the Web UI and they are: Admin and Reporting.
 
 **Admin Role**: Has access to all functionality in the UI and the ability to add additional administrators and create / invite users with a role of Reporting.
 
@@ -33,13 +33,13 @@ The administrative user can invite colleagues to their account by completing the
 
 **Note**: The New User will be sent an invitation email to confirm acceptance. Once they confirm, they will be added in as a new user (Admin/reporting) in the UI. They MUST complete this step before they will be granted access to the UI in this role.
 
-**Confirmation**: User added to the SparkPost or SparkPost Elite Account
+**Confirmation**: User added to the SparkPost or SparkPost Enterprise Account
 
-Once the user has registered as a new user to your SparkPost or SparkPost Elite Account you will be able to confirm by seeing that their credentials have been added to the account. Below is an example confirming that "new user" has been added to the account. You can choose their role, either Administrator or Reporting, by using the pull down menu.
+Once the user has registered as a new user to your SparkPost or SparkPost Enterprise Account you will be able to confirm by seeing that their credentials have been added to the account. Below is an example confirming that "new user" has been added to the account. You can choose their role, either Administrator or Reporting, by using the pull down menu.
 
 ![](media/user-management/newuseradded_original.png)
 
-### Deleting a User from your SparkPost or SparkPost Elite Account 
+### Deleting a User from your Account 
 
 1. Click on the trash can icon to the right of the users name.
 
@@ -63,4 +63,4 @@ It is important to note that API keys are tied to users. This means that if a us
 2. Have a valid user generate new API keys as necessary.
 3. Replace the old user(s) with new one(s) in any system(s) using them to integrate with SparkPost before deleting the users.
 
-**Note**: A user cannot use the same email address more than once on a SparkPost or SparkPost Elite account.
+**Note**: A user cannot use the same email address more than once on a SparkPost or SparkPost Enterprise account.
