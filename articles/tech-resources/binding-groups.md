@@ -1,17 +1,17 @@
 ---
 title: "How to Use Binding Groups"
-description: "Note This Knowledge Base Article Is For Spark Post Enterprise Only Introduction Your Spark Post Elite environment was provisioned with your specific messaging needs and industry segmentation best practices in mind Bindings enable the ability to route individual messages over a designated group of IP addresses Each message sent must..."
+description: "Your SparkPost Enterprise environment was provisioned with your specific messaging needs and industry segmentation best practices in mind. Bindings enable routing of individual messages over a designated group of IP addresses."
 ---
 
 ### Note: This Knowledge Base Article Is For SparkPost Enterprise Only
 
 **Introduction**
 
-Your SparkPost Elite environment was provisioned with your specific messaging needs and industry segmentation best practices in mind. Bindings enable the ability to route individual messages over a designated group of IP addresses. Each message sent **must** carry a binding designation.  Any transmission *without* a binding designation will be initially accepted, but will use a default binding group on your system which automatically blackholes all messages.
+Your SparkPost Enterprise environment was provisioned with your specific messaging needs and industry segmentation best practices in mind. Bindings enable routing of individual messages over a designated group of IP addresses. Each message sent **must** carry a binding designation.  Any transmission *without* a binding designation will be initially accepted, but will use a default binding group on your system which automatically blackholes all messages.
 
 **Note**: *Messages assigned to the default binding are never attempted, so in your webhook event data, or Message Events API data, you will see a single reception event on the default binding for messages that did not initially have a binding assignment, but you will **not** see a delivery event for these messages.* 
 
-The bindings on your account were established during on-boarding and were communicated in the "*Welcome to SparkPost Elite*                   " document.  If you need assistance retrieving your bindings, please contact your Technical Account Manager.
+The bindings on your account were established during on-boarding and were communicated in the "*Welcome to SparkPost Enterprise*                   " document.  If you need assistance retrieving your bindings, please contact your Technical Account Manager.
 
 **How To**   
 
