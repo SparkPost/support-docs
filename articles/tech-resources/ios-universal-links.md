@@ -179,17 +179,3 @@ The following are important caveats to be aware of regarding the end user experi
 
 1. When a user taps a Universal Link that you handle, iOS also examines the user’s recent choices to determine whether to open your app or your website. For example, a user who has tapped a Universal Link to open your app can later choose to open your website in Safari by tapping a breadcrumb button in the status bar. After the user makes this choice, iOS 9 continues to open your website in Safari until the user chooses to open your app by tapping OPEN in the Smart App Banner on the webpage.
 1. To ensure maximum efficiency with Universal Link direction, we do provide an option to turn off base 64 encoding on the redirect/target portion of link URLs. This will reduce processing time when links are clicked since base 64 decoding for the target URL will not be necessary. Applying this option is system-wide, meaning all tracked links will not have base 64 encoding on the target URL when this configuration takes effect. No additional API or SMTP modifications are required in your calls/payloads; to turn this option on, please contact your TAM and request it.
-
-Here are some specific examples of what non-base 64 target encoded links look like:
-
-Link in the template text or html part:
-
-`https://google.com/purchase`
-
-Link as encoded as a click track link with the Target URL as a query parameter:
-
-`https://click.customer.com/f/a/1nLyONgylXZCMADaan5jUA~~/AAAAAQA~/RgRX8RCYP?target=http%3a%2f%2fgoogle.com%2fpurchase`
-
-Basic form of a click track link:
-
-`<scheme>://<engagement_host>/f/<path>/<hmac>/<track_info1>/<track_info2>/?target=<target>`
