@@ -11,6 +11,6 @@ To use the sink server, you will need to append the email addresses you are inje
 
 **Example**: 
 
-*Email Address* - john.doe@email.com
+*Email Address* - john.doe@example.com
 
-*To test with sink server* - john.doe@email.com.sink.sparkpostmail.com
+*To test with sink server* - john.doe@example.com.sink.sparkpostmail.com
