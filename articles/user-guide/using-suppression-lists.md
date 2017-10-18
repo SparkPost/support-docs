@@ -5,7 +5,7 @@ description: "Protecting your sender reputation is essential to maximizing your 
 
 Protecting your sender reputation is essential to maximizing your email deliverability. Many inbox providers, e.g. Yahoo, Gmail, Hotmail/Outlook.com, or AOL, opt to limit or refuse message traffic based on it. Continuing to send messages to invalid email addresses or to recipients who no longer want to receive your emails can negatively impact your sender reputation. By maintaining an up-to-date suppression list, you can avoid sending unwanted messages. A suppression list — or exclusion list, as it is sometimes called — is a list of recipient email addresses to which you do NOT want to send email.
 
-SparkPost supports two types of suppression lists: one (available via the Suppression List API) is specifically for your account, and a global suppression list. SparkPost maintains a global suppression list across all customers. **NOTE: The Global Suppression List data is not accessible via the Suppression List API**.
+SparkPost supports two types of suppression lists: one (available via the Suppression List API and UI) is specifically for your account, and a global suppression list. SparkPost maintains a global suppression list across all customers. **NOTE: The Global Suppression List data is not accessible via the Suppression List API**.
 
 When a message is injected either using SMTP or HTTP, SparkPost will check the email address against the account-specific and global suppression lists. If an email address for a recipient matches an address on the list, that message will be rejected for delivery by SparkPost automatically.
 
