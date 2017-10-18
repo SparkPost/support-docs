@@ -145,17 +145,24 @@ The following is a example of what an implementation of iOS Universal Links look
     `www.customer.com/rewards`
     `www.customer.com/rewards/travel`
     `www.customer.com/rewards/travel/hotels/greathotel`
+    
 1. For these links above, the company wants to send the users to their app instead of a browser. They would then assign a data-msys-sublink attribute to each of the links, like so:
     `<a data-msys-sublink=“rew” href="https://www.customer.com/rewards“>Link Name</a>`
     `<a data-msys-sublink=“rt” href="https://www.customer.com/rewards/travel“>Link Name</a>`
     `<a data-msys-sublink=“rthm” href="https://www.customer.com/rewards/travel/hotels/greathotel“>Link Name</a>`
+    
 1. SparkPost would then encode the links to allow for click tracking to occur, incorporating the custom subpaths set in the HTTP attribute as listed above. These are what the finalized links would look like:
     `https://<trackingserver>/f/rew/<encoded target url>`
+    
     `https://<trackingserver>/f/rt/<encoded target url>`
+    
     `https://<trackingserver>/f/rthm/<encoded target url>`
+    
 1. The customer would then need to create the corresponding path entries in their apple-app-site-association file. In this example, they want these custom subpath links to all be kicked to the app, so their apple-app-site-association path array(s) would look like this:
     `"paths" : [ "/f/rew/" ]`
+    
     `"paths" : [ "/f/rt/" ]`
+    
     `"paths" : [ "/f/rthm/" ]`
 
 ## End User Caveats with Universal Links
