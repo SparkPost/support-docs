@@ -1,9 +1,9 @@
 ---
 title: "My daily limit is bigger than my monthly plan limit - which one is correct?"
-description: "In certain situations you may see in the SparkPost Application that your daily limit is larger than your current plan's monthly limit. In this situation the monthly limit takes precedence and you will be allowed to send to your monthly limit in a single day. "
+description: "You may see that your daily limit is larger than your monthly limit. In this situation the monthly limit takes precedence and you will be allowed to send to your monthly limit in a single day. "
 ---
 
-In certain situations you may see in the SparkPost Application that your daily limit is larger than your current plan's monthly limit. For example if you have downgraded from a much larger plan or moved from one of our older plans. We leave this limit in place so if you upgrade you can use this larger limit without the need to request it through the application
+You may see that your daily limit is larger than your monthly limit. In this situation the monthly limit takes precedence and you will be allowed to send to your monthly limit in a single day. We leave this daily limit in place so if you upgrade you can use this larger daily limit without the need to request.
 
 In this situation the **monthly** limit takes precedence and you will be allowed to send to your monthly limit in a single day. Injections in excess of this monthly limit would be rejected.
 
