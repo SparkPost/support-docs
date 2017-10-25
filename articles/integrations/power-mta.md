@@ -30,3 +30,49 @@ Add the following to your PowerMTA config, changing the value for auth-password
 ```
 
 Two great benefits of using PowerMTA to relay to SparkPost are you don’t need to change your existing architecture, and PowerMTA handles all the queueing and any network issues that might arise during delivery.You also get the excellent [built in metrics](https://app.sparkpost.com/reports/summary) that are part of SparkPost.
+
+## Selecting which domains to send through SparkPost
+
+The `<domain *>` directive shown above causes all mail to be sent to SparkPost. More realistically, you will want to migrate gradually, by selecting which traffic streams go to SparkPost, and which ones are delivered by PMTA as before. With PMTA, you can select based on the `MAIL FROM` domain (known as the sending domain in SparkPost).
+
+In your PMTA configuration, include a `pattern-list` into the source directive that receives your incoming messages.  For example:
+
+```
+# Settings per source IP address (for incoming SMTP connections)
+<source 127.0.0.1>
+    always-allow-relaying yes   # allow feeding from 127.0.0.1
+    process-x-virtual-mta yes   # allow selection of a virtual MTA
+    max-message-size unlimited
+    smtp-service yes            # allow SMTP service
+    pattern-list domainsRelayedToSparkPost
+</source>
+```
+
+Then set up the `pattern-list` to match each `MAIL FROM` domain using a regex. This domain must be sendable by SparkPost, i.e. registered as a valid sending domain. Don't add a trailing `$` (matching end-of-line) to the regex target, because then it would not match addresses that are surrounded by `<` `>` brackets.
+
+```
+# SparkPost injection, conditional on the sending domain (mailfrom address) using the following
+# pattern.  This pattern should be included in your active <source> directive(s).
+<pattern-list domainsRelayedToSparkPost>
+    mail-from /@email.mydomain.com/ virtual-mta=SparkPostRelay
+</pattern-list>
+```
+
+Next, we set up a virtual-mta to handle this traffic with your chosen name. In the example below, it's called `SparkPostRelay`.
+
+```
+<virtual-mta SparkPostRelay>
+    <domain *>
+        queue-to {sparkpost}
+    </domain>
+</virtual-mta>
+```
+
+The `{sparkpost}` directive is a short way to get the needed configuration, instead of giving all the details in the  `<domain sparkpost.rollup>` directive in the first example. We can also select a particular SparkPost dedicated IP pool by name.  See PMTA User Guide section 3.3.20 "SparkPost Traffic Redirection Support".
+
+```
+<domain {sparkpost}>
+    auth-password ###YOUR API KEY HERE###           # generate under Account/API Keys
+    sparkpost-ip-pool test                          # if you want to select a specific SparkPost IP pool
+</domain>
+```
