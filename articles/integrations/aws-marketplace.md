@@ -7,15 +7,19 @@ SparkPost is now offering our email cloud service on the Amazon Web Services (AW
 
 When you are an AWS marketplace user, you can select Sparkpost as a service and setup a new account. Once you select the pricing option, the marketplace will pass you to our web console to complete the sign-up process. You will have 1 hour from the price selection to complete the sign-up process.
 
-**Pricing**
+# Pricing
 We have 3 plans available. 15k, 50k and 150k. For more information, please find our page at sparkpost on (AWS Marketplace)
 
-| Cost per month billed in hours | Free | $0.012 (about $9 a month) | $0.068 (about $49 a month) |
-|  # of monthly messages | 15k | 50k | 150k |
-|  Cost per 1000 extra messages | N/A | $0.75 | $0.70 |
+ |  |  | 
+--- | --- | --- | ---
+Cost per month billed in hours | Free | $0.012 (about $9 a month) | $0.068 (about $49 a month)
+#of monthly messages | 15k | 50k | 150k
+Cost per 1000 extra messages | N/A | $0.75 | $0.70
 
-**Using your new SparkPost account**
+# Using your new SparkPost account
+
 Please follow our standard process for using your sparkpost account [found here](https://www.sparkpost.com/docs/getting-started/getting-started-sparkpost/).
 
-**Managing your account**
+# Managing your account
+
 You can managing your account on the SparkPost UI or using our APIs. However to unsubscribe, please make this changes on the (AWS Marketplace).
