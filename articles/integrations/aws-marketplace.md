@@ -10,7 +10,7 @@ When you are an AWS marketplace user, you can select Sparkpost as a service and 
 # Pricing
 We have 3 plans available. 15k, 50k and 150k. For more information, please find our page at sparkpost on (AWS Marketplace)
 
-| Plan | Hourly cost                | Message volume | Cost per 1000 additional messages |
+| Pricing option | Hourly cost      | Message volume | Cost per 1000 additional messages |
 |------|----------------------------|----------------|-----------------------------------|
 | 15k  | free                       | 15,000         | N/A | 
 | 50k  | $0.012 (about $9 a month)  | 50,000         | $0.75 |
