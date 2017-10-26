@@ -1,6 +1,6 @@
 ---
 title: "SparkPost on AWS Marketplace"
-description: "To explain how to set-up the SparkPost service on AWS"
+description: "Explains how to set-up the SparkPost service on AWS"
 ---
 
 SparkPost is now offering our email cloud service on the Amazon Web Services (AWS) marketplace. More than just an email API, sophisticated features for applications big and small. Powerful templating, multiple webhook addresses, and multi-account features let you build applications that engage, retain, and rapidly grow your user base.
