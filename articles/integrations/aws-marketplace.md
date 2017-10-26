@@ -8,7 +8,7 @@ SparkPost is now offering our email cloud service on the Amazon Web Services (AW
 When you are an AWS marketplace user, you can select Sparkpost as a service and setup a new account. Once you select the pricing option, the marketplace will pass you to our web console to complete the sign-up process. You will have 1 hour from the price selection to complete the sign-up process.
 
 # Pricing
-We have 3 plans available. 15k, 50k and 150k. For more information, please find our page at sparkpost on (AWS Marketplace)
+We have 3 plans available: 15k, 50k and 150k. For more information, please find our page at sparkpost on (AWS Marketplace)
 
 | Pricing option | Hourly cost      | Message volume | Cost per 1000 additional messages |
 |------|----------------------------|----------------|-----------------------------------|
