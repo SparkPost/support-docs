@@ -5,10 +5,10 @@ description: "Explains how to set-up the SparkPost service on AWS"
 
 SparkPost is now offering our email cloud service on the Amazon Web Services (AWS) marketplace. More than just an email API, sophisticated features for applications big and small. Powerful templating, multiple webhook addresses, and multi-account features let you build applications that engage, retain, and rapidly grow your user base.
 
-When you are an AWS marketplace user, you can select Sparkpost as a service and setup a new account. Once you select the pricing option, the marketplace will pass you to our web console to complete the sign-up process. You will have 1 hour from the price selection to complete the sign-up process.
+When you are an AWS Marketplace user, you can select SparkPost as a service and setup a new account. Once you select the pricing option, the marketplace will pass you to our web console to complete the sign-up process. You will have 1 hour from the price selection to complete the sign-up process.
 
 # Pricing
-We have 3 plans available: 15k, 50k and 150k. For more information, please find our page at sparkpost on [AWS Marketplace](https://aws.amazon.com/marketplace/pp/B075ZJX4H8?qid=1509068768654&sr=0-7&ref_=srh_res_product_title).
+We have 3 plans available: 15k, 50k and 150k. For more information, please find our page at SparkPost on [AWS Marketplace](https://aws.amazon.com/marketplace/pp/B075ZJX4H8?qid=1509068768654&sr=0-7&ref_=srh_res_product_title).
 
 | Pricing option | Hourly cost      | Message volume | Cost per 1000 additional messages |
 |------|----------------------------|----------------|-----------------------------------|
@@ -18,7 +18,7 @@ We have 3 plans available: 15k, 50k and 150k. For more information, please find 
 
 # Using your new SparkPost account
 
-Please follow our standard process for using your sparkpost account [found here](https://www.sparkpost.com/docs/getting-started/getting-started-sparkpost/).
+Please follow our standard process for using your SparkPost account [found here](https://www.sparkpost.com/docs/getting-started/getting-started-sparkpost/).
 
 # Managing your account
 
