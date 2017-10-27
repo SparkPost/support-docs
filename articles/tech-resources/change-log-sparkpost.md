@@ -2,6 +2,10 @@
 title: "SparkPost Change Log"
 description: "A running log of what's new, what's been fixed, and what's been changed in SparkPost."
 ---
+## October 27, 2017
+### What’s New?
+
+* SparkPost introduces [HEML Email Development Framework](https://www.sparkpost.com/press-releases/sparkpost-introduces-heml-email-development-framework/)
 
 ## September 29, 2017
 ### What’s New?
