@@ -5,7 +5,7 @@ description: "A running log of what's new, what's been fixed, and what's been ch
 ## October 27, 2017
 ### What’s New?
 
-* SparkPost introduces [HEML Email Development Framework](https://www.sparkpost.com/press-releases/sparkpost-introduces-heml-email-development-framework/)
+* SparkPost introduces [HEML Email Development Framework](https://www.sparkpost.com/press-releases/sparkpost-introduces-heml-email-development-framework/), an open source markup language for building responsive email.
 
 ## September 29, 2017
 ### What’s New?
