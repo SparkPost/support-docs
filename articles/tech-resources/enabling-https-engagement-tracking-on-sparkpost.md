@@ -15,11 +15,11 @@ As a workaround, you may use a Content Delivery Network (CDN) service, such as [
 
 ## How to Create a Secure Tracking Domain on SparkPost
 
-In addition to SSL certificates, link forwarding, and page rules (see the step by step guide below), you will need to create a tracking domain with the tracking domains API using the `"secure": true` string. Detailed information on this operation can be found in our API documentation [here]https://developers.sparkpost.com/api/tracking-domains.html#tracking-domains-create-and-list-post.
+In addition to SSL certificates, link forwarding, and page rules (see the step by step guide below), you will need to create a tracking domain with the tracking domains API using the `"secure": true` string. Detailed information on this operation can be found in our API documentation [here](https://developers.sparkpost.com/api/tracking-domains.html#tracking-domains-create-and-list-post).
 
 ## How to Switch a Tracking Domain from Insecure to Secure
 
-If you have previously created a tracking domain (whether verified or unverified), and wish to switch it from insecure (the default value for tracking domains) to secure, use the tracking domains API `PUT` call to update the tracking domain with `"secure": true`. Detailed information on this operation can be found in our API documentation [here]https://developers.sparkpost.com/api/tracking-domains.html#tracking-domains-retrieve,-update,-and-delete-put.
+If you have previously created a tracking domain (whether verified or unverified), and wish to switch it from insecure (the default value for tracking domains) to secure, use the tracking domains API `PUT` call to update the tracking domain with `"secure": true`. Detailed information on this operation can be found in our API documentation [here](https://developers.sparkpost.com/api/tracking-domains.html#tracking-domains-retrieve,-update,-and-delete-put).
 
 ## Step by Step Guide with CloudFlare
 
