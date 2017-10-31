@@ -64,12 +64,14 @@ The following is a sample guide for use with CloudFlare **only**; please note, t
     	;; MSG SIZE  rcvd: 88
     ```
 
-4. Navigate to the Page Rules settings for the domain and perform the following instructions.
+4. Create the appropriate page rule settings for the domain. In the page rules tab, perform the following instructions:
     * Page Rule Tab -> Create Page Rule
     * Enter your domain like so: `track.yourdomain.com/*`
     * Add a Setting -> Forwarding URL
     * Destination URL is https://spgo.io/$1
-    * Save and Deploy
+    * Save and Deploy (turn page rule on)
+    
+    ![](media/enabling-https-engagement-tracking-on-sparkpost/SSL_full.png)
     
 5. Cloudflare has Universal SSL for all accounts, but it's good to ensure that setting on the page rule is "SSL". This is required for how CloudFlare will validate the certificate on the origin.
 
@@ -78,11 +80,7 @@ The following is a sample guide for use with CloudFlare **only**; please note, t
     
     More information on SSL options for Cloudflare can be found [here](https://support.cloudflare.com/hc/en-us/articles/200170416).
 
-6. Turn the page rule "on."
-
-    ![](media/enabling-https-engagement-tracking-on-sparkpost/SSL_full.png)
-
-7. Reach out to SparkPost Support and request that HTTPS engagement tracking be enabled on your account. They will verify the configuration and enable the setting on your account.
+6. Reach out to SparkPost Support and request that HTTPS engagement tracking be enabled on your account. They will verify the configuration and enable the setting on your account.
 
 ## Additional Resources for Content Delivery Networks
 
