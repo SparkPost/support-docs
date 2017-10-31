@@ -13,6 +13,14 @@ In order for HTTPS engagement tracking to be enabled on SparkPost, our service n
 
 As a workaround, you may use a Content Delivery Network (CDN) service, such as [Cloudflare](http://www.cloudflare.com) or [Fastly](http://www.fastly.com) to manage certificates and keys for any custom engagement tracking domains you configure.  These services forward traffic onwards to SparkPost so that HTTPS tracking can be performed.
 
+## How to Create a Secure Tracking Domain on SparkPost
+
+In addition to SSL certificates, link forwarding, and page rules (see the step by step guide below), you will need to create a tracking domain with the tracking domains API using the `"secure": true` string. Detailed information on this operation can be found in our API documentation [here]https://developers.sparkpost.com/api/tracking-domains.html#tracking-domains-create-and-list-post.
+
+## How to Switch a Tracking Domain from Insecure to Secure
+
+If you have previously created a tracking domain (whether verified or unverified), and wish to switch it from insecure (the default value for tracking domains) to secure, use the tracking domains API `PUT` call to update the tracking domain with `"secure": true`. Detailed information on this operation can be found in our API documentation [here]https://developers.sparkpost.com/api/tracking-domains.html#tracking-domains-retrieve,-update,-and-delete-put.
+
 ## Step by Step Guide with CloudFlare
 
 The following is a sample guide for use with CloudFlare **only**; please note, the steps to configure your chosen CDN will likely differ from CloudFlare in workflow. Please refer to your CDN's documentation and contact their respective support departments if you have any questions.
@@ -56,32 +64,25 @@ The following is a sample guide for use with CloudFlare **only**; please note, t
     	;; MSG SIZE  rcvd: 88
     ```
 
-4. Add a new CNAME entry that points your domain to `spgo.io`:
-
-    **Example:**
-
-    Using an engagement tracking domain of `track.example.com` in SparkPost, the appropriate CNAME record under the DNS tab of CloudFlare has been added.
-
-    ![](media/enabling-https-engagement-tracking-on-sparkpost/CNAMEtospgoio.png)
-
-5. Navigate to the Page Rules settings for the domain.
+4. Navigate to the Page Rules settings for the domain and perform the following instructions.
     * Page Rule Tab -> Create Page Rule
-    * Enter your domain like so: track.yourdomain.com/*
+    * Enter your domain like so: `track.yourdomain.com/*`
     * Add a Setting -> Forwarding URL
     * Destination URL is https://spgo.io/$1
     * Save and Deploy
     
-6. Cloudflare has Universal SSL for all accounts, but it's good to ensure that setting on the page rule is "SSL". This is required for how CloudFlare will validate the certificate on the origin.
+5. Cloudflare has Universal SSL for all accounts, but it's good to ensure that setting on the page rule is "SSL". This is required for how CloudFlare will validate the certificate on the origin.
 
     ![](media/enabling-https-engagement-tracking-on-sparkpost/page_rule.png)
 
+    
     More information on SSL options for Cloudflare can be found [here](https://support.cloudflare.com/hc/en-us/articles/200170416).
 
-7. Turn the page rule "on."
+6. Turn the page rule "on."
 
     ![](media/enabling-https-engagement-tracking-on-sparkpost/SSL_full.png)
 
-8. Reach out to SparkPost Support and request that HTTPS engagement tracking be enabled on your account. They will verify the configuration and enable the setting on your account.
+7. Reach out to SparkPost Support and request that HTTPS engagement tracking be enabled on your account. They will verify the configuration and enable the setting on your account.
 
 ## Additional Resources for Content Delivery Networks
 
