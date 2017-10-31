@@ -65,7 +65,13 @@ The following is a sample guide for use with CloudFlare **only**; please note, t
     ![](media/enabling-https-engagement-tracking-on-sparkpost/CNAMEtospgoio.png)
 
 5. Navigate to the Page Rules settings for the domain.
-6. Create a page rule for the domain that sets SSL to “Full”. This is required for how CloudFlare will validate the certificate on the origin.
+    * Page Rule Tab -> Create Page Rule
+    * Enter your domain like so: track.yourdomain.com/*
+    * Add a Setting -> Forwarding URL
+    * Destination URL is https://spgo.io/$1
+    * Save and Deploy
+    
+6. Cloudflare has Universal SSL for all accounts, but it's good to ensure that setting on the page rule is "SSL". This is required for how CloudFlare will validate the certificate on the origin.
 
     ![](media/enabling-https-engagement-tracking-on-sparkpost/page_rule.png)
 
