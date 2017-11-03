@@ -80,7 +80,7 @@ The following is a sample guide for use with CloudFlare **only**; please note, t
     
     More information on SSL options for Cloudflare can be found [here](https://support.cloudflare.com/hc/en-us/articles/200170416).
 
-6. **Enterprise ONLY** - Reach out to SparkPost support and request that HTTPS engagement tracking be enabled on your account. They will verify the configuration and enable the setting on your account.
+6. For SparkPost customers, turn the page rule ON in your CDN and the process is complete. **Enterprise ONLY** - Reach out to SparkPost support and request that HTTPS engagement tracking be enabled on your account. They will verify the configuration and enable the setting on your account.
 
 ## Additional Resources for Content Delivery Networks
 
