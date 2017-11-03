@@ -75,7 +75,15 @@ The following is a sample guide for use with CloudFlare **only**; please note, t
 
     ![](media/enabling-https-engagement-tracking-on-sparkpost/SSL_full.png)
 
-8. Reach out to SparkPost Support and request that HTTPS engagement tracking be enabled on your account. They will verify the configuration and enable the setting on your account.
+8. Run the [Update a Tracking Domain API](https://developers.sparkpost.com/api/tracking-domains.html#header-port-secure-attributes) using the following Post Data:
+
+    ```
+    {
+        "port"    : 443,
+        "secure"  : true,
+        "default" : true
+    }
+    ```
 
 ## Additional Resources for Content Delivery Networks
 
