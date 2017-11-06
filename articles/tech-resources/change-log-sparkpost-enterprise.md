@@ -14,25 +14,25 @@ A running log of new features and capabilities that have been rolled out on the 
 
 ### November, 2017
 * **NEW:** Additional Open Pixel at message top
-  * SparkPost has added an open pixel to the top of each message when open tracking is selected. This is in addition to the open pixel that is normally inserted at the bottom of the message
-  * Customers should expect a new event in the Message Events API and in your webhook events: initial_open
+  * SparkPost has added an open pixel to the top of each message when open tracking is selected. This is in addition to the open pixel that is inserted at the bottom of the message
+  * Customers should expect a new event in the Message Events API and in webhook events: initial_open
   * Customer should also expect an additional Metric in the Metrics API: initial_rendered
   * Rollout of this feature is expected over the first 2 weeks of November
   
 * **Enhancement:** Self-service for HTTPS tracking links
-  * SparkPost Customers can now setup secure tracking links/domains on their ownusing a third party Content Delivery Network (CDN). We will continue to support Enterprise tenants that require we host their certificates rather than use a CDN.
-  * This is currently only available via API. We will update the WebUI in the next couple of weeks
+  * SparkPost Customers can now setup secure tracking links/domains on their own using a third party Content Delivery Network (CDN). We will continue to support Enterprise tenants that require we host their certificates rather than use a CDN.
+  * This is currently only available via API. We will update the User Interface (UI) in the next couple of weeks
  
 * **Change:** We will no longer set CNAME = True for verified Tracking Domains
   * SparkPost changed the way we verify Tracking Domains that does not rely on checking DNS. Therefore, for Tracking Domains only, CNAME will be blank.
   * For verified Tracking Domains, the Verified field will continue to be set to TRUE
 
-* **Change:** Transmission API GET Request will only return scheduled transmissions
+* **Change:** Transmissions API GET Request will only return scheduled transmissions
   *  We will only track and return a status for scheduled transmissions when calling the GET method. 
   *  For all other Transmissions, including multi-recipient transmissions, a transmission record will not be returned when you call the GET /api/v1/transmissions endpoint. Instead, the API will return a 404, not found, error. In order to keep track of your transmissions, we recommend using the Metrics API, Message Events API, or Webhooks.
 
 * **Change:** Starting later this month, SparkPost will begin enforcing verified bounce domains (return-path) for Enterprise Tenants.
-  *  Your TAM will communicate with you in advnace of this change. 
+  *  Your TAM will communicate with you in advance of this change. 
   *  No change will be made until we have verified with you, which domains *should* be used
   *  After enforcement begins, any Transmissions using bounce domains not set up and verified in SparkPost will be rejected. This is the same behavior as Sending (FROM) domains today.
 
