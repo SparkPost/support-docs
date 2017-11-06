@@ -14,7 +14,7 @@ A running log of new features and capabilities that have been rolled out on the 
 
 ### November, 2017
 * **NEW:** Additional Open Pixel at message top
-  * SparkPost has added an additional open pixel to the top of each message where open tracking is selected. This is in addition to the open pixel that is normally inserted at the bottom of the message
+  * SparkPost has added an open pixel to the top of each message when open tracking is selected. This is in addition to the open pixel that is normally inserted at the bottom of the message
   * Customers should expect a new event in the Message Events API and in your webhook events: initial_open
   * Customer should also expect an additional Metric in the Metrics API: initial_rendered
   * Rollout of this feature is expected over the first 2 weeks of November
