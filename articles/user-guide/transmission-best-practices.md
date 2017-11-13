@@ -52,7 +52,7 @@ For other network timeouts where it is unclear if your request reached the serve
 There are two ways to track transmission errors:
 
 * The response to your original transmission request.
-* Data sent to your webhook endpoint (more information on our webhooks can be found here). 
+* Data sent to your webhook endpoint (more information on our webhooks can be found [here](https://www.sparkpost.com/docs/tech-resources/extended-error-codes/)). 
 
 ## Tracking Individual Transmissions
 
