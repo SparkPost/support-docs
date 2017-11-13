@@ -1,6 +1,8 @@
-# Support Docs Update Checklist
+### Support Docs Update Checklist
 
 Note: when you open a pull request, your changes are published to staging.sparkpost.com/docs.
+
+Please take a moment to check each of these steps for your pull request:
 
 - [ ] Give your pull request a meaningful name.
 - [ ] Include a description of your changes in the pull request.
