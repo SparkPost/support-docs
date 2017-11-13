@@ -47,6 +47,10 @@ If you receive a 504 after making a transmission request, you can inspect event 
 
 For other network timeouts where it is unclear if your request reached the server, you can also monitor and retry.
 
+**Transmission API Latency**
+
+It is recommended that you set a timeout interval of 5 minutes for retrying messages if you receive no response from the transmission API. 
+
 **Monitoring for Errors**
 
 There are two ways to track transmission errors:
