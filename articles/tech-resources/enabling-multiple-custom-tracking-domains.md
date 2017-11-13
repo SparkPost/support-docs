@@ -39,6 +39,8 @@ To configure one or more custom tracking domains through the SparkPost user inte
 
 ## Associate your Tracking domain(s) with one or more Sending domains      
 
+To associate custom tracking domains to sending domains through the SparkPost user interface, the custom tracking domains must be verified first and then follow the steps below.
+
 1. Select Account and then Sending Domains from the main menu.
 1. Click the New Domain button to create the new sending domain or select an existing sending domain.
 
@@ -47,7 +49,6 @@ To configure one or more custom tracking domains through the SparkPost user inte
     ![](media/enabling-multiple-custom-tracking-domains/xU06kJ2lac6YGEIi8KlReq8OaF1kfX.png)
 1. Complete the Sending Domain Name for each sending domain and select the Linked Tracking Domain you want to associate with it.
 1. Click the Add Domain or _Update Tracking Domain_ button to complete the association.
-Please note in order to associate a tracking domain with a sending doamin you need to make you have verified the trakcing domain first. 
 If you want to remove a trakcing domain you can simply go to the tracking domain section in your dashboard and click on the trash icon on the right hand side. 
 
 **Note for SparkPost customers**: for information on how to configure your Sending Domains, please see [this article](https://www.sparkpost.com/docs/getting-started/getting-started-sparkpost/#preparing-your-from-address).
