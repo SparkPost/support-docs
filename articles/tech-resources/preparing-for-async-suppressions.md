@@ -35,10 +35,10 @@ Note: While keeping your SparkPost client library up-to-date is always a good id
 
 In most cases, your existing code will continue to work as before. If you fall into one of the categories outlined above, you should take the following actions:
  - If you process `generation_rejection` or `policy_rejection` events to detect suppressions, begin also processing `bounce` events as specified above.
- - If you detect suppressions in your transmissions calls by checking for `400` status and a suppression error message, *you app will continue to function* but your suppression detection code will become redundant. If you need to detect suppressions, use the `bounce` event specified above.
+ - If you detect suppressions in your single-recipient transmissions calls by checking for `400` status and a suppression error message, *you app will continue to function* but your suppression detection code will become redundant. If you need to detect suppressions, use the `bounce` event specified above.
 
 ## Will My 3rd Party Apps Still Work?
 In the vast majority of cases, 3rd party apps integrated with SparkPost will continue to function as before. If you are unsure, please check with your 3rd party provider for details and direct them to this page and our [announcement of this change](https://www.sparkpost.com/blog/upcoming-api-transmission-endpoint-changes/).
 
-For instance, the [SparkPost WordPress plugin](https://wordpress.org/plugins/sparkpost/) is not affected even though it supports both SMTP and Transmissions API endpoint requests.
+For instance, the [SparkPost WordPress plugin](https://wordpress.org/plugins/sparkpost/) will continue to function with a slight change in behaviour. Before the change, the plugin produces an error when sending a single-recipient transmission to a suppressed address. After the change, those single-recipient, suppressed transmissions will succeed and a `bounce` event will be emitted instead.
 
