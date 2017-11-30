@@ -22,7 +22,7 @@ To enable CSS inlining with the SparkPost REST API, set `options.inline_css=tru
 
 ### Using CSS Inlining with SMTP
 
-The enable CSS inlining when using SparkPost's SMTP service, set `options.inline_css=true` to the `X-MSYS-API` header when submitting your messages:
+To enable CSS inlining when using SparkPost's SMTP service, set `options.inline_css=true` to the `X-MSYS-API` header when submitting your messages:
 ```
 X-MSYS-API: {"options": { "inline_css": true } }
 From: you@yourdomain.com
