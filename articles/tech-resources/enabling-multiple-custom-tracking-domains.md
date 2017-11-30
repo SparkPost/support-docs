@@ -39,6 +39,8 @@ To configure one or more custom tracking domains through the SparkPost user inte
 
 ## Associate your Tracking domain(s) with one or more Sending domains      
 
+To associate custom tracking domains to sending domains through the SparkPost user interface, the custom tracking domains must be verified first and then follow the steps below.
+
 1. Select Account and then Sending Domains from the main menu.
 1. Click the New Domain button to create the new sending domain or select an existing sending domain.
 
@@ -48,9 +50,11 @@ To configure one or more custom tracking domains through the SparkPost user inte
 1. Complete the Sending Domain Name for each sending domain and select the Linked Tracking Domain you want to associate with it.
 1. Click the Add Domain or _Update Tracking Domain_ button to complete the association.
 
-**Note for SparkPost customers**: for information on how to configure your Sending Domains, please see [this article](https://www.sparkpost.com/docs/getting-started/getting-started-sparkpost/#preparing-your-from-address).
+**Note:** For information on how to configure your Sending Domains, please see [this article](https://www.sparkpost.com/docs/getting-started/getting-started-sparkpost/#preparing-your-from-address).
 
-**Note**: As a general reminder, any newly configured tracking domains have to route back, either through delegation or use of CNAME records, in order for us to be able to report on opens and clicks. Misconfiguration of your tracking domain(s) could mean link redirection could fail, so please ensure you test prior to placing any new domains into production!
+**Note:** Any newly configured tracking domains have to route back, either through delegation or use of CNAME records, in order for us to be able to report on opens and clicks. Misconfiguration of your tracking domain(s) could mean link redirection could fail, so please ensure you test prior to placing any new domains into production!
+
+**Note:** Deleting a tracking domain will automatically disassociate it from all sending domains.
 
 ## API Configuration: Custom Tracking Domains
 

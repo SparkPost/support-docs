@@ -33,7 +33,8 @@ Find out whether the service is up, down, sideways, on vacation or going slow by
 
 | Task                           | How to get help                                                                                                                                                       |
 |:-------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **DKIM Verification Issues**   | **[Contact our Compliance Team](mailto:compliance@sparkpost.com?subject=DKIM Verification%20Issue)**                            |
+| **DKIM Verification Issues**   | **[Contact our Compliance Team](mailto:compliance@sparkpost.com?subject=DKIM%20Verification%20Issue)**                            |
+| **Sending Domain Block**   | See the **[Domain Requirements](https://www.sparkpost.com/docs/getting-started/requirements-for-sending-domains/)** Article and if all else fails **[Contact our Compliance Team](mailto:compliance@sparkpost.com?subject=Sending%20Domain%20Block)**                            |
 | **Finding Bounce Information** | See **[Getting Bounce Information](https://www.sparkpost.com/docs/faq/retrieve-bounce-info/)** for instructions |
 | **Policy Rejections**          | See the **[Suppressions](https://www.sparkpost.com/docs/user-guide/using-suppression-lists/)** Article                                         |
 

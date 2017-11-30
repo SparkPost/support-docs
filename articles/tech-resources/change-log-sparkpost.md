@@ -2,6 +2,13 @@
 title: "SparkPost Change Log"
 description: "A running log of what's new, what's been fixed, and what's been changed in SparkPost."
 ---
+## November 9, 2017
+### What’s New?
+
+* You now have the ability to set up secure engagement tracking links using a custom tracking domain, [Check it out](https://www.sparkpost.com/docs/tech-resources/enabling-https-engagement-tracking-on-sparkpost/).
+* On the Transmissions API, a GET request will only return scheduled transmissions.
+* Minor change - On the Tracking Domains API, a GET request for newly verified Tracking Domains will return a blank CNAME_status (rather than cname_status of “verified”). For verified tracking domains, the VERIFIED field will still be set to TRUE.
+
 ## October 27, 2017
 ### What’s New?
 
