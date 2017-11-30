@@ -3,9 +3,9 @@ title: "Managing dedicated IP Pools"
 description: "So now you have dedicated I Ps In which IP pools would you like them Would you like a marketing pool Would you like a transaction pool You can manage this in the user interface In the user interface select account IP Pools The default pool is already there for..."
 ---
 
-So now you have dedicated IPs. In which IP pools would you like them. Would you like a marketing pool? Would you like a transaction pool? You can manage this in the user interface.
+So now you have dedicated IPs. In which IP pools would you like them? Would you like a marketing pool? Would you like a transaction pool? You can manage this in the user interface.
 
-In the user interface select account> IP Pools. The default pool is already there for you.
+In the user interface, select Account > IP Pools. The default pool is already there for you.
 
 **(Note: if any sending IPs are in the default pool, then all traffic not assigned to another pool will go to this pool.)**                                                                                                                 
 
@@ -15,7 +15,7 @@ In the user interface select account> IP Pools. The default pool is already ther
 
 You can create new IP pools by selecting New IP Pool button.
 ![](media/managing-dedicated-ip-pools/Screenshot_2016-06-09_16.03.36_original.png)
-Create the IP pool name, search for the sending IP you want to use and  select create.
+Create the IP pool name, search for the sending IP you want to use and select create.
 
 **Move**
 
