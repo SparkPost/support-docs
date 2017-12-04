@@ -68,7 +68,7 @@ The following is a sample guide for use with CloudFlare **only**; please note, t
     * Page Rule Tab -> Create Page Rule
     * Enter your domain like so: `track.yourdomain.com/*`
     * Add a Setting -> Forwarding URL (you may need to specify a 301 redirect option)
-    * Destination URL is https://spgo.io/$1
+    * Destination URL is https://<CNAME_VALUE>.io/$1. Replace <CNAME_VALUE> with the value displayed in the tracking domains section of the SparkPost UI.
     * Save and Deploy (turn page rule on)
     
     ![](media/enabling-https-engagement-tracking-on-sparkpost/SSL_full.png)
