@@ -49,7 +49,7 @@ You can check your MX record propagation [here](https://www.whatsmydns.net/#MX)
 
 ## Create an Inbound Domain
 
-This is the domain that users will send email to. You can send a POST request to https://api.sparkpost.com/api/v1/inbound-domains or use our [Postman collection](http://app.getpostman.com) to create your [Inbound Domain](https://developers.sparkpost.com/api/inbound-domains.html). Make sure to set your API key as the Authorization header under the "headers" tab and to set your domain under the "body" tab.
+This is the domain that users will send email to. You can send a POST request to https:<span></span>//api.sparkpost.com/api/v1/inbound-domains or use our [Postman collection](http://app.getpostman.com) to create your [Inbound Domain](https://developers.sparkpost.com/api/inbound-domains.html). Make sure to set your API key as the Authorization header under the "headers" tab and to set your domain under the "body" tab.
 
 ## Create a Relay Webhook
 
