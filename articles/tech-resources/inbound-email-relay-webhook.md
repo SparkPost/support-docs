@@ -53,7 +53,7 @@ This is the domain that users will send email to. You can send a POST request to
 
 ## Create a Relay Webhook
 
-Now that you have your InboundDomain set up, you can create your Relay Webhook by sending a POST request to https://api.sparkpost.com/api/v1/relay-webhooks. This step links your consumer with the Inbound Domain. If you are using Postman make sure to update the Authorization header and set the required name, target and match.domain properties in the body. The match.domain property should be the same as the Inbound Domain you set up in the previous step. See our [docs](https://developers.sparkpost.com/api/relay-webhooks.html) for property definitions and other optional properties.  
+Now that you have your InboundDomain set up, you can create your Relay Webhook by sending a POST request to https:<span></span>//api.sparkpost.com/api/v1/relay-webhooks. This step links your consumer with the Inbound Domain. If you are using Postman make sure to update the Authorization header and set the required name, target and match.domain properties in the body. The match.domain property should be the same as the Inbound Domain you set up in the previous step. See our [docs](https://developers.sparkpost.com/api/relay-webhooks.html) for property definitions and other optional properties.  
 
 ## Test it Out!
 
