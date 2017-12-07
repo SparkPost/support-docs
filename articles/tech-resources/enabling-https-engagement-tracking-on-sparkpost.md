@@ -80,9 +80,9 @@ The following is a sample guide for use with CloudFlare **only**; please note, t
     
     More information on SSL options for Cloudflare can be found [here](https://support.cloudflare.com/hc/en-us/articles/200170416).
 
-6. For SparkPost customers, turn the page rule ON. **Enterprise ONLY** - Reach out to SparkPost support and request that HTTPS engagement tracking be enabled on your account. They will verify the configuration and enable the setting on your account.
+6. Turn the page rule ON.
 
-7. **Note: This step is if you host your own certificate. If you are a SparkPost Enterprise customer, there is an option for us to host your certifcate, but the preferred method is self-hosting.** Add a CNAME entry into DNS for your tracking domain. The value in the record doesn't matter; the record simply needs to exist. For example, if your tracking domain is `track.example.com`, a CNAME value of `example.com` is sufficient. Without a record to reference, the the page rule never gets triggered, and the proper redirection will not occur. Please note that the typical time to progagation of new CNAME records is often around five to ten minutes, but can be longer depending on your DNS provider.
+7. Add a CNAME entry into DNS for your tracking domain. The value in the record doesn't matter; the record simply needs to exist. For example, if your tracking domain is `track.example.com`, a CNAME value of `example.com` is sufficient. Without a record to reference, the the page rule never gets triggered, and the proper redirection will not occur. Please note that the typical time to progagation of new CNAME records is often around five to ten minutes, but can be longer depending on your DNS provider.
 
 8. Run the [Update a Tracking Domain API](https://developers.sparkpost.com/api/tracking-domains.html#header-port-secure-attributes) using the following Post Data:
 
