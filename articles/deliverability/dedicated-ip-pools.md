@@ -54,8 +54,6 @@ To assign an IP Pool to a subaccount, click Account **->** Subaccounts. Edit the
 
 Note that you cannot have more than one IP Pool assigned to the same subaccount. The IP pool assigned to the subaccount acts as the default IP pool for that subaccount. All messages injected by the subaccount will then automatically use that IP Pool. This means that subaccount transmissions do not need to specify the ip_pool value.
 
-To bypass an assigned IP Pool, you can specify sp_shared at the transmission level. This will route traffic through the SparkPost shared IP Pool instead of the subaccount’s assigned IP Pool.
-
 ## Queued Messages
 
 Messages queued for delivery have the sending IP attached to the message. So the message will still deliver via the correct dedicated IP, even if that IP is unassigned from the account. That logic is not specific to IP unassignment. Same holds true if you move that IP to a different pool, or delete the pool entirely. SparkPost behaves the same in all of those cases. As long as the message is already queued, it will still go out on the original assigned IP/Pool.
