@@ -2,6 +2,11 @@
 title: "SparkPost Change Log"
 description: "A running log of what's new, what's been fixed, and what's been changed in SparkPost."
 ---
+## December 8, 2017
+### What’s New?
+
+* We now have shorter SparkPost engagement tracking URLs. SparkPost changed our tracking URLs to be shorter. The precise amount of change depends on how much personalization and meta data a customer is sending with their transmission.
+
 ## November 9, 2017
 ### What’s New?
 
