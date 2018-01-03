@@ -28,9 +28,9 @@ To configure a bounce domain, choose the subdomain you would like to use (e.g. b
 
 This DNS record will ensure that out-of-band/asynchronous bounces are routed to SparkPost for processing.
 
-Once you have configured your DNS settings, register and verify the domain with SparkPost by following the steps below. *Please note, it may take SparkPost a few minutes for the bounce domain to be ready for use after verification.*
-
 **Cloudflare users need to turn the cloud button next to the CNAME record in their DNS from orange to grey, in order for it to propagate and be recognized by SparkPost.**
+
+Once you have configured your DNS settings, register and verify the domain with SparkPost by following the steps below. *Please note, it may take SparkPost a few minutes for the bounce domain to be ready for use after verification.*
 
 ## Using The SparkPost UI
 
