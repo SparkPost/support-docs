@@ -30,6 +30,8 @@ This DNS record will ensure that out-of-band/asynchronous bounces are routed to 
 
 Once you have configured your DNS settings, register and verify the domain with SparkPost by following the steps below. *Please note, it may take SparkPost a few minutes for the bounce domain to be ready for use after verification.*
 
+**Cloudflare users need to turn the cloud button next to the CNAME record in their DNS from orange to grey, in order for it to propagate and be recognized by SparkPost.**
+
 ## Using The SparkPost UI
 
 If you prefer to use the SparkPost UI, you can create multiple bounce domains or single bounce domain that will be used for all of your outgoing mail.
