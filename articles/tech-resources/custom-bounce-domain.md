@@ -50,7 +50,7 @@ Once the CNAME record is verified in SparkPost, you will notice an orange button
 
 If you prefer to set up a sending domain as a bounce domain via the API, use the following instructions:
 
-1. Register the domain with SparkPost by using the sending domains [create endpoint](https://developers.sparkpost.com/api/sending-domains.html#sending-domains-create-post)
+1. Register the domain with SparkPost by using the sending domains [create endpoint](https://developers.sparkpost.com/api/sending-domains.html#sending-domains-create-post).
 1. CNAME-verify the domain by using the sending domains [verify endpoint](https://developers.sparkpost.com/api/sending-domains.html#sending-domains-verify-post).  Here's an example API call to CNAME-verify the mail.example.com domain:
 
     ```
@@ -61,7 +61,7 @@ If you prefer to set up a sending domain as a bounce domain via the API, use the
     }
     ```
 
-1. Optionally set the domain as your account default bounce domain so that it is automatically used as the bounce domain for all messages sent through the account.  Here's an example API call to set example.com as the account default bounce domain:
+1. Optionally set the domain as your account default bounce domain so that it is automatically used as the bounce domain for all messages sent through the account (unless otherwise specified; please see the bottom of the article).  Here's an example API call to set example.com as the account default bounce domain:
 
     ```
     PUT /api/v1/sending-domains/bounce.example.com
@@ -106,4 +106,4 @@ It is important to note that after you create and verify your bounce domain(s), 
 
       ```
 
-You also have the option of choosing to make a verified bounce domain the default bounce domain to use for all messages. When this is set to `on` (UI slider button) or `cname_verify = true` in the sending domains API, all future transmissions will use the domain as their bounce domain (unless otherwise specified in the `return_path` string for transmissions or the `mail from` header in the SMTP payload).
+You also have the option of choosing to make a verified bounce domain the default bounce domain to use for all messages. When a bounce domain is set as the default, all future transmissions will use the domain as their bounce domain (unless otherwise specified in the `return_path` string for transmissions or the `mail from` header in the SMTP payload).
