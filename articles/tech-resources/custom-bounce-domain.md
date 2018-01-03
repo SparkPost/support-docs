@@ -5,19 +5,19 @@ description: "You can improve your deliverability and email branding by adding a
 
 By creating a custom bounce domain, you can customize the address that is used for the Return-Path header (which denotes the destination for out-of-band bounces). This bounce domain overrides the default Return-Path (also known as the envelope FROM) value of "sparkpostmail.com" for all messages sent.
 
-Please note that your root domain should not be configured as a custom bounce domain. As a result, there are two options for adding and verifying custom bounce domains in SparkPost:
+There are two options for adding and verifying custom bounce domains in SparkPost:
 
-Option 1:
-
-1. Add your root domain (e.g. example.com) as a sending domain. Only add the TXT record provided in SparkPost to your DNS and ignore the CNAME verification.
-
-1. Add a separate subdomain (e.g. bounce.example.com) to be used as a bounce domain. Only add the CNAME record for that subdomain to your DNS and ignore the TXT verification.
-
-Option 2: 
+Option 1 (preferred option): 
 
 1. Add a subdomain (e.g. mail.example.com) to be used as both a sending domain and a bounce domain. Add both the TXT record and CNAME record provided in SparkPost to your DNS.
 
+Option 2:
 
+1. Add your root domain (e.g. example.com) as a sending domain. Only add the CNAME verification if you understand the root domain CNAME record caveats (see note immediately below).
+
+1. If using a root domain as a sending domain, add a separate subdomain (e.g. bounce.example.com) to be used as a bounce domain. Only add the CNAME record for that subdomain to your DNS and ignore the TXT verification.
+
+*NOTE: Option 2 requires some very careful considerations. Using a root domain as a bounce domain means you will **not** be able to receive any mail there, as all messages will be destined for SparkPost. If you intend to receive mail at a root domain, you **cannot** use it as a bounce domain. Additionally, using a CNAME record at a root domain means you **cannot** create any subdomains of the root domain, as per limitations of DNS. 
 
 To configure a bounce domain, choose the subdomain you would like to use (e.g. bounce.example.com) and add the following CNAME record to your DNS settings:
 
