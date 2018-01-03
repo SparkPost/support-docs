@@ -28,7 +28,7 @@ To configure a bounce domain, choose the subdomain you would like to use (e.g. b
 
 This DNS record will ensure that out-of-band/asynchronous bounces are routed to SparkPost for processing.
 
-Once you have configured your DNS settings, register and verify the domain with SparkPost by following the steps below.
+Once you have configured your DNS settings, register and verify the domain with SparkPost by following the steps below. *Please note, it may take SparkPost a few minutes for the bounce domain to be ready for use after verification.
 
 ## Using The SparkPost UI
 
@@ -71,7 +71,7 @@ If you prefer to set up a sending domain as a bounce domain via the API, use the
 
 ## Using Multiple Custom Bounce Domains
 
-If you configure multiple bounce domains, you will need to specify the desired bounce domain directly in your transmission request:
+It is important to note that after you create and verify your bounce domain(s), they will not automatically be in use. You will need to specify the desired bounce domain directly in your transmission request:
 
 1. SMTP – You will need to specify the bounce domain in the SMTP MAIL FROM command.
 
@@ -103,3 +103,5 @@ If you configure multiple bounce domains, you will need to specify the desired b
        }         
 
       ```
+
+You also have the option of choosing to make a verified bounce domain the default bounce domain to use for all messages. When this is set to `on` (UI slider button) or `cname_verify = true` in the sending domains API, all future transmissions will use the domain as their bounce domain (unless otherwise specified in the `return_path` string for transmissions or the `mail from` header in the SMTP payload).
