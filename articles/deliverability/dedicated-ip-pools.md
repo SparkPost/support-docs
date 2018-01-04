@@ -60,4 +60,4 @@ Messages queued for delivery have the sending IP attached to the message. So the
 
 ## Scheduled Transmissions
 
-Scheduled transmissions have a slightly different behavior. If at the scheduled time, SparkPost sees that the selected IP Pool either doesn't exist or is empty, it will attempt fallback to your account's default pool if it exists. If not, it falls back to the shared pools for SparkPost accounts.  Enterprise accounts will have the transmission **rejected**.
+Scheduled transmissions have a slightly different behavior. If at the scheduled time, SparkPost sees that the selected IP Pool either doesn't exist or is empty, it will attempt fallback to your account's default pool if it exists. If not, it falls back to the shared pools for SparkPost accounts.  For Enterprise accounts, there are no shared pools and no fall back is possible, so the transmission will be **rejected**.
