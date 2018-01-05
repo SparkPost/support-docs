@@ -18,6 +18,7 @@ You can provision new dedicated IPs directly to your Account via the UI.  For En
 4. The Billing page will then reflect your new purchase and your monthly invoice will be updated to reflect the charge for the dedicated IP(s). The dedicated IP(s) charge will be prorated by month.
 
 ****NOTE: Each SparkPost Account is limited to a maximum of 4 dedicated IPs at any one time.*** 
+
 ****NOTE: SparkPost Enterprise Accounts have no limit dedicated IPs.***                                                                          
 
 ## Managing Dedicated IP Pools
