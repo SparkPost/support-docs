@@ -17,7 +17,7 @@ Option 2:
 
 1. If using a root domain as a sending domain, add a separate subdomain (e.g. bounce.example.com) to be used as a bounce domain. Only add the CNAME record for that subdomain to your DNS and ignore the TXT verification.
 
-*NOTE: Option 2 requires some very careful considerations. Using a root domain as a bounce domain means you will **not** be able to receive any mail there, as all messages will be destined for SparkPost. If you intend to receive mail at a root domain, you **cannot** use it as a bounce domain. Additionally, using a CNAME record at a root domain means you **cannot** create any subdomains of the root domain, as per limitations of DNS.*
+*NOTE: Using a root domain as a bounce domain means you will **not** be able to receive any mail there, as all messages will be destined for SparkPost. If you intend to receive mail at a root domain, you **cannot** use it as a bounce domain. Additionally, using a CNAME record at a root domain means you **cannot** create any subdomains of the root domain, as per limitations of DNS. Because of this limitation, it is **not** recommended that you use a root domain as a bounce domain.
 
 To configure a bounce domain, choose the subdomain you would like to use (e.g. bounce.example.com) and add the following CNAME record to your DNS settings:
 
