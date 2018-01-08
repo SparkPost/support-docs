@@ -37,13 +37,21 @@ Once you have these, there are three steps to setting up your Relay Webhook:
 
 ## Add MX Records
 
-DNS changes can take a while to propagate so you should do this first; your Inbound Domain and Relay Webhook won't work until SparkPost can find your new MX records. Every provider is slightly different in how you do this, but you will need to create 3 MX records with the following values (subsitute your domain name for “your.inbounddomain.com”):
+DNS changes can take a while to propagate so you should do this first; your Inbound Domain and Relay Webhook won't work until SparkPost can find your new MX records. Every provider is slightly different in how you do this, but you will need to create 3 MX records with the following values (subsitute your domain name for “your.inbounddomain.com”) for a SparkPost Account, or 1 MX record for an Enterprise Account:
+
+### SparkPost Account
 
 | Name                   | Type | Data                  | Priority |
 |:-----------------------|:-----|:----------------------|:---------|
 | your.inbounddomain.com | MX   | rx1.sparkpostmail.com | 10       |
 | your.inbounddomain.com | MX   | rx2.sparkpostmail.com | 10       |
 | your.inbounddomain.com | MX   | rx3.sparkpostmail.com | 10       |
+
+### Enterprise Account
+
+| Name                   | Type | Data                  | Priority |
+|:-----------------------|:-----|:----------------------|:---------|
+| your.inbounddomain.com | MX   | <yourdomain>.mx.e.sparkpost.com | 10       |
 
 You can check your MX record propagation [here](https://www.whatsmydns.net/#MX).
 
