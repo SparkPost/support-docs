@@ -48,7 +48,9 @@ REST transmission example:
 }
 ```
 
-If you have one or more IP pools, and you do **not** provide an "ip_pool" value for your transmission, then messages will be routed through the IP(s) in the "Default" IP Pool. If the "Default" IP pool has no sending IPs then the traffic will be sent through the SparkPost shared IP pools for SparkPost accounts.  For Enterprise accounts, transmissions that do not specify an IP Pool and have no IPs in the "Default" IP pool will be **rejected**.
+If you have one or more IP pools, and you do **not** provide an "ip_pool" value for your transmission, then messages will be routed through the IP(s) in the "Default" IP Pool. If the "Default" IP pool has no sending IPs then the traffic will be sent through the SparkPost shared IP pools for SparkPost accounts.  
+
+***NOTE: For Enterprise accounts, transmissions that do not specify an IP Pool and have no IPs in the "Default" IP pool will be **rejected**.**
 
 ## Using Your Dedicated IPs with Subaccounts
 
@@ -62,4 +64,6 @@ Messages queued for delivery have the sending IP attached to the message. So the
 
 ## Scheduled Transmissions
 
-Scheduled transmissions have a slightly different behavior. If at the scheduled time, SparkPost sees that the selected IP Pool either doesn't exist or is empty, it will attempt fallback to your account's default pool if it exists. If not, it falls back to the shared pools for SparkPost accounts.  For Enterprise accounts, there are no shared pools and no fall back is possible, so the transmission will be **rejected**.
+Scheduled transmissions have a slightly different behavior. If at the scheduled time, SparkPost sees that the selected IP Pool either doesn't exist or is empty, it will attempt fallback to your account's default pool if it exists. If not, it falls back to the shared pools for SparkPost accounts.  
+
+***NOTE: For Enterprise accounts, there are no shared pools and no fall back is possible, so the transmission will be **rejected**.**
