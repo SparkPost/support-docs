@@ -17,9 +17,9 @@ You can provision new dedicated IPs directly to your Account via the UI.  For En
 3. Once finished, click the "Confirm Purchases" button to purchase your dedicated IPs.
 4. The Billing page will then reflect your new purchase and your monthly invoice will be updated to reflect the charge for the dedicated IP(s). The dedicated IP(s) charge will be prorated by month.
 
-****NOTE: Each SparkPost Account is limited to a maximum of 4 dedicated IPs at any one time.*** 
+***NOTE:** Each SparkPost Account is limited to a maximum of 4 dedicated IPs at any one time.* 
 
-****NOTE: SparkPost Enterprise Accounts have no limit dedicated IPs.***                                                                          
+***NOTE:** SparkPost Enterprise Accounts have no limit dedicated IPs.*                                                                          
 
 ## Managing Dedicated IP Pools
 
@@ -50,7 +50,7 @@ REST transmission example:
 
 If you have one or more IP pools, and you do **not** provide an "ip_pool" value for your transmission, then messages will be routed through the IP(s) in the "Default" IP Pool. If the "Default" IP pool has no sending IPs then the traffic will be sent through the SparkPost shared IP pools for SparkPost accounts.  
 
-***NOTE: For Enterprise accounts, transmissions that do not specify an IP Pool and have no IPs in the "Default" IP pool will be **rejected**.**
+***NOTE:** For Enterprise accounts, transmissions that do not specify an IP Pool and have no IPs in the "Default" IP pool will be **rejected**.*
 
 ## Using Your Dedicated IPs with Subaccounts
 
@@ -66,4 +66,4 @@ Messages queued for delivery have the sending IP attached to the message. So the
 
 Scheduled transmissions have a slightly different behavior. If at the scheduled time, SparkPost sees that the selected IP Pool either doesn't exist or is empty, it will attempt fallback to your account's default pool if it exists. If not, it falls back to the shared pools for SparkPost accounts.  
 
-***NOTE: For Enterprise accounts, there are no shared pools and no fall back is possible, so the transmission will be **rejected**.**
+***NOTE:** For Enterprise accounts, there are no shared pools and no fall back is possible, so the transmission will be **rejected**.*
