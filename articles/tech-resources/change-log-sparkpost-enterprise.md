@@ -7,6 +7,11 @@ notification: "This Change Log is for SparkPost Enterprise Only"
 A running log of new features and capabilities that have been rolled out on the SparkPost Enterprise service. The API reference can be found [here](https://developers.sparkpost.com/api).
 
 
+### February, 2018
+* **Change:** Shorter SparkPost Link-Unsubscribe Header URLs and FBLs.
+  * SparkPost shortened the links for the list-unsubscribe header and FBLs. This is addition to the shorter tracking links completed in December.
+
+
 ### December, 2017
 * **Change:** Shorter SparkPost engagement tracking URLs
   * SparkPost changed our tracking URLs to be shorter. The precise amount of change depends on how much personalization and meta data a customer is sending with their transmission.
