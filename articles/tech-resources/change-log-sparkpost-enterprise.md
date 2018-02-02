@@ -12,7 +12,7 @@ A running log of new features and capabilities that have been rolled out on the 
   * SparkPost shortened the links for the list-unsubscribe header and FBLs. This is addition to the shorter tracking links completed in December.
 
 * **Change:** Addressed Stale MX Issues
-  * SparkPost addressed the issue of some messages not being delivered due to cached, out of date MX records.
+  * SparkPost addressed the issue of some messages not being delivered due to cached out-of-date MX records.
 
 ### December, 2017
 * **Change:** Shorter SparkPost engagement tracking URLs
