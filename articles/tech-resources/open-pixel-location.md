@@ -38,12 +38,12 @@ To enable/disable the feature, set the `initial_open_pixel_tracking` string in t
  "options": {
    "initial_open_pixel_tracking": false
  }
-}```
+}
 
-```Response:
+Response:
 
 {
  "results": {
    "message": "Account has been updated"
  }
-}```
+}
