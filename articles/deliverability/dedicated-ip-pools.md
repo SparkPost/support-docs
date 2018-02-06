@@ -56,7 +56,9 @@ If you have one or more IP pools, and you do **not** provide an "ip_pool" value 
 
 To assign an IP Pool to a subaccount, click Account **->** Subaccounts. Edit the appropriate subaccount, select the IP Pool Id in the IP Pool Id picklist, and press Update Subaccount.
 
-Note that you cannot have more than one IP Pool assigned to the same subaccount. The IP pool assigned to the subaccount acts as the default IP pool for that subaccount. All messages injected by the subaccount will then automatically use that IP Pool. This means that subaccount transmissions do not need to specify the ip_pool value.
+Note that you cannot have more than one IP Pool assigned to the same subaccount. The IP pool assigned to the subaccount acts as the default IP pool for that subaccount. All messages injected by the subaccount will then automatically use that IP Pool. This means that subaccount transmissions do not need to specify the ip_pool value. Subaccounts will receive an error if they attempt to specify an ip_pool value which differs from the assigned default IP pool.
+
+If you do not assign an IP pool to a subaccount, the subaccount may use any of the account's IP pools.
 
 ## Queued Messages
 

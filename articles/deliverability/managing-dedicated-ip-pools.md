@@ -29,7 +29,9 @@ To delete an IP pool, select the trashcan icon next to the IP pool. You will see
 
 **Subaccounts**
 
-When you have subaccounts, you can define what IP pool the subaccount uses. Search for the subaccount, edit the subaccount, search for the IP Pool ID and update
+When you have subaccounts, you can define which IP pool the subaccount uses.  The IP pool assigned to the subaccount acts as the default IP pool for that subaccount.  All messages injected by the subaccount will then automatically use that IP Pool. This means that subaccount transmissions do not need to specify the ip_pool value. Subaccounts will receive an error if they attempt to specify an ip_pool value which differs from the assigned IP pool.
+
+To assign an IP pool to a subaccount, search for the subaccount, edit the subaccount, search for the IP Pool ID and update
 ![](media/managing-dedicated-ip-pools/Screenshot_2016-06-10_18.18.08_original.png)
 
 ![](media/managing-dedicated-ip-pools/Screenshot_2016-06-10_18.18.34_original.png)
