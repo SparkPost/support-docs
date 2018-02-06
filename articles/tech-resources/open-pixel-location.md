@@ -23,3 +23,25 @@ Top open pixel downloads are also accounted for in our Metrics API and UI report
 A useful way to use the `open` and `initial_open` events would be look at the difference between the two for the same set of messages. If they are the same, then recipients who are opening the message are rendering the entire message in their email client, leading to a better end-user experience. On the other hand, if there is a difference between opens and `initial_opens`, it means the entire message has not been rendered, meaning that the message was likely clipped.
 
 The combination of SparkPost’s `rendered` and `initial_rendered` metrics provides important insight about a recipient's depth of engagement with your message. It will be useful for making decisions about the content of email messages, message length, and what content to include at the top and bottom of the message body.
+
+## Initial Open Pixel Control and Notes
+
+In order for the initial open pixel to function correctly, your content _must_ include both valid HTML and BODY tags.
+
+To enable/disable the feature, set the `initial_open_pixel_tracking` string in the `options` object to `false` or `true`. For example, to turn the initial open pixel off:
+
+```PUT /api/v1/account
+{
+ "company_name": "SparkPost",
+ "options": {
+   "initial_open_pixel_tracking": false
+ }
+}
+
+Response:
+
+{
+ "results": {
+   "message": "Account has been updated"
+ }
+}
