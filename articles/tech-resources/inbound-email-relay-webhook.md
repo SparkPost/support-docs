@@ -35,6 +35,19 @@ Once you have these, there are three steps to setting up your Relay Webhook:
 * setting up an Inbound Domain in SparkPost
 * setting up a Relay Webhook in SparkPost
 
+**Note**: You *cannot* use a domain already in use as a bounce domain as an inbound domain. An attempt to create an inbound domain via the API when this condition is present will yield a `409 conflict error` as a result:
+
+```{
+    "errors": [
+        {
+            "message": "resource conflict",
+            "description": "A CNAME or MX verified sending domain with similar attributes already exists.",
+            "code": "1602"
+        }
+    ]
+}
+```
+
 ## Add MX Records
 
 DNS changes can take a while to propagate so you should do this first; your Inbound Domain and Relay Webhook won't work until SparkPost can find your new MX records. Every provider is slightly different in how you do this, but you will need to create 3 MX records with the following values (subsitute your domain name for “your.inbounddomain.com”) for a SparkPost Account, or 1 MX record for an Enterprise Account:
