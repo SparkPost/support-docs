@@ -94,11 +94,11 @@ The following is a list of permissions supported for subaccount API keys:
 
 **Note**: If you do not have dedicated IPs, you should not set default IP Pools.
 
-After creating a subaccount, the master account has the option of assigning a default IP pool/binding group to the subaccount. This operation can be performed either through the UI or the API; all you need to do is provide the IP pool ID/binding group name.
+After creating a subaccount, the master account has the option of assigning a default IP pool/binding group to the subaccount.  All messages injected by the subaccount will then automatically use that IP Pool. This means that subaccount transmissions do not need to specify the ip_pool value.  Subaccounts will receive an error if they attempt to specify an ip_pool value which differs from the assigned default IP pool.  The assignment of the subaccount's default IP pool can be performed through either the subaccounts UI or subaccounts API endpoint.
 
 **Note**: Minimal validation is done against the value set in the IP pool ID key/field. If a mismatch error occurs, all attempted messages from that subaccount will be rejected.
 
-**Note**: If you do not set a default IP pool/binding group for a subaccount, it will use the system level default setting for your default IP pool/binding group. This is likely the safest configuration option unless there is a compelling business requirement to do otherwise.
+**Note**: If you do not set a default IP pool/binding group for a subaccount, the subaccount may use any of the account's IP pools.  If no such IP Pool is specified in the subaccount's injected email, the system will use either the account level default IP pool (if such a pool exists), or fallback to the sparkpost shared IP Pool.
 
 **Permissions**
 
