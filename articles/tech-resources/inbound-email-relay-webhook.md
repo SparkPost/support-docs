@@ -35,7 +35,7 @@ Once you have these, there are three steps to setting up your Relay Webhook:
 * setting up an Inbound Domain in SparkPost
 * setting up a Relay Webhook in SparkPost
 
-**Note**: You *cannot* use a domain already in use as a bounce domain as an inbound domain. An attempt to create an inbound domain via the API when this condition is present will yield a `409 conflict error` as a result:
+**Note**: You *cannot* use a domain already and in use as a bounce domain (CNAME or MX verified) as an inbound domain. If the domain is not yet verified, an attempt to create the same domain as an inbound domain will be accepted. However, an attempt to create an inbound domain via the API when the domain is already CNAME or MX verified will yield a `409 conflict error` as a result:
 
 ```{
     "errors": [
