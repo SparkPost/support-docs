@@ -27,3 +27,5 @@ Following is a list of bounce classification codes and their meanings:
 | 80             | Subscribe               | The message is a subscribe request.                                         | Admin        |
 | 90             | Unsubscribe             | The message is an unsubscribe request.                                      | Hard         |
 | 100            | Challenge-Response      | The message is a challenge-response probe.                                  | Soft         |
+
+Note that `soft`, `block` and `undetermined` are usually temporary events. If you'd like to filter on suppression-level events, only check for `hard` or `admin` bounce-type events.
