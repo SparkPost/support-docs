@@ -60,6 +60,14 @@ DNS changes can take a while to propagate so you should do this first; your Inbo
 | your.inbounddomain.com | MX   | rx2.sparkpostmail.com | 10       |
 | your.inbounddomain.com | MX   | rx3.sparkpostmail.com | 10       |
 
+### SparkPost EU Account
+
+| Name                   | Type | Data                     | Priority |
+|:-----------------------|:-----|:-------000---------------|:---------|
+| your.inbounddomain.com | MX   | rx1.eu.sparkpostmail.com | 10       |
+| your.inbounddomain.com | MX   | rx2.eu.sparkpostmail.com | 10       |
+| your.inbounddomain.com | MX   | rx3.eu.sparkpostmail.com | 10       |
+
 ### Enterprise Account
 
 | Name                   | Type | Data                  | Priority |
