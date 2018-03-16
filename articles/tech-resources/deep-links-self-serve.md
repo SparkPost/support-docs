@@ -5,11 +5,11 @@ description: "A guide to including iOS universal links and Android App Links in 
 
 ## Introduction
 
-Both Universal and App links are a mechanism in iOS (9 and later) and Android (6.0 and later) that allows you to link deeply into your apps from web pages and HTML email. To use deep linking, you must publish the URLs you'd like your app to handle and then add support for them into the app itself. When your users receive an email containing a deep link, iOS/Android then recognizes the domain and path of the URL and triggers your app. As a result, it's important to keep the URLs in your HTML emails intact to ensure your deep links function correctly.
+Both Universal and App links are a mechanism in iOS (9 and later) and Android (6.0 and later) that allows you to link deeply into your apps from web pages and HTML email. To use deep linking, you must publish the URLs you'd like your app to handle and then add support for them into the app itself. When your users receive an email containing a deep link, the mobile device then recognizes the domain and path of the URL and triggers your app. As a result, it's important to keep the URLs in your HTML emails intact to ensure your deep links function correctly.
 
 This article describes the various ways you can use deep links with email sent through your SparkPost account.
 
-Documentiation explains the app mechanisims in detail.
+The following developer documentation explains the deep linking mechanisims in detail.
 - [Apple's Universal Links](https://developer.apple.com/library/content/documentation/General/Conceptual/AppSearch/UniversalLinks.html) 
 
 - [Android App Links](https://developer.android.com/training/app-links/index.html)
@@ -18,8 +18,8 @@ Documentiation explains the app mechanisims in detail.
 
 ## Prerequisites
 
-- an app with deep linking support
-- an apple-app-site-association or assetlinks.json file hosted on a Content Delivery Network (CDN) or equivalent
+- a moble app with deep linking support
+- a deep linking spec file(`apple-app-site-association` or `assetlinks.json`) hosted on a Content Delivery Network (CDN) or equivalent
 
 #### Sidebar: SparkPost Click Tracking
 
@@ -27,7 +27,7 @@ In the discussion below, it might be useful to understand how the SparkPost clic
 
 You can customize the domain SparkPost uses in your tracked links by setting up a [custom tracking domain](https://www.sparkpost.com/docs/tech-resources/enabling-multiple-custom-tracking-domains/)). This is useful from a branding and reputation standpoint and it also offers a mechanism for including universal links in your HTML email.
 
-**Note:** When you set up a custom tracking domain on your SparkPost account, you must verify the tracking domain either by publishing a CNAME record in DNS which points to the SparkPost click tracking service, or redirect the tracking domain to the SparkPost click tracking service. This can make it difficult to serve other content on that domain, including your `apple-app-site-association` or `assetlinks.json` file. The solution is to use a CDN or equivalent that can host your `apple-app-site-association` or `assetlinks.json` file while redirecting the custom tracking domain to the SparkPost click tracking service.
+**Note:** When you set up a custom tracking domain on your SparkPost account, you must verify the tracking domain either by publishing a CNAME record in DNS which points to the SparkPost click tracking service, or redirect the tracking domain to the SparkPost click tracking service. This can make it difficult to serve other content on that domain, including your deep linking spec file. The solution is to use a CDN or equivalent that can host your deep linking spec file while redirecting the custom tracking domain to the SparkPost click tracking service.
 
 You can also have SparkPost include a specific string in the path part of a tracked URL by setting the `data-msys-sublink` attribute:
 
@@ -43,9 +43,9 @@ Pros:
 - Very simple
  
 Cons:
-- No click tracking on univeral or Android App links
+- No click tracking on deep linking
 
-This is the simplest option: if you disable SparkPost's click tracking for the mobile deep links in your email, they work just fine with your app with no further effort. This works because SparkPost does not alter untracked links in your email.
+This is the simplest option: if you disable SparkPost's click tracking for the mobile deep links in your email, they work just fine with your mobile app with no further effort. This works because SparkPost does not alter untracked links in your email.
 
 #### Disabling Click Tracking
 - If you're using the SparkPost REST API, you can use the `data-msys-clicktrack` attribute to [disable click tracking for a single link in your email](https://developers.sparkpost.com/api/substitutions-reference.html#header-per-link-disabling-of-click-tracking):
@@ -62,9 +62,11 @@ This is the simplest option: if you disable SparkPost's click tracking for the m
 
 Pros:
 - Minimal development effort
+- Provides click tracking on deep links
 
 Cons:
-- Requires iOS/Android app support
+- Requires mobile app support
+- Configuration of a CDN
 
 If you'd like to use SparkPost to track when people click the universal links in your email, you can use a custom tracking domain and have your app pass each click event to SparkPost. In this scenario, you nominate a link in your email as a mobile deep link by enabling click tracking on it and setting a specific "custom link sub-path". SparkPost replaces the link with a tracked version using your tracking domain and including the named path in the tracked URL. When your recipients click on the link, the domain and path match your published deep link and the mobile device opens your app. Your app then makes an HTTP request to the tracked URL which lets SparkPost know your recipient has visited that universal link.
 
@@ -74,7 +76,9 @@ The setup steps are as follows:
 **Note:** The CDN needs to support file hosting such as AWS CloudFront.
 1. [Configure a custom tracking domain on your SparkPost account.](https://app.sparkpost.com/account/tracking-domains)
 1. [Use a "custom link sub-path" in your links.](https://developers.sparkpost.com/api/substitutions-reference.html#header-custom-link-sub-paths)
-1. Publish the `apple-app-site-associate` or `assetlinks.json` file for your app using both the tracking domain and link sub-path.  These should be hosted on your CDN under  **\<your-tracking-domain>\\.well-known\\**. Your apple-app-site-association file might include the following:
+1. Publish the deep linking spec file for your app using both the tracking domain and link sub-path.  These should be hosted on your CDN under  **\<your-tracking-domain>\\.well-known\\**.
+    
+    Example apple-app-site-association file:
     ```javascript
     {
       "applinks": {
@@ -89,6 +93,18 @@ The setup steps are as follows:
         ]
       }
     }
+    ```
+    Example assetlinks.json file:
+    ```javascript
+    [{
+        "relation": ["delegate_permission/common.handle_all_urls"],
+        "target": {
+            "namespace": "app_namespace",
+            "package_name": "com.example.deeplinking",
+            "sha256_cert_fingerprints":
+            [<Your_APP_FINGERPRINT>]
+        }
+    }]
     ```
 1. Send your email through SparkPost with click tracking enabled, using your custom tracking domain and link sub-path:
     ```
@@ -130,11 +146,9 @@ Here's a sample `application:continueUserActivity:restorationHandler` method whi
 }
 ```
 
-With a little configuration, a single additional handler in your app, and no additional hosting requirements, you can enable and track iOS universal links through your SparkPost account just as if they were any other link.
-
 #### Forwarding Clicks From Android To SparkPost
 
-When an Android email client recognizes that a link has been clicked that is registered via your `AndoidManifest.xml` file.  For examples on configuring an Androdi App Link, see the documenation linked above.  Once the link is clicked, an `intent` is sent to the registered `Activity` to handle the click.  Once inside the activity, the tracking link can be manually "clicked" by performing a HTTP GET request on the link passed in with the `intent`.
+When an Android email client recognizes that an app link has been clicked based on your apps' `AndroidManifest.xml`, it sends an `intent` which triggers the registered `Activity` in your app. You can then make an HTTP request to the link to trigger a "click" event in Sparkpost and retrieve the original tracked URL from the message.
 
 Here is a sample `Activity` with the corresponding `AsyncTask` that will perform an HTTP GET to the SparkPost click tracking service after an Android App Link has been clicked:
 ```java
