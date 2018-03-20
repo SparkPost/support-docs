@@ -71,7 +71,7 @@ If you prefer to set up a sending domain as a bounce domain via the API, use the
     }
     ```
 
-And here is an example API call to set a subaccount 123 bounce domain 'sub.bounce.example.com' as that subaccount's default bounce domain:
+    And here is an example API call to set a subaccount 123 bounce domain 'sub.bounce.example.com' as that subaccount's default bounce domain:
 
     ```
     PUT /api/v1/sending-domains/sub.bounce.example.com
