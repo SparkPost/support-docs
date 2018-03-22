@@ -9,12 +9,6 @@ SparkPost and SparkPost Enterprise provide data streams of raw event data via we
 
 Raw event data is streamed in individual batches that may vary from 1 to 1000 or more events based on your volume and peak sending rate. Batches are posted at least several times every 30 seconds to 1 minute. Batches may come from multiple servers, so the intervals of data posting may be irregular.
 
-This is how batch sizing/sending works:
-
-* If you have a batch that is at least 100 events, SparkPost transmits that as a single batch.
-* If you have a batch that is less than 100 events, SparkPost will buffer it and hold off on sending it. If the next batch of events comes through and puts the buffer over 100 events, it will send that as a single batch.
-* If you have 1 batch that is 10 events, another that is 20 events, and then no additional events to increase the buffered batch beyond 100, SparkPost will wait 30 seconds before transmitting that as a single batch.
-
 Generally speaking, four events are recorded for each message: injection, delivery, open and click (more are possible depending on if a given user clicks or opens a message multiple times and if the message is not delivered on the first attempt). For projecting how many events you expect during any given time period, we suggest a rough multiplier of 2.5 of your outgoing message volume. For example, if you inject 100,000 messages in an hour, you can expect approximately 250,000 events during that period. (The exact number will vary based on whether or not engagement tracking is enabled, engagement rates, delivery rates, and so forth).
 
  ## Webhook Batch Retry Logic
