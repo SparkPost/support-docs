@@ -31,11 +31,11 @@ To configure one or more custom tracking domains through the SparkPost user inte
 1. Select Account and then Tracking Domains from the main menu.
 2. Click the New Domain button to add a new tracking domain.
 
-    ![](media/enabling-multiple-custom-tracking-domains/Screenshot_2015-09-25_13.14.55_original.png)
+    ![](media/enabling-multiple-custom-tracking-domains/create_tracking_domain_button.png)
 
 3. Complete the Domain Name field and Set as Default button and then click the Add Domain button to complete the process of adding a tracking domain.
 
-    ![](media/enabling-multiple-custom-tracking-domains/Screenshot_2015-09-25_13.15.33_original.png)
+    ![](media/enabling-multiple-custom-tracking-domains/add_tracking_domain.png)
 
 ## Associate your Tracking domain(s) with one or more Sending domains      
 
@@ -44,10 +44,10 @@ To associate custom tracking domains to sending domains through the SparkPost us
 1. Select Account and then Sending Domains from the main menu.
 1. Click the New Domain button to create the new sending domain or select an existing sending domain.
 
-    ![](media/enabling-multiple-custom-tracking-domains/thefirststep_addingasendingdomain_original.png)
+    ![](media/enabling-multiple-custom-tracking-domains/add_sending_domain.png)
 
-    ![](media/enabling-multiple-custom-tracking-domains/xU06kJ2lac6YGEIi8KlReq8OaF1kfX.png)
-1. Complete the Sending Domain Name for each sending domain and select the Linked Tracking Domain you want to associate with it.
+    ![](media/enabling-multiple-custom-tracking-domains/link_tracking_domain.png)
+1. Complete the Sending Domain Name for each sending domain and select the Linked Tracking Domain you want to associate with it. **Note**: If you do not select a linked tracking domain, the sending domain will use the default tracking domain.
 1. Click the Add Domain or _Update Tracking Domain_ button to complete the association.
 
 **Note:** For information on how to configure your Sending Domains, please see [this article](https://www.sparkpost.com/docs/getting-started/getting-started-sparkpost/#preparing-your-from-address).
