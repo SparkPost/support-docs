@@ -152,6 +152,8 @@ When an Android email client recognizes that an app link has been clicked based 
 
 Here is a sample `Activity` with the corresponding `AsyncTask` that will perform an HTTP GET to the SparkPost click tracking service after an Android App Link has been clicked:
 ```java
+public class LinkDestinationActivity extends AppCompatActivity{
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -200,4 +202,5 @@ Here is a sample `Activity` with the corresponding `AsyncTask` that will perform
             return null;
         }
     }
+}
 ```
