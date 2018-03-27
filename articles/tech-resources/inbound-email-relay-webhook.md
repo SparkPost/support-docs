@@ -63,7 +63,7 @@ DNS changes can take a while to propagate so you should do this first; your Inbo
 ### SparkPost EU Account
 
 | Name                   | Type | Data                     | Priority |
-|:-----------------------|:-----|:-------000---------------|:---------|
+|:-----------------------|:-----|:-------------------------|:---------|
 | your.inbounddomain.com | MX   | rx1.eu.sparkpostmail.com | 10       |
 | your.inbounddomain.com | MX   | rx2.eu.sparkpostmail.com | 10       |
 | your.inbounddomain.com | MX   | rx3.eu.sparkpostmail.com | 10       |
