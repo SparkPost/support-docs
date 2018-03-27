@@ -19,7 +19,7 @@ Note: SparkPost is a developer-centric email delivery service. That means pretty
 
 ## Signing Up And In
 
-First things first: sign up for your free SparkPost account [here](https://app.sparkpost.com/sign-up). After sign-up, SparkPost will send you a verification email; please do verify your email address so SparkPost can contact you if you need support later on and send you important service announcements.
+First things first: sign up for your free SparkPost account [here](https://app.sparkpost.com/join). After sign-up, SparkPost will send you a verification email; please do verify your email address so SparkPost can contact you if you need support later on and send you important service announcements.
 
 ## Preparing Your "From:" Address
 
