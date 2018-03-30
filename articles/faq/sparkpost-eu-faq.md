@@ -16,16 +16,15 @@ Go to app.eu.sparkpost.com, sign up, set up your account, and start sending. Our
 
 ## What’s different between an EU based account vs. a US based account?
 
-Not much really. The signup link is slightly different (as noted above), and the endpoints you’re used to in the US have “eu” appended in them. See the table below for more details. 
+Not much really. The signup link is slightly different (as noted above), and the endpoints you’re used to in the US have “eu” appended in them. See the table below for more details.
 
-API endpoint
-api.eu.sparkpost.com
-SMTP injection endpoint
-smtp.eu.sparkpost.com
-Default bounce domain
-eu.sparkpostmail.com
-Default tracking domain
-eu.spgo.io
+|    |   EU   |
+| --- | --- |
+|   API endpoint   |   api.eu.sparkpost.com   |
+|   SMTP injection endpoint   |   smtp.eu.sparkpost.com   |
+|   Default bounce domain   |   eu.sparkpostmail.com   |
+|   Default tracking domain   |   eu.spgo.io   |
+
 
 ## How do you migrate from SparkPost to SparkPost EU?
 
@@ -65,13 +64,8 @@ Data is at rest in the EU covered by all of the protections that provides. We’
 When sending from the EU, connection times to APIs and SMTP are significantly less if using SparkPost EU. This is critical for things such as the time to first send 
 For instance, see these improvements for Transmission API latency in SparkPost EU (approx 5.7x faster)
 
+  |      |   EU   |   US   |
+  | --- | --- | --- |
+  |   With Connection Reuse   |   33ms   |   190ms   |
+  |   Without Connection Reuse   |   89ms   |   533ms   |
 
-
-EU
-US
-With Connection Reuse
-33ms
-190ms
-Without Connection Reuse
-89ms
-533ms
