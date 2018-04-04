@@ -7,6 +7,19 @@ notification: "This Change Log is for SparkPost Enterprise Only"
 A running log of new features and capabilities that have been rolled out on the SparkPost Enterprise service. The API reference can be found [here](https://developers.sparkpost.com/api).
 
 
+### April 2018
+
+* **NEW:** SparkPost.com is now available in the EU. If you need your data hosted in the EU, check out [SparkPost EU](https://app.eu.sparkpost.com)
+
+* **NEW:** SparkPost is GDPR compliant - well ahead of the May deadline. For details, read our [blog post](https://www.sparkpost.com/blog/announcing-sparkpost-eu/?utm_source=twitter&utm_medium=social-media&utm_campaign=all&utm_content=bl-sp-eu-gdpr)
+
+* **NEW:** You can now set a default bounce domain (return-path domain) for each subaccount, in addition to the account-wide option. 
+   * The "is_default_bounce_domain" can be set at the account or subaccount level via the Sending Domains API. 
+   * The UI component will be available shortly.
+
+### March, 2018
+* **Change:** Check out our new UI and tell us what you think?
+
 ### February, 2018
 * **Change:** Shorter SparkPost Link-Unsubscribe Header URLs and FBLs.
   * SparkPost shortened the links for the list-unsubscribe header and FBLs. This is addition to the shorter tracking links completed in December.
