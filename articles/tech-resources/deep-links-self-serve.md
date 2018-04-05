@@ -18,7 +18,7 @@ The following developer documentation explains the deep linking mechanisims in d
 
 ## Prerequisites
 
-- a moble app with deep linking support
+- a mobile app with deep linking support
 - a deep linking spec file(`apple-app-site-association` or `assetlinks.json`) hosted on a Content Delivery Network (CDN) or equivalent
 
 #### Sidebar: SparkPost Click Tracking
@@ -43,7 +43,7 @@ Pros:
 - Very simple
  
 Cons:
-- No click tracking on deep linking
+- No click tracking on deep links
 
 This is the simplest option: if you disable SparkPost's click tracking for the mobile deep links in your email, they work just fine with your mobile app with no further effort. This works because SparkPost does not alter untracked links in your email.
 
@@ -66,6 +66,7 @@ Pros:
 
 Cons:
 - Requires mobile app support
+- Requires use of a CDN
 - Configuration of a CDN
 
 If you'd like to use SparkPost to track when people click the universal links in your email, you can use a custom tracking domain and have your app pass each click event to SparkPost. In this scenario, you nominate a link in your email as a mobile deep link by enabling click tracking on it and setting a specific "custom link sub-path". SparkPost replaces the link with a tracked version using your tracking domain and including the named path in the tracked URL. When your recipients click on the link, the domain and path match your published deep link and the mobile device opens your app. Your app then makes an HTTP request to the tracked URL which lets SparkPost know your recipient has visited that universal link.
@@ -76,7 +77,7 @@ The setup steps are as follows:
 **Note:** The CDN needs to support file hosting such as AWS CloudFront.
 1. [Configure a custom tracking domain on your SparkPost account.](https://app.sparkpost.com/account/tracking-domains)
 1. [Use a "custom link sub-path" in your links.](https://developers.sparkpost.com/api/substitutions-reference.html#header-custom-link-sub-paths)
-1. Publish the deep linking spec file for your app using both the tracking domain and link sub-path.  These should be hosted on your CDN under  **\<your-tracking-domain>\\.well-known\\**.
+1. Publish the deep linking spec file for your app using both the tracking domain and link sub-path.  This should be hosted on your CDN under  **\<your-tracking-domain>\\.well-known\\**.
     
     Example apple-app-site-association file:
     ```javascript
