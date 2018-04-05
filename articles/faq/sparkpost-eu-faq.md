@@ -69,3 +69,7 @@ For instance, see these improvements for Transmission API latency in SparkPost E
   |   With Connection Reuse   |   33ms   |   190ms   |
   |   Without Connection Reuse   |   89ms   |   533ms   |
 
+
+## Can I keep the same tracking domain when migrating from the SPC to SPC EU account?
+
+Yes, you can reuse the same tracking domain, but please note that this will break any tracked links in messages sent from your original account. We recommend that you use a new subdomain if you need your existing links to continue to function.
