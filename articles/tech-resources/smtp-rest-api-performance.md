@@ -25,6 +25,9 @@ Follow these best practices in order to optimize SMTP injection rates (and ove
 * Keep the TCP connections open between messages.  Closing and opening connections on each message is much less efficient and can slow performance.
 * Ensure your SMTP client has pipelining enabled, to reduce the roundtrip delay on some SMTP commands.
 
+### Note on International Performance
+So called "chatty" protocols like SMTP with a lot of round trips between client and server may be subject to greater than expected latency. In performance sensitive situations, we recommend that you use our RESTful interface if possible. If you have to send via SMTP, sending from a server within the US would be best. SparkPost EU is fully hosted withing Western Europe. For better performance in Europe or near, consider creating a [SparkPost EU](https://app.eu.sparkpost.com/join) account.
+
 ## General Message Size Considerations
 
 * For optimal deliverability, the total size of each message should not exceed 100kb.
