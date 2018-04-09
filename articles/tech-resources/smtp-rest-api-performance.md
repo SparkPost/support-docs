@@ -26,7 +26,7 @@ Follow these best practices in order to optimize SMTP injection rates (and ove
 * Ensure your SMTP client has pipelining enabled, to reduce the roundtrip delay on some SMTP commands.
 
 ### Note on International Performance
-So called "chatty" protocols like SMTP with a lot of round trips between client and server may be subject to greater than expected latency. In performance sensitive situations, we recommend that you use our RESTful interface if possible. If you have to send via SMTP, sending from a server within the US would be best. SparkPost EU is fully hosted withing Western Europe. For better performance in Europe or near, consider creating a [SparkPost EU](https://app.eu.sparkpost.com/join) account.
+"Chatty" protocols, like SMTP, with many round trips between client and server, may be subject to greater than expected latency. We recommend using our REST API in performance sensitive situations. If you have to send via SMTP, sending from a server within the US would be best. SparkPost EU is fully hosted withing Western Europe. For better performance in Europe or near, consider creating a [SparkPost EU](https://app.eu.sparkpost.com/join) account.
 
 ## General Message Size Considerations
 
