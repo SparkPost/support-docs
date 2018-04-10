@@ -122,7 +122,7 @@ Number of messages that SparkPost is unable to generate for various reasons. Cal
 
 **Sent**
 
-Number of messages for which SparkPost attempts delivery.  This is the number of messages targeted minus any that SparkPost is not able to attempt delivery.
+Number of messages that SparkPost attempted to deliver, which includes both Deliveries and Bounces.
 
 **Soft Bounce Rate**
 
