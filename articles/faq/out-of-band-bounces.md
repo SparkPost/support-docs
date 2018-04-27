@@ -13,7 +13,7 @@ However, there are some recipient servers that are configured to accept incoming
 
 SparkPost uses three different headers on our outbound messages to attempt to glean recipients from out out of band bounces:
 
-1. `X-MSFBL` header: We encode the `rcpt_to` and `metadata` in this header.
+1. `X-MSFBL` header: We encode the `rcpt_to`, `metadata`, `account ID`, and `subaccount ID` in this header.
 2. `Message-ID` header: This is a unique value assigned to every individual message sent through SparkPost.
 3. `Return-Path` header: We use VERP (variable envelope return path) to encode the account ID and subaccount (if used) that sent the message.
 
