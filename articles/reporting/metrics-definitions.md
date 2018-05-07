@@ -36,9 +36,9 @@ The percentage of messages that are bounced by SparkPost - suppression logic i
 
 Number of messages that are bounced by SparkPost - suppression logic is the most common type of admin bounce.
 
-**All Bounce Rate**
+**Bounce Rate**
 
-The percentage of messages that bounce (for any reason).  Calculated by *number of bounces / number of messages targeted*
+The percentage of messages that bounce except admin bounces.  Calculated by *(number of bounces - admin bounces ) / number of messages sent*
 
 **Average Delivery Message Size**
 
@@ -54,7 +54,7 @@ Average time between the time SparkPost accepts a message and the time of the a
 
 **Block Bounce Rate**
 
-The percentage of messages that are "blocked" bounced.  Calculated by *number of blocked bounces / number of messages targeted*
+The percentage of messages that are "blocked" bounced.  Calculated by *number of blocked bounces / number of messages sent*
 
 **Block Bounced**
 
@@ -62,7 +62,7 @@ Number of messages that are "blocked" bounced by the recipient's mailbox provid
 
 **Bounced**
 
-Number of messages that are bounced for all reasons.  (Includes the less common out-of-band bounces.)
+Number of messages that are bounced for all reasons except admin bounces.  (Includes the less common out-of-band bounces.)
 
 **Click-Through Rate (approximated)**
 
@@ -98,7 +98,7 @@ Number of messages that SparkPost is unable to generate for policy reasons - a c
 
 **Hard Bounce Rate**
 
-The percentage of messages that are "hard" bounced.  Calculated by *number of hard bounces / number of messages targeted.*
+The percentage of messages that are "hard" bounced.  Calculated by *number of hard bounces / number of messages sent.*
 
 **Hard Bounced**
 
@@ -126,7 +126,7 @@ Number of messages for which SparkPost attempts delivery.  This is the number o
 
 **Soft Bounce Rate**
 
-The percentage of messages that are "soft" bounced.  Calculated by *number of soft bounces / number of messages targeted*
+The percentage of messages that are "soft" bounced.  Calculated by *number of soft bounces / number of messages sent*
 
 **Soft Bounced**
 
@@ -138,7 +138,7 @@ Number of spam complaints that are received by SparkPost.
 
 **Undetermined Bounce Rate**
 
-The percentage of messages that bounce for "undetermined" reasons.  Calculated by *number of undetermined bounces / number of messages targeted.*
+The percentage of messages that bounce for "undetermined" reasons.  Calculated by *number of undetermined bounces / number of messages sent.*
 
 **Undetermined Bounced**
 
