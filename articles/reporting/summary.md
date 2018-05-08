@@ -7,7 +7,7 @@ Summary in the Reports menu will load in the summary screen view, with a default
 
 ![](media/summary/calendar_original.png)
 
-Below the Summary graph are the various metrics you can choose. You can add up to five metrics per search by clicking on the Select metrics button to the upper right:
+Below the Summary graph are the various metrics you can choose. You can add up to five metrics per search by clicking on the Select Metrics button to the upper right:
 
 ![](media/summary/metrics_original.png)
 
