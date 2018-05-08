@@ -38,7 +38,7 @@ Number of messages that are bounced by SparkPost - suppression logic is the mos
 
 **Bounce Rate**
 
-The percentage of messages that bounce except admin bounces.  Calculated by *(number of bounces - admin bounces ) / number of messages sent*
+The percentage of messages that bounce except admin bounces.  Calculated by *number of bounces / number of messages sent*
 
 **Average Delivery Message Size**
 
@@ -66,7 +66,7 @@ Number of messages that are bounced for all reasons except admin bounces.  (In
 
 **Click-Through Rate (approximated)**
 
-Percentage of “targeted” messages that have at least one click.
+Percentage of “accepted” messages that have at least one click.
 
 **Delayed**
 
@@ -110,7 +110,7 @@ Number of messages for which SparkPost attempts delivery.  This is the number o
 
 **Open Rate**
 
-Percentage of “targeted” messages that are either rendered or have at least one click.
+Percentage of “accepted” messages that are either rendered or have at least one click.
 
 **Policy Rejection**
 
