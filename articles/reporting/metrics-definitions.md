@@ -132,6 +132,10 @@ The percentage of messages that are "soft" bounced.  Calculated by *number of s
 
 Number of messages that are "soft" bounced by the recipient's mailbox provider.  (A soft bounce occurs when recipient's mailbox provider states that message cannot be accepted at this time, common example: mailbox full.)
 
+**Spam Complaint Rate**
+
+Percentage of “accepted” messages that have a spam complaint.
+
 **Spam Complaints**
 
 Number of spam complaints that are received by SparkPost.
