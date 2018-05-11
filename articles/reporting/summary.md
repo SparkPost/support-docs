@@ -1,9 +1,9 @@
 ---
 title: "Summary"
-description: "The Reports tab will load in the summary screen view with a default time range of the last hour For large senders there may be a short delay while the data is being compiled The Calendar drop down provides preset time ranges and an optional custom date time picker You..."
+description: "The Summary Reports Page will load with a default time range of the last hour. For large senders there may be a short delay while the data is being compiled. The Calendar drop down provides preset time ranges and an optional custom date time picker You..."
 ---
 
-Summary in the Reports menu will load in the summary screen view, with a default time range of the last hour.  For large senders, there may be a short delay while the data is being compiled. The Calendar drop down provides preset time ranges and an optional custom date/time picker. You can also apply additional search criteria like recipient domain, campaign or template name in the search bar in the upper right.
+The Summary Reports Page will load with a default time range of the last hour.  For large senders, there may be a short delay while the data is being compiled. The Calendar drop down provides preset time ranges and an optional custom date/time picker. You can also apply additional search criteria like recipient domain, campaign or template name in the search bar in the upper right.
 
 ![](media/summary/calendar_original.png)
 
