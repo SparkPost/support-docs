@@ -2,6 +2,11 @@
 title: "SparkPost Change Log"
 description: "A running log of what's new, what's been fixed, and what's been changed in SparkPost."
 ---
+## March 15, 2018
+### What’s New?
+
+* Open and Click tracking options are now independent options for a given Transmissions call.
+
 ## December 8, 2017
 ### What’s New?
 
