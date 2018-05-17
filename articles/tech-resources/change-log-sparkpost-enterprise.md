@@ -7,6 +7,12 @@ notification: "This Change Log is for SparkPost Enterprise Only"
 A running log of new features and capabilities that have been rolled out on the SparkPost Enterprise service. The API reference can be found [here](https://developers.sparkpost.com/api).
 
 
+### May 17, 2018
+
+* **NEW:** Smart Send launched as a [SparkPost Labs](https://developers.sparkpost.com/api/labs-introduction.html) feature. This Transmissions API option will not attempt to send to any recipients who have not engaged (received messages but not open or clicked) in at least 6 months. More details on our [blog](https://www.sparkpost.com/blog/smart-send/).
+
+   * **NOTE:** Enterprise customers, please contact your TAM for information on how to enable this option.
+
 ### April 2018
 
 * **NEW:** SparkPost.com is now available in the EU. If you need your data hosted in the EU, check out [SparkPost EU](https://app.eu.sparkpost.com)
