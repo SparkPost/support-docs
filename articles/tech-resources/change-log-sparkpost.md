@@ -6,7 +6,7 @@ description: "A running log of what's new, what's been fixed, and what's been ch
 ## May 17, 2018  
 ### What’s New?
 
-* Smart Send launched as a [SparkPost Labs](https://developers.sparkpost.com/api/labs-introduction.html) feature. This [Transmissions API](https://developers.sparkpost.com/api/transmissions.html) option will not attempt to send to any recipients who have not engaged (received messages but not open or clicked) in at least 6 months. More details in the [blog post](https://www.sparkpost.com/blog/). 
+* Smart Send launched as a [SparkPost Labs](https://developers.sparkpost.com/api/labs-introduction.html) feature. This [Transmissions API](https://developers.sparkpost.com/api/transmissions.html) option will not attempt to send to any recipients who have not engaged (received messages but not open or clicked) in at least 6 months. More details in the [blog post](https://www.sparkpost.com/blog/smart-send/). 
 NOTE: If you're a SparkPost Enterprise customer, please contact your TAM for information on how to enable this option.
 
 ## March 15, 2018  
