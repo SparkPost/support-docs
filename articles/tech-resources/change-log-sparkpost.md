@@ -8,12 +8,23 @@ description: "A running log of what's new, what's been fixed, and what's been ch
 
 * Smart Send launched as a [SparkPost Labs](https://developers.sparkpost.com/api/labs-introduction.html) feature. This [Transmissions API](https://developers.sparkpost.com/api/transmissions.html) option will not attempt to send to any recipients who have not engaged (received messages but not open or clicked) in at least 6 months. More details in the [blog post](https://www.sparkpost.com/blog/smart-send/). 
 
-NOTE: If you're a SparkPost Enterprise customer, please contact your TAM for information on how to enable this option.
+## May 14, 2018  
+### What Changed?
+
+* We changed the "rate" type metrics in the Summary Report to use "Sent" or "Accepted" as the denominator, rather than "Targeted" across the board.
+  * This will make Open Rate, Click Rate, and Bounce Rates higher since there's a lower number in the denominator. The counts have not changed.
+  * This is a UI-only change. There are no "rate" metrics in webhooks or Message Events
+  * You can read about the rationale for these changes in this [blog post](https://www.sparkpost.com/blog/metrics-calculation-update/)
+
+## March 31, 2018  
+### What’s New?
+
+* We launched our new UI.
 
 ## March 15, 2018  
 ### What’s New?
 
-* Open and Click tracking options are now independent options for a given Transmissions call.
+* Open and Click tracking options are now independent of eachother as account-level defaults.
 
 ## December 8, 2017
 ### What’s New?
