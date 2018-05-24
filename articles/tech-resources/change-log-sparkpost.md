@@ -57,6 +57,15 @@ description: "A running log of what's new, what's been fixed, and what's been ch
 
 * SparkPost optimised our engagement tracking our engagement tracking URLs to make them shorter. Their length still depends on the amount personalization and metadata used in each message.
 
+
+## November 30, 2017
+### What’s New?
+* Additional Open Pixel at message top
+  * SparkPost has added an open pixel to the top of each message when open tracking is selected. This is in addition to the open pixel that is inserted at the bottom of the message
+  * Customers should expect a new event in the Message Events API and in webhook events: initial_open
+  * Customer should also expect an additional Metric in the Metrics API: initial_rendered
+
+
 ## November 9, 2017
 ### What’s New?
 
