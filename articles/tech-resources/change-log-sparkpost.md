@@ -7,13 +7,14 @@ description: "A running log of what's new, what's been fixed, and what's been ch
 ## May 18, 2018  
 ### What’s New?
 
-Customers that pay by credit card can now view copies of past invoices in the UI, on the [Billing](https://app.sparkpost.com/account/billing) page. The 20 most recent invoices are available for download.
+* Customers that pay by credit card can now view copies of past invoices in the UI, on the [Billing](https://app.sparkpost.com/account/billing) page. The 20 most recent invoices are available for download.
 
 
 ## May 17, 2018  
 ### What’s New?
 
 * Smart Send launched as a [SparkPost Labs](https://developers.sparkpost.com/api/labs-introduction.html) feature. This [Transmissions API](https://developers.sparkpost.com/api/transmissions.html) option will not attempt to send to any recipients who have not engaged (received messages but not open or clicked) in at least 6 months. More details in the [blog post](https://www.sparkpost.com/blog/smart-send/). 
+  * NOTE: Not yet available in the EU. Enterprise customers, please contact your TAM for information on how to enable this option.
 
 ## May 14, 2018  
 ### What Changed?
@@ -22,6 +23,16 @@ Customers that pay by credit card can now view copies of past invoices in the UI
   * This will make Open Rate, Click Rate, and Bounce Rates higher since there's a lower number in the denominator. The counts have not changed.
   * This is a UI-only change. There are no "rate" metrics in webhooks or Message Events
   * You can read about the rationale for these changes in this [blog post](https://www.sparkpost.com/blog/metrics-calculation-update/)
+  
+## April, 2018  
+### What’s New?
+  
+* SparkPost.com is now available in the EU. If you need your data hosted in the EU, check out [SparkPost EU](https://app.eu.sparkpost.com)
+
+* SparkPost is GDPR compliant - well ahead of the May deadline. For details, read our [blog post](https://www.sparkpost.com/blog/announcing-sparkpost-eu/)
+
+* You can now set a default bounce domain (return-path domain) for each subaccount, in addition to the account-wide option. 
+  * The "is_default_bounce_domain" can be set at the account or subaccount level via the Sending Domains API. 
 
 ## March 31, 2018  
 ### What’s New?
@@ -32,6 +43,14 @@ Customers that pay by credit card can now view copies of past invoices in the UI
 ### What’s New?
 
 * Open and Click tracking options are now independent of eachother as account-level defaults.
+
+## February, 2018
+### What's New?
+* Shorter SparkPost Link-Unsubscribe Header URLs and FBLs.
+  * SparkPost shortened the links for the list-unsubscribe header and FBLs. 
+  * This is addition to the shorter tracking links completed in December.
+
+* Addressed the issue of some messages not being delivered due to cached out-of-date MX records.
 
 ## December 8, 2017
 ### What’s New?
