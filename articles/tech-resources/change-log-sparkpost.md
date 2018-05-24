@@ -3,6 +3,13 @@ title: "SparkPost Change Log"
 description: "A running log of what's new, what's been fixed, and what's been changed in SparkPost."
 ---
 
+
+## May 18, 2018  
+### What’s New?
+
+Customers that pay by credit card can now view copies of past invoices in the UI, on the [Billing](https://app.sparkpost.com/account/billing) page. The 20 most recent invoices are available for download.
+
+
 ## May 17, 2018  
 ### What’s New?
 
