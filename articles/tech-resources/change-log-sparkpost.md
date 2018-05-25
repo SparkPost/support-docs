@@ -3,6 +3,10 @@ title: "SparkPost Change Log"
 description: "A running log of what's new, what's been fixed, and what's been changed in SparkPost."
 ---
 
+## May 30, 2018  
+### What’s New?
+
+* The Unsubscribe metric is available in the API. It will be in the UI shortly.
 
 ## May 18, 2018  
 ### What’s New?
