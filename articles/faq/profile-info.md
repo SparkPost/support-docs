@@ -1,12 +1,8 @@
 ---
-title: "Where do I find my Username, Account ID (Customer ID), or Email Address?"
-description: "When you're submitting a Support ticket or communicating with us via our community Slack channel we ask you to identify your account by providing either your Username Account ID Customer ID or Email Address used to create the Spark Post account Having this info allows us to help you faster..."
+title: "Where do I find my username, account ID, or account email address?"
+description: "Sometimes when we communicate with you as a user, we ask you to identify your account by providing your username, account ID, or account email address. Having this info allows us to help you faster in situations where we don't already have these details about who you are."
 ---
 
-When you're submitting a Support ticket or communicating with us via our [community Slack channel](http://slack.sparkpost.com), we ask you to identify your account by providing either your Username, Account ID (Customer ID), or Email Address used to create the SparkPost account. Having this info allows us to help you faster, especially if you are sending us an email from an address not associated with your account.
+Sometimes when we communicate with you as a user (e.g. via our [community Slack channel](http://slack.sparkpost.com)), we ask you to identify your account by providing your username, account ID (Customer ID), or account email address. Having this info allows us to help you faster in situations where we don't already have these details about who you are.
 
-To find this info, log into your SparkPost account, go to Account, then Profile; you will find your Username, Account ID (Customer ID) and Email Address info at the top of that page. 
-
-For **SparkPost Enterprise customers**, please provide your email address in the "SparkPost Username, Account ID or Email” field.
-
-![](media/profile-info/account_profile_original.png)
+**To find this info, visit your [user profile page](https://app.sparkpost.com/account/profile)** where you will find your username, account ID (Customer ID) and acccount email address info, as well as security settings and more.
