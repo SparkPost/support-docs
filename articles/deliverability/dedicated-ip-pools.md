@@ -13,7 +13,7 @@ You can provision new dedicated IPs directly to your Account via the UI.  For En
 2. You will then be prompted to choose:
     * Quantity: the number of dedicated IPs **\*** (additional monthly charges of $20.00 / IP Address / Month apply)
     * IP Pool: whether you would like to assign these addresses to an existing IP pool or create a new IP Pool
-        * If you choose to create a new pool, note that IP Pool names are limited to at most 20 letters and/or numbers. The resulting pool will also have an IP Pool Id that you will use at the transmission level.
+        * You will use the IP Pool ID at the transmission level.
 3. Once finished, click the "Confirm Purchases" button to purchase your dedicated IPs.
 4. The Billing page will then reflect your new purchase and your monthly invoice will be updated to reflect the charge for the dedicated IP(s). The dedicated IP(s) charge will be prorated by month.
 
