@@ -14,25 +14,26 @@ The hostname can be accessed by adding "no-tlsv1-test-" as a prefix to the curre
 
 **US Hosted Customers:**
 
-Current Endpoint: `https://api.sparkpost.com/api/v1/`
+Current Endpoint: https://api.sparkpost.com/api/v1/
 
-Test Endpoint for TLS Deprecation: `https://no-tlsv1-test-api.sparkpost.com/api/v1/`
+Test Endpoint for TLS Deprecation: https://no-tlsv1-test-api.sparkpost.com/api/v1/
 
 
 
 **EU Hosted Customers:**
 
-Current Endpoint: `https://api.eu.sparkpost.com/api/v1/`
+Current Endpoint: https://api.eu.sparkpost.com/api/v1/
 
-Test Endpoint for TLS Deprecation: `https://no-tlsv1-test-api.eu.sparkpost.com/api/v1/`
+Test Endpoint for TLS Deprecation: https://no-tlsv1-test-api.eu.sparkpost.com/api/v1/
 
 
 **Enterprise Customers with Branded Hostnames:**
 
-Current Endpoint: `https://<public_tenant_id>.api.e.sparkpost.com/api/v1/`
+Current Endpoint: https://<public_tenant_id>.api.e.sparkpost.com/api/v1/
 
-Test Endpoint for TLS Deprecation: `https://no-tlsv1-test-<public_tenant_id>.api.e.sparkpost.com/api/v1/`
+Test Endpoint for TLS Deprecation: https://no-tlsv1-test-<public_tenant_id>.api.e.sparkpost.com/api/v1/
 
+<br/>
 <br/>
 
 These hostnames will be removed after June 30, 2018, when TLSv1.0 has been fully deprecated.
