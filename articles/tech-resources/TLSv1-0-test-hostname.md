@@ -18,7 +18,7 @@ Current Endpoint: https://api.sparkpost.com/api/v1/
 
 Test Endpoint for TLS Deprecation: https://no-tlsv1-test-api.sparkpost.com/api/v1/
 
-
+<br/>
 
 **EU Hosted Customers:**
 
@@ -26,6 +26,7 @@ Current Endpoint: https://api.eu.sparkpost.com/api/v1/
 
 Test Endpoint for TLS Deprecation: https://no-tlsv1-test-api.eu.sparkpost.com/api/v1/
 
+<br/>
 
 **Enterprise Customers with Branded Hostnames:**
 
