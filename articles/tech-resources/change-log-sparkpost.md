@@ -5,7 +5,6 @@ description: "A running log of what's new, what's been fixed, and what's been ch
 ## May 30, 2018  
 ### What’s New?
 
-* The Unsubscribe metric is available in the API. It will be in the UI shortly.
 * **Changes in the UI:** we've introduced **a new account navigation menu** at the top right of the screen. That menu now contains all of your account management pages such as your user profile, billing, user management, help and API docs, and the log out link. The old "Account" section in the side navigation has been renamed "Settings". All existing deep links will continue to work as expected.
 
 ## May 18, 2018  
