@@ -1,5 +1,5 @@
 ---
-title: "submitting a support case"
+title: "Submitting a support case"
 description: "User guide for raising a support case with the team"
 ---
 
@@ -12,7 +12,7 @@ Raising a support case is just a couple of clicks away in the SparkPost UI. From
 4. Use the free form text box to tell us more about your issue, you can add in attachments as needed.
 5. When you are ready press the ‘Submit Ticket’ button, this will send your case to support and also provide a confirmation screen, once you have noted your case number click 'Continue' to return to the UI. You will also receive an email confirmation which you can reply to with further details if needed. The SparkPost team will be in touch as soon as they can
 
-![](faq/media/in-app-support-demo.gif)
+![](media/in-app-support-demo.gif)
 
 
-If you need to raise a case immediately please log in to your account or click [HERE](https://app.sparkpost.com/dashboard/?supportTicket=true). [EU](https://app.sparkpost.com/dashboard/?supportTicket=true)
+If you need to raise a case immediately please log in to your account or click [HERE](https://app.sparkpost.com/dashboard/?supportTicket=true). [EU](https://app.eu.sparkpost.com/dashboard/?supportTicket=true)
