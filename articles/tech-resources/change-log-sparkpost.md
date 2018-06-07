@@ -2,6 +2,11 @@
 title: "SparkPost Change Log"
 description: "A running log of what's new, what's been fixed, and what's been changed in SparkPost."
 ---
+## June 7, 2018  
+### What’s New?
+
+* **Changes in the UI:** we've introduced **2 new metrics:** unsubscribe and unsubscribe rate. Both link unsubscribe and list unsubscribe events are combined in the new metrics.
+
 ## May 30, 2018  
 ### What’s New?
 
