@@ -110,7 +110,7 @@ Number of messages for which SparkPost attempts delivery.  This is the number o
 
 **Open Rate**
 
-Percentage of “accepted” messages that are either rendered or have at least one click. Calculated by _approximate number of messages opened / number of messages delivered._
+Percentage of “accepted” messages that are either rendered or have at least one click. Calculated by _number of messages opened / number of messages delivered._
 
 **Policy Rejection**
 
