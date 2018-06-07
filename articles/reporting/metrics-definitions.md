@@ -66,7 +66,7 @@ Number of messages that are bounced for all reasons except admin bounces.  (In
 
 **Click-Through Rate (approximated)**
 
-Percentage of “accepted” messages that have at least one click.
+Percentage of “accepted” messages that have at least one click. Calculated by _approximate number of unique links clicked / number of messages delivered._
 
 **Delayed**
 
@@ -110,7 +110,7 @@ Number of messages for which SparkPost attempts delivery.  This is the number o
 
 **Open Rate**
 
-Percentage of “accepted” messages that are either rendered or have at least one click.
+Percentage of “accepted” messages that are either rendered or have at least one click. Calculated by _approximate number of messages opened / number of messages delivered._
 
 **Policy Rejection**
 
@@ -134,7 +134,7 @@ Number of messages that are "soft" bounced by the recipient's mailbox provider.
 
 **Spam Complaint Rate**
 
-Percentage of “accepted” messages that have a spam complaint.
+Percentage of “accepted” messages that have a spam complaint. Calculated by _number of spam complaints / number of messages delivered._
 
 **Spam Complaints**
 
@@ -166,4 +166,4 @@ Total number of times a recipient clicked a specifically tagged unsubscribe link
 
 **Unsubscribe Rate**
 
-The percentage messages that resulted in unsubscribes. Calculated by _number of all unsubscribes / number of messages sent._
+The percentage messages that resulted in unsubscribes. Calculated by _number of all unsubscribes / number of messages delivered._
