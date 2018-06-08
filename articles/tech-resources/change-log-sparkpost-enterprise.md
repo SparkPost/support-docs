@@ -1,10 +1,10 @@
 ---
 title: "SparkPost Enterprise Change Log"
-description: "Note This Change Log is for SparkPost Enterprise Only. This is a running log of new features and capabilities that have been rolled out on the SparkPost Enterprise service. The API reference can be found here https://developers.sparkpost.com/api/"
-notification: "This Change Log is for SparkPost Enterprise Only"
+NOTE: "Note This Change Log is being deprecated in favor of a combined change log here: https://www.sparkpost.com/docs/tech-resources/change-log-sparkpost/. Please bookmark the new location. The API reference can still be found here https://developers.sparkpost.com/api/"
+
 ---
 
-A running log of new features and capabilities that have been rolled out on the SparkPost Enterprise service. The API reference can be found [here](https://developers.sparkpost.com/api).
+This change log is being deprecated. Please go [here](https://www.sparkpost.com/docs/tech-resources/change-log-sparkpost/) for the latest changes. The API reference can be found [here](https://developers.sparkpost.com/api).
 
 
 ### May 17, 2018
