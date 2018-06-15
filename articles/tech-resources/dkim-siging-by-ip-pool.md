@@ -56,4 +56,15 @@ Click on the IP pool name you wish to configure. The drop down will present your
 
 _Note:_ The operation immediately above can be performed on a pre-existing IP pool by clicking the IP pool name you wish to edit on the IP Pools page.
 
+**Example Signing by IP Pool**:
+
+Consider the following two IP pools and their signing domains:
+
+```
+IP Poo: `My Pool 2`
+“signing_domain” : “my-2.serviceproviderdomain.com”
+
+“name”: "My Pool 3",
+“signing_domain” : “my-3.serviceproviderdomain.com”
+```
 
