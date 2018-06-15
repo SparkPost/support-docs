@@ -16,6 +16,8 @@ The following explains the logic of how SparkPost will sign messages based upon 
 ### **_DKIM Signing Domain = From Domain_** ###
 
 For senders where the from domain and the DKIM signing domain (`d=`) match, you can use the sending domains API to create the domain and verify it using the DKIM method. Any messages (regardless of IP Pool being used) sent using that from domain will DKIM sign using the same `d=` domain. 
+<br>
+<br>
 
 **Example:**
 
@@ -50,7 +52,6 @@ _Note_: If you would like the same d= signing domain for all IP Pools, repeat th
 Reference API documentation for IP pools can be referenced [here](https://developers.sparkpost.com/api/ip-pools.html#ip-pools-ip-pools-resource-put).
 
 <br>
-<br>
 
 The IP Pools UI can also be used to assign a default DKIM `d=` to a given IP pool. To access the IP pool page in the UI, click on Settings > IP Pools in the left frame. To create a new pool, click on the orange "Create IP Pool" button in the upper right.
 
@@ -61,6 +62,8 @@ Click on the IP pool name you wish to configure. The drop down will present your
 ![](media/dkim-siging-by-ip-pool/ip-pool-signing-screen.png)
 
 _Note:_ The operation immediately above can be performed on a pre-existing IP pool by clicking the IP pool name you wish to edit on the IP Pools page.
+<br>
+<br>
 
 **Example Signing by IP Pool**:
 
