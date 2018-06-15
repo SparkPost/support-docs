@@ -14,7 +14,7 @@ _Note_: This feature is currently available on SPC, SPC EU and our Enterprise cu
 The following explains the logic of how SparkPost will sign messages based upon signing domain and/or IP pool settings.
 
 
-### **DKIM Signing Domain = From Domain** ###
+### **_DKIM Signing Domain = From Domain_** ###
 
 For senders where the from domain and the DKIM signing domain (`d=`) match, you can use the sending domains API to create the domain and verify it using the DKIM method. Any messages (regardless of IP Pool being used) sent using that from domain will DKIM sign using the same `d=` domain. 
 
