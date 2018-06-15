@@ -61,8 +61,8 @@ _Note:_ The operation immediately above can be performed on a pre-existing IP po
 Consider the following IP and its signing domains:
 
 ```
-IP Pool: `my_pool_2`
-Signing Domain (`d=`) : `my-2.serviceproviderdomain.com`
+IP Pool: my_pool_2
+Signing Domain (d=) : my-2.serviceproviderdomain.com
 ```
 
 If a message sent from `my_pool_2` has has a DKIM-verified FROM domain, it will be signed with a d= that matches that FROM domain, e.g. From = mysendingdomain.com / d= mysendingdomain.com.
