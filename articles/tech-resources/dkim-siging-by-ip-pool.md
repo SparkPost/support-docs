@@ -33,7 +33,8 @@ For Service Providers who group their senders/customers by IP pool and would lik
 1. Use the Sending Domains API to create and verify the desired d= signing domain using DKIM verification method.
 1. Use the IP Pools API and provide the desired DKIM signing domain in the signing_domain field for that IP Pool. For example:
 
-```PUT /api/v1/ip-pools/mypool2  {
+```
+PUT /api/v1/ip-pools/mypool2  {
 “name”: "My Pool 2",
 “signing_domain” : “my-2.serviceproviderdomain.com” }
 
@@ -44,9 +45,7 @@ PUT /api/v1/ip-pools/mypool3  {
 
 Reference API documentation for IP pools can be referenced [here](https://developers.sparkpost.com/api/ip-pools.html#ip-pools-ip-pools-resource-put).
 
-_Note_:
-
-Note: If you would like the same d= signing domain for all IP Pools, repeat the PUT call above for each IP Pool using the same domain, such as in the following example:
+_Note_: If you would like the same d= signing domain for all IP Pools, repeat the PUT call above for each IP Pool using the same domain, such as in the following example:
 
 ```
 PUT /api/v1/ip-pools/mypool  {
