@@ -9,7 +9,7 @@ DKIM signing by IP pool allows service providers to brand (or white label) the D
 
 _Note_: This feature is currently available on SPC, SPC EU and our Enterprise customers on Next Gen Architecture. Enterprise customers, please contact your TAM for an update on the availability of this feature.  
 
-## DKIM Signing Logic ##
+# DKIM Signing Logic #
 
 The following explains the logic of how SparkPost will sign messages based upon signing domain and/or IP pool settings.
 
