@@ -48,7 +48,7 @@ Reference API documentation for IP pools can be referenced [here](https://develo
 
 The IP Pools UI can also be used to assign a default DKIM `d=` to a given IP pool. To access the IP pool page in the UI, click on Settings > IP Pools in the left frame. To create a new pool, click on the orange "Create IP Pool" button in the upper right.
 
-![](media/dkim-siging-by-ip-pool/ip-pool-signing-screen.png)
+![](media/dkim-siging-by-ip-pool/create-ip-pool-button-2.png)
 
 Click on the IP pool name you wish to configure. The drop down will present your DKIM-verified sending domain(s) that you can use as a DKIM- Signing domain for that IP Pool. In the example below, we have selected `elite.trysparkpost.com`.
 
