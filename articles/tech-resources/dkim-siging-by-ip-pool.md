@@ -51,3 +51,5 @@ The IP Pools UI can also be used to assign a default DKIM `d=` to a given IP poo
 ![](media/dkim-siging-by-ip-pool/ip-pool-signing-screen.png)
 
 Click on the IP pool name you wish to configure. The drop down will present your DKIM-verified sending domain(s) that you can use as a DKIM- Signing domain for that IP Pool. In the example below, we have selected `elite.trysparkpost.com`.
+
+![](media/dkim-siging-by-ip-pool/ip-pool-signing-screen.png)
