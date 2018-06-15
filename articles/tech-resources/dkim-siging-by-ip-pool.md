@@ -67,8 +67,26 @@ IP Pool: my_pool_2
 Signing Domain (d=) : my-2.serviceproviderdomain.com
 ```
 
-If a message sent from `my_pool_2` has has a DKIM-verified from domain, it will be signed with a d= that matches that from domain, e.g. From = `mysendingdomain.com` / `d= mysendingdomain.com`.
+If a message sent from `my_pool_2` has has a DKIM-verified from domain, it will be signed with a `d=` that matches that from domain, e.g. From = `mysendingdomain.com` / `d= mysendingdomain.com`.
 
-If a message sent from `my_pool_2` does not have a DKIM-verified from domain, it will be signed with the IP Pool signing_domain, e.g. from = `unverified-domain.com` / `d= my-2.serviceproviderdomain.com`
+If a message sent from `my_pool_2` does not have a DKIM-verified from domain, it will be signed with the IP Pool `signing_domain`, e.g. from = `unverified-domain.com` / `d= my-2.serviceproviderdomain.com`
 
+### **_Yahoo FBL (YCFL) DKIM Signing_** ###
+
+For most customers, SparkPost automatically appends a second DKIM signature with a SparkPost-owned `d=` domain that we have registered with Yahoo in order to receive and process FBLs on your behalf. However, for Enterprise service providers who wish to fully brand their headers and set the FBL DKIM signing domain to be one of your own, you must then specify an `fbl_signing_domain` via the IP Pools API. 
+
+_Note_: If the DKIM signing domain you are using is already registered with Yahoo, you do not need to configure a `fbl_signing_domain`.
+
+If the DKIM signing domain you wish to use for your IP Pools is _not_ registered with Yahoo, however, you can work with your TAM to register the DKIM signing domain with Yahoo and set the `fbl_signing_domain` field in the IP Pools API. SparkPost will then append this second signature for messages destined for Yahoo in order to process their FBLs. The following is an example of setting the `fbl_signing_domain` using the IP Pools API.
+
+```
+PUT /api/v1/ip-pools/mypool  { 
+“name”: "my_pool",
+“fbl_signing_domain” : “my.serviceproviderfbldomain.com” }
+```
+
+With the above configuration set, any message sent to a Yahoo recipient out of the `my_pool` IP pool will have 2 DKIM signatures, like so:
+
+`signing_domain` = my-2.serviceproviderdomain.com
+`fbl_signing_domain` = my.serviceproviderfbldomain.com
 
