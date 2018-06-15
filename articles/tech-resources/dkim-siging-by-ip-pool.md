@@ -13,7 +13,6 @@ _Note_: This feature is currently available on SPC, SPC EU and our Enterprise cu
 
 The following explains the logic of how SparkPost will sign messages based upon signing domain and/or IP pool settings.
 
-
 ### **_DKIM Signing Domain = From Domain_** ###
 
 For senders where the from domain and the DKIM signing domain (`d=`) match, you can use the sending domains API to create the domain and verify it using the DKIM method. Any messages (regardless of IP Pool being used) sent using that from domain will DKIM sign using the same `d=` domain. 
@@ -45,6 +44,23 @@ PUT /api/v1/ip-pools/mypool3  {
 
 Reference API documentation for IP pools can be referenced [here](https://developers.sparkpost.com/api/ip-pools.html#ip-pools-ip-pools-resource-put).
 
+_Note_:
+
+Note: If you would like the same d= signing domain for all IP Pools, repeat the PUT call above for each IP Pool using the same domain, such as in the following example:
+
+```
+PUT /api/v1/ip-pools/mypool  {
+“name”: "My Pool",
+“signing_domain” : “my.serviceproviderdomain.com” }
+
+PUT /api/v1/ip-pools/mypool2  {
+“name”: "My Pool 2",
+“signing_domain” : “my-2.serviceproviderdomain.com” }
+
+PUT /api/v1/ip-pools/mypool3  {
+“name”: "My Pool 3",
+“signing_domain” : “my-3.serviceproviderdomain.com” }
+```
 
 The IP Pools UI can also be used to assign a default DKIM `d=` to a given IP pool. To access the IP pool page in the UI, click on Settings > IP Pools in the left frame. To create a new pool, click on the orange "Create IP Pool" button in the upper right.
 
@@ -68,3 +84,5 @@ Signing Domain (d=) : my-2.serviceproviderdomain.com
 If a message sent from `my_pool_2` has has a DKIM-verified from domain, it will be signed with a d= that matches that from domain, e.g. From = `mysendingdomain.com` / `d= mysendingdomain.com`.
 
 If a message sent from `my_pool_2` does not have a DKIM-verified from domain, it will be signed with the IP Pool signing_domain, e.g. from = `unverified-domain.com` / `d= my-2.serviceproviderdomain.com`
+
+
