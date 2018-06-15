@@ -29,4 +29,17 @@ More information on how to create sending domains via the API can be found [here
 
 ### **_DKIM Signing Domain Linked to IP Pool_**
 
-For Service Providers who group their senders/customers by IP pool and would like to use a specific `d=` DKIM domain for each IP Pool, do the following:
+For Service Providers who group their senders/customers by IP pool and would like to use a specific `d=` DKIM domain for each IP Pool, perform the following steps:
+
+1. Use the Sending Domains API to create and verify the desired d= signing domain using DKIM verification method.
+1. Use the IP Pools API and provide the desired DKIM signing domain in the signing_domain field for that IP Pool. For example:
+
+```PUT /api/v1/ip-pools/mypool2  {
+“name”: "My Pool 2",
+“signing_domain” : “my-2.serviceproviderdomain.com” }
+
+
+PUT /api/v1/ip-pools/mypool3  {
+“name”: "My Pool 3",
+“signing_domain” : “my-3.serviceproviderdomain.com” }```
+
