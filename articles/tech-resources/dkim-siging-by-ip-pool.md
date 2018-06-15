@@ -60,11 +60,11 @@ _Note:_ The operation immediately above can be performed on a pre-existing IP po
 
 Consider the following two IP pools and their signing domains:
 
-```
-IP Poo: `My Pool 2`
-“signing_domain” : “my-2.serviceproviderdomain.com”
 
-“name”: "My Pool 3",
-“signing_domain” : “my-3.serviceproviderdomain.com”
-```
+IP Pool: `my_pool_2`
+Signing Domain (`d=`) : `my-2.serviceproviderdomain.com`
+
+IP Pool: `my_pool_3`
+Signing Domain (`d=`) : `my-3.serviceproviderdomain.com`
+
 
