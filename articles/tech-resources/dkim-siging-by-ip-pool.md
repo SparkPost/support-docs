@@ -38,8 +38,15 @@ For Service Providers who group their senders/customers by IP pool and would lik
 “name”: "My Pool 2",
 “signing_domain” : “my-2.serviceproviderdomain.com” }
 
-```PUT /api/v1/ip-pools/mypool3  {
+PUT /api/v1/ip-pools/mypool3  {
 “name”: "My Pool 3",
-“signing_domain” : “my-3.serviceproviderdomain.com” }```
+“signing_domain” : “my-3.serviceproviderdomain.com” }
+```
 
-Refence document
+Reference API documentation for IP pools can be referenced [here](https://developers.sparkpost.com/api/ip-pools.html#ip-pools-ip-pools-resource-put).
+
+The IP Pools UI can also be used to assign a default DKIM `d=` to a given IP pool. To access the IP pool page in the UI, click on Settings > IP Pools in the left frame. To create a new pool, click on the orange "Create IP Pool" button in the upper right.
+
+    ![](media/enabling-multiple-custom-tracking-domains/create_tracking_domain_button.png)
+
+Click on the IP pool name you wish to configure. The drop down will present your DKIM-verified sending domain that you can use as a DKIM- Signing domain for that IP Pool.
