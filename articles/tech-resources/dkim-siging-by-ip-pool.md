@@ -13,7 +13,6 @@ _Note_: This feature is currently available on SPC, SPC EU and our Enterprise cu
 
 The following explains the logic of how SparkPost will sign messages based upon signing domain and/or IP pool settings.
 
-<br>
 
 ### **DKIM Signing Domain = From Domain** ###
 
