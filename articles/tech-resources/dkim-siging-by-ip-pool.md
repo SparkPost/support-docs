@@ -98,4 +98,15 @@ With the above configuration set, any message sent to a Yahoo recipient out of t
 
 `signing_domain` = my-2.serviceproviderdomain.com
 `fbl_signing_domain` = my.serviceproviderfbldomain.com
+<br>
+<br>
 
+### **_Webhook and Message Events Additions_** ###
+
+Webhook and message events have a string field associated with DKIM signing called `"DKIM_Signed"`. Possible values are:
+
+1. `"sending_domain"` - if the message was signed using the DKIM domain that is the same as the from sending domain.
+1. `"ip_pool"` - if the message was signed using the IP pool level DKIM domain 
+1. `"shared_pool"` - refers to an available pool of SparkPost-owned domains for use with DKIM signing. 
+1. `"sandbox"` - SparkPost-owned domain used to sign the first 5 messages sent on a given account. Established SparkPost customers should never see this value.
+1. `"fallback"` - if all of the above DKIM domain fail (something that shouldn’t happen if domains are set up correctly), there is fallback that will ensure that any message leaving SparkPost will still be signed. The specific fallback DKIM domain varies.
