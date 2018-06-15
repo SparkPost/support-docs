@@ -21,7 +21,7 @@ For senders where the from domain and the DKIM signing domain (`d=`) match, you 
 **Example:**
 
 From Domain = `mysendingdomain.com`
-DKIM `d`= `mysendingdomain.com`
+DKIM `d= mysendingdomain.com`
 
 _Note_: This is the result regardless of the IP pool being used.
 
