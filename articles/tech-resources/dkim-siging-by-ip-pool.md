@@ -32,7 +32,7 @@ More information on how to create sending domains via the API can be found [here
 <br>
 <br>
 
-### **_DKIM Signing Domain Linked to IP Pool_**
+### **_DKIM Signing Domain by IP Pool_**
 
 For service providers who group their senders/customers by IP pool and would like to use a specific `d=` DKIM domain for each IP pool, perform the following steps:
 
