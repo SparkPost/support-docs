@@ -58,13 +58,13 @@ _Note:_ The operation immediately above can be performed on a pre-existing IP po
 
 **Example Signing by IP Pool**:
 
-Consider the following two IP pools and their signing domains:
+Consider the following IP and its signing domains:
 
-
+```
 IP Pool: `my_pool_2`
 Signing Domain (`d=`) : `my-2.serviceproviderdomain.com`
+```
 
-IP Pool: `my_pool_3`
-Signing Domain (`d=`) : `my-3.serviceproviderdomain.com`
+If a message sent from `my_pool_2` has has a DKIM-verified FROM domain, it will be signed with a d= that matches that FROM domain, e.g. From = mysendingdomain.com / d= mysendingdomain.com.
 
-
+If a message sent from mypool2 does not have a DKIM-verified from domain, it will be signed with the IP Pool signing_domain, e.g. from = unverified-domain.com / d= my-2.serviceproviderdomain.com
