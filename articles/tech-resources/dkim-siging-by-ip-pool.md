@@ -23,7 +23,7 @@ For senders where the from domain and the DKIM signing domain (`d=`) match, you 
 
 **Example:**
 
-From Domain = `mysendingdomain.com`
+From domain = `mysendingdomain.com`
 DKIM `d= mysendingdomain.com`
 
 _Note_: This is the result regardless of the IP pool being used.
@@ -72,8 +72,8 @@ _Note:_ The operation immediately above can be performed on a pre-existing IP po
 Consider the following IP pool and its signing domain:
 
 ```
-IP Pool: my_pool_2
-Signing Domain (d=): my-2.serviceproviderdomain.com
+ip_pool: my_pool_2
+signing_domain (d=): my-2.serviceproviderdomain.com
 ```
 
 If a message sent from `my_pool_2` has has a DKIM-verified from domain, it will be signed with a `d=` that matches that from domain, e.g. From = `mysendingdomain.com` / `d= mysendingdomain.com`.
