@@ -45,21 +45,8 @@ PUT /api/v1/ip-pools/mypool3  {
 
 Reference API documentation for IP pools can be referenced [here](https://developers.sparkpost.com/api/ip-pools.html#ip-pools-ip-pools-resource-put).
 
-_Note_: If you would like the same d= signing domain for all IP Pools, repeat the PUT call above for each IP Pool using the same domain, such as in the following example:
-
-```
-PUT /api/v1/ip-pools/mypool  {
-“name”: "My Pool",
-“signing_domain” : “my.serviceproviderdomain.com” }
-
-PUT /api/v1/ip-pools/mypool2  {
-“name”: "My Pool 2",
-“signing_domain” : “my-2.serviceproviderdomain.com” }
-
-PUT /api/v1/ip-pools/mypool3  {
-“name”: "My Pool 3",
-“signing_domain” : “my-3.serviceproviderdomain.com” }
-```
+_Note_: If you would like the same d= signing domain for all IP Pools, repeat the PUT call above for each IP Pool using the same signing domain ('d=').
+<br>
 
 The IP Pools UI can also be used to assign a default DKIM `d=` to a given IP pool. To access the IP pool page in the UI, click on Settings > IP Pools in the left frame. To create a new pool, click on the orange "Create IP Pool" button in the upper right.
 
