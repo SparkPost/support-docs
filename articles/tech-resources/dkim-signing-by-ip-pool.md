@@ -73,7 +73,7 @@ Consider the following IP pool and its signing domain:
 
 ```
 ip_pool: my_pool_2
-signing_domain (`d=`): my-2.serviceproviderdomain.com
+signing_domain (d=): my-2.serviceproviderdomain.com
 ```
 
 If a message sent from `my_pool_2` has has a DKIM-verified from domain, it will be signed with a `d=` that matches that from domain, e.g. From = `mysendingdomain.com` / `d= mysendingdomain.com`.
