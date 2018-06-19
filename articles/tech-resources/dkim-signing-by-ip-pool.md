@@ -3,28 +3,28 @@ title: "DKIM Signing by IP Pool"
 Description: "DKIM signing by IP pool allows service providers to brand (or white label) the DKIM signature of the messages they send on behalf of their customers/senders. It gives the ability for service providers to use their own DKIM signing domain for groups of senders where having an individual DKIM domain for each from domain is impractical (e.g. because the service provider doesn’t have the ability or access to..."
 ---
 
-# Introduction #
+## Introduction ##
 
 DKIM signing by IP pool allows service providers to brand (or white label) the DKIM signature of the messages they send on behalf of their customers/senders. It gives the ability for service providers to use their own DKIM signing domain for groups of senders where having an individual DKIM signature for each from domain is impractical (e.g. because the service provider doesn’t have the ability or access to change their customers’ DNS, or the number of sending domains required of their customer base is very large.) It allows service providers to have different DKIM domains for each group of senders on different IP pools for more granular control of reputation management. This feature also allows the branding of the DKIM domain(s) registered with Yahoo who uses DKIM keys/selectors as the basis for feedback loops.
 
 _Note_: This feature is currently available on SPC, SPC EU and our Enterprise customers on Next Gen Architecture. Enterprise customers, please contact your TAM for an update on the availability of this feature.  
 
-# DKIM Signing Logic #
+## DKIM Signing Logic ##
 
 The following sections explain the logic of how SparkPost will sign messages based upon signing domain and/or IP pool settings.
 <br>
 <br>
 
-### **_DKIM Signing Domain = From Domain_** ###
+### _DKIM Signing Domain = From Domain_ ###
 
-For senders where the from domain and the DKIM signing domain (`d=`) match, you can use the sending domains API to create the domain and verify it using the DKIM method. Any messages (regardless of IP Pool being used) sent using that from domain will DKIM sign using the same `d=` domain. 
+For senders where the from domain and the DKIM signing domain (`d=`) match, you can use the sending domains API to create the domain and verify it using the DKIM method (or create the domain and verify it via the UI). Any messages (regardless of IP Pool being used) sent using that from domain will DKIM sign using the same `d=` domain. 
 <br>
 <br>
 
 **Example:**
 
 From domain = `mysendingdomain.com`
-DKIM `d= mysendingdomain.com`
+DKIM signing domain (`d=`) = `mysendingdomain.com`
 
 _Note_: This is the result regardless of the IP pool being used.
 
@@ -32,12 +32,12 @@ More information on how to create sending domains via the API can be found [here
 <br>
 <br>
 
-### **_DKIM Signing Domain by IP Pool_**
+### _DKIM Signing Domain by IP Pool_ ###
 
-For service providers who group their senders/customers by IP pool and would like to use a specific `d=` DKIM domain for each IP pool, perform the following steps:
+For service providers who group their senders/customers by IP pool and would like to use a specific DKIM signing domain for each IP pool, perform the following steps:
 
-1. Use the Sending Domains API to create and verify the desired `d=` signing domain using the DKIM verification method.
-1. Use the IP Pools API and provide the desired DKIM signing domain in the signing_domain field for that IP pool. For example:
+1. Use the Sending Domains API to create and verify the desired signing domain using the DKIM verification method.
+1. Use the IP Pools API and provide the desired DKIM signing domain in the `signing_domain` field for that IP pool. For example:
 
 ```
 PUT /api/v1/ip-pools/mypool2  {
@@ -49,13 +49,13 @@ PUT /api/v1/ip-pools/mypool3  {
 “signing_domain” : “my-3.serviceproviderdomain.com” }
 ```
 
-_Note_: If you would like the same `d=` signing domain for all IP Pools, repeat the PUT call above for each IP pool using the same signing domain (`d=`).
+_Note_: If you would like the same DKIM signing domain for all IP Pools, repeat the PUT call above for each IP pool using the same signing domain (`d=`).
 
 Reference API documentation for IP pools can be referenced [here](https://developers.sparkpost.com/api/ip-pools.html#ip-pools-ip-pools-resource-put).
 
 <br>
 
-The IP Pools UI can also be used to assign a default DKIM `d=` to a given IP pool. To access the IP pool page in the UI, click on Settings > IP Pools in the left frame. To create a new pool, click on the orange "Create IP Pool" button in the upper right.
+The IP Pools UI can also be used to assign a default DKIM signing domain/`d=` to a given IP pool. To access the IP pool page in the UI, click on Settings > IP Pools in the left frame. To create a new pool, click on the orange "Create IP Pool" button in the upper right.
 
 ![](media/dkim-siging-by-ip-pool/create-ip-pool-button-2.png)
 
@@ -73,7 +73,7 @@ Consider the following IP pool and its signing domain:
 
 ```
 ip_pool: my_pool_2
-signing_domain (d=): my-2.serviceproviderdomain.com
+signing_domain (`d=`): my-2.serviceproviderdomain.com
 ```
 
 If a message sent from `my_pool_2` has has a DKIM-verified from domain, it will be signed with a `d=` that matches that from domain, e.g. From = `mysendingdomain.com` / `d= mysendingdomain.com`.
@@ -84,7 +84,7 @@ If a message sent from `my_pool_2` does not have a DKIM-verified from domain, it
 
 ### **_Yahoo FBL (YCFL) DKIM Signing_** ###
 
-For most customers, SparkPost automatically appends a second DKIM signature with a SparkPost-owned `d=` domain that we have registered with Yahoo in order to receive and process FBLs on your behalf. However, for Enterprise service providers who wish to fully brand their headers and set the FBL DKIM signing domain to be one of your own, you must then specify an `fbl_signing_domain` via the IP Pools API. 
+For most customers, SparkPost automatically appends a second DKIM signature with a SparkPost-owned DKIM signing domain that we have registered with Yahoo in order to receive and process FBLs on your behalf. However, for Enterprise service providers who wish to fully brand their headers and set the FBL DKIM signing domain to be one of your own, you must then specify an `fbl_signing_domain` via the IP Pools API. 
 
 _Note_: If the DKIM signing domain you are using is already registered with Yahoo, you do not need to configure a `fbl_signing_domain`.
 
