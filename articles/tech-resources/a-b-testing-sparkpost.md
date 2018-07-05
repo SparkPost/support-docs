@@ -23,18 +23,11 @@ The benefit of this approach is that you only have to change the Transmission AP
 
 You can get your results using webhook events. For transmissions that used an A/B Test, Open and Click events will have the A/B Test ID, and the A/B Test Version number so you can look at the results.
 
-**Planned Enhancements and Known Limitations**
- *  The current "Learning Mode" does not automatically pick a winner. It provides real-time results via webhooks to allow users to analyze the results and make a determination which template is the best based on open or click rates. It is then a separate call to the A/B Testing API to change the default template to be the winning template. The next enhancement is the introduction of a statistical model in Bayesian Mode that will pick the winner automatically for you. This is coming soon!!
- 
- * An user interface (UI) is coming to allow non-technical users, such as Email Marketers and Email Product Managers to set up and manage A/B tests and get results. 
- 
- * Current functionality only supports single-recipient Transmissions REST API calls. Multiple recipient Transmissions calls that attempt to call an A/B Test will get an error. A/B testing is not supported for SMTP API
-
-
 **Notes about A/B testing specifics:**
 
 * A minimum of 2 templates is required to run an A/B test. You may have up to a maximum of 10 templates in a single A/B test.
-* You can specify EITHER a population size with proportions or numbers of recipients to receive a given template variant or default OR you can specify and end time to end the test. 
+* You can specify a population size with proportions for each template variant and default, which must add up to 100%. Or you can specify the number of recipients to receive a given template variant or default, which must add up to the population size. 
+* You can optionally provide an end_time to your test. The test will end when the specified end_time OR population size is reached, whichever comes first.
 * The assignment of individual recipients to specific template variants is randomized. You can see which recipient received which template variant in webhook events.
 * Templates **must be published** to be used in A/B testing. You cannot use draft templates.
 * The published templates you are testing with **must have engagement tracking turned on.**
@@ -51,3 +44,13 @@ You can get your results using webhook events. For transmissions that used an A/
   * CTA (call to action)
   * Offer language/different offers
   * Header image 
+
+**Planned Enhancements and Known Limitations**
+
+ *  The current "Learning Mode" does not automatically pick a winner. It provides real-time results via webhooks to allow users to analyze the results and make a determination which template is the best based on open or click rates. It is then a separate call to the A/B Testing API to change the default template to be the winning template. The next enhancement is the introduction of a statistical model in Bayesian Mode that will pick the winner automatically for you. This is coming soon!!
+ 
+ * An user interface (UI) is coming to allow non-technical users, such as Email Marketers and Email Product Managers to set up and manage A/B tests and get results. 
+ 
+ * Current functionality only supports single-recipient Transmissions REST API calls using stored templates. Multiple recipient Transmissions calls that attempt to call an A/B Test will get an error. A/B testing is not supported for SMTP API, nor for inline-templates.
+
+
