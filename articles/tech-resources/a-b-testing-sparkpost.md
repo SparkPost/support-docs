@@ -23,7 +23,7 @@ The benefit of this approach is that you only have to change the Transmission AP
 
 You can get your results using webhook events. For transmissions that used an A/B Test, Open and Click events will have the A/B Test ID, and the A/B Test Version number so you can look at the results.
 
-**Planned Enhancements and Known Issues**
+**Planned Enhancements and Known Limitations**
  *  The current "Learning Mode" does not automatically pick a winner. It provides real-time results via webhooks to allow users to analyze the results and make a determination which template is the best based on open or click rates. It is then a separate call to the A/B Testing API to change the default template to be the winning template. The next enhancement is the introduction of a statistical model in Bayesian Mode that will pick the winner automatically for you. This is coming soon!!
  
  * An user interface (UI) is coming to allow non-technical users, such as Email Marketers and Email Product Managers to set up and manage A/B tests and get results. 
