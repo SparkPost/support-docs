@@ -2,6 +2,13 @@
 title: "SparkPost Change Log"
 description: "A running log of what's new, what's been fixed, and what's been changed in SparkPost."
 ---
+
+## July 7, 2018  
+### What’s New?
+
+* **A/B Testing for Transactional Messages:** The initial release of SparkPost's A/B Testing functionality is available to our US customers on SPC and Enterprise Customers on our Next Gen architecture. The [Knowledge Base](https://www.sparkpost.com/docs/tech-resources/a-b-testing-sparkpost/) article and [API docs](https://developers.sparkpost.com/api/ab-testing.html) have the details.  
+
+
 ## June 7, 2018  
 ### What’s New?
 
