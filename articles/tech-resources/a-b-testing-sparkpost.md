@@ -28,12 +28,17 @@ You can get your results using webhook events. For transmissions that used an A/
 * A minimum of 2 templates is required to run an A/B test. You may have up to a maximum of 10 templates in a single A/B test.
 * You can specify a population size with proportions for each template variant and default, which must add up to 100%. Or you can specify the number of recipients to receive a given template variant or default, which must add up to the population size. 
 * You can optionally provide an end_time to your test. The test will end when the specified end_time OR population size is reached, whichever comes first.
+* An active test can run for a **maximum of 30 days**. That includes the engagement timeout (see below for more about the engagement timeout.)
 * The assignment of individual recipients to specific template variants is randomized. You can see which recipient received which template variant in webhook events.
 * Templates **must be published** to be used in A/B testing. You cannot use draft templates.
 * The published templates you are testing with **must have engagement tracking turned on.**
 * Reporting by individual tests is available through both the [message events API](http://developers.sparkpost.com/api/message-events.html#message-events-message-events-get) (individual message events) and the [metrics API](https://developers.sparkpost.com/api/metrics.html#metrics-deliverability-metrics-by-template-get) (aggregate statistics).
   * For the message events API, you must filter by template ID to pull individual recipient data.
   * To pull aggregate statistics by template performance, use the deliverability metrics by template as described in the metrics API link immediately above.
+  
+***A note about the Engagement Timeout and End Time***  
+A/B testing of email is not immediate. It takes some amount of time for opens and clicks to come in as people open their messages over time. We're calling that period between when a message is delivered, and the amount of time we hold the test open to let those opens and clicks trickle in, The Engagement Timeout. By default, this is set to 24 hours but you can lengthen or shorten it. Keep in mind, that a test can run for 30 days total including the engagement timeout. So if you don't set an end time explicitely, the system will set an end time that is 30 days minus the engagement timout. 
+
 
 **Best practices for A/B testing**
 
