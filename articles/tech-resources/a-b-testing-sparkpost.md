@@ -9,9 +9,7 @@ A/B testing is a common method of comparing templates to see which one performs 
 
 **What benefits do I get from using A/B testing?** 
 
-A/B testing is a means of determining what content drives more engagement (greater open/click rates). 
-
-The SparkPost A/B Testing API allows users to compare multiple templates in the context of standard marketing campaigns and transactional/app-generated messages to see which one performs better for a set number of recipients (sample size) or over a set period of time. 
+A/B testing is a means of determining what content drives more engagement (greater open/click rates). The SparkPost A/B Testing API allows users to compare multiple templates in the context of transactional or app-generated messages to see which one performs better for a set number of recipients (sample size) or over a set period of time. 
 
 Many studies have shown that doing A/B testing on email content (vs. not doing any testing) can lift open rates by 13% or more. The following is a step by step guide to A/B Testing on SparkPost to get you started. Note that enhancements are coming over the months ahead (see below) - so please give us feedback on what you would like to see improved in our [Beta Program](https://www.sparkpost.com/sparkpost-beta-tester/).
 
