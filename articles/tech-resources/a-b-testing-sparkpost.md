@@ -5,39 +5,40 @@ description: "A B Testing in Spark Post An A B test in summary is a common metho
 
 ### A/B Testing in SparkPost 
 
-An A/B test, in summary, is a common method of comparing templates to see which one performs better. SparkPost provides the means to create new A/B tests and view completed results through our A/B Testing API.
+A/B testing is a common method of comparing templates to see which one performs better. SparkPost provides the means to create A/B tests and view completed results through our A/B Testing API.
 
 **What benefits do I get from using A/B testing?** 
 
-An A/B test is a method of comparing 2 or more templates to see which one performs better. That is, which one provides a higher unique open or click rate. The SparkPost A/B Testing API allows users to compare multiple templates in the context of transactional or app generated messages, rather than lists, to see which one performs better for a set number of recipients (Sample Size) or over a set period of time. 
+A/B testing is a means of determining what content drives more engagement (greater open/click rates). The SparkPost A/B Testing API allows users to compare multiple templates in the context of transactional or app-generated messages to see which one performs better for a set number of recipients (sample size) or over a set period of time. 
 
-Some studies have shown that doing A/B testing on email content (vs. not doing any testing) can lift open rates by 13% or more. So here's a step by step guide to A/B Testing at SparkPost to get your started. Note that enhancements are coming over the months ahead (we're agile too!) - so please give us feedback on what you would like to see improved in our [Beta Program](https://www.sparkpost.com/sparkpost-beta-tester/).
+Many studies have shown that doing A/B testing on email content (vs. not doing any testing) can lift open rates by 13% or more. The following is a step by step guide to A/B Testing on SparkPost to get you started. Note that enhancements are coming over the months ahead (see below) - so please give us feedback on what you would like to see improved in our [Beta Program](https://www.sparkpost.com/sparkpost-beta-tester/).
 
 **Creation and review of A/B testing through the API** 
 
 Please refer to the [A/B testing API documentation](https://developers.sparkpost.com/api/ab-testing.html) for specifics on how to create and retrieve A/B test results. As a basic flow:
   1.  Call the A/B testing API to create/edit your A/B Test. 
-  2.  Once you have a A/B Test ID, use it use it in the Transmissions API instead of your regular content JSON. The A/B Testing functionality will then take over and send either the default template you've defined as part of your A/B Test set up process or one of the variants if you're running an active test.
+  2.  Once you have a A/B Test ID, use it in the Transmissions API instead of your regular `content` JSON object. The A/B Testing functionality will then take over and send either the default template you've defined as part of your A/B Test set up process, or one of the defined variants if you're running an active test. You can reference the API documentation [here](https://developers.sparkpost.com/api/transmissions.html#header-using-an-a-b-test) on how to call the active A/B test in your Transmissions API call.
 
-The benefit of this approach is that you only have to change the Transmission API once for any given message type (e.g. payment confirmation) and you can run as many A/B tests are you need to get to the best template. Once an active test completes, the A/B Testing functionality will revert to sending your default until you change it. When you're ready to run another active test, use the A/B Testing API to provide new template variants, set the new date, recipient counts, etc., and the test will run again with a different version number. This mode of A/B testing was built specifically to support the needs of users testing their transactional or app-generated messages rather than bulk sends because once an active test ends, the previously defined default template will continue to be sent so that Production sends are never interrupted.
+The benefit of this approach is that you only have to change the Transmissions API once for any given message type, (e.g. payment confirmation) and you can run as many A/B tests as needed to decide on the best template. Once an active test completes, the A/B Testing functionality will revert to sending your default template if you continue to call the A/B test ID via the Transmissions API. When you're ready to run another active test, use the A/B Testing API to provide new template variants, set a new date, recipient counts, etc., and the test will run again with a different version number. This mode of A/B testing was built specifically to support the needs of users testing their transactional or app-generated messages rather than bulk sends, because once an active test ends, the previously defined default template will continue to be sent so that production sends are never interrupted.
 
-You can get your results using webhook events. For transmissions that used an A/B Test, Open and Click events will have the A/B Test ID, and the A/B Test Version number so you can look at the results.
+You can review your results using webhooks or via the Message Events API. For transmissions that used an A/B Test, open and click events will have the A/B test ID and A/B Test version number so you can differentiate at the results.
 
 **Notes about A/B testing specifics:**
 
 * A minimum of 2 templates is required to run an A/B test. You may have up to a maximum of 10 templates in a single A/B test.
 * You can specify a population size with proportions for each template variant and default, which must add up to 100%. Or you can specify the number of recipients to receive a given template variant or default, which must add up to the population size. 
-* You can optionally provide an end_time to your test. The test will end when the specified end_time OR population size is reached, whichever comes first.
-* An active test can run for a **maximum of 30 days**. That includes the engagement timeout (see below for more about the engagement timeout.)
+* You can optionally provide an `end_time` to your test. The test will end when the specified `end_time` OR population size is reached, whichever comes first.
+* An active test can run for a **maximum of 30 days**. That includes the engagement timeout (see below for more about the engagement timeout).
 * The assignment of individual recipients to specific template variants is randomized. You can see which recipient received which template variant in webhook events.
 * Templates **must be published** to be used in A/B testing. You cannot use draft templates.
 * The published templates you are testing with **must have engagement tracking turned on.**
-* Reporting by individual tests is available through both the [message events API](http://developers.sparkpost.com/api/message-events.html#message-events-message-events-get) (individual message events) and the [metrics API](https://developers.sparkpost.com/api/metrics.html#metrics-deliverability-metrics-by-template-get) (aggregate statistics).
-  * For the message events API, you must filter by template ID to pull individual recipient data.
-  * To pull aggregate statistics by template performance, use the deliverability metrics by template as described in the metrics API link immediately above.
+* Reporting by individual tests is available through both the [Message Events API](http://developers.sparkpost.com/api/message-events.html#message-events-message-events-get) (individual message events) and the [Metrics API](https://developers.sparkpost.com/api/metrics.html#metrics-deliverability-metrics-by-template-get) (aggregate statistics).
+  * For the Message Events API, you must filter by template ID to pull individual recipient data.
+  * To pull aggregate statistics by template performance, use the deliverability metrics by template as described in the metrics API link immediately above, or filter by template in the UI reporting.
   
-***A note about the Engagement Timeout and End Time***  
-A/B testing of email is not immediate. It takes some amount of time for opens and clicks to come in as people open their messages over time. We're calling that period between when a message is delivered, and the amount of time we hold the test open to let those opens and clicks trickle in, The Engagement Timeout. By default, this is set to 24 hours but you can lengthen or shorten it. Keep in mind, that a test can run for 30 days total including the engagement timeout. So if you don't set an end time explicitely, the system will set an end time that is 30 days minus the engagement timout. 
+***A note about Engagement Timeout and End Time*** 
+
+A/B testing of email is not immediate - it takes some amount of time for opens and clicks to occur as recipients open their messages over time. Because of this, we've built in something called the "Engagement Timeout" - the amount of time, in hours, that a test waits to collect results after the `end_time` to make a decision on a winner and/or mark a test as completed. By default, this is set to 24 hours, but you can lengthen or shorten it to your needs. However, keep in mind that a test can run for 30 days total including the engagement timeout, so if you don't set an end time explicitly, the system will set an end time that is 30 days minus the engagement timeout. 
 
 
 **Best practices for A/B testing**
@@ -50,12 +51,12 @@ A/B testing of email is not immediate. It takes some amount of time for opens an
   * Offer language/different offers
   * Header image 
 
-**Planned Enhancements and Known Limitations**
+**Planned Enhancements and known limitations**
 
- *  The current "Learning Mode" does not automatically pick a winner. It provides real-time results via webhooks to allow users to analyze the results and make a determination which template is the best based on open or click rates. It is then a separate call to the A/B Testing API to change the default template to be the winning template. The next enhancement is the introduction of a statistical model in Bayesian Mode that will pick the winner automatically for you. This is coming soon!!
+ *  The current "Learning Mode" does not automatically pick a winner. It provides real-time results via webhooks to allow users to analyze the results and make a determination which template is the best based on open or click rates. It is then a separate call to the A/B Testing API to change the default template to be the winning template. The next enhancement is the introduction of a statistical model in Bayesian Mode that will pick the winner automatically for you. This is coming soon!
  
  * An user interface (UI) is coming to allow non-technical users, such as Email Marketers and Email Product Managers to set up and manage A/B tests and get results. 
  
- * Current functionality only supports single-recipient Transmissions REST API calls using stored templates. Multiple recipient Transmissions calls that attempt to call an A/B Test will get an error. A/B testing is not supported for SMTP API, nor for inline-templates.
+ * Current functionality only supports single-recipient Transmissions API calls using stored templates. Multiple recipient Transmissions calls that attempt to call an A/B Test will get an error. A/B testing is not supported for SMTP API or inline templates.
 
 
