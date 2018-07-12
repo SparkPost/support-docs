@@ -3,6 +3,11 @@ title: "SparkPost Change Log"
 description: "A running log of what's new, what's been fixed, and what's been changed in SparkPost."
 ---
 
+## July 12, 2018  
+### What’s New?
+
+* **Changes in the UI:** we've introduced a new **Admin Bounces** view in the Bounce report
+
 ## July 7, 2018  
 ### What’s New?
 
