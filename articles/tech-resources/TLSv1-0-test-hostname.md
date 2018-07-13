@@ -65,7 +65,7 @@ If you're unable to connect to the no-tlsv1 enpoints, you probably need to upgra
 Depending on your system, you might have to upgrade the version of the programming language used to call SparkPost or other components of your server.
 Here are some common cases that could solve the issue:
 
-#### OppenSSL
+#### OpenSSL
 Upgrade your OppenSSL (or equivalent TLS implementation) to a version that supports TLS 1.2.
 
 #### Python
