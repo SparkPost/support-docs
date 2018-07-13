@@ -9,7 +9,7 @@ and processes which leverage our REST API and SMTP services.
 The hostname is configured to reject TLSv1.0 connections,
 and therefore can be used to verify your processes are using TLSv1.1 or higher.
 
-These hostnames will be removed after June 30, 2018, when TLSv1.0 has been fully deprecated.
+These hostnames will be removed after July 23, 2018, when TLSv1.0 has been fully deprecated.
 Please note that these hostnames are not intended to support production traffic.
 
 The hostname can be accessed by adding "no-tlsv1-test-" as a prefix to the current hostname.
