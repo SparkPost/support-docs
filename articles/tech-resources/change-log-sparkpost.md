@@ -6,7 +6,7 @@ description: "A running log of what's new, what's been fixed, and what's been ch
 ## July 23, 2018  
 ### What’s New?
 
-* As previously communicated via email, we will deprecate TLSv1.0 on July 23. Any messages connecting to SparkPost's API that are not using TLSv1.1 or higher will fail with an authentication error. We have made test endpoints available and they are described in this [article](https://www.sparkpost.com/docs/tech-resources/tlsv1-0-test-hostname/)
+* As previously communicated via email, we will deprecate TLSv1.0 on July 23. Any messages connecting to SparkPost's API that are not using TLSv1.1 or higher will fail with an authentication error. We have made test endpoints available and they are described in this [article](https://www.sparkpost.com/docs/tech-resources/tlsv1-0-test-hostname/).
 
 ## July 12, 2018  
 ### What’s New?
