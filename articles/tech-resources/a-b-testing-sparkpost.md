@@ -13,6 +13,13 @@ A/B testing is a means of determining what content drives more engagement (great
 
 Many studies have shown that doing A/B testing on email content (vs. not doing any testing) can lift open rates by 13% or more. The following is a step by step guide to A/B Testing on SparkPost to get you started. Note that enhancements are coming over the months ahead (see below) - so please give us feedback on what you would like to see improved in our [Beta Program](https://www.sparkpost.com/sparkpost-beta-tester/).
 
+
+**Modes of A/B tesing**
+
+There are two supported modes of behavior selection once the A/B test completes. In "learning" mode, once the test has completed, subsequent transmissions will revert to using the default template. In "bayesian" mode, the best performing template (the "winner"), as determined by a Bayesian algorithm, will be used in all subsequent transmissions.
+
+You can think of learning mode as a more manual means of doing A/B testing, leaving the decision of which template is the winner entirely up to you, whereas bayesian mode is intended to be an automated means of testing, where an algorithm determines the winner automatically once a given confidence interval has been reached (unless this confidence interval has not been reached by the time the test ends, at which point the default template will be considered the "winner").
+
 **Creation and review of A/B testing through the API** 
 
 Please refer to the [A/B testing API documentation](https://developers.sparkpost.com/api/ab-testing.html) for specifics on how to create and retrieve A/B test results. As a basic flow:
@@ -130,7 +137,7 @@ PUT /api/v1/ab-test/:id,
 
 **Planned enhancements and known limitations**
 
- *  The current "Learning Mode" does not automatically pick a winner. It provides real-time results via webhooks to allow users to analyze the results and make a determination which template is the best based on open or click rates. It is then a separate call to the A/B Testing API to change the default template to be the winning template. The next enhancement is the introduction of a statistical model in Bayesian Mode that will pick the winner automatically for you. This is coming soon!
+ *  "Learning Mode" does not automatically pick a winner. It provides real-time results via webhooks to allow users to analyze the results and make a determination which template is the best based on open or click rates. It is then a separate call to the A/B Testing API to change the default template to be the winning template.
  
  * An user interface (UI) is coming to allow non-technical users, such as Email Marketers and Email Product Managers to set up and manage A/B tests and get results. 
  
