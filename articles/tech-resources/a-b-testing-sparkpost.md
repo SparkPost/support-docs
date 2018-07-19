@@ -44,13 +44,13 @@ A/B testing of email is not immediate - it takes some amount of time for opens a
 
 An A/B Test can be in one of the following states:
 
-*1. Draft State* — only the name, Test ID, and default template are required (no variant templates set). If called in the Transmissions API, the “default template” will be delivered to recipients.
+*1. Draft State* — only the name, Test ID, and default template are required (no variant templates set). If called in the Transmissions API, the default template will be delivered to recipients.
 
-To change the default template when the A/B Test is in a Draft State:
-
-PUT /api/v1/ab-test/draft/:id
+To change the default template when the A/B Test is in a "draft" state:
 
 ```
+PUT /api/v1/ab-test/draft/:id
+
 {
   "default_template": {
     "template_id": "new_template_id" 
@@ -58,37 +58,60 @@ PUT /api/v1/ab-test/draft/:id
 }
 ```
 
+*2. Scheduled State* — An A/B test with start time, variant templates, and all the other parameters set in order to run an A/B test. If called in the Transmissions API, the default template will be delivered to recipients until the start time arrives.
 
-1. Scheduled State — An A/B test with start time, variant templates, and all the other parameters set in order to run an A/B test. If called in the Transmissions API, the default template will be delivered to recipients until the start time arrives.
+To change the default template when the A/B Test is in a "scheduled" state:
 
-To change the default template when the A/B Test is in a Scheduled State:
-    PUT /api/v1/ab-test/:{id},
-                   {"default_template": {"template_id": "new_template_id" }}
-
-
-1. Running State — An A/B Test is running with the template variants or default template being sent to recipients according to the test instructions.
-
-To change the default template when the A/B Test is in a Running State, the test must be cancelled first, which will put it into the Cancelled State.
-
-*1. Cancelled State* — An A/B Test that was cancelled by the user. If called in the Transmissions API, the “default template” that was defined at the beginning of the test is being sent to recipients.
-
-To change the default template when the A/B Test is in a Cancelled State:
-  PUT /api/v1/ab-test/draft/:id,
-                   {"default_template": {"template_id": "new_template_id" }}
+```
+PUT /api/v1/ab-test/:{id},
     
-Note that the A/B Test will go into Draft State, and the version will be incremented
+{
+   "default_template": {
+     "template_id": "new_template_id" 
+   }
+}
+```
 
-NOTE: The following will also work, however requires a valid start time and other A/B Test parameters:
+*3. Running State* — An A/B Test is running with the template variants or default template being sent to recipients according to the test instructions.
+
+To change the default template when the A/B Test is in a "running" state, the test must be cancelled first, which will put it into the "cancelled" state.
+
+*4. Cancelled State* — An A/B Test that was cancelled by the user. If called in the Transmissions API, the default template that was defined at the beginning of the test will be sent to recipients.
+
+To change the default template when the A/B Test is in a "cancelled" state:
+
+```
+PUT /api/v1/ab-test/draft/:id,
+
+{
+   "default_template": {
+     "template_id": "new_template_id" 
+   }
+}
+```                  
+    
+Note that the A/B Test will go into "draft" state, and the version will be incremented accordingly.
+
+NOTE: The following will also work but requires a valid start time and other A/B Test parameters:
 PUT /api/v1/ab-test/:id,
               	{"default_template": {"template_id": "new_template_id" }}
 
-1. Completed State — An A/B Test reached its end time+engagement timeout or required sample size. If called in the Transmissions API, either the winning template ID (if there was a winner) or the default template id (if there was no winner) is being sent to recipients.
+*5. Completed State* — An A/B Test reached its end time + engagement timeout or required sample size. If called in the Transmissions API, either the winning template ID (if there was a winner) or the default template ID (if there was no winner) will be sent to recipients.
 
-To change the default template or the winning template when the A/B Test is in a Completed State:
-  PUT /api/v1/ab-test/draft/:id,
-                   {"default_template": {"template_id": "new_template_id" }}
-    
-    Note that  the A/B Test will go into Draft State, and the version will be incremented
+To change the default template or the winning template when the A/B Test is in a "completed" state:
+
+```
+PUT /api/v1/ab-test/draft/:id,
+
+{
+   "default_template": {
+     "template_id": "new_template_id" 
+   }
+}
+```
+
+Note that the A/B Test will go into "draft" state, and the version will be incremented accordingly.
+
 
 NOTE: The following will also work, however requires a valid start time and other A/B Test parameters:
 PUT /api/v1/ab-test/:id,
