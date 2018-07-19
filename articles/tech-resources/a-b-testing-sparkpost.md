@@ -40,6 +40,60 @@ You can review your results using webhooks or via the Message Events API. For tr
 
 A/B testing of email is not immediate - it takes some amount of time for opens and clicks to occur as recipients open their messages over time. Because of this, we've built in something called the "Engagement Timeout" - the amount of time, in hours, that a test waits to collect results after the `end_time` to make a decision on a winner and/or mark a test as completed. By default, this is set to 24 hours, but you can lengthen or shorten it to your needs. However, keep in mind that a test can run for 30 days total including the engagement timeout, so if you don't set an end time explicitly, the system will set an end time that is 30 days minus the engagement timeout. 
 
+**A/B testing states**
+
+An A/B Test can be in one of the following states:
+
+Draft State — only the name, Test ID, and default template are required. If called in the Transmissions API, the “default template” will be delivered to recipients.
+
+To change the default template when the A/B Test is in a Draft State:
+
+PUT /api/v1/ab-test/draft/:id
+
+```
+{
+  "default_template": {
+    "template_id": "new_template_id" 
+   }
+}
+```
+
+
+Scheduled State — Start time, variant templates, and all the other parameters in order to run an A/B test. If called in the Transmissions API, the “default template” will be delivered to recipients until the “start time” arrives.
+
+To change the default template when the A/B Test is in a Scheduled State:
+    PUT /api/v1/ab-test/:{id},
+                   {"default_template": {"template_id": "new_template_id" }}
+
+
+Running State — An A/B Test is running with the template variants or default template being sent to recipients according to the test instructions.
+
+To change the default template when the A/B Test is in a Running State, the test must be cancelled first, which will put it into the Cancelled State.
+
+Cancelled State — An A/B Test that was cancelled by the user. If called in the Transmissions API, the “default template” that was defined at the beginning of the test is being sent to recipients.
+
+To change the default template when the A/B Test is in a Cancelled State:
+  PUT /api/v1/ab-test/draft/:id,
+                   {"default_template": {"template_id": "new_template_id" }}
+    
+    Note that the A/B Test will go into Draft State, and the version will be incremented
+
+NOTE: The following will also work, however requires a valid start time and other A/B Test parameters:
+PUT /api/v1/ab-test/:id,
+              	{"default_template": {"template_id": "new_template_id" }}
+
+Completed State — An A/B Test reached its end time+engagement timeout or required sample size. If called in the Transmissions API, either the winning template ID (if there was a winner) or the default template id (if there was no winner) is being sent to recipients.
+
+To change the default template or the winning template when the A/B Test is in a Completed State:
+  PUT /api/v1/ab-test/draft/:id,
+                   {"default_template": {"template_id": "new_template_id" }}
+    
+    Note that  the A/B Test will go into Draft State, and the version will be incremented
+
+NOTE: The following will also work, however requires a valid start time and other A/B Test parameters:
+PUT /api/v1/ab-test/:id,
+              	{"default_template": {"template_id": "new_template_id" }}
+
 
 **Best practices for A/B testing**
 
@@ -51,7 +105,7 @@ A/B testing of email is not immediate - it takes some amount of time for opens a
   * Offer language/different offers
   * Header image 
 
-**Planned Enhancements and known limitations**
+**Planned enhancements and known limitations**
 
  *  The current "Learning Mode" does not automatically pick a winner. It provides real-time results via webhooks to allow users to analyze the results and make a determination which template is the best based on open or click rates. It is then a separate call to the A/B Testing API to change the default template to be the winning template. The next enhancement is the introduction of a statistical model in Bayesian Mode that will pick the winner automatically for you. This is coming soon!
  
