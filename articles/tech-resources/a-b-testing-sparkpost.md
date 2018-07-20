@@ -56,7 +56,7 @@ An A/B Test can be in one of the following states:
 To change the default template when the A/B Test is in a "draft" state:
 
 ```
-PUT /api/v1/ab-test/draft/:id
+PUT /api/v1/ab-test/draft/{id}
 
 {
   "default_template": {
@@ -70,7 +70,7 @@ PUT /api/v1/ab-test/draft/:id
 To change the default template when the A/B Test is in a "scheduled" state:
 
 ```
-PUT /api/v1/ab-test/:{id},
+PUT /api/v1/ab-test/{id}
     
 {
    "default_template": {
@@ -88,7 +88,7 @@ To change the default template when the A/B Test is in a "running" state, the te
 To change the default template when the A/B Test is in a "cancelled" state:
 
 ```
-PUT /api/v1/ab-test/draft/:id,
+PUT /api/v1/ab-test/draft/{id}
 
 {
    "default_template": {
@@ -97,18 +97,43 @@ PUT /api/v1/ab-test/draft/:id,
 }
 ```                  
     
-Note that the A/B Test will go into "draft" state, and the version will be incremented accordingly.
+Note that the A/B Test will go into "draft" state, and the version will be incremented accordingly. The following will also work, but requires a valid start time and other A/B Test parameters:
 
-NOTE: The following will also work but requires a valid start time and other A/B Test parameters:
-PUT /api/v1/ab-test/:id,
-              	{"default_template": {"template_id": "new_template_id" }}
+```
+PUT /api/v1/ab-test/{id}
+
+{
+  "name": "Password Reset!",
+  "metric": "count_unique_confirmed_opened",
+  "start_time": "2018-07-20T19:50:00.000Z",
+  "end_time": "2018-07-22T18:00:00.000Z",
+  "test_mode": "bayesian",
+  "audience_selection": "percent",
+  "engagement_timeout": 24,
+  "confidence_level": 0.95,
+  "default_template": {
+    "template_id": "default_payment_confirmation_template",
+    "percent": 50
+  },
+  "variants": [
+    {
+      "template_id": "payment_confirmation_variant1",
+      "percent": 25
+    },
+    {
+      "template_id": "payment_confirmation_variant2",
+      "percent": 25
+    }
+  ]
+}
+```
 
 *5. Completed State* — An A/B Test reached its end time + engagement timeout or required sample size. If called in the Transmissions API, either the winning template ID (if there was a winner) or the default template ID (if there was no winner) will be sent to recipients.
 
 To change the default template or the winning template when the A/B Test is in a "completed" state:
 
 ```
-PUT /api/v1/ab-test/draft/:id,
+PUT /api/v1/ab-test/draft/{id}
 
 {
    "default_template": {
@@ -117,13 +142,37 @@ PUT /api/v1/ab-test/draft/:id,
 }
 ```
 
-Note that the A/B Test will go into "draft" state, and the version will be incremented accordingly.
+Note that the A/B Test will go into "draft" state, and the version will be incremented accordingly. The following will also work, but requires a valid start time and other A/B Test parameters:
 
+```
+PUT /api/v1/ab-test/{id}
 
-NOTE: The following will also work, however requires a valid start time and other A/B Test parameters:
-PUT /api/v1/ab-test/:id,
-              	{"default_template": {"template_id": "new_template_id" }}
-
+{
+  "name": "Password Reset!",
+  "metric": "count_unique_confirmed_opened",
+  "start_time": "2018-07-20T19:50:00.000Z",
+  "end_time": "2018-07-22T18:00:00.000Z",
+  "test_mode": "bayesian",
+  "audience_selection": "sample_size",
+  "total_sample_size": 10000,
+  "engagement_timeout": 24,
+  "confidence_level": 0.95,
+  "default_template": {
+    "template_id": "default_payment_confirmation_template",
+    "sample_size": 5000
+  },
+  "variants": [
+    {
+      "template_id": "payment_confirmation_variant1",
+      "sample_size": 2500
+    },
+    {
+      "template_id": "payment_confirmation_variant2",
+      "sample_size": 2500
+    }
+  ]
+}
+```
 
 **Best practices for A/B testing**
 
