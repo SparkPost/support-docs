@@ -185,11 +185,7 @@ PUT /api/v1/ab-test/{id}
   * Header image 
 
 **Planned enhancements and known limitations**
-
- *  "Learning Mode" does not automatically pick a winner. It provides real-time results via webhooks to allow users to analyze the results and make a determination which template is the best based on open or click rates. It is then a separate call to the A/B Testing API to change the default template to be the winning template.
  
  * An user interface (UI) is coming to allow non-technical users, such as Email Marketers and Email Product Managers to set up and manage A/B tests and get results. 
  
  * Current functionality only supports single-recipient Transmissions API calls using stored templates. Multiple recipient Transmissions calls that attempt to call an A/B Test will get an error. A/B testing is not supported for SMTP API or inline templates.
-
-
