@@ -28,7 +28,7 @@ The combination of SparkPost’s `rendered` and `initial_rendered` metrics provi
 
 In order for the initial open pixel to function correctly, your content _must_ include both valid HTML and BODY tags.
 
-To enable/disable the feature, set the `initial_open_pixel_tracking` string in the `options` object to `false` or `true`. For example, to turn the initial open pixel off:
+To enable/disable the feature, set the `initial_open_pixel_tracking` string in the `options` object to `false` or `true` at the account API endpoint. For example, to turn the initial open pixel off:
 
 ```PUT /api/v1/account
 {
