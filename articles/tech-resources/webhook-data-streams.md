@@ -28,4 +28,5 @@ Generally speaking, four events are recorded for each message: injection, delive
 
 ## ​Monitoring Webhooks
 
-If you have issues with your webhooks, it would be wise to monitor them either on your endpoint, or via the batch-status API, which is detailed [here](https://developers.sparkpost.com/api/webhooks#webhooks-batch-status-get). This will help inform you if there is a problem with the webhooks so it can be remedied before batches hit the 8 hour limit as described in the retry logic above.
+If you have issues with your webhooks, it would be wise to monitor them either on your endpoint, or via the batch-status API, which is detailed [here](https://developers.sparkpost.com/api/webhooks#webhooks-batch-status-get), or on the webhhok details / Batch Status tab on the UI. This will help inform you if there is a problem with the webhooks so it can be remedied before batches hit the 8 hour limit as described in the retry logic above.
+Note that batch status (via both app and the API) does not report batches that succeeded first time. It reports only failed batches, and batches that initially failed but later succeeded. The batch status is kept for a few days.
