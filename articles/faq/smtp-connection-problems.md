@@ -9,7 +9,7 @@ If you are having problems connecting to SparkPost over SMTP, here's a checklist
 * The port should be 587
 * Alternately, port 2525 can be used in environments where port 587 is blocked (such as Google Compute Engine).
 * You need to use `AUTH LOGIN` as the authentication approach
-* You need to connect using TLS (STARTTLS)
+* You need to connect using TLSv1.1 or TLSv1.2* (STARTTLS)
 * The username should be `SMTP_Injection`
 * The password should be an API key you created from your SparkPost account
 * Your API key must have the 'Send via SMTP' permission enabled
@@ -25,3 +25,6 @@ If you do not receive the test messages, check your [SparkPost Summary](https://
 If they do not show up on the [Summary report](https://app.sparkpost.com/reports/summary), then there is an issue with getting the messages to SparkPost - check your configuration of your front-end again.  
 
 If the messages are shown as received on SparkPost but you did **not receive the test messages** on your test email addresses, check the [Bounce report](https://app.sparkpost.com/reports/bounces) to see why the messages might have been rejected (for example, being sent from an email address from a domain that has not yet been verified as a legitimate Sending Domain on your SparkPost Sending Domains report).
+
+Deprecating TLSv1.0
+[As previously announced](https://www.sparkpost.com/blog/tls-v1-0-deprecation/), we are deprecating TLSv1.0, in favor or TLSv1.1 and TLSv1.2. As of Monday July 23rd, connections to the SparkPost API using TLSv1.0 will fail.
