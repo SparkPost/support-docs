@@ -63,9 +63,8 @@ Accept: application/json
 **You can also use the User Interface to manage the suppression list**
 Note: CSV upload with subaccounts will need individual files for upload.
 
-**![suppression list manual entry screenshot](media/using-suppression-lists/Screenshot_2016-07-21_16.17.48_original.png)**
+![suppression list manual entry screenshot](media/using-suppression-lists/add-suppression.png)
 
-![suppression list upload file screenshot](media/using-suppression-lists/Screenshot_2016-07-21_16.18.12_original.png)
 
 ## Suppression List Events and Error Messages
 

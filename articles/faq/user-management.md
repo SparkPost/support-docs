@@ -13,45 +13,43 @@ SparkPost provides the ability to add or delete additional users to your account
 
 The administrative user can invite colleagues to their account by completing the following steps:
 
-1. Click on the Add User button from the Account > Users screen. (Note: In the upper right hand corner of the screen).
+1. Click on **Invite User** from the Account > Users screen. (Note: In the upper right hand corner of the screen).
 	
-	![](media/user-management/basic_original.png)
+	![](media/user-management/users-page.png)
 
 2. Add the Email Address of the prospective user in the Email Address field. 
-3. Select Reporting from the Role drop down menu (Note: In a similar fashion you can add an administrator to your account).
-4. Click the Add User button to continue.
+3. Select the role you'd like the new user to have.
+4. Click **Add User** to continue.
 	
-	![](media/user-management/howtoadd_original.png)
+	![](media/user-management/add-user-form.png)
 
 5. This screen confirms that the invitation has been sent to the prospective user.
 	
-	![](media/user-management/invitationsent_original.png)
+	![](media/user-management/new-user-confirmation.png)
 
 6. The prospective user will receive a request similar to the email below.
 
-	![](media/user-management/email_original.png)
+	![](media/user-management/invitation-email.png)
 
 **Note**: The New User will be sent an invitation email to confirm acceptance. Once they confirm, they will be added in as a new user (Admin/reporting) in the UI. They MUST complete this step before they will be granted access to the UI in this role.
 
 **Confirmation**: User added to the SparkPost or SparkPost Enterprise Account
 
-Once the user has registered as a new user to your SparkPost or SparkPost Enterprise Account you will be able to confirm by seeing that their credentials have been added to the account. Below is an example confirming that "new user" has been added to the account. You can choose their role, either Administrator or Reporting, by using the pull down menu.
+Once the user has registered as a new user to your SparkPost or SparkPost Enterprise Account you will be able to confirm by seeing that their credentials have been added to the account. Below is an example confirming that "new user" has been added to the account. You can choose their role, either Administrator or Reporting, by using the drop down menu.
 
-![](media/user-management/newuseradded_original.png)
+![](media/user-management/users-list.png)
 
 ### Deleting a User from your Account 
 
-1. Click on the trash can icon to the right of the users name.
+1. Click on **Delete** to the right of the user's name.
 
-	![](media/user-management/circledelete_original.png)
+2. Click on **Delete** to confirm deletion.
 
-2. Click the Delete button.  (Note: Deletion of user is confirmed on the subsequent screen).
-
-	![](media/user-management/areyousure_original.png)
+	![](media/user-management/delete-user-confirmation.png)
 
 3. The subsequent screen example below confirms that the user was successfully deleted. 
 
-	![](media/user-management/userdeleted_original.png)
+	![](media/user-management/user-deleted.png)
 
 ### Users and API Keys 
 

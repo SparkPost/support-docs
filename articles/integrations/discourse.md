@@ -30,7 +30,7 @@ Choose the method that works best for you. View [this support article](https://w
 
 Visit the [API Keys](https://app.sparkpost.com/account/credentials) page and create an API key with the “Send via SMTP” permission:
 
-![](media/discourse/create-key.png)
+![](media/discourse/create-api-key.png)
 
 ## Install Discourse
 

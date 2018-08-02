@@ -31,13 +31,13 @@ The Header-Based Token method has been deprecated and is not available for new w
 
 The authentication method is set to "None" by default when creating a new webhook.  To configure either Basic Auth or OAuth 2.0, select the appropriate value from the "Authentication" drop-down list.  While using either authentication method is optional, we strongly encourage our customers to configure one of these two methods for their webhooks.
 
-![](media/webhook-authentication/Screenshot_2015-09-18_15.53.14_original.png) 
+![](media/webhook-authentication/webhook-no-auth.png) 
 
 **Basic Authentication**
 
 To configure HTTP Basic Auth, provide the username and password that your target URL uses. Remember that the "Basic Auth Username" and "Basic Auth Password" is not the same username and password used to log into SparkPost.
 
-![](media/webhook-authentication/screenshot-1_original.png) 
+![](media/webhook-authentication/webhook-basic-auth.png) 
 
 **OAuth 2.0**
 
@@ -46,7 +46,7 @@ To configure OAuth 2.0, you need to provide the following information:
 * OAuth2 Client ID and OAuth2 Client Secret (which is akin to username and password) that SparkPost will use to request the authentication token from your authorization server
 * OAuth2 Token URL i.e. the URL of the authorization server from which SparkPost will request the token
 
-![](media/webhook-authentication/screenshot-2_original.png)​
+![](media/webhook-authentication/webhook-auth2.png)​
 
 ## FAQ
 

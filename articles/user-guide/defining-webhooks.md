@@ -20,7 +20,7 @@ There are two ways to create a webhook in SparkPost: Using the [SparkPost Webho
 1.  [Login to SparkPost](https://app.sparkpost.com/)
 1.  Navigate to [Webhooks](https://app.sparkpost.com/#/configuration)
 1.  Click on the "New Webhook" button
-    ![New Webhook button in SparkPost](media/defining-webhooks/new-webhook-button-in-sparkpost.png)
+    ![Create webhook](media/defining-webhooks/create-webhook.png)
 1.  Set the following values:
     1.  **Webhook Name:**       human friendly name for your webhook
     1.  **Target URL**    : The URL where your webhook event consumer resides and the path to the event handler. Example: http[s]://your.domain.tld/webhook/event/handler
@@ -29,7 +29,7 @@ There are two ways to create a webhook in SparkPost: Using the [SparkPost Webho
         1.  All: The webhook will receive ALL events from ALL webhook categories
         1.  Select: You can choose which events you want to be sent to your webhook consumer
 1.  Click the Add Webhook button, and your webhook will be saved.
-    ![SparkPost webhook in the UI](media/defining-webhooks/sparkpost-webhook-in-the-ui.png)
-1.  If you want to test that the webhook is working, click the "Test" button.
-1.  If you want to modify your webhook, click the "Edit" button
-1.  If you want to delete this webook, click the trash can icon
+    ![SparkPost webhook in the UI](media/defining-webhooks/view-webhook-test.png)
+1.  If you want to test that the webhook is working, click the "Test" tab.
+1.  If you want to modify your webhook, click the "Setting" tab.
+1.  If you want to delete this webook, click **Delete**.

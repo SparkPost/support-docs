@@ -27,53 +27,33 @@ Creating a template using the SparkPost UI is simple. To get started, let's go s
 
 1. **Open the templates view:** Click on "Templates" in the main SparkPost navigation.
 
-    ![Templates navigation element](media/creating-template/new-template-button.png)
-
 1. **Make a new template:** Click on the "New Template" button to open the SparkPost template editor.
 
-    ![Create New Template button](media/creating-template/templates-button.png)
+    ![Create New Template top](media/creating-template/create-a-template-top.png)
 
 1. **Name your template:** Input a human-friendly name for your template in the "Template Name" field. This field will *not* be displayed to recipients.
 
-    ![](media/creating-template/new-template-name-highlight.png)
-
 1. **Provide an ID for your template [optional]:** Input an ID for your template (note that if you do not provide an ID, SparkPost will create an ID for you). This field will *not* be displayed to recipients and is used to help remind you of the purpose of the template. *Note: The template ID is used when referencing the template via the API - When using a given template for an outbound message, you will reference the template ID, not the template name itself.
-
-    ![](media/creating-template/new-template-ID-highlight.jpg)
     
 1. **Define subaccount usage of the template:** Choose whether or not to share this template with subaccounts by clicking the checkbox titled "Share with all subaccounts". If a master account creates a template and does not elect to share it with subaccounts, only the master account may use that template. If the template is shared with all subaccounts, every subaccount has access to use the template, but only the master account has edit permissions. If the master account creates a template on behalf of a subaccount and assigns it to a single subaccount, both the master account and subaccount can use and edit that template.
 
-Read more about using subaccounts in SparkPost [here](https://www.sparkpost.com/docs/user-guide/subaccounts/).
-
-    ![](media/creating-template/new-template-subaccount-highlight.jpg)    
-
-1. **Define the from name of the template:** Input the from name to be used in the template. This is the name displayed in your recipient's email client, often called the "friendly from".
-
-    ![](media/creating-template/new-template-fromname-highlight.jpg)
-
-1. **Define the from email of the template:** Input the full email address this template will be sent from. This is often displayed next to the from name (friendly from) in most mail clients.
-
-    ![](media/creating-template/new-template-from-email-highlight.jpg)
-    
-1. **Define the reply to of the template:** Input the reply to address of the template. If a recipient chooses to reply to a message sent using this template, this is the address that will be used as the reply to.
-
-    ![](media/creating-template/new-template-reply-to-highlight.jpg)    
+    Read more about using subaccounts in SparkPost [here](https://www.sparkpost.com/docs/user-guide/subaccounts/).
 
 1. **Define the subject of the template:** Input the subject line of the template that will appear in your recipient's mail client.
 
-    ![](media/creating-template/new-template-subject-highlight.jpg)
+1. **Define the from name of the template:** Input the from name to be used in the template. This is the name displayed in your recipient's email client, often called the "friendly from".
+
+1. **Define the from email of the template:** Input the full email address this template will be sent from. This is often displayed next to the from name (friendly from) in most mail clients.
+    
+1. **Define the reply to of the template:** Input the reply to address of the template. If a recipient chooses to reply to a message sent using this template, this is the address that will be used as the reply to.
+    
+    ![Create New Template bottom](media/creating-template/create-a-template-bottom.png)
 
 1. **Provide a description of the template:** Input a description of this email. This field will NOT appear to your recipients and is used to help remind you of the purpose of the template.
 
-    ![](media/creating-template/new-template-description-highlight.jpg)
-
 1. **Choose engagement tracking options:** If you would like this template to have open and click tracking enabled, click on either of these buttons. Orange is enabled, and grey is disabled.
-
-    ![](media/creating-template/new-template-engagement-tracking-highlight.jpg)
     
 1. **Choose transactional message options:** Choose whether to mark this template as a transactional message. Orange is enabled, grey is disabled (and therefore "non_transactional".) Appropriately categorizing your templates is important because both "transactional" and "non-transactional" templates have separate suppression lists. For more information on suppression lists, see this article [here](https://www.sparkpost.com/docs/user-guide/using-suppression-lists/).
-
-    ![](media/creating-template/new-template-transactional-message-highlight.jpg)    
 
 1. **Define the content of the template:**
     * **[Creating HTML Content](https://www.sparkpost.com/docs/getting-started/creating-template/#authoring-html-content-for-your-templates)**
@@ -86,11 +66,9 @@ At this point, we are *technically* done with our template and we could "Save"
 
 To test an email, you simply make sure all the above steps are completed and then click the "Preview" button. This allows you to view your email template.
 
-![](media/creating-template/new-template-preview-and-send.jpg)
-
 To send yourself (or approvers) a test transmission of your email template, enter the email addresses (comma separated) into the "To" field and click on the "Send Email" button.
 
-![](media/creating-template/new-send-test-highlight.png)
+![](media/creating-template/preview-and-send.png)
 
 **Please be aware that sending a test email is an actual transmission (make sure you don't have any LIVE customer email addresses in the "To" field).**
 

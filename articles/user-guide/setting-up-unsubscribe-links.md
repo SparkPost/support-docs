@@ -46,7 +46,7 @@ Our [Suppression List API](https://www.sparkpost.com/api#/reference/suppression-
 
 #### In the SparkPost UI
 
-![webhooks UI screenshot](media/setting-up-unsubscribe-links/sp_ui_webhooks_unsub_original.png)
+![Create a webhook for unsubscribe events](media/setting-up-unsubscribe-links/selected-webhook-events.png)
 
 * [Creating a Webhook using the API](https://developers.sparkpost.com/api/webhooks.html#webhooks-create-post)
 * [Updating an existing Webhook using the API](https://developers.sparkpost.com/api/webhooks.html#webhooks-update-and-delete-put)
