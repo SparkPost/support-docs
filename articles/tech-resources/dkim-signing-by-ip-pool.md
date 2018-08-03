@@ -107,7 +107,7 @@ With the above configuration set, any message sent to a Yahoo recipient out of t
 
 Several new fields have been added to message events with respect to the use of DKIM signing by IP pool. They are as follows:
 
-Event String | Definition | Included Events | Potential Values
+Event String | Definition | Potential Values | Included Events
 ------------ | ------------- | ------------- | -------------
-`dkim_signed` | Indicates the source of the domain information used for DKIM signing. | "sending_domain", "ip_pool", "shared_pool", "sandbox", or "fallback"
+`dkim_signed` | Indicates the source of the domain information used for DKIM signing. | `sending_domain`, `ip_pool`, `shared_pool`, `sandbox`, or `fallback` | `reception`, `delivery`, `delay` and `bounce`
 Content in the first column | Content in the second column
