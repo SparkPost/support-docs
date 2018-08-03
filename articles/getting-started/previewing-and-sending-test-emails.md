@@ -108,11 +108,11 @@ Once you have your completed template content and have provided the substitution
 
 ## To Send a Test Email in Preview
 
-Both sparkpost.com and SparkPost Enterprise allow you to set substitution_data, metadata, and options values in the test data screen (accessed by clicking on the "*TEST DATA*" button). For sparkpost.com users, none of these fields are required to send a test message and are optional. For SparkPost Enterprise users, however, you **MUST** provide a valid binding group name already configured on your system in order for the test message to be sent. Sparkpost.com users have the option of setting an ip_pool to be used by the test message if desired nested in the options object. The screenshot below illustrates both use cases; please note that the capitalized sentences highlight which key value pairs align with the given service.
+You have the option to set `substitution_data`, `metadata`, and `options` values in the test data screen (accessed by clicking on the "*TEST DATA*" button). SparkPost Enterprise users **MUST** provide a configured `binding_group` name in the `options` object, in order for the test emails to be sent.
 
 ![](media/previewing-and-sending-test-emails/substitution-data.png)
 
-While you have the Preview window still open (viewing your rendered template with substitution data) you can enter up to five (5) email addresses in the "To" field. Then click the "Send Email" button, and your email will be sent to those addresses. You can see an example screenshot below of the preview I.
+While you have the Preview window still open (viewing your rendered template with substitution data) you can enter up to five (5) email addresses in the "To" field. Then click the "Send Email" button, and your email will be sent to those addresses. You can see an example screenshot below of the preview.
 
 ![Example of the Preview mode of Sparkpost being used to send a test transmission](media/previewing-and-sending-test-emails/preview-send.png)
 

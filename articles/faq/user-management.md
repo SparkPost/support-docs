@@ -13,7 +13,7 @@ SparkPost provides the ability to add or delete additional users to your account
 
 The administrative user can invite colleagues to their account by completing the following steps:
 
-1. Click on **Invite User** from the Account > Users screen. (Note: In the upper right hand corner of the screen).
+1. Click on **Invite User** from the Account > [Manage Users](https://app.sparkpost.com/account/users) ([EU](https://app.sparkpost.com/account/users)) screen. (Note: In the upper right hand corner of the screen).
 	
 	![](media/user-management/users-page.png)
 
