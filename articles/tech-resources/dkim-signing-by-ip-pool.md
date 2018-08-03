@@ -110,4 +110,5 @@ Several new fields have been added to message events with respect to the use of 
 Event String | Definition | Potential Values | Included Events
 ------------ | ------------- | ------------- | -------------
 `dkim_signed` | Indicates the source of the domain information used for DKIM signing. | `sending_domain`, `ip_pool`, `shared_pool`, `sandbox`, or `fallback` | `reception`, `delivery`, `delay` and `bounce`
-Content in the first column | Content in the second column
+`fbl_dkim_signed` | Indicates the domain (`d=`) used for fbl DKIM signing. | `sending_domain`, `ip_pool`, `shared_pool`, `sandbox`, or `fallback`| `reception`, `delivery`, `delay` and `bounce`
+`dkim_signing_failed` | Indicates that the message had no DKIM signature added. | If present, value is `1`. | `reception`, `delivery`, `delay` and `bounce`
