@@ -3,7 +3,7 @@ title: "A/B Testing in SparkPost"
 description: "A B Testing in Spark Post An A B test in summary is a common method of comparing templates to see which one performs better Spark Post provides the means to create new A B tests and view completed results through our A B Testing API What benefits do I..."
 ---
 
-### A/B Testing in SparkPost 
+## A/B Testing in SparkPost 
 
 A/B testing is a common method of comparing templates to see which one performs better. SparkPost provides the means to create A/B tests and view completed results through our A/B Testing API.
 
@@ -47,7 +47,7 @@ You can review your results using webhooks or via the Message Events API. For tr
 
 A/B testing of email is not immediate - it takes some amount of time for opens and clicks to occur as recipients open their messages over time. Because of this, we've built in something called the "Engagement Timeout" - the amount of time, in hours, that a test waits to collect results after the `end_time` to make a decision on a winner and/or mark a test as completed. By default, this is set to 24 hours, but you can lengthen or shorten it to your needs. However, keep in mind that a test can run for 30 days total including the engagement timeout, so if you don't set an end time explicitly, the system will set an end time that is 30 days minus the engagement timeout. 
 
-**A/B testing states**
+## A/B testing states
 
 An A/B Test can be in one of the following states:
 
