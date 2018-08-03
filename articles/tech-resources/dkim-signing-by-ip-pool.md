@@ -103,4 +103,8 @@ With the above configuration set, any message sent to a Yahoo recipient out of t
 <br>
 <br>
 
+## New Message Event Fields ##
 
+Several new fields have been added to message events with respect to the use of DKIM signing by IP pool. They are as follows:
+
+1. *dkim_signed* 
