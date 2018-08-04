@@ -3,6 +3,12 @@ import CMS from 'netlify-cms'
 import path from 'path'
 import markdownToHtml from './markdownToHtml'
 import { collections } from '../admin/config.yml'
+import fs from 'fs'
+
+const css = fs.readFileSync(`${__dirname}/article.css`, 'utf8')
+
+
+console.log(css)
 
 const Article = ({ entry, getAsset }) => {
   const base = path.dirname(entry.getIn(['path']))
@@ -38,5 +44,5 @@ collections.forEach(({ name }) => {
   CMS.registerPreviewTemplate(name, Article)  
 })
 
-// in admin/article.css
-CMS.registerPreviewStyle("/article.css")
+// add the styles for it
+CMS.registerPreviewStyle(css, { raw: true })
