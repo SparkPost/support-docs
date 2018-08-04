@@ -8,8 +8,6 @@ import fs from 'fs'
 const css = fs.readFileSync(`${__dirname}/article.css`, 'utf8')
 
 
-console.log(css)
-
 const Article = ({ entry, getAsset }) => {
   const base = path.dirname(entry.getIn(['path']))
   const title = entry.getIn(['data', 'title'])
