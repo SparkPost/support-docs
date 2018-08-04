@@ -2,3 +2,8 @@ node_modules
 deploy-key
 .DS_Store
 .idea
+.cache
+# Ignore all admin files except config.yml and article.css
+cms/admin/*
+!config.yml
+!article.css
