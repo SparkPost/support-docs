@@ -49,13 +49,13 @@ Note: SparkPost's Compliance team expect to see a [legitimate web presence](http
 
 If you didn't create a sending domain during your sign up process, you can [add one now in the SparkPost app](https://app.sparkpost.com/account/sending-domains/add) ([EU](https://app.eu.sparkpost.com/account/sending-domains/add)). If you already added a domain, visit the [Sending Domains page](https://app.sparkpost.com/account/sending-domains) ([EU](https://app.eu.sparkpost.com/account/sending-domains)) to find your existing domain and click "View Settings" to complete the domain set up. In both cases, you should now be on your domain's edit page and see that it has a status of "Unverified".
 
-![Editing domain settings](media/getting-started-sparkpost/domain-edit-screen.png)
+![Editing domain settings](media/getting-started-sparkpost/domain-edit-page.png)
 
 ### Sending Domain Step 2: Verifying Domain Ownership
 
 Before you can send mail using your sending domain, SparkPost needs to verify that you own it. Adding a DNS record to your domain is the recommended way to complete this verification. The edit screen, under _Set Up For Sending_, shows a TXT record value along with a funny-looking hostname where SparkPost expects to find that TXT record. For example, the demo hostname shown below is `scph0717._domainkey.mail.example.com` and the value of the TXT record begins with "v=DKIM1;".
 
-![Domain DNS verification section](media/getting-started-sparkpost/domain-verification.png)
+![Domain DNS verification section](media/getting-started-sparkpost/domain-verification-section.png)
 
 
 Once you've set up the DNS TXT record, come back to the edit screen and click "Verify TXT Record". Unfortunately, some DNS records take longer to update than others, so you may have to try this a few times or, in rare cases, come back up to 24 hours later and click "Verify TXT Record" again. If you want, you can check to see if the DNS value has updated using a service like [Whats My DNS](https://whatsmydns.net). Just be sure to use the correct hostname there, too.
@@ -81,7 +81,7 @@ Here are some how-to documents for editing DNS records with common DNS providers
 
 Once your DNS record has been found, your domain's status will change to "Pending". This means the domain has been picked up by our final review process which will verify that the domain meets [our best practice requirements](https://www.sparkpost.com/docs/getting-started/requirements-for-sending-domains/#if-your-domain-is-blocked). This usually takes just a few minutes, but can sometimes take up to an hour. Once the review is complete, the domain's status will change to "Verified" and "Ready for: Sending" (and DKIM-signing if you set up your DKIM DNS record).
 
-![Ready to send](media/getting-started-sparkpost/ready-for.png)
+![Ready to send](media/getting-started-sparkpost/status-section.png)
 
 ## Important: Coming From Other Email Services
 
@@ -200,7 +200,7 @@ By default, SparkPost uses a generic bounce domain for your email, such as *spar
 
 To do this, visit [the Sending Domains page](https://app.sparkpost.com/account/sending-domains) ([EU](https://app.eu.sparkpost.com/account/sending-domains)) and either create a new domain or edit an existing sending domain. In either case, **you will need to edit DNS records to set up your bounce domain** (no other verification methods are available for bounce domain setup). Add the CNAME record with the value shown under _Set Up For Bounce_, click "Verify CNAME Record" (DNS updates can take up to 24 hours to complete, but are usually available within an hour), and the domain will show up as "Ready for: Bounce" (along with anything else it was already ready for).
 
-![Domain DNS verification section](media/getting-started-sparkpost/domain-verification.png)
+![Domain DNS verification section](media/getting-started-sparkpost/domain-verification-section.png)
 
 ### Tracking Domain
 
@@ -210,7 +210,7 @@ If you have click-tracking turned on, SparkPost will wrap each link in your emai
 
 You can use message events, metrics, and webhooks to keep track of your SparkPost account activity and email delivery performance. Metrics and message events are both available visually and through the SparkPost API, while webhooks offer an efficient way to have SparkPost push message events directly to your own app.
 
-![Summary report](media/getting-started-sparkpost/summary-report.png)
+![Summary report](media/getting-started-sparkpost/summary-report-section.png)
 
 <div align="center"><em>Summary report</em></div>
 

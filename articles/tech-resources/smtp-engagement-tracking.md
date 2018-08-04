@@ -5,11 +5,11 @@ description: "You can control your account’s default setting for tracking of m
 
 You can control your account’s default setting for tracking of messages submitted via SMTP to be enabled, or disabled.
 
-The option is in the Account / SMTP Relay page of your SparkPost user interface:
+The option is in the SMTP Settings page of your SparkPost user interface:
 
-![](media/smtp-engagement-tracking/engagement_tracking_original.jpg)
+![](media/smtp-engagement-tracking/smtp-engagement-tracking.png)
 
-Before you make a selection, the system default (Disabled) will apply to your account.  This is why there’s no radio button visible until you make a selection.
+Before you make a selection, the system default (Disabled) will apply to your account.
 
 If you have tracking disabled, then you won’t see “open” and “click” events in your event stream (whether via Webhooks, or via the Message Events API). 
 

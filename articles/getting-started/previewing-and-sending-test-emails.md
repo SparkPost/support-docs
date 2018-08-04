@@ -104,16 +104,16 @@ Click the "Save" button (for this example, so we can easily edit it if something
 
 Once you have your completed template content and have provided the substitution data, you can click the "Preview" button to view your template rendered with your test substitution data. Below is an example of a completed template.
 
-![Example completed template definition](media/previewing-and-sending-test-emails/example-completed-template-definition.png)
+![Example completed template definition](media/previewing-and-sending-test-emails/template-draft.png)
 
 ## To Send a Test Email in Preview
 
-Both sparkpost.com and SparkPost Enterprise allow you to set substitution_data, metadata, and options values in the test data screen (accessed by clicking on the "*</>TEST DATA*" button). For sparkpost.com users, none of these fields are required to send a test message and are optional. For SparkPost Enterprise users, however, you **MUST** provide a valid binding group name already configured on your system in order for the test message to be sent. Sparkpost.com users have the option of setting an ip_pool to be used by the test message if desired nested in the options object. The screenshot below illustrates both use cases; please note that the capitalized sentences highlight which key value pairs align with the given service.
+You have the option to set `substitution_data`, `metadata`, and `options` values in the test data screen (accessed by clicking on the "*TEST DATA*" button). SparkPost Enterprise users **MUST** provide a configured `binding_group` name in the `options` object, in order for the test emails to be sent.
 
-![](media/previewing-and-sending-test-emails/Screen_Shot_2016-11-14_at_12.26.14_PM_original.png)
+![](media/previewing-and-sending-test-emails/substitution-data.png)
 
-While you have the Preview window still open (viewing your rendered template with substitution data) you can enter up to five (5) email addresses in the "To" field (it is marked with a message that reads "For testing purposes only"). Then click the "Send Email" button, and your email will be sent to those addresses. You can see an example screenshot below of the preview window (I have added three email addresses to test send with in the example).
+While you have the Preview window still open (viewing your rendered template with substitution data) you can enter up to five (5) email addresses in the "To" field. Then click the "Send Email" button, and your email will be sent to those addresses. You can see an example screenshot below of the preview.
 
-![Example of the Preview mode of Sparkpost being used to send a test transmission](media/previewing-and-sending-test-emails/example-of-the-preview-mode-of-sparkpost-being-used-to-send-a-test-transmission.png)
+![Example of the Preview mode of Sparkpost being used to send a test transmission](media/previewing-and-sending-test-emails/preview-send.png)
 
 **BONUS FEATURE**: Sending test transmissions also generates **REAL** webhook events, so you can use it to test those as well.

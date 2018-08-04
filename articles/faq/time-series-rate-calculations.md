@@ -5,7 +5,7 @@ description: "Time series graphs on the summary page calculate most rate metrics
 
 Time series graphs on the summary page calculate most **rate** metrics against the number of targeted messages. Rolling your mouse cursor over a specific point in time on the graph will display the results exactly at that point in time. As an example, if you have previously sent out a mailing and have included click and open tracking options on those messages, clicks and opens/renders will continue to be registered after the mailing has completed, after there are no more messages being targeted. 
 
-![](media/time-series-rate-calculations/ratecalculations_original.png)
+![](media/time-series-rate-calculations/rate-calculations.png)
 
 This creates two scenarios in which rate calculations on the time series graph will not show correct data.
 
