@@ -1,7 +1,7 @@
 import remark from 'remark'
 import remarkHtml from 'remark-html'
 import visit from 'unist-util-visit'
-import path from 'path'
+import join from 'url-join'
 
 
 export default ({ markdown, base, getAsset }) => {
@@ -13,7 +13,7 @@ export default ({ markdown, base, getAsset }) => {
         if (url.includes('global_media')) {
           node.url = getAsset(url)
         } else {
-          node.url = path.join(
+          node.url = join(
             `https://raw.githubusercontent.com/SparkPost/support-docs/master/`,
             base,
             url
