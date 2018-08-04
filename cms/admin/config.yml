@@ -3,7 +3,7 @@ backend:
   repo: SparkPost/support-docs
   branch: cms
 publish_mode: editorial_workflow
-media_folder: /global_media
+media_folder: global_media
 collections: 
   - label: Billing
     name: billing
