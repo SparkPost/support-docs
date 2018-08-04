@@ -5,9 +5,8 @@ description: "This reporting tab showcases statistics surrounding messages that 
 
 This reporting tab showcases statistics surrounding messages that were accepted. With regard to the accepted rate, the higher the better!
 
-![](media/accepted/accepted_all_original.jpg)
+![](media/accepted/accepted-page.png)
 
-**Targeted:** The number of messages you sent SparkPost.
 
 **Sent**: The number of messages that have been delivered (or attempted to deliver) by SparkPost (includes multiple delivery attempts, including all In-Band Bounces).
 
@@ -20,11 +19,5 @@ This reporting tab showcases statistics surrounding messages that were accepted.
 **Average Message Size:** The size of your emails can impact the sending speed. Are they full of images and links? Do they have an attachment (not recommended)? Large emails can impact latency as well.
 
 **Accepted Rates:** As previously mentioned, SparkPost will retry emails if they don’t get an initial response from the recipient server. This is a really great tool to use if you are seeing latency and want to pinpoint if it’s coming from a particular recipient server.
-
-For instance, in the image below, we see a really good send.
-
-![](media/accepted/accepted2_original.jpeg)
-
-99.92% accepted occurred on the first attempt, which is quite good, and .08% accepted on the second to fifth attempt.
 
 You can also put a domain name in the search window, and it will show how many emails were accepted on the first attempt that way – for a more domain-centric look.

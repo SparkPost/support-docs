@@ -29,9 +29,7 @@ Once ownership of your domain has been verified through any one of the above met
 
 Once the review is complete and your sending domain passes the checks, your domain will be marked as "Verified" and ready for use (for sending, DKIM-signing, and/or bounce).
 
-![Ready to send icon](media/requirements-for-sending-domains/sending-domains-complete.png)
-
-![](media/requirements-for-sending-domains/sending-domains-UI.png)
+![Sending Domain verified](media/requirements-for-sending-domains/sending-domain-verified.png)
 
 ## If Your Domain Is Blocked...
 

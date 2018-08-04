@@ -69,7 +69,7 @@ Administrators within your business can create as many subaccounts as needed. Cr
 
 **Note**: You have the option to skip the initial creation of an API key when first creating a subaccount. This operation can be done via the UI or the API. The following is a screenshot of the UI skipping initial subaccount API key creation. Note the checkbox stating "create API key" is unchecked, which has removed all API key options from the UI.
 
-![subaccount api key option](media/subaccounts/apikey.png)
+![subaccount api key option](media/subaccounts/skip-api-key.png)
 
 For documentation on how to skip API key genration upon initial subaccount creation by using the "setup_api_key" boolean string, please click [here.](https://developers.sparkpost.com/api/subaccounts.html#subaccounts-subaccounts-collection-post)
 
@@ -77,7 +77,7 @@ For documentation on how to skip API key genration upon initial subaccount creat
 
 This is how subaccount creation appears in the UI:
 
-![subaccount create screenshot](media/subaccounts/subaccount-creation-UI.png)
+![subaccount create screenshot](media/subaccounts/create-subaccount-api-key.png)
 
 The following is a list of permissions supported for subaccount API keys:
 
@@ -182,14 +182,14 @@ The master account may create a webhook as the subaccount with the webhooks API 
 
 When creating new webhooks within the UI, leaving the subaccount field blank will cause the created webhook to contain all events for the account. When selecting Master Account, the webhook will only contain events for non-subaccounts. Selecting a subaccount will result in the webhook containing events from that subaccount only.
 
-![subaccount management for webhooks screenshot](media/subaccounts/Screen_Shot_2017-05-23_at_1.46.55_PM.png)
+![subaccount management for webhooks screenshot](media/subaccounts/webhook-for-subaccount.png)
 
 **Templates**
 
 
 The master account can create templates via the API and assign it to a single subaccount by using the X-MSYS-SUBACCOUNT HTTP header, or share it with all subaccounts using a master account API key. Templates can also be created on behalf of subaccounts using the SparkPost UI in the "Templates" page, as per the screenshot below:
 
-![subaccount management for templates screenshot](media/subaccounts/new-template-subaccount-highlight.jpg)
+![subaccount management for templates screenshot](media/subaccounts/template-for-subaccount.png)
 
 **Notes on subaccount template usage:** If a master account creates a template and does not elect to share it with subaccounts, only the master account may use that template. If the template is shared with all subaccounts, every subaccount has access to use the template, but only the master account has edit permissions. If the master account creates a template on behalf of a subaccount and assigns it to a single subaccount, both the master account and subaccount can use and edit that template.
 

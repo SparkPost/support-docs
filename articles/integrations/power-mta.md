@@ -7,7 +7,7 @@ If you’re interested in relaying mail through PowerMTA to SparkPost, there are
 
 Next, [create an API key](https://app.sparkpost.com/account/credentials) with the "Send via SMTP" permission:
 
-![](media/power-mta/pmta-key_original.png)
+![](media/power-mta/create-api-key.png)
 
 Now [create and verify](https://app.sparkpost.com/account/sending-domains) the domain you want to use for sending. The setup process should take about 5-10 minutes if you have access to your DNS server. See [Verify Sending Domains](https://www.sparkpost.com/docs/getting-started/getting-started-sparkpost/#step-2-verifying-domain-ownership) for more information.
 

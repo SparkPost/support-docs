@@ -47,7 +47,7 @@ If you prefer to use the SparkPost UI, you can create multiple bounce domains or
 1. Select the "Verify CNAME Record" orange text in the  _Setup For Bounce_ record box.
 1. Make sure the domain is verified by the green check mark. Please note that there is up to a 5 minute delay [for compliance verification](https://www.sparkpost.com/docs/getting-started/requirements-for-sending-domains/) before the domain can be used.
 
- ![](media/custom-bounce-domain/CNAME-verification-2.png)
+ ![](media/custom-bounce-domain/verified-for-bounce.png)
 
 Once the CNAME record is verified in SparkPost, you will notice an orange button in the CNAME record box that says "Use this domain as your default bounce domain?" Turn this on if you want all of your transmissions to use this bounce domain. If you plan to configure multiple bounce domains, please refer to the end of the article for more information on how to set the bounce domain in your transmission.
 
