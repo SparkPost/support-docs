@@ -26,7 +26,7 @@ Generally speaking, four events are recorded for each message: injection, delive
 *   It is recommended that you do not set a maximum batch size your endpoint will accept, or that if you do, that it is not excessively small, in order to prevent truncation of data on any attempted batch.
 *   Utilize separate processing & storage for different [Event Types](https://www.sparkpost.com/docs/tech-resources/webhook-event-reference/#event-types).  Message structure & data types are consistent within a given Event Type, but not between Event Types. 
 
-## ​Monitoring Webhooks
+## Monitoring Webhooks
 
-If you have issues with your webhooks, it would be wise to monitor them either on your endpoint, or via the batch-status API, which is detailed [here](https://developers.sparkpost.com/api/webhooks#webhooks-batch-status-get), or on the webhhok details / Batch Status tab on the UI. This will help inform you if there is a problem with the webhooks so it can be remedied before batches hit the 8 hour limit as described in the retry logic above.
-Note that batch status (via both app and the API) does not report batches that succeeded first time. It reports only failed batches, and batches that initially failed but later succeeded. The batch status is kept for a few days.
+If you have issues with your webhooks, it would be wise to monitor them either on your endpoint, or via the batch-status API, which is detailed [here](https://developers.sparkpost.com/api/webhooks#webhooks-batch-status-get). You can also view the endpoint status in the Webhhook Batch Status tab in the [app](https://app.sparkpost.com/webhooks/) ([EU](https://app.eu.sparkpost.com/webhooks/)). This will help inform you if there is a problem with the webhooks so it can be remedied before batches hit the 8 hour limit as described in the retry logic above.
+Note that batch status (via both app and the API) does not report batches that succeeded first time. It reports only failed batches and batches that initially failed but later succeeded. The batch status is kept for a few days.
