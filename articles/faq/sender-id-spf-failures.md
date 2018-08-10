@@ -25,8 +25,16 @@ If you want to resolve this issue with the Sender-ID, you can do either of the f
 
             "v=spf1 include:_spf.sparkpostmail.com"
 
+            or for SparkPost EU:
+
+            "v=spf1 include:_spf.eu.sparkpostmail.com"
+
       2. Publish a proper Sender-ID record for your domain to read as follows:
 
             "v=spf2.0/pra include:_spf.sparkpostmail.com"
+
+            or for SparkPost EU:
+
+            "v=spf2.0/pra include:_spf.eu.sparkpostmail.com"
       
 For more detail refer to this article at [openspf.org](http://www.openspf.org/SPF_vs_Sender_ID)

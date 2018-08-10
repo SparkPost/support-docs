@@ -5,7 +5,7 @@ description: "When you create a new webhook in the Spark Post UI you may see an 
 
 When you create a new webhook in the SparkPost UI, you may see an error similar to the following:
 
-![](media/webhook-error-post-to-webhook-target-url-failed/webhookcreateerror_original.png)
+![](media/webhook-error-post-to-webhook-target-url-failed/webhook-failed.png)
 
 This error occurs when SparkPost sends a test batch to your webhook endpoint and, if an error is detected during that test, this error is shown.  There are a few common steps you can take to rectify the issue:
 

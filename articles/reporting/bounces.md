@@ -5,18 +5,13 @@ description: "When you first click on this tab you have the drop down date like 
 
 When you first click on this tab, you have the drop down date like in Summary, where you can select which time frame to look at.  You can also further select a domain, campaign or template for more granular evaluation.
 
-Below that, you will see 4 categories:
+Below that, you will see a summary of the bounce report in the specified time range, detailing the bounce percentage, number of sent messages, and number of bounced messages.
 
-![](media/bounces/bounces1_original.jpg)
-
-1. Targeted: number of emails you sent to SparkPost
-1. Accepted: number of emails that was accepted by the recipient server  (250ok)
-1. Bounces: emails that were rejected from the recipient server 
-1. Bounce Rate: the percentage of bounces for the particular date range selected. Again, you can also select domain, campaign or template.  
+![](media/bounces/bounce-summary.png)
 
 Bounces can fall in to two different sections: Category and Type.
 
-![](media/bounces/bounce2_original.jpg)
+![](media/bounces/bounce-by-type-and-category.png)
 
 ## Category
 
@@ -43,4 +38,4 @@ There are 2 different Types of bounces, In-Band and Out-of-Band:
 
 Further down the page, you will see more detail on the various types of bounces your sends have encountered.  This chart can be downloaded for further evaluation.  
 
-![](media/bounces/bounce3_original.jpg)
+![](media/bounces/bounce-messages-table.png)

@@ -1,10 +1,66 @@
 ---
 title: "SparkPost Enterprise Change Log"
-description: "Note This Change Log is for SparkPost Enterprise Only. This is a running log of new features and capabilities that have been rolled out on the SparkPost Enterprise service. The API reference can be found here https://developers.sparkpost.com/api/"
-notification: "This Change Log is for SparkPost Enterprise Only"
+NOTE: "Note This Change Log is being deprecated in favor of a combined change log here: https://www.sparkpost.com/docs/tech-resources/change-log-sparkpost/. Please bookmark the new location. The API reference can still be found here https://developers.sparkpost.com/api/"
+
 ---
 
-A running log of new features and capabilities that have been rolled out on the SparkPost Enterprise service. The API reference can be found [here](https://developers.sparkpost.com/api).
+This change log is being deprecated. Please go [here](https://www.sparkpost.com/docs/tech-resources/change-log-sparkpost/) for the latest changes. The API reference can be found [here](https://developers.sparkpost.com/api).
+
+
+### May 17, 2018
+
+* **NEW:** Smart Send launched as a [SparkPost Labs](https://developers.sparkpost.com/api/labs-introduction.html) feature. This Transmissions API option will not attempt to send to any recipients who have not engaged (received messages but not open or clicked) in at least 6 months. More details on our [blog](https://www.sparkpost.com/blog/smart-send/).
+
+   * **NOTE:** Enterprise customers, please contact your TAM for information on how to enable this option.
+
+### April 2018
+
+* **NEW:** SparkPost.com is now available in the EU. If you need your data hosted in the EU, check out [SparkPost EU](https://app.eu.sparkpost.com)
+
+* **NEW:** SparkPost is GDPR compliant - well ahead of the May deadline. For details, read our [blog post](https://www.sparkpost.com/blog/announcing-sparkpost-eu/?utm_source=twitter&utm_medium=social-media&utm_campaign=all&utm_content=bl-sp-eu-gdpr)
+
+* **NEW:** You can now set a default bounce domain (return-path domain) for each subaccount, in addition to the account-wide option. 
+   * The "is_default_bounce_domain" can be set at the account or subaccount level via the Sending Domains API. 
+   * The UI component will be available shortly.
+
+### March, 2018
+* **Change:** Check out our new UI and tell us what you think?
+
+### February, 2018
+* **Change:** Shorter SparkPost Link-Unsubscribe Header URLs and FBLs.
+  * SparkPost shortened the links for the list-unsubscribe header and FBLs. This is addition to the shorter tracking links completed in December.
+
+* **Change:** Addressed Stale MX Issues
+  * SparkPost addressed the issue of some messages not being delivered due to cached out-of-date MX records.
+
+### December, 2017
+* **Change:** Shorter SparkPost engagement tracking URLs
+  * SparkPost changed our tracking URLs to be shorter. The precise amount of change depends on how much personalization and meta data a customer is sending with their transmission.
+
+### November, 2017
+* **NEW:** Additional Open Pixel at message top
+  * SparkPost has added an open pixel to the top of each message when open tracking is selected. This is in addition to the open pixel that is inserted at the bottom of the message
+  * Customers should expect a new event in the Message Events API and in webhook events: initial_open
+  * Customer should also expect an additional Metric in the Metrics API: initial_rendered
+  * Rollout of this feature is expected over the first 2 weeks of November
+  
+* **Enhancement:** Self-service for HTTPS tracking links
+  * SparkPost Customers can now setup secure tracking links/domains on their own using a third party Content Delivery Network (CDN). We will continue to support Enterprise tenants that require we host their certificates rather than use a CDN.
+  * This is currently only available via API. We will update the User Interface (UI) in the next couple of weeks
+ 
+* **Change:** We will no longer set CNAME = True for verified Tracking Domains
+  * SparkPost changed the way we verify Tracking Domains that does not rely on checking DNS. Therefore, for Tracking Domains only, CNAME will be blank.
+  * For verified Tracking Domains, the Verified field will continue to be set to TRUE
+
+* **Change:** Transmissions API GET Request will only return scheduled transmissions
+  *  We will only track and return a status for scheduled transmissions when calling the GET method. 
+  *  For all other Transmissions, including multi-recipient transmissions, a transmission record will not be returned when you call the GET /api/v1/transmissions endpoint. Instead, the API will return a 404, not found, error. In order to keep track of your transmissions, we recommend using the Metrics API, Message Events API, or Webhooks.
+
+* **Change:** Starting later this month, SparkPost will begin enforcing verified bounce domains (return-path) for Enterprise Tenants.
+  *  Your TAM will communicate with you in advance of this change. 
+  *  No change will be made until we have verified with you, which domains *should* be used
+  *  After enforcement begins, any Transmissions using bounce domains not set up and verified in SparkPost will be rejected. This is the same behavior as Sending (FROM) domains today.
+
 
 ### (Week of) 18 September, 2017 
 

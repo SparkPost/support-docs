@@ -18,14 +18,13 @@ That person on the other end of that particular email address has resulted in on
 2. The user clicked the list-unsubscribe header
 3. The user clicked one of your emails and flagged it as SPAM. This FBL (FeedBack Loop) event should add that email address to your Suppression List.
 
-You can see which customers are on your account's Suppression List by using our API, here is the documentation for Suppression Lists: [https://www.sparkpost.com/api#/reference/suppression-list](https://www.sparkpost.com/api#/reference/suppression-list)
+You can see which customers are on your account's Suppression List within the dashboard by navigating to Lists > Suppressions, or by using our API, here is the documentation for Suppression Lists: [https://www.sparkpost.com/api#/reference/suppression-list](https://www.sparkpost.com/api#/reference/suppression-list)
 
 You can use the API key to view who was on your account's Suppression List, but you need to set up your API so that you can pull the information. That requires enabling your Suppression Lists Read/Write Permission.
 
 You can edit that by visiting this URL and clicking the Edit button for that particular API key and adding the Suppression Lists Read/Write permission: [https://app.sparkpost.com/#/account/credentials](https://app.sparkpost.com/#/account/credentials)
 
-Please see this article on how to manage your suppression list:
-https://www.sparkpost.com/docs/user-guide/using-suppression-lists/
+More information regarding the suppression list can be found here:  https://www.sparkpost.com/docs/user-guide/using-suppression-lists/
 
 Some workarounds for this situation are:
 

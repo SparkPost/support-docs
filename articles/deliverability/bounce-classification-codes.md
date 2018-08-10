@@ -15,6 +15,7 @@ Following is a list of bounce classification codes and their meanings:
 | 23             | Too Large               | The message bounced because it was too large for the recipient.             | Soft         |
 | 24             | Timeout                 | The message timed out.                                                      | Soft         |
 | 25             | Admin Failure           | The message was failed by SparkPost's configured policies.                  | Admin        |
+| 26             | Smart Send Suppression  | The message was suppressed by Smart Send policy.                            | Admin        |
 | 30             | Generic Bounce: No RCPT | No recipient could be determined for the message.                           | Hard         |
 | 40             | Generic Bounce          | The message failed for unspecified reasons.                                 | Soft         |
 | 50             | Mail Block              | The message was blocked by the receiver.                                    | Block        |
@@ -27,3 +28,5 @@ Following is a list of bounce classification codes and their meanings:
 | 80             | Subscribe               | The message is a subscribe request.                                         | Admin        |
 | 90             | Unsubscribe             | The message is an unsubscribe request.                                      | Hard         |
 | 100            | Challenge-Response      | The message is a challenge-response probe.                                  | Soft         |
+
+Note that `soft`, `block` and `undetermined` are usually temporary events. If you'd like to filter on suppression-level events, only check for `hard` or `admin` bounce-type events.

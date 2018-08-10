@@ -5,14 +5,14 @@ description: "In SparkPost go into Account and then Sending Domains Put in your 
 
 The following are instructions for creating sending domains via the SparkPost UI.
 
-1. In the SparkPost UI, click Account, and then click Sending Domains.
+1. In the SparkPost UI, click Settings, and then click Sending Domains.
 1. Type your sending domain in the box, and then choose your subaccount options for the sending domain. For more information on subaccounts, please see [this support article](https://www.sparkpost.com/docs/user-guide/subaccounts/). Click "Add Domain" when you are finished. 
 
-    ![](media/setting-up-domains/sending-domains-subaccounts-2.png)
+    ![](media/setting-up-domains/add-a-sending-domain.png)
 
 1. The next screen will display your newly created domain, but a red "Unverified" status will show in the upper right box. A sending domain must be verified before it can be used on SparkPost. In order to verify the domain, you must place the DKIM TXT record displayed in the _Set Up For Sending_ section into DNS.
 
-    ![](media/setting-up-domains/sending-domains-verification.png)
+    ![](media/setting-up-domains/unverified-sending-domain.png)
 
 1. Depending on what domain provider you are using, their DNS may look different, but how it works is essentially the same across all providers. There will be a TEXT field, and you can put the DKIM record in the text fields. We have provided you with many domain provider’s steps to go through to put your DKIM record into their records [here](https://www.sparkpost.com/docs/getting-started/getting-started-sparkpost/#prerequisites).
 
@@ -22,7 +22,7 @@ The following are instructions for creating sending domains via the SparkPost UI
 
 1. It can take a bit of time for DKIM records to propagate. You can check the TTL (time to live) amount within your DNS provider – usually they are beside the record type. It can take up to that time both to be propagated and ready to go. Once they do, you may click the orange "Verify TXT Record" in the UI. If the domain validates successfully, this is what it should look like:
 
-    ![](media/setting-up-domains/sending-domain-complete.png)
+    ![](media/setting-up-domains/verified-sending-domain.png)
 
 1. You can have as many sending domains as you’d like. However, they can only be in ONE SparkPost account. Duplicates across multiple accounts are not permitted.
 

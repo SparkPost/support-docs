@@ -14,6 +14,7 @@ Use these quick links to jump to certain sections of this article:
 * [Summarized Workflow of Universal Links Setup and Operation](#summarized-workflow-of-universal-links-setup-and-operation)
 * [As a SparkPost Enterprise Customer, What Steps Do I Need to Take?](#as-a-sparkpost-enterprise-customer-what-steps-do-i-need-to-take)
 * [Creating Universal Links in Templates with Sub-Pathing](#creating-universal-links-in-templates-with-sub-pathing)
+* [Full Examples](#full-examples)
 * [End User Caveats with Universal Links](#end-user-caveats-with-universal-links)
 
 ## Introduction
@@ -73,18 +74,6 @@ http://<engagement tracking domain>/f/<customsubpath>/<base64 encoded redirectio
 ```
 
 Custom sub-paths can be set using the `data-msys-sublink` URL attribute in your HTML code. By using this attribute, you can segment your website content to push links to either your mobile app, or to the end user's default browser. Detailed info on how to properly use the  `data-msys-sublink` URL attribute to create sub-pathed links is illustrated in this article [here](https://www.sparkpost.com/docs/tech-resources/ios-universal-links/#creating-universal-links-in-templates-with-sub-pathing).
-
-**Note**: SparkPost Enterprise sub-pathed links are limited to one subdirectory deep in a URL pathway beyond the two subdirectories that SparkPost Enterprise automatically adds (whether using a custom sub-path or not) to the beginning of your links during message generation. Due to this restriction, all of your paths set in your apple-app-site-assocation file should **never** be longer be longer than 2 subdirectories deep plus a wildcard character (`*`), and will always be of the format `/f/<customsubpath>/*` or `*`, if you wish all links on your website to route to your app. Adding any other character(s) beyond the custom sub-path other than a wildcard (`*`) will cause the link to fail and route to the end user's default browser. As an example, you cannot set a path like this in your apple-app-site-assocation file:
-
-```
-"paths" : [ "/f/stuff/junk/things/" ]
-```
-
-The example above will fail due to the fact that `/things/` takes the path beyond 3 subdirectories deep, which SparkPost Enterprise does not support. If the path above is intended to support Universal Links, it would need to be formed like this to be properly supported:
-
-```
-"paths" : [ "/f/stuff/*" ]
-```
 
 In addition, the following caveats below should be taken into account when configuring Universal Links with SparkPost Enterprise:
 
@@ -148,23 +137,45 @@ Spaces within data-msys-sublink attributes (only allowed in HTML templates, no
 
 **Note**: Click reporting available through webhook data, message events API data, or through the Enterprise UI cannot differentiate reported clicks as routing to the mobile browser versus the app!
 
+## Full Examples
+
+The following is a example of what an implementation of iOS Universal Links looks like with SparkPost:
+
+1. Assume a company sends an email containing links to the following websites (target URL):
+
+    `www.customer.com/rewards`
+    
+    `www.customer.com/rewards/travel`
+    
+    `www.customer.com/rewards/travel/hotels/greathotel`
+    
+1. For these links above, the company wants to send the users to their app instead of a browser. They would then assign a data-msys-sublink attribute to each of the links, like so:
+
+    `<a data-msys-sublink=“rew” href="https://www.customer.com/rewards“>Link Name</a>`
+    
+    `<a data-msys-sublink=“rt” href="https://www.customer.com/rewards/travel“>Link Name</a>`
+    
+    `<a data-msys-sublink=“rthm” href="https://www.customer.com/rewards/travel/hotels/greathotel“>Link Name</a>`
+    
+1. SparkPost would then encode the links to allow for click tracking to occur, incorporating the custom subpaths set in the HTTP attribute as listed above. These are what the finalized links would look like:
+
+    `https://<trackingserver>/f/rew/<encoded target url>`
+    
+    `https://<trackingserver>/f/rt/<encoded target url>`
+    
+    `https://<trackingserver>/f/rthm/<encoded target url>`
+    
+1. The customer would then need to create the corresponding path entries in their apple-app-site-association file. In this example, they want these custom subpath links to all be kicked to the app, so their apple-app-site-association path array(s) would look like this:
+
+    `"paths" : [ "/f/rew/" ]`
+    
+    `"paths" : [ "/f/rt/" ]`
+    
+    `"paths" : [ "/f/rthm/" ]`
+
 ## End User Caveats with Universal Links
 
 The following are important caveats to be aware of regarding the end user experience with Universal Links:
 
 1. When a user taps a Universal Link that you handle, iOS also examines the user’s recent choices to determine whether to open your app or your website. For example, a user who has tapped a Universal Link to open your app can later choose to open your website in Safari by tapping a breadcrumb button in the status bar. After the user makes this choice, iOS 9 continues to open your website in Safari until the user chooses to open your app by tapping OPEN in the Smart App Banner on the webpage.
 1. To ensure maximum efficiency with Universal Link direction, we do provide an option to turn off base 64 encoding on the redirect/target portion of link URLs. This will reduce processing time when links are clicked since base 64 decoding for the target URL will not be necessary. Applying this option is system-wide, meaning all tracked links will not have base 64 encoding on the target URL when this configuration takes effect. No additional API or SMTP modifications are required in your calls/payloads; to turn this option on, please contact your TAM and request it.
-
-Here are some specific examples of what non-base 64 target encoded links look like:
-
-Link in the template text or html part:
-
-`https://google.com/purchase`
-
-Link as encoded as a click track link with the Target URL as a query parameter:
-
-`https://click.customer.com/f/a/1nLyONgylXZCMADaan5jUA~~/AAAAAQA~/RgRX8RCYP?target=http%3a%2f%2fgoogle.com%2fpurchase`
-
-Basic form of a click track link:
-
-`<scheme>://<engagement_host>/f/<path>/<hmac>/<track_info1>/<track_info2>/?target=<target>`

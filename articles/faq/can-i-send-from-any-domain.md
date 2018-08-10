@@ -5,11 +5,11 @@ description: "Domain Ownership And Control You can send mail through Spark Post 
 
 ## Domain Ownership And Control
 
-You can send mail through SparkPost from any domain *that you or your customers control*. By verifying your sending domains with SparkPost, you're letting us know that you control them and that you authorize delivery from those domains. The SPF and DKIM domain verification procedures are the best option here since they also bring deliverability best practice with them. [There are instructions here how to verify your sending domains](https://www.sparkpost.com/docs/getting-started/getting-started-sparkpost/#step-2-verifying-domain-ownership). 
+You can send mail through SparkPost from any domain *that you or your customers control*. By verifying your sending domains with SparkPost, you're letting us know that you control them and that you authorize delivery from those domains. The DKIM domain verification procedure is the best option here since it also brings deliverability best practice with it. [There are instructions here how to verify your sending domains](https://www.sparkpost.com/docs/getting-started/getting-started-sparkpost/#step-2-verifying-domain-ownership). 
 
 ## Why Can't I Just Send From Any Domain?
 
-If email services allowed their users to send from any domain or address, anyone could forge email that looked like it came from anyone else.  This opens the door for impersonation, phishing and other illicit acts that we do not wish to perpetuate. We recommend validating your sending domain using SPF and DKIM because they can help with these issues. SPF lets receiving email services validate that mail came from a location authorized by the domain owner. DKIM allows receiving email services to verify that message content was created by an agent authorized by the domain owner and that it has not been altered in transit.
+If email services allowed their users to send from any domain or address, anyone could forge email that looked like it came from anyone else.  This opens the door for impersonation, phishing and other illicit acts that we do not wish to perpetuate. We recommend validating your sending domain using DKIM because it can help with these issues. DKIM allows receiving email services to verify that message content was created by an agent authorized by the domain owner and that it has not been altered in transit.
 
 ## Sending On Behalf Of Others
 

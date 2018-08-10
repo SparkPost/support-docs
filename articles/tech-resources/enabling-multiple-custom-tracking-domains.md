@@ -5,7 +5,7 @@ description: "A tracking domain also referred to as an engagement tracking domai
 
 A tracking domain (also referred to as an "engagement tracking domain") is the domain that a tracked link will redirect through before reaching the final URL path of the original link. It is also used as the path for the tracking pixel to track message opens. A recipient will see this domain if they mouse over a tracked link in an HTML message or if they receive a plain text message. SparkPost offers the option to configure one or multiple tracking domains per account.
 
-There is a system default tracking domain that is used for tracking if you choose not to configure a custom tracking domain. For SparkPost this is "spgo.io". For SparkPost Enterprise, it is the domain configured by your Technical Account Manager during onboarding. Once a single custom tracking domain is configured, it becomes the default and will be the tracking domain used for all of your messages. When you configure multiple tracking domains, you will associate each one with a sending domain and designate one as the default for any sending domains that don't have a tracking domain associated with it.
+There is a system default tracking domain that is used for tracking if you choose not to configure a custom tracking domain. For SparkPost this is "spgo.io". For SparkPost EU this is "eu.spgo.io". For SparkPost Enterprise, it is the domain configured by your Technical Account Manager during onboarding. Once a single custom tracking domain is configured, it becomes the default and will be the tracking domain used for all of your messages. When you configure multiple tracking domains, you will associate each one with a sending domain and designate one as the default for any sending domains that don't have a tracking domain associated with it.
 
 To summarize, when a message is sent:
 
@@ -20,7 +20,7 @@ If you would like to configure your account to use a custom tracking domain, the
 1. Determine what subdomain you wish to use for your custom tracking domain (e.g. click.myawesomedomain.com). Please note, the tracking domain **must** be a subdomain and not a root domain!
 1. Make sure that the custom tracking domain you choose to use is one for which you have access and permission to modify the DNS.
 1. Edit your DNS zone file for your tracking domain to include the new CNAME (this is different depending upon who you use as your domain registrar, such as GoDaddy.com, Ghandi, or Moniker).
-1. Create a new CNAME record in your DNS zone file and set the host to your tracking sub-domain (e.g. click.myawesomedomain.com) with the value: "spgo.io" **(Note: For SparkPost Enterprise users, your CNAME record value should point to the tracking domain configured during your onboarding).**
+1. Create a new CNAME record in your DNS zone file and set the host to your tracking sub-domain (e.g. click.myawesomedomain.com) with the value: "spgo.io" for SparkPost, or "eu.spgo.io" for SparkPost EU **(Note: For SparkPost Enterprise users, your CNAME record value should point to the tracking domain configured during your onboarding).**
 1. Once you have completed creating your CNAME record(s) and have successfully saved the DNS changes, complete the set up through either the API or the UI (instructions for both below).
 1. Associate the custom tracking domain to a sending domain via UI or API.
 
@@ -28,29 +28,30 @@ If you would like to configure your account to use a custom tracking domain, the
 
 To configure one or more custom tracking domains through the SparkPost user interface, follow the steps below.
 
-1. Select Account and then Tracking Domains from the main menu.
-2. Click the New Domain button to add a new tracking domain.
+1. Select Settings and then Tracking Domains from the main menu.
+2. Click **New Tracking Domain** to add a new tracking domain.
 
-    ![](media/enabling-multiple-custom-tracking-domains/Screenshot_2015-09-25_13.14.55_original.png)
+    ![](media/enabling-multiple-custom-tracking-domains/tracking-domains-page.png)
 
-3. Complete the Domain Name field and Set as Default button and then click the Add Domain button to complete the process of adding a tracking domain.
+3. Complete the Domain Name and then click **Add Tracking Domain** to complete the process of adding a tracking domain.
 
-    ![](media/enabling-multiple-custom-tracking-domains/Screenshot_2015-09-25_13.15.33_original.png)
+    ![](media/enabling-multiple-custom-tracking-domains/create-tracking-domain.png)
 
 ## Associate your Tracking domain(s) with one or more Sending domains      
 
+To associate custom tracking domains to sending domains through the SparkPost user interface, the custom tracking domains must be verified first and then follow the steps below.
+
 1. Select Account and then Sending Domains from the main menu.
 1. Click the New Domain button to create the new sending domain or select an existing sending domain.
+1. Complete the Sending Domain Name for each sending domain and select the Linked Tracking Domain you want to associate with it. **Note**: If you do not select a linked tracking domain, the sending domain will use the default tracking domain.
+1. Click the **Add Domain** or **Update Tracking Domain** button to complete the association.
+  ![](media/enabling-multiple-custom-tracking-domains/connect-tracking-domain.png)
 
-    ![](media/enabling-multiple-custom-tracking-domains/thefirststep_addingasendingdomain_original.png)
+**Note:** For information on how to configure your Sending Domains, please see [this article](https://www.sparkpost.com/docs/getting-started/getting-started-sparkpost/#preparing-your-from-address).
 
-    ![](media/enabling-multiple-custom-tracking-domains/xU06kJ2lac6YGEIi8KlReq8OaF1kfX.png)
-1. Complete the Sending Domain Name for each sending domain and select the Linked Tracking Domain you want to associate with it.
-1. Click the Add Domain or _Update Tracking Domain_ button to complete the association.
+**Note:** Any newly configured tracking domains have to route back, either through delegation or use of CNAME records, in order for us to be able to report on opens and clicks. Misconfiguration of your tracking domain(s) could mean link redirection could fail, so please ensure you test prior to placing any new domains into production!
 
-**Note for SparkPost customers**: for information on how to configure your Sending Domains, please see [this article](https://www.sparkpost.com/docs/getting-started/getting-started-sparkpost/#preparing-your-from-address).
-
-**Note**: As a general reminder, any newly configured tracking domains have to route back, either through delegation or use of CNAME records, in order for us to be able to report on opens and clicks. Misconfiguration of your tracking domain(s) could mean link redirection could fail, so please ensure you test prior to placing any new domains into production!
+**Note:** Deleting a tracking domain will automatically disassociate it from all sending domains.
 
 ## API Configuration: Custom Tracking Domains
 

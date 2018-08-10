@@ -1,15 +1,15 @@
 ---
 title: "Consolidating/Migrating SparkPost Accounts"
-description: "Subaccounts As you start utilizing subaccounts it will be essential to become more familiar with how management will work with this feature Please read through this article before determining how you would like to set up your account u Subaccounts in Spark Post and Spark Post Elite u Determine what..."
+description: "Guidance for consolidating SparkPost accounts. It is important to also become familiar with the subaccounts feature before beginning consolidation. "
 ---
 
-As you start utilizing subaccounts it will be essential to become familiar with management of this feature. Please read through this article before determining how you would like to set up your account: [Subaccounts in SparkPost and SparkPost Enterprise](https://www.sparkpost.com/docs/user-guide/subaccounts/).
+As you start utilizing subaccounts it will be essential to become familiar with management of this feature. Please read through this article before determining how you would like to set up your account: [Subaccounts in SparkPost](https://www.sparkpost.com/docs/user-guide/subaccounts/).
 
 Determine what account you want to be your remaining account or create a new account if applicable.
 
 ## API Keys
 
-Once you determine your remaining account, make sure you have an API key with all permissions to complete the migration. 
+Once you determine your remaining account, make sure you have an API key with all permissions to complete the migration.
 
 ## Sending Domains
 

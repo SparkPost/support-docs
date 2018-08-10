@@ -7,7 +7,7 @@ If you have found your way here you are probably experiencing a problem with eit
 
 ![](media/common-billing-errors/Screenshot_2017-03-21_09.49.44_original.png)
 
-This means that your credit card issuer has declined payment, this can be for one or more reasons
+This means that your credit card issuer has declined payment, this can be for one or more reasons:
 
 * Insufficient funds
 * Any element of the Billing address is incorrect

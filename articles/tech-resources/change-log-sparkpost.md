@@ -3,6 +3,106 @@ title: "SparkPost Change Log"
 description: "A running log of what's new, what's been fixed, and what's been changed in SparkPost."
 ---
 
+## July 23, 2018  
+### What’s New?
+
+* As previously communicated via email, we will deprecate TLSv1.0 on July 23. Any messages connecting to SparkPost's API that are not using TLSv1.1 or higher will fail with an authentication error. We have made test endpoints available and they are described in this [article](https://www.sparkpost.com/docs/tech-resources/tlsv1-0-test-hostname/).
+
+## July 12, 2018  
+### What’s New?
+
+* **Changes in the UI:** we've introduced a new **Admin Bounces** view in the Bounce report
+
+## July 7, 2018  
+### What’s New?
+
+* **A/B Testing for Transactional Messages:** The initial release of SparkPost's A/B Testing functionality is available to our US customers on SPC and Enterprise Customers on our Next Gen architecture. The [Knowledge Base](https://www.sparkpost.com/docs/tech-resources/a-b-testing-sparkpost/) article and [API docs](https://developers.sparkpost.com/api/ab-testing.html) have the details.  
+
+
+## June 7, 2018  
+### What’s New?
+
+* **Changes in the UI:** we've introduced **2 new metrics:** unsubscribe and unsubscribe rate. Both link unsubscribe and list unsubscribe events are combined in the new metrics.
+
+## May 30, 2018  
+### What’s New?
+
+* **Changes in the UI:** we've introduced **a new account navigation menu** at the top right of the screen. That menu now contains all of your account management pages such as your user profile, billing, user management, help and API docs, and the log out link. The old "Account" section in the side navigation has been renamed "Settings". All existing deep links will continue to work as expected.
+
+## May 18, 2018  
+### What’s New?
+
+* Customers that pay by credit card can now view copies of past invoices in the UI, on the [Billing](https://app.sparkpost.com/account/billing) page. The 20 most recent invoices are available for download.
+
+
+## May 17, 2018  
+### What’s New?
+
+* Smart Send launched as a [SparkPost Labs](https://developers.sparkpost.com/api/labs-introduction.html) feature. This [Transmissions API](https://developers.sparkpost.com/api/transmissions.html) option will not attempt to send to any recipients who have not engaged (received messages but not open or clicked) in at least 6 months. More details in the [blog post](https://www.sparkpost.com/blog/smart-send/). 
+  * NOTE: Not yet available in the EU. Enterprise customers, please contact your TAM for information on how to enable this option.
+
+## May 14, 2018  
+### What Changed?
+
+* We changed the "rate" type metrics in the Summary Report to use "Sent" or "Accepted" as the denominator, rather than "Targeted" across the board.
+  * This will make Open Rate, Click Rate, and Bounce Rates higher since there's a lower number in the denominator. The counts have not changed.
+  * This is a UI-only change. There are no "rate" metrics in webhooks or Message Events
+  * You can read about the rationale for these changes in this [blog post](https://www.sparkpost.com/blog/metrics-calculation-update/)
+  
+## April, 2018  
+### What’s New?
+  
+* SparkPost.com is now available in the EU. If you need your data hosted in the EU, check out [SparkPost EU](https://app.eu.sparkpost.com)
+
+* SparkPost is GDPR compliant - well ahead of the May deadline. For details, read our [blog post](https://www.sparkpost.com/blog/announcing-sparkpost-eu/)
+
+* You can now set a default bounce domain (return-path domain) for each subaccount, in addition to the account-wide option. 
+  * The "is_default_bounce_domain" can be set at the account or subaccount level via the Sending Domains API. 
+
+## March 31, 2018  
+### What’s New?
+
+* We launched our new UI.
+
+## March 15, 2018  
+### What’s New?
+
+* Open and Click tracking options are now independent of eachother as account-level defaults.
+
+## February, 2018
+### What's New?
+* Shorter SparkPost Link-Unsubscribe Header URLs and FBLs.
+  * SparkPost shortened the links for the list-unsubscribe header and FBLs. 
+  * This is addition to the shorter tracking links completed in December.
+
+* Addressed the issue of some messages not being delivered due to cached out-of-date MX records.
+
+## December 8, 2017
+### What’s New?
+
+* SparkPost optimised our engagement tracking our engagement tracking URLs to make them shorter. Their length still depends on the amount personalization and metadata used in each message.
+
+
+## November 30, 2017
+### What’s New?
+* Additional Open Pixel at message top
+  * SparkPost has added an open pixel to the top of each message when open tracking is selected. This is in addition to the open pixel that is inserted at the bottom of the message
+  * Customers should expect a new event in the Message Events API and in webhook events: initial_open
+  * Customer should also expect an additional Metric in the Metrics API: initial_rendered
+
+
+## November 9, 2017
+### What’s New?
+
+* You now have the ability to set up secure engagement tracking links using a custom tracking domain, [Check it out](https://www.sparkpost.com/docs/tech-resources/enabling-https-engagement-tracking-on-sparkpost/).
+* On the Transmissions API, a GET request will only return scheduled transmissions.
+* Minor change - On the Tracking Domains API, a GET request for newly verified Tracking Domains will return a blank CNAME_status (rather than cname_status of “verified”). For verified tracking domains, the VERIFIED field will still be set to TRUE.
+
+## October 27, 2017
+### What’s New?
+
+* SparkPost introduces [HEML Email Development Framework](https://www.sparkpost.com/press-releases/sparkpost-introduces-heml-email-development-framework/), an open source markup language for building responsive email.
+
 ## September 29, 2017
 ### What’s New?
 
