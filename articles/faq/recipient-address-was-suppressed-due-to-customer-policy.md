@@ -24,10 +24,10 @@ You can use the API key to view who was on your account's Suppression List, but 
 
 You can edit that by visiting this URL and clicking the Edit button for that particular API key and adding the Suppression Lists Read/Write permission: [https://app.sparkpost.com/#/account/credentials](https://app.sparkpost.com/#/account/credentials)
 
-Please see this artcile on how to manage your suppression list:
+Please see this article on how to manage your suppression list:
 https://www.sparkpost.com/docs/user-guide/using-suppression-lists/
 
 Some workarounds for this situation are:
 
-1. Find new ways to re-engage that customer on other channels such as your website, SMS (with their permission), social channels, etc...
-2. If this is a known testing address of your own, you can remove the email address from your account's Suppression List, but ONLY do this if you KNOW that this email address is yours and used ONLY for development. Otherwise you will seriously damage your reputation with the customer and SparkPost
+1. Find new ways to re-engage that customer on other channels such as your website, SMS (with their permission), social channels, etc.
+2. If this is a known testing address of your own, you can remove the email address from your account's Suppression List, but only do this if you _know_ that this email address is yours and used only for development. Otherwise you will seriously damage your reputation with the customer and SparkPost.
