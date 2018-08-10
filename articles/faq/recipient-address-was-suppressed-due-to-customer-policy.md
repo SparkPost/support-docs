@@ -28,5 +28,6 @@ More information regarding the suppression list can be found here:  https://www.
 
 Some workarounds for this situation are:
 
-1. Find new ways to re-engage that customer on other channels such as your website, SMS (with their permission), social channels, etc.
-2. If this is a known testing address of your own, you can remove the email address from your account's Suppression List, but only do this if you _know_ that this email address is yours and used only for development. Otherwise you will seriously damage your reputation with the customer and SparkPost.
+1. Try sending to a different single email address (perhaps your own).
+2. Find new ways to re-engage that customer on other channels such as your website, SMS (with their permission), social channels, etc...
+3. If this is a known testing address of your own, you can remove the email address from your account's Suppression List, but ONLY do this if you KNOW that this email address is yours and used ONLY for development. Otherwise you will seriously damage your reputation with the customer and Sparkpost.com.
