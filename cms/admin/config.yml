@@ -1,7 +1,7 @@
 backend:
   name: github
   repo: SparkPost/support-docs
-  branch: cms
+  branch: master
 publish_mode: editorial_workflow
 media_folder: cms/global_media
 collections: 
