@@ -1,0 +1,106 @@
+backend:
+  name: github
+  repo: SparkPost/support-docs
+  branch: cms
+publish_mode: editorial_workflow
+media_folder: global_media
+collections: 
+  - label: Billing
+    name: billing
+    label_singular: Billing Article
+    folder: "/articles/billing"
+    create: true
+    extension: md
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Description, name: description, widget: string, required: false }
+      - { label: Notification, name: notification, widget: string, required: false }
+      - { label: Body, name: body, widget: markdown }
+  - label: Deliverability
+    name: deliverability
+    label_singular: Deliverability Article
+    folder: "/articles/deliverability"
+    create: true
+    extension: md
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Description, name: description, widget: string, required: false }
+      - { label: Notification, name: notification, widget: string, required: false }
+      - { label: Body, name: body, widget: markdown }
+  - label: FAQ
+    name: faq
+    label_singular: FAQ Article
+    folder: "/articles/faq"
+    create: true
+    extension: md
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Description, name: description, widget: string, required: false }
+      - { label: Notification, name: notification, widget: string, required: false }
+      - { label: Body, name: body, widget: markdown }
+  - label: Getting Started
+    name: getting-started
+    label_singular: Getting Started Article
+    folder: "/articles/getting-started"
+    create: true
+    extension: md
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Description, name: description, widget: string, required: false }
+      - { label: Notification, name: notification, widget: string, required: false }
+      - { label: Body, name: body, widget: markdown }
+  - label: Integrations
+    name: integrations
+    label_singular: Integrations Article
+    folder: "/articles/integrations"
+    create: true
+    extension: md
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Description, name: description, widget: string, required: false }
+      - { label: Notification, name: notification, widget: string, required: false }
+      - { label: Body, name: body, widget: markdown }
+  - label: My Account and Profile
+    name: my-account-and-profile
+    label_singular: My Account and Profile Article
+    folder: "/articles/my-account-and-profile"
+    create: true
+    extension: md
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Description, name: description, widget: string, required: false }
+      - { label: Notification, name: notification, widget: string, required: false }
+      - { label: Body, name: body, widget: markdown }
+  - label: Reporting
+    name: reporting
+    label_singular: Reporting Article
+    folder: "/articles/reporting"
+    create: true
+    extension: md
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Description, name: description, widget: string, required: false }
+      - { label: Notification, name: notification, widget: string, required: false }
+      - { label: Body, name: body, widget: markdown }
+  - label: Tech Resources
+    name: tech-resources
+    label_singular: Tech Resources Article
+    folder: "/articles/tech-resources"
+    create: true
+    extension: md
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Description, name: description, widget: string, required: false }
+      - { label: Notification, name: notification, widget: string, required: false }
+      - { label: Body, name: body, widget: markdown }
+  - label: User Guide
+    name: user-guide
+    label_singular: User Guide Article
+    folder: "/articles/user-guide"
+    create: true
+    extension: md
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Description, name: description, widget: string, required: false }
+      - { label: Notification, name: notification, widget: string, required: false }
+      - { label: Body, name: body, widget: markdown }
