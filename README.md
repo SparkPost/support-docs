@@ -4,10 +4,6 @@
 
 This repo contains the Markdown files for support articles published on https://www.sparkpost.com/docs.
 
-## _Internal_
-
-For SparkPost employees: you can access the docs CMS at [sparkpost-docs.netlify.com](https://sparkpost-docs.netlify.com/).
-
 ## Managing articles
 
 All support articles live in the `articles` folder. This folder has subfolders, one for each category (e.g. api, billing). The articles are formatted using [Markdown](https://daringfireball.net/projects/markdown/syntax). Each article contains a bit of YAML metadata at the top you can use to set the title and description:
