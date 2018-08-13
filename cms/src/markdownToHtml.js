@@ -11,7 +11,7 @@ export default ({ markdown, base, getAsset }) => {
         const url = String(node.url);
         
         if (url.includes('global_media')) {
-          node.url = getAsset(url)
+          node.url = getAsset(url).toString()
         } else {
           node.url = join(
             `https://raw.githubusercontent.com/SparkPost/support-docs/master/`,
