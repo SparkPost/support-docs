@@ -8,7 +8,7 @@ description: >-
 ---
 If you have found your way here you are probably experiencing a problem with either adding or updating your billing information to your SparkPost account and will have seen the following alert in the UI. 
 
-![null](media/common-billing-errors/Screenshot_2017-03-21_09.49.44_original.png)
+![Billing issue](/cms/global_media/screenshot_2017-03-21_09.49.44_original.png)
 
 This means that your credit card issuer has declined payment, this can be for one or more reasons:
 
