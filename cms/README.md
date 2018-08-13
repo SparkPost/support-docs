@@ -31,7 +31,7 @@ Netlify CMS uses [Auth 2.0 providers](https://www.netlifycms.org/docs/authentica
 
 Each category in the `articles/` directory (.i.e. "faq") is defined as its own [folder collection](https://www.netlifycms.org/docs/collection-types/#folder-collections). All of the collections should have the same configuration, so if you make a change to one, be sure to make a change to the others.
 
-To add a new category, duplicate an existing collection and change the `label`, `name`, and `label_singular` to match the new category name. Most importantly, update the `folder` to the path to the new articles: `"/articles/{{new-category-folder}}".
+To add a new category, duplicate an existing collection and change the `label`, `name`, and `label_singular` to match the new category name. Most importantly, update the `folder` to the path to the new articles: `"/articles/{{new-category-folder}}"`.
 
 To remove a category, delete the corresponding collection configuration.
 
