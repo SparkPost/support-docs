@@ -58,7 +58,7 @@ Creating a template using the SparkPost UI is simple. To get started, let's go s
 1. **Define the content of the template:**
     * **[Creating HTML Content](https://www.sparkpost.com/docs/getting-started/creating-template/#authoring-html-content-for-your-templates)**
     * **[Creating TEXT Content](https://www.sparkpost.com/docs/getting-started/creating-template/#authoring-text-content-for-your-templates)**
-    * **[How to Use Substitution Data](https://developers.sparkpost.com/api/substitutions-reference.html)**
+    * **[How to Use The Template Language](https://developers.sparkpost.com/api/template-language/)**
 
 At this point, we are *technically* done with our template and we could "Save" or "Save and Publish", but let's take a few minutes to test this template and make sure it is behaving as we expect.
 
@@ -72,7 +72,7 @@ To send yourself (or approvers) a test transmission of your email template, ente
 
 **Please be aware that sending a test email is an actual transmission (make sure you don't have any LIVE customer email addresses in the "To" field).**
 
-If you are using substitution data in your emails, there are additional steps you must take to test your replacement values. [Read more about using substitution data in SparkPost to create dynamic email templates](https://developers.sparkpost.com/api/substitutions-reference.html).
+If you are using substitution data in your emails, there are additional steps you must take to test your replacement values. [Read more about using substitution data in SparkPost to create dynamic email templates](https://developers.sparkpost.com/api/template-language/).
 
 ## Creating templates with the API
 
@@ -86,20 +86,20 @@ Once you have all the prerequisites on-hand, you're ready to read the [Template
 
 ## Authoring HTML content for your templates in the SparkPost UI
 
-If your email template requires any type of customized data to be displayed, please take a moment and read [how to use substitution data to create dynamic email transmissions](https://developers.sparkpost.com/api/substitutions-reference.html).
+If your email template requires any type of customized data to be displayed, please take a moment and read [how to use substitution data to create dynamic email transmissions](https://developers.sparkpost.com/api/template-language/).
 
 * **Choose HTML in the template editor:** Choose "HTML" in the drop-down box.
 * **Insert your HTML:** You can either use the SparkPost HTML editor or you can copy and paste your HTML into the Template Editor.
-* **Include test substitution data [optional]:** If your template's HTML is using [substitution data](https://developers.sparkpost.com/api/substitutions-reference.html), then you will need to add some "Test Substitution Data". This is a JSON object that you can author(or copy/paste) by clicking the "</>Test Data" button. Please note that either the "substitution data" or "metadata" objects will replace substitution variables within your template. The difference between the two, when you begin using a template in production, is that values nested in the "substitution data" object will not appear in message events, whereas values nested in the metadata object will appear in message events.
+* **Include test substitution data [optional]:** If your template's HTML is using [substitution data](https://developers.sparkpost.com/api/template-language/), then you will need to add some "Test Substitution Data". This is a JSON object that you can author(or copy/paste) by clicking the "</>Test Data" button. Please note that either the "substitution data" or "metadata" objects will replace substitution variables within your template. The difference between the two, when you begin using a template in production, is that values nested in the "substitution data" object will not appear in message events, whereas values nested in the metadata object will appear in message events.
 * **Preview your HTML Template:** Once you have added the HTML you wish to use, click the "Preview" link to view the rendered output example.
 
 ## Authoring TEXT content for your templates in the SparkPost UI
 
-If your email template requires any type of customized data to be displayed, please take a moment and read [How to use substitution data to create dynamic email transmissions](https://developers.sparkpost.com/api/substitutions-reference.html).
+If your email template requires any type of customized data to be displayed, please take a moment and read [How to use substitution data to create dynamic email transmissions](https://developers.sparkpost.com/api/template-language/).
 
 * **Choose TEXT in the template editor:** Choose "TEXT" in the drop-down box.
 * **Insert your TEXT:** You can either use the SparkPost TEXT editor or you can copy and paste your TEXT into the Template Editor.
-* **Include test substitution data [optional]:** If your template's TEXT is using [substitution data](https://developers.sparkpost.com/api/substitutions-reference.html), then you will need to add some "Test Substitution Data". This is a JSON object that you can author(or copy/paste) by clicking the "</>Test Data" button. Please note that either the "substitution data" or "metadata" objects will replace substitution variables within your template. The difference between the two, when you begin using a template in production, is that values nested in the "substitution data" object will not appear in message events, whereas values nested in the metadata object will appear in message events.
+* **Include test substitution data [optional]:** If your template's TEXT is using [substitution data](https://developers.sparkpost.com/api/template-language/), then you will need to add some "Test Substitution Data". This is a JSON object that you can author(or copy/paste) by clicking the "</>Test Data" button. Please note that either the "substitution data" or "metadata" objects will replace substitution variables within your template. The difference between the two, when you begin using a template in production, is that values nested in the "substitution data" object will not appear in message events, whereas values nested in the metadata object will appear in message events.
 * **Preview your TEXT template:** Once you have added the TEXT you wish to use, click the "Preview" link to view the rendered output example.
 
 Outstanding! You've sent your first email / transmission in SparkPost and you've created your first template.

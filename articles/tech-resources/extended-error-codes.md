@@ -52,8 +52,8 @@ When developing to the REST api, you should be prepared to handle failed request
 |                       | 2102        | Exceed Sending Limit (daily)                     | Deprecated       |                                              |
 |                       | 2103        | Exceed Sending Limit (sandbox)                   | 420              |                                              |
 | *Template*            | *3000~3999* |                                                  |                  |                                              |
-|                       | 3000        | substitution language syntax error               | 422              | fix content and retry                        |
-|                       | 3001        | substitution render error                        | 422              | fix content and retry                        |
+|                       | 3000        | template language syntax error                   | 422              | fix content and retry                        |
+|                       | 3001        | template language render error                   | 422              | fix content and retry                        |
 |                       | 3002        | Invalid header                                   | 422              | correct header and retry                     |
 |                       | 3010        | template mime construction error                 | 422              | fix content and retry                        |
 |                       | 3020        | template mime parsing error                      | 422              | fix content and retry                        |
