@@ -48,7 +48,7 @@ Cons:
 This is the simplest option: if you disable SparkPost's click tracking for the mobile deep links in your email, they work just fine with your mobile app with no further effort. This works because SparkPost does not alter untracked links in your email.
 
 #### Disabling Click Tracking
-- If you're using the SparkPost REST API, you can use the `data-msys-clicktrack` attribute to [disable click tracking for a single link in your email](https://developers.sparkpost.com/api/substitutions-reference.html#header-per-link-disabling-of-click-tracking):
+- If you're using the SparkPost REST API, you can use the `data-msys-clicktrack` attribute to [disable click tracking for a single link in your email](https://developers.sparkpost.com/api/template-language/#header-per-link-disabling-of-click-tracking):
 
     ```html
     <a data-msys-clicktrack="0" href="http://my.universallink.example.com/path/">Open in app</a>
@@ -76,7 +76,7 @@ The setup steps are as follows:
 1. Configure a CDN to host your custom tracking domain.  One example can be found [here](https://www.sparkpost.com/docs/tech-resources/enabling-https-engagement-tracking-on-sparkpost/).
 **Note:** The CDN needs to support file hosting such as AWS CloudFront.
 1. [Configure a custom tracking domain on your SparkPost account.](https://app.sparkpost.com/account/tracking-domains)
-1. [Use a "custom link sub-path" in your links.](https://developers.sparkpost.com/api/substitutions-reference.html#header-custom-link-sub-paths)
+1. [Use a "custom link sub-path" in your links.](https://developers.sparkpost.com/api/template-language/#header-custom-link-sub-paths)
 1. Publish the deep linking spec file for your app using both the tracking domain and link sub-path.  This should be hosted on your CDN under  **\<your-tracking-domain>\\.well-known\\**.
     
     Example apple-app-site-association file:

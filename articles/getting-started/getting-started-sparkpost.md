@@ -127,7 +127,7 @@ For SMTP delivery, the API key is used as an SMTP authentication password. You c
 
 ### Sending With The REST API
 
-The modern way to send email with SparkPost is using the REST API's transmissions endpoint which supports high volume, multi-recipient delivery, [personalized message templates](https://developers.sparkpost.com/api/substitutions-reference.html), per-recipient metadata and a [slew of other capabilities](https://developers.sparkpost.com/api/transmissions.html) besides. Here's a simple transmission request:
+The modern way to send email with SparkPost is using the REST API's transmissions endpoint which supports high volume, multi-recipient delivery, [personalized message templates](https://developers.sparkpost.com/api/template-language/), per-recipient metadata and a [slew of other capabilities](https://developers.sparkpost.com/api/transmissions.html) besides. Here's a simple transmission request:
 
 ```bash
 # e.g. if your new sending domain was mail.example.com
@@ -238,7 +238,7 @@ Beyond the basics, SparkPost also has a slew of additional capabilities which ma
 
 ### Email Templates And Personalization
 
-If you're sending similar content to lots of people, SparkPost templates let you write the message once using substitution variables and logic for personalization, then make a single API call to generate and deliver that message to all your recipients together. You can create and edit templates on your account in the [Templates](https://app.sparkpost.com/templates) ([EU](https://app.eu.sparkpost.com/templates)) section. The SparkPost [template substitution syntax](https://developers.sparkpost.com/api/substitutions-reference.html) is explained in the API documentation as well as the relevant [API endpoints for managing templates](https://developers.sparkpost.com/api/templates.html) from your own apps.
+If you're sending similar content to lots of people, SparkPost templates let you write the message once using substitution variables and logic for personalization, then make a single API call to generate and deliver that message to all your recipients together. You can create and edit templates on your account in the [Templates](https://app.sparkpost.com/templates) ([EU](https://app.eu.sparkpost.com/templates)) section. The SparkPost [template language](https://developers.sparkpost.com/api/template-language/) is explained in the API documentation as well as the relevant [API endpoints for managing templates](https://developers.sparkpost.com/api/templates.html) from your own apps.
 
 ### Service Providers
 
