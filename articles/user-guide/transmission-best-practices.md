@@ -47,12 +47,16 @@ If you receive a 504 after making a transmission request, you can inspect event 
 
 For other network timeouts where it is unclear if your request reached the server, you can also monitor and retry.
 
+**Transmission API Latency**
+
+It is recommended that you set a timeout interval of 5 minutes for retrying messages if you receive no response from the transmission API. 
+
 **Monitoring for Errors**
 
 There are two ways to track transmission errors:
 
 * The response to your original transmission request.
-* Data sent to your webhook endpoint (more information on our webhooks can be found here). 
+* Data sent to your webhook endpoint (more information on our webhooks can be found [here](https://www.sparkpost.com/docs/tech-resources/extended-error-codes/)). 
 
 ## Tracking Individual Transmissions
 
