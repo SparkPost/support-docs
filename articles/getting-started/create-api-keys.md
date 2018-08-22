@@ -19,7 +19,7 @@ Click on **API Keys** under the Settings section of the side navigation bar, the
 
 1. Click the **Create API Key** button to save this information and generate the API key.
 
-**Note**: After the key has been created, you will only be able to see the name of the key, it's permissions, and the first four characters.
+**IMPORTANT**: The generated key will be visible only once. After the key has been created, you will only be able to see the name of the key, it's permissions, and the first four characters.
     
 You have now completed the account configuration and obtained an API Key. If your sending domain has been verified you are ready to [send your first email using SparkPost](https://www.sparkpost.com/docs/getting-started/getting-started-sparkpost/#sending-email)!
 
