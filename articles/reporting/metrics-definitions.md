@@ -22,10 +22,10 @@ The metrics available are:
 | Delivered 2+ Attempts    | `count_delivered_subsequent`     | Number of emails delivered that required more than one attempt. |
 | 1st Attempt Time         | `total_delivery_time_first`      | Total time taken to deliver on first attempt, in milliseconds. |
 | 2nd+ Attempt Time        | `total_delivery_time_subsequent` | Total time taken to deliver on subsequent attempts, in milliseconds. |
-| Delivered Message Volume | `total_msg_volume`               | Total size of delivered messages including attachments, in bytes. |
+| Delivered Message Volume | `total_msg_volume`               | Total size of delivered emails including attachments, in bytes. |
 | Delayed                  | `count_delayed`                  | Number emails that were temporarily rejected by a recipient's mailbox provider. |
 | Delayed 1st Attempt      | `count_delayed_first`            | Number of emails that were delayed on 1st delivery attempt. |
-| Rejected                 | `count_rejected`                 | Number of emails that were rejected by SparkPost. Includes Policy Rejections, Generation Rejections, Generation Faliures. Rejections are also counted as Admin Bounces. |
+| Rejected                 | `count_rejected`                 | Number of emails that were rejected by SparkPost. Includes Policy Rejections, Generation Rejections, Generation Faliures. |
 | Policy Rejections        | `count_policy_rejection`         | Number of emails that were rejected by SparkPost due to policy reasons. |
 | Generation Failures      | `count_generation_failed`        | Number of emails that failed generation due to technical reasons. |
 | Generation Rejections    | `count_generation_rejection`     | Number of emails that failed generation due to policy reasons. |
@@ -59,18 +59,18 @@ Here are the definitions for each of these calculated metrics, including the for
 
 | Metric                    | Formula                                        | Definition |
 |---------------------------|------------------------------------------------|------------|
-| Accepted Rate             | Percentage (Accepted / Targeted)               | Percentage or Targeted messages that were Accepted. |
-| Avg Latency 1st Attempt   | Average (1st Attempt Time)                     | Average delivery time in milliseconds (latency) for messages delivered on the first attempt. |
-| Avg Latency 2nd+ Attempt  | Average (2nd+ Attempt Time)                    | Average delivery time in milliseconds (latency) for messages delivered that required more than one attempt. |
-| Avg Delivery Message Size | Average (Delivered Message Size)               | Average size of delivered messages, including attachments, in bytes. |
-| Delayed Rate              | Percentage (Delayed First Attempt / Accepted)  | Percentage of Accepted messages that were delayed on the first delivery attempt. |
-| Rejection Rate            | Percentage (Rejected / Targeted)               | Percentage of targeted messages that were rejected. |
-| Admin Bounce Rate         | Percentage (Admin Bounces / Targeted)          | Percentage of Targeted messages that Admin Bounced. |
-| Soft Bounce Rate          | Percentage (Soft Bounces / Sent)               | Percentage of Sent messages that Soft Bounced. |
-| Hard Bounce Rate          | Percentage (Hard Bounces / Sent)               | Percentage of Sent messages that Hard Bounced. |
-| Block Bounce Rate         | Percentage (Block Bounces / Sent)              | Percentage of Sent messages that Block Bounced. |
-| Undetermined Bounce Rate  | Percentage (Undetermined Bounces / Sent)       | Percentage of Sent messages that Undertermined Bounced. |
-| Click-through Rate        | Percentage (Unique Clicks / Accepted)          | Approximate percentage of accepted messages that had at least one link selected. |
-| Open Rate                 | Percentage (Unique Confirmed Opens / Accepted) | Approximate Percentage of Accepted messages that were either rendered or had at least one link selected. |
+| Accepted Rate             | Percentage (Accepted / Targeted)               | Percentage or Targeted emails that were Accepted. |
+| Avg Latency 1st Attempt   | Average (1st Attempt Time)                     | Average delivery time in milliseconds (latency) for emails delivered on the first attempt. |
+| Avg Latency 2nd+ Attempt  | Average (2nd+ Attempt Time)                    | Average delivery time in milliseconds (latency) for emails delivered that required more than one attempt. |
+| Avg Delivery Message Size | Average (Delivered Message Size)               | Average size of delivered emails, including attachments, in bytes. |
+| Delayed Rate              | Percentage (Delayed First Attempt / Sent)      | Percentage of Accepted emails that were delayed on the first delivery attempt. |
+| Rejection Rate            | Percentage (Rejected / Targeted)               | Percentage of Targeted emails that were rejected. |
+| Admin Bounce Rate         | Percentage (Admin Bounces / Targeted)          | Percentage of Targeted emails that Admin Bounced. |
+| Soft Bounce Rate          | Percentage (Soft Bounces / Sent)               | Percentage of Sent emails that Soft Bounced. |
+| Hard Bounce Rate          | Percentage (Hard Bounces / Sent)               | Percentage of Sent emails that Hard Bounced. |
+| Block Bounce Rate         | Percentage (Block Bounces / Sent)              | Percentage of Sent emails that Block Bounced. |
+| Undetermined Bounce Rate  | Percentage (Undetermined Bounces / Sent)       | Percentage of Sent emails that Undertermined Bounced. |
+| Click-through Rate        | Percentage (Unique Clicks / Accepted)          | Approximate percentage of Accepted emails that had at least one link selected. |
+| Open Rate                 | Percentage (Unique Confirmed Opens / Accepted) | Approximate Percentage of Accepted emails that were either rendered or had at least one link selected. |
 | Spam Complaint Rate       | Percentage (Spam Complaints / Accepted)        | Percentage of Spam Complaints. |
-| Unsubscribe Rate          | Percentage (Unsubscribes / Accepted)           | Percentage of Accepted messages that resulted in unsubscribes. |
+| Unsubscribe Rate          | Percentage (Unsubscribes / Accepted)           | Percentage of Accepted emails that resulted in unsubscribes. |
