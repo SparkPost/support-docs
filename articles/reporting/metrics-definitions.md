@@ -63,7 +63,7 @@ Here are the definitions for each of these calculated metrics, including the for
 | Avg Latency 1st Attempt   | Average (1st Attempt Time)                     | Average delivery time in milliseconds (latency) for emails delivered on the first attempt. |
 | Avg Latency 2nd+ Attempt  | Average (2nd+ Attempt Time)                    | Average delivery time in milliseconds (latency) for emails delivered that required more than one attempt. |
 | Avg Delivery Message Size | Average (Delivered Message Size)               | Average size of delivered emails, including attachments, in bytes. |
-| Delayed Rate              | Percentage (Delayed First Attempt / Sent)      | Percentage of Accepted emails that were delayed on the first delivery attempt. |
+| Delayed Rate              | Percentage (Delayed First Attempt / Accepted)  | Percentage of Accepted emails that were delayed on the first delivery attempt. |
 | Rejection Rate            | Percentage (Rejected / Targeted)               | Percentage of Targeted emails that were rejected. |
 | Admin Bounce Rate         | Percentage (Admin Bounces / Targeted)          | Percentage of Targeted emails that Admin Bounced. |
 | Soft Bounce Rate          | Percentage (Soft Bounces / Sent)               | Percentage of Sent emails that Soft Bounced. |
