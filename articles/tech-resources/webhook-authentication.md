@@ -1,9 +1,13 @@
 ---
 title: "Webhook Authentication: OAuth 2.0 and Basic Authentication"
-description: "Spark Post offers 2 optional but highly recommended security measures that can be implemented when setting up a webhook namely OAuth 2.0 and Basic Authentication These measures increase the security of your webhook event data and ensure that the data delivered originates from Spark Post OAuth 2..."
+description: "Spark Post offers 3 optional but highly recommended security measures that can be implemented when setting up a webhook namely, SSL, OAuth 2.0, and Basic Authentication These measures increase the security of your webhook event data and ensure that the data delivered originates from Spark Post OAuth 2..."
 ---
 
-SparkPost offers 2 optional (but highly recommended) security measures that can be implemented when setting up a webhook, namely **OAuth 2.0** and **Basic Authentication**. These measures increase the security of your webhook event data and ensure that the data delivered originates from SparkPost.
+SparkPost offers 3 optional (but highly recommended) security measures that can be implemented when setting up a webhook, namely **SSL**, **OAuth 2.0**, and **Basic Authentication**. These measures increase the security of your webhook event data and ensure that the data delivered originates from SparkPost.
+
+**SSL**
+
+Secure Socket Layer (SSL), also known as Transport Layer Security (TLS), are cryptographic protocols that provide communications security over a computer network.  If your Target endpoint supports SSL then you can prefix your endpoint URL with "https://".  The default port is 443, in which case you do not need to specify the port in the URL e.g. https://yourdomain.com/yourendpoint.  If your Target endpoint has SSL enabled on a different port then you may specifcy it in your URL.  E.g. "https://yourdomain.com:81/yourendpoint"
 
 **OAuth 2.0**
 
