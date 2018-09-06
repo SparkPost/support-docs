@@ -3,6 +3,13 @@ title: "SparkPost Change Log"
 description: "A running log of what's new, what's been fixed, and what's been changed in SparkPost."
 ---
 
+
+## August 31, 2018  
+### What’s New?
+
+* User interface for setting up A/B tests is here. How to get started [article](https://www.sparkpost.com/blog/new-sparkpost-a-b-testing/) will get you going in 3 easy steps.
+
+
 ## July 23, 2018  
 ### What’s New?
 
