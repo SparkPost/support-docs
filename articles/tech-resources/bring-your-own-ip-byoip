@@ -1,0 +1,54 @@
+---
+title: "Bring Your Own IP (BYOI)"
+description: "SparkPost's Bring Your Own IP program provides senders of large volumes of email with the ability to quickly switch from their existing provider without having to worry about warming up new IPs, managing reputation, or communicating changes to their end customers. The BYOIP service provides IP portability for large volume senders focused on deliverability, inboxing, and customer satisfaction."
+---
+SparkPost's Bring Your Own IP program provides senders of large volumes of email with the ability to quickly switch from their existing provider without having to worry about warming up new IPs, managing reputation, or communicating changes to their end customers. The BYOIP service provides IP portability for large volume senders focused on deliverability, inboxing, and customer satisfaction. 
+Bring Your Own IP is about IP reputation control and simplicity. Large volume email senders take considerable time and care to ensure their IP’s have a good reputation. This program is designed to decrease the time it takes to transition from an existing messaging provider to SparkPost. It removes the need for a developer to have to create technology to split traffic between two different locations. It also eliminates the time a developer would spend manually watching and changing how and when traffic is split during a traditional warm up period. Additionally, Bring Your Own IP removes the risks around IP warmup, ensuring that the sender’s customers have a seamless and safe transition without worry of ISPs treating you like a new sender.   The service aims to maximize the benefits of SparkPost quickly, efficiently, and with limited risk to the sender
+The BYOIP service allows you to bring over a /24 that you own and manage, but you allow us to route messages through them.
+
+**FAQs**
+
+Q: When and where is BYOIP available?
+A: Available in the US since end of June 2018. Available in Europe by end of Sept 2018.
+
+Q: Is there a charge for BYOIP ?
+A: Yes, we’ll be charging a startup cost of $20,000 per instance or occurrence. Meaning a customer can bring all of their ranges at one time and have it covered by the $20k fee, or if they choose to bring ranges to us over a period of time, it will be $20k per instance. 
+
+Q: What is the smallest range of IPs I can port over      
+A: A /24 (which contains 254 usable address of 256 total including the 0 and 255 host addresses. 
+
+Q: Does everything on the /24 have to be cut over at once?
+A: Yes all IPs to the /24 need to be cut over at once. It’s a limitation of how the internet works 
+
+Q: What will the process be to bring my own IP blocks over? 
+A: Customer provides Sparkpost an LOA (Letter of Authorization) on customer letterhead. The LOA lists IP Range(s) being moved, Sparkpost authorization to announce, our ASN (23528), and a signature. Sparkpost does research based on the LOA confirming ownership. Also investigates current customer internet configuration.
+Meeting between Network Ops, TAM, and customer to discuss and plan the migration. Note that migrations vary wildly between customers
+Customer environment is provisioned, tested with Sparkpost IPs, and released to the customer. Customer and TAM configure the environment and prepare for migration.
+Engineering & Customer execute the agreed migration plan. Customer confirms migration successful and E-mail is flowing.
+
+Q: Will I need to schedule a maintenance window to stop injecting into my current MTA or provider in order to cut over to my IPs now being broadcast by SparkPost? 
+A: Yes. We need to plan a hard cut for sending of IPs. The method and length of time required for the cut depends on network design and your requirements. Sparkpost will help with planning and executing the migration. Downtime will be between 5 minutes and 2 hours.
+
+Q: How will we preconfigure our SparkPost set up so that once SparkPost is announcing my IPs all of my traffic is segmented properly? 
+A: The change is announced via BGP. Sparkpost will provision the customer environment, provide temporary Sparkpost owned IPs for testing, and hand over the environment to the customer. The Customer and TAMs will then pre-configure the environment in preparation of the cut over date. During provisioning, Sparkpost assigns all of the customer IPs directly to the default IP Pool assigned to the customer, they are isolated from other tenants from the start. The customer provided IPs will not function for sending until the scheduled cut over has been completed.
+
+Q: Is configuring of IPs to accounts/subaccounts and message streams something I can do myself or do I need to contact a TAM to do this? 
+A: You have full control over which IP Pools the BYOIP IPs belong.  
+
+Q: Will anyone else be able to use my IPs or will they solely be allocated to my account?
+A: Any IPs that are part of the BYOIP program are specially assigned to your account and cannot be reassigned to a different customer’s account.
+
+Q: Will I also be able to purchase and use SparkPost IPs and how would they be provisioned and used? 
+Yes, you can purchase additional SparkPost IPs.  You have full control over your IP pools and can assign your BYOIP IPs and SparkPost IPs as you see fit.
+
+Q: Can I see a report that shows all of my IPs and how they're allocated to what accounts/subaccounts 
+A: The Sending IP API and IP Pools UI will include a “customer_provided” boolean value that is is true if the IP is part of a customer owned block brought in using the BYOIP program.
+
+Q: How will I go about getting my IPs back if we choose to leave your service?
+A: To remove an announcement the customer submits a support ticket with the request to Sparkpost and the range will be removed within 10 business days. 
+
+Q: Can I keep my branded hostname: 
+A: Yes - the customer will continue owning the PTR - the reverse lookup will be the same. We won’t touch that. 
+
+Q: Will we need to do anything with SPF? 
+A: No - the customer will continue owning the SPF and will not change.
