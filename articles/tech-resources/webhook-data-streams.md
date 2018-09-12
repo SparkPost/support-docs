@@ -15,7 +15,7 @@ Generally speaking, four events are recorded for each message: injection, delive
 
 * The webhook service will reattempt to post patches for which it receives a non 2xx response code.
 * A timeout for any particular batch posting attempt will occur after **10 seconds** if the endpoint does not successfully accept a given batch.
-* The retry logic for the posting of batches gradually increases in a logarithmic fashion and will cease retrying altogether after 8 hours.  (This means you can potentially lose event data if your webhook consumer is completely down for 8 hours or longer.)
+* The retry logic for the posting of batches gradually increases in a logarithmic fashion and will cease retrying altogether after 8 hours. This means you can potentially lose event data if your webhook consumer is completely down for 8 hours or longer. 12 total attempts will be made to POST the webhook batch to the webhook endpoint (the initial attempt + 11 retries).
 
 ## Helpful Tips on Webhook Consumers
 
@@ -29,4 +29,5 @@ Generally speaking, four events are recorded for each message: injection, delive
 ## Monitoring Webhooks
 
 If you have issues with your webhooks, it would be wise to monitor them either on your endpoint, or via the batch-status API, which is detailed [here](https://developers.sparkpost.com/api/webhooks#webhooks-batch-status-get). You can also view the endpoint status in the Webhhook Batch Status tab in the [app](https://app.sparkpost.com/webhooks/) ([EU](https://app.eu.sparkpost.com/webhooks/)). This will help inform you if there is a problem with the webhooks so it can be remedied before batches hit the 8 hour limit as described in the retry logic above.
-Note that batch status (via both app and the API) does not report batches that succeeded first time. It reports only failed batches and batches that initially failed but later succeeded. The batch status is kept for a few days.
+
+Note that batch status (via both app and the API) does not report batches that succeeded first time. It reports only failed batches and batches that initially failed but later succeeded. The batch status is kept for a 24 hours.
