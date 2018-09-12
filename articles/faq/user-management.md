@@ -5,7 +5,7 @@ description: "SparkPost provides the ability to add or delete an additional user
 
 SparkPost provides the ability to add or delete additional users to your account. This self-service feature is available via the user interface in the Account > Users section of the UI.  Moreover, there are also two role-based features available in the Web UI and they are: Admin and Reporting.
 
-**Admin Role**: Has access to all functionality in the UI and the ability to add additional administrators and create / invite users with a role of Reporting.
+**Admin Role**: Has access to all functionality in the UI and the ability to add additional administrators and create / invite users with a role of Reporting.  Only this account type will be sent the "Weekly SparkPost Account Report" email.
 
 **Reporting Role**: Can view all reports.  The Reporting user can see a summary of templates and they can also view individual templates, however they are not able to change them at this time.  The Reporting Role also has access to their Profile screen and can change their password (Note: Refer to the screen below).  Otherwise, this role does not have access to any other functionality in the UI.
 
