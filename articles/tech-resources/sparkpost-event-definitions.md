@@ -29,8 +29,8 @@ The possible events are:
 | generation_rejection | Email generation failed due to a policy reason. |
 | list_unsubscribe     | Recipient unsubscribed using a mailbox provider's list unsubscribe feature. |
 | link_unsubscribe     | User clicked a [tagged unsubscribe link](https://www.sparkpost.com/docs/user-guide/setting-up-unsubscribe-links/). |
-| relay_injection      | Relayed email was received SparkPost. |
-| relay_rejection      | SparkPost rejected or failed to generate a relayed email. |
-| relay_delivery       | Recipient mailbox provider acknowledged receipt of a relayed email. |
-| relay_tempfail       | Recipient mailbox provider temporarily failed to accept a relayed email. |
-| relay_permfail       | Relayed email reached the maximum retry threshold without successful delivery to the recipient mailbox provider. |
+| relay_injection      | SparkPost received an inbound email. |
+| relay_rejection      | SparkPost rejected an inbound email. |
+| relay_delivery       | Delivered inbound email to your endpoint. |
+| relay_tempfail       | Your endpoint temporarily failed to accept inbound email. |
+| relay_permfail       | Reached the maximum retry delivery attempts for an inbound email.  |
