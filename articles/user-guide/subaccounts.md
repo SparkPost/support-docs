@@ -71,7 +71,7 @@ Administrators within your business can create as many subaccounts as needed. Cr
 
 ![subaccount api key option](media/subaccounts/skip-api-key.png)
 
-For documentation on how to skip API key genration upon initial subaccount creation by using the "setup_api_key" boolean string, please click [here.](https://developers.sparkpost.com/api/subaccounts.html#subaccounts-subaccounts-collection-post)
+For documentation on how to skip API key generation upon initial subaccount creation by using the "setup_api_key" boolean string, please click [here.](https://developers.sparkpost.com/api/subaccounts.html#subaccounts-subaccounts-collection-post)
 
 **Note**: Subaccounts cannot be nested beneath other subaccounts.
 
