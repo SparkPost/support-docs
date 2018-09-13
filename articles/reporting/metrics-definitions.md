@@ -1,169 +1,76 @@
 ---
-title: "Reporting Metrics - Definitions"
-description: "Spark Post's aggregated time series statistics are referred to as Metrics This type of reporting data is available in the dashboard or through the Metrics API This document outlines the definition of each metric Standard Metrics Targeted Number of messages passed to Spark Post some will be accepted and others..."
+title: "Metrics Definitions"
+description: "Definitions for the metrics available to SparkPost accounts."
 ---
 
-SparkPost's aggregated, time-series statistics are referred to as "Metrics". This type of reporting data is available in the dashboard or through the [Metrics API](https://developers.sparkpost.com/api/metrics.html). This document outlines the definition of each metric.
-
-## Standard Metrics
-
-**Targeted**
-
-Number of messages passed to SparkPost - some will be accepted and others will be rejected.  This is the number of recipients marked as "Accepted" in the REST transmission response.
-
-**Accepted**
-
-Number of messages accepted by the recipient's mailbox provider for delivery -- often referred to as a "delivered".  NOTE:  Recipients that have a delivery and an out-of-band bounce are not included in this count.​
-
-​**Rendered**
-
-Number of times messages are displayed (often referred to as "opened"); a raw count of opens.​
-
-**Clicks**
-Number of clicks on tracked links; a raw count of clicks.
-
-## Other Metrics
-
-**Accepted Rate**
-
-The percentage of messages that are accepted by the recipient's mailbox provider for delivery.  Calculated by _number of messages accepted / number of messages targeted._
-
-**Admin Bounce Rate**
-
-The percentage of messages that are bounced by SparkPost - suppression logic is the most common type of admin bounce.  Calculated by _number of admin bounces / number of messages targeted._
-
-**Admin Bounced**
-
-Number of messages that are bounced by SparkPost - suppression logic is the most common type of admin bounce.
-
-**Bounce Rate**
-
-The percentage of messages that bounce except admin bounces.  Calculated by _number of bounces / number of messages sent._
-
-**Average Delivery Message Size**
-
-Average size (in bytes) of all delivered messages, including attachments.
-
-**Average Latency First Attempt**
-
-Average time between the time SparkPost accepts a message and the time of the first delivery attempt with the recipient's mailbox provider.
-
-**Average Latency Second and Higher Attempts**
-
-Average time between the time SparkPost accepts a message and the time of the any delivery attempt after the first attempt.
-
-**Block Bounce Rate**
-
-The percentage of messages that are "blocked" bounced.  Calculated by _number of blocked bounces / number of messages sent._
-
-**Block Bounced**
-
-Number of messages that are "blocked" bounced by the recipient's mailbox provider.  (A block bounce occurs when a message is rejected due to message and content filtering rules such as URL blocks, IP blocks, lack of proper headers, etc.,)
-
-**Bounced**
-
-Number of messages that are bounced for all reasons except admin bounces.  (Includes the less common out-of-band bounces.)
-
-**Click-Through Rate (approximated)**
-
-Percentage of “accepted” messages that have at least one click. Calculated by _approximate number of unique links clicked / number of messages accepted._
-
-**Delayed**
-
-Number of times that messages are temporarily rejected by the recipient's mailbox provider; a raw count of delay events.  Note - this is a raw count of all delays (4xx rejections) and does not represent the number of messages that are currently delayed or how many messages were ever delayed.
-
-**Delayed First Attempt**
-
-Number of messages that are temporarily rejected by the recipient's mailbox provider on the first delivery attempt.
-
-**Delivered First Attempt**
-
-Number of messages that are accepted by the recipient's mailbox provider on the first delivery attempt.
-
-**Delivered Second and Higher Attempts**
-
-Number of messages that are accepted by the recipient's mailbox provider on any delivery attempt other than the first attempt.
-
-**Delivery Message Volume**
-
-Total size of delivered messages in bytes (includes attachments).
-
-**Generation Failure**
-
-Number of messages that SparkPost is unable to generate - a common reason for this event is a template syntax error.
-
-**Generation Rejection**
-
-Number of messages that SparkPost is unable to generate for policy reasons - a common reason for this event is a suppressed recipient.
-
-**Hard Bounce Rate**
-
-The percentage of messages that are "hard" bounced.  Calculated by _number of hard bounces / number of messages sent._
-
-**Hard Bounced**
-
-Number of messages that are "hard" bounced by the recipient's mailbox provider.  (A hard bounce occurs when recipient's mailbox provider states that the recipient's email address is not a valid address.)
-
-**Injected**
-
-Number of messages for which SparkPost attempts delivery.  This is the number of messages targeted minus any that SparkPost was not able to attempt delivery.
-
-**Open Rate**
-
-Percentage of “accepted” messages that are either rendered or have at least one click. Calculated by _number of messages opened / number of messages accepted._
-
-**Policy Rejection**
-
-Number of messages that SparkPost is unable to generate for policy reasons - a common reason for this event is when a daily limit is exceeded.
-
-**Rejected**
-
-Number of messages that SparkPost is unable to generate for various reasons. Calculated by the sum of generation rejections + generation failures + policy rejections.
-
-**Sent**
-
-Number of messages that SparkPost attempted to deliver, which includes both Deliveries and Bounces.
-
-**Soft Bounce Rate**
-
-The percentage of messages that are "soft" bounced.  Calculated by _number of soft bounces / number of messages sent._
-
-**Soft Bounced**
-
-Number of messages that are "soft" bounced by the recipient's mailbox provider.  (A soft bounce occurs when recipient's mailbox provider states that message cannot be accepted at this time, common example: mailbox full.)
-
-**Spam Complaint Rate**
-
-Percentage of “accepted” messages that have a spam complaint. Calculated by _number of spam complaints / number of messages accepted._
-
-**Spam Complaints**
-
-Number of spam complaints that are received by SparkPost.
-
-**Undetermined Bounce Rate**
-
-The percentage of messages that bounce for "undetermined" reasons.  Calculated by _number of undetermined bounces / number of messages sent._
-
-**Undetermined Bounced**
-
-Number of messages that bounce by the recipient's mailbox provider for "undetermined" reasons.
-
-**Unique Clicks (approximated)**
-
-Number of messages that have at least one link clicked.
-
-**Unique Confirmed Opens (approximated)**
-
-Number of messages opened or have at least one link clicked.
-
-**Unique Rendered (approximated)**
-
-Number of unique recipients who open a message.
-
-**Unsubscribes**
-
-Total number of times a recipient clicked a specifically tagged unsubscribe link or unsubscribed by using the ISP list unsubscribe feature.
-
-**Unsubscribe Rate**
-
-The percentage of messages that resulted in unsubscribes. Calculated by _number of all unsubscribes / number of messages accepted._
+For Enterprise Metrics see [Enterprise Metric Definitions](https://www.sparkpost.com/docs/reporting/enterprise-metrics-definitions/).
+
+# API Metrics Definitions
+
+The [Metrics API endpoint](https://developers.sparkpost.com/api/metrics.html)
+surfaces your account's aggregated and time-series data. 
+The metrics available are:
+
+| Metric                   | API Source                       | Definition  |
+|--------------------------|----------------------------------|-------------|
+| Targeted                 | `count_targeted`                 | Number of emails requested or relayed to SparkPost. Includes Injected and Rejected. |
+| Injected                 | `count_injected`                 | Number of emails successfully generated or relayed through SparkPost. |
+| Sent                     | `count_sent`                     | Number of emails that were attempted to be delivered. Includes Deliveries and Bounces. |
+| Delivered                | `count_delivered`                | Number of emails that were received by a recipient's mailbox provider. |
+| Accepted                 | `count_accepted`                 | Number of emails delivered that didn't subsequently bounce (Out-of-Band). |
+| Delivered 1st Attempt    | `count_delivered_first`          | Number of emails delivered on the first attempt. |
+| Delivered 2+ Attempts    | `count_delivered_subsequent`     | Number of emails delivered that required more than one attempt. |
+| 1st Attempt Time         | `total_delivery_time_first`      | Total time taken to deliver on first attempt, in milliseconds. |
+| 2nd+ Attempt Time        | `total_delivery_time_subsequent` | Total time taken to deliver on subsequent attempts, in milliseconds. |
+| Delivered Message Volume | `total_msg_volume`               | Total size of delivered emails including attachments, in bytes. |
+| Delayed                  | `count_delayed`                  | Number emails that were temporarily rejected by a recipient's mailbox provider. |
+| Delayed 1st Attempt      | `count_delayed_first`            | Number of emails that were delayed on 1st delivery attempt. |
+| Rejected                 | `count_rejected`                 | Number of emails that were rejected by SparkPost. Includes Policy Rejections, Generation Rejections, Generation Faliures. |
+| Policy Rejections        | `count_policy_rejection`         | Number of emails that were rejected by SparkPost due to policy reasons. |
+| Generation Failures      | `count_generation_failed`        | Number of emails that failed generation due to technical reasons. |
+| Generation Rejections    | `count_generation_rejection`     | Number of emails that failed generation due to policy reasons. |
+| Admin Bounces            | `count_admin_bounce`             | Number of emails that were bounced by SparkPost. Not counted in Bounces. |
+| Bounces                  | `count_bounce`                   | Number of bounced emails, not including Admin Bounces. Includes all In-Band and Out-of-Band Bounces. |
+| In-band Bounces          | `count_inband_bounce`            | Number of emails that bounced on delivery attempt. |
+| Out-of-Band Bounces      | `count_outofband_bounce`         | Number of emails that bounced subsequent to a successful delivery. |
+| Soft Bounces             | `count_soft_bounce`              | Number of emails that bounced due to temporary delivery issues. |
+| Hard Bounces             | `count_hard_bounce`              | Number of emails that bounced due to permanent delivery issues. |
+| Block Bounces            | `count_block_bounce`             | Number of emails that bounced due to a mailbox provider's filtering rules |
+| Undetermined Bounces     | `count_undetermined_bounce`      | Number of emails that bounced due to undetermined reasons. |
+| Clicks                   | `count_clicked`                  | Number of times that links were clicked across all emails. |
+| Raw Clicks               | `count_raw_clicked`              | Number of unique link clicks from recipients. |
+| Unique Clicks            | `count_unique_clicked`           | Number of emails that had at least one link clicked. Approximated with a 5% error threshold. |
+| Unique Confirmed Opens   | `count_unique_confirmed_opened`  | Number of emails that were displayed or had at a link clicked. Approximated with a 5% error threshold. |
+| Rendered                 | `count_rendered`                 | Number of times emails were displayed, as recorded by bottom open pixels. Applies only to HTML emails. |
+| Unique Renders           | `count_unique_rendered`          | Number of emails that were displayed at least once, as recorded by bottom open pixels. Applies only to HTML emails. Approximated with a 5% error threshold. |
+| Initial Renders          | `count_initial_rendered`         | Number of times emails were displayed, as recorded by top open pixels. Applies only to HTML emails. |
+| Unique Initial Rendered  | `count_unique_initial_rendered`  | Number of emails that were displayed at least once, as recorded by top open pixels. Applies only to HTML emails. Approximated with a 5% error threshold. |
+| Spam Complaints          | `count_spam_complaint`           | Number of spam complaints received from mailbox providers. |
+| Unsubscribes             | `count_unsubscribe`              | Number of times a recipient clicked a tagged unsubscribe link or used the list unsubscribe header. |
+
+## Report Metrics Definitions
+
+The [reports section of your account](https://app.sparkpost.com/reports)([EU](https://app.eu.sparkpost.com/reports))
+uses [Metrics API](#header-metrics-definitions) data to build graphs and reports to help understand your email activity.
+Most of the numbers found in these reports are taken straight from the API.
+Some of numbers in the reports are simple calculations involving 2 of the API metrics.
+Here are the definitions for each of these calculated metrics, including the formulas used to calculate them:
+
+
+| Metric                    | Formula                                        | Definition |
+|---------------------------|------------------------------------------------|------------|
+| Accepted Rate             | Percentage (Accepted / Targeted)               | Percentage or Targeted emails that were Accepted. |
+| Avg Latency 1st Attempt   | Average (1st Attempt Time)                     | Average delivery time in milliseconds (latency) for emails delivered on the first attempt. |
+| Avg Latency 2nd+ Attempt  | Average (2nd+ Attempt Time)                    | Average delivery time in milliseconds (latency) for emails delivered that required more than one attempt. |
+| Avg Delivery Message Size | Average (Delivered Message Size)               | Average size of delivered emails, including attachments, in bytes. |
+| Delayed Rate              | Percentage (Delayed First Attempt / Accepted)  | Percentage of Accepted emails that were delayed on the first delivery attempt. |
+| Rejection Rate            | Percentage (Rejected / Targeted)               | Percentage of Targeted emails that were rejected. |
+| Admin Bounce Rate         | Percentage (Admin Bounces / Targeted)          | Percentage of Targeted emails that Admin Bounced. |
+| Soft Bounce Rate          | Percentage (Soft Bounces / Sent)               | Percentage of Sent emails that Soft Bounced. |
+| Hard Bounce Rate          | Percentage (Hard Bounces / Sent)               | Percentage of Sent emails that Hard Bounced. |
+| Block Bounce Rate         | Percentage (Block Bounces / Sent)              | Percentage of Sent emails that Block Bounced. |
+| Undetermined Bounce Rate  | Percentage (Undetermined Bounces / Sent)       | Percentage of Sent emails that Undertermined Bounced. |
+| Click-through Rate        | Percentage (Unique Clicks / Accepted)          | Approximate percentage of Accepted emails that had at least one link selected. |
+| Open Rate                 | Percentage (Unique Confirmed Opens / Accepted) | Approximate Percentage of Accepted emails that were either rendered or had at least one link selected. |
+| Spam Complaint Rate       | Percentage (Spam Complaints / Accepted)        | Percentage of Spam Complaints. |
+| Unsubscribe Rate          | Percentage (Unsubscribes / Accepted)           | Percentage of Accepted emails that resulted in unsubscribes. |
