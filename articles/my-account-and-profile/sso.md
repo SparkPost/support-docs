@@ -33,6 +33,8 @@ For Enterprise customers: `https://<host>/api/v1/users/saml/consume`
 
 ## Disable SSO
 
+Enabling SSO is a 2-step process. You must complete both steps or users will not be able to log in.
+
 ### 1. Disable for your company:
 
 1. Click on your user name in the upper right corner and select “Account Settings”.
