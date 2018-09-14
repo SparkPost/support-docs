@@ -37,12 +37,12 @@ For Enterprise customers: `https://<host>/api/v1/users/saml/consume`
 
 1. Click on your user name in the upper right corner and select “Account Settings”.
 1. To the right of “Single Sign-On”, click “Disable SSO”.
-1. Each user will need to reset their password following the "Forgot Password" link on the SparkPost sign in page.
 
 ### 2. Disable for each user:
 1. If you have just disabled SSO for your company and are still on “Account Settings” page, click on “Manage single sign-on users” to go to the “Manage Users” page. If you are coming from any other page, click on your user name in the upper right corner and select “Manage Users” to access that page.
 1. Find the user for whom you would like to enable SSO. Click on the three dots in the rightmost column for more options. Click “Edit”.
 1. Check the box next to “Disable single sign-on authentication for this user” and then click “Update User”.
+1. The user will need to reset their password following the "Forgot Password" link on the SparkPost sign in page before they can log in.
 1. Repeat steps “b” and “c” for each additional user.
 
 ## FAQ
