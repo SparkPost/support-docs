@@ -31,6 +31,14 @@ For EU-hosted customers: `https://api.eu.sparkpost.com/api/v1/users/saml/consume
 For Enterprise customers: `https://<host>/api/v1/users/saml/consume`  
 *(Enterprise customers: note that you must replace < host > with your SparkPost tenant name. Please see your TAM if you need assistance determining your callback URL.)*
 
+## Disable SSO
+
+### 1. Disable for your company:
+
+1. Click on your user name in the upper right corner and select “Account Settings”.
+1. To the right of “Single Sign-On”, click “Disable SSO”.
+1. Each user will need to reset their password following the "Forgot Password" link on the SparkPost sign in page.
+
 ## FAQ
 
 ### What do I need to provide to my IdP?
