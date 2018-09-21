@@ -98,7 +98,7 @@ After creating a subaccount, the master account has the option of assigning a de
 
 **Note**: Minimal validation is done against the value set in the IP pool ID key/field. If a mismatch error occurs, all attempted messages from that subaccount will be rejected.
 
-**Note**: If you do not set a default IP pool/binding group for a subaccount, the subaccount may use any of the account's IP pools.  If no such IP Pool is specified in the subaccount's injected email, the system will use either the account level default IP pool (if such a pool exists), or fallback to the sparkpost shared IP Pool.
+**Note**: If you do not set a default IP pool/binding group for a subaccount, the subaccount may use any of the account's IP pools.  If no such IP Pool is specified in the subaccount's injected email, the system will use either the account level default IP pool. If the account level does not have any dedicated IPs and therefore no IP pools, the SparkPost shared IP Pool will be used.
 
 **Permissions**
 
