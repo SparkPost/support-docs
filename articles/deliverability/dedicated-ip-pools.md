@@ -54,7 +54,7 @@ REST transmission example:
 
 If you have one or more IP pools, and you do **not** provide an "ip_pool" value for your transmission, then messages will be routed through the IP(s) in the "Default" IP Pool. If the "Default" IP pool has no sending IPs then the transmission will be rejected. 
 
-If you do not have any IP pools, traffic will be sent through the SparkPost shared IP pools for SparkPost accounts.  
+If you do not have any dedicated IPs, traffic will be sent through the SparkPost shared IP pools for SparkPost accounts.  
 
 ## Using Your Dedicated IPs with Subaccounts
 
