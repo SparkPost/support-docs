@@ -5,9 +5,13 @@ description: "Dedicated IP addresses are available for any account with the exce
 
 Dedicated IP addresses are available for any account with the exception of the free plan. Any new dedicated IP address added to your account will have a neutral initial reputation, which means that you will be responsible for properly warming up your new IP. You can refer to our [IP Warmup Overview](https://www.sparkpost.com/docs/deliverability/ip-warm-up-overview/) for a comprehensive guide to warming up your new IP.
 
-## Purchasing Dedicated IPs
+## Plans with an Included IP
 
-You can provision new dedicated IPs directly to your Account via the UI.  For Enterpise customers, please contact your designated TAM for purchasing of dedicated IPs.
+Some plan levels include a free dedicated IP address. If your plan includes an IP, it will be provisioned to your account automatically on sign up or upgrade.
+
+## Purchasing Additional Dedicated IPs
+
+You can provision additional dedicated IPs directly to your Account via the UI.  For Enterpise customers, please contact your designated TAM for purchasing of dedicated IPs.
 
 1. Select Account **->** Billing and then press the orange "Purchase Sending IPs" Button.
 2. You will then be prompted to choose:
@@ -48,9 +52,9 @@ REST transmission example:
 }
 ```
 
-If you have one or more IP pools, and you do **not** provide an "ip_pool" value for your transmission, then messages will be routed through the IP(s) in the "Default" IP Pool. If the "Default" IP pool has no sending IPs then the traffic will be sent through the SparkPost shared IP pools for SparkPost accounts.  
+If you have one or more IP pools, and you do **not** provide an "ip_pool" value for your transmission, then messages will be routed through the IP(s) in the "Default" IP Pool. If the "Default" IP pool has no sending IPs then the transmission will be rejected. 
 
-***NOTE:** For Enterprise accounts, transmissions that do not specify an IP Pool and have no IPs in the "Default" IP pool will be **rejected**.*
+If you do not have any dedicated IPs, traffic will be sent through the SparkPost shared IP pools for SparkPost accounts.  
 
 ## Using Your Dedicated IPs with Subaccounts
 
@@ -66,6 +70,4 @@ Messages queued for delivery have the sending IP attached to the message. So the
 
 ## Scheduled Transmissions
 
-Scheduled transmissions have a slightly different behavior. If at the scheduled time, SparkPost sees that the selected IP Pool either doesn't exist or is empty, it will attempt fallback to your account's default pool if it exists. If not, it falls back to the shared pools for SparkPost accounts.  
-
-***NOTE:** For Enterprise accounts, there are no shared pools and no fall back is possible, so the transmission will be **rejected**.*
+Scheduled transmissions have a slightly different behavior. If at the scheduled time, SparkPost sees that the selected IP Pool either doesn't exist or is empty, it will attempt fallback to your account's "Default" IP pool. If the "Default" IP pool has no sending IPs then the transmission will be rejected.
