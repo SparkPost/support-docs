@@ -95,6 +95,36 @@ The following is a sample guide for use with CloudFlare **only**; please note, t
     ```
 9. Navigate to the Tracking Domains section in the UI and click the orange "test" verification link. At this point, the process is complete.
 
+## Step by Step Guide with AWS CloudFront
+
+The following is a sample guide for use with AWS CloudFront **only**; please note, the steps to configure your chosen CDN will likely differ from CloudFront in workflow. Please refer to your CDN's documentation and contact their respective support departments if you have any questions.
+
+1. Login with your credentials on AWS CloudFront console.
+
+2. Choose **Create Distribution**.
+
+3. On the "Select a delivery method for your content" page, choose **Get Started** under the **Web** section.
+
+4. On the Create Distribution page fill out the following:
+    * Under Origin Settings, fill in the **Origin Domain Name**.
+
+    * Under Origin Settings, select **HTTPS Only** for "Origin Protocol Policy".
+    
+    * Under Distribution Settings, fill in **Alternate Domain Names (CNAMEs)** with your custom tracking domains (i.e., www.customtrackingdomain.com).
+        * Create, or update, a CNAME record with your DNS service to route queries for tracking domain(s) to `d111111abcdef8.cloudfront.net`.
+        * **Note:** Can add up to 100 domains.
+    
+    * Under Distribution Settings, select **Custom SSL Certificate** for "SSL Certificate".
+        * Upload certificates as needed.
+    
+    * At the bottom of the page, press **Create Distribution**.
+
+5. Log into Sparkpost UI
+
+6. Add **custom tracking domain** and verify the domain.
+
+7. Use tracking domain while sending messages.
+
 ## Additional Resources for Content Delivery Networks
 
 For a list of CDN providers (any of which can integrate with SparkPost to enable HTTPS engagement tracking), this [page](http://www.cdn-advisor.com/articles/).
