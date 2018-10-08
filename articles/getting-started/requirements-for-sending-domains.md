@@ -52,7 +52,7 @@ That website must follow these guidelines:
 * Does not contain content that violates our [Messaging Policy](https://www.sparkpost.com/policies/messaging/)
 * Resides in the same country from where you registered your account
 
-If you make changes to your blocked sending domain and would like us to re-evaluate your domain, please [submit a support request](https://www.sparkpost.com/submit-a-ticket/?email[subject]=Web:Reevaluate%20Sending%20Domain)
+If you make changes to your blocked sending domain and would like us to re-evaluate your domain, please [submit a support request](https://app.sparkpost.com/dashboard?supportTicket=true&supportIssue=sending_domain_block)
 
 ## Additional Resources:
 
