@@ -98,28 +98,43 @@ The following is a sample guide for use with CloudFlare **only**; please note, t
 ## Step by Step Guide with AWS CloudFront
 
 The following is a sample guide for use with AWS CloudFront **only**; please note, the steps to configure your chosen CDN will likely differ from CloudFront in workflow. Please refer to your CDN's documentation and contact their respective support departments if you have any questions.
+For up to date information on creating a distribution via CloudFront, please refer to the [AWS docs](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-creating-console.html)
 
-1. Login with your credentials on AWS CloudFront console.
+1. Login with your credentials onto AWS console and navigate to [CloudFront](https://console.aws.amazon.com/cloudfront/).
 
-2. Choose **Create Distribution**.
+2. Choose **Create Distribution**:
 
-3. On the "Select a delivery method for your content" page, choose **Get Started** under the **Web** section.
+    ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_UI.png)
+
+3. On the "Select a delivery method for your content" page, under the **Web** section, choose **Get Started**.
+
+    ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_method.png)
 
 4. On the Create Distribution page fill out the following:
     * Under Origin Settings, fill in the **Origin Domain Name**.
-
-    * Under Origin Settings, select **HTTPS Only** for "Origin Protocol Policy".
     
+        ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_origin_domain_name.png)
+
+    * Under Origin Settings, for **Origin Protocol Policy**, select **HTTPS Only**.
+    
+        ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_origin_protocol_policy.png)
+
     * Under Distribution Settings, fill in **Alternate Domain Names (CNAMEs)** with your custom tracking domains (i.e., www.customtrackingdomain.com).
-        * Create, or update, a CNAME record with your DNS service to route queries for tracking domain(s) to `d111111abcdef8.cloudfront.net`.
         * **Note:** Can add up to 100 domains.
-    
-    * Under Distribution Settings, select **Custom SSL Certificate** for "SSL Certificate".
-        * Upload certificates as needed.
-    
-    * At the bottom of the page, press **Create Distribution**.
+        
+        ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_cnames.png)
 
-5. Log into Sparkpost UI
+    * Create, or update, a CNAME record with your DNS service to route queries for tracking domain(s) to `d111111abcdef8.cloudfront.net`.
+        
+    * Under Distribution Settings, for "SSL Certificate", select **Custom SSL Certificate** - Upload certificates as needed.
+        
+        ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_custom_ssl_cert.png)
+
+    * At the bottom of the page, press **Create Distribution**.
+    
+        ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_create_distribution.png)
+
+5. Log into Sparkpost UI use the Sparkpost [Tracking Domain API](https://developers.sparkpost.com/api/tracking-domains/#tracking-domains).
 
 6. Add **custom tracking domain** and verify the domain.
 
