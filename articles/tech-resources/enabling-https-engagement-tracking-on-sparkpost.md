@@ -11,7 +11,7 @@ SparkPost supports HTTPS engagement tracking for all self-service customers. Thi
 
 In order for HTTPS engagement tracking to be enabled on SparkPost, our service needs to present a valid certificate that will be trusted by the email recipient’s browser.  SparkPost does not manage certificates for customer engagement tracking domains, as we are not the record owner for our customers’ domains.
 
-As a workaround, you may use a Content Delivery Network (CDN) service, such as [Cloudflare](http://www.cloudflare.com) or [Fastly](http://www.fastly.com) to manage certificates and keys for any custom engagement tracking domains you configure.  These services forward traffic onwards to SparkPost so that HTTPS tracking can be performed.
+As a workaround, you may use a Content Delivery Network (CDN) service, such as [CloudFront](https://aws.amazon.com/cloudfront/), [Cloudflare](http://www.cloudflare.com) or [Fastly](http://www.fastly.com) to manage certificates and keys for any custom engagement tracking domains you configure.  These services forward traffic onwards to SparkPost so that HTTPS tracking can be performed.
 
 ## How to Create a Secure Tracking Domain on SparkPost
 
