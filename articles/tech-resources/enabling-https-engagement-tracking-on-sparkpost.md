@@ -124,7 +124,7 @@ For up to date information on creating a distribution via CloudFront, please ref
         
         ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_cnames.png)
 
-    * Create, or update, a CNAME record with your DNS service to route queries for tracking domain(s) to `d111111abcdef8.cloudfront.net`.
+    * Create, or update, a CNAME record with your DNS service to route queries for tracking domain(s) with your CloudFront distribution ID.
         
     * Under Distribution Settings, for "SSL Certificate", select **Custom SSL Certificate** - Upload certificates as needed.
         
