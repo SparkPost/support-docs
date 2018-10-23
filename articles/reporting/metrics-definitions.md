@@ -59,7 +59,7 @@ Here are the definitions for each of these calculated metrics, including the for
 
 | Metric                    | Formula                                        | Definition |
 |---------------------------|------------------------------------------------|------------|
-| Accepted Rate             | Percentage (Accepted / Targeted)               | Percentage or Targeted emails that were Accepted. |
+| Accepted Rate             | Percentage (Accepted / Targeted)               | Percentage of Sent emails that were Accepted. |
 | Avg Latency 1st Attempt   | Average (1st Attempt Time)                     | Average delivery time in milliseconds (latency) for emails delivered on the first attempt. |
 | Avg Latency 2nd+ Attempt  | Average (2nd+ Attempt Time)                    | Average delivery time in milliseconds (latency) for emails delivered that required more than one attempt. |
 | Avg Delivery Message Size | Average (Delivered Message Size)               | Average size of delivered emails, including attachments, in bytes. |
