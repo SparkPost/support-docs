@@ -1,6 +1,6 @@
 # Deprecation of API Extended Error Codes
 
-Post January 12th, 2019, SparkPost will no longer return an [extended error code](#extended-error-codes) during for an HTTP response.  This document outlines the deprecation of the extended erroor codes for API responsed in SparkPost.  The reasoning behind this is to standardize our API reponses to provide a more coherent customer experience.  This does not effect extended error codes that are returned via message events in the case of out-of-band errors.
+Post January 12th, 2019, SparkPost will no longer return an [extended error code](https://www.sparkpost.com/docs/tech-resources/extended-error-codes/) during for an HTTP response.  This document outlines the deprecation of the extended erroor codes for API responsed in SparkPost.  The reasoning behind this is to standardize our API reponses to provide a more coherent customer experience.  This does not effect extended error codes that are returned via message events in the case of out-of-band errors.
 
 As a general rule, all current error codes will be updated in the following manner:
 1. The description field will be moved to the message field
