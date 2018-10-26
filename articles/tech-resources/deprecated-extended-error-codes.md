@@ -1,15 +1,24 @@
 # Deprecation of API Extended Error Codes
 
-Post January 12th, 2019, SparkPost will no longer return an [extended error code](https://www.sparkpost.com/docs/tech-resources/extended-error-codes/) during for an HTTP response.  This document outlines the deprecation of the extended erroor codes for API responsed in SparkPost.  The reasoning behind this is to standardize our API reponses to provide a more coherent customer experience.  This does not effect extended error codes that are returned via message events in the case of out-of-band errors.
+ Post January 12th, 2019, SparkPost will no longer return an [extended error code](https://www.sparkpost.com/docs/tech-resources/extended-error-codes/) during for an **HTTP** response.  This document outlines the deprecation of the extended erroor codes for API responsed in SparkPost.  The reasoning behind this is to standardize our API reponses to provide a more coherent customer experience.  This does not effect extended error codes that are returned via message events in the case of out of band errors.
 
 As a general rule, all current error codes will be updated in the following manner:
-1. The description field will be moved to the message field
+1. The description field will be moved to the message field with the additional changes
+    * JSON parsing errors will be returned as:
+        > `Request body parsing failed [Attached error message: %error%]`
+    * Exists errors will be generic across the following APIs and will return:
+        > `resource '%resourcename' already exists`
+    * Type errors will no longer return the invalid type, just expected:
+        > `'%fieldName' must be a %expectedType%`
+    * Require field errors will be generic across the following APIs and will return:
+        > `'%fieldName%' is required`
 2. The `code` field will be removed
 3. The HTTP status code will not change
-4. Inline template syntax, compilation, and email_rfc822 validation errors will be moved to out of band errors via message events
-> Note: Some JSON parsing errors may be updated to provide more input on where validation failed.
+4. Inline template syntax, compilation, rendering and substituion, and email_rfc822 validation errors will be moved to out of band errors via message events.  Extended error codes will still be returned via message events.
 
-All HTTP errors will be guaranteed to return an `error` json object with a `message` with a message field.  Note that in addition to the `message` field, other fields may or may not be including to provide additional insight into the error message.  One example would be a `param` field during content validation.
+All HTTP errors will be guaranteed to return an `error` json object with a `message` with a message field.  Note that in addition to the `message` field, other fields may or may not be including to provide additional insight into the error message.  One example would be a `param` field during content validation.  All 5xx API errors should be retried, with all 4xx API errors evaluated for correctness before being retried.
+
+> Note: 404 and 5xx HTTP Errors returned by SparkPost are not affected by this change, as they do not currently return extended error codes.
 
 - [Generic](#generic)
 - [Transmissions API](#transmissions-api)
@@ -2181,7 +2190,7 @@ As the Transmission and Templates API share many of the same error codes, the te
             {
                 "errors" : [
                     {
-                        "message": "resource "%resource name" already exists",
+                        "message": "Template with id '%template_id%' already exists",
                     }
                 ]
             }
@@ -2434,8 +2443,16 @@ As the Transmission and Templates API share many of the same error codes, the te
                 ]
             }
 
-    + Post Change Response
-        >This will be an out of band error delivered via message events.
+    + Post Change Response 422 (application/json)
+        > Note: This will be returned out of band via Message Events for the Transmission API
+
+            {
+                "errors": [
+                    {
+                        "message": "Error while compiling %part html: line 8: a lone 'end' was detected%",
+                    }
+                ]
+            }
 
             
 
@@ -2456,8 +2473,16 @@ As the Transmission and Templates API share many of the same error codes, the te
                 ]
             }
 
-    + Post Change Response
-        >This will be an out of band error delivered via message events.
+    + Post Change Response 422 (application/json)
+        > Note: This will be returned out of band via Message Events for the Transmission API
+
+            {
+                "errors": [
+                    {
+                        "message": "Error while rendering %part html: line 8: a lone 'end' was detected%",
+                    }
+                ]
+            }
 
 + Reponse template headers too long
 
@@ -2469,6 +2494,17 @@ As the Transmission and Templates API share many of the same error codes, the te
                         "message": "Invalid header",
                         "description": "Error while validating header %header%: Header name too long",
                         "code": "3002",
+                    }
+                ]
+            }
+
+    + Post Change Response 422 (application/json)
+        > Note: This will be returned out of band via Message Events for the Transmission API
+
+            {
+                "errors": [
+                    {
+                        "message": "Error while validating header %header%: Header name too long",
                     }
                 ]
             }
@@ -2489,6 +2525,17 @@ As the Transmission and Templates API share many of the same error codes, the te
                 ]
             }
 
+    + Post Change Response 422 (application/json)
+        > Note: This will be returned out of band via Message Events for the Transmission API
+
+            {
+                "errors": [
+                    {
+                        "message": "Error while validating header %header%: Invalid header name",
+                    }
+                ]
+            }
+
 + Reponse syntax error on template headers
 
     + Current 422 (application/json)
@@ -2499,6 +2546,17 @@ As the Transmission and Templates API share many of the same error codes, the te
                         "message": "Invalid header",
                         "description": "Error while validating header %header%: Invalid header content",
                         "code": "3002",
+                    }
+                ]
+            }
+
+    + Post Change Response 422 (application/json)
+        > Note: This will be returned out of band via Message Events for the Transmission API
+
+            {
+                "errors": [
+                    {
+                        "message": "Error while validating header %header%: Invalid header content",
                     }
                 ]
             }
@@ -2517,6 +2575,17 @@ As the Transmission and Templates API share many of the same error codes, the te
                 ]
             }
 
+    + Post Change Response 422 (application/json)
+        > Note: This will be returned out of band via Message Events for the Transmission API
+
+            {
+                "errors": [
+                    {
+                        "message": "Error while validating header %header%: Header content all whitespace",
+                    }
+                ]
+            }
+
 + Reponse syntax error on template headers
 
     + Current 422 (application/json)
@@ -2531,7 +2600,16 @@ As the Transmission and Templates API share many of the same error codes, the te
                 ]
             }
 
->Function shared by both REST content.email_rfc822 validation/preview as well as SMTPAPI (to insert click/open tracking links).
+    + Post Change Response 422 (application/json)
+        > Note: This will be returned out of band via Message Events for the Transmission API
+
+            {
+                "errors": [
+                    {
+                        "message": "Error while validating header %header%: Missing header content",
+                    }
+                ]
+            }
 
 + Reponse decode error
 
@@ -2547,8 +2625,17 @@ As the Transmission and Templates API share many of the same error codes, the te
                 ]
             }
 
-    + Post Change Response
-        >This will be an out of band error delivered via message events.
+    + Post Change Response 422 (application/json)
+        > Note: This will be returned out of band via Message Events for the Transmission API
+
+            {
+                "errors": [
+                    {
+                        "message": "Unable to decode the %mimetype% part into UTF-8",
+                    }
+                ]
+            }
+
 
 + Reponse error in email_rfc833
 
@@ -2564,8 +2651,16 @@ As the Transmission and Templates API share many of the same error codes, the te
                 ]
             }
 
-    + Post Change Response
-        >This will be an out of band error delivered via message events.
+    + Post Change Response 422 (application/json)
+        > Note: This will be returned out of band via Message Events for the Transmission API
+
+            {
+                "errors": [
+                    {
+                        "message": "Error in content.email_rfc822: %errorMsg%",
+                    }
+                ]
+            }
 
 + Reponse concurrent updates
 
@@ -2634,7 +2729,7 @@ As the Transmission and Templates API share many of the same error codes, the te
             {
                 "errors" : [
                     {
-                        "message": "'content.from.email' is required",
+                        "message": "content.from.email is a required field",
                     }
                 ]
             }
@@ -2658,7 +2753,7 @@ As the Transmission and Templates API share many of the same error codes, the te
             {
                 "errors" : [
                     {
-                        "message": "'content.from' is required",
+                        "message": "content.from is a required field",
                     }
                 ]
             }
@@ -2682,7 +2777,7 @@ As the Transmission and Templates API share many of the same error codes, the te
             {
                 "errors" : [
                     {
-                        "message": "'content.subject' is required",
+                        "message": "content.subject is a required field",
                     }
                 ]
             }
@@ -2803,7 +2898,7 @@ As the Transmission and Templates API share many of the same error codes, the te
             {
                 "errors": [
                     {
-                        "message": "%fieldName must be a %expectedType%",
+                        "message": "content.%field% must be of type %type%",
                     }
                 ]
             }
@@ -2949,30 +3044,6 @@ As the Transmission and Templates API share many of the same error codes, the te
                 "errors": [
                     {
                         "message": "attachments and inline_images are not supported in stored templates",
-                    }
-                ]
-            }
-
-+ Reponse no attachments or inline images
-
-    +  Current 422 (application/json)
-
-            {
-                "errors": [
-                    {
-                        "message": "invalid data format/type",
-                        "description": "push content is not supported in stored templates",
-                        "code": "1300"
-                    }
-                ]
-            }
-
-    +  Post Change Response 422 (application/json)
-
-            {
-                "errors": [
-                    {
-                        "message": "push content is not supported in stored templates",
                     }
                 ]
             }
