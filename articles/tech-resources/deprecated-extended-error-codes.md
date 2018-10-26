@@ -1,12 +1,15 @@
+---
 title: Deprecation of API Extended Error Codes
-description: Details of SparkPost error codes
+description: Details on the deprecation of extended API error codes.
+---
 
 # Deprecation of API Extended Error Codes
 
- Post January 12th, 2019, SparkPost will no longer return an [extended error code](https://www.sparkpost.com/docs/tech-resources/extended-error-codes/) during for an **HTTP** response.  This document outlines the deprecation of the extended erroor codes for API responsed in SparkPost.  The reasoning behind this is to standardize our API reponses to provide a more coherent customer experience.  This does not effect extended error codes that are returned via message events in the case of out of band errors.
+ Post January 12th, 2019, SparkPost will no longer return an [extended error code](https://www.sparkpost.com/docs/tech-resources/extended-error-codes/) in API responses. The reasoning behind this is to standardize our API reponses to provide a more coherent API experience. This does not affect extended error codes that are returned via message events in the case of out of band errors.
 
 As a general rule, all current error codes will be updated in the following manner:
-1. The description field will be moved to the message field with the additional changes
+1. The `code` field will no longer be returned.
+2. The `description` field will be moved to the message field with the additional changes
     * JSON parsing errors will be returned as:
         > `Request body parsing failed [Attached error message: %error%]`
     * Exists errors will be generic across the following APIs and will return:
@@ -15,11 +18,10 @@ As a general rule, all current error codes will be updated in the following mann
         > `'%fieldName' must be a %expectedType%`
     * Require field errors will be generic across the following APIs and will return:
         > `'%fieldName%' is required`
-2. The `code` field will be removed
 3. The HTTP status code will not change
-4. Inline template syntax, compilation, rendering and substituion, and email_rfc822 validation errors will be moved to out of band errors via message events.  Extended error codes will still be returned via message events.
+4. Inline content syntax, compilation, rendering and substituion, and email_rfc822 validation errors will be moved to out of band errors via message events. Extended error codes will still be returned via message events.
 
-All HTTP errors will be guaranteed to return an `error` json object with a `message` with a message field.  Note that in addition to the `message` field, other fields may or may not be including to provide additional insight into the error message.  One example would be a `param` field during content validation.  All 5xx API errors should be retried, with all 4xx API errors evaluated for correctness before being retried.
+All HTTP errors will be guaranteed to return an `error` JSON object with a `message` field. Note that in addition to the `message` field, other fields may or may not be included to provide additional insight. One example would be a `param` field during content validation. All 5xx errors should be retried, with all 4xx API errors evaluated for correctness before being retried.
 
 > Note: 404 and 5xx HTTP Errors returned by SparkPost are not affected by this change, as they do not currently return extended error codes.
 
@@ -40,9 +42,6 @@ All HTTP errors will be guaranteed to return an `error` json object with a `mess
 - [Tracking Domains API](#tracking-domains-api)
 
 
-
-
-
 ## Generic
 
 + Reponse Missing Field
@@ -50,7 +49,7 @@ All HTTP errors will be guaranteed to return an `error` json object with a `mess
     + Current 422 (application/json)
 
             {
-                "errors": 
+                "errors":
                 [
                     {
                         "message": "required field is missing",
@@ -58,25 +57,25 @@ All HTTP errors will be guaranteed to return an `error` json object with a `mess
                         "code": "1400"
                     }
                 ]
-            }  
+            }
 
     + Post Change Response 422 (application/json)
 
             {
-                "errors": 
+                "errors":
                 [
                     {
                         "message": "'%fieldName%' is required"
                     }
                 ]
-            }  
+            }
 
 + Reponse type validation
 
     + Current 422 (application/json)
 
             {
-                "errors": 
+                "errors":
                 [
                     {
                         "message": "invalid data format/type",
@@ -84,12 +83,12 @@ All HTTP errors will be guaranteed to return an `error` json object with a `mess
                         "code": "1300"
                     }
                 ]
-            }  
+            }
 
     + Post Change Response 422 (application/json)
 
             {
-                "errors": 
+                "errors":
                 [
                     {
                         "message": "%fieldName must be a %expectedType%"
@@ -102,7 +101,7 @@ All HTTP errors will be guaranteed to return an `error` json object with a `mess
     + Current 422 (application/json)
 
             {
-                "errors": 
+                "errors":
                 [
                     {
                         "message": "invalid data format/type",
@@ -110,25 +109,25 @@ All HTTP errors will be guaranteed to return an `error` json object with a `mess
                         "code": "1300"
                     }
                 ]
-            }  
+            }
 
     + Post Change Response 422 (application/json)
 
             {
-                "errors": 
+                "errors":
                 [
                     {
                         "message": "%fieldName must be a %expectedType%"
                     }
                 ]
-            }   
+            }
 
 + Reponse type length validation
 
     + Current 422 (application/json)
 
             {
-                "errors": 
+                "errors":
                 [
                     {
                         "message": "invalid data format/type",
@@ -136,18 +135,18 @@ All HTTP errors will be guaranteed to return an `error` json object with a `mess
                         "code": "1300"
                     }
                 ]
-            }  
+            }
 
     + Post Change Response 422 (application/json)
 
             {
-                "errors": 
+                "errors":
                 [
                     {
                         "message": "%fieldName must be of max length %expectedLength%"
                     }
                 ]
-            }  
+            }
 
 + Response invalid json
 
@@ -171,14 +170,14 @@ All HTTP errors will be guaranteed to return an `error` json object with a `mess
                         "message": "Request body parsing failed [Attached error message: %error%]"
                     }
                 ]
-            }    
+            }
 
 + Reponse type domain validations
 
     + Current 422 (application/json)
 
             {
-                "errors": 
+                "errors":
                 [
                     {
                         "message": "invalid data format/type",
@@ -186,25 +185,25 @@ All HTTP errors will be guaranteed to return an `error` json object with a `mess
                         "code": "1300"
                     }
                 ]
-            }  
+            }
 
     + Post Change Response 422 (application/json)
 
             {
-                "errors": 
+                "errors":
                 [
                     {
                         "message": "domain must be valid"
                     }
                 ]
-            }  
+            }
 
 + Reponse type domain validations
 
     + Current 422 (application/json)
 
             {
-                "errors": 
+                "errors":
                 [
                     {
                         "message": "invalid data format/type",
@@ -212,25 +211,25 @@ All HTTP errors will be guaranteed to return an `error` json object with a `mess
                         "code": "1300"
                     }
                 ]
-            }  
+            }
 
     + Post Change Response 422 (application/json)
 
             {
-                "errors": 
+                "errors":
                 [
                     {
                         "message": "domain must be valid"
                     }
                 ]
-            }  
+            }
 
 + Reponse type domain validations
 
     + Current 422 (application/json)
 
             {
-                "errors": 
+                "errors":
                 [
                     {
                         "message": "invalid data format/type",
@@ -238,25 +237,25 @@ All HTTP errors will be guaranteed to return an `error` json object with a `mess
                         "code": "1300"
                     }
                 ]
-            }  
+            }
 
     + Post Change Response 422 (application/json)
 
             {
-                "errors": 
+                "errors":
                 [
                     {
                         "message": "domain must be valid"
                     }
                 ]
-            } 
+            }
 
 + Reponse type domain validations
 
     + Current 422 (application/json)
 
             {
-                "errors": 
+                "errors":
                 [
                     {
                         "message": "invalid data format/type",
@@ -264,25 +263,25 @@ All HTTP errors will be guaranteed to return an `error` json object with a `mess
                         "code": "1300"
                     }
                 ]
-            }  
+            }
 
     + Post Change Response 422 (application/json)
 
             {
-                "errors": 
+                "errors":
                 [
                     {
                         "message": "domain must be valid"
                     }
                 ]
-            } 
+            }
 
 + Reponse type domain validations
 
     + Current 422 (application/json)
 
             {
-                "errors": 
+                "errors":
                 [
                     {
                         "message": "invalid data format/type",
@@ -290,18 +289,18 @@ All HTTP errors will be guaranteed to return an `error` json object with a `mess
                         "code": "1300"
                     }
                 ]
-            }  
+            }
 
     + Post Change Response 422 (application/json)
 
             {
-                "errors": 
+                "errors":
                 [
                     {
                         "message": "domain must be valid"
                     }
                 ]
-            } 
+            }
 
 ## Transmissions API
 
@@ -319,7 +318,7 @@ All HTTP errors will be guaranteed to return an `error` json object with a `mess
             }
 
     + Post Change Response 400 (application/json)
-            
+
             {
                 "errors": [
                     {
@@ -342,7 +341,7 @@ All HTTP errors will be guaranteed to return an `error` json object with a `mess
             }
 
     + Post Change Response (application/json)
-            
+
             {
                 "errors": [
                     {
@@ -352,7 +351,7 @@ All HTTP errors will be guaranteed to return an `error` json object with a `mess
             }
 
 + Response invalid transmission ID
- 
+
     + Current 400 (application/json)
 
             {
@@ -365,7 +364,7 @@ All HTTP errors will be guaranteed to return an `error` json object with a `mess
             }
 
     + Post Change Response (application/json)
-            
+
             {
                 "errors": [
                     {
@@ -389,7 +388,7 @@ All HTTP errors will be guaranteed to return an `error` json object with a `mess
                     }
                 ]
             }
-        
+
     + Post Change Response (application/json)
 
             {
@@ -399,7 +398,7 @@ All HTTP errors will be guaranteed to return an `error` json object with a `mess
                     }
                 ]
             }
-            
+
 + Response for one parameter is missing
 
     + Current 400 (application/json)
@@ -470,7 +469,7 @@ All HTTP errors will be guaranteed to return an `error` json object with a `mess
                         "message": "content.email_rfc822 and content.subject are mutually exclusive"
                     }
                 ]
-            }       
+            }
 
 + Response no valid content fields
 
@@ -494,7 +493,7 @@ All HTTP errors will be guaranteed to return an `error` json object with a `mess
                         "message": "No valid fields exist in the 'content' object"
                     }
                 ]
-            }       
+            }
 
 + Response no valid fields with AMP
 
@@ -518,7 +517,7 @@ All HTTP errors will be guaranteed to return an `error` json object with a `mess
                         "message": "content.amp_html requires content.html or content.text"
                     }
                 ]
-            }  
+            }
 
 + Response inline_images requires html field
 
@@ -542,7 +541,7 @@ All HTTP errors will be guaranteed to return an `error` json object with a `mess
                         "message": "content.inline_images requires content.html"
                     }
                 ]
-            }  
+            }
 
 + Response content size is too big
 
@@ -566,12 +565,12 @@ All HTTP errors will be guaranteed to return an `error` json object with a `mess
                         "message": "The estimated message size is above the 20 MB message size limit"
                     }
                 ]
-            }  
+            }
 
 + Response error parsing start time
 
     + Current 422 (application/json)
-    
+
             {
                 "errors": [
                     {
@@ -590,7 +589,7 @@ All HTTP errors will be guaranteed to return an `error` json object with a `mess
                         "message": "options.start_time must be a ISO8601 timestamp"
                     }
                 ]
-            }  
+            }
 
 + Reponse error delete too close
 
@@ -614,7 +613,7 @@ All HTTP errors will be guaranteed to return an `error` json object with a `mess
                         "message": "Deletion time window (600 seconds) doesn't permit transmission deletion"
                     }
                 ]
-            }  
+            }
 
 + Response JSON object expected
 
@@ -628,7 +627,7 @@ All HTTP errors will be guaranteed to return an `error` json object with a `mess
                         "code": "1300"
                     }
                 ]
-            }  
+            }
 
     + Post Change Response 422 (application/json)
 
@@ -638,7 +637,7 @@ All HTTP errors will be guaranteed to return an `error` json object with a `mess
                         "message": "%field% must be a JSON object"
                     }
                 ]
-            }     
+            }
 
 + Response for invalid return path
 
@@ -662,7 +661,7 @@ All HTTP errors will be guaranteed to return an `error` json object with a `mess
                         "message": "return_path '%string%' is not a valid email address"
                     }
                 ]
-            }  
+            }
 
 + Response for subsitution data too large
 
@@ -686,7 +685,7 @@ All HTTP errors will be guaranteed to return an `error` json object with a `mess
                         "message": "Transmission-level substitution data must be less than 100000 bytes"
                     }
                 ]
-            }  
+            }
 
 ### Sending Domain Errors
 
@@ -712,7 +711,7 @@ All HTTP errors will be guaranteed to return an `error` json object with a `mess
                         "message": "Unconfigured Sending Domain <%sending_domain%>"
                     }
                 ]
-            }  
+            }
 
 + Reponse blocked sending domain
 
@@ -736,7 +735,7 @@ All HTTP errors will be guaranteed to return an `error` json object with a `mess
                         "message": "Blocked Sending Domain <%sending_domain%>"
                     }
                 ]
-            } 
+            }
 
 + Reponse compliance pending for sending domain
 
@@ -760,7 +759,7 @@ All HTTP errors will be guaranteed to return an `error` json object with a `mess
                         "message": "Compliance Pending for Sending Domain <%sending_domain%>"
                     }
                 ]
-            } 
+            }
 
 ### Recipient Errors
 
@@ -768,7 +767,7 @@ Recipient errors for Transmission API requests can be found [here](#recipient-an
 
 ### IP Pool Errors
 
-+ Response for Empty Default Pool/Empty Pool 
++ Response for Empty Default Pool/Empty Pool
 
     + Current 422 (application/json)
 
@@ -780,8 +779,8 @@ Recipient errors for Transmission API requests can be found [here](#recipient-an
                         "code": "1300"
                     }
                 ]
-            }   
-    
+            }
+
     + Post Change Response 422 (application/json)
 
             {
@@ -790,7 +789,7 @@ Recipient errors for Transmission API requests can be found [here](#recipient-an
                         "message": "IP Pool '%pool%' is empty",
                     }
                 ]
-            } 
+            }
 
 + Response for using sp_shared
 
@@ -814,7 +813,7 @@ Recipient errors for Transmission API requests can be found [here](#recipient-an
                         "message": "sp_shared is not a valid customer ip pool",
                     }
                 ]
-            } 
+            }
 
 + Reponse Ip Pool doesn't exist
 
@@ -838,7 +837,7 @@ Recipient errors for Transmission API requests can be found [here](#recipient-an
                         "message": "IP Pool '%pool%' does not exist",
                     }
                 ]
-            } 
+            }
 
 ### Templates
 
@@ -868,7 +867,7 @@ As the Transmission and Templates API share many of the same error codes, the te
                         "message": "Unable to delete a transmission that has completed (state=Success)",
                     }
                 ]
-            }   
+            }
 
 + Reponse delete when in generating
 
@@ -892,7 +891,7 @@ As the Transmission and Templates API share many of the same error codes, the te
                         "message": "Unable to delete a transmission that has completed (state=Generating)",
                     }
                 ]
-            }   
+            }
 
 + Reponse delete when cancelled or other state
 
@@ -916,7 +915,7 @@ As the Transmission and Templates API share many of the same error codes, the te
                         "message": "Unable to delete a transmission that has completed (state=%state%)",
                     }
                 ]
-            } 
+            }
 
 + Reponse failed json parsing from DB
 
@@ -940,7 +939,7 @@ As the Transmission and Templates API share many of the same error codes, the te
                         "message": "Failed parsing json from DB: %json_error%",
                     }
                 ]
-            } 
+            }
 
 ### Sending Limits
 
@@ -965,7 +964,7 @@ As the Transmission and Templates API share many of the same error codes, the te
                         "message": "Exceed Sending Limit (hourly)",
                     }
                 ]
-            } 
+            }
 
 + Response Daily sending limits
 
@@ -988,7 +987,7 @@ As the Transmission and Templates API share many of the same error codes, the te
                         "message": "Exceed Sending Limit (daily)",
                     }
                 ]
-            } 
+            }
 
 
 + Response monthly sending limits
@@ -1012,8 +1011,8 @@ As the Transmission and Templates API share many of the same error codes, the te
                         "message": "Exceed Sending Limit (monthly)",
                     }
                 ]
-            } 
-    
+            }
+
 + Response sandbox sending limits
 
     + Current 420 (application/json)
@@ -1035,7 +1034,7 @@ As the Transmission and Templates API share many of the same error codes, the te
                         "message": "Exceed Sending Limit (sandbox)",
                     }
                 ]
-            } 
+            }
 
 ## Inbound Domains API
 
@@ -1055,7 +1054,7 @@ As the Transmission and Templates API share many of the same error codes, the te
 
     + Post Change Response 400 (application/json)
 
-            {  
+            {
                 "errors": [
                     {
                         "message": "Please contact SparkPost support to get this domain authorized for your account."
@@ -1079,7 +1078,7 @@ As the Transmission and Templates API share many of the same error codes, the te
 
     + Post Change Response 409 (application/json)
 
-            {  
+            {
                 "errors": [
                     {
                         "message": "resource '%resourcename' already exists"
@@ -1103,7 +1102,7 @@ As the Transmission and Templates API share many of the same error codes, the te
 
     + Post Change Response 409 (application/json)
 
-            {  
+            {
                 "errors": [
                     {
                         "message": "resource '%resource name' already exists"
@@ -1127,7 +1126,7 @@ As the Transmission and Templates API share many of the same error codes, the te
 
     + Post Change Response 409 (application/json)
 
-            {  
+            {
                 "errors": [
                     {
                         "message": "Domain currently being used in a relay-webhook. Please delete the relay-webhook first."
@@ -1137,7 +1136,7 @@ As the Transmission and Templates API share many of the same error codes, the te
 
 + Reponse Missing Field
 
-    + Current 422 (application/json) 
+    + Current 422 (application/json)
 
             {
                 "errors": [
@@ -1151,13 +1150,13 @@ As the Transmission and Templates API share many of the same error codes, the te
 
     + Post Change Response 422 (application/json)
 
-            {  
+            {
                 "errors": [
                     {
                         "message": "'%fieldName%' is required"
                     }
                 ]
-            }    
+            }
 
 ## Recipient and Recipient List API
 
@@ -1182,7 +1181,7 @@ As the Transmission and Templates API share many of the same error codes, the te
                         "message": "List created with validation errors",
                     }
                 ]
-            } 
+            }
 
 + Reponse list already exists
 
@@ -1234,7 +1233,7 @@ As the Transmission and Templates API share many of the same error codes, the te
 + Resonse no valid recipients
 
     + Current 400 (application/json)
-    
+
             {
                 "errors": [
                     {
@@ -1252,7 +1251,7 @@ As the Transmission and Templates API share many of the same error codes, the te
                         "message": "At least one valid recipient is required"
                     }
                 ]
-            } 
+            }
 
 + Response recipient list not found
 
@@ -1281,7 +1280,7 @@ As the Transmission and Templates API share many of the same error codes, the te
  + Reponse Missing Field
 
     + Current 422 (application/json)
-    
+
             {
                 "errors": [
                     {
@@ -1290,7 +1289,7 @@ As the Transmission and Templates API share many of the same error codes, the te
                         "code": "1400"
                     }
                 ]
-            } 
+            }
 
     + Post Change Response 422 (application/json)
 
@@ -1349,7 +1348,7 @@ As the Transmission and Templates API share many of the same error codes, the te
                         "message": "invalid recipient address.%field%: %address%"
                     }
                 ]
-            }                
+            }
 
 + Reponse invalid recipient address
 
@@ -1445,7 +1444,7 @@ As the Transmission and Templates API share many of the same error codes, the te
                         "message": "recipients or list_id required"
                     }
                 ]
-            }   
+            }
 
 + Response improper `recipients` type
 
@@ -1469,7 +1468,7 @@ As the Transmission and Templates API share many of the same error codes, the te
                         "message": "recipeints must b a json_array or json_object",
                     }
                 ]
-            } 
+            }
 
 ## Relay Webhooks API
 
@@ -1611,13 +1610,13 @@ As the Transmission and Templates API share many of the same error codes, the te
 
     + Post Change Response 409 (application/json)
 
-            {  
+            {
                 "errors": [
                     {
                         "message": "Sending Domain <%domain.com> already CNAME/MX verified by another account %customerId%:%subaccountId%"
                     }
                 ]
-            }  
+            }
 
 + Response Msg Generation errors
 
@@ -1634,13 +1633,13 @@ As the Transmission and Templates API share many of the same error codes, the te
 
     + Post Change Response 400 (application/json)
 
-            {  
+            {
                 "errors": [
                     {
                         "message": "Failed to generate message"
                     }
                 ]
-            }  
+            }
 
 + Response domain is blacklisted
 
@@ -1658,7 +1657,7 @@ As the Transmission and Templates API share many of the same error codes, the te
 
     + Post Change Response 400 (application/json)
 
-            {  
+            {
                 "errors": [
                     {
                         "message": "Please contact SparkPost support to get this domain authorized for your account."
@@ -1682,7 +1681,7 @@ As the Transmission and Templates API share many of the same error codes, the te
 
     + Post Change Response 400 (application/json)
 
-            {  
+            {
                 "errors": [
                     {
                         "message": "You have exceeded the maximum allowed sending domains. Please contact support"
@@ -1706,7 +1705,7 @@ As the Transmission and Templates API share many of the same error codes, the te
 
     + Post Change Response 400 (application/json)
 
-            {  
+            {
                 "errors": [
                     {
                         "message": "Verification by address is not available for Sending Domains with a DMARC policy"
@@ -1731,7 +1730,7 @@ As the Transmission and Templates API share many of the same error codes, the te
 
     + Post Change Response 409 (application/json)
 
-            {  
+            {
                 "errors": [
                     {
                         "message": "An inbound domain with similar attributes already exists."
@@ -1755,18 +1754,18 @@ As the Transmission and Templates API share many of the same error codes, the te
 
     + Post Change Response 409 (application/json)
 
-            {  
+            {
                 "errors": [
                     {
                         "message": "resource '%resourcename' already exists"
                     }
                 ]
-            }  
+            }
 
 + Reponse Missing Field
 
     + Current 422 (application/json)
-    
+
             {
                 "errors": [
                     {
@@ -1779,7 +1778,7 @@ As the Transmission and Templates API share many of the same error codes, the te
 
     + Post Change Response 422 (application/json)
 
-            {  
+            {
                 "errors": [
                     {
                         "message": "verification_mailbox field required to verify mailbox"
@@ -1790,7 +1789,7 @@ As the Transmission and Templates API share many of the same error codes, the te
  + Reponse Invalid mailbox
 
     + Current 422 (application/json)
-    
+
             {
                 "errors": [
                     {
@@ -1799,23 +1798,23 @@ As the Transmission and Templates API share many of the same error codes, the te
                         "code": "1300"
                     }
                 ]
-            } 
+            }
 
     + Post Change Response 422 (application/json)
 
-            {  
+            {
                 "errors": [
                     {
                         "message": "verification_mailbox field cannot be 'postmaster' or 'abuse'"
                     }
                 ]
             }
-      
+
 
  + Reponse Missing Field
 
     + Current 422 (application/json)
-        
+
             {
                 "errors": [
                     {
@@ -1824,11 +1823,11 @@ As the Transmission and Templates API share many of the same error codes, the te
                         "code": "1400"
                     }
                 ]
-            }   
+            }
 
     + Post Change Response 422 (application/json)
 
-            {  
+            {
                 "errors": [
                     {
                         "message": "Error no fields specified for verification"
@@ -1839,7 +1838,7 @@ As the Transmission and Templates API share many of the same error codes, the te
 + Reponse empty DKIM keys
 
     + Current 422 (application/json)
-        
+
             {
                 "errors": [
                     {
@@ -1848,22 +1847,22 @@ As the Transmission and Templates API share many of the same error codes, the te
                         "code": "1300"
                     }
                 ]
-            }   
+            }
 
     + Post Change Response 422 (application/json)
 
-            {  
+            {
                 "errors": [
                     {
                         "message": "Empty keys are not allowed."
                     }
                 ]
-            }   
+            }
 
 + Reponse invalid private DKIM key
 
     + Current 422 (application/json)
-        
+
             {
                 "errors": [
                     {
@@ -1872,22 +1871,22 @@ As the Transmission and Templates API share many of the same error codes, the te
                         "code": "1300"
                     }
                 ]
-            }   
+            }
 
     + Post Change Response 422 (application/json)
 
-            {  
+            {
                 "errors": [
                     {
                         "message": "Private key does not seem valid. Please use another key pair."
                     }
                 ]
-            }   
+            }
 
 + Reponse invalid public DKIM key
 
     + Current 422 (application/json)
-        
+
             {
                 "errors": [
                     {
@@ -1896,22 +1895,22 @@ As the Transmission and Templates API share many of the same error codes, the te
                         "code": "1300"
                     }
                 ]
-            }   
+            }
 
     + Post Change Response 422 (application/json)
 
-            {  
+            {
                 "errors": [
                     {
                         "message": "Public key does not seem valid. Please use another key pair."
                     }
                 ]
-            }   
+            }
 
 + Reponse empty DKIM selector
 
     + Current 422 (application/json)
-        
+
             {
                 "errors": [
                     {
@@ -1920,22 +1919,22 @@ As the Transmission and Templates API share many of the same error codes, the te
                         "code": "1300"
                     }
                 ]
-            }   
+            }
 
     + Post Change Response 422 (application/json)
 
-            {  
+            {
                 "errors": [
                     {
                         "message": "Error: DKIM selector length is zero."
                     }
                 ]
-            }  
+            }
 
 + Reponse unable to read private key
 
     + Current 422 (application/json)
-        
+
             {
                 "errors": [
                     {
@@ -1944,22 +1943,22 @@ As the Transmission and Templates API share many of the same error codes, the te
                         "code": "1300"
                     }
                 ]
-            }   
+            }
 
     + Post Change Response 422 (application/json)
 
-            {  
+            {
                 "errors": [
                     {
                         "message": "Unable to read private key."
                     }
                 ]
-            }    
+            }
 
 + Reponse unable to validate keys
 
     + Current 422 (application/json)
-        
+
             {
                 "errors": [
                     {
@@ -1968,22 +1967,22 @@ As the Transmission and Templates API share many of the same error codes, the te
                         "code": "1300"
                     }
                 ]
-            }   
+            }
 
     + Post Change Response 422 (application/json)
 
-            {  
+            {
                 "errors": [
                     {
                         "message": "Unable to extract public key from private key."
                     }
                 ]
-            }    
+            }
 
 + Reponse unable to validate keys
 
     + Current 422 (application/json)
-        
+
             {
                 "errors": [
                     {
@@ -1992,22 +1991,22 @@ As the Transmission and Templates API share many of the same error codes, the te
                         "code": "1300"
                     }
                 ]
-            }   
+            }
 
     + Post Change Response 422 (application/json)
 
-            {  
+            {
                 "errors": [
                     {
                         "message": "Private and public DKIM keys do not match."
                     }
                 ]
-            }    
+            }
 
 + Reponse invalid status for bounce domain
 
     + Current 422 (application/json)
-        
+
             {
                 "errors": [
                     {
@@ -2016,22 +2015,22 @@ As the Transmission and Templates API share many of the same error codes, the te
                         "code": "1300"
                     }
                 ]
-            }   
+            }
 
     + Post Change Response 422 (application/json)
 
-            {  
+            {
                 "errors": [
                     {
                         "message": "Domain must have cname_status 'valid' or mx_status 'valid' in order to set 'is_default_bounce_domain' to true"
                     }
                 ]
-            }   
+            }
 
 + Reponse invalid data in status objects
 
     + Current 422 (application/json)
-        
+
             {
                 "errors": [
                     {
@@ -2040,22 +2039,22 @@ As the Transmission and Templates API share many of the same error codes, the te
                         "code": "1300"
                     }
                 ]
-            }   
+            }
 
     + Post Change Response 422 (application/json)
 
-            {  
+            {
                 "errors": [
                     {
                         "message": "'is_default_bounce_domain' cannot be set to true at the time of domain creation"
                     }
                 ]
-            } 
+            }
 
 + Reponse invalid data in status objects (control)
 
     + Current 422 (application/json)
-        
+
             {
                 "errors": [
                     {
@@ -2064,22 +2063,22 @@ As the Transmission and Templates API share many of the same error codes, the te
                         "code": "1300"
                     }
                 ]
-            }   
+            }
 
     + Post Change Response 422 (application/json)
 
-            {  
+            {
                 "errors": [
                     {
                         "message": "Invalid data in '%s' field, valid inputs are: %s"
                     }
                 ]
-            } 
+            }
 
 + Reponse invalid data in status objects (control)
 
     + Current 422 (application/json)
-        
+
             {
                 "errors": [
                     {
@@ -2088,22 +2087,22 @@ As the Transmission and Templates API share many of the same error codes, the te
                         "code": "1300"
                     }
                 ]
-            }   
+            }
 
     + Post Change Response 422 (application/json)
 
-            {  
+            {
                 "errors": [
                     {
                         "message": "Invalid data in 'compliance_status' field, valid inputs are: %values%"
                     }
                 ]
-            } 
+            }
 
 + Reponse invalid data in status objects (control)
 
     + Current 422 (application/json)
-        
+
             {
                 "errors": [
                     {
@@ -2112,17 +2111,17 @@ As the Transmission and Templates API share many of the same error codes, the te
                         "code": "1300"
                     }
                 ]
-            }   
+            }
 
     + Post Change Response 422 (application/json)
 
-            {  
+            {
                 "errors": [
                     {
                         "message": "No valid input fields detected"
                     }
                 ]
-            } 
+            }
 
 ## Template Content and Templates API
 
@@ -2206,7 +2205,7 @@ As the Transmission and Templates API share many of the same error codes, the te
                 "errors": [
                     {
                         "message": "template already exists",
-                        "description": "Another request has updated Template '%template_id%' at the same time as your request.  Please try again",
+                        "description": "Another request has updated Template '%template_id%' at the same time as your request. Please try again",
                         "code": "3030"
                     }
                 ]
@@ -2217,7 +2216,7 @@ As the Transmission and Templates API share many of the same error codes, the te
             {
                 "errors" : [
                     {
-                        "message": "Another request has updated Template '%template_id%' at the same time as your request.  Please try again",
+                        "message": "Another request has updated Template '%template_id%' at the same time as your request. Please try again",
                     }
                 ]
             }
@@ -2244,7 +2243,7 @@ As the Transmission and Templates API share many of the same error codes, the te
                         "message": "A/B Testing has been disabled",
                     }
                 ]
-            }     
+            }
 
 + Response Invalid UTF8 found in json
 
@@ -2306,7 +2305,7 @@ As the Transmission and Templates API share many of the same error codes, the te
                         "message": "content object or template_id required",
                     }
                 ]
-            } 
+            }
 
 + Response Template does not exist
 
@@ -2330,7 +2329,7 @@ As the Transmission and Templates API share many of the same error codes, the te
                         "message": "template '%nonexistent%' does not exist",
                     }
                 ]
-            } 
+            }
 
 + Reponse not specify template_id and ab_test_id
 
@@ -2354,7 +2353,7 @@ As the Transmission and Templates API share many of the same error codes, the te
                         "message": "You may not specify both template_id and ab_test_id",
                     }
                 ]
-            } 
+            }
 
 + Response AB Test not found
 
@@ -2378,7 +2377,7 @@ As the Transmission and Templates API share many of the same error codes, the te
                         "message": "ab_test_id '%id%' does not exist",
                     }
                 ]
-            } 
+            }
 
 
 + Response no published template available
@@ -2403,7 +2402,7 @@ As the Transmission and Templates API share many of the same error codes, the te
                         "message": "no published version of template '%nonexsistent%'",
                     }
                 ]
-            }             
+            }
 
 + Response no draft template available
 
@@ -2427,13 +2426,13 @@ As the Transmission and Templates API share many of the same error codes, the te
                         "message": "no draft version of template '%nonexsistent%'",
                     }
                 ]
-            }          
+            }
 
 + Reponse syntax error on inline template compilation
 
-    + Current 422 (application/json)  
+    + Current 422 (application/json)
     > [[Error while (compiling|rendering) (part|header) (.+?): (?:line (\d+): )?(.+)]])
-        
+
             {
                 "errors": [
                     {
@@ -2457,7 +2456,7 @@ As the Transmission and Templates API share many of the same error codes, the te
                 ]
             }
 
-            
+
 
 + Reponse syntax error on inline template rendering
 
@@ -2566,7 +2565,7 @@ As the Transmission and Templates API share many of the same error codes, the te
 
 + Reponse syntax error on template headers
 
-    + Current 422 (application/json) 
+    + Current 422 (application/json)
 
             {
                 "errors": [
@@ -2642,7 +2641,7 @@ As the Transmission and Templates API share many of the same error codes, the te
 
 + Reponse error in email_rfc833
 
-    + Current 422 (application/json) 
+    + Current 422 (application/json)
 
             {
                 "errors": [
@@ -2706,7 +2705,7 @@ As the Transmission and Templates API share many of the same error codes, the te
 
     + Post Change Response 422 (application/json)
         > Note: This will be returned out of band via Message Events for the Transmission API
-        
+
             {
                 "errors" : [
                     {
@@ -2718,7 +2717,7 @@ As the Transmission and Templates API share many of the same error codes, the te
  + Reponse Missing Field
 
     + Current 422 (application/json)
-    
+
             {
                 "errors": [
                     {
@@ -2727,7 +2726,7 @@ As the Transmission and Templates API share many of the same error codes, the te
                         "code": "1400"
                     }
                 ]
-            }  
+            }
 
     + Post Change Response 422 (application/json)
 
@@ -2742,7 +2741,7 @@ As the Transmission and Templates API share many of the same error codes, the te
  + Reponse Missing Field
 
     + Current 422 (application/json)
-    
+
             {
                 "errors": [
                     {
@@ -2751,7 +2750,7 @@ As the Transmission and Templates API share many of the same error codes, the te
                         "code": "1400"
                     }
                 ]
-            } 
+            }
 
     + Post Change Response 422 (application/json)
 
@@ -2766,7 +2765,7 @@ As the Transmission and Templates API share many of the same error codes, the te
  + Reponse Missing Field
 
     + Current 422 (application/json)
-    
+
             {
                 "errors": [
                     {
@@ -2775,7 +2774,7 @@ As the Transmission and Templates API share many of the same error codes, the te
                         "code": "1400"
                     }
                 ]
-            } 
+            }
 
     + Post Change Response 422 (application/json)
 
@@ -2790,7 +2789,7 @@ As the Transmission and Templates API share many of the same error codes, the te
  + Reponse Missing Field
 
     + Current 422 (application/json)
-    
+
             {
                 "errors": [
                     {
@@ -2799,7 +2798,7 @@ As the Transmission and Templates API share many of the same error codes, the te
                         "code": "1400"
                     }
                 ]
-            }   
+            }
 
     + Post Change Response 422 (application/json)
 
@@ -2814,7 +2813,7 @@ As the Transmission and Templates API share many of the same error codes, the te
  + Reponse Missing Field
 
     + Current 422 (application/json)
-    
+
             {
                 "errors": [
                     {
@@ -2823,7 +2822,7 @@ As the Transmission and Templates API share many of the same error codes, the te
                         "code": "1400"
                     }
                 ]
-            } 
+            }
 
     + Post Change Response 422 (application/json)
 
@@ -3077,7 +3076,7 @@ As the Transmission and Templates API share many of the same error codes, the te
                         "message": "Unable to reach http://example.com:80. Please verify that your redirect is functioning",
                     }
                 ]
-            } 
+            }
 
 + Response verification error returned
 
@@ -3101,7 +3100,7 @@ As the Transmission and Templates API share many of the same error codes, the te
                         "message": "Unable to reach http://example.com:80. Please verify that your redirect is functioning",
                     }
                 ]
-            } 
+            }
 
 + Response domain is blacklisted
 
@@ -3125,7 +3124,7 @@ As the Transmission and Templates API share many of the same error codes, the te
                         "message": "Please contact SparkPost support to get this domain authorized for your account.",
                     }
                 ]
-            } 
+            }
 
 + Reponse already in use
 
@@ -3149,7 +3148,7 @@ As the Transmission and Templates API share many of the same error codes, the te
                         "message": "resource '%resourcename%' already exists",
                     }
                 ]
-            } 
+            }
 
 
 + Reponse type validation
@@ -3157,7 +3156,7 @@ As the Transmission and Templates API share many of the same error codes, the te
     + Current 422 (application/json)
 
             {
-                "errors": 
+                "errors":
                 [
                     {
                         "message": "invalid data format/type",
@@ -3165,15 +3164,15 @@ As the Transmission and Templates API share many of the same error codes, the te
                         "code": "1300"
                     }
                 ]
-            }  
+            }
 
     + Post Change Response
 
             {
-                "errors": 
+                "errors":
                 [
                     {
                         "message": "Tracking domain '%domain' unverified"
                     }
                 ]
-            }   
+            }
