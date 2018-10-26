@@ -2677,6 +2677,7 @@ As the Transmission and Templates API share many of the same error codes, the te
             }
 
     + Post Change Response 422 (application/json)
+        > Note: This will be returned out of band via Message Events for the Transmission API
 
             {
                 "errors" : [
@@ -2701,7 +2702,8 @@ As the Transmission and Templates API share many of the same error codes, the te
             }
 
     + Post Change Response 422 (application/json)
-
+        > Note: This will be returned out of band via Message Events for the Transmission API
+        
             {
                 "errors" : [
                     {
