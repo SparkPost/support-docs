@@ -1,6 +1,5 @@
 # SparkPost support docs
 [![Build Status](https://travis-ci.org/SparkPost/support-docs.svg?branch=master)](https://travis-ci.org/SparkPost/support-docs)
-[![Slack Status](http://slack.sparkpost.com/badge.svg)](http://slack.sparkpost.com)
 
 This repo contains the Markdown files for support articles published on https://www.sparkpost.com/docs.
 
