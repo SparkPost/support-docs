@@ -5,7 +5,7 @@ description: Details on upcoming changes that will occur on January 12, 2019
 
 # Upcoming Change to SparkPost API HTTP Responses and Error Codes
 
-In effort to standardize our API responses to provide a more coherent API experience, all current error codes will be updated in the following manner:
+We are currently re-evaluating whether or not to deprecate extended error codes from the SparkPost API HTTP Responses. In the meantime, extended error codes will remain in place, unaltered, until May 2019. In effort to standardize our API responses to provide a more coherent API experience, all current error codes will be updated in the following manner:
 1. The `description` field will be moved to the ‘message’ field with the additional changes
     * JSON parsing errors will be returned as:
         > `Request body parsing failed [Attached error message: %error%]`
