@@ -14,6 +14,6 @@ In an effort to standardize our API responses to provide a more consistent API e
         > `'%fieldName' must be a %expectedType%`
     * Require field errors will return the field name:
         > `'%fieldName%' is required`
-3. Inline content syntax, generation, substitution, and email_rfc822 validation errors will no longer cause synchronous `4XX` errors. They will instead generate asynchronous events consumable via message events or webhooks. Check out [this article](link-to-article) for information on these asynchronous changes.
+3. Inline content syntax, generation, substitution, and email_rfc822 validation errors will no longer cause synchronous `4XX` errors. They will instead generate asynchronous events consumable via message events or webhooks. Check out [this article](https://www.sparkpost.com/docs/transmissions-breaking-changes) for information on these asynchronous changes.
 
 *The HTTP status code and the extended `code` field in responses will not be changed.*
