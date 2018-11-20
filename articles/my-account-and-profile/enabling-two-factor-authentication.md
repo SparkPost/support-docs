@@ -1,13 +1,11 @@
 ---
-title: "Enabling Two-Factor Authentication"
-description: "At Spark Post we take the security of your account very seriously which is why for example we make it easy to apply the principle of least privilege when assigning grants to API keys and even restricting API keys based on source IP address In order to provide you with..."
+title: "Two-Factor Authentication"
+description: "How to enable two factor authentication on your account."
 ---
 
-At SparkPost, we take the security of your account very seriously, which is why, for example, we make it easy to apply the [principle of least privilege](https://www.us-cert.gov/bsi/articles/knowledge/principles/least-privilege) when assigning grants to API keys, and even restricting API keys based on source IP address. 
+Add an extra layer of security to your account with two-factor authentication. This allows you to use your account in conjunction with a standard 3rd party authenticator app such as [Google Authenticator](https://support.google.com/accounts/answer/1066447), [Duo](https://duo.com/product/trusted-users/two-factor-authentication/duo-mobile), or [Authy](https://www.authy.com/app/mobile/) available for iOS, Android, etc. Enabling two-factor authentication will prevent anyone that does not have access to your authenticator app or backup codes from logging into your account - even if they somehow get your username and password.
 
-In order to provide you with even greater security, we have introduced Two-Factor Authentication. This allows you to use your account in conjunction with a standard 3rd party Authenticator app such as [Google Authenticator](https://support.google.com/accounts/answer/1066447), [Duo](https://duo.com/product/trusted-users/two-factor-authentication/duo-mobile), or [Authy](https://www.authy.com/app/mobile/) available for iOS, Android, etc.
-
-To enable Two-Factor Authentication, go to the Account menu in the top right and select **Profile**.
+To enable two-factor authentication, go to your [profile](https://app.sparkpost.com/account/profile)([EU](https://app.eu.sparkpost.com/account/profile)).
 
 ![](media/enabling-two-factor-authentication/profile-page.png)
 
@@ -15,7 +13,7 @@ Click on **Enable 2FA** and you'll see a screen like this:
 
 ![](media/enabling-two-factor-authentication/2-factor-auth-popup.png)
 
-Open up your chosen Authenticator App and scan the QR code. If you can’t, or don’t want to scan the QR code, you can also type the 23-character key into your App. 
+Open up your chosen authenticator app and scan the QR code. If you can’t or don’t want to scan the QR code, you can also type the 23-character key into your App. 
 
 **NOTE: It is essential that you do store the authentication token somewhere safe! We are unable to reset or remove Two-Factor Authentication from your account should you lose your device.**
 
@@ -25,7 +23,7 @@ You may also generate backup codes (after entering your password), which are 8 d
 
 ![](media/enabling-two-factor-authentication/generate-2-factor-backup-codes.png)
 
-These codes only expire when they are used, and come in handy if your phone disappears. You can also download the codes as a text file, which gives you a simple way to keep track of which ones have been used - add the current date next to the code you’re using.
+These codes only expire when they are used, and come in handy if you lose your phone. You can download the codes as a text file, which gives you a simple way to keep track of which ones have been used - add the current date next to the code you’re using.
 
 ![](media/enabling-two-factor-authentication/view-2-factor-backup-codes.png)
 
@@ -33,8 +31,6 @@ The next time you log in to your account, after entering your username and passw
 
 ![](media/enabling-two-factor-authentication/login-with-2-factor-auth.png)
 
-Open up your Authenticator App again and look for the SparkPost entry.  You will see a 6-digit number and an expiration timer.  Type that number into the secondary log in page before the timer in your app expires and you'll then be logged in to your account - it's as easy as that! This field also accepts backup codes.
+Open up your authenticator app again and look for the SparkPost entry. You will see a 6-digit number and an expiration timer. Type that number into the secondary log in page before the timer in your app expires and you'll then be logged in to your account. This field also accepts backup codes.
 
-Enabling Two-factor Auth will prevent anyone that does not have access to your Authenticator app or backup codes from logging into your account - even if they somehow get your username and password.
-
-Now you are all set! Two-Factor Authentication is now enabled for your account.
+Now you are all set! Two-factor authentication is now enabled for your account.
