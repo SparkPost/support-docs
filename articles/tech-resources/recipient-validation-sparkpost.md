@@ -3,7 +3,7 @@ title: "Recipient Validation"
 description: "Check if email addresses are valid before sending."
 ---
 
-Recipient Validation checks email addresses to ensure you are sending to valid recipients. It runs addresses against a series of tests that catch many common problems:
+Recipient Validation checks email addresses to ensure you are sending to valid recipients. It runs addresses through a series of checks that catch many common problems:
 
 | Reason               | What it means |
 |----------------------|---------------|
