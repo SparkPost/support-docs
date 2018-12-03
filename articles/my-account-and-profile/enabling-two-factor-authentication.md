@@ -44,26 +44,39 @@ Now you are all set! Two-Factor Authentication is now enabled for your account.
 # Requiring Two-factor Authentication For All Users
 Requiring two-factor authentication enforces that *all* users on the account (including the administrator) set up two-factor authentication before performing sensitive account actions. Once set, any users without two-factor authentication enabled will be required to logout and set up two-factor authentication on next login.
 **If single sign-on is enabled, it will be disabled in favor of the two-factor authentication requirement.**
+
 ### Enabling Two-factor Authentication Requirement
 Two-factor authentication can be configured from an account administrator's [Account Settings](https://app.eu.sparkpost.com/account/profile) ([EU](https://app.eu.sparkpost.com/account/settings)) page in the **Two-factor Authentication** section. When disabled, the status will be set to `Optional`.
+
 ![](media/enabling-two-factor-authentication/enable-2fa-enforcement.png)
+
 To require two-factor authentication for all users, set the slider the from `Off` to `On`.
+
 ![](media/enabling-two-factor-authentication/warning-enable-2fa-enforcement.png)
-A warning will prompt you to confirm the changes to the account. Once enabled, the status will be set to `Required`. An email will be sent to users informing them of the new security requirements, along with steps needed to set up two-factor authentication.
+
+A warning will prompt you to confirm the changes to the account. Once enabled, the status will change to `Required`. An email will be sent all users informing them of the new security requirements, along with steps needed to set up two-factor authentication.
+
+
 ### Disabling Two-factor Authentication Requirement
 An account administrator can remove the requirement for two-factor authentication from the [Account Settings](https://app.sparkpost.com/account/settings) ([EU](https://app.eu.sparkpost.com/account/settings)) page.
 ![](media/enabling-two-factor-authentication/disable-2fa-enforcement.png)
 Set the slider `Off` to disable it.
 ![](media/enabling-two-factor-authentication/warning-disable-2fa-enforcement.png)
-You will prompted with a warning notifying of potential changes to the specific user. The status will change to `Optional`. Removing the two-factor authentication requirement will not change any existing settngs for users.
+You will be prompted with a warning notifying you of potential changes to the specific user. The status will change to `Optional`. Removing the two-factor authentication requirement will not change existing settings for users.
+
 ### Reset Two-factor Authentication Settings
-In the event that a user lost or replaced their authentication device while two-factor authentication is enabled, an account administrator can reset the user's settings. If two-factor authentication is required for all users, the user will need to re-enable two-factor authentication at next login.
+In the event that a user has lost or replaced their authentication device while two-factor authentication is enabled, an account administrator can reset the user's settings. If two-factor authentication is for all users, the user will need to re-enable two-factor authentication at next login.
 **Any existing backup codes will be invalidated and new codes will need to be requested by the user.**
 To reset two-factor authentication settings for a user, head to the [Users](https://app.sparkpost.com/account/users) ([EU](https://app.eu.sparkpost.com/account/users)) page.
-![](media/enabling-two-factor-authentication/edit-user-page.png)
-Once there, you can access the user options dropdown by clicking the **...** for a specific user. Select the **Edit** option to go to that user's settings.
-![](media/enabling-two-factor-authentication/disable-2fa-user.png)
-Once at user's settings page, click the **Disable Two-factor Authentication** option.
-![](media/enabling-two-factor-authentication/warning-disable-2fa-user.png)
-A warning will prompt you to confirm the changes to the user's settings. An email will be sent to the user to informing them about the change.
 
+![](media/enabling-two-factor-authentication/edit-user-page.png)
+
+Once there, you can access the user options drop-down by clicking the **...** for the user. Select the **Edit** option to go to that user's settings.
+
+![](media/enabling-two-factor-authentication/disable-2fa-user.png)
+
+From the user settings page, click the **Disable Two-factor Authentication** option.
+
+![](media/enabling-two-factor-authentication/warning-disable-2fa-user.png)
+
+A warning will prompt you to confirm the changes to the user's settings.
