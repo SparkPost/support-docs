@@ -3,6 +3,21 @@ title: "SparkPost Change Log"
 description: "A running log of what's new, what's been fixed, and what's been changed in SparkPost."
 ---
 
+## December 5, 2018
+### What's New?
+
+* Alerts LAB: configure a real-time email notification when you are getting close to your monthly plan limit.
+
+* Snippets LAB: Nested template functionality that you can leverage with both SparkPost stored templates and inline content. More details on our [blog](https://www.sparkpost.com/blog/get-started-snippets-sparkpost-email-templates/).
+
+* Event Webhooks now supports mutual TLS (mTLS) for increased security when receiving your event data. 
+
+* **Changes in the UI:** The “Manage Users” section of the UI now includes a column to display which users have two-factor authentication enabled. Easily conduct security audits without needing to open up each user account.
+
+* Easier User Deletion: You can now delete a user without deleting their API keys, giving you complete control over the users on your account without needing to change out your production API keys. API keys associated with a deleted user will now be transferred to the user doing the deleting.
+
+* Two-Factor Authentication: As part of our ongoing commitment to security, we are making it even easier for you to keep your account secure by offering a new account option that will require [two-factor authentication](https://www.sparkpost.com/docs/my-account-and-profile/enabling-two-factor-authentication/) for all users on your account.
+
 ## September 17, 2018
 ### What's New?
 
@@ -11,7 +26,7 @@ description: "A running log of what's new, what's been fixed, and what's been ch
 ## August 31, 2018  
 ### What’s New?
 
-* User interface for setting up A/B tests is here. How to get started [article](https://www.sparkpost.com/blog/new-sparkpost-a-b-testing/) will get you going in 3 easy steps.
+* User Interface for setting up A/B tests is here. How to get started [article](https://www.sparkpost.com/blog/new-sparkpost-a-b-testing/) will get you going in 3 easy steps.
 
 
 ## July 23, 2018  
