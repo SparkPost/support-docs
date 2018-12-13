@@ -3,6 +3,12 @@ title: "SparkPost Change Log"
 description: "A running log of what's new, what's been fixed, and what's been changed in SparkPost."
 ---
 
+## December 6, 2018
+### What's New?
+
+* **Changes in the UI:** Filtering the reports by campaign, domain, template, etc. is now faster with our improvements to the typeahead functionality.
+
+
 ## December 5, 2018
 ### What's New?
 
@@ -17,6 +23,7 @@ description: "A running log of what's new, what's been fixed, and what's been ch
 * Easier User Deletion: You can now delete a user without deleting their API keys, giving you complete control over the users on your account without needing to change out your production API keys. API keys associated with a deleted user will now be transferred to the user doing the deleting.
 
 * Two-Factor Authentication: As part of our ongoing commitment to security, we are making it even easier for you to keep your account secure by offering a new account option that will require [two-factor authentication](https://www.sparkpost.com/docs/my-account-and-profile/enabling-two-factor-authentication/) for all users on your account.
+
 
 ## September 17, 2018
 ### What's New?
