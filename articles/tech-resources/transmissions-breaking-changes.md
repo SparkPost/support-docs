@@ -35,6 +35,10 @@ For both single and multi-recipient transmissions, the syntax validation will be
 
 Instead, the API will return a `200` response, and then a subsequent "Generation Failure" [webhook event](https://www.sparkpost.com/docs/tech-resources/webhook-event-reference/) that will provide details on the failure. It is recommended that developers utilize the [preview endpoint of the Templates API](https://developers.sparkpost.com/api/templates/#templates-post-preview-a-template) before injecting with an inline content.
 
+## Removal of Description Field
+
+Although we are reviewing customer needs for extended error codes, HTTP error response bodies will be updated by removing the `description` field, and moving the current `description` responses to the `message` field. This is to provide a simpler message body and to return the relevant data to our customers for our HTTP error responses.
+
 ## Deprecation of Extended Error Codes Postponed to May 2019
 
 Based on customer feedback, we will not be making changes to how the API returns extended error codes at this time. We are committed to providing the current extended error codes until May 2019. We will continue to review customer needs and determine the best solution to this issue. Please refer and check back to this article for any new announcements or updates.
