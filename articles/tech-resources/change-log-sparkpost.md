@@ -2,6 +2,11 @@
 title: "SparkPost Change Log"
 description: "A running log of what's new, what's been fixed, and what's been changed in SparkPost."
 ---
+## January 2, 2019
+### What's New?
+
+* OAuth 2.0 for Relay Webhooks: Authentication that can be used during the POST requests to the target. More details the API [docs](https://developers.sparkpost.com/api/relay-webhooks/).
+
 
 ## December 6, 2018
 ### What's New?
