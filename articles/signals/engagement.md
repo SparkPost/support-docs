@@ -3,7 +3,7 @@ title: "Engagement"
 description: "The Signals recommendation on how to build and keep engaged lists."
 ---
 
-You can expect a quarter of your subscribers disengage each year. Therefore it is key that you work to keep your subscribers engaged and attract new people. Here are some ways to accomplish a healthy list of subscribers.
+You can expect a quarter of your subscribers disengage each year. Therefore it is key that you work to keep your subscribers engaged and attract new people. Here are some ways to accomplish a healthy list of subscribers. 
 
 1. Keep those on your list engaged. 
     1. Provide quality content.
