@@ -12,7 +12,7 @@ Each of row in these tables contains the summary for a different subaccount, and
 
 Dive into the details page to see a deeper view of your scoring and find curated actions you should take to improve your sending, deliverability, and engagement.
 
-_**Note:** Unlike SparkPost metrics which are calculated based on the number of sent emails, Signals is calculated based on the number of injected emails._
+_**Note:** Unlike SparkPost metrics which are calculated based on the number of sent emails, Signals is calculated based on the number of injected emails. Because of this, you'll see differing rates for some components such as hard bounces._
 
 ![Signals Dashboard](media/signals-dashboard.png)
 
@@ -65,8 +65,6 @@ Mailbox providers like Gmail closely monitor recipient engagement to determine i
 _**Note:** For Engagement Recency to function, you must enable at minimum either open or click tracking. For best results, enable both._
 
 ![Engagement Recency chart](media/engagement-recency-chart.png)
-
-<br /><br />
 
 Recipients are divided into the following cohorts:
 * **Never Engaged** – Recipients who have received email but have not engaged with your messages in the past 365 days.
