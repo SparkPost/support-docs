@@ -45,11 +45,9 @@ In the components chart, you can select a specific component to examine. When se
 
 ![Component percent chart](media/component-change-chart.png)
 
-### Items needing attention
+### Recommendations
 
 Signals provides a list of items needing attention and actions to take to improve any of the components that are negatively affecting your Health Score. By taking action to improve these items you'll see your Health Score, and therefore your deliverability and engagement, improve over time.
-
-![Items needing attention](media/items-needing-attention.png)
 
 ## Spam Trap Monitoring
 With visibility across multiple commercial and non-commercial spam trap networks, SparkPost Signals is a crucial resource for maintaining the health of your email. Spam Trap Monitoring reports the share over time of your total email volume that was sent to known spam traps for each given day. This indicator is important to take note of since an excessive rate of spam trap hits indicates poor list procurement and hygiene practices. You can view the spam trap hits as a raw number or a ratio over the number of injections for that day.
@@ -58,7 +56,7 @@ _**Note:** Your sending must stay within acceptable thresholds to receive the Sp
 
 ![Spam Trap Monitoring chart](media/spam-trap-monitoring-chart.png)
 
-### Items needing attention
+### Recommendations
 If your spam trap hits exceed safe limits, Signals provides actionable advice identifying the most likely source of the problem and guides you to improve your [list quality](https://www.sparkpost.com/docs/signals/list-hygiene/) or [acquisition practices](https://www.sparkpost.com/docs/signals/subscriber-acquisition/).
 
 ## Engagement Recency
@@ -68,6 +66,8 @@ _**Note:** For Engagement Recency to function, you must enable at minimum either
 
 ![Engagement Recency chart](media/engagement-recency-chart.png)
 
+<br /><br />
+
 Recipients are divided into the following cohorts:
 * **Never Engaged** – Recipients who have received email but have not engaged with your messages in the past 365 days.
 * **Not Recently Engaged** – Recipients who have engaged with your email in the past 365 days, but not in the past 90 days.
@@ -75,6 +75,6 @@ Recipients are divided into the following cohorts:
 * **Recently Engaged** – Recipients who have engaged with your email in the past 14 days.
 * **New Recipients** – Recipients who have received their first email from you within the past 7 days and who have not yet engaged with your messages.
 
-### Items needing attention
+### Recommendations
 
 Signals provides guidance and changes you can make to your sending to ensure you're sending relevant content to recipients who are interested. It also issues warnings when your cohort breakdown enters dangerous levels, as recipient engagement plays a significant factor in inbox placement.
