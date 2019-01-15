@@ -93,7 +93,9 @@ Metadata for Enterprise Customers:
 No, no relay state is required.
 
 ### What attributes need to be passed?
-We need the NameID to be the user's email address. This must correspond to the email address that is set up in SparkPost.
+We need the `NameIDFormat` to be `urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress`. This must correspond to the user's email address that is set up in SparkPost.
+
+The `Binding` needs to be `urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST`.
 
 ### Can I enable SSO for multiple users at the same time?
 No, you must enable SSO for one user at a time. If you have a large number of users and require assistance in enabling SSO for all your users, please contact support.
