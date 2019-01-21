@@ -68,7 +68,7 @@ The following is a sample guide for use with CloudFlare **only**; please note, t
     * Page Rule Tab -> Create Page Rule
     * Enter your domain like so: `track.yourdomain.com/*`
     * Add a Setting -> Forwarding URL (you may need to specify a 301 redirect option)
-    * Destination URL is https://<CNAME_VALUE>.io/$1. Replace <CNAME_VALUE> with the value displayed in the tracking domains section of the SparkPost UI.
+    * Destination URL is https://<CNAME_VALUE>/$1. Replace <CNAME_VALUE> with the value displayed in the tracking domains section of the SparkPost UI. E.g.: for SparkPost US, this would be `spgo.io`; for SparkPost EU, this would be `eu.spgo.io`.
     * Save and Deploy (turn page rule on)
     
     ![](media/enabling-https-engagement-tracking-on-sparkpost/SSL_full.png)
@@ -89,10 +89,12 @@ The following is a sample guide for use with CloudFlare **only**; please note, t
     ```
     {
         "port"    : 443,
-        "secure"  : true,
-        "default" : true
+        "secure"  : true
     }
     ```
+
+Note: If you would like this tracking domain to be the default, please add `"default": true` to the JSON object above, before updating the domain.
+
 9. Navigate to the Tracking Domains section in the UI and click the orange "test" verification link. At this point, the process is complete.
 
 ## Step by Step Guide with AWS CloudFront
@@ -111,7 +113,7 @@ For up to date information on creating a distribution via CloudFront, please ref
     ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_method.png)
 
 4. On the Create Distribution page fill out the following:
-    * Under Origin Settings, fill in the **Origin Domain Name**.
+    * Under Origin Settings, fill in the **Origin Domain Name**. Use the value displayed in the tracking domains section of the SparkPost UI. E.g.: for SparkPost US, this would be `spgo.io`; for SparkPost EU, this would be `eu.spgo.io`.
     
         ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_origin_domain_name.png)
 
@@ -123,6 +125,10 @@ For up to date information on creating a distribution via CloudFront, please ref
         * **Note:** Can add up to 100 domains.
         
         ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_cnames.png)
+
+    * Under Default Cache Behavior Settings, set **Query String Forwarding and Caching** to "Forward all, cache based on all".
+
+        ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_query_string_forward.png)
 
     * Create, or update, a CNAME record with your DNS service to route queries for tracking domain(s) with your CloudFront distribution ID.
         
