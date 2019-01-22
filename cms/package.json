@@ -9,12 +9,15 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "netlify-cms": "^2.0.8",
-    "parcel-bundler": "^1.9.7",
+    "parcel-bundler": "^1.10.0",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "remark": "^9.0.0",
     "remark-html": "^7.0.0",
     "unist-util-visit": "^1.4.0",
     "url-join": "^4.0.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3"
   }
 }
