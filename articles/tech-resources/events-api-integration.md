@@ -17,6 +17,26 @@ In the following sections, we’ll cover some useful tips and tricks to keep in 
 ### Filtering and Keyword Searching
 The most powerful feature of the Events Search API is the filtering and keyword searching capabilities. Using multiple filters to narrow down results lets the Events Search API act like a search engine for your SparkPost data, where everything important shows up on the first page. And if you’re not exactly sure what you’re looking for, using keyword search filters can help figure out what you are looking for, so further requests can be refined. Below, you can find a list of all filters, as well as the list of filters that support keyword searching.
 
+Filtering Capability| Query Parameter| Keyword Search Support
+:-----|:-----:|:-----:
+Event Types| `events`| 
+Recipient Addresses| `recipients`| 
+Friendly From Addresses| `from_addresses`| 
+Bounce Classes| `bounce_classes`| 
+Bounce/Failure/Rejection Reasons| `reasons`| X
+Subaccounts| `subaccounts`| 
+Transmission IDs| `transmissions`| 
+Message IDs| `messages`| 
+Campaign IDs| `campaigns`| X
+Template IDs| `templates`| X
+Recipient Domains| `recipient_domains`| X
+Subject| `subjects`| X
+Sending Domains| `sending_domains`| X
+Sending IPs| `sending_ips`| 
+IP Pools| `ip_pools`| X
+AB Test IDs| `ab_tests`| X
+AB Test Version| `ab_test_versions`|
+
 ### Pagination
 To start your integration, you’ll want to make sure that the code knows how to use the Events Search API pagination, so that queries returning more results than will fit in one response can still access all of the search hits. This means inspecting the response from the Events Search API for the `links` object. If the `links` object isn’t there, then we’re done! If the `links` object is present, then more results are available for retrieval, and additional pages can be requested using the url fragment from the links.next key.
 
@@ -60,14 +80,42 @@ To help you start migrating from the Message Events API to the Events Search API
 ### Keyword Searching
 The most exciting difference between the Message Events and Events Search API is all the new querying/filtering capabilities available in Events Search. The new filters supported by the Events Search API that are unavailable in the Message Events API are listed below, and provide your integration with many more options for finding the exact data needed faster.
 
+New Filter| New Query Parameter
+:-----|:-----
+Recipient Domains| `recipient_domains`
+Subject| `subjects`
+Sending Domains| `sending_domains`
+Sending IPs| `sending_ips`
+IP Pools|  `ip_pools`
+AB Test IDs| `ab_tests`
+AB Test Versions|  `ab_test_versions`
 
 Additionally, the Events Search API supports another feature not available in the Message Events API, which is support for keyword searching. Keyword searching is a powerful tool for looking up multiple values for a given filter, without having to know the exact values. For example, to look up events relating to any Yahoo! email address, you may use the keyword searching capability of the `recipient_domains` query parameter to accomplish that without having to know all of the permutations of Yahoo! email domains.
 
 With keyword searching, keywords are determined by natural breaks in phrases by
 spaces, dashes, underscores, and in special cases, periods (e.g: `recipient_domains` and `sending_domains`).
 
+Filter| Example Query String| Match Examples
+:-----|:-----|:-----
+Bounce/Failure/Rejection Reason| ?reasons=5.4.7| 5.4.7
+Campaign IDs| ?campaigns=friday| friday-20181214<br/>friday-20181207<br/>friday-2018-11-30
+Template IDs| ?templates=email| my-first-email<br/>my-email<br/>my\_other\_email
+Recipient Domains| ?recipient\_domains=yahoo| mail.yahoo.com<br/>yahoo.com<br/>yahoo.co<br/>yahoo.de<br/>yahoo.co.uk
+Subject| ?subjects=Reset| Reset your password<br/>Your Password has been successfully Reset
+Sending Domains| ?sending\_domains=example.com| info.example.com<br/>something.example.com<br/>example.com.uk<br/>example.com
+IP Pools| ?ip\_pools=admin| admin\_notify<br/>admin\_other
+AB Test IDs| ?ab\_tests=password| password-reset<br/>reset-password
+
 ### Changes to Filtering
 Another difference between the two APIs is some changes to query parameter names for certain filters. Listed below are the Message Events API query parameters, and their Events Search API counterparts that are different from their predecessor. These changes make the query parameter naming convention consistent with other SparkPost APIs, while also more accurately describing the data actually being used for filtering.
+
+Message Events query parameter| Events Search query parameter
+:-----|:-----
+campaign\_ids| campaigns
+template\_ids| templates
+friendly\_froms| from\_addresses
+reason| reasons
+message\_ids| messages
 
 ### Changes to Pagination
 The pagination functionality of the Events Search API is different from the Message Events API. In the Message Events API, the use of the `page` and `per_page` query parameters allows for paging through the full results of a query (offset pagination). The Events Search API also supports this functionality, but instead uses a new `cursor` query parameter in conjunction with `per_page` (cursor based pagination). Offset pagination may seem like an easier way to page through results at first glance, but has two critical drawbacks. One is that it does not scale with very large datasets, and the second is that the “windowing” of results can be inaccurate when data is being added at a high rate and being queried in real-time. Slack has a very good write up about some of the reasons why they switched to cursor based paging for their APIs [(https://slack.engineering/evolving-api-pagination-at-slack-1c1f644f8e12)](https://slack.engineering/evolving-api-pagination-at-slack-1c1f644f8e12), and we have come to similar conclusions for the new Events Search API.
@@ -84,6 +132,36 @@ Below is an example demonstrating the difference between the response of the two
   }
 }
 ```
+
+<table>
+<tr>
+<th>
+Message Events Example
+</th>
+<th>
+Response
+</th>
+</tr>
+<tr>
+<td>
+<pre><code>{
+  "rcpt_meta": {
+    "example": {
+      "0": "foo"
+      "1": "bar"
+    }
+  }
+}</code></pre> 
+</td>
+<td>
+<pre><code>{
+  "rcpt_meta": {
+    "example": ["foo", "bar"]
+  }
+}</code></pre>
+</td>
+</tr>
+</table>
 
 Additional data type changes include:
 * `customer_id` field is an integer, instead of a string
