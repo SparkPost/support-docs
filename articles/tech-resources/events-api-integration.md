@@ -1,6 +1,6 @@
 ---
 title: "Getting Started with the Events Search API"
-description: "How to integration with the Events API"
+description: "How to integrate with the Events API"
 ---
 The SparkPost Events Search API is a new tool providing robust querying capabilities on top of your SparkPost event data. The API provides the capability to debug deliverability issues in mail streams quickly and with granular detail, view the lifecycle of individual email messages, and sync your SparkPost data out to external sources. In this article, we’ll cover how you can get started quickly using the SparkPost Events Search API, some tips and tricks for getting the most out of your Events Search API queries, and a helpful guide for those looking to migrate from the Message Events API to the Events Search API. 
 
@@ -97,7 +97,7 @@ spaces, dashes, underscores, and in special cases, periods (e.g: `recipient_doma
 
 Filter| Example Query String| Match Examples
 :-----|:-----|:-----
-Bounce/Failure/Rejection Reason| ?reasons=5.4.7| 5.4.7
+Bounce/Failure/Rejection Reason| ?reasons=5.4.7| 5.4.7 Example text<br/>Example text 5.4.7
 Campaign IDs| ?campaigns=friday| friday-20181214<br/>friday-20181207<br/>friday-2018-11-30
 Template IDs| ?templates=email| my-first-email<br/>my-email<br/>my\_other\_email
 Recipient Domains| ?recipient\_domains=yahoo| mail.yahoo.com<br/>yahoo.com<br/>yahoo.co<br/>yahoo.de<br/>yahoo.co.uk
