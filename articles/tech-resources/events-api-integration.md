@@ -139,7 +139,7 @@ Below is an example demonstrating the difference between the response of the two
 Message Events Example
 </th>
 <th>
-Response
+Events Search Example
 </th>
 </tr>
 <tr>
