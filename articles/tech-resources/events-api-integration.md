@@ -19,6 +19,7 @@ The most powerful feature of the Events Search API is the filtering and keyword 
 
 Filtering Capability| Query Parameter| Keyword Search Support
 :-----|:-----:|:-----:
+Date/Time| `from` and `to`|
 Event Types| `events`| 
 Recipient Addresses| `recipients`| 
 Friendly From Addresses| `from_addresses`| 
@@ -38,7 +39,7 @@ AB Test IDs| `ab_tests`| X
 AB Test Version| `ab_test_versions`|
 
 ### Pagination
-To start your integration, you’ll want to make sure that the code knows how to use the Events Search API pagination, so that queries returning more results than will fit in one response can still access all of the search hits. This means inspecting the response from the Events Search API for the `links` object. If the `links` object isn’t there, then we’re done! If the `links` object is present, then more results are available for retrieval, and additional pages can be requested using the url fragment from the links.next key.
+To start your integration, you’ll want to make sure that the code knows how to use the Events Search API pagination, so that queries returning more results than will fit in one response can still access all of the search hits. This means inspecting the response from the Events Search API for the `links` object. If the `links` object is empty, then we’re done! If the `links` object is not empty, then more results are available for retrieval, and additional pages can be requested using the url fragment from the `links.next` key.
 
 ```javascript
 return request.get(options)
