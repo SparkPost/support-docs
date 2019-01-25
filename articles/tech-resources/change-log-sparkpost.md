@@ -2,6 +2,13 @@
 title: "SparkPost Change Log"
 description: "A running log of what's new, what's been fixed, and what's been changed in SparkPost."
 ---
+
+## January 17, 2019
+### What's New?
+
+* New Events Search: Events Search feature have the most flexible filtering capabilities of any SparkPost feature to date, providing the ability to refine queries to events associated with individual emails, regardless of what starting piece of information is use.  Events Search is available in the [SparkPost web app](https://app.sparkpost.com/reports/message-events?_ga=2.94533976.557180182.1548446345-1132104694.1535381368), and through a new [Events API](https://developers.sparkpost.com/api/events/?_ga=2.94533976.557180182.1548446345-1132104694.1535381368) endpoint.
+
+
 ## January 14, 2019
 ### What's New?
 
