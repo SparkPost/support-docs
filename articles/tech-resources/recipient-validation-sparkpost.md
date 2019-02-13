@@ -15,7 +15,7 @@ Recipient Validation checks email addresses to ensure you are sending to valid r
 
 Use the [API endpoint](#header-single-address-validation-api) to validate single addresses from your forms, or before you send a transactional emails. Check out [list validation](#header-email-list-validation) to validate entire email lists.
 
-Recipient Validation is available early for SparkPost beta testers. [Sign-up to be a beta tester](https://www.sparkpost.com/sparkpost-beta-tester/) if you'd like to try it out. Recipient Validation is not currently available to EU accounts, check back soon for availability.
+Recipient Validation is available for private access to SparkPost customers. Recipient Validation is not currently available to EU accounts, check back soon for availability.
 
 ## Single Address Validation API
 
