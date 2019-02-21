@@ -42,4 +42,4 @@ another@hello.com,Invalid Recipient
 ceo@email.com,Role Based Email
 ```
 
-The list validation form accepts a max file size of `200MB`, arround 10M email addresses.
+The list validation form accepts a max file size of `200MB`, around 10M email addresses.
