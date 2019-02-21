@@ -2,7 +2,6 @@
 title: "Getting Started with AMP for Email"
 description: "This guide describes the steps you’ll need to follow to create AMPHTMP content using SparkPost."
 ---
-
 This guide describes the steps you’ll need to follow to start sending AMPHTML content. We'll run through content setup and best practices to have in place before you begin sending. We'll also point out some useful resources along the way to help you get the best from SparkPost, such as our [SparkPost API documentation](https://developers.sparkpost.com/api/).
 
 AMP, commonly known for developing fast web pages on mobile clients, is a set of HTML tags backed by JavaScript with a focus on performance and security.
@@ -38,3 +37,20 @@ Hello, world.
 </body>
 </html>
 '''
+
+An AMP email must have:
+
+| Rules |   Description   |
+| --- | --- |
+| Start with the '<!doctype html>' doctype|Standard for HTML | Standard for HTML |
+| Contain a top-level '<html ⚡4email>' tag ('<html amp4email>' is accepted as well) | Identifies the document as AMPHTML Email |
+| Contain '<head>' and '<body>' tags | Optional in HTML but not in AMPHTML Email |
+| Contain a '<meta charset="utf-8">' tag as the first child of their '<head>' tag | Identifies the encoding for the page |
+| Contain the amp4email boilerplate in the '<head>' :
+'<style amp4email-boilerplate>body{visibility:hidden}</style><script async src="https://cdn.ampproject.org/v0.js"></script>' | CSS boilerplate to initially hide the content until AMP JS is loaded |
+
+
+
+
+
+
