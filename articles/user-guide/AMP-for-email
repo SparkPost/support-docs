@@ -49,6 +49,22 @@ An AMP email must have:
 | Contain the amp4email boilerplate in the '<head>' :
 '<style amp4email-boilerplate>body{visibility:hidden}</style><script async src="https://cdn.ampproject.org/v0.js"></script>' | CSS boilerplate to initially hide the content until AMP JS is loaded |
 
+## AMP Components
+
+The following is a list of AMP components that are supported today and are grouped in the following categories:
+* [Dynamic Content](https://www.ampproject.org/docs/interaction_dynamic/amp-email-format#dynamic-content)
+* [Layout](https://www.ampproject.org/docs/interaction_dynamic/amp-email-format#layout)
+* [Media](https://www.ampproject.org/docs/interaction_dynamic/amp-email-format#media)
+
+### Dynamic Content
+
+### Layout
+
+### Media
+
+
+
+
 
 
 
