@@ -21,7 +21,7 @@ Note: SparkPost is available in multiple regions. "SparkPost" refers to the Spar
 
 ## Signing Up And In
 
-First things first: sign up for your free SparkPost account [here](https://app.sparkpost.com/join) ([EU](https://app.eu.sparkpost.com/join)). After sign-up, we will send you a verification email; please do verify your email address so SparkPost can contact you if you need support later on and send you important service announcements.
+First things first: sign up for your SparkPost account [here](https://app.sparkpost.com/join) ([EU](https://app.eu.sparkpost.com/join)). After sign-up, we will send you a verification email; please do verify your email address so SparkPost can contact you if you need support later on and send you important service announcements.
 
 ## Preparing Your "From:" Address
 
