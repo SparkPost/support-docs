@@ -68,14 +68,14 @@ The following is a list of AMP components that are supported today and are group
 
 ### Layout
 
-| Element |   Description   |
+| *Element* |   *Description*   |
 | --- | --- |
-| `<amp-accordion>` |	A UI element that facilitates showing/hiding different sections |
-| `<amp-carousel>` |	A carousel UI component |
-| `<amp-sidebar>` |	A sidebar for navigational purposes |
-| `<amp-image-lightbox>` |	A lightbox for containing images |
-| `<amp-lightbox>` |	A lightbox for containing content |
-| `<amp-fit-text>` |	A helper component for fitting text within a certain area |
+| `<amp-accordion>` |	UI element that facilitates showing/hiding different sections |
+| `<amp-carousel>` |	Carousel UI component |
+| `<amp-sidebar>` |	Sidebar for navigational purposes |
+| `<amp-image-lightbox>` |	Lightbox for containing images |
+| `<amp-lightbox>` |	Lightbox for containing content |
+| `<amp-fit-text>` |	Helper component for fitting text within a certain area |
 | `<amp-timeago>` |	Provides a convenient way of rendering timestamps |
 
 ### Media
