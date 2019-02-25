@@ -82,7 +82,8 @@ The following is a list of AMP components that are supported today and are group
 
 | Element |   Description   |
 | --- | --- |
-| `<amp-img>` |	An AMP component that replaces <img>. Note: Binding to [src] is not allowed |
+| `<amp-img>` |	An AMP component that replaces <img>. 
+Note: Binding to [src] is not allowed |
 | `<amp-anim>` | Embeds GIF files. Note: Binding to [src] is not allowed |
 
 ## CSS Requirements
