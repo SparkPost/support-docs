@@ -104,10 +104,6 @@ Example:
 </style>
 ```
 
-## Document Dimensions
-Optimal width: 800px or less (any wider and content may be unexpectedly truncated on some clients).
-Height: variable, the client allows the user to scroll through the content.
-
 ## Content Validation Tools
 ### Web-based validator
 A web-based validator is available [here](https://validator.ampproject.org/)
@@ -121,7 +117,7 @@ Simply paste in the AMP HTML to ensure the document meets all the AMPHTML Email 
 `<amp-bind>` `<amp-state` example link [here](https://codepen.io/isaac-kim/pen/zMyvxX?editors=1100)
   
   
-## Adding AMP to Existing Emails
+## Adding AMP to New and Existing Emails
 
 ### MIME Part
 Email is structured as a MIME tree. This MIME tree contains the message body and any attachments to the email.
@@ -142,6 +138,10 @@ Important things to note:
 
 ### Replies and Forwarding
 To start, the email client strips out the `text/x-amp-html` part of the MIME tree when a user replies to or forwards an AMP email message. This is why it is important that an email provide alternative content in the HTML part.
+
+### Document Dimensions
+Optimal width: 800px or less (any wider and content may be unexpectedly truncated on some clients).
+Height: variable, the client allows the user to scroll through the content.
 
 ## Where to Next
 
