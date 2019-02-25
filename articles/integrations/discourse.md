@@ -14,7 +14,7 @@ To use SparkPost with Discourse you’ll need to:
 
 ## Sign up for a SparkPost account
 
-Visit our [sign up](https://app.sparkpost.com/join) page and create your SparkPost account. It’s free up to 15,000 emails!
+Visit our [sign up](https://app.sparkpost.com/join) page and create your SparkPost account.
 
 ## Create and verify a sending domain
 

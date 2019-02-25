@@ -3,12 +3,6 @@ title: "SparkPost EU FAQ"
 description: "FAQ for our new EU based Service..."
 ---
 
-
-## Is there a free plan?
-
-Yes. Just like we offer a free SparkPost account, we also offer an identical free SparkPost EU account. You can check out our SparkPost EU pricing plans [here](https://www.sparkpost.com/pricing/eu/).
-
-
 ## How do I get started with SparkPost EU? 
 
 Go to app.eu.sparkpost.com, sign up, set up your account, and start sending. Our new user guide provides more details on what to do once you’ve signed up - the steps are the same whether you have an US or EU based account.

@@ -3,7 +3,7 @@ title: "Dedicated IP Pools"
 description: "Dedicated IP addresses are available for any account with the exception of the FREE plan with no credit card details on file Any new dedicated IP address added to your account will have a neutral initial reputation which means that you will be responsible for properly warming up your new..."
 ---
 
-Dedicated IP addresses are available for any account with the exception of the free plan. Any new dedicated IP address added to your account will have a neutral initial reputation, which means that you will be responsible for properly warming up your new IP. You can refer to our [IP Warmup Overview](https://www.sparkpost.com/docs/deliverability/ip-warm-up-overview/) for a comprehensive guide to warming up your new IP.
+Dedicated IP addresses are available for any account with the exception of free plans. Any new dedicated IP address added to your account will have a neutral initial reputation, which means that you will be responsible for properly warming up your new IP. You can refer to our [IP Warmup Overview](https://www.sparkpost.com/docs/deliverability/ip-warm-up-overview/) for a comprehensive guide to warming up your new IP.
 
 ## Plans with an Included IP
 
