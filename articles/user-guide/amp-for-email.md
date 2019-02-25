@@ -57,6 +57,7 @@ The following is a list of AMP components that are supported today and are group
 * [Media](https://www.ampproject.org/docs/interaction_dynamic/amp-email-format#media)
 
 ### Dynamic Content
+
 | Element |   Description   |
 | --- | --- |
 | '<amp-form>' | Form element. The action-xhr attribute must be used in place of the regular action attribute. Can be used in conjunction with '<template type="amp-mustache">' to render a response. |
@@ -66,6 +67,7 @@ The following is a list of AMP components that are supported today and are group
 | '<amp-bind>' and '<amp-state>' | Simple scripting language in AMP that allows the manipulation of a state machine for interactions between elements. Can also be used to add behavior on certain events. '<amp-state>' is used to remotely fetch the initial state machine values |
 
 ### Layout
+
 | Element |   Description   |
 | --- | --- |
 | '<amp-accordion>' |	A UI element that facilitates showing/hiding different sections |
@@ -77,6 +79,7 @@ The following is a list of AMP components that are supported today and are group
 | '<amp-timeago>' |	Provides a convenient way of rendering timestamps |
 
 ### Media
+
 | Element |   Description   |
 | --- | --- |
 | '<amp-img>' |	An AMP component that replaces <img>. Note: Binding to [src] is not allowed |
