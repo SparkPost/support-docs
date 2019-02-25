@@ -32,7 +32,7 @@ The following code represents the minimum amount of markup that makes up a valid
   <script async src="https://cdn.ampproject.org/v0.js"></script>
 </head>
 <body>
-Hello, world.
+Let's get started using AMPHTML together!
 </body>
 </html>
 ```
