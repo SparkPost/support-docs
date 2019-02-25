@@ -24,7 +24,7 @@ Note: SparkPost is available in multiple regions. "SparkPost" refers to the Spar
 ### Required Markup
 
 The following code represents the minimum amount of markup that makes up a valid AMP email message:
-'''json
+```json
 <!doctype html>
 <html ⚡4email>
 <head>
@@ -36,7 +36,7 @@ The following code represents the minimum amount of markup that makes up a valid
 Hello, world.
 </body>
 </html>
-'''
+```
 
 An AMP email must have:
 
