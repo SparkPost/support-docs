@@ -40,7 +40,7 @@ Hello, world.
 
 An AMP email must have:
 
-| Rules |   Description   |
+| Rules | Description |
 | --- | --- |
 | Start with the `<!doctype html>` doctype|Standard for HTML | Standard for HTML |
 | Contain a top-level `<html ⚡4email>` tag (`<html amp4email>` is accepted as well) | Identifies the document as AMPHTML Email |
@@ -68,7 +68,7 @@ The following is a list of AMP components that are supported today and are group
 
 ### Layout
 
-| *Element* |   *Description*   |
+| Element |   Description   |
 | --- | --- |
 | `<amp-accordion>` |	UI element that facilitates showing/hiding different sections |
 | `<amp-carousel>` |	Carousel UI component |
