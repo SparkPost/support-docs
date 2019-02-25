@@ -82,8 +82,7 @@ The following is a list of AMP components that are supported today and are group
 
 | Element |   Description   |
 | --- | --- |
-| `<amp-img>` |	An AMP component that replaces <img>. 
-Note: Binding to [src] is not allowed |
+| `<amp-img>` |	An AMP component that replaces <img>. Note: Binding to [src] is not allowed |
 | `<amp-anim>` | Embeds GIF files. Note: Binding to [src] is not allowed |
 
 ## CSS Requirements
@@ -111,17 +110,32 @@ Height: variable, the client allows the user to scroll through the content.
 
 ## Content Validation Tools
 ### Web-based validator
-A web-based validator is available at https://validator.ampproject.org/
+A web-based validator is available [here](https://validator.ampproject.org/)
 Simply paste in the AMP HTML to ensure the document meets all the AMPHTML Email restrictions. This tool shows you the validation errors directly inline.
 
 ## Examples
+`<amp-selector>` example link [here](https://codepen.io/isaac-kim/pen/EOdByj)
 
+`<amp-carousel>` example link [here](https://codepen.io/isaac-kim/pen/bQmPJJ)
 
+`<amp-bind>``<amp-state` example link [here](https://codepen.io/isaac-kim/pen/zMyvxX?editors=1100)
+  
+  
 ## Adding AMP to Existing Emails
 
-###MIME Part
+### MIME Part
 Email is structured as a MIME tree. This MIME tree contains the message body and any attachments to the email.
 Embedding AMP within an email is simple, add a new MIME part with a content type of text/x-amp-html as a descendant of multipart/alternative. It should live alongside the existing text/html or text/plain parts. This ensures that the email message works on all clients.
+
+### MIME Part Ordering
+MIME Part Ordering:
+* `text/plain`
+* `text/x-amp-html`
+* `text/html`
+
+We recommend you structure your MIME part with plain text first, x-amp-html second, and then html last.  The reason being, some email clients will only render the last MIME part, so we recommend placing the text/x-amp-html MIME part before the text/html MIME part. Also, the email client strips out the text/x-amp-html part of the MIME tree when a user replies to or forwards an AMP email message. This is why it is important that an email provide alternative content in the HTML part.
+
+
 Important things to note:
 * The text/x-amp-html part must be nested under a multipart/alternative node, it will not be recognized by the email client otherwise.
 * Some email clients will only render the last MIME part, so we recommend placing the text/x-amp-html MIME part before the text/html MIME part.
