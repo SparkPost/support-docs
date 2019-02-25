@@ -84,17 +84,47 @@ The following is a list of AMP components that are supported today and are group
 
 ## CSS Requirements
 
+Any and all CSS in any AMP document must be included in a '<style amp-custom>' tag within the header or as inline style attributes. The entire '<style>' tag cannot exceed 50,000 bytes. 
+Example:
+'''json
+<style amp-custom>
+  /* any custom styles go here. */
+  body {
+    background-color: white;
+  }
+  amp-img {
+    border: 5px solid black;
+  }
+  amp-img.grey-placeholder {
+    background-color: grey;
+  }
+</style>
+'''
+
 ## Document Dimensions
+Optimal width: 800px or less (any wider and content may be unexpectedly truncated on some clients).
+Height: variable, the client allows the user to scroll through the content.
 
 ## Content Validation Tools
+### Web-based validator
+A web-based validator is available at https://validator.ampproject.org/
+Simply paste in the AMP HTML to ensure the document meets all the AMPHTML Email restrictions. This tool shows you the validation errors directly inline.
 
 ## Examples
 
+
 ## Adding AMP to Existing Emails
+Email is structured as a MIME tree. This MIME tree contains the message body and any attachments to the email.
+Embedding AMP within an email is simple, add a new MIME part with a content type of text/x-amp-html as a descendant of multipart/alternative. It should live alongside the existing text/html or text/plain parts. This ensures that the email message works on all clients.
+Important things to note:
+* The text/x-amp-html part must be nested under a multipart/alternative node, it will not be recognized by the email client otherwise.
+* Some email clients will only render the last MIME part, so we recommend placing the text/x-amp-html MIME part before the text/html MIME part.
 
 ## Where to Next
 
+
 ## How to Get Help
+
 
 
 
