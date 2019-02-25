@@ -12,10 +12,9 @@ Note: SparkPost is available in multiple regions. "SparkPost" refers to the Spar
 * [The AMPHTML Email Format](#the-amphtml-email-format)
 * [AMP Components](#amp-components)
 * [CSS Requirements](#css-requirements)
-* [Document Dimensions](#document-dimensions)
 * [Content Validation Tools](#validation-tools)
 * [Examples](#examples)
-* [Adding AMP to existing emails](#adding-amp-to-existing-emails)
+* [Adding AMP to new and existing emails](#adding-amp-to-new-and-existing-emails)
 * [Where To Next?](#where-to-next)
 * [How To Get Help](#how-to-get-help)
 
