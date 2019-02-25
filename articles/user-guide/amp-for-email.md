@@ -42,12 +42,12 @@ An AMP email must have:
 
 | Rules |   Description   |
 | --- | --- |
-| Start with the '<!doctype html>' doctype|Standard for HTML | Standard for HTML |
-| Contain a top-level '<html ⚡4email>' tag ('<html amp4email>' is accepted as well) | Identifies the document as AMPHTML Email |
-| Contain '<head>' and '<body>' tags | Optional in HTML but not in AMPHTML Email |
-| Contain a '<meta charset="utf-8">' tag as the first child of their '<head>' tag | Identifies the encoding for the page |
-| Contain the amp4email boilerplate in the '<head>' :
-'<style amp4email-boilerplate>body{visibility:hidden}</style><script async src="https://cdn.ampproject.org/v0.js"></script>' | CSS boilerplate to initially hide the content until AMP JS is loaded |
+| Start with the `<!doctype html>` doctype|Standard for HTML | Standard for HTML |
+| Contain a top-level `<html ⚡4email>` tag (`<html amp4email>` is accepted as well) | Identifies the document as AMPHTML Email |
+| Contain `<head>` and `<body>` tags | Optional in HTML but not in AMPHTML Email |
+| Contain a `<meta charset="utf-8">` tag as the first child of their `<head>` tag | Identifies the encoding for the page |
+| Contain the amp4email boilerplate in the `<head>` :
+`<style amp4email-boilerplate>body{visibility:hidden}</style><script async src="https://cdn.ampproject.org/v0.js"></script>` | CSS boilerplate to initially hide the content until AMP JS is loaded |
 
 ## AMP Components
 
@@ -60,30 +60,30 @@ The following is a list of AMP components that are supported today and are group
 
 | Element |   Description   |
 | --- | --- |
-| '<amp-form>' | Form element. The action-xhr attribute must be used in place of the regular action attribute. Can be used in conjunction with '<template type="amp-mustache">' to render a response. |
-| '<amp-list>' |Remotely fetches JSON data that will be rendered by an '<amp-mustache>' |
-| '<template type="amp-mustache">' | A Mustache template markup to render the results of an amp-list call |
-| '<amp-selector>'| A multi-select widget for use within a form |
-| '<amp-bind>' and '<amp-state>' | Simple scripting language in AMP that allows the manipulation of a state machine for interactions between elements. Can also be used to add behavior on certain events. '<amp-state>' is used to remotely fetch the initial state machine values |
+| `<amp-form>` | Form element. The action-xhr attribute must be used in place of the regular action attribute. Can be used in conjunction with `<template type="amp-mustache">` to render a response. |
+| `<amp-list>` |Remotely fetches JSON data that will be rendered by an `<amp-mustache>` |
+| `<template type="amp-mustache">` | A Mustache template markup to render the results of an amp-list call |
+| `<amp-selector>`| A multi-select widget for use within a form |
+| `<amp-bind>` and `<amp-state>` | Simple scripting language in AMP that allows the manipulation of a state machine for interactions between elements. Can also be used to add behavior on certain events. `<amp-state>` is used to remotely fetch the initial state machine values |
 
 ### Layout
 
 | Element |   Description   |
 | --- | --- |
-| '<amp-accordion>' |	A UI element that facilitates showing/hiding different sections |
-| '<amp-carousel>' |	A carousel UI component |
-| '<amp-sidebar>' |	A sidebar for navigational purposes |
-| '<amp-image-lightbox>' |	A lightbox for containing images |
-| '<amp-lightbox>' |	A lightbox for containing content |
-| '<amp-fit-text>' |	A helper component for fitting text within a certain area |
-| '<amp-timeago>' |	Provides a convenient way of rendering timestamps |
+| `<amp-accordion>` |	A UI element that facilitates showing/hiding different sections |
+| `<amp-carousel>` |	A carousel UI component |
+| `<amp-sidebar>` |	A sidebar for navigational purposes |
+| `<amp-image-lightbox>` |	A lightbox for containing images |
+| `<amp-lightbox>` |	A lightbox for containing content |
+| `<amp-fit-text>` |	A helper component for fitting text within a certain area |
+| `<amp-timeago>` |	Provides a convenient way of rendering timestamps |
 
 ### Media
 
 | Element |   Description   |
 | --- | --- |
-| '<amp-img>' |	An AMP component that replaces <img>. Note: Binding to [src] is not allowed |
-| '<amp-anim>' | Embeds GIF files. Note: Binding to [src] is not allowed |
+| `<amp-img>` |	An AMP component that replaces <img>. Note: Binding to [src] is not allowed |
+| `<amp-anim>` | Embeds GIF files. Note: Binding to [src] is not allowed |
 
 ## CSS Requirements
 
