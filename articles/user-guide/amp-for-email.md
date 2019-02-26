@@ -17,8 +17,18 @@ Sections
 ## The AMPHTML Email Format
 
 ### Required Markup
+A properly formed AMP email must adhere to each rule stated below:
 
-The following code represents the minimum amount of markup that makes up a valid AMP email message:
+| Rules | Description |
+| --- | --- |
+| Start with the `<!doctype html>` doctype|Standard for HTML | Standard for HTML |
+| Contain a top-level `<html ⚡4email>` tag (`<html amp4email>` is accepted as well) | Identifies the document as AMPHTML Email |
+| Contain `<head>` and `<body>` tags | Optional in HTML but not in AMPHTML Email |
+| Contain a `<meta charset="utf-8">` tag as the first child of their `<head>` tag | Identifies the encoding for the page |
+| Contain the amp4email boilerplate in the `<head>` :
+`<style amp4email-boilerplate>body{visibility:hidden}</style><script async src="https://cdn.ampproject.org/v0.js"></script>` | CSS boilerplate to initially hide the content until AMP JS is loaded |
+
+The following example code includes all five required rules and reprements the minimum amount of markup that makes up a valid AMP email message:
 ```json
 <!doctype html>
 <html ⚡4email>
@@ -32,17 +42,6 @@ Let's get started using AMPHTML together!
 </body>
 </html>
 ```
-
-An AMP email must have:
-
-| Rules | Description |
-| --- | --- |
-| Start with the `<!doctype html>` doctype|Standard for HTML | Standard for HTML |
-| Contain a top-level `<html ⚡4email>` tag (`<html amp4email>` is accepted as well) | Identifies the document as AMPHTML Email |
-| Contain `<head>` and `<body>` tags | Optional in HTML but not in AMPHTML Email |
-| Contain a `<meta charset="utf-8">` tag as the first child of their `<head>` tag | Identifies the encoding for the page |
-| Contain the amp4email boilerplate in the `<head>` :
-`<style amp4email-boilerplate>body{visibility:hidden}</style><script async src="https://cdn.ampproject.org/v0.js"></script>` | CSS boilerplate to initially hide the content until AMP JS is loaded |
 
 ## AMP Components
 
