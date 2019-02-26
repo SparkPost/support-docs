@@ -12,11 +12,9 @@ Note: SparkPost is available in multiple regions. "SparkPost" refers to the Spar
 * [The AMPHTML Email Format](#the-amphtml-email-format)
 * [AMP Components](#amp-components)
 * [CSS Requirements](#css-requirements)
-* [Content Validation Tools](#validation-tools)
 * [Examples](#examples)
 * [Adding AMP to new and existing emails](#adding-amp-to-new-and-existing-emails)
-* [Where To Next?](#where-to-next)
-* [How To Get Help](#how-to-get-help)
+* [Where To Next & Help](#where-to-next-&-help)
 
 ## The AMPHTML Email Format
 
@@ -103,11 +101,6 @@ Example:
 </style>
 ```
 
-## Content Validation Tools
-### Web-based validator
-A web-based validator is available [here](https://validator.ampproject.org/)
-Simply paste in the AMP HTML to ensure the document meets all the AMPHTML Email restrictions. This tool shows you the validation errors directly inline.
-
 ## Examples
 `<amp-selector>` example link [here](https://codepen.io/isaac-kim/pen/EOdByj)
 
@@ -130,22 +123,22 @@ MIME Part Ordering:
 
 We recommend you structure your MIME part with plain text first, x-amp-html second, and then html last.  The reason being, some email clients will only render the last MIME part, so we recommend placing the `text/x-amp-html` MIME part before the `text/html` MIME part. Also, the email client strips out the `text/x-amp-html` part of the MIME tree when a user replies to or forwards an AMP email message. This is why it is important that an email provide alternative content in the HTML part.
 
-
-Important things to note:
-* The `text/x-amp-html part` must be nested under a multipart/alternative node, it will not be recognized by the email client otherwise.
-* Some email clients will only render the last MIME part, so we recommend placing the `text/x-amp-html` MIME part before the `text/html` MIME part.
-
 ### Replies and Forwarding
 To start, the email client strips out the `text/x-amp-html` part of the MIME tree when a user replies to or forwards an AMP email message. This is why it is important that an email provide alternative content in the HTML part.
 
 ### Document Dimensions
-Optimal width: 800px or less (any wider and content may be unexpectedly truncated on some clients).
-Height: variable, the client allows the user to scroll through the content.
+Width: 800px or less (any wider and content may be unexpectedly truncated on some clients)
+Height: variable, the client allows the user to scroll through the content
 
-## Where to Next
+## Where to Next & Help
+### Content Validation
+A web-based validator is available [here](https://validator.ampproject.org/).
+Simply paste in the AMP HTML to ensure the document meets all the AMPHTML Email restrictions. This tool shows you the validation errors directly inline.
 
+### SparkPost API Documentation
+To learn more about how to send AMPHTML, refer to the [SparkPost API Documentation](https://developers.sparkpost.com/api/).
+Learn more about AMP-specific engagement tracking (clicks and opens) [here](https://developers.sparkpost.com/api/events/).
 
-## How to Get Help
 
 
 
