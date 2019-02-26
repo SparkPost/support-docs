@@ -47,5 +47,5 @@ Once the validation is completed, download a list of the recipients by clicking 
 ```
 email,valid,reason,is_role,is_disposable
 another@hello.com,false,Invalid Recipient,false,false
-ceo@email.com,,
+ceo@email.com,true,,true,false
 ```
