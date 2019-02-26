@@ -1,14 +1,12 @@
 ---
-title: "Getting Started with AMP for Email"
-description: "This guide describes the steps you’ll need to follow to create AMPHTMP content using SparkPost."
+title: "Getting Started with Google AMP for Email on SparkPost"
+description: "This guide describes the steps you’ll need to follow to start using Google AMP for Email (AMPHTML content) with SparkPost."
 ---
 This guide describes the steps you’ll need to follow to start sending AMPHTML content. We'll run through content setup and best practices to have in place before you begin sending. We'll also point out some useful resources along the way to help you get the best from SparkPost, such as our [SparkPost API documentation](https://developers.sparkpost.com/api/).
 
-AMP, commonly known for developing fast web pages on mobile clients, is a set of HTML tags backed by JavaScript with a focus on performance and security.
-The AMPHTML Email format provides a subset of AMP components, like carousels, responsive form elements, and the ability to retrieve fresh content, that can be included into email messages. Recipients of AMP emails can view and interact with the AMP components directly in the email message, all within the inbox.
+AMP, commonly known for developing fast web pages on mobile clients, is a set of HTML tags backed by JavaScript with a focus on performance and security. The AMPHTML Email format provides a subset of AMP components, like carousels, responsive form elements, and the ability to retrieve fresh content, that can be included into email messages. Email recipients can view and interact with the AMP components directly in the email, all within the inbox. AMP for Email not only provides interactive content, but uniquely provides dynamic up-to-date content to the inbox.
 
-Note: SparkPost is available in multiple regions. "SparkPost" refers to the SparkPost service hosted in North America. "SparkPost EU" refers to the SparkPost service hosted in Western Europe. An account created with SparkPost cannot be used with SparkPost EU, and vice-versa. Customers may use accounts in both regions.
-
+Sections
 * [The AMPHTML Email Format](#the-amphtml-email-format)
 * [AMP Components](#amp-components)
 * [CSS Requirements](#css-requirements)
