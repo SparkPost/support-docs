@@ -5,6 +5,8 @@ description: "An easy, efficient way to verify that email addresses are valid be
 
 Recipient Validation is an easy, efficient way to verify that email addresses are valid before you send. It runs addresses through a series of checks that catch many common problems, including syntax issues and non-existent mailboxes. 
 
+[Contact sales](https://www.sparkpost.com/recipient-validation/) for pricing.
+
 You can use the [API](#header-single-address-validation-api) to validate single addresses when you initially collect them, or before you send out the emails. You can also [validate](#header-email-list-validation) entire email lists in a single batch.
 
 Possible reasons why an email address would be invalid include:
