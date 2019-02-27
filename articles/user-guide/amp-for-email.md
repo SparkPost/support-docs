@@ -1,8 +1,8 @@
 ---
 title: "Getting Started with Google AMP for Email on SparkPost"
-description: "This guide describes the steps you’ll need to follow to start using Google AMP for Email (AMPHTML content) with SparkPost."
+description: "This support article covers the basic structure of AMPHTML emails and explains how to get started using Google AMP for email with SparkPost."
 ---
-This guide describes the steps you’ll need to follow to start sending AMPHTML content. We'll run through content setup and best practices to have in place before you begin sending. We'll also point out some useful resources along the way to help you get the best from SparkPost, such as our [SparkPost API documentation](https://developers.sparkpost.com/api/).
+Learn how to create your very first AMPTHML email! We'll run through content setup and best practices to have in place before you begin sending. We'll also point out some useful resources along the way to help you get the best from SparkPost, such as our [SparkPost API documentation](https://developers.sparkpost.com/api/).
 
 AMP, commonly known for developing fast web pages on mobile clients, is a set of HTML tags backed by JavaScript with a focus on performance and security. The AMPHTML Email format provides a subset of AMP components, like carousels, responsive form elements, and the ability to retrieve fresh content, that can be included into email messages. Email recipients can view and interact with the AMP components directly in the email, all within the inbox. AMP for Email not only provides interactive content, but uniquely provides dynamic up-to-date content to the inbox.
 
