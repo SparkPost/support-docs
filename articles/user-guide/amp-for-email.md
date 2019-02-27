@@ -28,7 +28,7 @@ A properly formed AMP email must adhere to a basic structure in order to be cons
 | `<script async src="https://cdn.ampproject.org/v0.js"></script>`| The AMP runtime |
 | `<style amp4email-boilerplate>body{visibility:hidden}</style>` | The AMPHTML Email boilerplate. This is the CSS boilerplate to initially hide the content until AMP JS is loaded |
 
-The following example code includes all five required rules and reprements the minimum amount of markup that makes up a valid AMP email message:
+The following example code includes all components listed above and represents the minimum amount of markup required to create a valid AMPHTML email:
 ```json
 <!doctype html>
 <html ⚡4email>
@@ -38,7 +38,7 @@ The following example code includes all five required rules and reprements the m
   <script async src="https://cdn.ampproject.org/v0.js"></script>
 </head>
 <body>
-Let's get started using AMPHTML together!
+Hellow World! Let's get started using AMPHTML together!
 </body>
 </html>
 ```
