@@ -14,7 +14,7 @@ Sections
 * [Examples](#examples)
 * [Adding AMP to new and existing emails](#adding-amp-to-new-and-existing-emails)
 * [Sending Through SparkPost](#sending-through-sparkpost)
-* [Where To Next & Help](#where-to-next-&-help)
+* [Help](#help)
 
 ## The AMPHTML Email Format
 
@@ -191,7 +191,7 @@ Basic engagement tracking for opens and clicks will be supported through an AMP-
 ### Stored Templates
 AMP for Email is supported in SparkPost templates, including metadata and substitution data in a template’s AMP MIME part.
 
-## Where to Next & Help
+## Help
 ### Content Validation
 A web-based validator is available [here](https://validator.ampproject.org/).
 Simply paste in the AMP HTML to ensure the document meets all the AMPHTML Email restrictions. This tool shows you the validation errors directly inline.
