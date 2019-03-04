@@ -140,6 +140,57 @@ To start, the email client strips out the `text/x-amp-html` part of the MIME tre
 Width: 800px or less (any wider and content may be unexpectedly truncated on some clients)
 Height: variable, the client allows the user to scroll through the content
 
+## Sending Through SparkPost
+SparkPost makes it simple to send AMP-enabled messages. The SparkPost [Transmissions API](https://developers.sparkpost.com/api/transmissions/) supports a new optional field, `content.amp_html` in the `content` JSON object, a UTF-8 encoded string representing the AMP for Email HTML content. SparkPost inserts this as a `text/x-amp-html`  MIME part in the appropriate location of the MIME tree and performs engagement tracking (if enabled) as well as substitutions.
+
+Here's an example:
+```
+{
+  "options": {
+    "open_tracking": true,
+    "click_tracking": true
+  },
+  "campaign_id": "AMP_Test",
+  "return_path": "test@bounces.sparkpost.com",
+  "recipients": [
+    {
+      "return_path": "test@bounces.sparkpost.com",
+      "address": {
+        "email": "[insert_email_here]",
+        "name": "John Doe"
+      }
+    }
+  ],
+	"content": {
+		"from": "bounces-amptest@mail.sparkpost.com",
+		"subject": "This is an AMP message test",
+		"html": "Hello from the HTML part",
+		"text": "Hello from the TEXT part",
+		"amp_html": 
+		"<!doctype html>
+		<html ⚡4email>
+		<head>
+		<meta charset="utf-8">
+		<style amp4email-boilerplate>body{visibility:hidden}
+		</style>
+		<script async src="https://cdn.ampproject.org/v0.js">
+		</script>
+		</head>
+		<body>
+			Hello World! Let's get started using AMPHTML together!
+		</body>
+</html>"
+}
+}
+```
+
+Those injecting via SMTP will also have AMP support. Be sure to use the proper MIME structure; text/x-amp-html must be a descendant of multipart/alternative, and live alongside at least one of text/html and/or text/plain MIME parts.
+
+Second, we will offer AMP-specific engagement metrics. Basic engagement tracking for opens and clicks will be supported through an AMP-specific tracking pixel. We will provide Message Events and webhook event data, allowing you to compare AMP opens and clicks versus traditional HTML opens and clicks. Down the road, we may provide additional, advanced engagement tracking for AMP messages, depending upon our customers’ needs.
+
+Last, but not least, we are adding support for AMP in our templates, including metadata and substitution data in a template’s AMP MIME part.
+
+
 ## Where to Next & Help
 ### Content Validation
 A web-based validator is available [here](https://validator.ampproject.org/).
