@@ -116,6 +116,7 @@ Example:
 `<amp-selector>` example link [here](https://codepen.io/isaac-kim/pen/EOdByj)
 
 `<amp-carousel>` example link [here](https://codepen.io/isaac-kim/pen/bQmPJJ)
+![amp_carousel](media/amp_carousel.png)
 
 `<amp-bind>` `<amp-state` example link [here](https://codepen.io/isaac-kim/pen/zMyvxX?editors=1100)
   
