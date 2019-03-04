@@ -31,7 +31,7 @@ A properly formed AMP email must adhere to a basic structure in order to be cons
 | `<style amp4email-boilerplate>body{visibility:hidden}</style>` | The AMPHTML Email boilerplate. This is the CSS boilerplate to initially hide the content until AMP JS is loaded |
 
 The following example code includes all components listed above and represents the minimum amount of markup required to create a valid AMPHTML email:
-```json
+```
 <!doctype html>
 <html ⚡4email>
 <head>
@@ -147,7 +147,7 @@ Height: variable, the client allows the user to scroll through the content
 SparkPost makes it simple to send AMP-enabled messages. The SparkPost [Transmissions API](https://developers.sparkpost.com/api/transmissions/) supports a new optional field, `content.amp_html` in the `content` JSON object, a UTF-8 encoded string representing the AMP for Email HTML content. SparkPost inserts this as a `text/x-amp-html`  MIME part in the appropriate location of the MIME tree and performs engagement tracking (if enabled) as well as substitutions.
 
 Here's an example:
-```json
+```
 {
   "options": {
     "open_tracking": true,
