@@ -39,7 +39,7 @@ The following example code includes all components listed above and represents t
   <script async src="https://cdn.ampproject.org/v0.js"></script>
 </head>
 <body>
-Hellow World! Let's get started using AMPHTML together!
+Hello World! Let's get started using AMPHTML together!
 </body>
 </html>
 ```
@@ -144,7 +144,7 @@ Height: variable, the client allows the user to scroll through the content
 SparkPost makes it simple to send AMP-enabled messages. The SparkPost [Transmissions API](https://developers.sparkpost.com/api/transmissions/) supports a new optional field, `content.amp_html` in the `content` JSON object, a UTF-8 encoded string representing the AMP for Email HTML content. SparkPost inserts this as a `text/x-amp-html`  MIME part in the appropriate location of the MIME tree and performs engagement tracking (if enabled) as well as substitutions.
 
 Here's an example:
-```
+```json
 {
   "options": {
     "open_tracking": true,
@@ -167,20 +167,18 @@ Here's an example:
 		"html": "Hello from the HTML part",
 		"text": "Hello from the TEXT part",
 		"amp_html": 
-		"<!doctype html>
-		<html ⚡4email>
-		<head>
-		<meta charset="utf-8">
-		<style amp4email-boilerplate>body{visibility:hidden}
-		</style>
-		<script async src="https://cdn.ampproject.org/v0.js">
-		</script>
-		</head>
-		<body>
+			"<!doctype html>
+			<html ⚡4email>
+			<head>
+  				<meta charset="utf-8">
+ 				 <style amp4email-boilerplate>body{visibility:hidden}</style>
+  				<script async src="https://cdn.ampproject.org/v0.js"></script>
+			</head>
+			<body>
 			Hello World! Let's get started using AMPHTML together!
-		</body>
-</html>"
-}
+			</body>
+		</html>"
+	}
 }
 ```
 
