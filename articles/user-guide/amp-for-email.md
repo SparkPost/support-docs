@@ -86,7 +86,7 @@ The following is a list of AMP components that are supported today and are group
 Any and all CSS in any AMP document must be included in a `<style amp-custom>` tag within the header or as inline style attributes. The entire `<style>` tag cannot exceed 50,000 bytes.  The CSS allowed withim email messages will vary depending on the email provider. The list of CSS properties allowed within Gmail can be found [here](https://developers.google.com/gmail/design/reference/supported_css). 
 
 Example:
-```json
+```
 <style amp-custom>
   /* any custom styles go here. */
   body {
