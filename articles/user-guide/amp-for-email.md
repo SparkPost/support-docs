@@ -114,11 +114,13 @@ Example:
 
 ## Examples
 `<amp-selector>` example link [here](https://codepen.io/isaac-kim/pen/EOdByj)
+![amp_selector](media/amp_form.png)
 
 `<amp-carousel>` example link [here](https://codepen.io/isaac-kim/pen/bQmPJJ)
 ![amp_carousel](media/amp_carousel.png)
 
 `<amp-bind>` `<amp-state` example link [here](https://codepen.io/isaac-kim/pen/zMyvxX?editors=1100)
+![amp_bind](media/amp_bind.png)
   
   
 ## Adding AMP to New and Existing Emails
