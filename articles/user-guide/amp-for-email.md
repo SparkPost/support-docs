@@ -44,6 +44,7 @@ Hello World! Let's get started using AMPHTML together!
 </body>
 </html>
 ```
+Note the lack of a `<link rel=canonical>` element compared to the traditional AMP spec. This is because an AMP email doesn’t have a canonical email!
 
 ## AMP Components
 
