@@ -1,10 +1,10 @@
 ---
-title: "Getting Started with Google AMP for Email on SparkPost"
-description: "This support article covers the basic structure of AMPHTML emails and explains how to get started using Google AMP for email with SparkPost."
+title: "Getting Started with AMP for Email on SparkPost"
+description: "This support article covers the basic structure of AMPHTML emails and explains how to get started sending AMP for email on SparkPost."
 ---
-Learn how to create your very first AMPTHML email! We'll run through content setup and best practices to have in place before you begin sending. We'll also point out some useful resources along the way to help you get the best from SparkPost, such as our [SparkPost API documentation](https://developers.sparkpost.com/api/).
+Learn how to create your very first AMP email! We'll run through content setup and best practices to have in place before you begin sending. We'll also point out some useful resources along the way to help you get the best from SparkPost, such as our [SparkPost API documentation](https://developers.sparkpost.com/api/).
 
-Google AMP (Accelerated Mobile Pages) initially launched as an open-sourced code to help publishers develop fast web pages on mobile clients. It’s had a huge impact on SEO and now it’s ready for email. AMP for Email is the ability to combine personalization and interactivity through a set of HTML tags backed by JavaScript with a focus on performance and security. The AMPHTML Email format provides a subset of AMP components, like carousels, responsive form elements, and the ability to retrieve fresh content, that can be included into email messages. Email recipients can view and interact with the AMP components directly in the email, all within the inbox. AMP for Email not only provides interactive content, but uniquely provides dynamic up-to-date content to the inbox.
+AMP (Accelerated Mobile Pages) initially launched as an open-sourced code to help publishers develop fast web pages on mobile clients. It’s had a huge impact on SEO and now it’s ready for email. AMP for Email is the ability to combine personalization and interactivity through a set of HTML tags backed by JavaScript with a focus on performance and security. The AMPHTML Email format provides a subset of AMP components, like carousels, responsive form elements, and the ability to retrieve fresh content from a backend, that can be included into email messages. Email recipients can view and interact with the AMP components directly in the email, all within the inbox. AMP for Email not only provides interactive content, but uniquely provides dynamic up-to-date content to the inbox. 
 
 Sections
 * [The AMPHTML Email Format](#the-amphtml-email-format)
