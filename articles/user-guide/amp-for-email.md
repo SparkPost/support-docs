@@ -18,6 +18,10 @@ Sections
 
 ## The AMPHTML Email Format
 
+### Registration
+
+An importatn note - in order to send AMP emails, you must register with Google. In addition to being subject to Google's [Bulk Senders Guidelines](https://support.google.com/mail/answer/81126), there are AMP specific requirements for sending dynamic emails. When you are ready to start sending, follow their [registration guide](https://developers.google.com/gmail/ampemail/register) to get started.
+
 ### Required Markup
 A properly formed AMP email must adhere to a basic structure in order to be considered an AMPHTML email. Here's each component: 
 
@@ -197,7 +201,7 @@ AMP for Email is supported in SparkPost templates, including metadata and substi
 
 ## Help
 ### Content Validation
-A web-based validator is available [here](https://validator.ampproject.org/).
+A web-based validator is available [here](https://validator.ampproject.org/#htmlFormat=AMP4EMAIL).
 Simply paste in the AMP HTML to ensure the document meets all the AMPHTML Email restrictions. This tool shows you the validation errors directly inline.
 
 ### SparkPost API Documentation
