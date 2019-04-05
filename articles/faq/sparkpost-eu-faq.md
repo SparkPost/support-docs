@@ -1,6 +1,6 @@
 ---
 title: "SparkPost EU FAQ"
-description: "FAQ for our new EU based Service..."
+description: "FAQ for our EU based Service..."
 ---
 
 ## How do I get started with SparkPost EU? 
@@ -54,7 +54,7 @@ Not at this time. If you come across a 400 error trying to use an integration wi
 
 ## What are the advantages of using EU vs US? 
 
-Data is at rest in the EU covered by all of the protections that provides. We’re also covered by Privacy Shield for data transiting out of the country and in full compliance with GDPR. 
+Data at rest in the EU is covered by all of the protections that localized data provides. We’re also covered by Privacy Shield for data transiting out of the country and in full compliance with GDPR. 
 When sending from the EU, connection times to APIs and SMTP are significantly less if using SparkPost EU. This is critical for things such as the time to first send 
 For instance, see these improvements for Transmission API latency in SparkPost EU (approx 5.7x faster)
 
