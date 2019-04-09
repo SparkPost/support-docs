@@ -7,7 +7,7 @@ You can invite members of your team to join your SparkPost account. Each user wi
 
 **Admin**: Full access user. Admins have all permissions available and are the only users that can manage users, security, and billing settings.
 
-**Developer**: Powerfull setup and development user. Developer users are able to create and edit API Keys and have access to all email related account settings.
+**Developer**: Powerful setup and development user. Developer users are able to create and edit API Keys and have access to all email related account settings.
 
 **Email**: Content and campaign management user. Email users can manage Templates, AB Tests, Recipient Lists, Suppressions. They also have view only access to Domains, Subaccounts, and all reporting and analytics features.
 
