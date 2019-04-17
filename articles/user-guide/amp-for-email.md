@@ -196,6 +196,8 @@ Those injecting via SMTP will also have AMP support. Be sure to use the proper M
 ### Engagement Metrics
 Basic engagement tracking for opens and clicks will be supported through an AMP-specific tracking pixel. SparkPost Events and Webhooks will support AMP-specific opens and clicks, allowing you to compare AMP opens and clicks versus traditional HTML opens and clicks. Down the road, we may provide additional, advanced engagement tracking for AMP messages, depending upon our customers’ needs.
 
+Note: AMP requires HTTPS open/click tracking in order for AMPHTML to properly render. Documentation on enabling HTTP engagement tracking on SparkPost can be found [here](https://www.sparkpost.com/docs/tech-resources/enabling-https-engagement-tracking-on-sparkpost/?_ga=2.79716823.1187573678.1555510062-535257696.1506374471).
+
 ### Stored Templates
 AMP for Email is supported in SparkPost templates, including metadata and substitution data in a template’s AMP MIME part.
 
