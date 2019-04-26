@@ -93,7 +93,7 @@ _**Note:** Not all mailbox providers surface spam complaints. While your known c
 
 Each cohorts behavior rate is depicted by a separate line corresponding to the cohort color. Below is the engagement rate broken down by cohorts.
 
-![Engagement by Cohort chart](media/engagement-by-cohort.png)
+![Engagement by Cohort chart](media/signals/engagement-by-cohort.png)
 
 ### Recommendations
 
