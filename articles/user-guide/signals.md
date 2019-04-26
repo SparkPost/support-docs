@@ -41,7 +41,7 @@ The components are as follows:
 
 ### Component changes over time
 
-In the components chart, you can select a specific component to examine. When selected, a chart of the components change over time is displayed. This chart allows you to see not only how your health score changed, but also how each component shifted over the selected timeframe.
+In the components chart, you can select a bar to examine. When selected, a chart of the component's change over time is displayed. This chart allows you to see not only how your health score changed, but also how each component shifted over the selected timeframe.
 
 ![Component percent chart](media/signals/component-change-chart.png)
 
