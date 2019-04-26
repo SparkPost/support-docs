@@ -14,18 +14,18 @@ Dive into the details page to see a deeper view of your scoring and find curated
 
 _**Note:** Unlike SparkPost metrics which are calculated based on the number of sent emails, Signals is calculated based on the number of injected emails. Because of this, you'll see differing rates for some components such as hard bounces._
 
-![Signals Dashboard](media/signals-dashboard.png)
+![Signals Dashboard](media/signals/signals-dashboard.png)
 
 ##  Health Score
 Your Health Score is a predictive score that monitors your email health to identify problems before they negatively impact email delivery. Each day you'll receive a health score between 0 and 100, informing you of your sending health as compared to all senders on the SparkPost. A good score is anything above 80.
 
 _**Note:** To provide the actionable insights and accurate analysis, the Health Score requires a minimum number of emails sent each day.  For any period where your sending does not pass these minimums, the app notifies you that it doesn't have enough data._
 
-![Health Score Chart](media/health-score-chart.png)
+![Health Score Chart](media/signals/health-score-chart.png)
 
 The Health Score is a combination of eight different components which are informed by all the events passing through SparkPost including bounces, spam trap hits, and user engagement. You can view these components for each day you have a health score on the right of the Health Score chart.
 
-![Health Score Components](media/health-score-components.png)
+![Health Score Components](media/signals/health-score-components.png)
 
 The relative size of the component in the chart indicates the impact it had on your health score.
 
@@ -43,7 +43,7 @@ The components are as follows:
 
 In the components chart, you can select a specific component to examine. When selected, a chart of the components change over time is displayed. This chart allows you to see not only how your health score changed, but also how each component shifted over the selected timeframe.
 
-![Component percent chart](media/component-change-chart.png)
+![Component percent chart](media/signals/component-change-chart.png)
 
 ### Recommendations
 
@@ -54,7 +54,7 @@ With visibility across multiple commercial and non-commercial spam trap networks
 
 _**Note:** Your sending must stay within acceptable thresholds to receive the Spam Trap report. If you fall outside of these limits, no data is shown to maintain the integrity of the spam traps._
 
-![Spam Trap Monitoring chart](media/spam-trap-monitoring-chart.png)
+![Spam Trap Monitoring chart](media/signals/spam-trap-monitoring-chart.png)
 
 ### Recommendations
 If your spam trap hits exceed safe limits, Signals provides actionable advice identifying the most likely source of the problem and guides you to improve your [list quality](https://www.sparkpost.com/docs/signals/list-hygiene/) or [acquisition practices](https://www.sparkpost.com/docs/signals/subscriber-acquisition/).
@@ -64,7 +64,7 @@ Mailbox providers like Gmail closely monitor recipient engagement to determine i
 
 _**Note:** For Engagement Recency to function, you must enable at minimum either open or click tracking. For best results, enable both._
 
-![Engagement Recency chart](media/engagement-recency-chart.png)
+![Engagement Recency chart](media/signals/engagement-recency-chart.png)
 
 Recipients are divided into the following cohorts:
 * **Never Engaged** – Recipients who have received email but have not engaged with your messages in the past 365 days.
