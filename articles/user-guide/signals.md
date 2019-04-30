@@ -17,7 +17,7 @@ _**Note:** Unlike SparkPost metrics which are calculated based on the number of 
 ![Signals Dashboard](media/signals/signals-dashboard.png)
 
 ##  Health Score
-Your Health Score is a predictive score that monitors your email health to identify problems before they negatively impact email delivery. Each day you'll receive a health score between 0 and 100, informing you of your sending health as compared to all senders on the SparkPost. A good score is anything above 80.
+Your Health Score is a predictive score to help you monitor your email health and identify problems before they negatively impact your ROI. Each day, the Health Score model predicts your overall engagement as compared with all senders using SparkPost, by analyzing dozens of different sending factors from your bounce rate to the relationship you have with your recipients. You'll receive a score between 0 and 100, informing you of your sending health. A good score is anything above 80.
 
 _**Note:** To provide the actionable insights and accurate analysis, the Health Score requires a minimum number of emails sent each day.  For any period where your sending does not pass these minimums, the app notifies you that it doesn't have enough data._
 
@@ -50,7 +50,7 @@ In the components chart, you can select a bar to examine. When selected, a chart
 Signals provides a list of items needing attention and actions to take to improve any of the components that are negatively affecting your Health Score. By taking action to improve these items you'll see your Health Score, and therefore your deliverability and engagement, improve over time.
 
 ## Spam Trap Monitoring
-With visibility across multiple commercial and non-commercial spam trap networks, SparkPost Signals is a crucial resource for maintaining the health of your email. Spam Trap Monitoring reports the share over time of your total email volume that was sent to known spam traps for each given day. This indicator is important to take note of since an excessive rate of spam trap hits indicates poor list procurement and hygiene practices. You can view the spam trap hits as a raw number or a ratio over the number of injections for that day.
+With visibility across multiple commercial and non-commercial spam trap networks for the broadest coverage in the industry, SparkPost Signals is a crucial resource for maintaining the health of your email. Spam Trap Monitoring reports the share over time of your total email volume that was sent to known spam traps for each given day. This indicator is important to take note of since an excessive rate of spam trap hits indicates poor list procurement and hygiene practices. You can view the spam trap hits as a raw number or a ratio over the number of injections for that day.
 
 _**Note:** Your sending must stay within acceptable thresholds to receive the Spam Trap report. If you fall outside of these limits, no data is shown to maintain the integrity of the spam traps._
 
