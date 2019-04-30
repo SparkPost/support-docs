@@ -19,15 +19,16 @@ Generally speaking, four events are recorded for each message: injection, delive
 
 ## Helpful Tips on Webhook Consumers
 
-*   Consumers of webhook data streams should defer any processing until after the acceptance response to the webhooks system is made (i.e., after the 200 OK response). 
+*   Consumers of webhook data streams should write to disk first and defer any processing until after the acceptance response to the webhooks system is made (i.e., after the 200 OK response). 
 *   Two important data elements exist to help you keep track of webhook batches and individual events: 
-    * `X-Messagesystems-Batch-Id` - a header in each posting (batch) that uniquely identifies a given batch of data. 
+    * `X-Messagesystems-Batch-Id` - a header in each posting (batch) that uniquely identifies a given batch of data. If you get a duplicate batch, return a 200 response so SparkPost will not keep retrying.
     * `event_id` - a data element within each set of event data that uniquely identifies a given event.  The format of this field is not consistent across events -- for some event types this may be a large integer, while for others it may be a UUID. 
 *   It is recommended that you do not set a maximum batch size your endpoint will accept, or that if you do, that it is not excessively small, in order to prevent truncation of data on any attempted batch.
 *   Utilize separate processing & storage for different [Event Types](https://www.sparkpost.com/docs/tech-resources/webhook-event-reference/#event-types).  Message structure & data types are consistent within a given Event Type, but not between Event Types. 
 
 ## Monitoring Webhooks
 
-If you have issues with your webhooks, it would be wise to monitor them either on your endpoint, or via the batch-status API, which is detailed [here](https://developers.sparkpost.com/api/webhooks#webhooks-batch-status-get). You can also view the endpoint status in the Webhhook Batch Status tab in the [app](https://app.sparkpost.com/webhooks/) ([EU](https://app.eu.sparkpost.com/webhooks/)). This will help inform you if there is a problem with the webhooks so it can be remedied before batches hit the 8 hour limit as described in the retry logic above.
+If you have issues with your webhooks, it would be wise to monitor them either on your own endpoint's application logs, or via the webhook or batch-status API, which is detailed [here](https://developers.sparkpost.com/api/webhooks#webhooks-batch-status-get). Use your monitoring tool of choice to alert your technical staff of an issue such as when attempts for a batch exceeds 2.  
+You can also view the endpoint status in the Webhhook Batch Status tab in the [app](https://app.sparkpost.com/webhooks/) ([EU](https://app.eu.sparkpost.com/webhooks/)). This will help inform you if there is a problem with the webhooks so it can be remedied before batches hit the 8 hour limit as described in the retry logic above.  
 
 Note that batch status (via both app and the API) does not report batches that succeeded first time. It reports only failed batches and batches that initially failed but later succeeded. The batch status is kept for a 24 hours.
