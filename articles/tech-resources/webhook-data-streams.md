@@ -32,3 +32,11 @@ If you have issues with your webhooks, it would be wise to monitor them either o
 You can also view the endpoint status in the Webhhook Batch Status tab in the [app](https://app.sparkpost.com/webhooks/) ([EU](https://app.eu.sparkpost.com/webhooks/)). This will help inform you if there is a problem with the webhooks so it can be remedied before batches hit the 8 hour limit as described in the retry logic above.  
 
 Note that batch status (via both app and the API) does not report batches that succeeded first time. It reports only failed batches and batches that initially failed but later succeeded. The batch status is kept for a 24 hours.
+
+## Disaster Recovery Scenarios
+
+SparkPost will retry sending data for 8 hours.  This is usually sufficient time for customers to detect a problem with their webhook consumer application and fix it.  If data is very important to your business we recommend following the monitoring guidelines above and implementing production alerting and on-call procedures to ensure you catch and fix issues quickly before webhook data expires. In the unfortunate event that you do not recover in a timeley manner you may end up with gaps in your data. These are some general guidelines to use to recover from this scenario.
+* Once you have your webhook consumer back up and running and any current batches have been retried successfully you need to determine the approximate start and end gaps in your data.
+* Use the [Events API](https://developers.sparkpost.com/api/events/) to download the minutes, hours, or days when your webhook consumer was down.
+* In order to avoid duplicate data getting into your reporting database, use the the unique `event_id` to dedup data before adding into your data pipeline and/or reporting database.  Alternatively, depending on how your reporting data is partitioned, delete any partial periods and replace with the full data set downloaded using the Events API.
+If you have more detailed questions please submit a support ticket or reach out to your Technical Account Manager.
