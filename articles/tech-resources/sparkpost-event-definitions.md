@@ -7,7 +7,7 @@ description: "Descriptions for each type of event that SparkPost logs."
 
 SparkPost logs several events that can be used to track the lifecycle of your emails.
 Individual events are available via [Webhooks](https://developers.sparkpost.com/api/webhooks)
-or the [Message Events API](https://developers.sparkpost.com/api/message-events).
+or the [Events API](https://developers.sparkpost.com/api/events/).
 
 You can also view your recent events from the [app](https://app.sparkpost.com/reports/message-events)([EU](https://app.eu.sparkpost.com/reports/message-events)).
 
