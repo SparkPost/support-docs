@@ -1,9 +1,9 @@
 ---
-title: "Message Events Reporting in the UI"
-description: "Introduction With the addition of the Message Events API we have added the power searching for message event data based on recipients campaigns and more This new API endpoint provides our customers with a way to pull data on demand for use in internal reporting triggering message generation or other..."
+title: "Events Search in the UI"
+description: "Introduction With the addition of the Events API we have added the power searching for message event data via API and in the UI based on recipients campaigns and more This new API endpoint provides our customers with a way to pull data on demand for use in internal reporting triggering message generation or other..."
 ---
 
-With the addition of the Message Events API we have added the power searching for message event data based on recipients, campaigns, and more.  This new API endpoint provides our customers with a way to pull data – on demand – for use in internal reporting, triggering message generation, or other programmatic processing of event data.
+The [Events API](https://developers.sparkpost.com/api/events/) provides powerful searching for message event data based on recipients, campaigns, and more.  This API endpoint provides our customers with a way to pull data – on demand – for use in internal reporting, triggering message generation, or other programmatic processing of event data.
 
 Message Events provides you with the ability to:
 
@@ -19,6 +19,7 @@ Complete the following steps from the main menu in SparkPost.
 1.  Click on Reports from the main menu.
 1.  Select Message Events from the Sub-menu to view the same.
 1.  Perform a filtered search for message event data - the response is sorted by descending timestamp.
+1.  Use the "More Filters" to get to advanced filtering.  Use the "Add Filter" button to filter on specific attributes.
 
 ![](media/message-events/message-events-page.png)
 
