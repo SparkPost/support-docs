@@ -28,7 +28,7 @@ Please refer to the [A/B testing API documentation](https://developers.sparkpost
 
 The benefit of this approach is that you only have to change the Transmissions API once for any given message type, (e.g. payment confirmation) and you can run as many A/B tests as needed to decide on the best template. Once an active test completes, the A/B Testing functionality will revert to sending your default template if you continue to call the A/B test ID via the Transmissions API. When you're ready to run another active test, use the A/B Testing API to provide new template variants, set a new date, recipient counts, etc., and the test will run again with a different version number. This mode of A/B testing was built specifically to support the needs of users testing their transactional or app-generated messages rather than bulk sends, because once an active test ends, the previously defined default template will continue to be sent so that production sends are never interrupted.
 
-You can review your results using webhooks or via the Message Events API. For transmissions that used an A/B Test, open and click events will have the A/B test ID and A/B Test version number so you can differentiate at the results.
+You can review your results using webhooks or via the Events API. For transmissions that used an A/B Test, open and click events will have the A/B test ID and A/B Test version number so you can differentiate at the results.
 
 **Notes about A/B testing specifics:**
 
@@ -39,7 +39,7 @@ You can review your results using webhooks or via the Message Events API. For tr
 * The assignment of individual recipients to specific template variants is randomized. You can see which recipient received which template variant in webhook events.
 * Templates **must be published** to be used in A/B testing. You cannot use draft templates.
 * The published templates you are testing with **must have engagement tracking turned on.**
-* Reporting by individual tests is available through both the [Message Events API](http://developers.sparkpost.com/api/message-events.html#message-events-message-events-get) (individual message events) and the [Metrics API](https://developers.sparkpost.com/api/metrics.html#metrics-deliverability-metrics-by-template-get) (aggregate statistics).
+* Reporting by individual tests is available through both the [Events API](https://developers.sparkpost.com/api/events/) (individual message events) and the [Metrics API](https://developers.sparkpost.com/api/metrics.html#metrics-deliverability-metrics-by-template-get) (aggregate statistics).
   * For the Message Events API, you must filter by template ID to pull individual recipient data.
   * To pull aggregate statistics by template performance, use the deliverability metrics by template as described in the metrics API link immediately above, or filter by template in the UI reporting.
   
