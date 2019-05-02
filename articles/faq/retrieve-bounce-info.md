@@ -19,15 +19,15 @@ Once you set up a webhook, you should click the "test" button in the UI (or the 
 
 Additional information about webhook best practices and retry logic should be read prior to setting up a webhook endpoint. That article can be found [here](https://www.sparkpost.com/docs/tech-resources/managing-webhook-data/).
 
-### Pull Mechanism - Message Events API
+### Pull Mechanism - Events API
 
-The pull method available for you to retrieve bounce info is the Message Events API, and to a more limited extent, the Message Events section nested beneath the reports tab in the UI. However, this section in the UI is meant to be a quick search only. This option is helpful in situations where you want to track down specific message dispositions or user actions by a single contact.
+The pull method available for you to retrieve bounce info is the Events API, and to a more limited extent, the Message Events section nested beneath the reports tab in the UI. However, this section in the UI is meant to be a quick search only. This option is helpful in situations where you want to track down specific message dispositions or user actions by a single contact.
 
-The Message Events API, however, contains many more filtering options for obtaining or searching for message events. More information about what searchable filters you can use with a Message Events API call, please see our documentation on that [here](https://developers.sparkpost.com/api/message-events).
+The Events API, however, contains many more filtering options for obtaining or searching for message events. More information about what searchable filters you can use with a Events API call, please see our documentation on that [here](https://developers.sparkpost.com/api/events/).
 
-It is important to note that there are minor differences present between the data posted by a webhook and information pulled from the Message Events API, though both sets of event data are otherwise exactly the same. More detailed information on the minor differences are detailed in [this article](https://www.sparkpost.com/docs/user-guide/comparing-data/).
+It is important to note that there are minor differences present between the data posted by a webhook and information pulled from the  Events API, though both sets of event data are otherwise exactly the same. More detailed information on the minor differences are detailed in [this article](https://www.sparkpost.com/docs/user-guide/comparing-data/).
 
-**Note**: Message Events data is only stored for a maximum of 10 days in a rolling window. If you wish to pull data from the Message Events API or UI, only the last 10 days will be displayed.
+**Note**: Message Events data is only stored for a maximum of 10 days in a rolling window. If you wish to pull data from the Events API or UI, only the last 10 days will be displayed.
 
 ### Which Bounce Events and Bounce Classes Should I Review for List Hygiene?
 
