@@ -1,9 +1,9 @@
 ---
 title: "Comparing Webhook and Message Event Data"
-description: "Webhooks are a resilient way to push real time events from SparkPost to an HTTP endpoint of your choice. Message Events offer a searchable pull-style interface to a similar set of events."
+description: "Webhooks are a resilient way to push real time events from SparkPost to an HTTP endpoint of your choice. The Events search API & UI offer a searchable pull-style interface to a similar set of events."
 ---
 
-Webhooks are a way to push real-time events from SparkPost to a consumer of your choice. If there is a problem receiving data at the consumer end, the webhook will retry a number of times, but eventually, it will stop attempting to send the data. You can request the same event data, but using the API's message events endpoint.
+[Webhooks](https://developers.sparkpost.com/api/webhooks/) are a way to push real-time events from SparkPost to a consumer of your choice. If there is a problem receiving data at the consumer end, the webhook will retry a number of times, but eventually, it will stop attempting to send the data. You can request the same event data, but using the [Event API](https://developers.sparkpost.com/api/events/) endpoint.
 
 There are a few differences between the format of data received in webhooks and the data retrieved using the API's message events endpoint. You should keep these differences in mind when deciding how to process the message event data.
 
