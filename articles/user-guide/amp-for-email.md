@@ -200,6 +200,7 @@ In order for engagement tracking to work properly and to have AMP content render
 
 ### Stored Templates
 AMP for Email is supported in SparkPost templates, including metadata and substitution data in a template’s AMP MIME part.
+![amp template](media/Email Stored Template.gif)
 
 ## Help
 ### Content Validation
