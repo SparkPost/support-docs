@@ -151,6 +151,13 @@ Height: variable, the client allows the user to scroll through the content
 
 ## Sending Through SparkPost
 
+Even if you’re not an approved AMP sender, you can still send test emails to yourself and ensure your AMP content really does work! 
+To accomplish this, go to your email account and access Settings. Then on the “General” tab, click on Dynamic Email Development under Dynamic Email. Type in your sender email address in order to opt in, to be able to display dynamic emails during development. 
+
+![gmail_settings](media/gmail_settings.png)
+
+It is recommended that this setting is only used on test accounts and in private browsing mode. You will be able to send your AMP messages from SparkPost to this email!
+
 ### Injecting AMP Emails
 SparkPost makes it simple to send AMP-enabled messages. The SparkPost [Transmissions API](https://developers.sparkpost.com/api/transmissions/) supports a new optional field, `content.amp_html` in the `content` JSON object, a UTF-8 encoded string representing the AMP for Email HTML content. SparkPost inserts this as a `text/x-amp-html`  MIME part in the appropriate location of the MIME tree and performs engagement tracking (if enabled) as well as substitutions.
 
@@ -198,8 +205,20 @@ Basic engagement tracking for opens and clicks will be supported through an AMP-
 
 In order for engagement tracking to work properly and to have AMP content render without breaking, HTTPS engagement tracking is required. Please refer to [SparkPost documentation](https://www.sparkpost.com/docs/tech-resources/enabling-https-engagement-tracking-on-sparkpost/?_ga=2.79716823.1187573678.1555510062-535257696.1506374471) on how to enable HTTPS engagement tracking. 
 
-### Stored Templates
-AMP for Email is supported in SparkPost templates, including metadata and substitution data in a template’s AMP MIME part.
+### Stored Templates with AMP Preview
+AMP for Email is supported in SparkPost templates, including metadata and substitution data in a template’s AMP MIME part. With SparkPost templates, you’ll be able to add can edit the subject line, the FROM domain, FROM Name, Template Name, and make changes to the email content itself (text, HTML, AMP HTML). You can save your template as a draft or publish it to be production ready.
+
+![amp_template](media/AMP_Template.png)
+
+If you do not have HTTPS enabled for your engagement tracking, and you plan to send a test AMP email from AMP Preview, please add in the following under test data to disable engagement:
+
+![amp_test_data](media/AMP_Test_Data.png)
+
+As you create your email template, click on the “Preview & Send” button. This will quickly show  you how your content will be rendered in the inbox. On the “AMP HTML” tab, you will be able to verify that your AMP content is in working condition, whether that’s clicking through a carousel of pictures, rendering a list, rating a product and providing feedback, or answering a poll. Verify that everything is in working order all within the UI.
+
+![amp_preview](media/AMP_Preview.png)
+
+From the Preview Screen, you can type in the email address that has approved the sender email address, and then send the test email. Navigate to to your inbox to find the AMP email rendered properly.
 
 ## Help
 ### Content Validation
