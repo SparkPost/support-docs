@@ -9,9 +9,9 @@ You can invite members of your team to join your SparkPost account. Each user wi
 
 **Developer**: Powerful setup and development user. Developer users are able to create and edit API Keys and have access to all email related account settings.
 
-**Email**: Content and campaign management user. Email users can manage Templates, AB Tests, Recipient Lists, Suppressions. They also have view only access to Domains, Subaccounts, and all reporting and analytics features.
+**Templates**: Content and campaign management user. These users can manage Templates, AB Tests, Recipient Lists, Suppressions. They also have view only access to Domains, Subaccounts, IP Pools, and all reporting and analytics features.
 
-**Reporting**: Data analytics user. Has access to all reporting features and view only access to Domains, Subaccounts, and IP Pools. Reporting users can't edit any account or feature settings.
+**Reporting**: Data analytics user. They have access to all reporting features and view only access to Domains, Subaccounts, and IP Pools. Reporting users can't edit any account or feature settings.
 
 ### Adding Users To Your Account
 
