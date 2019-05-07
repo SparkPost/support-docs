@@ -41,7 +41,7 @@ If enough traffic isn’t sent across the cold IP to progress through all the st
 
 Stage-Based Progression Schedule
 
-Stage Number | Target Volume | s.n. | t.v. 
+Stage Number | Target Volume | Stage Number | Target Volume 
 ------------ | ------------- | ------------- | -------------
 Stage 1  | 200/day | Stage 16 | 400,000/day
 Stage 2  | 500/day | Stage 17 | 500,000/day
