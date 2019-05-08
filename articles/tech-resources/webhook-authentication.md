@@ -1,13 +1,16 @@
 ---
 title: "Event Webhook Authentication: OAuth 2.0 and Basic Authentication"
-description: "Spark Post offers 3 optional but highly recommended security measures that can be implemented when setting up a webhook namely, SSL, OAuth 2.0, and Basic Authentication These measures increase the security of your webhook event data and ensure that the data delivered originates from Spark Post OAuth 2..."
+description: "Spark Post offers 3 optional but highly recommended security measures that can be implemented when setting up a webhook namely, SSL, OAuth 2.0, mTLS, and Basic Authentication These measures increase the security of your webhook event data and ensure that the data delivered originates from Spark Post OAuth 2..."
 ---
 
 SparkPost offers 3 optional (but highly recommended) security measures that can be implemented when setting up a webhook, namely **SSL**, **OAuth 2.0**, and **Basic Authentication**. These measures increase the security of your webhook event data and ensure that the data delivered originates from SparkPost.
 
-**SSL**
+**SSL (TLS)**
 
 Secure Socket Layer (SSL), also known as Transport Layer Security (TLS), are cryptographic protocols that provide communications security over a computer network.  If your Target endpoint supports SSL then you can prefix your endpoint URL with "https://".  The default port is 443, in which case you do not need to specify the port in the URL e.g. https://yourdomain.com/yourendpoint.  If your Target endpoint has SSL enabled on a different port then you may specifcy it in your URL.  E.g. "https://yourdomain.com:81/yourendpoint"
+
+**mTLS**
+Event webhooks supports mTLS for transport layer authentication. mTLS is not a separate authentication schema, it is simply a change in how the TLS connection handshake happens.  SparkPost = CLIENT, your app = SERVER.
 
 **OAuth 2.0**
 
@@ -54,11 +57,11 @@ To configure OAuth 2.0, you need to provide the following information:
 
 ## FAQ
 
-**Q: How does SparkPost deal with expiring tokens?**
+**Q: How does SparkPost deal with expiring Oauth tokens?**
 
 SparkPost assumes a token is expired if the webhook endpoint returns a response of 400 or 401.
 
-**Q: Will SparkPost request a new token if our endpoint returns a 400 or 401 status?**
+**Q: Will SparkPost request a new OAuth token if our endpoint returns a 400 or 401 status?**
 
 Yes.
 
@@ -66,6 +69,6 @@ Yes.
 
 SparkPost requests a token when we are attempting to send data to the webhook target. We also request one when the webhook is initially created, or later modified/updated either via the UI or API.
 
-**Q: Is the token included in the authorization header?**
+**Q: Is the Oauth token included in the authorization header?**
 
 Yes, the formation of this header is "Authorization: Bearer {token}".
