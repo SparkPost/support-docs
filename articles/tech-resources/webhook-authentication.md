@@ -10,7 +10,7 @@ SparkPost [Event Webhooks](https://developers.sparkpost.com/api/webhooks/) offer
 Secure Socket Layer (SSL), also known as Transport Layer Security (TLS), are cryptographic protocols that provide communications security over a computer network.  If your Target endpoint supports SSL then you can prefix your endpoint URL with "https://".  The default port is 443, in which case you do not need to specify the port in the URL e.g. https://yourdomain.com/yourendpoint.  If your Target endpoint has SSL enabled on a different port then you may specifcy it in your URL.  E.g. "https://yourdomain.com:81/yourendpoint"
 
 **mTLS**
-Event webhooks supports mTLS for transport layer authentication. mTLS is not a separate authentication schema, it is simply a change in how the TLS connection handshake happens.  SparkPost = CLIENT, your app = SERVER.
+Event webhooks supports [mTLS](https://en.wikipedia.org/wiki/Mutual_authentication) for transport layer authentication. mTLS is not a separate authentication schema, it is simply a change in how the TLS connection handshake happens.  SparkPost = CLIENT, your app = SERVER.
 
 **OAuth 2.0**
 
