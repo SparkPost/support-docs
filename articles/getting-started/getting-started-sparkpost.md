@@ -224,7 +224,7 @@ When SparkPost sends an email, it emits a sequence of events so you can see when
 
 <div align="center"><em>SparkPost message events in sequence</em></div>
 
-Message events are stored for 10 days and can be searched from Reports -> [Message Events](https://app.sparkpost.com/reports/message-events) ([EU](https://app.eu.sparkpost.com/reports/message-events)). The same data is also available through the [message events API endpoint](https://developers.sparkpost.com/api/message-events.html).
+Message events are stored for 10 days and can be searched from Reports -> [Events Search](https://app.sparkpost.com/reports/events/) ([EU](https://app.eu.sparkpost.com/reports/message-events)). The same data is also available through the [Events API endpoint](https://developers.sparkpost.com/api/events/).
 
 ### Webhooks
 
