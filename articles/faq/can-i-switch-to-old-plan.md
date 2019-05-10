@@ -1,6 +1,6 @@
 ---
-title: "Can I buy or switch account to one of the old plans that don’t include support?"
-description: "We will no longer offer old pricing tiers once these changes take effect on August 17, 2017. Existing customers may stay on their current tier at the current price without the additional support options or they can move to a new sending tier."
+title: "Can I switch back to an old plan?"
+description: "When you switch to a new plan (either upgrade or downgrade), you won't be able to later switch back to an old plan that we no longer offer."
 ---
 
-We will no longer offer old pricing tiers once these changes take effect on August 17, 2017. Existing customers may stay on their current tier at the current price without the additional support options or they can move to a new sending tier. 
+When you switch to a new plan (either upgrade or downgrade), you won't be able to later switch back to an old plan that we no longer offer. 
