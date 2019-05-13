@@ -3,8 +3,6 @@ title: "What is the difference between a “Starter” plan and a “Premier” 
 description: "The Starter plans are low-cost plans that make it easy for new or low-volume senders to get started. They include many of SparkPost’s great features, but some features are limited in order to keep costs low. See the chart below for a list of current feature limitations. The Premier plans are robust email packages for high-volume senders that include additional features to facilitate and manage sending large volumes of email."
 ---
 
-## What is the difference between a “Starter” plan and a “Premier” plan?
-
 The **Starter** plans are low-cost plans that make it easy for new or low-volume senders to get started. They include many of SparkPost’s great features, but some features are limited in order to keep costs low. See the chart below for a list of current feature limitations.
 
 The **Premier** plans are robust email packages for high-volume senders that include additional features to facilitate and manage sending large volumes of email.
@@ -19,7 +17,7 @@ Inbound Email | No | Yes
 IP Pools | No | Yes
 Recipient Lists | Yes (10 max) | Yes
 Scheduled Send | Yes (3 days) | Yes (30 days)
-Sending & Bounce Domains | Yes (10 max) | Yes (50 max)
+Sending Domains / Bounce Domains | Yes (10 max) | Yes (50 max)
 SSO/MFA | No | Yes
 Subaccounts | No | Yes (15 max)
 Templates | Yes (10 max) | Yes
