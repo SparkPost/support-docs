@@ -1,6 +1,6 @@
 ---
 title: "Signals Overview"
-description: "Overview of Signals, the dashboard, Health Score, Spam Trap Monitoring, and Engagement Recency"
+description: "Overview of Signals, the dashboard, Health Score, Spam Trap Monitoring, Engagement Recency Cohorts, and Behavior by Engagement Cohorts"
 ---
 
 SparkPost Signals is an analytics suite that helps you improve email performance by diagnosing health issues before they impact your business. It analyzes your email sending and benchmark data from across our industry-leading email network to provide data-driven, predictive, and actionable insights that help you increase open rates, prevent blacklisting, and boost inbox placement.
@@ -17,7 +17,7 @@ _**Note:** Unlike SparkPost metrics which are calculated based on the number of 
 ![Signals Dashboard](media/signals/signals-dashboard.png)
 
 ##  Health Score
-Your Health Score is a predictive score that monitors your email health to identify problems before they negatively impact email delivery. Each day you'll receive a health score between 0 and 100, informing you of your sending health as compared to all senders on the SparkPost. A good score is anything above 80.
+Your Health Score is a predictive score to help you monitor your email health and identify problems before they negatively impact your ROI. Each day, the Health Score model predicts your overall engagement as compared with all senders using SparkPost, by analyzing dozens of different sending factors from your bounce rate to the relationship you have with your recipients. You'll receive a score between 0 and 100, informing you of your sending health. A good score is anything above 80.
 
 _**Note:** To provide the actionable insights and accurate analysis, the Health Score requires a minimum number of emails sent each day.  For any period where your sending does not pass these minimums, the app notifies you that it doesn't have enough data._
 
@@ -41,7 +41,7 @@ The components are as follows:
 
 ### Component changes over time
 
-In the components chart, you can select a specific component to examine. When selected, a chart of the components change over time is displayed. This chart allows you to see not only how your health score changed, but also how each component shifted over the selected timeframe.
+In the components chart, you can select a bar to examine. When selected, a chart of the component's change over time is displayed. This chart allows you to see not only how your health score changed, but also how each component shifted over the selected timeframe.
 
 ![Component percent chart](media/signals/component-change-chart.png)
 
@@ -50,7 +50,7 @@ In the components chart, you can select a specific component to examine. When se
 Signals provides a list of items needing attention and actions to take to improve any of the components that are negatively affecting your Health Score. By taking action to improve these items you'll see your Health Score, and therefore your deliverability and engagement, improve over time.
 
 ## Spam Trap Monitoring
-With visibility across multiple commercial and non-commercial spam trap networks, SparkPost Signals is a crucial resource for maintaining the health of your email. Spam Trap Monitoring reports the share over time of your total email volume that was sent to known spam traps for each given day. This indicator is important to take note of since an excessive rate of spam trap hits indicates poor list procurement and hygiene practices. You can view the spam trap hits as a raw number or a ratio over the number of injections for that day.
+With visibility across multiple commercial and non-commercial spam trap networks for the broadest coverage in the industry, SparkPost Signals is a crucial resource for maintaining the health of your email. Spam Trap Monitoring reports the share over time of your total email volume that was sent to known spam traps for each given day. This indicator is important to take note of since an excessive rate of spam trap hits indicates poor list procurement and hygiene practices. You can view the spam trap hits as a raw number or a ratio over the number of injections for that day.
 
 _**Note:** Your sending must stay within acceptable thresholds to receive the Spam Trap report. If you fall outside of these limits, no data is shown to maintain the integrity of the spam traps._
 
@@ -59,7 +59,8 @@ _**Note:** Your sending must stay within acceptable thresholds to receive the Sp
 ### Recommendations
 If your spam trap hits exceed safe limits, Signals provides actionable advice identifying the most likely source of the problem and guides you to improve your [list quality](https://www.sparkpost.com/docs/signals/list-hygiene/) or [acquisition practices](https://www.sparkpost.com/docs/signals/subscriber-acquisition/).
 
-## Engagement Recency
+## Engagement Recency Cohorts
+
 Mailbox providers like Gmail closely monitor recipient engagement to determine inbox placement, making their engagement a critical part of your email health. Engagement Recency summarizes how your recipient engagement changes over time, categorizing your recipients into different cohorts based on the recency of their last interaction.  With this data, Signals provides recommendations to increase your engaged recipients and reduce unsubscribes, bounces, and spam complaints.
 
 _**Note:** For Engagement Recency to function, you must enable at minimum either open or click tracking. For best results, enable both._
@@ -76,3 +77,24 @@ Recipients are divided into the following cohorts:
 ### Recommendations
 
 Signals provides guidance and changes you can make to your sending to ensure you're sending relevant content to recipients who are interested. It also issues warnings when your cohort breakdown enters dangerous levels, as recipient engagement plays a significant factor in inbox placement.
+
+## Behavior by Engagement Cohort
+
+Understanding your recipients is an important step to optimizing your sending and messaging. The three Behavior by Engagement Cohorts reports provide metrics about how each of your different cohorts are engaging with your email, as well as suggestions on how to interpret them. 
+
+48 hours after emails are send we analyze the behavior by each cohort to give you an accurate view into their patterns.
+
+The behaviors include:
+* Engagement 
+* Unsubscribes
+* Spam Complaints
+
+_**Note:** Not all mailbox providers surface spam complaints. While your known complaint rate might be low or zero, there may be complaints that aren't reported. This means that any changes in your complaint rate should be taken seriously._
+
+Each cohorts behavior rate is depicted by a separate line corresponding to the cohort color. Below is the engagement rate broken down by cohorts.
+
+![Engagement by Cohort chart](media/signals/engagement-by-cohort.png)
+
+### Recommendations
+
+Signals provides recommendations around the behavior rates of each cohort to help you understand how your sending is performing. Recommendations can include investigating spam foldering, improving your onboarding, and other actionable changes you can make to improve your sending.
