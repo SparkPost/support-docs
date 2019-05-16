@@ -5,37 +5,41 @@ description: "IP Warm up Definition IP warming is the process of methodically ad
 
 ### IP Warm-up Definition 
 
-IP warming is the process of methodically adding campaign volume week-over-week to a new IP Address to establish a positive sending reputation with Internet Services Providers. (ISPs)
+IP warming is the process of methodically adding email volume to a new IP address gradually over several days and weeks in order to establish a positive sending reputation with mailbox providers.
 
 ### IP Warm-up Summary 
 
-ISPs view email from a new IP address as suspicious until they establish a positive sending reputation.  It takes 4-8 weeks to achieve maximum deliverability (depending on targeted volume and engagement).  Warming could take longer if receivers don’t perceive an email as opt-in.  Certain receivers limit senders to thresholds until they build a sender reputation.
+Mailbox providers view email from a new IP address as suspicious until they establish a positive sending reputation.  It takes 4-8 weeks to achieve maximum deliverability (depending on targeted volume and engagement).  Warming could take longer if mailbox providers don’t perceive that the email is "wanted by" the recipient (i.e., recipient has signed up explicitly).  Certain mailbox providers limit senders to thresholds - number of messages delivered per day - until they establish a reputation.
 
-SparkPost recommends starting off on the right foot with the cleanest data first.  Focus warming your most engaged subscribers and then add in the older segments as you progress.  Older segments should be added to the engaged segments in chunks of 15% of your existing volume as not to tip your reputation from good to bad. The goal during your warm-up process is to send to subscribers who are least likely to complain and bounce.  This would include those that have opted-in most recently and are consistent openers/clickers.
+SparkPost recommends starting off with your best performing messages - those to highly engaged recipients.  Focus warming your most engaged subscribers and then add in the older segments as you progress.  Older segments should be added to the engaged segments in chunks of 15% of your existing volume as not to tip your reputation from good to bad. The goal during your the warm-up process is to send to subscribers who are least likely to complain and bounce.  This would include those that have opted-in most recently and are consistent openers/clickers.
 
-During the Warm-up phase the more consistent you are with volume, frequency, complaint and bounce levels, the faster you will establish a positive sending reputation.  If you send infrequently, anything less than weekly it will take more time to build a positive sender reputation.
+During the Warm-up phase the more consistent you are with volume, frequency, complaint and bounce levels, the faster you will establish a positive sending reputation.  If you send infrequently - anything less than weekly - it will take more time to build a positive sender reputation.
 
 ### IP Warm-up Plan 
 
 **Key to Success**           
+* During weeks 1-2 send to the your most active subscribers - those who have opened/clicked in the past 30 days
+* During weeks 3-4 you can expand to subscribers who have opened/clicked in the past 60 days
+* During the first 6 weeks, do NOT send to subscribers that have not opened or clicked in the past 90 days
+* If warming above 5 million subscribers, do not send more than double the previous volume after day 14
 
-| Week 1 | Daily Volume | Notes |
-| ---|---|---|
-| Day 1 | 200 | • During weeks 1-2 send to the most |
-| Day 2 | 500 | active subscribers. 30 days active |
-| Day 3 | 1,000 | |
-| Day 4 | 2,000 | |
-| Day 5 | 5,000 | • During weeks 3-4 send to 60 days |
-| Day 6 | 10,000 | active subscribers.|
-| Day 7 | 20,000 | |
-| <strong> Week 2 </strong> | | |
-| Day 8 | 40,000 | • Do not send to subscribers that have |
-| Day 9 | 100,000 | note opened or clicked in the past 90 days |
-| Day 10 | 250,000 | during the first 45 days of warm-up. |
-| Day 11 | 500,000 | |
-| Day 12 | 1,000,000 | |
-| Day 13 | 2,000,000 | • If warming above 5 Million do not send |
-| Day 14 | 5,000,000 | more than double the previous volume.|
+| Week 1 | Daily Volume |
+| ---|---|
+| Day 1 | 200 |
+| Day 2 | 500 |
+| Day 3 | 1,000 |
+| Day 4 | 2,000 |
+| Day 5 | 5,000 |
+| Day 6 | 10,000 |
+| Day 7 | 20,000 |
+| <strong> Week 2 </strong> | |
+| Day 8 | 40,000 |
+| Day 9 | 100,000 |
+| Day 10 | 250,000 |
+| Day 11 | 500,000 |
+| Day 12 | 1,000,000 |
+| Day 13 | 2,000,000 |
+| Day 14 | 5,000,000 |
 
 **What to Expect**          
 
