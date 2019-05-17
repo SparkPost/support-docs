@@ -1,6 +1,6 @@
 ---
 title: "IP Warm-up Overview"
-description: "IP Warm up Definition IP warming is the process of methodically adding campaign volume week over week to a new IP Address to establish a positive sending reputation with Internet Services Providers IS Ps IP Warm up Summary IS Ps view email from a new IP Address as suspicious until..."
+description: "IP warming is the process of methodically adding email volume to a new IP address gradually over several days and weeks in order to establish a positive sending reputation with mailbox providers. Mailbox providers view email from a new IP address as suspicious until..."
 ---
 
 ### IP Warm-up Definition 
@@ -58,7 +58,7 @@ Once you begin warming up your IPs you can expect some bulking and blocking to o
 
 | Quick Warm-Up:                                                                                                     | Slow Warm-Up:                                                                                                                                                                                                                         |
 |:-------------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| <ul><li>ISPs see volume spikes</li><li>Unknown Senders</li><li>Blocks/Filtering/Rate Limiting will occur</li></ul> | <ul><li>ISPs see the gradual build in volume</li><li>Good reputation develops over time</li><li>Blocks/Filtering/Rate Limiting rarely occurs (only occurs when engagement and complaint rate ratios are in poor standing). </li></ul> |
+| <ul><li>Mailbox providers see volume spikes</li><li>Unknown Senders</li><li>Blocks/Filtering/Rate Limiting will occur</li></ul> | <ul><li>Mailbox providers see the gradual build in volume</li><li>Good reputation develops over time</li><li>Blocks/Filtering/Rate Limiting rarely occurs (only occurs when engagement and complaint rates are low). </li></ul> |
 
 **IP Warm-up Helps Build Your Sender Reputation**                                           
 
