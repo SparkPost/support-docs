@@ -66,7 +66,7 @@ Once you begin warming up your IPs you can expect some bulking and blocking to o
 * Email reputation controls access to the inbox
   * Bad reputation = Spam Folder or Blocks
   * Good reputation = Inbox
-* Reputation can effect the Domain and/or IP Address and will be based on:
+* Reputation can effect the Domain and/or IP address and will be based on:
   * Spam Complaints
   * Invalid email addresses (hard bounces)
   * Spamtrap hits
