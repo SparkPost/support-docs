@@ -9,7 +9,7 @@ IP warming is the process of methodically adding email volume to a new IP addres
 
 ### IP Warm-up Summary 
 
-Mailbox providers view email from a new IP address as suspicious until they establish a positive sending reputation.  It takes 4-8 weeks to achieve maximum deliverability (depending on targeted volume and engagement).  Warming could take longer if mailbox providers don’t perceive that the email is "wanted by" the recipient (i.e., recipient has signed up explicitly).  Certain mailbox providers limit senders to thresholds - number of messages delivered per day - until they establish a reputation.
+Mailbox providers view email from a new IP address as suspicious until they establish a positive sending reputation.  It takes 4-8 weeks to achieve maximum deliverability (depending on targeted volume and engagement).  Warming could take longer if mailbox providers don’t perceive that the email is "wanted" by the recipient (i.e., recipient has signed up explicitly).  Certain mailbox providers limit senders to thresholds - number of messages delivered per day - until they establish a reputation.
 
 SparkPost recommends starting off with your best performing messages - those to highly engaged recipients.  Focus warming your most engaged subscribers and then add in the older segments as you progress.  Older segments should be added to the engaged segments in chunks of 15% of your existing volume as not to tip your reputation from good to bad. The goal during your the warm-up process is to send to subscribers who are least likely to complain and bounce.  This would include those that have opted-in most recently and are consistent openers/clickers.
 
@@ -18,9 +18,9 @@ During the Warm-up phase the more consistent you are with volume, frequency, com
 ### IP Warm-up Plan 
 
 **Key to Success**           
-* During weeks 1-2 send to the your most active subscribers - those who have opened/clicked in the past 30 days
+* During weeks 1-2 send to your most active subscribers - those who have opened/clicked in the past 30 days
 * During weeks 3-4 you can expand to subscribers who have opened/clicked in the past 60 days
-* During the first 6 weeks, do NOT send to subscribers that have not opened or clicked in the past 90 days
+* During the first 6 weeks do NOT send to subscribers who have not opened or clicked in the past 90 days
 * If warming above 5 million subscribers, do not send more than double the previous volume after day 14
 
 | Week 1 | Daily Volume |
@@ -46,11 +46,11 @@ During the Warm-up phase the more consistent you are with volume, frequency, com
 Once you begin warming up your IPs you can expect some bulking and blocking to occur.  It is key to stick with the plan. Below are details of what you can expect and actions to take.
 
 * **Bulking** at Yahoo, AOL, Gmail. Typically clears up after a few sends with solid positive metrics, but it can take time to get inbox delivery. **The key is to keep sending to engaged subscribers.**   
-* **Delays** at AOL, Microsoft and Comcast.  The delays (421 bounces) will retry for 72 hours and if not delivered will bounce as a 5XX with the original 421 error in the bounce record.  *Delays are normal, and will lessen each day as reputation developes.  As long as they are ultimately delivering there is no concern.*  However if they are timing out in large quantities you should back down your volumes to that ISP by tightening up your engagement
-* Possible **blocking** by ISPs can occur if the list isn’t engaged enough.  The key is to segment carfully and tighten up engagement **Again the key is to keep sending.**                            
-* It is important to monitor your metrics and adjust the plan accordingly during the Warm-up period.
+* **Delays** at AOL, Microsoft and Comcast.  The delays (421 bounces) will retry for 72 hours and if not delivered will bounce as a 5XX with the original 421 error in the bounce record.  *Delays are normal, and will lessen each day as reputation developes.  As long as they are ultimately delivering there is no concern.*  However if they are timing out in large quantities you should back down your volumes to that mailbox provider by tightening up your engagement window.
+* Possible **blocking** by mailbox providers can occur if the list isn’t engaged enough.  The key is to segment carefully and tighten up engagement **Again the key is to keep sending.**                            
+* It is important to monitor your metrics and adjust the plan accordingly during the warm-up period.
 
-### Why is an IP Warm-up important?
+### Why is IP Warm-up Important?
 
 **Warm-up Matters**        
 
@@ -62,29 +62,29 @@ Once you begin warming up your IPs you can expect some bulking and blocking to o
 
 **IP Warm-up Helps Build Your Sender Reputation**                                           
 
-⇒Sender Reputation is how receivers view you and your mail. 
+⇒Sender Reputation is how mailbox providers view you and your mail. 
 * Email reputation controls access to the inbox
   * Bad reputation = Spam Folder or Blocks
   * Good reputation = Inbox
-* Reputation can effect the Domain and/or IP address and will be based on:
-  * Spam Complaints
+* Reputation can effect the domain and/or IP address and will be based on:
+  * Spam complaints
   * Invalid email addresses (hard bounces)
-  * Spamtrap hits
-  * Authentication (SPF, Sender ID, DKIM, DMARC)
+  * Spam trap hits
+  * Authentication (SPF, DKIM, DMARC)
   * Third-party blacklistings
   * Engagement
 
 ⇒Positive affects on your reputation are:
 * Opens
 * Clicks
-* Authentication – DKIM, SPF, Sender ID, DMARC
+* Authentication – DKIM, SPF, DMARC
 
 ⇒Negative affects on your reputation are:
 * Poor or insufficient permission
   * High recipient complaints (report as spam)
-* Poor list quality/hygiene - Bad email addresses
-* IP Address and Domain blacklistings
-* Spam Trap hits
+* Poor list quality/hygiene - bad email addresses
+* IP address and domain blacklistings
+* Spam trap hits
 * Large spikes in volume
 
 **The Fundamentals of Reputation**                           
@@ -92,10 +92,10 @@ Once you begin warming up your IPs you can expect some bulking and blocking to o
 ⇒Key Takeaways:
 * Opt-ins are most important
 * If people do not want your mail, your reputation suffers
-* Receivers and metrics are judge and jury when it comes to getting delivered to the inbox.
+* Mailbox providers and metrics are judge and jury when it comes to getting delivered to the inbox.
 * You can not transfer your reputation from your previously used IP.
-* If you use the same domain that reputation can follow you, however ISPs like Gmail use the reputation of the domain coupled with the reputation of the IP therefore you must follow the warm-up process.
-* ISPs trust metrics from their users and what they observe, therefore, no Brand will get special treatment over another.
+* If you use the same domain that reputation can follow you, however mailbox providers like Gmail use the reputation of the domain coupled with the reputation of the IP therefore you must follow the warm-up process.
+* Mailbox providers trust metrics from their users and what they observe, therefore, no brand will get special treatment.
 * B2B senders must follow the same warm-up process as B2C senders as many business domains are now hosted by Yahoo, Outlook, Gmail, AOL, etc.
 
 ### Permission and Engagement is Key
@@ -108,22 +108,22 @@ Permission is the cornerstone of building a good sender reputation.
 
 **Why is Engagement Important?**   
 
-ISPs track how engaged subscribers are with an email and its sender, and the nature of the engagement.
+Mailbox providers track how engaged subscribers are with an email and its sender, and the nature of the engagement.
 * Positive actions may include opening a message, adding an email address to the contact list, clicking through links, clicking to enable images, and read rate such as scrolling through the message.
 * Negative actions may include reporting the email as spam, deleting it, moving it to the junk folder, or ignoring it.
-* Engagement ratings are another compelling reason to use only opt-in or confirmed opt-in email marketing lists. Opt-in maximizes the likelihood of engagement, because in theory there is a relationship already established with the receiver.
+* Engagement ratings are another compelling reason to use only opt-in or confirmed opt-in email marketing lists. Opt-in maximizes the likelihood of engagement, because in theory there is a relationship already established with the mailbox provider.
 
-**Remember Quality always wins out over Quantity.**                                       
+**Remember Quality Always Wins Out Over Quantity.**                                       
 * There is a charge for the volume you send. If the message is never opened that cost is wasted.
 * Lower ROI when including disengaged subscribers in your campaigns.
-* Disengaged subscribers are the common cause of complaints, spam traps, hard bounces which can affect deliverability/inbox placement to Engaged subscribers which lower your ROI.
+* Disengaged subscribers are the common cause of complaints, spam traps, hard bounces which can affect deliverability/inbox placement to engaged subscribers which lower your ROI.
 * Run regular re-engagement campaigns to win back the disengaged subscribers.
 * Send to the disengaged subscribers less frequently than engaged subscribers.
 
 **How to Keep your List Highly Engaged**                                 
 * Send relevant content to engaged subscribers.
 * Set subscribers’ expectations from the beginning.
-* Give people who opt- in to your subscription lists choices on how often they’ll receive emails from you (e.g., once daily, a weekly digest, as items become available or go on sale). If you send infrequently, make that clear. Ask them to whitelist you as they opt-in.
+* Give people who opt-in to your mail choices on how often they’ll receive emails from you (e.g., once daily, a weekly digest, as items become available or go on sale). If you send infrequently, make that clear. Ask them to whitelist you as they opt-in.
 * Deploy a good onboarding program educating them on expectations.
 * Keep your lists clean.
 * Begin with your registration forms. If you have the option to block spammy, personal, or role-based email addresses, do so.
@@ -132,13 +132,13 @@ ISPs track how engaged subscribers are with an email and its sender, and the nat
 ### Spam Traps
 
 **Pristine Spam Traps**           
-* Email addresses created solely to capture spammers (sometimes referred to as Honey Pots). These email addresses were never owned by a real person, do not subscribe to email programs and of course will never make a purchase. If you are hitting pristine traps, this typically indicates you have a bad data partner.
+* Email addresses created solely to capture spammers (sometimes referred to as "Honey Pots"). These email addresses were never owned by a real person, do not subscribe to email programs and of course will never make a purchase. If you are hitting pristine traps, this typically indicates you have a bad data partner and/or poor list acquisition practices.
 
 **Recycled Spam Traps**           
-* Email addresses that were once used by a real person but abandoned and then recycled by ISPs as spam traps. Before turning on an abandoned email address into a spam trap, ISPs will return an unknown user error code for a period of time (6 to 12 months). If you are hitting a recycled spam trap, this typically indicates that your data hygiene process is not working.
+* Email addresses that were once used by a real person but abandoned and then recycled by mailbox providers as spam traps. Before turning an abandoned email address into a spam trap, mailbox providers will return an unknown user error code for a period of time (6 to 12 months). If you are hitting a recycled spam trap, this typically indicates that your data hygiene process is not working.
 
 **How to Avoid and Remove Spam Traps**                               
 * Do not purchase or rent lists.
 * Remove hard bounces.
-* Continuously re-engaged your inactive subscribers.
-* Remove disengaged subscribers once several re-engagement attempts have been made.
+* Continuously re-engage your inactive subscribers.
+* Remove unengaged subscribers (if re-engagement attempt is not successful).
