@@ -38,7 +38,7 @@ $pwd = ConvertTo-SecureString "<<MY API KEY HERE>>" -AsPlainText -Force
 $creds = New-Object System.Management.Automation.PSCredential ("SMTP_Injection", $pwd)
  
 Send-MailMessage -From me@mysendingdomain.com -To me@myrecipientdomain.com -Subject "Hello World" -Body "Here it is" `
- -SmtpServer smtp.eu.sparkpostmail.com -Port 587 -Credential $creds
+ -SmtpServer smtp.eu.sparkpostmail.com -Port 587 -Credential $creds -UseSsl
 ```
 File: SparkPost_win_powershell_example.ps1
 
