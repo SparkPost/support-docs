@@ -95,7 +95,7 @@ Once you begin warming up your IPs you can expect some bulking and blocking to o
 * Receivers and metrics are judge and jury when it comes to getting delivered to the inbox.
 * You can not transfer your reputation from your previously used IP.
 * If you use the same domain that reputation can follow you, however ISPs like Gmail use the reputation of the domain coupled with the reputation of the IP therefore you must follow the warm-up process.
-* ISPs trust metrics from their users and what they observe therefore no Brand will get special treatment over another.
+* ISPs trust metrics from their users and what they observe, therefore, no Brand will get special treatment over another.
 * B2B senders must follow the same warm-up process as B2C senders as many business domains are now hosted by Yahoo, Outlook, Gmail, AOL, etc.
 
 ### Permission and Engagement is Key
@@ -104,7 +104,7 @@ Permission is the cornerstone of building a good sender reputation.
   * Are you sending more frequently than you said you would?
   * Did they sign up for exactly what they are receiving?
   * Are you sending content other than what you said you would?
-* Are you following best practices by staying up on the Can-Spam Act and the CASAL laws?
+* Are you following best practices by staying up on the Can-Spam Act and the CASL laws?
 
 **Why is Engagement Important?**   
 
