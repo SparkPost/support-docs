@@ -25,7 +25,7 @@ Admin users can add new users to their account by from the [Manage Users](https:
 3. Select the role you'd like the new user to have.
 4. Click **Add User** to send them the invitation.
 
-	![](media/user-management/add-user-form.png)
+	![](media/user-management/add-user.png)
 
 5. The new user will receive an email to join your account similar to the one below.
 
