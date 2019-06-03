@@ -31,7 +31,7 @@ If you fall into the fourth category mentioned above or have other specific need
 
 
 # Nuts and Bolts
-Auto IP Warm up works by guiding new IPs through several stages until they are ready for regular email traffic. Each stage limits the number of emails that can be sent through that IP in a day. Once an IP sends enough, it will automatically be upgraded to the next stage. Any email traffic directed to an IP that has reached the stage limit will be redirected to the appropriate overflow pool. If you're going to need to use an overflow pool because all of the IPs in your current pool are cold, it's important to designate it through the UI or using the API. Failing to designate an overflow pool could have negative consequences on your IPs in warmup as we'll send over them if nothing else is available. 
+Auto IP Warm up works by guiding new IPs through several stages until they are ready for regular email traffic. Each stage limits the number of emails that can be sent through that IP in a day. Once an IP sends enough, it will automatically be upgraded to the next stage. Any email traffic directed to an IP that has reached the stage limit will be redirected to the appropriate overflow pool. If you're going to need to use an overflow pool because all of the IPs in your current pool are cold, it's important to designate it through the UI or using the API. Failing to designate an overflow pool could have negative consequences on your IPs in warmup as we'll send over them if nothing else is available. In order to assign an overflow pool, your IP will need to belong to a pool that isn't the **default** pool that is attached to your account on creation. The **default** pool is unable to have any overflow pool assigned to it at this time. 
 
 When you enable Auto IP Warm Up for an IP address (enabled automatically for newly purchased or assigned IPs) the IP will be set to Stage 1. Once you start sending traffic through the IP pool that contains the IP you're warming up, we’ll include the cold IP in the sending selection process up to the maximum number of emails for that stage. Our current schedule is based on best practices that we’ve had success with over the years. Each day, we’ll check to see if your new IP successfully delivered more than 90% of the traffic for that stage. If so, voila! Your IP will progress to the next stage and be able to send additional traffic the next day. If the IP didn’t reach the stage threshold, it will be held at the current stage but will still be able to send traffic the following day. 
 
@@ -39,7 +39,7 @@ If enough traffic isn’t sent across the cold IP to progress through all the st
 
 
 
-Stage-Based Progression Schedule
+**Stage-Based Progression Schedule**
 
 Stage Number | Target Volume | Stage Number | Target Volume 
 ------------ | ------------- | ------------- | -------------
