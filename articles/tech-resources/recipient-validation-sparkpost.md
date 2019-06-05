@@ -16,6 +16,7 @@ Possible reasons why an email address would be invalid include:
 | `Invalid Syntax`       | Doesn't comply with email syntax standards. |
 | `Invalid Domain`       | Domain doesn't exist or receive email.     |
 | `Invalid Recipient`    | Recipient doesn't exist or receive email.   |
+| `Customer Suppression`    | Recipient is on your customer suppression list because of a hard bounce.   |
 
 The service also returns information about the following:
 | Check                        | Definition  |
