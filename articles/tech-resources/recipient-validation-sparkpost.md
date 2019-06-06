@@ -18,10 +18,13 @@ Possible reasons why an email address would be invalid include:
 | `Invalid Recipient`    | Recipient doesn't exist or receive email.   |
 
 The service also returns information about the following:
+
+
 | Check                        | Definition  |
 |------------------------------|---------------|
 | Role-based addresses         | Mailboxes used for a job or group of people that may lead to higher bounce rates and more spam complaints. |
 | Disposable mailbox providers | A service that provides temporary addresses that expire after a short period.  |
+| Free mailbox providers | Mailbox providers that allow anyone to set up an email address, free of charge.  |
 
 
 ## Validation API
@@ -47,7 +50,7 @@ After selecting your file, press the **Validate Email Addresses** button.
 Once the validation is completed, download a list of the recipients by clicking on the **Download Rejected Recipients** button. You'll get a `.csv` file with the email addresses that we have information to share, including whether or not they are invalid, the reason, if they are a role address, or if they are a disposable address.
 
 ```
-email,valid,reason,is_role,is_disposable
-another@hello.com,false,Invalid Recipient,false,false
-ceo@email.com,true,,true,false
+email,valid,reason,is_role,is_disposable,is_free
+another@hello.com,false,Invalid Recipient,false,false,true
+ceo@email.com,true,,true,false,false
 ```
