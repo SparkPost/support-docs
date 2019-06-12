@@ -52,6 +52,8 @@ Enabling SSO is a 2-step process.
 ### What do I need to provide to my IdP?
 The specifics for configuring SSO in your IdP varies by provider, so we recommend you reference their documentation for full details. In general, you will need to provide the callback URL as described above. You may also be asked for metadata in some cases. If so, here is the metadata you can provide to your IdP:
 
+*Note: the entity ID for legacy SAML configurations is `passport-saml`.*
+
 Metadata for US-hosted Customers:
 
 ```xml
