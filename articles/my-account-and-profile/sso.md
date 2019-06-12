@@ -52,11 +52,13 @@ Enabling SSO is a 2-step process.
 ### What do I need to provide to my IdP?
 The specifics for configuring SSO in your IdP varies by provider, so we recommend you reference their documentation for full details. In general, you will need to provide the callback URL as described above. You may also be asked for metadata in some cases. If so, here is the metadata you can provide to your IdP:
 
+*Note: the entity ID for legacy SAML configurations is `passport-saml`.*
+
 Metadata for US-hosted Customers:
 
 ```xml
 <?xml version="1.0"?>
-<EntityDescriptor xmlns="urn:oasis:names:tc:SAML:2.0:metadata" xmlns:ds="http://www.w3.org/2000/09/xmldsig# " entityID="passport-saml" ID="passport_saml">
+<EntityDescriptor xmlns="urn:oasis:names:tc:SAML:2.0:metadata" xmlns:ds="http://www.w3.org/2000/09/xmldsig# " entityID="https://api.sparkpost.com" ID="passport_saml">
   <SPSSODescriptor protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
     <NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress</NameIDFormat>
     <AssertionConsumerService index="1" isDefault="true" Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://api.sparkpost.com/api/v1/users/saml/consume"/>
@@ -68,7 +70,7 @@ Metadata for EU-hosted Customers:
 
 ```xml
 <?xml version="1.0"?>
-<EntityDescriptor xmlns="urn:oasis:names:tc:SAML:2.0:metadata" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" entityID="passport-saml" ID="passport_saml">
+<EntityDescriptor xmlns="urn:oasis:names:tc:SAML:2.0:metadata" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" entityID="https://api.eu.sparkpost.com" ID="passport_saml">
   <SPSSODescriptor protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
     <NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress</NameIDFormat>
     <AssertionConsumerService index="1" isDefault="true" Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://api.eu.sparkpost.com/api/v1/users/saml/consume"/>
@@ -80,7 +82,7 @@ Metadata for Enterprise Customers:
 
 ```xml
 <?xml version="1.0"?>
-<EntityDescriptor xmlns="urn:oasis:names:tc:SAML:2.0:metadata" xmlns:ds="http://www.w3.org/2000/09/xmldsig# " entityID="passport-saml" ID="passport_saml">
+<EntityDescriptor xmlns="urn:oasis:names:tc:SAML:2.0:metadata" xmlns:ds="http://www.w3.org/2000/09/xmldsig# " entityID="https://<host>" ID="passport_saml">
   <SPSSODescriptor protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
     <NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress</NameIDFormat>
     <AssertionConsumerService index="1" isDefault="true" Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://<host>/api/v1/users/saml/consume"/>
