@@ -36,7 +36,7 @@ When developing to the REST api, you should be prepared to handle failed request
 |                       | 1603        | Subresource not found                            | 422              |                                              |
 |                       | 1700        | Unsupported Content-Type header                  | 415              | fix content-type and retry                   |
 |                       | 1800        | HTTP header value not acceptable                 | 406              | fix header and retry                         |
-|                       | 1900        | Message generation module not available          | 503              |                                              |
+|                       | 1900        | Message generation module not available          | 503              | retry, likely transient error                                             |
 |                       | 1901        | Message failed to generate                       | 400              |                                              |
 |                       | 1902        | Message generation rejected                      | 400              |                                              |
 |                       | 1910        | Message generation not configured                | 400              |                                              |
