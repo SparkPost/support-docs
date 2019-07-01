@@ -5,6 +5,12 @@ description: "When developing to the REST api you should be prepared to handle f
 
 When developing to the REST api, you should be prepared to handle failed requests, understand their meaning and what actions are needed to resolve them. The following table is a complete list of extended error code responses, organized by the four elements included in the response array. 
 
+In a general context it is useful to understand the meaning of certain types of HTTP codes.  For general guidance on HTTP status codes see https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
+* **2xx** means that the API call was successful
+* **4xx** means that there was a problem with the call. You need to fix something before retrying. Usually the extended error code or message in the HTTP response body will indicate the problem. If you are not able to figure out how to fix the call then contact Support with details on the API call and current response.
+* **5xx** means that there is a problem with the SparkPost service. Usually it is a transient error that will work on retry. If the call fails with a 5xx after 2 retries then contact Support.
+
+## Extended Error Code Details 
 * **Component**: The related service that the error has sourced from
 * **Error Code:** The numeric code of the extended error
 * **Notes:** The human readable description of the error
