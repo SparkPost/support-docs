@@ -5,7 +5,7 @@ description: "When developing to the REST api you should be prepared to handle f
 
 When developing to the REST api, you should be prepared to handle failed requests, understand their meaning and what actions are needed to resolve them. The following table is a complete list of extended error code responses, organized by the four elements included in the response array. 
 
-In a general context it is useful to understand the meaning of certain types of HTTP codes.  For general guidance on HTTP status codes see https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
+In a general context it is useful to understand the meaning of certain types of HTTP codes.  For general guidance on HTTP status codes see [HTTP Status Codes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status).
 * **2xx** means that the API call was successful
 * **4xx** means that there was a problem with the call. You need to fix something before retrying. Usually the extended error code or message in the HTTP response body will indicate the problem. If you are not able to figure out how to fix the call then contact Support with details on the API call and current response.
 * **5xx** means that there is a problem with the SparkPost service. Usually it is a transient error that will work on retry. If the call fails with a 5xx after 2 retries then contact Support.
@@ -66,9 +66,6 @@ In a general context it is useful to understand the meaning of certain types of 
 |                       | 3030        | template already exists                          | 400              |                                              |
 |                       | 3040        | template content is corrupt                      | 422              | fix content and retry                        |
 |                       | 3050        | template HTML content is invalid                 | 422              | fix content and retry                        |
-| *User Management*     | *4000~4999* |                                                  |                  |                                              |
-|                       | 4100        | user exist                                       | 400              |                                              |
-|                       | 4200        | user does not exist                              | 400              |                                              |
 | *Recipient List*      | *5000-5999* |                                                  |                  |                                              |
 |                       | 5000        | List created with validation errors              | 200              |                                              |
 |                       | 5001        | List already exists                              | 400              |                                              |
@@ -78,11 +75,8 @@ In a general context it is useful to understand the meaning of certain types of 
 |                       | 6200        | Tracking domain does not exist                   | 404              |                                              |
 | *Sending Domain*      | *7000-7999* |                                                  |                  |                                              |
 |                       | 7000        | Sending domain blacklisted                       | 400              |                                              |
-|                       | 7001        | Invalid Sending/Tracking Domain                  | 400              |                                              |
-| *Bounce Domain*       | *8000-8999* |                                                  |                  |                                              |
-|                       | 8000        | Bounce domain exists                             | 400              |                                              |
-|                       | 8001        | Bounce domain does not exist                     | 404              |                                              |
-| *Message Events*      |             | Too many requests                                | 429              | Rate limiting - pause and retry
+|                       | 7001        | Invalid Sending/Tracking Domain                  | 400              |                                              |                              |
+| *Any Rate limited API*      |             | Too many requests                                | 429              | Rate limiting - pause and retry
 | *Relay Webhooks*       | *10000-10002* |                                                  |                  |                                              |
 |                       | 10000        | Using a restricted custom header                             | 422              | remove the restricted header and retry                                             |
 |                       | 10001        | Total size of custom headers is too large                     | 413              | reduce the size of the custom headers and retry                                             |
