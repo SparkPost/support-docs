@@ -24,6 +24,4 @@ The following are instructions for creating sending domains via the SparkPost UI
 
     ![](media/setting-up-domains/verified-sending-domain.png)
 
-1. You can have as many sending domains as you’d like. However, they can only be in ONE SparkPost account. Duplicates across multiple accounts are not permitted.
-
 *Note:* that if you ever remove your domain from your SparkPost Account and re-add it, this will reset the TXT record for the domain in SparkPost, so you will need to update your DNS TXT record to verify the domain.
