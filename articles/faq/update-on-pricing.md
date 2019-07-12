@@ -5,20 +5,20 @@ description: "Information about pricing changes."
 
 On **May 14, 2019**, we adjusted pricing for new self-serve plans.
 
-On **July 15, 2019**, we notified SparkPost customers on the old SparkPost “Free” plan of changes to our [plans and pricing] (https://www.sparkpost.com/pricing/). On or before **September 15, 2019**, any customer on an old “Free” plan will need to select from one of our currently available plans to continue using SparkPost. _**Note:** You have the option to continue using SparkPost for free on a “Test” plan, but please take notice of the monthly volume limit of 500 emails._
+On **July 15, 2019**, we notified SparkPost customers on the old SparkPost “Free” plan of changes to our [plans and pricing](https://www.sparkpost.com/pricing/). On or before **September 15, 2019**, any customer on an old “Free” plan will need to select from one of our currently available plans to continue using SparkPost. _**Note:** You have the option to continue using SparkPost for free on a “Test” plan, but please take notice of the monthly volume limit of 500 emails._
 
 ## Why did we change our pricing?
 
-Over the last four years, we have delivered significant expansions to our product such as [A/B testing] (https://www.sparkpost.com/docs/tech-resources/a-b-testing-sparkpost/), [Recipient Validation] (https://www.sparkpost.com/recipient-validation/), and our predictive email analytics platform [Signals] (https://www.sparkpost.com/platform/signals/). And we’re shipping new features faster than ever. We believe that the new pricing is fair and in line with what is being offered in the market.
+Over the last four years, we have delivered significant expansions to our product such as [A/B testing](https://www.sparkpost.com/docs/tech-resources/a-b-testing-sparkpost/), [Recipient Validation](https://www.sparkpost.com/recipient-validation/), and our predictive email analytics platform [Signals](https://www.sparkpost.com/platform/signals/). And we’re shipping new features faster than ever. We believe that the new pricing is fair and in line with what is being offered in the market.
 
 ## What are the differences between Starter and Premier plans?
 
 The **Starter** plans are low-cost plans that make it easy for new or low-volume senders to get started. They include many of SparkPost’s great features, but some features are limited in order to keep costs low. See the chart below for a list of current feature limitations.
-The **Premier** plans are robust email packages for high-volume senders that include additional features to facilitate and manage sending large volumes of email. Feature breakdown of these plans can be found [here] (https://www.sparkpost.com/docs/faq/difference-between-starter-and-premier/). 
+The **Premier** plans are robust email packages for high-volume senders that include additional features to facilitate and manage sending large volumes of email. Feature breakdown of these plans can be found [here](https://www.sparkpost.com/docs/faq/difference-between-starter-and-premier/). 
 
 ## If I cancel my plan and reactivate, can I go back to the old pricing? 
 
-No, if you would like to create a new account you will need to select from the currently available [plans and pricing] (https://www.sparkpost.com/pricing/).
+No, if you would like to create a new account you will need to select from the currently available [plans and pricing](https://www.sparkpost.com/pricing/).
 
 ## If I upgrade can I go back to my old plan?
 
@@ -30,4 +30,4 @@ On or before September 15, 2019, you will need to login to your SparkPost accoun
 
 ## Will you be increasing prices for other SparkPost features and services?
 
-Pricing and plan changes only apply to sending volume. Features or additional services such as [Recipient Validation] (https://www.sparkpost.com/docs/tech-resources/recipient-validation-sparkpost/) and [Dedicated IPs] (https://www.sparkpost.com/docs/deliverability/dedicated-ip-pools/) are not affected by this change. 
+Pricing and plan changes only apply to sending volume. Features or additional services such as [Recipient Validation](https://www.sparkpost.com/docs/tech-resources/recipient-validation-sparkpost/) and [Dedicated IPs](https://www.sparkpost.com/docs/deliverability/dedicated-ip-pools/) are not affected by this change. 
