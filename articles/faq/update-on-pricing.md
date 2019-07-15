@@ -13,7 +13,7 @@ Over the last four years, we have delivered significant expansions to our produc
 
 ## What are the differences between Starter and Premier plans?
 
-The **Starter** plans are low-cost plans that make it easy for new or low-volume senders to get started. They include many of SparkPost’s great features, but some features are limited in order to keep costs low. See the chart below for a list of current feature limitations.
+The **Starter** plans are low-cost plans that make it easy for new or low-volume senders to get started. They include many of SparkPost’s great features, but some features are limited in order to keep costs low.
 The **Premier** plans are robust email packages for high-volume senders that include additional features to facilitate and manage sending large volumes of email. Feature breakdown of these plans can be found [here](https://www.sparkpost.com/docs/faq/difference-between-starter-and-premier/). 
 
 ## If I cancel my plan and reactivate, can I go back to the old pricing? 
