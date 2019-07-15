@@ -3,8 +3,6 @@ title: "Update on Pricing"
 description: "Information about pricing changes."
 ---
 
-On **May 14, 2019**, we adjusted pricing for new self-serve plans.
-
 On **July 15, 2019**, we notified SparkPost customers on the old SparkPost “Free” plan of changes to our [plans and pricing](https://www.sparkpost.com/pricing/). On or before **September 15, 2019**, any customer on an old “Free” plan will need to select from one of our currently available plans to continue using SparkPost. _**Note:** You have the option to continue using SparkPost for free on a “Test” plan, but please take notice of the monthly volume limit of 500 emails._
 
 ## Why did we change our pricing?
