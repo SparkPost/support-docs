@@ -20,7 +20,7 @@ No, if you would like to create a new account you will need to select from the c
 
 ## If I upgrade can I go back to my old plan?
 
-No, old plans will no longer be active/valid. You have the option to select any of the currently available paid plans or the current free “Test” plan with a monthly limit of 500 emails.
+No, old plans will no longer be available. You have the option to select any of the currently available paid plans or the current free “Test” plan with a monthly limit of 500 emails.
 
 ## I’m on a SparkPost Free account, how does this affect me?
 
