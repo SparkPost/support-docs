@@ -3,7 +3,7 @@ title: "Update on Pricing"
 description: "Information about pricing changes."
 ---
 
-On **July 15, 2019**, we notified SparkPost customers on the old SparkPost “Free” plan of changes to our [plans and pricing](https://www.sparkpost.com/pricing/). On or before **September 15, 2019**, any customer on an old “Free” plan will need to select from one of our currently available plans to continue using SparkPost. You can continue using SparkPost for free on our "Test" plan, with a limit of 500 emails/month and 100 emails/day.
+On **July 15, 2019**, we notified SparkPost customers on the old SparkPost “Free” plan of changes to our [plans and pricing](https://www.sparkpost.com/pricing/). On or before **September 15, 2019**, any customer on an old “Free” plan will need to select from one of our currently available plans to continue using SparkPost. You can continue using SparkPost for free on our "Test" plan, with limits of 500 emails/month and 100 emails/day.
 
 ## Why did we change our pricing?
 
@@ -20,7 +20,7 @@ No, if you would like to create a new account you will need to select from the c
 
 ## If I upgrade can I go back to my old plan?
 
-No, old plans will no longer be available. You have the option to select any of the currently available paid plans or the current free “Test” plan with a limit of 500 emails/month and 100 emails/day.
+No, old plans will no longer be available. You have the option to select any of the currently available paid plans or the current free “Test” plan with limits of 500 emails/month and 100 emails/day.
 
 ## I’m on a SparkPost Free account, how does this affect me?
 
