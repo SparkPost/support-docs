@@ -15,7 +15,7 @@ Find out whether the service is up, down, sideways, on vacation or going slow by
 |:------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Upgrades, Downgrades (standard plans)**       | See the **[Billing](https://app.sparkpost.com/account/billing)** page under Account in the SparkPost UI                                                          |
 | **Upgrades - Large Plans & Add-ons**            | **[Contact Sales](mailto:insidesales@sparkpost.com?subject=Account%20Change)**                                                                                   |
-| **Cancel your Service**                         | **[Submit a support request](https://app.sparkpost.com/dashboard/?supportTicket=true&supportIssue=account_cancellation)** |
+| **Cancel your Service**                         | **[Cancel your account](https://app.sparkpost.com/account/settings)** on the Account Settings page in the SparkPost UI|
 | **Billing Inquiries**                           | **[Contact our Billing Team](https://app.sparkpost.com/dashboard/?supportTicket=true&supportIssue=general_billing)**           |
 
 ## Account Setup & Requests
