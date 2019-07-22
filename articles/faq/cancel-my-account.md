@@ -11,8 +11,8 @@ What's the difference?
 
 Both downgrades and cancellations will take effect at the end of your current billing cycle.
 
-To **Downgrade**, go to the [Billing] (https://app.sparkpost.com/account/billing) page  in your SparkPost account and click "Change Plan". Select the free "Test" plan from the dropdown menu.
+To **Downgrade**, go to the [Billing](https://app.sparkpost.com/account/billing) page  in your SparkPost account and click "Change Plan". Select the free "Test" plan from the dropdown menu.
 
-To **Cancel**, go to the [Account Settings] (https://app.sparkpost.com/account/settings) page and click "Cancel Account". If you decide you want to undo your cancellation before it takes effect (at the end of your current billing cycle), you can return to this same page to undo your cancellation. After the cancellation has occurred, there is no way to undo it and you will need to create a new account.
+To **Cancel**, go to the [Account Settings](https://app.sparkpost.com/account/settings) page and click "Cancel Account". If you decide you want to undo your cancellation before it takes effect (at the end of your current billing cycle), you can return to this same page to undo your cancellation. After the cancellation has occurred, there is no way to undo it and you will need to create a new account.
 
 Please note: If you have a customized pricing account, please [contact us](https://www.sparkpost.com/submit-a-ticket/) to downgrade or cancel.
