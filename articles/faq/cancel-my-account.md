@@ -1,6 +1,6 @@
 ---
 title: "How Do I Downgrade or Cancel My Account?"
-description: "If you no longer wish to use SparkPost, you have two options: (1) downgrade to the free "Test" plan, or (2) cancel your account..."
+description: "If you no longer wish to use SparkPost, you have two options: (1) downgrade to the free Test plan, or (2) cancel your account..."
 ---
 
 If you no longer wish to use SparkPost, you have two options: (1) downgrade to the free "Test" plan, or (2) cancel your account. 
