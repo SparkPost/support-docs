@@ -3,7 +3,7 @@ title: "Setting up Alerts"
 description: "Automated alerting about what matters as it happens."
 ---
 
-Alerts track important sending metrics and notify you when something is wrong in real-time. Track your entire account or a few critical resources with powerful filtering. Recieve notifications through email, Slack, and webhooks.
+Alerts track important sending metrics and notify you when something is wrong in real-time. Track your entire account or a few critical resources with powerful filtering. Receive notifications through email, Slack, and webhooks.
 
 ## Metrics to Track
 You can set up alerts to track the following metrics:
@@ -19,18 +19,18 @@ Alerts can send notifications through these channels:
 
 * Email - notify up to 10 email addresses
 * Slack - using [incoming webhooks](https://api.slack.com/incoming-webhooks#create_a_webhook)
-* Webhooks - we'll send a payload to your custom target URL
+* Webhooks - we'll send a [payload](#header-webhook-payload-sample) to your custom target URL
 
 No need to pick just one, every alert can notify on multiple channels.
 
 ## Custom Thresholds and Filters
-Pick trigger thresholds that make sense for you and get as specific as you need with which resources to track. Each alert metric supports a different type of triger threshold and types of filters you can use.
+Pick trigger thresholds that make sense for you and get as specific as you need with which resources to track. Each alert metric supports a different type of trigger threshold and types of filters you can use.
 
 ### Bounce Rate Metrics
 Bounce rate alerts trigger either above or below a percentage of your choice. Filter what the alert tracks by:
 * Subaccounts: Track Master and all subaccounts, any subaccount, or any number of specific subaccounts.
-* Sending IPs: Any number of your sending ips.
-* Mailbox Providers: Pick any number of popular mailbox providers from from [this list](#header-mailbox-providers).
+* Sending IPs: Any number of your sending IPs.
+* Mailbox Providers: Pick any number of popular mailbox providers from [this list](#header-mailbox-providers).
 * Sending Domains: Any number of your sending domains.
 
 ### Health Score Metric
@@ -54,27 +54,27 @@ Monthly sending limit alerts trigger when your usage hits a specified percentage
 This section covers the intricacies of how alerts track your metrics when they send notifications.
 
 ## Triggers and Incidents
-An alert triggers when their metric breaks the threshold for any of the filters it tracks. When an triggers for the first time, an incident is created. Alerts send notifications when a new incident is created. Incidents remain open until the doesn't trigger again for at least 45 mintues. If a metric continues to trigger while an incident is open, the incident will be updated to reflect the metric's value, but notifications will not be sent. Incidents can remain open and continue to be updated for up to 24 hours. If a metric continues trigger past 24 hours, the alert will create a new incident and send notifications again.
+An alert triggers when their metric breaks the threshold for any of the filters it tracks. When an alert triggers for the first time, an incident is created. Alerts send notifications when a new incident is created. Incidents remain open until the doesn't trigger again for at least 45 mintues. If a metric continues to trigger while an incident is open, the incident will be updated to reflect the metric's value, but notifications will not be sent. Incidents can remain open and continue to be updated for up to 24 hours. If a metric continues trigger past 24 hours, the alert will create a new incident and send notifications again.
 
-*Alerts trigger and create individual incidents for each filter they track.* For example, if your alert tracks 2 sendings domains, up two 2 indepented incidents could be open for the alert at any time. The subaccounts groupds "Master and all subaccounts" and "Any subaccount" act as 1 filter each.
+*Alerts trigger and create individual incidents for each filter they track.* For example, if your alert tracks 2 sendings domains, up two 2 independent incidents could be open for the alert at any time. The subaccounts groups "Master and all subaccounts" and "Any subaccount" act as one filter each.
 
 ## Muting Alerts
-Alerts can be muted. If you're testing or just want to silence an alert for a bit, simply mute it and you will no longer recieve notifications. *Muted alerts still track your metrics and trigger incidents*, so you can still find out if your metric has broken the threshold.
+Alerts can be muted. If you're testing or want to silence an alert for a bit, simply mute it and you will no longer receive notifications. *Muted alerts still track your metrics and trigger incidents*, so you can still find out if your metric has broken the threshold.
 
 # Recommended Alerts
 If you are starting out with alerts, we recommend a few basic ones to start with:
 
 * Monthly Sending Limit alert at 80%, this will let you know when you are near overage pricing for your plan.
-* Health Score alert tracking Week of Week change of 10%, this would indicate an upcoming engagments and performance change.
+* Health Score alert tracking Week of Week change of 10%, this would indicate an upcoming engagement and performance change.
 * Block Bounce Rate above 20%, for an immidiate warning of current deliverability issues.
 
 # Mailbox Providers
 These are the Mailbox Provider options you can filter by and what domains they cover.
 
-| Mailbox Provider         | Domains covered |
+| Mailbox Provider         | Routing domains covered |
 |--------------------------|-----------------|
-| Appel                    | mac.com |
-| gmail                    | gmail.com, googlemail.com |
+| Apple                    | mac.com |
+| Gmail                    | gmail.com, googlemail.com |
 | Google Apps              | google.com |
 | Microsoft                | hotmail.com |
 | Verizon Media            | verizon.net aol.com, aim.com, yahoo.com |
@@ -89,3 +89,26 @@ These are the Mailbox Provider options you can filter by and what domains they c
 | Canadian Providers       | shaw.ca, rogers.com, telus.net, sympatico.ca, videotron.ca, sasktel.net, cogeco.ca, bell.net |
 | Japanese Providers       | ezweb.ne.jp, yahoo.co.jp, i.softbank.jp, docomo.ne.jp, nifty.com |
 | Other European Providers | seznam.cz, wp.pl, onet.pl, telenet.be, skynet.net, bluewin.ch, ukr.net, ziggo.nl, gmx.at, home.nl, centrum.cz, planet.nl, gmx.ch, hetnet.nl, abv.bg |
+
+# Webhook Payload Sample
+```
+[
+  {
+    "alert_id": 1,
+    "incident_id": 1,
+    "name": "Health Score dropped",
+    "metric": "health_score",
+    "triggered_value": 40,
+    "triggered_at": "2019-06-01T14:48:00.000Z",
+    "threshold_evaluator": {
+      "operator": "lt",
+      "source": "raw",
+      "value": 50
+    },
+    "filters": {
+      "subaccount_id": 0,
+      "ip_pool": "default"
+    }
+  }
+]
+```
