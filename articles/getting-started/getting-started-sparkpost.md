@@ -25,7 +25,7 @@ First things first: sign up for your SparkPost account [here](https://app.sparkp
 
 ## Preparing Your "From:" Address
 
-The very first thing your recipients see when they open your email is your address in the From field, so it's important to set it properly from the get-go. In SparkPost, that means creating a sending domain, the domain name you'll use to send email from. We recommend using a subdomain like *mail.myawesomedomain.com*, but a using a top-level domain is also allowed. You can register as many sending domains as you need on your SparkPost account.
+The very first thing your recipients see when they open your email is your address in the From field, so it's important to set it properly from the get-go. In SparkPost, that means creating a sending domain, the domain name you'll use to send email from. We recommend using a subdomain like *mail.myawesomedomain.com*, but using a top-level domain is also allowed.
 
 ### Prerequisites
 
