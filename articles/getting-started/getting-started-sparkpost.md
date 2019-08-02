@@ -7,7 +7,7 @@ Welcome to SparkPost! This guide describes the steps you’ll need to follow to 
 
 SparkPost is a developer-centric email delivery service. That means pretty much everything described in this guide can be done through the SparkPost API. If you'd like to just skip to the end, the [SparkPost API documentation](https://developers.sparkpost.com/api/) is worth a visit.
 
-Note: SparkPost is available in multiple regions. "SparkPost" refers to the SparkPost service hosted in North America. "SparkPost EU" refers to the SparkPost service hosted in Western Europe. An account created with SparkPost cannot be used with SparkPost EU, and vice-versa. Customers may use accounts in both regions.
+Note: SparkPost is available in multiple regions. "SparkPost" refers to the SparkPost service hosted in North America. "SparkPost EU" refers to the SparkPost service hosted in Western Europe. An account created with SparkPost cannot be used with SparkPost EU, and vice-versa. Customers may use accounts in both regions. 
 
 * [Signing Up And In](#signing-up-and-in)
 * [Preparing Your "From:" Address](#preparing-your-from-address)
