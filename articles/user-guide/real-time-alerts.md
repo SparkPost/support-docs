@@ -1,5 +1,5 @@
 ---
-title: "Setting up Alerts"
+title: "Alerts"
 description: "Automated alerting about what matters as it happens."
 ---
 
@@ -14,7 +14,7 @@ You can set up alerts to track the following metrics:
 * Monthly Sending Limit
 * Health Score
 
-## Channels to Notify
+## Notify
 Alerts can send notifications through these channels:
 
 * Email - notify up to 10 email addresses
@@ -27,7 +27,7 @@ No need to pick just one, every alert can notify on multiple channels.
 Pick trigger thresholds that make sense for you and get as specific as you need with which resources to track. Each alert metric supports a different type of trigger threshold and types of filters you can use.
 
 ### Bounce Rate Metrics
-Bounce rate alerts trigger either above or below a percentage of your choice. Filter what the alert tracks by:
+Bounce rate alerts trigger above percentage of your choice. Filter what the alert tracks by:
 * Subaccounts: Track Master and all subaccounts, any subaccount, or any number of specific subaccounts.
 * Sending IPs: Any number of your sending IPs.
 * Mailbox Providers: Pick any number of popular mailbox providers from [this list](#header-mailbox-providers).
@@ -51,15 +51,15 @@ Monthly sending limit alerts trigger when your usage hits a specified percentage
 
 
 # How Alerts Work
-This section covers the intricacies of how alerts track your metrics when they send notifications.
+How alerts track your metrics and when they send notifications.
 
 ## Triggers and Incidents
-An alert triggers when their metric breaks the threshold for any of the filters it tracks. When an alert triggers for the first time, an incident is created. Alerts send notifications when a new incident is created. Incidents remain open until the doesn't trigger again for at least 45 mintues. If a metric continues to trigger while an incident is open, the incident will be updated to reflect the metric's value, but notifications will not be sent. Incidents can remain open and continue to be updated for up to 24 hours. If a metric continues trigger past 24 hours, the alert will create a new incident and send notifications again.
+An alert triggers when the metric it tracks breaks the threshold you set. When an alert triggers for the first time, an incident is created. *Alerts send notifications when a new incident is created.* Incidents remain open until the doesn't trigger again for at least 45 mintues. If a metric continues to trigger while an incident is open, the incident will be updated to reflect the metric's value, but notifications will not be sent. Incidents can be open and updated for up to 24 hours. If a metric continues trigger past 24 hours, the alert will create a new incident and send notifications again.
 
 *Alerts trigger and create individual incidents for each filter they track.* For example, if your alert tracks 2 sendings domains, up two 2 independent incidents could be open for the alert at any time. The subaccounts groups "Master and all subaccounts" and "Any subaccount" act as one filter each.
 
 ## Muting Alerts
-Alerts can be muted. If you're testing or want to silence an alert for a bit, simply mute it and you will no longer receive notifications. *Muted alerts still track your metrics and trigger incidents*, so you can still find out if your metric has broken the threshold.
+Alerts can be muted. If you're testing or want to silence an alert, mute it and it will no longer send notifications. *Muted alerts still track your metrics and trigger incidents*, so you can still find out if your metric has broken the threshold.
 
 # Recommended Alerts
 If you are starting out with alerts, we recommend a few basic ones to start with:
