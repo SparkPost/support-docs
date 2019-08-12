@@ -24,14 +24,14 @@ Alerts can send notifications through these channels:
 No need to pick just one, every alert can notify on multiple channels.
 
 ## Custom Thresholds and Filters
-Pick trigger thresholds that make sense for you and get as specific as you need with which resources to track. Each alert metric supports a different type of trigger threshold and types of filters you can use.
+Pick trigger thresholds that make sense for you and get specific with which resources to track. Each alert metric supports a different type of trigger threshold and types of filters you can use.
 
 ### Bounce Rate Metrics
 Bounce rate alerts trigger above percentage of your choice. Filter what the alert tracks by:
-* Subaccounts: Track Master and all subaccounts, any subaccount, or any number of specific subaccounts.
-* Sending IPs: Any number of your sending IPs.
-* Mailbox Providers: Pick any number of popular mailbox providers from [this list](#header-mailbox-providers).
-* Sending Domains: Any number of your sending domains.
+* Subaccounts: Track Master and all subaccounts, any subaccount, or specific subaccounts.
+* Sending Domains
+* Sending IPs
+* Mailbox Providers: Pick popular mailbox providers from [this list](#header-mailbox-providers).
 
 ### Health Score Metric
 Health Score alerts trigger on your choice of:
@@ -40,11 +40,11 @@ Health Score alerts trigger on your choice of:
 * Week over Week change: A percent change from one week to the next, positive or negative.
 
 Filter what the alert tracks by:
-* Subaccounts: Track Master and all subaccounts, any subaccount, or any number of specific subaccounts.
+* Subaccounts: Track Master and all subaccounts, any subaccount, or specific subaccounts.
 * Facet of your score:
-  * IP Pools: Any number of IP pools
+  * IP Pools
+  * Sending Domains
   * Mailbox Providers: Pick any number of popular mailbox providers from [this list](#header-mailbox-providers).
-  * Sending Domains: Any number of your sending domains.
 
 ### Monthly Sending Limit
 Monthly sending limit alerts trigger when your usage hits a specified percentage of your monthly sending limit.
@@ -54,7 +54,7 @@ Monthly sending limit alerts trigger when your usage hits a specified percentage
 How alerts track your metrics and when they send notifications.
 
 ## Triggers and Incidents
-An alert triggers when the metric it tracks breaks the threshold you set. When an alert triggers for the first time, an incident is created. *Alerts send notifications when a new incident is created.* Incidents remain open until the doesn't trigger again for at least 45 mintues. If a metric continues to trigger while an incident is open, the incident will be updated to reflect the metric's value, but notifications will not be sent. Incidents can be open and updated for up to 24 hours. If a metric continues trigger past 24 hours, the alert will create a new incident and send notifications again.
+An alert triggers when the metric it tracks breaks the threshold you set. When an alert triggers for the first time, an incident is created. *Alerts send notifications when a new incident is created.* Incidents remain open until the alert doesn't trigger again for at least 45 mintues. If a metric continues to trigger while an incident is open, the incident will be updated to reflect the metric's value, but notifications will not be sent. Incidents can be open and updated for up to 24 hours. If a metric continues trigger past 24 hours, the alert will create a new incident and send notifications again.
 
 *Alerts trigger and create individual incidents for each filter they track.* For example, if your alert tracks 2 sendings domains, up two 2 independent incidents could be open for the alert at any time. The subaccounts groups "Master and all subaccounts" and "Any subaccount" act as one filter each.
 
