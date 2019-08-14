@@ -4,7 +4,7 @@ description: "Dedicated IP addresses issued from SparkPost address ranges automa
 ---
 You may have noticed that recently allocated [dedicated IP addresses](https://www.sparkpost.com/docs/deliverability/managing-dedicated-ip-pools/) in your SparkPost account come from specific address ranges. 
 
-Unless you are using our [Bring your Own IP](https://www.sparkpost.com/docs/tech-resources/bring-your-own-ip/) feature, your dedicated IPs come from a range  registered to SparkPost.
+Unless you are using our [Bring your Own IP](https://www.sparkpost.com/docs/tech-resources/bring-your-own-ip/) feature, your dedicated IPs come from a range registered to SparkPost.
 
 ```
 whois 147.253.215.24
@@ -54,11 +54,6 @@ dig -x 147.253.215.24
 ```
 
 You can also use online tools such as [MX Toolbox](https://mxtoolbox.com/ReverseLookup.aspx/) to view this relationship.
-
-## Why is this useful?
-Checks such as [DKIM](https://www.sparkpost.com/docs/faq/why-configure-dkim/) and [SPF](https://en.wikipedia.org/wiki/Sender_Policy_Framework) use published records on your sending domain’s DNS, and do not rely on full-circle reverse DNS. 
-
-Anecdotally, full-circle reverse DNS [may support your email reputation](https://wordtothewise.com/2015/06/ptr-records/) with some mailbox providers.
 
 ## EHLO hostnames in the outbound SMTP conversation
 When SparkPost delivers email onwards to a mailbox provider, the SMTP conversation starts with the remote provider announcing themselves, and SparkPost replies with its hostname in the EHLO command, like this. The lines from SparkPost are annotated thus: `>`
