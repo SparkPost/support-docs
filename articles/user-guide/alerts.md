@@ -54,7 +54,7 @@ Monthly sending limit alerts trigger when your usage hits a specified percentage
 How alerts track your metrics and when they send notifications.
 
 ## Triggers and Incidents
-An alert triggers when the metric it tracks breaks the threshold you set. When an alert triggers for the first time, an incident is created. *Alerts send notifications when a new incident is created.* Incidents remain open until the alert doesn't trigger again for at least 45 mintues. If a metric continues to trigger while an incident is open, the incident will be updated to reflect the metric's value, but notifications will not be sent. Incidents can be open and updated for up to 24 hours. If a metric continues trigger past 24 hours, the alert will create a new incident and send notifications again.
+An alert triggers when the metric it tracks breaks the threshold you set. When an alert triggers for the first time, an incident is created. *Alerts send notifications when a new incident is created.* Incidents remain open until the alert doesn't trigger again for at least 30 mintues. If a metric continues to trigger while an incident is open, the incident will be updated to reflect the metric's value, but notifications will not be sent. Incidents can be open and updated for up to 24 hours. If a metric continues trigger past 24 hours, the alert will create a new incident and send notifications again.
 
 *Alerts trigger and create individual incidents for each filter they track.* For example, if your alert tracks 2 sendings domains, up two 2 independent incidents could be open for the alert at any time. The subaccounts groups "Master and all subaccounts" and "Any subaccount" act as one filter each.
 
