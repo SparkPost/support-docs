@@ -3,7 +3,7 @@ title: "Alerts"
 description: "Automated alerting about what matters as it happens."
 ---
 
-Alerts track important sending metrics and notify you when something is wrong in real-time. Track your entire account or a few critical resources with powerful filtering. Receive notifications through email, Slack, and webhooks.
+Alerts track important sending metrics and notify you when something is wrong in real-time. Track your entire account or a few critical resources with powerful filtering and eceive notifications through email, Slack, and webhooks.
 
 ## Metrics to Track
 You can set up alerts to track the following metrics:
@@ -19,7 +19,7 @@ Alerts can send notifications through these channels:
 
 * Email - notify up to 10 email addresses
 * Slack - using [incoming webhooks](https://api.slack.com/incoming-webhooks#create_a_webhook)
-* Webhooks - we'll send a [payload](#header-webhook-payload-sample) to your custom target URL
+* Webhooks - we'll send a [payload](#webhook-payload-sample) to your custom target URL
 
 No need to pick just one, every alert can notify on multiple channels.
 
@@ -31,7 +31,7 @@ Bounce rate alerts trigger above percentage of your choice. Filter what the aler
 * Subaccounts: Track Master and all subaccounts, any subaccount, or specific subaccounts.
 * Sending Domains
 * Sending IPs
-* Mailbox Providers: Pick popular mailbox providers from [this list](#header-mailbox-providers).
+* Mailbox Providers: Pick popular mailbox providers from [this list](#mailbox-providers).
 
 ### Health Score Metric
 Health Score alerts trigger on your choice of:
@@ -44,7 +44,7 @@ Filter what the alert tracks by:
 * Facet of your score:
   * IP Pools
   * Sending Domains
-  * Mailbox Providers: Pick any number of popular mailbox providers from [this list](#header-mailbox-providers).
+  * Mailbox Providers: Pick any number of popular mailbox providers from [this list](#mailbox-providers).
 
 ### Monthly Sending Limit
 Monthly sending limit alerts trigger when your usage hits a specified percentage of your monthly sending limit.
@@ -54,12 +54,12 @@ Monthly sending limit alerts trigger when your usage hits a specified percentage
 How alerts track your metrics and when they send notifications.
 
 ## Triggers and Incidents
-An alert triggers when the metric it tracks breaks the threshold you set. When an alert triggers for the first time, an incident is created. *Alerts send notifications when a new incident is created.* Incidents remain open until the alert doesn't trigger again for at least 30 mintues. If a metric continues to trigger while an incident is open, the incident will be updated to reflect the metric's value, but notifications will not be sent. Incidents can be open and updated for up to 24 hours. If a metric continues trigger past 24 hours, the alert will create a new incident and send notifications again.
+An alert triggers when the metric it tracks breaks the threshold you set. When an alert triggers for the first time, an incident is created. **Alerts send notifications when a new incident is created.** Incidents remain open until the alert doesn't trigger again for at least 30 mintues. If a metric continues to trigger while an incident is open, the incident will be updated to reflect the metric's value, but notifications will not be sent. Incidents can be open and updated for up to 24 hours. If a metric continues trigger past 24 hours, the alert will create a new incident and send notifications again.
 
-*Alerts trigger and create individual incidents for each filter they track.* For example, if your alert tracks 2 sendings domains, up two 2 independent incidents could be open for the alert at any time. The subaccounts groups "Master and all subaccounts" and "Any subaccount" act as one filter each.
+**Alerts trigger and create individual incidents for each filter they track.** For example, if your alert tracks 2 sendings domains, up two 2 independent incidents could be open for the alert at any time. The subaccounts groups "Master and all subaccounts" and "Any subaccount" act as one filter each.
 
 ## Muting Alerts
-Alerts can be muted. If you're testing or want to silence an alert, mute it and it will no longer send notifications. *Muted alerts still track your metrics and trigger incidents*, so you can still find out if your metric has broken the threshold.
+Alerts can be muted. If you're testing or want to silence an alert, mute it and it will no longer send notifications. **Muted alerts still track your metrics and trigger incidents**, so you can still find out if your metric has broken the threshold.
 
 # Recommended Alerts
 If you are starting out with alerts, we recommend a few basic ones to start with:
