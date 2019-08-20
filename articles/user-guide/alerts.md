@@ -3,7 +3,7 @@ title: "Alerts"
 description: "Automated alerting about what matters as it happens."
 ---
 
-Alerts track important sending metrics and notify you when something is wrong in real-time. Track your entire account or a few critical resources with powerful filtering and eceive notifications through email, Slack, and webhooks.
+Alerts track important sending metrics and notify you when something is wrong in real-time. Track your entire account or a few critical resources with powerful filtering and receive notifications through email, Slack, and webhooks.
 
 ## Metrics to Track
 You can set up alerts to track the following metrics:
