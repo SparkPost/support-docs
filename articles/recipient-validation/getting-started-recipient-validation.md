@@ -5,21 +5,21 @@ description: "Recipient Validation is an easy, efficient way to verify that emai
 
 Recipient Validation helps you remove bad email addresses before you send to them to protect your [sender reputation](https://www.sparkpost.com/email-deliverability-guide/sender-reputation/) so your emails land in the inbox. Powered by the world's largest sender, Recipient Validation uses millions of data points to eliminate undeliverable and toxic addresses from your list so that you can send confidently.
 
-You can quickly [validate your email lists](/docs/recipient-validation/validate-an-email-list/) or [integrate Recipient Validation](/docs/recipient-validation/integration-guide/) into your sign up flow through the API.
+You can quickly [validate your email lists](./validate-an-email-list/) or [integrate Recipient Validation](./integration-guide/) into your sign up flow through the API.
 
 Recipient Validation is available to all SparkPost senders on the Starter plan and higher.
 
-## Validate an email lists
+## Validate an email list
 
 Using Recipient Validation, you can quickly validate a list of email addresses. In addition to your regular [list hygiene](https://www.sparkpost.com/blog/sending-email-to-inactive-users/), you should be sure to verify your list when for the first time in a while and when you are migrating between email delivery providers.
 
-Learn how [to validate your list](/docs/recipient-validation/validate-an-email-list/).
+Learn how [to validate your list](./validate-an-email-list/).
 
 ## Integrate the API
 
 You may want to add Recipient Validation when you first collect an email address. When you validate email addresses the moment you collect them, not only are you able to block undeliverable and low-quality addresses from making it past your digital front door. Additionally, you're able to catch your user's typos and recommend a correction, so your user isn't confused when they never get emails from you.
 
-[Learn how to protect your forms](/docs/recipient-validation/integration-guide/) with Recipient Validation.
+[Learn how to protect your forms](./integration-guide/) with Recipient Validation.
 
 ## Understanding the results
 
