@@ -1,5 +1,7 @@
-# Validate an email list
-
+---
+title: "Validate an email list"
+description: "TODO"
+---
 
 To validate a list of emails, visit the [Recipient Validation](https://app.sparkpost.com/recipient-validation) ([EU](https://app.eu.sparkpost.com/recipient-validation)) page in the SparkPost app. You can upload a `.csv` file containing an email address per line. The list validation form accepts a max file size of `200MB` or around 10 million email addresses in a single list.
 
