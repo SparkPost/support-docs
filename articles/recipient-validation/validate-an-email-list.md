@@ -1,40 +1,67 @@
 ---
 title: "Validate an email list"
-description: "TODO"
+description: "A guide on how to easily validate a large list of email addresses using Recipient Validation."
 ---
 
-TODO: DESCRIPTION
+With Recipient Validation you can upload and validate a large list of email addresses. You should contantly remove bad addresses and disengaged subscribers, as well as validate your lists if you haven't sent to them for  a while or if you're moving between email service providers.
 
-TODO: VIDEO
+**Note:** You should never purchase lists or send to people who have not explictly opted-in to recieve emails from you.
 
-## Upload a list
+## File requirements
 
-TODO: LIST TEMPLATE AND CRITERIA
+Before uploading your list, make sure it fits the following conditions:
+* The file type is `.csv` or `.txt`
+* The file does not contain a header row
+* Each line should contain a single email address, with no additional columns
+* Your file should be under the maximum size of `200MB`
 
-To validate a list of emails, visit the [Recipient Validation](https://app.sparkpost.com/recipient-validation) ([EU](https://app.eu.sparkpost.com/recipient-validation)) page in the SparkPost app. You can upload a `.csv` file containing an email address per line. The list validation form accepts a max file size of `200MB` or around 10 million email addresses in a single list.
-
-Here is a sample CSV for the list validation tool.
-
-```
-email@address.com
-another@hello.com
-ceo@email.com
-```
-
-## Validate the file
-
-TODO: Confirm pricing, press validate
-
-## Download results
-
-After selecting your file, press the **Validate Email Addresses** button.
-
-Once the validation is completed, download a list of the recipients by clicking on the **Download Rejected Recipients** button. You'll get a `.csv` file with the email addresses that we have information to share, including whether or not they are invalid, the reason, if they are a role address, or if they are a disposable address.
+Below is an example of a valid file to upload.
 
 ```
-email,valid,reason,is_role,is_disposable,is_free
-another@hello.com,false,Invalid Recipient,false,false,true
-ceo@email.com,true,,true,false,false
+harry.potter@hogwarts.edu
+hermione.granger@hogwarts.edu
+ron.weasley@howgarts.edu
+teachers@hogwarts.edu
+voldemort@hogwarts.edu
+```
+
+## Validating a list
+
+To validate your list, visit [Recipient Validation](https://app.sparkpost.com/recipient-validation) ([EU](https://app.eu.sparkpost.com/recipient-validation)) in the SparkPost app.
+
+### 1. Upload the file
+
+First, drag and drop your list into the SparkPost or select your list from the file picker and press "open" to upload your file.
+
+![Upload an email list](./media/validate-an-email-list/upload-a-list.png)
+
+### 2. Confirm pricing
+
+After the list upload completes, you'll see the estimated cost for validating all the emails in the file.
+
+To continue, press the "Validate" button.
+
+![Confirm pricing](./media/validate-an-email-list/confirm-pricing.png)
+
+As the validation progresses, you can see what stage it's running. Feel free to navigate away – the job will continue to run if you leave the page.
+
+### 3. Download the results
+
+After the job completes, you can download the results in the table below.The results are stored and are easily accessible through the app for 10 days after you initially upload the file.
+
+![List of validation results](./media/validate-an-email-list/results.png)
+
+The file you download will contain all of the email addresses you uploaded, with columns for each of the fields Recipient Validation provides, including whether or not they are valid and the reason.
+
+Here is the example of the validation results.
+
+```
+email,valid,result,reason,is_role,is_disposable,is_free,did_you_mean
+harry.potter@hogwarts.edu,true,valid,,false,false,false,
+hermione.granger@hogwarts.edu,true,valid,,false,false,false,
+teachers@hogwarts.edu,true,valid,,true,false,false,
+voldemort@hogwarts.edu,false,undeliverable,Invalid Recipient,false,false,false,
+ron.weasley@howgarts.edu,false,undeliverable,Invalid Domain,false,false,false,
 ```
 
 

@@ -1,6 +1,6 @@
 ---
 title: "Integrating the Recipient Validation API"
-description: "TODO"
+description: "Learn how to integrate Recipient Validation into your forms so you can reject bad emails before you add them to your lists."
 ---
 
 When you collect email addresses, you should put checks in place to protect your email program from being overrun with bad emails and help your users by catching mistakes before they leave.
@@ -9,6 +9,11 @@ When you collect email addresses, you should put checks in place to protect your
 In addition to using Recipient Validation, we recommend implementing [reCAPTCHA](https://www.google.com/recaptcha/intro/v3.html#) for the best results.
 
 You should put these checks in place in front of any form which accepts an email, from a raffle registration to your product's sign up page.
+
+The integration should follow these steps:
+1. The user submits a form with their email
+2. Your server checks if the email is valid with Recipient Validation
+3. If the email isn't valid, you ask the user for a different email address
 
 ## API integration
 
