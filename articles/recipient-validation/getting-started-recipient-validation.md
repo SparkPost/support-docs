@@ -1,26 +1,25 @@
 ---
 title: "Getting Started with Recipient Validation"
-description: "TODO"
+description: "Recipient Validation is an easy, efficient way to verify that email addresses are valid before you send."
 ---
 
-Recipient Validation helps you remove bad email addresses before you send to them to protect your [sender reputation](https://www.sparkpost.com/email-deliverability-guide/sender-reputation/) so your emails land in the inbox. You'll catch many common problems, including syntax errors and non-existent mailboxes, so you are guarded against bounces, human errors, and even fraud.
+Recipient Validation helps you remove bad email addresses before you send to them to protect your [sender reputation](https://www.sparkpost.com/email-deliverability-guide/sender-reputation/) so your emails land in the inbox. Powered by the world's largest sender, Recipient Validation uses millions of data points to eliminate undeliverable and toxic addresses from your list so that you can send confidently.
 
 You can quickly [validate your email lists](/docs/recipient-validation/validate-an-email-list/) or [integrate Recipient Validation](/docs/recipient-validation/integration-guide/) into your sign up flow through the API.
 
-Recipient Validation is available to all SparkPost senders on Starter plan and higher.
+Recipient Validation is available to all SparkPost senders on the Starter plan and higher.
 
 ## Validate an email lists
 
-TODO: WHEN YOU VALIDATE A LIST OF EMAILS
+Using Recipient Validation, you can quickly validate a list of email addresses. In addition to your regular [list hygiene](https://www.sparkpost.com/blog/sending-email-to-inactive-users/), you should be sure to verify your list when for the first time in a while and when you are migrating between email delivery providers.
+
+Learn how [to validate your list](/docs/recipient-validation/validate-an-email-list/).
 
 ## Integrate the API
 
-TODO: WHEN YOU SHOULD USE THE API
+You may want to add Recipient Validation when you first collect an email address. When you validate email addresses the moment you collect them, not only are you able to block undeliverable and low-quality addresses from making it past your digital front door. Additionally, you're able to catch your user's typos and recommend a correction, so your user isn't confused when they never get emails from you.
 
-The Recipient Validation [API](https://developers.sparkpost.com/api/recipient-validation) is the best way to validate an email address when you first collect it from sign-up forms, subscription forms, and more. To protect your reputation, you should validate an address before you send to it for the first time. The API takes an email address through a URI parameter and returns whether the address is valid, the reason if it's invalid, as well other data to help you decide if you'd like to accept the address.
-
-If you already have large sets of recipients that aren't validated, you can add a check before your transmissions request or validate the addresses using the in-app list functionality.
-
+[Learn how to protect your forms](/docs/recipient-validation/integration-guide/) with Recipient Validation.
 
 ## Understanding the results
 
@@ -31,35 +30,35 @@ Each validation response comes back with several pieces of information that you 
 The `result` field contains the overall status of this email. It'll be `valid` `risky`, or `undeliverable`. You should never send to addresses classified as `undeliverable`.
 
 | Result          | Description |
-| --------------- |   |
-| `valid`         |   |
-| `risky`         |   |
-| `undeliverable` |   |
+| --------------- | --------------- |
+| `valid`         | The email address passed all checks, and you should send to it. |
+| `risky`         | The email address is risky to send to because it is suspected of hard bouncing. |
+| `undeliverable` | THe email address is undeliverable because of a syntax issue, an invalid domain, or it doesn't exist. |
 
 #### Reason
 
-TODO: REASON DESCRIPTION
+Recipient Validation provides a `reason` field, which describes how it reached the `result`.
 
 | Reason               | Definition |
 |----------------------|---------------|
-| `Invalid Syntax`       | TODO |
-| `Invalid Domain`       | TODO |
-| `Invalid Recipient`    | TODO |
+| `Invalid Syntax`       | Given email is not valid email syntax |
+| `Invalid Domain`       | The domain does not exist or is not set up to receive email |
+| `Invalid Recipient`    | Email address does not exist, according to our data |
 
-### "Did you mean"
+### Did you mean?
 
-TODO: DID YOU MEAN DESCRIPTION
+When the response contains the `did_you_mean` field, it indicates there's probably a typo in the domain of the email address. An example of this is "gmial.com" instead of "gmail.com". You can pass this correction on to your user when you integrate Recipient Validation through the API or use the corrected address if you validate a list.
 
-### Email address and provider types
+### Email address types
 
-#### Disposable email providers
+#### Disposable email address
 
-Disposable email providers are services that create email addresses that are discarded after one use or a short time period. People use them to avoid giving out their real email address. Our data shows that disposable email providers have engagement rates of **less than 1%**.
+Disposable email providers are services that create email addresses that are discarded after one use or a short time. People use them to avoid giving out their real email address. Our data shows that disposable email providers have engagement rates of **less than 1%**.
 
 #### Role-based email addresses
 
 Role email addresses represent a group or activity, like sales or abuse, and not an individual. They tend to have a lower engagement rate and higher unsubscribe and complaint rate. These email addresses should be avoided since they risk harming your reputation.
 
-#### Free email providers
+#### Free email address
 
-Free email providers such as Gmail allow anyone to sign up for an email address. In most cases, these email addresses are not low-quality leads. However, certain businesses may consider requiring professional email addresses and not allow free personal ones
+Free email providers such as Gmail allow anyone to sign up for an email address. In most cases, these email addresses are not low-quality leads. However, certain businesses may consider requiring professional email addresses and not allow free personal ones.
