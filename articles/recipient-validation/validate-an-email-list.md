@@ -3,7 +3,7 @@ title: "Validate an email list"
 description: "A guide on how to easily validate a large list of email addresses using Recipient Validation."
 ---
 
-With Recipient Validation you can upload and validate a large list of email addresses. You should contantly remove bad addresses and disengaged subscribers, as well as validate your lists if you haven't sent to them for  a while or if you're moving between email service providers.
+With Recipient Validation you can upload and validate a large list of email addresses. As a best practice, you should contantly remove bad addresses and disengaged subscribers, validate lists you have not sent periodically or consistently, and validate lists when moving between email service providers.
 
 **Note:** You should never purchase lists or send to people who have not explictly opted-in to recieve emails from you.
 
@@ -15,7 +15,7 @@ Before uploading your list, make sure it fits the following conditions:
 * Each line should contain a single email address, with no additional columns
 * Your file should be under the maximum size of `200MB`
 
-Below is an example of a valid file to upload.
+Below is an example of a valid file to upload:
 
 ```
 harry.potter@hogwarts.edu
@@ -31,23 +31,23 @@ To validate your list, visit [Recipient Validation](https://app.sparkpost.com/re
 
 ### 1. Upload the file
 
-First, drag and drop your list into the SparkPost or select your list from the file picker and press "open" to upload your file.
+Drag and drop your list into the SparkPost or select your list from the file picker and press "open" to upload your file.
 
 ![Upload an email list](./media/validate-an-email-list/upload-a-list.png)
 
 ### 2. Confirm pricing
 
-After the list upload completes, you'll see the estimated cost for validating all the emails in the file.
+After the list upload completes, you will see the estimated cost for validating all the emails in the file.
 
 To continue, press the "Validate" button.
 
 ![Confirm pricing](./media/validate-an-email-list/confirm-pricing.png)
 
-As the validation progresses, you can see what stage it's running. Feel free to navigate away – the job will continue to run if you leave the page.
+As the validation progresses, you can see what stage it's running. Feel free to navigate away – the job will continue to run if you leave the page!
 
 ### 3. Download the results
 
-After the job completes, you can download the results in the table below.The results are stored and are easily accessible through the app for 10 days after you initially upload the file.
+After the job completes, you can download the results in the table below. The results are stored and are easily accessible through the app for 10 days after you initially upload the file.
 
 ![List of validation results](./media/validate-an-email-list/results.png)
 
