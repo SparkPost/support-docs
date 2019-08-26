@@ -3,7 +3,7 @@ title: "Getting Started with Recipient Validation"
 description: "Recipient Validation is an easy, efficient way to verify that email addresses are valid before you send."
 ---
 
-Recipient Validation helps you remove bad email addresses before you send to them to protect your [sender reputation](https://www.sparkpost.com/email-deliverability-guide/sender-reputation/) so your emails land in the inbox. Powered by the world's largest sender, Recipient Validation uses millions of data points to eliminate undeliverable and toxic addresses from your list so that you can send confidently.
+Recipient Validation helps you remove bad email addresses before you send to them to protect your [sender reputation](https://www.sparkpost.com/email-deliverability-guide/sender-reputation/) so your emails land in the inbox. Powered by the world's largest email and analytics platform, Recipient Validation uses millions of data points to eliminate undeliverable and toxic addresses from your list so that you can send confidently.
 
 You can quickly [validate your email lists](./validate-an-email-list/) or [integrate Recipient Validation](./integration-guide/) into your sign up flow through the API.
 
@@ -27,13 +27,13 @@ Each validation response comes back with several pieces of information that you 
 
 ### Result
 
-The `result` field contains the overall status of this email. It'll be `valid` `risky`, or `undeliverable`. You should never send to addresses classified as `undeliverable`.
+The `result` field contains the overall status of this email. It will show the status of the email address as either `valid` `risky`, or `undeliverable`. You should never send to addresses classified as `undeliverable`.
 
 | Result          | Description |
 | --------------- | --------------- |
 | `valid`         | The email address passed all checks, and you should send to it. |
 | `risky`         | The email address is risky to send to because it is suspected of hard bouncing. |
-| `undeliverable` | THe email address is undeliverable because of a syntax issue, an invalid domain, or it doesn't exist. |
+| `undeliverable` | The email address is undeliverable because of a syntax issue, an invalid domain, or it doesn't exist. |
 
 #### Reason
 
@@ -47,13 +47,13 @@ Recipient Validation provides a `reason` field, which describes how it reached t
 
 ### Did you mean?
 
-When the response contains the `did_you_mean` field, it indicates there's probably a typo in the domain of the email address. An example of this is "gmial.com" instead of "gmail.com". You can pass this correction on to your user when you integrate Recipient Validation through the API or use the corrected address if you validate a list.
+When the response contains the `did_you_mean` field, it indicates there is probably a typo in the domain of the email address. An example of this is "gmial.com" instead of "gmail.com". You can pass this correction on to your user when you integrate Recipient Validation through the API or use the corrected address if you validate a list.
 
 ### Email address types
 
 #### Disposable email address
 
-Disposable email providers are services that create email addresses that are discarded after one use or a short time. People use them to avoid giving out their real email address. Our data shows that disposable email providers have engagement rates of **less than 1%**.
+Disposable email providers are services that create email addresses that are discarded after one use or a short period of time. People use them to avoid giving out their real email address. Our data shows that disposable email providers have engagement rates of **less than 1%**.
 
 #### Role-based email addresses
 
