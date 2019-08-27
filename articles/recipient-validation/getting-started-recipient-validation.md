@@ -55,7 +55,7 @@ When the response contains the `did_you_mean` field, it indicates there is proba
 
 Disposable email providers are services that create email addresses that are discarded after one use or a short period of time. People use them to avoid giving out their real email address. Our data shows that disposable email providers have engagement rates of **less than 1%**.
 
-#### Role-based email addresses
+#### Role-based email address
 
 Role-based email addresses represent a group or activity, like sales or abuse. They tend to engage less, and unsubscribe and complaint more. These email addresses should be avoided since they risk harming your reputation.
 
