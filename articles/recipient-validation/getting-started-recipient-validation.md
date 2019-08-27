@@ -27,7 +27,7 @@ Each recipient validation response comes back with information to help you decid
 
 ### Result
 
-The `result` field contains the overall status of this email. It will show the status of the email address as either `valid` `risky`, or `undeliverable`. You should never send to addresses classified as `undeliverable`.
+The `result` field contains the overall status of this email. It will show the status of the email address as either `valid`, `risky`, or `undeliverable`. You should never send to addresses classified as `undeliverable`.
 
 | Result          | Description |
 | --------------- | --------------- |
