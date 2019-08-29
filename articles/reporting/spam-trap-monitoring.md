@@ -1,25 +1,27 @@
 ---
 title: "Spam Trap Monitoring"
-description: "TODO"
+description: "The Spam Trap Monitoring surfaces how much of your mail you are sending to known spam traps. This can help you find problems in your list collection and hygiene practices, and avoid deliverability problems."
 ---
 
+The Spam Trap Monitoring surfaces how much of your mail you are sending to known spam traps. This can help you find problems in your list collection and hygiene practices, and avoid deliverability problems.
 
 ## Spam traps
 
 Spam traps, also known as honeypots, are email addresses that are set up by blacklists, filter companies, and mailbox providers as a way to identify senders with bad list hygiene and list collection practices.
 
-When you send to a high number of spam traps, your mail will be blocked or delayed.
+As a sender, these addresses have no value since no one is reading the email. When you send to a high number of traps, your mail will be blocked or placed in the spam folder. In sum, you should avoid sending to spam traps as much as possible.
 
+[Learn more](https://www.sparkpost.com/email-deliverability-guide/spam-traps/) about spam traps and how to avoid them.
 
 ### Monitored traps
 
-With visibility across multiple commercial and non-commercial spam trap networks for the broadest coverage in the industry, SparkPost Signals is a crucial resource for maintaining the health of your email. Spam Trap Monitoring reports the share over time of your total email volume that was sent to known spam traps for each given day. This indicator is important to take note of since an excessive rate of spam trap hits indicates poor list procurement and hygiene practices. You can view the spam trap hits as a raw number or a ratio over the number of injections for that day.
+SparkPost has visibility into multiple commercial and non-commercial spam trap networks for the broadest coverage in the industry. Every day we analyze all the emails that were sent to to find and monitor new spam traps to provide the most accurate report of your sending possible.
 
 ### Trap types
 
 Spam traps are categorized into different types based on their behavior and the way they can end up on your list.
 
-Knowing the type spam trap you’re sending to can helu you find where your email program may have an issue.
+Knowing the type spam trap you’re sending to can help you find where in your email program may have an issue.
 
 * **Recycled** - Email addresses that once were real, but have been converted into a spam trap. If you have these on your list it’s probably a sign you need to clean out old unengaged recipients. You can look at your engagement recency cohorts (EU) to see if you are sending to a lot of unengaged recipients.
 * **Typo** - Email addresses hosted on a domain that looks like a real mailbox provider, like gmal.com. These usually get onto your list when a real person tries to sign up but “fat fingers” their email address and accidentally adds a trap instead. These addresses signal that you should work to improve your enrollment process. Using a tool like Recipient Validation can help solve this problem.
@@ -27,9 +29,9 @@ Knowing the type spam trap you’re sending to can helu you find where your emai
 * **Parked** - These are email addresses hosted by a parked domain provider. These addresses can point to list quality issues, though they will not affect your reputation.
 
 
-## Dashboard
+## Spam Trap Monitoring Dashboard
 
-Spam Trap Monitoring allows you to see the raw count and percent of spam traps you are sending to in the selected time range. On the dashboard you can quickly set the date range to any of the presets or set a custom range to focus. To find specific issues, group the results by subaccount, and any IP pool, sending domain, or campaign.
+The dashboard shows you the raw count or percent of spam traps you are sending to in the selected time range. On the dashboard you can quickly set the date range to any of the presets or set a custom range to focus. To find specific issues, group the results by subaccount, and any IP pool, sending domain, or campaign.
 
 
 ![Spam Trap Monitoring dashboard](media/spam-traps/dashboard.png)
