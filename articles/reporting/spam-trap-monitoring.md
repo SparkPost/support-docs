@@ -15,7 +15,7 @@ As a sender, these addresses have no value since no one is reading the email. Wh
 
 ### Monitored traps
 
-SparkPost has visibility into multiple commercial and non-commercial spam trap networks for the broadest coverage in the industry. Every day we analyze all the emails that were sent to to find and monitor new spam traps to provide the most accurate report of your sending possible.
+SparkPost has visibility into multiple commercial and non-commercial spam trap networks for the broadest coverage in the industry. Every day we analyze all the emails that were sent to find and monitor new spam traps to provide the most accurate report of your sending possible.
 
 ### Trap types
 
@@ -23,9 +23,8 @@ Spam traps are categorized into different types based on their behavior and the 
 
 Knowing the type spam trap you’re sending to can help you find where in your email program may have an issue.
 
-* **Recycled** - Email addresses that once were real, but have been converted into a spam trap. If you have these on your list it’s probably a sign you need to clean out old unengaged recipients. You can look at your engagement recency cohorts (EU) to see if you are sending to a lot of unengaged recipients.
+* **Recycled** - Email addresses that once were real, but have been converted into a spam trap. If you have these on your list it’s probably a sign you need to clean out old unengaged recipients. You can look at your [engagement recency cohorts](https://app.sparkpost.com/signals/engagement)([EU](https://app.eu.sparkpost.com/signals/engagement)) to see if you are sending to a lot of unengaged recipients.
 * **Typo** - Email addresses hosted on a domain that looks like a real mailbox provider, like gmal.com. These usually get onto your list when a real person tries to sign up but “fat fingers” their email address and accidentally adds a trap instead. These addresses signal that you should work to improve your enrollment process. Using a tool like Recipient Validation can help solve this problem.
-
 * **Parked** - These are email addresses hosted by a parked domain provider. These addresses can point to list quality issues, though they will not affect your reputation.
 
 
@@ -39,7 +38,7 @@ The dashboard shows you the raw count or percent of spam traps you are sending t
 
 ## Details page
 
-On each Spam trap details page, hover over each day to see how the count and rate of the total spam traps, as well as the stats broken down by each type of spam trap available. On the right hand side, you will find an assessment on how your performing for the day currently selected. Click on a different day to learn about your spam trap hits for that day.
+On each Spam trap details page, hover over each day to see the count and rate of total spam traps, as well as the stats broken down by each type of spam trap available. On the right hand side, you will find an assessment on how your performing for the day selected. Click on a different day to learn about your spam trap hits for that day.
 
 If your spam trap hits exceed safe limits, Signals provides actionable advice identifying the most likely source of the problem and guides you to improve your [list quality](https://www.sparkpost.com/docs/signals/list-hygiene/) or [acquisition practices](https://www.sparkpost.com/docs/signals/subscriber-acquisition/).
 
