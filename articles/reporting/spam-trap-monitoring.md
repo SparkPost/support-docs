@@ -39,7 +39,9 @@ The dashboard shows you the raw count or percent of spam traps you are sending t
 
 ## Details page
 
-On each Spam trap details page, hover over each day to see how the count and rate of the total spam traps, as well as the stats broken down by each type of spam trap available. On the right hand side, you will find an assessment on how your performing for the day currently selected. Click on a different day to learn about your spam trap hits for that day. If your sending to a high number of traps, the assessment will provide a recommendation on where you should look for problems in your sending program.
+On each Spam trap details page, hover over each day to see how the count and rate of the total spam traps, as well as the stats broken down by each type of spam trap available. On the right hand side, you will find an assessment on how your performing for the day currently selected. Click on a different day to learn about your spam trap hits for that day.
+
+If your spam trap hits exceed safe limits, Signals provides actionable advice identifying the most likely source of the problem and guides you to improve your [list quality](https://www.sparkpost.com/docs/signals/list-hygiene/) or [acquisition practices](https://www.sparkpost.com/docs/signals/subscriber-acquisition/).
 
 
 ![Spam Trap Monitoring details page](media/spam-traps/details.png)
