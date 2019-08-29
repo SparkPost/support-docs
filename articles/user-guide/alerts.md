@@ -50,25 +50,25 @@ Filter what the alert tracks by:
 Monthly sending limit alerts trigger when your usage hits a specified percentage of your monthly sending limit.
 
 
-# How Alerts Work
+## How Alerts Work
 How alerts track your metrics and when they send notifications.
 
-## Triggers and Incidents
+### Triggers and Incidents
 An alert triggers when the metric it tracks breaks the threshold you set. When an alert triggers for the first time, an incident is created. **Alerts send notifications when a new incident is created.** Incidents remain open until the alert doesn't trigger again for at least 30 mintues. If a metric continues to trigger while an incident is open, the incident will be updated to reflect the metric's value, but notifications will not be sent. Incidents can be open and updated for up to 24 hours. If a metric continues trigger past 24 hours, the alert will create a new incident and send notifications again.
 
 **Alerts trigger and create individual incidents for each filter they track.** For example, if your alert tracks 2 sendings domains, up two 2 independent incidents could be open for the alert at any time. The subaccounts groups "Master and all subaccounts" and "Any subaccount" act as one filter each.
 
-## Muting Alerts
+### Muting Alerts
 Alerts can be muted. If you're testing or want to silence an alert, mute it and it will no longer send notifications. **Muted alerts still track your metrics and trigger incidents**, so you can still find out if your metric has broken the threshold.
 
-# Recommended Alerts
+## Recommended Alerts
 If you are starting out with alerts, we recommend a few basic ones to start with:
 
 * Monthly Sending Limit alert at 80%, this will let you know when you are near overage pricing for your plan.
 * Health Score alert tracking Week of Week change of 10%, this would indicate an upcoming engagement and performance change.
 * Block Bounce Rate above 20%, for an immidiate warning of current deliverability issues.
 
-# Mailbox Providers
+## Mailbox Providers
 These are the Mailbox Provider options you can filter by and what domains they cover.
 
 | Mailbox Provider         | Routing domains covered |
@@ -90,7 +90,8 @@ These are the Mailbox Provider options you can filter by and what domains they c
 | Japanese Providers       | ezweb.ne.jp, yahoo.co.jp, i.softbank.jp, docomo.ne.jp, nifty.com |
 | Other European Providers | seznam.cz, wp.pl, onet.pl, telenet.be, skynet.net, bluewin.ch, ukr.net, ziggo.nl, gmx.at, home.nl, centrum.cz, planet.nl, gmx.ch, hetnet.nl, abv.bg |
 
-# Webhook Payload Sample
+## Webhook Payload Sample
+
 ```
 [
   {
