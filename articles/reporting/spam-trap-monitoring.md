@@ -1,6 +1,6 @@
 ---
 title: "Spam Trap Monitoring"
-description: "The Spam Trap Monitoring surfaces how much of your mail you are sending to known spam traps. This can help you find problems in your list collection and hygiene practices, and avoid deliverability problems."
+description: "The Spam Trap Monitoring surfaces how much of your mail you are sending to known spam traps. This can help you find problems in your list collection and hygiene practices, and avoid deliverability problems"
 ---
 
 The Spam Trap Monitoring surfaces how much of your mail you are sending to known spam traps. This can help you find problems in your list collection and hygiene practices, and avoid deliverability problems.
