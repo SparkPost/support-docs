@@ -1,6 +1,6 @@
 ---
 title: "Setting Up Marketing Rocket with SparkPost!"
-description: "Setting up Marketing Rocket to use the Spark Post integration is simple and takes only a couple of minutes To correctly authenticate setup Spark Post to send emails with your domain follow these steps Log Into your Spark Post account Go to ACCOUNT Sending Domains ADD NEW DOMAIN Enter the..."
+description: "Setting up Marketing Rocket to use the Spark Post integration is simple and takes only a couple of minutes To correctly authenticate setup SparkPost to send emails with your domain follow these steps Log Into your SparkPost account Go to Configuration Sending Domains ADD NEW DOMAIN Enter the..."
 ---
 
 Setting up Marketing Rocket to use the SparkPost integration is simple, and takes only a couple of minutes!
@@ -9,7 +9,9 @@ Setting up Marketing Rocket to use the SparkPost integration is simple, and take
 
 1. Log Into your SparkPost account
 
-1. Go to ACCOUNT -> Sending Domains -> ADD NEW DOMAIN
+1. Go to **Configuration** > **Sending Domains**
+
+1. Press **Add a Domain**
 
 1. Enter the domain you will be sending emails from
 
@@ -31,13 +33,13 @@ Setting up Marketing Rocket to use the SparkPost integration is simple, and take
 
 1. In your SparkPost Account press TEST. *(It can sometimes take a few minutes to recognize and approve with a green check, if it does not work right away, try again in a few minutes)*
 
-1. In Your SparkPost Account go to: Account -> API & SMTP
+1. In Your SparkPost Account go to: **Configuration** > **API Keys**
 
 1. Click on ‘New API KEY” and create a new API, enter a name, select all permissions, confirm your password, and click ADD API KEY
 
 1. Log into Marketing Rocket (New users can sign up for an account [here](https://marketing-rocket.com/pricing))
 
-1. Goto API’s, press NEW and select SparkPost from the list.
+1. Go to API’s, press NEW and select SparkPost from the list.
 
 1. Copy the API key from SparkPost and enter in the Manage API page, enter a Title for the API and ensure DEFAULT MAIL PROVIDER is set to YES.
 

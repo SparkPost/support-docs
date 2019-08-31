@@ -27,7 +27,7 @@ voldemort@hogwarts.edu
 
 ## Validating a list
 
-To validate your list, visit [Recipient Validation](https://app.sparkpost.com/recipient-validation) ([EU](https://app.eu.sparkpost.com/recipient-validation)) in the SparkPost app.
+To validate your list, visit [Recipient Validation](https://app.sparkpost.com/recipient-validation) ([EU](https://app.eu.sparkpost.com/recipient-validation)) under **Recipients** in the SparkPost app.
 
 ### 1. Upload the file
 

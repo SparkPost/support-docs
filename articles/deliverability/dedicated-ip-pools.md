@@ -13,7 +13,7 @@ Some plan levels include a free dedicated IP address. If your plan includes an I
 
 You can provision additional dedicated IPs directly to your Account via the UI.  For Enterpise customers, please contact your designated TAM for purchasing of dedicated IPs.
 
-1. Select Account **->** Billing and then press the orange "Purchase Sending IPs" Button.
+1. Select **Billing** in top navigation and then press the orange "Purchase Sending IPs" Button.
 2. You will then be prompted to choose:
     * Quantity: the number of dedicated IPs **\*** (additional monthly charges of $20.00 / IP Address / Month apply)
     * IP Pool: whether you would like to assign these addresses to an existing IP pool or create a new IP Pool
@@ -27,7 +27,7 @@ You can provision additional dedicated IPs directly to your Account via the UI. 
 
 ## Managing Dedicated IP Pools
 
-You can view and manage your dedicated IPs and their associated IP Pools in the UI by selecting Account **->** IP Pools
+You can view and manage your dedicated IPs and their associated IP Pools in the UI by selecting **Configuration** > **IP Pools**
 
 From here, you can create, delete, or edit IP Pools. You can also move dedicated IPs between pools. Read this article to understand more about __[managing your existing dedicated IP pools](https://www.sparkpost.com/docs/deliverability/managing-dedicated-ip-pools/)__.
 
@@ -58,7 +58,7 @@ If you do not have any dedicated IPs, traffic will be sent through the SparkPost
 
 ## Using Your Dedicated IPs with Subaccounts
 
-To assign an IP Pool to a subaccount, click Account **->** Subaccounts. Edit the appropriate subaccount, select the IP Pool Id in the IP Pool Id picklist, and press Update Subaccount.
+To assign an IP Pool to a subaccount, click **Configuration** > **Subaccounts**. Edit the appropriate subaccount, select the IP Pool Id in the IP Pool Id picklist, and press Update Subaccount.
 
 Note that you cannot have more than one IP Pool assigned to the same subaccount. The IP pool assigned to the subaccount acts as the default IP pool for that subaccount. All messages injected by the subaccount will then automatically use that IP Pool. This means that subaccount transmissions do not need to specify the ip_pool value. Subaccounts will receive an error if they attempt to specify an ip_pool value which differs from the assigned default IP pool.
 

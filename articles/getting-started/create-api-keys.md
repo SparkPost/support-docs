@@ -9,7 +9,7 @@ Before you can use the SparkPost REST APIs or SMTP injection, you will need to h
 
 ## Define the API Key:
 
-Click on **API Keys** under the Settings section of the side navigation bar, then click **Create API Key**. You'll use this key to authorize API requests or to authenticate SMTP injection. You may not need to select all permissions for your particular integration needs. It is always best practice to ONLY choose permissions which are necessary for your integration, but if you aren't sure which permissions you might not need, we recommend you simply "select all" permissions.
+Click on **API Keys** under the **Configuration** section of the side navigation bar, then click **Create API Key**. You'll use this key to authorize API requests or to authenticate SMTP injection. You may not need to select all permissions for your particular integration needs. It is always best practice to ONLY choose permissions which are necessary for your integration, but if you aren't sure which permissions you might not need, we recommend you simply "select all" permissions.
 
 1. Name the API key.
 

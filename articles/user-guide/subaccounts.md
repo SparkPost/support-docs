@@ -18,7 +18,7 @@ Use these links to jump to certain sections of this article
 
 ### Overview
 
-This article is intended for master account administrators (not subaccount users).  It introduces our subaccount functionality in SparkPost and SparkPost Enterprise. The subaccount functionality will allow you to support separate business units, mailstreams, or customers (if you are an email service provider) all from within your SparkPost account. Subaccounts enable you to give each of these units direct access to the SparkPost messaging service APIs. (Subaccount users will not have separate access in the UI.)
+This article is intended for master account administrators (not subaccount users).  It introduces our subaccount functionality in SparkPost and SparkPost Enterprise. The subaccount functionality will allow you to support separate business units, mailstreams, or customers (if you are an email service provider) all from within your SparkPost account. Subaccounts enable you to give each of these units direct access to the SparkPost messaging service APIs. (Subaccount users will not have separate access in the app.)
 
 ### Terminology
 
@@ -33,7 +33,7 @@ This article is intended for master account administrators (not subaccount users
 You will have the ability to:
 
 * Provision and manage access for individual subaccounts (includes providing an API key, allowed sending domains, etc.)
-* Run reports in the UI by subaccount
+* Run reports in the app by subaccount
 * Get raw message event data by subaccount
 * Get aggregated statistics by subaccount using the Metrics API
 * Separate suppression lists by subaccount automatically
@@ -65,9 +65,9 @@ The following is a list of potential, common use cases for using subaccounts:
 
 **Creating Subaccounts**
 
-Administrators within your business can create as many subaccounts as needed. Creating a subaccount can be done either via the UI or the subaccounts API. When a subaccount is initially created, an API key unique to that subaccount will be created with your chosen permissions, unless you have elected to not create an initial API key via the UI or API (see note immediately below). Additional subaccount API keys must be created using the UI.
+Administrators within your business can create as many subaccounts as needed. Creating a subaccount can be done either via the app or the subaccounts API. When a subaccount is initially created, an API key unique to that subaccount will be created with your chosen permissions, unless you have elected to not create an initial API key via the app or API (see note immediately below). Additional subaccount API keys must be created using the app.
 
-**Note**: You have the option to skip the initial creation of an API key when first creating a subaccount. This operation can be done via the UI or the API. The following is a screenshot of the UI skipping initial subaccount API key creation. Note the checkbox stating "create API key" is unchecked, which has removed all API key options from the UI.
+**Note**: You have the option to skip the initial creation of an API key when first creating a subaccount. This operation can be done via the app or the API. The following is a screenshot of the app skipping initial subaccount API key creation. Note the checkbox stating "create API key" is unchecked, which has removed all API key options from the app.
 
 ![subaccount api key option](media/subaccounts/skip-api-key.png)
 
@@ -75,7 +75,7 @@ For documentation on how to skip API key generation upon initial subaccount crea
 
 **Note**: Subaccounts cannot be nested beneath other subaccounts.
 
-This is how subaccount creation appears in the UI:
+This is how subaccount creation appears in the app:
 
 ![subaccount create screenshot](media/subaccounts/create-subaccount-api-key.png)
 
@@ -94,7 +94,7 @@ The following is a list of permissions supported for subaccount API keys:
 
 **Note**: If you do not have dedicated IPs, you should not set default IP Pools.
 
-After creating a subaccount, the master account has the option of assigning a default IP Pool to the subaccount.  All messages injected by the subaccount will then automatically use that IP Pool. This means that subaccount transmissions do not need to specify the ip_pool value.  Subaccounts will receive an error if they attempt to specify an ip_pool value which differs from the assigned default IP pool.  The assignment of the subaccount's default IP pool can be performed through either the subaccounts UI or subaccounts API endpoint.
+After creating a subaccount, the master account has the option of assigning a default IP Pool to the subaccount.  All messages injected by the subaccount will then automatically use that IP Pool. This means that subaccount transmissions do not need to specify the ip_pool value.  Subaccounts will receive an error if they attempt to specify an ip_pool value which differs from the assigned default IP pool.  The assignment of the subaccount's default IP pool can be performed through either the subaccounts app or subaccounts API endpoint.
 
 **Note**: Minimal validation is done against the value set in the IP pool ID key/field. If a mismatch error occurs, all attempted messages from that subaccount will be rejected.
 
@@ -102,7 +102,7 @@ After creating a subaccount, the master account has the option of assigning a de
 
 **Permissions**
 
-Only master account users can create subaccounts. If you create a UI user, they will have access to both the master account and subaccounts, so it is critical that be taken into account when provisioning UI accounts on your system.
+Only master account users can create subaccounts. If you create a app user, they will have access to both the master account and subaccounts, so it is critical that be taken into account when provisioning app accounts on your system.
 
 **Subaccount Statuses**
 
@@ -118,7 +118,7 @@ All that you need to give your customer/subaccount user(s) is the subaccount API
 
 ### Master Account: Reporting by Subaccount
 
-Master accounts can filter reporting by a single subaccount in the UI. These reports include:
+Master accounts can filter reporting by a single subaccount in the app. These reports include:
 
 * Summary
 * Bounces
@@ -140,17 +140,17 @@ For each of the APIs listed below, the master account may perform several operat
 
 **Sending Domain**
 
-The master account may provision sending domains on behalf of the subaccount using the UI or sending domains API by including the X-MSYS-SUBACCOUNT HTTP header.
+The master account may provision sending domains on behalf of the subaccount using the app or sending domains API by including the X-MSYS-SUBACCOUNT HTTP header.
 
-When a sending domain is created it will be associated with the designated subaccount provided in the X-MSYS-SUBACCOUNT HTTP header (API) or the subaccount field in the UI. If the header is not included in the API call, the sending domain will instead be associated to the master account.
+When a sending domain is created it will be associated with the designated subaccount provided in the X-MSYS-SUBACCOUNT HTTP header (API) or the subaccount field in the app. If the header is not included in the API call, the sending domain will instead be associated to the master account.
 
 If you wish to associate a sending domain to a different subaccount, the sending domain must be deleted and re-created with the desired subaccount ID assigned to it.
 
-**Note**: The master account can create a sending domain and leave it assigned to the master account. The master account can then set a flag in either the API or the UI to indicate that the sending domain can be used by all of their subaccounts and the master account. In the API, the field is called "shared with subaccounts" and in the UI, there is a checkbox labeled "**share with subaccounts**                 ". One of these must be enabled in order for both the master account and all subaccounts to be able to use the same sending domain.
+**Note**: The master account can create a sending domain and leave it assigned to the master account. The master account can then set a flag in either the API or the app to indicate that the sending domain can be used by all of their subaccounts and the master account. In the API, the field is called "shared with subaccounts" and in the app, there is a checkbox labeled "**share with subaccounts**                 ". One of these must be enabled in order for both the master account and all subaccounts to be able to use the same sending domain.
 
 **Tracking Domains**
 
-The master account can perform CRUD (create/read/update/delete) operations on tracking domains for subaccounts in both the UI and API.
+The master account can perform CRUD (create/read/update/delete) operations on tracking domains for subaccounts in both the app and API.
 
 * The master account may assign a tracking domain to a subaccount upon creation.
 * The master account has the option to filter the list of tracking domains by subaccount.
@@ -158,7 +158,7 @@ The master account can perform CRUD (create/read/update/delete) operations on tr
 
 The master account has the ability to link a tracking domain to a sending domain. This option is located on the sending domains page. **Note**: Both the sending domain and tracking domain must both be assigned to the same subaccount. Also, tracking domains that are linked to the "shared" sending domains can also be used by all the subaccounts.
 
-If the "Hide Subaccounts" checkbox is checked on the tracking domains page in the UI, only master account tracking domains will be displayed.
+If the "Hide Subaccounts" checkbox is checked on the tracking domains page in the app, only master account tracking domains will be displayed.
 
 The master account has the ability to set a default tracking domain for a subaccount. Only verified tracking domains can set as default. Note: Subaccounts can have more than one tracking domain assigned to them. If the subaccount does not have an associated tracking domain, it will use the master account default tracking domain.
 
@@ -180,14 +180,14 @@ The master account may submit traffic on behalf of the subaccount SMTP by provid
 
 The master account may create a webhook as the subaccount with the webhooks API by including the X-MSYS-SUBACCOUNT HTTP header. If the header is 0 only events for non-subaccounts will be posted.  If the header is not present, the webhook contain all events for the account.
 
-When creating new webhooks within the UI, leaving the subaccount field blank will cause the created webhook to contain all events for the account. When selecting Master Account, the webhook will only contain events for non-subaccounts. Selecting a subaccount will result in the webhook containing events from that subaccount only.
+When creating new webhooks within the app, leaving the subaccount field blank will cause the created webhook to contain all events for the account. When selecting Master Account, the webhook will only contain events for non-subaccounts. Selecting a subaccount will result in the webhook containing events from that subaccount only.
 
 ![subaccount management for webhooks screenshot](media/subaccounts/webhook-for-subaccount.png)
 
 **Templates**
 
 
-The master account can create templates via the API and assign it to a single subaccount by using the X-MSYS-SUBACCOUNT HTTP header, or share it with all subaccounts using a master account API key. Templates can also be created on behalf of subaccounts using the SparkPost UI in the "Templates" page, as per the screenshot below:
+The master account can create templates via the API and assign it to a single subaccount by using the X-MSYS-SUBACCOUNT HTTP header, or share it with all subaccounts using a master account API key. Templates can also be created on behalf of subaccounts using the SparkPost app in the "Templates" page, as per the screenshot below:
 
 ![subaccount management for templates screenshot](media/subaccounts/template-for-subaccount.png)
 
