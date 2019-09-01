@@ -24,10 +24,7 @@ The relative size of the component in the chart indicates the impact it has on y
 
 ![Health Score Components](media/health-score/components.png)
 
-
-TODO: UPDATE COMPONENTS
-The components are as follows:
-* **List Quality** – Percent of injections sent to email addresses matching patterns that may indicate a low-quality list.
+* **Subscriber Quality** – The share of injections that match address patterns associated with problematic list procurement and hygiene practices.
 * **Hard Bounces** – Percent of injections that returned hard bounces.
 * **Block Bounces** – Percent of injections that returned block bounces.
 * **Complaints** – Percent of injections that received a spam complaint.
@@ -35,6 +32,10 @@ The components are as follows:
 * **Other Bounces** – Percent of injections that returned a different bounce category.
 * **Engaged Recipients** – Percent of injections that were sent to new recipients or recipients who have engaged within the past 30 days.
 * **Unengaged Recipients** – Percent of injections that were sent to recipients who most recently engaged more than 90 days ago or never engaged.
+* **Spam Trap hits** - Percent of your injections that are sent to spam traps. 
+* **Suppression Hits** - Percent of the injections that were sent to addresses on your suppression list.
+* **Historical Engagement** - Engagement rate calculated for the previous 3 days of emails sent.
+* **Unsubscribes** - Share of emails injected that led to the recipient unsubscribing.
 
 ### Component changes over time
 
