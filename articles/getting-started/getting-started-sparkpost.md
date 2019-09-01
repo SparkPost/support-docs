@@ -15,7 +15,7 @@ Note: SparkPost is available in multiple regions. "SparkPost" refers to the Spar
 * [Sending Email](#sending-email)
 * [Tracking Recipient Behavior](#tracking-recipient-behavior)
 * [Improving Reputation And Branding](#improving-reputation-and-branding)
-* [Reports, Analytics and Tracking](#reports-analytics-and-tracking)
+* [Signals Analytics and Tracking](#signals-analytics-and-tracking)
 * [Where To Next?](#where-to-next)
 * [How To Get Help](#how-to-get-help)
 
@@ -47,7 +47,7 @@ Note: SparkPost expects to see a [legitimate web presence](https://www.sparkpost
 
 ### Sending Domain Step 1: Add the Domain
 
-If you didn't add a sending domain during your sign up process, you can [add one now in the SparkPost app](https://app.sparkpost.com/account/sending-domains/create) ([EU](https://app.eu.sparkpost.com/account/sending-domains/create)). If you already added a domain, visit the [Sending Domains page](https://app.sparkpost.com/account/sending-domains) ([EU](https://app.eu.sparkpost.com/account/sending-domains)) to find your existing domain and click on the domain to complete the domain set up. You should now be on your domain's edit page and see that it has a status of "Unverified".
+If you didn't add a sending domain during your sign up process, you can [add one now in the SparkPost app](https://app.sparkpost.com/account/sending-domains/create) ([EU](https://app.eu.sparkpost.com/account/sending-domains/create)). If you already added a domain, under **Configuration**, visit the [Sending Domains page](https://app.sparkpost.com/account/sending-domains) ([EU](https://app.eu.sparkpost.com/account/sending-domains)) to find your existing domain and click on the domain to complete the domain set up. You should now be on your domain's edit page and see that it has a status of "Unverified".
 
 ![Editing domain settings](media/getting-started-sparkpost/domain-edit-page.png)
 
@@ -116,6 +116,7 @@ Here are migration guides for other popular Email Services:
 * [Mailgun Migration Guide](https://www.sparkpost.com/migration-guides/mailgun/#migrate-your-suppression-list)
 * [Mandrill Migration Guide](https://www.sparkpost.com/migration-guides/mandrill/)
 * [SendGrid Migration Guide](https://www.sparkpost.com/migration-guides/sendgrid/#migrate-your-suppression-list)
+* [Mailjet Migration Guide](https://www.sparkpost.com/migration-guides/mailjet/#migrate-your-suppression-list)
 
 ## Sending Email
 
@@ -127,7 +128,7 @@ In case you need it, SparkPost also supports [SMTP-based email delivery](#header
 
 #### Authentication
 
-Authenticate each request by setting the Authoriation header with a valid API key. You can issue and manage the API keys on your account from Settings -> [API Keys](https://app.sparkpost.com/account/api-keys) ([EU](https://app.eu.sparkpost.com/account/api-keys)), each with its own permissions so you can restrict what each key is used for. Make sure to store your API keys somewhere secure and never share them publicly.
+Authenticate each request by setting the Authoriation header with a valid API key. You can issue and manage the API keys on your account from **Configuration** > [API Keys](https://app.sparkpost.com/account/api-keys) ([EU](https://app.eu.sparkpost.com/account/api-keys)), each with its own permissions so you can restrict what each key is used for. Make sure to store your API keys somewhere secure and never share them publicly.
 
 ```
 "Authorization": "14ac5499cfdd2bb2859e4476d2e5b1d2bad079bf"
@@ -169,7 +170,7 @@ Note: some hosting providers block outbound SMTP so you may need to request that
 
 SparkPost can automatically track when your recipients open your email and click on the links inside.
 
-Check out Reports -> [Engagement](https://app.sparkpost.com/reports/engagement) ([EU](https://app.eu.sparkpost.com/reports/engagement)) to review a summary of recipient engagement with your emails. You can also search message events report in Reports -> [Message Events](https://app.sparkpost.com/reports/message-events) ([EU](https://app.eu.sparkpost.com/reports/message-events)) to see individual, per-email open and click events.
+Check out **Signals Analytics** > [Engagement](https://app.sparkpost.com/reports/engagement) ([EU](https://app.eu.sparkpost.com/reports/engagement)) to review a summary of recipient engagement with your emails. You can also search message events report in **[Events](https://app.sparkpost.com/reports/message-events) ([EU](https://app.eu.sparkpost.com/reports/message-events))** to see individual, per-email open and click events.
 
 ### Tracking With The REST API
 
@@ -183,7 +184,7 @@ To enable tracking on SMTP, you can add an `X-MSYS-API` header to your messages 
 X-MSYS-API: { "options" : { "open_tracking" : true, "click_tracking" : true } }
 ```
 
-You can also control SMTP tracking at the account level in Setting -> [SMTP Relay](https://app.sparkpost.com/account/smtp) ([EU](https://app.eu.sparkpost.com/account/smtp))).
+You can also control SMTP tracking at the account level in **Configuration** [> SMTP Settings](https://app.sparkpost.com/account/smtp) ([EU](https://app.eu.sparkpost.com/account/smtp)).
 
 ## Improving Reputation And Branding
 
@@ -204,13 +205,13 @@ To do this, visit [the Sending Domains page](https://app.sparkpost.com/account/s
 
 ### Tracking Domain
 
-In order to track clicks on your emails, SparkPost wraps links in your emails to add tracking information, replacing each URL with a tracking service URL using the generic SparkPost domain name: spgo.io. You can create your own custom tracking domains from Settings -> [Tracking Domains](https://app.sparkpost.com/account/tracking-domains) ([EU](https://app.eu.sparkpost.com/account/tracking-domains)). You can set a tracking domain as default to be used in all your emails, or link a tracking domain to a sending domain to be used on all emails sent with that domain. Tracking domains are assigned to sending domains from the [sending domains](https://app.sparkpost.com/account/sending-domains) ([EU](https://app.eu.sparkpost.com/account/sending-domains)) page.
+In order to track clicks on your emails, SparkPost wraps links in your emails to add tracking information, replacing each URL with a tracking service URL using the generic SparkPost domain name: spgo.io. You can create your own custom tracking domains from **Configuration** > [Tracking Domains](https://app.sparkpost.com/account/tracking-domains) ([EU](https://app.eu.sparkpost.com/account/tracking-domains)). You can set a tracking domain as default to be used in all your emails, or link a tracking domain to a sending domain to be used on all emails sent with that domain. Tracking domains are assigned to sending domains from the [sending domains](https://app.sparkpost.com/account/sending-domains) ([EU](https://app.eu.sparkpost.com/account/sending-domains)) page.
 
 
 
-## Reports, Analytics and Tracking
+## Signals Analytics and Tracking
 
-You can use message events, metrics, and webhooks to keep track of your SparkPost account activity and email delivery performance. Metrics and message events are both available visually and through the API, while webhooks offer an efficient way to have SparkPost push message events directly to your own app.
+You can use message events, Signal Analytics, and webhooks to keep track of your SparkPost account activity and email delivery performance. Metrics and message events are both available visually and through the API, while webhooks offer an efficient way to have SparkPost push message events directly to your own app.
 
 ![Summary report](media/getting-started-sparkpost/summary-report-section.png)
 
@@ -224,15 +225,15 @@ When SparkPost sends an email, it emits a sequence of events so you can see when
 
 <div align="center"><em>SparkPost message events in sequence</em></div>
 
-Message events are stored for 10 days and can be searched from Reports -> [Events Search](https://app.sparkpost.com/reports/events/) ([EU](https://app.eu.sparkpost.com/reports/message-events)). The same data is also available through the [Events API endpoint](https://developers.sparkpost.com/api/events/).
+Message events are stored for 10 days and can be searched from **[Events](https://app.sparkpost.com/reports/events/) ([EU](https://app.eu.sparkpost.com/reports/message-events))**. The same data is also available through the [Events API endpoint](https://developers.sparkpost.com/api/events/).
 
 ### Webhooks
 
-Webhooks post events as they happen to an HTTP endpoint of your choice. You create webhooks from Settings -> [Webhooks](https://app.sparkpost.com/account/webhooks) ([EU](https://app.eu.sparkpost.com/account/webhooks)) on your account. Read up on [how to handle webhook events](https://www.sparkpost.com/blog/webhooks-beyond-the-basics/) and [check out the API documentation](https://developers.sparkpost.com/api/webhooks.html) for the details.
+Webhooks post events as they happen to an HTTP endpoint of your choice. You create webhooks from **Configuration** > [Webhooks](https://app.sparkpost.com/account/webhooks) ([EU](https://app.eu.sparkpost.com/account/webhooks)) on your account. Read up on [how to handle webhook events](https://www.sparkpost.com/blog/webhooks-beyond-the-basics/) and [check out the API documentation](https://developers.sparkpost.com/api/webhooks.html) for the details.
 
 ### Metrics
 
-Metrics offer a high-level view of your account, rolling up those message-level events into summaries for reviewing trends over time. The [Reports](https://app.sparkpost.com/reports/summary) ([EU](https://app.eu.sparkpost.com/reports/summary)) section of your account provides an easy way to review your sending history. As with most SparkPost features, you can also access these metrics by [API call](https://developers.sparkpost.com/api/metrics.html) to feed your own applications.
+Metrics offer a high-level view of your account, rolling up those message-level events into summaries for reviewing trends over time. The [Signals Analytics](https://app.sparkpost.com/reports) ([EU](https://app.eu.sparkpost.com/reports)) section of your account provides an easy way to review your sending history. As with most SparkPost features, you can also access these metrics by [API call](https://developers.sparkpost.com/api/metrics.html) to feed your own applications.
 
 ## Where To Next?
 
@@ -240,7 +241,7 @@ Beyond the basics, SparkPost also has a slew of additional capabilities which ma
 
 ### Email Templates And Personalization
 
-If you're sending similar content to lots of people, Templates let you write the message once using substitution variables and logic for personalization. You can create and edit templates on your account in the [Templates](https://app.sparkpost.com/templates) ([EU](https://app.eu.sparkpost.com/templates)) page. Check the SparkPost [template language](https://developers.sparkpost.com/api/template-language/) for information on how to personalize your emails.
+If you're sending similar content to lots of people, Templates let you write the message once using substitution variables and logic for personalization. You can create and edit templates on your account in the **Content** > [Templates](https://app.sparkpost.com/templates) ([EU](https://app.eu.sparkpost.com/templates)) page. Check the SparkPost [template language](https://developers.sparkpost.com/api/template-language/) for information on how to personalize your emails.
 
 ### Service Providers - Subaccounts
 
