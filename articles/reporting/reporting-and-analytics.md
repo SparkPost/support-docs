@@ -1,14 +1,14 @@
 ---
 title: "Reporting and Analytics"
-description: "One of the major benefits of Spark Post is the vast amount of reporting metrics we allow you to gather about your email transmissions We offer over forty 40 different metrics about the entire lifecycle of your email transmissions Spark Post Reporting The Summary View Login to Spark Post com..."
+description: "One of the major benefits of Spark Post is the vast amount of reporting metrics we allow you to gather about your email transmissions We offer over forty 40 different metrics about the entire lifecycle of your email transmissions..."
 ---
 
 One of the major benefits of SparkPost is the vast amount of reporting metrics we allow you to gather about your email transmissions. We offer over forty (40) different metrics about the entire lifecycle of your email transmissions.
 
 ## SparkPost Reporting - The Summary View
 
-1. Login to SparkPost.com
-1. Navigate to Reports
+1. Login to the [SparkPost app](https://app.sparkpost.com) ([EU](https://app.eu.sparkpost.com))
+1. Navigate to **Signals Analytics**
 1. The default reporting view is the Summary view, as seen below. The Summary view provides you the ability to select from a variety of metrics, adjust reporting date ranges, and to filter by campaign or domain (the recipient's domain...not your sending domains).
 
     ![The summary report view in SparkPost](media/reporting-and-analytics/summary-view.png)

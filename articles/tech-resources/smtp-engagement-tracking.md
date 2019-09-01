@@ -5,7 +5,7 @@ description: "You can control your account’s default setting for tracking of m
 
 You can control your account’s default setting for tracking of messages submitted via SMTP to be enabled, or disabled.
 
-The option is in the SMTP Settings page of your SparkPost user interface:
+The option is located under **Configuration** > **SMTP Settings** in the SparkPost app:
 
 ![](media/smtp-engagement-tracking/smtp-engagement-tracking.png)
 
