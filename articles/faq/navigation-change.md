@@ -3,7 +3,7 @@ title: "Navigation change"
 description: "Outlining the changes to the navigation inside the SparkPost app."
 ---
 
-On September 18th the SparkPost main navigation was reorganized. The table below contains the old and new versions of the navigation. We hope that this change makes SparkPost easier to use.
+As of September 18th, the SparkPost navigation was reorganized to make the app easier to use. The table below contains the old and new versions of the navigation.
 
 
 | Old Navigation | New Navigation |
