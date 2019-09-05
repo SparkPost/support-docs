@@ -1,6 +1,6 @@
 ---
 title: "Health Score"
-description: "TODO"
+description: "Learn about the Health Score, it's components, and recommendations on how to improve your sending."
 ---
 
 Your Health Score is a predictive score to help you monitor your email health and identify problems before they surface in your normal metrics. Each day, the Health Score model predicts your overall engagement as compared with all senders using SparkPost, by analyzing dozens of different sending factors from your bounce rate to the relationship you have with your recipients. You'll receive a score between 0 and 100, informing you of your sending health. A good score is anything above 80.
@@ -9,11 +9,13 @@ _**Note:** To provide the actionable insights and accurate analysis, the Health 
 
 ## Dashboard
 
-TODO...
+On the Health Score dashboard, you'll find the health of your overall account along with the full history, total injections and floor and ceiling. 
+
+Below is a summary for each subaccount's health, which can be sliced by campaign, IP pool, or sending domain to help catch issues across any of these facets. Additionally, you can view the data for up to 90 days to analyze trends over time.
 
 ## Health Score details
 
-TODO...
+From the dashboard, you can dive into the details page to see a deeper view of your scoring and find curated actions you should take to improve your sending, deliverability, and engagement.
 
 ![Health Score Chart](media/health-score/health-score.png)
 
@@ -43,8 +45,8 @@ To examine the raw data for a component, select it in the chart on right. When s
 
 ![Health Score Components](media/health-score/components-chart.gif)
 
+_**Note:** Unlike SparkPost metrics which are calculated based on the number of sent emails, Signals is calculated based on the number of injected emails. Because of this, you’ll see differing rates for some components such as hard bounces._
+
 ### Recommendations
 
 Signals provides a list of items needing attention and actions to take to improve any of the components that are negatively affecting your Health Score. By taking action to improve these items you'll see your Health Score, and therefore your deliverability and engagement, improve over time.
-
-TODO...
