@@ -5,7 +5,7 @@ description: "Learn about the Health Score, it's components, and recommendations
 
 Your Health Score is a predictive score to help you monitor your email health and identify problems before they surface in your normal metrics. Each day, the Health Score model predicts your overall engagement as compared with all senders using SparkPost, by analyzing dozens of different sending factors from your bounce rate to the relationship you have with your recipients. You'll receive a score between 0 and 100, informing you of your sending health. A good score is anything above 80.
 
-_**Note:** To provide the actionable insights and accurate analysis, the Health Score requires a minimum 1000 emails sent each day.  For any period where your sending does not pass these minimums, you will not have a Health Score._
+_**Note:** To provide the actionable insights and accurate analysis, the Health Score requires a minimum 1000 emails sent each day with open tracking enabled.  For any period where your sending does not pass these minimums, you will not have an accurate Health Score._
 
 ## Dashboard
 
