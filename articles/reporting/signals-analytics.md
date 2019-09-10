@@ -13,14 +13,14 @@ The default reporting view is the Summary report, as seen below. It provides y
 
 ## Bounce, Rejections, Accepted, Delayed Reports
 
-Bounce, Rejections, Accepted, and Delayed reports in SparkPost provide the same date and filtering tools as the Summary report, with additional data and visualizations. Each report focuses on a different type of event and provides a breakdown into the different categories in the event, along with messages which provide information about why the event happened. For example, for the Bounce report, you'll see what reason mailbox providers are returning when they bounce your email.
+Bounce, Rejections, Accepted, and Delayed reports in SparkPost provide the same date and filtering tools as the Summary report, with additional data and visualizations. Each report focuses on a different type of event and provides a breakdown into the different categories in the event, along with messages which provide information about why the event happened. For example, on the Bounce report, you'll see what reason mailbox providers are returning when they bounce your email.
 
 ![](media/signals-analytics/bounce-report.png)
 
 
 ## Health Score
 
-The Health Score is a predictive score to help you monitor your email health and identify problems before they become apparent in through traditional metrics. Use it to discover areas of your sending that are low-performing and get recommendations on how to improve. [Learn more](./health-score) about the Health Score.
+The Health Score is a predictive score to help you monitor your email health and identify problems before they become apparent through traditional metrics. Use it to discover areas of your sending that are low-performing and get recommendations on how to improve. [Learn more](./health-score) about the Health Score.
 
 ![The overall health score for a SparkPost account](media/signals-analytics/health-score.png)
 
