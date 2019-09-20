@@ -5,7 +5,7 @@ description: "A guide on how to easily validate a large list of email addresses 
 
 With Recipient Validation you can upload and validate a large list of email addresses. As a best practice, you should contantly remove bad addresses and disengaged subscribers, validate lists you have not sent periodically or consistently, and validate lists when moving between email service providers.
 
-**Note:** You should never purchase lists or send to people who have not explictly opted-in to recieve emails from you.
+**Note:** You should never purchase lists or send to people who have not explictly opted-in to receive emails from you.
 
 ## File requirements
 

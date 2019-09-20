@@ -61,5 +61,5 @@ Role-based email addresses represent a group or activity, like sales or abuse. T
 
 #### Free email address
 
-Free email providers such as Gmail allow anyone to sign up for an email address. In most cases, these email addresses are not low-quality leads. However, certain businesses may consider requiring professional email addresses and not allow free personal ones.
+Free email providers such as Gmail allow anyone to sign up for an email address. In most cases, these email addresses are not low-quality leads. However, certain businesses may consider requiring professional email addresses and not allowing free personal ones.
 
