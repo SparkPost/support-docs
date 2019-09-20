@@ -21,7 +21,7 @@ The integration should follow these steps:
 
 First, create an API key. You'll use this key to make the validation request.
 
-Under **Settings**, navigate to **[API Keys](https://app.sparkpost.com/account/api-keys)([EU](https://app.eu.sparkpost.com/account/api-keys))** and press "Create API Key". Set API Permissions to "Select" and check `Single Recipient Validation: Read/Write`. Finally, press "Create API Key" and copy the key to a secure location. You will not be able to access the key in the future.
+Under **Configuration**, navigate to **[API Keys](https://app.sparkpost.com/account/api-keys)([EU](https://app.eu.sparkpost.com/account/api-keys))** and press "Create API Key". Set API Permissions to "Select" and check `Single Recipient Validation: Read/Write`. Finally, press "Create API Key" and copy the key to a secure location. You will not be able to access the key in the future.
 
 ![Create a Recipient Validation API key](./media/integration-guide/create-a-key.png)
 

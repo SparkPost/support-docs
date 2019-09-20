@@ -50,7 +50,7 @@ The metrics available are:
 
 ## Report Metrics Definitions
 
-The [reports section of your account](https://app.sparkpost.com/reports)([EU](https://app.eu.sparkpost.com/reports))
+The [Signals Analytics section of your account](https://app.sparkpost.com/reports)([EU](https://app.eu.sparkpost.com/reports))
 uses [Metrics API](#header-metrics-definitions) data to build graphs and reports to help understand your email activity.
 Most of the numbers found in these reports are taken straight from the API.
 Some of numbers in the reports are simple calculations involving 2 of the API metrics.

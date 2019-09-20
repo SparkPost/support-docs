@@ -3,7 +3,7 @@ title: "Accepted"
 description: "This reporting tab showcases statistics surrounding messages that were accepted With regard to the Accepted Rate the higher the better Targeted The number of messages you sent Spark Post Sent The number of messages that have been delivered or attempted to deliver by Spark Post includes multiple delivery attempts including..."
 ---
 
-This reporting tab showcases statistics surrounding messages that were accepted. With regard to the accepted rate, the higher the better!
+This Signals Analytics report showcases statistics surrounding messages that were accepted. With regard to the accepted rate, the higher the better!
 
 ![](media/accepted/accepted-page.png)
 

@@ -24,7 +24,7 @@ swaks -server smtp.sparkpostmail.com:587 -tls --auth-user SMTP_Injection --auth-
 * **TO_EMAIL** - The email address of the test email recipient
 * **FROM_EMAIL** - An email address on a configured Sending Domain
 
-**If you ever need the [SMTP Connection information for SparkPost](https://app.sparkpost.com/#/account/credentials), it is available in the Account section of the SparkPost UI.**
+**If you ever need the [SMTP Connection information for SparkPost](https://app.sparkpost.com/account/smtp), it is available in the Configuration section of the SparkPost app.**
 
 ## Sample Response
 

@@ -37,11 +37,11 @@ This DNS record will ensure that out-of-band/asynchronous bounces are routed to 
 
 Once you have configured your DNS settings, register and verify the domain with SparkPost by following the steps below. *Please note, it may take SparkPost a few minutes for the bounce domain to be ready for use after verification.*
 
-## Using The SparkPost UI
+## Using The SparkPost app
 
-If you prefer to use the SparkPost UI, you can create multiple bounce domains or single bounce domain that will be used for all of your outgoing mail.
+If you prefer to use the SparkPost app, you can create multiple bounce domains or single bounce domain that will be used for all of your outgoing mail.
 
-1. Select Account and then [Sending Domains](https://app.sparkpost.com/account/sending-domains).
+1. Select **Configuration** and then [Sending Domains](https://app.sparkpost.com/account/sending-domains).
 1. Click the New Domain button to add a sending domain. Again, please add a subdomain to avoid any issues with your root domain.
 1. Navigate to your DNS and add the displayed CNAME record from SparkPost.
 1. Select the "Verify CNAME Record" orange text in the  _Setup For Bounce_ record box.

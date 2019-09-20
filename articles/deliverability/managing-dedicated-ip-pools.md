@@ -1,11 +1,11 @@
 ---
 title: "Managing dedicated IP Pools"
-description: "So now you have dedicated I Ps In which IP pools would you like them Would you like a marketing pool Would you like a transaction pool You can manage this in the user interface In the user interface select account IP Pools The default pool is already there for..."
+description: "So now you have dedicated I Ps In which IP pools would you like them Would you like a marketing pool Would you like a transaction pool You can manage this in the SparkPost app In the SparkPost app select account IP Pools The default pool is already there for..."
 ---
 
-So now you have dedicated IPs. In which IP pools would you like them? Would you like a marketing pool? Would you like a transaction pool? You can manage this in the user interface.
+So now you have dedicated IPs. In which IP pools would you like them? Would you like a marketing pool? Would you like a transactional pool? You can manage this in the SparkPost app.
 
-In the user interface, select Account > IP Pools. The default pool is already there for you. The default pool is used if you do not specify an IP Pool in your transmission. Since the default pool is the "fallback", you must always have at least 1 IP in the default pool.
+In the SparkPost app, select **Configuration** > **IP Pools**. The default pool is already there for you. The default pool is used if you do not specify an IP Pool in your transmission. Since the default pool is the "fallback", you must always have at least 1 IP in the default pool.
                                                                                                               
 
 ![](media/managing-dedicated-ip-pools/Screenshot_2016-06-09_16.07.21_original.png)

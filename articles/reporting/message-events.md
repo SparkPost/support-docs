@@ -10,14 +10,13 @@ Message Events provides you with the ability to:
 * Retrieve all events or specific events, such as bounces, deliveries, or clicks
 * Filter the data by date range, campaign, or just about any other field
 
-**Note**: Message events data is available for 10 days. Moreover, rolled up data is available via our metrics endpoints or the UI reports for much longer.
+**Note**: Message events data is available for 10 days. Moreover, rolled up data is available via our metrics endpoints or the Signals Analytics for much longer.
 
 ## How do I view Message Events?
 
 Complete the following steps from the main menu in SparkPost.
 
-1.  Click on Reports from the main menu.
-1.  Select Message Events from the Sub-menu to view the same.
+1.  Select **Events** from the main menu
 1.  Perform a filtered search for message event data - the response is sorted by descending timestamp.
 1.  Use the "More Filters" to get to advanced filtering.  Use the "Add Filter" button to filter on specific attributes.
 

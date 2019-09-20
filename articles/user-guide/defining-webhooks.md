@@ -15,11 +15,11 @@ Each of the above categories have a variety of event types, each with a unique 
 
 ### How to define a Webhook in SparkPost 
 
-There are two ways to create a webhook in SparkPost: Using the [SparkPost Webhook API](https://developers.sparkpost.com/api/webhooks) or using the SparkPost UI (directions below). 
+There are two ways to create a webhook in SparkPost: Using the [SparkPost Webhook API](https://developers.sparkpost.com/api/webhooks) or using the SparkPost app (directions below). 
 
-1.  [Login to SparkPost](https://app.sparkpost.com/)
-1.  Navigate to [Webhooks](https://app.sparkpost.com/#/configuration)
-1.  Click on the "New Webhook" button
+1.  [Login to SparkPost](https://app.sparkpost.com/) ([EU](https://app.eu.sparkpost.com/))
+1.  Navigate to **Configuration** > [Webhooks](https://app.sparkpost.com/webhooks) ([EU](https://app.eu.sparkpost.com/webhooks))
+1.  Click on the "Create Webhook" button
     ![Create webhook](media/defining-webhooks/create-webhook.png)
 1.  Set the following values:
     1.  **Webhook Name:**       human friendly name for your webhook
@@ -29,7 +29,7 @@ There are two ways to create a webhook in SparkPost: Using the [SparkPost Webho
         1.  All: The webhook will receive ALL events from ALL webhook categories
         1.  Select: You can choose which events you want to be sent to your webhook consumer
 1.  Click the Add Webhook button, and your webhook will be saved.
-    ![SparkPost webhook in the UI](media/defining-webhooks/view-webhook-test.png)
+    ![SparkPost webhook in the app](media/defining-webhooks/view-webhook-test.png)
 1.  If you want to test that the webhook is working, click the "Test" tab.
 1.  If you want to modify your webhook, click the "Setting" tab.
 1.  If you want to delete this webook, click **Delete**.

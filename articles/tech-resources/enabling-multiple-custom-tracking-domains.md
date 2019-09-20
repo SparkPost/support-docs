@@ -24,12 +24,12 @@ If you would like to configure your account to use a custom tracking domain, the
 1. Once you have completed creating your CNAME record(s) and have successfully saved the DNS changes, complete the set up through either the API or the UI (instructions for both below).
 1. Associate the custom tracking domain to a sending domain via UI or API.
 
-## Setting Up Custom Tracking domains through the Dashboard
+## Setting Up Custom Tracking domains through the app
 
-To configure one or more custom tracking domains through the SparkPost user interface, follow the steps below.
+To configure one or more custom tracking domains through the SparkPost app, follow the steps below.
 
-1. Select Settings and then Tracking Domains from the main menu.
-2. Click **New Tracking Domain** to add a new tracking domain.
+1. Select **Configuration** and then [Tracking Domains](https://app.sparkpost.com/account/tracking-domains) from the main menu.
+2. Click **Create Tracking Domain** to add a new tracking domain.
 
     ![](media/enabling-multiple-custom-tracking-domains/tracking-domains-page.png)
 
@@ -41,8 +41,8 @@ To configure one or more custom tracking domains through the SparkPost user inte
 
 To associate custom tracking domains to sending domains through the SparkPost user interface, the custom tracking domains must be verified first and then follow the steps below.
 
-1. Select Account and then Sending Domains from the main menu.
-1. Click the New Domain button to create the new sending domain or select an existing sending domain.
+1. Select **Configuration** and then [Sending Domains](https://app.sparkpost.com/account/sending-domains) from the main menu.
+1. Click the **Add a Domain** button to create the new sending domain or select an existing sending domain.
 1. Complete the Sending Domain Name for each sending domain and select the Linked Tracking Domain you want to associate with it. **Note**: If you do not select a linked tracking domain, the sending domain will use the default tracking domain.
 1. Click the **Add Domain** or **Update Tracking Domain** button to complete the association.
   ![](media/enabling-multiple-custom-tracking-domains/connect-tracking-domain.png)
@@ -70,5 +70,5 @@ Once a tracking domain has been associated with a verified sending domain, the a
 
 More information about our click tracking options can be found here:
 
-* [REST API (Transmission)](https://developers.sparkpost.com/api/?_ga=1.73076883.1033930248.1481562971#/reference/transmissions)
-* [SMTP API (SMTP injection)](https://developers.sparkpost.com/api/?_ga=1.73076883.1033930248.1481562971#/reference/smtp-api)
+* [REST API (Transmission)](https://developers.sparkpost.com/api/transmissions/)
+* [SMTP API (SMTP injection)](https://developers.sparkpost.com/api/smtp/)

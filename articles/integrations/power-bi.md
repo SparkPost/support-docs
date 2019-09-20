@@ -20,7 +20,7 @@ Connect to the [SparkPost content pack](https://app.powerbi.com/getdata/services
 
     **![](media/power-bi/carl3_original.png)**
 
-1. When prompted, select Key as the Authentication Method and provide your SparkPost API Key. The API Key can be created in your SparkPost account under API & SMTP. Then select **Sign In**   .
+1. When prompted, select Key as the Authentication Method and provide your SparkPost API Key. The API Key can be created in your SparkPost account under **Configuration** > **API Keys**. Then select **Sign In**   .
 
     ![](media/power-bi/carl4_original.png)
 
