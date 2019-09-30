@@ -55,6 +55,9 @@ To configure OAuth 2.0, you need to provide the following information:
 
 ![](media/webhook-authentication/webhook-auth2.png)​
 
+**IP Whitelisting**
+For those customers that require inbound traffic to be whitelisted in a firewall we do maintain the hostname wh.egress.sparkpost.com which lists the egress IPs under the host's A record. Please let your TAM know that you are whitelisting IPs and SparkPost will notify you if this list changes, with some advance notice.
+
 ## FAQ
 
 **Q: How does SparkPost deal with expiring Oauth tokens?**
