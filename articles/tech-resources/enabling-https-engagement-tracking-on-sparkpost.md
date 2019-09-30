@@ -139,12 +139,15 @@ For up to date information on creating a distribution via CloudFront, please ref
     * At the bottom of the page, press **Create Distribution**.
     
         ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_create_distribution.png)
+5. On the **Create Distribution** page, in the dropdown menu next to **Cache Based on Selected Request Headers**, select "All."
 
-5. Log into Sparkpost UI use the Sparkpost [Tracking Domain API](https://developers.sparkpost.com/api/tracking-domains/#tracking-domains).
+         ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_create_distribution_options.png) 
 
-6. Add **custom tracking domain** and verify the domain.
+6. Log into Sparkpost UI use the Sparkpost [Tracking Domain API](https://developers.sparkpost.com/api/tracking-domains/#tracking-domains).
 
-7. Use tracking domain while sending messages.
+7. Add **custom tracking domain** and verify the domain.
+
+8. Use tracking domain while sending messages.
 
 ## Additional Resources for Content Delivery Networks
 
