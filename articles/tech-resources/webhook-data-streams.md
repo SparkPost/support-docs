@@ -3,7 +3,7 @@ title: "Best Practices for Managing Webhook Data Streams"
 description: "Spark Post and Spark Post Enterprise provide data streams of raw event data via webhooks There are several points of consideration to take into account in order to ensure you correctly receive the event data This article details how our webhooks function so you can successfully set up your endpoint..."
 ---
 
-SparkPost and SparkPost Enterprise provide data streams of raw event data via webhooks. There are several points of consideration to take into account in order to ensure you correctly receive the event data. This article details how our webhooks function so you can successfully set up your endpoint to consume streamed event data. 
+SparkPost provides data streams of raw event data via webhooks. There are several points of consideration to take into account in order to ensure you correctly receive the event data. This article details how our webhooks function so you can successfully set up your endpoint to consume streamed event data. For more details on authentication and security see [Webhook Authentication]( https://www.sparkpost.com/docs/tech-resources/webhook-authentication/)
 
 ## Webhook Batch Sizes and Projections
 
