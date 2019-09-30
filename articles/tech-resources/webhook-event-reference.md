@@ -7,6 +7,8 @@ This is a reference guide for developers who are consuming SparkPost Webhook Eve
 
 There are several types of events that SparkPost is able to send which provide you data concerning your email's life cycle. They are organized by Event Types which contain various Events with each Event being composed of Event Properties. You can use the [SparkPost API Webhook Resource](https://developers.sparkpost.com/api/webhooks.html) to discover sample payloads of selected events, and the sample values and event descriptions. To list descriptions of the events, event types, and event fields that could be included in a Webhooks post to your target URL, run the following call in a REST API client like Postman: https://api.sparkpost.com/api/v1/webhooks/events/documentation
 
+Additional resources: [Webhook Authentication](https://www.sparkpost.com/docs/tech-resources/webhook-authentication/) and [Best Pratices for managing webhook streams](https://www.sparkpost.com/docs/tech-resources/webhook-data-streams/)
+
 ## Event Types
 
 Events which are sent from SparkPost webhooks are organized into different event types. Below is a table that provides you with a list of these event types and map containing each event which fall into their respective event types.
