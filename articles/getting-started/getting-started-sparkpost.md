@@ -146,6 +146,7 @@ curl -XPOST \
   -H "Content-Type: application/json" \
   -d "{"content": {"from": "us@mail.example.com", "subject": "A Great Email", "text": "With great things to say."}, "recipients": [{"address": "developers+started@sparkpost.com"}]}"
 ```
+The endpoint URL depends on your account region ([US, EU](https://developers.sparkpost.com/api/#header-endpoints)).
 
 ### Client Libraries
 
