@@ -143,7 +143,7 @@ For up to date information on creating a distribution via CloudFront, please ref
 
          ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_create_distribution_options.png) 
 
-6. Log into Sparkpost UI use the Sparkpost [Tracking Domain API](https://developers.sparkpost.com/api/tracking-domains/#tracking-domains).
+6. Log into SparkPost app use the SparkPost [Tracking Domain API](https://developers.sparkpost.com/api/tracking-domains/#tracking-domains).
 
 7. Add **custom tracking domain** and verify the domain.
 
