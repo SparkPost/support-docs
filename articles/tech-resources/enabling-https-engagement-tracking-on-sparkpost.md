@@ -149,6 +149,3 @@ For up to date information on creating a distribution via CloudFront, please ref
 
 8. Use tracking domain while sending messages.
 
-## Additional Resources for Content Delivery Networks
-
-For a list of CDN providers (any of which can integrate with SparkPost to enable HTTPS engagement tracking), this [page](http://www.cdn-advisor.com/articles/).
