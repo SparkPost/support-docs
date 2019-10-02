@@ -139,6 +139,7 @@ For up to date information on creating a distribution via CloudFront, please ref
     * At the bottom of the page, press **Create Distribution**.
     
         ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_create_distribution.png)
+
 5. On the **Create Distribution** page, in the dropdown menu next to **Cache Based on Selected Request Headers**, select "All."
 
       ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_create_distribution_options.png) 
@@ -148,4 +149,35 @@ For up to date information on creating a distribution via CloudFront, please ref
 7. Add **custom tracking domain** and verify the domain.
 
 8. Use tracking domain while sending messages.
+
+### Updating an Existing Domain on AWS CloudFront
+
+If you use AWS CloudFront to enable SSL engagement tracking, by default, CloudFront replaces the User-Agent header with "Amazon CloudFront," obscuring device and client information. To regain the device and client information, configure CloudFront to forward the original User-Agent header.
+
+1. Navigate to the CloudFront console.
+
+2. Click on your distribution's ID.
+
+      ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_edit_domain_distribution_id.png)
+
+3. Click on the "Behaviors" tab.
+        
+      ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_edit_domain_behaviors_tab.png)
+      
+4. Click on the checkmark next to the first item in the list.
+
+      ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_edit_domain_checkmark.png)
+      
+5. Click on the "Edit" button.
+
+      ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_edit_domain_edit_button.png)
+      
+6. In the dropdown next to "Cache Based on Selected Request Headers," select "All."
+
+      ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_edit_domain_cache_based_headers.png)
+
+7. At the bottom of the page, click on the "Yes, Edit" button.
+
+      ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_edit_domain_yes_edit_button.png)
+
 
