@@ -3,6 +3,8 @@ title: "SparkPost Change Log"
 description: "A running log of what's new, what's been fixed, and what's been changed in SparkPost."
 ---
 
+## This change log is being deprecated ## 
+
 ## January 17, 2019
 ### What's New?
 
