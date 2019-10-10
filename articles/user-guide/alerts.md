@@ -66,7 +66,7 @@ If you are starting out with alerts, we recommend a few basic ones to start with
 
 * Monthly Sending Limit alert at 80%, this will let you know when you are near overage pricing for your plan.
 * Health Score alert tracking Week of Week change of 10%, this would indicate an upcoming engagement and performance change.
-* Block Bounce Rate above 20%, for an immidiate warning of current deliverability issues.
+* Block Bounce Rate above 10%, for an immidiate warning of current deliverability issues.
 
 ## Mailbox Providers
 These are the Mailbox Provider options you can filter by and what domains they cover.
