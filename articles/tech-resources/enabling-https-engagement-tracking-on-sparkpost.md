@@ -185,11 +185,11 @@ If you use AWS CloudFront to enable SSL engagement tracking, by default, CloudFr
 
 Sign up for Fastly or log in to an existing account.
 
-1. Click Configure on the Dashboard.
-2. Click the gear icon to open the Manage Service menu and click Create.
+1. Click **Configure** on the Dashboard.
+2. Click the gear icon to open the **Manage Service** menu and click **Create**.
 
 Set the options as follows:
 
 Server address and port: For SparkPost US, this would be `spgo.io :  443`; for SparkPost EU, this would be `eu.spgo.io : 443`
 Domain: Your click tracking domain, e.g. `click.business.com`
-Description: Sparkpost (or whatever you like!)
+Description: SparkPost (or whatever you like!)
