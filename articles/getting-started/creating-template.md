@@ -29,6 +29,7 @@ Creating a template using the SparkPost app is simple. To get started, let's go 
 
 1. **Make a new template:** Click on the **Create Template** button to open the SparkPost template editor.
 
+    ![Create New Template top](media/creating-template/New Template List Page.png)
     ![Create New Template top](media/creating-template/create-a-template-top.png)
 
 1. **Name your template:** Input a human-friendly name for your template in the "Template Name" field. This field will *not* be displayed to recipients.
