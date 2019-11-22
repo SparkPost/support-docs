@@ -3,7 +3,6 @@ title: "Getting Started with our Automated IP Warmup Feature"
 description: "A guide to knowing when Automated IP Warmup is right for you and how to use it"
 ---
 
-## IP Warm-up Definition
 IP warming is the process of methodically adding campaign volume week-over-week to a new IP Address to establish a positive sending reputation with Internet Services Providers (ISPs). Our Automated IP Warmup feature provides a stage-based approach to limit sending volumes while you're building a reputation for your new IP. For a great introduction into the theory behind IP Warm-up as well as an expanded article on best practices, visit the [original IP Warm-up Knowledge Article](https://www.sparkpost.com/docs/deliverability/ip-warm-up-overview/).
 
 
@@ -35,7 +34,7 @@ Auto IP Warm up works by guiding new IPs through several stages until they are r
 
 When you enable Auto IP Warm Up for an IP address (enabled automatically for newly purchased or assigned IPs) the IP will be set to Stage 1. Once you start sending traffic through the IP pool that contains the IP you're warming up, we’ll include the cold IP in the sending selection process up to the maximum number of emails for that stage. Our current schedule is based on best practices that we’ve had success with over the years. Each day, we’ll check to see if your new IP successfully delivered more than 90% of the traffic for that stage. If so, voila! Your IP will progress to the next stage and be able to send additional traffic the next day. If the IP didn’t reach the stage threshold, it will be held at the current stage but will still be able to send traffic the following day. 
 
-If enough traffic isn’t sent across the cold IP to progress through all the stages, don’t worry. Once the IP is at a comfortable position with your warm-up (where future traffic is expected to be less than double of the current stage) you’re clear to disable Automated IP Warmup. This IP will then be included, without restriction, in the normal IP selection process for that pool. **If you forget to disable Automated IP Warmup when your IP is warmed, we'll automatically disable Warmup if the IP has a stage > 1 and hasn't progressed to a new stage in the last 10 days.**
+If enough traffic isn’t sent across the cold IP to progress through all the stages, don’t worry. Once the IP is at a comfortable position with your warm-up (where future traffic is expected to be less than double of the current stage) you’re clear to disable Automated IP Warmup. This IP will then be included, without restriction, in the normal IP selection process for that pool. We'll automatically disable Warmup if the IP has a stage > 1 and hasn't progressed to a new stage in the last 10 days so that there are no surprises if you forget to turn the feature off. 
 
 
 
