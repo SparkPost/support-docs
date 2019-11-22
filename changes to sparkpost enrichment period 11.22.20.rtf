@@ -1,0 +1,94 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1671\cocoasubrtf600
+{\fonttbl\f0\fswiss\fcharset0 Arial-BoldMT;\f1\froman\fcharset0 Times-Roman;\f2\fswiss\fcharset0 ArialMT;
+}
+{\colortbl;\red255\green255\blue255;\red18\green31\blue60;\red255\green255\blue255;\red0\green0\blue0;
+\red16\green60\blue192;}
+{\*\expandedcolortbl;;\cssrgb\c9020\c16863\c30196;\cssrgb\c100000\c100000\c100000;\cssrgb\c0\c0\c0;
+\cssrgb\c6667\c33333\c80000;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid1\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}}
+\margl1440\margr1440\vieww28600\viewh15640\viewkind0
+\deftab720
+\pard\pardeftab720\sl380\partightenfactor0
+
+\f0\b\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Changes to SparkPost\'92s \'93Enrichment\'94 period for open and click events
+\f1\b0\fs24 \cf4 \strokec4 \
+\pard\pardeftab720\sl320\partightenfactor0
+\cf4 \'a0\
+\pard\pardeftab720\sl380\partightenfactor0
+
+\f2\fs28 \cf2 \strokec2 SparkPost processes over half a trillion email events a month, billions per day, which power Signals Analytics reports, Event Webhooks, and the Events API. SparkPost\'92s Enrichment is a process that adds metadata fields to engagement events (opens and clicks as well as unsubscribes and spam complaints) by looking up this metadata from the original delivery event, which is stored in a large database. SparkPost introduced this enrichment process several years ago so that we could reduce the length of tracking links, and up to now, we enriched engagement events for messages that were delivered up to one (1) year prior. Effective, January 18, 2020, SparkPost is reducing this enrichment period to 60 days in order to improve the performance and reliability of our data processing services.
+\f1\fs24 \cf4 \strokec4 \
+\pard\pardeftab720\sl320\partightenfactor0
+\cf4 \'a0\
+\pard\pardeftab720\sl380\partightenfactor0
+
+\f2\fs28 \cf2 \strokec2 This change will have no impact on the processing or recording of engagement events - even those events that occur many months after the original message was sent. However, when these types of events are recorded on messages that were sent more than 60 days ago, some data elements - the \'93enriched\'94 data fields - will not be present, specifically:\'a0
+\f1\fs24 \cf4 \strokec4 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl380\partightenfactor0
+\ls1\ilvl0
+\f2\fs28 \cf2 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 campaign_id\'a0\uc0\u8232 \cb1 \
+\ls1\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 subject\uc0\u8232 \cb1 \
+\ls1\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 ip_pool & sending_ip\uc0\u8232 \cb1 \
+\ls1\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 rcpt_meta & rcpt_tags\'a0\uc0\u8232 \cb1 \
+\ls1\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 routing_domain\uc0\u8232 \cb1 \
+\ls1\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 sending_domain\uc0\u8232 \cb1 \
+\ls1\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 template_id and template_verison\uc0\u8232 \cb1 \
+\pard\pardeftab720\sl320\partightenfactor0
+
+\f1\fs24 \cf4 \cb3 \strokec4 \'a0\
+\pard\pardeftab720\sl380\partightenfactor0
+
+\f2\fs28 \cf2 \strokec2 This change has no impact on the collection and reporting on any other field within these events including IP address, GeoIP, or user agent since these fields are captured at the time the open and click event occurs.\'a0
+\f1\fs24 \cf4 \strokec4 \
+\pard\pardeftab720\sl320\partightenfactor0
+\cf4 \'a0\
+\pard\pardeftab720\sl380\partightenfactor0
+
+\f0\b\fs28 \cf2 \strokec2 Customer Impact
+\f1\b0\fs24 \cf4 \strokec4 \
+\pard\pardeftab720\sl320\partightenfactor0
+\cf4 \'a0\
+\pard\pardeftab720\sl380\partightenfactor0
+
+\f2\fs28 \cf2 \strokec2 For most customers, this change will have little to no impact because our data shows that on average, 98% of opens and clicks (and other engagement events) happen within 60 days of an email being sent. The actual percentage of open and click events that happen more than 60 days after sending will vary from customer to customer depending on how recipients engage with older emails.
+\f1\fs24 \cf4 \strokec4 \
+\pard\pardeftab720\sl320\partightenfactor0
+\cf4 \'a0\
+\pard\pardeftab720\sl380\partightenfactor0
+
+\f2\fs28 \cf2 \strokec2 For engagement events on messages older than 60 days, customers may notice a difference in the SparkPost Summary Report 
+\f0\b only when filtering on Campaign, Template, IP Pool or Sending IP
+\f2\b0 .\'a0 For example, when using the Summary Report to assess Open Rate or Click Count for a given IP pool, the metrics will show slightly lower numbers since only opens and clicks from messages sent more than 60 days ago will be included. Reporting on engagement by account or subaccount will not be affected - the change is only seen when filtering. The Health Score and Engagement Recently reports are also not affected by this change.
+\f1\fs24 \cf4 \strokec4 \
+\pard\pardeftab720\sl320\partightenfactor0
+\cf4 \'a0\
+\pard\pardeftab720\sl380\partightenfactor0
+
+\f0\b\fs28 \cf2 \strokec2 A Note on Raw Event Data
+\f1\b0\fs24 \cf4 \strokec4 \
+\pard\pardeftab720\sl380\partightenfactor0
+
+\f2\fs28 \cf2 \strokec2 For engagement events that are triggered from emails sent more than 60 days ago, the events will continue to be processed and be available to customers through Event Webhooks and the Events API.\'a0 We will provide the same number of events, but the \'93enriched\'94 data fields will not be present for those events.\'a0
+\f1\fs24 \cf4 \strokec4 \
+\pard\pardeftab720\sl320\partightenfactor0
+\cf4 \'a0\
+\pard\pardeftab720\sl380\partightenfactor0
+
+\f2\fs28 \cf2 \strokec2 Customers consuming Event Webhooks and the Events API should already have processes in place to handle a small percentage of older events that are logged without these \'93enriched\'94 data fields so it is unlikely any code changes are needed, however, this is a good time to check. As always, please follow our {\field{\*\fldinst{HYPERLINK "https://www.sparkpost.com/docs/tech-resources/webhook-data-streams/"}}{\fldrslt \cf5 \ul \ulc5 \strokec5 documented recommendations}} for processing webhooks which include avoiding any synchronous processing of the batches since this is the single most important step to ensure you do not miss any data.\'a0\'a0\'a0
+\f1\fs24 \cf4 \strokec4 \
+\pard\pardeftab720\sl320\partightenfactor0
+\cf4 \'a0\
+\pard\pardeftab720\sl380\partightenfactor0
+
+\f2\fs28 \cf2 \strokec2 This change will go into effect on Monday, January 18, 2020. For Enterprise and Premium customers, your TAM or CSM can share more details with you on the expected percentage of engagement events that may fall out of the 60-day window.
+\f1\fs24 \cf4 \strokec4 \
+}
