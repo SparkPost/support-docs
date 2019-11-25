@@ -1,6 +1,6 @@
 ---
 title: "Changes to SparkPost’s “Enrichment” period for open and click events"
-description: "notification of changes to enrichment period for all SPC users"
+description: " Information on changes to enrichment period for all SparkPost users"
 ---
 
 SparkPost processes over half a trillion email events a month, billions per day, which power SparkPost Signals<sup>TM</sup>  Analytics reports, Event Webhooks, and the Events API. SparkPost’s Enrichment is a process that adds metadata fields to engagement events (opens and clicks as well as unsubscribes and spam complaints) by looking up this metadata from the original delivery event, which is stored in a large database. SparkPost introduced this enrichment process several years ago so that we could reduce the length of tracking links, and up to now, we enriched engagement events for messages that were delivered up to one (1) year prior. Effective, January 18, 2020, SparkPost is reducing this enrichment period to 60 days in order to improve the performance and reliability of our data processing services.
