@@ -17,7 +17,7 @@ If you need an example of the format for your CSV file, select a sample to downl
 
 You may upload tags and additional information for a given recipient if required - but it is not essential. A list of correctly formatted email addresses is also acceptable. You can also edit an existing recipient list by uploading a new file to an existing label (list name).
 
-**Note:** The maximum supported size of a recipient list .csv file is **2GB**.
+**Note:** The maximum supported size of a recipient list .csv file is **10MB**.
 
 ## Editing an Existing Recipient List
 

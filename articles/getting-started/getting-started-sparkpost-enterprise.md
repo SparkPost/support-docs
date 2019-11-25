@@ -34,7 +34,7 @@ Examples:
     * Example: "binding" : "marketing"
 * Sizing considerations for multiple recipient transmissions:
     * ​5,000 - 10,000 recipients per transmission call is the recommended range for maximizing performance and efficiency.
-    * There is a 2GB limit on payload size for each transmission, but we recommend keeping a payload size no greater than 1GB.
+    * There is a 300MB limit on payload size for each transmission, but we recommend keeping a payload size no greater than 50MB.
     * Performance of the transmission API is better when there are more transmissions and fewer recipients per transmission. Five transmissions of 10,000 recipients generally has better throughput than one transmission with 50,000 recipients.
     * We recommend you inject transmissions in parallel with up to 50 open concurrent connections.
 
