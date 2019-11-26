@@ -29,4 +29,4 @@ For engagement events that are triggered from emails sent more than 60 days ago,
 
 Customers consuming Event Webhooks and the Events API should already have processes in place to handle a small percentage of older events that are logged without these “enriched” data fields so it is unlikely any code changes are needed, however, this is a good time to check. As always, please follow our [documented recommendations](https://www.sparkpost.com/docs/tech-resources/webhook-data-streams/) for processing webhooks which include avoiding any synchronous processing of the batches since this is the single most important step to ensure you do not miss any data.   
 
-This change will go into effect on Monday, January 18, 2020. For Enterprise and Premium customers, your TAM or CSM can share more details with you on the expected percentage of engagement events that may fall out of the 60-day window.
+For Enterprise and Premium customers, your TAM or CSM can share more details with you on the expected percentage of engagement events that may fall out of the 60-day window.
