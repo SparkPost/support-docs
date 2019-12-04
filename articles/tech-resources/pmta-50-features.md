@@ -13,34 +13,34 @@ The PMTA 5.0 Web Monitor contains six key improvements features that we think ma
 
 1. Autocomplete support on “commands” tab to help guide the customer
 
-![PMTA Commands](media/pmta50features/pmtacommands.gif)
+![](media/pmta50features/pmtacommands.gif)
 
 2. Config option to limit access to log file downloads tab
 
-![LimitLogs](media/pmta50features/configlimitlog.png)
+![](media/pmta50features/configlimitlog.png)
 
 3. Config option for changing the # of items per page and sort order
 
-![Sort Config](media/pmta50features/defaultsortconfig.jpg)
+![](media/pmta50features/defaultsortconfig.jpg)
 
 4. Sorting of table headers to give more control over data visualizations
 
-![Sort Columns](media/pmta50features/sortcolumns.gif)
+![](media/pmta50features/sortcolumns.gif)
 
 5. Improvements to the Configuration Edit page
 
-![Config Edit](media/pmta50features/configedit.gif)
+![](media/pmta50features/configedit.gif)
 
 6. Host name displays in the tab at the top of the browser for faster navigation between multiple PMTA instances.
 
-![hostnametab](media/pmta50features/hostnametab.jpg)
+![](media/pmta50features/hostnametab.jpg)
 
 
 # SparkPost Signals Support 
 
 SparkPost [Signals](https://www.sparkpost.com/platform/signals/) is the world’s most powerful email analytics suite. We analyze data from our massive email footprint (SparkPost products and services collectively are used to send over 37% of the world’s B2C email) and use that knowledge to power your sending. PMTA now ships with a [connector](https://www.sparkpost.com/blog/deploy-sparkpost-signals-for-on-premises-part-1/) that, when enabled, allows logs to be sent to SparkPost for analysis. Compare your on-prem sending to that of many billions of emails a year to get the most out of your program. 
 
-![Signals](media/pmta50features/signals.gif)
+![](media/pmta50features/signals.gif)
 
 
 # Email Submissions via HTTP - REST Transmissions 
@@ -49,7 +49,7 @@ Customers can directly inject a JSON-preformatted email into PowerMTA using an H
 
 One of the great things this enables, is an easy set up of a hot:hot disaster recovery solution in combination with the SparkPost Cloud email delivery service. Since many of the API commands are identical to those in SparkPost Cloud, customers can set up two accounts for resiliency and switch between them nearly seamlessly. Not only that, but with SparkPost Cloud’s auto warm-up functionality, you don’t need to worry about reputational damage in connection with a fast switch during an outage. This is an easy win for teams working to find ways to improve their system’s robustness, save money compared to setting up redundant infrastructure, begin migrating to a cloud solution, or just explore what SparkPost Signals Analytics Suite is capable of without needing to learn an entirely new API. 
 
-![JSONtoEmail](media/pmta50features/jsontoemail.jpg)
+![](media/pmta50features/jsontoemail.jpg)
 
 
 # MX Rollup and Cold vMTA
@@ -60,26 +60,26 @@ Cold vMTA is a feature that’s used to warm cold IPs. It’s a feature designed
 
 Both MX Rollup and Cold vMTA are available in older versions of PMTA. The revision to this pair of features now allows the cold vMTA feature to be aware of any MX Rollup work going on behind the scenes. It helps protect cold IPs more by making sure that the _rolled up_ queue doesn’t have too many messages in it. This is especially useful in regions such as Europe where roll up can occur for dozens of domains. 
 
-![mxrollup](media/pmta50features/mxrollup.gif)
+![](media/pmta50features/mxrollup.gif)
 
 # JSON-Formatted outputs for PowerMTA monitoring commands
 
 New and seasoned developers alike are increasingly adopting JSON format over XML. By providing JSON-formatted outputs, PMTA data is easier to ingest, filter, graph, and generally consume than it would be otherwise. And operationally, working with JSON is easier and often cheaper than using XML.
 
-![json](media/pmta50features/jsonstatus.jpg)
+![](media/pmta50features/jsonstatus.jpg)
 
 # Outbound Proxy Support 
 
 PowerMTA supports the use of HAProxy protocol for outbound traffic. This allows customers to deploy all their source IPs on an external proxy server instead of being deployed on the individual PowerMTA nodes. The internal PowerMTA nodes will route their email through the correct source IP deployed on proxy node via the use of proxy protocol. This makes it very simple to load balance outbound traffic across multiple PowerMTA nodes. Likewise, if a node is taken down for whatever reason, users will still have access to their full range of IPs.
 
-![Proxy](media/pmta50features/HAProxy.jpg)
+![](media/pmta50features/HAProxy.jpg)
 
 
 # New User Guide
 
 A revised user guide is now available in HTML format. In addition to the improvements to the Web Monitor, having a User Guide available in a searchable .pdf viewer can make learning the ins-and-out of PMTA a breeze. This is valuable regardless of if you’re a new user just getting started or an experienced user looking to get the most out of PMTA. 
 
-![UserGuide](media/pmta50features/usersguide.gif)
+![](media/pmta50features/usersguide.gif)
 
 
 # Opportunistic DANE
@@ -91,5 +91,5 @@ DANE stands for DNS-Based Authentication of Named Entities and is now supported 
 
 Allows emails to be delivered from PowerMTA to a destination endpoint using HTTP/HTTPS. This makes implementing important enhancements such as unsubscribe hooks much easier. 
 
-![emailtojson](media/pmta50features/emailtojson.jpg)
+![](media/pmta50features/emailtojson.jpg)
 
