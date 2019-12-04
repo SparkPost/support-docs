@@ -15,25 +15,38 @@ The PMTA 5.0 Web Monitor contains six key improvements features that we think ma
 
 ![](media/pmta50features/PMTAcommands.gif)
 
+
+
 2. Config option to limit access to log file downloads tab
 
 ![](media/pmta50features/configLimitLogs.png)
+
+
 
 3. Config option for changing the # of items per page and sort order
 
 ![](media/pmta50features/DefaultSortConfig.JPG)
 
+
+
 4. Sorting of table headers to give more control over data visualizations
 
 ![](media/pmta50features/SortColumns.gif)
+
+
 
 5. Improvements to the Configuration Edit page
 
 ![](media/pmta50features/ConfigEdit.gif)
 
+
+
 6. Host name displays in the tab at the top of the browser for faster navigation between multiple PMTA instances.
 
 ![](media/pmta50features/HostnameTab.JPG)
+
+
+
 
 
 # SparkPost Signals Support 
@@ -43,6 +56,8 @@ SparkPost [Signals](https://www.sparkpost.com/platform/signals/) is the world’
 ![](media/pmta50features/Signals.gif)
 
 
+
+
 # Email Submissions via HTTP - REST Transmissions 
 
 Customers can directly inject a JSON-preformatted email into PowerMTA using an HTTP REST API interface. This makes it easier to integrate email submission into existing web applications without necessarily having to change context to SMTP to submit messages in to PowerMTA.
@@ -50,6 +65,8 @@ Customers can directly inject a JSON-preformatted email into PowerMTA using an H
 One of the great things this enables, is an easy set up of a hot:hot disaster recovery solution in combination with the SparkPost Cloud email delivery service. Since many of the API commands are identical to those in SparkPost Cloud, customers can set up two accounts for resiliency and switch between them nearly seamlessly. Not only that, but with SparkPost Cloud’s auto warm-up functionality, you don’t need to worry about reputational damage in connection with a fast switch during an outage. This is an easy win for teams working to find ways to improve their system’s robustness, save money compared to setting up redundant infrastructure, begin migrating to a cloud solution, or just explore what SparkPost Signals Analytics Suite is capable of without needing to learn an entirely new API. 
 
 ![](media/pmta50features/JSONtoEmail.JPG)
+
+
 
 
 # MX Rollup and Cold vMTA
@@ -62,17 +79,23 @@ Both MX Rollup and Cold vMTA are available in older versions of PMTA. The revisi
 
 ![](media/pmta50features/MXrolllup.gif)
 
+
+
 # JSON-Formatted outputs for PowerMTA monitoring commands
 
 New and seasoned developers alike are increasingly adopting JSON format over XML. By providing JSON-formatted outputs, PMTA data is easier to ingest, filter, graph, and generally consume than it would be otherwise. And operationally, working with JSON is easier and often cheaper than using XML.
 
 ![](media/pmta50features/JSONstatus.JPG)
 
+
+
 # Outbound Proxy Support 
 
 PowerMTA supports the use of HAProxy protocol for outbound traffic. This allows customers to deploy all their source IPs on an external proxy server instead of being deployed on the individual PowerMTA nodes. The internal PowerMTA nodes will route their email through the correct source IP deployed on proxy node via the use of proxy protocol. This makes it very simple to load balance outbound traffic across multiple PowerMTA nodes. Likewise, if a node is taken down for whatever reason, users will still have access to their full range of IPs.
 
 ![](media/pmta50features/HAProxy.JPG)
+
+
 
 
 # New User Guide
@@ -82,9 +105,12 @@ A revised user guide is now available in HTML format. In addition to the improve
 ![](media/pmta50features/UsersGuide.gif)
 
 
+
+
 # Opportunistic DANE
 
 DANE stands for DNS-Based Authentication of Named Entities and is now supported by PMTA. It is defined in RFC 7672 and allows digital certificates commonly used for TLS to be bound to domain names. This means that a domain owner is able to specify which Certificate Authorities (CA) are allowed to issue a certificate for a particular resource - combatting the abusive practice where a CA issues certificates for a domain that doesn’t belong to the requesting party. 
+
 
 
 # HTTP Delivery Webhooks
@@ -92,4 +118,6 @@ DANE stands for DNS-Based Authentication of Named Entities and is now supported 
 Allows emails to be delivered from PowerMTA to a destination endpoint using HTTP/HTTPS. This makes implementing important enhancements such as unsubscribe hooks much easier. 
 
 ![](media/pmta50features/emailtoJSON.JPG)
+
+
 
