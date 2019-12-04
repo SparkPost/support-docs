@@ -13,7 +13,7 @@ The PMTA 5.0 Web Monitor contains six key improvements features that we think ma
 
 1. Autocomplete support on “commands” tab to help guide the customer
 
-![](media/pmta50features/pmtacommands.gif)
+![](./media/pmta50features/pmtacommands.gif)
 
 2. Config option to limit access to log file downloads tab
 
