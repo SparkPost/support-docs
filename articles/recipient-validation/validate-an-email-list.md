@@ -13,7 +13,7 @@ Before uploading your list, make sure it fits the following conditions:
 * The file type is `.csv` or `.txt`
 * The file does not contain a header row
 * Each line should contain a single email address, with no additional columns
-* Your file should be under the maximum size of `200MB`
+* Your file should be under the maximum size of `20MB`
 
 Below is an example of a valid file to upload:
 
