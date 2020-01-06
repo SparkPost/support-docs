@@ -3,7 +3,7 @@ title: "Alerts"
 description: "Automated alerting about what matters as it happens."
 ---
 
-Alerts track important sending metrics and notify you when something is wrong in real-time. Track your entire account or a few critical resources with powerful filtering and receive notifications through email, Slack, and webhooks.
+Alerts track important sending metrics and notify you when something is wrong in real-time. Track your entire account or a few critical resources with powerful filtering and receive notifications through email, Slack, and webhooks. You can get started from the [Alerts page](https://app.sparkpost.com/alerts)([EU](https://app.eu.sparkpost.com/alerts)).
 
 ## Metrics to Track
 You can set up alerts to track the following metrics:
@@ -14,7 +14,7 @@ You can set up alerts to track the following metrics:
 * Monthly Sending Limit
 * Health Score
 
-## Notify
+## Notification Channels
 Alerts can send notifications through these channels:
 
 * Email - notify up to 10 email addresses
@@ -26,14 +26,14 @@ No need to pick just one, every alert can notify on multiple channels.
 ## Custom Thresholds and Filters
 Pick trigger thresholds that make sense for you and get specific with which resources to track. Each alert metric supports a different type of trigger threshold and types of filters you can use.
 
-### Bounce Rate Metrics
+### Bounce Rates
 Bounce rate alerts trigger above percentage of your choice. Filter what the alert tracks by:
 * Subaccounts: Track Master and all subaccounts, any subaccount, or specific subaccounts.
 * Sending Domains
 * Sending IPs
 * Mailbox Providers: Pick popular mailbox providers from [this list](#mailbox-providers).
 
-### Health Score Metric
+### Health Score
 Health Score alerts trigger on your choice of:
 * Value: Above or below a specific score from 0 to 100.
 * Day over Day change: A percent change from one day to next, positive or negative.
@@ -54,7 +54,9 @@ Monthly sending limit alerts trigger when your usage hits a specified percentage
 How alerts track your metrics and when they send notifications.
 
 ### Triggers and Incidents
-An alert triggers when the metric it tracks breaks the threshold you set. When an alert triggers for the first time, an incident is created. **Alerts send notifications when a new incident is created.** Incidents remain open until the alert doesn't trigger again for at least 30 mintues. If a metric continues to trigger while an incident is open, the incident will be updated to reflect the metric's value, but notifications will not be sent. Incidents can be open and updated for up to 24 hours. If a metric continues trigger past 24 hours, the alert will create a new incident and send notifications again.
+An alert triggers when the metric it tracks breaks the threshold you set. When an alert triggers for the first time, an incident is created. **Alerts send notifications when a new incident is created.** You can see the most recent alerts that triggered from the [Alerts page](https://app.sparkpost.com/alerts)([EU](https://app.eu.sparkpost.com/alerts)). Click on any alert to see it's active or closed incidents.
+
+Incidents remain open until the alert doesn't trigger again for at least 30 mintues. If a metric continues to trigger while an incident is open, the incident will be updated to reflect the metric's latest value, but notifications will not be sent. Incidents can be open and updated for up to 24 hours. If a metric continues trigger past 24 hours, the alert will create a new incident and send notifications again.
 
 **Alerts trigger and create individual incidents for each filter they track.** For example, if your alert tracks 2 sendings domains, up two 2 independent incidents could be open for the alert at any time. The subaccounts groups "Master and all subaccounts" and "Any subaccount" act as one filter each.
 
