@@ -1,9 +1,11 @@
 ---
-title: "Signals Integration Troubleshooting"
+title: "Signals Integration"
 description: "How to troubleshoot signals integration validation and batch errors."
 ---
 
-Your Signals integegration processes your sending data in batches of events. Each batch is validated to make sure it work with our analytics. You can see the results for each batch from the [Signals Integration page](https://app.sparkpost.com/signals/integration). This article outlines the possible issues the integration could have. Please reach out to your Technical Account Manager for support in solving issue with your integration.
+# Event Batches
+
+The Signals integegration processes your sending data in batches of events. Each batch is validated to make sure it works with our analytics. You can see the validation results for each batch from the [Signals Integration page](https://app.sparkpost.com/signals/integration). This article outlines the possible issues the integration could have. Please reach out to your Technical Account Manager for support in solving issue with your integration.
 
 ## Event Validation
 Each event inside a batch is validated to work with SparkPost. Events that fail validation are are dropped and do not affect the rest of the data. The number of invalid events is recorded for each batch. Reach out to your Technical Account Manager for help with recovering, fixing, and retrying events.
