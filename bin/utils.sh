@@ -15,14 +15,29 @@ DIRECTORY=""
 ALL_FLAG="false"
 CHANGED_FILES=""
 
-for arg in "$@"; do
-  shift
-  case "$arg" in
-    "--all") ALL_FLAG='true' ;;
-    "--directory") DIRECTORY=$@ ;;
-    "--type") WP_POST_TYPE=$@ ;;
-    "--tax") WP_CUSTOM_TAX=$@ ;;
-  esac
+for i in "$@"
+do
+case $i in
+    --directory=*)
+    DIRECTORY="${i#*=}"
+    shift
+    ;;
+    --type=*)
+    WP_POST_TYPE="${i#*=}"
+    shift
+    ;;
+    --tax=*)
+    WP_CUSTOM_TAX="${i#*=}"
+    shift
+    ;;
+    --all)
+    ALL_FLAG="true"
+    shift
+    ;;
+    *)
+      # unknown option
+    ;;
+esac
 done
 
 if [[ "$DIRECTORY" == "" ]] ; then
@@ -40,10 +55,10 @@ if [[ "$WP_CUSTOM_TAX" == "" ]] ; then
     exit 1
 fi
 
-if [ "$ALL_FLAG" == "true" ]; then
-  CHANGED_FILES=($(find $DIRECTORY -type f))
-else
+if [ "$ALL_FLAG" == "false" ]; then
   CHANGED_FILES=($(git diff --name-only $TRAVIS_COMMIT_RANGE -- $DIRECTORY))
+else
+  CHANGED_FILES=($(find $DIRECTORY -type f))
 fi
 
 
