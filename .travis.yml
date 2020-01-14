@@ -11,8 +11,10 @@ install:
 - sudo apt-get install jq
 - cd ./bin && npm install && cd ../
 script:
-- "./bin/deploy-categories.sh"
-- "./bin/deploy-articles.sh"
+- "./bin/deploy-categories.sh --directory='sparkpost' --type='support_article' --tax='support_category' --all"
+- "./bin/deploy-articles.sh --directory='sparkpost' --type='support_article' --tax='support_category' --all"
+- "./bin/deploy-categories.sh --directory='momentum' --type='momentum_article' --tax='momentum_category' --all"
+- "./bin/deploy-articles.sh --directory='momentum' --type='momentum_article' --tax='momentum_category' --all"
 addons:
   ssh_known_hosts:
   - 104.197.69.102
