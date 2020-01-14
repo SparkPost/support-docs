@@ -1,20 +1,33 @@
 #!/usr/bin/env bash
 #set -e
 
-WP_USER="${WP_USER:-Support}"
-WP_POST_TYPE="${WP_POST_TYPE:-support_article}"
-WP_CUSTOM_TAX="${WP_CUSTOM_TAX:-support_category}"
-
 COLOR_RED="\033[1;31m"
 COLOR_GREEN="\033[1;32m"
 COLOR_BLUE="\033[0;36m"
 COLOR_NONE="\033[0m"
 NUMBER_PATTERN="^[0-9]+$"
 
-CHANGED_FILES=($(git diff --name-only $TRAVIS_COMMIT_RANGE -- ./articles))
+## Defaults
+WP_USER="${WP_USER:-Support}"
+WP_POST_TYPE="support_article"
+WP_CUSTOM_TAX="support_category"
+DIRECTORY="sparkpost"
+ALL_FLAG="false"
+CHANGED_FILES=""
 
-if [ "$1" == "--all" ]; then
-  CHANGED_FILES=($(find articles -type f))
+for arg in "$@"; do
+  shift
+  case "$arg" in
+    "--all") ALL_FLAG='TRUE' ;;
+    "--type") WP_POST_TYPE=$@ ;;
+    "--tax") WP_CUSTOM_TAX=$@ ;;
+  esac
+done
+
+if [ "$ALL_FLAG" == "true" ]; then
+  CHANGED_FILES=($(find $DIRECTORY -type f))
+else
+  CHANGED_FILES=($(git diff --name-only $TRAVIS_COMMIT_RANGE -- $DIRECTORY))
 fi
 
 function do_wp() {
