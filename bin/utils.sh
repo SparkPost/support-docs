@@ -9,26 +9,43 @@ NUMBER_PATTERN="^[0-9]+$"
 
 ## Defaults
 WP_USER="${WP_USER:-Support}"
-WP_POST_TYPE="support_article"
-WP_CUSTOM_TAX="support_category"
-DIRECTORY="sparkpost"
+WP_POST_TYPE=""
+WP_CUSTOM_TAX=""
+DIRECTORY=""
 ALL_FLAG="false"
 CHANGED_FILES=""
 
 for arg in "$@"; do
   shift
   case "$arg" in
-    "--all") ALL_FLAG='TRUE' ;;
+    "--all") ALL_FLAG='true' ;;
+    "--directory") DIRECTORY=$@ ;;
     "--type") WP_POST_TYPE=$@ ;;
     "--tax") WP_CUSTOM_TAX=$@ ;;
   esac
 done
+
+if [[ "$DIRECTORY" == "" ]] ; then
+    echo -e "${COLOR_RED}ERROR${COLOR_NONE}: --directory flag is required"
+    exit 1
+fi
+
+if [[ "$WP_POST_TYPE" == "" ]] ; then
+    echo -e "${COLOR_RED}ERROR${COLOR_NONE}: --type flag is required"
+    exit 1
+fi
+
+if [[ "$WP_CUSTOM_TAX" == "" ]] ; then
+    echo -e "${COLOR_RED}ERROR${COLOR_NONE}: --tax flag is required"
+    exit 1
+fi
 
 if [ "$ALL_FLAG" == "true" ]; then
   CHANGED_FILES=($(find $DIRECTORY -type f))
 else
   CHANGED_FILES=($(git diff --name-only $TRAVIS_COMMIT_RANGE -- $DIRECTORY))
 fi
+
 
 function do_wp() {
   if [ "$DEPLOY_ENV" == "DEVELOPMENT" ]; then
@@ -109,7 +126,7 @@ if [ -z "$WP_CONNECTION" ]; then
 fi
 
 # get the wordpress post stuff
-WP_POSTS=$(do_wp post list --post_type=$WP_POST_TYPE --format=json --fields=ID,post_name)
+WP_POSTS=$(do_wp post list --post_type="$WP_POST_TYPE" --format=json --fields=ID,post_name)
 WP_POST_SLUGS=($(echo "$WP_POSTS" | jq '.[].post_name' --raw-output))
 WP_POST_IDS=($(echo "$WP_POSTS" | jq '.[].ID' --raw-output))
 
