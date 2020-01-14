@@ -81,22 +81,6 @@ Run the following command to install the [Wordpress CLI](http://wp-cli.org/), [j
 ./bin/bootstrap.sh
 ```
 
-### Exporting from Desk
-
-Previously the SparkPost Support articles were hosted on Desk.com.
-
-Set the desk.com credentials to export the data:
-
-```bash
-export DESK_USERNAME=desk_email@domain.com
-export DESK_PASSWORD=desk_password
-```
-
-To export from desk run `npm run live`. To test this with pre-downloaded data run `npm run local`. At last run there are 25 topics which will be saved to the `/articles` folder.
-
-Each topic will be its own folder with an `index.md` file that defines the metadata about the topic pulled from desk. Each markdown file (other then `index.md`) is an article pulled from desk.com. The related media is stored in `/media` folder in the the folder with the corresponding name.
-
-
 ### Importing to WordPress
 
 To run the import locally you'll need to define a couple of environment variables. You can use the below values as a template:
