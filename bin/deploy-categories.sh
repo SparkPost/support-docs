@@ -10,7 +10,7 @@ for filepath in "${CHANGED_FILES[@]}"; do
 done
 CHANGED_DIRECTORIES=($(printf '%s\n' "${CHANGED_DIRECTORIES[@]}" | sort -u))
 
-print_section "do dem categories"
+print_section "Deploying categories"
 
 if [ ${#CHANGED_DIRECTORIES[@]} -eq 0 ]; then
   echo "No changes to be made"
@@ -52,7 +52,7 @@ for directory in "${CHANGED_DIRECTORIES[@]}"; do
 
   # somethin' broke
   if [ "-1" == "$wp_cat_index" ] && [ ! -f "$directory/index.md" ]; then
-    echo " - No index file and no category with $slug...idk what to do"
+    echo " - No index file and no category with $slug – unknown case"
   fi
 
   echo ""

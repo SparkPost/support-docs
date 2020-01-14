@@ -76,7 +76,7 @@ function generate_html() {
   echo "$(node bin/markdown.js "$filepath" "$replace_images_array" | jq '.html' --raw-output)"
 }
 
-print_section "now da articles"
+print_section "Deploying articles"
 
 if [ ${#CHANGED_FILES[@]} -eq 0 ]; then
   echo "No changes to be made"
@@ -196,7 +196,7 @@ for filepath in "${CHANGED_FILES[@]}"; do
 
   # somethin' broke
   if [ -z "$md_post" ] && [ "-1" == "$wp_post_index" ]; then
-    echo " - No post markdown and no ID with $slug...idk what to do"
+    echo " - No post markdown and no ID with $slug – unknown case"
   fi
 
   echo ""
