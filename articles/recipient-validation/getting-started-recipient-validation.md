@@ -31,9 +31,11 @@ The `result` field contains the overall status of this email. It will show the s
 
 | Result          | Description |
 | --------------- | --------------- |
-| `valid`         | The email address passed all checks, and you should send to it. |
+| `valid`         | Data indicates a delivery and/or engagement event associated with email address. You should send. |
+| `neutral`       | Data indicates no hard bounce, delivery, or engagement event associated with email address. |
 | `risky`         | The email address is risky to send to because it is suspected of hard bouncing. |
-| `undeliverable` | The email address is undeliverable because of a syntax issue, an invalid domain, or it doesn't exist. |
+| `undeliverable` | The email address is undeliverable because of hard bounces, syntax, invalid domain, or invalid recipient issue. |
+| `typo`          | The email address may have a misspelled domain. Please see did_you_mean for our best recommendation to correct |
 
 #### Reason
 
