@@ -13,7 +13,7 @@ A/B Testing | No | Yes (10 max)
 Alerting | Predefined | Custom
 Automated IP Warmup | No | Yes
 Dedicated IP | No | Yes (1 included; additional available for purchase)
-Event Search | 5 days | 10 days
+Event Search | Yes | Yes
 Inbound Email | No | Yes
 IP Pools | No | Yes
 Recipient Lists | Yes (10 max) | Yes
