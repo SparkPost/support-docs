@@ -39,7 +39,7 @@ The `result` field contains the overall status of this email. It will show the s
 | `neutral`       | Data indicates no hard bounce, delivery, or engagement event associated with email address. |
 | `risky`         | The email address is risky to send to because it is suspected of hard bouncing in the past. |
 | `undeliverable` | The email address is undeliverable because of hard bounces, syntax, invalid domain, or invalid recipient issue. |
-| `typo` | The email address may have a misspelled domain. Please see did_you_mean for our best recommendation to correct |
+| `typo`          | The email address may have a misspelled domain. Please see did_you_mean for our best recommendation to correct |
 
 #### Reason
 
