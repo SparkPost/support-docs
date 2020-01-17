@@ -39,7 +39,7 @@ The `result` field contains the overall status of this email. It will show the s
 | `neutral`       | Data indicates no hard bounce, delivery, or engagement event associated with email address. |
 | `risky`         | The email address is risky to send to because it is suspected of hard bouncing in the past. |
 | `undeliverable` | The email address is undeliverable because of hard bounces, syntax, invalid domain, or invalid recipient issue. |
-| `typo`          | The email address may have a misspelled domain. Please see did_you_mean for our best recommendation to correct |
+| `typo`          | The email address may have a misspelled domain. Please see did_you_mean for our best recommendation to correct. |
 
 #### Reason
 
@@ -47,9 +47,9 @@ Recipient Validation provides a `reason` field, which describes how it reached t
 
 | Reason               | Definition |
 |----------------------|---------------|
-| `Invalid Syntax`       | Given email is not valid email syntax |
-| `Invalid Domain`       | The domain does not exist or is not set up to receive email |
-| `Invalid Recipient`    | Email address does not exist, according to our data |
+| `Invalid Syntax`       | Given email is not valid email syntax. |
+| `Invalid Domain`       | The domain does not exist or is not set up to receive email. |
+| `Invalid Recipient`    | Email address does not exist, according to our data. |
 
 ### Did you mean?
 
