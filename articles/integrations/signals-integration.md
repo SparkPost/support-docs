@@ -21,4 +21,8 @@ Sometimes there can be processing issues with an entire batch. These are the bat
 
 # Custom Message ID
 
-If you use cutsom message IDs, the Singals integration will use that value to identify your events accross SparkPost. You can find your custom ID value in the `message_id` field of every event. You can search for specific events using the [Events Search](https://app.sparkpost.com/reports/message-events)([EU](https://app.eu.sparkpost.com/reports/message-events)) Message IDs filter.
+If you use cutsom IDs to track your emails, the Singals integration will use that value to identify your events accross SparkPost. You can find your custom ID value in the `message_id` field of every event. You can search for specific events using the [Events Search](https://app.sparkpost.com/reports/message-events)([EU](https://app.eu.sparkpost.com/reports/message-events)) Message IDs filter.
+
+# Anonymized Recipient Addresses
+
+The Signals integration allows you to anonymize recipient addresses in your sending data. When this feature is enabled, recipient addresses are hashed before being sent to SparkPost. These anonymized events will contain a `rcpt_hash` field with the hashed address instead of the normal `rcpt_to` & `raw_rcpt_to` field. You can search for anonymized events using the original address or the hash string through the [Events Search](https://app.sparkpost.com/reports/message-events)([EU](https://app.eu.sparkpost.com/reports/message-events)) Recipient Address filter. 
