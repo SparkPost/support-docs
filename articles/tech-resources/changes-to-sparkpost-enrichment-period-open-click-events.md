@@ -14,6 +14,7 @@ This change will have no impact on the processing or recording of engagement eve
   - routing_domain
   - sending_domain
   - template_id and template_verison
+  - transmission_id (doc update 2/10/220)
 
 This change has no impact on the collection and reporting on any other field within these events including IP address, GeoIP, or user agent since these fields are captured at the time the open and click event occurs. 
  
