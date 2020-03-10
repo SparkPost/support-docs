@@ -19,7 +19,9 @@ IP Pools | No | Yes
 Recipient Lists | Yes (10 max) | Yes
 Scheduled Send | Yes (3 days) | Yes (3 days)
 Sending Domains / Bounce Domains | Yes (10 max) | Yes (50 max)
-SSO/MFA | No | Yes
+SSO | No | Yes
+Account level 2FA/MFA | No | Yes
+User level 2FA/MFA | Yes | Yes
 Subaccounts | No | Yes (15 max)
 Templates | Yes (10 max) | Yes
 Template Snippets | Yes (10 max) | Yes
