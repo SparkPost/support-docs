@@ -57,7 +57,7 @@ To associate custom tracking domains to sending domains through the SparkPost us
 
 You can also configure custom tracking domains by using the SparkPost REST API.
 
-* [Creating a Tracking Domain](https://developers.sparkpost.com/api/tracking-domains.html#header-tracking-domains-attributes) 
+* [Creating a Tracking Domain](https://developers.sparkpost.com/api/tracking-domains/#tracking-domains-post-create-a-tracking-domain) 
 * [List all Tracking Domains](https://developers.sparkpost.com/api/tracking-domains.html#tracking-domains-create-and-list-get)
 * [Retrieve a Tracking Domain](https://developers.sparkpost.com/api/tracking-domains.html#tracking-domains-retrieve,-update,-and-delete-get)
 * [Verify a Tracking Domain](https://developers.sparkpost.com/api/tracking-domains.html#tracking-domains-verify-post)
