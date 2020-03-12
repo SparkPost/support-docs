@@ -28,4 +28,4 @@ On or before September 15, 2019, you will need to login to your SparkPost accoun
 
 ## Will you be increasing prices for other SparkPost features and services?
 
-Pricing and plan changes only apply to sending volume. Features or additional services such as [Recipient Validation](https://www.sparkpost.com/docs/tech-resources/recipient-validation-sparkpost/) and [Dedicated IPs](https://www.sparkpost.com/docs/deliverability/dedicated-ip-pools/) are not affected by this change. 
+Pricing and plan changes only apply to sending volume. The price of features or additional services such as [Recipient Validation](https://www.sparkpost.com/docs/tech-resources/recipient-validation-sparkpost/) and [Dedicated IPs](https://www.sparkpost.com/docs/deliverability/dedicated-ip-pools/) are not affected by this change - please do note that these features are not avialable with all messaging plans. Feature breakdown of the different plan tiers can be found [here](https://www.sparkpost.com/docs/faq/difference-between-starter-and-premier/). 
