@@ -11,7 +11,8 @@ install:
 - sudo apt-get install jq
 - cd ./bin && npm install && cd ../
 script:
-- "echo \"test\""
+- "./bin/deploy-categories.sh"
+- "./bin/deploy-articles.sh"
 addons:
   ssh_known_hosts:
   - 104.197.69.102
