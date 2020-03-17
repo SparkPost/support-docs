@@ -5,7 +5,7 @@ This repo contains the Markdown files for support articles published on https://
 
 ## Managing articles
 
-All support articles live in the `articles` folder. This folder has subfolders, one for each category (e.g. api, billing). The articles are formatted using [Markdown](https://daringfireball.net/projects/markdown/syntax). Each article contains a bit of YAML metadata at the top you can use to set the title and description:
+All support articles live in the `support` folder. This folder has subfolders, one for each category (e.g. api, billing). The articles are formatted using [Markdown](https://daringfireball.net/projects/markdown/syntax). Each article contains a bit of YAML metadata at the top you can use to set the title and description:
 
 ```yaml
 title: "Example Support Article"
@@ -19,7 +19,7 @@ The rest of the article content is written in plain Markdown, a simple syntax th
 The URL for each article is constructed based off the folders and filenames. The name of the folder is the category and the name of the file is the slug. For example, given the following structure:
 
 ```
-articles/integrations
+support/integrations
 ├── using-sparkpost-heroku-add-on.md
 └── using-templates-sparkpost-wordpress.md
 ```
@@ -31,10 +31,10 @@ You would have two articles published to the SparkPost website:
 
 ### Managing media
 
-Media should be placed in `articles/<category>/media/<slug>/`, where `category` is the name of the folder containing the article and `slug` is the name of the file without the `.md` extension. For example, the following structure shows an article in the category `api` with some media:
+Media should be placed in `support/<category>/media/<slug>/`, where `category` is the name of the folder containing the article and `slug` is the name of the file without the `.md` extension. For example, the following structure shows an article in the category `api` with some media:
 
 ```
-articles/api
+support/api
 ├── media
 │   └── managing-sending-domains
 │       └── some-image.png
@@ -92,7 +92,7 @@ export DESK_USERNAME=desk_email@domain.com
 export DESK_PASSWORD=desk_password
 ```
 
-To export from desk run `npm run live`. To test this with pre-downloaded data run `npm run local`. At last run there are 25 topics which will be saved to the `/articles` folder.
+To export from desk run `npm run live`. To test this with pre-downloaded data run `npm run local`. At last run there are 25 topics which will be saved to the `/support` folder.
 
 Each topic will be its own folder with an `index.md` file that defines the metadata about the topic pulled from desk. Each markdown file (other then `index.md`) is an article pulled from desk.com. The related media is stored in `/media` folder in the the folder with the corresponding name.
 
