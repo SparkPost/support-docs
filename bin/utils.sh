@@ -11,10 +11,10 @@ COLOR_BLUE="\033[0;36m"
 COLOR_NONE="\033[0m"
 NUMBER_PATTERN="^[0-9]+$"
 
-CHANGED_FILES=($(git diff --name-only $TRAVIS_COMMIT_RANGE -- ./articles))
+CHANGED_FILES=($(git diff --name-only $TRAVIS_COMMIT_RANGE -- ./support))
 
 if [ "$1" == "--all" ]; then
-  CHANGED_FILES=($(find articles -type f))
+  CHANGED_FILES=($(find support -type f))
 fi
 
 function do_wp() {
