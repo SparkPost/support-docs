@@ -33,14 +33,24 @@ else
   if [[ "$navigation_file_exists" == "true" ]] && [[ "$navigation_option_exists" == "false" ]]; then
     echo " - Creating navigation option"
     json="$(./bin/node_modules/.bin/js-yaml "$filepath")"
-    echo " - $(do_wp option add "${DIRECTORY}_article_navigation" "$json")"
+    if []; then
+      echo -e "Error deploying navigation for "
+      exit 1
+    fi
+    echo $json
+    # echo " - $(do_wp option add "${DIRECTORY}_article_navigation" "$json")"
   fi
 
   # if we have the file and we have the option - update
   if [[ "$navigation_file_exists" == "true" ]] && [[ "$navigation_option_exists" == "true" ]]; then
     echo " - Updating navigation option"
     json="$(./bin/node_modules/.bin/js-yaml "$filepath")"
-    echo " - $(do_wp option update "${DIRECTORY}_article_navigation" "$json")"
+    if []; then
+      echo -e "Error deploying navigation for "
+      exit 1
+    fi
+    echo $json
+    # echo " - $(do_wp option update "${DIRECTORY}_article_navigation" "$json")"
   fi
 
   # if we don't have file and we have the option - delete

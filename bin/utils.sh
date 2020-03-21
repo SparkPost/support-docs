@@ -150,6 +150,8 @@ WP_CATEGORIES=$(do_wp term list "$WP_CUSTOM_TAX" --format=json --fields=term_id,
 WP_CATEGORY_SLUGS=($(echo "$WP_CATEGORIES" | jq '.[].slug' --raw-output))
 WP_CATEGORY_IDS=($(echo "$WP_CATEGORIES" | jq '.[].term_id' --raw-output))
 
+# get the currently stored yaml navigation option
+WP_NAVIGATION_OPTION=$(do_wp option get "${DIRECTORY}_article_navigation")
 
 # refresh the categories cache – used for when we create a parent and child category in the same PR
 function refresh_categories() {

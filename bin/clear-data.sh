@@ -7,8 +7,11 @@ select yn in "Yes" "No"; do
     esac
 done
 
-source utils.sh
+source ./bin/utils.sh
 echo "Deleting articles, categories, and related media."
+
+# delete the navigation
+echo " - $(do_wp option delete "${DIRECTORY}_article_navigation")"
 
 # delete the categories
 for category_id in "${WP_CATEGORY_IDS[@]}"; do
