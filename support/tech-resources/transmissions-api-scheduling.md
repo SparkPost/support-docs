@@ -34,7 +34,7 @@ curl -X POST \
 
 ## Cancelling Scheduled Transmissions
 
-If you schedule a transmission and later decide that you do not want to send it, then you can cancel it. The Transmissions API allows you to cancel scheduled transmissions by campaign ID. Simply make a `DELETE` request to the Transmissions API, providing the `campaign_id` as a query parameter. If you want to cancel a transmission scheduled by a subaccount, then you must make the request as the subaccount. You can do this by using one of the subaccount's API keys or by specifying the `X-MSYS-SUBACCOUNT` header as the master account. Here is an example of cancelling all scheduled transmissions in the `new_year` campaign:
+If you schedule a transmission and later decide that you do not want to send it, then you can cancel it. The Transmissions API allows you to cancel scheduled transmissions by campaign ID. Simply make a `DELETE` request to the Transmissions API, providing the `campaign_id` as a query parameter. If you want to cancel a transmission scheduled by a subaccount, then you must make the request as the subaccount. You can do this by using one of the subaccount's API keys or by setting the `X-MSYS-SUBACCOUNT` header to the subaccount's ID when using a master account's API key. Here is an example of cancelling all scheduled transmissions in the `new_year` campaign:
 
 ```bash
 curl -X DELETE \
@@ -42,7 +42,7 @@ curl -X DELETE \
   -H 'Authorization: <Your API key>'
 ```
 
-When you cancel transmissions, the API immediately returns a 204 response, and the cancellation process happens in the background. Normally, all messages will be cancelled in ten minutes or less. In some rare circumstances, it may take longer than that. For that reason, we highly recommend that you cancel scheduled transmissions far in advance of their scheduled delivery times.
+When you cancel transmissions, the API immediately returns a 204 response, and the cancellation process happens asynchronously. Normally, all messages will be cancelled in ten minutes or less. In some rare circumstances, it may take longer than that. For that reason, we highly recommend that you cancel scheduled transmissions far in advance of their scheduled delivery times.
 
 When a message is cancelled, you will receive a bounce event with a reason of "554 5.7.1 [internal] Campaign cancelled". You can use these bounce events to track which messages were cancelled. There are a few different places that you can view these events.
 
