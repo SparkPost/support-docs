@@ -88,4 +88,4 @@ curl -X GET \
 
 #### Using Event Webhooks
 
-You can also receive cancellation events via Event Webhooks. [Please click here to learn more about Event Webhooks](https://developers.sparkpost.com/api/webhooks/). 
+You can also receive cancellation events via Event Webhooks. [Click here to learn more about Event Webhooks](https://developers.sparkpost.com/api/webhooks/). 
