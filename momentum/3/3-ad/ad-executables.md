@@ -9,7 +9,6 @@ Find below a table of executables related to the adaptive module.
 
 <a name="ad.exectables.table"></a> 
 
-**Table B.1. adaptive executables**
 
 | Command/Description |
 | --- |
@@ -24,7 +23,6 @@ Find below a table of console commands related to the adaptive module.
 
 <a name="ad.console.table"></a> 
 
-**Table B.2. adaptive console commands**
 
 | Command/Description | Version |
 | --- | --- |

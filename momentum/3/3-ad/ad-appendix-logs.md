@@ -9,7 +9,6 @@ The following table shows the log entries at the various debug levels.
 
 <a name="ad.adaptive.log.entries.table"></a> 
 
-**Table C.1. adaptive log entries**
 
 | Error Level | Error Message | Action |
 | --- | --- | --- |
