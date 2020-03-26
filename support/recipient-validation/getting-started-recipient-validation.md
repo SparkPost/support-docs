@@ -3,21 +3,25 @@ title: "Getting Started with Recipient Validation"
 description: "Recipient Validation is an easy, efficient way to verify that email addresses are valid before you send."
 ---
 
-Send with confidence: Recipient Validation helps you remove bad email addresses before you send to them to protect your [sender reputation](https://www.sparkpost.com/email-deliverability-guide/sender-reputation/) so your emails land in the inbox. Powered by the world's largest email and analytics platform, Recipient Validation uses millions of data points to eliminate undeliverable and toxic addresses from your list.
+Send with confidence: Recipient Validation helps you remove bad email addresses before you send to them to protect your [sender reputation](https://www.sparkpost.com/email-deliverability-guide/sender-reputation/) so your emails land in the inbox. Powered by the world's largest email and analytics platform, Recipient Validation uses hundreds of millions of data points to eliminate undeliverable and toxic email addresses from your list.
 
 You can quickly [validate your email lists](./validate-an-email-list/) or [integrate Recipient Validation](./integration-guide/) into your sign up flow through the API.
 
 Recipient Validation is available to all SparkPost senders on the Starter plan and higher.
 
-## Validate an email list
+## Validate an email list in app
 
 Using Recipient Validation, you can quickly validate a list of email addresses. In addition to your regular [list hygiene](https://www.sparkpost.com/blog/sending-email-to-inactive-users/), you should be sure to verify your list when sending to recipients for the first time in a while, and when you migrate between email delivery providers.
 
 Learn how [to validate your list](./validate-an-email-list/).
 
+## Validate a single email address in app
+
+While in the SparkPost app, you can quickly validate a single email address for spot checking purposes. 
+
 ## Integrate the API
 
-You may want to add Recipient Validation when you first collect an email address. When you validate email addresses the moment you collect them, not only are you able to block undeliverable and low-quality addresses from making it past your digital front door. Additionally, you're able to catch your user's typos and recommend a correction, so your user isn't confused when they never get emails from you.
+You may want to add Recipient Validation when you first collect an email address. When you validate email addresses the moment you collect them, not only are you able to block undeliverable and risky addresses from making it past your digital front door. Additionally, you are able to catch your user's typos and recommend a correction, so your user isn't confused when they never get emails from you.
 
 [Learn how to protect your forms](./integration-guide/) with Recipient Validation.
 
@@ -27,13 +31,15 @@ Each recipient validation response comes back with information to help you decid
 
 ### Result
 
-The `result` field contains the overall status of this email. It will show the status of the email address as either `valid`, `risky`, or `undeliverable`. You should never send to addresses classified as `undeliverable`.
+The `result` field contains the overall status of this email. It will show the status of the email address as either `valid`, `neutral`, `risky`, `undeliverable`, or `typo`. You should never send to addresses classified as `undeliverable`.
 
 | Result          | Description |
 | --------------- | --------------- |
-| `valid`         | The email address passed all checks, and you should send to it. |
-| `risky`         | The email address is risky to send to because it is suspected of hard bouncing. |
-| `undeliverable` | The email address is undeliverable because of a syntax issue, an invalid domain, or it doesn't exist. |
+| `valid`         | Data indicates a delivery and/or engagement event associated with email address. You should send to it. |
+| `neutral`       | Data indicates no hard bounce, delivery, or engagement event associated with email address. |
+| `risky`         | The email address is risky to send to because it is suspected of hard bouncing in the past. |
+| `undeliverable` | The email address is undeliverable because of hard bounces, syntax, invalid domain, or invalid recipient issue. |
+| `typo`          | The email address may have a misspelled domain. Please see did_you_mean for our best recommendation to correct. |
 
 #### Reason
 
@@ -41,9 +47,9 @@ Recipient Validation provides a `reason` field, which describes how it reached t
 
 | Reason               | Definition |
 |----------------------|---------------|
-| `Invalid Syntax`       | Given email is not valid email syntax |
-| `Invalid Domain`       | The domain does not exist or is not set up to receive email |
-| `Invalid Recipient`    | Email address does not exist, according to our data |
+| `Invalid Syntax`       | Given email is not valid email syntax. |
+| `Invalid Domain`       | The domain does not exist or is not set up to receive email. |
+| `Invalid Recipient`    | Email address does not exist, according to our data. |
 
 ### Did you mean?
 

@@ -3,7 +3,7 @@ title: "Update on Pricing"
 description: "Information about pricing changes."
 ---
 
-On **July 15, 2019**, we notified SparkPost customers on the old SparkPost “Free” plan of changes to our [plans and pricing](https://www.sparkpost.com/pricing/). On or before **September 15, 2019**, any customer on an old “Free” plan will need to select from one of our currently available plans to continue using SparkPost. You can continue using SparkPost for free on our "Test" plan, with limits of 500 emails/month and 100 emails/day.
+On **July 15, 2019**, we notified SparkPost customers on the old SparkPost “Free” plan of changes to our [plans and pricing](https://www.sparkpost.com/pricing/). On or before **September 15, 2019**, any customer on an old “Free” plan will need to select from one of our currently available plans to continue using SparkPost. You can continue using SparkPost for free on our "Test" plan, with limits of 500 emails/month and 100 emails/day. 
 
 ## Why did we change our pricing?
 
@@ -28,4 +28,4 @@ On or before September 15, 2019, you will need to login to your SparkPost accoun
 
 ## Will you be increasing prices for other SparkPost features and services?
 
-Pricing and plan changes only apply to sending volume. Features or additional services such as [Recipient Validation](https://www.sparkpost.com/docs/tech-resources/recipient-validation-sparkpost/) and [Dedicated IPs](https://www.sparkpost.com/docs/deliverability/dedicated-ip-pools/) are not affected by this change. 
+Pricing and plan changes only apply to sending volume. Pricing of features or additional services such as [Recipient Validation](https://www.sparkpost.com/docs/tech-resources/recipient-validation-sparkpost/) and [Dedicated IPs](https://www.sparkpost.com/docs/deliverability/dedicated-ip-pools/) are not affected by this change. However, please do note that these features are not available with all messaging plans. Feature breakdown of the different plan tiers can be found [here](https://www.sparkpost.com/docs/faq/difference-between-starter-and-premier/). 

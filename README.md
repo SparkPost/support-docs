@@ -10,6 +10,7 @@ SparkPost documentation is located in the `support/` directory.
 
 Momentum documentation is located in the `momentum/` directory.
 
+
 All content is formatted in [Markdown](https://daringfireball.net/projects/markdown/syntax).
 
 * [SparkPost and Momentum documentation](#sparkpost-and-momentum-documentation)
@@ -74,7 +75,7 @@ description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do e
 
 ### Images and other media
 
-Images and other media should be placed in `articles/<category>/media/<slug>/`, where `category` is the name of the folder containing the article and `slug` is the name of the file without the `.md` extension. For example, the following structure shows an article in the category `api` with some media:
+Images and other media should be placed in `support/<category>/media/<slug>/`, where `category` is the name of the folder containing the article and `slug` is the name of the file without the `.md` extension. For example, the following structure shows an article in the category `api` with some media:
 
 ```
 support/api
@@ -188,7 +189,6 @@ export WP_DEVELOPMENT="/my_wp/path" # This needs to be set to the absolute path 
 export WP_USER="my.account@example.com" # Defaults to the Wordpress Support account
 export GITHUB_TOKEN="some_access_token" # This is set to raise the rate limiting to get the contributors
 ```
-
 
 ### Sync locally
 

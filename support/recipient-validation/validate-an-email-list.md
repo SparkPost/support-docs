@@ -21,8 +21,12 @@ Below is an example of a valid file to upload:
 harry.potter@hogwarts.edu
 hermione.granger@hogwarts.edu
 ron.weasley@howgarts.edu
-teachers@hogwarts.edu
-voldemort@hogwarts.edu
+albus.dumbledore@hogwarts.edu
+professors@hoggggwarts.edu
+hufflepuffs@hogwarts.com
+griphook@gringottsbank.com
+dobby@freehouseelf.me
+hewhomustnotbenamed@thedarkmark.me
 ```
 
 ## Validating a list
@@ -57,11 +61,16 @@ Here is the example of the validation results.
 
 ```
 email,valid,result,reason,is_role,is_disposable,is_free,did_you_mean
-harry.potter@hogwarts.edu,true,valid,,false,false,false,
-hermione.granger@hogwarts.edu,true,valid,,false,false,false,
-teachers@hogwarts.edu,true,valid,,true,false,false,
-voldemort@hogwarts.edu,false,undeliverable,Invalid Recipient,false,false,false,
-ron.weasley@howgarts.edu,false,undeliverable,Invalid Domain,false,false,false,
+harry.potter@hogwarts.edu, true, valid, false, false, false,
+hermione.granger@hogwarts.edu, true, valid, false, false, false,
+ron.weasley@howgarts.edu, true, typo, false, false, false, ron.weasley@hogwarts.edu,
+albus.dumbledore@hogwarts.edu, true, valid, false, false, false,
+professors@hoggggwarts.edu, true, typo, true, false, false, professors@hogwarts.edu,
+hufflepuffs@hogwarts.com, true, typo, true, false, false, hufflepuffs@hogwarts.edu,
+griphook@gringottsbank.com, true, neutral, false, false, false,
+dobby@freehouseelf.me, true, risky, false, false, false,
+hewhomustnotbenamed@thedarkmark.me, false, undeliverable, invalid_recipient, false, false, false
+
 ```
 
 

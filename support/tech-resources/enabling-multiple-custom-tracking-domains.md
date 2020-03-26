@@ -7,7 +7,7 @@ A tracking domain (also referred to as an "engagement tracking domain") is the d
 
 There is a system default tracking domain that is used for tracking if you choose not to configure a custom tracking domain. For SparkPost this is "spgo.io". For SparkPost EU this is "eu.spgo.io". For SparkPost Enterprise, it is the domain configured by your Technical Account Manager during onboarding. Once a single custom tracking domain is configured, it becomes the default and will be the tracking domain used for all of your messages. When you configure multiple tracking domains, you will associate each one with a sending domain and designate one as the default for any sending domains that don't have a tracking domain associated with it.
 
-To summarize, when a message is sent:
+To summarize, when a message is sent: 
 
 * If the sending domain has an associated tracking domain, that tracking domain will be used.
 * If the sending domain does not have an associated tracking domain, the designated default tracking domain will be used.
@@ -57,7 +57,7 @@ To associate custom tracking domains to sending domains through the SparkPost us
 
 You can also configure custom tracking domains by using the SparkPost REST API.
 
-* [Creating a Tracking Domain](https://developers.sparkpost.com/api/tracking-domains.html#header-tracking-domains-attributes) 
+* [Creating a Tracking Domain](https://developers.sparkpost.com/api/tracking-domains/#tracking-domains-post-create-a-tracking-domain) 
 * [List all Tracking Domains](https://developers.sparkpost.com/api/tracking-domains.html#tracking-domains-create-and-list-get)
 * [Retrieve a Tracking Domain](https://developers.sparkpost.com/api/tracking-domains.html#tracking-domains-retrieve,-update,-and-delete-get)
 * [Verify a Tracking Domain](https://developers.sparkpost.com/api/tracking-domains.html#tracking-domains-verify-post)

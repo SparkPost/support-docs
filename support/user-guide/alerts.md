@@ -1,6 +1,6 @@
 ---
 title: "Alerts"
-description: "Automated alerting about what matters as it happens."
+description: "Get notified about deliverability issues as they happen."
 ---
 
 Alerts track important sending metrics and notify you when something is wrong in real-time. Track your entire account or a few critical resources with powerful filtering and receive notifications through email, Slack, and webhooks. You can get started from the [Alerts page](https://app.sparkpost.com/alerts)([EU](https://app.eu.sparkpost.com/alerts)).
@@ -21,13 +21,13 @@ Alerts can send notifications through these channels:
 * Slack - using [incoming webhooks](https://api.slack.com/incoming-webhooks#create_a_webhook)
 * Webhooks - we'll send a [payload](#webhook-payload-sample) to your custom target URL
 
-No need to pick just one, every alert can notify on multiple channels.
+No need to pick just one, alerts can notify on multiple channels.
 
 ## Custom Thresholds and Filters
-Pick trigger thresholds that make sense for you and get specific with which resources to track. Each alert metric supports a different type of trigger threshold and types of filters you can use.
+Pick thresholds that make sense for you and specific resources to track. Each alert metric supports different type of thresholds and filters you can use.
 
 ### Bounce Rates
-Bounce rate alerts trigger above percentage of your choice. Filter what the alert tracks by:
+Bounce rate alerts trigger above a percentage of your choice. Filter what the alert tracks by:
 * Subaccounts: Track Master and all subaccounts, any subaccount, or specific subaccounts.
 * Sending Domains
 * Sending IPs
@@ -67,7 +67,7 @@ Alerts can be muted. If you're testing or want to silence an alert, mute it and 
 If you are starting out with alerts, we recommend a few basic ones to start with:
 
 * Monthly Sending Limit alert at 80%, this will let you know when you are near overage pricing for your plan.
-* Health Score alert tracking Week of Week change of 10%, this would indicate an upcoming engagement and performance change.
+* Health Score alert tracking Week over Week change of 10%, this would indicate an upcoming engagement and performance change.
 * Block Bounce Rate above 10%, for an immidiate warning of current deliverability issues.
 
 ## Mailbox Providers
