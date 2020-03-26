@@ -27,45 +27,45 @@ if [ -n "$WP_NAVIGATION_OPTION" ]; then
 fi
 
 
-# if [ "$navigation_file_was_changed" == "false" ]; then
-#   echo "No changes to be made"
-# else 
-#   # if we have the file but don't have the option - create
-#   if [[ "$navigation_file_exists" == "true" ]] && [[ "$navigation_option_exists" == "false" ]]; then
-#     echo " - Creating navigation option"
-#     json="$(./bin/node_modules/.bin/js-yaml "$filepath" 2>&1)"
-#     if [[ "$json" == *"YAMLException"* ]] || [[ "$json" == "null" ]]; then
-#       echo -e "\n${COLOR_RED}ERROR${COLOR_NONE}: Error parsing navigation.yml for ${DIRECTORY}/"
-#       exit 1
-#     fi
-#     echo " - $(trim "$(do_wp option add "${DIRECTORY}_article_navigation" << heredoc
-# $json
-# heredoc)")"
-#   fi
+if [ "$navigation_file_was_changed" == "false" ]; then
+  echo "No changes to be made"
+else 
+  # if we have the file but don't have the option - create
+  if [[ "$navigation_file_exists" == "true" ]] && [[ "$navigation_option_exists" == "false" ]]; then
+    echo " - Creating navigation option"
+    json="$(./bin/node_modules/.bin/js-yaml "$filepath" 2>&1)"
+    if [[ "$json" == *"YAMLException"* ]] || [[ "$json" == "null" ]]; then
+      echo -e "\n${COLOR_RED}ERROR${COLOR_NONE}: Error parsing navigation.yml for ${DIRECTORY}/"
+      exit 1
+    fi
+    echo " - $(trim "$(do_wp option add "${DIRECTORY}_article_navigation" << heredoc
+$json
+heredoc)")"
+  fi
 
-#   # if we have the file and we have the option - update
-#   if [[ "$navigation_file_exists" == "true" ]] && [[ "$navigation_option_exists" == "true" ]]; then
-#     echo " - Updating navigation option"
-#     json="$(./bin/node_modules/.bin/js-yaml "$filepath" 2>&1)"
-#     if [[ "$json" == *"YAMLException"* ]] || [[ "$json" == "null" ]]; then
-#       echo -e "\n${COLOR_RED}ERROR${COLOR_NONE}: Error parsing navigation.yml for ${DIRECTORY}/"
-#       exit 1
-#     fi
-#     echo " - $(trim "$(do_wp option update "${DIRECTORY}_article_navigation" << heredoc
-# $json
-# heredoc)")"
-#   fi
+  # if we have the file and we have the option - update
+  if [[ "$navigation_file_exists" == "true" ]] && [[ "$navigation_option_exists" == "true" ]]; then
+    echo " - Updating navigation option"
+    json="$(./bin/node_modules/.bin/js-yaml "$filepath" 2>&1)"
+    if [[ "$json" == *"YAMLException"* ]] || [[ "$json" == "null" ]]; then
+      echo -e "\n${COLOR_RED}ERROR${COLOR_NONE}: Error parsing navigation.yml for ${DIRECTORY}/"
+      exit 1
+    fi
+    echo " - $(trim "$(do_wp option update "${DIRECTORY}_article_navigation" << heredoc
+$json
+heredoc)")"
+  fi
 
-#   # if we don't have file and we have the option - delete
-#   if [[ "$navigation_file_exists" == "false" ]] && [[ "$navigation_option_exists" == "true" ]]; then
+  # if we don't have file and we have the option - delete
+  if [[ "$navigation_file_exists" == "false" ]] && [[ "$navigation_option_exists" == "true" ]]; then
     echo " - Deleting navigation option"
     echo " - $(trim "$(do_wp option delete "${DIRECTORY}_article_navigation")")"
-#   fi
+  fi
 
-#   # if we don't have the file and we don't have the option - error case
-#   if [[ "$navigation_file_exists" == "false" ]] && [[ "$navigation_option_exists" == "false" ]]; then
-#     echo " - No navigation file and no stored navigation option – unknown case"
-#   fi
-# fi
+  # if we don't have the file and we don't have the option - error case
+  if [[ "$navigation_file_exists" == "false" ]] && [[ "$navigation_option_exists" == "false" ]]; then
+    echo " - No navigation file and no stored navigation option – unknown case"
+  fi
+fi
 
-# echo ""
+echo ""
