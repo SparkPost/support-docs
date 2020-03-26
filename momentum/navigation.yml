@@ -630,7 +630,7 @@
           title: Acknowledgements
         - link: /momentum/4/4-copyright-3-rdparty-disclaimer
           title: Disclaimers for Redistributed Third-Party Software
-- link: /momentum//3
+- link: /momentum/3
   title: Momentum 3.x
   items:
     - link: /momentum/3/3-reference
@@ -1341,7 +1341,7 @@
               title: Custom Callback Functions
             - link: /momentum/3/3-api/custom-channels-compiling
               title: Compiling in C
-- link: /momentum//mobile
+- link: /momentum/mobile
   title: Momentum Mobile
   items:
     - link: /momentum/mobile/mobile-reference
