@@ -26,6 +26,7 @@ if [ -n "$WP_NAVIGATION_OPTION" ]; then
   navigation_option_exists="true"
 fi
 
+
 if [ "$navigation_file_was_changed" == "false" ]; then
   echo "No changes to be made"
 else 
@@ -37,7 +38,7 @@ else
       echo -e "\n${COLOR_RED}ERROR${COLOR_NONE}: Error parsing navigation.yml for ${DIRECTORY}/"
       exit 1
     fi
-    echo " - $(trim "$(do_wp option add "${DIRECTORY}_article_navigation" << $json)")"
+    echo " - $(trim "$(do_wp option add "${DIRECTORY}_article_navigation" << 'EOF' "$json" )")"
   fi
 
   # if we have the file and we have the option - update
@@ -48,7 +49,7 @@ else
       echo -e "\n${COLOR_RED}ERROR${COLOR_NONE}: Error parsing navigation.yml for ${DIRECTORY}/"
       exit 1
     fi
-    echo " - $(trim "$(do_wp option update "${DIRECTORY}_article_navigation" << $json)")"
+    echo " - $(trim "$(do_wp option update "${DIRECTORY}_article_navigation" << 'EOF' "$json" )")"
   fi
 
   # if we don't have file and we have the option - delete
