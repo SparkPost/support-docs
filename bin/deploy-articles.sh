@@ -42,19 +42,19 @@ for filepath in "${CHANGED_FILES[@]}"; do
   # create
   if [ -n "$md_post" ] && [ "-1" == "$wp_post_index" ]; then
     echo " - Creating post"
-    wp_post_id=$(do_wp post create --post_name=$slug --post_status="publish" --post_title="$md_post_title" --post_type=$WP_POST_TYPE --porcelain)
+    wp_post_id=$(trim "$(do_wp post create --post_name=$slug --post_status="publish" --post_title="$md_post_title" --post_type=$WP_POST_TYPE --porcelain)")
 
     if [[ $wp_post_id =~ $NUMBER_PATTERN ]]; then
       echo " - Success: Created post $wp_post_id."
 
       # add category
-      echo " - $(do_wp post term add "$wp_post_id" "$WP_CUSTOM_TAX" "$cat_slug")"
+      echo " - $(trim "$(do_wp post term add "$wp_post_id" "$WP_CUSTOM_TAX" "$cat_slug")")"
 
       # add contributors
-      echo " - $(do_wp post meta add "$wp_post_id" "contributors" "$contributors")"
+      echo " - $(trim "$(do_wp post meta add "$wp_post_id" "contributors" "$contributors")")"
 
       # add notification
-      echo " - $(do_wp post meta add "$wp_post_id" "notification" "$md_post_notification")"
+      echo " - $(trim "$(do_wp post meta add "$wp_post_id" "notification" "$md_post_notification")")"
 
       # add media
       echo " - Importing related media"
@@ -64,7 +64,7 @@ for filepath in "${CHANGED_FILES[@]}"; do
       # update the content with the images in it
       md_post_content=$(generate_html "$filepath" "${imported_image_ids[@]}")
 
-      echo " - $(do_wp post update $wp_post_id --post_content="$md_post_content" --post_excerpt="$md_post_excerpt")"
+      echo " - $(trim "$(do_wp post update $wp_post_id --post_content="$md_post_content" --post_excerpt="$md_post_excerpt")")"
     else
       echo " - $wp_post_id"
     fi
@@ -79,14 +79,15 @@ for filepath in "${CHANGED_FILES[@]}"; do
     echo " - Updating post"
 
     # update category
-    echo " - $(do_wp post term remove "$wp_post_id" "$WP_CUSTOM_TAX" $(do_wp post term list "$wp_post_id" "$WP_CUSTOM_TAX" --format=ids))"
-    echo " - $(do_wp post term add "$wp_post_id" "$WP_CUSTOM_TAX" "$cat_slug")"
+    current_terms=$(trim "$(do_wp post term list "$wp_post_id" "$WP_CUSTOM_TAX" --format=ids)")
+    echo " - $(trim "$(do_wp post term remove "$wp_post_id" "$WP_CUSTOM_TAX" $current_terms)")"
+    echo " - $(trim "$(do_wp post term add "$wp_post_id" "$WP_CUSTOM_TAX" "$cat_slug")")"
 
     # update contributors
-    echo " - $(do_wp post meta update "$wp_post_id" "contributors" "$contributors")"
+    echo " - $(trim "$(do_wp post meta update "$wp_post_id" "contributors" "$contributors")")"
 
     # add notification
-    echo " - $(do_wp post meta update "$wp_post_id" "notification" "$md_post_notification")"
+    echo " - $(trim "$(do_wp post meta update "$wp_post_id" "notification" "$md_post_notification")")"
 
     # update media
     echo " - Deleting related media"
@@ -100,7 +101,7 @@ for filepath in "${CHANGED_FILES[@]}"; do
     # update the content
     md_post_content=$(generate_html "$filepath" "${imported_image_ids[@]}")
 
-    echo " - $(do_wp post update $wp_post_id --post_title="$md_post_title" --post_content="$md_post_content" --post_excerpt="$md_post_excerpt")"
+    echo " - $(trim "$(do_wp post update $wp_post_id --post_title="$md_post_title" --post_content="$md_post_content" --post_excerpt="$md_post_excerpt")")"
 
     continue;
   fi
@@ -114,12 +115,12 @@ for filepath in "${CHANGED_FILES[@]}"; do
     deleted_image_ids=($(delete_related_media "$wp_post_id"))
     echo " - Deleted ${#deleted_image_ids[@]} files"
 
-    echo " - $(do_wp post delete $wp_post_id --force)"
+    echo " - $(trim "$(do_wp post delete $wp_post_id --force)")"
 
     continue;
   fi
 
-  # somethin' broke
+  # something broke
   if [ -z "$md_post" ] && [ "-1" == "$wp_post_index" ]; then
     echo " - No post markdown and no ID with $slug – unknown case"
   fi

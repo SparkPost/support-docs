@@ -61,6 +61,11 @@ else
   CHANGED_FILES=($(find $DIRECTORY -type f))
 fi
 
+function trim() {
+  local str="$1"
+  
+  echo "${str}" | xargs
+}
 
 function do_wp() {
   if [ "$DEPLOY_ENV" == "DEVELOPMENT" ]; then
