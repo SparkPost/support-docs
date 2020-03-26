@@ -11,8 +11,12 @@ install:
 - sudo apt-get install jq
 - cd ./bin && npm install && cd ../
 script:
-- "./bin/deploy-categories.sh"
-- "./bin/deploy-articles.sh"
+- "./bin/deploy-navigation.sh --directory='support' --type='support_article' --tax='support_category'"
+- "./bin/deploy-categories.sh --directory='support' --type='support_article' --tax='support_category'"
+- "./bin/deploy-articles.sh --directory='support' --type='support_article' --tax='support_category'"
+- "./bin/deploy-navigation.sh --directory='momentum' --type='momentum_article' --tax='momentum_category'"
+- "./bin/deploy-categories.sh --directory='momentum' --type='momentum_article' --tax='momentum_category'"
+- "./bin/deploy-articles.sh --directory='momentum' --type='momentum_article' --tax='momentum_category'"
 addons:
   ssh_known_hosts:
   - 104.197.69.102

@@ -1,0 +1,685 @@
+-
+  title: 'Momentum 4.x'
+  link: /momentum/4
+  items:
+    - 
+      title: 'Sup fam'
+      link: /momentum/4/sup
+    -
+      title: 'Preface'
+      link: /momentum/4/manual/preface
+-
+  title: 'Mobile Momentum'
+  link: /momentum/mobile
+  items:
+    -
+      title: 'Reference Manual'
+      link: /momentum/mobile/reference
+      items:
+        -
+          title: Preface
+          link: /momentum/mobile/reference/preface
+          items:
+            -
+              title: '1. Typographical Conventions Used in This Document'
+              link: '/momentum/mobile/reference/preface#typographical'
+        -
+          title: 'I. Mobile Momentum SMPP'
+          link: /momentum/mobile/reference/p.smpp
+          items:
+            -
+              title: '1. Overview of Mobile Momentum'
+              link: /momentum/mobile/reference/overview
+              items:
+                -
+                  title: '1.1. Architecture'
+                  link: '/momentum/mobile/reference/overview#overview-architecture'
+                -
+                  title: '1.2. The Short Message Peer-to-Peer Protocol (SMPP) ESME Module'
+                  link: /momentum/mobile/reference/overview.smppesme
+                -
+                  title: '1.3. Message Conversions, Transformations, and Mappings'
+                  link: /momentum/mobile/reference/overview-SmppEmailSMS
+                -
+                  title: '1.4. Installing Momentum'
+                  link: /momentum/mobile/reference/overview.installing
+            -
+              title: '2. Mobile Momentum SMPP'
+              link: /momentum/mobile/reference.mobility
+              items:
+                -
+                  title: '2.1. The smpp Modules'
+                  link: '/momentum/mobile/reference.mobility#modules.mobility.smpp_logger'
+                -
+                  title: '2.2. Persistent Connections'
+                  link: /momentum/mobile/reference/mobility.persistent.connections
+                -
+                  title: '2.3. Throttling'
+                  link: /momentum/mobile/reference/mobility.throttling
+                -
+                  title: '2.4. SMPP Caveats'
+                  link: /momentum/mobile/reference/mobility.smpp.caveats
+                -
+                  title: '2.5. smpp_logger Module Configuration'
+                  link: /momentum/mobile/reference/mobility.configuration.smpp
+                -
+                  title: '2.6. The smpp_bounce_logger Module'
+                  link: /momentum/mobile/reference/modules.mobility.smpp_bounce_logger
+                -
+                  title: '2.7. Message Context Variables'
+                  link: /momentum/mobile/reference/mobility.runtime
+                -
+                  title: '2.8. SMS Conversion Hook Points'
+                  link: /momentum/mobile/reference/mobility.runtime.hooks
+            -
+              title: '3. Mobile Momentum SMPP Options'
+              link: /momentum/mobile/reference/mobility.smpp.options
+              items:
+                -
+                  title: '3.1. SMPP Configuration Option Details'
+                  link: '/momentum/mobile/reference/mobility.smpp.options#mobility.conf'
+            -
+              title: '4. Use Cases'
+              link: /momentum/mobile/reference/admin.use.cases
+              items:
+                -
+                  title: '4.1. Route to SMS Matching a Regex in the Subject Header'
+                  link: '/momentum/mobile/reference/admin.use.cases#admin.use.case.regex'
+                -
+                  title: '4.2. Route to SMS Based on the Recipient Address'
+                  link: /momentum/mobile/reference/admin.use.case.recipient.address
+                -
+                  title: '4.3. Route to SMS Based on the Sender IP Address'
+                  link: /momentum/mobile/reference/admin.use.case.sender.ip
+                -
+                  title: '4.4. Route to SMS Based on the Sender Address'
+                  link: /momentum/mobile/reference/admin.use.case.sender.address
+            -
+              title: '5. SMPP Configuration Best Practices'
+              link: /momentum/mobile/reference/mobility.best.practices
+              items:
+                -
+                  title: '5.1. SMSC Bind Parameters'
+                  link: '/momentum/mobile/reference/mobility.best.practices#mobility.best.practices.bind.params'
+                -
+                  title: '5.2. Message Conversion Parameters'
+                  link: /momentum/mobile/reference/mobility.best.practices.conversion
+                -
+                  title: '5.3. SMPP Timer Parameters'
+                  link: /momentum/mobile/reference/mobility.best.practices.timer.params
+                -
+                  title: '5.4. Delivery Receipts'
+                  link: /momentum/mobile/reference/mobility.best.practices.delivery.receipts
+                -
+                  title: '5.5. Persistent Connections'
+                  link: /momentum/mobile/reference/mobility.best.practices.persistent.cnnections
+                -
+                  title: '5.6. SMS to Email Address Mappings'
+                  link: /momentum/mobile/reference/mobility.best.practices.sms.to.email
+                -
+                  title: '5.7. Throttling'
+                  link: /momentum/mobile/reference/mobility.best.practices.throttling
+                -
+                  title: '5.8. SMPP Logging'
+                  link: /momentum/mobile/reference/mobility.best.practices.logging
+                -
+                  title: '5.9. Message Mode'
+                  link: /momentum/mobile/reference/mobility.best.practices.message.mode
+            -
+              title: '6. FAQ'
+              link: /momentum/mobile/reference/faq
+              items:
+                -
+                  title: '6.1. Configuration'
+                  link: '/momentum/mobile/reference/faq#faq-mobility1'
+                -
+                  title: '6.2. Domains'
+                  link: /momentum/mobile/reference/faq-mobility2
+        -
+          title: 'II. Mobile Momentum MMS'
+          link: /momentum/mobile/reference/p.mm7
+          items:
+            -
+              title: '7. Mobile Momentum MM7'
+              link: /momentum/mobile/reference/mobility.mm7
+              items:
+                -
+                  title: '7.1. The mm7_serv Module'
+                  link: '/momentum/mobile/reference/mobility.mm7#mobility.configuration.mm7'
+                -
+                  title: '7.2. The mms_logger Module'
+                  link: /momentum/mobile/reference/mobility.mm7.mms_logger
+                -
+                  title: '7.3. The mms_bounce_logger Module'
+                  link: /momentum/mobile/reference/mobility.mm7.mms_bounce_logger
+                -
+                  title: '7.4. Multi Protocol Domain Naming'
+                  link: /momentum/mobile/reference/mobility.mm7.multiprotocol
+                -
+                  title: '7.5. The MCMT_Reception option'
+                  link: /momentum/mobile/reference/mm7.mcmt_reception
+                -
+                  title: '7.6. Listener Configuration for MCMT'
+                  link: /momentum/mobile/reference/mobility.mm7.listener
+                -
+                  title: '7.7. Aggregator-specific Requirements'
+                  link: /momentum/mobile/reference/mobility.mm7.aggregator.specific
+                -
+                  title: '7.8. Configuration for MM7'
+                  link: /momentum/mobile/reference/mobility.mm7.config
+            -
+              title: '8. Mobile Momentum MM7 Options'
+              link: /momentum/mobile/reference/mobility.mm7.options
+              items:
+                -
+                  title: '8.1. MM7 Configuration Option Details'
+                  link: '/momentum/mobile/reference/mobility.mm7.options#mm7.conf'
+            -
+              title: '9. Aggregator APIs'
+              link: /momentum/mobile/reference/mobility.aggregator.apis
+              items:
+                -
+                  title: '9.1. The mBlox API'
+                  link: '/momentum/mobile/reference/mobility.aggregator.apis#mobility.aggregator.apis.mblox'
+        -
+          title: 'III. Mobile Momentum XMPP'
+          link: /momentum/mobile/reference/p.xmpp
+          items:
+            -
+              title: '10. Mobile Momentum XMPP'
+              link: /momentum/mobile/reference/mobility.xmpp.modules
+              items:
+                -
+                  title: '10.1. The XMPP Module and Listener'
+                  link: '/momentum/mobile/reference/mobility.xmpp.modules#modules.xmpp'
+                -
+                  title: '10.2. The XMPP Logger Module'
+                  link: /momentum/mobile/reference/modules.xmpp_logger
+                -
+                  title: '10.3. Roster and Presence'
+                  link: /momentum/mobile/reference/mobility.xmpp.modules.roster.presence
+                -
+                  title: '10.4. Lua XMPP Functions'
+                  link: /momentum/mobile/reference/xmpp.lua.functions
+                -
+                  title: '10.5. Converting MCMT to XMPP'
+                  link: /momentum/mobile/reference/mcmt2xmpp
+                -
+                  title: '10.6. Filtering Out Chat State Notifications'
+                  link: /momentum/mobile/reference/mcmt2xmpp.caveat
+        -
+          title: 'IV. Retrying Messages'
+          link: /momentum/mobile/reference/p.retry
+          items:
+            -
+              title: '11. Retrying Messages'
+              link: /momentum/mobile/reference/mobility.message.retry
+              items:
+                -
+                  title: '11.1. The mstore Module'
+                  link: '/momentum/mobile/reference/mobility.message.retry#mobility.message.retry.modules.mstore'
+                -
+                  title: '11.2. Message Retention'
+                  link: /momentum/mobile/reference/mobility.message.retry.retention
+        -
+          title: Glossary
+          link: /momentum/mobile/reference/glossary
+        -
+          title: 'A. Acronyms'
+          link: /momentum/mobile/reference/acronyms
+        -
+          title: 'B. Command Status Codes'
+          link: /momentum/mobile/reference/status_codes
+        -
+          title: 'C. SMPP PDU Operation Definitions'
+          link: /momentum/mobile/reference/smpp_pdu.definitions
+    -
+      title: 'Quick Start'
+      link: /momentum/quick-start
+      items:
+        -
+          title: '1. Overview'
+          link: /momentum/quick-start/quickmob.overview.php
+        -
+          title: '2. Installing Mobile Momentum'
+          link: /momentum/quick-start/quickmob.installing.php
+        -
+          title: '3. Configuring the Mobile Momentum Modules'
+          link: /momentum/quick-start/quickmob.config.modules.php
+          items:
+            -
+              title: '3.1. The SMPP Modules'
+              link: /momentum/quick-start/quickmob.config.modules.
+            -
+              title: '3.2. The MM7 Modulesphp#quickmob.smpp.modules'
+              link: /momentum/quick-start/quickmob.mm7.modules.php
+            -
+              title: '3.3. Configuring for Web UI Stats'
+              link: /momentum/quick-start/quickmob.config.web.stats.php
+        -
+          title: '4. Configuration Options in the Global, Domain and Binding Scopes'
+          link: /momentum/quick-start/quickmob.config.options.php
+          items:
+            -
+              title: '4.1. SMPP-specific Configuration'
+              link: /momentum/quick-start/quickmob.config.options.p
+            -
+              title: '4.2. MM7-specific Configurationhp#quickmob.smpp.specific'
+              link: /momentum/quick-start/quickmob.mm7.specific.php
+        -
+          title: '5. Bare Bones Configurations'
+          link: /momentum/quick-start/quickmob.bare.bones.php
+    -
+      title: 'Developer Guide'
+      link: momentum/mobile/developer-guide
+      items:
+        -
+          title: 'I. Customization'
+          link: momentum/mobile/developer-guide/p.overview.php
+          items:
+            -
+              title: '1. Overview'
+              link: momentum/mobile/developer-guide/DeveloperandCustomization.php
+              items:
+                -
+                  title: '1.1. Developing Applications for Mobile Momentum 2.1'
+                  link: momentum/mobile/developer-guide/'DeveloperandCustomization.php#DC.developapplications'
+                -
+                  title: '1.2. Developing Applications for the SMPP ESME'
+                  link: momentum/mobile/developer-guide/DC.DevelopingApplicationsfortheSMPPESME.php
+                -
+                  title: '1.3. Developing Applications for the MM7 VASP'
+                  link: momentum/mobile/developer-guide/DC.DevelopingApplicationsfortheMM7VASP.php
+        -
+          title: 'II. SMPP Hooks'
+          link: momentum/mobile/developer-guide/p.smpp.php
+          items:
+            -
+              title: '2. SMPP Delivery Receipt Evaluation Hook'
+              link: momentum/mobile/developer-guide/SMPPDeliveryReceiptEvaluationHook.php
+              items:
+                -
+                  title: '2.1. Purpose'
+                  link: momentum/mobile/developer-guide/'SMPPDeliveryReceiptEvaluationHook.php#SMPPDeliveryReceiptEvaluationHook.purpose'
+                -
+                  title: '2.2. Interface'
+                  link: momentum/mobile/developer-guide/SMPPDeliveryReceiptEvaluationHook.interface.php
+                -
+                  title: '2.3. Examples'
+                  link: momentum/mobile/developer-guide/SMPPDeliveryReceiptEvaluationHook.examples.php
+            -
+              title: '3. SMPP Log Inband Bounce Hook'
+              link: momentum/mobile/developer-guide/SMPPLogInbandBounceHook.php
+              items:
+                -
+                  title: '3.1. Purpose'
+                  link: momentum/mobile/developer-guide/'SMPPLogInbandBounceHook.php#SMPPLogInbandBounceHook.purpose'
+                -
+                  title: '3.2. Interface'
+                  link: momentum/mobile/developer-guide/SMPPLogInbandBounceHook.interface.php
+                -
+                  title: '3.3. Examples'
+                  link: momentum/mobile/developer-guide/SMPPLogInbandBounceHook.examples.php
+            -
+              title: '4. SMPP Log Outband Bounce Hook'
+              link: momentum/mobile/developer-guide/SMPPLogOutbandBounceHook.php
+              items:
+                -
+                  title: '4.1. Purpose'
+                  link: momentum/mobile/developer-guide/'SMPPLogOutbandBounceHook.php#SMPPLogOutbandBounceHook.purpose'
+                -
+                  title: '4.2. Interface'
+                  link: momentum/mobile/developer-guide/SMPPLogOutbandBounceHook.interface.php
+                -
+                  title: '4.3. Examples'
+                  link: momentum/mobile/developer-guide/SMPPLogOutbandBounceHook.examples.php
+            -
+              title: '5. SMPP Log Transient Bounce Hook'
+              link: momentum/mobile/developer-guide/SMPPLogTransientBounceHook.php
+              items:
+                -
+                  title: '5.1. Purpose'
+                  link: momentum/mobile/developer-guide/'SMPPLogTransientBounceHook.php#SMPPLogTransientBounceHook.purpose'
+                -
+                  title: '5.2. Function Interface'
+                  link: momentum/mobile/developer-guide/SMPPLogTransientBounceHook.interface.php
+                -
+                  title: '5.3. Examples'
+                  link: momentum/mobile/developer-guide/SMPPLogTransientBounceHook.examples.php
+            -
+              title: '6. SMPP Log Conversion Hook'
+              link: momentum/mobile/developer-guide/SMPPLogConversionHook.php
+              items:
+                -
+                  title: '6.1. Purpose'
+                  link: momentum/mobile/developer-guide/'SMPPLogConversionHook.php#SMPPLogConversionHook.purpose'
+                -
+                  title: '6.2. Interface'
+                  link: momentum/mobile/developer-guide/SMPPLogConversionHook.interface.php
+                -
+                  title: '6.3. Examples'
+                  link: momentum/mobile/developer-guide/SMPPLogConversionHook.examples.php
+            -
+              title: '7. SMPP Log Delivery Hook'
+              link: momentum/mobile/developer-guide/SMPPLogDeliveryHook.php
+              items:
+                -
+                  title: '7.1. Purpose'
+                  link: momentum/mobile/developer-guide/'SMPPLogDeliveryHook.php#SMPPLogDeliveryHook.purpose'
+                -
+                  title: '7.2. Interface'
+                  link: momentum/mobile/developer-guide/SMPPLogDeliveryHook.interface.php
+                -
+                  title: '7.3. Examples'
+                  link: momentum/mobile/developer-guide/SMPPLogDeliveryHook.examples.php
+            -
+              title: '8. SMPP Log Permfail Hook'
+              link: momentum/mobile/developer-guide/SMPPLogPermfailHook.php
+              items:
+                -
+                  title: '8.1. Purpose'
+                  link: momentum/mobile/developer-guide/'SMPPLogPermfailHook.php#SMPPLogPermfailHook.purpose'
+                -
+                  title: '8.2. Interface'
+                  link: momentum/mobile/developer-guide/SMPPLogPermfailHook.interface.php
+                -
+                  title: '8.3. Examples'
+                  link: momentum/mobile/developer-guide/SMPPLogPermfailHook.examples.php
+            -
+              title: '9. SMPP Log Reception Hook'
+              link: momentum/mobile/developer-guide/SMPPLogReceptionHook.php
+              items:
+                -
+                  title: '9.1. Purpose'
+                  link: momentum/mobile/developer-guide/'SMPPLogReceptionHook.php#SMPPLogReceptionHook.purpose'
+                -
+                  title: '9.2. Interface'
+                  link: momentum/mobile/developer-guide/SMPPLogReceptionHook.interface.php
+                -
+                  title: '9.3. Examples'
+                  link: momentum/mobile/developer-guide/SMPPLogReceptionHook.examples.php
+            -
+              title: '10. SMPP Logger Status Hook'
+              link: momentum/mobile/developer-guide/SMPPLogStatusHook.php
+              items:
+                -
+                  title: '10.1. Purpose'
+                  link: momentum/mobile/developer-guide/'SMPPLogStatusHook.php#SMPPLogStatusHook.purpose'
+                -
+                  title: '10.2. Interface'
+                  link: momentum/mobile/developer-guide/SMPPLogStatusHook.interface.php
+                -
+                  title: '10.3. Examples'
+                  link: momentum/mobile/developer-guide/SMPPLogStatusHook.examples.php
+            -
+              title: '11. SMPP Log Tempfail Hook'
+              link: momentum/mobile/developer-guide/SMPPLogTempfailHook.php
+              items:
+                -
+                  title: '11.1. Purpose'
+                  link: momentum/mobile/developer-guide/'SMPPLogTempfailHook.php#SMPPLogTempfailHook.purpose'
+                -
+                  title: '11.2. Interface'
+                  link: momentum/mobile/developer-guide/SMPPLogTempfailHook.interface.php
+                -
+                  title: '11.3. Examples'
+                  link: momentum/mobile/developer-guide/SMPPLogTempfailHook.examples.php
+            -
+              title: '12. SMPP MO Conversion Hook'
+              link: momentum/mobile/developer-guide/SMPPMOConversionHook.php
+              items:
+                -
+                  title: '12.1. Purpose'
+                  link: momentum/mobile/developer-guide/'SMPPMOConversionHook.php#SMPPMOConversionHook.purpose'
+                -
+                  title: '12.2. Interface'
+                  link: momentum/mobile/developer-guide/SMPPMOConversionHook.interface.php
+                -
+                  title: '12.3. Examples'
+                  link: momentum/mobile/developer-guide/SMPPMOConversionHook.examples.php
+            -
+              title: '13. SMPP MT Conversion Hook'
+              link: momentum/mobile/developer-guide/SMPPMTConversionHook.php
+              items:
+                -
+                  title: '13.1. Interface'
+                  link: momentum/mobile/developer-guide/'SMPPMTConversionHook.php#SMPPMTConversionHook.interface'
+                -
+                  title: '13.2. Examples'
+                  link: momentum/mobile/developer-guide/SMPPMTConversionHook.examples.php
+            -
+              title: '14. SMPP PDU MO (Receiver) Evaluation Hook'
+              link: momentum/mobile/developer-guide/SMPPPDUMOEvaluationHook.php
+              items:
+                -
+                  title: '14.1. Purpose'
+                  link: momentum/mobile/developer-guide/'SMPPPDUMOEvaluationHook.php#SMPPPDUMOEvaluationHook.purpose'
+                -
+                  title: '14.2. Interface'
+                  link: momentum/mobile/developer-guide/SMPPPDUMOEvaluationHook.interface.php
+                -
+                  title: '14.3. Examples'
+                  link: momentum/mobile/developer-guide/SMPPPDUMOEvaluationHook.examples.php
+            -
+              title: '15. SMPP PDU MT (Transmit) Evaluation Hook'
+              link: momentum/mobile/developer-guide/SMPPPDUMTEvaluationHook.php
+              items:
+                -
+                  title: '15.1. Purpose'
+                  link: momentum/mobile/developer-guide/'SMPPPDUMTEvaluationHook.php#SMPPPDUMTEvaluationHook.purpose'
+                -
+                  title: '15.2. Interface'
+                  link: momentum/mobile/developer-guide/SMPPPDUMTEvaluationHook.interface.php
+                -
+                  title: '15.3. Examples'
+                  link: momentum/mobile/developer-guide/SMPPPDUMTEvaluationHook.examples.php
+            -
+              title: '16. SMPP Received Message Validation Hook'
+              link: momentum/mobile/developer-guide/SMPPReceivedMessageValidationHook.php
+              items:
+                -
+                  title: '16.1. Purpose'
+                  link: momentum/mobile/developer-guide/'SMPPReceivedMessageValidationHook.php#SMPPReceivedMessageValidationHook.purpose'
+                -
+                  title: '16.2. Interface'
+                  link: momentum/mobile/developer-guide/SMPPReceivedMessageValidationHook.interface.php
+                -
+                  title: '16.3. Examples'
+                  link: momentum/mobile/developer-guide/SMPPReceivedMessageValidationHook.examples.php
+            -
+              title: '17. SMPP Submit Response Hook'
+              link: momentum/mobile/developer-guide/SMPPSubmitResponseHook.php
+              items:
+                -
+                  title: '17.1. Purpose'
+                  link: momentum/mobile/developer-guide/'SMPPSubmitResponseHook.php#SMPPSubmitResponseHook.purpose'
+                -
+                  title: '17.2. Interface'
+                  link: momentum/mobile/developer-guide/SMPPSubmitResponseHook.interface.php
+                -
+                  title: '17.3. Examples'
+                  link: momentum/mobile/developer-guide/SMPPSubmitResponseHook.examples.php
+        -
+          title: 'III. MM7 Hooks'
+          link: momentum/mobile/developer-guide/p.mm7.php
+          items:
+            -
+              title: '18. MM7 MT Submit Request Hook'
+              link: momentum/mobile/developer-guide/MM7ClientSubmitRequestHook.php
+              items:
+                -
+                  title: '18.1. Purpose'
+                  link: momentum/mobile/developer-guide/'MM7ClientSubmitRequestHook.php#MM7ClientSubmitRequestHook.purpose'
+                -
+                  title: '18.2. Interface'
+                  link: momentum/mobile/developer-guide/MM7ClientSubmitRequestHook.interface.php
+                -
+                  title: '18.3. Examples'
+                  link: momentum/mobile/developer-guide/MM7ClientSubmitRequestHook.example.php
+            -
+              title: '19. MM7 MT Submit Response Hook'
+              link: momentum/mobile/developer-guide/MM7ClientSubmitResponseHook.php
+              items:
+                -
+                  title: '19.1. Purpose'
+                  link: momentum/mobile/developer-guide/'MM7ClientSubmitResponseHook.php#MM7ClientSubmitResponseHook.purpose'
+                -
+                  title: '19.2. Interface'
+                  link: momentum/mobile/developer-guide/MM7ClientSubmitResponseHook.interface.php
+                -
+                  title: '19.3. Examples'
+                  link: momentum/mobile/developer-guide/MM7ClientSubmitResponseHook.examples.php
+            -
+              title: '20. MM7 Log Inband Bounce Hook'
+              link: momentum/mobile/developer-guide/MM7LogInbandBounceHook.php
+              items:
+                -
+                  title: '20.1. Purpose'
+                  link: momentum/mobile/developer-guide/'MM7LogInbandBounceHook.php#MM7LogInbandBounceHook.purpose'
+                -
+                  title: '20.2. Interface'
+                  link: momentum/mobile/developer-guide/MM7LogInbandBounceHook.interface.php
+                -
+                  title: '20.3. Examples'
+                  link: momentum/mobile/developer-guide/MM7LogInbandBounceHook.examples.php
+            -
+              title: '21. MM7 Log Outband Bounce Hook'
+              link: momentum/mobile/developer-guide/MM7LogOutbandBounceHook.php
+              items:
+                -
+                  title: '21.1. Purpose'
+                  link: momentum/mobile/developer-guide/'MM7LogOutbandBounceHook.php#MM7LogOutbandBounceHook.purpose'
+                -
+                  title: '21.2. Interface'
+                  link: momentum/mobile/developer-guide/MM7LogOutbandBounceHook.interface.php
+                -
+                  title: '21.3. Examples'
+                  link: momentum/mobile/developer-guide/MM7LogOutbandBounceHook.examples.php
+            -
+              title: '22. MM7 Log Transient Bounce Hook'
+              link: momentum/mobile/developer-guide/MM7LogTransientBounceHook.php
+              items:
+                -
+                  title: '22.1. Purpose'
+                  link: momentum/mobile/developer-guide/'MM7LogTransientBounceHook.php#MM7LogTransientBounceHook.purpose'
+                -
+                  title: '22.2. Interface'
+                  link: momentum/mobile/developer-guide/MM7LogTransientBounceHook.interface.php
+                -
+                  title: '22.3. Examples'
+                  link: momentum/mobile/developer-guide/MM7LogTransientBounceHook.examples.php
+            -
+              title: '23. MM7 Log Conversion Hook'
+              link: momentum/mobile/developer-guide/MM7LogConversionHook.php
+              items:
+                -
+                  title: '23.1. Purpose'
+                  link: momentum/mobile/developer-guide/'MM7LogConversionHook.php#MM7LogConversionHook.purpose'
+                -
+                  title: '23.2. Interface'
+                  link: momentum/mobile/developer-guide/MM7LogConversionHook.interface.php
+                -
+                  title: '23.3. Examples'
+                  link: momentum/mobile/developer-guide/MM7LogConversionHook.examples.php
+            -
+              title: '24. MM7 Log Delivery Hook'
+              link: momentum/mobile/developer-guide/MM7LogDeliveryHook.php
+              items:
+                -
+                  title: '24.1. Purpose'
+                  link: momentum/mobile/developer-guide/'MM7LogDeliveryHook.php#MM7LogDeliveryHook.purpose'
+                -
+                  title: '24.2. Interface'
+                  link: momentum/mobile/developer-guide/MM7LogDeliveryHook.interface.php
+                -
+                  title: '24.3. Examples'
+                  link: momentum/mobile/developer-guide/MM7LogDeliveryHook.examples.php
+            -
+              title: '25. MM7 Log Permfail Hook'
+              link: momentum/mobile/developer-guide/MM7LogPermfailHook.php
+              items:
+                -
+                  title: '25.1. Purpose'
+                  link: momentum/mobile/developer-guide/'MM7LogPermfailHook.php#MM7LogPermfailHook.purpose'
+                -
+                  title: '25.2. Interface'
+                  link: momentum/mobile/developer-guide/MM7LogPermfailHook.interface.php
+                -
+                  title: '25.3. Examples'
+                  link: momentum/mobile/developer-guide/MM7LogPermfailHook.examples.php
+            -
+              title: '26. MM7 Log Reception Hook'
+              link: momentum/mobile/developer-guide/MM7LogReceptionHook.php
+              items:
+                -
+                  title: '26.1. Purpose'
+                  link: momentum/mobile/developer-guide/'MM7LogReceptionHook.php#MM7LogReceptionHook.purpose'
+                -
+                  title: '26.2. Interface'
+                  link: momentum/mobile/developer-guide/MM7LogReceptionHook.interface.php
+                -
+                  title: '26.3. Examples'
+                  link: momentum/mobile/developer-guide/MM7LogReceptionHook.examples.php
+            -
+              title: '27. MM7 Logger Status Hook'
+              link: momentum/mobile/developer-guide/MM7LogStatusHook.php
+              items:
+                -
+                  title: '27.1. Purpose'
+                  link: momentum/mobile/developer-guide/'MM7LogStatusHook.php#MM7LogStatusHook.purpose'
+                -
+                  title: '27.2. Interface'
+                  link: momentum/mobile/developer-guide/MM7LogStatusHook.interface.php
+                -
+                  title: '27.3. Examples'
+                  link: momentum/mobile/developer-guide/MM7LogStatusHook.examples.php
+            -
+              title: '28. MM7 Log Tempfail Hook'
+              link: momentum/mobile/developer-guide/MM7LogTempfailHook.php
+              items:
+                -
+                  title: '28.1. Purpose'
+                  link: momentum/mobile/developer-guide/'MM7LogTempfailHook.php#MM7LogTempfailHook.purpose'
+                -
+                  title: '28.2. Interface'
+                  link: momentum/mobile/developer-guide/MM7LogTempfailHook.interface.php
+                -
+                  title: '28.3. Examples'
+                  link: momentum/mobile/developer-guide/MM7LogTempfailHook.examples.php
+            -
+              title: '29. MM7 Server Received Message Hook'
+              link: momentum/mobile/developer-guide/MM7ServerReceivedMessageHook.php
+              items:
+                -
+                  title: '29.1. Purpose'
+                  link: momentum/mobile/developer-guide/'MM7ServerReceivedMessageHook.php#MM7ServerReceivedMessageHook.purpose'
+                -
+                  title: '29.2. Interface'
+                  link: momentum/mobile/developer-guide/MM7ServerReceivedMessageHook.interface.php
+                -
+                  title: '29.3. Examples'
+                  link: momentum/mobile/developer-guide/MM7ServerReceivedMessageHook.examples.php
+            -
+              title: '30. MM7 Server Received Message Validation Hook'
+              link: momentum/mobile/developer-guide/MM7ServerReceivedMessageValidationHook.php
+              items:
+                -
+                  title: '30.1. Purpose'
+                  link: momentum/mobile/developer-guide/'MM7ServerReceivedMessageValidationHook.php#MM7ServerReceivedMessageValidationHook.purpose'
+                -
+                  title: '30.2. Interface'
+                  link: momentum/mobile/developer-guide/MM7ServerReceivedMessageValidationHook.interface.php
+                -
+                  title: '30.3. Examples'
+                  link: momentum/mobile/developer-guide/MM7_Server_Received_Message_Validation_Hook.examples.php
+            -
+              title: 'A. The Multi-Channel Message Type (MCMT)'
+              link: momentum/mobile/developer-guide/mob.dev.guide.mcmt.php
+              items:
+                -
+                  title: 'A.1. The Multi-Channel Message Type (MCMT)'
+                  link: momentum/mobile/developer-guide/'mob.dev.guide.mcmt.php#mobility.mcmt'
+                -
+                  title: 'A.2. The MCMT Format'
+                  link: momentum/mobile/developer-guide/mobility.mcmt.injection.php
+    
