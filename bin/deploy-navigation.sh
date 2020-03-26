@@ -38,8 +38,9 @@ else
       echo -e "\n${COLOR_RED}ERROR${COLOR_NONE}: Error parsing navigation.yml for ${DIRECTORY}/"
       exit 1
     fi
-    echo " - $(trim "$(do_wp option add "${DIRECTORY}_article_navigation" << 'EOF' "$json"
-EOF)")"
+    echo " - $(trim "$(do_wp option add "${DIRECTORY}_article_navigation" << heredoc
+$json
+heredoc)")"
   fi
 
   # if we have the file and we have the option - update
@@ -50,8 +51,9 @@ EOF)")"
       echo -e "\n${COLOR_RED}ERROR${COLOR_NONE}: Error parsing navigation.yml for ${DIRECTORY}/"
       exit 1
     fi
-    echo " - $(trim "$(do_wp option update "${DIRECTORY}_article_navigation" << 'EOF' "$json"
-EOF)")"
+    echo " - $(trim "$(do_wp option update "${DIRECTORY}_article_navigation" << heredoc
+$json
+heredoc)")"
   fi
 
   # if we don't have file and we have the option - delete
