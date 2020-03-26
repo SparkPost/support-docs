@@ -9,7 +9,6 @@ Find below a table of options valid in the adaptive module scope.
 
 <a name="adaptive-module-options-table"></a> 
 
-**Table A.1. adaptive module options**
 
 | Option/Description | Default |
 | --- | --- |
@@ -45,7 +44,6 @@ Find below a table of non-module options related to Adaptive Delivery. (However,
 
 <a name="adaptive-options-table"></a> 
 
-**Table A.2. adaptive options**
 
 | Option/Description | Default | Scopes |
 | --- | --- | --- |
