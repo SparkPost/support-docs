@@ -156,7 +156,7 @@ WP_CATEGORY_SLUGS=($(echo "$WP_CATEGORIES" | jq '.[].slug' --raw-output))
 WP_CATEGORY_IDS=($(echo "$WP_CATEGORIES" | jq '.[].term_id' --raw-output))
 
 # get the currently stored yaml navigation option
-WP_NAVIGATION_OPTION=$(do_wp option get "${DIRECTORY}_article_navigation")
+WP_NAVIGATION_OPTION=$(trim "$(do_wp option get "${DIRECTORY}_article_navigation" 2> /dev/null)") 
 
 # refresh the categories cache – used for when we create a parent and child category in the same PR
 function refresh_categories() {
