@@ -630,6 +630,8 @@
           title: Acknowledgements
         - link: /momentum/4/4-copyright-3-rdparty-disclaimer
           title: Disclaimers for Redistributed Third-Party Software
+    - link: /momentum/4/4-changlog
+      title: '4.x changelog'
 - link: /momentum/3
   title: Momentum 3.x
   items:
