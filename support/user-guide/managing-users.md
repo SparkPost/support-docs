@@ -32,7 +32,10 @@ Admin users can add new users to their account by from the [Manage Users](https:
 	![](media/user-management/invitation-email.png)
 	
 ### Subaccount Users
+*Limited access. Reach out to our support team or your Technical Account Manager to have this option enabled for your account.
 
 Reporting Users can optionally be assigned to a specific subaccount. Check the "assign to subaccount" box when creating the user and then select the subaccount. Learn more about subaccounts and subaccount users [here](https://www.sparkpost.com/docs/user-guide/subaccounts/).
 
 Only Reporting Users support subaccount designation at this time.
+
+Subaccount UI access is available to use for free internally to your company and can be made available to your customers via a reseller agreement.
