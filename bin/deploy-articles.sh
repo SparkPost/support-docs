@@ -28,8 +28,6 @@ for filepath in "${CHANGED_FILES[@]}"; do
   contributors=$(get_contributors "$filepath")
   wp_post_index=$(index_of "${WP_POST_SLUGS[@]}" "$slug")
 
-  node bin/markdown.js "$filepath"
-
   md_post=$(node bin/markdown.js "$filepath")
   md_post_images=("$(echo $md_post | jq --compact-output --raw-output '.images')")
   md_post_title="$(echo $md_post | jq '.meta.title' --raw-output)"
