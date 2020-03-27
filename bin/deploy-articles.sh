@@ -64,7 +64,7 @@ for filepath in "${CHANGED_FILES[@]}"; do
       # update the content with the images in it
       md_post_content=$(generate_html "$filepath" "${imported_image_ids[@]}")
 
-      echo " - $(trim "$(do_wp post update $wp_post_id --post_content=<<<"$md_post_content" --post_excerpt="$md_post_excerpt")")"
+      echo " - $(trim "$(do_wp post update $wp_post_id --post_content="$md_post_content" --post_excerpt="$md_post_excerpt")")"
     else
       echo " - $wp_post_id"
     fi
@@ -101,7 +101,7 @@ for filepath in "${CHANGED_FILES[@]}"; do
     # update the content
     md_post_content=$(generate_html "$filepath" "${imported_image_ids[@]}")
 
-    echo " - $(trim "$(do_wp post update $wp_post_id --post_title="$md_post_title" --post_content=<<<"$md_post_content" --post_excerpt="$md_post_excerpt")")"
+    echo " - $(trim "$(do_wp post update $wp_post_id --post_title="$md_post_title" --post_content="$md_post_content" --post_excerpt="$md_post_excerpt")")"
 
     continue;
   fi
