@@ -15,10 +15,11 @@ Use these links to jump to certain sections of this article
 * [Master Account: Reporting by Subaccount](#master-account-reporting-by-subaccount)
 * [Master Account: Operating on Behalf of a Subaccount](#master-account-operating-on-behalf-of-a-subaccount)
 * [Subaccount Self Service​](#subaccount-self-service)
+* [Subaccount UI Access​](#subaccount-ui-access)
 
 ### Overview
 
-This article is intended for master account administrators (not subaccount users).  It introduces our subaccount functionality in SparkPost and SparkPost Enterprise. The subaccount functionality will allow you to support separate business units, mailstreams, or customers (if you are an email service provider) all from within your SparkPost account. Subaccounts enable you to give each of these units direct access to the SparkPost messaging service APIs. (Subaccount users will not have separate access in the app.)
+This article is intended for master account administrators (not subaccount users).  It introduces our subaccount functionality in SparkPost and SparkPost Enterprise. The subaccount functionality will allow you to support separate business units, mailstreams, or customers (if you are an email service provider) all from within your SparkPost account. Subaccounts enable you to give each of these units direct access to the SparkPost messaging service APIs.
 
 ### Terminology
 
@@ -49,7 +50,8 @@ In addition, your subaccount users will be able to:
 * Get raw message event data via the API
 * View and manage the suppression list via the API​
 * Create their own webhook via the API
-* Create, edit, view, and use templates
+* Create, edit, view, and use templates via the API
+* Access analytics and event data, including Signals, via the UI
 
 ### Use Cases
 
@@ -102,7 +104,9 @@ After creating a subaccount, the master account has the option of assigning a de
 
 **Permissions**
 
-Only master account users can create subaccounts. If you create a app user, they will have access to both the master account and subaccounts, so it is critical that be taken into account when provisioning app accounts on your system.
+Master account Admin and Developer users can create subaccounts. Master account Templates and Reporting users can see information about all subaccounts. Reporting Users can optionally be assigned to a specific subaccount instead of the master account - more information on this below in "Subaccount UI Access". It is important to consider if a user should have access to the master and all subaccounts or if a user should be restricted to a specific subaccount when provisioning app accounts on your system.
+
+Learn more about user roles [here](https://www.sparkpost.com/docs/user-guide/managing-users/).
 
 **Subaccount Statuses**
 
@@ -115,6 +119,8 @@ Administrators can also choose to edit the subaccount name, or change the subacc
 **What to Provide Subaccount Users**
 
 All that you need to give your customer/subaccount user(s) is the subaccount API key - they will use it for all operations afforded via the default API key created upon subaccount creation.
+
+You may optionally choose to create a Subaccount Reporting User login if you would like them to be able to access the SparkPost UI directly.
 
 ### Master Account: Reporting by Subaccount
 
@@ -210,5 +216,19 @@ Subaccounts have limited access to system operations, data, and assets. The acce
 Sending domain and tracking domain functionality afforded to subaccount users are create, edit, and delete, as well as being able to verify their own sending domain/tracking domain. Subaccounts can also edit and retrieve their unique suppression lists, as well as create, edit, and delete their own templates.
 
 **Note**: When making API requests for the above reports, the subaccount does not need to specify the subaccount ID in their payloads. Even if this is included, no matter the value, it will always be overwritten since the subaccount ID is tied to the API key associated with it. Due to this restriction, a subaccount will not be able to spoof a different subaccount ID and get access to any other subaccount's or master account's data or assets.
+
+### Subaccount UI Access
+*Limited access. Reach out to our support team or your Technical Account Manager to have this option enabled for your account.
+
+Users with the "Reporting" role can be assigned to a specific subaccount. These users only have access to information about that subaccount within the SparkPost UI. They can access their email analytics, including SparkPost Signals, as well as their events. They also have read-only access to templates and snippets associated with their specific subaccount or shared with all subaccounts.
+
+Other details to keep in mind:
+* Subaccount Reporting users can see their subaccount name and ID in the app.
+* A Reporting user can only be assigned to a subaccount at account creation. If you want to assign a current user to a specific subaccount, you will need to delete and re-add the user.
+* A Reporting user cannot be switched to a different subaccount or be changed to a the master account. If you want to make these changes, you will need to delete and re-add the user.
+* A Reporting user can only be assigned to a single subaccount. Multi-subaccount access is not supported at this time.
+
+Subaccount UI access is available to use for free internally to your company and can be made available to your customers via a reseller agreement. Reach out to our support team or your Technical Account Manager to have this option enabled for your account.
+
 
 Full documentation for creating, listing, and editing subaccounts can be found in our API documentation [here](https://developers.sparkpost.com/api/?_ga=1.50518185.1033930248.1481562971#/reference/subaccounts-coming-in-april!). The documentation for the supported API calls listed above also includes additional options for subaccounts.
