@@ -104,7 +104,7 @@ After creating a subaccount, the master account has the option of assigning a de
 
 **Permissions**
 
-Master account Admin and Developer users can create subaccounts. Master account Templates and Reporting users can see information about all subaccounts. Reporting Users can optionally be assigned to a specific subaccount instead of the master account - more information on this below in "Subaccount UI Access". It is important to consider if a user should have access to the master and all subaccounts or if a user should be restricted to a specific subaccount when provisioning app accounts on your system.
+Master account Admin and Developer users can create subaccounts. Master account Templates and Reporting users can see information about all subaccounts. Reporting Users can optionally be assigned to a specific subaccount instead of the master account - more information on this below in "Subaccount UI Access".
 
 Learn more about user roles [here](https://www.sparkpost.com/docs/user-guide/managing-users/).
 
