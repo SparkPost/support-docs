@@ -11,7 +11,7 @@ You can invite members of your team to join your SparkPost account. Each user wi
 
 **Templates**: Content and campaign management user. These users can manage Templates, AB Tests, Recipient Lists, Suppressions. They also have view only access to Domains, Subaccounts, IP Pools, and all reporting and analytics features.
 
-**Reporting**: Data analytics user. They have access to all reporting features and view only access to Domains, Subaccounts, and IP Pools. Reporting users can't edit any account or feature settings.
+**Reporting**: Data analytics user. They have access to all reporting features and view only access to Domains, Subaccounts, and IP Pools. Reporting users can't edit any account or feature settings. Reporting users can optionally be assigned to a specific subaccount.
 
 ### Adding Users To Your Account
 
@@ -30,3 +30,12 @@ Admin users can add new users to their account by from the [Manage Users](https:
 5. The new user will receive an email to join your account similar to the one below.
 
 	![](media/user-management/invitation-email.png)
+	
+### Subaccount Users
+*Limited access. Reach out to our support team or your Technical Account Manager to have this option enabled for your account.
+
+Reporting Users can optionally be assigned to a specific subaccount. Check the "assign to subaccount" box when creating the user and then select the subaccount. Learn more about subaccounts and subaccount users [here](https://www.sparkpost.com/docs/user-guide/subaccounts/).
+
+Only Reporting Users support subaccount assignment at this time.
+
+Subaccount UI access is available to use for free internally within your company and can be made available to your customers via a reseller agreement.
