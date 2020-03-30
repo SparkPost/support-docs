@@ -220,13 +220,13 @@ Sending domain and tracking domain functionality afforded to subaccount users ar
 ### Subaccount UI Access
 *Limited access. Reach out to our support team or your Technical Account Manager to have this option enabled for your account.
 
-Users with the "Reporting" role can be assigned to a specific subaccount. These users only have access to information about that subaccount within the SparkPost UI. They can access their email analytics, including SparkPost Signals, as well as their events. They also have read-only access to templates and snippets associated with their specific subaccount or shared with all subaccounts.
+Users with the "Reporting" role can be assigned to a specific subaccount. These users only have access to information about that subaccount within the SparkPost UI. They can access Signals analytics and event data. They also have read-only access to templates and snippets associated with their specific subaccount or shared with all subaccounts.
 
 Other details to keep in mind:
 * Subaccount Reporting users can see their subaccount name and ID in the app.
 * A Reporting user can only be assigned to a subaccount at account creation. If you want to assign a current user to a specific subaccount, you will need to delete and re-add the user.
 * A Reporting user cannot be switched to a different subaccount or be changed to a the master account. If you want to make these changes, you will need to delete and re-add the user.
-* A Reporting user can only be assigned to a single subaccount. Multi-subaccount access is not supported at this time.
+* A Reporting user can only be assigned to a single subaccount.
 
 Subaccount UI access is available to use for free internally to your company and can be made available to your customers via a reseller agreement. Reach out to our support team or your Technical Account Manager to have this option enabled for your account.
 
