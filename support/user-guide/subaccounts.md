@@ -51,7 +51,7 @@ In addition, your subaccount users will be able to:
 * View and manage the suppression list via the API​
 * Create their own webhook via the API
 * Create, edit, view, and use templates via the API
-* Access [SparkPost Signals](https://www.sparkpost.com/docs/reporting/signals-analytics/) via the UI
+* Access [Signals Analytics](https://www.sparkpost.com/docs/reporting/signals-analytics/) via the UI
 
 ### Use Cases
 
