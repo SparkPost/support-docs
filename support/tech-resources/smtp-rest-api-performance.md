@@ -9,13 +9,19 @@ SparkPost wants to make sure all of our customers have the best sending experien
 
 We recommend that you send via the Transmission REST API, if possible. Overall the REST API is more efficient than SMTP and requires less resources on the client side.
 
-* Keep the size of the transmission to approximately 50MB.  This refers to the total size of the JSON used for transmission, including any substitution data.
+* On timeout or any 5XX error the best practice is to retry.
+* When retrying, we recommend that you leave at least 5 seconds before the first retry, then use exponential backoff.
+* Set API timeout to 300 seconds.
+
+* There is a 300MB limit on payload size for each transmission, but we recommend keeping a payload size no greater than 50MB.  This refers to the total size of the JSON used for transmission, including the content, recipients and any substitution data.
 * Use concurrent connections by having multiple transmissions running in parallel.
 * Send smaller concurrent batches.  Sending 10 transmissions of 2,000 recipients each is more efficient than sending 4 transmissions of 5,000 recipients.
 * For large bulk mailings of 100,000 or more, keep the maximum number of recipients to 10,000 and the minimum number of recipients to 2,000 per transmission call.
+
+* Send up to a maximum of 10,000 transmissions per connection.
+* Use a connection for up to a maximum of 15 minutes, before closing it and creating a new connection.
+* Respect the DNS TTLs for the API endpoint's hostnames.  We use load balancers.  The load balancers do not have a fixed set of IP addresses.  IP addresses can be added and removed automatically during scale out / scale in.  We recommend that your applications look up the hostname in DNS every time a new connnection is made.
 * Limit the concurrent connections to a maximum of 10\.  (For SparkPost Enterprise customers, please contact your TAM for guidance on the number of concurrent connections.)
-* Set API timeout to 300 seconds.  
-* On timeout or any 5XX error the best practice is to retry.
 
 ## Sending via SMTP
 
