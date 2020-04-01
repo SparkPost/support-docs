@@ -10,7 +10,7 @@ SparkPost wants to make sure all of our customers have the best sending experien
 We recommend that you send via the Transmission REST API, if possible. Overall the REST API is more efficient than SMTP and requires less resources on the client side.
 
 * On timeout or any 5XX error the best practice is to retry.
-* When retrying, leave at least 5 seconds between retries. We also recommend using exponential backoff.
+* When retrying, we recommend that you leave at least 5 seconds before the first retry, then use exponential backoff.
 * Set API timeout to 300 seconds.
 
 * There is a 300MB limit on payload size for each transmission, but we recommend keeping a payload size no greater than 50MB.  This refers to the total size of the JSON used for transmission, including the content, recipients and any substitution data.
