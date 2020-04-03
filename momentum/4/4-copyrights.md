@@ -8,11 +8,11 @@ description: "The following copyrights apply to each source file in Momentum inc
 
 The following copyrights apply to each source file in Momentum including this product manual:
 
-Copyright © 1999-2014 Message Systems, Inc. All Rights Reserved.
+Copyright © 1999-2020 Message Systems, Inc. All Rights Reserved.
 
 All or some of the following copyrights apply to third-party libraries distributed with or link against Momentum:
 
-Copyright © 1999-2014 Message Systems, Inc. All Rights Reserved.
+Copyright © 1999-2020 Message Systems, Inc. All Rights Reserved.
 
 Copyright © 2006-2013 Hewlett-Packard, and its licensors. All rights reserved.
 
