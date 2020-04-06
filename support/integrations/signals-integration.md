@@ -15,8 +15,8 @@ Due to multiple source connections and common networking issues, you can expect 
 
 ## Batch Errors
 Sometimes there can be processing issues with an entire batch. These are the batch errors you could see in your integration:
-* System: Catch-all networking error. Batches with system errors should always be retried.
-* Decompression: Could not decompress the GZIP batch data. Batch data may need to be edited and re-compressed in order to retry batch.
+* System: Catch-all networking error. Your application should retry any batches marked with system errors.
+* Decompression: Could not decompress the GZIP batch data. Batch data may need to be edited and re-compressed in order to retry the batch. Check your encoding routine.
 * Empty: Batches with no events. Expected intermittently.
 
 # Custom Message ID
