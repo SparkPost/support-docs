@@ -140,7 +140,7 @@ For up to date information on creating a distribution via CloudFront, please ref
     
         ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_create_distribution.png)
 
-5. On the **Create Distribution** page, under Default Cache Behavior Settings, it is recommended to set a custom whitelist for the `User-Agent` header.  Set the configuration **Query String Forwarding and Caching** to "Whitelist".  At this point you will need to "Add Custom" for `User-Agent`.  This allows `User-Agent` data to be present in your engagement events received from SparkPost.
+5. On the **Create Distribution** page, under Default Cache Behavior Settings, it is recommended to set a custom whitelist for the `User-Agent` header.  Set the configuration **Cache Based on Selected Request Headers** to "Whitelist".  At this point you will need to "Add Custom" for `User-Agent`.  This allows `User-Agent` data to be present in your engagement events received from SparkPost.
 
     ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_whitelist_cache.png)
 
