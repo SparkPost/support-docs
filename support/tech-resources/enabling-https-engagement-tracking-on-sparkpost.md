@@ -126,9 +126,9 @@ For up to date information on creating a distribution via CloudFront, please ref
         
         ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_cnames.png)
 
-    * Under Default Cache Behavior Settings, it is recommended to set a custom whitelist for the `User-Agent` header.  Set the configuration **Query String Forwarding and Caching** to "Whitelist".  At this point you will need to "Add Custom" for `User-Agent`.  This allows `User-Agent` data to be present in your engagement events received from SparkPost.
+    * Under Default Cache Behavior Settings, set **Query String Forwarding and Caching** to "Forward all, cache based on all".
 
-        ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_whitelist_cache.png)
+        ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_query_string_forward.png)
 
     * Create, or update, a CNAME record with your DNS service to route queries for tracking domain(s) with your CloudFront distribution ID.
         
