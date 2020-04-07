@@ -1950,3 +1950,13 @@
                 - link: >-
                     /momentum/mobile/mobile-developer-guide/mobility-mcmt-injection
                   title: The MCMT Format
+- link: /momentum/changelog
+  title: Changelog
+  items:
+    - link: /momentum/changelog/4
+      title: Momentum 4.x Changelog
+      items: 
+        - link: /momentum/changelog/4-3-1
+          title: Momentum 4.3.1 Changelog
+        - link: /momentum/changelog/4-3-0
+          title: Momentum 4.3.0 Changelog
