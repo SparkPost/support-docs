@@ -1,22 +1,9 @@
 ---
 title: "Category File"
 type: "custom"
-name: "Momentum Changelog"
-description: "Message Systems Inc Copyright 2014 Message Systems Inc Confidential Proprietary Abstract This documents Momentum's changelogs"
+name: "Momentum Changelogs"
+description: "Momentum Changelogs"
 ---
 
-### Message Systems, Inc.
-
-Copyright © 2014 Message Systems, Inc.
-
-<a name="changelogs"></a> 
-
-Confidential & Proprietary.
-
-**Abstract**
-
-This book documents Momentum's changelogs.
-
-* * *
-
-
+* [Momentum 4.x Changelogs](/momentum/changelog/4)
+* [Legacy Momentum Changelogs](/momentum/changelog/legacy)

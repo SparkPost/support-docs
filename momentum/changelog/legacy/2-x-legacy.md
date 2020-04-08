@@ -3,8 +3,6 @@ title: "Momentum 2.x Legacy Changelog"
 description: "Changelogs for legacy versions of Momentum 2.x"
 ---
 
-# Momentum 2.x Changelogs
-
 ## Ecelerity version 2.2.3.51 released on 2013-05-17
 * Fixed ticket MO-414: Fixed parsing error with nested multipart messages
 * Fixed ticket MT-10093: Fixed issue causing null pointer exception in TLS handler

@@ -1979,3 +1979,5 @@
           title: Momentum 2.x Legacy Changelog
         - link: /momentum/changelog/legacy/message-central
           title: Message Central Legacy Changelog
+        - link: /momentum/changelog/legacy/message-scope
+          title: Message Scope Legacy Changelog

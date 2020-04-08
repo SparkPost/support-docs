@@ -3,8 +3,6 @@ title: "Message Scope Legacy Changelog"
 description: "Changelogs for legacy versions of Message Scope"
 ---
 
-# Message Scope 1.x Change Log
-
 ## Message Scope 1.2.4 released on 2013-07-02
 * Fixed ticket #PKG-49: Upgrade to Apache 2.2.24 which addresses security vulnerability
 * Fixed ticket #PKG-50: Upgrade to PHP 5.3.24 which addresses security vulnerability

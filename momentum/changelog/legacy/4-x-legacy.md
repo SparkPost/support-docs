@@ -3,8 +3,6 @@ title: "Momentum 4.x Legacy Changelog"
 description: "Changelogs for legacy versions of Momentum 4.x"
 ---
 
-# Momentum 4.x Legacy Changelogs
-
 ## Momentum 4.2 Hotfix 14 released on 2016-09-27
 * Fix: MO-5555: Prevent invalid `content-type` header longer than 256 bytes from causing Momentum to crash.
 * Fix: MO-5681: Provide support for 64 bit integers in Lua for Bloom filter calculation for suppression list.

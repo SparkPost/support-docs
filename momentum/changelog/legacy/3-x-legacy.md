@@ -3,8 +3,6 @@ title: "Momentum 3.x Legacy Changelog"
 description: "Changelogs for legacy versions of Momentum 3.x"
 ---
 
-# Momentum 3.x Changelogs
-
 ## Momentum 3.6.25 released on 2016-08-11
 * Defect ticket: MO-5341 - Fix for DKIM signing failing when transmission API injections required dot stuffing.
 * Defect ticket: MO-5459 - Change default APNS message expiration from 60 seconds to 7 days.

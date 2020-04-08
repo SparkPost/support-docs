@@ -3,8 +3,6 @@ title: "Message Central Legacy Changelog"
 description: "Changelogs for legacy versions of Message Central"
 ---
 
-## Message Central Changelog
-
 # MC 3.8.8 released on 2015-2-11
 * Fixed ticket: MC-277 - fixes issue where generator manager communication with scheduler could stall, neccessitating a scheduler restart
 * Fixed ticket: MC-275 - cleans up manager log by changing the debug level of a couple of statements
