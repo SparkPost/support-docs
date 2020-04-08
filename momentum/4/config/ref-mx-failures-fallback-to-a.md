@@ -17,6 +17,8 @@ mx_failures_fallback_to_a — configure the maximum number of times an MX lookup
 
 The number of times an MX lookup will be attempted before attempting an A lookup. The default value is "3".
 
+If the value is set to -1, the first lookup will be an MX lookup, and any subsequent lookups will be with A records.
+
 <a name="idp25498944"></a> 
 ## Scope
 
