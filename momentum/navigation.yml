@@ -1979,8 +1979,14 @@
           title: Momentum 3.x Legacy Changelog from 2011-2012
         - link: /momentum/changelog/legacy/3-x-legacy-2009-2010
           title: Momentum 3.x Legacy Changelog from 2009-2010
-        - link: /momentum/changelog/legacy/2-x-legacy
-          title: Momentum 2.x Legacy Changelog
+        - link: /momentum/changelog/legacy/2-x-legacy-2009-2013
+          title: Momentum 2.x Legacy Changelog from 2009-2013
+        - link: /momentum/changelog/legacy/2-x-legacy-2008
+          title: Momentum 2.x Legacy Changelog for 2008
+        - link: /momentum/changelog/legacy/2-x-legacy-2007
+          title: Momentum 2.x Legacy Changelog for 2007
+        - link: /momentum/changelog/legacy/2-x-legacy-2003-2006
+          title: Momentum 2.x Legacy Changelog from 2003-2006
         - link: /momentum/changelog/legacy/message-central
           title: Message Central Legacy Changelog
         - link: /momentum/changelog/legacy/message-scope
