@@ -1973,8 +1973,12 @@
       items:
         - link: /momentum/changelog/legacy/4-x-legacy
           title: Momentum 4.x Legacy Changelog
-        - link: /momentum/changelog/legacy/3-x-legacy
-          title: Momentum 3.x Legacy Changelog
+        - link: /momentum/changelog/legacy/3-x-legacy-2013-2016
+          title: Momentum 3.x Legacy Changelog from 2013-2016
+        - link: /momentum/changelog/legacy/3-x-legacy-2011-2012
+          title: Momentum 3.x Legacy Changelog from 2011-2012
+        - link: /momentum/changelog/legacy/3-x-legacy-2009-2010
+          title: Momentum 3.x Legacy Changelog from 2009-2010
         - link: /momentum/changelog/legacy/2-x-legacy
           title: Momentum 2.x Legacy Changelog
         - link: /momentum/changelog/legacy/message-central
