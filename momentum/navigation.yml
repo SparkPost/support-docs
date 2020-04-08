@@ -1956,7 +1956,26 @@
     - link: /momentum/changelog/4
       title: Momentum 4.x Changelog
       items: 
-        - link: /momentum/changelog/4-3-1
+        - link: /momentum/changelog/4/4-3-1
           title: Momentum 4.3.1 Changelog
-        - link: /momentum/changelog/4-3-0
+        - link: /momentum/changelog/4/4-3-0
           title: Momentum 4.3.0 Changelog
+        - link: /momentum/changelog/4/4-2-40
+          title: Momentum 4.2.40 Changelog
+        - link: /momentum/changelog/4/4-2-38
+          title: Momentum 4.2.38 Changelog
+        - link: /momentum/changelog/4/4-2-31
+          title: Momentum 4.2.31 Changelog
+        - link: /momentum/changelog/4/4-2-28
+          title: Momentum 4.2.28 Changelog
+    - link: /momentum/changelog/legacy
+      title: Momentum Legacy Changelogs
+      items:
+        - link: /momentum/changelog/legacy/4-x-legacy
+          title: Momentum 4.x Legacy Changelog
+        - link: /momentum/changelog/legacy/3-x-legacy
+          title: Momentum 3.x Legacy Changelog
+        - link: /momentum/changelog/legacy/2-x-legacy
+          title: Momentum 2.x Legacy Changelog
+        - link: /momentum/changelog/legacy/message-central
+          title: Message Central Legacy Changelog
