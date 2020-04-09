@@ -172,6 +172,8 @@ description: "This chapter provides the definitions of the configuration options
 | [rfc2822_messageid_header](/momentum/4/config/ref-rfc-2822-messageid-header) | rfc2822 conformance |
 | [rfc2822_missing_headers](/momentum/4/config/ref-rfc-2822-missing-headers) | rfc2822 conformance |
 | [rfc2822_trace_headers](/momentum/4/config/ref-rfc-2822-trace-headers) | rfc2822 conformance |
+| [rollup_mx](/momentum/4/config/ref-rollup-mx) | MX Rollup enable/disable |
+| [rollup_mx_name](/momentum/4/config/ref-rollup-mx-name) | MX Rollup routing domain specification |
 | [routes](/momentum/4/config/ref-routes) | configure message routing |
 | [rset_timeout](/momentum/4/config/ref-rset-timeout) | set the timeout after RSET |
 | [scope_max_outbound_connections](/momentum/4/config/ref-scope-max-outbound-connections) | provide traffic shaping for outbound connections |
