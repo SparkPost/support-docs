@@ -1,19 +1,19 @@
 ---
 title: "rollup_mx_name"
-description: "If the associated rollup_mx option is set to 'true', rollup_mx_name specifies the MX host domain to route the traffic to. Valid in host, binding, and binding_group scopes.
+description: "If the associated rollup_mx option is set to 'true', rollup_mx_name specifies the MX host domain to route the traffic to. Valid in host, binding, and binding_group scopes. Usable in host stanzas, which can be included in binding or binding group scopes."
 ---
 
 <a name="conf.ref.rollup_mx_name"></a>
 ## Name
 
-rollup_mx_name — specifies the destination domain to route mail to when doing MX rollup
+rollup_mx_name — specifies the destination domain to route mail to when using the MX rollup feature
 
 ## Synopsis
 
 `rollup_mx_name = "somedomain.com`
 
 ## Description
-This option specifies the destination domain to route to when using the MX rollup feature for a destination.  A more complete description of MX rollup is given in the rollup_mx section.
+This option specifies the destination domain to route to when using the MX rollup feature for a destination host.  A more complete description of MX rollup is given in the rollup_mx option entry.
 
 In the following example configuration, mail sent to either "node1.somedomain.com" or "mail.nobody.com" will be routed to "otherdomain.com", and any Adaptive Delivery settings for "otherdomain.com" will control the delivery.
 
