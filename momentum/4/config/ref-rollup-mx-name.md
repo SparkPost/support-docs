@@ -1,6 +1,6 @@
 ---
 title: "rollup_mx_name"
-description: "If the associated rollup_mx option is set to 'true', rollup_mx_name specifies the MX host domain to route the traffic to. Valid in host, binding, and binding_group scopes. Usable in host stanzas, which can be included in binding or binding group scopes."
+description: "If the associated rollup_mx option is set to 'true', rollup_mx_name specifies the MX host domain to route the traffic to. Valid in host, binding, and binding_group scopes. Usable in Host stanzas, which can be included in global, binding or binding_group scopes."
 ---
 
 <a name="conf.ref.rollup_mx_name"></a>
@@ -35,7 +35,7 @@ The rollup_mx_name option works in conjunction with the rollup_mx option to impl
 
 ## Scope
 
-rollup_mx_name is valid in host scope.  This can be specified in host, binding, or binding group scopes.
+rollup_mx_name is valid in Host scope.  This can be specified in a Host stanza used in global, binding, or binding_group scopes.
 
 ## See Also
 

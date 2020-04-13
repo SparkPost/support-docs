@@ -1,6 +1,6 @@
 ---
 title: "rollup_mx"
-description: "If set to 'true' traffic for the associated host domain will be routed to the MX host of the destination host domain specified by the argument of the related rollup_mx_name option. This enhances the ability of Adaptive Delivery to respond to feedback from receiving domains. Usable in host stanzas, which can be included in binding or binding group scopes."
+description: "If set to 'true' traffic for the associated host domain will be routed to the MX host of the destination host domain specified by the argument of the related rollup_mx_name option. This enhances the ability of Adaptive Delivery to respond to feedback from receiving domains. Usable in host stanzas, which can be included in global, binding or binding_group scopes."
 ---
 
 <a name="conf.ref.rollup_mx"></a>
@@ -37,7 +37,7 @@ The rollup_mx option works in conjunction with the rollup_mx_name option to impl
 
 ## Scope
 
-rollup_mx is valid in host scope.  This can be specified in host, binding, or binding group scopes.
+rollup_mx is valid in Host scope.  This can be specified in a Host stanza used in global, binding, or binding_group scopes.
 
 ## See Also
 
