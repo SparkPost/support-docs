@@ -15,7 +15,7 @@ SparkPost click tracking links are highly dependent on the size of the original 
 > Link sizes of over **4096** bytes will be rejected on redirection
 
 ## REST Transmissions with Engagement Tracking
-Transmissions sent via the SparkPost Transmissions API have engagement tracking on by default for all customers.  This includes a top tracking pixel, and bottom open pixel, and click tracking on all links within the email content.  These options can be configured via [Transmissions API](https://developers.sparkpost.com/api/transmissions/) level options.  For example, if you wish to use open tracking, but not click tracking, you can set the following options in your JSON payload for a REST transmission
+Transmissions sent via the SparkPost Transmissions API have engagement tracking on by default for all customers.  This includes a top open pixel, and bottom open pixel, and click tracking on all links within the email content.  These options can be configured via [Transmissions API](https://developers.sparkpost.com/api/transmissions/) level options.  For example, if you wish to use open tracking, but not click tracking, you can set the following options in your JSON payload for a REST transmission
 
 > **Note:** The `open_tracking` option is not required to be set in the example below, as it defaults to `true`.  It is set explicitly for this example.
 
