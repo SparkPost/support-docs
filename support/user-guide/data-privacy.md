@@ -24,7 +24,7 @@ Once you are on the Data and Privacy page, you can choose to process a single re
 
 **Single Recipient**
 
-For a single recipient, select the type of compliance request you are submitting and the recipient’s email address. 
+For a single recipient, select the type of compliance request you are submitting and enter the recipient’s email address. 
 
 If applicable, select if this request applies to the master account, the master and all subaccounts, or one specific subaccount. (Learn more about subaccounts [here](https://www.sparkpost.com/docs/user-guide/subaccounts/).)
 
@@ -52,7 +52,7 @@ By default, the request will be applied to the master account only. If you would
 
 **Subaccount API Usage**
 
-A subaccount may submit data privacy requests directly to SparkPost via API not the SparkPost app. The master account will need to create an API key for the subaccount with the `Data Privacy: Read/Write` permission. 
+A subaccount may submit data privacy requests directly to SparkPost via API but not in the SparkPost app. The master account will need to create an API key for the subaccount with the `Data Privacy: Read/Write` permission. 
 
 Requests submitted by a subaccount will always only apply to that specific subaccount.
 
