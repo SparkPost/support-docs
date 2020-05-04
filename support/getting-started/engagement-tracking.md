@@ -52,5 +52,10 @@ X-MSYS-API: { "options" : { "open_tracking" : true, "click_tracking" : true } }
 For more information on SMTP Engagement Tracking, check out this [Guide](https://www.sparkpost.com/docs/tech-resources/smtp-engagement-tracking/) to configure your account settings or leverage the [SMTP API](https://developers.sparkpost.com/api/smtp/) to control your engagement tracking. 
 
 
+### Rate Limiting
+If Sparkpost detects excessive click requests over a short period, it will return http `403 Forbidden` errors.
+
+If you're a developer running the same tests frequently, you may run into it. The solution is to wait a while, or cycle through various recipient addresses.
+
 ## Next Steps
 Look at setting up a [Custom Tracking Domain](https://www.sparkpost.com/docs/tech-resources/enabling-multiple-custom-tracking-domains/) for your SparkPost mail, which can provide features like [Mobile Universal and App Links](https://www.sparkpost.com/docs/tech-resources/enabling-multiple-custom-tracking-domains/) and **HTTPS** tracking links through [CDN Hosting](https://www.sparkpost.com/docs/tech-resources/enabling-https-engagement-tracking-on-sparkpost/) or the use of a [Reverse Proxy](https://www.sparkpost.com/docs/tech-resources/using-proxy-https-tracking-domain/).
