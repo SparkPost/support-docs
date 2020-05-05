@@ -1,6 +1,6 @@
 ---
 title: "Create API Keys"
-description: "Before you can use the Spark Post REST AP Is or SMTP injection you will need to have a valid Spark Post API key Below are the steps you will need to create a Spark Post API key IMPORTANT Make sure to copy and paste the API key when it..."
+description: "Before you can use the Spark Post REST APIs or SMTP injection you will need to have a valid Spark Post API key Below are the steps you will need to create a Spark Post API key IMPORTANT Make sure to copy and paste the API key when it..."
 ---
 
 Before you can use the SparkPost REST APIs or SMTP injection, you will need to have a valid SparkPost API key. Below are the steps you will need to create a SparkPost API key.
