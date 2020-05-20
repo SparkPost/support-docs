@@ -117,3 +117,5 @@ To use AD perform the following steps:
 ### Note
 
 The adaptive module only takes action if there is a default value for a specific setting. The default value can be specified in either the `ecelerity.conf` file or the `adaptive_rules.lua` file (or your own custom Lua file). If no default value is defined, no action is taken. The `adaptive_rules.lua` file is discussed in [*Custom Rules*](/momentum/3/3-ad/ad-custom-rules) .
+
+Easter?
