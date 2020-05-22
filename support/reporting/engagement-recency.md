@@ -3,7 +3,7 @@ title: "Engagement Recency"
 description: "Engagement Recency Cohort reports show you the breakdown of how recently the recipients you're sending to have engaged, and how the different cohorts are interacting with your emails."
 ---
 
-Mailbox providers like Gmail closely monitor recipient engagement to determine inbox placement, making their engagement a critical part of your email health. Engagement Recency summarizes how your recipient engagement changes over time, categorizing your recipients into different cohorts based on the recency of their last interaction.  With this data, Signals provides recommendations to increase your engaged recipients and reduce unsubscribes, bounces, and spam complaints.
+Mailbox providers like Gmail closely monitor recipient engagement to determine inbox placement, making their engagement a critical part of your email health. Engagement Recency summarizes how your recipient engagement changes over time, categorizing your recipients into different cohorts based on the recency of their last interaction. With this data, Signals provides recommendations to increase your engaged recipients and reduce unsubscribes, bounces, and spam complaints.
 
 _**Note:** For Engagement Recency to function, you must enable at open or click tracking. For best results, enable both._
 
@@ -12,12 +12,12 @@ _**Note:** For Engagement Recency to function, you must enable at open or click 
 ![Engagement Recency chart](media/engagement-recency/chart.png)
 
 Recipients are divided into the following cohorts:
-* **New Recipients** have received their first email from you within the past 7 days and haven't yet engaged with your messages
-* **Never Engaged** recipients have received email from you but have never engaged, or they last engaged more than one year ago.
-* **Not Recently Engaged** recipients have engaged with your email in the past 365 days, but not in the past 90 days.
-* **Semi-Recently Engaged** recipients have engaged with your email in the past 90 days, but not in the past 14 days.
-* **Recently Engaged** recipients who have engaged with your email in the past 14 days.
 
+- **New Recipients** have received their first email from you within the past 7 days and haven't yet engaged with your messages
+- **Never Engaged** recipients have received email from you but have never engaged, or they last engaged more than one year ago.
+- **Not Recently Engaged** recipients have engaged with your email in the past 365 days, but not in the past 90 days.
+- **Semi-Recently Engaged** recipients have engaged with your email in the past 90 days, but not in the past 14 days.
+- **Recently Engaged** recipients who have engaged with your email in the past 14 days.
 
 ## Dashboard
 
@@ -44,9 +44,10 @@ You can further dive into each group of recipients to optimize your sending and 
 48 hours after emails are sent, the behavior is processed to give you an accurate view of their patterns.
 
 The behavior charts are:
-* Engagement Rate
-* Unsubscribe Rate
-* Spam Complaint Rate
+
+- Engagement Rate
+- Unsubscribe Rate
+- Spam Complaint Rate
 
 Each cohorts behavior rate is depicted by a separate line corresponding to the cohort color. Below is the engagement rate is broken down by cohorts.
 
