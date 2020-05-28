@@ -69,12 +69,12 @@ function trim() {
 
 function do_wp() {
   if [ "$DEPLOY_ENV" == "DEVELOPMENT" ]; then
-    (cd bin && vip @sparkpost.develop -- wp "$@" --user="$WP_USER" --url="http://www.sparkpost.dev:8900")
+    ./bin/node_modules/.bin/vip @sparkpost.develop -- wp "$@" --user="$WP_USER" --url="http://www.sparkpost.dev:8900"
   else
     if [ "$DEPLOY_ENV" == "STAGING" ]; then
-      (cd bin && vip @sparkpost.preprod -- wp "$@" --user="$WP_USER" --url="https://staging.sparkpost.com")
+      ./bin/node_modules/.bin/vip @sparkpost.preprod -- wp "$@" --user="$WP_USER" --url="https://staging.sparkpost.com"
     else
-      (cd bin && vip @sparkpost.prod -- wp "$@" --user="$WP_USER" --url="https://www.sparkpost.com")
+      ./bin/node_modules/.bin/vip @sparkpost.prod -- wp "$@" --user="$WP_USER" --url="https://www.sparkpost.com"
     fi
   fi
 }

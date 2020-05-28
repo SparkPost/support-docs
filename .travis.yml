@@ -9,7 +9,6 @@ install:
   - nvm install stable
   - nvm use stable
   - sudo apt-get install jq
-  - npm install -g @automattic/vip@1.9
   - (cd ./bin && npm install)
 before_script:
   - node bin/login.js
