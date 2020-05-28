@@ -63,20 +63,20 @@ fi
 
 function trim() {
   local str="$1"
-  
+
   echo "${str}" | xargs
 }
 
 function do_wp() {
-  if [ "$DEPLOY_ENV" == "DEVELOPMENT" ]; then
-    wp "$@" --user="$WP_USER" --path="$WP_CONNECTION" --url="http://www.sparkpost.dev:8900"
-  else
+  # if [ "$DEPLOY_ENV" == "DEVELOPMENT" ]; then
+  #   npx vip @sparkpost.develop -- wp "$@" --user="$WP_USER" --url="http://www.sparkpost.dev:8900"
+  # else
     if [ "$DEPLOY_ENV" == "STAGING" ]; then
-      wp "$@" --user="$WP_USER" --ssh="$WP_CONNECTION" --url="https://staging.sparkpost.com"
+      (cd bin && npx vip @sparkpost.preprod -- wp "$@" --user="$WP_USER" --url="https://staging.sparkpost.com")
     else
-      wp "$@" --user="$WP_USER" --ssh="$WP_CONNECTION" --url="https://www.sparkpost.com"
+      (cd bin && npx vip @sparkpost.prod -- wp "$@" --user="$WP_USER" --url="https://www.sparkpost.com")
     fi
-  fi
+  # fi
 }
 
 function get_filename() {
@@ -106,7 +106,7 @@ function index_of() {
     echo "-1"
 }
 
-function get_ext() {  
+function get_ext() {
   local filename=$(basename "$1")
   local extension="${filename##*.}"
   extension=$(echo "$extension" | tr '[:upper:]' '[:lower:]')
@@ -126,7 +126,6 @@ function print_section() {
 }
 
 DEPLOY_ENV="false"
-WP_CONNECTION="false"
 
 if [ "$CI" != "true" ]; then
   DEPLOY_ENV="DEVELOPMENT"
@@ -138,12 +137,7 @@ else
   fi
 fi
 
-eval "WP_CONNECTION=\$WP_$DEPLOY_ENV"
 
-if [ -z "$WP_CONNECTION" ]; then
-  echo -e "${COLOR_RED}Unable to find connection details for \"$DEPLOY_ENV\" environment${COLOR_NONE}"
-  exit 1
-fi
 
 # get the wordpress post stuff
 WP_POSTS=$(do_wp post list --post_type="$WP_POST_TYPE" --format=json --fields=ID,post_name)
@@ -156,7 +150,7 @@ WP_CATEGORY_SLUGS=($(echo "$WP_CATEGORIES" | jq '.[].slug' --raw-output))
 WP_CATEGORY_IDS=($(echo "$WP_CATEGORIES" | jq '.[].term_id' --raw-output))
 
 # get the currently stored yaml navigation option
-WP_NAVIGATION_OPTION=$(trim "$(do_wp option get "${DIRECTORY}_article_navigation" 2> /dev/null)") 
+WP_NAVIGATION_OPTION=$(trim "$(do_wp option get "${DIRECTORY}_article_navigation" 2> /dev/null)")
 
 # refresh the categories cache – used for when we create a parent and child category in the same PR
 function refresh_categories() {
