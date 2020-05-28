@@ -1,6 +1,9 @@
 language: php
 php:
   - "7.1"
+branches:
+  only:
+    - master
 install:
   - . $HOME/.nvm/nvm.sh
   - nvm install stable
@@ -19,5 +22,4 @@ script:
 notifications:
   email: false
   slack:
-    if: branch = master
     secure: CpOt8+gXNrpLdtDzPTDfz0bNtgbQ9Xeq6vFiOx30rQmBwuRKVzHuiJZWZlnuxxoe56C3bMr3vPSo2Gr+a50rvtmQbWoP4hF3fZtLPvEl4ITKtcnDB+wksguNKQkC57M7JSNsKaTbmzW4O5sRhiqbluNBfP/8wNrfjvDW4TuHP9P57rGmt9ALK+Z9v+n0YroPbu/rHL6Q0poeLbW+En6uqSPq4wmb3ZH1qCzG/QhigiLG9Qlr+iXnpyAA5z/PZ/+jHXdexUkEtp7owVLcilg9I3pm5DZJOq0nG7neecOBgr86aJp2CVgk5pOjZxBLK4AGG8xNuvB4xhTcQ5BxApfitViRUYEOm/5dELKFCpM5Sk8+1AWsywfL340mmh5KnxW3eM3ri1NKHwCU6r+j1026ERaDEH2T4gERgQBxPvH7bUNncLUYzosMXeozW3D6A+2N75jpvK8lmH/9absBF/tLPz9Ktsr2zpoM3nH84S1vbSKykz1RfmUIPGsO5sH9XEVv+/c+cSUVRgxHSMkQENM/lggrJNWx3dFaMm0Cuh+Y2qfaEGZgcKTVmsZmFES/FDd1I+LYMaLb+kFT8SAPiABtOcEiw4gMpTqMDSuoHCc4+rO7hgM68ol4+JkoaTKQNwoDDDlD94c4KWzmEU2lPbJFbgF9ms94R3QvoBgO6ZmIaDU=
