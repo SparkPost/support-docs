@@ -69,7 +69,7 @@ function trim() {
 
 function do_wp() {
   if [ "$DEPLOY_ENV" == "DEVELOPMENT" ]; then
-    npx vip @sparkpost.develop -- wp "$@" --user="$WP_USER" --url="http://www.sparkpost.dev:8900"
+    (cd bin && npx vip @sparkpost.develop -- wp "$@" --user="$WP_USER" --url="http://www.sparkpost.dev:8900")
   else
     if [ "$DEPLOY_ENV" == "STAGING" ]; then
       (cd bin && npx vip @sparkpost.preprod -- wp "$@" --user="$WP_USER" --url="https://staging.sparkpost.com")
