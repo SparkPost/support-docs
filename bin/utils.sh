@@ -144,6 +144,8 @@ WP_POSTS=$(do_wp post list --post_type="$WP_POST_TYPE" --format=json --fields=ID
 WP_POST_SLUGS=($(echo "$WP_POSTS" | jq '.[].post_name' --raw-output))
 WP_POST_IDS=($(echo "$WP_POSTS" | jq '.[].ID' --raw-output))
 
+echo -e "$WP_POSTS"
+
 # get the wordpress category stuff
 WP_CATEGORIES=$(do_wp term list "$WP_CUSTOM_TAX" --format=json --fields=term_id,slug)
 WP_CATEGORY_SLUGS=($(echo "$WP_CATEGORIES" | jq '.[].slug' --raw-output))
