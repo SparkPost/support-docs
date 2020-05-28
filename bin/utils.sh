@@ -69,12 +69,12 @@ function trim() {
 
 function do_wp() {
   if [ "$DEPLOY_ENV" == "DEVELOPMENT" ]; then
-    vip wp "$@" --app=sparkpost --env=develop --yes --user="$WP_USER" --url="http://www.sparkpost.dev:8900"
+    (cd bin && npx vip @sparkpost.develop --yes -- wp "$@" --user="$WP_USER" --url="http://www.sparkpost.dev:8900")
   else
     if [ "$DEPLOY_ENV" == "STAGING" ]; then
-      vip wp "$@" --app=sparkpost --env=preprod --yes --user="$WP_USER" --url="https://staging.sparkpost.com"
+      (cd bin && npx vip @sparkpost.preprod --yes -- wp "$@" --user="$WP_USER" --url="https://staging.sparkpost.com")
     else
-      vip wp "$@" --app=sparkpost --env=prod --yes --user="$WP_USER" --url="https://www.sparkpost.com"
+      (cd bin && npx vip @sparkpost.prod --yes -- wp "$@" --user="$WP_USER" --url="https://www.sparkpost.com")
     fi
   fi
 }
@@ -143,8 +143,6 @@ echo -e "DEPLOY_ENV = $DEPLOY_ENV"
 WP_POSTS=$(do_wp post list --post_type="$WP_POST_TYPE" --format=json --fields=ID,post_name --posts_per_page=1000)
 WP_POST_SLUGS=($(echo "$WP_POSTS" | jq '.[].post_name' --raw-output))
 WP_POST_IDS=($(echo "$WP_POSTS" | jq '.[].ID' --raw-output))
-
-echo -e "$WP_POSTS"
 
 # get the wordpress category stuff
 WP_CATEGORIES=$(do_wp term list "$WP_CUSTOM_TAX" --format=json --fields=term_id,slug)
