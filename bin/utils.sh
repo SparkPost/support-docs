@@ -68,15 +68,15 @@ function trim() {
 }
 
 function do_wp() {
-  # if [ "$DEPLOY_ENV" == "DEVELOPMENT" ]; then
-  #   npx vip @sparkpost.develop -- wp "$@" --user="$WP_USER" --url="http://www.sparkpost.dev:8900"
-  # else
+  if [ "$DEPLOY_ENV" == "DEVELOPMENT" ]; then
+    npx vip @sparkpost.develop -- wp "$@" --user="$WP_USER" --url="http://www.sparkpost.dev:8900"
+  else
     if [ "$DEPLOY_ENV" == "STAGING" ]; then
       (cd bin && npx vip @sparkpost.preprod -- wp "$@" --user="$WP_USER" --url="https://staging.sparkpost.com")
     else
       (cd bin && npx vip @sparkpost.prod -- wp "$@" --user="$WP_USER" --url="https://www.sparkpost.com")
     fi
-  # fi
+  fi
 }
 
 function get_filename() {
@@ -137,10 +137,10 @@ else
   fi
 fi
 
-
+echo -e "DEPLOY_ENV = $DEPLOY_ENV"
 
 # get the wordpress post stuff
-WP_POSTS=$(do_wp post list --post_type="$WP_POST_TYPE" --format=json --fields=ID,post_name)
+WP_POSTS=$(do_wp post list --post_type="$WP_POST_TYPE" --format=json --fields=ID,post_name --posts_per_page=1000)
 WP_POST_SLUGS=($(echo "$WP_POSTS" | jq '.[].post_name' --raw-output))
 WP_POST_IDS=($(echo "$WP_POSTS" | jq '.[].ID' --raw-output))
 
