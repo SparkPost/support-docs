@@ -20,7 +20,7 @@ done
 
 # delete the posts
 for post_id in "${WP_POST_IDS[@]}"; do
-  image_ids=($(do_wp post list --post_type='attachment' --format=ids --post_parent="$post_id"))
+  image_ids=($(do_wp post list --post_type='attachment' --format=ids --post_parent="$post_id" $NO_PAGINATION_FLAGS))
   do_wp post delete "${image_ids[@]}" --force
 
   do_wp post delete $post_id --force

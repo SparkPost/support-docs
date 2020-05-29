@@ -139,15 +139,14 @@ fi
 
 echo -e "DEPLOY_ENV = $DEPLOY_ENV"
 
+# note, `wp post list` requires posts_per_page and nopaging disables pagination
+# see, https://developer.wordpress.org/reference/classes/wp_query/
+NO_PAGINATION_FLAGS='--posts_per_page=1000 --nopaging=true'
+
 # get the wordpress post stuff
-WP_POSTS=$(do_wp post list --post_type="$WP_POST_TYPE" --format=json --fields=ID,post_name --posts_per_page=1000)
+WP_POSTS=$(do_wp post list --post_type="$WP_POST_TYPE" --format=json --fields=ID,post_name $NO_PAGINATION_FLAGS)
 WP_POST_SLUGS=($(echo "$WP_POSTS" | jq '.[].post_name' --raw-output))
 WP_POST_IDS=($(echo "$WP_POSTS" | jq '.[].ID' --raw-output))
-
-# get the wordpress category stuff
-WP_CATEGORIES=$(do_wp term list "$WP_CUSTOM_TAX" --format=json --fields=term_id,slug)
-WP_CATEGORY_SLUGS=($(echo "$WP_CATEGORIES" | jq '.[].slug' --raw-output))
-WP_CATEGORY_IDS=($(echo "$WP_CATEGORIES" | jq '.[].term_id' --raw-output))
 
 # refresh the categories cache – used for when we create a parent and child category in the same PR
 function refresh_categories() {
@@ -156,6 +155,11 @@ function refresh_categories() {
   WP_CATEGORY_IDS=($(echo "$WP_CATEGORIES" | jq '.[].term_id' --raw-output))
 }
 
+# get the wordpress category stuff
+refresh_categories
+
+echo -e "Found $(echo "$WP_POSTS" | jq '. | length') posts"
+echo -e "Found $(echo "$WP_CATEGORIES" | jq '. | length') categories"
 
 function import_related_media() {
   local post_id="$1"
@@ -198,7 +202,7 @@ function import_related_media() {
 
 function delete_related_media() {
   local post_id="$1"
-  local image_ids=($(do_wp post list --post_type='attachment' --format=ids --post_parent="$post_id"))
+  local image_ids=($(do_wp post list --post_type='attachment' --format=ids --post_parent="$post_id" $NO_PAGINATION_FLAGS))
 
   if [ ${#image_ids[@]} -ne 0 ]; then
     do_wp post delete "${image_ids[@]}" --force > /dev/null 2>&1
