@@ -69,12 +69,12 @@ function trim() {
 
 function do_wp() {
   if [ "$DEPLOY_ENV" == "DEVELOPMENT" ]; then
-    (cd bin && npx vip @sparkpost.develop --yes -- wp "$@" --user="$WP_USER" --url="http://www.sparkpost.dev:8900")
+    ./bin/node_modules/.bin/vip-wp @sparkpost.develop --yes -- "$@" --user="$WP_USER" --url="http://www.sparkpost.dev:8900"
   else
     if [ "$DEPLOY_ENV" == "STAGING" ]; then
-      (cd bin && npx vip @sparkpost.preprod --yes -- wp "$@" --user="$WP_USER" --url="https://staging.sparkpost.com")
+      ./bin/node_modules/.bin/vip-wp @sparkpost.preprod --yes -- "$@" --user="$WP_USER" --url="https://staging.sparkpost.com"
     else
-      (cd bin && npx vip @sparkpost.prod --yes -- wp "$@" --user="$WP_USER" --url="https://www.sparkpost.com")
+      ./bin/node_modules/.bin/vip-wp @sparkpost.prod --yes -- "$@" --user="$WP_USER" --url="https://www.sparkpost.com"
     fi
   fi
 }
@@ -151,6 +151,14 @@ WP_CATEGORY_IDS=($(echo "$WP_CATEGORIES" | jq '.[].term_id' --raw-output))
 
 # get the currently stored yaml navigation option
 WP_NAVIGATION_OPTION=$(trim "$(do_wp option get "${DIRECTORY}_article_navigation" 2> /dev/null)")
+
+echo -e "WP_POSTS: ${WP_POSTS}"
+echo -e "WP_POST_SLUGS: ${WP_POST_SLUGS[*]}"
+echo -e "WP_POST_IDS: ${WP_POST_IDS[*]}"
+echo -e "WP_CATEGORIES: ${WP_CATEGORIES}"
+echo -e "WP_CATEGORY_SLUGS: ${WP_CATEGORY_SLUGS[*]}"
+echo -e "WP_CATEGORY_IDS: ${WP_CATEGORY_IDS[*]}"
+echo -e "WP_NAVIGATION_OPTION: ${WP_NAVIGATION_OPTION}"
 
 # refresh the categories cache – used for when we create a parent and child category in the same PR
 function refresh_categories() {
