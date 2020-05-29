@@ -149,17 +149,6 @@ WP_CATEGORIES=$(do_wp term list "$WP_CUSTOM_TAX" --format=json --fields=term_id,
 WP_CATEGORY_SLUGS=($(echo "$WP_CATEGORIES" | jq '.[].slug' --raw-output))
 WP_CATEGORY_IDS=($(echo "$WP_CATEGORIES" | jq '.[].term_id' --raw-output))
 
-# get the currently stored yaml navigation option
-WP_NAVIGATION_OPTION=$(trim "$(do_wp option get "${DIRECTORY}_article_navigation" 2> /dev/null)")
-
-echo -e "WP_POSTS: ${WP_POSTS}"
-echo -e "WP_POST_SLUGS: ${WP_POST_SLUGS[*]}"
-echo -e "WP_POST_IDS: ${WP_POST_IDS[*]}"
-echo -e "WP_CATEGORIES: ${WP_CATEGORIES}"
-echo -e "WP_CATEGORY_SLUGS: ${WP_CATEGORY_SLUGS[*]}"
-echo -e "WP_CATEGORY_IDS: ${WP_CATEGORY_IDS[*]}"
-echo -e "WP_NAVIGATION_OPTION: ${WP_NAVIGATION_OPTION}"
-
 # refresh the categories cache – used for when we create a parent and child category in the same PR
 function refresh_categories() {
   WP_CATEGORIES=$(do_wp term list "$WP_CUSTOM_TAX" --format=json --fields=term_id,slug)

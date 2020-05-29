@@ -3,6 +3,8 @@ source ./bin/utils.sh
 
 print_section "Deploying navigation"
 
+# get the currently stored yaml navigation option
+WP_NAVIGATION_OPTION=$(trim "$(do_wp option get "${DIRECTORY}_article_navigation" 2> /dev/null)")
 
 filepath="${DIRECTORY}/navigation.yml"
 navigation_file_was_changed="false"
@@ -29,7 +31,7 @@ fi
 
 if [ "$navigation_file_was_changed" == "false" ]; then
   echo "No changes to be made"
-else 
+else
   # if we have the file but don't have the option - create
   if [[ "$navigation_file_exists" == "true" ]] && [[ "$navigation_option_exists" == "false" ]]; then
     echo " - Creating navigation option"
