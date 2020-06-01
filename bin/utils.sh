@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#set -e
+set -e
 
 COLOR_RED="\033[1;31m"
 COLOR_GREEN="\033[1;32m"
@@ -69,12 +69,12 @@ function trim() {
 
 function do_wp() {
   if [ "$DEPLOY_ENV" == "DEVELOPMENT" ]; then
-    ./bin/node_modules/.bin/vip-wp @sparkpost.develop --yes -- "$@" --user="$WP_USER" --url="http://www.sparkpost.dev:8900"
+    ./bin/wp @sparkpost.develop "$@" --user="$WP_USER" --url="http://www.sparkpost.dev:8900"
   else
     if [ "$DEPLOY_ENV" == "STAGING" ]; then
-      ./bin/node_modules/.bin/vip-wp @sparkpost.preprod --yes -- "$@" --user="$WP_USER" --url="https://staging.sparkpost.com"
+      ./bin/wp @sparkpost.preprod "$@" --user="$WP_USER" --url="https://staging.sparkpost.com"
     else
-      ./bin/node_modules/.bin/vip-wp @sparkpost.prod --yes -- "$@" --user="$WP_USER" --url="https://www.sparkpost.com"
+      ./bin/wp @sparkpost.prod "$@" --user="$WP_USER" --url="https://www.sparkpost.com"
     fi
   fi
 }

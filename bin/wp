@@ -1,0 +1,195 @@
+#!/usr/bin/env node
+"use strict";
+
+const {
+  API: { default: API, API_HOST },
+  Token: { default: Token }
+} = require("@automattic/vip");
+const { parseEnvAlias } = require("@automattic/vip/dist/lib/cli/envAlias");
+const gql = require("graphql-tag");
+const client = require("socket.io-client");
+const stream = require("socket.io-stream");
+
+const emit = async ({ guid, inputToken, socket }) =>
+  new Promise((accept, reject) => {
+    const stdout = stream.createStream();
+    let str = "";
+
+    stdout.on("data", chunk => {
+      str = str + chunk;
+    });
+    stdout.on("end", () => {
+      accept(str);
+    });
+    stdout.on("error", error => {
+      reject(error);
+    });
+
+    stream(socket).emit(
+      "cmd",
+      {
+        guid,
+        inputToken,
+        columns: 100, // NON_TTY_COLUMNS,
+        rows: 15, // NON_TTY_ROWS,
+        offset: 0 // arg default
+      },
+      stream.createStream(), // input
+      stdout
+    );
+  });
+
+const main = async () => {
+  const api = await API();
+  const token = await Token.get();
+  const [_node, _script, alias, ...args] = process.argv;
+  const { app: appName, env: environmentName } = parseEnvAlias(alias);
+  const command = args.join(" ");
+
+  // get ids for application and environment
+  const {
+    data: {
+      apps: {
+        edges: [edge]
+      }
+    }
+  } = await api.query({
+    // $FlowFixMe: gql template is not supported by flow
+    query: gql`
+      query Apps($first: Int, $after: String) {
+        apps(first: $first, after: $after) {
+          total
+          nextCursor
+          edges {
+            id
+            name
+            organization {
+              id
+              name
+            }
+            environments {
+              id
+              appId
+              type
+              name
+              primaryDomain {
+                name
+              }
+            }
+          }
+        }
+      }
+    `,
+    variables: {
+      first: 1,
+      after: null
+    }
+  });
+
+  if (appName !== edge.name) {
+    throw new Error(`Unable to find Wordpress VIP application ${appName}`);
+  }
+
+  const environment = edge.environments.find(
+    ({ type }) => type === environmentName
+  );
+
+  if (!environment) {
+    throw new Error(
+      `Unable to find Wordpress VIP environment ${environmentName}`
+    );
+  }
+
+  // see, getTokenForCommand()
+  const {
+    data: {
+      triggerWPCLICommandOnAppEnvironment: {
+        command: { guid },
+        inputToken
+      }
+    }
+  } = await api.mutate({
+    mutation: gql`
+      mutation TriggerWPCLICommandMutation(
+        $input: AppEnvironmentTriggerWPCLICommandInput
+      ) {
+        triggerWPCLICommandOnAppEnvironment(input: $input) {
+          inputToken
+          command {
+            guid
+          }
+        }
+      }
+    `,
+    variables: {
+      input: {
+        id: environment.appId,
+        environmentId: environment.id,
+        command
+      }
+    }
+  });
+
+  // todo, insert error handling
+  // if (e.graphQLErrors) {
+  //   e.graphQLErrors.forEach(error => {
+  //     console.log(_chalk.default.red('Error:'), error.message);
+  //   });
+  // }
+
+  // see, launchCommandAndGetStreams()
+  const socket = client(`${API_HOST}/wp-cli`, {
+    transportOptions: {
+      polling: {
+        extraHeaders: {
+          Authorization: `Bearer ${token.raw}`
+        }
+      }
+    },
+    // see, https://socket.io/docs/client-api/#new-Manager-url-options
+    forceNew: true,
+    reconnection: false
+    // requestTimeout: 1000
+    // timeout: 20000
+  });
+
+  const events = [
+    "cancel", // custom vip event
+    // "connect",
+    "connect_error",
+    "connect_timeout",
+    // "disconnect",
+    "error",
+    // "ping",
+    // "pong",
+    "reconnect",
+    "reconnect_attempt",
+    "reconnect_error",
+    "reconnect_failed",
+    "reconnecting",
+    "unauthorized" // custom vip event
+  ];
+
+  events.forEach(event => {
+    socket.on(event, (...args) => {
+      socket.disconnect(); // same as .close()
+      console.error(event, args);
+      throw new Error(`Received unexpected socket event ${event}`);
+    });
+  });
+
+  //
+  try {
+    const result = await emit({ guid, inputToken, socket });
+    socket.disconnect(); // same as .close()
+    console.log(result);
+  } catch (error) {
+    socket.disconnect(); // same as .close()
+    throw error;
+  }
+};
+
+main().catch(error => {
+  console.error(error);
+  process.exit(1);
+});

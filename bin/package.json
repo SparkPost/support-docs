@@ -5,8 +5,11 @@
   "author": "SparkPost",
   "dependencies": {
     "@automattic/vip": "^1.9.0",
+    "graphql-tag": "^2.10.3",
     "markdown-it": "^8.3.1",
     "markdown-it-anchor": "^4.0.0",
-    "markdown-it-meta": "0.0.1"
+    "markdown-it-meta": "0.0.1",
+    "socket.io-client": "^2.3.0",
+    "socket.io-stream": "^0.9.1"
   }
 }
