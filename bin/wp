@@ -154,7 +154,11 @@ const main = async () => {
     // maybe causing too many open connections?
     // see, https://socket.io/docs/client-api/#socket-connected
     // forceNew: true,
-    // reconnection: false,
+
+    forceNode: true,
+
+    // note, want to fail quickly
+    reconnection: false,
 
     // note, the backtrace starts at Timeout._onTimeout
     // scratch, still failed on second GET
