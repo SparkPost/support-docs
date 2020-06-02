@@ -11,6 +11,7 @@ install:
   - sudo apt-get install jq
   - (cd ./bin && npm install)
 before_script:
+  - dig api.wpvip.com
   - node bin/login.js
 script:
   - "./bin/deploy-navigation.sh --directory='support' --type='support_article' --tax='support_category'"
