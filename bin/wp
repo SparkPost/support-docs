@@ -141,24 +141,24 @@ const main = async () => {
 
   // see, launchCommandAndGetStreams()
   const socket = client(`${API_HOST}/wp-cli`, {
-    transports: ["polling"],
+    // transports: ["polling"],
     transportOptions: {
       polling: {
         extraHeaders: {
           Authorization: `Bearer ${token.raw}`
         }
       }
-    },
+    }
     // see, https://socket.io/docs/client-api/#new-Manager-url-options
 
     // maybe causing too many open connections?
     // see, https://socket.io/docs/client-api/#socket-connected
-    forceNew: true,
+    // forceNew: true,
 
-    forceNode: true,
+    // forceNode: true,
 
-    reconnection: true,
-    reconnectionAttempts: 1,
+    // reconnection: true,
+    // reconnectionAttempts: 1,
 
     // note, the backtrace starts at Timeout._onTimeout
     // scratch, still failed on second GET
@@ -167,7 +167,7 @@ const main = async () => {
 
     // lots of discussion about upgrade header breaking nginx
     // see, https://github.com/socketio/socket.io/issues/2333
-    upgrade: false
+    // upgrade: false
   });
 
   const events = [
