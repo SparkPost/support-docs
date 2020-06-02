@@ -6,8 +6,8 @@ branches:
     - master
 install:
   - . $HOME/.nvm/nvm.sh
-  - nvm install stable
-  - nvm use stable
+  - nvm install v10.17.0
+  - nvm use v10.17.0
   - sudo apt-get install jq
   - (cd ./bin && npm install)
 before_script:
