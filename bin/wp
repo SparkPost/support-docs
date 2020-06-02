@@ -154,10 +154,11 @@ const main = async () => {
     // maybe causing too many open connections?
     // see, https://socket.io/docs/client-api/#socket-connected
     // forceNew: true,
-    reconnection: false,
+    // reconnection: false,
 
     // note, the backtrace starts at Timeout._onTimeout
-    requestTimeout: 10000,
+    // scratch, still failed on second GET
+    // requestTimeout: 10000,
     // timeout: 20000,
 
     // lots of discussion about upgrade header breaking nginx
