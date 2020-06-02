@@ -27,7 +27,9 @@ const emit = async ({ guid, inputToken, socket }) =>
       reject(error);
     });
 
-    console.error("sockect.connected", socket.connected);
+    stream(socket).on("error", (...args) => {
+      console.error("The Real Slim Shady", ...args);
+    });
 
     stream(socket).emit(
       "cmd",
@@ -142,7 +144,6 @@ const main = async () => {
   // }
 
   // see, launchCommandAndGetStreams()
-  console.error("API_HOST = ", API_HOST);
   const socket = client(`${API_HOST}/wp-cli`, {
     transportOptions: {
       polling: {
@@ -157,8 +158,6 @@ const main = async () => {
     // requestTimeout: 1000
     // timeout: 20000
   });
-  console.error(JSON.stringify(socket.io.opts, undefined, "  "));
-  console.error(socket.io.engine);
 
   const events = [
     "cancel", // custom vip event
