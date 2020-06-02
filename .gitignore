@@ -7,3 +7,6 @@ deploy-key
 cms/admin/*
 !config.yml
 !article.css
+
+# vim swap files
+**/.*.sw?
