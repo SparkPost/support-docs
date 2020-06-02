@@ -32,8 +32,8 @@ const emit = async ({ guid, inputToken, socket }) =>
       {
         guid,
         inputToken,
-        columns: 100, // NON_TTY_COLUMNS,
-        rows: 15, // NON_TTY_ROWS,
+        columns: process.stdout.columns || 100, // NON_TTY_COLUMNS,
+        rows: process.stdout.rows || 15, // NON_TTY_ROWS,
         offset: 0 // arg default
       },
       stream.createStream(), // input
