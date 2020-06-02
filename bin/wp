@@ -27,10 +27,6 @@ const emit = async ({ guid, inputToken, socket }) =>
       reject(error);
     });
 
-    stream(socket).on("error", (...args) => {
-      console.error("The Real Slim Shady", ...args);
-    });
-
     stream(socket).emit(
       "cmd",
       {
@@ -158,13 +154,13 @@ const main = async () => {
     // maybe causing too many open connections?
     // see, https://socket.io/docs/client-api/#socket-connected
     // forceNew: true,
-    reconnection: false
+    reconnection: false,
     // requestTimeout: 1000
     // timeout: 20000,
 
     // lots of discussion about upgrade header breaking nginx
     // see, https://github.com/socketio/socket.io/issues/2333
-    // upgrade: false // see,
+    upgrade: false // see,
   });
 
   const events = [
@@ -199,6 +195,13 @@ const main = async () => {
   try {
     const result = await emit({ guid, inputToken, socket });
     socket.disconnect(); // same as .close()
+
+    // todo, if you see this error message, there is a cmd that needs to be canceled
+    // see, https://dashboard.wpvip.com/apps/2077/wp-cli
+    // There was an error running the command: Maximum running command count has been reached
+    // for the site. Please wait until a command is finished and try again. You can also
+    // view and cancel running commands from Command Log in the dashboard.
+
     console.log(result);
   } catch (error) {
     socket.disconnect(); // same as .close()
