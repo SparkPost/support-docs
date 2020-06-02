@@ -5,7 +5,7 @@ const {
   API: { default: API, API_HOST },
   Token: { default: Token }
 } = require("@automattic/vip");
-const { parseEnvAlias } = require("@automattic/vip/dist/lib/cli/envAlias");
+const { parseEnvAlias } = require("@automattic/vip/dist/lib/cli/envAlias"); // :)
 const gql = require("graphql-tag");
 const client = require("socket.io-client");
 const stream = require("socket.io-stream");
@@ -18,12 +18,16 @@ const emit = async ({ guid, inputToken, socket }) =>
     stdout.on("data", chunk => {
       str = str + chunk;
     });
+
     stdout.on("end", () => {
       accept(str);
     });
+
     stdout.on("error", error => {
       reject(error);
     });
+
+    console.error("sockect.connected", socket.connected);
 
     stream(socket).emit(
       "cmd",
@@ -138,6 +142,7 @@ const main = async () => {
   // }
 
   // see, launchCommandAndGetStreams()
+  console.error("API_HOST = ", API_HOST);
   const socket = client(`${API_HOST}/wp-cli`, {
     transportOptions: {
       polling: {
@@ -148,11 +153,12 @@ const main = async () => {
     },
     // see, https://socket.io/docs/client-api/#new-Manager-url-options
     forceNew: true,
-    reconnection: false,
-    rejectUnauthorized: false
+    reconnection: false
     // requestTimeout: 1000
     // timeout: 20000
   });
+  console.error(JSON.stringify(socket.io.opts, undefined, "  "));
+  console.error(socket.io.engine);
 
   const events = [
     "cancel", // custom vip event
@@ -173,8 +179,11 @@ const main = async () => {
 
   events.forEach(event => {
     socket.on(event, (...args) => {
-      socket.disconnect(); // same as .close()
-      console.error(event, args);
+      if (!socket.disconnect) {
+        socket.disconnect(); // same as .close()
+      }
+
+      console.error(event, ...args);
       throw new Error(`Received unexpected socket event "${event}"`);
     });
   });
