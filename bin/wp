@@ -157,8 +157,8 @@ const main = async () => {
 
     forceNode: true,
 
-    // note, want to fail quickly
-    reconnection: false,
+    reconnection: true,
+    reconnectionAttempts: 1,
 
     // note, the backtrace starts at Timeout._onTimeout
     // scratch, still failed on second GET
@@ -179,8 +179,8 @@ const main = async () => {
     "error",
     "ping",
     "pong",
-    "reconnect",
-    "reconnect_attempt",
+    // "reconnect",
+    // "reconnect_attempt",
     "reconnect_error",
     "reconnect_failed",
     "reconnecting",
