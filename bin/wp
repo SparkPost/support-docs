@@ -144,7 +144,8 @@ const main = async () => {
   // }
 
   // see, launchCommandAndGetStreams()
-  const socket = client(`${API_HOST}/wp-cli`, {
+  // const socket = client(`${API_HOST}/wp-cli`, {
+  const socket = client("https://192.0.66.2/wp-cli", {
     transportOptions: {
       polling: {
         extraHeaders: {
