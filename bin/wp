@@ -155,12 +155,14 @@ const main = async () => {
     // see, https://socket.io/docs/client-api/#socket-connected
     // forceNew: true,
     reconnection: false,
-    // requestTimeout: 1000
+
+    // note, the backtrace starts at Timeout._onTimeout
+    requestTimeout: 10000,
     // timeout: 20000,
 
     // lots of discussion about upgrade header breaking nginx
     // see, https://github.com/socketio/socket.io/issues/2333
-    upgrade: false // see,
+    upgrade: false
   });
 
   const events = [
