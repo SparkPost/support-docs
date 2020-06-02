@@ -144,8 +144,7 @@ const main = async () => {
   // }
 
   // see, launchCommandAndGetStreams()
-  // const socket = client(`${API_HOST}/wp-cli`, {
-  const socket = client("https://192.0.66.2/wp-cli", {
+  const socket = client(`${API_HOST}/wp-cli`, {
     transportOptions: {
       polling: {
         extraHeaders: {
@@ -155,9 +154,10 @@ const main = async () => {
     },
     // see, https://socket.io/docs/client-api/#new-Manager-url-options
     forceNew: true,
-    reconnection: false
+    reconnection: false,
     // requestTimeout: 1000
-    // timeout: 20000
+    // timeout: 20000,
+    upgrade: false
   });
 
   const events = [
