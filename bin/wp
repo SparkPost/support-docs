@@ -10,6 +10,47 @@ const gql = require("graphql-tag");
 const client = require("socket.io-client");
 const stream = require("socket.io-stream");
 
+const connect = async ({ token }) =>
+  new Promise((accept, reject) => {
+    // see, launchCommandAndGetStreams()
+    const socket = client(`${API_HOST}/wp-cli`, {
+      // transports: ["polling"],
+      transportOptions: {
+        polling: {
+          extraHeaders: {
+            Authorization: `Bearer ${token.raw}`
+          }
+        }
+      }
+      // see, https://socket.io/docs/client-api/#new-Manager-url-options
+
+      // maybe causing too many open connections?
+      // see, https://socket.io/docs/client-api/#socket-connected
+      // forceNew: true,
+
+      // forceNode: true,
+
+      // reconnection: true,
+      // reconnectionAttempts: 1,
+
+      // note, the backtrace starts at Timeout._onTimeout
+      // scratch, still failed on second GET
+      // requestTimeout: 10000,
+      // timeout: 20000,
+
+      // lots of discussion about upgrade header breaking nginx
+      // see, https://github.com/socketio/socket.io/issues/2333
+      // upgrade: false
+    });
+
+    socket.on("connect", () => {
+      accept(socket);
+    });
+
+    socket.on("connect_error", reject);
+    socket.on("connect_timeout", reject);
+  });
+
 const emit = async ({ guid, inputToken, socket }) =>
   new Promise((accept, reject) => {
     const stdout = stream.createStream();
@@ -139,42 +180,13 @@ const main = async () => {
   //   });
   // }
 
-  // see, launchCommandAndGetStreams()
-  const socket = client(`${API_HOST}/wp-cli`, {
-    // transports: ["polling"],
-    transportOptions: {
-      polling: {
-        extraHeaders: {
-          Authorization: `Bearer ${token.raw}`
-        }
-      }
-    }
-    // see, https://socket.io/docs/client-api/#new-Manager-url-options
-
-    // maybe causing too many open connections?
-    // see, https://socket.io/docs/client-api/#socket-connected
-    // forceNew: true,
-
-    // forceNode: true,
-
-    // reconnection: true,
-    // reconnectionAttempts: 1,
-
-    // note, the backtrace starts at Timeout._onTimeout
-    // scratch, still failed on second GET
-    // requestTimeout: 10000,
-    // timeout: 20000,
-
-    // lots of discussion about upgrade header breaking nginx
-    // see, https://github.com/socketio/socket.io/issues/2333
-    // upgrade: false
-  });
+  const socket = await connect({ token });
 
   const events = [
     "cancel", // custom vip event
     // "connect",
-    "connect_error",
-    "connect_timeout",
+    // "connect_error",
+    // "connect_timeout",
     // "disconnect",
     "error",
     "ping",
