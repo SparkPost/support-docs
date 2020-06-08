@@ -34,27 +34,9 @@ The following is a description of the fields:
 | 6 | example.fict | Domain of the recipient |
 | 7 | info | Localpart of the envelope sender |
 | 8 | postalengine.com | Domain of the envelope sender |
-| 9 | 10.0.1.1 | 
-
-IP address from which the message was received
-
-(For HTTP transmissions, this value will be `unknown`. )
-
- |
+| 9 | 10.0.1.1 | IP address from which the message was received. For HTTP transmissions, this value will be `unknown`. |
 | 10 | 201 | Size of the message in bytes |
-| 11 | esmtp | 
-
-Protocol over which the message was received:
-
-`esmtp` – SMTP
-
-`rest` – HTTP
-
-`xfer` – message was transferred from another node
-
-`internal` – internally generated bounce
-
- |
+| 11 | esmtp | Protocol over which the message was received:<br>`esmtp` – SMTP<br>`rest` – HTTP<br>`xfer` – message was transferred from another node<br>`internal` – internally generated bounce |
 | 12 | default | MultiVIP® binding group to which the message was assigned |
 | 13 | default | MultiVIP® binding to which the message was assigned |
 
@@ -78,24 +60,12 @@ The following is a description of the fields:
 | 1 | 20/00-25593-945A87F3 | Message's unique message-id |
 | 2 | 00/00-03736-F4101B54 | Batch ID |
 | 3 | 00/00-04532-A3456B54 | Connection ID |
-| 4 | D | 
-
-`D` indicating a successful delivery or `X` indicating a transfer between nodes, in a cluster configuration
-
-(`X` entries appear in the delivery log on the transferring node indicating that the message left for another cluster node, while `R` entries appear in the reception log on the node receiving the message with `xfer` in its protocol field.)
-
- |
+| 4 | D | `D` indicating a successful delivery or `X` indicating a transfer between nodes, in a cluster configuration.<br> `X` entries appear in the delivery log on the transferring node indicating that the message left for another cluster node, while `R` entries appear in the reception log on the node receiving the message with `xfer` in its protocol field. |
 | 5 | postalengine.com | Destination domain |
 | 6 | 266 | Size in bytes of the delivered message |
 | 7 | group-a | MultiVIP® binding group to which the message was assigned |
 | 8 | binding-a | MultiVIP® binding to which the message was assigned |
-| 9 | 0 | 
-
-Number of times the message has been retried
-
-(A value of 0 indicates the initial attempt.)
-
- |
+| 9 | 0 | Number of times the message has been retried. A value of 0 indicates the initial attempt.  |
 | 10 | 0.393 | Amount of time, in seconds, between reception and delivery |
 | 11 | 10.0.0.1 | IP address that accepted the message |
 
@@ -121,23 +91,11 @@ The following is a description of the fields:
 | 3 | 00/00-04532-A3456B54 | Connection ID |
 | 4 | T | `T` indicating a transient failure |
 | 5 | example.fict | Destination domain |
-| 6 | 0 | 
-
-Number of bytes of data transferred before the failure occurred
-
-(A value of 0 indicates no connection could be made.)
-
- |
+| 6 | 0 | Number of bytes of data transferred before the failure occurred. A value of 0 indicates no connection could be made. |
 | 7 | group-a | MultiVIP® binding group to which the message was assigned |
 | 8 | binding-a | MultiVIP® binding to which the message was assigned |
 | 9 | 15 | Stage of the message (See [“Connection Stages”](/momentum/4/4-log-formats-connection-stages).) |
-| 10 | 0 | 
-
-Number of times the message has been retried
-
-(A value of 0 indicates the initial attempt.)
-
- |
+| 10 | 0 | Number of times the message has been retried. A value of 0 indicates the initial attempt. |
 | 11 | 18.53 | Amount of time, in seconds, between reception and this transient failure |
 | 12 | 10.0.0.1 | IP address of the server that rejected the message |
 | 13 | 421 no adequate servers | Error message associated with the failure |
@@ -164,13 +122,7 @@ The following is a description of the fields:
 | 3 | 00/00-04532-A3456B54 | Connection ID |
 | 4 | P | `P` indicating a permanent failure, such as an in-band bounce |
 | 5 | postalengine.com | Destination domain |
-| 6 | 31 | 
-
-Number of bytes of data transferred before the failure occurred
-
-(In this example, 31 bytes were transferred before the remote server returned its error.)
-
- |
+| 6 | 31 | Number of bytes of data transferred before the failure occurred. In this example, 31 bytes were transferred before the remote server returned its error. |
 | 7 | group-a | MultiVIP® binding group to which the message was assigned |
 | 8 | binding-a | MultiVIP® binding to which the message was assigned |
 | 9 | 5 | Stage of the message (See [“Connection Stages”](/momentum/4/4-log-formats-connection-stages).) |
