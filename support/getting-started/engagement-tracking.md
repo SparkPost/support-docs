@@ -8,8 +8,9 @@ With SparkPost, there are a multitide of ways to configure engagement tracking w
 ## Getting Started
 Customers can view their engagement through the use of SparkPosts Events.  These events can be searched and viewed in many different ways.  They can be viewed within [SparkPost Signals](https://www.sparkpost.com/docs/reporting/signals-analytics/), queried and searched via the [Events API](https://developers.sparkpost.com/api/events/) or sent to your own environments through the use of [Event Webhooks](https://developers.sparkpost.com/api/webhooks/) to name a few.
 
-
 ### Notes on Click Tracking
+For a link to be click tracked, it must start with a protocol of either `http://` or `https://`.  If neither of these are present, the link will not be click tracked by SparkPost. 
+
 SparkPost click tracking links are highly dependent on the size of the original link supplied within the REST Transmission or SMTP request.  If there are concerns over link length within an email with SparkPost's click tracking enabled, first verify the original link length.
 
 > Link sizes of over **4096** bytes will be rejected on redirection
@@ -50,7 +51,6 @@ X-MSYS-API: { "options" : { "open_tracking" : true, "click_tracking" : true } }
 ```
 
 For more information on SMTP Engagement Tracking, check out this [Guide](https://www.sparkpost.com/docs/tech-resources/smtp-engagement-tracking/) to configure your account settings or leverage the [SMTP API](https://developers.sparkpost.com/api/smtp/) to control your engagement tracking. 
-
 
 ### Rate Limiting
 If Sparkpost detects excessive click requests over a short period, it will return http `403 Forbidden` errors.
