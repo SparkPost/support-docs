@@ -20,7 +20,7 @@ The possible events are:
 | policy_rejection     | SparkPost rejected the email due to a policy reason. |
 | delay                | Recipient mailbox provider temporarily rejected the email. |
 | bounce               | Recipient mailbox provider permanently rejected the email. |
-| out_of_band          | Recipient mailbox provider rejected the email after initially acctepting it. |
+| out_of_band          | Recipient mailbox provider rejected the email after initially accepting it. |
 | spam_complaint       | Recipient marked the email as spam. |
 | initial_open         | Recipient opened the email. Recorded by a tracking pixel at the top of the email. |
 | open                 | Recipient opened the email. Recorded by a tracking pixel at the bottom of the email. |
