@@ -3,7 +3,7 @@
 
 const {
   API: { default: API, API_HOST },
-  Token: { default: Token }
+  Token: { default: Token },
 } = require("@automattic/vip");
 const { parseEnvAlias } = require("@automattic/vip/dist/lib/cli/envAlias"); // :)
 const gql = require("graphql-tag");
@@ -14,14 +14,14 @@ const connect = async ({ token }) =>
   new Promise((accept, reject) => {
     // see, launchCommandAndGetStreams()
     const socket = client(`${API_HOST}/wp-cli`, {
-      // transports: ["polling"],
+      transports: ["websocket"],
       transportOptions: {
         polling: {
           extraHeaders: {
-            Authorization: `Bearer ${token.raw}`
-          }
-        }
-      }
+            Authorization: `Bearer ${token.raw}`,
+          },
+        },
+      },
       // see, https://socket.io/docs/client-api/#new-Manager-url-options
 
       // maybe causing too many open connections?
@@ -56,7 +56,7 @@ const emit = async ({ guid, inputToken, socket }) =>
     const stdout = stream.createStream();
     let str = "";
 
-    stdout.on("data", chunk => {
+    stdout.on("data", (chunk) => {
       str = str + chunk;
     });
 
@@ -64,7 +64,7 @@ const emit = async ({ guid, inputToken, socket }) =>
       accept(str);
     });
 
-    stdout.on("error", error => {
+    stdout.on("error", (error) => {
       reject(error);
     });
 
@@ -75,7 +75,7 @@ const emit = async ({ guid, inputToken, socket }) =>
         inputToken,
         columns: process.stdout.columns || 100, // NON_TTY_COLUMNS,
         rows: process.stdout.rows || 15, // NON_TTY_ROWS,
-        offset: 0 // arg default
+        offset: 0, // arg default
       },
       stream.createStream(), // input
       stdout
@@ -93,9 +93,9 @@ const main = async () => {
   const {
     data: {
       apps: {
-        edges: [edge]
-      }
-    }
+        edges: [edge],
+      },
+    },
   } = await api.query({
     // $FlowFixMe: gql template is not supported by flow
     query: gql`
@@ -125,8 +125,8 @@ const main = async () => {
     `,
     variables: {
       first: 1,
-      after: null
-    }
+      after: null,
+    },
   });
 
   if (appName !== edge.name) {
@@ -148,9 +148,9 @@ const main = async () => {
     data: {
       triggerWPCLICommandOnAppEnvironment: {
         command: { guid },
-        inputToken
-      }
-    }
+        inputToken,
+      },
+    },
   } = await api.mutate({
     mutation: gql`
       mutation TriggerWPCLICommandMutation(
@@ -168,9 +168,9 @@ const main = async () => {
       input: {
         id: environment.appId,
         environmentId: environment.id,
-        command
-      }
-    }
+        command,
+      },
+    },
   });
 
   // todo, insert error handling
@@ -196,10 +196,10 @@ const main = async () => {
     "reconnect_error",
     "reconnect_failed",
     "reconnecting",
-    "unauthorized" // custom vip event
+    "unauthorized", // custom vip event
   ];
 
-  events.forEach(event => {
+  events.forEach((event) => {
     socket.on(event, (...args) => {
       if (!socket.disconnect) {
         socket.disconnect(); // same as .close()
@@ -228,7 +228,7 @@ const main = async () => {
   }
 };
 
-main().catch(error => {
+main().catch((error) => {
   console.error(error);
   process.exit(1);
 });
