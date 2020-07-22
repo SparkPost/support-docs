@@ -84,7 +84,7 @@ The following is a sample guide for use with CloudFlare **only**; please note, t
 
 7. Add a CNAME entry into DNS for your tracking domain. The value in the record doesn't matter; the record simply needs to exist. For example, if your tracking domain is `track.example.com`, a CNAME value of `example.com` is sufficient. Without a record to reference, the the page rule never gets triggered, and the proper redirection will not occur. Please note that the typical time to progagation of new CNAME records is often around five to ten minutes, but can be longer depending on your DNS provider.
 
-8. Run the [Update a Tracking Domain API](https://developers.sparkpost.com/api/tracking-domains.html#header-port-secure-attributes) using the following Post Data:
+8. Run the [Update a Tracking Domain API](https://developers.sparkpost.com/api/tracking-domains/#tracking-domains-put-update-a-tracking-domain) using the following Post Data:
 
     ```
     {
