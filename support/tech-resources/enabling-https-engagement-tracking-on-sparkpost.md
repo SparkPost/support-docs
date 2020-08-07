@@ -80,11 +80,19 @@ The following is a sample guide for use with CloudFlare **only**; please note, t
     
     More information on SSL options for Cloudflare can be found [here](https://support.cloudflare.com/hc/en-us/articles/200170416).
 
-6. Turn the page rule ON.
+6. Turn the page rule ON. 
 
-7. Add a CNAME entry into DNS for your tracking domain. The value in the record doesn't matter; the record simply needs to exist. For example, if your tracking domain is `track.example.com`, a CNAME value of `example.com` is sufficient. Without a record to reference, the the page rule never gets triggered, and the proper redirection will not occur. Please note that the typical time to progagation of new CNAME records is often around five to ten minutes, but can be longer depending on your DNS provider.
+7. If you with to also set up [Mobile Universal and App Links](https://www.sparkpost.com/docs/tech-resources/deep-links-self-serve/), an additional page rule is necessary. A prerequisite for this configuration is that the desired universal link files (apple-app-site-assocation/assetlinks.json) are already hosted either via a CDN or webserver.
+    * Page Rule Tab -> Create Page Rule
+    * Enter your domain like so: `track.yourdomain.com/.well-known/*`
+    * Add a Setting -> Forwarding URL (you may need to specify a 301 redirect option)
+    * Destination URL is determined by where the universal link files are hosted.  The destination URL should be configured as https://<UNVERSAL_LINK_DESTINATION>/.well-known/$1.  Note that CloudFlare page rules are evaluated in priority order.  This page rule should be first, with the page rule from Step 4 second.
 
-8. Run the [Update a Tracking Domain API](https://developers.sparkpost.com/api/tracking-domains/#tracking-domains-put-update-a-tracking-domain) using the following Post Data:
+    ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudflare_universal_links_page_rule.png)
+
+8. Add a CNAME entry into DNS for your tracking domain. The value in the record doesn't matter; the record simply needs to exist. For example, if your tracking domain is `track.example.com`, a CNAME value of `example.com` is sufficient. Without a record to reference, the the page rule never gets triggered, and the proper redirection will not occur. Please note that the typical time to progagation of new CNAME records is often around five to ten minutes, but can be longer depending on your DNS provider.
+
+9. Run the [Update a Tracking Domain API](https://developers.sparkpost.com/api/tracking-domains/#tracking-domains-put-update-a-tracking-domain) using the following Post Data:
 
     ```
     {
@@ -95,7 +103,7 @@ The following is a sample guide for use with CloudFlare **only**; please note, t
 
 Note: If you would like this tracking domain to be the default, please add `"default": true` to the JSON object above, before updating the domain.
 
-9. Navigate to the Tracking Domains section in the UI and click the orange "test" verification link. At this point, the process is complete.
+10. Navigate to the Tracking Domains section in the UI and click the orange "test" verification link. At this point, the process is complete.
 
 ## Step by Step Guide with Fastly
 
