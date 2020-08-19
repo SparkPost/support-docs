@@ -27,7 +27,7 @@ Best practice recommendations for use of a relay webhook are simple and short. 
 Before you start you will need the following:
 
 * A Relay Webhook consumer: This is code that you write and host. This is what will process inbound emails relayed through SparkPost. You will need to have this ready before you set up your Relay Webhook. For testing, you could use a service like requestbin.com (https://requestbin.com) to set up a temporary consumer.
-* An API key with "Inbound Domains: Read/Write" and "Relay Webhooks: Read/Write" permissions. You're going to make some API calls, so you might want to download [Postman](https://www.postman.com) and get the free [SparkPost Postman collection](https://www.getpostman.com/run-collection/81ee1dd2790d7952b76a) to make this easier.
+* An API key with "Inbound Domains: Read/Write" and "Relay Webhooks: Read/Write" permissions. You're going to make some API calls, so you might want to download [Postman](https://www.postman.com) and get the free [SparkPost Postman collection](https://www.postman.com/run-collection/81ee1dd2790d7952b76a) to make this easier.
 
 Once you have these, there are three steps to setting up your Relay Webhook:
 
@@ -78,7 +78,7 @@ You can check your MX record propagation [here](https://www.whatsmydns.net/#MX)
 
 ## Create an Inbound Domain
 
-This is the domain that users will send email to. You can send a POST request to https:<span></span>//api.sparkpost.com/api/v1/inbound-domains or use our [Postman collection](http://app.getpostman.com) to create your [Inbound Domain](https://developers.sparkpost.com/api/inbound-domains.html). Make sure to set your API key as the Authorization header under the "headers" tab and to set your domain under the "body" tab.
+This is the domain that users will send email to. You can send a POST request to https:<span></span>//api.sparkpost.com/api/v1/inbound-domains or use our [Postman collection](https://www.postman.com/run-collection/81ee1dd2790d7952b76a) to create your [Inbound Domain](https://developers.sparkpost.com/api/inbound-domains.html). Make sure to set your API key as the Authorization header under the "headers" tab and to set your domain under the "body" tab.
 
 ## Create a Relay Webhook
 
