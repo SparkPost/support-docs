@@ -4,7 +4,7 @@
   "description": "",
   "author": "SparkPost",
   "dependencies": {
-    "@automattic/vip": "^1.9.0",
+    "@automattic/vip": "^1.11.2",
     "markdown-it": "^8.3.1",
     "markdown-it-anchor": "^4.0.0",
     "markdown-it-meta": "0.0.1"
