@@ -36,10 +36,10 @@ If you do not have a domain name, you'll need to purchase one to use with SparkP
 * [Cloudflare](https://www.cloudflare.com/plans)
 * [GoDaddy](https://support.godaddy.com/help/article/680/managing-dns-for-your-domain-names)
 * [NameCheap](https://www.namecheap.com/)
-* [Rackspace](http://www.rackspace.com/)
-* [DreamHost](http://wiki.dreamhost.com/Custom_DNS)
+* [Rackspace](https://www.rackspace.com/)
+* [DreamHost](https://wiki.dreamhost.com/Custom_DNS)
 * [DNSSimple](https://dnsimple.com/)
-* [Bluehost](http://www.bluehost.com/)
+* [Bluehost](https://www.bluehost.com/)
 
 To set up your sending domain, add the domain to your SparkPost account, verify that you own it and wait a moment while our Compliance team runs a few quick checks. Follow the detailed steps below to get it done.
 
@@ -74,7 +74,7 @@ Here are some how-to documents for editing DNS records with common DNS providers
 * [GoDaddy](https://www.godaddy.com/help/manage-dns-for-your-domain-names-680)
 * [NameCheap](https://www.namecheap.com/support/knowledgebase/article.aspx/317/2237/how-do-i-add-txtspfdkimdmarc-records-for-my-domain)
 * [Rackspace](https://www.rackspace.com/knowledge_center/article/creating-a-spf-txt-record)
-* [Dreamhost](http://wiki.dreamhost.com/Custom_DNS#TXT_Record)
+* [Dreamhost](https://wiki.dreamhost.com/Custom_DNS#TXT_Record)
 * [DNSSimple](https://support.dnsimple.com/articles/dkim-record/)
 * [BlueHost](https://my.bluehost.com/hosting/help/txt_record)
 
@@ -152,7 +152,7 @@ The endpoint URL depends on your account region ([US, EU](https://developers.spa
 
 SparkPost also provides libraries, add-ons and plugins for various environments, to simplify your integration:
 
-* [PHP](http://github.com/SparkPost/php-sparkpost)
+* [PHP](https://github.com/SparkPost/php-sparkpost)
 * [Python](https://github.com/SparkPost/python-sparkpost)
 * Node.js - [client library](https://github.com/SparkPost/node-sparkpost) and [Nodemailer transport](https://www.github.com/SparkPost/nodemailer-sparkpost-transport)
 * [Java](https://github.com/SparkPost/java-sparkpost)
@@ -256,6 +256,6 @@ SparkPost can receive email on your behalf and forward to your own HTTP endpoint
 
 For general questions, you might find a ready-made answer by searching SparkPost's [support articles](https://www.sparkpost.com/docs/).
 
-If you run into an issue with your account you can contact our support team by clicking on the question mark on the top right of [your dashboard](https://app.sparkpost.com/dashboard) and submitting a ticket. You can also follow the [SparkPost status page](http://status.sparkpost.com/) for service updates.
+If you run into an issue with your account you can contact our support team by clicking on the question mark on the top right of [your dashboard](https://app.sparkpost.com/dashboard) and submitting a ticket. You can also follow the [SparkPost status page](https://status.sparkpost.com/) for service updates.
 
-If you're interested in chatting with other SparkPost users, discussing your integration and getting involved with our developer community, join our [Community Slack team](http://slack.sparkpost.com/).
+If you're interested in chatting with other SparkPost users, discussing your integration and getting involved with our developer community, join our [Community Slack team](https://slack.sparkpost.com/).
