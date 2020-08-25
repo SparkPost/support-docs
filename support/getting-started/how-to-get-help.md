@@ -7,7 +7,7 @@ This guide will help you find the best resource for your inquiry and fastest res
 
 ## Service Status
 
-Find out whether the service is up, down, sideways, on vacation or going slow by visiting [status.sparkpost.com](http://status.sparkpost.com).
+Find out whether the service is up, down, sideways, on vacation or going slow by visiting [status.sparkpost.com](https://status.sparkpost.com).
 
 ## Account Services
 
@@ -43,7 +43,7 @@ Our Support teams work **Monday to Friday 09:00 til 20:00 Eastern Time (UTC-5)**
 
 ## Integration Support
 
-For **ALL** integration questions, check out our community slack channel at **[slack.sparkpost.com](http://slack.sparkpost.com/)** and chat with our engineers and other developers using SparkPost. Whether you are using a third party front-end application or service, using an existing Library or building your own, you will find help and advice in the community.
+For **ALL** integration questions, check out our community slack channel at **[slack.sparkpost.com](https://slack.sparkpost.com/)** and chat with our engineers and other developers using SparkPost. Whether you are using a third party front-end application or service, using an existing Library or building your own, you will find help and advice in the community.
  The **SparkPost community channels** include:
 
 * community_support, announcements, subaccounts
