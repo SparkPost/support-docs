@@ -24,6 +24,7 @@ description: "Learn how to enable SCIM user provisioning through Okta for your S
 ## Configuration in Okta
 1. From the Okta admin console, navigate to "Applications" and select the SparkPost app.
 1. Select the "General" tab. Under "App Settings" check the "Enable SCIM Provisioning" box.
+1. Select the "Sign On" tab. Ensure that under "Credentials Details", "Application username format" is set to "Email".
 1. Select the "Provisioning" tab, and from the "Integration" menu select "Edit".
 1. In the "SCIM connector base URL" field:
     - For US-hosted customers, enter `https://api.sparkpost.com/api/v1/users/scim/v2`
@@ -54,3 +55,4 @@ description: "Learn how to enable SCIM user provisioning through Okta for your S
         - Description: admin, reporting, templates, or developer
     - Click "Save Attribute".
 1. In the "To Okta" section, delete all attribute mappings except "First name", "Last name", and "Primary email".
+1. In the "To Okta" section, next to "Imported user is an exact match to Okta user if", select "Email matches".
