@@ -56,3 +56,6 @@ description: "Learn how to enable SCIM user provisioning through Okta for your S
     - Click "Save Attribute".
 1. In the "To Okta" section, delete all attribute mappings except "First name", "Last name", and "Primary email".
 1. In the "To Okta" section, next to "Imported user is an exact match to Okta user if", select "Email matches".
+
+## Known Issues / Troubleshooting
+- N/A
