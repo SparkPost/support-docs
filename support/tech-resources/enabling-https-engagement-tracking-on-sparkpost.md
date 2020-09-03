@@ -184,7 +184,7 @@ If you use AWS CloudFront to enable SSL engagement tracking, by default, CloudFr
 
 6. It is recommended to set a custom whitelist for the `User-Agent` header.  Set the configuration **Cache Based on Selected Request Headers** to "Whitelist".  At this point you will need to "Add Custom" for `User-Agent`.  This allows `User-Agent` data to be present in your engagement events received from SparkPost.	
 
-      ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_edit_domain_cache_based_headers.png)	
+      ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_whitelist_cache.png)
 
 7. At the bottom of the page, click on the "Yes, Edit" button.	
 
