@@ -34,7 +34,7 @@ Follow these best practices in order to optimize SMTP injection rates (and ove
 Following these best practices for optimal use of SMTP injection:
 
 * On timeout or any 4XX error the best practice is to retry.
-* Use a timeout of at least 10 seconds for the SMTP authentication phase (AUTH command).
+* Use a timeout of at least 30 seconds for the SMTP authentication phase (AUTH command).
 * General recommendations for SMTP client timeouts can be found in [section 4.5.3.2 of RFC 5321](https://tools.ietf.org/html/rfc5321#section-4.5.3.2)
 
 ### Note on International Performance
