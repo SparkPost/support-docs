@@ -31,8 +31,14 @@ Follow these best practices in order to optimize SMTP injection rates (and ove
 * Keep the TCP connections open between messages.  Closing and opening connections on each message is much less efficient and can slow performance. Best practice is to reuse connections for no more than 10,000 messages and then create a new connection. This allows local and remote resources to be cleaned up efficiently.
 * Ensure your SMTP client has pipelining enabled, to reduce the roundtrip delay on some SMTP commands.
 
+Following these best practices for optimal use of SMTP injection:
+
+* On timeout or any 4XX error the best practice is to retry.
+* Use a timeout of at least 30 seconds for the SMTP authentication phase (AUTH command).
+* General recommendations for SMTP client timeouts can be found in [section 4.5.3.2 of RFC 5321](https://tools.ietf.org/html/rfc5321#section-4.5.3.2)
+
 ### Note on International Performance
-"Chatty" protocols, like SMTP, with many round trips between client and server, may be subject to higher than expected latency. We recommend using our REST API in performance sensitive situations. If you need to send via SMTP, the closer your servers are to ours the better. Sparkpost is hosted in the US, so sending from a server in North America is recommended. For SparkPost EU, sending from Western Europe is recommended.
+"Chatty" protocols, like SMTP, with many round trips between client and server, may be subject to higher than expected latency. We recommend using our REST API in performance sensitive situations. If you need to send via SMTP, the closer your servers are to ours the better. SparkPost is hosted in the US, so sending from a server in North America is recommended. For SparkPost EU, sending from Western Europe is recommended.
 
 ## General Message Size Considerations
 
