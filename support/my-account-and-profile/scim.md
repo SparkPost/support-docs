@@ -8,7 +8,7 @@ description: "Learn how to enable SCIM user provisioning through Okta for your S
 ## Features
 - **Create users** Okta users will be created in the SparkPost application.
 - **Update user roles** SparkPost user roles can be changed via Okta.
-- **Deactivate users** Deactiving an Okta user will remove it in the SparkPost application.
+- **Deactivate users** Deactivating an Okta user will remove it in the SparkPost application.
 - **Import users** Users created in SparkPost can be imported into Okta and either matched against existing Okta users or created as new Okta users.
 
 ## Requirements
@@ -63,4 +63,4 @@ description: "Learn how to enable SCIM user provisioning through Okta for your S
 ![](media/scim/sparkpost_users.png)
 
 ## Known Issues / Troubleshooting
-- N/A
+- If you have questions or difficulties with your SparkPost/Okta SCIM integration, please [submit a support ticket](https://www.sparkpost.com/submit-a-ticket).
