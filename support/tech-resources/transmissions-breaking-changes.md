@@ -1,15 +1,19 @@
 ---
 title: "Upcoming Breaking Changes to the Transmissions API - Communications Log"
-description: "On January 12, 2019, single-recipient transmissions and inline content validation will become asynchronous."
+description: "UPDATE: September 2020. On January 12, 2019, single-recipient transmissions and inline content validation will become asynchronous."
 ---
 
 The [Transmissions API](https://developers.sparkpost.com/api/transmissions/) is among our most heavily used endpoints. We know how critical it is to how our customers integrate email into their applications. That’s why we’re continuously looking for ways to further strengthen its reliability, maximize its performance, and improve the developer experience. It’s also why we’re very careful about making any changes that might impact how our customers use the Transmissions API in their production code.
 
-Usually, these objectives are aligned, but there are times when moving the API forward require an unavoidable breaking change. In January, we will be deploying one of those changes. Read on for the details.
+Usually, these objectives are aligned, but there are times when moving the API forward require an unavoidable breaking change. We will be deploying one of those changes. Read on for the details.
 
-## Summary of Changes to the Transmissions API Coming in January 2019
+## Update: September X, 2020
 
-On **January 12, 2019**, we will be making two significant changes related to how the Transmissions API handles errors:
+As we have continued to make improvements to SparkPost infrastructure, we are moving into the next stage of these changes.  In 2019, this breaking change was put into effect for many of our enterprise customers in US West, and all customers in the EU region.  As we finish 2020 and moving into 2021, we will be completing these changes for the rest of the customers in the US West region.
+
+## Summary of Changes to the Transmissions API
+
+We will be making two significant changes related to how the Transmissions API handles errors:
 
 * Single recipient message generation will become an asynchronous, rather than synchronous, operation.
 
@@ -37,11 +41,31 @@ Instead, the API will return a `200` response, and then a subsequent "Generation
 
 ## Removal of Description Field
 
-Although we are reviewing customer needs for extended error codes, HTTP error response bodies will be updated by removing the `description` field, and moving the current `description` responses to the `message` field. This is to provide a simpler message body and to return the relevant data to our customers for our HTTP error responses.
+Although we are reviewing customer needs for extended error codes, HTTP error response bodies will be updated by removing the `description` field, and moving the current `description` responses to the `message` field. This is to provide a simpler message body and to return the relevant data to our customers for our HTTP error responses.  For example, if no "content.from" field is found, the current errors message is:
 
-## Deprecation of Extended Error Codes Postponed to May 2019
+```
+{
+    "errors": [
+        {
+            "message": "required field is missing",
+            "description": "content.from is a required field",
+            "code": "1400"
+        }
+    ]
+}
+```
 
-Based on customer feedback, we will not be making changes to how the API returns extended error codes at this time. We are committed to providing the current extended error codes until May 2019. We will continue to review customer needs and determine the best solution to this issue. Please refer and check back to this article for any new announcements or updates.
+After this change, the message will be returned as:
+```
+{
+    "errors": [
+        {
+            "message": "content.from is a required field",
+            "code": "1400"
+        }
+    ]
+}
+```
 
 ## Will My 3rd Party Apps Still Work?
 
@@ -50,6 +74,10 @@ In the vast majority of cases, 3rd party apps integrated with SparkPost will con
 ## Chronological Communications Log
 
 This fall, we sent out a series of emails announcing our intention to implement these breaking changes. We’ve listened to and understand your concerns. While we believe these changes are necessary to improve the quality and reliability of our service, we value your feedback and have adjusted our course to address these issues.
+
+**September X, 2020**:
+
+Update to this document to outline these changes will be applied to remaining customers in USW.  Email with subject line "XX" was sent to all impacted premium and enterprise customers.
 
 **September 18, 2018**:
 
