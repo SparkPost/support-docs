@@ -71,13 +71,41 @@ After this change, the message will be returned as:
 
 In the vast majority of cases, 3rd party apps integrated with SparkPost will continue to function as before. If you are unsure, please check with your 3rd party provider for details and direct them to this page. For instance, the SparkPost WordPress plugin will continue to function with a slight change in behaviour. Before the change, the plugin produces a `4xx` error for a syntax error on inline content. After the change, those transmissions with syntax errors will succeed and a "Generation Failure" event will be emitted instead.
 
+## Early Opt-in
+
+Customers can opt-in to these changes earlier than the set date. This opt-in requires the use of a simple HTTP header.  By setting the `X-MSYS-OPT-IN` header to `"1"`, customer can begin using these changes now, either for testing or production traffic.  Example API Request:
+```
+curl --location --request POST 'https://api.sparkpost.com/api/v1/transmissions' \
+--header 'Content-Type: application/json' \
+--header 'Accept: application/json' \
+--header 'Authorization: <API-KEY>' \
+--header 'X-MSYS-OPT-IN: 1' \
+--data-raw '{
+  "options" : {
+  },
+  "campaign_id" : "sparkpost-test",
+  "recipients" : [
+    {
+      "address" : {
+        "email": "nathan.durant@sparkpost.com"
+      }
+    }
+  ],
+  "content" : {
+  	"from": {
+      "email": "hello@nddurant.com",
+      "name": "Nate"
+    },
+    "subject": "Test Email",
+    "reply_to": "nate <nathan.durant@sparkpost.com>",
+    "html" : "<html><h4> Test Email </h4></html>"
+  }
+}'
+```
+
 ## Chronological Communications Log
 
 This fall, we sent out a series of emails announcing our intention to implement these breaking changes. We’ve listened to and understand your concerns. While we believe these changes are necessary to improve the quality and reliability of our service, we value your feedback and have adjusted our course to address these issues.
-
-**September X, 2020**:
-
-Update to this document to outline these changes will be applied to remaining customers in USW.  Email with subject line "XX" was sent to all impacted premium and enterprise customers.
 
 **September 18, 2018**:
 
@@ -108,3 +136,7 @@ Decision made to hold off on deprecating extended error codes until, at least Ma
 
 * Making single recipient template validation and message generation error asynchronous.
 * Making all inline content syntax validation asynchronous, impacting both single and multi-recipient transmissions.
+
+**September X, 2020**:
+
+Update to this document to outline these changes will be applied to remaining customers in USW.  Email with subject line "XX" was sent to all impacted premium and enterprise customers.
