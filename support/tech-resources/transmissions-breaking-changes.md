@@ -1,13 +1,13 @@
 ---
 title: "Upcoming Breaking Changes to the Transmissions API - Communications Log"
-description: "UPDATE: September 2020. On January 12, 2019, single-recipient transmissions and inline content validation will become asynchronous."
+description: "Single-recipient transmissions and inline content validation will become asynchronous."
 ---
 
 The [Transmissions API](https://developers.sparkpost.com/api/transmissions/) is among our most heavily used endpoints. We know how critical it is to how our customers integrate email into their applications. That’s why we’re continuously looking for ways to further strengthen its reliability, maximize its performance, and improve the developer experience. It’s also why we’re very careful about making any changes that might impact how our customers use the Transmissions API in their production code.
 
 Usually, these objectives are aligned, but there are times when moving the API forward require an unavoidable breaking change. We will be deploying one of those changes. Read on for the details.
 
-## Update: September X, 2020
+## Update: September 30, 2020
 
 As we have continued to make improvements to SparkPost infrastructure, we are moving into the next stage of these changes.  In 2019, this breaking change was put into effect for many of our enterprise customers in US West, and all customers in the EU region.  As we finish 2020 and moving into 2021, we will be completing these changes for the rest of the customers in the US West region.
 
@@ -102,41 +102,3 @@ curl --location --request POST 'https://api.sparkpost.com/api/v1/transmissions' 
   }
 }'
 ```
-
-## Chronological Communications Log
-
-This fall, we sent out a series of emails announcing our intention to implement these breaking changes. We’ve listened to and understand your concerns. While we believe these changes are necessary to improve the quality and reliability of our service, we value your feedback and have adjusted our course to address these issues.
-
-**September 18, 2018**:
-
-Email with subject line “Operational Alert - Transmissions API Asynchronous Changes” was sent out to all SparkPost accounts regarding three upcoming changes related to error handling:
-
-
-* Making single recipient template validation and message generation error asynchronous.
-* Making all inline content syntax validation asynchronous, impacting both single and multi-recipient transmissions.
-* Deprecating extended error codes.
-
-This email stated that the changes would be put into effect, **November 17, 2018**.
-
-
-> Customers shared concerns, requesting more time outside of the sixty-day window, in order to avoid impacting any major holiday email campaigns, as well as end-of-year code freezes.
-
-----
-
-**October 2 & 3, 2018**:
-
-A second round of emails was sent out to SparkPost accounts, with subject line “Operational Alert - Postponing Transmission API Async Changes”, pushing the date the changes would go into effect back from the original November 17, 2018, to **January 12, 2019**. This decision was made to provide more time to implement any code changes (if needed), and to accommodate especially sensitive requirements, such as end-of-year code freezes and potential impact to holiday email campaigns.
-
-> Customers shared additional concerns surrounding error handling and our plans to deprecate the extended error codes.
-
-----
-
-**November 7, 2018**
-Decision made to hold off on deprecating extended error codes until, at least May 2019. The following two asynchronous changes will still be put into effect on **January 12, 2019**:
-
-* Making single recipient template validation and message generation error asynchronous.
-* Making all inline content syntax validation asynchronous, impacting both single and multi-recipient transmissions.
-
-**September X, 2020**:
-
-Update to this document to outline these changes will be applied to remaining customers in USW.  Email with subject line "XX" was sent to all impacted premium and enterprise customers.
