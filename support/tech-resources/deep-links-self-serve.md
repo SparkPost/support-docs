@@ -5,11 +5,11 @@ description: "A guide to including iOS universal links and Android App Links in 
 
 ## Introduction
 
-Both Universal and App links are a mechanism in iOS (9 and later) and Android (6.0 and later) that allows you to link deeply into your apps from web pages and HTML email. ***Note: Deep Link, Unversal Link, and App Link terms will be used interchangeably.*** To use deep linking, you must publish the URLs you'd like your app to handle and then add support for them into the app itself. When your users receive an email containing a deep link, the mobile device then recognizes the domain and path of the URL and triggers your app. As a result, it's important to keep the URLs in your HTML emails intact to ensure your deep links function correctly.
+Both Universal and App links are a mechanism in iOS (9 and later) and Android (6.0 and later) that allows you to link deeply into your apps from web pages and HTML email. ***Note: Deep Link, Universal Link, and App Link terms will be used interchangeably.*** To use deep linking, you must publish the URLs you'd like your app to handle and then add support for them into the app itself. When your users receive an email containing a deep link, the mobile device then recognizes the domain and path of the URL and triggers your app. As a result, it's important to keep the URLs in your HTML emails intact to ensure your deep links function correctly.
 
 This article describes the various ways you can use deep links with email sent through your SparkPost account.
 
-The following developer documentation explains the deep linking mechanisims in detail.
+The following developer documentation explains the deep linking mechanisms in detail.
 - [Apple's Universal Links](https://developer.apple.com/library/content/documentation/General/Conceptual/AppSearch/UniversalLinks.html) 
 
 - [Android App Links](https://developer.android.com/training/app-links/index.html)
