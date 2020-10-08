@@ -38,9 +38,7 @@ The spec files must be published on your domain(s) and accessible via HTTPS. The
 - For Android devices, the file is named `assetlinks.json`
 
 
-These files should be placed on your website in the directory `/.well-known`.
-
-@@ check if tracking domain specifics can be used
+These files should be placed on your website in the directory `.well-known`.
 
 ### iOS: example `apple-app-site-association`
 
@@ -91,13 +89,13 @@ Configure the `paths` section to match the links in your email HTML content, dep
 ---
 ## <a name="tracking"></a> Deep links and click tracking
 
-Setting up a [custom tracking domain](https://www.sparkpost.com/docs/tech-resources/enabling-multiple-custom-tracking-domains/) is useful for branding and email reputation. It is required for click-tracking of deep links in your HTML email.
+Setting up a [custom tracking domain](https://www.sparkpost.com/docs/tech-resources/enabling-multiple-custom-tracking-domains/) is useful for branding and email reputation. It is required for click tracking of deep links in your HTML email.
 
 It's best to choose a subdomain (e.g. `track.example.com`), so that subdomain can be redirected while your website uses the main top-level domain. Each tracking domain can serve regular email tracked links and deep links. Your content can use a mixture of both kinds of link inside the same email.
 
 ### HTTPS secure links
 
-It is good practice to use secure (HTTPS) tracking domains, and it's essential if your but website has an [HSTS](https://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security) policy. We have articles describing the setup of this for:
+It is good practice to use secure (HTTPS) tracking domains, and it's essential if your website has an [HSTS](https://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security) policy. We have articles describing the setup of this for:
 
 -  [Various CDNs](https://www.sparkpost.com/docs/tech-resources/enabling-https-engagement-tracking-on-sparkpost/)
 - Your own [web server reverse proxy such as NGINX](https://www.sparkpost.com/docs/tech-resources/using-proxy-https-tracking-domain/)
@@ -108,7 +106,7 @@ In both cases, your CDN (or proxy) redirects the specific tracking subdomain(s) 
 
 It might be useful to understand how the SparkPost click tracking feature works with HTML links. Other email-service-provider click tracking services work in a similar way.
 
-> In essence, when SparkPost encounters an anchor tag in an HTML email, it will replace the `href` attribute with a new URL pointing to the SparkPost click tracking service. When your recipient clicks that link, the SparkPost service receives the request (via CDN for HTTPS links), records the click, and redirects the recipient to your original URL.
+> When SparkPost encounters an anchor tag in an HTML email, it will replace the `href` attribute with a new URL pointing to the SparkPost click tracking service. When your recipient clicks that link, the SparkPost service receives the request (via CDN for HTTPS links), records the click, and redirects the recipient to your original URL.
 
 ![](media/deep-links-self-serve/deep-links-click-tracking-simple.png)
 *Normal click tracking (without deep links)*
@@ -117,7 +115,7 @@ Deep links supersede this flow; after checking the spec file, the  device passes
 
 SparkPost won't receive the request and won't register the click in your analytics, unless your app code makes it happen.
 
-A workaround is to disable click-tracking for deep links. This may be appropriate if you already have analytics for measuring in-app activity.
+A workaround is to disable tracking for deep links. This may be appropriate if you already have analytics for measuring in-app activity.
 
 The preferred solution is to set up Sparkpost click tracking and include code in your app to follow the link. We'll review each of these.
 
@@ -138,20 +136,21 @@ This is appropriate where your content has a mix of deep links and links leading
 Alternatively, you can [disable click tracking for a whole transmission request](https://developers.sparkpost.com/api/transmissions.html#header-options-attributes) by setting the `click_tracking` option to `false`. The [SMTP API](https://developers.sparkpost.com/api/smtp-api.html#header-open-and-click-tracking)  supports a similar flag.
 You can control [click tracking for SMTP messages](https://app.sparkpost.com/account/smtp) at the account level too.
 
-### Preferred solution: Using SparkPost click-tracking on deep links
+### Preferred solution: Using SparkPost click tracking on deep links
 
 ![](media/deep-links-self-serve/deep-links-app-flow.png)
-*Deep link flow (preferred solution - app triggers the click tracking)*
 
-Set up your spec files to match your [custom tracking domain](https://www.sparkpost.com/docs/tech-resources/enabling-multiple-custom-tracking-domains/).
+*Deep link flow, app triggers click tracking*
 
 The device operating system "wakes up" your app with an API call, passing in  the URL. Your app issues an HTTP(S) GET to the URL, which registers the click. Your app receives the original URL in the response "Location" header; there's no need to follow the redirect and fetch the entire web-page.
+
+Set up your spec files to match your [custom tracking domain](https://www.sparkpost.com/docs/tech-resources/enabling-multiple-custom-tracking-domains/) and custom link sub-path.
 
 #### Custom Link Sub-Paths
 
 Your spec file states which *link paths* should be treated as deep links. Any other paths on that domain will be opened via the device browser in the usual way. This enables you to use both regular tracked links and deep links with that tracking domain. Deep links are distinguished from regular tracked links as follows.
 
-You can have SparkPost include a specific string *in the path part* of a tracked URL by setting the `data-msys-sublink` attribute:, for example:
+SparkPost will include a specific string *in the path part* of a tracked URL when your content has the `data-msys-sublink` attribute, for example:
 
 ```html
 <a href="http://my.universal-link.example.com" data-msys-sublink="open-in-app">Open in app</a>
@@ -218,10 +217,10 @@ func application(_ application: UIApplication, continue userActivity: NSUserActi
 
 This code calls the SparkPost click tracking service, which responds with a "3xx" redirect to the original URL from your email, which can be used by your app.
 
-This simple code gets the Location: header and also follows the redirect to fetch the web-page, which consumes device bandwidth. It's more efficient to stop after the "302" response is received; this is shown in a complete app example [here]().
+This simple code gets the `Location` header and also follows the redirect to fetch the web-page, which consumes device bandwidth. It's more efficient, but needs more code to stop after the "302" response is received; complete example iOS [app here](https://github.com/SparkPost/deep-links/tree/main/iOS).
 
 #### iOS User Agent
-In SparkPost event reporting, the attribute "user_agent" carries information on app name and OS version, for example `"testlinks/1 CFNetwork/1197 Darwin/20.0.0"`. This enables you to use SparkPost analytics to find out which links are being opened via your app.
+In SparkPost event reporting, the attribute `user_agent` carries information on app name and OS version, for example `"testlinks/1 CFNetwork/1197 Darwin/20.0.0"`. This enables you to use SparkPost analytics to find out which links are being opened via your app.
 
 ## Forwarding Clicks From Android To SparkPost
 
@@ -287,7 +286,31 @@ Java example (@@note: update for Kotlin)
 ---
 ##  <a name="cdn"></a> Hosting the spec files
 
-@@Examples to follow.
+You can use a CDN or an ordinary web-server to host your spec files. Ensure you have a valid certificate for your domain, as devices need to fetch these files using HTTPS.
+
+@@ check if tracking-domain subdomains can be used
+
+### Apache
+
+Create the association files in the `.well-known` directory of your web root (default is `/var/www/html`). You can check the file exists using your web browser.
+
+![](media/deep-links-self-serve/deep-links-check-spec-file.png)
+
+*Checking spec files*
+
+Click the padlock symbol and check the certificate is valid and as expected. Repeat for the Android `assetlinks.json` file.
+
+### NGINX
+
+@@
+
+### AWS CloudFront
+
+@@
+
+### CloudFlare
+
+@@
 
 ---
 ## Further reading
