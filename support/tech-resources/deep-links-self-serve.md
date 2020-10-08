@@ -109,7 +109,7 @@ It might be useful to understand how the SparkPost click tracking feature works 
 > When SparkPost encounters an anchor tag in an HTML email, it will replace the `href` attribute with a new URL pointing to the SparkPost click tracking service. When your recipient clicks that link, the SparkPost service receives the request (via CDN for HTTPS links), records the click, and redirects the recipient to your original URL.
 
 ![](media/deep-links-self-serve/deep-links-click-tracking-simple.png)
-*Normal click tracking (without deep links)*
+*Normal click tracking (without deep links)  icons by [The Noun Project](https://thenounproject.com/)*
 
 Deep links supersede this flow; after checking the spec file, the  device passes the request directly to your app instead. This means your app will receive the tracked link via an API call and can show the user an appropriate part of your app.
 
@@ -140,7 +140,7 @@ You can control [click tracking for SMTP messages](https://app.sparkpost.com/acc
 
 ![](media/deep-links-self-serve/deep-links-app-flow.png)
 
-*Deep link flow, app triggers click tracking*
+*Deep link flow, app triggers click tracking. icons by [The Noun Project](https://thenounproject.com/)*
 
 The device operating system "wakes up" your app with an API call, passing in  the URL. Your app issues an HTTP(S) GET to the URL, which registers the click. Your app receives the original URL in the response "Location" header; there's no need to follow the redirect and fetch the entire web-page.
 
