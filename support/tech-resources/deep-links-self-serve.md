@@ -6,6 +6,7 @@ description: "A guide to including iOS universal links and Android App Links in 
 ## Introduction
 
 Email is often read and engaged with on mobile devices. Both iOS (9 and later) and Android (6.0 and later) provide a way for links in your content to take your users directly into an app that you have created, providing your users with a richer interactive experience.
+The links that connect a user directly to your app are referred to as deep links.
 
 This article describes how to configure your content and mobile apps to support deep links.
 
