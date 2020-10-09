@@ -153,7 +153,7 @@ For up to date information on creating a distribution via CloudFront, please ref
 
         ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_whitelist_cache_orange.png)
 
-       An orange warning indicator appears, this is OK.
+        An orange warning indicator appears. This is expected.
 
     * Under Default Cache Behavior Settings, set **Query String Forwarding and Caching** to "Forward all, cache based on all".
 
@@ -164,9 +164,11 @@ For up to date information on creating a distribution via CloudFront, please ref
 
         ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_cnames.png)
 
-    * Under Distribution Settings, for "SSL Certificate", select **Custom SSL Certificate** - Upload certificates as needed. If instead, you want to have AWS create a certificate within AWS, leave this set at "Default" and leave the Alternate DomainNames field blank until your [domain is routed](#cname).
+    * Under Distribution Settings, for "SSL Certificate", select **Custom SSL Certificate** - Upload certificates as needed.
 
         ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_custom_ssl_cert.png)
+
+        > If you want to have AWS create a new certificate within AWS instead of importing an existing one, leave this set at "Default" and the Alternate Domain Names field blank for the time being.
 
     * At the bottom of the page, press **Create Distribution**. This returns you to the main CloudFront Distributions list.
 
@@ -180,7 +182,7 @@ For up to date information on creating a distribution via CloudFront, please ref
 
         ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_dist_domain.png)
 
-    * Create the CNAME record within your DNS service (screen will be specific to your provider - this is just one example). If you have a TTL (time to live) field, we suggest to set this to 1 hour.
+    * Create the CNAME record within your DNS service (this will be specific to your provider). If you have a TTL (time to live) field, we suggest to set this to 1 hour.
 
         ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_domain_provider_xyz_cname.png)
 
@@ -188,11 +190,13 @@ For up to date information on creating a distribution via CloudFront, please ref
 
         You can verify that the routing is successful using `ping` on your created record. You should see a response from `xyzzy.cloudfront.net`.
 
+### <a name="sparkpost-app"></a> In the SparkPost app
+
 1. Log into SparkPost app, or use the SparkPost [Tracking Domain API](https://developers.sparkpost.com/api/tracking-domains/#tracking-domains).
 
-1. Add **custom tracking domain**. It won't verify just yet.
+1. Add **custom tracking domain**. It can't be verified just yet.
 
-1. Ensure your domain is set to `secure` mode as[above](#switch-to-secure).
+1. Ensure your domain is set to `secure` mode as [above](#switch-to-secure).
 
 1. Verify the tracking domain.
 
@@ -201,7 +205,7 @@ For up to date information on creating a distribution via CloudFront, please ref
 ---
 ### <a name="aws-cert"></a>Using AWS Certificate Manager (ACM) to issue a certificate for your domain(s)
 
-Once your CNAME is set up with your DNS provider, you can have AWS issue a certificate for your custom tracking domain(s), instead of providing an existing one.
+Once your CNAME is set up with your DNS provider, instead of providing an existing certificate, you can have AWS issue a certificate for your custom tracking domain(s),
 
 1. Navigate to the AWS Certificate Manager (ACM). Choose Request a Certificate, then select Request a public certificate.
 
@@ -221,6 +225,8 @@ Once your CNAME is set up with your DNS provider, you can have AWS issue a certi
 
     ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_validated_cert.png)
 
+#### To attach the issued certificate to your CloudFront distribution:
+
 1. Navigate to CloudFront. Select your distribution, then select "Edit":
 
     ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_edit.png)
@@ -232,6 +238,9 @@ Once your CNAME is set up with your DNS provider, you can have AWS issue a certi
 1. At the bottom of the page, click on the "Yes, Edit" button.
 
       ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_edit_domain_yes_edit_button.png)
+
+1. Go back through the [steps in the SparkPost app](#sparkpost-app) to validate your domain, as this requires the certificate to be present and valid.
+
 ---
 ### <a name = "aws-update"></a> Updating an Existing Domain on AWS CloudFront
 
@@ -263,7 +272,7 @@ If you use AWS CloudFront to enable HTTPS engagement tracking, by default, Cloud
 
       ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_whitelist_cache_orange.png)
 
-    An orange warning indicator appears, this is OK.
+    An orange warning indicator appears. This is expected.
 
 1. At the bottom of the page, click on the "Yes, Edit" button.
 
