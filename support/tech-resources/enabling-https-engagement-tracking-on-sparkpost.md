@@ -205,7 +205,7 @@ For up to date information on creating a distribution via CloudFront, please ref
 ---
 ### <a name="aws-cert"></a>Using AWS Certificate Manager (ACM) to issue a certificate for your domain(s)
 
-Once your CNAME is set up with your DNS provider, instead of providing an existing certificate, you can have AWS issue a certificate for your custom tracking domain(s),
+Once your CNAME is set up with your DNS provider, instead of providing an existing certificate, you can have AWS issue a certificate for your custom tracking domain(s).
 
 1. Navigate to the AWS Certificate Manager (ACM). Choose Request a Certificate, then select Request a public certificate.
 
