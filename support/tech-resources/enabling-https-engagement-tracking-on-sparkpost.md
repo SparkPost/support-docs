@@ -31,7 +31,7 @@ This document includes step by step guides for the following CDNs.
     * [Create a Domain](#aws-create)
     * [Issue a Certificate](#aws-cert)
     * [Update an Existing Domain](#aws-update) to pass `User-Agent` information
-* [Fastly](#fastly]): create a Domain
+* [Fastly](#fastly): create a Domain
 
 Please note, if you are using a CDN not listed here, the steps will likely differ in workflow. Please refer to your CDN's documentation and contact their respective support departments if you have any questions.
 
