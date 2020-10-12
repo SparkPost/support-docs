@@ -41,7 +41,7 @@ The spec files must be published on your domain(s) and accessible via HTTPS. The
 
 These files should be placed on your website in the directory `.well-known`.
 
-### iOS: example `apple-app-site-association`
+### <a name="ios-spec-file"></a> iOS: example `apple-app-site-association`
 
 ```javascript
 {
@@ -72,7 +72,7 @@ Your app needs access to the [Apple "associated domains" entitlement](https://de
 
 Configure the `paths` section to match the links in your email HTML content, depending on your chosen SparkPost click tracking setup (explained [here](#tracking)).
 
-### Android: example `assetlinks.json`
+### <a name="android-spec-file"></a> Android: example `assetlinks.json`
 
 ```javascript
 [{
@@ -301,14 +301,127 @@ Create the association files in the `.well-known` directory of your web root (de
 
 Click the padlock symbol and check the certificate is valid and as expected. Repeat for the Android `assetlinks.json` file.
 
+---
+
 ### NGINX
 
 @@
 
+---
+
 ### AWS CloudFront
 
-@@
+First set up your secure tracking domain using CloudFront - instructions [here](https://www.sparkpost.com/docs/tech-resources/enabling-https-engagement-tracking-on-sparkpost/#aws-create). This establishes your tracking domain routing and certificate in AWS. This section describes how to:
 
+ * Create an S3 bucket for the spec files;
+ * Set up our CloudFront distribution to selectively serve requests on our tracking domain from the bucket;
+ * Test the files are served correctly;
+ * Ensure our app domain association matches our tracking domain.
+
+With CloudFront we are working with the specific sub-domain used for link tracking. It's therefore an alternative to updating your main website's `.well-known` directory.
+
+#### Create S3 bucket
+
+1. On [AWS S3](https://s3.console.aws.amazon.com/s3/), create a new bucket if you don't already have a bucket for your website. Give it a name, and choose region.
+
+    ![](media/deep-links-self-serve/deep-links-aws-create-bucket.png)
+
+    * Step 2, "Congfigure options", you can leave these options unset.
+
+    * Step 3, "Set permissions", leave this at default ("Block all") for now.
+
+    * Step 4, "Review", choose "Create bucket". This returns you to the S3 console.
+
+1. On your bucket permissions tab, select Edit, then uncheck "block all public access" and select "Save", then "confirm". Refer to [AWS documentation](https://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteAccessPermissionsReqd.html) if needed.
+
+    ![](media/deep-links-self-serve/deep-links-aws-public-access.png)
+
+    > Note: you don't need to create a Bucket Policy at this stage, because CloudFront creates a specific policy for you in the next step.
+
+    > There is also no need to enable "Static website hosting", as CloudFront will selectively match specified URL path patterns to serve your files.
+
+1. Select your bucket. If you don't already have a folder named `.well-known`, then create it.
+
+    ![](media/deep-links-self-serve/deep-links-aws-create-well-known.png)
+
+    Leave security settings at "None (Use bucket settings)" and select Save.
+
+1. Select your folder, then select "Upload". Drag and drop in your spec files.
+
+    ![](media/deep-links-self-serve/deep-links-aws-upload-spec-files.png)
+
+    Select Next. Leave access permissions for your user ID at their defaults, and select Next.
+
+    Choose "Standard" storage class and select Next. After review, complete the upload.
+
+    You should now have two files in your bucket.
+
+    ![](media/deep-links-self-serve/deep-links-aws-spec-files.png)
+
+1. Select both files via the check-boxes. Under the "Actions" drop-down menu, select "Change metadata". Under "Select a key", choose `Content-Type`, and type in the value `application-json`. Select "Save" then "Change".
+
+    ![](media/deep-links-self-serve/deep-links-aws-set-metadata.png)
+
+    Your files are now uploaded in S3.
+
+#### Set up AWS CloudFront to serve your spec files
+
+1. On [AWS CloudFront](https://console.aws.amazon.com/cloudfront/home), under "Origins and Origin Groups", select "Create Origin".
+
+    ![](media/deep-links-self-serve/deep-links-aws-create-origin.png)
+
+    * In Origin Domain Name, start typing the name of your S3 bucket, then choose it from the drop-down list presented.
+
+    * Leave Origin Path blank, as we have created the S3 bucket with the correct folder-name to fit the incoming path already.
+
+    * On Origin Access Identity, choose "Create a New Identity" if you don't have one already.
+
+    * On Grant Read Permissions on Bucket, choose "Yes, Update Bucket Policy".
+
+    * Leave the other settings at defaults. Scroll down and select "Create".
+
+1. Set up which URL paths will be forwarded by CloudFront to the files in your bucket.
+
+    Select your distribution by clicking on its name. Select the "Behaviors" tab and then "Create Behavior".
+
+    ![](media/deep-links-self-serve/deep-links-aws-create-behavior.png)
+
+    * In Path Pattern, type `.well-known/*`
+
+        ![](media/deep-links-self-serve/deep-links-aws-create-behavior-path.png)
+
+    * In Origin or Origin Group, select your S3 bucket from the drop-down list.
+
+    * In Viewer Protocol Policy, select "HTTPS Only" (as mobile devices will always request using HTTPS).
+
+    * Leave the remaining settings at default. At the bottom of the page, select "Create".
+
+    * Back on the CloudFront Behaviors list view, you should see your new rule has been created.
+
+1. Return to the CloudFront Distributions list, you should see Status "In Progress" as the distribution is deployed.
+
+    ![](media/deep-links-self-serve/deep-links-aws-dist-deployment-in-progress.png)
+
+#### Test AWS CloudFront serves your spec files
+
+Check that your spec files are correctly published and available on the Internet, using `curl` or a web browser. Be sure to specify `https`.
+
+```
+curl https://##your-tracking-domain-here##/.well-known/apple-app-site-association
+
+curl https://##your-tracking-domain-here##/.well-known/assetlinks.json
+```
+
+You can check your S3 bucket configuration is secure using [this tool](https://console.aws.amazon.com/trustedadvisor/home?#/category/security).
+
+
+#### Ensure your app matches your tracking domain
+
+The domains entitlement in your app(s) need to match your tracking domain. This can be done specifically, or with a wildcard matching a sub-domain. Refer to
+* [Apple](#ios-spec-file) configuration
+* [Android](android-spec-file) configuration
+
+---
 ### CloudFlare
 
 @@
@@ -319,5 +432,6 @@ Click the padlock symbol and check the certificate is valid and as expected. Rep
 1. [Branch.io](https://blog.branch.io/how-to-setup-universal-links-to-deep-link-on-apple-ios/) article on setting up iOS Universal Links
 1. [Apple](https://developer.apple.com/documentation/xcode/allowing_apps_and_websites_to_link_to_your_content/supporting_universal_links_in_your_app) article on Universal Links including info on MacOS and WatchOS as well as iOS
 1. [Tips](https://shinesolutions.com/2017/06/15/universal-linking-a-few-things-to-be-prepared-for/) on iOS app debugging with Universal Links and the XCode device simulator
-
+1. [Apple WWDC 2020](https://developer.apple.com/videos/play/wwdc2020/10098) presentation
+1. More on [CloudFront Distributions](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-create-delete.html)
 
