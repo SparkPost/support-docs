@@ -302,15 +302,66 @@ public class LinkDestinationActivity extends AppCompatActivity{
 
 You can use a CDN or an ordinary web-server to host your spec files. Ensure you have a valid certificate for your domain, as devices need to fetch these files using HTTPS.
 
-### Apache
+When set up, you can get a security report by running the [SSL Labs server test](https://www.ssllabs.com/ssltest/analyze.html).
 
-Create the association files in the `.well-known` directory of your web root (default is `/var/www/html`). You can check the file exists using your web browser.
+### <a name="apache"></a> Apache
+
+Note: this simple example creates the spec files in the `.well-known` directory of your web root (default is `/var/www/html`).
+
+You can check the file exists using your web browser.
 
 ![](media/deep-links-self-serve/deep-links-check-spec-file.png)
 
 *Checking spec files*
 
 Click the padlock symbol and check the certificate is valid and as expected. Repeat for the Android `assetlinks.json` file.
+
+### NGINX
+
+1. Follow the steps in [this article](https://www.sparkpost.com/docs/tech-resources/using-proxy-https-tracking-domain/) to set up your secure tracking domain.
+
+1. Check where your NGINX root directory is, by running `nginx -V`. Look for the path shown after `--prefix=`, for example `--prefix=/usr/share/nginx` (and adjust the following example to suit). This should contain a directory named `html` which is used for your files.
+
+1. Within this, create a directory `.well-named`, and upload/create your spec files here. This will usually require root privilege on your server.
+
+1. Add `location` blocks to your config to declare the spec files. Here is a complete example, including the engagement-tracking `proxy-pass` block done in step 1.
+
+    ```
+    server {
+        listen 80;
+        listen 443 ssl;
+        server_name     nginx-track.thetucks.com;
+        ssl_certificate /etc/letsencrypt/live/nginx-track.thetucks.com/fullchain.pem;
+        ssl_certificate_key /etc/letsencrypt/live/nginx-track.thetucks.com/privkey.pem;
+
+        # Security improvements - needed to get an "A" rating
+        ssl_protocols TLSv1.2;
+        ssl_prefer_server_ciphers on;
+        ssl_ciphers ECDH+AESGCM:ECDH+AES256:ECDH+AES128:DH+3DES:!ADH:!AECDH:!MD5;
+
+        # Serve the deep linking spec files using specific patterns
+        location = /.well-known/apple-app-site-association {
+            root /usr/share/nginx/html;
+            default_type "application/json";
+            }
+
+        location = /.well-known/assetlinks.json {
+        root /usr/share/nginx/html;
+        default_type "application/json";
+        }
+
+        # pass all other requests through to SparkPost engagement tracking
+        location / {
+            proxy_pass      https://spgo.io;
+        }
+    }
+    ```
+
+    Note the security settings to use only newer TLS versions and disable weaker ciphers, to get an "A" rating on the [SSL Labs server test](https://www.ssllabs.com/ssltest/analyze.html). You may wish to adjust these to suit your own IT policy.
+
+1. Check your configuration is valid using `sudo nginx -t`. If no errors are reported, then reload using `sudo nginx -s reload`.
+
+1. Check that your spec files are correctly published and available on the Internet - see [troubleshooting tips](#troubleshooting).
 
 ---
 
@@ -409,7 +460,14 @@ With CloudFront we are working with the specific sub-domain used for link tracki
 
 #### Test AWS CloudFront serves your spec files
 
-Check that your spec files are correctly published and available on the Internet, using `curl` or a web browser. Be sure to specify `https`.
+* Check your S3 bucket configuration is secure using [this tool](https://console.aws.amazon.com/trustedadvisor/home?#/category/security).
+
+---
+## <a name="troubleshooting"></a>Troubleshooting tips
+
+### Check your spec files
+
+You can check your spec files are correctly published and available on the Internet, using `curl` or a web browser. Be sure to specify `https`.
 
 ```
 curl https://##your-tracking-domain-here##/.well-known/apple-app-site-association
@@ -417,16 +475,19 @@ curl https://##your-tracking-domain-here##/.well-known/apple-app-site-associatio
 curl https://##your-tracking-domain-here##/.well-known/assetlinks.json
 ```
 
-You can check your S3 bucket configuration is secure using [this tool](https://console.aws.amazon.com/trustedadvisor/home?#/category/security).
+> Note: If your tracking sub-domain does not have spec file(s), mobile devices will also look on the root domain for files in the `/.well-known` directory. This is shown in the above simple [Apache example](#apache).
 
+### Check your tracked links
 
-#### Ensure your app matches your tracking domain
+You can view your encoded links using Gmail, by selecting the three dots menu top-right, then "View Original". Check the domain is as expected, and the `<A HREF ..` links are using HTTPS.
 
-The domains entitlement in your app(s) need to match your tracking domain. This can be done specifically, or with a wildcard matching a sub-domain. Refer to
+### Check your app matches your tracking domain
+
+The domains entitlement in your app(s) must match your tracking domain. This can be done specifically, or with a wildcard matching a sub-domain. Refer to
 * [Apple](#ios-spec-file) configuration
 * [Android](android-spec-file) configuration
 
----
+
 ## Further reading
 
 1. [Branch.io](https://blog.branch.io/how-to-setup-universal-links-to-deep-link-on-apple-ios/) article on setting up iOS Universal Links
@@ -434,4 +495,8 @@ The domains entitlement in your app(s) need to match your tracking domain. This 
 1. [Tips](https://shinesolutions.com/2017/06/15/universal-linking-a-few-things-to-be-prepared-for/) on iOS app debugging with Universal Links and the XCode device simulator
 1. [Apple WWDC 2020](https://developer.apple.com/videos/play/wwdc2020/10098) presentation
 1. More on [CloudFront Distributions](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-create-delete.html)
+1. View email internals including tracked links, with Gmail [Show Original](https://support.google.com/mail/answer/29436?hl=en-GB)
+1. NGINX [Location](https://docs.nginx.com/nginx/admin-guide/web-server/web-server/#locations) block
+
+
 
