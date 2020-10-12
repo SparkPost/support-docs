@@ -12,7 +12,7 @@ This article describes how to configure your content and mobile apps to support 
 
 > iOS uses the term Universal Link. The Android term is "App link". We use the term "deep link" in this article to cover the aspects common to both.
 
-When correctly configured, a deep link takes your user directly from the email to your app, without opening the mobile browser. If the app is not installed, the mobile browser will open and display the specified page instead.
+When correctly configured, a deep link takes your user directly from the email to your app, without opening the mobile web browser. If the app is not installed, the mobile web browser will open and display the specified page instead.
 
 ## Setup requirements
 
@@ -33,7 +33,7 @@ The following developer documentation explains the deep linking mechanisms in de
 
 ## <a name="spec-file"></a>Deep linking spec files
 
-The spec files must be published on your domain(s) and accessible via HTTPS. They may be hosted on a Content Delivery Network (CDN) or a regular web server - examples [here]().
+The spec files must be published on your domain(s) and accessible via HTTPS. They may be hosted on a Content Delivery Network (CDN) or a regular web server - examples [here](#cdn).
 
 - For iOS devices, the file is named `apple-app-site-association`
 - For Android devices, the file is named `assetlinks.json`
@@ -132,6 +132,12 @@ If you're using the SparkPost REST API, you can use the `data-msys-clicktrack` a
 <a data-msys-clicktrack="0" href="http://my.universallink.example.com/path/">Open in app</a>
 ```
 
+You can also disable click-tracking on plain-text email content as follows. See [this article](https://developers.sparkpost.com/api/template-language/#header-custom-link-attributes) for more information.
+
+```
+http://www.example.com[[data-msys-clicktrack="0"]]
+```
+
 This is appropriate where your content has a mix of deep links and links leading to an ordinary website destination.
 
 Alternatively, you can [disable click tracking for a whole transmission request](https://developers.sparkpost.com/api/transmissions.html#header-options-attributes) by setting the `click_tracking` option to `false`. The [SMTP API](https://developers.sparkpost.com/api/smtp-api.html#header-open-and-click-tracking)  supports a similar flag.
@@ -149,7 +155,7 @@ Set up your spec files to match your [custom tracking domain](https://www.sparkp
 
 #### Custom Link Sub-Paths
 
-Your spec file states which *link paths* should be treated as deep links. Any other paths on that domain will be opened via the device browser in the usual way. This enables you to use both regular tracked links and deep links with that tracking domain. Deep links are distinguished from regular tracked links as follows.
+Your spec file states which *link paths* should be treated as deep links. Any other paths on that domain will be opened via the device web browser in the usual way. This enables you to use both regular tracked links and deep links with that tracking domain. Deep links are distinguished from regular tracked links as follows.
 
 SparkPost will include a specific string *in the path part* of a tracked URL when your content has the `data-msys-sublink` attribute, for example:
 
@@ -160,6 +166,12 @@ SparkPost will include a specific string *in the path part* of a tracked URL whe
 This will cause the tracked link path to start with `/f/open-in-app/` which simplifies writing your `apple-app-site-association` file.
 
 SparkPost supports the use of custom sub-paths on an individual link basis.  This allows you to choose, when setting up your spec file, which app opens depending on the custom subpath.
+
+You can also set up custom sub-paths in plain text email content as follows. See [this article](https://developers.sparkpost.com/api/template-language/#header-custom-link-attributes) for more information.
+
+```
+http://www.example.com[[data-msys-sublink="open-in-app"]]
+```
 
 If a custom sub-path is not used, the spec files can be configured to open on a wildcard path.
 
@@ -221,6 +233,7 @@ This code calls the SparkPost click tracking service, which responds with a "3xx
 This simple code gets the `Location` header and also follows the redirect to fetch the web-page, which consumes device bandwidth. It's more efficient, but needs more code to stop after the "302" response is received; complete example iOS [app here](https://github.com/SparkPost/deep-links/tree/main/iOS).
 
 #### iOS User Agent
+
 In SparkPost event reporting, the attribute `user_agent` carries information on app name and OS version, for example `"testlinks/1 CFNetwork/1197 Darwin/20.0.0"`. This enables you to use SparkPost analytics to find out which links are being opened via your app.
 
 ## Forwarding Clicks From Android To SparkPost
@@ -282,14 +295,12 @@ public class LinkDestinationActivity extends AppCompatActivity{
     }
 }
 ```
-Java example (@@note: update for Kotlin)
+*Android Java example*
 
 ---
 ##  <a name="cdn"></a> Hosting the spec files
 
 You can use a CDN or an ordinary web-server to host your spec files. Ensure you have a valid certificate for your domain, as devices need to fetch these files using HTTPS.
-
-@@ check if tracking-domain subdomains can be used
 
 ### Apache
 
@@ -300,12 +311,6 @@ Create the association files in the `.well-known` directory of your web root (de
 *Checking spec files*
 
 Click the padlock symbol and check the certificate is valid and as expected. Repeat for the Android `assetlinks.json` file.
-
----
-
-### NGINX
-
-@@
 
 ---
 
@@ -420,11 +425,6 @@ You can check your S3 bucket configuration is secure using [this tool](https://c
 The domains entitlement in your app(s) need to match your tracking domain. This can be done specifically, or with a wildcard matching a sub-domain. Refer to
 * [Apple](#ios-spec-file) configuration
 * [Android](android-spec-file) configuration
-
----
-### CloudFlare
-
-@@
 
 ---
 ## Further reading
