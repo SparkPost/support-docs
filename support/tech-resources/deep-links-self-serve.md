@@ -479,7 +479,7 @@ curl https://##your-tracking-domain-here##/.well-known/assetlinks.json
 
 ### Check your tracked links
 
-You can view your encoded links using Gmail, by selecting the three dots menu top-right, then "View Original". Check the domain is as expected, and the `<A HREF ..` links are using HTTPS.
+You can view your encoded links using Gmail, by selecting the three dots menu top-right, then "Show Original". Check the domain is as expected, and the `<A HREF ..` links are using HTTPS.
 
 ### Check your app matches your tracking domain
 
