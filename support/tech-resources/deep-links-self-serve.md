@@ -331,7 +331,7 @@ Click the padlock symbol and check the certificate is valid and as expected. Rep
     ```
     server {
         listen 80;
-        listen 443 ssl;
+        listen 443 ssl http2;
         server_name     nginx-track.example.com;
         ssl_certificate /etc/letsencrypt/live/nginx-track.example.com/fullchain.pem;
         ssl_certificate_key /etc/letsencrypt/live/nginx-track.example.com/privkey.pem;
@@ -355,6 +355,8 @@ Click the padlock symbol and check the certificate is valid and as expected. Rep
         # pass all other requests through to SparkPost engagement tracking
         location / {
             proxy_pass      https://spgo.io;
+            proxy_set_header X-Forwarded-For $remote_addr; # pass the client IP to the open & click tracker
+            server_tokens off; # suppress NGINX giving version/OS information on error pages
         }
     }
     ```
