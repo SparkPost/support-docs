@@ -37,7 +37,7 @@ After configuring your CDN, you need to s SparkPost to encode your links using H
 ---
 ## <a name="cloudflare"></a> Step by Step Guide with CloudFlare
 
-1. Create CloudFlare account
+1. Create CloudFlare account.
 
 1. Go to “DNS” tab on the CloudFlare UI:
 
@@ -79,11 +79,11 @@ After configuring your CDN, you need to s SparkPost to encode your links using H
 
 1. Create the appropriate page rule settings for the domain.
 
-    * In the page rules tab: Create Page Rule
+    * In the page rules tab: Create Page Rule:
 
         ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudflare_create_page_rule.png)
 
-    * Enter your domain with a trailing `/*`, e.g. `track.yourdomain.com/*`
+    * Enter your domain with a trailing `/*`, e.g. `track.yourdomain.com/*`.
 
     * Add a Setting -> Forwarding URL (specify the 301 redirect option).
 
@@ -91,7 +91,7 @@ After configuring your CDN, you need to s SparkPost to encode your links using H
 
         ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudflare_page_rule_edit.png)
 
-    * Save and Deploy (turn page rule on)
+    * Save and Deploy (turn page rule on).
 
 1. Cloudflare has Universal SSL for all accounts on the client side, but it's good to ensure that the origin side (towards SparkPost) also uses HTTPS.
 
