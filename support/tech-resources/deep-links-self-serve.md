@@ -38,7 +38,6 @@ The spec files must be published on your domain(s) and accessible via HTTPS. The
 - For iOS devices, the file is named `apple-app-site-association`
 - For Android devices, the file is named `assetlinks.json`
 
-
 These files should be placed on your website in the directory `.well-known`.
 
 ### <a name="ios-spec-file"></a> iOS: example `apple-app-site-association`
@@ -68,7 +67,6 @@ The `appID` is available from your XCode development environment, or from your [
 Your app needs access to the [Apple "associated domains" entitlement](https://developer.apple.com/documentation/safariservices/supporting_associated_domains). You need a paid Apple Developer account for this. Set up the "associated domains" to match your paths.
 
 ![](media/deep-links-self-serve/deep-links-apple-xcode-assoc-domains.png)
-
 
 Configure the `paths` section to match the links in your email HTML content, depending on your chosen SparkPost click tracking setup (explained [here](#tracking)).
 
@@ -367,6 +365,8 @@ Click the padlock symbol and check the certificate is valid and as expected. Rep
 
 ### AWS CloudFront
 
+> As described [here](#spec-file), it's easy to create spec files in your web site top-level domain's `/.well-known` directory, and write your apps to match those domain(s) *and* the tracking sub-domains. The following steps are needed *only* if you wish to serve particular spec files for your *tracking domain* URLs.
+
 First set up your secure tracking domain using CloudFront - instructions [here](https://www.sparkpost.com/docs/tech-resources/enabling-https-engagement-tracking-on-sparkpost/#aws-create). This establishes your tracking domain routing and certificate in AWS. This section describes how to:
 
  * Create an S3 bucket for the spec files;
@@ -460,23 +460,35 @@ With CloudFront we are working with the specific sub-domain used for link tracki
 
 1. Check your S3 bucket configuration is secure using [this tool](https://console.aws.amazon.com/trustedadvisor/home?#/category/security).
 
+1. In case of difficulty, see [troubleshooting tips](#troubleshooting).
+
 ---
 
 ### CloudFlare
 
-1. In your CloudFlare dashboard, an additional page rule is necessary. A prerequisite for this configuration is that the desired spec files (`apple-app-site-assocation` and `assetlinks.json`) are already hosted either via a CDN or web server.
+> As described [here](#spec-file), it's easy to create spec files in your web site top-level domain's `/.well-known` directory, and write your apps to match those domain(s) *and* the tracking sub-domains. The following steps are needed *only* if you wish to serve particular spec files for your *tracking domain* URLs.
+
+Unlike AWS CloudFront, you need to already have the spec files (`apple-app-site-assocation` and `assetlinks.json`) hosted elsewhere, such as on a web server.
+
+1. In your CloudFlare dashboard, an additional page rule is necessary to serve the spec files.
 
     * Page Rules Tab -> Create Page Rule
 
-    * Enter your domain like so: `track.yourdomain.com/.well-known/*`
+        ![](media/deep-links-self-serve/deep-links-cloudflare-create-page-rule.png)
+
+    * Enter your domain without the https prefix, like so: `track.yourdomain.com/.well-known/*`
 
     * Add a Setting -> Forwarding URL (specify a 301 redirect option)
 
-    * Destination URL is determined by where the universal link files are hosted.  The destination URL should be configured as `https://<DEEP_LINK_DESTINATION>/.well-known/$1`.
+    * Destination URL is determined by where the spec files are hosted.  The destination URL should be configured as `https://<DEEP_LINK_DESTINATION>/.well-known/$1`. (The `$1` placeholder contains the file name matched by the `*` in the domain rule.)
 
-        ![](media/deep-links-self-serve/deep-links-cloudflare-universal-links-page-rule.png)
+    * CloudFlare page rules are evaluated in priority order.  Set this page rule to be first, with the page rules for forwarding to SparkPost Engagement Tracking afterwards.
 
-        Note that CloudFlare page rules are evaluated in priority order.  This page rule should be first, with the page rule for forwarding to SparkPost Engagement Tracking second.
+1. Your rules should now look like this.
+
+    ![](media/deep-links-self-serve/deep-links-cloudflare-all-page-rules.png)
+
+1. In case of difficulty, see [troubleshooting tips](#troubleshooting).
 
 ---
 ## <a name="troubleshooting"></a>Troubleshooting tips
@@ -513,6 +525,3 @@ The domains entitlement in your app(s) must match your tracking domain. This can
 1. More on [CloudFront Distributions](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-create-delete.html)
 1. View email internals including tracked links, with Gmail [Show Original](https://support.google.com/mail/answer/29436?hl=en-GB)
 1. NGINX [Location](https://docs.nginx.com/nginx/admin-guide/web-server/web-server/#locations) block
-
-
-
