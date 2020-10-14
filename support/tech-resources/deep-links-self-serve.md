@@ -330,9 +330,9 @@ Click the padlock symbol and check the certificate is valid and as expected. Rep
     server {
         listen 80;
         listen 443 ssl;
-        server_name     nginx-track.thetucks.com;
-        ssl_certificate /etc/letsencrypt/live/nginx-track.thetucks.com/fullchain.pem;
-        ssl_certificate_key /etc/letsencrypt/live/nginx-track.thetucks.com/privkey.pem;
+        server_name     nginx-track.example.com;
+        ssl_certificate /etc/letsencrypt/live/nginx-track.example.com/fullchain.pem;
+        ssl_certificate_key /etc/letsencrypt/live/nginx-track.example.com/privkey.pem;
 
         # Security improvements - needed to get an "A" rating
         ssl_protocols TLSv1.2;
@@ -458,9 +458,25 @@ With CloudFront we are working with the specific sub-domain used for link tracki
 
     ![](media/deep-links-self-serve/deep-links-aws-dist-deployment-in-progress.png)
 
-#### Test AWS CloudFront serves your spec files
+1. Check your S3 bucket configuration is secure using [this tool](https://console.aws.amazon.com/trustedadvisor/home?#/category/security).
 
-* Check your S3 bucket configuration is secure using [this tool](https://console.aws.amazon.com/trustedadvisor/home?#/category/security).
+---
+
+### CloudFlare
+
+1. In your CloudFlare dashboard, an additional page rule is necessary. A prerequisite for this configuration is that the desired spec files (`apple-app-site-assocation` and `assetlinks.json`) are already hosted either via a CDN or web server.
+
+    * Page Rules Tab -> Create Page Rule
+
+    * Enter your domain like so: `track.yourdomain.com/.well-known/*`
+
+    * Add a Setting -> Forwarding URL (specify a 301 redirect option)
+
+    * Destination URL is determined by where the universal link files are hosted.  The destination URL should be configured as `https://<DEEP_LINK_DESTINATION>/.well-known/$1`.
+
+        ![](media/deep-links-self-serve/deep-links-cloudflare-universal-links-page-rule.png)
+
+        Note that CloudFlare page rules are evaluated in priority order.  This page rule should be first, with the page rule for forwarding to SparkPost Engagement Tracking second.
 
 ---
 ## <a name="troubleshooting"></a>Troubleshooting tips
