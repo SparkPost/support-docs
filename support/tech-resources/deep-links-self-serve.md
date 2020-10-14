@@ -304,11 +304,15 @@ When set up, you can get a security report by running the [SSL Labs server test]
 
 ### <a name="apache"></a> Apache
 
-Note: this simple example creates the spec files in the `.well-known` directory of your web root (default is `/var/www/html`).
+1. Find the directory used by your web server, known as the web root. The  default is `/var/www/html`, but yours may vary. You can find this by locating the `DocumentRoot` setting in your `.conf` files.
 
-You can check the file exists using your web browser.
+ 1. Within this, create a directory `.well-known` if it doesn't already exist, and upload/create your spec files here. This will usually require root privilege on your server.
 
-![](media/deep-links-self-serve/deep-links-check-spec-file.png)
+3. Restart Apache.
+
+4. You can check they are served using your web browser.
+
+    ![](media/deep-links-self-serve/deep-links-check-spec-file.png)
 
 *Checking spec files*
 
@@ -320,7 +324,7 @@ Click the padlock symbol and check the certificate is valid and as expected. Rep
 
 1. Check where your NGINX root directory is, by running `nginx -V`. Look for the path shown after `--prefix=`, for example `--prefix=/usr/share/nginx` (and adjust the following example to suit). This should contain a directory named `html` which is used for your files.
 
-1. Within this, create a directory `.well-named`, and upload/create your spec files here. This will usually require root privilege on your server.
+1. Within this, create a directory `.well-known` if it doesn't already exist, and upload/create your spec files here. This will usually require root privilege on your server.
 
 1. Add `location` blocks to your config to declare the spec files. Here is a complete example, including the engagement-tracking `proxy-pass` block done in step 1.
 
