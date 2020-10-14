@@ -33,7 +33,7 @@ The following developer documentation explains the deep linking mechanisms in de
 
 ## <a name="spec-file"></a>Deep linking spec files
 
-The spec files must be published on your domain(s) and accessible via HTTPS. They may be hosted on a Content Delivery Network (CDN) or a regular web server - examples [here](#cdn).
+The spec files must be published on your domain(s) and accessible via HTTPS. They may be hosted on a regular web server, or via a CDN - examples [here](#hosting).
 
 - For iOS devices, the file is named `apple-app-site-association`
 - For Android devices, the file is named `assetlinks.json`
@@ -296,7 +296,7 @@ public class LinkDestinationActivity extends AppCompatActivity{
 *Android Java example*
 
 ---
-##  <a name="cdn"></a> Hosting the spec files
+##  <a name="hosting"></a> Hosting the spec files
 
 You can use a CDN or an ordinary web-server to host your spec files. Ensure you have a valid certificate for your domain, as devices need to fetch these files using HTTPS.
 
@@ -365,7 +365,7 @@ Click the padlock symbol and check the certificate is valid and as expected. Rep
 
 ### AWS CloudFront
 
-> As described [here](#spec-file), it's easy to create spec files in your web site top-level domain's `/.well-known` directory, and write your apps to match those domain(s) *and* the tracking sub-domains. The following steps are needed *only* if you wish to serve particular spec files for your *tracking domain* URLs.
+> As described [here](#spec-file), it's easy to create spec files in your web site top-level domain's `/.well-known` directory, and write your apps to match those domain(s) *and* the tracking sub-domains. The following steps are needed *only* if you wish to serve particular, different spec files for your *tracking domain* URLs.
 
 First set up your secure tracking domain using CloudFront - instructions [here](https://www.sparkpost.com/docs/tech-resources/enabling-https-engagement-tracking-on-sparkpost/#aws-create). This establishes your tracking domain routing and certificate in AWS. This section describes how to:
 
@@ -466,7 +466,7 @@ With CloudFront we are working with the specific sub-domain used for link tracki
 
 ### CloudFlare
 
-> As described [here](#spec-file), it's easy to create spec files in your web site top-level domain's `/.well-known` directory, and write your apps to match those domain(s) *and* the tracking sub-domains. The following steps are needed *only* if you wish to serve particular spec files for your *tracking domain* URLs.
+> As described [here](#spec-file), it's easy to create spec files in your web site top-level domain's `/.well-known` directory, and write your apps to match those domain(s) *and* the tracking sub-domains. The following steps are needed *only* if you wish to serve particular, different spec files for your *tracking domain* URLs.
 
 Unlike AWS CloudFront, you need to already have the spec files (`apple-app-site-assocation` and `assetlinks.json`) hosted elsewhere, such as on a web server.
 
@@ -522,6 +522,7 @@ The domains entitlement in your app(s) must match your tracking domain. This can
 1. [Apple](https://developer.apple.com/documentation/xcode/allowing_apps_and_websites_to_link_to_your_content/supporting_universal_links_in_your_app) article on Universal Links including info on MacOS and WatchOS as well as iOS
 1. [Tips](https://shinesolutions.com/2017/06/15/universal-linking-a-few-things-to-be-prepared-for/) on iOS app debugging with Universal Links and the XCode device simulator
 1. [Apple WWDC 2020](https://developer.apple.com/videos/play/wwdc2020/10098) presentation
-1. More on [CloudFront Distributions](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-create-delete.html)
+1. More on AWS [CloudFront Distributions](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-create-delete.html)
 1. View email internals including tracked links, with Gmail [Show Original](https://support.google.com/mail/answer/29436?hl=en-GB)
 1. NGINX [Location](https://docs.nginx.com/nginx/admin-guide/web-server/web-server/#locations) block
+1. [Understanding and Configuring Cloudflare Page Rules](https://support.cloudflare.com/hc/en-us/articles/218411427-Understanding-and-Configuring-Cloudflare-Page-Rules-Page-Rules-Tutorial-)
