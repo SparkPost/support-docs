@@ -17,9 +17,9 @@ When correctly configured, a deep link takes your user directly from the email t
 ## Setup requirements
 
 - Known URL path(s) that you want to deep link to your application.
-    - When using SparkPost Click Tracking, you  choose the Tracking Domain and the custom link sub-path, explained [here](#tracking).
+    - When using SparkPost Click Tracking, you choose the Tracking Domain and the custom link sub-path, explained [here](#tracking). It's best to choose a subdomain (e.g. `track.example.com`), so that subdomain can be redirected, while your website uses your organizational domain.
 
-- Deep linking spec files hosted on your website or CDN, in the correct location for the devices to find. The spec file declares the identity of your app, and which URL paths lead to your app - described [here](#specfiles).
+- Deep linking spec files hosted on your website or CDN, in the correct location for the devices to find. The spec file declares the identity of your app, and which URL paths lead to your app - described [here](#spec-file). The spec files must be accessible via HTTPS.
 
 - A mobile app that is registered to handle incoming deep link requests - see [example code](#app-examples).
 
@@ -90,7 +90,7 @@ Configure the `paths` section to match the links in your email HTML content, dep
 
 Setting up a [custom tracking domain](https://www.sparkpost.com/docs/tech-resources/enabling-multiple-custom-tracking-domains/) is useful for branding and email reputation. It is required for click tracking of deep links in your HTML email.
 
-It's best to choose a subdomain (e.g. `track.example.com`), so that subdomain can be redirected while your website uses the main top-level domain. Each tracking domain can serve regular email tracked links and deep links. Your content can use a mixture of both kinds of link inside the same email.
+It's best to choose a subdomain (e.g. `track.example.com`), so that subdomain can be redirected, while your website uses your organizational domain. Each tracking domain can serve regular email tracked links and deep links. Your content can use a mixture of both kinds of link inside the same email.
 
 ### HTTPS secure links
 
@@ -359,7 +359,7 @@ Click the padlock symbol and check the certificate is valid and as expected. Rep
     }
     ```
 
-    Note the security settings to use only newer TLS versions and disable weaker ciphers, to get an "A" rating on the [SSL Labs server test](https://www.ssllabs.com/ssltest/analyze.html). You may wish to adjust these to suit your own IT policy.
+    Note the security settings to use only newer TLS versions and disable weaker ciphers, to get an "A" rating on the [SSL Labs server test](https://www.ssllabs.com/ssltest/analyze.html). You may wish to adjust these to suit your own IT policy, e.g. to accept TLS v1.1 as well for compatibility with older email clients / web browsers.
 
 1. Check your configuration is valid using `sudo nginx -t`. If no errors are reported, then reload using `sudo nginx -s reload`.
 
