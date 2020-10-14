@@ -11,41 +11,39 @@ SparkPost supports HTTPS engagement tracking for all self-service customers. Thi
 
 ## Configuring SSL Certificates
 
-In order for HTTPS engagement tracking to be enabled on SparkPost, our service needs to present a valid certificate that will be trusted by the email recipient’s browser.  SparkPost does not manage certificates for customer engagement tracking domains, as we are not the record owner for our customers’ domains.
+In order for HTTPS engagement tracking to be enabled on SparkPost, our service needs to present a valid certificate that will be trusted by the email recipient’s browser. SparkPost does not manage certificates for customer engagement tracking domains, as we are not the record owner for our customers’ domains.
 
-Use a CDN like [Cloudflare](http://www.cloudflare.com), [Fastly](http://www.fastly.com) or [AWS Cloudfront](https://aws.amazon.com/cloudfront/) to manage certificates and keys for any custom engagement tracking domains.  These services forward traffic onwards to SparkPost so that HTTPS tracking can be performed.
-
-## How to Create a Secure Tracking Domain on SparkPost
-
-In addition to SSL certificates, link forwarding, and page rules (see the step by step guide below), you will need to create a tracking domain with the tracking domains API using the `"secure": true` string. Detailed information on this operation can be found in our API documentation [here](https://developers.sparkpost.com/api/tracking-domains.html#tracking-domains-create-and-list-post).
-
-## <a name = "switch-to-secure"></a> How to Switch a Tracking Domain from Insecure to Secure
-
-If you have previously created a tracking domain (whether verified or unverified), and wish to switch it from insecure (the default value for tracking domains) to secure, use the tracking domains API `PUT` call to update the tracking domain with the `"secure": true` string. Detailed information on this operation can be found in our API documentation [here](https://developers.sparkpost.com/api/tracking-domains.html#tracking-domains-retrieve,-update,-and-delete-put).
-
+Use a CDN such as [Cloudflare](http://www.cloudflare.com), [Fastly](http://www.fastly.com) or [AWS Cloudfront](https://aws.amazon.com/cloudfront/) to manage certificates and keys for any custom engagement tracking domains. These services forward traffic onwards to SparkPost so that HTTPS tracking can be performed.
 
 ## Step by Step guides
 
 This document includes step by step guides for the following CDNs.
 
-* [CloudFlare](#cloudflare): create a Domain
+* CloudFlare:
+    * [Create a Domain](#cloudflare)
 * AWS CloudFront:
     * [Create a Domain](#aws-create)
     * [Issue a Certificate](#aws-cert)
     * [Update an Existing Domain](#aws-update) to pass `User-Agent` information
-* [Fastly](#fastly): create a Domain
+* Fastly:
+    * [Create a Domain](#fastly)
 
 Please note, if you are using a CDN not listed here, the steps will likely differ in workflow. Please refer to your CDN's documentation and contact their respective support departments if you have any questions.
+
+## How to Create a Secure Tracking Domain on SparkPost
+
+After configuring your CDN, you need to s SparkPost to encode your links using HTTPS, then verify your domain - instructions [here](#switch-to-secure).
 
 ---
 ## <a name="cloudflare"></a> Step by Step Guide with CloudFlare
 
 1. Create CloudFlare account
-2. Go to “DNS” tab on the CloudFlare UI:
+
+1. Go to “DNS” tab on the CloudFlare UI:
 
     ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudflare_UI.png)
 
-3. Add domain and then add the following Cloudflare NS records (**please note**, for other providers, the NS records to be used will differ):
+1. Add domain and then add the following Cloudflare NS records (**please note**, for other providers, the NS records to be used will differ):
 
     ```
     NS	aron.ns.cloudflare.com
@@ -79,46 +77,44 @@ Please note, if you are using a CDN not listed here, the steps will likely diffe
     	;; MSG SIZE  rcvd: 88
     ```
 
-4. Create the appropriate page rule settings for the domain. In the page rules tab, perform the following instructions:
-    * Page Rule Tab -> Create Page Rule
-    * Enter your domain like so: `track.yourdomain.com/*`
-    * Add a Setting -> Forwarding URL (you may need to specify a 301 redirect option)
-    * Destination URL is https://<CNAME_VALUE>/$1. Replace <CNAME_VALUE> with the value displayed in the tracking domains section of the SparkPost UI. E.g.: for SparkPost US, this would be `spgo.io`; for SparkPost EU, this would be `eu.spgo.io`; for PMTA+Signals, refer to your user guide.
+1. Create the appropriate page rule settings for the domain.
+
+    * In the page rules tab: Create Page Rule
+
+        ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudflare_create_page_rule.png)
+
+    * Enter your domain with a trailing `/*`, e.g. `track.yourdomain.com/*`
+
+    * Add a Setting -> Forwarding URL (specify the 301 redirect option).
+
+    * Destination URL is `https://<CNAME_VALUE>/$1`. Replace `<CNAME_VALUE>` with the endpoint displayed in the Tracking Domains section of your SparkPost account. For SparkPost US, this would be `spgo.io`; for SparkPost EU, this would be `eu.spgo.io`. For PowerMTA+Signals, refer to your PowerMTA User Guide.
+
+        ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudflare_page_rule_edit.png)
+
     * Save and Deploy (turn page rule on)
 
-    ![](media/enabling-https-engagement-tracking-on-sparkpost/SSL_full.png)
+1. Cloudflare has Universal SSL for all accounts on the client side, but it's good to ensure that the origin side (towards SparkPost) also uses HTTPS.
 
-5. Cloudflare has Universal SSL for all accounts, but it's good to ensure that setting on the page rule is "SSL". This is required for how CloudFlare will validate the certificate on the origin.
+    * Create a new page rule:
 
-    ![](media/enabling-https-engagement-tracking-on-sparkpost/page_rule.png)
+        ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudflare_SSL_full.png)
+
+    * Enter your domain with a trailing `/*`, e.g. `track.yourdomain.com/*`
+
+    * Select settings "SSL" and "Full".
+
+    * Save and Deploy.
+
+    * Turn the page rule ON. Using the priority buttons, ensure that the SSL rule is first and the forwarding rule is second.
+
+        ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudflare_SSL_priority.png)
+
+        More information on CloudFlare SSL options can be found in [this article](https://support.cloudflare.com/hc/en-us/articles/200170416).
 
 
-    More information on SSL options for Cloudflare can be found [here](https://support.cloudflare.com/hc/en-us/articles/200170416).
+1. Add a CNAME entry into DNS for your tracking domain. The value in the record doesn't matter; the record simply needs to exist. For example, if your tracking domain is `track.example.com`, a CNAME value of `example.com` is sufficient. Without a record to reference, the the page rule never gets triggered, and the proper redirection will not occur. Please note that the typical time to progagation of new CNAME records is often around five to ten minutes, but can be longer depending on your DNS provider.
 
-6. Turn the page rule ON.
-
-7. If you with to also set up [Mobile Universal and App Links](https://www.sparkpost.com/docs/tech-resources/deep-links-self-serve/), an additional page rule is necessary. A prerequisite for this configuration is that the desired universal link files (apple-app-site-assocation/assetlinks.json) are already hosted either via a CDN or webserver.
-    * Page Rule Tab -> Create Page Rule
-    * Enter your domain like so: `track.yourdomain.com/.well-known/*`
-    * Add a Setting -> Forwarding URL (you may need to specify a 301 redirect option)
-    * Destination URL is determined by where the universal link files are hosted.  The destination URL should be configured as https://<UNVERSAL_LINK_DESTINATION>/.well-known/$1.  Note that CloudFlare page rules are evaluated in priority order.  This page rule should be first, with the page rule from Step 4 second.
-
-    ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudflare_universal_links_page_rule.png)
-
-8. Add a CNAME entry into DNS for your tracking domain. The value in the record doesn't matter; the record simply needs to exist. For example, if your tracking domain is `track.example.com`, a CNAME value of `example.com` is sufficient. Without a record to reference, the the page rule never gets triggered, and the proper redirection will not occur. Please note that the typical time to progagation of new CNAME records is often around five to ten minutes, but can be longer depending on your DNS provider.
-
-9. Run the [Update a Tracking Domain API](https://developers.sparkpost.com/api/tracking-domains/#tracking-domains-put-update-a-tracking-domain) using the following Post Data:
-
-    ```
-    {
-        "secure"  : true
-    }
-    ```
-
-Note: If you would like this tracking domain to be the default, please add `"default": true` to the JSON object above, before updating the domain.
-
-10. Navigate to the Tracking Domains section in the UI and click the orange "test" verification link. At this point, the process is complete.
-
+1. Follow the Domain verification steps here.
 
 ---
 ## <a name="aws-create"></a> Step by Step Guide with AWS CloudFront
@@ -139,7 +135,7 @@ For up to date information on creating a distribution via CloudFront, please ref
     ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_method.png)
 
 1. On the Create Distribution page fill out the following:
-    * Under Origin Settings, fill in the **Origin Domain Name**. Use the value displayed in the tracking domains section of the SparkPost UI. E.g.: for SparkPost US, this would be `spgo.io`; for SparkPost EU, this would be `eu.spgo.io`.
+    * Under Origin Settings, fill in the **Origin Domain Name**. Use the value displayed in the tracking domains section of the SparkPost UI. E.g.: for SparkPost US, this would be `spgo.io`; for SparkPost EU, this would be `eu.spgo.io`. For PowerMTA+Signals, refer to your PowerMTA User Guide.
 
         ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_origin_domain_name.png)
 
@@ -192,17 +188,7 @@ For up to date information on creating a distribution via CloudFront, please ref
 
         You can verify that the routing is successful using `ping` on your created record. You should see a response from `xyzzy.cloudfront.net`.
 
-### <a name="sparkpost-app"></a> In the SparkPost app
-
-1. Log into SparkPost app, or use the SparkPost [Tracking Domain API](https://developers.sparkpost.com/api/tracking-domains/#tracking-domains).
-
-1. Add **custom tracking domain**. It can't be verified just yet.
-
-1. Ensure your domain is set to `secure` mode as [above](#switch-to-secure).
-
-1. Verify the tracking domain.
-
-1. Use tracking domain while sending messages.
+1. Follow [these steps](#switch-to-secure) to update and verify your tracking domain.
 
 ---
 ### <a name="aws-cert"></a>Using AWS Certificate Manager (ACM) to issue a certificate for your domain(s)
@@ -241,7 +227,7 @@ Once your CNAME is set up with your DNS provider, instead of providing an existi
 
       ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_edit_domain_yes_edit_button.png)
 
-1. Go back through the [steps in the SparkPost app](#sparkpost-app) to validate your domain, as this requires the certificate to be present and valid.
+1. Follow [these steps](#switch-to-secure) to update and verify your tracking domain, as this requires the certificate to be present and valid.
 
 ---
 ### <a name = "aws-update"></a> Updating an Existing Domain on AWS CloudFront
@@ -288,8 +274,34 @@ Sign up for Fastly or log in to an existing account.
 1. Click **Configure** on the Dashboard.
 2. Click the gear icon to open the **Manage Service** menu and click **Create**.
 
-Set the options as follows:
+    Set the options as follows:
 
-Server address and port: For SparkPost US, this would be `spgo.io :  443`; for SparkPost EU, this would be `eu.spgo.io : 443`
-Domain: Your click tracking domain, e.g. `click.business.com`
-Description: SparkPost (or whatever you like!)
+    Server address and port: For SparkPost US, this would be `spgo.io :  443`; for SparkPost EU, this would be `eu.spgo.io : 443`. For PowerMTA+Signals, refer to your PowerMTA User Guide.
+
+    Domain: Your click tracking domain, e.g. `click.business.com`
+    Description: SparkPost (or whatever you like!)
+
+1. Follow [these steps](#switch-to-secure) to update and verify your tracking domain.
+---
+
+## <a name = "switch-to-secure"></a> Switch tracking domain to secure, and validate
+
+If you have previously created a tracking domain (whether verified or unverified), and wish to switch it from insecure (the default) to secure, use the [Update a Tracking Domain API](https://developers.sparkpost.com/api/tracking-domains/#tracking-domains-put-update-a-tracking-domain) `PUT` call, to update the tracking domain with the `"secure": true` string.
+
+1. Run the  using the following data:
+
+    ```
+    {
+        "secure"  : true
+    }
+    ```
+
+    Note: If you would like this tracking domain to be the default, please add `"default": true` to the JSON object above, before updating the domain.
+
+    Detailed information on this operation can be found in our API documentation [here](https://developers.sparkpost.com/api/tracking-domains.html#tracking-domains-retrieve,-update,-and-delete-put).
+
+1. Navigate to the Tracking Domains section in the UI and click the  "test" verification button.
+
+1. Send a test email, examine the internals of the email and check the expected HTTPS URLs using your tracking domain are present.
+
+1. Check that clicking the links takes you to the expected landing page.
