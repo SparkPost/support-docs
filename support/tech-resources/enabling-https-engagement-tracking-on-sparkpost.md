@@ -114,7 +114,7 @@ After configuring your CDN, you need to s SparkPost to encode your links using H
 
 1. Add a CNAME entry into DNS for your tracking domain. The value in the record doesn't matter; the record simply needs to exist. For example, if your tracking domain is `track.example.com`, a CNAME value of `example.com` is sufficient. Without a record to reference, the the page rule never gets triggered, and the proper redirection will not occur. Please note that the typical time to progagation of new CNAME records is often around five to ten minutes, but can be longer depending on your DNS provider.
 
-1. Follow the Domain verification steps here.
+1. Follow [these steps](#switch-to-secure) to update and verify your tracking domain.
 
 ---
 ## <a name="aws-create"></a> Step by Step Guide with AWS CloudFront
@@ -288,7 +288,7 @@ Sign up for Fastly or log in to an existing account.
 
 If you have previously created a tracking domain (whether verified or unverified), and wish to switch it from insecure (the default) to secure, use the [Update a Tracking Domain API](https://developers.sparkpost.com/api/tracking-domains/#tracking-domains-put-update-a-tracking-domain) `PUT` call, to update the tracking domain with the `"secure": true` string.
 
-1. Run the  using the following data:
+1. Run the PUT call with the following data:
 
     ```
     {
