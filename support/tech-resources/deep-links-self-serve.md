@@ -74,17 +74,67 @@ Configure the `paths` section to match the links in your email HTML content, dep
 
 ```javascript
 [{
-    "relation": ["delegate_permission/common.handle_all_urls"],
-    "target": {
-        "namespace": "app_namespace",
-        "package_name": "com.example.deeplinking",
-        "sha256_cert_fingerprints":
-        [<Your_APP_FINGERPRINT>]
-    }
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "com.example.testlinks",
+    "sha256_cert_fingerprints":
+    ["xyzzy"]
+  }
 }]
 ```
+The SHA256 fingerprint is unique to your particular app.
+
+#### Android App Links Assistant
+
+The [App Links Assistant](https://developer.android.com/studio/write/app-link-indexing) (Under the Tools menu) helps you configure the associated domains and permissions for your app, and generate the `assetlinks.json` file. It guides you step-by-step.
+
+1. Add URL intent filters
+
+    ![Android App Links Assistant](media/deep-links-self-serve/deep-links-android-app-assistant0.png)
+
+    ![Android App Links Assistant](media/deep-links-self-serve/deep-links-android-app-assistant1a.png)
+
+    Add your tracking domain URLs with Path set to "pathPrefix", and add your chosen prefix starting with `/f/`, for example `/f/open-in-app`. Your app can be registered to multiple URLs if you wish.
+
+    ![Android App Links Assistant](media/deep-links-self-serve/deep-links-android-app-assistant1.png)
+
+    Use the "Check URL mapping" box to test that your mapping works with a real URL.
+
+1. Add logic to handle the intent
+
+    This works for Java apps but not currently for Kotlin - see [here](#android) for a Kotlin example.
+
+1. Associate website
+
+    ![Android App Links Assistant](media/deep-links-self-serve/deep-links-android-app-assistant3.png)
+
+    Enter your site domain.
+
+    Choose "Signing config". During development, "debug" is fine.
+
+    Save your digital asset links file.
+
+1. Test on Device or Emulator
+
+    Test that your URL triggers your app.
+
+    ![Android App Links Assistant](media/deep-links-self-serve/deep-links-android-app-assistant4.png)
+
+1. Deploy your app.
+
+    On first open, by default, your recipients will be prompted to select whether to select your app. Android remembers the user's preference.
+
+    ![Android App first open](media/deep-links-self-serve/deep-links-android-first-time-open.png)
+
+    In `AndroidManifest.xml`, you can set your domains `intent-filter` to `autoVerify` to favor opening in your app - see [here](https://developer.android.com/training/app-links/verify-site-associations).
 
 
+    ```xml
+    <intent-filter android:autoVerify="true">
+    ```
+
+    Ensure autoVerify works for your domain(s) on fresh installs of your app, as mentioned in [this article](#autoverify).
 ---
 ## <a name="tracking"></a> Deep links and click tracking
 
@@ -107,7 +157,7 @@ It might be useful to understand how the SparkPost click tracking feature works 
 
 > When SparkPost encounters an anchor tag in an HTML email, it will replace the `href` attribute with a new URL pointing to the SparkPost click tracking service. When your recipient clicks that link, the SparkPost service receives the request (via CDN for HTTPS links), records the click, and redirects the recipient to your original URL.
 
-![](media/deep-links-self-serve/deep-links-click-tracking-simple.png)
+![Normal click tracking (without deep links)](media/deep-links-self-serve/deep-links-click-tracking-simple.png)
 *Normal click tracking (without deep links) - icons by [The Noun Project](https://thenounproject.com/)*
 
 Deep links supersede this flow; after checking the spec file, the  device passes the request directly to your app instead. This means your app will receive the tracked link via an API call and can show the user an appropriate part of your app.
@@ -143,7 +193,7 @@ You can control [click tracking for SMTP messages](https://app.sparkpost.com/acc
 
 ### Preferred solution: Using SparkPost click tracking on deep links
 
-![](media/deep-links-self-serve/deep-links-app-flow.png)
+![Deep link flow, app triggers click tracking](media/deep-links-self-serve/deep-links-app-flow.png)
 *Deep link flow, app triggers click tracking - icons by [The Noun Project](https://thenounproject.com/)*
 
 The device operating system "wakes up" your app with an API call, passing in  the URL. Your app issues an HTTP(S) GET to the URL, which registers the click. Your app receives the original URL in the response "Location" header; there's no need to follow the redirect and fetch the entire web-page.
@@ -235,64 +285,109 @@ In SparkPost event reporting, the attribute `user_agent` carries information on 
 
 ## Forwarding Clicks From Android To SparkPost
 
-When an Android email client recognizes that an app link has been clicked based on your apps' `AndroidManifest.xml`, it sends an `intent` which triggers the registered `Activity` in your app. You can then make an HTTP request to the link to trigger a "click" event in Sparkpost and retrieve the original tracked URL from the message.
+When an Android email client recognizes that an app link has been clicked based on your app `AndroidManifest.xml`, it sends an `intent` of type `appLinkAction` which triggers the registered `Activity` in your app. You can then make an HTTP(S) request to the link to trigger a "click" event in Sparkpost and retrieve the original tracked URL from the message.
 
-Here is a sample `Activity` with the corresponding `AsyncTask` that will perform an HTTP GET to the SparkPost click tracking service after an Android App Link has been clicked:
+Here is sample `MainActivity.kt` which uses the `OkHttp4` library to perform the HTTP(S) GET to the SparkPost click tracking service asynchronously, triggering the `onResponse` or `onFailure` functions on completion.
 
-```java
-public class LinkDestinationActivity extends AppCompatActivity{
+```kotlin
+package com.example.testlinks
 
-    @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.link_destination_activity);
+// Example deep linking app
 
-        //Grab the Tracking Link from the intent
-        Intent intent = getIntent();
-        Uri linkUri = intent.getData();
+import android.content.Intent
+import android.net.Uri
+import android.os.Bundle
+import android.util.Log
+import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+import okhttp3.*
+import java.io.IOException
 
-        //Pass the tracking link into the AsyncTask for network communication
-        RequestTask task = new RequestTask();
-        task.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, linkUri.toString());
+class MainActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        handleIntent(intent)
     }
 
-    /**
-     * Android requires network communication off the main UI thread
-     */
-    protected class RequestTask extends AsyncTask<String, Void, Void> {
+    override fun onNewIntent(intent: Intent) {
+        super.onNewIntent(intent)
+        Log.i("MainActivity", "onNewIntent called")
+        handleIntent(intent)
+    }
 
-        @Override
-        protected Void doInBackground(String... strings) {
-            String uri = strings[0];
-            //Activate Click Tracking
-            try {
-                URL url = new URL(uri);
-                HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+    private fun handleIntent(intent: Intent) {
+        Log.i("MainActivity", "handleIntent called")
 
-                InputStream in = new BufferedInputStream(connection.getInputStream());
+        val appLinkAction = intent.action
+        val appLinkData: Uri? = intent.data
+        if (Intent.ACTION_VIEW == appLinkAction) {
+            // handle URL
+            val res : TextView = findViewById(R.id.result)
+            res.text = appLinkData.toString()
 
-                int numRead = 0;
-                byte [] buffer = new byte[1024];
-                StringBuilder builder = new StringBuilder();
-
-                while ((numRead = in.read(buffer)) > 0) {
-                    String newString = new String(buffer, 0, numRead);
-                    builder.append(newString);
-                }
-                //Simply print out the response
-                System.out.println(builder.toString());
-                connection.disconnect();
-            } catch (MalformedURLException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            return null;
+            // Show this on our simple example app. The function updates the TextView itself
+            makeRequest(appLinkData)
         }
+    }
+
+    // Basic URL GET request.
+    // See https://guides.codepath.com/android/Using-OkHttp
+    //     https://square.github.io/okhttp/recipes/
+
+    private fun makeRequest(url: Uri?) {
+        // More efficient click-tracking with HTTP GET to obtain the "302" response, but not follow the redirect through to the Location.
+        val client = OkHttpClient.Builder()
+            .followRedirects(false)
+            .build()
+
+        val request = Request.Builder()
+            .url(url.toString())
+            .build()
+
+        client.newCall(request).enqueue(object : Callback {
+            override fun onFailure(call: Call, e: IOException) {
+                e.printStackTrace()
+            }
+
+            override fun onResponse(call: Call, response: Response) {
+                val locationURL = response.headers["Location"]
+                if (locationURL != null) {
+                    Log.i("locationURL", locationURL)
+                    // Show this on our simple example app
+                    val originalUrl : TextView = findViewById(R.id.originalURL)
+                    originalUrl.text = locationURL
+                }
+            }
+        })
     }
 }
 ```
-*Android Java example*
+*Android Kotlin example*
+
+The `makeRequest` function gets the `Location` header without following the redirect, which saves bandwidth and battery power. [See here](https://github.com/SparkPost/deep-links/tree/main/Android) for the complete example app.
+
+
+#### OkHttp library dependency
+
+In the project `app/build.gradle` file dependencies section, this line fetches and builds the library. We used this library because it gives the required control over the HTTP(S) stack to control how redirects are handled.
+
+```xml
+implementation 'com.squareup.okhttp3:okhttp:4.9.0'
+```
+
+Your `AndroidManifest.xml` needs these permissions added to `<manifest` .. `>` scope:
+
+```xml
+<uses-permission android:name="android.permission.INTERNET" />
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+```
+
+#### Android User Agent
+
+In SparkPost event reporting, the attribute `user_agent` carries information on your app. In our demo app, it will be the default set by the library: `"okhttp/4.9.0"`. This enables you to use SparkPost analytics to find out which links are being opened via your app. You can [customise this](https://square.github.io/okhttp/interceptors/) in your code.
+
 
 ---
 ##  <a name="hosting"></a> Hosting the spec files
@@ -473,7 +568,7 @@ With CloudFront we are working with the specific sub-domain used for link tracki
 
 > As described [here](#spec-file), it's easy to create spec files in your web site top-level domain's `/.well-known` directory, and write your apps to match those domain(s) *and* the tracking sub-domains. The following steps are needed *only* if you wish to serve particular, different spec files for your *tracking domain* URLs.
 
-Unlike AWS CloudFront, you need to already have the spec files (`apple-app-site-assocation` and `assetlinks.json`) hosted elsewhere, such as on a web server.
+Note: unlike AWS CloudFront, you need to already have the spec files (`apple-app-site-assocation` and `assetlinks.json`) hosted elsewhere, such as on a web server. When your clients request *`yourtracking.domain.com/.well-known/*`*, CloudFlare will respond with a `301` "moved permanently" redirect to your files. We have found this can work, but it's not recommended by [Apple](https://developer.apple.com/library/archive/documentation/General/Conceptual/AppSearch/UniversalLinks.html) or [Google](https://developer.android.com/training/app-links/verify-site-associations).
 
 1. In your CloudFlare dashboard, an additional page rule is necessary to serve the spec files.
 
@@ -531,3 +626,6 @@ The domains entitlement in your app(s) must match your tracking domain. This can
 1. View email internals including tracked links, with Gmail [Show Original](https://support.google.com/mail/answer/29436?hl=en-GB)
 1. NGINX [Location](https://docs.nginx.com/nginx/admin-guide/web-server/web-server/#locations) block
 1. [Understanding and Configuring Cloudflare Page Rules](https://support.cloudflare.com/hc/en-us/articles/218411427-Understanding-and-Configuring-Cloudflare-Page-Rules-Page-Rules-Tutorial-)
+1. [Android App Links documentation](https://developer.android.com/training/app-links/verify-site-associations) on auto-verify
+1. <a name="autoverify"></a>Article on [Android deep links](https://levelup.gitconnected.com/the-wrong-hacked-and-correct-way-of-android-deep-linking-for-redirected-multisite-with-autoverify-5c72fb1f8053) the wrong and right way (specifically, auto-verify on variations of your domains)
+1. Android Studio [App Links Assistant](https://developer.android.com/studio/write/app-link-indexing) tool
