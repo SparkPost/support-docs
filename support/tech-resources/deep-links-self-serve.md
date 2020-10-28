@@ -123,18 +123,18 @@ The [App Links Assistant](https://developer.android.com/studio/write/app-link-in
 
 1. Deploy your app.
 
-    On first open, by default, your recipients will be prompted to select whether to select your app. Android remembers the user's preference.
+    <a name="android-ask"></a> On first open, by default, your recipients will be prompted to select whether to select your app. Android remembers the user's preference.
 
     ![Android App first open](media/deep-links-self-serve/deep-links-android-first-time-open.png)
 
-    In `AndroidManifest.xml`, you can set your domains `intent-filter` to `autoVerify` to favor opening in your app - see [here](https://developer.android.com/training/app-links/verify-site-associations).
+    In `AndroidManifest.xml`, you can set your domains `intent-filter` to `autoVerify` to favor opening in your app instead of asking the user - see [here](https://developer.android.com/training/app-links/verify-site-associations).
 
 
     ```xml
     <intent-filter android:autoVerify="true">
     ```
 
-    Ensure autoVerify works for your domain(s) on fresh installs of your app, as mentioned in [this article](#autoverify).
+    This requires your `assetlinks.json` file to be hosted on your specific tracking domain. This is explained further in the [hosting](#hosting) and [troubleshooting](#troubleshooting) sections.
 ---
 ## <a name="tracking"></a> Deep links and click tracking
 
@@ -412,6 +412,45 @@ When set up, you can get a security report by running the [SSL Labs server test]
 
 Click the padlock symbol and check the certificate is valid and as expected. Repeat for the Android `assetlinks.json` file.
 
+#### Using specific tracking domain(s) with Apache
+
+The above simple instructions allow deep linking to work via your website's main `/.well-known` URL. However to get Android to autoverify your app to open tracked domains (skipping the user ["Ask" step](#android-ask)), you need to serve spec files from your specific tracking domains, *while also forwarding* opens and clicks to SparkPost on that domain. This is possible using Apache patterns.
+
+```apacheconf
+#
+# Reverse proxy for SparkPost engagement tracking, and enable specific files to show through
+#
+<VirtualHost _default_:80>
+  ServerName yourtrackingdomain.example.com
+  ProxyPass "/f/" "http://spgo.io/f/"
+  ProxyPassReverse "/f/" "http://spgo.io/f/"
+  ProxyPass "/q/" "http://spgo.io/q/"
+  ProxyPassReverse "/q/" "http://spgo.io/q/"
+
+  Alias "/.well-known" "/var/www/html/securetrack/.well-known"
+</VirtualHost>
+
+<VirtualHost _default_:443>
+  ServerName yourtrackingdomain.example.com
+  ProxyPass "/f/" "http://spgo.io/f/"
+  ProxyPassReverse "/f/" "http://spgo.io/f/"
+  ProxyPass "/q/" "http://spgo.io/q/"
+  ProxyPassReverse "/q/" "http://spgo.io/q/"
+
+  Alias "/.well-known" "/var/www/html/securetrack/.well-known"
+
+  SSLEngine on
+  SSLCertificateFile "/opt/apache2/conf/server.crt"
+  SSLCertificateKeyFile "/opt/apache2/conf/server.key"
+  SSLProxyEngine on
+</VirtualHost>
+```
+The paths `/f/` and `/q/` are SparkPost tracked clicks and opens, respectively.
+
+The spec files are made available under URL `https://yourtrackingdomain.example.com/.well-known/` from a specific directory using the `Alias` directive. If you want your files to be identical to your main website, then you can omit this step.
+
+For completeness, the same routing is configured for HTTP on port 80, although mobile devices will request the spec files via HTTPS.
+
 ### NGINX
 
 1. Follow the steps in [this article](https://www.sparkpost.com/docs/tech-resources/using-proxy-https-tracking-domain/) to set up your secure tracking domain.
@@ -465,7 +504,7 @@ Click the padlock symbol and check the certificate is valid and as expected. Rep
 
 ### AWS CloudFront
 
-> As described [here](#spec-file), it's easy to create spec files in your web site top-level domain's `/.well-known` directory, and write your apps to match those domain(s) *and* the tracking sub-domains. The following steps are needed *only* if you wish to serve particular, different spec files for your *tracking domain* URLs.
+> As described [here](#spec-file), it's easy to create spec files in your web site. The following steps are needed *only* if you are using a CDN for HTTPS tracking and therefore need to configure the spec files there.
 
 First set up your secure tracking domain using CloudFront - instructions [here](https://www.sparkpost.com/docs/tech-resources/enabling-https-engagement-tracking-on-sparkpost/#aws-create). This establishes your tracking domain routing and certificate in AWS. This section describes how to:
 
@@ -566,9 +605,9 @@ With CloudFront we are working with the specific sub-domain used for link tracki
 
 ### CloudFlare
 
-> As described [here](#spec-file), it's easy to create spec files in your web site top-level domain's `/.well-known` directory, and write your apps to match those domain(s) *and* the tracking sub-domains. The following steps are needed *only* if you wish to serve particular, different spec files for your *tracking domain* URLs.
+> As described [here](#spec-file), it's easy to create spec files in your web site. The following steps are needed *only* if you are using a CDN for HTTPS tracking and therefore need to configure the spec files there.
 
-Note: unlike AWS CloudFront, you need to already have the spec files (`apple-app-site-assocation` and `assetlinks.json`) hosted elsewhere, such as on a web server. When your clients request *`yourtracking.domain.com/.well-known/*`*, CloudFlare will respond with a `301` "moved permanently" redirect to your files. We have found this can work, but it's not recommended by [Apple](https://developer.apple.com/library/archive/documentation/General/Conceptual/AppSearch/UniversalLinks.html) or [Google](https://developer.android.com/training/app-links/verify-site-associations).
+Note: unlike AWS CloudFront, you need to already have the spec files (`apple-app-site-assocation` and `assetlinks.json`) hosted elsewhere, such as on a web server. When your clients request *`yourtracking.domain.com/.well-known/*`*, CloudFlare will respond with a `301` "moved permanently" redirect to your files. We have found this can work, but it's not recommended by [Apple](https://developer.apple.com/library/archive/documentation/General/Conceptual/AppSearch/UniversalLinks.html) or [Google](https://developer.android.com/training/app-links/verify-site-associations). It prevents Android [autoverify](#autoverify) of your app.
 
 1. In your CloudFlare dashboard, an additional page rule is necessary to serve the spec files.
 
@@ -611,10 +650,37 @@ You can view your encoded links using Gmail, by selecting the three dots menu to
 
 ### Check your app matches your tracking domain
 
-The domains entitlement in your app(s) must match your tracking domain. This can be done specifically, or with a wildcard matching a sub-domain. Refer to
+The domains entitlement in your app(s) must match your tracking domain. This can be done specifically, or (with Apple) a wildcard matching sub-domain. Refer to
 * [Apple](#ios-spec-file) configuration
 * [Android](android-spec-file) configuration
 
+
+### Android specific: autoVerify
+
+Getting your app to autoverify requires the `assetlinks.json` file to be available on your _specific_ tracking domain rather than relying on the organizational domain.
+
+To test autoVerify works for your domain(s), start with a fresh install of your app, as mentioned in [this article](#autoverify-article), because Android remembers the user's choice.
+
+If you are getting the ["ask" prompt](#android-ask) to choose which application opens the link, you can use the `adb` debugger to investigate the status of your app. If the Status is shown as `ask` then autoverify is not working as intended. The value `always : 200000000` means it is verified.
+
+```bash
+$ adb reconnect
+reconnecting emulator-5554 [device]
+
+$ adb shell dumpsys package d
+App verification status:
+:
+:
+  Package: com.example.testlinks
+  Domains: track.mydomain.com track2.mydomain.com
+  Status:  always : 200000000
+```
+
+If your app has more than one associated domain, the status will be "`ask`" if _any_ of them fail to autoverify. You can use `adb` to check your setup from Android Studio without having to delete/reinstall.
+
+> Note: CloudFront is problematic for autoverify, owing to its use of 301 redirect for files.
+
+For more information, see [this article](#adb).
 
 ## Further reading
 
@@ -627,5 +693,6 @@ The domains entitlement in your app(s) must match your tracking domain. This can
 1. NGINX [Location](https://docs.nginx.com/nginx/admin-guide/web-server/web-server/#locations) block
 1. [Understanding and Configuring Cloudflare Page Rules](https://support.cloudflare.com/hc/en-us/articles/218411427-Understanding-and-Configuring-Cloudflare-Page-Rules-Page-Rules-Tutorial-)
 1. [Android App Links documentation](https://developer.android.com/training/app-links/verify-site-associations) on auto-verify
-1. <a name="autoverify"></a>Article on [Android deep links](https://levelup.gitconnected.com/the-wrong-hacked-and-correct-way-of-android-deep-linking-for-redirected-multisite-with-autoverify-5c72fb1f8053) the wrong and right way (specifically, auto-verify on variations of your domains)
+1. <a name="autoverify-article"></a>Article on [Android deep links](https://levelup.gitconnected.com/the-wrong-hacked-and-correct-way-of-android-deep-linking-for-redirected-multisite-with-autoverify-5c72fb1f8053) the wrong and right way (specifically, auto-verify on variations of your different domains)
+1. <a name="adb"></a> Article on [investigating Android deep-link problems with adb](https://medium.com/mobile-app-development-publication/unrealized-deeplink-bug-on-many-apps-6ac78a557702)
 1. Android Studio [App Links Assistant](https://developer.android.com/studio/write/app-link-indexing) tool

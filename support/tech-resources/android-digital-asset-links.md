@@ -3,7 +3,7 @@ title: "How do I use Android digital asset links with SparkPost Enterprise?"
 description: "Note This article is for Spark Post Enterprise only Table of Contents Use these quick links to jump to certain sections of this article Introduction What are the potential benefits to configuring Android digital asset links As a Spark Post Enterprise customer what steps do I need to take to..."
 ---
 
-**Note:** This article is for SparkPost Enterprise *only.*
+> **Note:** This article is for SparkPost Enterprise legacy setup *only* - please see [this article](./deep-links-self-serve) for current instructions.
 
 ## Table of Contents
 
