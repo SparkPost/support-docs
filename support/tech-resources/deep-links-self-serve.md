@@ -127,7 +127,7 @@ The [App Links Assistant](https://developer.android.com/studio/write/app-link-in
 
     ![Android App first open](media/deep-links-self-serve/deep-links-android-first-time-open.png)
 
-    In `AndroidManifest.xml`, you can set your domains `intent-filter` to `autoVerify` to favor opening in your app instead of asking the user - see [here](https://developer.android.com/training/app-links/verify-site-associations).
+ 1. <a name="autoverify"></a> In `AndroidManifest.xml`, you can set your domain `intent-filter` to `autoVerify` to favor opening your app instead of asking the user - see [here](https://developer.android.com/training/app-links/verify-site-associations).
 
 
     ```xml
@@ -283,11 +283,13 @@ This simple code gets the `Location` header and also follows the redirect to fet
 
 In SparkPost event reporting, the attribute `user_agent` carries information on app name and OS version, for example `"testlinks/1 CFNetwork/1197 Darwin/20.0.0"`. This enables you to use SparkPost analytics to find out which links are being opened via your app.
 
-## Forwarding Clicks From Android To SparkPost
+## <a name="android"></a> Forwarding Clicks From Android To SparkPost
 
-When an Android email client recognizes that an app link has been clicked based on your app `AndroidManifest.xml`, it sends an `intent` of type `appLinkAction` which triggers the registered `Activity` in your app. You can then make an HTTP(S) request to the link to trigger a "click" event in Sparkpost and retrieve the original tracked URL from the message.
+When an Android email client recognizes that an app link has been clicked based on your app `AndroidManifest.xml`, it sends an `intent` which triggers the registered activity in your app. You can then make the HTTP(S) request to the link to trigger a "click" event in SparkPost and retrieve the original tracked URL from the message.
 
 Here is sample `MainActivity.kt` which uses the `OkHttp4` library to perform the HTTP(S) GET to the SparkPost click tracking service asynchronously, triggering the `onResponse` or `onFailure` functions on completion.
+
+The incoming URL and the original unwrapped URL are shown on the app's  `TextView` elements.
 
 ```kotlin
 package com.example.testlinks
@@ -607,7 +609,7 @@ With CloudFront we are working with the specific sub-domain used for link tracki
 
 > As described [here](#spec-file), it's easy to create spec files in your web site. The following steps are needed *only* if you are using a CDN for HTTPS tracking and therefore need to configure the spec files there.
 
-Note: unlike AWS CloudFront, you need to already have the spec files (`apple-app-site-assocation` and `assetlinks.json`) hosted elsewhere, such as on a web server. When your clients request *`yourtracking.domain.com/.well-known/*`*, CloudFlare will respond with a `301` "moved permanently" redirect to your files. We have found this can work, but it's not recommended by [Apple](https://developer.apple.com/library/archive/documentation/General/Conceptual/AppSearch/UniversalLinks.html) or [Google](https://developer.android.com/training/app-links/verify-site-associations). It prevents Android [autoverify](#autoverify) of your app.
+> Unlike AWS CloudFront, you need to already have the spec files (`apple-app-site-assocation` and `assetlinks.json`) hosted elsewhere, such as on a web server. When your clients request *`yourtracking.domain.com/.well-known/*`*, CloudFlare responds with a `301` "moved permanently" redirect to your files. We have found this can work, but it's not recommended by [Apple](https://developer.apple.com/library/archive/documentation/General/Conceptual/AppSearch/UniversalLinks.html) or [Google](https://developer.android.com/training/app-links/verify-site-associations). It prevents Android [autoverifying](#autoverify) your app.
 
 1. In your CloudFlare dashboard, an additional page rule is necessary to serve the spec files.
 
@@ -655,11 +657,11 @@ The domains entitlement in your app(s) must match your tracking domain. This can
 * [Android](android-spec-file) configuration
 
 
-### Android specific: autoVerify
+### Android: testing autoverify
 
-Getting your app to autoverify requires the `assetlinks.json` file to be available on your _specific_ tracking domain rather than relying on the organizational domain.
+Getting your app to autoverify requires the `assetlinks.json` file to be available on your _specific_ tracking domain rather than relying on the organizational domain (main website).
 
-To test autoVerify works for your domain(s), start with a fresh install of your app, as mentioned in [this article](#autoverify-article), because Android remembers the user's choice.
+To test autoverify works for your domain(s), start with a fresh install of your app, as mentioned in [this article](#autoverify-article), because Android remembers the user's choice.
 
 If you are getting the ["ask" prompt](#android-ask) to choose which application opens the link, you can use the `adb` debugger to investigate the status of your app. If the Status is shown as `ask` then autoverify is not working as intended. The value `always : 200000000` means it is verified.
 
