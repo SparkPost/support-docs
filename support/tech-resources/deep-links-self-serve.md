@@ -285,11 +285,11 @@ In SparkPost event reporting, the attribute `user_agent` carries information on 
 
 ## <a name="android"></a> Forwarding Clicks From Android To SparkPost
 
-When an Android email client recognizes that an app link has been clicked based on your app `AndroidManifest.xml`, it sends an `intent` which triggers the registered activity in your app. You can then make the HTTP(S) request to the link to trigger a "click" event in SparkPost and retrieve the original tracked URL from the message.
+When an Android email client recognizes that an app link has been clicked based on your app `AndroidManifest.xml`, it sends an `intent` which triggers the registered activity in your app. Your app can then make the HTTP(S) request, to register the "click" event in SparkPost and retrieve the original tracked URL from the message.
 
 Here is sample `MainActivity.kt` which uses the `OkHttp4` library to perform the HTTP(S) GET to the SparkPost click tracking service asynchronously, triggering the `onResponse` or `onFailure` functions on completion.
 
-The incoming URL and the original unwrapped URL are shown on the app's  `TextView` elements.
+The incoming URL and the original unwrapped URL are shown on the app `TextView` elements.
 
 ```kotlin
 package com.example.testlinks
@@ -379,7 +379,7 @@ In the project `app/build.gradle` file dependencies section, this line fetches a
 implementation 'com.squareup.okhttp3:okhttp:4.9.0'
 ```
 
-Your `AndroidManifest.xml` needs these permissions added to `<manifest` .. `>` scope:
+Your `AndroidManifest.xml` also needs these permissions added to `<manifest` .. `>` scope:
 
 ```xml
 <uses-permission android:name="android.permission.INTERNET" />
@@ -416,7 +416,7 @@ Click the padlock symbol and check the certificate is valid and as expected. Rep
 
 #### Using specific tracking domain(s) with Apache
 
-The above simple instructions allow deep linking to work via your website's main `/.well-known` URL. However to get Android to autoverify your app to open tracked domains (skipping the user ["Ask" step](#android-ask)), you need to serve spec files from your specific tracking domains, *while also forwarding* opens and clicks to SparkPost on that domain. This is possible using Apache patterns.
+The above simple instructions allow deep linking to work via your website's main `/.well-known` URL. However to get Android to [autoverify](#autoverify) your app's domains (skipping the user ["Ask" step](#android-ask)), you need to serve spec files from your *specific* tracking domains, *while also forwarding* opens and clicks to SparkPost on that domain. This is possible using Apache patterns.
 
 ```apacheconf
 #
@@ -453,6 +453,8 @@ The spec files are made available under URL `https://yourtrackingdomain.example.
 
 For completeness, the same routing is configured for HTTP on port 80, although mobile devices will request the spec files via HTTPS.
 
+To check your files are served correctly and Android autoverify is working - see [troubleshooting tips](#troubleshooting).
+
 ### NGINX
 
 1. Follow the steps in [this article](https://www.sparkpost.com/docs/tech-resources/using-proxy-https-tracking-domain/) to set up your secure tracking domain.
@@ -461,7 +463,7 @@ For completeness, the same routing is configured for HTTP on port 80, although m
 
 1. Within this, create a directory `.well-known` if it doesn't already exist, and upload/create your spec files here. This will usually require root privilege on your server.
 
-1. Add `location` blocks to your config to declare the spec files. Here is a complete example, including the engagement-tracking `proxy-pass` block done in step 1.
+1. Add `location` blocks to your config to declare the spec files on your tracking domain, which will allow Android to [autoverify](#autoverify). Here is a complete example, including the engagement-tracking `proxy-pass` block done in step 1.
 
     ```
     server {
@@ -500,7 +502,7 @@ For completeness, the same routing is configured for HTTP on port 80, although m
 
 1. Check your configuration is valid using `sudo nginx -t`. If no errors are reported, then reload using `sudo nginx -s reload`.
 
-1. Check that your spec files are correctly published and available on the Internet - see [troubleshooting tips](#troubleshooting).
+1. Check your files are served correctly and Android autoverify is working - see [troubleshooting tips](#troubleshooting).
 
 ---
 
@@ -512,7 +514,7 @@ First set up your secure tracking domain using CloudFront - instructions [here](
 
  * Create an S3 bucket for the spec files;
  * Set up our CloudFront distribution to selectively serve requests on our tracking domain from the bucket;
- * Test the files are served correctly;
+ * Test the files are served correctly on the specific tracking domain;
  * Ensure our app domain association matches our tracking domain.
 
 With CloudFront we are working with the specific sub-domain used for link tracking. It's therefore an alternative to updating your main website's `.well-known` directory.
@@ -601,7 +603,7 @@ With CloudFront we are working with the specific sub-domain used for link tracki
 
 1. Check your S3 bucket configuration is secure using [this tool](https://console.aws.amazon.com/trustedadvisor/home?#/category/security).
 
-1. In case of difficulty, see [troubleshooting tips](#troubleshooting).
+1. To check your files are served correctly and Android autoverify is working, see [troubleshooting tips](#troubleshooting).
 
 ---
 
@@ -629,7 +631,7 @@ With CloudFront we are working with the specific sub-domain used for link tracki
 
     ![](media/deep-links-self-serve/deep-links-cloudflare-all-page-rules.png)
 
-1. In case of difficulty, see [troubleshooting tips](#troubleshooting).
+1. To check your files are served correctly - see [troubleshooting tips](#troubleshooting).
 
 ---
 ## <a name="troubleshooting"></a>Troubleshooting tips
