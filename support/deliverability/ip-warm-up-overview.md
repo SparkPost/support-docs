@@ -21,9 +21,9 @@ During the Warm-up phase the more consistent you are with volume, frequency, com
 * During weeks 1-2 send to your most active subscribers - those who have opened/clicked in the past 30 days
 * During weeks 3-4 you can expand to subscribers who have opened/clicked in the past 60 days
 * During the first 6 weeks do NOT send to subscribers who have not opened or clicked in the past 90 days
-* If warming above 5 million subscribers, do not send more than double the previous volume after day 14
+* If warming above 10 million subscribers, consider adding another IP
 
-| Week 1 | Daily Volume |
+| Week 1 | Daily Volume per IP |
 | ---|---|
 | Day 1 | 200 |
 | Day 2 | 500 |
@@ -34,12 +34,31 @@ During the Warm-up phase the more consistent you are with volume, frequency, com
 | Day 7 | 20,000 |
 | <strong> Week 2 </strong> | |
 | Day 8 | 40,000 |
-| Day 9 | 100,000 |
-| Day 10 | 250,000 |
-| Day 11 | 500,000 |
-| Day 12 | 1,000,000 |
-| Day 13 | 2,000,000 |
-| Day 14 | 5,000,000 |
+| Day 9 | 50,000 |
+| Day 10 | 75,000 |
+| Day 11 | 100,000 |
+| Day 12 | 150,000 |
+| Day 13 | 200,000 |
+| Day 14 | 250,000 |
+| <strong> Week 3 </strong> | |
+| Day 15 | 325,000 |
+| Day 16 | 400,000 |
+| Day 17 | 500,000 |
+| Day 18 | 600,000 |
+| Day 19 | 750,000 |
+| Day 20 | 1,000,000 |
+| Day 21 | 1,250,000 |
+| <strong> Week 4 </strong> | |
+| Day 22 | 1,750,000 |
+| Day 23 | 2,000,000 |
+| Day 24 | 3,000,000 |
+| Day 25 | 4,250,000 |
+| Day 26 | 5,000,000 |
+| Day 27 | 6,000,000 |
+| Day 28 | 7,500,000 |
+| <strong> Final Week </strong> | |
+| Day 29 | 10,000,000 |
+| Day 30 | DONE |
 
 **What to Expect**          
 
