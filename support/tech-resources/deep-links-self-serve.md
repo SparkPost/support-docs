@@ -682,7 +682,7 @@ App verification status:
 
 If your app has more than one associated domain, the status will be "`ask`" if _any_ of them fail to autoverify. You can use `adb` to check your setup from Android Studio without having to delete/reinstall.
 
-> Note: CloudFront is problematic for autoverify, owing to its use of 301 redirect for files.
+> Note: [CloudFlare](#cloudflare) is problematic for autoverify, owing to its use of 301 redirect for files.
 
 For more information, see [this article](#adb).
 

@@ -13,7 +13,7 @@ SparkPost supports HTTPS engagement tracking for all self-service customers. Thi
 
 In order for HTTPS engagement tracking to be enabled on SparkPost, our service needs to present a valid certificate that will be trusted by the email recipient’s browser. SparkPost does not manage certificates for customer engagement tracking domains, as we are not the record owner for our customers’ domains.
 
-Use a CDN such as [Cloudflare](http://www.cloudflare.com), [Fastly](http://www.fastly.com) or [AWS Cloudfront](https://aws.amazon.com/cloudfront/) to manage certificates and keys for any custom engagement tracking domains. These services forward traffic onwards to SparkPost so that HTTPS tracking can be performed.
+Use a CDN such as [Cloudflare](http://www.cloudflare.com), [Fastly](http://www.fastly.com) or [AWS Cloudfront](https://aws.amazon.com/cloudfront/) to manage certificates and keys for any custom engagement tracking domains. These services forward requests onward to SparkPost so that HTTPS tracking can be performed.
 
 ## Step by Step guides
 
@@ -21,18 +21,31 @@ This document includes step by step guides for the following CDNs.
 
 * CloudFlare:
     * [Create a Domain](#cloudflare)
+        * (Cloudflare certificates are auto-issued)
 * AWS CloudFront:
     * [Create a Domain](#aws-create)
     * [Issue a Certificate](#aws-cert)
     * [Update an Existing Domain](#aws-update) to pass `User-Agent` information
 * Fastly:
-    * [Create a Domain](#fastly)
+    * [Create a Domain](#fastly-create)
+    * [Issue a Certificate](#fastly-cert)
 
-Please note, if you are using a CDN not listed here, the steps will likely differ in workflow. Please refer to your CDN's documentation and contact their respective support departments if you have any questions.
+> If you plan to use [deep linking](./deep-links-self-serve) with Android apps, CloudFlare serves files via a `301` redirect, which can prevent Android apps autoverifying domains.
 
-## How to Create a Secure Tracking Domain on SparkPost
+If you are using a CDN not listed here, the steps will differ in workflow. Please refer to your CDN's documentation and contact their respective support departments if you have any questions.
 
-After configuring your CDN, you need to s SparkPost to encode your links using HTTPS, then verify your domain - instructions [here](#switch-to-secure).
+## <a name="endpoints"></a>SparkPost tracking endpoints
+
+This address is configured as the address your CDN forwards HTTPS requests to, usually known as the "origin server".
+|Service|Endpoint|
+|--|--|
+|SparkPost US|`spgo.io`|
+|SparkPost EU|`eu.spgo.io`|
+|PowerMTA+Signals|Refer to your PowerMTA User Guide documentation|
+
+## Create a secure tracking domain on SparkPost
+
+After configuring your CDN, you need instruct SparkPost to encode your links using HTTPS and verify your domain - instructions [here](#switch-to-secure).
 
 ---
 ## <a name="cloudflare"></a> Step by Step Guide with CloudFlare
@@ -87,7 +100,7 @@ After configuring your CDN, you need to s SparkPost to encode your links using H
 
     * Add a Setting -> Forwarding URL (specify the 301 redirect option).
 
-    * Destination URL is `https://<CNAME_VALUE>/$1`. Replace `<CNAME_VALUE>` with the endpoint displayed in the Tracking Domains section of your SparkPost account. For SparkPost US, this would be `spgo.io`; for SparkPost EU, this would be `eu.spgo.io`. For PowerMTA+Signals, refer to your PowerMTA User Guide.
+    * Destination URL is `https://<CNAME_VALUE>/$1`. Replace `<CNAME_VALUE>` with the correct endpoint address for your service, see [here](#endpoints).
 
         ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudflare_page_rule_edit.png)
 
@@ -112,6 +125,8 @@ After configuring your CDN, you need to s SparkPost to encode your links using H
         More information on CloudFlare SSL options can be found in [this article](https://support.cloudflare.com/hc/en-us/articles/200170416).
 
 
+1. Cloudflare does not offer control of cache "time to live" (TTL) on free accounts. This may mask repeat opens/clicks, as described [here](#ttl). If you have a paid account, under Caching, set your TTL value.
+
 1. Add a CNAME entry into DNS for your tracking domain. The value in the record doesn't matter; the record simply needs to exist. For example, if your tracking domain is `track.example.com`, a CNAME value of `example.com` is sufficient. Without a record to reference, the the page rule never gets triggered, and the proper redirection will not occur. Please note that the typical time to progagation of new CNAME records is often around five to ten minutes, but can be longer depending on your DNS provider.
 
 1. Follow [these steps](#switch-to-secure) to update and verify your tracking domain.
@@ -135,7 +150,7 @@ For up to date information on creating a distribution via CloudFront, please ref
     ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_method.png)
 
 1. On the Create Distribution page fill out the following:
-    * Under Origin Settings, fill in the **Origin Domain Name**. Use the value displayed in the tracking domains section of the SparkPost UI. E.g.: for SparkPost US, this would be `spgo.io`; for SparkPost EU, this would be `eu.spgo.io`. For PowerMTA+Signals, refer to your PowerMTA User Guide.
+    * Under Origin Settings, fill in the **Origin Domain Name** with the correct endpoint address for your service, see [here](#endpoints).
 
         ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_origin_domain_name.png)
 
@@ -152,6 +167,10 @@ For up to date information on creating a distribution via CloudFront, please ref
         ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_whitelist_cache_orange.png)
 
         An orange warning indicator appears. This is expected.
+
+    * Under Object Caching, choose "Customize" and set the Default TTL to 10 seconds (explanation [here](#ttl)).
+
+        ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_ttl.png)
 
     * Under Default Cache Behavior Settings, set **Query String Forwarding and Caching** to "Forward all, cache based on all".
 
@@ -267,24 +286,87 @@ If you use AWS CloudFront to enable HTTPS engagement tracking, by default, Cloud
       ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_edit_domain_yes_edit_button.png)
 
 ---
-## <a name="fastly"></a> Step by Step Guide with Fastly
+## <a name="fastly-create"></a> Step by Step Guide with Fastly
 
 Sign up for Fastly or log in to an existing account.
 
-1. Click **Configure** on the Dashboard.
-2. Click the gear icon to open the **Manage Service** menu and click **Create**.
+1. Select the **Configure** tab on the Dashboard, then "Create Service". Give your service a name, and add your tracking domain under "Domains".
 
-    Set the options as follows:
+    ![](media/enabling-https-engagement-tracking-on-sparkpost/fastly-create-service.png)
 
-    Server address and port: For SparkPost US, this would be `spgo.io :  443`; for SparkPost EU, this would be `eu.spgo.io : 443`. For PowerMTA+Signals, refer to your PowerMTA User Guide.
 
-    Domain: Your click tracking domain, e.g. `click.business.com`
-    Description: SparkPost (or whatever you like!)
+1. Select "Origins" on the left. Add the correct endpoint address for your service, see [here](#endpoints).
+
+    ![](media/enabling-https-engagement-tracking-on-sparkpost/fastly-origin-hosts.png)
+
+    Fastly detects that SparkPost supports TLS, and shows the host entry like this. Optionally you can use the "pencil" edit icon to set a meaningful name.
+
+    ![](media/enabling-https-engagement-tracking-on-sparkpost/fastly-origin.png)
+
+    Fastly's default settings pass the `user_agent` and `ip_address` through to SparkPost engagement tracking as expected.
+
+1. On "Settings", "Cache Settings", set the "Fallback TTL" to ten seconds (explanation [here](#ttl)).
+
+    ![](media/enabling-https-engagement-tracking-on-sparkpost/fastly-ttl.png)
+
+## <a name="fastly-cert"></a> Issue a certificate with Fastly
+
+1. Select the "HTTPS and network" tab, then "Get Started".
+
+    ![](media/enabling-https-engagement-tracking-on-sparkpost/fastly-cert1.png)
+
+
+1. Enter your tracking domain. Let's Encrypt certificates are free, and can be auto-renewed by Fastly, via an additional CNAME record that you will need to create with your DNS provider.
+
+    ![](media/enabling-https-engagement-tracking-on-sparkpost/fastly-cert2.png)
+
+    Other options are to use GlobalSign, or to upload your own private key & certificate.
+
+1. For Let's Encrypt option: copy the information shown and create a CNAME record in your DNS provider's account.
+
+    ![](media/enabling-https-engagement-tracking-on-sparkpost/fastly-cert-letsencrypt-cname.png)
+
+1. After you create the CNAME, Fastly requests the certificate.
+
+    ![](media/enabling-https-engagement-tracking-on-sparkpost/fastly-cert-letsencrypt2.png)
+
+    After a short time, you should see
+
+    ![](media/enabling-https-engagement-tracking-on-sparkpost/fastly-cert-letsencrypt3.png)
+
+1. Select "More Details .." and look for "CNAME records". This is the address the Fastly will use to serve your incoming requests.
+
+    ![](media/enabling-https-engagement-tracking-on-sparkpost/fastly-service-cname.png)
+
+1. Create the CNAME record within your DNS service (this will be specific to your provider). If you have a TTL (time to live) field, we suggest to set this to 1 hour.
+
+    ![](media/enabling-https-engagement-tracking-on-sparkpost/fastly-cname.png)
+
+    _Example DNS provider CNAME setup_
+
+    You can verify that the routing is successful using `ping` on your created record.
 
 1. Follow [these steps](#switch-to-secure) to update and verify your tracking domain.
+
+Fastly keeps previous versions of your configuration, and can show the "diff" between them. You can also set up advanced routing rules using the VCL language, and monitor statistics on served requests.
+
+![](media/enabling-https-engagement-tracking-on-sparkpost/fastly-stats.png)
+
+
 ---
 
-## <a name = "switch-to-secure"></a> Switch tracking domain to secure, and validate
+## <a name="ttl"></a> Cache Time To Live (TTL) settings
+
+CDNs apply caching, with a "Time to Live" (TTL) for each unique request URL. When a request is first fetched, it is cached. Within the TTL, later requests *may* be served to the client from the CDN cache, without touching the SparkPost endpoint. The client is redirected to the landing page as usual, but a side-effect is that SparkPost does not record the repeat opens/clicks.
+
+SparkPost engagement tracking URLs are unique to a particular recipient, message, and (for links) each individal link in the message.
+
+A TTL of zero means "always pass through to the origin", which is, perhaps surprisingly, not ideal. Some inbound mail gateways repeatedly scan email links, which leads to erroneous high event counts.
+
+To enable SparkPost to record human-driven repeat opens/clicks, while screening robot-driven repeat opens/clicks, we suggest setting the default TTL to 10 seconds.
+
+
+## <a name="switch-to-secure"></a> Switch tracking domain to secure, and validate
 
 If you have previously created a tracking domain (whether verified or unverified), and wish to switch it from insecure (the default) to secure, use the [Update a Tracking Domain API](https://developers.sparkpost.com/api/tracking-domains/#tracking-domains-put-update-a-tracking-domain) `PUT` call, to update the tracking domain with the `"secure": true` string.
 
@@ -305,3 +387,32 @@ If you have previously created a tracking domain (whether verified or unverified
 1. Send a test email, examine the internals of the email and check the expected HTTPS URLs using your tracking domain are present.
 
 1. Check that clicking the links takes you to the expected landing page.
+
+### Troubleshooting tips
+
+You can test that your tracking domain is correctly routed to SparkPost, using `curl -v` (verbose). Note the `/f/` path.
+
+```
+curl -v https://track.mydomain.com/f/
+```
+The output will show the TLS negotiation including info on the certificate served by your CDN for your domain. Example:
+
+```
+* Server certificate:
+*  subject: CN=track-aws.thetucks.com
+*  start date: Oct  8 00:00:00 2020 GMT
+*  expire date: Nov  7 12:00:00 2021 GMT
+*  subjectAltName: host "track-aws.thetucks.com" matched cert's "track-aws.thetucks.com"
+*  issuer: C=US; O=Amazon; OU=Server CA 1B; CN=Amazon
+*  SSL certificate verify ok.
+```
+
+If forwarding is configured properly, you will see a response relayed back from the SparkPost endpoint. The `server` header value below indicates that your CDN is routed to a SparkPost endpoint.
+
+```
+< HTTP/2 200
+< content-type: text/plain
+< content-length: 0
+< date: Sat, 31 Oct 2020 10:52:44 GMT
+< server: msys-http
+```
