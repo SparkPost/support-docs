@@ -388,7 +388,7 @@ If you have previously created a tracking domain (whether verified or unverified
 
 1. Check that clicking the links takes you to the expected landing page.
 
-### Troubleshooting tips
+### <a name="troubleshooting"></a> Troubleshooting tips
 
 You can test that your tracking domain is correctly routed to SparkPost, using `curl -v` (verbose). Note the `/f/` path.
 

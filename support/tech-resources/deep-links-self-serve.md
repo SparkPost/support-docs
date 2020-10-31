@@ -138,7 +138,7 @@ The [App Links Assistant](https://developer.android.com/studio/write/app-link-in
 ---
 ## <a name="tracking"></a> Deep links and click tracking
 
-Setting up a [custom tracking domain](https://www.sparkpost.com/docs/tech-resources/enabling-multiple-custom-tracking-domains/) is useful for branding and email reputation. It is required for click tracking of deep links in your HTML email.
+Setting up a [custom tracking domain](./nabling-multiple-custom-tracking-domains) is useful for branding and email reputation. It is required for click tracking of deep links in your HTML email.
 
 It's best to choose a subdomain (e.g. `track.example.com`), so that subdomain can be redirected, while your website uses your organizational domain. Each tracking domain can serve regular email tracked links and deep links. Your content can use a mixture of both kinds of link inside the same email.
 
@@ -146,8 +146,8 @@ It's best to choose a subdomain (e.g. `track.example.com`), so that subdomain ca
 
 It is good practice to use secure (HTTPS) tracking domains, and it's essential if your website has an [HSTS](https://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security) policy. We have articles describing the setup of this for:
 
--  [Various CDNs](https://www.sparkpost.com/docs/tech-resources/enabling-https-engagement-tracking-on-sparkpost/)
-- Your own [web server reverse proxy such as NGINX](https://www.sparkpost.com/docs/tech-resources/using-proxy-https-tracking-domain/)
+-  [Various CDNs](./enabling-https-engagement-tracking-on-sparkpost)
+- Your own [web server reverse proxy such as NGINX](./using-proxy-https-tracking-domain)
 
 In both cases, your CDN (or proxy) redirects the specific tracking subdomain(s) to the SparkPost click tracking service, while your web content is served in the usual way.
 
@@ -198,7 +198,7 @@ You can control [click tracking for SMTP messages](https://app.sparkpost.com/acc
 
 The device operating system "wakes up" your app with an API call, passing in  the URL. Your app issues an HTTP(S) GET to the URL, which registers the click. Your app receives the original URL in the response "Location" header; there's no need to follow the redirect and fetch the entire web-page.
 
-Set up your spec files to match your [custom tracking domain](https://www.sparkpost.com/docs/tech-resources/enabling-multiple-custom-tracking-domains/) and custom link sub-path.
+Set up your spec files to match your [custom tracking domain](./enabling-multiple-custom-tracking-domains) and custom link sub-path.
 
 #### Custom Link Sub-Paths
 
@@ -398,6 +398,13 @@ You can use a CDN or an ordinary web-server to host your spec files. Ensure you 
 
 When set up, you can get a security report by running the [SSL Labs server test](https://www.ssllabs.com/ssltest/analyze.html).
 
+Step-by-step instructions follow, for
+* [Apache](#apache)
+* [NGINX](#nginx)
+* [AWS CloudFront](#aws-cloudfront)
+* [CloudFlare](#cloudflare)
+* [Fastly](fastly)
+
 ### <a name="apache"></a> Apache
 
 1. Find the directory used by your web server, known as the web root. The  default is `/var/www/html`, but yours may vary. You can find this by locating the `DocumentRoot` setting in your `.conf` files.
@@ -416,7 +423,10 @@ Click the padlock symbol and check the certificate is valid and as expected. Rep
 
 #### Using specific tracking domain(s) with Apache
 
-The above simple instructions allow deep linking to work via your website's main `/.well-known` URL. However to get Android to [autoverify](#autoverify) your app's domains (skipping the user ["Ask" step](#android-ask)), you need to serve spec files from your *specific* tracking domains, *while also forwarding* opens and clicks to SparkPost on that domain. This is possible using Apache patterns.
+The above simple instructions allow deep linking to work via your website's main `/.well-known` URL.
+
+To get Android to [autoverify](#autoverify) your app's domains (skipping the user ["Ask" step](#android-ask)), you need to serve spec files from your *specific* tracking domains, *while also forwarding* opens and clicks to SparkPost on that domain. Follow the steps in [this article](./using-proxy-https-tracking-domain), then modify the Apache patterns to look like this:
+
 
 ```apacheconf
 #
@@ -455,9 +465,11 @@ For completeness, the same routing is configured for HTTP on port 80, although m
 
 To check your files are served correctly and Android autoverify is working - see [troubleshooting tips](#troubleshooting).
 
-### NGINX
+---
 
-1. Follow the steps in [this article](https://www.sparkpost.com/docs/tech-resources/using-proxy-https-tracking-domain/) to set up your secure tracking domain.
+### <a name="nginx"></a>NGINX
+
+1. Follow the steps in [this article](./using-proxy-https-tracking-domain) to set up your secure tracking domain.
 
 1. Check where your NGINX root directory is, by running `nginx -V`. Look for the path shown after `--prefix=`, for example `--prefix=/usr/share/nginx` (and adjust the following example to suit). This should contain a directory named `html` which is used for your files.
 
@@ -506,11 +518,11 @@ To check your files are served correctly and Android autoverify is working - see
 
 ---
 
-### AWS CloudFront
+### <a name="aws-cloudfront"></a> AWS CloudFront
 
 > As described [here](#spec-file), it's easy to create spec files in your web site. The following steps are needed *only* if you are using a CDN for HTTPS tracking and therefore need to configure the spec files there.
 
-First set up your secure tracking domain using CloudFront - instructions [here](https://www.sparkpost.com/docs/tech-resources/enabling-https-engagement-tracking-on-sparkpost/#aws-create). This establishes your tracking domain routing and certificate in AWS. This section describes how to:
+First set up your secure tracking domain using CloudFront - instructions [here](./enabling-https-engagement-tracking-on-sparkpost/#aws-create). This establishes your tracking domain routing and certificate in AWS. This section describes how to:
 
  * Create an S3 bucket for the spec files;
  * Set up our CloudFront distribution to selectively serve requests on our tracking domain from the bucket;
@@ -607,7 +619,7 @@ With CloudFront we are working with the specific sub-domain used for link tracki
 
 ---
 
-### CloudFlare
+### <a name="cloudflare"></a>CloudFlare
 
 > As described [here](#spec-file), it's easy to create spec files in your web site. The following steps are needed *only* if you are using a CDN for HTTPS tracking and therefore need to configure the spec files there.
 
@@ -634,23 +646,81 @@ With CloudFront we are working with the specific sub-domain used for link tracki
 1. To check your files are served correctly - see [troubleshooting tips](#troubleshooting).
 
 ---
+
+### <a name="fastly"></a>Fastly
+
+> As described [here](#spec-file), it's easy to create spec files in your web site. The following steps are needed *only* if you are using a CDN for HTTPS tracking and therefore need to configure the spec files there.
+
+> Unlike AWS CloudFront, you need to already have the spec files (`apple-app-site-assocation` and `assetlinks.json`) hosted elsewhere, such as on a web server. Fastly can serve requests for these files without sending the client a `301` "moved permanently" redirect, so it supports Android [autoverifying](#autoverify) your app.
+
+1. Set up your secure tracking domain - instructions [here](./enabling-https-engagement-tracking-on-sparkpost/#fastly-create). This establishes your tracking domain routing and certificate in Fastly.
+
+1. "Clone" your current configuration. This gives a draft config to edit. The version number increments, while your previous version continues to be active.
+
+    ![](media/deep-links-self-serve/deep-links-fastly-clone.png)
+
+    The following steps should be done on your new draft config.
+
+1. Select Origins / Hosts, then Create a Host.
+
+    ![](media/deep-links-self-serve/deep-links-fastly-add-host.png)
+
+    Enter the address of your website where the spec files will be served. Use the pencil "edit" icon to give your host a meaningful name.
+
+1. Select "Attach a condition", give this a name, such as "well-known". In the "Apply if ..." box, enter the following. The `~` applies a Perl-like regular-expression match on the incoming URL path.
+
+    ```perl
+    req.url ~ "^/\.well-known/.*"
+    ```
+
+      ![](media/deep-links-self-serve/deep-links-fastly-condition.png)
+
+    Leave the priority settings as default.
+
+1. Your host settings should now look like this.
+
+    ![](media/deep-links-self-serve/deep-links-fastly-hosts2.png)
+
+    > Fastly is based on [Varnish](https://en.wikipedia.org/wiki/Varnish_(software)) HTTP accelerator, and uses Perl-like [Varnish Configuration Language (VCL)](https://docs.fastly.com/en/guides/guide-to-vcl) to configure forwarding rules. Your entire configuration is a VCL file, which you can view using the "Show VCL" option. Your condition appears in a section called
+
+    ```perl
+    sub vcl_recv {
+
+    }
+    ```
+1. Select "Activate" to make your new configuration live.
+
+1. Check your files are served correctly - see [troubleshooting tips](#troubleshooting).
+
+#### Optional: Fastly boilerplate and "Fiddle"
+
+For more advanced VCL capabilities, you can start with the ["boilerplate" code](https://developer.fastly.com/learning/vcl/using/). Edit, then upload it back.
+
+You can prototype VCL using the online [Fastly Fiddle](https://fiddle.fastlydemo.net/) tool - see [this article](https://www.fastly.com/blog/testing-new-ideas-fastly-fiddle). You enter the origin servers, custom VCL code and test requests. The forwarding decision and result is shown when you run the request.
+
+![](media/deep-links-self-serve/deep-links-fastly-fiddle.png)
+
+
+---
 ## <a name="troubleshooting"></a>Troubleshooting tips
 
 ### Check your spec files
 
 You can check your spec files are correctly published and available on the Internet, using `curl` or a web browser. Be sure to specify `https`.
 
-```
-curl https://##your-tracking-domain-here##/.well-known/apple-app-site-association
+```bash
+curl https://your-tracking-domain-here/.well-known/apple-app-site-association
 
-curl https://##your-tracking-domain-here##/.well-known/assetlinks.json
+curl https://your-tracking-domain-here/.well-known/assetlinks.json
 ```
 
 > Note: If your tracking sub-domain does not have spec file(s), mobile devices will also look on the root domain for files in the `/.well-known` directory. This is shown in the above simple [Apache example](#apache).
 
 ### Check your tracked links
 
-You can view your encoded links using Gmail, by selecting the three dots menu top-right, then "Show Original". Check the domain is as expected, and the `<A HREF ..` links are using HTTPS.
+You can view your encoded links using Gmail, by selecting the three dots menu top-right, then "Show Original". Check the domain is as expected, and the `<A HREF ..` links are using HTTPS. Check that clicking the link takes you to the expected landing page.
+
+You can then use `curl` to request the tracked link, with the `-v` option to see the details of the tracked link request and response; see [here](./enabling-https-engagement-tracking-on-sparkpost#troubleshooting).
 
 ### Check your app matches your tracking domain
 
@@ -680,11 +750,9 @@ App verification status:
   Status:  always : 200000000
 ```
 
-If your app has more than one associated domain, the status will be "`ask`" if _any_ of them fail to autoverify. You can use `adb` to check your setup from Android Studio without having to delete/reinstall.
+If your app has more than one associated domain, the status will be "`ask`" if _any_ of them fail to autoverify. You can use `adb` to check your setup from Android Studio without having to delete/reinstall. For more information on using the `adb` debugger, see [this article](#adb).
 
-> Note: [CloudFlare](#cloudflare) is problematic for autoverify, owing to its use of 301 redirect for files.
-
-For more information, see [this article](#adb).
+> Note: [CloudFlare](#cloudflare) CDN is problematic for Android autoverify, owing to its use of 301 redirect for files.
 
 ## Further reading
 
