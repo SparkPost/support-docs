@@ -681,27 +681,35 @@ With CloudFront we are working with the specific sub-domain used for link tracki
 
     ![](media/deep-links-self-serve/deep-links-fastly-hosts2.png)
 
-    > Fastly is based on [Varnish](https://en.wikipedia.org/wiki/Varnish_(software)) HTTP accelerator, and uses Perl-like [Varnish Configuration Language (VCL)](https://docs.fastly.com/en/guides/guide-to-vcl) to configure forwarding rules. Your entire configuration is a VCL file, which you can view using the "Show VCL" option. Your condition appears in a section called
-
-    ```perl
-    sub vcl_recv {
-
-    }
-    ```
 1. Select "Activate" to make your new configuration live.
 
 1. Check your files are served correctly - see [troubleshooting tips](#troubleshooting).
 
-#### Optional: Fastly boilerplate and "Fiddle"
+#### Background info: VCL, Fastly boilerplate and "Fiddle"
 
-For more advanced VCL capabilities, you can start with the ["boilerplate" code](https://developer.fastly.com/learning/vcl/using/). Edit, then upload it back.
+Fastly is based on [Varnish](https://en.wikipedia.org/wiki/Varnish_(software)) HTTP accelerator, and uses Perl-like [Varnish Configuration Language (VCL)](https://docs.fastly.com/en/guides/guide-to-vcl) to configure forwarding rules. Your entire configuration is a VCL file, which you can view using the "Show VCL" option. The condition you created appears in a section called
 
-You can prototype VCL using the online [Fastly Fiddle](https://fiddle.fastlydemo.net/) tool - see [this article](https://www.fastly.com/blog/testing-new-ideas-fastly-fiddle). You enter the origin servers, custom VCL code and test requests. The forwarding decision and result is shown when you run the request.
+```perl
+sub vcl_recv {
+
+}
+```
+
+For more advanced VCL capabilities, start with the ["boilerplate" code](https://developer.fastly.com/learning/vcl/using/). Edit, then upload it back.
+
+You can also prototype VCL separately from your main configuration, using the online [Fastly Fiddle](https://fiddle.fastlydemo.net/) tool; see [this article](https://www.fastly.com/blog/testing-new-ideas-fastly-fiddle). You enter the origin servers, custom VCL code and test requests.
 
 ![](media/deep-links-self-serve/deep-links-fastly-fiddle.png)
 
+When you run the request, the forwarding decision and result is shown; in this case, fetching the Apple spec file from an Apache server.
+
+![](media/deep-links-self-serve/deep-links-fastly-fiddle-result.png)
+
+Likewise, if you run a request for a tracked link from a test email (starting `/f/xyzzy...`) if your VCL code is working, you will see the request routed to SparkPost.
+
 
 ---
+
 ## <a name="troubleshooting"></a>Troubleshooting tips
 
 ### Check your spec files
