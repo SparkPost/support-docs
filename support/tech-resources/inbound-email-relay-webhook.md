@@ -102,4 +102,4 @@ If your webhook doesn’t seem to be working, you can try these steps: 
 
 Unlike webhooks, relay webhooks do not batch - individual messages are pushed to the relay webhook endpoints when received.
 
-Unlike webhooks, relay webhooks share the same retry logic as messages sent through SparkPost. Any relay webhook push that fails will be re-attempted first at 300 seconds, and then repeatedly tried up to 7 times with a back-off algorithm.
+Unlike webhooks, the relay webhook retry logic is similar (but not identical) to messages sent through SparkPost. Any relay webhook push that fails will be re-attempted first at 300 seconds, and then repeatedly tried up to 7 times with a back-off algorithm.
