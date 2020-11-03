@@ -97,7 +97,7 @@ Yes, after you enable SSO for your company, newly added users will automatically
 No, there is no default user role - role is decided by the admin user when adding each new user.
 
 ### Can the user role be changed after a SSO user has been created?
-Yes, an admin user can the user role for any user (including SSO users) at any time.
+Yes, an admin user can change the user role for any user (including SSO users) at any time.
 
 ### Is there a way to bypass SSO once its enabled?
 An admin can enable or disable SSO for each user at any time. However, there is no way to bypass SSO if it is enabled for a specific user - the admin must disable for that user in order to login via password.
