@@ -79,7 +79,7 @@ Configure the `paths` section to match the links in your email HTML content, dep
     "namespace": "android_app",
     "package_name": "com.example.testlinks",
     "sha256_cert_fingerprints":
-    ["xyzzy"]
+    ["<Your_APP_FINGERPRINT>"]
   }
 }]
 ```
