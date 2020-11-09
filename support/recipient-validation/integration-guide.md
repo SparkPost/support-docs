@@ -43,7 +43,7 @@ const SparkPost = require('sparkpost')
 const client = new SparkPost('YOUR_RECIPIENT_VALIDATION_KEY');
 
 app.post('/sign-up', function (req, res) {
-	const emailAddress = req.body.emailAddress;
+	const emailAddress = encodeURIComponent(req.body.emailAddress);
 
 	sparkpost.get({ uri: `/api/v1/recipient-validation/single/${emailAddress}` })
 	.then((response) => {
