@@ -725,7 +725,7 @@ Branch is a mobile linking platform powering deep links and mobile attribution, 
 Branch has built-in integrations for many email service provider setups including SparkPost, Braze + SparkPost, BlueShift + SparkPost, listed [here](https://help.branch.io/using-branch/docs/email-partners-list). Each of these follow the same standard [Univeral Email Integration Guide](https://help.branch.io/using-branch/docs/universal-email-integration-guide).
 
 
-Branch includes a CDN, in that it can host your secure Click Tracking Domain (CTD) and spec files, with a certificate for HTTPS access. However Branch has specific  deep linking features:
+Branch can host your secure Click Tracking Domain (CTD) and spec files, with a certificate for HTTPS access. However Branch also has specific deep linking features:
 
 * Branch creates the spec files (`apple-app-link-association`,  `assetlinks.json`) via configuration in your account, and hosts them on your click tracking domain(s) automatically.
 * Your app should include and use the Branch SDK to accept incoming click events and resolve links for your app, rather than native code.
@@ -756,7 +756,6 @@ The Branch dashboard shows the status of your email integration.
 Clicking the gearwheel shows:
 
 ![](media/deep-links-self-serve/deep-links-branch2.png)
-
 
 The [troubleshooting](#troubleshooting) tips below can also be used. For example, you can check your spec files are present on your Click Tracking Domain, and check your tracked links are resolving through Branch to SparkPost's endpoint.
 
