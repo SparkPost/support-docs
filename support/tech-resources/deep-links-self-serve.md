@@ -25,6 +25,9 @@ When correctly configured, a deep link takes your user directly from the email t
 
 The deep link will operate only when all of these match correctly. When you're ready, check your setup against the [summary of setup steps](#summary).
 
+If you are using a deep linking platform such as [branch.io](https://branch.io/) or [AppsFlyer](https://www.appsflyer.com/), these platforms automate some of the setup - [see here](#platforms).
+
+
 ##  <a name="app"></a> Writing your mobile app
 The following developer documentation explains the deep linking mechanisms in detail.
 - [Apple's Universal Links](https://developer.apple.com/library/content/documentation/General/Conceptual/AppSearch/UniversalLinks.html)
@@ -708,6 +711,54 @@ When you run the request, the forwarding decision and result is shown; in this c
 Likewise, if you run a request for a tracked link from a test email sent through your SparkPost account (with a path starting `/f/xyzzy...`), you should see your VCL code forward the request to SparkPost.
 
 ---
+
+## <a name="platforms"></a> Alternative setup with deep linking platforms
+
+If you are using a deep linking platform such as [branch.io](https://branch.io/) or [AppsFlyer](https://www.appsflyer.com/), these platforms automate some of the setup process for you, while also working in a specific way.
+
+### Branch
+
+Branch is a mobile linking platform powering deep links and mobile attribution, supporting web and other clients as well as iOS and Android. It provides an SDK which you need to include into your app - see [here](https://help.branch.io/developers-hub) for steps specific to the platforms you're using.
+
+[Universal Email overview](https://help.branch.io/using-branch/docs/branch-universal-email) is an introduction to the how Branch handles links in email.
+
+Branch has built-in integrations for many email service provider setups, including SparkPost, Braze + SparkPost, BlueShift + SparkPost, listed [here](https://help.branch.io/using-branch/docs/email-partners-list). Each of these follow the same standard [Univeral Email Integration Guide](https://help.branch.io/using-branch/docs/universal-email-integration-guide).
+
+
+Using Branch is different to using a general-purpose CDN, for several reasons:
+
+* Branch can host your secure Click Tracking Domain (CTD) for you, with a certificate for HTTPS access.
+* Branch creates the spec files (`apple-app-link-association`,  `assetlinks.json`) via configuration in your account, and hosts them on your click tracking domain(s) automatically.
+* Your app should include and use the Branch SDK to accept incoming click events and resolve links for your app.
+* Branch has a special link format, which can be used for testing with your app prior to using tracked emails. You choose a unique name for your `app.link`. This name can differ from your email Click Tracking Domain, and is speciifc to your Branch account.
+
+    ![](media/deep-links-self-serve/deep-links-branch-link1.png)
+
+Here are the steps to get your app running with Branch and SparkPost. Your source of help during this process is the Branch online documentation and support system. Steps 1 and 2 below are independent of email provider, and are done with your Branch account, code development enviroment, and Branch SDK.
+
+1. Download and integrate the Branch SDK into your apps ([iOS](https://help.branch.io/developers-hub/docs/ios-sdk-overview), [Android](https://help.branch.io/developers-hub/docs/android-sdk-overview)). Ensure your app has the expected code for receiving incoming events from the Branch SDK. Ensure your app is configured with your Branch account settings, and that Branch account is configured with your app ID & Bundle ID.
+1. Create a test message containing your `xyz.app.link` on your test device (e.g. using iMessage or email) and check that your app opens and receives the event.  It may be helpful to print received event parameters to the console during development.
+
+1. Follow the Branch [Univeral Email Integration Guide](https://help.branch.io/using-branch/docs/universal-email-integration-guide) to set up your Click Tracking Domain(s) in the Branch dashboard.
+
+    This example shows the standard SparkPost US endpoint address. Be sure to use the address for your SparkPost account region and type, see [here](./enabling-https-engagement-tracking-on-sparkpost/#endpoints).
+
+    ![](media/deep-links-self-serve/deep-links-branch-sparkpost-endpoint.png)
+
+1. The guide directs you to "Point DNS CNAME to Branch". Once this is done, follow the steps [here](./enabling-https-engagement-tracking-on-sparkpost/#switch-to-secure) to set your tracking domain in SparkPost to Secure mode and verify, if not verified already.
+
+1. You can now send email using the Branch-hosted Click Tracking Domain for your links. These should open as usual on a desktop browser, and open your app on mobile devices.
+
+The Branch dashboard shows the status of your email integration, for example
+
+![](media/deep-links-self-serve/deep-links-branch1.png)
+
+Clicking the gearwheel shows (for example):
+
+![](media/deep-links-self-serve/deep-links-branch2.png)
+
+
+The [troubleshooting](#troubleshooting) tips below can also be used with Branch if needed. For example, you can check your spec files are present on your CTD, and check your tracked links are resolving through Branch to SparkPost's endpoint.
 
 ## <a name="troubleshooting"></a>Troubleshooting tips
 
