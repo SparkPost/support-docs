@@ -25,6 +25,9 @@ When correctly configured, a deep link takes your user directly from the email t
 
 The deep link will operate only when all of these match correctly. When you're ready, check your setup against the [summary of setup steps](#summary).
 
+If you are using a deep linking platform such as [branch.io](https://branch.io/) or [AppsFlyer](https://www.appsflyer.com/), these platforms automate some of the setup - [see here](#platforms).
+
+
 ##  <a name="app"></a> Writing your mobile app
 The following developer documentation explains the deep linking mechanisms in detail.
 - [Apple's Universal Links](https://developer.apple.com/library/content/documentation/General/Conceptual/AppSearch/UniversalLinks.html)
@@ -74,21 +77,71 @@ Configure the `paths` section to match the links in your email HTML content, dep
 
 ```javascript
 [{
-    "relation": ["delegate_permission/common.handle_all_urls"],
-    "target": {
-        "namespace": "app_namespace",
-        "package_name": "com.example.deeplinking",
-        "sha256_cert_fingerprints":
-        [<Your_APP_FINGERPRINT>]
-    }
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "com.example.testlinks",
+    "sha256_cert_fingerprints":
+    ["<Your_APP_FINGERPRINT>"]
+  }
 }]
 ```
+The SHA256 fingerprint is unique to your particular app.
+
+#### Android App Links Assistant
+
+The [App Links Assistant](https://developer.android.com/studio/write/app-link-indexing) (Under the Tools menu) helps you configure the associated domains and permissions for your app, and generate the `assetlinks.json` file. It guides you step-by-step.
+
+1. Add URL intent filters
+
+    ![Android App Links Assistant](media/deep-links-self-serve/deep-links-android-app-assistant0.png)
+
+    ![Android App Links Assistant](media/deep-links-self-serve/deep-links-android-app-assistant1a.png)
+
+    Add your tracking domain URLs with Path set to "pathPrefix", and add your chosen prefix starting with `/f/`, for example `/f/open-in-app`. Your app can be registered to multiple URLs if you wish.
+
+    ![Android App Links Assistant](media/deep-links-self-serve/deep-links-android-app-assistant1.png)
+
+    Use the "Check URL mapping" box to test that your mapping works with a real URL.
+
+1. Add logic to handle the intent
+
+    This works for Java apps but not currently for Kotlin - see [here](#android) for a Kotlin example.
+
+1. Associate website
+
+    ![Android App Links Assistant](media/deep-links-self-serve/deep-links-android-app-assistant3.png)
+
+    Enter your site domain.
+
+    Choose "Signing config". During development, "debug" is fine.
+
+    Save your digital asset links file.
+
+1. Test on Device or Emulator
+
+    Test that your URL triggers your app.
+
+    ![Android App Links Assistant](media/deep-links-self-serve/deep-links-android-app-assistant4.png)
+
+1. Deploy your app.
+
+    <a name="android-ask"></a> On first open, by default, your recipients will be prompted to select whether to select your app. Android remembers the user's preference.
+
+    ![Android App first open](media/deep-links-self-serve/deep-links-android-first-time-open.png)
+
+ 1. <a name="autoverify"></a> In `AndroidManifest.xml`, you can set your domain `intent-filter` to `autoVerify` to favor opening your app instead of asking the user - see [here](https://developer.android.com/training/app-links/verify-site-associations).
 
 
+    ```xml
+    <intent-filter android:autoVerify="true">
+    ```
+
+    This requires your `assetlinks.json` file to be hosted on your specific tracking domain. This is explained further in the [hosting](#hosting) and [troubleshooting](#troubleshooting) sections.
 ---
 ## <a name="tracking"></a> Deep links and click tracking
 
-Setting up a [custom tracking domain](https://www.sparkpost.com/docs/tech-resources/enabling-multiple-custom-tracking-domains/) is useful for branding and email reputation. It is required for click tracking of deep links in your HTML email.
+Setting up a [custom tracking domain](./nabling-multiple-custom-tracking-domains) is useful for branding and email reputation. It is required for click tracking of deep links in your HTML email.
 
 It's best to choose a subdomain (e.g. `track.example.com`), so that subdomain can be redirected, while your website uses your organizational domain. Each tracking domain can serve regular email tracked links and deep links. Your content can use a mixture of both kinds of link inside the same email.
 
@@ -96,8 +149,8 @@ It's best to choose a subdomain (e.g. `track.example.com`), so that subdomain ca
 
 It is good practice to use secure (HTTPS) tracking domains, and it's essential if your website has an [HSTS](https://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security) policy. We have articles describing the setup of this for:
 
--  [Various CDNs](https://www.sparkpost.com/docs/tech-resources/enabling-https-engagement-tracking-on-sparkpost/)
-- Your own [web server reverse proxy such as NGINX](https://www.sparkpost.com/docs/tech-resources/using-proxy-https-tracking-domain/)
+-  [Various CDNs](./enabling-https-engagement-tracking-on-sparkpost)
+- Your own [web server reverse proxy such as NGINX](./using-proxy-https-tracking-domain)
 
 In both cases, your CDN (or proxy) redirects the specific tracking subdomain(s) to the SparkPost click tracking service, while your web content is served in the usual way.
 
@@ -107,7 +160,7 @@ It might be useful to understand how the SparkPost click tracking feature works 
 
 > When SparkPost encounters an anchor tag in an HTML email, it will replace the `href` attribute with a new URL pointing to the SparkPost click tracking service. When your recipient clicks that link, the SparkPost service receives the request (via CDN for HTTPS links), records the click, and redirects the recipient to your original URL.
 
-![](media/deep-links-self-serve/deep-links-click-tracking-simple.png)
+![Normal click tracking (without deep links)](media/deep-links-self-serve/deep-links-click-tracking-simple.png)
 *Normal click tracking (without deep links) - icons by [The Noun Project](https://thenounproject.com/)*
 
 Deep links supersede this flow; after checking the spec file, the  device passes the request directly to your app instead. This means your app will receive the tracked link via an API call and can show the user an appropriate part of your app.
@@ -143,12 +196,12 @@ You can control [click tracking for SMTP messages](https://app.sparkpost.com/acc
 
 ### Preferred solution: Using SparkPost click tracking on deep links
 
-![](media/deep-links-self-serve/deep-links-app-flow.png)
+![Deep link flow, app triggers click tracking](media/deep-links-self-serve/deep-links-app-flow.png)
 *Deep link flow, app triggers click tracking - icons by [The Noun Project](https://thenounproject.com/)*
 
 The device operating system "wakes up" your app with an API call, passing in  the URL. Your app issues an HTTP(S) GET to the URL, which registers the click. Your app receives the original URL in the response "Location" header; there's no need to follow the redirect and fetch the entire web-page.
 
-Set up your spec files to match your [custom tracking domain](https://www.sparkpost.com/docs/tech-resources/enabling-multiple-custom-tracking-domains/) and custom link sub-path.
+Set up your spec files to match your [custom tracking domain](./enabling-multiple-custom-tracking-domains) and custom link sub-path.
 
 #### Custom Link Sub-Paths
 
@@ -233,66 +286,113 @@ This simple code gets the `Location` header and also follows the redirect to fet
 
 In SparkPost event reporting, the attribute `user_agent` carries information on app name and OS version, for example `"testlinks/1 CFNetwork/1197 Darwin/20.0.0"`. This enables you to use SparkPost analytics to find out which links are being opened via your app.
 
-## Forwarding Clicks From Android To SparkPost
+## <a name="android"></a> Forwarding Clicks From Android To SparkPost
 
-When an Android email client recognizes that an app link has been clicked based on your apps' `AndroidManifest.xml`, it sends an `intent` which triggers the registered `Activity` in your app. You can then make an HTTP request to the link to trigger a "click" event in Sparkpost and retrieve the original tracked URL from the message.
+When an Android email client recognizes that an app link has been clicked based on your app `AndroidManifest.xml`, it sends an `intent` which triggers the registered activity in your app. Your app can then make the HTTP(S) request, to register the "click" event in SparkPost and retrieve the original tracked URL from the message.
 
-Here is a sample `Activity` with the corresponding `AsyncTask` that will perform an HTTP GET to the SparkPost click tracking service after an Android App Link has been clicked:
+Here is sample `MainActivity.kt` which uses the `OkHttp4` library to perform the HTTP(S) GET to the SparkPost click tracking service asynchronously, triggering the `onResponse` or `onFailure` functions on completion.
 
-```java
-public class LinkDestinationActivity extends AppCompatActivity{
+The incoming URL and the original unwrapped URL are shown on the app `TextView` elements.
 
-    @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.link_destination_activity);
+```kotlin
+package com.example.testlinks
 
-        //Grab the Tracking Link from the intent
-        Intent intent = getIntent();
-        Uri linkUri = intent.getData();
+// Example deep linking app
 
-        //Pass the tracking link into the AsyncTask for network communication
-        RequestTask task = new RequestTask();
-        task.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, linkUri.toString());
+import android.content.Intent
+import android.net.Uri
+import android.os.Bundle
+import android.util.Log
+import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+import okhttp3.*
+import java.io.IOException
+
+class MainActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        handleIntent(intent)
     }
 
-    /**
-     * Android requires network communication off the main UI thread
-     */
-    protected class RequestTask extends AsyncTask<String, Void, Void> {
+    override fun onNewIntent(intent: Intent) {
+        super.onNewIntent(intent)
+        Log.i("MainActivity", "onNewIntent called")
+        handleIntent(intent)
+    }
 
-        @Override
-        protected Void doInBackground(String... strings) {
-            String uri = strings[0];
-            //Activate Click Tracking
-            try {
-                URL url = new URL(uri);
-                HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+    private fun handleIntent(intent: Intent) {
+        Log.i("MainActivity", "handleIntent called")
 
-                InputStream in = new BufferedInputStream(connection.getInputStream());
+        val appLinkAction = intent.action
+        val appLinkData: Uri? = intent.data
+        if (Intent.ACTION_VIEW == appLinkAction) {
+            // handle URL
+            val res : TextView = findViewById(R.id.result)
+            res.text = appLinkData.toString()
 
-                int numRead = 0;
-                byte [] buffer = new byte[1024];
-                StringBuilder builder = new StringBuilder();
-
-                while ((numRead = in.read(buffer)) > 0) {
-                    String newString = new String(buffer, 0, numRead);
-                    builder.append(newString);
-                }
-                //Simply print out the response
-                System.out.println(builder.toString());
-                connection.disconnect();
-            } catch (MalformedURLException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            return null;
+            // Show this on our simple example app. The function updates the TextView itself
+            makeRequest(appLinkData)
         }
+    }
+
+    // Basic URL GET request.
+    // See https://guides.codepath.com/android/Using-OkHttp
+    //     https://square.github.io/okhttp/recipes/
+
+    private fun makeRequest(url: Uri?) {
+        // More efficient click-tracking with HTTP GET to obtain the "302" response, but not follow the redirect through to the Location.
+        val client = OkHttpClient.Builder()
+            .followRedirects(false)
+            .build()
+
+        val request = Request.Builder()
+            .url(url.toString())
+            .build()
+
+        client.newCall(request).enqueue(object : Callback {
+            override fun onFailure(call: Call, e: IOException) {
+                e.printStackTrace()
+            }
+
+            override fun onResponse(call: Call, response: Response) {
+                val locationURL = response.headers["Location"]
+                if (locationURL != null) {
+                    Log.i("locationURL", locationURL)
+                    // Show this on our simple example app
+                    val originalUrl : TextView = findViewById(R.id.originalURL)
+                    originalUrl.text = locationURL
+                }
+            }
+        })
     }
 }
 ```
-*Android Java example*
+*Android Kotlin example*
+
+The `makeRequest` function gets the `Location` header without following the redirect, which saves bandwidth and battery power. [See here](https://github.com/SparkPost/deep-links/tree/main/Android) for the complete example app.
+
+
+#### OkHttp library dependency
+
+In the project `app/build.gradle` file dependencies section, this line fetches and builds the library. We used this library because it gives the required control over the HTTP(S) stack to control how redirects are handled.
+
+```xml
+implementation 'com.squareup.okhttp3:okhttp:4.9.0'
+```
+
+Your `AndroidManifest.xml` also needs these permissions added to `<manifest` .. `>` scope:
+
+```xml
+<uses-permission android:name="android.permission.INTERNET" />
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+```
+
+#### Android User Agent
+
+In SparkPost event reporting, the attribute `user_agent` carries information on your app. In our demo app, it will be the default set by the library: `"okhttp/4.9.0"`. This enables you to use SparkPost analytics to find out which links are being opened via your app. You can [customise this](https://square.github.io/okhttp/interceptors/) in your code.
+
 
 ---
 ##  <a name="hosting"></a> Hosting the spec files
@@ -300,6 +400,13 @@ public class LinkDestinationActivity extends AppCompatActivity{
 You can use a CDN or an ordinary web-server to host your spec files. Ensure you have a valid certificate for your domain, as devices need to fetch these files using HTTPS.
 
 When set up, you can get a security report by running the [SSL Labs server test](https://www.ssllabs.com/ssltest/analyze.html).
+
+Step-by-step instructions follow, for
+* [Apache](#apache)
+* [NGINX](#nginx)
+* [AWS CloudFront](#aws-cloudfront)
+* [CloudFlare](#cloudflare)
+* [Fastly](fastly)
 
 ### <a name="apache"></a> Apache
 
@@ -317,15 +424,61 @@ When set up, you can get a security report by running the [SSL Labs server test]
 
 Click the padlock symbol and check the certificate is valid and as expected. Repeat for the Android `assetlinks.json` file.
 
-### NGINX
+#### Using specific tracking domain(s) with Apache
 
-1. Follow the steps in [this article](https://www.sparkpost.com/docs/tech-resources/using-proxy-https-tracking-domain/) to set up your secure tracking domain.
+The above simple instructions allow deep linking to work via your website's main `/.well-known` URL.
+
+To get Android to [autoverify](#autoverify) your app's domains (skipping the user ["Ask" step](#android-ask)), you need to serve spec files from your *specific* tracking domains, *while also forwarding* opens and clicks to SparkPost on that domain. Follow the steps in [this article](./using-proxy-https-tracking-domain), then modify the Apache patterns to look like this:
+
+
+```apacheconf
+#
+# Reverse proxy for SparkPost engagement tracking, and enable specific files to show through
+#
+<VirtualHost _default_:80>
+  ServerName yourtrackingdomain.example.com
+  ProxyPass "/f/" "http://spgo.io/f/"
+  ProxyPassReverse "/f/" "http://spgo.io/f/"
+  ProxyPass "/q/" "http://spgo.io/q/"
+  ProxyPassReverse "/q/" "http://spgo.io/q/"
+
+  Alias "/.well-known" "/var/www/html/securetrack/.well-known"
+</VirtualHost>
+
+<VirtualHost _default_:443>
+  ServerName yourtrackingdomain.example.com
+  ProxyPass "/f/" "http://spgo.io/f/"
+  ProxyPassReverse "/f/" "http://spgo.io/f/"
+  ProxyPass "/q/" "http://spgo.io/q/"
+  ProxyPassReverse "/q/" "http://spgo.io/q/"
+
+  Alias "/.well-known" "/var/www/html/securetrack/.well-known"
+
+  SSLEngine on
+  SSLCertificateFile "/opt/apache2/conf/server.crt"
+  SSLCertificateKeyFile "/opt/apache2/conf/server.key"
+  SSLProxyEngine on
+</VirtualHost>
+```
+The paths `/f/` and `/q/` are SparkPost tracked clicks and opens, respectively.
+
+The spec files are made available under URL `https://yourtrackingdomain.example.com/.well-known/` from a specific directory using the `Alias` directive. If you want your files to be identical to your main website, then you can omit this step.
+
+For completeness, the same routing is configured for HTTP on port 80, although mobile devices will request the spec files via HTTPS.
+
+To check your files are served correctly and Android autoverify is working - see [troubleshooting tips](#troubleshooting).
+
+---
+
+### <a name="nginx"></a>NGINX
+
+1. Follow the steps in [this article](./using-proxy-https-tracking-domain) to set up your secure tracking domain.
 
 1. Check where your NGINX root directory is, by running `nginx -V`. Look for the path shown after `--prefix=`, for example `--prefix=/usr/share/nginx` (and adjust the following example to suit). This should contain a directory named `html` which is used for your files.
 
 1. Within this, create a directory `.well-known` if it doesn't already exist, and upload/create your spec files here. This will usually require root privilege on your server.
 
-1. Add `location` blocks to your config to declare the spec files. Here is a complete example, including the engagement-tracking `proxy-pass` block done in step 1.
+1. Add `location` blocks to your config to declare the spec files on your tracking domain, which will allow Android to [autoverify](#autoverify). Here is a complete example, including the engagement-tracking `proxy-pass` block done in step 1.
 
     ```
     server {
@@ -364,19 +517,19 @@ Click the padlock symbol and check the certificate is valid and as expected. Rep
 
 1. Check your configuration is valid using `sudo nginx -t`. If no errors are reported, then reload using `sudo nginx -s reload`.
 
-1. Check that your spec files are correctly published and available on the Internet - see [troubleshooting tips](#troubleshooting).
+1. Check your files are served correctly and Android autoverify is working - see [troubleshooting tips](#troubleshooting).
 
 ---
 
-### AWS CloudFront
+### <a name="aws-cloudfront"></a> AWS CloudFront
 
-> As described [here](#spec-file), it's easy to create spec files in your web site top-level domain's `/.well-known` directory, and write your apps to match those domain(s) *and* the tracking sub-domains. The following steps are needed *only* if you wish to serve particular, different spec files for your *tracking domain* URLs.
+> As described [here](#spec-file), it's easy to create spec files in your web site. The following steps are needed *only* if you are using a CDN for HTTPS tracking and therefore need to configure the spec files there.
 
-First set up your secure tracking domain using CloudFront - instructions [here](https://www.sparkpost.com/docs/tech-resources/enabling-https-engagement-tracking-on-sparkpost/#aws-create). This establishes your tracking domain routing and certificate in AWS. This section describes how to:
+First set up your secure tracking domain using CloudFront - instructions [here](./enabling-https-engagement-tracking-on-sparkpost/#aws-create). This establishes your tracking domain routing and certificate in AWS. This section describes how to:
 
  * Create an S3 bucket for the spec files;
  * Set up our CloudFront distribution to selectively serve requests on our tracking domain from the bucket;
- * Test the files are served correctly;
+ * Test the files are served correctly on the specific tracking domain;
  * Ensure our app domain association matches our tracking domain.
 
 With CloudFront we are working with the specific sub-domain used for link tracking. It's therefore an alternative to updating your main website's `.well-known` directory.
@@ -465,15 +618,15 @@ With CloudFront we are working with the specific sub-domain used for link tracki
 
 1. Check your S3 bucket configuration is secure using [this tool](https://console.aws.amazon.com/trustedadvisor/home?#/category/security).
 
-1. In case of difficulty, see [troubleshooting tips](#troubleshooting).
+1. To check your files are served correctly and Android autoverify is working, see [troubleshooting tips](#troubleshooting).
 
 ---
 
-### CloudFlare
+### <a name="cloudflare"></a>CloudFlare
 
-> As described [here](#spec-file), it's easy to create spec files in your web site top-level domain's `/.well-known` directory, and write your apps to match those domain(s) *and* the tracking sub-domains. The following steps are needed *only* if you wish to serve particular, different spec files for your *tracking domain* URLs.
+> As described [here](#spec-file), it's easy to create spec files in your web site. The following steps are needed *only* if you are using a CDN for HTTPS tracking and therefore need to configure the spec files there.
 
-Unlike AWS CloudFront, you need to already have the spec files (`apple-app-site-assocation` and `assetlinks.json`) hosted elsewhere, such as on a web server.
+> Unlike AWS CloudFront, you need to already have the spec files (`apple-app-site-assocation` and `assetlinks.json`) hosted elsewhere, such as on a web server. When your clients request *`yourtracking.domain.com/.well-known/*`*, CloudFlare responds with a `301` "moved permanently" redirect to your files. We have found this can work, but it's not recommended by [Apple](https://developer.apple.com/library/archive/documentation/General/Conceptual/AppSearch/UniversalLinks.html) or [Google](https://developer.android.com/training/app-links/verify-site-associations). It prevents Android [autoverifying](#autoverify) your app.
 
 1. In your CloudFlare dashboard, an additional page rule is necessary to serve the spec files.
 
@@ -493,33 +646,170 @@ Unlike AWS CloudFront, you need to already have the spec files (`apple-app-site-
 
     ![](media/deep-links-self-serve/deep-links-cloudflare-all-page-rules.png)
 
-1. In case of difficulty, see [troubleshooting tips](#troubleshooting).
+1. To check your files are served correctly - see [troubleshooting tips](#troubleshooting).
 
 ---
+
+### <a name="fastly"></a>Fastly
+
+> As described [here](#spec-file), it's easy to create spec files in your web site. The following steps are needed *only* if you are using a CDN for HTTPS tracking and therefore need to configure the spec files there.
+
+> Unlike AWS CloudFront, you need to already have the spec files (`apple-app-site-assocation` and `assetlinks.json`) hosted elsewhere, such as on a web server. Fastly can serve requests for these files without sending the client a `301` "moved permanently" redirect, so it supports Android [autoverifying](#autoverify) your app.
+
+1. Set up your secure tracking domain - instructions [here](./enabling-https-engagement-tracking-on-sparkpost/#fastly-create). This establishes your tracking domain routing and certificate in Fastly.
+
+1. "Clone" your current configuration. This gives a draft config to edit. The version number increments, while your previous version continues to be active.
+
+    ![](media/deep-links-self-serve/deep-links-fastly-clone.png)
+
+    The following steps should be done on your new draft config.
+
+1. Select Origins / Hosts, then Create a Host.
+
+    ![](media/deep-links-self-serve/deep-links-fastly-add-host.png)
+
+    Enter the address of your website where the spec files will be served. Use the pencil "edit" icon to give your host a meaningful name.
+
+1. Select "Attach a condition", give this a name, such as "well-known". In the "Apply if ..." box, enter the following. The `~` applies a Perl-like regular-expression match on the incoming URL path.
+
+    ```perl
+    req.url ~ "^/\.well-known/.*"
+    ```
+
+      ![](media/deep-links-self-serve/deep-links-fastly-condition.png)
+
+    Leave the priority settings as default.
+
+1. Your host settings should now look like this.
+
+    ![](media/deep-links-self-serve/deep-links-fastly-hosts2.png)
+
+1. Select "Activate" to make your new configuration live.
+
+1. Check your files are served correctly - see [troubleshooting tips](#troubleshooting).
+
+#### Background info: VCL, Fastly boilerplate and "Fiddle"
+
+Fastly is based on [Varnish](https://en.wikipedia.org/wiki/Varnish_(software)) HTTP accelerator, and uses Perl-like [Varnish Configuration Language (VCL)](https://docs.fastly.com/en/guides/guide-to-vcl) to configure forwarding rules. Your entire configuration is a VCL file, which you can view using the "Show VCL" option. The condition you created appears in a section called
+
+```perl
+sub vcl_recv {
+
+}
+```
+
+For more advanced VCL capabilities, start with the ["boilerplate" code](https://developer.fastly.com/learning/vcl/using/). Edit, then upload it back.
+
+You can also prototype VCL separately from your main configuration, using the online [Fastly Fiddle](https://fiddle.fastlydemo.net/) tool; see [this article](https://www.fastly.com/blog/testing-new-ideas-fastly-fiddle). You enter the origin servers, custom VCL code and test requests.
+
+![](media/deep-links-self-serve/deep-links-fastly-fiddle.png)
+
+When you run the request, the forwarding decision and result is shown; in this case, fetching the Apple spec file from an Apache server.
+
+![](media/deep-links-self-serve/deep-links-fastly-fiddle-result.png)
+
+Likewise, if you run a request for a tracked link from a test email sent through your SparkPost account (with a path starting `/f/`), you should see your VCL code forward the request to SparkPost.
+
+---
+
+## <a name="platforms"></a> Alternative setup with deep linking platforms
+
+If you are using a deep linking platform such as [branch.io](https://branch.io/) or [AppsFlyer](https://www.appsflyer.com/), these platforms automate some of the setup process for you, while also working in a specific way.
+
+### Branch
+
+Branch is a mobile linking platform powering deep links and mobile attribution, supporting web and other clients as well as iOS and Android. It provides an SDK which you need to include into your app - see [here](https://help.branch.io/developers-hub) for specific steps for the platforms you're using.
+
+[Universal Email overview](https://help.branch.io/using-branch/docs/branch-universal-email) is an introduction to the how Branch handles links in email.
+
+Branch has built-in integrations for many email service provider setups including SparkPost, Braze + SparkPost, BlueShift + SparkPost, listed [here](https://help.branch.io/using-branch/docs/email-partners-list). Each of these follow the same standard [Univeral Email Integration Guide](https://help.branch.io/using-branch/docs/universal-email-integration-guide).
+
+
+Branch can host your secure Click Tracking Domain (CTD) and spec files, with a certificate for HTTPS access. However Branch also has specific deep linking features:
+
+* Branch creates the spec files (`apple-app-link-association`,  `assetlinks.json`) via configuration in your account, and hosts them on your click tracking domain(s) automatically.
+* Your app should include and use the Branch SDK to accept incoming click events and resolve links for your app, rather than native code.
+
+Branch also has a special link format, which can be used for testing with your app prior to testing with tracked email links. You choose a unique name for your `app.link`. This name differs from your email Click Tracking Domain, and is specific to your Branch account.
+
+![](media/deep-links-self-serve/deep-links-branch-link1.png)
+
+Here are the steps to get your app running with Branch and SparkPost. Your source of help during this process is the Branch online documentation and support system. The first steps are independent of email provider, and are done with your Branch account, code development enviroment, and Branch SDK.
+
+1. Download and integrate the Branch SDK into your apps ([iOS](https://help.branch.io/developers-hub/docs/ios-sdk-overview), [Android](https://help.branch.io/developers-hub/docs/android-sdk-overview)). Ensure your app has the expected code for receiving incoming events from the Branch SDK. Ensure your app is configured with your Branch account settings. Ensure your Branch account is configured with your app ID & Bundle ID.
+1. Create a test message containing your `xyz.app.link` on your test device (e.g. using iMessage or email) and check that your app opens and receives the event.  It may be helpful to print received event parameters to the console during development.
+
+1. Follow the Branch [Univeral Email Integration Guide](https://help.branch.io/using-branch/docs/universal-email-integration-guide) to set up your Click Tracking Domain(s) in the Branch dashboard.
+
+    This example shows the standard SparkPost US endpoint address. Be sure to use the address for your SparkPost account region and type, see [here](./enabling-https-engagement-tracking-on-sparkpost/#endpoints).
+
+    ![](media/deep-links-self-serve/deep-links-branch-sparkpost-endpoint.png)
+
+1. The guide directs you to "Point DNS CNAME to Branch". Once this is done, follow the steps [here](./enabling-https-engagement-tracking-on-sparkpost/#switch-to-secure) to set your tracking domain in SparkPost to Secure mode and verify, if not verified already.
+
+1. You can now send email using the Branch-hosted Click Tracking Domain for your links. These should open as usual on a desktop browser, and open your app on mobile devices.
+
+The Branch dashboard shows the status of your email integration.
+
+![](media/deep-links-self-serve/deep-links-branch1.png)
+
+Clicking the gearwheel shows:
+
+![](media/deep-links-self-serve/deep-links-branch2.png)
+
+The [troubleshooting](#troubleshooting) tips below can also be used. For example, you can check your spec files are present on your Click Tracking Domain, and check your tracked links are resolving through Branch to SparkPost's endpoint.
+
 ## <a name="troubleshooting"></a>Troubleshooting tips
 
 ### Check your spec files
 
 You can check your spec files are correctly published and available on the Internet, using `curl` or a web browser. Be sure to specify `https`.
 
-```
-curl https://##your-tracking-domain-here##/.well-known/apple-app-site-association
+```bash
+curl https://your-tracking-domain-here/.well-known/apple-app-site-association
 
-curl https://##your-tracking-domain-here##/.well-known/assetlinks.json
+curl https://your-tracking-domain-here/.well-known/assetlinks.json
 ```
 
 > Note: If your tracking sub-domain does not have spec file(s), mobile devices will also look on the root domain for files in the `/.well-known` directory. This is shown in the above simple [Apache example](#apache).
 
 ### Check your tracked links
 
-You can view your encoded links using Gmail, by selecting the three dots menu top-right, then "Show Original". Check the domain is as expected, and the `<A HREF ..` links are using HTTPS.
+You can view your encoded links using Gmail, by selecting the three dots menu top-right, then "Show Original". Check the domain is as expected, and the `<A HREF ..` links are using HTTPS. Check that clicking the link takes you to the expected landing page.
+
+You can then use `curl` to request the tracked link, with the `-v` option to see the details of the tracked link request and response; see [here](./enabling-https-engagement-tracking-on-sparkpost#troubleshooting).
 
 ### Check your app matches your tracking domain
 
-The domains entitlement in your app(s) must match your tracking domain. This can be done specifically, or with a wildcard matching a sub-domain. Refer to
+The domains entitlement in your app(s) must match your tracking domain. This can be done specifically, or (with Apple) a wildcard matching sub-domain. Refer to
 * [Apple](#ios-spec-file) configuration
 * [Android](android-spec-file) configuration
 
+
+### Android: testing autoverify
+
+Getting your app to autoverify requires the `assetlinks.json` file to be available on your _specific_ tracking domain rather than relying on the organizational domain (main website).
+
+To test autoverify works for your domain(s), start with a fresh install of your app, as mentioned in [this article](#autoverify-article), because Android remembers the user's choice.
+
+If you are getting the ["ask" prompt](#android-ask) to choose which application opens the link, you can use the `adb` debugger to investigate the status of your app. If the Status is shown as `ask` then autoverify is not working as intended. The value `always : 200000000` means it is verified.
+
+```bash
+$ adb reconnect
+reconnecting emulator-5554 [device]
+
+$ adb shell dumpsys package d
+App verification status:
+:
+:
+  Package: com.example.testlinks
+  Domains: track.mydomain.com track2.mydomain.com
+  Status:  always : 200000000
+```
+
+If your app has more than one associated domain, the status will be "`ask`" if _any_ of them fail to autoverify. You can use `adb` to check your setup from Android Studio without having to delete/reinstall. For more information on using the `adb` debugger, see [this article](#adb).
+
+> Note: [CloudFlare](#cloudflare) CDN is problematic for Android autoverify, owing to its use of 301 redirect for files.
 
 ## Further reading
 
@@ -531,3 +821,7 @@ The domains entitlement in your app(s) must match your tracking domain. This can
 1. View email internals including tracked links, with Gmail [Show Original](https://support.google.com/mail/answer/29436?hl=en-GB)
 1. NGINX [Location](https://docs.nginx.com/nginx/admin-guide/web-server/web-server/#locations) block
 1. [Understanding and Configuring Cloudflare Page Rules](https://support.cloudflare.com/hc/en-us/articles/218411427-Understanding-and-Configuring-Cloudflare-Page-Rules-Page-Rules-Tutorial-)
+1. [Android App Links documentation](https://developer.android.com/training/app-links/verify-site-associations) on auto-verify
+1. <a name="autoverify-article"></a>Article on [Android deep links](https://levelup.gitconnected.com/the-wrong-hacked-and-correct-way-of-android-deep-linking-for-redirected-multisite-with-autoverify-5c72fb1f8053) the wrong and right way (specifically, auto-verify on variations of your different domains)
+1. <a name="adb"></a> Article on [investigating Android deep-link problems with adb](https://medium.com/mobile-app-development-publication/unrealized-deeplink-bug-on-many-apps-6ac78a557702)
+1. Android Studio [App Links Assistant](https://developer.android.com/studio/write/app-link-indexing) tool
