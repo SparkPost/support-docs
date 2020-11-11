@@ -205,7 +205,7 @@ For up to date information on creating a distribution via CloudFront, please ref
 
         _Example DNS provider CNAME setup_
 
-        You can verify that the routing is successful using `ping` on your created record. You should see a response from `xyzzy.cloudfront.net`.
+        You can verify that the routing is successful using `ping` on your created record. You should see a response from CloudFront.
 
 1. Follow [these steps](#switch-to-secure) to update and verify your tracking domain.
 

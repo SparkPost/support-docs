@@ -708,7 +708,7 @@ When you run the request, the forwarding decision and result is shown; in this c
 
 ![](media/deep-links-self-serve/deep-links-fastly-fiddle-result.png)
 
-Likewise, if you run a request for a tracked link from a test email sent through your SparkPost account (with a path starting `/f/xyzzy...`), you should see your VCL code forward the request to SparkPost.
+Likewise, if you run a request for a tracked link from a test email sent through your SparkPost account (with a path starting `/f/`), you should see your VCL code forward the request to SparkPost.
 
 ---
 
