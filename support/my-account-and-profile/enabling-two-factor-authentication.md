@@ -5,6 +5,12 @@ description: "How to enable two factor authentication on your account."
 
 Add an extra layer of security to your account with two-factor authentication. This allows you to use your account in conjunction with a standard 3rd party authenticator app such as [Google Authenticator](https://support.google.com/accounts/answer/1066447), [Duo](https://duo.com/product/trusted-users/two-factor-authentication/duo-mobile), or [Authy](https://www.authy.com/app/mobile/) available for iOS, Android, etc. Enabling two-factor authentication will prevent anyone that does not have access to your authenticator app or backup codes from logging into your account - even if they somehow get your username and password.
 
+* [Enabling Two-Factor Authentication](#enabling-two-factor-authentication)
+* [Requiring Two-Factio Athentication For All Users](#requiring-two-factor-authentication-for-all-users)
+* [Recovering Access](#recovering-access-to-account)
+
+# Enabling Two-Factor Authentication
+
 To enable two-factor authentication, go to your [profile](https://app.sparkpost.com/account/profile)([EU](https://app.eu.sparkpost.com/account/profile)).
 
 ![](media/enabling-two-factor-authentication/profile-page.png)
@@ -13,9 +19,7 @@ Click on **Enable 2FA** and you'll see a screen like this:
 
 ![](media/enabling-two-factor-authentication/2-factor-auth-popup.png)
 
-Open up your chosen authenticator app and scan the QR code. If you can’t scan the QR code, you can also type the 23-character key into your App. 
-
-**NOTE: It is essential that you do store the authentication token somewhere safe! We are unable to reset or remove Two-Factor Authentication from your account should you lose your device.**
+Open up your chosen authenticator app and scan the QR code. If you can’t scan the QR code, you can also type the 23-character key into your App. Note: You can store the key somewhere safe in order to re-configure two-factor auth on a new device.
 
 Enter a generated 2FA passcode and click on **Enable 2FA** to finish enabling 2 factor authentication.
 
