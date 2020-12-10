@@ -5,6 +5,8 @@ description: "Learn how to enable SSO for your SparkPost account and get answers
 
 SparkPost supports single sign-on (SSO) through any SAML provider. SSO is enabled via the UI by an Admin level user. You can also set up [SCIM user provisioning through OKTA](https://www.sparkpost.com/docs/my-account-and-profile/scim/).
 
+Check this [article](https://www.sparkpost.com/docs/my-account-and-profile/sso/) to verify that your account's plan level supports SSO.
+
 ## Enable SSO
 
 Enabling SSO is a 3-step process:
