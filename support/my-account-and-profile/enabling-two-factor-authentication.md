@@ -6,7 +6,7 @@ description: "How to enable two factor authentication on your account."
 Add an extra layer of security to your account with two-factor authentication. This allows you to use your account in conjunction with a standard 3rd party authenticator app such as [Google Authenticator](https://support.google.com/accounts/answer/1066447), [Duo](https://duo.com/product/trusted-users/two-factor-authentication/duo-mobile), or [Authy](https://www.authy.com/app/mobile/) available for iOS, Android, etc. Enabling two-factor authentication will prevent anyone that does not have access to your authenticator app or backup codes from logging into your account - even if they somehow get your username and password.
 
 * [Enabling Two-Factor Authentication](#enabling-two-factor-authentication)
-* [Requiring Two-Factio Athentication For All Users](#requiring-two-factor-authentication-for-all-users)
+* [Requiring Two-Factor Authentication For All Users](#requiring-two-factor-authentication-for-all-users)
 * [Recovering Access](#recovering-access-to-account)
 
 # Enabling Two-Factor Authentication
@@ -41,18 +41,18 @@ Now you are all set! Two-Factor Authentication is now enabled for your account.
 
 # Requiring Two-factor Authentication For All Users
 Requiring two-factor authentication enforces that *all* users on the account (including the admin) set up two-factor authentication before performing sensitive account actions. Once set, any users without two-factor authentication enabled will be required to logout and set up two-factor authentication on next login.
-**Turning on the Two-factor requirment will disable single sign-on for all users.**
+**Turning on the Two-factor requirement will disable single sign-on for all users.**
 
 ### Enabling Two-factor Authentication Requirement
 Two-factor authentication can be configured from an account admini's [Account Settings](https://app.eu.sparkpost.com/account/profile) ([EU](https://app.eu.sparkpost.com/account/settings)) page in the **Two-factor Authentication** section. When disabled, the status will be set to `Optional`.
 
 ![](media/enabling-two-factor-authentication/enable-2fa-enforcement.png)
 
-To require two-factor authentication for all users, set the slider the from `Off` to `On`.
+To require two-factor authentication for all users, set the slider from `Off` to `On`.
 
 ![](media/enabling-two-factor-authentication/warning-enable-2fa-enforcement.png)
 
-A warning will prompt you to confirm the changes to the account. Once enabled, the status will change to `Required`. An email will be sent all users informing them of the new security requirements, along with steps needed to set up two-factor authentication.
+A warning will prompt you to confirm the changes to the account. Once enabled, the status will change to `Required`. An email will be sent to all users informing them of the new security requirements, along with steps needed to set up two-factor authentication.
 
 ### Disabling Two-factor Authentication Requirement
 An account admin can remove the requirement for two-factor authentication from the [Account Settings](https://app.sparkpost.com/account/settings) ([EU](https://app.eu.sparkpost.com/account/settings)) page.
@@ -63,7 +63,7 @@ You will be prompted with a warning notifying you of potential changes to the sp
 
 # Recovering Access to Account
 In the event that a user has lost or replaced their authentication device while two-factor authentication is enabled, they have a few options to recover access to their account:
-* Reconfigure on a different device or app using orginal 23 character key.
+* Reconfigure on a different device or app using original 23 character key.
 * Enter a backup code into the two-factor log in screen, gain access, then re-configure their two-factor authentication settings.
 * Have an account admin reset their two-factor authentication settings.
 
