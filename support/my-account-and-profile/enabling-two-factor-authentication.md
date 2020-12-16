@@ -68,7 +68,7 @@ In the event that a user has lost or replaced their authentication device while 
 * Have an account admin reset their two-factor authentication settings.
 
 ### Resetting Two-Factor Settings 
-An account admin can reset the user's two-factor settings, allowing them to log in with just their password. If an admin lost their authentication device and there are no other admins that can reset their settings, please email compliance@sparkpost.com for help recovering the account.
+An account admin can reset the user's two-factor settings, allowing them to log in with just their password. If an admin lost their authentication device and there are no other admins that can reset their settings, please email [compliance@sparkpost.com](mailto:compliance@sparkpost.com) for help recovering the account.
 
 If two-factor authentication is required for all users, the user will need to re-enable two-factor authentication at next login. **Any existing backup codes will be invalidated and new codes will need to be requested by the user.** 
 
