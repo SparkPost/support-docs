@@ -13,7 +13,7 @@ Generally speaking, four events are recorded for each message: injection, delive
 
  # Webhook Batch Retry Logic
 
-* The webhook service will reattempt to post patches for which it receives a non 2xx response code.
+* The webhook service will reattempt to post batches for which it receives a non 2xx response code.
 * A timeout for any particular batch posting attempt will occur after **10 seconds** if the endpoint does not successfully accept a given batch.
 * The retry logic for the posting of batches gradually increases in a logarithmic fashion and will cease retrying altogether after 8 hours. This means you can potentially lose event data if your webhook consumer is completely down for 8 hours or longer. 12 total attempts will be made to POST the webhook batch to the webhook endpoint (the initial attempt + 11 retries).
 
