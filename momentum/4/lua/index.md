@@ -70,6 +70,7 @@ description: "This section details all Lua functions Functions are ordered alpha
 | [msys.registerAuth](/momentum/4/lua/ref-msys-register-auth) | Register an authentication/authorization scheme that can be used for SMTP or control channel authentication |
 | [msys.registerControl](/momentum/4/lua/ref-msys-register-control) | Register a command with the control channel subsystem |
 | [msys.registerModule](/momentum/4/lua/ref-msys-register-module) | Register a Lua module with the system. |
+| [msys.runInInst](/momentum/4/lua/ref-msys-runininst) | Run a function in a specific event loop |
 | [msys.runInPool](/momentum/4/lua/ref-msys-runinpool) | Run a function in a separate threadpool |
 | [msys.sleep](/momentum/4/lua/ref-msys-sleep) | When called in the scheduler thread, suspend the current session for the specified duration |
 | [msys.snmpTrap](/momentum/4/lua/ref-msys-snmp-trap) | Issue an SNMP trap |
