@@ -56,7 +56,7 @@ How alerts track your metrics and when they send notifications.
 ### Triggers and Incidents
 An alert triggers when the metric it tracks breaks the threshold you set. When an alert triggers for the first time, an incident is created. **Alerts send notifications when a new incident is created.** You can see the most recent alerts that triggered from the [Alerts page](https://app.sparkpost.com/alerts)([EU](https://app.eu.sparkpost.com/alerts)). Click on any alert to see it's active or closed incidents.
 
-Incidents remain open until the alert doesn't trigger again for at least 30 mintues. If a metric continues to trigger while an incident is open, the incident will be updated to reflect the metric's latest value, but notifications will not be sent. Incidents can be open and updated for up to 24 hours. If a metric continues trigger past 24 hours, the alert will create a new incident and send notifications again.
+Incidents remain open until the alert doesn't trigger again for at least 30 minutes. If a metric continues to trigger while an incident is open, the incident will be updated to reflect the metric's latest value, but notifications will not be sent. Incidents can be open and updated for up to 24 hours. If a metric continues trigger past 24 hours, the alert will create a new incident and send notifications again.
 
 **Alerts trigger and create individual incidents for each filter they track.** For example, if your alert tracks 2 sendings domains, up two 2 independent incidents could be open for the alert at any time. The subaccounts groups "Master and all subaccounts" and "Any subaccount" act as one filter each.
 
