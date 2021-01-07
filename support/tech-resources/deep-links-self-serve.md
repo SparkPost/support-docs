@@ -25,8 +25,6 @@ When correctly configured, a deep link takes your user directly from the email t
 
 The deep link will operate only when all of these match correctly. When you're ready, check your setup against the [summary of setup steps](#summary).
 
-If you are using a deep linking platform such as [branch.io](https://branch.io/) or [AppsFlyer](https://www.appsflyer.com/), these platforms automate some of the setup - [see here](#platforms).
-
 
 ##  <a name="app"></a> Writing your mobile app
 The following developer documentation explains the deep linking mechanisms in detail.
@@ -96,6 +94,7 @@ The [App Links Assistant](https://developer.android.com/studio/write/app-link-in
 
     ![Android App Links Assistant](media/deep-links-self-serve/deep-links-android-app-assistant0.png)
 
+    URL Mapping Editor:
     ![Android App Links Assistant](media/deep-links-self-serve/deep-links-android-app-assistant1a.png)
 
     Add your tracking domain URLs with Path set to "pathPrefix", and add your chosen prefix starting with `/f/`, for example `/f/open-in-app`. Your app can be registered to multiple URLs if you wish.
@@ -407,6 +406,11 @@ Step-by-step instructions follow, for
 * [AWS CloudFront](#aws-cloudfront)
 * [CloudFlare](#cloudflare)
 * [Fastly](fastly)
+* [Google Cloud](google-cloud)
+* [Branch](platforms)
+* [AppsFlyer](platforms)
+
+If you are using a deep linking platform such as [Branch](https://branch.io/) or [AppsFlyer](https://www.appsflyer.com/), these platforms automate the spec file creation for you.
 
 ### <a name="apache"></a> Apache
 
@@ -712,9 +716,20 @@ Likewise, if you run a request for a tracked link from a test email sent through
 
 ---
 
+### <a name="google-cloud"></a>Google Cloud Platform
+
+Like AWS CloudFront, you can host the spec files (`apple-app-site-assocation` and `assetlinks.json`) directly on [Google Cloud Platform](https://cloud.google.com/) (GCP) as well as handling HTTPS tracking.
+
+1. Set up your secure tracking domain - instructions [here](./enabling-https-engagement-tracking-on-sparkpost/#gcp-create). This establishes your tracking domain routing and certificate.
+
+1. Create a "Backend bucket" to serve your spec files.
+
+
+---
+
 ## <a name="platforms"></a> Alternative setup with deep linking platforms
 
-If you are using a deep linking platform such as [branch.io](https://branch.io/) or [AppsFlyer](https://www.appsflyer.com/), these platforms automate some of the setup process for you, while also working in a specific way.
+If you are using a deep linking platform such as [Branch](https://branch.io/) or [AppsFlyer](https://www.appsflyer.com/), these platforms automate some of the setup process for you, while also working in a specific way.
 
 ### Branch
 
@@ -758,6 +773,18 @@ Clicking the gearwheel shows:
 ![](media/deep-links-self-serve/deep-links-branch2.png)
 
 The [troubleshooting](#troubleshooting) tips below can also be used. For example, you can check your spec files are present on your Click Tracking Domain, and check your tracked links are resolving through Branch to SparkPost's endpoint.
+
+
+### AppsFlyer
+
+AppsFlyer supports [deep links](https://www.appsflyer.com/product/one-link-deep-linking/) from web-to-app, email, and social sources, with built-in integrations for many [email service provider setups](https://support.appsflyer.com/hc/en-us/articles/360004556077-ESPs-Email-service-providers-explained).
+
+
+- Include the [AppsFlyer SDK](https://support.appsflyer.com/hc/en-us/categories/201114756-SDK-integration-) into your app. Your source of help during this process is the AppsFlyer online documentation and support system.
+
+- For email integration, follow these [step by step instructions](https://support.appsflyer.com/hc/en-us/articles/360014381317) for SparkPost. AppsFlyer supports [Braze+SparkPost](https://support.appsflyer.com/hc/en-us/articles/360001437497-Braze) in the same way.
+
+Complete the steps [here](./enabling-https-engagement-tracking-on-sparkpost/#switch-to-secure) to set your tracking domain in SparkPost to Secure mode and verify, if not verified already.
 
 ## <a name="troubleshooting"></a>Troubleshooting tips
 

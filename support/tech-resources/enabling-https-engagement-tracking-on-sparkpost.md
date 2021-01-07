@@ -29,6 +29,9 @@ This document includes step by step guides for the following CDNs.
 * Fastly:
     * [Create a Domain](#fastly-create)
     * [Issue a Certificate](#fastly-cert)
+* Google Cloud Platform:
+    * [Create a Domain](#gcp-create)
+    * [Issue a Certificate](#gcp-cert)
 
 > If you plan to use [deep linking](./deep-links-self-serve) with Android apps, CloudFlare serves files via a `301` redirect, which can prevent Android apps autoverifying domains.
 
@@ -352,6 +355,150 @@ Fastly keeps previous versions of your configuration, and can show the "diff" be
 
 ![](media/enabling-https-engagement-tracking-on-sparkpost/fastly-stats.png)
 
+---
+
+## <a name="gcp-create"></a> Step by Step Guide with Google Cloud Platform
+
+Unlike some other services, [Google Cloud Platform](https://cloud.google.com/) (GCP) load-balancers can serve HTTPS domains and forward to endpoints that lie outside your GCP project, without configuring a CDN. This makes it  simpler to configure for SparkPost tracking domains, as there is no caching / Time to Live to consider.
+
+1. GCP organizes resources into named projects. From the top menu, select an existing project or (as we'll do here) create a new project.
+
+    ![](media/enabling-https-engagement-tracking-on-sparkpost/gcp-new-project.png)
+
+
+1. On the main menu (top left), scroll down and select "Network Services" then "Load balancing".
+
+    It will take a few minutes for your project to become ready to add services.
+
+    ![](media/enabling-https-engagement-tracking-on-sparkpost/gcp-network-services.png)
+
+ 1. Choose "Create load balancer".
+
+    ![](media/enabling-https-engagement-tracking-on-sparkpost/gcp-load-balancing.png)
+
+1. You will see three options.
+
+    ![](media/enabling-https-engagement-tracking-on-sparkpost/gcp-https-lb.png)
+
+    Choose "HTTP(S) Load Balancing" and Start configuration.
+
+1. On the question "Internet facing or internal only", choose "From Internet to my VMs" and continue.
+
+
+    ![](media/enabling-https-engagement-tracking-on-sparkpost/gcp-lb1.png)
+
+1. Give your load balancer a meaningful name.
+
+    ![](media/enabling-https-engagement-tracking-on-sparkpost/gcp-name.png)
+
+    Note the remaining setup steps:
+
+    * Backend (which will be SparkPost's engagement tracking endpoint)
+    * Host and Path Rules, and
+    * Frontend configuration (which includes the certificate).
+
+    We need to configure each of these before the load-balancer can be created.
+
+1. Backend configuration:
+
+    ![](media/enabling-https-engagement-tracking-on-sparkpost/gcp-backend1.png)
+
+    Choose Backend services / Create a backend service. Give the backend service a name, e.g. "sparkpost-engagement-tracking".
+
+    ![](media/enabling-https-engagement-tracking-on-sparkpost/gcp-new-backend-group.png)
+
+    * For "Backend type", choose "Internet network endpoint group".
+    * For Protocol, choose "HTTPS". Leave "Named port" and "Timeout" at defaults.
+    * In the "New backend" dialog, choose "Create Internet network endpoint group". This will open a new browser tab.
+
+
+1.  Give your "Network Endpoint Group" a name:
+
+    ![](media/enabling-https-engagement-tracking-on-sparkpost/gcp-create-network-endpoint-group.png)
+
+    * Set Default port to 443.
+    * On "Add through", select "Fully qualified domain name and port".
+    * On "Fully qualified domain name", add the correct endpoint address for your service, see [here](#endpoints).
+    * Select "Create".
+
+    You should now see your "Network Endpoint Group" exists.
+
+     ![](media/enabling-https-engagement-tracking-on-sparkpost/gcp-network-endpoint-group-exists.png)
+
+    Close this tab, and **return to your previous tab**. Unfortunately this does not auto-refresh with your newly created Network Endpoint Group, so you'll need to refresh your browser to make it visible and repeat some steps.
+
+    * Give the backend service a name, e.g. "sparkpost-engagement-tracking".
+    * For "Backend type", choose "Internet network endpoint group".
+    * For Protocol, choose "HTTPS". Leave "Named port" and "Timeout" at defaults.
+    * For Backends, under "Edit item", choose your newly created "Network Endpoint group" from the drop-down list, then choose "Done".
+
+      ![](media/enabling-https-engagement-tracking-on-sparkpost/gcp-choose-backend-group.png)
+
+    * Leave "Enable Cloud CDN" unchecked and the following settings at defaults.
+
+    * Scroll to the end of the page and select "Create".
+
+      ![](media/enabling-https-engagement-tracking-on-sparkpost/gcp-backend-create.png)
+
+    * This returns you to the "New HTTP(S) load balancer" view, showing that "Backend configuration" and "Host and path rules" are initialized.
+
+      ![](media/enabling-https-engagement-tracking-on-sparkpost/gcp-https-lb-step2.png)
+
+1. Host and path rules: the above default confguration passes all traffic on the load balancer through to the SparkPost engagement tracking back end. This is sufficient.
+
+1. <a name="gcp-frontend"></a>Frontend configuration
+
+    ![](media/enabling-https-engagement-tracking-on-sparkpost/gcp-front-end-config.png)
+
+    * Enter a name.
+    * For Protocol, select HTTPS.
+    * For Certificate, choose "Create a new certificate". If you have an existing certificate, you can upload it into the dialog.
+
+      ![](media/enabling-https-engagement-tracking-on-sparkpost/gcp-front-end-cert.png)
+
+    * To create a new certificate, follow [these steps](#gcp-cert). The certificate will be fully provisioned only after you map your domain to the frontend service.
+
+1. Review and finalize
+
+    Select the Review and Finalize option. Your configuration should now look similar to this:
+
+    ![](media/enabling-https-engagement-tracking-on-sparkpost/gcp-review-finalize.png)
+
+    * Ensure your load balancer has a valid name.
+    * Choose "Create". After a few seconds, you should see the following status.
+
+    ![](media/enabling-https-engagement-tracking-on-sparkpost/gcp-lb-created.png)
+
+## <a name="gcp-cert"></a> Issue a certificate with Google Cloud
+
+Creating a new certificate is offered as part of the configuration flow when you are creating a new HTTP(S) load balancer. If you wish to update an existing one, log in to Google Cloud Platform.
+
+1. On the main menu (top left), scroll down and select "Network Services" then "Load balancing". Select Frontend configuration.
+
+    * If you don't have a named certificate present on your frontend, follow the menu [above](#gcp-frontend) to begin the process.
+    * Once you have a named certificate on your frontend, it should look like this (note: the certicate is not active yet). It may take a few minutes for the `IP:Port` to be allocated.
+
+      ![](media/enabling-https-engagement-tracking-on-sparkpost/gcp-front-end-got-ip-port.png)
+
+    * Click on the certificate name (underlined, blue above). You should see the status similar to this.
+
+      ![](media/enabling-https-engagement-tracking-on-sparkpost/gcp-front-end-cert-provisioning.png)
+
+2. Take the IP address from the `IP:Port` value above, and use it to create your DNS record to point your tracking domain toward the load-balancer front end with an [A record](https://en.wikipedia.org/wiki/List_of_DNS_record_types). The entry will vary depending on your DNS provider; for example, on GoDaddy, you omit the organizational domain and type in only the subdomain part.
+
+    ![](media/enabling-https-engagement-tracking-on-sparkpost/gcp-lb-dns-a-record.png)
+
+    Save your record. It will typically take from a few minutes up to several hours before the record is published and visible. While you're waiting, Google Cloud Platform will show the Domain Status with a yellow warning triangle. This is usual.
+
+    ![](media/enabling-https-engagement-tracking-on-sparkpost/gcp-lb-dns-warning.png)
+
+    If your A record is correct, Google Gloud Platform will soon provision the certificate and make it visible on the screen.
+
+    ![](media/enabling-https-engagement-tracking-on-sparkpost/gcp-cert-success.png)
+
+    It can take a few more minutes before the certificate is active on the endpoint. You can check this using the [troubleshooting tips](#troubleshooting) if necessary.
+
+1. Once the certificate is fully active, follow [these steps](#switch-to-secure) to update and verify your tracking domain.
 
 ---
 
