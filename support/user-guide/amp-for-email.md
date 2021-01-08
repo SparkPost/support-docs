@@ -205,7 +205,7 @@ Here's an example:
 
 Those injecting via SMTP will also have AMP support. Be sure to use the proper MIME structure; `text/x-amp-html` must be a descendant of multipart/alternative, and live alongside at least one of `text/html` and/or `text/plain` MIME parts.
 
-For delivered AMP content to render, **HTTPS engagement tracking is required**. Please refer to [SparkPost documentation](../tech-resources/enabling-https-engagement-tracking-on-sparkpost/) on how to enable HTTPS engagement tracking.
+For delivered AMP content to render, **HTTPS engagement tracking is required**. Please refer to [SparkPost documentation](../tech-resources/enabling-https-engagement-tracking-on-sparkpost) on how to enable HTTPS engagement tracking.
 For initial tests without HTTPS engagement tracking, you can set `open_tracking` and `click_tracking` attributes in the above example to `false`.
 
 ### Engagement Metrics
