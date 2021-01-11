@@ -23,7 +23,7 @@ To move Sending IP from 1 IP Pool to another, select edit on the original IP poo
 
 **Delete**
 
-To delete an IP pool, select the trashcan icon next to the IP pool. You will see a warning message and select delete. Please note that and sending IPs still in that pool will move to the default pool.
+To delete an IP pool, select Delete from the dropdown menu at the top of the IP Pool details page. Please note that sending IPs still in that pool will move to the default pool.
 ![](media/managing-dedicated-ip-pools/Screenshot_2016-06-10_18.17.09_original.png)
 
 **Subaccounts**
@@ -32,5 +32,3 @@ When you have subaccounts, you can define which IP pool the subaccount uses.  Th
 
 To assign an IP pool to a subaccount, search for the subaccount, edit the subaccount, search for the IP Pool ID and update
 ![](media/managing-dedicated-ip-pools/Screenshot_2016-06-10_18.18.08_original.png)
-
-![](media/managing-dedicated-ip-pools/Screenshot_2016-06-10_18.18.34_original.png)
