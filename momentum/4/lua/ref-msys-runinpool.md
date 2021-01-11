@@ -27,7 +27,7 @@ This function runs a process in a separate threadpool. This can be done in a num
 
 The first parameter passed to this function may be a thread pool name (string) or a thread pool identifier (integer).
 
-The following example runs `closure` in the specified pool, returning the value(s) from the closure to the calling script. The calling script is suspended pending completion of the closure. Calling `msys.runInPool`in this way is useful for moving processing off the scheduler thread for some blocking work.
+The following example runs `closure` in the specified pool, returning the value(s) from the closure to the calling script. The calling script is suspended pending completion of the closure. Calling `msys.runInPool` in this way is useful for moving processing off the scheduler thread for some blocking work.
 
 `status, result = msys.runInPool(pool, closure)`
 
@@ -130,4 +130,4 @@ Because this function is in the `msys` namespace, an explicit `require` is not n
 <a name="idp16345392"></a> 
 ## See Also
 
-[thread.mutex](/momentum/4/lua/ref-thread-mutex), [msys.sleep](/momentum/4/lua/ref-msys-sleep), [msys.lock](/momentum/4/lua/ref-msys-lock), [msys.unlock](/momentum/4/lua/ref-msys-unlock), [threadpool](/momentum/4/config/ref-threadpool)
+[thread.mutex](/momentum/4/lua/ref-thread-mutex), [msys.sleep](/momentum/4/lua/ref-msys-sleep), [msys.lock](/momentum/4/lua/ref-msys-lock), [msys.unlock](/momentum/4/lua/ref-msys-unlock), [threadpool](/momentum/4/config/ref-threadpool), [msys.runInInst](/momentum/4/lua/ref-msys-runininst)
