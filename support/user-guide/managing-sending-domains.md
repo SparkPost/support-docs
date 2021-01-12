@@ -11,8 +11,6 @@ A sending domain is a domain that is used to indicate who an email is from via t
 
 1.  In the SparkPost app, navigate to **Configuration** > **Sending Domains** 
 1.  Click on **Add a Domain** to continue.
-
-    ![add sending domain screenshot](media/managing-sending-domains/sending-domains-page.png)
 1.  Complete the Sending Domain information on the screen to create the same. In this example we will be using mail.exmaple.com.
 1.  Click the Add Domain button to add the Sending Domain to your account.
 
