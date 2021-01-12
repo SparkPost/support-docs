@@ -182,8 +182,6 @@ For more information on the features available within the SparkPost dashboard pl
 
 The SparkPost dashboard allows you to view metrics and create sending domains and templates.
 
-![Summary Report](media/using-sparkpost-heroku-add-on/summary-report.png)
-
 The dashboard can be accessed via the CLI:`$ heroku addons:open sparkpost Opening sparkpost for sharp-mountain-4005`or by visiting the [Heroku Dashboard](https://dashboard.heroku.com/apps) and selecting the application in question. Select SparkPost from the Add-ons menu.
 
 ## Migrating Between Plans
