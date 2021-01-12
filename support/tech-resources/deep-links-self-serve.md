@@ -720,45 +720,41 @@ Likewise, if you run a request for a tracked link from a test email sent through
 
 Like AWS CloudFront, you can host the [spec files](#spec-file) (`apple-app-site-assocation` and `assetlinks.json`) directly on [Google Cloud Platform](https://cloud.google.com/) (GCP) as well as handling HTTPS tracking.
 
-1. First, set up your secure tracking domain - instructions [here](./enabling-https-engagement-tracking-on-sparkpost/#gcp-create). This establishes your tracking domain routing via a GCP ["external" HTTPS load-balancer](https://cloud.google.com/load-balancing/docs/https) with a valid certificate for your domain, and a default routing rule to forward all incoming requests to SparkPost.
-
-    Summary of steps:
-
-    * Create a new storage bucket
-    * Upload the spec files
-    * Configure a load balancer "bucket backend" to serve files on path `/.well-known/*`, while other paths go to the SparkPost engagement-tracking endpoint.
+First, set up your secure tracking domain - instructions [here](./enabling-https-engagement-tracking-on-sparkpost/#gcp-create). This establishes your tracking domain routing via a GCP ["external" HTTPS load-balancer](https://cloud.google.com/load-balancing/docs/https) with a valid certificate for your domain, and a default routing rule to forward all incoming requests to SparkPost.
 
 1. From the top menu, select your existing project. On the main menu, top left, select "Network Services" then "Load balancing". You can pin the "Network Services" menu for easy access later.
 
     ![](media/deep-links-self-serve/deep-links-gcp-select-project.png)
 
-    You will see your named load-balancer. Click the three dots menu on the right, and select "Edit".
+    You will see your named load-balancer.
 
-    ![](media/deep-links-self-serve/deep-links-gcp-lb-edit.png)
+    * Click the three dots menu on the right, and select "Edit".
 
-1. <a href="create-gcp-bucket"></a>Select "Backend configuation", then "Create a Backend Bucket".
+      ![](media/deep-links-self-serve/deep-links-gcp-lb-edit.png)
 
-    ![](media/deep-links-self-serve/deep-links-gcp-create-backend-bucket.png)
+    * <a href="create-gcp-bucket"></a>Select "Backend configuation", then "Create a Backend Bucket".
 
-    Give your backend bucket a name.
+      ![](media/deep-links-self-serve/deep-links-gcp-create-backend-bucket.png)
 
-    ![](media/deep-links-self-serve/deep-links-gcp-create-backend-bucket2.png)
+    * Give your backend bucket a name.
 
-    Select "Browse". If you don't have a storage bucket yet, select "New bucket".
+      ![](media/deep-links-self-serve/deep-links-gcp-create-backend-bucket2.png)
 
-    ![](media/deep-links-self-serve/deep-links-gcp-create-backend-bucket3.png)
+    * Select "Browse". If you don't have a storage bucket yet, select "New bucket".
 
-    Give your storage bucket a name, which must be globally unique (according to Google's naming guidelines in the linked article). It states the bucket names are *publicly visible* to other GCP users.
+      ![](media/deep-links-self-serve/deep-links-gcp-create-backend-bucket3.png)
 
-    ![](media/deep-links-self-serve/deep-links-gcp-create-backend-bucket4.png)
+    * Give your storage bucket a name, which must be globally unique (according to Google's naming guidelines in the linked article). It states the bucket names are *publicly visible* to other GCP users.
 
-    Unless you are planning to make frequent changes to your spec files, enable Cloud CDN and select the "Cache static content (recommended)" option.
+      ![](media/deep-links-self-serve/deep-links-gcp-create-backend-bucket4.png)
 
-    ![](media/deep-links-self-serve/deep-links-gcp-create-backend-bucket5.png)
+    * Unless you are planning to make frequent changes to your spec files, enable Cloud CDN and select the "Cache static content (recommended)" option.
 
-    Select Create to set up the (empty) bucket associated with your load-balancer.
+      ![](media/deep-links-self-serve/deep-links-gcp-create-backend-bucket5.png)
 
-1.  Ensure that you have your [spec files](#spec-file) ready. On the main menu, top left, select "Storage" then "Browser". (You can pin the "Storage" menu for easy access.)
+    * Select Create to set up the (empty) bucket associated with your load-balancer.
+
+1. Upload spec files to the bucket. On the main menu, top left, select "Storage" then "Browser". (You can pin the "Storage" menu for easy access.)
 
     ![](media/deep-links-self-serve/deep-links-gcp-storage.png)
 
@@ -796,13 +792,13 @@ Like AWS CloudFront, you can host the [spec files](#spec-file) (`apple-app-site-
 
     * Return to the Bucket Details screen, and select the "Objects" tab. You will see both your files are now public, and have a specific URL.
 
-    ![](media/deep-links-self-serve/deep-links-gcp-bucket-public4.png)
+      ![](media/deep-links-self-serve/deep-links-gcp-bucket-public4.png)
 
-    > This is *not* your tracking-domain URL; it's the address of the bucket. (You can, if you wish, check the files are public by clicking on "Copy URL", then paste taddress into your browser which should open/download the file.)
+      > This is *not* your tracking-domain URL; it's the address of the bucket. (You can, if you wish, check the files are public by clicking on "Copy URL", then paste taddress into your browser which should open/download the file.)
 
 1. Update the Apple file MIME type
 
-    Note that the Apple file, by default, has MIME type `application/octet-stream`. It's [recommended](https://branch.io/resources/aasa-validator/) to change this to `application/json`.
+   Note that the Apple file, by default, has MIME type `application/octet-stream`. It's [recommended](https://branch.io/resources/aasa-validator/) to change this to `application/json`.
 
     * Select the three dots menu on the right of this file, and select "Edit metadata".
 
@@ -829,13 +825,13 @@ Like AWS CloudFront, you can host the [spec files](#spec-file) (`apple-app-site-
       * Paths: enter `/.well-known/*`
       * Backends: choose your named backend bucket
 
-    * Select the "Update" button.
+    * Select "Update".
 
-    * Use the "back" arrow button (top left) to return to the load balancer details view, which should look like this.
+    * Use the blue arrow button (top left) to return to the load balancer details view, which should look like this.
 
       ![](media/deep-links-self-serve/deep-links-gcp-backend-lb-done.png)
 
-      Note that the system generated the Hosts `*`  Paths `/*` rule automatically.
+      Note that GCP generated the Hosts `*`  Paths `/*` rule automatically.
 
 1. Check your files are served correctly - see [troubleshooting tips](#troubleshooting).
 
