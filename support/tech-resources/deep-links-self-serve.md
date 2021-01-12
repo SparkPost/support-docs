@@ -140,7 +140,7 @@ The [App Links Assistant](https://developer.android.com/studio/write/app-link-in
 ---
 ## <a name="tracking"></a> Deep links and click tracking
 
-Setting up a [custom tracking domain](./nabling-multiple-custom-tracking-domains) is useful for branding and email reputation. It is required for click tracking of deep links in your HTML email.
+Setting up a [custom tracking domain](./enabling-multiple-custom-tracking-domains) is useful for branding and email reputation. It is required for click tracking of deep links in your HTML email.
 
 It's best to choose a subdomain (e.g. `track.example.com`), so that subdomain can be redirected, while your website uses your organizational domain. Each tracking domain can serve regular email tracked links and deep links. Your content can use a mixture of both kinds of link inside the same email.
 
@@ -405,10 +405,10 @@ Step-by-step instructions follow, for
 * [NGINX](#nginx)
 * [AWS CloudFront](#aws-cloudfront)
 * [CloudFlare](#cloudflare)
-* [Fastly](fastly)
-* [Google Cloud](google-cloud)
-* [Branch](platforms)
-* [AppsFlyer](platforms)
+* [Fastly](#fastly)
+* [Google Cloud](#google-cloud)
+* [Branch](#platforms)
+* [AppsFlyer](#platforms)
 
 If you are using a deep linking platform such as [Branch](https://branch.io/) or [AppsFlyer](https://www.appsflyer.com/), these platforms automate the spec file creation for you.
 
@@ -718,12 +718,126 @@ Likewise, if you run a request for a tracked link from a test email sent through
 
 ### <a name="google-cloud"></a>Google Cloud Platform
 
-Like AWS CloudFront, you can host the spec files (`apple-app-site-assocation` and `assetlinks.json`) directly on [Google Cloud Platform](https://cloud.google.com/) (GCP) as well as handling HTTPS tracking.
+Like AWS CloudFront, you can host the [spec files](#spec-file) (`apple-app-site-assocation` and `assetlinks.json`) directly on [Google Cloud Platform](https://cloud.google.com/) (GCP) as well as handling HTTPS tracking.
 
-1. Set up your secure tracking domain - instructions [here](./enabling-https-engagement-tracking-on-sparkpost/#gcp-create). This establishes your tracking domain routing and certificate.
+1. First, set up your secure tracking domain - instructions [here](./enabling-https-engagement-tracking-on-sparkpost/#gcp-create). This establishes your tracking domain routing via a GCP ["external" HTTPS load-balancer](https://cloud.google.com/load-balancing/docs/https) with a valid certificate for your domain, and a default routing rule to forward all incoming requests to SparkPost.
 
-1. Create a "Backend bucket" to serve your spec files.
+    Summary of steps:
 
+    * Create a new storage bucket
+    * Upload the spec files
+    * Configure a load balancer "bucket backend" to serve files on path `/.well-known/*`, while other paths go to the SparkPost engagement-tracking endpoint.
+
+1. From the top menu, select your existing project. On the main menu, top left, select "Network Services" then "Load balancing". You can pin the "Network Services" menu for easy access later.
+
+    ![](media/deep-links-self-serve/deep-links-gcp-select-project.png)
+
+    You will see your named load-balancer. Click the three dots menu on the right, and select "Edit".
+
+    ![](media/deep-links-self-serve/deep-links-gcp-lb-edit.png)
+
+1. <a href="create-gcp-bucket"></a>Select "Backend configuation", then "Create a Backend Bucket".
+
+    ![](media/deep-links-self-serve/deep-links-gcp-create-backend-bucket.png)
+
+    Give your backend bucket a name.
+
+    ![](media/deep-links-self-serve/deep-links-gcp-create-backend-bucket2.png)
+
+    Select "Browse". If you don't have a storage bucket yet, select "New bucket".
+
+    ![](media/deep-links-self-serve/deep-links-gcp-create-backend-bucket3.png)
+
+    Give your storage bucket a name, which must be globally unique (according to Google's naming guidelines in the linked article). It states the bucket names are *publicly visible* to other GCP users.
+
+    ![](media/deep-links-self-serve/deep-links-gcp-create-backend-bucket4.png)
+
+    Unless you are planning to make frequent changes to your spec files, enable Cloud CDN and select the "Cache static content (recommended)" option.
+
+    ![](media/deep-links-self-serve/deep-links-gcp-create-backend-bucket5.png)
+
+    Select Create to set up the (empty) bucket associated with your load-balancer.
+
+1.  Ensure that you have your [spec files](#spec-file) ready. On the main menu, top left, select "Storage" then "Browser". (You can pin the "Storage" menu for easy access.)
+
+    ![](media/deep-links-self-serve/deep-links-gcp-storage.png)
+
+    Click on your named bucket.
+
+    ![](media/deep-links-self-serve/deep-links-gcp-upload.png)
+
+    Select "Create Folder" and give this the name `.well-known`.
+
+    ![](media/deep-links-self-serve/deep-links-gcp-create-folder.png)
+
+    Click on this folder. Upload your spec files to the bucket. It should now look like this.
+
+    ![](media/deep-links-self-serve/deep-links-gcp-files-created.png)
+
+1. Configure the bucket to be public.
+
+    Here we make the entire bucket readable, rather than setting individual file access-controls. For more information on access controls, refer to [this article](https://cloud.google.com/storage/docs/access-control/making-data-public).
+
+    Return to the bucket details page, and select the "Permissions" tab. The bucket is not yet public, it's "subject to object ACLs".
+
+    ![](media/deep-links-self-serve/deep-links-gcp-bucket-public.png)
+
+    * Select the "+ ADD" button.
+
+      ![](media/deep-links-self-serve/deep-links-gcp-bucket-public2.png)
+
+    * In the "New members" field, enter `allUsers`.
+
+    * In the "Select a role" drop down, select the "Cloud Storage" sub-menu, and click the "Storage Object Viewer" option.
+
+    * Click **Save**. You will see the following warning. Select "Allow public access".
+
+      ![](media/deep-links-self-serve/deep-links-gcp-bucket-public3.png)
+
+    * Return to the Bucket Details screen, and select the "Objects" tab. You will see both your files are now public, and have a specific URL.
+
+    ![](media/deep-links-self-serve/deep-links-gcp-bucket-public4.png)
+
+    > This is *not* your tracking-domain URL; it's the address of the bucket. (You can, if you wish, check the files are public by clicking on "Copy URL", then paste taddress into your browser which should open/download the file.)
+
+1. Update the Apple file MIME type
+
+    Note that the Apple file, by default, has MIME type `application/octet-stream`. It's [recommended](https://branch.io/resources/aasa-validator/) to change this to `application/json`.
+
+    * Select the three dots menu on the right of this file, and select "Edit metadata".
+
+      ![](media/deep-links-self-serve/deep-links-gcp-apple-json.png)
+
+    * Edit the object metadata to set the content type.
+
+      ![](media/deep-links-self-serve/deep-links-gcp-apple-json2.png)
+
+    * Click Save.
+
+1. Set up load-balancer routing rules with the path to your backend bucket.
+
+    On the main menu, top left, select "Network Services" then "Load balancing". Select "Edit", then "Backend configuration". You should see your backend service (that fowards to SparkPost) and your backend bucket. If you don't see it, ensure you followed [these steps](create-gcp-bucket) correctly.
+
+    ![](media/deep-links-self-serve/deep-links-gcp-backend-config.png)
+
+
+    * Select "Host and path rules" from the menu. Create a rule which routes the spec file URL requests to your bucket.
+
+      ![](media/deep-links-self-serve/deep-links-gcp-backend-host-path-rules.png)
+
+      * Hosts: enter `*`
+      * Paths: enter `/.well-known/*`
+      * Backends: choose your named backend bucket
+
+    * Select the "Update" button.
+
+    * Use the "back" arrow button (top left) to return to the load balancer details view, which should look like this.
+
+      ![](media/deep-links-self-serve/deep-links-gcp-backend-lb-done.png)
+
+      Note that the system generated the Hosts `*`  Paths `/*` rule automatically.
+
+1. Check your files are served correctly - see [troubleshooting tips](#troubleshooting).
 
 ---
 
