@@ -32,7 +32,7 @@ The following example runs `closure` in the specified instance, returning the va
 
 ```
 local inst = msys.core.scheduler_for_domain("domain.example")
-local status, result = msys.runInPool(inst, closure)
+local status, result = msys.runInInst(inst, closure)
 ```
 
 Return values are the same as `pcall`; the first return value is a boolean indicating whether the function was called successfully or not. If it is `true` then the call was successful and the remaining return value(s) are those from the closure. If the status value is `false`, the second return value holds an error message.
