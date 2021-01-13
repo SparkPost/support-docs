@@ -95,6 +95,7 @@ The [App Links Assistant](https://developer.android.com/studio/write/app-link-in
     ![Android App Links Assistant](media/deep-links-self-serve/deep-links-android-app-assistant0.png)
 
     URL Mapping Editor:
+    
     ![Android App Links Assistant](media/deep-links-self-serve/deep-links-android-app-assistant1a.png)
 
     Add your tracking domain URLs with Path set to "pathPrefix", and add your chosen prefix starting with `/f/`, for example `/f/open-in-app`. Your app can be registered to multiple URLs if you wish.
@@ -796,7 +797,7 @@ First, set up your secure tracking domain - instructions [here](./enabling-https
 
       > This is *not* your tracking-domain URL; it's the address of the bucket. (You can, if you wish, check the files are public by clicking on "Copy URL", then paste taddress into your browser which should open/download the file.)
 
-1. Update the Apple file MIME type
+1. Update the Apple file MIME type.
 
    Note that the Apple file, by default, has MIME type `application/octet-stream`. It's [recommended](https://branch.io/resources/aasa-validator/) to change this to `application/json`.
 
