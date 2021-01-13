@@ -41,9 +41,9 @@ The relative size of the component in the chart indicates the impact it has on y
 
 ### Component changes over time
 
-To examine the raw data for a component, select it in the chart on right. When selected, a chart of the raw is displayed for the time window selected. This chart allows you to see not only how your health score changed, but also how each component shifted over the selected timeframe.
+To examine the raw data for a component, select it in the chart at the bottom. When selected, a chart of the raw data is displayed for the time window selected. This chart allows you to see not only how your health score changed, but also how each component shifted over the selected timeframe.
 
-![Health Score Components](media/health-score/components-chart.gif)
+![Health Score Components](media/health-score/components-chart.png)
 
 _**Note:** Unlike SparkPost metrics which are calculated based on the number of sent emails, Signals is calculated based on the number of injected emails. Because of this, you’ll see differing rates for some components such as hard bounces._
 
