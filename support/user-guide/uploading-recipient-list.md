@@ -7,8 +7,6 @@ description: "Adding a New Recipient List In the SparkPost app first go to Lists
 
 In the SparkPost app, select **Recipients** > **Recipient Lists** then click the orange button that says "New Recipient List".
 
- ![](media/uploading-recipient-list/recipient-list-page.png)
-
 Fill in the Label (The ID Field will self fill) and the Description Field. Choose the File you would like to upload with the “Choose File” button. Then click “CREATE".
 
 ![](media/uploading-recipient-list/create-recipient-list.png)

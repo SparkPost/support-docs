@@ -18,9 +18,6 @@ You can invite members of your team to join your SparkPost account. Each user wi
 Admin users can add new users to their account by from the [Manage Users](https://app.sparkpost.com/account/users) ([EU](https://app.sparkpost.com/account/users)) page.
 
 1. Click on **Invite User** button.
-
-	![](media/user-management/users-page.png)
-
 2. Enter the new user's email in the Email address input.
 3. Select the role you'd like the new user to have.
 4. Click **Add User** to send them the invitation.

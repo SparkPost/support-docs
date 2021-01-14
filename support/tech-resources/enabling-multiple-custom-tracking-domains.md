@@ -28,14 +28,12 @@ If you would like to configure your account to use a custom tracking domain, the
 
 To configure one or more custom tracking domains through the SparkPost app, follow the steps below.
 
-1. Select **Configuration** and then [Tracking Domains](https://app.sparkpost.com/account/tracking-domains) from the main menu.
-2. Click **Create Tracking Domain** to add a new tracking domain.
+1. Select **Configuration** and then [Domains](https://app.sparkpost.com/domains) from the main navigation.
+2. Click **Add a Domain** and select the Tracking Domain option.
 
     ![](media/enabling-multiple-custom-tracking-domains/tracking-domains-page.png)
 
 3. Complete the Domain Name and then click **Add Tracking Domain** to complete the process of adding a tracking domain.
-
-    ![](media/enabling-multiple-custom-tracking-domains/create-tracking-domain.png)
 
 ## Associate your Tracking domain(s) with one or more Sending domains      
 
