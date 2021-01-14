@@ -66,7 +66,7 @@ If you prefer to set up a sending domain as a bounce domain via the API, use the
     }
     ```
 
-1. Optionally set the domain as your account/subaccount default bounce domain so that it is automatically used as the bounce domain for all messages sent through the account/subaccount (unless otherwise specified; please see the bottom of the article).  Here's an example API call to set a master account bounce domain 'bounce.example.com' as the master account's default bounce domain:
+1. Optionally set the domain as your account/subaccount default bounce domain so that it is automatically used as the bounce domain for all messages sent through the account/subaccount (unless otherwise specified; please see the bottom of the article).  Here's an example API call to set a primary account bounce domain 'bounce.example.com' as the primary account's default bounce domain:
 
     ```
     PUT /api/v1/sending-domains/bounce.example.com
@@ -122,4 +122,4 @@ It is important to note that after you create and verify your bounce domain(s), 
 
       ```
 
-You also have the option of choosing to make a verified bounce domain the default bounce domain to use for all messages injected by the account (or subaccount).  See the `is_default_bounce_domain` flag described above. When a bounce domain is set as the default, all future transmissions will use the domain as their bounce domain (unless otherwise specified in the `return_path` string for transmissions or the `mail from` header in the SMTP payload).  The `is_default_bounce_domain` flag can be applied independently at both the master account and individual subaccount levels.  Each subaccount may select one of its bounce domains to be used as the subaccount default bounce domain.  If none of the subaccount's bounce domains are flagged as the default, then subaccount messages will fallback to a master account default bounce domain (if such a domain is configured).
+You also have the option of choosing to make a verified bounce domain the default bounce domain to use for all messages injected by the account (or subaccount).  See the `is_default_bounce_domain` flag described above. When a bounce domain is set as the default, all future transmissions will use the domain as their bounce domain (unless otherwise specified in the `return_path` string for transmissions or the `mail from` header in the SMTP payload).  The `is_default_bounce_domain` flag can be applied independently at both the primary account and individual subaccount levels.  Each subaccount may select one of its bounce domains to be used as the subaccount default bounce domain.  If none of the subaccount's bounce domains are flagged as the default, then subaccount messages will fallback to a primary account default bounce domain (if such a domain is configured).

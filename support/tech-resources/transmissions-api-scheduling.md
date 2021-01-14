@@ -34,7 +34,7 @@ curl -X POST \
 
 ## Cancelling Scheduled Transmissions
 
-If you schedule a transmission and later decide that you do not want to send it, then you can cancel it. The Transmissions API allows you to cancel scheduled transmissions by campaign ID. Simply make a `DELETE` request to the Transmissions API, providing the `campaign_id` as a query parameter. If you want to cancel a transmission scheduled by a subaccount, then you must make the request as the subaccount. You can do this by using one of the subaccount's API keys or by setting the `X-MSYS-SUBACCOUNT` header to the subaccount's ID when using a master account's API key. Here is an example of cancelling all scheduled transmissions in the `new_year` campaign:
+If you schedule a transmission and later decide that you do not want to send it, then you can cancel it. The Transmissions API allows you to cancel scheduled transmissions by campaign ID. Simply make a `DELETE` request to the Transmissions API, providing the `campaign_id` as a query parameter. If you want to cancel a transmission scheduled by a subaccount, then you must make the request as the subaccount. You can do this by using one of the subaccount's API keys or by setting the `X-MSYS-SUBACCOUNT` header to the subaccount's ID when using a primary account's API key. Here is an example of cancelling all scheduled transmissions in the `new_year` campaign:
 
 ```bash
 curl -X DELETE \

@@ -9,7 +9,7 @@ SparkPost supports two types of suppression lists: one (available via the [Suppr
 
 When a message is injected either using SMTP or HTTP, SparkPost will check the email address against the account-specific and global suppression lists. If an email address for a recipient matches an address on the list, that message will be rejected for delivery by SparkPost automatically.
 
-**Note: each subaccount has its own separate suppression list which is separate from the master account suppression list.**
+**Note: each subaccount has its own separate suppression list which is separate from the primary account suppression list.**
 
 ## How are [recipients](https://www.sparkpost.com/api#/reference/recipient-lists "Recipient List API") added to [suppression lists](https://www.sparkpost.com/api#/reference/suppression-list "Suppression List API")?
 
