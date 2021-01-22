@@ -1,91 +1,46 @@
 ---
-title: "Creating a Custom Bounce Domain"
+title: "Custom Bounce Domains"
 description: "You can improve your deliverability and email branding by adding a custom bounce domain A custom bounce domain provides another layer to the branding that some ISPs care about."
 ---
 
-By creating a custom bounce domain, you can customize the address that is used for the Return-Path header (which denotes the destination for out-of-band bounces). This bounce domain overrides the default Return-Path (also known as the envelope FROM) value of "sparkpostmail.com" for all messages sent.
+By creating a custom bounce domain, you can customize the address that is used for the Return-Path header, which denotes the destination for out-of-band bounces. This bounce domain overrides the default Return-Path (also known as the envelope FROM) value of "sparkpostmail.com" for all emails sent.
 
-There are two options for adding and verifying custom bounce domains in SparkPost:
+You can set up a custom bounce domain in the different ways outlined below: 
 
-Option 1 (preferred option): 
+### Recommended Option - Strict Alignment Subdomain
 
-1. Add a subdomain (e.g. mail.example.com) to be used as both a sending domain and a bounce domain. Add both the TXT record and CNAME record provided in SparkPost to your DNS.
+Use a subdomain, like mail.example.com, as both a sending domain and a bounce domain. Add both the TXT record and CNAME records to your DNS.
 
-Option 2:
+### Root Domain + Subdomain:
 
-1. Add your root domain (e.g. example.com) as a sending domain. Only add the CNAME verification if you understand the root domain CNAME record caveats (see note immediately below).
+Use a root domain (e.g. example.com) as a sending domain, and a separate subdomain (e.g. bounce.example.com) to be used as a bounce domain. Only add the CNAME record for that subdomain to your DNS and ignore the TXT record.
 
-1. If using a root domain as a sending domain, add a separate subdomain (e.g. bounce.example.com) to be used as a bounce domain. Only add the CNAME record for that subdomain to your DNS and ignore the TXT verification.
+### Not Recommended - Root Domain Strict Alignment 
 
-*NOTE: Using a root domain as a bounce domain means you will **not** be able to receive any mail there, as all messages will be destined for SparkPost. If you intend to receive mail at a root domain, you **cannot** use it as a bounce domain. Additionally, using a CNAME record at a root domain means you **cannot** create any subdomains of the root domain, as per limitations of DNS. Because of this limitation, it is **not** recommended that you use a root domain as a bounce domain.
+Use your root domain (e.g. example.com) as a sending domain and bounce domain. 
 
-To configure a bounce domain, choose the subdomain you would like to use (e.g. bounce.example.com) and add the appropriate CNAME record to your DNS settings. For SparkPost.com:
+**Only do this if you understand the root domain CNAME record caveats**: 
+* Using a root domain as a bounce domain means you will **not** be able to receive any mail there, as all messages will be sent to SparkPost. If you intend to receive mail at a root domain, you cannot use it as a bounce domain. 
+* Additionally, using a CNAME record at a root domain means you cannot create any subdomains of the root domain, as per limitations of DNS. Because of this limitation, it is **not recommended** that you use a root domain as a bounce domain.
 
-| Hostname | Type | Value |
-| --- | --- | --- |
-| bounce.example.com | CNAME | sparkpostmail.com |
+## Setting Up a Bounce DOmain
 
-For SparkPost EU:
+Start from [Domains create](https://app.sparkpost.com/domains/create) ([EU](https://app.eu.sparkpost.com/domains/create)) page and select the Bounce Domain option as you add your domain.
 
-| Hostname | Type | Value |
-| --- | --- | --- |
-| bounce.example.com | CNAME | eu.sparkpostmail.com |
+Then add the CNAME records outlined in the Bounce section to your domain's DNS settings and verify the domain.
 
-This DNS record will ensure that out-of-band/asynchronous bounces are routed to SparkPost for processing.
+  ![](media/custom-bounce-domain/verified-for-bounce.png)
 
-**Cloudflare users need to turn the cloud button next to the CNAME record in their DNS from orange to grey, in order for it to propagate and be recognized by SparkPost.**
+### Set as Default Bounce DOmain
+You can set a Bounce domain as Default if you want all of your emails to use this bounce domain. If you plan to configure multiple bounce domains, please refer to the end of the article for more information on how to set the bounce domain in your transmission.
 
-Once you have configured your DNS settings, register and verify the domain with SparkPost by following the steps below. *Please note, it may take SparkPost a few minutes for the bounce domain to be ready for use after verification.*
+## Set Up Using The API
 
-## Using The SparkPost app
-
-If you prefer to use the SparkPost app, you can create multiple bounce domains or single bounce domain that will be used for all of your outgoing mail.
-
-1. Select **Configuration** and then [Sending Domains](https://app.sparkpost.com/account/sending-domains).
-1. Click the New Domain button to add a sending domain. Again, please add a subdomain to avoid any issues with your root domain.
-1. Navigate to your DNS and add the displayed CNAME record from SparkPost.
-1. Select the "Verify CNAME Record" orange text in the  _Setup For Bounce_ record box.
-1. Make sure the domain is verified by the green check mark. Please note that there is up to a 5 minute delay [for compliance verification](https://www.sparkpost.com/docs/getting-started/requirements-for-sending-domains/) before the domain can be used.
-
- ![](media/custom-bounce-domain/verified-for-bounce.png)
-
-Once the CNAME record is verified in SparkPost, you will notice an orange button in the CNAME record box that says "Use this domain as your default bounce domain?" Turn this on if you want all of your transmissions to use this bounce domain. If you plan to configure multiple bounce domains, please refer to the end of the article for more information on how to set the bounce domain in your transmission.
-
-## Using The SparkPost API
-
-If you prefer to set up a sending domain as a bounce domain via the API, use the following instructions:
+If you prefer to set up a bounce domain via the API, use the following instructions:
 
 1. Register the domain with SparkPost by using the sending domains [create endpoint](https://developers.sparkpost.com/api/sending-domains.html#sending-domains-create-post).
-1. CNAME-verify the domain by using the sending domains [verify endpoint](https://developers.sparkpost.com/api/sending-domains.html#sending-domains-verify-post).  Here's an example API call to CNAME-verify the mail.example.com domain:
-
-    ```
-    POST /api/v1/sending-domains/bounce.example.com/verify
-
-    {
-      "cname_verify" : true
-    }
-    ```
-
-1. Optionally set the domain as your account/subaccount default bounce domain so that it is automatically used as the bounce domain for all messages sent through the account/subaccount (unless otherwise specified; please see the bottom of the article).  Here's an example API call to set a master account bounce domain 'bounce.example.com' as the master account's default bounce domain:
-
-    ```
-    PUT /api/v1/sending-domains/bounce.example.com
-
-    {
-      "is_default_bounce_domain" : true
-    }
-    ```
-
-    And here is an example API call to set a subaccount 123 bounce domain 'sub.bounce.example.com' as that subaccount's default bounce domain:
-
-    ```
-    PUT /api/v1/sending-domains/sub.bounce.example.com
-    X-MSYS-SUBACCOUNT: 123
-
-    {
-      "is_default_bounce_domain" : true
-    }
-    ```
+2. CNAME-verify the domain by using the sending domains [verify endpoint](https://developers.sparkpost.com/api/sending-domains.html#sending-domains-verify-post). 
+3. Optionally set the domain as your account/subaccount default bounce domain through the [update endpoint](https://developers.sparkpost.com/api/sending-domains/?no-cache=1#sending-domains-put-update-a-sending-domain). This sets it up to be used automatically as the bounce domain for all emails sent through the account/subaccount.
 
 ## Using Multiple Custom Bounce Domains
 
