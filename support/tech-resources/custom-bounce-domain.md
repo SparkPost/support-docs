@@ -5,7 +5,7 @@ description: "You can improve your deliverability and email branding by adding a
 
 By creating a custom bounce domain, you can customize the address that is used for the Return-Path header, which denotes the destination for out-of-band bounces. This bounce domain overrides the default Return-Path (also known as the envelope FROM) value of "sparkpostmail.com" for all emails sent.
 
-You can set up a customer bounce domain in different ways outlined below: 
+You can set up a custom bounce domain in the different ways outlined below: 
 
 ### Recommended Option - Strict Alignment Subdomain
 
@@ -27,7 +27,7 @@ Use your root domain (e.g. example.com) as a sending domain and bounce domain.
 
 Start from [Domains create](https://app.sparkpost.com/domains/create) ([EU](https://app.eu.sparkpost.com/domains/create)) page and select the Bounce Domain option as you add your domain.
 
-Then add the CNAME recors outlined in the Bounce section to your domain's DNS settings and verify the domain.
+Then add the CNAME records outlined in the Bounce section to your domain's DNS settings and verify the domain.
 
   ![](media/custom-bounce-domain/verified-for-bounce.png)
 
