@@ -95,7 +95,7 @@ The [App Links Assistant](https://developer.android.com/studio/write/app-link-in
     ![Android App Links Assistant](media/deep-links-self-serve/deep-links-android-app-assistant0.png)
 
     URL Mapping Editor:
-    
+
     ![Android App Links Assistant](media/deep-links-self-serve/deep-links-android-app-assistant1a.png)
 
     Add your tracking domain URLs with Path set to "pathPrefix", and add your chosen prefix starting with `/f/`, for example `/f/open-in-app`. Your app can be registered to multiple URLs if you wish.
@@ -130,14 +130,14 @@ The [App Links Assistant](https://developer.android.com/studio/write/app-link-in
 
     ![Android App first open](media/deep-links-self-serve/deep-links-android-first-time-open.png)
 
- 1. <a name="autoverify"></a> In `AndroidManifest.xml`, you can set your domain `intent-filter` to `autoVerify` to favor opening your app instead of asking the user - see [here](https://developer.android.com/training/app-links/verify-site-associations).
+ 1. <a name="auto-verify"></a> In `AndroidManifest.xml`, you can set your domain `intent-filter` to `autoVerify` to favor opening your app instead of asking the user - see [here](https://developer.android.com/training/app-links/verify-site-associations).
 
 
     ```xml
     <intent-filter android:autoVerify="true">
     ```
 
-    This requires your `assetlinks.json` file to be hosted on your specific tracking domain. This is explained further in the [hosting](#hosting) and [troubleshooting](#troubleshooting) sections.
+    This requires your `assetlinks.json` file to be hosted on your specific tracking domain. This is explained further in the [hosting](#hosting) and [troubleshooting](#testing-auto-verify) sections.
 ---
 ## <a name="tracking"></a> Deep links and click tracking
 
@@ -391,7 +391,7 @@ Your `AndroidManifest.xml` also needs these permissions added to `<manifest` .. 
 
 #### Android User Agent
 
-In SparkPost event reporting, the attribute `user_agent` carries information on your app. In our demo app, it will be the default set by the library: `"okhttp/4.9.0"`. This enables you to use SparkPost analytics to find out which links are being opened via your app. You can [customise this](https://square.github.io/okhttp/interceptors/) in your code.
+In SparkPost event reporting, the attribute `user_agent` carries information on your app. In our demo app, it will be the default set by the library: `"okhttp/4.9.0"`. This enables you to use SparkPost analytics to find out which links are being opened via your app. You can [customize this](https://square.github.io/okhttp/interceptors/) in your code.
 
 
 ---
@@ -433,7 +433,7 @@ Click the padlock symbol and check the certificate is valid and as expected. Rep
 
 The above simple instructions allow deep linking to work via your website's main `/.well-known` URL.
 
-To get Android to [autoverify](#autoverify) your app's domains (skipping the user ["Ask" step](#android-ask)), you need to serve spec files from your *specific* tracking domains, *while also forwarding* opens and clicks to SparkPost on that domain. Follow the steps in [this article](./using-proxy-https-tracking-domain), then modify the Apache patterns to look like this:
+To get Android to [auto-verify](#auto-verify) your app's domains (skipping the user ["Ask" step](#android-ask)), you need to serve spec files from your *specific* tracking domains, *while also forwarding* opens and clicks to SparkPost on that domain. Follow the steps in [this article](./using-proxy-https-tracking-domain), then modify the Apache patterns to look like this:
 
 
 ```apacheconf
@@ -471,7 +471,7 @@ The spec files are made available under URL `https://yourtrackingdomain.example.
 
 For completeness, the same routing is configured for HTTP on port 80, although mobile devices will request the spec files via HTTPS.
 
-To check your files are served correctly and Android autoverify is working - see [troubleshooting tips](#troubleshooting).
+To check your files are served correctly and Android auto-verify is working - see [troubleshooting tips](#troubleshooting).
 
 ---
 
@@ -483,7 +483,7 @@ To check your files are served correctly and Android autoverify is working - see
 
 1. Within this, create a directory `.well-known` if it doesn't already exist, and upload/create your spec files here. This will usually require root privilege on your server.
 
-1. Add `location` blocks to your config to declare the spec files on your tracking domain, which will allow Android to [autoverify](#autoverify). Here is a complete example, including the engagement-tracking `proxy-pass` block done in step 1.
+1. Add `location` blocks to your config to declare the spec files on your tracking domain, which will allow Android to [auto-verify](#auto-verify). Here is a complete example, including the engagement-tracking `proxy-pass` block done in step 1.
 
     ```
     server {
@@ -522,7 +522,7 @@ To check your files are served correctly and Android autoverify is working - see
 
 1. Check your configuration is valid using `sudo nginx -t`. If no errors are reported, then reload using `sudo nginx -s reload`.
 
-1. Check your files are served correctly and Android autoverify is working - see [troubleshooting tips](#troubleshooting).
+1. Check your files are served correctly and Android auto-verify is working - see [troubleshooting tips](#troubleshooting).
 
 ---
 
@@ -545,7 +545,7 @@ With CloudFront we are working with the specific sub-domain used for link tracki
 
     ![](media/deep-links-self-serve/deep-links-aws-create-bucket.png)
 
-    * Step 2, "Congfigure options", you can leave these options unset.
+    * Step 2, "Configure options", you can leave these options unset.
 
     * Step 3, "Set permissions", leave this at default ("Block all") for now.
 
@@ -623,7 +623,7 @@ With CloudFront we are working with the specific sub-domain used for link tracki
 
 1. Check your S3 bucket configuration is secure using [this tool](https://console.aws.amazon.com/trustedadvisor/home?#/category/security).
 
-1. To check your files are served correctly and Android autoverify is working, see [troubleshooting tips](#troubleshooting).
+1. To check your files are served correctly and Android auto-verify is working, see [troubleshooting tips](#troubleshooting).
 
 ---
 
@@ -631,7 +631,7 @@ With CloudFront we are working with the specific sub-domain used for link tracki
 
 > As described [here](#spec-file), it's easy to create spec files in your web site. The following steps are needed *only* if you are using a CDN for HTTPS tracking and therefore need to configure the spec files there.
 
-> Unlike AWS CloudFront, you need to already have the spec files (`apple-app-site-assocation` and `assetlinks.json`) hosted elsewhere, such as on a web server. When your clients request *`yourtracking.domain.com/.well-known/*`*, CloudFlare responds with a `301` "moved permanently" redirect to your files. We have found this can work, but it's not recommended by [Apple](https://developer.apple.com/library/archive/documentation/General/Conceptual/AppSearch/UniversalLinks.html) or [Google](https://developer.android.com/training/app-links/verify-site-associations). It prevents Android [autoverifying](#autoverify) your app.
+> Unlike AWS CloudFront, you need to already have the spec files (`apple-app-site-assocation` and `assetlinks.json`) hosted elsewhere, such as on a web server. When your clients request *`yourtracking.domain.com/.well-known/*`*, CloudFlare responds with a `301` "moved permanently" redirect to your files. We have found this can work, but it's not recommended by [Apple](https://developer.apple.com/library/archive/documentation/General/Conceptual/AppSearch/UniversalLinks.html) or [Google](https://developer.android.com/training/app-links/verify-site-associations). It prevents Android [auto-verifying](#auto-verify) your app.
 
 1. In your CloudFlare dashboard, an additional page rule is necessary to serve the spec files.
 
@@ -659,7 +659,7 @@ With CloudFront we are working with the specific sub-domain used for link tracki
 
 > As described [here](#spec-file), it's easy to create spec files in your web site. The following steps are needed *only* if you are using a CDN for HTTPS tracking and therefore need to configure the spec files there.
 
-> Unlike AWS CloudFront, you need to already have the spec files (`apple-app-site-assocation` and `assetlinks.json`) hosted elsewhere, such as on a web server. Fastly can serve requests for these files without sending the client a `301` "moved permanently" redirect, so it supports Android [autoverifying](#autoverify) your app.
+> Unlike AWS CloudFront, you need to already have the spec files (`apple-app-site-assocation` and `assetlinks.json`) hosted elsewhere, such as on a web server. Fastly can serve requests for these files without sending the client a `301` "moved permanently" redirect, so it supports Android [auto-verifying](#auto-verify) your app.
 
 1. Set up your secure tracking domain - instructions [here](./enabling-https-engagement-tracking-on-sparkpost/#fastly-create). This establishes your tracking domain routing and certificate in Fastly.
 
@@ -860,7 +860,7 @@ Branch also has a special link format, which can be used for testing with your a
 
 ![](media/deep-links-self-serve/deep-links-branch-link1.png)
 
-Here are the steps to get your app running with Branch and SparkPost. Your source of help during this process is the Branch online documentation and support system. The first steps are independent of email provider, and are done with your Branch account, code development enviroment, and Branch SDK.
+Here are the steps to get your app running with Branch and SparkPost. Your source of help during this process is the Branch online documentation and support system. The first steps are independent of email provider, and are done with your Branch account, code development environment, and Branch SDK.
 
 1. Download and integrate the Branch SDK into your apps ([iOS](https://help.branch.io/developers-hub/docs/ios-sdk-overview), [Android](https://help.branch.io/developers-hub/docs/android-sdk-overview)). Ensure your app has the expected code for receiving incoming events from the Branch SDK. Ensure your app is configured with your Branch account settings. Ensure your Branch account is configured with your app ID & Bundle ID.
 1. Create a test message containing your `xyz.app.link` on your test device (e.g. using iMessage or email) and check that your app opens and receives the event.  It may be helpful to print received event parameters to the console during development.
@@ -924,13 +924,13 @@ The domains entitlement in your app(s) must match your tracking domain. This can
 * [Android](android-spec-file) configuration
 
 
-### Android: testing autoverify
+### <a name="testing-auto-verify"></a>Android: testing auto-verify
 
-Getting your app to autoverify requires the `assetlinks.json` file to be available on your _specific_ tracking domain rather than relying on the organizational domain (main website).
+Getting your app to auto-verify requires the `assetlinks.json` file to be available on your _specific_ tracking domain rather than relying on the organizational domain (main website).
 
-To test autoverify works for your domain(s), start with a fresh install of your app, as mentioned in [this article](#autoverify-article), because Android remembers the user's choice.
+To test auto-verify works for your domain(s), start with a fresh install of your app, as mentioned in [this article](#auto-verify-article), because Android remembers the user's choice.
 
-If you are getting the ["ask" prompt](#android-ask) to choose which application opens the link, you can use the `adb` debugger to investigate the status of your app. If the Status is shown as `ask` then autoverify is not working as intended. The value `always : 200000000` means it is verified.
+If you are getting the ["ask" prompt](#android-ask) to choose which application opens the link, you can use the `adb` debugger to investigate the status of your app. If the Status is shown as `ask` then auto-verify is not working as intended. The value `always : 200000000` means it is verified.
 
 ```bash
 $ adb reconnect
@@ -945,9 +945,9 @@ App verification status:
   Status:  always : 200000000
 ```
 
-If your app has more than one associated domain, the status will be "`ask`" if _any_ of them fail to autoverify. You can use `adb` to check your setup from Android Studio without having to delete/reinstall. For more information on using the `adb` debugger, see [this article](#adb).
+If your app has more than one associated domain, the status will be "`ask`" if _any_ of them fail to auto-verify. You can use `adb` to check your setup from Android Studio without having to delete/reinstall. For more information on using the `adb` debugger, see [this article](#adb).
 
-> Note: [CloudFlare](#cloudflare) CDN is problematic for Android autoverify, owing to its use of 301 redirect for files.
+> Note: [CloudFlare](#cloudflare) CDN is problematic for Android auto-verify, owing to its use of 301 redirect for files.
 
 ## Further reading
 
@@ -960,6 +960,6 @@ If your app has more than one associated domain, the status will be "`ask`" if _
 1. NGINX [Location](https://docs.nginx.com/nginx/admin-guide/web-server/web-server/#locations) block
 1. [Understanding and Configuring Cloudflare Page Rules](https://support.cloudflare.com/hc/en-us/articles/218411427-Understanding-and-Configuring-Cloudflare-Page-Rules-Page-Rules-Tutorial-)
 1. [Android App Links documentation](https://developer.android.com/training/app-links/verify-site-associations) on auto-verify
-1. <a name="autoverify-article"></a>Article on [Android deep links](https://levelup.gitconnected.com/the-wrong-hacked-and-correct-way-of-android-deep-linking-for-redirected-multisite-with-autoverify-5c72fb1f8053) the wrong and right way (specifically, auto-verify on variations of your different domains)
+1. <a name="auto-verify-article"></a>Article on [Android deep links](https://levelup.gitconnected.com/the-wrong-hacked-and-correct-way-of-android-deep-linking-for-redirected-multisite-with-autoverify-5c72fb1f8053) the wrong and right way (specifically, auto-verify on variations of your different domains)
 1. <a name="adb"></a> Article on [investigating Android deep-link problems with adb](https://medium.com/mobile-app-development-publication/unrealized-deeplink-bug-on-many-apps-6ac78a557702)
 1. Android Studio [App Links Assistant](https://developer.android.com/studio/write/app-link-indexing) tool

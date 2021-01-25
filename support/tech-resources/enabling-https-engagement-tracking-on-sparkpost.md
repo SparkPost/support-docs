@@ -130,7 +130,7 @@ After configuring your CDN, you need instruct SparkPost to encode your links usi
 
 1. Cloudflare does not offer control of cache "time to live" (TTL) on free accounts. This may mask repeat opens/clicks, as described [here](#ttl). If you have a paid account, under Caching, set your TTL value.
 
-1. Add a CNAME entry into DNS for your tracking domain. The value in the record doesn't matter; the record simply needs to exist. For example, if your tracking domain is `track.example.com`, a CNAME value of `example.com` is sufficient. Without a record to reference, the the page rule never gets triggered, and the proper redirection will not occur. Please note that the typical time to progagation of new CNAME records is often around five to ten minutes, but can be longer depending on your DNS provider.
+1. Add a CNAME entry into DNS for your tracking domain. The value in the record doesn't matter; the record simply needs to exist. For example, if your tracking domain is `track.example.com`, a CNAME value of `example.com` is sufficient. Without a record to reference, the the page rule never gets triggered, and the proper redirection will not occur. Please note that the typical time to propagation of new CNAME records is often around five to ten minutes, but can be longer depending on your DNS provider.
 
 1. Follow [these steps](#switch-to-secure) to update and verify your tracking domain.
 
@@ -481,7 +481,7 @@ Creating a new certificate is done through the HTTP(S) load balancer configurati
 
 If you don't have a named certificate present under the "Frontend" section, follow the menu [above](#gcp-frontend) to begin the process.
 
-Once you have a named certificate on your frontend, it should look like this. The certicate is not active yet. It may take a few minutes after creatingthe load balancer for the `IP:Port` to appear.
+Once you have a named certificate on your frontend, it should look like this. The certificate is not active yet. It may take a few minutes after creating the load balancer for the `IP:Port` to appear.
 
 ![](media/enabling-https-engagement-tracking-on-sparkpost/gcp-front-end-got-ip-port.png)
 
@@ -515,7 +515,7 @@ The gray `i` indicates the certificate is in the "provisioning" state, not yet f
 
 CDNs apply caching, with a "Time to Live" (TTL) for each unique request URL. When a request is first fetched, it is cached. Within the TTL, later requests *may* be served to the client from the CDN cache, without touching the SparkPost endpoint. The client is redirected to the landing page as usual, but a side-effect is that SparkPost does not record the repeat opens/clicks.
 
-SparkPost engagement tracking URLs are unique to a particular recipient, message, and (for links) each individal link in the message.
+SparkPost engagement tracking URLs are unique to a particular recipient, message, and (for links) each individual link in the message.
 
 A TTL of zero means "always pass through to the origin", which is, perhaps surprisingly, not ideal. Some inbound mail gateways repeatedly scan email links, which leads to erroneous high event counts.
 
