@@ -79,7 +79,7 @@ Metadata for Customers with dedicated tenants:
   </SPSSODescriptor>
 </EntityDescriptor>
 ```
-*(Enterprise customers: note that you must replace < host > with your SparkPost tenant name API URL. For example https://<tenant>.api.e.sparkpost.com Please see your TAM if you need assistance.)*
+*(Enterprise customers: note that you must replace < host > with your SparkPost tenant name API URL. For example https://< tenant >.api.e.sparkpost.com Please see your TAM if you need assistance.)*
 
 ### Is a relay state required?
 No, no relay state is required.
