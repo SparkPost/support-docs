@@ -24,8 +24,8 @@ US: `https://api.sparkpost.com/api/v1/users/saml/consume`
 
 EU: `https://api.eu.sparkpost.com/api/v1/users/saml/consume`
 
-Enterprise: `https://<host>/api/v1/users/saml/consume`
-*(Note: Enterprise accounts must replace < host > with your SparkPost tenant name. Please see your TAM if you need assistance determining your callback URL.)*
+Enterprise: `https://<api-host>/api/v1/users/saml/consume`
+*(Note: Enterprise accounts must replace < api-host > with your SparkPost tenant API URL. For example https://< tenant >.api.e.sparkpost.com Please see your TAM if you need assistance determining your callback URL.)*
 
 ## Disable SSO
 
@@ -68,18 +68,18 @@ Metadata for EU-hosted Customers:
 </EntityDescriptor>
 ```
 
-Metadata for Enterprise Customers:
+Metadata for Customers with dedicated tenants:
 
 ```xml
 <?xml version="1.0"?>
-<EntityDescriptor xmlns="urn:oasis:names:tc:SAML:2.0:metadata" xmlns:ds="http://www.w3.org/2000/09/xmldsig# " entityID="https://<host>" ID="passport_saml">
+<EntityDescriptor xmlns="urn:oasis:names:tc:SAML:2.0:metadata" xmlns:ds="http://www.w3.org/2000/09/xmldsig# " entityID="https://<api-host>" ID="passport_saml">
   <SPSSODescriptor protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
     <NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress</NameIDFormat>
-    <AssertionConsumerService index="1" isDefault="true" Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://<host>/api/v1/users/saml/consume"/>
+    <AssertionConsumerService index="1" isDefault="true" Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://<api-host>/api/v1/users/saml/consume"/>
   </SPSSODescriptor>
 </EntityDescriptor>
 ```
-*(Enterprise customers: note that you must replace < host > with your SparkPost tenant name. Please see your TAM if you need assistance.)*
+*(Enterprise customers: note that you must replace < api-host > with your SparkPost tenant name API URL. For example https://< tenant >.api.e.sparkpost.com Please see your TAM if you need assistance.)*
 
 ### Is a relay state required?
 No, no relay state is required.
