@@ -68,7 +68,7 @@ Metadata for EU-hosted Customers:
 </EntityDescriptor>
 ```
 
-Metadata for Enterprise Customers:
+Metadata for Customers with dedicated tenants:
 
 ```xml
 <?xml version="1.0"?>
@@ -79,7 +79,7 @@ Metadata for Enterprise Customers:
   </SPSSODescriptor>
 </EntityDescriptor>
 ```
-*(Enterprise customers: note that you must replace < host > with your SparkPost tenant name. Please see your TAM if you need assistance.)*
+*(Enterprise customers: note that you must replace < host > with your SparkPost tenant name API URL. For example https://<tenant>.api.e.sparkpost.com Please see your TAM if you need assistance.)*
 
 ### Is a relay state required?
 No, no relay state is required.
