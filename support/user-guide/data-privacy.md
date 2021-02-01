@@ -26,7 +26,7 @@ If there are any issues reading your uploaded file, you will receive an error me
 Note: You may only select one compliance type per CSV file. If you have requests of different compliance types, please submit a separate request for each compliance type.
 
 ### Subaccount Requests
-If applicable, select if this request applies to the master account, the master and all subaccounts, or one specific subaccount. Learn more about subaccounts [here](https://www.sparkpost.com/docs/user-guide/subaccounts/).
+If applicable, select if this request applies to the primary account, the primary and all subaccounts, or one specific subaccount. Learn more about subaccounts [here](https://www.sparkpost.com/docs/user-guide/subaccounts/).
 
 ## Submitting Requests via API
 
@@ -34,10 +34,10 @@ The [Data Privacy API](https://developers.sparkpost.com/api/data-privacy/) lets 
 
 Just like in the app, you can submit a single recipient or up to 1000 recipients per API call.
 
-Requests are applied only to the master account by default. To apply the request to the master and all subaccounts, set `include_subaccounts=true`. To apply the request to a specific subaccount, include the subaccount in the `x-msys-subaccount` header. Learn more about subaccounts [here](https://www.sparkpost.com/docs/user-guide/subaccounts/).
+Requests are applied only to the primary account by default. To apply the request to the primary and all subaccounts, set `include_subaccounts=true`. To apply the request to a specific subaccount, include the subaccount in the `x-msys-subaccount` header. Learn more about subaccounts [here](https://www.sparkpost.com/docs/user-guide/subaccounts/).
 
 ### Subaccount API Usage
 
-Subaccounts may submit data privacy requests directly to SparkPost via API but not through the SparkPost app. The master account will need to create an API key for the subaccount with the `Data Privacy: Read/Write` permission.
+Subaccounts may submit data privacy requests directly to SparkPost via API but not through the SparkPost app. The primary account will need to create an API key for the subaccount with the `Data Privacy: Read/Write` permission.
 
 Requests submitted by a subaccount will always only apply to that specific subaccount.

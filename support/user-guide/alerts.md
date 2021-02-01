@@ -28,7 +28,7 @@ Pick thresholds that make sense for you and specific resources to track. Each al
 
 ### Bounce Rates
 Bounce rate alerts trigger above a percentage of your choice. Filter what the alert tracks by:
-* Subaccounts: Track Master and all subaccounts, any subaccount, or specific subaccounts.
+* Subaccounts: Track Primary and all subaccounts, any subaccount, or specific subaccounts.
 * Sending Domains
 * Sending IPs
 * Mailbox Providers: Pick popular mailbox providers from [this list](#mailbox-providers).
@@ -40,7 +40,7 @@ Health Score alerts trigger on your choice of:
 * Week over Week change: A percent change from one week to the next, positive or negative.
 
 Filter what the alert tracks by:
-* Subaccounts: Track Master and all subaccounts, any subaccount, or specific subaccounts.
+* Subaccounts: Track Primary and all subaccounts, any subaccount, or specific subaccounts.
 * Facet of your score:
   * IP Pools
   * Sending Domains
@@ -58,7 +58,7 @@ An alert triggers when the metric it tracks breaks the threshold you set. When a
 
 Incidents remain open until the alert doesn't trigger again for at least 30 mintues. If a metric continues to trigger while an incident is open, the incident will be updated to reflect the metric's latest value, but notifications will not be sent. Incidents can be open and updated for up to 24 hours. If a metric continues trigger past 24 hours, the alert will create a new incident and send notifications again.
 
-**Alerts trigger and create individual incidents for each filter they track.** For example, if your alert tracks 2 sendings domains, up two 2 independent incidents could be open for the alert at any time. The subaccounts groups "Master and all subaccounts" and "Any subaccount" act as one filter each.
+**Alerts trigger and create individual incidents for each filter they track.** For example, if your alert tracks 2 sendings domains, up two 2 independent incidents could be open for the alert at any time. The subaccounts groups "Primary and all subaccounts" and "Any subaccount" act as one filter each.
 
 ### Muting Alerts
 Alerts can be muted. If you're testing or want to silence an alert, mute it and it will no longer send notifications. **Muted alerts still track your metrics and trigger incidents**, so you can still find out if your metric has broken the threshold.
