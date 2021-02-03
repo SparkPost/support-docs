@@ -33,7 +33,7 @@ The first chart shows the total emails you sent each day, broken up by each coho
 
 ![Engagement Recency details page](media/engagement-recency/details.png)
 
-In the example above, you can see 51.2% of the email that was sent on August 16th were sent to recipients who engaged with this sender's emails in the past 14 days.
+In the example above, you can see 28.2% of the email that was sent on December 14th were sent to recipients who engaged with this sender's emails in the past 14 days.
 
 With this report, you can see if you are sending to too many disengaged recipients. If the Never Engaged and Not Recently Engaged cohorts make up a majority of the people you send to, you should examine your [list hygiene practices](https://www.sparkpost.com/docs/signals/list-hygiene/).
 
