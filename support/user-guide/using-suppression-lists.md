@@ -18,11 +18,11 @@ When a message is injected either using SMTP or HTTP, SparkPost will check the e
 * **Unsubscribe Requests:** Recipients can request to be unsubscribed by clicking the SparkPost-provided unsubscribe link in the message or by using the List-Unsubscribe header. SparkPost will automatically add the recipient's email address to the suppression list.The unsubscribe header is not added automatically for transactional messages (using the option transactional=true)
 * **Compliance Team:** Recipients can contact SparkPost and request that they no longer receive messages from a particular sender. Protecting our customers’ brands and maintaining high deliverability across all SparkPost's accounts is of the utmost importance. SparkPost's Compliance Team ensures that we’re acting as a good sender within the email community across all our customers and takes requests of recipients very seriously. If a request is received, the Compliance Team will add the recipient's email address to that sender’s suppression list.
 * **Suppression List API:** Using the REST API, you can insert/update a single entry or multiple entries in your suppression list, check the suppression status for a specific recipient, or remove a recipient from your suppression list. For more information, see the [SparkPost Suppression List API](https://www.sparkpost.com/api#/reference/suppression-list "SparkPost Suppression List API").
-* **Suppression list UI:** In the User Interface choose lists and suppression list.
+* **Suppression list UI:** Using the User Interface (UI), select Recipients and then Suppressions.
 
 **If you want to learn how your application can be notified of list pruning events, read our [using unsubscribe events](https://www.sparkpost.com/docs/user-guide/using-unsubscribe-reports/) guide.**
 
-## Managing Suppression Lists with SparkPost
+## Managing Suppression Lists with the SparkPost API
 
 Now that you have unsubscribe events being broadcasted to your webhook consumer, you can begin to watch for those events and prevent sending reputation damage by populating your SparkPost Suppression Lists.
 
@@ -60,11 +60,21 @@ Authorization: YOUR KEY HERE
 Accept: application/json
 ```
 
-**You can also use the User Interface to manage the suppression list**
-Note: CSV upload with subaccounts will need individual files for upload.
+## Managing Suppression Lists with the SparkPost User Interface (UI)
+
+To add a recipient to your Suppression List, you can [Add Suppressions](https://app.sparkpost.com/lists/suppressions/create) ([EU](https://app.eu.sparkpost.com/lists/suppressions/create))
+
+Note: CSV upload with subaccounts will need individual files for upload.
 
 ![suppression list manual entry screenshot](media/using-suppression-lists/add-suppression.png)
 
+To inspect the status of a recipient on your Suppression List, you can [Find by Email](https://app.sparkpost.com/lists/suppressions) ([EU](https://app.eu.sparkpost.com/lists/suppressions)) and then select View Details 
+
+![suppression list view details screenshot](media/using-suppression-lists/find-by-email-view-details.png)
+
+To then remove a recipient from a Suppression List, select Delete
+
+![suppression list delete entry screenshot](media/using-suppression-lists/find-by-email-delete.png)
 
 ## Suppression List Events and Error Messages
 
