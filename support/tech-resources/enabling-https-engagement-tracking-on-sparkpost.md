@@ -32,6 +32,9 @@ This document includes step by step guides for the following CDNs.
 * Google Cloud Platform:
     * [Create a Domain](#gcp-create)
     * [Issue a Certificate](#gcp-cert)
+* Microsoft Azure:
+    * [Create a Domain](#azure-create)
+    * [Issue a Certificate](#azure-cert)
 
 > If you plan to use [deep linking](./deep-links-self-serve) with Android apps, CloudFlare serves files via a `301` redirect, which can prevent Android apps autoverifying domains.
 
@@ -44,6 +47,7 @@ This address is configured as the address your CDN forwards HTTPS requests to, u
 |--|--|
 |SparkPost US|`spgo.io`|
 |SparkPost EU|`eu.spgo.io`|
+|SparkPost Enterprise accounts with their own service endpoint|Endpoint address is specific to each account; usually follows the format of `<tenant>.et.e.sparkpost.com`, where `<tenant>` is unique to your account. Please check with your Technical Account Manager|
 |PowerMTA+Signals|Refer to your PowerMTA User Guide documentation|
 
 ## Create a secure tracking domain on SparkPost
@@ -359,14 +363,13 @@ Fastly keeps previous versions of your configuration, and can show the "diff" be
 
 ## <a name="gcp-create"></a> Step by Step Guide with Google Cloud Platform
 
-Unlike some other services, [Google Cloud Platform](https://cloud.google.com/) (GCP) [External HTTPS Load Balancers](This establishes your tracking domain routing via a [GCP "external" HTTPS load-balancer](https://cloud.google.com/load-balancing/docs/https) with certificate and routing rule to forward all requests to SparkPost. This is conceptually simpler than using a CDN in front of SparkPost tracking, as there is no caching [Time to Live](#ttl) to consider.
+Unlike some other services, [Google Cloud Platform](https://cloud.google.com/) (GCP) can route tracking domains to SparkPost via an ["external" HTTPS load-balancer](https://cloud.google.com/load-balancing/docs/https), with certificate and routing rules. This is conceptually simpler than using a CDN in front of SparkPost tracking, as there is no caching [Time to Live](#ttl) to consider.
 
 GCP organizes resources under named projects.
 
 1. From the top menu, select an existing project, or create a new project.
 
     ![](media/enabling-https-engagement-tracking-on-sparkpost/gcp-new-project.png)
-
 
 1. On the main menu (top left), scroll down and select "Network Services" then "Load balancing".
 
@@ -385,7 +388,6 @@ GCP organizes resources under named projects.
     Choose "HTTP(S) Load Balancing" and Start configuration.
 
 1. On the question "Internet facing or internal only", choose "From Internet to my VMs" and continue.
-
 
     ![](media/enabling-https-engagement-tracking-on-sparkpost/gcp-lb1.png)
 
@@ -412,7 +414,6 @@ GCP organizes resources under named projects.
     * For Protocol, choose "HTTPS". Leave "Named port" and "Timeout" at defaults.
 
     ![](media/enabling-https-engagement-tracking-on-sparkpost/gcp-new-backend-group.png)
-
 
     * In the "New backend" dialog, choose "Create Internet network endpoint group". This will open a new browser tab.
 
@@ -455,9 +456,9 @@ GCP organizes resources under named projects.
     * Enter a name.
     * For Protocol, select "HTTPS (includes HTTP/2)".
 
-    ![](media/enabling-https-engagement-tracking-on-sparkpost/gcp-front-end-config.png)
+        ![](media/enabling-https-engagement-tracking-on-sparkpost/gcp-front-end-config.png)
 
-    * For Certificate, If you have an existing certificate for your tracking domain, you can upload it via this dialog. Otherwise choose "Create a new certificate", this has the advantage of GCP handling your renewals.
+    * If you have an existing certificate for your tracking domain, you can upload it via this dialog. Otherwise choose "Create a new certificate". This has the advantage that GCP will handle your renewals.
 
       ![](media/enabling-https-engagement-tracking-on-sparkpost/gcp-front-end-cert.png)
 
@@ -477,17 +478,17 @@ GCP organizes resources under named projects.
 
 ## <a name="gcp-cert"></a> Issue a certificate with Google Cloud
 
-Creating a new certificate is done through the HTTP(S) load balancer configuration. If you're not already there, on the main menu (top left), scroll down and select "Network Services" then "Load balancing". Select your load balancer by clicking on its name.
+Creating a new certificate is done through the HTTP(S) load balancer configuration. On the main menu (top left), navigate to "Network Services" then "Load balancing". Select your load balancer by clicking on its name.
 
 If you don't have a named certificate present under the "Frontend" section, follow the menu [above](#gcp-frontend) to begin the process.
 
-Once you have a named certificate on your frontend, it should look like this. The certificate is not active yet. It may take a few minutes after creating the load balancer for the `IP:Port` to appear.
+Once you have a named certificate on your frontend, it should look like this. It may take a few minutes after creating the load balancer for the `IP:Port` to appear.
 
 ![](media/enabling-https-engagement-tracking-on-sparkpost/gcp-front-end-got-ip-port.png)
 
-The gray `i` indicates the certificate is in the "provisioning" state, not yet fully active.
+The gray `(i)` indicates the certificate is in the "provisioning" state, not yet fully active.
 
-* Click on the certificate name (underlined, blue above). You should see the status similar to this.
+* Click on the certificate name (underlined in blue). You should see the status similar to this.
 
     ![](media/enabling-https-engagement-tracking-on-sparkpost/gcp-front-end-cert-provisioning.png)
 
@@ -501,11 +502,116 @@ The gray `i` indicates the certificate is in the "provisioning" state, not yet f
 
     ![](media/enabling-https-engagement-tracking-on-sparkpost/gcp-lb-dns-warning.png)
 
-    If your A record is correct, Google Gloud Platform will soon activate the certificate and make it visible on the screen. The green check mark indicates the domain/certificate is active.
+    If your A record is correct, Google Gloud Platform will activate the certificate and make it visible on the screen. The green check mark indicates the domain/certificate is active.
 
     ![](media/enabling-https-engagement-tracking-on-sparkpost/gcp-cert-success.png)
 
-    We found it can take a further few minutes before the certificate is fully active on the endpoint. You can check this using the [troubleshooting tips](#troubleshooting).
+    It can take a further few minutes after this before the certificate is fully active on the endpoint. You can check this using the [troubleshooting tips](#troubleshooting).
+
+1. Once the certificate is fully active, follow [these steps](#switch-to-secure) to update and verify your tracking domain.
+
+---
+
+## <a name="azure-create"></a> Step by Step Guide with Microsoft Azure
+
+[Microsoft Azure](https://docs.microsoft.com/en-gb/azure/)  offers a range of [load-balancer types](https://docs.microsoft.com/en-us/azure/architecture/guide/technology-choices/load-balancing-overview). Most of these are for routing to destinations within Azure. The [Azure Front Door](https://docs.microsoft.com/en-us/azure/frontdoor/front-door-overview) service provides SSL offload with certificate, custom domains, path-based routing, and forwarding to external destinations such as SparkPost tracking. It is a [global service](https://docs.microsoft.com/en-us/azure/frontdoor/front-door-faq#what-regions-is-the-service-available-in), not tied to any specific Azure region.
+
+The steps below are based on [this guide](https://docs.microsoft.com/en-us/azure/frontdoor/quickstart-create-front-door#create-a-front-door-for-your-application) to creating a Front Door instance.
+
+1. From the home page or the Azure menu (top left), select Resource Groups. If you don't have one already, create a Resource Group for your project. Give this a name. Choose a region; this affects only where the Azure project metadata is stored.
+
+    ![](media/enabling-https-engagement-tracking-on-sparkpost/azure-create-resource-group.png)
+
+1. Select "Review and Create", then "Create". This should return you back to your list of Resource Groups.
+
+    ![](media/enabling-https-engagement-tracking-on-sparkpost/azure-select-resource-group.png)
+
+1. From the home page or the Azure menu, select Create a resource. Select Networking > See All > Front Door.
+
+    ![](media/enabling-https-engagement-tracking-on-sparkpost/azure-front-door1.png)
+
+    Choose Create.
+
+    ![](media/enabling-https-engagement-tracking-on-sparkpost/azure-front-door2.png)
+
+    Select your resource group. Select "Next: Configuration".
+
+1. In Frontends/domains, select `+` to open "Add a frontend host". Give your host a name - this needs to be a valid, unique subdomain of the domain `.azurefd.net`. Choosing a name based on your custom tracking domain should help to ensure uniqueness; you should see a green check mark appear on the right. (We will change this later to be your actual custom domain.)
+
+    ![](media/enabling-https-engagement-tracking-on-sparkpost/azure-front-door3.png)
+
+1. Next, we create a backend pool that contains just the SparkPost tracking domain. In Backend pools, select + to open Add a backend pool. Give this a name.
+
+
+    ![](media/enabling-https-engagement-tracking-on-sparkpost/azure-front-door4.png)
+
+1. Select "Add a backend". Set the backend host type to be "Custom host". Set the backend host name to be the correct endpoint address for your service, see [here](#endpoints).
+
+    ![](media/enabling-https-engagement-tracking-on-sparkpost/azure-front-door5.png)
+
+    The backend host header field will be automatically filled in for you. Leave the HTTP port and HTTPS port settings at defaults. Click Add.
+
+    You can optionally configure a Health probe; there is no real need for this, as there is only one backend. If you do configure it, use `\f\a` as the path, and set the probe method to  `Get`, so that SparkPost will respond with a 3xx response (`Head` will get a 4xx response).
+
+1. On "Routing rules", select `+`. Give your rule a name.
+
+    Leave "Accepted protocol" as the default "HTTP and HTTPS". Ensure your "Frontends/domains" setting is your previously configured subdomain name.
+
+    Set the Path to `/*` to match all incoming requests. Leave Route type set to the default "Forward", and set Forwarding Protocol to "Match request". Select "Add".
+
+    ![](media/enabling-https-engagement-tracking-on-sparkpost/azure-front-door6.png)
+
+1. Select "Review + create", then "Create".
+
+    ![](media/enabling-https-engagement-tracking-on-sparkpost/azure-front-door7.png)
+
+    You should see "Deployment is in progress", followed by a "deployment complete" message.
+
+    ![](media/enabling-https-engagement-tracking-on-sparkpost/azure-front-door8.png)
+
+    Your front door is now active on the subdomain we set up, and can be checked using `curl` with added path `/f/a`, for example:
+
+    ```
+    curl -v https://my-tracking-domain.azurefd.net/f/a/
+    ```
+
+    You should see a default `302` response from SparkPost via your Front Door.
+
+## <a name="azure-cert"></a> Issue a certificate with Microsoft Azure
+
+The front door created so far has a certificate for `*.azurefd.net`. Here we set up a custom domain and enable a matching certificate for the custom domain. The following steps are based on [this tutorial](https://docs.microsoft.com/en-us/azure/frontdoor/front-door-custom-domain) followed by [this tutorial](https://docs.microsoft.com/en-us/azure/frontdoor/front-door-custom-domain-https), taking the option "Use a certificate managed by Front Door" and the regular CNAME verification method.
+
+1. Create a CNAME DNS record, pointing your custom domain to your Azure front door. The entry will vary depending on your DNS provider; for example, on GoDaddy, you omit the organizational domain from the "Host" field, i.e. type in only the subdomain part; in this test example, the tracking subdomain is `azure`, yours will be specific to your own name.
+
+    ![](media/enabling-https-engagement-tracking-on-sparkpost/azure-cname.png)
+
+    Save your record. It will typically take from a few minutes up to several hours before the record is published and visible.
+
+1. Sign in to the Azure portal and browse to the Front Door containing the frontend host that you want to map to a custom domain. Select the Front Door designer.
+
+    ![](media/enabling-https-engagement-tracking-on-sparkpost/azure-cert1.png)
+
+1. On the "Frontends/domains" panel, select `+` to add a custom domain. On "Custom host name", enter your tracking domain. Select "Add".
+
+    ![](media/enabling-https-engagement-tracking-on-sparkpost/azure-cert2.png)
+
+1. The Front Door designer will show a warning about your new domain not yet having a default route. Select "Routing rules". Update your routing rule to select your custom domain, and deselect your previously set `azurefd.net` domain.
+
+    ![](media/enabling-https-engagement-tracking-on-sparkpost/azure-cert3.png)
+
+1. On Frontends/domains, select your new domain. Update the "CUSTOM DOMAIN HTTPS" setting to be "Enabled", with minimum TLS version 1.2. Select "Update".
+
+    ![](media/enabling-https-engagement-tracking-on-sparkpost/azure-cert4.png)
+
+1. The Front Door designer shows that there are pending changes. Select "Save". After this is completed, select your custom domain. You should see that the certificate provisioning [progressing through these stages](https://docs.microsoft.com/en-us/azure/frontdoor/front-door-custom-domain-https#operation-progress).
+
+    ![](media/enabling-https-engagement-tracking-on-sparkpost/azure-cert5.png)
+
+1. After a few minutes, you should see the status of your custom domain certificate change to "complete".
+
+    ![](media/enabling-https-engagement-tracking-on-sparkpost/azure-cert6.png)
+
+    You can check the certificate is being served correctly on your domain using the [troubleshooting tips](#troubleshooting).
 
 1. Once the certificate is fully active, follow [these steps](#switch-to-secure) to update and verify your tracking domain.
 
