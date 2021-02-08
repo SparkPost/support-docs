@@ -91,6 +91,7 @@ description: "This chapter provides the definitions of the configuration options
 | [host](/momentum/4/config/ref-host) | configure host specific options |
 | [hostname](/momentum/4/config/ref-hostname) | override the system configured hostname |
 | [host_failure_retry](/momentum/4/config/ref-host-failure-retry) | time to wait before attempting a retry |
+| [hot_domains](/momentum/4/config/ref-hot-domains) | list of high-traffic domains that should be spread across maintainer threads |
 | [http_basic_auth](/momentum/4/config/ref-http-basic-auth) | Define the user credentials when using basic HTTP authentication |
 | [http_host](/momentum/4/config/ref-http-host) | Define the HTTP host |
 | [http_method](/momentum/4/config/ref-http-method) | Define the HTTP method to use |
