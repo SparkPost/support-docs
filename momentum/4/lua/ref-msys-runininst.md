@@ -17,6 +17,9 @@ msys.runInInst — Run a function in a specific event loop
 pool: mixed
 closure: mixed
 ```
+
+Since Momentum 4.3.1.62
+
 <a name="idp16312993"></a>
 ## Description
 
