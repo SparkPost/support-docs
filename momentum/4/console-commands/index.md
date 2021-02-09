@@ -34,6 +34,8 @@ description: "This section documents all the non module specific console command
 | [fingerprint rejection summary](/momentum/4/console-commands/fingerprint-rejection-summary) | display details related to the current inbound connection                         |
 | [flush domain](/momentum/4/console-commands/flush-domain)                                   | perform delivery attempt on delayed queue of a domain                             |
 | [help](/momentum/4/console-commands/help)                                                   | show help information for console commands                                        |
+| [hot_domains list](/momentum/4/console-commands/hot-domains-list)                                        | show how hot domains are spread across maintainer threads                                        |
+| [hot_domains list json](/momentum/4/console-commands/hot-domains-list-json)                                   | show how hot domains are spread across maintainer threads (JSON format)                                        |
 | [mailq](/momentum/4/console-commands/4-mailq)                                                 | show the status of the mail queues                                                |
 | [memory](/momentum/4/console-commands/4-memory)                                               | report detailed memory usage                                                      |
 | [message details](/momentum/4/console-commands/message-details)                             | show detailed message information                                                 |
