@@ -38,7 +38,7 @@ This document includes step by step guides for the following CDNs.
 
 > If you plan to use [deep linking](./deep-links-self-serve) with Android apps, CloudFlare serves files via a `301` redirect, which can prevent Android apps autoverifying domains.
 
-If you are using a CDN not listed here, the steps will differ in workflow. Please refer to your CDN's documentation and contact their respective support departments if you have any questions.
+If you are using a CDN not listed here, the steps will differ in workflow. Please refer to your CDN documentation and contact their respective support departments if you have any questions.
 
 ## <a name="endpoints"></a>SparkPost tracking endpoints
 
@@ -143,7 +143,7 @@ After configuring your CDN, you need instruct SparkPost to encode your links usi
 
 Note: If you utilize CloudFront as your CDN to manage certificates and keys for any custom engagement tracking domains, it will result in a loss of user agent data. We include steps below to minimize data loss.
 
-The following is a sample guide for use with AWS CloudFront **only**; please note, the steps to configure your chosen CDN will likely differ from CloudFront in workflow. Please refer to your CDN's documentation and contact their respective support departments if you have any questions.
+The following is a sample guide for use with AWS CloudFront **only**; please note, the steps to configure your chosen CDN will likely differ from CloudFront in workflow. Please refer to your CDN documentation and contact their respective support departments if you have any questions.
 For up to date information on creating a distribution via CloudFront, please refer to the [AWS docs](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-creating-console.html).
 
 1. Login with your credentials onto AWS console and navigate to [CloudFront](https://console.aws.amazon.com/cloudfront/).
@@ -270,7 +270,7 @@ If you use AWS CloudFront to enable HTTPS engagement tracking, by default, Cloud
 
       ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_edit_domain_behaviors_tab.png)
 
-1. Click on the checkmark next to the first item in the list.
+1. Click on the check-mark next to the first item in the list.
 
       ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_edit_domain_checkmark.png)
 
@@ -310,7 +310,7 @@ Sign up for Fastly or log in to an existing account.
 
     ![](media/enabling-https-engagement-tracking-on-sparkpost/fastly-origin.png)
 
-    Fastly's default settings pass the `user_agent` and `ip_address` through to SparkPost engagement tracking as expected.
+    Fastly default settings pass the `user_agent` and `ip_address` through to SparkPost engagement tracking as expected.
 
 1. On "Settings", "Cache Settings", set the "Fallback TTL" to ten seconds (explanation [here](#ttl)).
 
@@ -449,7 +449,7 @@ GCP organizes resources under named projects.
 
       ![](media/enabling-https-engagement-tracking-on-sparkpost/gcp-https-lb-step2.png)
 
-      For "Host and path rules": the above default confguration (shown in gray) passes all traffic on the load balancer through to our back end; this is sufficient.
+      For "Host and path rules": the above default configuration (shown in gray) passes all traffic on the load balancer through to our back end; this is sufficient.
 
 1. <a name="gcp-frontend"></a>Frontend configuration
 
@@ -502,7 +502,7 @@ The gray `(i)` indicates the certificate is in the "provisioning" state, not yet
 
     ![](media/enabling-https-engagement-tracking-on-sparkpost/gcp-lb-dns-warning.png)
 
-    If your A record is correct, Google Gloud Platform will activate the certificate and make it visible on the screen. The green check mark indicates the domain/certificate is active.
+    If your A record is correct, Google Cloud Platform will activate the certificate and make it visible on the screen. The green check mark indicates the domain/certificate is active.
 
     ![](media/enabling-https-engagement-tracking-on-sparkpost/gcp-cert-success.png)
 
