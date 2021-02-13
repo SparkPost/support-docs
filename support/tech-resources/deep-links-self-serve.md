@@ -631,7 +631,7 @@ With CloudFront we are working with the specific sub-domain used for link tracki
 
 > As described [here](#spec-file), it's easy to create spec files in your web site. The following steps are needed *only* if you are using a CDN for HTTPS tracking and therefore need to configure the spec files there.
 
-> Unlike AWS CloudFront, you need to already have the spec files (`apple-app-site-assocation` and `assetlinks.json`) hosted elsewhere, such as on a web server. When your clients request *`yourtracking.domain.com/.well-known/*`*, CloudFlare responds with a `301` "moved permanently" redirect to your files. We have found this can work, but it's not recommended by [Apple](https://developer.apple.com/library/archive/documentation/General/Conceptual/AppSearch/UniversalLinks.html) or [Google](https://developer.android.com/training/app-links/verify-site-associations). It prevents Android [auto-verifying](#auto-verify) your app.
+> Unlike AWS CloudFront, you need to already have the spec files (`apple-app-site-association` and `assetlinks.json`) hosted elsewhere, such as on a web server. When your clients request *`yourtracking.domain.com/.well-known/*`*, CloudFlare responds with a `301` "moved permanently" redirect to your files. We have found this can work, but it's not recommended by [Apple](https://developer.apple.com/library/archive/documentation/General/Conceptual/AppSearch/UniversalLinks.html) or [Google](https://developer.android.com/training/app-links/verify-site-associations). It prevents Android [auto-verifying](#auto-verify) your app.
 
 1. In your CloudFlare dashboard, an additional page rule is necessary to serve the spec files.
 
@@ -659,7 +659,7 @@ With CloudFront we are working with the specific sub-domain used for link tracki
 
 > As described [here](#spec-file), it's easy to create spec files in your web site. The following steps are needed *only* if you are using a CDN for HTTPS tracking and therefore need to configure the spec files there.
 
-> Unlike AWS CloudFront, you need to already have the spec files (`apple-app-site-assocation` and `assetlinks.json`) hosted elsewhere, such as on a web server. Fastly can serve requests for these files without sending the client a `301` "moved permanently" redirect, so it supports Android [auto-verifying](#auto-verify) your app.
+> Unlike AWS CloudFront, you need to already have the spec files (`apple-app-site-association` and `assetlinks.json`) hosted elsewhere, such as on a web server. Fastly can serve requests for these files without sending the client a `301` "moved permanently" redirect, so it supports Android [auto-verifying](#auto-verify) your app.
 
 1. Set up your secure tracking domain - instructions [here](./enabling-https-engagement-tracking-on-sparkpost/#fastly-create). This establishes your tracking domain routing and certificate in Fastly.
 
@@ -719,7 +719,7 @@ Likewise, if you run a request for a tracked link from a test email sent through
 
 ### <a name="google-cloud"></a>Google Cloud Platform
 
-Like AWS CloudFront, you can host the [spec files](#spec-file) (`apple-app-site-assocation` and `assetlinks.json`) directly on [Google Cloud Platform](https://cloud.google.com/) (GCP) as well as handling HTTPS tracking.
+Like AWS CloudFront, you can host the [spec files](#spec-file) (`apple-app-site-association` and `assetlinks.json`) directly on [Google Cloud Platform](https://cloud.google.com/) (GCP) as well as handling HTTPS tracking.
 
 First, set up your secure tracking domain - instructions [here](./enabling-https-engagement-tracking-on-sparkpost/#gcp-create). This establishes your tracking domain routing via a GCP ["external" HTTPS load-balancer](https://cloud.google.com/load-balancing/docs/https) with a valid certificate for your domain, and a default routing rule to forward all incoming requests to SparkPost.
 
@@ -733,7 +733,7 @@ First, set up your secure tracking domain - instructions [here](./enabling-https
 
       ![](media/deep-links-self-serve/deep-links-gcp-lb-edit.png)
 
-    * <a href="create-gcp-bucket"></a>Select "Backend configuation", then "Create a Backend Bucket".
+    * <a href="create-gcp-bucket"></a>Select "Backend configuration", then "Create a Backend Bucket".
 
       ![](media/deep-links-self-serve/deep-links-gcp-create-backend-bucket.png)
 
@@ -795,7 +795,7 @@ First, set up your secure tracking domain - instructions [here](./enabling-https
 
       ![](media/deep-links-self-serve/deep-links-gcp-bucket-public4.png)
 
-      > This is *not* your tracking-domain URL; it's the address of the bucket. (You can, if you wish, check the files are public by clicking on "Copy URL", then paste taddress into your browser which should open/download the file.)
+      > This is *not* your tracking-domain URL; it's the address of the bucket. (You can, if you wish, check the files are public by clicking on "Copy URL", then paste the address into your browser which should open/download the file.)
 
 1. Update the Apple file MIME type.
 
@@ -813,7 +813,7 @@ First, set up your secure tracking domain - instructions [here](./enabling-https
 
 1. Set up load-balancer routing rules with the path to your backend bucket.
 
-    On the main menu, top left, select "Network Services" then "Load balancing". Select "Edit", then "Backend configuration". You should see your backend service (that fowards to SparkPost) and your backend bucket. If you don't see it, ensure you followed [these steps](create-gcp-bucket) correctly.
+    On the main menu, top left, select "Network Services" then "Load balancing". Select "Edit", then "Backend configuration". You should see your backend service (that forwards to SparkPost) and your backend bucket. If you don't see it, ensure you followed [these steps](create-gcp-bucket) correctly.
 
     ![](media/deep-links-self-serve/deep-links-gcp-backend-config.png)
 
@@ -848,7 +848,7 @@ Branch is a mobile linking platform powering deep links and mobile attribution, 
 
 [Universal Email overview](https://help.branch.io/using-branch/docs/branch-universal-email) is an introduction to the how Branch handles links in email.
 
-Branch has built-in integrations for many email service provider setups including SparkPost, Braze + SparkPost, BlueShift + SparkPost, listed [here](https://help.branch.io/using-branch/docs/email-partners-list). Each of these follow the same standard [Univeral Email Integration Guide](https://help.branch.io/using-branch/docs/universal-email-integration-guide).
+Branch has built-in integrations for many email service provider setups including SparkPost, Braze + SparkPost, BlueShift + SparkPost, listed [here](https://help.branch.io/using-branch/docs/email-partners-list). Each of these follow the same standard [Universal Email Integration Guide](https://help.branch.io/using-branch/docs/universal-email-integration-guide).
 
 
 Branch can host your secure Click Tracking Domain (CTD) and spec files, with a certificate for HTTPS access. However Branch also has specific deep linking features:
@@ -865,7 +865,7 @@ Here are the steps to get your app running with Branch and SparkPost. Your sourc
 1. Download and integrate the Branch SDK into your apps ([iOS](https://help.branch.io/developers-hub/docs/ios-sdk-overview), [Android](https://help.branch.io/developers-hub/docs/android-sdk-overview)). Ensure your app has the expected code for receiving incoming events from the Branch SDK. Ensure your app is configured with your Branch account settings. Ensure your Branch account is configured with your app ID & Bundle ID.
 1. Create a test message containing your `xyz.app.link` on your test device (e.g. using iMessage or email) and check that your app opens and receives the event.  It may be helpful to print received event parameters to the console during development.
 
-1. Follow the Branch [Univeral Email Integration Guide](https://help.branch.io/using-branch/docs/universal-email-integration-guide) to set up your Click Tracking Domain(s) in the Branch dashboard.
+1. Follow the Branch [Universal Email Integration Guide](https://help.branch.io/using-branch/docs/universal-email-integration-guide) to set up your Click Tracking Domain(s) in the Branch dashboard.
 
     This example shows the standard SparkPost US endpoint address. Be sure to use the address for your SparkPost account region and type, see [here](./enabling-https-engagement-tracking-on-sparkpost/#endpoints).
 
