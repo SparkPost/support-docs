@@ -408,6 +408,7 @@ Step-by-step instructions follow, for
 * [CloudFlare](#cloudflare)
 * [Fastly](#fastly)
 * [Google Cloud](#google-cloud)
+* [Microsoft Azure](#azure)
 * [Branch](#platforms)
 * [AppsFlyer](#platforms)
 
@@ -838,6 +839,189 @@ First, set up your secure tracking domain - instructions [here](./enabling-https
 
 ---
 
+### <a name="azure"></a>Microsoft Azure
+
+Like AWS CloudFront, you can host the [spec files](#spec-file) (`apple-app-site-association` and `assetlinks.json`) directly on [Microsoft Azure](https://azure.microsoft.com/) as well as handling HTTPS tracking.
+
+First, set up your secure tracking domain - instructions [here](./enabling-https-engagement-tracking-on-sparkpost/#azure-create). This establishes your tracking domain routing via an [Azure Front Door](https://docs.microsoft.com/en-us/azure/frontdoor/front-door-overview) with a valid certificate for your domain, and a default routing rule to forward all incoming requests to SparkPost.
+
+The following instructions follow parts of [this tutorial on hosting a static website on Blob Storage](https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blob-static-website-host), serving only the deep linking spec files rather than a full website.
+
+1. Create a storage account. In the Azure Portal, browse to "Storage accounts". Select "New". Select the resource group that already contains your Front Door service.
+
+    * Give your Storage account a name.
+    * Select the location to be the same as your Front Door.
+    * Leave other settings at defaults.
+
+        ![](media/deep-links-self-serve/deep-links-azure-create-storage1.png)
+
+    * Select "Next: networking".
+    * Leave all these settings at defaults, i.e. "Public endpoint" and "Microsoft network routing".
+
+        ![](media/deep-links-self-serve/deep-links-azure-create-storage2.png)
+
+    * Select "Next: Data protection".
+    * Leave all these settings at defaults.
+
+        ![](media/deep-links-self-serve/deep-links-azure-create-storage3.png)
+
+    * Select "Next: Advanced".
+    * Leave all these settings at defaults:
+        * Minimum TLS version of 1.2
+        * Allow Blob public access must be Enabled.
+
+        ![](media/deep-links-self-serve/deep-links-azure-create-storage4.png)
+
+    * Select "Next: Tags", you can leave this blank.
+
+        ![](media/deep-links-self-serve/deep-links-azure-create-storage5.png)
+
+    * Select "Next: Review+Create".
+
+        ![](media/deep-links-self-serve/deep-links-azure-create-storage6.png)
+
+    * Select "Create".
+    * After a few moments, you should see the deployment is in progress, and then is complete.
+
+        ![](media/deep-links-self-serve/deep-links-azure-create-storage7.png)
+
+    * You should see a link to download and install a desktop tool, [Azure Storage Explorer](https://azure.microsoft.com/en-us/features/storage-explorer/). While you can do some storage tasks in the portal, some  tasks, such as setting the file `Content-Type` manually on the iOS spec file, appear to require it. We found it's generally easier to work with files via the tool.
+
+        ![](media/deep-links-self-serve/deep-links-azure-create-storage8.png)
+
+1. Configure your storage to serve a static website. In the portal, browse to your storage account. Under Settings, select "Static website".
+
+    ![](media/deep-links-self-serve/deep-links-azure-static1.png)
+
+    * Change the setting to "Enabled".
+    * You can leave "Index document name" and "Error document path" blank.
+    * Take note of the Primary and Secondary endpoint addresses; these are needed later for backend configuration.
+
+    ![](media/deep-links-self-serve/deep-links-azure-static2.png)
+
+1. Open Azure Storage Explorer and browse to your container.
+
+    * You should find that two containers are now present, called `$logs` and `$web`. Select `$web`.
+
+      ![](media/deep-links-self-serve/deep-links-azure-blob1.png)
+
+
+    * Using the "New Folder" item in the top menu, create a directory named `.well-known`.
+
+       ![](media/deep-links-self-serve/deep-links-azure-blob2.png)
+
+    * Note that not much seems to happen! However the address bar changes to show you're in the directory.
+
+       ![](media/deep-links-self-serve/deep-links-azure-blob3.png)
+
+    * Using the "Upload files" option (or by dragging and dropping the file across), create your files.
+
+       ![](media/deep-links-self-serve/deep-links-azure-blob4.png)
+
+    * Note that the Apple file has default Content-Type of `text/plain`, because it has no file extension. Change this by right-clicking the file, selecting "Properties", and change it to `application/json`.
+
+       ![](media/deep-links-self-serve/deep-links-azure-blob5.png)
+
+    * Enable public access by right-clicking the `$web` container, select "Set Public Access Level..".
+
+        ![](media/deep-links-self-serve/deep-links-azure-blob6.png)
+
+    * Set this to "Public read access for blobs only".
+
+        ![](media/deep-links-self-serve/deep-links-azure-blob7.png)
+
+    * Once this has taken effect, check you can view your files via the static site address noted earlier (which will be of the form _your_name.xx.web.core.windows.net_) plus the `.well-known` path to the file. You can do this on the command-line with `curl`, or use a browser, for example:
+
+        ![](media/deep-links-self-serve/deep-links-azure-blob8.png)
+
+1. Configure Azure Front door back end route to your storage. In the portal, navigate to your Front Door instance.
+
+    * Select the "+" option for "Backend pools" to create a new backend pool.
+
+       ![](media/deep-links-self-serve/deep-links-azure-add-backend0.png)
+
+    * Name the pool, for example "well-known".
+
+       ![](media/deep-links-self-serve/deep-links-azure-add-backend1.png)
+
+    * Select "Add a backend".
+    * For "Backend host type", choose "custom host".
+    * Paste in the primary container address you noted earlier. This will update the "Backend host header" entry as well.
+    * Leave other settings at defaults.
+    * Select "Add".
+
+       ![](media/deep-links-self-serve/deep-links-azure-add-backend2.png)
+
+    * Select "Add a backend" again.For "Backend host type", choose "custom host".
+    * Paste in the *secondary* container address you noted earlier. This will update the "Backend host header" entry as well.
+    * Leave other settings at defaults.  Select "Add".
+
+    * On the top menu, click "Save" to apply.
+
+       ![](media/deep-links-self-serve/deep-links-azure-add-backend3.png)
+
+    * After a few seconds, your Front Door will be updated. Click on your backend pool name, it will show the primary and secondary backend hosts,  enabled and with status showing a green check-mark.
+
+       ![](media/deep-links-self-serve/deep-links-azure-blob-backend4.png)
+
+        > Note: while the Front Door Designer "Backend Pools" configuration screen offers a "Backend host type" of "Storage", with corresponding automatic drop-down selection of your storage container, we were unable to make this serve files via Front Door as expected; instead giving a 400 error _"One of the request inputs is out of range"_ response to the HTTPS request. Our approach is based on [this article](https://marcelzehner.ch/2020/04/13/mastering-azure-front-door/).
+
+1. Configure Azure Front Door routing rule to your new backend pool.
+
+    * Select the "+" option for "Routing rules" to create a new routing rule
+
+       ![](media/deep-links-self-serve/deep-links-azure-add-rule0.png)
+
+    * Name the pool, for example "well-known".
+    * Leave "Accepted protocol" at default "HTTP and HTTPS",
+    * On "Frontends/Domains", ensure your custom tracking domain is selected. You could leave the "my_name.azurefd.net" also enabled, or disable it as you wish. Here we select only our custom tracking domain to be active.
+
+       ![](media/deep-links-self-serve/deep-links-azure-add-rule1.png)
+
+    * On "Patterns to match", type `./well-known/*` and delete the default `/*` rule.
+    * On "Route details", leave "Route type" set to the default "Forward".
+    * On Backend pool", choose your new pool (in this case, named "well-known").
+    * Leave "Forwarding Protocol" set to the default "HTTPS Only".
+    * Leave "URL rewrite" set to the default "Disabled".
+    * Select "Add".
+
+       ![](media/deep-links-self-serve/deep-links-azure-add-rule2.png)
+
+    * On the top menu, click "Save" to apply.
+
+       ![](media/deep-links-self-serve/deep-links-azure-add-backend3.png)
+
+    * On the Activity Log, you can see the changes propagate. We found that it can take around 5 minutes before the files are served externally.
+
+1. Check your files are served correctly - see [troubleshooting tips](#troubleshooting).
+
+1. Optional step: block access to your files via the direct static website URLs, i.e. access only via your custom tracking domain Front Door address.
+
+    * In the portal, view your Storage Account. On the left side, under Settings, select "Networking".
+
+       ![](media/deep-links-self-serve/deep-links-azure-restrict1.png)
+
+    * In the portal, view your Storage Account. On the left side, under Settings, select "Networking".
+    * Under Firewalls and Virtual Networks, select "Allow Access from Selected Networks".
+    * Add the IP address range for the Azure Front Door service, which is `147.243.0.0/16` - see [here](https://github.com/MicrosoftDocs/azure-docs/issues/40845#issuecomment-542665873).
+    * Your can check the box to also permit access directly your own client IP address.
+    * At the top of the page, select "Save".
+
+       ![](media/deep-links-self-serve/deep-links-azure-restrict2.png)
+
+1. Optional step: enable Front Door cache for your spec files. This is best done once your spec file contents are known stable.
+
+    * In the portal, navigate to your Front Door. Select Front Door Designer. Select your existing routing rule "well-known".
+    * Scroll down to the "Caching" setting and select "Enabled".
+    * The other settings can be left at defaults.
+
+       ![](media/deep-links-self-serve/deep-links-azure-cache1.png)
+
+    * Select Update.
+    * At the top of the page, Select Save.
+
+---
+
 ## <a name="platforms"></a> Alternative setup with deep linking platforms
 
 If you are using a deep linking platform such as [Branch](https://branch.io/) or [AppsFlyer](https://www.appsflyer.com/), these platforms automate some of the setup process for you, while also working in a specific way.
@@ -963,3 +1147,4 @@ If your app has more than one associated domain, the status will be "`ask`" if _
 1. <a name="auto-verify-article"></a>Article on [Android deep links](https://levelup.gitconnected.com/the-wrong-hacked-and-correct-way-of-android-deep-linking-for-redirected-multisite-with-autoverify-5c72fb1f8053) the wrong and right way (specifically, auto-verify on variations of your different domains)
 1. <a name="adb"></a> Article on [investigating Android deep-link problems with adb](https://medium.com/mobile-app-development-publication/unrealized-deeplink-bug-on-many-apps-6ac78a557702)
 1. Android Studio [App Links Assistant](https://developer.android.com/studio/write/app-link-indexing) tool
+

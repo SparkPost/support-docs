@@ -514,7 +514,7 @@ The gray `(i)` indicates the certificate is in the "provisioning" state, not yet
 
 ## <a name="azure-create"></a> Step by Step Guide with Microsoft Azure
 
-[Microsoft Azure](https://docs.microsoft.com/en-gb/azure/)  offers a range of [load-balancer types](https://docs.microsoft.com/en-us/azure/architecture/guide/technology-choices/load-balancing-overview). Most of these are for routing to destinations within Azure. The [Azure Front Door](https://docs.microsoft.com/en-us/azure/frontdoor/front-door-overview) service provides SSL offload with certificate, custom domains, path-based routing, and forwarding to external destinations such as SparkPost tracking. It is a [global service](https://docs.microsoft.com/en-us/azure/frontdoor/front-door-faq#what-regions-is-the-service-available-in), not tied to any specific Azure region.
+[Microsoft Azure](https://azure.microsoft.com/)  offers a range of [load-balancer types](https://docs.microsoft.com/en-us/azure/architecture/guide/technology-choices/load-balancing-overview). Most of these are for routing to destinations within Azure. The [Azure Front Door](https://docs.microsoft.com/en-us/azure/frontdoor/front-door-overview) service provides SSL offload with certificate, custom domains, path-based routing, and forwarding to external destinations such as SparkPost tracking. It is a [global service](https://docs.microsoft.com/en-us/azure/frontdoor/front-door-faq#what-regions-is-the-service-available-in), not tied to any specific Azure region.
 
 The steps below are based on [this guide](https://docs.microsoft.com/en-us/azure/frontdoor/quickstart-create-front-door#create-a-front-door-for-your-application) to creating a Front Door instance.
 
