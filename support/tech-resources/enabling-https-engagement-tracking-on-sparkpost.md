@@ -445,7 +445,7 @@ GCP organizes resources under named projects.
 
       ![](media/enabling-https-engagement-tracking-on-sparkpost/gcp-backend-create.png)
 
-    * This returns you to the "New HTTP(S) load balancer" view, showing 9with blue check marks) that "Backend configuration" and "Host and path rules" are done.
+    * This returns you to the "New HTTP(S) load balancer" view, showing with blue check marks that "Backend configuration" and "Host and path rules" are done.
 
       ![](media/enabling-https-engagement-tracking-on-sparkpost/gcp-https-lb-step2.png)
 
@@ -549,9 +549,9 @@ The steps below are based on [this guide](https://docs.microsoft.com/en-us/azure
 
     ![](media/enabling-https-engagement-tracking-on-sparkpost/azure-front-door5.png)
 
-    The backend host header field will be automatically filled in for you. Leave the HTTP port and HTTPS port settings at defaults. Click Add.
+    * The backend host header field will be automatically filled in for you. Leave the HTTP port and HTTPS port settings at defaults. Click Add.
 
-    You can optionally configure a Health probe; there is no real need for this, as there is only one backend. If you do configure it, use `\f\a` as the path, and set the probe method to  `Get`, so that SparkPost will respond with a 3xx response (`Head` will get a 4xx response).
+    * Leave the Health probe inactive, as there is only one backend.
 
 1. On "Routing rules", select `+`. Give your rule a name.
 
