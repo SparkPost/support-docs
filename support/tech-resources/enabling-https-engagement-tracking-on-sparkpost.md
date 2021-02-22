@@ -112,7 +112,7 @@ After configuring your CDN, you need instruct SparkPost to encode your links usi
 
         ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudflare_SSL_full.png)
 
-    * Enter your domain with a trailing `/*`, e.g. `track.yourdomain.com/*`
+    * Enter your domain with a leading and trailing `/*`, e.g. `*.track.yourdomain.com/*`
 
     * Select settings "SSL" and "Full".
 
