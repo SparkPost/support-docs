@@ -25,8 +25,6 @@ When correctly configured, a deep link takes your user directly from the email t
 
 The deep link will operate only when all of these match correctly. When you're ready, check your setup against the [summary of setup steps](#summary).
 
-If you are using a deep linking platform such as [branch.io](https://branch.io/) or [AppsFlyer](https://www.appsflyer.com/), these platforms automate some of the setup - [see here](#platforms).
-
 
 ##  <a name="app"></a> Writing your mobile app
 The following developer documentation explains the deep linking mechanisms in detail.
@@ -96,6 +94,8 @@ The [App Links Assistant](https://developer.android.com/studio/write/app-link-in
 
     ![Android App Links Assistant](media/deep-links-self-serve/deep-links-android-app-assistant0.png)
 
+    URL Mapping Editor:
+
     ![Android App Links Assistant](media/deep-links-self-serve/deep-links-android-app-assistant1a.png)
 
     Add your tracking domain URLs with Path set to "pathPrefix", and add your chosen prefix starting with `/f/`, for example `/f/open-in-app`. Your app can be registered to multiple URLs if you wish.
@@ -130,18 +130,18 @@ The [App Links Assistant](https://developer.android.com/studio/write/app-link-in
 
     ![Android App first open](media/deep-links-self-serve/deep-links-android-first-time-open.png)
 
- 1. <a name="autoverify"></a> In `AndroidManifest.xml`, you can set your domain `intent-filter` to `autoVerify` to favor opening your app instead of asking the user - see [here](https://developer.android.com/training/app-links/verify-site-associations).
+ 1. <a name="auto-verify"></a> In `AndroidManifest.xml`, you can set your domain `intent-filter` to `autoVerify` to favor opening your app instead of asking the user - see [here](https://developer.android.com/training/app-links/verify-site-associations).
 
 
     ```xml
     <intent-filter android:autoVerify="true">
     ```
 
-    This requires your `assetlinks.json` file to be hosted on your specific tracking domain. This is explained further in the [hosting](#hosting) and [troubleshooting](#troubleshooting) sections.
+    This requires your `assetlinks.json` file to be hosted on your specific tracking domain. This is explained further in the [hosting](#hosting) and [troubleshooting](#testing-auto-verify) sections.
 ---
 ## <a name="tracking"></a> Deep links and click tracking
 
-Setting up a [custom tracking domain](./nabling-multiple-custom-tracking-domains) is useful for branding and email reputation. It is required for click tracking of deep links in your HTML email.
+Setting up a [custom tracking domain](./enabling-multiple-custom-tracking-domains) is useful for branding and email reputation. It is required for click tracking of deep links in your HTML email.
 
 It's best to choose a subdomain (e.g. `track.example.com`), so that subdomain can be redirected, while your website uses your organizational domain. Each tracking domain can serve regular email tracked links and deep links. Your content can use a mixture of both kinds of link inside the same email.
 
@@ -391,7 +391,7 @@ Your `AndroidManifest.xml` also needs these permissions added to `<manifest` .. 
 
 #### Android User Agent
 
-In SparkPost event reporting, the attribute `user_agent` carries information on your app. In our demo app, it will be the default set by the library: `"okhttp/4.9.0"`. This enables you to use SparkPost analytics to find out which links are being opened via your app. You can [customise this](https://square.github.io/okhttp/interceptors/) in your code.
+In SparkPost event reporting, the attribute `user_agent` carries information on your app. In our demo app, it will be the default set by the library: `"okhttp/4.9.0"`. This enables you to use SparkPost analytics to find out which links are being opened via your app. You can [customize this](https://square.github.io/okhttp/interceptors/) in your code.
 
 
 ---
@@ -406,7 +406,13 @@ Step-by-step instructions follow, for
 * [NGINX](#nginx)
 * [AWS CloudFront](#aws-cloudfront)
 * [CloudFlare](#cloudflare)
-* [Fastly](fastly)
+* [Fastly](#fastly)
+* [Google Cloud](#google-cloud)
+* [Microsoft Azure](#azure)
+* [Branch](#platforms)
+* [AppsFlyer](#platforms)
+
+If you are using a deep linking platform such as [Branch](https://branch.io/) or [AppsFlyer](https://www.appsflyer.com/), these platforms automate the spec file creation for you.
 
 ### <a name="apache"></a> Apache
 
@@ -428,7 +434,7 @@ Click the padlock symbol and check the certificate is valid and as expected. Rep
 
 The above simple instructions allow deep linking to work via your website's main `/.well-known` URL.
 
-To get Android to [autoverify](#autoverify) your app's domains (skipping the user ["Ask" step](#android-ask)), you need to serve spec files from your *specific* tracking domains, *while also forwarding* opens and clicks to SparkPost on that domain. Follow the steps in [this article](./using-proxy-https-tracking-domain), then modify the Apache patterns to look like this:
+To get Android to [auto-verify](#auto-verify) your app's domains (skipping the user ["Ask" step](#android-ask)), you need to serve spec files from your *specific* tracking domains, *while also forwarding* opens and clicks to SparkPost on that domain. Follow the steps in [this article](./using-proxy-https-tracking-domain), then modify the Apache patterns to look like this:
 
 
 ```apacheconf
@@ -466,7 +472,7 @@ The spec files are made available under URL `https://yourtrackingdomain.example.
 
 For completeness, the same routing is configured for HTTP on port 80, although mobile devices will request the spec files via HTTPS.
 
-To check your files are served correctly and Android autoverify is working - see [troubleshooting tips](#troubleshooting).
+To check your files are served correctly and Android auto-verify is working - see [troubleshooting tips](#troubleshooting).
 
 ---
 
@@ -478,7 +484,7 @@ To check your files are served correctly and Android autoverify is working - see
 
 1. Within this, create a directory `.well-known` if it doesn't already exist, and upload/create your spec files here. This will usually require root privilege on your server.
 
-1. Add `location` blocks to your config to declare the spec files on your tracking domain, which will allow Android to [autoverify](#autoverify). Here is a complete example, including the engagement-tracking `proxy-pass` block done in step 1.
+1. Add `location` blocks to your config to declare the spec files on your tracking domain, which will allow Android to [auto-verify](#auto-verify). Here is a complete example, including the engagement-tracking `proxy-pass` block done in step 1.
 
     ```
     server {
@@ -517,7 +523,7 @@ To check your files are served correctly and Android autoverify is working - see
 
 1. Check your configuration is valid using `sudo nginx -t`. If no errors are reported, then reload using `sudo nginx -s reload`.
 
-1. Check your files are served correctly and Android autoverify is working - see [troubleshooting tips](#troubleshooting).
+1. Check your files are served correctly and Android auto-verify is working - see [troubleshooting tips](#troubleshooting).
 
 ---
 
@@ -540,7 +546,7 @@ With CloudFront we are working with the specific sub-domain used for link tracki
 
     ![](media/deep-links-self-serve/deep-links-aws-create-bucket.png)
 
-    * Step 2, "Congfigure options", you can leave these options unset.
+    * Step 2, "Configure options", you can leave these options unset.
 
     * Step 3, "Set permissions", leave this at default ("Block all") for now.
 
@@ -618,7 +624,7 @@ With CloudFront we are working with the specific sub-domain used for link tracki
 
 1. Check your S3 bucket configuration is secure using [this tool](https://console.aws.amazon.com/trustedadvisor/home?#/category/security).
 
-1. To check your files are served correctly and Android autoverify is working, see [troubleshooting tips](#troubleshooting).
+1. To check your files are served correctly and Android auto-verify is working, see [troubleshooting tips](#troubleshooting).
 
 ---
 
@@ -626,7 +632,7 @@ With CloudFront we are working with the specific sub-domain used for link tracki
 
 > As described [here](#spec-file), it's easy to create spec files in your web site. The following steps are needed *only* if you are using a CDN for HTTPS tracking and therefore need to configure the spec files there.
 
-> Unlike AWS CloudFront, you need to already have the spec files (`apple-app-site-assocation` and `assetlinks.json`) hosted elsewhere, such as on a web server. When your clients request *`yourtracking.domain.com/.well-known/*`*, CloudFlare responds with a `301` "moved permanently" redirect to your files. We have found this can work, but it's not recommended by [Apple](https://developer.apple.com/library/archive/documentation/General/Conceptual/AppSearch/UniversalLinks.html) or [Google](https://developer.android.com/training/app-links/verify-site-associations). It prevents Android [autoverifying](#autoverify) your app.
+> Unlike AWS CloudFront, you need to already have the spec files (`apple-app-site-association` and `assetlinks.json`) hosted elsewhere, such as on a web server. When your clients request *`yourtracking.domain.com/.well-known/*`*, CloudFlare responds with a `301` "moved permanently" redirect to your files. We have found this can work, but it's not recommended by [Apple](https://developer.apple.com/library/archive/documentation/General/Conceptual/AppSearch/UniversalLinks.html) or [Google](https://developer.android.com/training/app-links/verify-site-associations). It prevents Android [auto-verifying](#auto-verify) your app.
 
 1. In your CloudFlare dashboard, an additional page rule is necessary to serve the spec files.
 
@@ -654,7 +660,7 @@ With CloudFront we are working with the specific sub-domain used for link tracki
 
 > As described [here](#spec-file), it's easy to create spec files in your web site. The following steps are needed *only* if you are using a CDN for HTTPS tracking and therefore need to configure the spec files there.
 
-> Unlike AWS CloudFront, you need to already have the spec files (`apple-app-site-assocation` and `assetlinks.json`) hosted elsewhere, such as on a web server. Fastly can serve requests for these files without sending the client a `301` "moved permanently" redirect, so it supports Android [autoverifying](#autoverify) your app.
+> Unlike AWS CloudFront, you need to already have the spec files (`apple-app-site-association` and `assetlinks.json`) hosted elsewhere, such as on a web server. Fastly can serve requests for these files without sending the client a `301` "moved permanently" redirect, so it supports Android [auto-verifying](#auto-verify) your app.
 
 1. Set up your secure tracking domain - instructions [here](./enabling-https-engagement-tracking-on-sparkpost/#fastly-create). This establishes your tracking domain routing and certificate in Fastly.
 
@@ -712,9 +718,313 @@ Likewise, if you run a request for a tracked link from a test email sent through
 
 ---
 
+### <a name="google-cloud"></a>Google Cloud Platform
+
+Like AWS CloudFront, you can host the [spec files](#spec-file) (`apple-app-site-association` and `assetlinks.json`) directly on [Google Cloud Platform](https://cloud.google.com/) (GCP) as well as handling HTTPS tracking.
+
+First, set up your secure tracking domain - instructions [here](./enabling-https-engagement-tracking-on-sparkpost/#gcp-create). This establishes your tracking domain routing via a GCP ["external" HTTPS load-balancer](https://cloud.google.com/load-balancing/docs/https) with a valid certificate for your domain, and a default routing rule to forward all incoming requests to SparkPost.
+
+1. From the top menu, select your existing project. On the main menu, top left, select "Network Services" then "Load balancing". You can pin the "Network Services" menu for easy access later.
+
+    ![](media/deep-links-self-serve/deep-links-gcp-select-project.png)
+
+    You will see your named load-balancer.
+
+    * Click the three dots menu on the right, and select "Edit".
+
+      ![](media/deep-links-self-serve/deep-links-gcp-lb-edit.png)
+
+    * <a href="create-gcp-bucket"></a>Select "Backend configuration", then "Create a Backend Bucket".
+
+      ![](media/deep-links-self-serve/deep-links-gcp-create-backend-bucket.png)
+
+    * Give your backend bucket a name.
+
+      ![](media/deep-links-self-serve/deep-links-gcp-create-backend-bucket2.png)
+
+    * Select "Browse". If you don't have a storage bucket yet, select "New bucket".
+
+      ![](media/deep-links-self-serve/deep-links-gcp-create-backend-bucket3.png)
+
+    * Give your storage bucket a name, which must be globally unique (according to Google's naming guidelines in the linked article). It states the bucket names are *publicly visible* to other GCP users.
+
+      ![](media/deep-links-self-serve/deep-links-gcp-create-backend-bucket4.png)
+
+    * Unless you are planning to make frequent changes to your spec files, enable Cloud CDN and select the "Cache static content (recommended)" option.
+
+      ![](media/deep-links-self-serve/deep-links-gcp-create-backend-bucket5.png)
+
+    * Select Create to set up the (empty) bucket associated with your load-balancer.
+
+1. Upload spec files to the bucket. On the main menu, top left, select "Storage" then "Browser". (You can pin the "Storage" menu for easy access.)
+
+    ![](media/deep-links-self-serve/deep-links-gcp-storage.png)
+
+    Click on your named bucket.
+
+    ![](media/deep-links-self-serve/deep-links-gcp-upload.png)
+
+    Select "Create Folder" and give this the name `.well-known`.
+
+    ![](media/deep-links-self-serve/deep-links-gcp-create-folder.png)
+
+    Click on this folder. Upload your spec files to the bucket. It should now look like this.
+
+    ![](media/deep-links-self-serve/deep-links-gcp-files-created.png)
+
+1. Configure the bucket to be public.
+
+    Here we make the entire bucket readable, rather than setting individual file access-controls. For more information on access controls, refer to [this article](https://cloud.google.com/storage/docs/access-control/making-data-public).
+
+    Return to the bucket details page, and select the "Permissions" tab. The bucket is not yet public, it's "subject to object ACLs".
+
+    ![](media/deep-links-self-serve/deep-links-gcp-bucket-public.png)
+
+    * Select the "+ ADD" button.
+
+      ![](media/deep-links-self-serve/deep-links-gcp-bucket-public2.png)
+
+    * In the "New members" field, enter `allUsers`.
+
+    * In the "Select a role" drop down, select the "Cloud Storage" sub-menu, and click the "Storage Object Viewer" option.
+
+    * Click **Save**. You will see the following warning. Select "Allow public access".
+
+      ![](media/deep-links-self-serve/deep-links-gcp-bucket-public3.png)
+
+    * Return to the Bucket Details screen, and select the "Objects" tab. You will see both your files are now public, and have a specific URL.
+
+      ![](media/deep-links-self-serve/deep-links-gcp-bucket-public4.png)
+
+      > This is *not* your tracking-domain URL; it's the address of the bucket. (You can, if you wish, check the files are public by clicking on "Copy URL", then paste the address into your browser which should open/download the file.)
+
+1. Update the Apple file MIME type.
+
+   Note that the Apple file, by default, has MIME type `application/octet-stream`. It's [recommended](https://branch.io/resources/aasa-validator/) to change this to `application/json`.
+
+    * Select the three dots menu on the right of this file, and select "Edit metadata".
+
+      ![](media/deep-links-self-serve/deep-links-gcp-apple-json.png)
+
+    * Edit the object metadata to set the content type.
+
+      ![](media/deep-links-self-serve/deep-links-gcp-apple-json2.png)
+
+    * Click Save.
+
+1. Set up load-balancer routing rules with the path to your backend bucket.
+
+    On the main menu, top left, select "Network Services" then "Load balancing". Select "Edit", then "Backend configuration". You should see your backend service (that forwards to SparkPost) and your backend bucket. If you don't see it, ensure you followed [these steps](create-gcp-bucket) correctly.
+
+    ![](media/deep-links-self-serve/deep-links-gcp-backend-config.png)
+
+
+    * Select "Host and path rules" from the menu. Create a rule which routes the spec file URL requests to your bucket.
+
+      ![](media/deep-links-self-serve/deep-links-gcp-backend-host-path-rules.png)
+
+      * Hosts: enter `*`
+      * Paths: enter `/.well-known/*`
+      * Backends: choose your named backend bucket
+
+    * Select "Update".
+
+    * Use the blue arrow button (top left) to return to the load balancer details view, which should look like this.
+
+      ![](media/deep-links-self-serve/deep-links-gcp-backend-lb-done.png)
+
+      Note that GCP generated the Hosts `*`  Paths `/*` rule automatically.
+
+1. Check your files are served correctly - see [troubleshooting tips](#troubleshooting).
+
+---
+
+### <a name="azure"></a>Microsoft Azure
+
+Like AWS CloudFront, you can host the [spec files](#spec-file) (`apple-app-site-association` and `assetlinks.json`) directly on [Microsoft Azure](https://azure.microsoft.com/) as well as handling HTTPS tracking.
+
+First, set up your secure tracking domain - instructions [here](./enabling-https-engagement-tracking-on-sparkpost/#azure-create). This establishes your tracking domain routing via an [Azure Front Door](https://docs.microsoft.com/en-us/azure/frontdoor/front-door-overview) with a valid certificate for your domain, and a default routing rule to forward all incoming requests to SparkPost.
+
+The following instructions follow parts of [this tutorial on hosting a static website on Blob Storage](https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blob-static-website-host), serving only the deep linking spec files rather than a full website.
+
+1. Create a storage account. In the Azure Portal, browse to "Storage accounts". Select "New". Select the resource group that already contains your Front Door service.
+
+    * Give your Storage account a name.
+    * Select the location to be the same as your Front Door.
+    * Leave other settings at defaults.
+
+        ![](media/deep-links-self-serve/deep-links-azure-create-storage1.png)
+
+    * Select "Next: networking".
+    * Leave all these settings at defaults, i.e. "Public endpoint" and "Microsoft network routing".
+
+        ![](media/deep-links-self-serve/deep-links-azure-create-storage2.png)
+
+    * Select "Next: Data protection".
+    * Leave all these settings at defaults.
+
+        ![](media/deep-links-self-serve/deep-links-azure-create-storage3.png)
+
+    * Select "Next: Advanced".
+    * Leave all these settings at defaults:
+        * Minimum TLS version of 1.2
+        * Allow Blob public access must be Enabled.
+
+        ![](media/deep-links-self-serve/deep-links-azure-create-storage4.png)
+
+    * Select "Next: Tags", you can leave this blank.
+
+        ![](media/deep-links-self-serve/deep-links-azure-create-storage5.png)
+
+    * Select "Next: Review+Create".
+
+        ![](media/deep-links-self-serve/deep-links-azure-create-storage6.png)
+
+    * Select "Create".
+    * After a few moments, you should see the deployment is in progress, and then is complete.
+
+        ![](media/deep-links-self-serve/deep-links-azure-create-storage7.png)
+
+    * You should see a link to download and install a desktop tool, [Azure Storage Explorer](https://azure.microsoft.com/en-us/features/storage-explorer/). While you can do some storage tasks in the portal, some  tasks, such as setting the file `Content-Type` manually on the iOS spec file, appear to require it. We found it's generally easier to work with files via the tool.
+
+        ![](media/deep-links-self-serve/deep-links-azure-create-storage8.png)
+
+1. Configure your storage to serve a static website. In the portal, browse to your storage account. Under Settings, select "Static website".
+
+    ![](media/deep-links-self-serve/deep-links-azure-static1.png)
+
+    * Change the setting to "Enabled".
+    * You can leave "Index document name" and "Error document path" blank.
+    * Take note of the Primary and Secondary endpoint addresses; these are needed later for backend configuration.
+
+    ![](media/deep-links-self-serve/deep-links-azure-static2.png)
+
+1. Open Azure Storage Explorer and browse to your container.
+
+    * You should find that two containers are now present, called `$logs` and `$web`. Select `$web`.
+
+      ![](media/deep-links-self-serve/deep-links-azure-blob1.png)
+
+
+    * Using the "New Folder" item in the top menu, create a directory named `.well-known`.
+
+       ![](media/deep-links-self-serve/deep-links-azure-blob2.png)
+
+    * Note that not much seems to happen! However the address bar changes to show you're in the directory.
+
+       ![](media/deep-links-self-serve/deep-links-azure-blob3.png)
+
+    * Using the "Upload files" option (or by dragging and dropping the file across), create your files.
+
+       ![](media/deep-links-self-serve/deep-links-azure-blob4.png)
+
+    * Note that the Apple file has default Content-Type of `text/plain`, because it has no file extension. Change this by right-clicking the file, selecting "Properties", and change it to `application/json`.
+
+       ![](media/deep-links-self-serve/deep-links-azure-blob5.png)
+
+    * Enable public access by right-clicking the `$web` container, select "Set Public Access Level..".
+
+        ![](media/deep-links-self-serve/deep-links-azure-blob6.png)
+
+    * Set this to "Public read access for blobs only".
+
+        ![](media/deep-links-self-serve/deep-links-azure-blob7.png)
+
+    * Once this has taken effect, check you can view your files via the static site address noted earlier (which will be of the form _your_name.xx.web.core.windows.net_) plus the `.well-known` path to the file. You can do this on the command-line with `curl`, or use a browser, for example:
+
+        ![](media/deep-links-self-serve/deep-links-azure-blob8.png)
+
+1. Configure Azure Front door back end route to your storage. In the portal, navigate to your Front Door instance.
+
+    * Select the "+" option for "Backend pools" to create a new backend pool.
+
+       ![](media/deep-links-self-serve/deep-links-azure-add-backend0.png)
+
+    * Name the pool, for example "well-known".
+
+       ![](media/deep-links-self-serve/deep-links-azure-add-backend1.png)
+
+    * Select "Add a backend".
+    * For "Backend host type", choose "custom host".
+    * Paste in the primary container address you noted earlier. This will update the "Backend host header" entry as well.
+    * Leave other settings at defaults.
+    * Select "Add".
+
+       ![](media/deep-links-self-serve/deep-links-azure-add-backend2.png)
+
+    * Select "Add a backend" again.For "Backend host type", choose "custom host".
+    * Paste in the *secondary* container address you noted earlier. This will update the "Backend host header" entry as well.
+    * Leave other settings at defaults.  Select "Add".
+
+    * On the top menu, click "Save" to apply.
+
+       ![](media/deep-links-self-serve/deep-links-azure-add-backend3.png)
+
+    * After a few seconds, your Front Door will be updated. Click on your backend pool name, it will show the primary and secondary backend hosts,  enabled and with status showing a green check-mark.
+
+       ![](media/deep-links-self-serve/deep-links-azure-blob-backend4.png)
+
+        > Note: while the Front Door Designer "Backend Pools" configuration screen offers a "Backend host type" of "Storage", with corresponding automatic drop-down selection of your storage container, we were unable to make this serve files via Front Door as expected; instead giving a 400 error _"One of the request inputs is out of range"_ response to the HTTPS request. Our approach is based on [this article](https://marcelzehner.ch/2020/04/13/mastering-azure-front-door/).
+
+1. Configure Azure Front Door routing rule to your new backend pool.
+
+    * Select the "+" option for "Routing rules" to create a new routing rule
+
+       ![](media/deep-links-self-serve/deep-links-azure-add-rule0.png)
+
+    * Name the pool, for example "well-known".
+    * Leave "Accepted protocol" at default "HTTP and HTTPS",
+    * On "Frontends/Domains", ensure your custom tracking domain is selected. You could leave the "my_name.azurefd.net" also enabled, or disable it as you wish. Here we select only our custom tracking domain to be active.
+
+       ![](media/deep-links-self-serve/deep-links-azure-add-rule1.png)
+
+    * On "Patterns to match", type `./well-known/*` and delete the default `/*` rule.
+    * On "Route details", leave "Route type" set to the default "Forward".
+    * On Backend pool", choose your new pool (in this case, named "well-known").
+    * Leave "Forwarding Protocol" set to the default "HTTPS Only".
+    * Leave "URL rewrite" set to the default "Disabled".
+    * Select "Add".
+
+       ![](media/deep-links-self-serve/deep-links-azure-add-rule2.png)
+
+    * On the top menu, click "Save" to apply.
+
+       ![](media/deep-links-self-serve/deep-links-azure-add-backend3.png)
+
+    * On the Activity Log, you can see the changes propagate. We found that it can take around 5 minutes before the files are served externally.
+
+1. Check your files are served correctly - see [troubleshooting tips](#troubleshooting).
+
+1. Optional step: block access to your files via the direct static website URLs, i.e. access only via your custom tracking domain Front Door address.
+
+    * In the portal, view your Storage Account. On the left side, under Settings, select "Networking".
+
+       ![](media/deep-links-self-serve/deep-links-azure-restrict1.png)
+
+    * In the portal, view your Storage Account. On the left side, under Settings, select "Networking".
+    * Under Firewalls and Virtual Networks, select "Allow Access from Selected Networks".
+    * Add the IP address range for the Azure Front Door service, which is `147.243.0.0/16` - see [here](https://github.com/MicrosoftDocs/azure-docs/issues/40845#issuecomment-542665873).
+    * Your can check the box to also permit access directly your own client IP address.
+    * At the top of the page, select "Save".
+
+       ![](media/deep-links-self-serve/deep-links-azure-restrict2.png)
+
+1. Optional step: enable Front Door cache for your spec files. This is best done once your spec file contents are known stable.
+
+    * In the portal, navigate to your Front Door. Select Front Door Designer. Select your existing routing rule "well-known".
+    * Scroll down to the "Caching" setting and select "Enabled".
+    * The other settings can be left at defaults.
+
+       ![](media/deep-links-self-serve/deep-links-azure-cache1.png)
+
+    * Select Update.
+    * At the top of the page, Select Save.
+
+---
+
 ## <a name="platforms"></a> Alternative setup with deep linking platforms
 
-If you are using a deep linking platform such as [branch.io](https://branch.io/) or [AppsFlyer](https://www.appsflyer.com/), these platforms automate some of the setup process for you, while also working in a specific way.
+If you are using a deep linking platform such as [Branch](https://branch.io/) or [AppsFlyer](https://www.appsflyer.com/), these platforms automate some of the setup process for you, while also working in a specific way.
 
 ### Branch
 
@@ -722,7 +1032,7 @@ Branch is a mobile linking platform powering deep links and mobile attribution, 
 
 [Universal Email overview](https://help.branch.io/using-branch/docs/branch-universal-email) is an introduction to the how Branch handles links in email.
 
-Branch has built-in integrations for many email service provider setups including SparkPost, Braze + SparkPost, BlueShift + SparkPost, listed [here](https://help.branch.io/using-branch/docs/email-partners-list). Each of these follow the same standard [Univeral Email Integration Guide](https://help.branch.io/using-branch/docs/universal-email-integration-guide).
+Branch has built-in integrations for many email service provider setups including SparkPost, Braze + SparkPost, BlueShift + SparkPost, listed [here](https://help.branch.io/using-branch/docs/email-partners-list). Each of these follow the same standard [Universal Email Integration Guide](https://help.branch.io/using-branch/docs/universal-email-integration-guide).
 
 
 Branch can host your secure Click Tracking Domain (CTD) and spec files, with a certificate for HTTPS access. However Branch also has specific deep linking features:
@@ -734,12 +1044,12 @@ Branch also has a special link format, which can be used for testing with your a
 
 ![](media/deep-links-self-serve/deep-links-branch-link1.png)
 
-Here are the steps to get your app running with Branch and SparkPost. Your source of help during this process is the Branch online documentation and support system. The first steps are independent of email provider, and are done with your Branch account, code development enviroment, and Branch SDK.
+Here are the steps to get your app running with Branch and SparkPost. Your source of help during this process is the Branch online documentation and support system. The first steps are independent of email provider, and are done with your Branch account, code development environment, and Branch SDK.
 
 1. Download and integrate the Branch SDK into your apps ([iOS](https://help.branch.io/developers-hub/docs/ios-sdk-overview), [Android](https://help.branch.io/developers-hub/docs/android-sdk-overview)). Ensure your app has the expected code for receiving incoming events from the Branch SDK. Ensure your app is configured with your Branch account settings. Ensure your Branch account is configured with your app ID & Bundle ID.
 1. Create a test message containing your `xyz.app.link` on your test device (e.g. using iMessage or email) and check that your app opens and receives the event.  It may be helpful to print received event parameters to the console during development.
 
-1. Follow the Branch [Univeral Email Integration Guide](https://help.branch.io/using-branch/docs/universal-email-integration-guide) to set up your Click Tracking Domain(s) in the Branch dashboard.
+1. Follow the Branch [Universal Email Integration Guide](https://help.branch.io/using-branch/docs/universal-email-integration-guide) to set up your Click Tracking Domain(s) in the Branch dashboard.
 
     This example shows the standard SparkPost US endpoint address. Be sure to use the address for your SparkPost account region and type, see [here](./enabling-https-engagement-tracking-on-sparkpost/#endpoints).
 
@@ -758,6 +1068,18 @@ Clicking the gearwheel shows:
 ![](media/deep-links-self-serve/deep-links-branch2.png)
 
 The [troubleshooting](#troubleshooting) tips below can also be used. For example, you can check your spec files are present on your Click Tracking Domain, and check your tracked links are resolving through Branch to SparkPost's endpoint.
+
+
+### AppsFlyer
+
+AppsFlyer supports [deep links](https://www.appsflyer.com/product/one-link-deep-linking/) from web-to-app, email, and social sources, with built-in integrations for many [email service provider setups](https://support.appsflyer.com/hc/en-us/articles/360004556077-ESPs-Email-service-providers-explained).
+
+
+- Include the [AppsFlyer SDK](https://support.appsflyer.com/hc/en-us/categories/201114756-SDK-integration-) into your app. Your source of help during this process is the AppsFlyer online documentation and support system.
+
+- For email integration, follow these [step by step instructions](https://support.appsflyer.com/hc/en-us/articles/360014381317) for SparkPost. AppsFlyer supports [Braze+SparkPost](https://support.appsflyer.com/hc/en-us/articles/360001437497-Braze) in the same way.
+
+Complete the steps [here](./enabling-https-engagement-tracking-on-sparkpost/#switch-to-secure) to set your tracking domain in SparkPost to Secure mode and verify, if not verified already.
 
 ## <a name="troubleshooting"></a>Troubleshooting tips
 
@@ -786,13 +1108,13 @@ The domains entitlement in your app(s) must match your tracking domain. This can
 * [Android](android-spec-file) configuration
 
 
-### Android: testing autoverify
+### <a name="testing-auto-verify"></a>Android: testing auto-verify
 
-Getting your app to autoverify requires the `assetlinks.json` file to be available on your _specific_ tracking domain rather than relying on the organizational domain (main website).
+Getting your app to auto-verify requires the `assetlinks.json` file to be available on your _specific_ tracking domain rather than relying on the organizational domain (main website).
 
-To test autoverify works for your domain(s), start with a fresh install of your app, as mentioned in [this article](#autoverify-article), because Android remembers the user's choice.
+To test auto-verify works for your domain(s), start with a fresh install of your app, as mentioned in [this article](#auto-verify-article), because Android remembers the user's choice.
 
-If you are getting the ["ask" prompt](#android-ask) to choose which application opens the link, you can use the `adb` debugger to investigate the status of your app. If the Status is shown as `ask` then autoverify is not working as intended. The value `always : 200000000` means it is verified.
+If you are getting the ["ask" prompt](#android-ask) to choose which application opens the link, you can use the `adb` debugger to investigate the status of your app. If the Status is shown as `ask` then auto-verify is not working as intended. The value `always : 200000000` means it is verified.
 
 ```bash
 $ adb reconnect
@@ -807,9 +1129,9 @@ App verification status:
   Status:  always : 200000000
 ```
 
-If your app has more than one associated domain, the status will be "`ask`" if _any_ of them fail to autoverify. You can use `adb` to check your setup from Android Studio without having to delete/reinstall. For more information on using the `adb` debugger, see [this article](#adb).
+If your app has more than one associated domain, the status will be "`ask`" if _any_ of them fail to auto-verify. You can use `adb` to check your setup from Android Studio without having to delete/reinstall. For more information on using the `adb` debugger, see [this article](#adb).
 
-> Note: [CloudFlare](#cloudflare) CDN is problematic for Android autoverify, owing to its use of 301 redirect for files.
+> Note: [CloudFlare](#cloudflare) CDN is problematic for Android auto-verify, owing to its use of 301 redirect for files.
 
 ## Further reading
 
@@ -822,6 +1144,7 @@ If your app has more than one associated domain, the status will be "`ask`" if _
 1. NGINX [Location](https://docs.nginx.com/nginx/admin-guide/web-server/web-server/#locations) block
 1. [Understanding and Configuring Cloudflare Page Rules](https://support.cloudflare.com/hc/en-us/articles/218411427-Understanding-and-Configuring-Cloudflare-Page-Rules-Page-Rules-Tutorial-)
 1. [Android App Links documentation](https://developer.android.com/training/app-links/verify-site-associations) on auto-verify
-1. <a name="autoverify-article"></a>Article on [Android deep links](https://levelup.gitconnected.com/the-wrong-hacked-and-correct-way-of-android-deep-linking-for-redirected-multisite-with-autoverify-5c72fb1f8053) the wrong and right way (specifically, auto-verify on variations of your different domains)
+1. <a name="auto-verify-article"></a>Article on [Android deep links](https://levelup.gitconnected.com/the-wrong-hacked-and-correct-way-of-android-deep-linking-for-redirected-multisite-with-autoverify-5c72fb1f8053) the wrong and right way (specifically, auto-verify on variations of your different domains)
 1. <a name="adb"></a> Article on [investigating Android deep-link problems with adb](https://medium.com/mobile-app-development-publication/unrealized-deeplink-bug-on-many-apps-6ac78a557702)
 1. Android Studio [App Links Assistant](https://developer.android.com/studio/write/app-link-indexing) tool
+
