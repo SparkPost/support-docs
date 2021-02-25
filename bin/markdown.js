@@ -1,7 +1,6 @@
 'use strict';
 
 const fs = require('fs');
-const path = require('path');
 const markdownIt = require('markdown-it');
 const metaParser = require('markdown-it-meta');
 const anchorTitles = require('markdown-it-anchor');
