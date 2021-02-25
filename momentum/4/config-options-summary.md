@@ -327,20 +327,8 @@ The `Version` column indicated the version(s) of Momentum that support the optio
 | [sysdescription](/momentum/4/config/ref-snmp) – Set the SNMP SysDescription option value | na | (*non-dynamic*) | 4.0 and later | snmp |
 | [syslocation](/momentum/4/config/ref-snmp) – Set the SNMP SysLocation option value | na | (*non-dynamic*) | 4.0 and later | snmp |
 | [tcp_buffer_size](/momentum/4/config/ref-tcp-buffer-size) – Maximum tcp buffer size for outbound connections | sending | 32768 | 4.0 and later | cluster, global |
-| **tcp_recv_buffer_size** – Sets the TCP receive buffer size. When set to 0, the operating system automatically manages the buffer size. | receiving | 
-
-4096 (ESMTP_Listener)
-
-32768 (HTTP_Listener)
-
- | 4.0 and later | control_listener, eccluster_listener, ecstream_listener, esmtp_listener, http_listener, listen, xmpp_listener |
-| **tcp_send_buffer_size** – Sets the TCP send buffer size. When set to 0, the operating system automatically manages the buffer size. | receiving | 
-
-4096 (ESMTP_Listener)
-
-32768 (HTTP_Listener)
-
- | 4.0 and later | control_listener, eccluster_listener, ecstream_listener, esmtp_listener, http_listener, listen, xmpp_listener |
+| **tcp_recv_buffer_size** – Sets the TCP receive buffer size. When set to 0, the operating system automatically manages the buffer size. | receiving | 4096 (ESMTP_Listener), 32768 (HTTP_Listener) | 4.0 and later | control_listener, eccluster_listener, ecstream_listener, esmtp_listener, http_listener, listen, xmpp_listener |
+| **tcp_send_buffer_size** – Sets the TCP send buffer size. When set to 0, the operating system automatically manages the buffer size. | receiving | 4096 (ESMTP_Listener), 32768 (HTTP_Listener) | 4.0 and later | control_listener, eccluster_listener, ecstream_listener, esmtp_listener, http_listener, listen, xmpp_listener |
 | [threadpool](/momentum/4/config/ref-threadpool) *(scope)* – Configure thread pool specific options | na |   | 4.0 and later | global |
 | [timeout](/momentum/4/control-listener#control_listener.config) – Timeout for idle control connections on Control_Listeners | receiving | 60 | 4.0 and later | control_listener |
 | [timestampformat](/momentum/4/config/ref-timestampformat) – Set the timestamp format used when logging to stderr | na | [%a %d %b %Y %H:%M:%S] | 4.0 and later | global |
