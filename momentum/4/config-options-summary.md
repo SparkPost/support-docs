@@ -178,6 +178,7 @@ The `Version` column indicated the version(s) of Momentum that support the optio
 | [high_threshold](/momentum/4/modules/4-adaptive#modules.adaptive.high_threshold) – High threshold value for the sum of the rates of the bounce codes or FBL categories | sending | 10 | 4.0 and later | adaptive_sweep_rule |
 | [host](/momentum/4/config/ref-host) *(scope)* – Configure host-specific options | sending |   | 4.0 and later | binding, binding_group, global |
 | [host_failure_retry](/momentum/4/config/ref-host-failure-retry) – Time to wait before attempting a retry | sending | 120 | 4.0 and later | domain, global |
+| [hot_domains](/momentum/4/config/ref-hot-domains) - List of high-traffic domains that should be spread across maintainer threads | sending | version-dependent | 3.6 and later | global |
 | [hostname](/momentum/4/config/ref-hostname) – Override the system configured hostname | both |   | 4.0 and later | global |
 | [http_basic_auth](/momentum/4/config/ref-http-basic-auth) – Define the user credentials when using basic HTTP authentication | both |   | 4.0 and later | binding, binding_group, domain, global |
 | [http_host](/momentum/4/config/ref-http-host) – Define the HTTP host | sending |   | 4.0 and later | binding, binding_group, domain, global |
