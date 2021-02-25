@@ -47,7 +47,7 @@ The `hot_domains list json` command shows how the configured hot domains are spr
 ]
 ```
 
-[hot_domains list](/momentum/4/console-commands/hot-domains-list-json) is an alternative version of this command that outputs in a more human-readable format.
+[hot_domains list](/momentum/4/console-commands/hot-domains-list) is an alternative version of this command that outputs in a more human-readable format.
 
 ### See Also
 
