@@ -20,13 +20,6 @@ Not much really. The signup link is slightly different (as noted above), and the
 |   Default tracking domain   |   eu.spgo.io   |
 
 
-## How do you migrate from SparkPost to SparkPost EU?
-
-There’s currently no way to directly migrate, but if you already have an active US account, you’re welcome to set up an account in the EU using the same sending domain. Within the next few weeks we’ll be putting together a “Sparkpost to SparkPost EU migration guide” like we have for some of our competitors. Some things to keep in mind if you want to switch to a new EU account:
-Don’t forget to export your suppression list from your US based SparkPost account and import it to your EU based SparkPost account. This is probably the most important step! We detail that in our [onboarding doc](https://www.sparkpost.com/docs/getting-started/getting-started-sparkpost/#important-coming-from-other-email-services) if you’d like more details.
-If you send significant volumes on a dedicated IP you’ll need to warm up the new IP(s). Here’s [an overview](https://www.sparkpost.com/docs/deliverability/ip-warm-up-overview/) to help you out on that.
-
-
 ## Can I use the same domain in a SparkPost account and SparkPost EU account? 
 
 Yes.
