@@ -17,6 +17,7 @@ Event Search | Yes | Yes
 Inbound Email | No | Yes
 IP Pools | No | Yes
 Recipient Lists | Yes (10 max) | Yes
+Saved Reports | Yes (30 max) | Yes (100 max)
 Scheduled Send | Yes (3 days) | Yes (3 days)
 Sending Domains / Bounce Domains | Yes (10 max) | Yes (50 max)
 SSO | No | Yes
