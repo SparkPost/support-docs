@@ -7,7 +7,7 @@ Using the Transmissions API, you can schedule your emails to be delivered up to 
 
 ## Getting Started
 
-To schedule a transmission, simply set the `options.start_time` field to the desired delivery time in your Transmissions API request. The time should be in ISO-8601 format (`YYYY-MM-DDTHH:mm:ss+-HH:mm`). We strongly encourage you to include a `campaign_id` in your transmission in case you need to cancel it later (more on that below). Here is an example transmission that is scheduled to be delivered on January 1, 2021 at 12:00 AM UTC:
+To schedule a transmission, simply set the `options.start_time` field to the desired delivery time in your Transmissions API request. The time should be in ISO-8601 format (`YYYY-MM-DDTHH:mm:ss+-HH:mm`). We strongly encourage you to include a `campaign_id` in your transmission in case you need to cancel it later (more on that below). The `campaign_id` should be the same for your entire campaign; you should not specify a unique `campaign_id` for each transmission. Here is an example transmission that is scheduled to be delivered on January 1, 2021 at 12:00 AM UTC:
 
 ```bash
 curl -X POST \
