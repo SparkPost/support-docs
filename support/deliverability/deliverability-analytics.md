@@ -7,7 +7,7 @@ Get the full picture of your email lifecycle by combining your sending, engageme
 
 ## What’s the difference between delivery and deliverability?
 
-Delivery metrics measure how successfully your emails are handed over to the mailbox provider. How many emails were accepted vs. bounced?
+Delivery metrics measure how successfully your emails are handed over to the mailbox provider - how many emails were accepted vs. bounced?
 
 Deliverability metrics measure what the mailbox provider did with your mail after they accepted it - did they put it in the inbox or the spam folder?
 
@@ -17,9 +17,9 @@ A key difference to note between delivery and deliverability metrics is that you
 
 ## Where does deliverability data come from?
 
-Mailbox providers don’t like to share what they are doing with your emails to prevent abuse. Their goal is to send spam - which by definition means unwanted mail - to the spam folder. Our goal is to make sure that wanted emails are ending up where they should be - in the inbox.
+Mailbox providers don’t like to share what they are doing with your emails to prevent abuse. Their goal is to send spam - which by definition means unwanted mail - to the spam folder. Our goal is to make sure that *wanted* emails are ending up where they should be - in the inbox.
 
-Unlike delivery metrics - did the email bounce, was it accepted, etc. - deliverability metrics are generally not available from mailbox providers directly. You have to be a bit more creative in order to get deliverability data. The best way to get deliverability data is to send an email to a mailbox that you have access to, and look to see where it ended up. This sounds simple enough if you are just talking about one mailbox provider, but it gets complicated quickly. There are hundreds of mainstream mailbox providers, each with its own algorithm to determine what to send to the spam folder. Add in complicating factors like mailbox providers changing the algorithms over time and taking personal preferences and and action into account, and the end results is that getting a representative sample of your deliverability can be tricky.
+Unlike delivery metrics - did the email bounce, was it accepted, etc. - deliverability metrics are generally not available from mailbox providers directly. You have to be a bit more creative in order to get deliverability data. The best way to get deliverability data is to send an email to a mailbox that you have access to, and look to see where it ended up. This sounds simple enough if you are just talking about one mailbox provider, but it gets complicated quickly. There are hundreds of mainstream mailbox providers, each with its own algorithm to determine what to send to the spam folder. Add in complicating factors like mailbox providers changing the algorithms over time and taking personal preferences and and actions into account, and the end results is that getting a representative sample of your deliverability can be tricky.
 
 ### Seeds
 
@@ -27,11 +27,11 @@ Never fear - that’s where a “seed list” comes in! A seed list is a set of 
 
 ### Panelists
 
-Complementing our extensive seed list is permissioned data from our consumer panel, which is powered by a free email app called Boxbe. Boxbe is an email concierge app that allows consumers to better manage and control which messages make it to their inbox. We currently have subscribers at 42 global providers including Gmail, Outlook, AOL, Yahoo, Time Warner, Comcast, Apple Mail, and many others. Our panel data gives us a deeper look into deliverability, allowing us to measure and report data about actions that people take, like the effect of engagement on deliverability as well as when an email is moved to spam or moved to the inbox.
+Complementing our extensive seed list is permissioned data from our [consumer panel](https://support.emailanalyst.com/en/articles/927828-what-is-a-user-panel), which is powered by a free email app called [Boxbe](http://support.emailanalyst.com/en/articles/2100545-consumer-panel-data-collection-privacy-practices). Boxbe is an email concierge app that allows consumers to better manage and control which messages make it to their inbox. We currently have subscribers at 42 global providers including Gmail, Outlook, AOL, Yahoo, Time Warner, Comcast, Apple Mail, and many others. Our panel data gives us a deeper look into deliverability, allowing us to measure and report data about actions that people take, like the effect of engagement on deliverability as well as when an email is moved to spam or moved to the inbox.
 
 ## What makes our deliverability analytics better?
 
-By combining seeds and panel data, we give you a better picture of your deliverability than any other provider. Our seeds’ breadth of data and our panel’s depth of data enable you to make the most well-rounded data-driven decisions for your email program.
+By combining seeds *and* panel data, we give you a better picture of your deliverability than any other provider. Our seeds’ *breadth* of data and our panel’s *depth* of data enable you to make the most well-rounded data-driven decisions for your email program.
 
 On top of that, we’re the only provider who gives you a full picture of the email lifecycle by combining your sending, engagement, and deliverability data into a single view. We don’t cordone off the sending and engagement data into a separate portion of the app. Since sending & engagement informs deliverability, and deliverability data (should) inform your sending, it’s critical that you see how these metrics interact.
 
@@ -53,9 +53,9 @@ The seed list is updated periodically, as we regularly expand our panel coverage
 
 ### Getting Started with Panel Data
 
-Panel data associated with a sending domain in your SparkPost account will start flowing into your account immediately. If you already have a sending domain added and verified, no further action is needed! If you do not yet have a sending domain in your SparkPost account, please follow these Getting Started steps to set one up and verify it.
+Panel data associated with a sending domain in your SparkPost account will start flowing into your account immediately. If you already have a sending domain added and verified, no further action is needed! If you do not yet have a sending domain in your SparkPost account, please follow these [Getting Started steps](https://www.sparkpost.com/docs/getting-started/getting-started-sparkpost/) to set one up and verify it.
 
-Note: You do not need to send emails to the consumer panel through SparkPost in order to see the data - we will show you panel data sent through any method. We do require a verified domain in order to display the results to the correct account.
+Note: You do *not* need to send emails to the consumer panel *through SparkPost* in order to see the data - we will show you panel data sent through any method. We do require a verified domain in order to display the results to the correct account.
 
 ### Retrieving Deliverability Metrics
 
