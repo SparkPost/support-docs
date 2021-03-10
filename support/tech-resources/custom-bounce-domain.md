@@ -23,7 +23,7 @@ Use your root domain (e.g. example.com) as a sending domain and bounce domain.
 * Using a root domain as a bounce domain means you will **not** be able to receive any mail there, as all messages will be sent to SparkPost. If you intend to receive mail at a root domain, you cannot use it as a bounce domain. 
 * Additionally, using a CNAME record at a root domain means you cannot create any subdomains of the root domain, as per limitations of DNS. Because of this limitation, it is **not recommended** that you use a root domain as a bounce domain.
 
-## Setting Up a Bounce DOmain
+## Setting Up a Bounce Domain
 
 Start from [Domains create](https://app.sparkpost.com/domains/create) ([EU](https://app.eu.sparkpost.com/domains/create)) page and select the Bounce Domain option as you add your domain.
 
@@ -31,7 +31,7 @@ Then add the CNAME records outlined in the Bounce section to your domain's DNS s
 
   ![](media/custom-bounce-domain/verified-for-bounce.png)
 
-### Set as Default Bounce DOmain
+### Set as Default Bounce Domain
 You can set a Bounce domain as Default if you want all of your emails to use this bounce domain. If you plan to configure multiple bounce domains, please refer to the end of the article for more information on how to set the bounce domain in your transmission.
 
 ## Set Up Using The API
