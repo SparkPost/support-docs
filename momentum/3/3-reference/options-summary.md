@@ -6,11 +6,12 @@ description: "This section displays all configuration file options visible in th
 
 This section displays all configuration file options visible in the following scopes; global, domain, host, binding, binding_group, security, pathway, pathway_group, listener, listen, peer, threadpool, debug_flags and cluster. Module-specific options are documented in the module documentation and options specific to Mobile Momentum are documented in the Mobile Momentum documents. Listener options are listed here but for a separate table of listener-specific options see [Table 9.25, “listener options”](/momentum/3/3-reference/ecelerity-conf#table-listener-options) and for a separate list of cluster options see [Table 7.1, “ Cluster options ”](/momentum/3/3-reference/cluster-config-management#table-cluster-options). Options are sorted alphabetically by name. If an option functions as a scope, this is indicated by `(scope)`. The `Type` column indicates the MTA type of a given option. Options of type `na` do not directly apply to either a sending or receiving MTA. If an option has a default value, it is shown in the `Default` column followed by a version number, if there has been a change to the default value. If the value of an option cannot be changed at runtime, the `Default` column will show `(non-dynamic)`. The `Version` column shows when an option was introduced. Options that are not valid in version 3.0 or higher are not shown.
 
-<a name="All-options-table"></a> 
+<a name="All-options-table"></a>
 
 
 | Option/Description | Type | Default | Version | Scopes |
 | --- | --- | --- | --- | --- |
+| [prefer_ipv6_mxs](/momentum/3/3-reference/3-reference-conf-prefer_ipv6mxs) - Prefer IPv6 addresses over IPv4 addresses when they have the same priority | sending | false | 3.6.12 | global |
 | [_unsafe_spool](/momentum/3/3-reference/3-reference-conf-ref-unsafe-spool) – Allow dangerous spool semantics to be used | na | false | 3.0 | global |
 | [accept_queue_backlog](/momentum/3/3-reference/ecelerity-conf#ecelerity.conf3.listener.options.accept_queue_backlog) – The accept queue backlog | receiving | 0 | 3.0 | control_listener, eccluster_listener, ecstream_listener, esmtp_listener, http_listener, listen, msgcserver_listener, xmpp_listener |
 | [adaptive_adjustment_interval](/momentum/3/3-reference/3-reference-modules-adaptive#modules.adaptive.adaptive_adjustment_interval) – Throttle the adaptive adjustment interval | sending | 60 | 3.0 | binding, binding_group, domain, global |
@@ -372,7 +373,7 @@ This section displays all configuration file options visible in the following sc
 
 This section displays all options of the specified type sorted alphabetically.
 
-<a name="adaptive-options-table"></a> 
+<a name="adaptive-options-table"></a>
 
 
 | Option/Description | Type | Default | Version | Scopes |
@@ -420,7 +421,7 @@ This section displays all options of the specified type sorted alphabetically.
 
 This section displays all options of the specified type sorted alphabetically.
 
-<a name="bounce-options-table"></a> 
+<a name="bounce-options-table"></a>
 
 
 | Option/Description | Type | Default | Version | Scopes |
@@ -447,7 +448,7 @@ This section displays all options of the specified type sorted alphabetically.
 
 This section displays all options of the specified type sorted alphabetically.
 
-<a name="cluster-options-table"></a> 
+<a name="cluster-options-table"></a>
 
 
 | Option/Description | Type | Default | Version | Scopes |
@@ -488,7 +489,7 @@ This section displays all options of the specified type sorted alphabetically.
 
 This section displays all options of the specified type sorted alphabetically.
 
-<a name="http-options-table"></a> 
+<a name="http-options-table"></a>
 
 
 | Option/Description | Type | Default | Version | Scopes |
@@ -504,7 +505,7 @@ This section displays all options of the specified type sorted alphabetically.
 
 This section displays all options of the specified type sorted alphabetically.
 
-<a name="listen-options-table"></a> 
+<a name="listen-options-table"></a>
 
 
 | Option/Description | Type | Default | Version | Scopes |
@@ -529,7 +530,7 @@ This section displays all options of the specified type sorted alphabetically.
 
 This section displays all options of the specified type sorted alphabetically.
 
-<a name="logging-options-table"></a> 
+<a name="logging-options-table"></a>
 
 
 | Option/Description | Type | Default | Version | Scopes |
@@ -551,7 +552,7 @@ This section displays all options of the specified type sorted alphabetically.
 
 This section displays all options of the specified type sorted alphabetically.
 
-<a name="misc-options-table"></a> 
+<a name="misc-options-table"></a>
 
 
 | Option/Description | Type | Default | Version | Scopes |
@@ -582,7 +583,7 @@ This section displays all options of the specified type sorted alphabetically.
 
 This section displays all options of the specified type sorted alphabetically.
 
-<a name="module-options-table"></a> 
+<a name="module-options-table"></a>
 
 
 | Option/Description | Type | Default | Version | Scopes |
@@ -596,7 +597,7 @@ This section displays all options of the specified type sorted alphabetically.
 
 This section displays all options of the specified type sorted alphabetically.
 
-<a name="multiple-event-options-table"></a> 
+<a name="multiple-event-options-table"></a>
 
 
 | Option/Description | Type | Default | Version | Scopes |
@@ -610,7 +611,7 @@ This section displays all options of the specified type sorted alphabetically.
 
 This section displays all options of the specified type sorted alphabetically.
 
-<a name="push-options-table"></a> 
+<a name="push-options-table"></a>
 
 
 | Option/Description | Type | Default | Version | Scopes |
@@ -626,7 +627,7 @@ This section displays all options of the specified type sorted alphabetically.
 
 This section displays all options of the specified type sorted alphabetically.
 
-<a name="resource-options-table"></a> 
+<a name="resource-options-table"></a>
 
 
 | Option/Description | Type | Default | Version | Scopes |
@@ -684,7 +685,7 @@ This section displays all options of the specified type sorted alphabetically.
 
 This section displays all options of the specified type sorted alphabetically.
 
-<a name="rfc-options-table"></a> 
+<a name="rfc-options-table"></a>
 
 
 | Option/Description | Type | Default | Version | Scopes |
@@ -707,7 +708,7 @@ This section displays all options of the specified type sorted alphabetically.
 
 This section displays all options of the specified type sorted alphabetically.
 
-<a name="routing-options-table"></a> 
+<a name="routing-options-table"></a>
 
 
 | Option/Description | Type | Default | Version | Scopes |
@@ -737,7 +738,7 @@ This section displays all options of the specified type sorted alphabetically.
 
 This section displays all options of the specified type sorted alphabetically.
 
-<a name="security-options-table"></a> 
+<a name="security-options-table"></a>
 
 
 | Option/Description | Type | Default | Version | Scopes |
@@ -767,7 +768,7 @@ This section displays all options of the specified type sorted alphabetically.
 
 This section displays all options of the specified type sorted alphabetically.
 
-<a name="shaping-options-table"></a> 
+<a name="shaping-options-table"></a>
 
 
 | Option/Description | Type | Default | Version | Scopes |
@@ -803,7 +804,7 @@ This section displays all options of the specified type sorted alphabetically.
 
 This section displays all options of the specified type sorted alphabetically.
 
-<a name="snmp-options-table"></a> 
+<a name="snmp-options-table"></a>
 
 
 | Option/Description | Type | Default | Version | Scopes |
@@ -826,7 +827,7 @@ This section displays all options of the specified type sorted alphabetically.
 
 This section displays all options of the specified type sorted alphabetically.
 
-<a name="timeout-options-table"></a> 
+<a name="timeout-options-table"></a>
 
 
 | Option/Description | Type | Default | Version | Scopes |
@@ -859,7 +860,7 @@ This section displays all options of the specified type sorted alphabetically.
 
 This section displays all options of the specified type sorted alphabetically.
 
-<a name="tls-options-table"></a> 
+<a name="tls-options-table"></a>
 
 
 | Option/Description | Type | Default | Version | Scopes |
@@ -886,7 +887,7 @@ This section displays all options of the specified type sorted alphabetically.
 
 This section displays all options of the specified type sorted alphabetically.
 
-<a name="virtual-options-table"></a> 
+<a name="virtual-options-table"></a>
 
 
 | Option/Description | Type | Default | Version | Scopes |
@@ -915,7 +916,7 @@ This section displays all options of the specified type sorted alphabetically.
 
 This section displays all options of the specified type sorted alphabetically.
 
-<a name="xmpp-options-table"></a> 
+<a name="xmpp-options-table"></a>
 
 
 | Option/Description | Type | Default | Version | Scopes |
