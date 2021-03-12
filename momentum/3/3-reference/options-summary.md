@@ -11,7 +11,6 @@ This section displays all configuration file options visible in the following sc
 
 | Option/Description | Type | Default | Version | Scopes |
 | --- | --- | --- | --- | --- |
-| [prefer_ipv6_mxs](/momentum/3/3-reference/3-reference-conf-prefer_ipv6mxs) - Prefer IPv6 addresses over IPv4 addresses at a given MX priority level | sending | false | 3.6.12 | global |
 | [_unsafe_spool](/momentum/3/3-reference/3-reference-conf-ref-unsafe-spool) – Allow dangerous spool semantics to be used | na | false | 3.0 | global |
 | [accept_queue_backlog](/momentum/3/3-reference/ecelerity-conf#ecelerity.conf3.listener.options.accept_queue_backlog) – The accept queue backlog | receiving | 0 | 3.0 | control_listener, eccluster_listener, ecstream_listener, esmtp_listener, http_listener, listen, msgcserver_listener, xmpp_listener |
 | [adaptive_adjustment_interval](/momentum/3/3-reference/3-reference-modules-adaptive#modules.adaptive.adaptive_adjustment_interval) – Throttle the adaptive adjustment interval | sending | 60 | 3.0 | binding, binding_group, domain, global |
@@ -264,6 +263,7 @@ This section displays all configuration file options visible in the following sc
 | [permastore_interval](/momentum/3/3-reference/3-reference-conf-ref-permastore-interval) – The frequency for saving various statistics | na | 300 | 3.0 | global |
 | [pidfile](/momentum/3/3-reference/3-reference-conf-ref-pidfile) – Set the PID file path | na | /var/run/ecelerity.pid (*non-dynamic*) | 3.0 | global |
 | [pool_name](/momentum/3/3-reference/ecelerity-conf#esmtp_listener_example3) – Associate a threadpool with a listener | receiving |   | 3.0 | control_listener, eccluster_listener, ecstream_listener, esmtp_listener, http_listener, listen, xmpp_listener |
+| [prefer_ipv6_mxs](/momentum/3/3-reference/3-reference-conf-prefer_ipv6mxs) - Prefer IPv6 addresses over IPv4 addresses at a given MX priority level | sending | false | 3.6.12 | global |
 | [privileges](/momentum/3/3-reference/3-reference-conf-ref-capabilities) – Selectively retain root capabilities (Solaris) | na | (*non-dynamic*) | 3.0 | security |
 | [prohibited_hosts](/momentum/3/3-reference/3-reference-conf-ref-prohibited-hosts) – Prevent mail from being delivered to invalid destinations | sending |   | 3.0 | global |
 | [rcptto_timeout](/momentum/3/3-reference/3-reference-conf-ref-rcptto-timeout) – Timeout after RCPT TO | sending | 300 | 3.0 | binding, binding_group, domain, global |

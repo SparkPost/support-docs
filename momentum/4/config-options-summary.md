@@ -16,7 +16,6 @@ The `Version` column indicated the version(s) of Momentum that support the optio
 
 | Option/Description | Type | Default | Version | Scopes |
 | --- | --- | --- | --- | --- |
-| [prefer_ipv6_mxs](/momentum/4/config/ref-prefer_ipv6_mxs) - Prefer IPv6 addresses over IPv4 addresses at a given MX priority level | sending | false | 4.0 and later | global |
 | [_unsafe_spool](/momentum/4/config/ref-unsafe-spool) – Allow dangerous spool semantics to be used | na | false | 4.0 and later | global |
 | **accept_queue_backlog** – Accept queue backlog | receiving | 0 | 4.0 and later | control_listener, eccluster_listener, ecstream_listener, esmtp_listener, http_listener, listen, msgcserver_listener, xmpp_listener |
 | [adaptive_adjustment_interval](/momentum/4/modules/4-adaptive#modules.adaptive.adaptive_adjustment_interval) – Throttle the adaptive adjustment interval | sending | 60 | 4.0 and later | binding, binding_group, domain, global |
@@ -271,6 +270,7 @@ The `Version` column indicated the version(s) of Momentum that support the optio
 | [permastore_interval](/momentum/4/config/ref-permastore-interval) – Frequency for saving various statistics | na | 300 | 4.0 and later | global |
 | [pidfile](/momentum/4/config/ref-pidfile) – Set the PID file path | na | /var/run/ecelerity.pid (*non-dynamic*) | 4.0 and later | global |
 | [pool_name](/momentum/4/esmtp-listener#esmtp_listener.config) – Associate a threadpool with a listener | receiving |   | 4.0 and later | control_listener, eccluster_listener, ecstream_listener, esmtp_listener, http_listener, listen, xmpp_listener |
+| [prefer_ipv6_mxs](/momentum/4/config/ref-prefer_ipv6_mxs) - Prefer IPv6 addresses over IPv4 addresses at a given MX priority level | sending | false | 4.0 and later | global |
 | [prohibited_hosts](/momentum/4/config/ref-prohibited-hosts) – Prevent mail from being delivered to invalid destinations | sending |   | 4.0 and later | global |
 | [rcptto_timeout](/momentum/4/config/ref-rcptto-timeout) – Timeout after RCPT TO | sending | 300 | 4.0 and later | binding, binding_group, domain, global |
 | **received_hostname** – Hostname that is placed in the received headers; these are added to the messages as it transits Momentum | receiving |   | 4.0 and later | esmtp_listener, listen, pathway, pathway_group, peer |

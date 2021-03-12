@@ -151,6 +151,7 @@ description: "This chapter provides the definitions of the configuration options
 | [pcre_cache_ttl](/momentum/4/config/ref-pcre-cache-ttl) | set the maximum TTL for the ec_pcre_compile cache |
 | [permastore_interval](/momentum/4/config/ref-permastore-interval) | the frequency for saving various statistics |
 | [pidfile](/momentum/4/config/ref-pidfile) | set the PID file path |
+| [prefer_ipv6_mxs](/momentum/4/config/ref-prefer_ipv6_mxs) | prefer IPv6 addresses over ipv4 at a given mx priority level |
 | [prohibited_hosts](/momentum/4/config/ref-prohibited-hosts) | prevent mail from being delivered to invalid destinations |
 | [rcptto_timeout](/momentum/4/config/ref-rcptto-timeout) | timeout after RCPT TO |
 | [relay_for_sending_domains](/momentum/4/config/ref-relay-for-sending-domains) | domains that may use the MTA as a relay. |
@@ -227,7 +228,7 @@ description: "This chapter provides the definitions of the configuration options
 | [use_sendfile](/momentum/4/config/ref-use-sendfile) | use sendfile() when sending mail |
 | [user](/momentum/4/config/ref-user) | security: user identity to assume after startup |
 | [xclient](/momentum/4/config/ref-xclient) | use the xclient extension to SMTP for outbound mail |
-| [prefer_ipv6_mxs](/momentum/4/config/ref-prefer_ipv6_mxs) | prefer IPv6 addresses over ipv4 addresses when they have the same priority |
+
 
 
 This chapter provides the definitions of the configuration options for the configuration files that are referenced in this document.
