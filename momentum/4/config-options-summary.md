@@ -16,7 +16,7 @@ The `Version` column indicated the version(s) of Momentum that support the optio
 
 | Option/Description | Type | Default | Version | Scopes |
 | --- | --- | --- | --- | --- |
-| [prefer_ipv6_mxs](/momentum/4/config/ref-prefer_ipv6_mxs) - Prefer IPv6 addresses over IPv4 addresses when they have the same priority | sending | false | 4.0 and later | global |
+| [prefer_ipv6_mxs](/momentum/4/config/ref-prefer_ipv6_mxs) - Prefer IPv6 addresses over IPv4 addresses at a given MX priority level | sending | false | 4.0 and later | global |
 | [_unsafe_spool](/momentum/4/config/ref-unsafe-spool) – Allow dangerous spool semantics to be used | na | false | 4.0 and later | global |
 | **accept_queue_backlog** – Accept queue backlog | receiving | 0 | 4.0 and later | control_listener, eccluster_listener, ecstream_listener, esmtp_listener, http_listener, listen, msgcserver_listener, xmpp_listener |
 | [adaptive_adjustment_interval](/momentum/4/modules/4-adaptive#modules.adaptive.adaptive_adjustment_interval) – Throttle the adaptive adjustment interval | sending | 60 | 4.0 and later | binding, binding_group, domain, global |

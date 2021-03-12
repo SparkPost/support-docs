@@ -11,7 +11,7 @@ This section displays all configuration file options visible in the following sc
 
 | Option/Description | Type | Default | Version | Scopes |
 | --- | --- | --- | --- | --- |
-| [prefer_ipv6_mxs](/momentum/3/3-reference/3-reference-conf-prefer_ipv6mxs) - Prefer IPv6 addresses over IPv4 addresses when they have the same priority | sending | false | 3.6.12 | global |
+| [prefer_ipv6_mxs](/momentum/3/3-reference/3-reference-conf-prefer_ipv6mxs) - Prefer IPv6 addresses over IPv4 addresses at a given MX priority level | sending | false | 3.6.12 | global |
 | [_unsafe_spool](/momentum/3/3-reference/3-reference-conf-ref-unsafe-spool) – Allow dangerous spool semantics to be used | na | false | 3.0 | global |
 | [accept_queue_backlog](/momentum/3/3-reference/ecelerity-conf#ecelerity.conf3.listener.options.accept_queue_backlog) – The accept queue backlog | receiving | 0 | 3.0 | control_listener, eccluster_listener, ecstream_listener, esmtp_listener, http_listener, listen, msgcserver_listener, xmpp_listener |
 | [adaptive_adjustment_interval](/momentum/3/3-reference/3-reference-modules-adaptive#modules.adaptive.adaptive_adjustment_interval) – Throttle the adaptive adjustment interval | sending | 60 | 3.0 | binding, binding_group, domain, global |
