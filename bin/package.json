@@ -5,7 +5,7 @@
   "author": "SparkPost",
   "dependencies": {
     "markdown-it": "^8.3.1",
-    "markdown-it-anchor": "^4.0.0",
+    "markdown-it-anchor": "^5.0.2",
     "markdown-it-meta": "0.0.1"
   }
 }
