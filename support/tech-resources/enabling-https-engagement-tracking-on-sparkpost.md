@@ -13,13 +13,13 @@ SparkPost supports HTTPS engagement tracking for all self-service customers. Thi
 
 If you already have non-secure tracking domains in live service, with a `CNAME` direct to SparkPost's tracking endpoints, you need to plan for what happens when users click on links in previously-delivered emails.
 
-The simplest approach is to leave the current tracking-domain in place, and set up a new, sibling tracking-domain pointing to your CDN. For example, if you are using `click.mycompany.com` with a direct CNAME, set up the proxy with `click2.mycompany.com`. This enables you to test your proxy is working before switching over to use it for Production traffic in SparkPost.
+The simplest approach is to leave the current tracking-domain in place, and set up a new, sibling tracking-domain pointing to your CDN. For example, if you are using `click.mycompany.com` with a direct CNAME, set up the proxy with `click2.mycompany.com`. This enables you to test your setup is working before switching over to use it for Production traffic in SparkPost.
 
 If you want to end up with your CDN serving the original domain:
 * You'll need your CDN to handle both port 80 (HTTP) and port 443 (HTTPS) requests, so that links in previously delivered mails continue to work
 * To mimimize disruption, we recommend you test your setup on a sibling domain before switching
 * You need to consider your certificates (which may be specific to your subdomain, or may use subdomain wild-card)
-* You need to change your DNS setting on the original tracking domain(s) to point to the CDN, only when your proxy is tested and working.
+* You need to change your DNS setting on the original tracking domain(s) to point to the CDN, only when your setup is tested and working.
 
 ## Configuring SSL Certificates
 
@@ -387,6 +387,8 @@ GCP organizes resources under named projects.
 
     It will take a few minutes for a new project to become ready for adding services.
 
+    >You may see a message such as "_Compute Engine is getting ready_". Refresh your browser to continue.
+
     ![](media/enabling-https-engagement-tracking-on-sparkpost/gcp-network-services.png)
 
  1. Choose "Create load balancer".
@@ -442,14 +444,12 @@ GCP organizes resources under named projects.
 
      ![](media/enabling-https-engagement-tracking-on-sparkpost/gcp-network-endpoint-group-exists.png)
 
-    Close this tab, and **return to your previous tab**. Unfortunately this does not auto-refresh with your newly created Network Endpoint Group, so you'll need to refresh your browser to make it visible, then repeat some steps.
+    Close this tab, and **return to your previous tab**. Unfortunately this does not auto-refresh; however, start typing the name of the Network Endpoint Group you just created, and it will appear.
 
-    * Give the backend service a name, e.g. "sparkpost-engagement-tracking".
-    * For "Backend type", choose "Internet network endpoint group".
-    * For Protocol, choose "HTTPS". Leave "Named port" and "Timeout" at defaults.
-    * For Backends, under "Edit item", choose your newly created "Network Endpoint group" from the drop-down list, then choose "Done".
 
       ![](media/enabling-https-engagement-tracking-on-sparkpost/gcp-choose-backend-group.png)
+
+    Choose "Done".
 
     * Leave "Enable Cloud CDN" unchecked and the other settings at defaults.
 
