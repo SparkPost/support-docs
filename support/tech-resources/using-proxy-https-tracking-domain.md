@@ -27,6 +27,18 @@ Step-by-step instructions follow, for:
 * [nginx](#nginx)
 * [Apache](#apache)
 
+## Migration planning
+
+If you already have non-secure tracking domains in live service, with a `CNAME` direct to SparkPost's tracking endpoints, you need to plan for what happens when users click on links in previously-delivered emails.
+
+The simplest approach is to leave the current tracking-domain in place, and set up a new, sibling tracking-domain pointing to your proxy. For example, if you are using `click.mycompany.com` with a direct CNAME, set up the proxy with `click2.mycompany.com`. This enables you to test your proxy is working before switching over to use it for Production traffic in SparkPost.
+
+If you want to end up with your proxy serving the original domain:
+* You'll need your proxy to handle both port 80 (HTTP) and port 443 (HTTPS) requests, so that links in previously delivered mails continue to work
+* To mimimize disruption, we recommend you test your setup on a sibling domain before switching
+* You need to consider your certificates (which may be specific to your subdomain, or may use subdomain wild-card)
+* You need to change your DNS setting on the original tracking domain(s) to point to the proxy, only when your proxy is tested and working.
+
 ## <a name="nginx"></a> Configuring nginx
 
 This section uses [nginx](https://www.nginx.com/).  It is easy to get installed and configured as a reverse proxy and Let’s Encrypt for SSL certificates has support for it.  To install nginx, follow the guidelines for your Linux distribution.
