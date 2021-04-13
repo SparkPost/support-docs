@@ -17,7 +17,7 @@ The simplest approach is to leave the current tracking-domain in place, and set 
 
 If you want to end up with your CDN serving the original domain:
 * You'll need your CDN to handle both port 80 (HTTP) and port 443 (HTTPS) requests, so that links in previously delivered mails continue to work
-* To mimimize disruption, we recommend you test your setup on a sibling domain before switching
+* To minimize disruption, we recommend you test your setup on a sibling domain before switching
 * You need to consider your certificates (which may be specific to your subdomain, or may use subdomain wild-card)
 * You need to change your DNS setting on the original tracking domain(s) to point to the CDN, only when your setup is tested and working.
 
