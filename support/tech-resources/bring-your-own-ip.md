@@ -14,7 +14,7 @@ Please reach out to your sales representative or Technical Account Manager about
 A: Available in the US at the end of June 2018. Available in Europe at the end of Sept 2018.
 
 **Q: Is there a charge for BYOIP?**
-A: Yes, there is a startup cost of per instance or occurrence. 
+A: Yes, there is a startup cost of per instance or occurrence. Please discuss with your TAM or Sales account rep.
 
 **Q: What is the smallest range of IPs I can port over**
 A: A /24 (which contains 254 usable address of 256 total including the 0 and 255 host addresses)
@@ -27,6 +27,9 @@ A: Customer provides SparkPost an LOA (Letter of Authorization) on customer lett
 
 **Q: Will I need to schedule a maintenance window to stop injecting into my current MTA or email provider in order to cut over to my IPs now being broadcast by SparkPost?**
 A: Yes. We need to plan a hard cut for sending of IPs. The method and length of time required for the cut depends on network design and your requirements. SparkPost will help with planning and executing the migration. 
+
+**Q: Can I bring a new IP block? Where can I get one?**
+A: Yes. You can aquire a new IP block that you are not currently using. There are multiple brokers that specialize in this. SparkPost has used https://ipv4marketgroup.com/ in the past for successful aquisitions of IP blocks.
 
 **Q: How will we pre-configure our SparkPost set up so that once SparkPost is announcing my IPs all of my traffic is segmented properly?**
 A: The change is announced via BGP. SparkPost will provision the customer environment, provide temporary SparkPost owned IPs for testing, and hand over the environment to the customer. The customer and TAMs will then pre-configure the account in preparation of the cut over date. During provisioning, SparkPost assigns all of the customer IPs directly to a predefined IP pool within the customer account. The customer provided IPs will not function for sending until the scheduled cut over has been completed. IPs can be moved into other pools manually or using scripts.
@@ -50,4 +53,4 @@ A: To remove an announcement, the customer submits a support ticket with the req
 A: Yes - the customer will continue owning the PTR - the reverse lookup will be the same. 
 
 **Q: Will we need to do anything with SPF?**
-A: No - the customer will continue owning the SPF and will not change.
+A: No - the customer will continue owning the SPF however please discuss your use case with your TAM to verify
