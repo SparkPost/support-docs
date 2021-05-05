@@ -7,9 +7,9 @@ Get the full picture of your email lifecycle by combining your sending, engageme
 
 ## What’s the difference between delivery and deliverability?
 
-Delivery metrics measure how successfully your emails are handed over to the mailbox provider - how many emails were accepted vs. bounced?
+**Delivery** metrics measure how successfully your emails are handed over to the mailbox provider - how many emails were accepted vs. bounced?
 
-Deliverability metrics measure what the mailbox provider did with your mail after they accepted it - did they put it in the inbox or the spam folder?
+**Deliverability** metrics measure what the mailbox provider did with your mail after they accepted it - did they put it in the inbox or the spam folder?
 
 If we go old school and think in terms of physical mail, “delivery” is getting a letter in your mailbox. “Deliverability” is whether your kids/partner put the letter on the table for you to see, or threw in the back of the junk drawer where you’ll never look.
 
@@ -41,7 +41,7 @@ On top of that, we’re the only provider who gives you a full picture of the em
 
 ### Getting Started with Seeds
 
-In order to receive deliverability data from seeds, the first step is to start sending your campaigns to the seed addresses. [Download your seedlist](https://app.sparkpost.com/inbox-placement/seedlist) ([EU](https://app.eu.sparkpost.com/inbox-placement/seedlist)) from the SparkPost app. Scroll to the bottom of the page to download as a CSV or copy the list.
+In order to receive deliverability data from seeds, the first step is to start sending your campaigns to the seed addresses. [Download your seed list](https://app.sparkpost.com/inbox-placement/seedlist) ([EU](https://app.eu.sparkpost.com/inbox-placement/seedlist)) from the SparkPost app. Choose if you would like to copy the seed list or download it as a CSV. You can also retrieve the seed list [via API](https://developers.sparkpost.com/api/seed-list/). 
 
 Set up your campaign per your standard process, and include the seeds in your recipient list. For the most accurate results, it is best to distribute the seeds equally throughout your send. If possible, avoid placing the entire list together at the beginning or end of a send. Make sure that the first seed in your list - your reference email address - is the first seed that you send to.
 
@@ -90,6 +90,40 @@ To view the deliverability metrics in the UI, first click “Signals Analytics�
 You also have the option to enable/disable the different data sources in the UI. After adding your metrics, scroll down to the “Breakdown by” section beneath the main graph. Select a “Breakdown by” category, and then click the “Data Sources” dropdown to select which data sources you would like to enable/disable.
 
 ![](media/deliverability-analytics/03-deliverability-metrics-break-down.png)
+
+## Subaccount Access for Deliverability Metrics
+
+Subaccounts can access deliverability metrics by sending to seeds or panelists just like a primary account. However - deliverability metrics are _not_ enabled for subaccounts by default. 
+
+If you are using subaccounts to segment your mailstreams internal to your company, you can use deliverability analytics for your subaccounts for no additional charge. If you are using subaccounts for your customers/end users and you would like to offer deliverability analytics to them, please [get in touch with us](mailto:channels@sparkpost.comd) for information about reseller agreements.
+
+### Enabling Access
+
+If you would like a subaccount to have access to deliverability metrics, enable the option on the subaccount configuration page. First click "Configuration" in the top menu and then select "Subaccounts". Select the subaccount from the list and/or search for the subaccount of interest. Open the configuration page for that subaccount and toggle the option on, then click "update subaccount".
+
+[PICTURE]
+
+You can also enable [via API](https://developers.sparkpost.com/api/subaccounts/#subaccounts-put-update-a-subaccount). (Note that you cannot set the option on subaccount creation, you must toggle it after creation.)
+
+### Retrieving Seed list
+
+Each subaccount has a specific reference seed (the first seed in the seed list), which helps match the data to the correct account. Therefore, each subaccount sending to seeds need to include the correct reference seed in their send. 
+
+To retrieve the seedlist for a specific subaccount, click "Configuration" in the top manu and then select "Seed List". Select the primary account, or select the subaccount that you wish to retrieve the seed list for. Note that only subaccount with the deliverability features enabled will be included in this list.
+
+[PICTURE]
+
+You can also retrieve a seed list for the primary account or a subaccount [via API](https://developers.sparkpost.com/api/seed-list/). 
+
+### Subaccount Users
+
+Once deliverability analtyics have been enabled for a subaccount, any subaccount users will be able to:
+1. Retrieve the seed list _for their subaccount only_ via the UI or API.
+2. Access deliverability metrics _for their subaccount only_ via the UI or API.
+
+### Disabling Access
+
+To disable access for a subaccount, repeat the same steps as enabling. As soon as the product has been disabled, the subaccount will no longer be able to access their deliverability metrics or seed list. If access is re-enabled, a subaccount will be able to see their previous deliverability metrics.
 
 ## Benchmarking
 
