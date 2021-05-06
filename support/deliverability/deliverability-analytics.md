@@ -109,7 +109,7 @@ You can also enable [via API](https://developers.sparkpost.com/api/subaccounts/#
 
 Each subaccount has a specific reference seed (the first seed in the seed list), which helps match the data to the correct account. Therefore, each subaccount sending to seeds need to include the correct reference seed in their send. 
 
-To retrieve the seedlist for a specific subaccount, click "Configuration" in the top manu and then select "Seed List". Select the primary account, or select the subaccount that you wish to retrieve the seed list for. Note that only subaccount with the deliverability features enabled will be included in this list.
+To retrieve the seedlist for a specific subaccount, click "Configuration" in the top menu and then select "Seed List". Select the primary account, or select the subaccount that you wish to retrieve the seed list for. Note that only subaccount with the deliverability features enabled will be included in this list.
 
 [PICTURE]
 
@@ -117,7 +117,7 @@ You can also retrieve a seed list for the primary account or a subaccount [via A
 
 ### Subaccount Users
 
-Once deliverability analtyics have been enabled for a subaccount, any subaccount users will be able to:
+Once deliverability analytics have been enabled for a subaccount, any subaccount users will be able to:
 1. Retrieve the seed list _for their subaccount only_ via the UI or API.
 2. Access deliverability metrics _for their subaccount only_ via the UI or API.
 
