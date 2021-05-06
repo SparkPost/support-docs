@@ -101,7 +101,7 @@ If you are using subaccounts to segment your mailstreams internal to your compan
 
 If you would like a subaccount to have access to deliverability metrics, enable the option on the subaccount configuration page. First click "Configuration" in the top menu and then select "Subaccounts". Select the subaccount from the list and/or search for the subaccount of interest. Open the configuration page for that subaccount and toggle the option on, then click "update subaccount".
 
-[PICTURE]
+![](media/deliverability-analytics/deliverability-metrics-subaccount-enable.png)
 
 You can also enable [via API](https://developers.sparkpost.com/api/subaccounts/#subaccounts-put-update-a-subaccount). (Note that you cannot set the option on subaccount creation, you must toggle it after creation.)
 
@@ -111,7 +111,7 @@ Each subaccount has a specific reference seed (the first seed in the seed list),
 
 To retrieve the seedlist for a specific subaccount, click "Configuration" in the top menu and then select "Seed List". Select the primary account, or select the subaccount that you wish to retrieve the seed list for. Note that only subaccount with the deliverability features enabled will be included in this list.
 
-[PICTURE]
+![](media/deliverability-analytics/deliverability-metrics-subaccount-seed-list.png)
 
 You can also retrieve a seed list for the primary account or a subaccount [via API](https://developers.sparkpost.com/api/seed-list/). 
 
