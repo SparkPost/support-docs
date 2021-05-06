@@ -5,7 +5,30 @@ description: "Get the full picture of your email lifecycle by combining your sen
 
 Get the full picture of your email lifecycle by combining your sending, engagement, and deliverability data into a single view. Deliverability Analytics empowers you to make effective, timely, data-driven, and strategic decisions to maximize the success of your email program.
 
-## What’s the difference between delivery and deliverability?
+This guide covers:
+* [Deliverability FAQ](#deliverability-faq)
+  * [What’s the difference between delivery and deliverability?](#whats-the-difference-between-delivery-and-deliverability)
+  * [Where does deliverability data come from?](#where-does-deliverability-data-come-from)
+  * [What makes our deliverability analytics better?](#what-makes-our-deliverability-analytics-better)
+* [Deliverability Metrics](#deliverability-metrics)
+  * [Getting Started with Seeds](#getting-started-with-seeds)
+  * [Getting Started with Panel Data](#getting-started-with-panel-data)
+  * [Retrieving Deliverability Metrics](#retrieving-deliverability-metrics)
+* [Subaccount Access for Deliverability Metrics](#subaccount-access-for-deliverability-metrics)
+  * [Enabling Access](#enabling-access)
+  * [Retrieving Seed List](#retrieving-seed-list)
+  * [Subaccount Users](#subaccount-users)
+  * [Disabling Access](#disabling-access)
+* [Benchmarking](#benchmarking)
+* [Blocklists](#blocklists)
+  * [Monitoring](#monitoring)
+  * [Remediation Steps](#remediation-steps)
+  * [Alerting](#alerting)
+  * [Coming Soon: Blocklist Impact](#coming-soon-blocklist-impact)
+
+## Deliverability FAQ
+
+### What’s the difference between delivery and deliverability?
 
 **Delivery** metrics measure how successfully your emails are handed over to the mailbox provider - how many emails were accepted vs. bounced?
 
@@ -15,17 +38,17 @@ If we go old school and think in terms of physical mail, “delivery” is getti
 
 A key difference to note between delivery and deliverability metrics is that you won’t have deliverability data for every single email you send. You send your email to a sample group, we tell you where those emails ended up, and you can approximate that your actual sends were distributed similarly. It’s not exact, and we never pretend it to be - but it gives you some insight into something that you otherwise would have zero visibility into.
 
-## Where does deliverability data come from?
+### Where does deliverability data come from?
 
 Mailbox providers don’t like to share what they are doing with your emails to prevent abuse. Their goal is to send spam - which by definition means unwanted mail - to the spam folder. Our goal is to make sure that *wanted* emails are ending up where they should be - in the inbox.
 
 Unlike delivery metrics - did the email bounce, was it accepted, etc. - deliverability metrics are generally not available from mailbox providers directly. You have to be a bit more creative in order to get deliverability data. The best way to get deliverability data is to send an email to a mailbox that you have access to, and look to see where it ended up. This sounds simple enough if you are just talking about one mailbox provider, but it gets complicated quickly. There are hundreds of mainstream mailbox providers, each with its own algorithm to determine what to send to the spam folder. Add in complicating factors like mailbox providers changing the algorithms over time and taking personal preferences and and actions into account, and the end results is that getting a representative sample of your deliverability can be tricky.
 
-### Seeds
+#### Seeds
 
 Never fear - that’s where a “seed list” comes in! A seed list is a set of email addresses (“seed address” or “seeds”) that are used exclusively for testing email delivery and inbox placement. When you send an email to the seed list, we can look inside these mailboxes and see if the email was delivered to the inbox or spam folder. Our seed list covers all the major mailbox providers, giving you a wide sample of deliverability data.
 
-### Panelists
+#### Panel Data
 
 Complementing our extensive seed list is permissioned data from our [consumer panel](https://support.emailanalyst.com/en/articles/927828-what-is-a-user-panel), which is powered by a free email app called [Boxbe](http://support.emailanalyst.com/en/articles/2100545-consumer-panel-data-collection-privacy-practices). Boxbe is an email concierge app that allows consumers to better manage and control which messages make it to their inbox. We currently have subscribers at 42 global providers including Gmail, Outlook, AOL, Yahoo, Time Warner, Comcast, Apple Mail, and many others. Our panel data gives us a deeper look into deliverability, allowing us to measure and report data about actions that people take, like the effect of engagement on deliverability as well as when an email is moved to spam or moved to the inbox.
 
@@ -95,21 +118,21 @@ You also have the option to enable/disable the different data sources in the UI.
 
 Subaccounts can access deliverability metrics by sending to seeds or panelists just like a primary account. However - deliverability metrics are _not_ enabled for subaccounts by default. 
 
-If you are using subaccounts to segment your mailstreams internal to your company, you can use deliverability analytics for your subaccounts for no additional charge. If you are using subaccounts for your customers/end users and you would like to offer deliverability analytics to them, please [get in touch with us](mailto:channels@sparkpost.comd) for information about reseller agreements.
+If you are using subaccounts to segment your mailstreams internal to your company, you can use deliverability analytics for your subaccounts for no additional charge. If you are using subaccounts for your customers/end users and you would like to offer deliverability analytics to them, please [get in touch with us](mailto:channels@sparkpost.com) for information about reseller agreements.
 
 ### Enabling Access
 
-If you would like a subaccount to have access to deliverability metrics, enable the option on the subaccount configuration page. First click "Configuration" in the top menu and then select "Subaccounts". Select the subaccount from the list and/or search for the subaccount of interest. Open the configuration page for that subaccount and toggle the option on, then click "update subaccount".
+If you would like a subaccount to have access to deliverability metrics, enable the option on the subaccount configuration page. First click "Configuration" in the top menu and then select "Subaccounts". Search for the subaccount and then select it from the list. Open the configuration page for that subaccount and toggle the option on, then click "update subaccount".
 
 ![](media/deliverability-analytics/deliverability-metrics-subaccount-enable.png)
 
 You can also enable [via API](https://developers.sparkpost.com/api/subaccounts/#subaccounts-put-update-a-subaccount). (Note that you cannot set the option on subaccount creation, you must toggle it after creation.)
 
-### Retrieving Seed list
+### Retrieving Seed List
 
-Each subaccount has a specific reference seed (the first seed in the seed list), which helps match the data to the correct account. Therefore, each subaccount sending to seeds need to include the correct reference seed in their send. 
+Each subaccount has a specific reference seed (the first seed in the seed list), which helps match the data to the correct subaccount. Therefore, each subaccount sending to seeds needs to include the correct reference seed in their send. 
 
-To retrieve the seedlist for a specific subaccount, click "Configuration" in the top menu and then select "Seed List". Select the primary account, or select the subaccount that you wish to retrieve the seed list for. Note that only subaccount with the deliverability features enabled will be included in this list.
+To retrieve the seed list for a specific subaccount, click "Configuration" in the top menu and then select "Seed List". Select the primary account, or select the subaccount that you wish to retrieve the seed list for. Note that only subaccounts with deliverability features enabled will be included in this list.
 
 ![](media/deliverability-analytics/deliverability-metrics-subaccount-seed-list.png)
 
