@@ -64,7 +64,7 @@ On top of that, we’re the only provider who gives you a full picture of the em
 
 ### Getting Started with Seeds
 
-In order to receive deliverability data from seeds, the first step is to start sending your campaigns to the seed addresses. [Download your seed list](https://app.sparkpost.com/inbox-placement/seedlist) ([EU](https://app.eu.sparkpost.com/inbox-placement/seedlist)) from the SparkPost app. Choose if you would like to copy the seed list or download it as a CSV. You can also retrieve the seed list [via API](https://developers.sparkpost.com/api/seed-list/). 
+In order to receive deliverability data from seeds, the first step is to start sending your campaigns to the seed addresses. [Download your seed list](https://app.sparkpost.com/inbox-placement/seedlist) ([EU](https://app.eu.sparkpost.com/inbox-placement/seedlist)) from the SparkPost app. Choose if you would like to copy the seed list or download it as a CSV. You can also retrieve the seed list [via API](https://developers.sparkpost.com/api/seed-list/). In order to use this API, create an API key with the `Seeds: Read-only` permission.
 
 Set up your campaign per your standard process, and include the seeds in your recipient list. For the most accurate results, it is best to distribute the seeds equally throughout your send. If possible, avoid placing the entire list together at the beginning or end of a send. Make sure that the first seed in your list - your reference email address - is the first seed that you send to.
 
@@ -72,7 +72,7 @@ Send your campaign, and watch the results roll in! You can expect to see seed li
 
 Learn more about seed list best practices [here](https://support.emailanalyst.com/en/articles/2440819-how-to-deploy-intelliseed-and-seed-lists).
 
-The seed list is updated periodically, as we regularly expand our panel coverage as well as swap out stale seed addresses. We’ll send you an email when an updated seed list is available. An old seed list will still work, but using the most current version will give you the best insight into your deliverability.
+The seed list is updated periodically, as we regularly expand our panel coverage as well as swap out stale seed addresses. We’ll send you an email when an updated seed list is available. An old seed list will still work, but using the most current version will give you the best insight into your deliverability. The email notifications will go to all active users on the account, including subaccount reporting users [who have access to deliverability metrics](#enabling-access). A user may unsubscribe at any time to stop receiving these notifications.
 
 ### Getting Started with Panel Data
 
@@ -84,29 +84,31 @@ Note: You do *not* need to send emails to the consumer panel *through SparkPost*
 
 SparkPost provides the following deliverability metrics [via API](https://developers.sparkpost.com/api/metrics/#metrics-get-metrics-summary):
 
-|                      |                                                                      |
+|  Metri                 | Description                                                          |
 | :------------------- | :------------------------------------------------------------------- |
-| count_inbox_panel    | Panel messages delivered to the inbox.                               |
-| count_spam_panel     | Panel messages delivered to the spam folder.                         |
-| count_inbox_seed     | Seed messages delivered to the inbox.                                |
-| count_spam_seed      | Seed messages delivered to the spam folder.                          |
-| count_moved_to_inbox | Panel messages delivered to the spam folder then moved to the inbox. |
-| count_moved_to_spam  | Panel messages delivered to the inbox then moved to the spam folder. |
+| `count_inbox_panel`    | Panel messages delivered to the inbox.                               |
+| `count_spam_panel`     | Panel messages delivered to the spam folder.                         |
+| `count_inbox_seed`     | Seed messages delivered to the inbox.                                |
+| `count_spam_seed`      | Seed messages delivered to the spam folder.                          |
+| `count_moved_to_inbox` | Panel messages delivered to the spam folder then moved to the inbox. |
+| `count_moved_to_spam`  | Panel messages delivered to the inbox then moved to the spam folder. |
+
+Use an API key with the `Metrics: Read-only` permission in order to retrieve your panel data programatically. Deliverability data can be updated for up to 10 days after an email is sent due to possible mailbox provider delays and campaign grouping logic, so we recommend using the API on demand to retrieve the most up-to-date information. If you choose to use the API to pull the data into your own database, we recommend polling the API every 30 minutes and then taking a more complete snapshot every 72 hours. [Contact our support team](https://app.sparkpost.com/dashboard?supportTicket=true&supportIssue=signals_issues) for additional guidance.
 
 SparkPost also provides the following deliverability metrics in the [SparkPost app](https://app.sparkpost.com/) ([EU](https://app.eu.sparkpost.com/)):
 
-|                      |                                                                                               |
-| :------------------- | :-------------------------------------------------------------------------------------------- |
-| Inbox Folder Count   | Number of seed and panel messages delivered to the inbox.                                     |
-| Inbox Folder Rate    | Percentage of seed and panel messages delivered to the inbox.                                 |
-| Spam Folder Count    | Number of seed and panel messages delivered to the spam folder.                               |
-| Spam Folder Rate     | Percentage of seed and panel messages delivered to the spam folder.                           |
-| Moved to Inbox Count | Number of panel messages delivered to the spam folder but then moved to the inbox.            |
-| Moved to Inbox Rate  | Percentage of panel messages delivered to the spam folder but then moved to the inbox.        |
-| Moved to Spam Count  | Number of panel messages delivered to the inbox but then moved to the spam folder.            |
-| Moved to Spam Rate   | Percentage of panel messages delivered to the inbox folder but then moved to the spam folder. |
+| Metric               | Description                                                                                   | API Formula   |
+| :------------------- | :-------------------------------------------------------------------------------------------- | :---------------- |
+| Inbox Folder Count   | Number of seed and panel messages delivered to the inbox.                                     | `count_inbox_panel` + `count_inbox_seed` |
+| Inbox Folder Rate    | Percentage of seed and panel messages delivered to the inbox.                                 | (`count_inbox_panel` + `count_inbox_seed`) / (`count_inbox_panel` + `count_inbox_seed` + `count_spam_panel` + `count_spam_seed`) |
+| Spam Folder Count    | Number of seed and panel messages delivered to the spam folder.                               | `count_spam_panel` + `count_spam_seed` |
+| Spam Folder Rate     | Percentage of seed and panel messages delivered to the spam folder.                           | (`count_spam_panel` + `count_spam_seed`) / (`count_inbox_panel` + `count_inbox_seed` + `count_spam_panel` + `count_spam_seed`) |
+| Moved to Inbox Count | Number of panel messages delivered to the spam folder but then moved to the inbox.            | `count_moved_to_inbox`
+| Moved to Inbox Rate  | Percentage of panel messages delivered to the spam folder but then moved to the inbox.        | `count_moved_to_inbox` / (`count_spam_panel` + `count_spam_seed`) |
+| Moved to Spam Count  | Number of panel messages delivered to the inbox but then moved to the spam folder.            | `count_moved_to_spam` 
+| Moved to Spam Rate   | Percentage of panel messages delivered to the inbox folder but then moved to the spam folder. | `count_moved_to_spam` / (`count_inbox_panel` + `count_inbox_seed`) |
 
-To view the deliverability metrics in the UI, first click “Signals Analytics” in the top menu to be taken to the “Analytics Report”. Click “Add Metrics” and scroll to the “Deliverability Metrics” section to add your desired metrics.
+To view the deliverability metrics in the UI, first click “Signals Analytics” in the top menu to be taken to the “Analytics Report”. Click “Add Metrics” and scroll to the “Deliverability Metrics” section to add your desired metrics. All [user roles](https://www.sparkpost.com/docs/user-guide/managing-users/) can view deliverability metrics in the UI.
 
 ![](media/deliverability-analytics/02-deliverability-metrics.png)
 
@@ -126,7 +128,7 @@ If you would like a subaccount to have access to deliverability metrics, enable 
 
 ![](media/deliverability-analytics/deliverability-metrics-subaccount-enable.png)
 
-You can also enable [via API](https://developers.sparkpost.com/api/subaccounts/#subaccounts-put-update-a-subaccount). (Note that you cannot set the option on subaccount creation, you must toggle it after creation.)
+You can also enable [via API](https://developers.sparkpost.com/api/subaccounts/#subaccounts-put-update-a-subaccount). Use an API key that has the `Subaccounts: Read/Write` permission. (Note that you cannot set the option on subaccount creation, you must toggle it after creation.)
 
 ### Retrieving Seed List
 
@@ -136,13 +138,14 @@ To retrieve the seed list for a specific subaccount, click "Configuration" in th
 
 ![](media/deliverability-analytics/deliverability-metrics-subaccount-seed-list.png)
 
-You can also retrieve a seed list for the primary account or a subaccount [via API](https://developers.sparkpost.com/api/seed-list/). 
+You can also retrieve a seed list for the primary account or a subaccount [via API](https://developers.sparkpost.com/api/seed-list/). In order to use this API, create an API key with the `Seeds: Read-only` permission.
 
 ### Subaccount Users
 
 Once deliverability analytics have been enabled for a subaccount, any subaccount users will be able to:
 1. Retrieve the seed list _for their subaccount only_ via the UI or API.
 2. Access deliverability metrics _for their subaccount only_ via the UI or API.
+3. Receive email notifications when the seed list has been updated. (Note that a user may unsubscribe at any time to stop receiving these notifications.)
 
 ### Disabling Access
 
