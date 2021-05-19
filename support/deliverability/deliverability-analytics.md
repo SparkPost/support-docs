@@ -84,7 +84,7 @@ Note: You do *not* need to send emails to the consumer panel *through SparkPost*
 
 SparkPost provides the following deliverability metrics [via API](https://developers.sparkpost.com/api/metrics/#metrics-get-metrics-summary):
 
-|  Metri                 | Description                                                          |
+|  Metric                | Description                                                          |
 | :------------------- | :------------------------------------------------------------------- |
 | `count_inbox_panel`    | Panel messages delivered to the inbox.                               |
 | `count_spam_panel`     | Panel messages delivered to the spam folder.                         |
