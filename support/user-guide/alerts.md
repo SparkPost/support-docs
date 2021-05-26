@@ -33,6 +33,8 @@ Bounce rate alerts trigger above a percentage of your choice. Filter what the al
 * Sending IPs
 * Mailbox Providers: Pick popular mailbox providers from [this list](#mailbox-providers).
 
+The bounce rate alerts currently have a minimum injections threshold. 100 message injections in a 15-minute time period are needed for calculating the bounce rate and triggering the alert if the percentage is higher than the configured threshold.
+
 ### Health Score
 Health Score alerts trigger on your choice of:
 * Value: Above or below a specific score from 0 to 100.
