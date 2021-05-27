@@ -21,12 +21,6 @@ module.exports = {
         icon: `src/images/icon.png`,
       },
     },
-    {
-      resolve: `gatsby-plugin-mdx`,
-      options: {
-        extensions: [`.md`, `.mdx`],
-      },
-    },
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     {
