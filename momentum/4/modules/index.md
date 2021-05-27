@@ -44,6 +44,7 @@ description: "Table of Contents 71 1 Introduction 71 2 ac auth Authentication Ha
 | [exim_logger](/momentum/4/modules/exim-logger) | Exim Logging |
 | [fbl](/momentum/4/modules/fbl) | Feedback Loop |
 | [fingerprint](/momentum/4/modules/host-fingerprint) | Host Fingerprinting |
+| [ha_proxy_client](/momentum/4/modules/ha-proxy-client) | HAProxy Protocol Client |
 | [http_logger](/momentum/4/modules/http-logger) | HTTP Requests and Responses |
 | [httpsrv](/momentum/4/modules/4-httpsrv) | HTTP Server |
 | [icu](/momentum/4/modules/icu) | ICU |
