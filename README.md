@@ -220,3 +220,12 @@ If you want to clean out the navigation, articles, categories, and related media
 ```bash
 ./bin/clear-data.sh
 ```
+
+
+### GATSBY!! (or the start of it)
+Gotta start somewhere! I'm putting a placeholder header section for now that will further outline how to work with support-docs on Gatsby.
+
+#### Uptime monitoring
+We plan on leveraging CloudWatch Canary with Terraform, but right now we have access to Gatsby's uptime monitoring on their site.
+- https://status.gatsbyjs.com/uptime
+- https://status.gatsbyjs.com/  
