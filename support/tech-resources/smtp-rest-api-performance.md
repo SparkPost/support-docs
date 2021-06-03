@@ -30,6 +30,8 @@ Follow these best practices in order to optimize SMTP injection rates (and ove
 * Use concurrent connections by having multiple batches running simultaneously - use up to 10 connections at a time.  Having multiple connections open and running allows more messages to be sent in a shorter period of time.  (For SparkPost Enterprise customers, please contact your TAM for guidance on the number of concurrent connections.)
 * Keep the TCP connections open between messages.  Closing and opening connections on each message is much less efficient and can slow performance. Best practice is to reuse connections for no more than 100 messages and then create a new connection. This allows local and remote resources to be cleaned up efficiently.
 * Ensure your SMTP client has pipelining enabled, to reduce the roundtrip delay on some SMTP commands.
+* SparkPost strongly recommends using TLS with SMTP to protect your message content, recipient information and API keys in transmission. This includes API keys and any details such as recipient email addresses and message content.
+* If TLS is not supported by your application, SparkPost recommends using API keys with only the "Send via SMTP" privilege enabled. It is also good practice to regularly cycle your API keys to limit exposure of keys sent in the clear. 
 
 Following these best practices for optimal use of SMTP injection:
 
