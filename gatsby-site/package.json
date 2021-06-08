@@ -16,6 +16,9 @@
   "dependencies": {
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
+    "@sparkpost/design-tokens": "^5.1.5",
+    "@sparkpost/matchbox": "^5.1.5",
+    "@sparkpost/matchbox-icons": "^5.1.5",
     "babel-plugin-styled-components": "^1.12.0",
     "gatsby": "^3.6.0",
     "gatsby-plugin-gatsby-cloud": "^2.6.1",
@@ -29,6 +32,7 @@
     "gatsby-source-filesystem": "^3.6.0",
     "gatsby-transformer-sharp": "^3.6.0",
     "react": "^17.0.1",
+    "react-day-picker": "^7.4.10",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
     "react-is": "^17.0.2",
