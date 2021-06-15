@@ -1,6 +1,6 @@
 ---
 title: "Analytics Report"
-description: ""
+description: "Analytics Report is a powerful and flexible tool designed to make it easy for you to visualize time-series trends in your data."
 ---
 
 ## Overview
@@ -57,25 +57,25 @@ Creating your first report is simple and only takes a few clicks.
 
 The metrics you select are the basic building blocks of your report. The chosen metrics will be displayed in time-series charts.
 
-// image
+![Selecting Metrics](media/analytics-report/metrics.gif)
 
 #### Step 2: Apply Your Filters
 
 Think about what data you would like to hone in on, or what data you want to include.
 
-// image
+![Adding Filters](media/analytics-report/filter.gif)
 
 #### Step 3: Choose Your Breakdown
 
 Use the breakdown tool to further segment your data and identify the highest and lowest performers.
 
-// image
+![Selecting a Breakdown](media/analytics-report/breakdown.gif)
 
 #### Step 4: Save Your Report
 
 Save your report for quick access in the future and to avoid reconfiguring your settings each visit.
 
-// image
+![Saving a Report](media/analytics-report/save.gif)
 
 ---
 
@@ -85,23 +85,19 @@ Save your report for quick access in the future and to avoid reconfiguring your 
 
 Your account comes with several preset saved reports which are available from the report dropdown. All preset reports are also available through a menu by clicking the “View All Reports” button in the upper right hand corner.
 
-// image
+![Finding Preset Reports](media/analytics-report/preset.gif)
 
 #### Your Reports
 
-Reports that you’ve saved will also appear in the same dropdown along with preset saved reports. All saved reports are also available through a menu by clicking the “View All Reports” button in the upper right hand corner.
+Reports that you’ve saved will also appear in the same dropdown along with preset saved reports. All saved reports are also available through a menu by clicking the “View All Reports” button in the upper right hand corner. Saved reports are automatically shared with other users on your SparkPost account.
 
-// image
+![Finding Saved Reports](media/analytics-report/reportselection.gif)
 
-## Scheduling and Sharing Your Reports
+## Scheduling Your Reports
 
-#### Sharing Saved Reports With Others
+Keep yourself and your stakeholders informed by scheduling any saved report to be emailed straight to your inbox. Reports can be scheduled to be sent on a daily, weekly, or monthly basis.
 
-Saved reports are automatically shared with other users on your SparkPost account. They are accessible by others via the report dropdown or the menu that opens by clicking the “View All Reports” button in the upper right hand corner.
-
-#### Scheduling Reports
-
-Keep yourself and your stakeholders informed by scheduling any saved report to be sent straight to your inbox. Reports can be scheduled to be sent on a daily, weekly, or monthly basis.
+![Scheduling a Report](media/analytics-report/schedule.gif)
 
 ---
 
