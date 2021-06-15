@@ -25,7 +25,7 @@ Precision is the time range that one data point represents. Precision can be set
 
 #### Metrics
 
-We offer 40+ metrics that track the entire email lifecycle. Metrics are categorized by the stage of the email lifecycle - injection, delivery, deliverability\*, and engagement. See Metric Definitions for more information.
+We offer 40+ metrics that track the entire email lifecycle. Metrics are categorized by the stage of the email lifecycle - injection, delivery, deliverability\*, and engagement. See [Metric Definitions](https://www.sparkpost.com/docs/reporting/metrics-definitions/) for more information.
 
 Each metric selected will be displayed in time-series charts. Depending on the metrics selected, additional data is displayed. For example, selecting a bounce metric will reveal bounce classification information available through a tab, and selecting an engagement metric will reveal link engagement information.
 
@@ -135,4 +135,4 @@ Time zone is only adjustable for precision values under a day. This includes 1 m
 
 ## Giving Feedback
 
-For any questions or feedback about SparkPost’s reporting capabilities, please submit a support ticket.
+For any questions or feedback about SparkPost’s reporting capabilities, please [submit a support ticket](https://www.sparkpost.com/submit-a-ticket/).
