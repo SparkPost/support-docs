@@ -1,9 +1,9 @@
 ---
 title: "Webhook Event Reference"
-description: "This is a reference guide for developers who are consuming Spark Post Webhook Events and need to understand the structure of the events being sent If you would like Spark Post to begin transmitting events to a server for your web or mobile application to begin receiving near real time..."
+description: "This is a reference guide for developers who are consuming SparkPost Webhook Events and need to understand the structure of the events being sent If you would like Spark Post to begin transmitting events to a server for your web or mobile application to begin receiving near real time..."
 ---
 
-This is a reference guide for developers who are consuming SparkPost Webhook Events and need to understand the structure of the events being sent. If you would like SparkPost to begin transmitting events to a server for your web or mobile application to begin receiving near real-time detailed information about your SparkPost Email Transmissions, learn about [Defining Webhooks](https://www.sparkpost.com/docs/user-guide/defining-webhooks/).
+This is a reference guide for developers who are consuming SparkPost Webhook Events and need to understand the structure of the events being sent. If you want to begin transmitting near real-time events to a server for your own applications, get started from the [Webhooks page](https://app.sparkpost.com/webhooks) ([EU](https://app.eu.sparkpost.com/webhooks)) in the app, or the [Webhooks API](https://developers.sparkpost.com/api/webhooks/).
 
 There are several types of events that SparkPost is able to send which provide you data concerning your email's life cycle. They are organized by Event Types which contain various Events with each Event being composed of Event Properties. You can use the [SparkPost API Webhook Resource](https://developers.sparkpost.com/api/webhooks.html) to discover sample payloads of selected events, and the sample values and event descriptions. To list descriptions of the events, event types, and event fields that could be included in a Webhooks post to your target URL, run the following call in a REST API client like Postman: https://api.sparkpost.com/api/v1/webhooks/events/documentation
 
