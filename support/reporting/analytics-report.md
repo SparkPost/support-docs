@@ -7,27 +7,35 @@ description: "Analytics Report is a powerful and flexible tool designed to make 
 
 Analytics Report is a powerful and flexible tool designed to make it easy for you to visualize time-series trends in your data. You can analyze sending and deliverability events, compare segments with each other, and more.
 
+If you’ve used the reports before, you’ll notice some new, powerful features:
+
+- Saved Reports
+- Scheduled Reports
+- Selectable time precision
+- Comparison Reports
+- Mailbox Provider and Mailbox Provider Region Reporting Facets
+
 ---
 
 ## Reporting Concepts
 
 #### Date Range
 
-The date selector allows you to select the time frame of the data you would like to view. All data presented in the report will be limited to this selected date and time range.
+The date selector lets you set the time frame of the data you want to view. All data presented in the report will be limited to the date and time range you set.
 
 #### Time Zone
 
-Data is presented in your local time zone for precisions under 1 day. Coordinated Universal Time or UTC is used otherwise.
+Data is shown in your local time zone for precisions under 1 day. Coordinated Universal Time or UTC is used otherwise.
 
 #### Precision
 
-Precision is the time range that one data point represents. Precision can be set to 1 minute, 5 minutes, 15 minutes, 1 hour, 1 day, 1 week, or 1 month. For example, selecting a precision of 1 hour will aggregate your data into 1 hour data points in a time-series chart. Hovering over the time-series charts will reveal data rolled up to your selected precision value.
+Precision is the time range that one data point represents. Precision can be set to 1 minute, 5 minutes, 15 minutes, 1 hour, 1 day, 1 week, or 1 month. For example, setting a precision of 1 hour will aggregate your data into 1 hour data points in a time-series chart. Hovering over the time-series charts will reveal data rolled up to the precision value set.
 
 #### Metrics
 
-We offer 40+ metrics that track the entire email lifecycle. Metrics are categorized by the stage of the email lifecycle - injection, delivery, deliverability\*, and engagement. See [Metric Definitions](https://www.sparkpost.com/docs/reporting/metrics-definitions/) for more information.
+We offer 40+ metrics that track the entire email lifecycle. Metrics are categorized by the stage of the email lifecycle: injection, delivery, deliverability\*, and engagement. See [Metric Definitions](https://www.sparkpost.com/docs/reporting/metrics-definitions/) for more information.
 
-Each metric selected will be displayed in time-series charts. Depending on the metrics selected, additional data is displayed. For example, selecting a bounce metric will reveal bounce classification information available through a tab, and selecting an engagement metric will reveal link engagement information.
+Each metric selected will be shown in time-series charts. Depending on the metrics selected, more data could become available. For example, selecting a bounce metric will reveal bounce classification information available through a tab, and selecting an engagement metric will reveal link engagement information.
 
 _\* Available for Deliverability Analytics customers._
 
@@ -37,15 +45,15 @@ A filter lets you view details on specific segments of your traffic. You can inc
 
 #### Comparisons
 
-Comparisons allow you to view multiple segments head-to-head to easily see and compare their time-series data simultaneously. Just like filters, breakdowns are available for any type of resource.
+Comparisons let you compare multiple segments to easily see their time-series data at the same time. Just like filters, breakdowns are available for any type of resource. You can compare different subaccounts, campaigns, mailbox providers and so on. This is helpful to explore how your sending performance varies over time.
 
 #### Aggregates
 
-Aggregate data for your selected date range, and metrics is displayed underneath the time-series charts.
+Aggregate data for your selected date range and metrics are displayed below the time-series charts, and can be exported as CSV files for further analysis in Excel and other tools. Remember the same information is available via the [Metrics API](https://developers.sparkpost.com/api/metrics/), so your own code can retrieve and process it.
 
 #### Breakdowns
 
-Breakdowns give you additional visibility into your data by grouping your data by any resource type. This makes it easy to surface the highest and lowest performers of any resource type, like campaign, sending domain, etc.
+Breakdowns give you more visibility into your data by grouping your data by any resource type. This makes it easy to find the highest and lowest performers of any resource type, like campaign, sending domain, and others.
 
 ---
 
