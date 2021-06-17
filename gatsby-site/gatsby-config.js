@@ -13,6 +13,13 @@ module.exports = {
       },
     },
     `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/pages`,
+        name: "pages",
+      },
+    },
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-gatsby-cloud`,
     {

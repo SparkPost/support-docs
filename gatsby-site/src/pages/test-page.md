@@ -2,6 +2,7 @@
 title: "New Installation - All Configurations"
 description: "The installation and upgrade instructions in Chapters 8 through 11 are only applicable in their entirety for Momentum 4 x releases prior to 4 2 28 For release 4 2 28 and beyond please refer to the installation and upgrade PDF documents available under the desired release's folder on the..."
 path: "/test-page"
+github: "https://github.com/SparkPost/support-docs/blob/master/momentum/4/new-installation.md"
 ---
 
 ### Warning
