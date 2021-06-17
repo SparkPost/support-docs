@@ -15,8 +15,6 @@ If you’ve used the reports before, you’ll notice some new, powerful features
 - Comparison Reports
 - Mailbox Provider and Mailbox Provider Region Reporting Facets
 
----
-
 ## Reporting Concepts
 
 #### Date Range
@@ -55,8 +53,6 @@ Aggregate data for your selected date range and metrics are displayed below the 
 
 Breakdowns give you more visibility into your data by grouping your data by any resource type, and can be exported as CSV files for further analysis in Excel or other tools. This makes it easy to find the highest and lowest performers of any resource type, like campaign, sending domain, and others.
 
----
-
 ## Building Your First Report
 
 Creating your first report is simple and only takes a few clicks.
@@ -85,8 +81,6 @@ Save your report for quick access in the future and to avoid reconfiguring your 
 
 ![Saving a Report](media/analytics-report/save.gif)
 
----
-
 ## Accessing Your Reports
 
 #### Preset Reports
@@ -110,8 +104,6 @@ Keep yourself and your stakeholders informed by scheduling any saved report to b
 ## Deleting Your Reports
 
 Reports can only be deleted by the user that created them. To delete a report, first click on “View All Reports” in the upper right-hand corner, then under the “My Reports” tab, find the report you want to delete. The delete button is found in the dropdown menu on the right side of each report.
-
----
 
 ## Limits/Limitations
 
@@ -142,8 +134,6 @@ Selectable precision values are based on the selected date range of the report.
 #### Time Zone Limitations
 
 Time zone is only adjustable for precision values under a day. This includes 1 minute, 5 minutes, 15 minutes, and 1 hour. Data is only available in UTC for precisions 1 day and above.
-
----
 
 ## Giving Feedback
 
