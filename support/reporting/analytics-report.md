@@ -49,11 +49,11 @@ Comparisons let you compare multiple segments to easily see their time-series da
 
 #### Aggregates
 
-Aggregate data for your selected date range and metrics are displayed below the time-series charts, and can be exported as CSV files for further analysis in Excel and other tools. Remember the same information is available via the [Metrics API](https://developers.sparkpost.com/api/metrics/), so your own code can retrieve and process it.
+Aggregate data for your selected date range and metrics are displayed below the time-series charts. Remember, the same information is available via the [Metrics API](https://developers.sparkpost.com/api/metrics/), so your own code can retrieve and process it.
 
 #### Breakdowns
 
-Breakdowns give you more visibility into your data by grouping your data by any resource type. This makes it easy to find the highest and lowest performers of any resource type, like campaign, sending domain, and others.
+Breakdowns give you more visibility into your data by grouping your data by any resource type, and can be exported as CSV files for further analysis in Excel or other tools. This makes it easy to find the highest and lowest performers of any resource type, like campaign, sending domain, and others.
 
 ---
 
@@ -63,13 +63,13 @@ Creating your first report is simple and only takes a few clicks.
 
 #### Step 1: Select Your Metrics
 
-The metrics you select are the basic building blocks of your report. The chosen metrics will be displayed in time-series charts.
+The metrics you select are the basic building blocks of your report. The chosen metrics will be shown in time-series charts.
 
 ![Selecting Metrics](media/analytics-report/metrics.gif)
 
 #### Step 2: Apply Your Filters
 
-Think about what data you would like to hone in on, or what data you want to include.
+Think about what data you would like to isolate, or what data you want to include.
 
 ![Adding Filters](media/analytics-report/filter.gif)
 
