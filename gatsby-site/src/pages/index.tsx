@@ -1,5 +1,5 @@
-import * as React from "react"
-import { Button, ThemeProvider } from '@sparkpost/matchbox'
+import React from "react"
+import { ThemeProvider } from '@sparkpost/matchbox'
 
 // styles
 const pageStyles = {
@@ -38,9 +38,9 @@ const listItemStyles = {
 
 const linkStyle = {
   color: "#8954A8",
-  fontWeight: "bold",
   fontSize: 16,
   verticalAlign: "5%",
+  fontWeight: 800
 }
 
 const docLinkStyle = {
@@ -68,12 +68,12 @@ const badgeStyle = {
   backgroundColor: "#088413",
   border: "1px solid #088413",
   fontSize: 11,
-  fontWeight: "bold",
+  fontWeight: 800,
   letterSpacing: 1,
   borderRadius: 4,
   padding: "4px 6px",
   display: "inline-block",
-  position: "relative",
+  // position: "relative", // ERY: not entirely sure why "position" can't be a string because it's SUPPOSED TO be a string, but TS disagrees _shrug_
   top: -2,
   marginLeft: 10,
   lineHeight: 1,
@@ -127,7 +127,7 @@ const links = [
 ]
 
 // markup
-const IndexPage = () => {
+const IndexPage = (): JSX.Element => {
   return (
     <ThemeProvider>
     <main style={pageStyles}>
