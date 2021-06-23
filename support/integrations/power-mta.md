@@ -16,7 +16,7 @@ Now [create and verify](https://app.sparkpost.com/account/sending-domains) the d
 
 Add the following to your PowerMTA config, changing the value for auth-password to the SparkPost API key you created above.
 
-The `{sparkpost}` directive is a short way to get the needed configuration.
+The `{sparkpost}` special domain is a short way to get the needed configuration.
 
 ```
 <domain {sparkpost}>
