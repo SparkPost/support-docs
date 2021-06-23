@@ -32,7 +32,7 @@ The `{sparkpost}` directive is a short way to get the needed configuration.
 The config can optionally select a particular SparkPost dedicated IP pool by name, or select a SparkPost subaccount for delivery. See PowerMTA User Guide "SparkPost Traffic Redirection Support" for more information.
 
 
-Benefits of using PMTA to relay to SparkPost:
+Benefits of using PowerMTA to relay to SparkPost:
 * You don’t need to change your existing message generation architecture:
     * PowerMTA handles all the queueing and any network issues that might arise during delivery.
     * Your message generation platform may not supply a SMTP username and password, particularly if it's directly connected to your MTA over a private network. Any cloud sending service expects authentication; PowerMTA can supply the username and password on the outgoing connection.
@@ -44,9 +44,9 @@ Benefits of using PMTA to relay to SparkPost:
 
 ## Selecting domains to relay to SparkPost
 
-The `<domain *>` directive shown above causes all mail to be sent to SparkPost. More realistically, you will want to migrate gradually, by selecting which traffic streams go to SparkPost, and which ones are delivered by PMTA as before. With PMTA, you can select based on the `MAIL FROM` domain (known as the sending domain in SparkPost).
+The `<domain *>` directive shown above causes all mail to be sent to SparkPost. More realistically, you will want to migrate gradually, by selecting which traffic streams go to SparkPost, and which ones are delivered by PowerMTA as before. With PowerMTA, you can select based on the `MAIL FROM` domain (known as the sending domain in SparkPost).
 
-In your PMTA configuration, include a `pattern-list` into the source directive that receives your incoming messages.  For example:
+In your PowerMTA configuration, include a `pattern-list` into the source directive that receives your incoming messages.  For example:
 
 ```
 # Settings per source IP address (for incoming SMTP connections)
