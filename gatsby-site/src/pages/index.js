@@ -1,5 +1,5 @@
 import * as React from "react"
-import { Button, ThemeProvider } from '@sparkpost/matchbox'
+import { ThemeProvider } from '@sparkpost/matchbox'
 
 // styles
 const pageStyles = {
