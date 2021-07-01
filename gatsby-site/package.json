@@ -41,11 +41,15 @@
     "styled-components": "^5.3.0"
   },
   "resolutions": {
+    "sanitize-html": ">=2.3.2",
+    "postcss": ">=7.0.36",
     "trim": ">=0.0.3",
     "trim-newlines": ">=3.0.1",
     "css-what": ">=5.0.1"
   },
   "resolutionsComments": {
+    "sanitize-html": "https://npmjs.com/advisories/1676",
+    "postcss": "https://npmjs.com/advisories/1693",
     "trim": "https://npmjs.com/advisories/1700",
     "trim-newlines": "https://npmjs.com/advisories/1753",
     "css-what": "https://npmjs.com/advisories/1754"
