@@ -14,8 +14,9 @@
   },
   "exclude": ["./node_modules", "./public", "./.cache", "./src/**/*"],
   "include": [
-    "./gatsby-config.ts",
-    "./gatsby-node.ts"
+    "ts-configs/**/*"
+    // "./gatsby-config.ts",
+    // "./gatsby-node.ts"
     // "./gatsby-browser.tsx",
     // "./gatsby-ssr.tsx"
   ]

@@ -1,22 +1,10 @@
 {
   "include": [
     "./src/**/*",
-    "gatsby-config.ts",
-    "src/gatsby-node.ts",
-    "src/create-pages.ts",
-    "gatsby-node.ts",
-    "create-pages.ts"
+    "./ts-configs/**/*",
+    "./ts-configs/create-pages.ts"
   ],
-  "exclude": [
-    "./node_modules",
-    "./public",
-    "./.cache",
-    "./gatsby-config.ts",
-    "./gatsby-node.ts",
-    "./gatsby-browser.ts",
-    "./gatsby-ssr.ts",
-    "./gatsby-config.js"
-  ],
+  "exclude": ["./node_modules", "./public", "./.cache"],
   "compilerOptions": {
     "noImplicitAny": true,
     "noImplicitReturns": true,
@@ -33,6 +21,7 @@
     "noEmit": true,
     "skipLibCheck": true,
     "moduleResolution": "node",
-    "sourceMap": true
+    "sourceMap": true,
+    "types": ["node"]
   }
 }

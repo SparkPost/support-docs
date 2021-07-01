@@ -1,5 +1,5 @@
 import { GatsbyNode } from "gatsby";
-import * as path from "path";
+import { resolve } from "path";
 
 export interface INode {
   frontmatter: {
@@ -22,7 +22,7 @@ export const createPages: GatsbyNode["createPages"] = async ({
 }) => {
   const { createPage } = actions;
 
-  const singleTemplate = path.resolve(`src/templates/single.tsx`);
+  const singleTemplate = resolve(`src/templates/single.tsx`);
 
   const result = await graphql<IQueryResult>(`
     {
