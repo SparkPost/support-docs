@@ -1,4 +1,8 @@
+<<<<<<< HEAD:gatsby-site/src/pages/index.tsx
 import React from "react"
+=======
+import * as React from "react"
+>>>>>>> eb53d65700b58ddea6a602a904051f06045a8466:gatsby-site/src/pages/index.js
 import { ThemeProvider } from '@sparkpost/matchbox'
 
 // styles
