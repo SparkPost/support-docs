@@ -1,7 +1,14 @@
 module.exports = {
   siteMetadata: {
-    title: `Support Documents`,
-    siteUrl: `https://support.sparkpost.com`,
+    siteName: `SparkPost Support Documentation`,
+    url: `https://support.sparkpost.com`,
+    title: `SparkPost Support Documentation`,
+    defaultTitle: "Default title",
+    titleTemplate: "%s · The Real Hero",
+    description: `All the help and API resources you need to send emails successfully: Get started, integrate, set up your account and profile, report on your progress, and more.`,
+    defaultImage: `/images/sparkpost-logo-standard.png`,
+    twitterUsername: `SparkPost`,
+    facebookPage: `https://www.facebook.com/sparkpost/`,
   },
   plugins: [
     `gatsby-plugin-styled-components`,
