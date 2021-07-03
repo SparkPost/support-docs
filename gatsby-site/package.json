@@ -16,13 +16,14 @@
     "lint": "eslint . --ignore-path .gitignore --ext .ts,.tsx,.js",
     "test": "npm run type-check && npm run lint"
   },
-  "sideEffects": false,
   "dependencies": {
+    "@mdx-js/mdx": "^1.6.22",
+    "@mdx-js/react": "^1.6.22",
     "@sparkpost/design-tokens": "^5.3.0",
     "@sparkpost/matchbox": "^5.3.0",
     "@sparkpost/matchbox-icons": "^5.3.0",
     "babel-plugin-styled-components": "^1.13.1",
-    "gatsby": "^3.8.0",
+    "gatsby": "^3.8.1",
     "gatsby-plugin-gatsby-cloud": "^2.8.1",
     "gatsby-plugin-google-analytics": "^3.8.0",
     "gatsby-plugin-image": "^1.8.0",
@@ -34,26 +35,12 @@
     "gatsby-source-filesystem": "^3.8.0",
     "gatsby-transformer-remark": "^4.5.0",
     "gatsby-transformer-sharp": "^3.8.0",
-    "react": "^16.8.0",
+    "react": "^17.0.2",
     "react-day-picker": "^7.4.10",
-    "react-dom": "^16.8.0",
+    "react-dom": "^17.0.2",
     "react-helmet": "^6.1.0",
-    "react-is": "^16.8.0",
+    "react-is": "^17.0.2",
     "styled-components": "^5.3.0"
-  },
-  "devDependencies": {
-    "@types/node": "^15.14.0",
-    "@types/react": "^17.0.13",
-    "@types/react-dom": "^17.0.8",
-    "@typescript-eslint/eslint-plugin": "^4.28.1",
-    "@typescript-eslint/parser": "^4.28.1",
-    "eslint": "^7.29.0",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-jsx-a11y": "^6.4.1",
-    "eslint-plugin-prettier": "^3.4.0",
-    "prettier": "^2.3.2",
-    "ts-node": "^9.1.1",
-    "typescript": "^4.3.5"
   },
   "resolutions": {
     "sanitize-html": ">=2.3.2",
@@ -68,5 +55,21 @@
     "trim": "https://npmjs.com/advisories/1700",
     "trim-newlines": "https://npmjs.com/advisories/1753",
     "css-what": "https://npmjs.com/advisories/1754"
+  },
+  "devDependencies": {
+    "@types/node": "^15.14.0",
+    "@types/react": "^17.0.13",
+    "@types/react-dom": "^17.0.8",
+    "@types/react-helmet": "^6.1.1",
+    "@types/styled-components": "^5.1.11",
+    "@typescript-eslint/eslint-plugin": "^4.28.1",
+    "@typescript-eslint/parser": "^4.28.1",
+    "eslint": "^7.29.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.4.0",
+    "prettier": "^2.3.2",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.3.5"
   }
 }

@@ -4,7 +4,6 @@ exports.createPages = void 0;
 const path_1 = require("path");
 const createPages = async ({ actions, graphql, reporter, }) => {
     const { createPage } = actions;
-    const singleTemplate = path_1.resolve(`src/templates/single.tsx`);
     const result = await graphql(`
     {
       allMarkdownRemark(limit: 1000) {
@@ -25,10 +24,10 @@ const createPages = async ({ actions, graphql, reporter, }) => {
     if (!result.data) {
         throw new Error("ERROR: Could not fetch posts on build");
     }
-    result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+    result.data.allMarkdownRemark.edges.forEach((edge) => {
         createPage({
-            path: node.frontmatter.path,
-            component: singleTemplate,
+            path: edge.node.frontmatter.path,
+            component: path_1.resolve("src/templates/single.tsx"),
             context: {},
         });
     });

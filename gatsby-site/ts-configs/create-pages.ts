@@ -22,8 +22,6 @@ export const createPages: GatsbyNode["createPages"] = async ({
 }) => {
   const { createPage } = actions;
 
-  const singleTemplate = resolve(`src/templates/single.tsx`);
-
   const result = await graphql<IQueryResult>(`
     {
       allMarkdownRemark(limit: 1000) {
@@ -45,10 +43,11 @@ export const createPages: GatsbyNode["createPages"] = async ({
   if (!result.data) {
     throw new Error("ERROR: Could not fetch posts on build");
   }
-  result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+
+  result.data.allMarkdownRemark.edges.forEach((edge) => {
     createPage({
-      path: node.frontmatter.path,
-      component: singleTemplate,
+      path: edge.node.frontmatter.path,
+      component: resolve("src/templates/single.tsx"),
       context: {},
     });
   });

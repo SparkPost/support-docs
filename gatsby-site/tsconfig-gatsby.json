@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "outDir": "./",
     "noImplicitAny": true,
     "module": "commonjs",
     "strict": true,
@@ -8,9 +7,9 @@
     "jsx": "react",
     "target": "esnext",
     "noImplicitReturns": true,
-    "esModuleInterop": true
-    // "rootDir": "./ts-configs"
-    // "outDir": "./"
+    "esModuleInterop": true,
+    "rootDir": "./ts-configs",
+    "outDir": "./"
   },
   "exclude": ["./node_modules", "./public", "./.cache", "./src/**/*"],
   "include": [

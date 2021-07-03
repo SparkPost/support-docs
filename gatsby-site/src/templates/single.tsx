@@ -1,33 +1,33 @@
-import React from "react";
+import React, { FunctionComponent } from "react";
 import { graphql } from "gatsby";
 
 interface IFrontMatter {
-  title: string,
-  description: string,
-  path: string,
-  github: string
+  title: string;
+  description: string;
+  path: string;
+  github: string;
 }
 
-interface TemplateProps {
+interface SingleProps {
   data: {
-    markdownRemark: { 
-      html: string
-      frontmatter: IFrontMatter
-    }
-  }
+    markdownRemark: {
+      html: string;
+      frontmatter: IFrontMatter;
+    };
+  };
 }
 
-export const Template = ({ data } : TemplateProps): JSX.Element => {
-  return (
-    <div className="container">
-      <h1>{data.markdownRemark.frontmatter.title}</h1>
-      <div
-        className="doc-content"
-        dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
-      />
-    </div>
-  );
-}
+const Single: FunctionComponent<SingleProps> = ({ data }) => (
+  <div className="container">
+    <h1>{data.markdownRemark.frontmatter.title}</h1>
+    <div
+      className="doc-content"
+      dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
+    />
+  </div>
+);
+
+export default Single;
 
 export const pageQuery = graphql`
   query DocPageByPath($path: String!) {

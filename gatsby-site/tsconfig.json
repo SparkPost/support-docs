@@ -1,9 +1,5 @@
 {
-  "include": [
-    "./src/**/*",
-    "./ts-configs/**/*",
-    "./ts-configs/create-pages.ts"
-  ],
+  "include": ["./src/**/*", "./ts-configs/**/*"],
   "exclude": ["./node_modules", "./public", "./.cache"],
   "compilerOptions": {
     "noImplicitAny": true,
