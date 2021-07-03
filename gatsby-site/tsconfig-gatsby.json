@@ -12,11 +12,5 @@
     "outDir": "./"
   },
   "exclude": ["./node_modules", "./public", "./.cache", "./src/**/*"],
-  "include": [
-    "ts-configs/**/*"
-    // "./gatsby-config.ts",
-    // "./gatsby-node.ts"
-    // "./gatsby-browser.tsx",
-    // "./gatsby-ssr.tsx"
-  ]
+  "include": ["ts-configs/**/*"]
 }
