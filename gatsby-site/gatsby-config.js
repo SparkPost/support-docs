@@ -7,7 +7,7 @@ module.exports = {
     titleTemplate: "%s - SparkPost",
     description: `All the help and API resources you need to send emails successfully: Get started, integrate, set up your account and profile, report on your progress, and more.`,
     defaultImage: `/images/sparkpost-logo-standard.png`,
-    twitterUsername: `SparkPost`,
+    twitterUsername: `@SparkPost`,
     facebookPage: `https://www.facebook.com/sparkpost/`,
   },
   plugins: [
