@@ -103,7 +103,7 @@ description: "This section details all Lua functions Functions are ordered alpha
 | [msg:makeContainer](/momentum/4/lua/ref-msg-make-container) | Creates a new, unlinked, container message part |
 | [msg:makePart](/momentum/4/lua/ref-msg-make-part) | Creates a new, unlinked, singleton (or leaf) message part |
 | [msg:mime](/momentum/4/lua/ref-msg-mime) | Returns the top of the MIME tree for the message, a message part |
-| [msg:raw](/momentum/4/lua/ref-msg-raw) | Set or returns the message content |
+| [msg:raw](/momentum/4/lua/ref-msg-raw) | Set or returns the message content and the message length |
 | [msg:raw_match](/momentum/4/lua/ref-msg-raw-match) | Streaming interface to a PCRE search of the message content |
 | [msg:raw_replace](/momentum/4/lua/ref-msg-raw-replace) | Streaming interface to a PCRE replacement of message content |
 | [msg:rcptto](/momentum/4/lua/ref-msg-rcptto) | Sets the 'RCPT TO' email address if one is provided |
