@@ -57,4 +57,4 @@ Deploy this starter with one click on [Gatsby Cloud](https://www.gatsbyjs.com/cl
 
 The `ts-configs/` directory is what contains each of the gatsby config files in ts form. They then use the tsconfig-gatsby.json file to build the ts files into js (as gatsby expects) and exports them to the root as js files. This way, we can still type check our config files while still using the methodology gatsby expects.
 
-It stinks that it has to be this hacky, but while gatsby supports typescript, it doesn't support type checking natively or on it's config files.
+This is a bit hacky, but at least it's clean. While gatsby supports typescript, it doesn't support type checking or typescript versions of it's config files out of the box.
