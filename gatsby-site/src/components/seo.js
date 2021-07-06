@@ -12,7 +12,6 @@ const SEO = ({ title, description, image, article }) => {
     defaultTitle,
     titleTemplate,
     defaultDescription,
-    siteName,
     siteUrl,
     defaultImage,
     twitterUsername,
@@ -27,10 +26,9 @@ const SEO = ({ title, description, image, article }) => {
   };
 
   return (
-    <Helmet>
-      <title>{seo.title}</title>
+    <Helmet title={seo.title} titleTemplate={titleTemplate}>
       <meta property="og:locale" content="en_US" />
-      <meta property="og:title" content={site.siteMetadata.title} />
+      <meta property="og:title" content={seo.title} />
       <meta name="description" content={seo.description} />
       {seo.description && (
         <meta property="og:description" content={seo.description} />
@@ -38,11 +36,11 @@ const SEO = ({ title, description, image, article }) => {
       {seo.url && <meta property="og:url" content={seo.url} />}
       {(article ? true : null) && <meta property="pg:type" content="article" />}
       {seo.image && <meta property="og:image" content={seo.image} />}
-      <meta property="og:site_name" content={site.siteMetadata.siteName} />
+      <meta property="og:site_name" content={seo.title} />
       // Twitter
       <meta name="twitter:card" content="summary_large_image" />
-      {site.siteMetadata.title} && (
-      <meta name="twitter:title" content={site.siteMetadata.title} />
+      {seo.title} && (
+      <meta name="twitter:title" content={seo.title} />
       )}
       {seo.description && (
         <meta property="twitter:description" content={seo.description} />
@@ -66,24 +64,24 @@ export default SEO;
 SEO.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
-  // image: PropTypes.string,
-  // article: PropTypes.bool,
+  image: PropTypes.string,
+  article: PropTypes.bool,
 };
 
 SEO.defaultProps = {
   title: null,
   description: null,
-  // image: null,
-  // article: false,
+  image: null,
+  article: false,
 };
 
 const query = graphql`
   query {
     site {
       siteMetadata {
-        title
+        defaultTitle: title
+        titleTemplate
         defaultDescription: description
-        siteName
         siteUrl: url
         defaultImage
         twitterUsername
