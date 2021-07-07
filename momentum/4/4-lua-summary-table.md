@@ -52,7 +52,7 @@ This section contains tables of Lua functions. Click the function name for detai
 | [msg:makeContainer](/momentum/4/lua/ref-msg-make-container) – Creates a new, unlinked, container message part | mimetype, [boundary], [add_terminator] | msys.extended.message | 4.0 | data, data_spool, data_spool_each_rcpt |
 | [msg:makePart](/momentum/4/lua/ref-msg-make-part) – Creates a new, unlinked, singleton (or leaf) message part | mimetype, [body], [encoding] | msys.extended.message | 4.0 | data, data_spool, data_spool_each_rcpt |
 | [msg:mime](/momentum/4/lua/ref-msg-mime) – Returns the top of the MIME tree for the message, a message part | [readonly] | msys.extended.message | 4.0 | data, data_spool, data_spool_each_rcpt |
-| [msg:raw](/momentum/4/lua/ref-msg-raw) – Sets the message content if value is provided | [value] | msys.extended.message | 4.0 | data, data_spool, data_spool_each_rcpt |
+| [msg:raw](/momentum/4/lua/ref-msg-raw) – Sets the message content if value is provided and returns the raw message and message length | [value] | msys.extended.message | 4.0 | data, data_spool, data_spool_each_rcpt |
 | [msg:raw_match](/momentum/4/lua/ref-msg-raw-match) – Streaming interface to PCRE search message content | pattern | msys.extended.message | 4.0 | data, data_spool, data_spool_each_rcpt |
 | [msg:raw_replace](/momentum/4/lua/ref-msg-raw-replace) – Streaming interface to a PCRE replacement of message content | pattern, replacement | msys.extended.message | 4.0 | data, data_spool, data_spool_each_rcpt |
 | [msg:rcptto](/momentum/4/lua/ref-msg-rcptto) – Sets the 'RCPT TO' email address if one is provided. Returns the current/new value | [value] | msys.extended.message | 4.0 | data, data_spool, data_spool_each_rcpt, rcptto, set_binding |
