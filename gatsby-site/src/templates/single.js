@@ -7,7 +7,11 @@ export default function Template({ data }) {
   const { markdownRemark: post } = data;
   return (
     <ThemeProvider>
-      <SEO article />
+      <SEO
+        title={post.frontmatter.title}
+        description={post.frontmatter.description}
+        article
+      />
       <div class="container">
         <h1>{post.frontmatter.title}</h1>
         <div

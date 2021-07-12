@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     siteName: `SparkPost Support Documentation`,
-    url: `https://support.sparkpost.com`,
+    siteUrl: `https://support.sparkpost.com`,
     title: `SparkPost Support Documentation`,
     defaultTitle: `SparkPost Support Documentation`,
     titleTemplate: "%s - SparkPost",
