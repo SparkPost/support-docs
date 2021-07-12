@@ -297,6 +297,8 @@ A hook is made up of a number of elements:
 
     *   Third – The invocation of the hook's providers. This always includes a special first argument called `EC_HOOK_CLOSURE` and then the variable names (in order) defined in the caller function shown in the [log_permanent_failure_v1 example](/momentum/3/3-api/arch-primary-apis#arch.using.hooks.example). `EC_HOOK_CLOSURE` just refers to the closure argument that was passed when the provider was registered. It's a symbolic name used by the programmer within the macro in order to obscure the 'real' name.
 
+    When writing hook implementations, the first argument in many hooks is `void *closure`. The closure is passed into hooks written in C, but for hooks written in lua, the closure argument is not passed. Arguments start with the second argument.
+    
 *   Return value handling
 
     This parameter does not exist for void return hooks. For non-void return hooks, this is a snippet of code to evaluate when each provider returns. For example:
