@@ -20,6 +20,17 @@ backend out
     server foo 0.0.0.0
 ``` 
 
+## IPV6 Support
+
+Recently, **IPV6** support was introduced to the module. IPV6 can be proxied standlone or via an IPV4 HAProxy listener. To utilize IPV6, the following configuration(s) from above can be modified. 
+
+```
+frontend main
+  bind :::8085 v6only accept-proxy
+``` 
+
+## Health Check
+
 The module supports a configurable health check.
 
 <a name="modules.ha_proxy_client.example"></a> 
@@ -37,6 +48,11 @@ binding ha_ipv4_bypass {
   Domain example.com {
     ha_proxy_bypass = "true"
   }
+binding ha_ipv6_bypass {
+  ha_proxy_server = "0:0:0:0:0:0:0:1:8085"
+  ha_proxy_src_addr = "1.2.3.4"
+  Domain example.com {
+    ha_proxy_bypass = "true"
+  }
 }
 ```
-
