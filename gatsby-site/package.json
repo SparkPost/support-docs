@@ -23,7 +23,7 @@
     "@sparkpost/matchbox": "^5.3.0",
     "@sparkpost/matchbox-icons": "^5.3.0",
     "babel-plugin-styled-components": "^1.13.1",
-    "gatsby": "^3.8.1",
+    "gatsby": "^3.6.0",
     "gatsby-plugin-gatsby-cloud": "^2.8.1",
     "gatsby-plugin-google-analytics": "^3.8.0",
     "gatsby-plugin-image": "^1.8.0",
