@@ -1,5 +1,3 @@
-
-
 # SparkPost and Momentum documentation
 
 [![Build Status](https://travis-ci.org/SparkPost/support-docs.svg?branch=master)](https://travis-ci.org/SparkPost/support-docs)
@@ -10,31 +8,30 @@ SparkPost documentation is located in the `support/` directory.
 
 Momentum documentation is located in the `momentum/` directory.
 
-
 All content is formatted in [Markdown](https://daringfireball.net/projects/markdown/syntax).
 
-* [SparkPost and Momentum documentation](#sparkpost-and-momentum-documentation)
-  * [Resources](#resources)
-  * [Directory Structure](#directory-structure)
-* [Content](#content)
-  * [Articles](#articles)
-    * [Frontmatter](#frontmatter)
-  * [Images and other media](#images-and-other-media)
-  * [Categories](#categories)
-    * [Category Types](#category-types)
-  * [Navigation](#navigation)
-* [Deployment](#deployment)
-  * [Pipeline](#pipeline)
-* [Development](#development)
-  * [Installation](#installation)
-  * [Local environment variables](#local-environment-variables)
-  * [Sync locally](#sync-locally)
-  * [Cleaning WordPress](#cleaning-wordpress)
+- [SparkPost and Momentum documentation](#sparkpost-and-momentum-documentation)
+  - [Resources](#resources)
+  - [Directory Structure](#directory-structure)
+- [Content](#content)
+  - [Articles](#articles)
+    - [Frontmatter](#frontmatter)
+  - [Images and other media](#images-and-other-media)
+  - [Categories](#categories)
+    - [Category Types](#category-types)
+  - [Navigation](#navigation)
+- [Deployment](#deployment)
+  - [Pipeline](#pipeline)
+- [Development](#development)
+  - [Installation](#installation)
+  - [Local environment variables](#local-environment-variables)
+  - [Sync locally](#sync-locally)
+  - [Cleaning WordPress](#cleaning-wordpress)
 
 ### Resources
 
-* [Markdown tutorial](http://www.markdowntutorial.com/)
-* [YAML tutorial](https://docs.ansible.com/ansible/latest/reference_appendices/YAMLSyntax.html)
+- [Markdown tutorial](http://www.markdowntutorial.com/)
+- [YAML tutorial](https://docs.ansible.com/ansible/latest/reference_appendices/YAMLSyntax.html)
 
 ### Directory Structure
 
@@ -49,7 +46,7 @@ All content is formatted in [Markdown](https://daringfireball.net/projects/markd
 
 **Important note:** the functionality for the Momentum and SparkPost documentation is identical
 
-While this document 
+While this document
 
 ### Articles
 
@@ -57,14 +54,13 @@ Markdown articles live in the `support` or `momentum` folders. Every folder insi
 
 The rest of the article content is written in plain Markdown, a simple syntax that can be used to write content for the web. A [Markdown tutorial](http://www.markdowntutorial.com/) is available on GitHub.
 
-
 #### Frontmatter
 
 **Fields:**
 
-* `title` – Top-level title of the article. This will show up at the top of the page and in search results.
-* `description` – Description of the article. This is used for SEO, the search results, and the list of articles in each category.
-* `notification` – A notification to show at the top of the article, before the content and below the title. [How to Use Binding Groups](https://github.com/SparkPost/support-docs/blob/master/support/tech-resources/binding-groups.md) is an example of this.
+- `title` – Top-level title of the article. This will show up at the top of the page and in search results.
+- `description` – Description of the article. This is used for SEO, the search results, and the list of articles in each category.
+- `notification` – A notification to show at the top of the article, before the content and below the title. [How to Use Binding Groups](https://github.com/SparkPost/support-docs/blob/master/support/tech-resources/binding-groups.md) is an example of this.
 
 **Example:**
 
@@ -138,7 +134,7 @@ The `list` category type is the default behavior. Type `list` category pages wil
 
 ##### custom
 
-Type `custom` category pages will function almost identically to a regular article page. This is useful for when you want to put many articles into a category and have a fully fleshed out description and introduction for the section. You can write regular markdown content inside of the body of `custom` category pages and it will look identical to a article page. 
+Type `custom` category pages will function almost identically to a regular article page. This is useful for when you want to put many articles into a category and have a fully fleshed out description and introduction for the section. You can write regular markdown content inside of the body of `custom` category pages and it will look identical to a article page.
 
 **Note**: To use media on a `custom` category page, you need to link to an absolute file - media is not automatically imported for these pages.
 
@@ -160,15 +156,15 @@ For large sets of organized documentation it is important that there is a clear 
 
 Deployment of support articles is handled automatically through [Travis CI](https://travis-ci.org/SparkPost/support-docs). Once code is merged down to the master branch, a build/deployment are triggered. The following occurs during this automated process:
 
-| Step | Script |
-| --- | --- |
-| Navigation file (navigation.yml) is synced to WordPress | `./bin/deploy-navigation.sh` |
-| <ul><li>Categories for the articles are synced with WordPress</li><li> If it is a "custom" type, the content is converted from Markdown to HTML before it is synced</li></ul> |  `./bin/deploy-categories.sh` |
-| <ul><li>Articles are converted from Markdown to HTML </li><li> Articles and their images are synced with WordPress </li></ul> |  `./bin/deploy-articles.sh` |
+| Step                                                                                                                                                                          | Script                       |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------- |
+| Navigation file (navigation.yml) is synced to WordPress                                                                                                                       | `./bin/deploy-navigation.sh` |
+| <ul><li>Categories for the articles are synced with WordPress</li><li> If it is a "custom" type, the content is converted from Markdown to HTML before it is synced</li></ul> | `./bin/deploy-categories.sh` |
+| <ul><li>Articles are converted from Markdown to HTML </li><li> Articles and their images are synced with WordPress </li></ul>                                                 | `./bin/deploy-articles.sh`   |
 
 ## Development
 
-The following instructions walk you through how to sync your local version of this repository to your local version of the sparkpost.com website. This is only needed when you are debugging the sync scripts or adding new functionality. 
+The following instructions walk you through how to sync your local version of this repository to your local version of the sparkpost.com website. This is only needed when you are debugging the sync scripts or adding new functionality.
 
 **This is not a required step in contributing to the documentation**
 
@@ -196,7 +192,7 @@ After installing the dependencies and setting up the required environment variab
 
 Run the following three commands in sequence to sync all the support articles.
 
-The `--all` flag on the each of the deploy scripts redeploys all the of respective resource. If this is not set, then the files edits in the commit range inside of the `$TRAVIS_COMMIT_RANGE` is used. Learn more about the 
+The `--all` flag on the each of the deploy scripts redeploys all the of respective resource. If this is not set, then the files edits in the commit range inside of the `$TRAVIS_COMMIT_RANGE` is used. Learn more about the
 [$TRAVIS_COMMIT_RANGE](https://docs.travis-ci.com/user/environment-variables/#default-environment-variables).
 
 ```bash
@@ -221,11 +217,37 @@ If you want to clean out the navigation, articles, categories, and related media
 ./bin/clear-data.sh
 ```
 
-
 ### GATSBY!! (or the start of it)
+
 Gotta start somewhere! I'm putting a placeholder header section for now that will further outline how to work with support-docs on Gatsby.
 
+#### How to preview changes
+
+In order to preview changes, you will need access to [Gatsby Cloud](https://www.gatsbyjs.com/products/cloud/). Contact FE for assistance.
+
+1. Create a branch
+2. Create a PR to master
+3. Go to https://www.gatsbyjs.com/dashboard/organization/60c30363-21fd-4739-a2ca-75f5011a3a1b/sites
+4. Click on the link "Support Docs"
+5. You are now in the "builds" section. Here you can see a "production" section and a "pull requests" section
+6. Look in the "pull requests" section for the PR you just created and click "view build"
+
+- This will show a version for the PR current build of the static gatsby site
+
+#### How to deploy changes
+
+1. Complete the steps above in the "How to preview changes" section
+2. Once the PR is approved by a reviewer and the PR is merged and squashed, the build will kick off automatically.
+
+#### Lighthouse Performance Audit
+
+One of the features of gatsby cloud is that with every successful build we receive a [lighthouse performance audit](https://www.gatsbyjs.com/docs/how-to/performance/audit-with-lighthouse/). Our goal is to keep these scores in the green as much as possible.
+
+The audits can be viewed either in the gatsby cloud [dashboard build section](https://www.gatsbyjs.com/dashboard/60c30363-21fd-4739-a2ca-75f5011a3a1b/sites/ad8f9b9d-b249-4bf8-ad8f-5e1720c7128a/deploys) or in the PR on github.
+
 #### Uptime monitoring
+
 We plan on leveraging CloudWatch Canary with Terraform, but right now we have access to Gatsby's uptime monitoring on their site.
+
 - https://status.gatsbyjs.com/uptime
-- https://status.gatsbyjs.com/  
+- https://status.gatsbyjs.com/
