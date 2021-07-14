@@ -6,7 +6,7 @@ description: "The ha_proxy_client module is used to configure Momentum to use HA
 ## Configuration
  
 * When configured for a binding or binding group Momentum will connect to the given `ha_proxy_server` and prefix the SMTP session with a PROXY protocol version 2 header.  
-* The `dst_addr` and `dst_port` will be filled in with the resolved MX, the `src_addr` will be filled in with the configured value of `ha_proxy_src_addr` if the destination family is IPV4, or `ha_proxy_ipv6_src_addr` if the destination family is IPV6.  If you need to deliver to both IPV4 and IPV6 destinations than you must configure both options for the binding or binding_group.  
+* The `dst_addr` and `dst_port` will be filled in with the resolved MX, the `src_addr` will be filled in with the configured value of `ha_proxy_src_addr` if the destination family is IPV4, or `ha_proxy_ipv6_src_addr` if the destination family is IPV6.  If you need to deliver to both IPV4 and IPV6 destinations then you must configure both options for the binding or binding_group.  
 * The `ha_proxy_bypass` option allows you to bypass the proxy and follow the normal delivery method on a domain by domain basis.
 * It is the customers responsibility to configure a listener at `ha_proxy_server` that   listens for PROXY protocol and forwards traffic based on `dst_addr:dst_port`. 
 
