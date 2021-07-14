@@ -1191,7 +1191,7 @@ Modification of any structures returned by the configuration is strictly not sup
 
 ### <a name="arch.memory"></a> Memory API
 
-Momentum exposes its own memory management API, using either built-in or third party memory allocators. Without going into detail, the stock allocators provided on our supported platforms have a variety of problems—some with performance, some with fragmentation. In the past Momentum was specifically designed to use the Solaris `umem` allocator. This worked well but given that a number of other allocators are now available, Momentum includes a pluggable engine for using any allocator that follows the general malloc/free/realloc semantics that UNIX defines.
+Momentum exposes its own memory management API, using either built-in or third party memory allocators. Without going into detail, the stock allocators provided on our supported platforms have a variety of problems—some with performance, some with fragmentation. Momentum includes a pluggable engine for using any allocator that follows the general malloc/free/realloc semantics that UNIX defines.
 
 **<a name="arch.memory.types"></a> 1.3.6.1. Memory Types**
 
