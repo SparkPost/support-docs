@@ -39,6 +39,10 @@ binding {
 
 The module supports a configurable health check. 
 
+* In order to flip the state of a server from plumbed to unplumbed, a certain number of consecutive failures or successes must be met. The configurations `health_check_failure_threshold` and `health_check_success_threshold` define the number of said failures or successes to be met. 
+* Health check will happen periodically, as defined by the `health_check_interval` configuration in seconds. 
+* All health checks will follow a specified `health_check_timeout` period defined in seconds. Health checks will be aborted once this timeout threshold is met. 
+
 <a name="modules.ha_proxy_client.example"></a> 
 
 ```
