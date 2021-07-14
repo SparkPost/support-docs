@@ -101,7 +101,8 @@ To access the Inline Seeds API you need to use an API key with the "inline-seeds
 
 Initializing your configuration via the API is as simple as making the following request, modified to your specific needs.
 
-`curl --location --request POST 'https://api.sparkpost.com/api/v1/inline-seeds/config' \
+```
+curl --location --request POST 'https://api.sparkpost.com/api/v1/inline-seeds/config' \
 --header 'Content-Type: application/json' \
 --header 'Accept: application/json' \
 --header 'Authorization: <MY_API_KEY>' \
@@ -112,18 +113,22 @@ Initializing your configuration via the API is as simple as making the following
    "match": [
        "my-seed-test*"
    ]
-}'`
+}'
+```
 
 The match array can have up to five entries. Each entry can be appended with an asterisk character to support pattern matching. The above entry would enable Automatic Inline Seeding on campaigns "my-seed-test-one" and "my-seed-test-two".
 
 To check your current configuration you can make a GET request against the same endpoint:
-`curl --location --request GET 'https://api.sparkpost.com/api/v1/inline-seeds/config' \
+```
+curl --location --request GET 'https://api.sparkpost.com/api/v1/inline-seeds/config' \
 --header 'Content-Type: application/json' \
 --header 'Accept: application/json' \
---header 'Authorization: <MY_API_KEY>'`
+--header 'Authorization: <MY_API_KEY>'
+```
 
 Response:
-`{
+```
+{
    "results": {
        "configs": [
            {
@@ -138,10 +143,12 @@ Response:
        ]
    }
 }
+```
 
 To update the configuration you can provide the field(s) you want to update in a PUT request. You do not need to specify fields that you do not want to update.
 
-`curl --location --request PUT 'https://api.sparkpost.com/api/v1/inline-seeds/config' \
+```
+curl --location --request PUT 'https://api.sparkpost.com/api/v1/inline-seeds/config' \
 --header 'Content-Type: application/json' \
 --header 'Accept: application/json' \
 --header 'Authorization: <MY_API_KEY>' \
@@ -150,8 +157,8 @@ To update the configuration you can provide the field(s) you want to update in a
        "my-seed-test*",
        "my-new-seed-test*"
    ]
-}
-'`
+}'
+```
 
 Configuration cannot be deleted. Providing an empty array to the "match" field will make it so that no campaigns will be seeded.
 
