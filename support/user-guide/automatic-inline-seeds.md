@@ -173,7 +173,3 @@ TODO: image here
 
 ### My Campaign_ID’s Don’t Change Often and I want to Seed on a Recurring Basis
 * Imagine that you send a weekly newsletter or a regular welcome email. If your campaign_ids for these messages do not change often, you can tell SparkPost to seed these campaigns on a regular basis. For example, setting the Seed Reset Time to 7 days will let you seed your campaign_id: welcome-email every week and can indicate changes in your deliverability. 
-
-## More Details
-For additional information on how Automatic Inline Seeding works, check out our [Under the Hood](https://sparkpost.com/blog/automatic-inline-seeding-under-the-hood/) blog post where you can learn more about everything from how we count messages to how we protect the privacy of you and your customers. Happy Sending.
-
