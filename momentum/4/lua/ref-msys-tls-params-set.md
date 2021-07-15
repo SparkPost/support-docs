@@ -26,7 +26,8 @@ This function sets a tls parameter string in the Momentum configuration, overrid
 
 <a name="lua.ref.msys.tls_params.set.example"></a> 
 
-The following example shows how to use this function in the `get_outbound_tls_parameters` hook to override all outbound tls parameters:
+The following example shows how to use this function in the `get_outbound_tls_parameters` hook to override all outbound tls parameters.
+It is important to note that the use of this hook will remove all outbound tls configs, requring the user to overwrite them.
 
 ```
 local core = require("msys.core");
@@ -47,8 +48,6 @@ end
 
 msys.registerModule("custom_tls_hook", mod);
 ```
-
-It is important to note that the use of this hook will remove all outbound tls configs, requring the user to overwrite them.
 
 ## See Also
 
