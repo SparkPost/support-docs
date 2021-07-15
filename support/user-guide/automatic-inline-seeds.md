@@ -1,26 +1,7 @@
 ---
 title: "Automatic Inline Seeding User Guide"
+description: "Overview of Automatic Inline Seeding product, configuration, setup, and use cases."
 ---
-
-* Why is Automatic Seeding Exciting?
-* How to Get Started with Automatic Inline Seeding
-* What is Seeding
-* How to Set Up Automatic Inline Seeding
-  * Campaign Setup
-  * Getting Started
-  * Setting Up Automatic Inline Seeding using the UI
-  * Automatic Inline Seeding Configuration Options
-    * Account Selection
-    * Enable Inline Seeding
-    * Campaigns to Seed
-    * Seeding Threshold
-    * Seeding Duration
-    * Seeding Reset Time
-  * Setting Up Automatic Inline Seeding using the API
-* Monitoring Activity
-  * Viewing Results
-* Possible Use Case Scenarios
-* More Details
 
 ## How to Get Started with Automatic Inline Seeding
 
