@@ -168,7 +168,7 @@ This section contains tables of Lua functions. Click the function name for detai
 | [msys.timer.after](/momentum/4/lua/ref-msys-timer-after) – Execute closure after a given length of time | delta, closure, [name] | msys.timer | 4.0 | any |
 | [msys.timer.at](/momentum/4/lua/ref-msys-timer-at) – Execute closure at a given time | number, closure, [name] | msys.timer | 4.0 | any |
 | [msys.timer.every](/momentum/4/lua/ref-msys-timer-every) – Execute closure every interval | interval, closure, [name] | msys.timer | 4.0 | any |
-| [msys.tls_params.set](/momentum/4/lua/ref-msys-tls-params-set) - Set a tls parameter string in the Momentum configuration | tls_params, param, val | 4.4 | any |
+| [msys.tls_params.set](/momentum/4/lua/ref-msys-tls-params-set) - Set a tls parameter string on a per connection basis | tls_params, param, val | 4.4 | any |
 | [msys.type](/momentum/4/lua/ref-msys-type) – Return the type name of the supplied parameter | parameter | msys | 4.0 | any |
 | [msys.unlock](/momentum/4/lua/ref-msys-unlock) – Releases a lock obtained via msys.lock | mutexname | msys | 4.0 | any |
 | [msys.validate.dk.get_responsible_domain](/momentum/4/lua/ref-msys-validate-dk-get-responsible-domain) – This function requires module "dk_validate". "msg" is a mail message. "ctx" is the validation context. It returns the responsible domain for the current message | msg, ctx | msys.validate.dk | 4.0 | data, data_spool, data_spool_each_rcpt |
