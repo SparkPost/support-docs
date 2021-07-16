@@ -45,7 +45,6 @@ function mod:core_get_outbound_tls_parameters(msg, params)
   msys.tls_params.set(params, "certfile", "path/to/cert");
   msys.tls_params.set(params, "keyfile", "psth/to/key");
   msys.tls_params.set(params, "ca", "path/to/ca");
-  msys.tls_params.set(params, "cipherlist", "chosen_ciphers");
 end
 
 msys.registerModule("custom_tls_hook", mod);
