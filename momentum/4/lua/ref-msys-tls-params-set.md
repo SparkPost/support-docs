@@ -24,9 +24,11 @@ val: string
 
 This function sets a tls parameter string in the Momentum configuration, overriding if the parameter is already set.
 
+This should only be used in hooks where the tls parameters are passed as an argument such as `get_outbound_tls_parameters` and `get_inbound_tls_parameters`.
+
 <a name="lua.ref.msys.tls_params.set.example"></a> 
 
-The following example shows how to use this function in the `get_outbound_tls_parameters` hook to override all outbound tls parameters.
+The following example shows how to use this function in the `get_outbound_tls_parameters` hook to override all outbound tls parameters in a mutual tls connection.
 It is important to note that the use of this hook will reset outbound tls config for the current connection, requiring the user to set a value for all keys listed in the example below.
 
 ```
