@@ -187,6 +187,7 @@ description: "This section details all Lua functions Functions are ordered alpha
 | [msys.timer.after](/momentum/4/lua/ref-msys-timer-after) | execute closure after a given time |
 | [msys.timer.at](/momentum/4/lua/ref-msys-timer-at) | execute closure at a given time |
 | [msys.timer.every](/momentum/4/lua/ref-msys-timer-every) | execute closure every interval |
+| [msys.tls_params.set](/momentum/4/lua/ref-msys-tls-params-set) | Set a tls parameter string on a per connection basis |
 | [msys.validate.dk.get_responsible_domain](/momentum/4/lua/ref-msys-validate-dk-get-responsible-domain) | Return the domain responsible for the current message |
 | [msys.validate.dk.sign](/momentum/4/lua/ref-msys-validate-dk-sign) | Sign a message using a Domain Key |
 | [msys.validate.opendkim.get_num_sigs](/momentum/4/lua/ref-msys-validate-opendkim-get-num-sigs) | Return the number of DKIM signatures |
