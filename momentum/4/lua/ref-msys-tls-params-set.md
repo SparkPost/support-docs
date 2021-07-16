@@ -1,12 +1,12 @@
 ---
 title: "msys.tls_params.set"
-description: "msys tls_params set Set a tls parameter string in the Momentum configuration, overriding if the parameter is already set"
+description: "msys tls_params set Set a tls parameter string on a per connection basis, overriding if the parameter is already set"
 ---
 
 <a name="lua.ref.msys.tls_params.set"></a> 
 ## Name
 
-msys.tls_params.set — Set a tls parameter string in the Momentum configuration, overriding if the parameter is already set.
+msys.tls_params.set — Set a tls parameter string on a per connection basis, overriding if the parameter is already set.
 
 ## Synopsis
 
