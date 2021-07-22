@@ -7,7 +7,6 @@
     "gatsby"
   ],
   "scripts": {
-    "preinstall": "npx npm-force-resolutions",
     "build": "tsc -p ./tsconfig-gatsby.json && gatsby build",
     "develop": "tsc -p ./tsconfig-gatsby.json && gatsby develop",
     "serve": "tsc -p ./tsconfig-gatsby.json && gatsby serve",
