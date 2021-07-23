@@ -21,7 +21,7 @@ First, we need to make sure you own the domain you want to set up. *Adding a DNS
 
 * For a domain that you plan to use as a **sending domain** (From), you should add a TXT record with the provided DKIM information. This will make this domain ready for sending and DKIM-signing, verifying ownership and at the same time resulting in better DKIM alignment.
 * For a domain that you plan to use as a **bounce domain** (Return Path), you should add a CNAME record with the provided hostname value. This will verify ownership and make this domain ready for bounces.
-* If you don't have access to the domain's DNS records, you can verify ownership by requesting an email be sent to abuse@ or postmaster@ and then clicking the link in the received email. (Note: this email verification option is not available for bounce domains which _must_ be CNAME-verified.)
+* If you don't have access to the domain's DNS records, you can verify ownership by requesting an email be sent to any address on the sending domain and then clicking the link in the received email. (Note: this email verification option is not available for bounce domains which _must_ be CNAME-verified.)
 
 ### Step Two: Compliance Review
 

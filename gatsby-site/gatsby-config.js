@@ -2,8 +2,15 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = {
     siteMetadata: {
-        title: `Support Documents`,
+        siteName: `SparkPost Support Documentation`,
         siteUrl: `https://support.sparkpost.com`,
+        title: `SparkPost Support Documentation`,
+        defaultTitle: `SparkPost Support Documentation`,
+        titleTemplate: "%s - SparkPost",
+        description: `All the help and API resources you need to send emails successfully: Get started, integrate, set up your account and profile, report on your progress, and more.`,
+        defaultImage: `/images/sparkpost-logo-standard.png`,
+        twitterUsername: `@SparkPost`,
+        facebookPage: `https://www.facebook.com/sparkpost/`,
     },
     plugins: [
         `gatsby-plugin-styled-components`,

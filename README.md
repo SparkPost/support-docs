@@ -227,6 +227,32 @@ In order to prevent vulnerabilities in our node packages, we are leveraging [NPM
 
 ##### Uptime monitoring
 
+#### How to preview changes
+
+In order to preview changes, you will need access to [Gatsby Cloud](https://www.gatsbyjs.com/products/cloud/). Contact FE for assistance.
+
+1. Create a branch
+2. Create a PR to master
+3. Go to https://www.gatsbyjs.com/dashboard/organization/60c30363-21fd-4739-a2ca-75f5011a3a1b/sites
+4. Click on the link "Support Docs"
+5. You are now in the "builds" section. Here you can see a "production" section and a "pull requests" section
+6. Look in the "pull requests" section for the PR you just created and click "view build"
+
+- This will show a version for the PR current build of the static gatsby site
+
+#### How to deploy changes
+
+1. Complete the steps above in the "How to preview changes" section
+2. Once the PR is approved by a reviewer and the PR is merged and squashed, the build will kick off automatically.
+
+#### Lighthouse Performance Audit
+
+One of the features of gatsby cloud is that with every successful build we receive a [lighthouse performance audit](https://www.gatsbyjs.com/docs/how-to/performance/audit-with-lighthouse/). Our goal is to keep these scores in the green as much as possible.
+
+The audits can be viewed either in the gatsby cloud [dashboard build section](https://www.gatsbyjs.com/dashboard/60c30363-21fd-4739-a2ca-75f5011a3a1b/sites/ad8f9b9d-b249-4bf8-ad8f-5e1720c7128a/deploys) or in the PR on github.
+
+#### Uptime monitoring
+
 We plan on leveraging CloudWatch Canary with Terraform, but right now we have access to Gatsby's uptime monitoring on their site.
 
 - https://status.gatsbyjs.com/uptime

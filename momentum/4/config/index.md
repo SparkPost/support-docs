@@ -219,7 +219,6 @@ description: "This chapter provides the definitions of the configuration options
 | [tracking_link_expiry](/momentum/4/config/tracking-link-expiry) | set the expiration time for engagement tracking for SMTP injections |
 | [transfail_drain_rate](/momentum/4/config/ref-transfail-drain-rate) | the maximum number of messages to pop off the transient failure queue in a single scheduler iteration |
 | [transform_8bitmime_content](/momentum/4/config/ref-transform-8-bitmime-content) | Enable 8BITMIME downconversion when sending mail |
-| [umem_reap_interval](/momentum/4/config/ref-umem-reap-interval) | how often to release unused memory |
 | [unlink_on_spool_in_failure](/momentum/4/config/ref-unlink-on-spool-in-failure) | Whether or not to remove malformed messages |
 | [_unsafe_spool](/momentum/4/config/ref-unsafe-spool) | allow dangerous spool semantics to be used |
 | [use_iflist_cache](/momentum/4/config/ref-use-iflist-cache) | Whether or not to cache the list of network interfaces configured by the system |

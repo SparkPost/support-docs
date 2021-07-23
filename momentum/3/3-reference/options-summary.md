@@ -348,7 +348,6 @@ This section displays all configuration file options visible in the following sc
 | [transform_8bitmime_content](/momentum/3/3-reference/3-reference-conf-ref-transform-8-bitmime-content) – Enable 8BITMIME downconversion when sending mail | sending | ifneeded (*3.1.6*) | 3.0 | binding, binding_group, domain, global |
 | [trap_destination](/momentum/3/3-reference/3-reference-conf-ref-snmp) – Destination for SNMP trap | na | (*non-dynamic*) | 3.0 | snmp_traps |
 | [trap_interval](/momentum/3/3-reference/3-reference-conf-ref-snmp) – Frequency of SNMP trap generation | na | 60 (*non-dynamic*) | 3.0 | snmp_traps |
-| [umem_reap_interval](/momentum/3/3-reference/3-reference-conf-ref-umem-reap-interval) – How often to release unused memory | na | 1800 | 3.0 | global |
 | [unconditional_rebind](/momentum/3/3-reference/ecelerity-cluster-conf#option.unconditional_rebind) – Whether the full set_binding logic is invoked or not (cluster-specific) | na | true | 3.0 | cluster |
 | [unlink_on_spool_in_failure](/momentum/3/3-reference/3-reference-conf-ref-unlink-on-spool-in-failure) – Whether or not to remove malformed messages | receiving | true | 3.0 | global |
 | [use_iflist_cache](/momentum/3/3-reference/3-reference-conf-ref-use-iflist-cache) – Whether or not to cache the list of interfaces configured by the system | sending | 0 (*non-dynamic*) | 3.0 | global |
@@ -676,7 +675,6 @@ This section displays all options of the specified type sorted alphabetically.
 | [tcp_buffer_size](/momentum/3/3-reference/3-reference-conf-ref-tcp-buffer-size) – Maximum tcp buffer size for outbound connections | sending | 32768 | 3.0 | cluster, global |
 | [threadpool](/momentum/3/3-reference/3-reference-conf-ref-threadpool) *(scope)* – Configure thread pool specific options | na |   | 3.0 | global |
 | [trace_smtp_mode](/momentum/3/3-reference/3-reference-conf-ref-trace-smtp-mode) – Set the default permissions of trace files | sending | 0640 (*non-dynamic*) | 3.0 | global |
-| [umem_reap_interval](/momentum/3/3-reference/3-reference-conf-ref-umem-reap-interval) – How often to release unused memory | na | 1800 | 3.0 | global |
 | [use_iflist_cache](/momentum/3/3-reference/3-reference-conf-ref-use-iflist-cache) – Whether or not to cache the list of interfaces configured by the system | sending | 0 (*non-dynamic*) | 3.0 | global |
 | [use_mmap](/momentum/3/3-reference/3-reference-conf-ref-use-mmap) – Use mmap when spooling messages from disk | na | false | 3.0 | global |
 | [use_sendfile](/momentum/3/3-reference/3-reference-conf-ref-use-sendfile) – Use sendfile() when sending mail | sending | false | 3.0 | global |
