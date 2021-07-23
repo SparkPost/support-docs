@@ -1,6 +1,6 @@
 ---
 title: "swap_out_meta_after_each_tempfail"
-description: "controls whether or not Momentum will update metadata such as num_retries, next_attempt, and message context on disk after each tempfail. Defaults to true"
+description: "controls whether or not Momentum will update metadata such as num_retries, next_attempt, and message context on disk after each tempfail"
 ---
 
 <a name="conf.ref.swap_out_meta_after_each_tempfail"></a> 
@@ -14,7 +14,9 @@ swap_out_meta_after_each_tempfail — controls behavior for updating the startup
 
 ## Description
 
-Assuming `swap_out_meta_after_each_tempfail` is left at the default value of true, the `num_retries` and `next_attempt` values will always be updated on disk after each tempfail.  If this is set to false, `num_retries` will start back at 0 on a restart causing potential issues. 
+Assuming `swap_out_meta_after_each_tempfail` is left at the default value of _true_, the `num_retries` and `next_attempt` values will always be updated on disk after each tempfail.  
+
+If this is set to false, Momentum will only update metadata on disk after each tempfail if the message context is dirty. Also, if set to false, `num_retries`, `next_attempt` and message context may not be accurate if Momentum crashes.
 
 The default value is _true_.
 
