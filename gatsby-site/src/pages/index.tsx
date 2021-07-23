@@ -63,7 +63,7 @@ const docLink = {
   color: "#8954A8",
 }
 
-const badgeStyle = {
+const badgeStyle: React.CSSProperties = {
   color: "#fff",
   backgroundColor: "#088413",
   border: "1px solid #088413",
@@ -73,7 +73,7 @@ const badgeStyle = {
   borderRadius: 4,
   padding: "4px 6px",
   display: "inline-block",
-  // position: "relative", // ERY: not entirely sure why "position" can't be a string because it's SUPPOSED TO be a string, but TS disagrees _shrug_
+  position: "relative",
   top: -2,
   marginLeft: 10,
   lineHeight: 1,
