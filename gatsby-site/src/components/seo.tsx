@@ -1,12 +1,23 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Helmet } from "react-helmet";
-import { useLocation } from "@reach/router";
-import { useStaticQuery, graphql } from "gatsby";
+import React, { FunctionComponent } from "react"
+import { Helmet } from "react-helmet"
+import { useLocation } from "@reach/router"
+import { useStaticQuery, graphql } from "gatsby"
 
-const SEO = ({ title, description, image, article }) => {
-  const { pathname } = useLocation();
-  const { site } = useStaticQuery(query);
+interface ISEO {
+  title?: string
+  description?: string
+  image?: string
+  article?: boolean
+}
+
+const SEO: FunctionComponent<ISEO> = ({
+  title,
+  description,
+  image,
+  article,
+}) => {
+  const { pathname } = useLocation()
+  const { site } = useStaticQuery(query)
 
   const {
     defaultTitle,
@@ -16,14 +27,14 @@ const SEO = ({ title, description, image, article }) => {
     defaultImage,
     twitterUsername,
     facebookPage,
-  } = site.siteMetadata;
+  } = site.siteMetadata
 
   const seo = {
     title: title || defaultTitle,
     description: description || defaultDescription,
     image: `${siteUrl}${image || defaultImage}`,
     url: `${siteUrl}${pathname}`,
-  };
+  }
 
   return (
     <Helmet title={seo.title} titleTemplate={titleTemplate}>
@@ -42,9 +53,7 @@ const SEO = ({ title, description, image, article }) => {
       {twitterUsername && (
         <meta name="twitter:creator" content={twitterUsername} />
       )}
-      {seo.title} && (
-      <meta name="twitter:title" content={seo.title} />
-      )}
+      {seo.title && <meta name="twitter:title" content={seo.title} />}
       {seo.description && (
         <meta property="twitter:description" content={seo.description} />
       )}
@@ -60,24 +69,10 @@ const SEO = ({ title, description, image, article }) => {
         content="https://www.facebook.com/sparkpost/"
       />
     </Helmet>
-  );
-};
+  )
+}
 
-export default SEO;
-
-SEO.propTypes = {
-  title: PropTypes.string,
-  description: PropTypes.string,
-  image: PropTypes.string,
-  article: PropTypes.bool,
-};
-
-SEO.defaultProps = {
-  title: null,
-  description: null,
-  image: null,
-  article: false,
-};
+export default SEO
 
 const query = graphql`
   query {
@@ -93,4 +88,4 @@ const query = graphql`
       }
     }
   }
-`;
+`

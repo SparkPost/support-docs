@@ -221,6 +221,12 @@ If you want to clean out the navigation, articles, categories, and related media
 
 Gotta start somewhere! I'm putting a placeholder header section for now that will further outline how to work with support-docs on Gatsby.
 
+#### Security Notice
+
+In order to prevent vulnerabilities in our node packages, we are leveraging [NPM Force Resolutions](https://www.npmjs.com/package/npm-force-resolutions) to specify which updates we want to force. If there are any build issues or problems, take a look at the "resolutions" and "resolutionsComments" sections to see if these are the cause.
+
+##### Uptime monitoring
+
 #### How to preview changes
 
 In order to preview changes, you will need access to [Gatsby Cloud](https://www.gatsbyjs.com/products/cloud/). Contact FE for assistance.

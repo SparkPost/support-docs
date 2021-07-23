@@ -26,7 +26,7 @@ const codeStyles = {
 };
 
 // markup
-const NotFoundPage = () => {
+const NotFoundPage = (): JSX.Element => {
   return (
     <main style={pageStyles}>
       <SEO />
