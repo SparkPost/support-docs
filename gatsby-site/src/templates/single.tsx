@@ -1,20 +1,20 @@
-import React, { FunctionComponent } from "react";
-import { graphql } from "gatsby";
+import React, { FunctionComponent } from "react"
+import { graphql } from "gatsby"
 
 interface IFrontMatter {
-  title: string;
-  description: string;
-  path: string;
-  github: string;
+  title: string
+  description: string
+  path: string
+  github: string
 }
 
 interface SingleProps {
   data: {
     markdownRemark: {
-      html: string;
-      frontmatter: IFrontMatter;
-    };
-  };
+      html: string
+      frontmatter: IFrontMatter
+    }
+  }
 }
 
 const Single: FunctionComponent<SingleProps> = ({ data }) => (
@@ -25,9 +25,9 @@ const Single: FunctionComponent<SingleProps> = ({ data }) => (
       dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
     />
   </div>
-);
+)
 
-export default Single;
+export default Single
 
 export const pageQuery = graphql`
   query DocPageByPath($path: String!) {
@@ -40,4 +40,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`;
+`

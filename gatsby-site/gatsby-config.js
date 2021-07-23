@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+// Edit the ts files in the ts-configs, not the js files in the root since those will be overwritten by the ts files
 exports.default = {
     siteMetadata: {
         siteName: `SparkPost Support Documentation`,
