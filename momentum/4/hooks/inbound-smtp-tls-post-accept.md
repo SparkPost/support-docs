@@ -24,7 +24,7 @@ end
 
 This hook is only valid for Momentum 4.4.0 or higher. It is invoked after the tls handshake. It allows the user to augment the built-in TLS accept
 handshake for inbound SMTP sessions.
-If mc.ctx.code is set to anything other than 220, and mc.ctx.disconnect is set to 1, the message will be rejected and the SMTP connection will terminate. You may set a rejection message with  `mc.ctx:set(core.VCTX_CONN, '_tls_note', _message_');` Default rejection message is `421 4.7.0 TLS Negotiation failed.` 
+If `mc.ctx.code` is set to anything other than 220, and `mc.ctx.disconnect` is set to 1, the message will be rejected and the SMTP connection will terminate. You may set a rejection message with `mc.ctx:set(core.VCTX_CONN, '_tls_note', _message_');` Default rejection message is `421 4.7.0 TLS Negotiation failed.` 
 
 
 **<a name="idp4353216"></a> Parameters**
