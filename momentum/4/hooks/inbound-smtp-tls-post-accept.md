@@ -22,15 +22,10 @@ end
 <a name="idp7749872"></a> 
 ## Description
 
-This hook is invoked after the tls handshake. Allows the user to augment the built-in TLS accept
+This hook is only valid for momentum 4.4.0 and up and invoked after the tls handshake. Allows the user to augment the built-in TLS accept
 handshake for inbound SMTP sessions.
-If mc.ctx.code to anything other than 220, and mc.ctx.disconnect to 1, You may set a rejection message with mc.ctx:set(core.VCTX_CONN, '_tls_note', '<your error>'); and the SMTP connection will terminate. 
+If mc.ctx.code is set to anything other than 220, and mc.ctx.disconnect is set to 1, the message will be rejected and the SMTP connection will terminate. You may set a rejection message with  `mc.ctx:set(core.VCTX_CONN, '_tls_note', _message_');` Default rejection message is `421 4.7.0 TLS Negotiation failed.` 
 
-
-### Warning
-
-this hook is only valid for momentum 4.4.0 and up
-If _tls_note is not provided, the reject log message will default to 421 4.7.0 TLS Negotiation failed.
 
 **<a name="idp4353216"></a> Parameters**
 
@@ -40,7 +35,7 @@ If _tls_note is not provided, the reject log message will default to 421 4.7.0 T
 
 <dd>
 
-message_construct.
+message_construct
 
 </dd>
 
@@ -48,7 +43,7 @@ message_construct.
 
 <dd>
 
-Event.
+Event
 
 </dd>
 
