@@ -150,7 +150,7 @@ To run the test, execute the following commands:
 
 ```
 cd /opt/msys/ecelerity/docs
-../bin/ec_runtests.pl -kvnc1 lua_sample.t
+sudo ../bin/ec_runtests.pl -kvnc1 lua_sample.t
 ```
 
 You should then see an output similar to the following on success:
