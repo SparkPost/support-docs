@@ -7,7 +7,7 @@ Momentum's module API is at the core of how it is extended. When a module is loa
 
 All modules load automatically if you use any of the options they declare or use other resources provided by them. However, the module must be explicitly loaded to set its configuration options. Note that you do not need to explicitly declare modules that do not have options (apart from the `enabled` and `debug_level` options common to all modules). To determine if the module is loaded implicitly, refer to the specific module in [*Modules Reference*](/momentum/4/modules/) .
 
-### <a name="module_config.config"></a> Modules Configuration
+### <a name="module_config.config"></a> Module Configuration
 
 Modules can be configured by altering the configuration files or by setting options with the **config** command from the console.
 
@@ -137,3 +137,36 @@ scriptlet "scriptlet" {
 ```
 
 For detailed information about how Lua is implemented in Momentum, see [“scriptlet - Lua Policy Scripts”](/momentum/4/modules/scriptlet) and [“Policy Scriptlets”](/momentum/4/4-implementing-policy-scriptlets).
+
+### <a name="module_config.test.lua"></a> Testing a Lua Module
+
+As of Momentum 4.4, a new test script has been added under `/opt/msys/ecelerity/docs/lua_sample.t`. This test serves as an example of how to use the `ec_runtests.pl` test harness to test Lua modules.
+
+In order to run tests, you must have the `msys-ecelerity-devel` package installed first.
+Since the test needs to compile a module, the `msys_ecelerity_devel` package will install gcc on your system. It also requires the use of the `openssl-devel` package.
+The versions we used during development were `gcc-4.8.5-44` and `openssl-devel-1.0.2k-21`.
+
+To run the test, execute the following commands:
+
+```
+cd /opt/msys/ecelerity/docs
+../bin/ec_runtests.pl -kvnc1 lua_sample.t
+```
+
+You should then see an output similar to the following on success:
+
+```
+1..6
+ok 1 - Working in an installed Momentum environment.
+# /opt/msys/ecelerity/libexec/scriptlets/lua_sample.so
+ok 2 - ecxs didn't make a manifest file
+ok 3 - Server Startup
+ok 4 - mail goes in ok
+ok 5 - Confirmed the lua module ran and printed logs inside the panic log.
+ok 6 - Server Shutdown
+ok     6495 ms ( 0.00 usr  0.00 sys +  0.62 cusr  0.24 csys =  0.86 CPU)
+[14:39:07]
+All tests successful.
+Files=1, Tests=6, 6.53296 wallclock secs ( 0.02 usr  0.00 sys +  0.62 cusr  0.24 csys =  0.88 CPU)
+Result: PASS
+```
