@@ -138,7 +138,7 @@ scriptlet "scriptlet" {
 
 For detailed information about how Lua is implemented in Momentum, see [“scriptlet - Lua Policy Scripts”](/momentum/4/modules/scriptlet) and [“Policy Scriptlets”](/momentum/4/4-implementing-policy-scriptlets).
 
-### <a name="module_config.test.lua"></a> Testing a Lua Module
+### <a name="module_config.test.lua"></a> Testing Lua Modules
 
 As of Momentum 4.4, a new test script has been added under `/opt/msys/ecelerity/docs/lua_sample.t`. This test serves as an example of how to use the `ec_runtests.pl` test harness to test Lua modules, as well as how to build an extension to Momentum's built-in Lua functionality.
 
