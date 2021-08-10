@@ -140,13 +140,13 @@ For detailed information about how Lua is implemented in Momentum, see [“scrip
 
 ### <a name="module_config.test.lua"></a> Testing a Lua Module
 
-As of Momentum 4.4, a new test script has been added under `/opt/msys/ecelerity/docs/lua_sample.t`. This test serves as an example of how to use the `ec_runtests.pl` test harness to test Lua modules.
+As of Momentum 4.4, a new test script has been added under `/opt/msys/ecelerity/docs/lua_sample.t`. This test serves as an example of how to use the `ec_runtests.pl` test harness to test Lua modules, as well as how to build an extension to Momentum's built-in Lua functionality.
 
 In order to run tests, you must have the `msys-ecelerity-devel` package installed first.
 Since the test needs to compile a module, the `msys_ecelerity_devel` package will install gcc on your system. It also requires the use of the `openssl-devel` package.
 The versions we used during development were `gcc-4.8.5-44` and `openssl-devel-1.0.2k-21`.
 
-To run the test, execute the following commands:
+To run the test, execute the following commands (`sudo` can be omitted if running as a privileged user):
 
 ```
 cd /opt/msys/ecelerity/docs
