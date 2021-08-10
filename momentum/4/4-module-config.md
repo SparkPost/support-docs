@@ -156,17 +156,15 @@ sudo ../bin/ec_runtests.pl -kvnc1 lua_sample.t
 You should then see an output similar to the following on success:
 
 ```
-1..6
-ok 1 - Working in an installed Momentum environment.
-# /opt/msys/ecelerity/libexec/scriptlets/lua_sample.so
-ok 2 - ecxs didn't make a manifest file
-ok 3 - Server Startup
-ok 4 - mail goes in ok
-ok 5 - Confirmed the lua module ran and printed logs inside the panic log.
-ok 6 - Server Shutdown
-ok     6495 ms ( 0.00 usr  0.00 sys +  0.62 cusr  0.24 csys =  0.86 CPU)
-[14:39:07]
+1..4
+Working in installed Momentum environment
+ok 1 - Server Startup
+ok 2 - Mail goes in ok
+ok 3 - Confirmed the lua module ran and printed logs inside the panic log.
+ok 4 - Server Shutdown
+ok     5909 ms ( 0.00 usr  0.00 sys +  0.57 cusr  0.18 csys =  0.75 CPU)
+[14:17:31]
 All tests successful.
-Files=1, Tests=6, 6.53296 wallclock secs ( 0.02 usr  0.00 sys +  0.62 cusr  0.24 csys =  0.88 CPU)
+Files=1, Tests=4, 5.91827 wallclock secs ( 0.01 usr  0.00 sys +  0.57 cusr  0.18 csys =  0.76 CPU)
 Result: PASS
 ```
