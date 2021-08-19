@@ -154,6 +154,32 @@ Maximum allowed time in the future for which a transmission can be scheduled. Ti
 
 </dl>
 
+### <a name="modules.msg_gen.scheduled_send"></a> Scheduled Send
+
+As of Momentum 4.4, a message can be scheduled to be sent at some time in the future as part of the `msg_gen` module. Scheduled send currently only applies to REST injections.
+
+The old version of this functionality was known as scheduled generation, and it was retired in Momentum 4.2.28.
+Scheduled send differs from scheduled generation as it is simpler, requires less configuration, and saves disk space.
+The old functionality would place a generated message on disk until it was time to send, but the new functionality instead utilizes the systems memory.
+
+#### Configuration Options
+In order to enable this feature, please make sure that certain configuration options are set within Momentum.
+
+* `scheduled_send`
+  * This option enables the scheduled send functionality. It is defaulted to false, so it must be explicitly set to true.
+* `keep_message_dicts_in_memory`
+  * Defaults to false, and must also be explicitly set to true. More information on this configuration option can be found [here](/momentum/4/config/ref-keep-message-dicts-in-memory).
+
+##### Example: 
+```
+msg_gen {
+  scheduled_send = "true"
+  keep_message_dicts_in_memory = "true"
+}
+```
+
+For a description on how to use the scheduled send functionality with REST injections, please visit the [Scheduled Transmissions](https://developers.sparkpost.com/api/transmissions/#transmissions-scheduled-transmissions) page.
+
 ### Note
 
 The precedence for engagement tracking options, from highest to lowest is as follows:
