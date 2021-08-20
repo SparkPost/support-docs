@@ -152,33 +152,22 @@ Maximum allowed time in the future for which a transmission can be scheduled. Ti
 
 </dd>
 
-</dl>
+<dt><a name="modules.scheduled_send"></a> scheduled_send</dt>
 
-### <a name="modules.msg_gen.scheduled_send"></a> Scheduled Send
+<dd>
 
-As of Momentum 4.4, a message can be scheduled to be sent at some time in the future as part of the `msg_gen` module. Scheduled send currently only applies to REST injections.
+As of Momentum 4.4, a message can be scheduled to be sent at some time in the future as part of the `msg_gen` module. 
+Scheduled send currently only applies to REST injections. 
+For a description on how to use the scheduled send functionality, please visit our [apiary docs](https://themomentumapiv1.docs.apiary.io/#reference/transmissions/create/create-a-transmission).
 
 The old version of this functionality was known as scheduled generation, and it was retired in Momentum 4.2.28.
-Scheduled send differs from scheduled generation as it is simpler, requires less configuration, and saves disk space.
-The old functionality would place a generated message on disk until it was time to send, but the new functionality instead utilizes the systems memory.
+Scheduled send differs from scheduled generation in that the message is now immediately generated, but queued in Momentum's delayed queue until the scheduled start time.
 
-#### Configuration Options
-In order to enable this feature, please make sure that certain configuration options are set within Momentum.
+To enable this functionality the `scheduled_send` and [`keep_message_dicts_in_memory`](/momentum/4/config/ref-keep-message-dicts-in-memory) options must both be set to true in the configuration.
 
-* `scheduled_send`
-  * This option enables the scheduled send functionality. It is defaulted to false, so it must be explicitly set to true.
-* `keep_message_dicts_in_memory`
-  * Defaults to false, and must also be explicitly set to true. More information on this configuration option can be found [here](/momentum/4/config/ref-keep-message-dicts-in-memory).
+</dd>
 
-##### Example: 
-```
-msg_gen {
-  scheduled_send = "true"
-  keep_message_dicts_in_memory = "true"
-}
-```
-
-For a description on how to use the scheduled send functionality with REST injections, please visit the [Scheduled Transmissions](https://developers.sparkpost.com/api/transmissions/#transmissions-scheduled-transmissions) page.
+</dl>
 
 ### Note
 
