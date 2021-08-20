@@ -267,11 +267,9 @@ For up to date information on creating a distribution via CloudFront, please ref
 
       * AWS WAF web ACL - leave at default
 
-    ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_settings1.png)
+        ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_settings1.png)
 
-      * Alternate domain name (CNAME) - choose "Add item". Type in your custom tracking domain, without the leading `https://` - e.g. `track.mycompany.com`.
-
-        ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_cnames.png)
+      * Alternate domain name (CNAME) - leave this blank for now.
 
     * Under "Custom SSL Certificate", select **Custom SSL Certificate** - Upload certificates as needed.
 
@@ -295,7 +293,14 @@ For up to date information on creating a distribution via CloudFront, please ref
 
         _Example DNS provider CNAME setup_
 
-        You can verify that the routing is successful using `ping` on your created record. You should see a response from CloudFront.
+    * Go back into your CloudFront distribution, select "Edit", and add the CNAME record. Choose "Add item". Type in your custom tracking domain, without the leading `https://` - e.g. `track.mycompany.com`.
+
+        ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_cnames.png)
+
+
+    * Select "Save changes". The update will take a few minutes to deploy.
+    
+    * You can verify that the routing is successful using `ping` on your created record. You should see a response from CloudFront.
 
 1. Follow [these steps](#switch-to-secure) to update and verify your tracking domain.
 
