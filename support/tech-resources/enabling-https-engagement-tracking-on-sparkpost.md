@@ -37,7 +37,6 @@ This document includes step by step guides for the following CDNs.
 * AWS CloudFront:
     * [Create a Domain](#aws-create)
     * [Issue a Certificate](#aws-cert)
-    * [Update an Existing Domain](#aws-update) to pass `User-Agent` information
 * Fastly:
     * [Create a Domain](#fastly-create)
     * [Issue a Certificate](#fastly-cert)
@@ -153,68 +152,138 @@ After configuring your CDN, you need instruct SparkPost to encode your links usi
 ---
 ## <a name="aws-create"></a> Step by Step Guide with AWS CloudFront
 
+*Updated for CloudFront Console v3, as of July 2021.*
+
 Note: If you utilize CloudFront as your CDN to manage certificates and keys for any custom engagement tracking domains, it will result in a loss of user agent data. We include steps below to minimize data loss.
 
 The following is a sample guide for use with AWS CloudFront **only**; please note, the steps to configure your chosen CDN will likely differ from CloudFront in workflow. Please refer to your CDN documentation and contact their respective support departments if you have any questions.
 For up to date information on creating a distribution via CloudFront, please refer to the [AWS docs](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-creating-console.html).
 
-1. Login with your credentials onto AWS console and navigate to [CloudFront](https://console.aws.amazon.com/cloudfront/).
+1. Login with your credentials onto AWS console and navigate to the [CloudFront v3 console](https://console.aws.amazon.com/cloudfront/v3/home).
 
 1. Choose **Create Distribution**:
 
-    ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_UI.png)
+   ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_UI.png)
 
-1. On the "Select a delivery method for your content" page, under the **Web** section, choose **Get Started**.
+1. Origin
 
-    ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_method.png)
+   * Origin Domain: enter the correct endpoint address for your service, see [here](#endpoints).
 
-1. On the Create Distribution page fill out the following:
-    * Under Origin Settings, fill in the **Origin Domain Name** with the correct endpoint address for your service, see [here](#endpoints).
+   * Origin Path: leave blank.
 
-        ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_origin_domain_name.png)
+   * Protocol: choose "Match viewer". This provides backwards compatibility with HTTP as well as HTTPS.
 
-    * Under Origin Settings, for **Origin Protocol Policy**, select **HTTPS Only**.
+   * Leave the port numbers at default.
 
-        ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_origin_protocol_policy.png)
+   * Choose minimum version of TLSv1.2. Note this sets what AWS CloudFront uses to communicate with SparkPost, it does not limit what your distribution offers to clients.
 
-    * Under "Cache and origin request settings", choose "Use legacy cache settings".
+   ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_origin1.png)
 
-        ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_legacy_cache.png)
+   * Optionally, change the name (you can leave this at default).
 
-    * Enable forwarding of the `User-Agent` header. Set the configuration **Cache Based on Selected Request Headers** to "Whitelist".  Type in `User-Agent` and select "Add Custom". This allows `User-Agent` data to be present in your engagement events received from SparkPost.
+   * Leave "Enable Origin Shield" disabled.
 
-        ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_whitelist_cache_orange.png)
+   * Skip the "Additional settings".
 
-        An orange warning indicator appears. This is expected.
+    ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_origin2.png)
 
-    * Under Object Caching, choose "Customize" and set the Default TTL to 10 seconds (explanation [here](#ttl)).
+1. Default cache behavior
 
-        ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_ttl.png)
+    * "Path Pattern" - use default setting of (*).
 
-    * Under Default Cache Behavior Settings, set **Query String Forwarding and Caching** to "Forward all, cache based on all".
+    * "Compress objects automatically" - use default setting of "Yes". (This doesn't really affect engagement tracking, as large objects are not transferred).
 
-        ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_query_string_forward.png)
+    * "Viewer Protocol Policy" - use default setting "HTTP and HTTPS". This enables your distribution to serve non-secure links that may be already out there in your delivered email, prior to enabling this.
 
-    * Under Distribution Settings, fill in **Alternate Domain Names (CNAMEs)** with your custom tracking domains (i.e., www.customtrackingdomain.com).
-        * **Note:** Can add up to 100 domains.
+    * "Allowed HTTP methods" - use default setting of "GET, HEAD".
 
-        ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_cnames.png)
+    * "Restrict viewer access" - use default setting of "No".
 
-    * Under Distribution Settings, for "SSL Certificate", select **Custom SSL Certificate** - Upload certificates as needed.
+    ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_origin3.png)
 
-        ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_custom_ssl_cert.png)
+    * "Cache key and origin requests" - use default setting of "Cache policy and origin request policy (recommended)".
 
-        > If you want to have AWS create a new certificate within AWS instead of importing an existing one, leave this set at "Default" and the Alternate Domain Names field blank for the time being.
+      ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_cache0.png)
+
+    * "Cache policy" - choose "Create policy". This opens a new tab.
+
+    * Give your policy a name, e.g. "SparkPost_ET_short_cache". Spaces are not permitted in names.
+
+    * Set Minimum TTL to 1 second
+
+    * Set Maximum TTL to 10 seconds
+
+    * Set default TTL to 10 seconds. For more information see [Cache Time To Live (TTL) settings](#ttl).
+
+      ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_cache1.png)
+
+    Cache Key Settings:
+
+    * Set Headers, Query Strings and Cookies to None.
+
+    * Leave Compression Support on defaults.
+
+      ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_cache2.png)
+
+    * Click "Create" (on first time) / "Save Changes" (if modifying).
+
+    * You can close this tab.
+
+    Continuing on your original tab, "Cache key and origin requests":
+
+    ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_cache3.png)
+
+    * Under Origin Request policy - choose "Create policy". This opens a new tab.
+
+    * Give your policy a name and optional description.
+
+      ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_cache4.png)
+
+    * Under Origin request settings, "Headers", select "Include the following headers".
+
+    * Select "Add custom".
+
+    * Enable forwarding of the `User-Agent` header. Type in `User-Agent` and click "Add". This allows `User-Agent` data to be present in your engagement events received from SparkPost.
+
+      ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_cache6.png)
+
+    * Leave Query string and Cookies set to defaults (None). Your origin request settings should now look like this.
+
+      ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_cache5.png)
+
+    * Click "Create" (on first time) / "Save Changes" (if modifying).
+
+    * You can close this tab.
+
+1. Continuing on your original tab, under "Function associations - _optional_":
+
+    * Leave these settings at default ("No association").
+
+        ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_func_assoc.png)
+
+1. Settings:
+
+      * "Price class" - we recommend leaving this set to default ("Use all edge locations").
+
+      * AWS WAF web ACL - leave at default
+
+        ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_settings1.png)
+
+      * Alternate domain name (CNAME) - leave this blank for now.
+
+    * Under "Custom SSL Certificate", select **Custom SSL Certificate** - Upload certificates as needed.
+
+        > If you want to have AWS create a new certificate within AWS instead of importing an existing one, click "Request certificate" and follow the steps [here](#aws-cert) before continuing.
+
+    * Leave the other settings at default / recommended values.
 
     * At the bottom of the page, press **Create Distribution**. This returns you to the main CloudFront Distributions list.
 
-
-        ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_create_distribution.png)
-
+        ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_created_new_dist.png)
 
 1. <a name="cname"></a> Create, or update, a CNAME record with your DNS service to route queries for tracking domain(s) with your CloudFront distribution ID. This will be specific to your DNS service.
 
-   * Get the "Domain Name" for your distribution.
+   * Get the "Domain Name" for your distribution from the Distributions page. You can use the square "copy" button.
 
         ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_dist_domain.png)
 
@@ -224,7 +293,14 @@ For up to date information on creating a distribution via CloudFront, please ref
 
         _Example DNS provider CNAME setup_
 
-        You can verify that the routing is successful using `ping` on your created record. You should see a response from CloudFront.
+    * Go back into your CloudFront distribution, select "Edit", and add the CNAME record. Choose "Add item". Type in your custom tracking domain, without the leading `https://` - e.g. `track.mycompany.com`.
+
+        ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_cnames.png)
+
+
+    * Select "Save changes". The update will take a few minutes to deploy.
+    
+    * You can verify that the routing is successful using `ping` on your created record. You should see a response from CloudFront.
 
 1. Follow [these steps](#switch-to-secure) to update and verify your tracking domain.
 
@@ -261,48 +337,9 @@ Once your CNAME is set up with your DNS provider, instead of providing an existi
 
     ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_select_cert.png)
 
-1. At the bottom of the page, click on the "Yes, Edit" button.
-
-      ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_edit_domain_yes_edit_button.png)
+1. At the bottom of the page, click on the "Save Changes" button.
 
 1. Follow [these steps](#switch-to-secure) to update and verify your tracking domain, as this requires the certificate to be present and valid.
-
----
-### <a name = "aws-update"></a> Updating an Existing Domain on AWS CloudFront
-
-If you use AWS CloudFront to enable HTTPS engagement tracking, by default, CloudFront replaces the User-Agent header with "Amazon CloudFront," obscuring device and client information. To regain the device and client information, configure CloudFront to forward the original User-Agent header.
-
-1. Navigate to the CloudFront console.
-
-1. Click on your distribution's ID.
-
-      ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_edit_domain_distribution_id.png)
-
-1. Click on the "Behaviors" tab.
-
-      ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_edit_domain_behaviors_tab.png)
-
-1. Click on the check-mark next to the first item in the list.
-
-      ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_edit_domain_checkmark.png)
-
-1. Click on the "Edit" button.
-
-      ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_edit_domain_edit_button.png)
-
-1. Under "Cache and origin request settings", choose "Use legacy cache settings".
-
-    ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_legacy_cache.png)
-
-1. Set the configuration **Cache Based on Selected Request Headers** to "Whitelist".  Type in `User-Agent` and select "Add Custom". This allows `User-Agent` data to be present in your engagement events received from SparkPost.
-
-      ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_whitelist_cache_orange.png)
-
-    An orange warning indicator appears. This is expected.
-
-1. At the bottom of the page, click on the "Yes, Edit" button.
-
-      ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_edit_domain_yes_edit_button.png)
 
 ---
 ## <a name="fastly-create"></a> Step by Step Guide with Fastly
