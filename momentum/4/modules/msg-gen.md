@@ -158,7 +158,7 @@ Maximum allowed time in the future for which a transmission can be scheduled. Ti
 
 As of Momentum 4.4, a message can be scheduled to be sent at some time in the future as part of the `msg_gen` module. 
 Scheduled send currently only applies to REST injections. 
-For a description on how to use the scheduled send functionality, please visit our [transmissions API docd](https://themomentumapiv1.docs.apiary.io/#reference/transmissions/create/create-a-transmission).
+For a description on how to use the scheduled send functionality, please visit our [transmissions API docs](https://themomentumapiv1.docs.apiary.io/#reference/transmissions/create/create-a-transmission).
 
 The old version of this functionality was known as scheduled generation, and it was retired after Momentum 4.2.28.
 Scheduled send differs from scheduled generation in that the message is now immediately generated, but queued in Momentum's delayed queue until the scheduled start time.
