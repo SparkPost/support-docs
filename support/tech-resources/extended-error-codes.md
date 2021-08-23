@@ -56,6 +56,7 @@ The following table is a complete list of extended error code responses, organiz
 |                       | 2101        | Exceed Sending Limit (hourly)                    | 420              |                                              |
 |                       | 2102        | Exceed Sending Limit (daily)                     | Deprecated       |                                              |
 |                       | 2103        | Exceed Sending Limit (sandbox)                   | 420              |                                              |
+|                       | 2106        | Invalid Template ID (sandbox)                    | 422              |                                              |
 | *Template*            | *3000~3999* |                                                  |                  |                                              |
 |                       | 3000        | template language syntax error                   | 422              | fix content and retry                        |
 |                       | 3001        | template language render error                   | 422              | fix content and retry                        |
