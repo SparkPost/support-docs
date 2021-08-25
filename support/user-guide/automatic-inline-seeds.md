@@ -61,10 +61,11 @@ TODO: image here
   * For example: You may choose to use wildcard matching in order to seed all of your marketing campaigns. Set the campaign’s seed setting to `marketing-*` so that any campaign_id that started with `marketing-` would be eligible for seeding. 
 * You can set up to 5 campaign_id patterns to be eligible for seeding at any given time.
 * Conversely, you can use the Exclude setting to have SparkPost skip specific campaigns that you do not want to seed; all other campaigns will be seeded.
+* SparkPost uses a redaction mechanism to remove potential PII from the emails you send to seed inboxes. This redaction mechanism works by comparing messages with the same campaign_id and the obfuscating text or components that are unique. Note that personalization in images may have an impact on results.
 
 #### Seeding Threshold
 * The Seeding Threshold sets how many messages should match a specific campaign_id before the system should begin seeding. 
-* The minimum threshold for seeding is 1,000 messages. This is designed to protect your deliverability and avoid overseeding - an issue that can happen if your campaign includes too high a percentage of seed addresses. 
+* The minimum threshold for seeding is 1,000 messages in a twenty four hour window. This is designed to protect your deliverability and avoid overseeding - an issue that can happen if your campaign includes too high a percentage of seed addresses. 
 
 #### Seeding Duration
 * Seeds are distributed evenly across the Seeding Duration. As a best practice, try to match your seeding duration to the approximate time it takes to send your campaign.
