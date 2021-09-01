@@ -236,6 +236,7 @@ The `Version` column indicated the version(s) of Momentum that support the optio
 | [max_resident_active_queue](/momentum/4/config/ref-max-resident-active-queue) – Threshold above which messages are not held in memory | sending | 250 | 4.0 and later | binding, binding_group, domain, global |
 | [max_resident_messages](/momentum/4/config/ref-max-resident-messages) – Threshold above which messages are not held in memory | sending | 32768 | 4.0 and later | binding, binding_group, global |
 | [max_resident_transfails](/momentum/4/config/ref-max-resident-transfails) – If the transient failure queue grows beyond this size, messages are swapped out of memory | sending | 100 | 4.0 and later | global |
+| [swap_out_meta_after_each_tempfail](/momentum/4/config/ref-swap_out_meta_after_each_tempfail) – If this is set to false, Momentum will only update metadata on disk after each tempfail if the message context is dirty, and the num_retires, next_attempt and message context may not be accurate if Momentum crashes | sending | true | 4.3.1 and later | global |
 | [max_retries](/momentum/4/config/ref-max-retries) – Override the system configured max_retries | sending |   | 4.0 and later | binding, binding_group, domain, global |
 | [max_retry_interval](/momentum/4/config/ref-max-retry-interval) – Maximum retry interval | sending | 43200 | 4.0 and later | binding, binding_group, domain, global |
 | [max_timed_events_per_iter](/momentum/4/config/ref-max-timed-events-per-iter) – Maximum numer of timed events per scheduler iteration | na | 1024 | 4.0 and later | global |
@@ -357,7 +358,6 @@ The `Version` column indicated the version(s) of Momentum that support the optio
 | [transform_8bitmime_content](/momentum/4/config/ref-transform-8-bitmime-content) – Enable 8BITMIME downconversion when sending mail | sending | ifneeded (*3.1.6*) | 4.0 and later | binding, binding_group, domain, global |
 | [trap_destination](/momentum/4/config/ref-snmp#example.snmp.3) – Destination for SNMP trap | na | (*non-dynamic*) | 4.0 and later | snmp_traps |
 | [trap_interval](/momentum/4/config/ref-snmp#conf.ref.snmp.trap_interval) – Frequency of SNMP trap generation | na | 60 (*non-dynamic*) | 4.0 and later | snmp_traps |
-| [umem_reap_interval](/momentum/4/config/ref-umem-reap-interval) – How often to release unused memory | na | 1800 | 4.0 and later | global |
 | [unconditional_rebind](/momentum/4/modules/4-modules-cluster#option.unconditional_rebind) – Whether the full set_binding logic is invoked or not (cluster-specific) | na | true | 4.0 and later | cluster |
 | [unlink_on_spool_in_failure](/momentum/4/config/ref-unlink-on-spool-in-failure) – Whether or not to remove malformed messages | receiving | true | 4.0 and later | global |
 | [use_iflist_cache](/momentum/4/config/ref-use-iflist-cache) – Whether or not to cache the list of interfaces configured by the system | sending | 0 (*non-dynamic*) | 4.0 and later | global |

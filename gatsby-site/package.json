@@ -7,12 +7,14 @@
     "gatsby"
   ],
   "scripts": {
-    "preinstall": "npx npm-force-resolutions",
-    "develop": "gatsby develop",
-    "start": "gatsby develop",
-    "build": "gatsby build",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "preinstall": "npm install --package-lock-only --ignore-scripts && npx npm-force-resolutions",
+    "build": "tsc -p ./tsconfig-gatsby.json && gatsby build",
+    "develop": "tsc -p ./tsconfig-gatsby.json && gatsby develop",
+    "serve": "tsc -p ./tsconfig-gatsby.json && gatsby serve",
+    "clean": "tsc -p ./tsconfig-gatsby.json && gatsby clean",
+    "type-check": "tsc --noEmit --pretty",
+    "lint": "eslint . --ignore-path .gitignore --ext .ts,.tsx,.js",
+    "test": "npm run type-check && npm run lint"
   },
   "dependencies": {
     "@mdx-js/mdx": "^1.6.22",
@@ -33,9 +35,9 @@
     "gatsby-source-filesystem": "^3.8.0",
     "gatsby-transformer-remark": "^4.5.0",
     "gatsby-transformer-sharp": "^3.8.0",
-    "react": "^17.0.1",
+    "react": "^17.0.2",
     "react-day-picker": "^7.4.10",
-    "react-dom": "^17.0.1",
+    "react-dom": "^17.0.2",
     "react-helmet": "^6.1.0",
     "react-is": "^17.0.2",
     "styled-components": "^5.3.0"
@@ -53,5 +55,21 @@
     "trim": "https://npmjs.com/advisories/1700",
     "trim-newlines": "https://npmjs.com/advisories/1753",
     "css-what": "https://npmjs.com/advisories/1754"
+  },
+  "devDependencies": {
+    "@types/node": "^15.14.0",
+    "@types/react": "^17.0.13",
+    "@types/react-dom": "^17.0.8",
+    "@types/react-helmet": "^6.1.1",
+    "@types/styled-components": "^5.1.11",
+    "@typescript-eslint/eslint-plugin": "^4.28.1",
+    "@typescript-eslint/parser": "^4.28.1",
+    "eslint": "^7.29.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.4.0",
+    "prettier": "^2.3.2",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.3.5"
   }
 }

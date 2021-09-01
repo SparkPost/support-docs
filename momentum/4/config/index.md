@@ -124,6 +124,7 @@ description: "This chapter provides the definitions of the configuration options
 | [max_resident_active_queue](/momentum/4/config/ref-max-resident-active-queue) | threshold above which messages are not held in memory |
 | [max_resident_messages](/momentum/4/config/ref-max-resident-messages) | threshold above which messages are not held in memory |
 | [max_resident_transfails](/momentum/4/config/ref-max-resident-transfails) | the threshold for swapping transient failures out of memory |
+| [swap_out_meta_after_each_tempfail](/momentum/4/config/ref-swap_out_meta_after_each_tempfail) | controls whether or not Momentum will update metadata such as num_retries, next_attempt, and message context on disk after each tempfail. |
 | [max_retries](/momentum/4/config/ref-max-retries) | override the system configured max_retries |
 | [max_retry_interval](/momentum/4/config/ref-max-retry-interval) | maximum retry interval |
 | [max_timed_events_per_iter](/momentum/4/config/ref-max-timed-events-per-iter) | the maximum numer of timed events per scheduler iteration |
@@ -219,7 +220,6 @@ description: "This chapter provides the definitions of the configuration options
 | [tracking_link_expiry](/momentum/4/config/tracking-link-expiry) | set the expiration time for engagement tracking for SMTP injections |
 | [transfail_drain_rate](/momentum/4/config/ref-transfail-drain-rate) | the maximum number of messages to pop off the transient failure queue in a single scheduler iteration |
 | [transform_8bitmime_content](/momentum/4/config/ref-transform-8-bitmime-content) | Enable 8BITMIME downconversion when sending mail |
-| [umem_reap_interval](/momentum/4/config/ref-umem-reap-interval) | how often to release unused memory |
 | [unlink_on_spool_in_failure](/momentum/4/config/ref-unlink-on-spool-in-failure) | Whether or not to remove malformed messages |
 | [_unsafe_spool](/momentum/4/config/ref-unsafe-spool) | allow dangerous spool semantics to be used |
 | [use_iflist_cache](/momentum/4/config/ref-use-iflist-cache) | Whether or not to cache the list of network interfaces configured by the system |
