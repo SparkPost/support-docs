@@ -310,6 +310,7 @@
               title: Outbound XCLIENT support
             - link: /momentum/4/outbound-mail-relay-hosts
               title: Outbound Email Relay
+            - link: /momentum/4/outbound-xfer
         - link: /momentum/4/log-aggregation
           title: Log Aggregation
           items:
