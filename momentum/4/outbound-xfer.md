@@ -7,7 +7,8 @@ description: "By default Momentum will attempt to deliver mail via the SMTP prot
 
 By default Momentum will attempt to deliver mail via the SMTP protocol to the destination MX server.  The XFER delivery method can be used to transfer mail over HTTP to another Momentum server that will handle delivery.  Some example use cases where this could be useful include transferring tempfailed messages to another server for handling retries, and transferring mail to specific domains to another server that is configured with different settings.
 
-To receive XFER messages from another server configuration like the following is needed:
+### Server Config To Receive XFER messages
+To receive XFER messages from another server, configuration like the following is needed:
 
 ```
 scriptlet "scriptlet" {
@@ -23,7 +24,8 @@ HTTP_Listener {
 }
 ```
 
-To reroute delayed messages to an XFER server configuration like the following is needed (assuming the XFER server is running on 10.10.10.10):
+### Sending Server Configuration For Delayed Messages
+To reroute delayed messages to an XFER server, configuration like the following is needed (assuming the XFER server is running on 10.10.10.10):
 
 ```
 # reroute the delayed message to the synthetic xfer.test domain
@@ -44,7 +46,8 @@ Domain xfer.test {
 }
 ```
 
-To reroute messages for speicifc domains to an XFER server configuration like the following is needed:
+### Sending Server Configuration For Specific Domains
+To reroute messages for specific domains to an XFER server configuration like the following is needed:
 
 ```
 
