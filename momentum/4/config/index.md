@@ -124,7 +124,7 @@ description: "This chapter provides the definitions of the configuration options
 | [max_resident_active_queue](/momentum/4/config/ref-max-resident-active-queue) | threshold above which messages are not held in memory |
 | [max_resident_messages](/momentum/4/config/ref-max-resident-messages) | threshold above which messages are not held in memory |
 | [max_resident_transfails](/momentum/4/config/ref-max-resident-transfails) | the threshold for swapping transient failures out of memory |
-| [swap_out_meta_after_each_tempfail](/momentum/4/config/ref-swap_out_meta_after_each_tempfail) | controls whether or not Momentum will update metadata such as num_retries, next_attempt, and message context on disk after each tempfail. |
+| [swap_out_meta_after_each_tempfail](/momentum/4/config/ref-swap-out-meta-after-each-tempfail) | controls whether or not Momentum will update metadata such as num_retries, next_attempt, and message context on disk after each tempfail. |
 | [max_retries](/momentum/4/config/ref-max-retries) | override the system configured max_retries |
 | [max_retry_interval](/momentum/4/config/ref-max-retry-interval) | maximum retry interval |
 | [max_timed_events_per_iter](/momentum/4/config/ref-max-timed-events-per-iter) | the maximum numer of timed events per scheduler iteration |
