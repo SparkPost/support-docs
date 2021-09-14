@@ -235,8 +235,7 @@ The `Version` column indicated the version(s) of Momentum that support the optio
 | [max_request_size](/momentum/4/config/max-request-size) – Limit the size of an HTTP request | both |   | 4.0 and later | http_listener, listen, pathway, pathway_group, peer |
 | [max_resident_active_queue](/momentum/4/config/ref-max-resident-active-queue) – Threshold above which messages are not held in memory | sending | 250 | 4.0 and later | binding, binding_group, domain, global |
 | [max_resident_messages](/momentum/4/config/ref-max-resident-messages) – Threshold above which messages are not held in memory | sending | 32768 | 4.0 and later | binding, binding_group, global |
-| [max_resident_transfails](/momentum/4/config/ref-max-resident-transfails) – If the transient failure queue grows beyond this size, messages are 
-ped out of memory | sending | 100 | 4.0 and later | global |
+| [max_resident_transfails](/momentum/4/config/ref-max-resident-transfails) – If the transient failure queue grows beyond this size, messages are swapped out of memory | sending | 100 | 4.0 and later | global |
 | [swap_out_meta_after_each_tempfail](/momentum/4/config/ref-swap-out-meta-after-each-tempfail) – If this is set to false, Momentum will only update metadata on disk after each tempfail if the message context is dirty, and the num_retires, next_attempt and message context may not be accurate if Momentum crashes | sending | true | 4.3.1 and later | global |
 | [max_retries](/momentum/4/config/ref-max-retries) – Override the system configured max_retries | sending |   | 4.0 and later | binding, binding_group, domain, global |
 | [max_retry_interval](/momentum/4/config/ref-max-retry-interval) – Maximum retry interval | sending | 43200 | 4.0 and later | binding, binding_group, domain, global |
