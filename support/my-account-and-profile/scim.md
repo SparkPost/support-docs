@@ -36,7 +36,7 @@ description: "Learn how to enable SCIM user provisioning through Okta for your S
 1. In the "Base URL" field:
     - For US-hosted customers, enter `https://api.sparkpost.com/api/v1/users/scim/v2`
     - For EU-hosted customers, enter `https://api.eu.sparkpost.com/api/v1/users/scim/v2`
-    - For Enterprise customers, enter `https://<host>/api/v1/users/scim/v2`
+    - For Enterprise customers, enter `https://<host>.api.e.sparkpost.com/api/v1/users/scim/v2`
     
         *Enterprise customers: note that you must replace < host > with your SparkPost tenant name. Please see your TAM if you need assistance determining your callback URL.*
     

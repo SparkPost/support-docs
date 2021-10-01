@@ -17,6 +17,8 @@ Event webhooks supports [mTLS](https://en.wikipedia.org/wiki/Mutual_authenticati
 **IP Whitelisting**
 For those customers that require inbound traffic to be whitelisted in a firewall we do maintain the hostname wh.egress.sparkpost.com which lists the egress IPs under the host’s A record. Please let your TAM know that you are whitelisting IPs and SparkPost will notify you if this list changes, with some advance notice.
 
+For non Enterprise customers that require inbound traffic to be whitelisted in a firewall we recommend instead of whitelisting IP addresses to instead whitelist the hostname wh.egress.sparkpost.com.
+
 ## Webhook Authentication Set Up
 
 The authentication method is set to "None" by default when creating a new webhook.  To configure either Basic Auth or OAuth 2.0, select the appropriate value from the "Authentication" drop-down list.  While using either authentication method is optional, we strongly encourage our customers to configure one of these two methods for their webhooks.
