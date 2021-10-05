@@ -10,8 +10,10 @@ core_inbound_smtp_tls_post_accept — This hook is invoked after the tls handsha
 
 ## Synopsis
 
-```local core = require("msys.core");
+```
+local core = require("msys.core");
 local mod = {};
+
 function mod:core_inbound_smtp_tls_post_accept(mc, event, eventtype, vclosure, now)
   mc.ctx.code = 420;
   mc.ctx.disconnect = 1;
