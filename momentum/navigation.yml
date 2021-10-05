@@ -311,6 +311,7 @@
             - link: /momentum/4/outbound-mail-relay-hosts
               title: Outbound Email Relay
             - link: /momentum/4/outbound-xfer
+              title: Configuring XFER for Outbound Mail Delivery
         - link: /momentum/4/log-aggregation
           title: Log Aggregation
           items:
