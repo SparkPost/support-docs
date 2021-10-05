@@ -15,7 +15,7 @@ const Home: NextPage = () => {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          SparkPost Test Page
+          SparkPost Support Docs
         </h1>
         <br />
         <Button variant="filled" color="blue" size="large" to="https://www.sparkpost.com/" external="true">Testing</Button>
