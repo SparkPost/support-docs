@@ -103,7 +103,7 @@ description: "This section details all Lua functions Functions are ordered alpha
 | [msg:makeContainer](/momentum/4/lua/ref-msg-make-container) | Creates a new, unlinked, container message part |
 | [msg:makePart](/momentum/4/lua/ref-msg-make-part) | Creates a new, unlinked, singleton (or leaf) message part |
 | [msg:mime](/momentum/4/lua/ref-msg-mime) | Returns the top of the MIME tree for the message, a message part |
-| [msg:raw](/momentum/4/lua/ref-msg-raw) | Set or returns the message content |
+| [msg:raw](/momentum/4/lua/ref-msg-raw) | Set or returns the message content and the message length |
 | [msg:raw_match](/momentum/4/lua/ref-msg-raw-match) | Streaming interface to a PCRE search of the message content |
 | [msg:raw_replace](/momentum/4/lua/ref-msg-raw-replace) | Streaming interface to a PCRE replacement of message content |
 | [msg:rcptto](/momentum/4/lua/ref-msg-rcptto) | Sets the 'RCPT TO' email address if one is provided |
@@ -187,6 +187,7 @@ description: "This section details all Lua functions Functions are ordered alpha
 | [msys.timer.after](/momentum/4/lua/ref-msys-timer-after) | execute closure after a given time |
 | [msys.timer.at](/momentum/4/lua/ref-msys-timer-at) | execute closure at a given time |
 | [msys.timer.every](/momentum/4/lua/ref-msys-timer-every) | execute closure every interval |
+| [msys.tls_params.set](/momentum/4/lua/ref-msys-tls-params-set) | Set a tls parameter string on a per connection basis |
 | [msys.validate.dk.get_responsible_domain](/momentum/4/lua/ref-msys-validate-dk-get-responsible-domain) | Return the domain responsible for the current message |
 | [msys.validate.dk.sign](/momentum/4/lua/ref-msys-validate-dk-sign) | Sign a message using a Domain Key |
 | [msys.validate.opendkim.get_num_sigs](/momentum/4/lua/ref-msys-validate-opendkim-get-num-sigs) | Return the number of DKIM signatures |
