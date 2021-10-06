@@ -1,6 +1,5 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import { Button } from '@sparkpost/matchbox'
 
@@ -18,7 +17,7 @@ const Home: NextPage = () => {
           SparkPost Support Docs
         </h1>
         <br />
-        <Button variant="filled" color="blue" size="large" to="https://www.sparkpost.com/" external="true">Testing</Button>
+        <Button variant="filled" color="blue" size="large" to="https://www.sparkpost.com/" external>Testing</Button>
       </main>
     </div>
   )
