@@ -11,9 +11,9 @@ export const SUPPORT_PATH: string = path.join(process.cwd(), 'content/support/')
  */
 export function getAllMomentumPostPaths(): string[] {
   return glob
-    .sync(`content/momentum/**/!(index).md`) // // TODO Need to figure out how to support index.md pages
-    .map((path) => path.replace(`.md`, ''))
-    .map((path) => path.replace('content/', '/'));
+    .sync(`content/momentum/**/!(index).md`) // TODO Need to figure out how to support index.md pages
+    .map((path) => path.replace(/.md$/, ''))
+    .map((path) => path.replace(/^content\//, '/'));
 }
 
 /**
