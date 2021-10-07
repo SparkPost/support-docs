@@ -1,5 +1,5 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
+import type { NextPage } from 'next';
+import Head from 'next/head';
 
 const Home: NextPage = () => {
   return (
@@ -9,11 +9,9 @@ const Home: NextPage = () => {
         <meta name="description" content="SparkPost Support Docs" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>
-        There&apos;s nothing here yet
-      </main>
+      <main>There&apos;s nothing here yet</main>
     </>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
