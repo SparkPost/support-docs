@@ -1,25 +1,23 @@
-import matter from 'gray-matter';
 import { GetStaticProps, GetStaticPaths } from 'next';
-import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
-import { serialize } from 'next-mdx-remote/serialize';
-import { getMomentumPostPaths, getMomentumPost } from 'lib/mdx';
+import ReactMarkdown from 'react-markdown';
+import { getAllMomentumPostPaths, getSingleMomentumPost } from 'lib/api';
 import components from 'components/markdown';
 
 type PostPageProps = {
-  source: MDXRemoteSerializeResult;
-  meta: {
+  content: string;
+  data: {
     title?: string;
     description?: string;
   };
 };
 
 export default function PostPage(props: PostPageProps): JSX.Element {
-  const { source, meta } = props;
+  const { content, data } = props;
   return (
     <>
-      <h1>{meta.title}</h1>
-      <h6>{meta.description}</h6>
-      <MDXRemote {...source} components={components} />
+      <h1>{data.title}</h1>
+      <h6>{data.description}</h6>
+      <ReactMarkdown components={components}>{content}</ReactMarkdown>
     </>
   );
 }
@@ -29,17 +27,12 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     return { props: {} };
   }
 
-  const { content, data } = matter(getMomentumPost(params.slug));
-  const mdxSource = await serialize(content, {
-    scope: data,
-  });
-
-  return { props: { source: mdxSource, meta: data } };
+  return { props: getSingleMomentumPost(params.slug) };
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
-    paths: getMomentumPostPaths(),
+    paths: getAllMomentumPostPaths(),
     fallback: false,
   };
 };
