@@ -1,5 +1,6 @@
 import { GetStaticProps, GetStaticPaths } from 'next';
 import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 import { getAllMomentumPostPaths, getSingleMomentumPost } from 'lib/api';
 import components from 'components/markdown';
 
@@ -15,9 +16,11 @@ export default function PostPage(props: PostPageProps): JSX.Element {
   const { content, data } = props;
   return (
     <>
-      <h1>{data.title}</h1>
-      <h6>{data.description}</h6>
-      <ReactMarkdown components={components}>{content}</ReactMarkdown>
+      <h1>{data?.title}</h1>
+      <h6>{data?.description}</h6>
+      <ReactMarkdown components={components} remarkPlugins={[remarkGfm]}>
+        {content}
+      </ReactMarkdown>
     </>
   );
 }
@@ -26,8 +29,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   if (!params?.slug) {
     return { props: {} };
   }
-
-  return { props: getSingleMomentumPost(params.slug) };
+  const { content, data } = await getSingleMomentumPost(params.slug);
+  return { props: { content, data } };
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {

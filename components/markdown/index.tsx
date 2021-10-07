@@ -24,6 +24,7 @@ const components = {
    * tables
    * inline code
    * code block
+   * table
    */
 };
 
