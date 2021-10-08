@@ -12,7 +12,7 @@ type PostPageProps = {
   };
 };
 
-export default function PostPage(props: PostPageProps): JSX.Element {
+const PostPage = (props: PostPageProps): JSX.Element => {
   const { content, data } = props;
   return (
     <>
@@ -23,7 +23,7 @@ export default function PostPage(props: PostPageProps): JSX.Element {
       </ReactMarkdown>
     </>
   );
-}
+};
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   if (!params?.slug) {
@@ -39,3 +39,5 @@ export const getStaticPaths: GetStaticPaths = async () => {
     fallback: false,
   };
 };
+
+export default PostPage;

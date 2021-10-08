@@ -9,18 +9,18 @@ export const SUPPORT_PATH: string = path.join(process.cwd(), 'content/support/')
 /**
  * Gets all Momentum markdown posts paths
  */
-export function getAllMomentumPostPaths(): string[] {
+export const getAllMomentumPostPaths = (): string[] => {
   return glob
     .sync(`content/momentum/**/!(index).md`) // TODO Need to figure out how to support index.md pages
     .map((path) => path.replace(/.md$/, ''))
     .map((path) => path.replace(/^content\//, '/'));
-}
+};
 
 /**
  * Retrieves a single Momentum post from a slug
  */
-export function getSingleMomentumPost(slug: string[] | string): matter.GrayMatterFile<Buffer> {
+export const getSingleMomentumPost = (slug: string[] | string): matter.GrayMatterFile<Buffer> => {
   const fullPath = typeof slug === 'string' ? slug : slug.join('/');
   const postFilePath = path.join(MOMENTUM_PATH, `${fullPath}.md`);
   return matter(fs.readFileSync(postFilePath));
-}
+};

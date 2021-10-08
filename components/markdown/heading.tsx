@@ -2,7 +2,7 @@ import React from 'react';
 import { Box, BoxProps } from '@sparkpost/matchbox';
 import * as Polymorphic from 'utils/types';
 
-function getFontSize(as?: string) {
+const getFontSize = (as?: string): string => {
   switch (as) {
     case 'h1':
       return '700';
@@ -11,7 +11,7 @@ function getFontSize(as?: string) {
     default:
       return '400';
   }
-}
+};
 
 const Heading = React.forwardRef(function Heading(props, ref) {
   const { children, as } = props;
