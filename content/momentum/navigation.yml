@@ -310,6 +310,8 @@
               title: Outbound XCLIENT support
             - link: /momentum/4/outbound-mail-relay-hosts
               title: Outbound Email Relay
+            - link: /momentum/4/outbound-xfer
+              title: Configuring XFER for Outbound Mail Delivery
         - link: /momentum/4/log-aggregation
           title: Log Aggregation
           items:
@@ -1956,6 +1958,8 @@
     - link: /momentum/changelog/4
       title: Momentum 4.x Changelog
       items: 
+        - link: /momentum/changelog/4/4-4-0
+          title: Momentum 4.4.0 Changelog
         - link: /momentum/changelog/4/4-3-1
           title: Momentum 4.3.1 Changelog
         - link: /momentum/changelog/4/4-3-0
