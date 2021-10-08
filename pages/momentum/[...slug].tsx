@@ -29,8 +29,14 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   if (!params?.slug) {
     return { props: {} };
   }
-  const { content, data } = await getSingleMomentumPost(params.slug);
-  return { props: { content, data } };
+
+  const post = await getSingleMomentumPost(params.slug);
+
+  if (!post) {
+    return { props: {} };
+  }
+
+  return { props: post };
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {

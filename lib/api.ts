@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import glob from 'glob';
-import matter from 'gray-matter';
+import matter, { GrayMatterFile } from 'gray-matter';
 
 export const MOMENTUM_PATH: string = path.join(process.cwd(), 'content/momentum/');
 export const SUPPORT_PATH: string = path.join(process.cwd(), 'content/support/');
@@ -26,14 +26,19 @@ export const getAllMomentumPostPaths = (): string[] => {
 /**
  * Retrieves a single Momentum post from a slug.
  */
-export const getSingleMomentumPost = (slug: string[] | string): matter.GrayMatterFile<Buffer> => {
-  const fullPath = typeof slug === 'string' ? slug : slug.join('/');
-  const filePath = path.join(MOMENTUM_PATH, `${fullPath}.md`);
-
+export const getSingleMomentumPost = (slug: string[] | string): GrayMatterFile<Buffer> | void => {
+  const postPath = typeof slug === 'string' ? slug : slug.join('/');
+  const filePath = path.join(MOMENTUM_PATH, `${postPath}.md`);
+  const indexPath = path.join(MOMENTUM_PATH, `${postPath}/index.md`);
+  
   // If file exists, it is not an index page.
   if (fs.existsSync(filePath)) {
     return matter(fs.readFileSync(filePath));
-  } else {
-    return matter(fs.readFileSync(path.join(MOMENTUM_PATH, `${fullPath}/index.md`)));
   }
+  
+  if (fs.existsSync(indexPath)) {
+    return matter(fs.readFileSync(indexPath));
+  }
+
+  return;
 };
