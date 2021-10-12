@@ -59,8 +59,7 @@
         "plugin:react/recommended",
         "plugin:react-hooks/recommended",
         "plugin:jsx-a11y/recommended",
-        "react-app",
-        "plugin:@asbjorn/groq/recommended"
+        "react-app"
       ],
       "plugins": ["prettier"],
       "rules": {
