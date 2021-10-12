@@ -30,12 +30,12 @@ export const getSingleMomentumPost = (slug: string[] | string): GrayMatterFile<B
   const postPath = typeof slug === 'string' ? slug : slug.join('/');
   const filePath = path.join(MOMENTUM_PATH, `${postPath}.md`);
   const indexPath = path.join(MOMENTUM_PATH, `${postPath}/index.md`);
-  
+
   // If file exists, it is not an index page.
   if (fs.existsSync(filePath)) {
     return matter(fs.readFileSync(filePath));
   }
-  
+
   if (fs.existsSync(indexPath)) {
     return matter(fs.readFileSync(indexPath));
   }
