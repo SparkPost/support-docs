@@ -10,6 +10,7 @@ const { withSentryConfig } = require('@sentry/nextjs');
 const moduleExports = {
   // Your existing module.exports
   reactStrictMode: true,
+  target: 'experimental-serverless-trace',
 };
 
 const SentryWebpackPluginOptions = {
