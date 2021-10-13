@@ -2,6 +2,7 @@ import type { AppProps } from 'next/app';
 import { ThemeProvider } from '@sparkpost/matchbox';
 import * as Sentry from '@sentry/react';
 import { Integrations } from '@sentry/tracing';
+import CookieConsent from 'components/site/cookieConsent';
 
 /**
  * Using the React sentry integration instead of
@@ -25,6 +26,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider>
       <Component {...pageProps} />
+      <CookieConsent />
     </ThemeProvider>
   );
 }
