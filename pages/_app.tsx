@@ -16,6 +16,9 @@ Sentry.init({
   // of transactions for performance monitoring.
   // We recommend adjusting this value in production
   tracesSampleRate: 1.0,
+
+  // Release is used to match events with uploaded sourcemaps
+  release: process.env.RELEASE,
 });
 
 function MyApp({ Component, pageProps }: AppProps) {
