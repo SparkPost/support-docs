@@ -1,0 +1,7 @@
+[defaults]
+url = https://sentry.io/
+org = sparkpost
+project = support-docs
+
+[auth]
+token = 6e6b3b556f3b4cecb1388a1ef6f10a9dbcdc362903f5444c8a026e557d804925

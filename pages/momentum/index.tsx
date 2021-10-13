@@ -1,6 +1,7 @@
 import { GetStaticProps } from 'next';
 import { getMomentumNavigation } from 'lib/api';
 import MomentumNavigation, { ItemProps } from 'components/site/momentumNavigation';
+import SEO from 'components/site/seo';
 import { Box } from '@sparkpost/matchbox';
 
 type IndexPageProps = {
@@ -12,12 +13,15 @@ type IndexPageProps = {
 const IndexPage = (props: IndexPageProps): JSX.Element => {
   const { data } = props;
   return (
-    <Box display="flex">
-      <Box flex="0">
-        <MomentumNavigation data={data.navigation} />
+    <>
+      <SEO title="Momentum Documentation - SparkPost" />
+      <Box display="flex">
+        <Box flex="0">
+          <MomentumNavigation data={data.navigation} />
+        </Box>
+        <Box flex="1"></Box>
       </Box>
-      <Box flex="1"></Box>
-    </Box>
+    </>
   );
 };
 

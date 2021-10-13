@@ -4,6 +4,7 @@ import remarkGfm from 'remark-gfm';
 import { getAllMomentumPostPaths, getSingleMomentumPost, getMomentumNavigation } from 'lib/api';
 import components from 'components/markdown';
 import MomentumNavigation, { ItemProps } from 'components/site/momentumNavigation';
+import SEO from 'components/site/seo';
 import { Box } from '@sparkpost/matchbox';
 
 type PostPageProps = {
@@ -18,18 +19,21 @@ type PostPageProps = {
 const PostPage = (props: PostPageProps): JSX.Element => {
   const { content, data } = props;
   return (
-    <Box display="flex">
-      <Box flex="0">
-        <MomentumNavigation data={data.navigation} />
+    <>
+      <SEO title={data.title} description={data.description} />
+      <Box display="flex">
+        <Box flex="0">
+          <MomentumNavigation data={data.navigation} />
+        </Box>
+        <Box p="500" flex="1">
+          <h1>{data?.title}</h1>
+          <h6>{data?.description}</h6>
+          <ReactMarkdown components={components} remarkPlugins={[remarkGfm]}>
+            {content}
+          </ReactMarkdown>
+        </Box>
       </Box>
-      <Box p="500" flex="1">
-        <h1>{data?.title}</h1>
-        <h6>{data?.description}</h6>
-        <ReactMarkdown components={components} remarkPlugins={[remarkGfm]}>
-          {content}
-        </ReactMarkdown>
-      </Box>
-    </Box>
+    </>
   );
 };
 
