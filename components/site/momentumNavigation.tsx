@@ -9,10 +9,14 @@ export interface ItemProps {
 }
 
 export type MomentumNavigationProps = {
-  data: ItemProps[];
+  data?: ItemProps[];
 };
 
-const MomentumNavigation = (props: MomentumNavigationProps): JSX.Element => {
+const MomentumNavigation = (props: MomentumNavigationProps): JSX.Element | null => {
+  if (!props.data) {
+    return null;
+  }
+
   return (
     <Box p="500">
       {props.data.map((item, i) => (

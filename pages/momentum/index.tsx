@@ -13,7 +13,9 @@ const IndexPage = (props: IndexPageProps): JSX.Element => {
   const { data } = props;
   return (
     <Box display="flex">
-      <Box flex="0">{data.navigation && <MomentumNavigation data={data.navigation} />}</Box>
+      <Box flex="0">
+        <MomentumNavigation data={data.navigation} />
+      </Box>
       <Box flex="1"></Box>
     </Box>
   );

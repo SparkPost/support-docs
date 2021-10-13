@@ -19,7 +19,9 @@ const PostPage = (props: PostPageProps): JSX.Element => {
   const { content, data } = props;
   return (
     <Box display="flex">
-      <Box flex="0">{data.navigation && <MomentumNavigation data={data.navigation} />}</Box>
+      <Box flex="0">
+        <MomentumNavigation data={data.navigation} />
+      </Box>
       <Box p="500" flex="1">
         <h1>{data?.title}</h1>
         <h6>{data?.description}</h6>
