@@ -17,6 +17,9 @@
     ]
   },
   "dependencies": {
+    "@sentry/react": "^6.13.3",
+    "@sentry/tracing": "^6.13.3",
+    "@sentry/webpack-plugin": "^1.18.0",
     "@sparkpost/design-tokens": "^6.0.6",
     "@sparkpost/matchbox": "^6.0.6",
     "@sparkpost/matchbox-icons": "^6.0.6",
@@ -34,6 +37,7 @@
     "styled-components": "^5.3.1"
   },
   "devDependencies": {
+    "@sentry/types": "^6.13.3",
     "@types/glob": "^7.1.4",
     "@types/js-yaml": "^4.0.3",
     "@types/react": "^17.0.27",
@@ -42,6 +46,7 @@
     "@types/styled-system": "^5.1.13",
     "@typescript-eslint/eslint-plugin": "^5.0.0",
     "@typescript-eslint/parser": "^5.0.0",
+    "babel-eslint": "^10.1.0",
     "eslint": "7.32.0",
     "eslint-config-next": "11.1.2",
     "eslint-config-prettier": "^8.3.0",
