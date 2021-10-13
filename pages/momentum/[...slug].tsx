@@ -1,6 +1,7 @@
 import { GetStaticProps, GetStaticPaths } from 'next';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import rehypeRaw from 'rehype-raw';
 import { getAllMomentumPostPaths, getSingleMomentumPost, getMomentumNavigation } from 'lib/api';
 import components from 'components/markdown';
 import MomentumNavigation, { ItemProps } from 'components/site/momentumNavigation';
@@ -25,13 +26,14 @@ const PostPage = (props: PostPageProps): JSX.Element => {
       <Box p="500" flex="1">
         <h1>{data?.title}</h1>
         <h6>{data?.description}</h6>
-        <ReactMarkdown components={components} remarkPlugins={[remarkGfm]}>
+        <ReactMarkdown components={components} rehypePlugins={[rehypeRaw]} remarkPlugins={[remarkGfm]}>
           {content}
         </ReactMarkdown>
       </Box>
     </Box>
   );
 };
+
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   if (!params?.slug) {
