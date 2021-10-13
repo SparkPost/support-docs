@@ -1,11 +1,8 @@
-export const GA_TRACKING_ID = process.env.NEXT_PUBLIC_GA_ID || '<YOUR_GA_TRACKING_ID>';
-
-// https://developers.google.com/analytics/devguides/collection/gtagjs/pages
-export const pageview = (url: URL) => {
-  window.gtag('config', GA_TRACKING_ID, {
-    page_path: url,
-  });
-};
+declare global {
+  interface Window {
+    dataLayer: object[];
+  }
+}
 
 type GTagEvent = {
   action: string;
@@ -14,11 +11,27 @@ type GTagEvent = {
   value: number;
 };
 
+// Google Analytics
+// https://developers.google.com/analytics/devguides/collection/gtagjs/pages
+export const gaPageview = (url: URL, gaTID: string) => {
+  window.gtag('config', gaTID, {
+    page_path: url,
+  });
+};
+
 // https://developers.google.com/analytics/devguides/collection/gtagjs/events
 export const event = ({ action, category, label, value }: GTagEvent) => {
   window.gtag('event', action, {
     event_category: category,
     event_label: label,
     value: value,
+  });
+};
+
+// GTM
+export const gtmPageview = (url: URL) => {
+  window.dataLayer.push({
+    event: 'pageview',
+    page: url,
   });
 };
