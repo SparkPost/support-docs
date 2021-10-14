@@ -59,6 +59,21 @@ class AppDocument extends Document {
           <link href="/assets/fonts.css" rel="stylesheet" />
         </Head>
         <body>
+          {process.env.NODE_ENV === 'production' && (
+            <>
+              {/* Google Tag Manager (noscript) */}
+              <noscript>
+                <iframe
+                  title="Google Tag Manager (noscript)"
+                  src={`//www.googletagmanager.com/ns.html?id=${process.env.NEXT_PUBLIC_GTM_ID}`}
+                  height="0"
+                  width="0"
+                  style={{ display: 'none', visibility: 'hidden' }}
+                />
+              </noscript>
+              {/* End Google Tag Manager (noscript) */}
+            </>
+          )}
           <Main />
           <NextScript />
         </body>
