@@ -2,7 +2,7 @@ import React from 'react';
 import { Box, Snackbar } from '@sparkpost/matchbox';
 import Cookies from 'js-cookie';
 
-const CONSENT_KEY = 'cookie_consent';
+const CONSENT_KEY = 'sparkpost_support_docs_cookie_consent';
 
 const CookieConsent = (): JSX.Element | null => {
   const [clicked, setClicked] = React.useState(false);
