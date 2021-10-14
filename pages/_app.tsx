@@ -6,6 +6,7 @@ import { ThemeProvider } from '@sparkpost/matchbox';
 import * as gtag from '../utils/gtm';
 import * as Sentry from '@sentry/react';
 import { Integrations } from '@sentry/tracing';
+import CookieConsent from 'components/site/cookieConsent';
 
 /**
  * Using the React sentry integration instead of
@@ -58,6 +59,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
         </>
       )}
       <Component {...pageProps} />
+      <CookieConsent />
     </ThemeProvider>
   );
 };
