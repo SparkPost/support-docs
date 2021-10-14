@@ -14,7 +14,7 @@ const IndexPage = (props: IndexPageProps): JSX.Element => {
   const { data } = props;
   return (
     <>
-      <SEO title="Momentum Documentation - SparkPost" />
+      <SEO title="Momentum Documentation - SparkPost" description="SparkPost Momentum Documentation" />
       <Box display="flex">
         <Box flex="0">
           <MomentumNavigation data={data.navigation} />
