@@ -14,6 +14,9 @@ This tool is great for testing out new content - things like new email templates
 
 Seeding is a tool that gives you unique and actionable insight into sending campaigns. A consistent and broad-coverage seeding practice, along with engagement tracking and panel data, provides a great return on investment by allowing content creators to optimize for their desired outcome. If you’re interested in learning more about Seeding or other Deliverability best practices, check out our guide to Deliverability Analytics.
 
+We recommend that you create a seeding strategy that allows you to seed across each sending domain/IP at least once a week. For marketing emails, you may want to seed more often, whereas for transactional emails, once a week is usually sufficient. This will ensure that you always have inboxing data available in your reports and that you can quickly recognize issues should they arise. 
+
+
 ## How to Set Up Automatic Inline Seeding
 
 In order to use Automatic Inline Seeding in SparkPost you must have a SparkPost sending account or a valid license for PowerMTA (versions newer than 5.0r8) and paid access to either SparkPost Deliverability Analytics or SparkPost Inbox Tracker. 
