@@ -55,7 +55,7 @@ TODO: image here
 * Toggling this setting to OFF will stop SparkPost from counting any more messages towards your Seeding Thresholds. Your settings will be saved. Toggling this setting to OFF will not stop messages from being sent to seed addresses if the seeding process has already started.
 
 #### Campaigns to Seed 
-* This setting lets you to specify which campaign_id’s you want to seed. 
+* This setting lets you to specify which campaign_id’s you want to seed. It is case-sensitive.  
 * This setting does not guarantee that these campaign_id’s will be seeded, but it will enable counting of the messages with these campaign_id’s to count towards the Seeding Threshold. 
 * The Campaigns to Seed setting allows wildcard matching in some situations.
   * For example: You may choose to use wildcard matching in order to seed all of your marketing campaigns. Set the campaign’s seed setting to `marketing-*` so that any campaign_id that started with `marketing-` would be eligible for seeding. 
