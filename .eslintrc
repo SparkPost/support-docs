@@ -24,7 +24,8 @@
     "plugin:react-hooks/recommended",
     "plugin:jsx-a11y/recommended",
     "react-app",
-    "next/core-web-vitals"
+    "next/core-web-vitals",
+    "next/babel"
   ],
   "rules": {
     "no-unused-vars": [
