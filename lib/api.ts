@@ -47,7 +47,7 @@ export const getSingleMomentumPost = (slug: string[] | string): GrayMatterFile<s
 /**
  * Retrieves momentum navigation structure as JSON.
  */
-export const getMomentumNavigation = (): any | void => {
+export const getMomentumNavigation = (): unknown | void => {
   const filePath = path.join(MOMENTUM_PATH, `navigation.yml`);
 
   if (fs.existsSync(filePath)) {

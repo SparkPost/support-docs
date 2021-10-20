@@ -1,7 +1,7 @@
 {
   "env": {
     "node": true,
-    "es6": true
+    "es2021": true
   },
   "settings": {
     "import/resolver": {
@@ -23,7 +23,8 @@
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
     "plugin:jsx-a11y/recommended",
-    "react-app"
+    "react-app",
+    "next/core-web-vitals"
   ],
   "rules": {
     "no-unused-vars": [
@@ -51,7 +52,7 @@
       "env": {
         "browser": true,
         "node": true,
-        "es6": true
+        "es2021": true
       },
       "extends": [
         "eslint:recommended",

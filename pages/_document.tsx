@@ -56,7 +56,6 @@ class AppDocument extends Document {
             type="font/woff2"
             crossOrigin="anonymous"
           />
-          <link href="/assets/fonts.css" rel="stylesheet" />
         </Head>
         <body>
           {process.env.NODE_ENV === 'production' && (

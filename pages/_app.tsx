@@ -1,12 +1,14 @@
 import type { AppProps } from 'next/app';
 import { useEffect } from 'react';
-import Script from 'next/script';
 import { useRouter } from 'next/router';
 import { ThemeProvider } from '@sparkpost/matchbox';
 import * as gtag from '../utils/gtm';
 import * as Sentry from '@sentry/react';
 import { Integrations } from '@sentry/tracing';
 import CookieConsent from 'components/site/cookieConsent';
+import Segment from 'components/site/segment';
+import GTM from 'components/site/gtm';
+import '../public/assets/fonts.css';
 
 /**
  * Using the React sentry integration instead of
@@ -41,23 +43,8 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
 
   return (
     <ThemeProvider>
-      {process.env.NODE_ENV === 'production' && (
-        <>
-          <Script
-            strategy="afterInteractive"
-            dangerouslySetInnerHTML={{
-              __html: `
-              (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-              new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-              '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-              })(window,document,'script','dataLayer', '${process.env.NEXT_PUBLIC_GTM_ID}');
-              `,
-            }}
-          />
-          {/* End Google Tag Manager */}
-        </>
-      )}
+      <Segment />
+      <GTM />
       <Component {...pageProps} />
       <CookieConsent />
     </ThemeProvider>
