@@ -34,11 +34,12 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: Install dependencies
         uses: bahmutov/npm-install@v1
+        # run: npm install
       # - name: Prepare codebase with latest build
       #   run: npm run build
       # - name:
       #   run: npm run test:e2e:ci
       - name: Cypress tests
-        uses: cypress-io/github-actions@v2
+        uses: cypress-io/github-action@v2
         # with:
         #   install: false
