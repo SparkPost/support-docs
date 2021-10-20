@@ -5,7 +5,8 @@ on:
     branches:
       - main - WE-294-install-cypress
   pull_request:
-    branches: - next - main - master
+    branches:
+      - next - main - master
   workflow_dispatch:
 
 jobs:
