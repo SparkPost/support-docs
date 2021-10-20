@@ -41,5 +41,8 @@ jobs:
       #   run: npm run test:e2e:ci
       - name: Cypress tests
         uses: cypress-io/github-action@v2
+        with:
+          build: npm run build
+          start: npm start
         # with:
         #   install: false
