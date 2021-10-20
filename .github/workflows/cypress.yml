@@ -38,7 +38,7 @@ jobs:
       # - name: Prepare codebase with latest build
       #   run: npm run build
       - name: Cypress tests
-        run: npm run test:e2e:ci
+        run: npm run test:ci
       # - name: Cypress tests
       #   uses: cypress-io/github-action@v2
       #   with:
