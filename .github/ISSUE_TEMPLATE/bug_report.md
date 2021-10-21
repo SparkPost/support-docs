@@ -1,6 +1,6 @@
 ---
 name: Bug report
-about: Help us improve Matchbox
+about: Help us improve the support docs
 title: ''
 labels: bug
 assignees: ''

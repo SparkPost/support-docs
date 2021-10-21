@@ -18,4 +18,4 @@ Anything beyond basic unit testing, such as assistive tech usage, or special int
 ### PR Checklist
 
 - [ ] Add the correct `type` label
-- [ ] Pull request approval from #uxfe or #design-guild
+- [ ] Pull request approval from #uxfe or #front-end-guild

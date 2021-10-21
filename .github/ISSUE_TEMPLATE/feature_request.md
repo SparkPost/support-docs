@@ -1,6 +1,6 @@
 ---
 name: Feature request
-about: Suggest an idea for Matchbox
+about: Suggest an idea for the support docs
 title: ''
 labels: feature request
 assignees: ''

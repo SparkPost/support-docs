@@ -1,6 +1,6 @@
 ---
 name: Documentation
-about: Anything related to the design system website
+about: Anything related to the support docs
 title: ''
 labels: documentation
 assignees: ''
@@ -9,4 +9,4 @@ assignees: ''
 
 ## 📚 Documentation
 
-Questions, comments, suggestions for the design system website
+Questions, comments, suggestions for the support docs
