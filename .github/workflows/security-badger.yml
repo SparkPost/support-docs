@@ -2,9 +2,6 @@ name: Security Badger
 
 on:
   workflow_dispatch: # Allows manual triggering - this can be removed after stabilization
-  push:
-    branches:
-      - WE-300-copy-over-security-badger
   schedule:
     # Run every Thursday at 6:00 PM UTC
     - cron: '0 18 * * 4'
