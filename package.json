@@ -9,7 +9,9 @@
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --write .",
-    "precommit": "lint-staged"
+    "precommit": "lint-staged",
+    "test:e2e:headless": "NODE_ENV=test node_modules/.bin/cypress run",
+    "test:e2e:gui": "NODE_ENV=test node_modules/.bin/cypress open"
   },
   "lint-staged": {
     "**/*.{tsx,ts,js,jsx}": [
