@@ -4,16 +4,16 @@ import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw';
 import { getAllMomentumPostPaths, getSingleMomentumPost, getMomentumNavigation } from 'lib/api';
 import components from 'components/markdown';
-import MomentumNavigation, { ItemProps } from 'components/site/momentumNavigation';
+import { MomentumNavigationItemProps } from 'components/site/momentumNavigation';
+import MomentumLayout from 'components/site/momentumLayout';
 import SEO from 'components/site/seo';
-import { Box } from '@sparkpost/matchbox';
 
 type PostPageProps = {
   content: string;
   data: {
     title?: string;
     description?: string;
-    navigation?: ItemProps[];
+    navigation?: MomentumNavigationItemProps[];
   };
 };
 
@@ -22,22 +22,20 @@ const PostPage = (props: PostPageProps): JSX.Element => {
   return (
     <>
       <SEO title={data.title} description={data.description} />
-      <Box display="flex">
-        <Box flex="0">
-          <MomentumNavigation data={data.navigation} />
-        </Box>
-        <Box p="500" flex="1">
-          <h1>{data?.title}</h1>
-          <h6>{data?.description}</h6>
-          <ReactMarkdown components={components} rehypePlugins={[rehypeRaw]} remarkPlugins={[remarkGfm]}>
-            {content}
-          </ReactMarkdown>
-        </Box>
-      </Box>
+      <MomentumLayout navigation={data.navigation}>
+        <h1>{data?.title}</h1>
+        <h6>{data?.description}</h6>
+        <ReactMarkdown
+          components={components}
+          rehypePlugins={[rehypeRaw]}
+          remarkPlugins={[remarkGfm]}
+        >
+          {content}
+        </ReactMarkdown>
+      </MomentumLayout>
     </>
   );
 };
-
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   if (!params?.slug) {

@@ -23,7 +23,6 @@
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
     "plugin:jsx-a11y/recommended",
-    "react-app",
     "next/core-web-vitals"
   ],
   "rules": {
@@ -59,8 +58,7 @@
         "plugin:@typescript-eslint/recommended",
         "plugin:react/recommended",
         "plugin:react-hooks/recommended",
-        "plugin:jsx-a11y/recommended",
-        "react-app"
+        "plugin:jsx-a11y/recommended"
       ],
       "plugins": ["prettier"],
       "rules": {
