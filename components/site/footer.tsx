@@ -7,6 +7,9 @@ const StyledNav = styled(Box)<BoxProps>`
   a {
     color: inherit;
     text-decoration: none;
+    &:visited {
+      color: inherit;
+    }
     &:hover {
       text-decoration: underline;
     }
