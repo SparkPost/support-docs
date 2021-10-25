@@ -1,7 +1,7 @@
 import React from 'react';
 import Logo from 'components/site/logo';
 import { Box, Button, TextField } from '@sparkpost/matchbox';
-import { Search } from '@sparkpost/matchbox-icons';
+import { Search, OpenInNew } from '@sparkpost/matchbox-icons';
 import Cookies from 'js-cookie';
 
 const DASHBOARD_LINK = 'https://app.sparkpost.com';
@@ -22,6 +22,7 @@ const Header = () => {
         {isLoggedIn ? (
           <Button as="a" color="blue" variant="outline" href={DASHBOARD_LINK}>
             Your Dashboard
+            <Button.Icon as={OpenInNew} ml="200" />
           </Button>
         ) : (
           <Button.Group>
