@@ -21,7 +21,7 @@ const Header = () => {
         <Logo />
         {isLoggedIn ? (
           <Button as="a" color="blue" variant="outline" href={DASHBOARD_LINK}>
-            Your Dashboard
+            View Your Dashboard
             <Button.Icon as={OpenInNew} ml="200" />
           </Button>
         ) : (
