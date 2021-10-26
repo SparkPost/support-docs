@@ -3,7 +3,7 @@ name: Cypress Tests
 on:
   push:
     branches:
-      - WE-294-install-cypress
+      - WE-305-install-cypress
   pull_request:
     branches:
       - next - main - master
@@ -35,8 +35,11 @@ jobs:
       - name: Install dependencies
         uses: bahmutov/npm-install@v1
         # run: npm install
-      # - name: Prepare codebase with latest build
-      #   run: npm run build
+      - name: Prepare codebase with latest build for testing
+        env:
+          CYPRESS_ENV: true
+        run: npm run build
+
       - name: Cypress tests
         run: npm run test:ci
       # - name: Cypress tests

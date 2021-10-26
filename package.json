@@ -10,7 +10,8 @@
     "lint": "next lint",
     "format": "prettier --write .",
     "precommit": "lint-staged",
-    "test:ci": "start-server-and-test http://localhost:3000 test:headless",
+    "build:test": "NODE_ENV=test next build",
+    "test:ci": "start-server-and-test http://localhost:3000 test:e2e:headless",
     "test:e2e:headless": "NODE_ENV=test node_modules/.bin/cypress run",
     "test:e2e:gui": "NODE_ENV=test node_modules/.bin/cypress open"
   },
@@ -57,7 +58,7 @@
     "@typescript-eslint/eslint-plugin": "^5.1.0",
     "@typescript-eslint/parser": "^5.1.0",
     "cypress": "^8.6.0",
-    "eslint": "8.0.1",
+    "eslint": "^7.32.0",
     "eslint-config-next": "11.1.2",
     "eslint-config-prettier": "^8.3.0",
     "eslint-config-react-app": "^6.0.0",
