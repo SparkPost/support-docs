@@ -7,9 +7,9 @@ declare global {
 
 // GTM
 export const pageview = (url: URL) => {
-  const window = getWindow();
-  if (window && window.dataLayer) {
-    window.dataLayer.push({
+  const environment = getWindow();
+  if (environment && environment.dataLayer) {
+    environment.dataLayer.push({
       event: 'pageview',
       page: url,
     });
