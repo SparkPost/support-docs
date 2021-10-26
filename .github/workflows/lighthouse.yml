@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Audit Netlify deploy preview
-        uses: jakejarvis/lighthouse-action@master
+        uses: jakejarvis/lighthouse-action@v2
         with:
           netlify_site: 'https://support-docs.netlify.app/'
       - uses: actions/upload-artifact@master
