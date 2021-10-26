@@ -10,14 +10,35 @@ on:
       - master
 
 jobs:
-  audit:
+  build:
     runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [16.x]
+
     steps:
-      - name: Audit Netlify deploy preview
-        uses: jakejarvis/lighthouse-action@v2
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
         with:
-          netlify_site: 'https://support-docs.netlify.app/'
-      - uses: actions/upload-artifact@master
+          node-version: ${{ matrix.node-version }}
+      - name: Install
+        run: |
+          npm ci
+      - name: Build
+        run: |
+          npm run build
+      - name: Waiting for 200 from Netlify
+        uses: probablyup/wait-for-netlify-action@3.2.0
+        id: waitForNetlifyDeploy
         with:
-          name: report
-          path: './lighthouse-report'
+          site_id: 'YOUR_SITE_ID' # See Settings > Site Details > General in the Netlify UI
+        env:
+          NETLIFY_TOKEN: ${{ secrets.NETLIFY_TOKEN }}
+      - name: Lighthouse CI
+        run: |
+          npm install -g @lhci/cli@0.3.x
+          lhci autorun --upload.target=temporary-public-storage --collect.url=${{ steps.waitForNetlifyDeploy.outputs.url }} || echo "LHCI failed!"
+        env:
+          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
