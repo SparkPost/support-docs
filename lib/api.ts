@@ -12,7 +12,8 @@ export const SUPPORT_PATH: string = path.join(process.cwd(), 'content/support/')
  * This tells Next.js which routes the site needs.
  */
 export const getAllCategoryPostPaths = (category: string): string[] => {
-  const stringArray = glob
+  let pathArray: string[];
+  const categoryPostPaths = glob
     .sync(`content/${category}/**/*.md`)
     // Replace `/index.md` paths with their parent directory for pretty urls
     .map((path) => (path.includes('index.md') ? path.replace(/\/index.md$/, '') : path))
@@ -21,10 +22,20 @@ export const getAllCategoryPostPaths = (category: string): string[] => {
     // Rip out the prefixed `content`
     .map((path) => path.replace(/^content\//, '/'));
 
+  // Applies a sample size limit when building for cypress in our github actions
   if (process.env.CYPRESS_ENV) {
-    stringArray.length = 100; // Sample size of the test
+    let n = 0;
+    pathArray = [];
+    while (n < Number(process.env.CYPRESS_SAMPLE_SIZE)) {
+      n++;
+      const randomIndex = Math.floor(Math.random() * categoryPostPaths.length);
+      pathArray.push(categoryPostPaths[randomIndex]);
+      categoryPostPaths.splice(randomIndex, 1);
+    }
+  } else {
+    pathArray = categoryPostPaths;
   }
-  return stringArray;
+  return pathArray;
 };
 
 /**
