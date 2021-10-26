@@ -1,9 +1,6 @@
 name: Cypress Tests
 
 on:
-  push:
-    branches:
-      - WE-305-testing-automation
   pull_request:
     branches:
       - next - main - master
@@ -26,7 +23,7 @@ jobs:
           path: |
             ~/.cache/Cypress
             node_modules
-          key: my-cache-${{ runner.os}}-${{ hashFiles('package-lock.json') }}
+          key: cypress-cache-${{ runner.os}}-${{ hashFiles('package-lock.json') }}
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v2
         with:
