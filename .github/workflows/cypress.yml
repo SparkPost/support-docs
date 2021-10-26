@@ -3,7 +3,9 @@ name: Cypress Tests
 on:
   pull_request:
     branches:
-      - next - main - master
+      - next
+      - main
+      - master
   workflow_dispatch:
 
 jobs:

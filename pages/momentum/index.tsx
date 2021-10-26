@@ -1,12 +1,12 @@
 import { GetStaticProps } from 'next';
 import { getCategoryNavigation, MOMENTUM_PATH } from 'lib/api';
-import MomentumNavigation, { ItemProps } from 'components/site/momentumNavigation';
+import { MomentumNavigationItemProps } from 'components/site/momentumNavigation';
 import SEO from 'components/site/seo';
-import { Box } from '@sparkpost/matchbox';
+import MomentumLayout from 'components/site/momentumLayout';
 
 type IndexPageProps = {
   data: {
-    navigation?: ItemProps[];
+    navigation?: MomentumNavigationItemProps[];
   };
 };
 
@@ -18,12 +18,9 @@ const IndexPage = (props: IndexPageProps): JSX.Element => {
         title="Momentum Documentation - SparkPost"
         description="SparkPost Momentum Documentation"
       />
-      <Box display="flex">
-        <Box flex="0">
-          <MomentumNavigation data={data.navigation} />
-        </Box>
-        <Box flex="1"></Box>
-      </Box>
+      <MomentumLayout navigation={data.navigation}>
+        <h1>Nothing here yet</h1>
+      </MomentumLayout>
     </>
   );
 };

@@ -2,14 +2,14 @@ import React from 'react';
 import Link from 'next/link';
 import { Box } from '@sparkpost/matchbox';
 
-export interface ItemProps {
+export interface MomentumNavigationItemProps {
   title: string;
   link: string;
   items?: this[];
 }
 
 export type MomentumNavigationProps = {
-  data?: ItemProps[];
+  data?: MomentumNavigationItemProps[];
 };
 
 const MomentumNavigation = (props: MomentumNavigationProps): JSX.Element | null => {
@@ -18,7 +18,7 @@ const MomentumNavigation = (props: MomentumNavigationProps): JSX.Element | null 
   }
 
   return (
-    <Box p="500">
+    <Box p="500" borderRight="400">
       {props.data.map((item, i) => (
         <Item key={i} {...item} />
       ))}
@@ -26,7 +26,7 @@ const MomentumNavigation = (props: MomentumNavigationProps): JSX.Element | null 
   );
 };
 
-const Item = (props: ItemProps): JSX.Element => {
+const Item = (props: MomentumNavigationItemProps): JSX.Element => {
   const { link, title, items } = props;
   return (
     <Box fontSize="200" lineHeight="200">
