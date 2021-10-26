@@ -2,12 +2,11 @@
   "name": "support-docs",
   "version": "0.1.0",
   "private": true,
-  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "build:ssr": "next build && next export",
-    "build:index:momentum": "node ./scripts/momentumIndex.js",
+    "build:index:momentum": "node ./scripts/momentumIndex.mjs",
     "postbuild": "next-sitemap",
     "start": "next start",
     "lint": "next lint",
