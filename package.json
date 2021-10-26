@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "build:ssr": "next build && next export",
+    "postbuild": "next-sitemap",
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --write .",
@@ -67,6 +68,7 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "husky": "^7.0.2",
     "lint-staged": "^11.2.3",
+    "next-sitemap": "^1.6.192",
     "prettier": "2.4.1",
     "typescript": "4.4.4"
   }
