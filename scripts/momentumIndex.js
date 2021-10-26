@@ -58,6 +58,7 @@ function transformPostToSearchObject(post) {
 
     const algoliaResponse = await index.saveObjects(transformed);
     console.log(`Added ${algoliaResponse.objectIDs.length} records to Algolia search`);
+    process.exit();
   } catch (error) {
     console.log(error);
     process.exit(1);
