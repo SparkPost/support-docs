@@ -16,7 +16,7 @@ jobs:
       - name: Audit Netlify deploy preview
         uses: jakejarvis/lighthouse-action@master
         with:
-          netlify_site: 'support-docs.netlify.app'
+          netlify_site: 'https://support-docs.netlify.app/'
       - uses: actions/upload-artifact@master
         with:
           name: report
