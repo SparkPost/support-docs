@@ -23,7 +23,7 @@ export const getAllCategoryPostPaths = (category: string): string[] => {
     .map((path) => path.replace(/^content\//, '/'));
 
   // Applies a sample size limit when building for cypress in our github actions
-  if (process.env.CYPRESS_ENV) {
+  if (process.env.CYPRESS_SAMPLE_SIZE) {
     let n = 0;
     pathArray = [];
     while (n < Number(process.env.CYPRESS_SAMPLE_SIZE)) {

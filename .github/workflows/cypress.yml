@@ -34,7 +34,7 @@ jobs:
         uses: bahmutov/npm-install@v1
       - name: Prepare codebase with latest build for testing
         env:
-          CYPRESS_ENV: true
+          CANCEL_SENTRY_CLI: true
           CYPRESS_SAMPLE_SIZE: 100
         run: npm run build
 
