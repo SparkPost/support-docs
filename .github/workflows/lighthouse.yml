@@ -1,0 +1,23 @@
+name: Lighthouse Audit
+on:
+  push:
+    branches:
+      - WE-307-lighthouse-github-action
+  pull_request:
+    branches:
+      - next
+      - main
+      - master
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Audit Netlify deploy preview
+        uses: jakejarvis/lighthouse-action@master
+        with:
+          netlify_site: 'support-docs.netlify.app'
+      - uses: actions/upload-artifact@master
+        with:
+          name: report
+          path: './lighthouse-report'
