@@ -4,9 +4,6 @@ import glob from 'glob';
 import matter, { GrayMatterFile } from 'gray-matter';
 import yaml from 'js-yaml';
 
-// export const MOMENTUM_PATH: string = path.join(process.cwd(), 'content/momentum/');
-// export const SUPPORT_PATH: string = path.join(process.cwd(), 'content/support/');
-
 export const categoryPath = (category: string): string => {
   return path.join(
     process.cwd(),

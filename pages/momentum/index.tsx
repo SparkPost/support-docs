@@ -1,5 +1,5 @@
 import { GetStaticProps } from 'next';
-import { getCategoryNavigation, /* MOMENTUM_PATH */ categoryPath } from 'lib/api';
+import { getCategoryNavigation, categoryPath } from 'lib/api';
 import { MomentumNavigationItemProps } from 'components/site/momentumNavigation';
 import SEO from 'components/site/seo';
 import MomentumLayout from 'components/site/momentumLayout';
