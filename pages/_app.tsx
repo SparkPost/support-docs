@@ -1,3 +1,4 @@
+import React from 'react';
 import type { AppProps } from 'next/app';
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
@@ -8,6 +9,7 @@ import { Integrations } from '@sentry/tracing';
 import CookieConsent from 'components/site/cookieConsent';
 import Segment from 'components/site/segment';
 import GTM from 'components/site/gtm';
+import { getWindow } from 'utils/ssr';
 import '../public/assets/fonts.css';
 
 /**
@@ -29,8 +31,13 @@ if (process.env.NODE_ENV === 'production') {
   });
 }
 
+if (!getWindow()) {
+  React.useLayoutEffect = React.useEffect;
+}
+
 const MyApp = ({ Component, pageProps }: AppProps) => {
   const router = useRouter();
+
   useEffect(() => {
     const handleRouteChange = (url: URL) => {
       gtag.pageview(url);
