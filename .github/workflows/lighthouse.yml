@@ -38,6 +38,8 @@ jobs:
         id: netlify
         with:
           site_name: 'support-docs'
+          # Unfortunately our build time is ~20min, so I'm setting the timeout to 22min.
+          max_timeout: 1320
       - name: Audit URLs using Lighthouse
         uses: treosh/lighthouse-ci-action@v8
         with:
