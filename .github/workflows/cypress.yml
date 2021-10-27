@@ -1,8 +1,5 @@
 name: Cypress Tests
 on:
-  push:
-    branches:
-      - WE-305-testing-automation
   pull_request:
     branches:
       - next
@@ -22,25 +19,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-      # - uses: actions/cache@v2
-      #   with:
-      #     path: |
-      #       ~/.cache/Cypress
-      #       node_modules
-      #     key: cypress-cache-${{ runner.os}}-${{ hashFiles('package-lock.json') }}
-      # - name: Use Node.js ${{ matrix.node-version }}
-      #   uses: actions/setup-node@v2
-      #   with:
-      #     node-version: ${{ matrix.node-version }}
-      # - name: Install dependencies
-      #   uses: bahmutov/npm-install@v1
-      # - name: Prepare codebase with latest build for testing
-      #   env:
-      #     ENV: test
-      #   run: npm run build
-
-      # - name: Cypress tests
-      #   run: npm run test:ci
       - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
