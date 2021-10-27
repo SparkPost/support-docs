@@ -4,38 +4,40 @@ import glob from 'glob';
 import matter, { GrayMatterFile } from 'gray-matter';
 import yaml from 'js-yaml';
 
-export const MOMENTUM_PATH: string = path.join(process.cwd(), 'content/momentum/');
-export const SUPPORT_PATH: string = path.join(process.cwd(), 'content/support/');
+// export const MOMENTUM_PATH: string = path.join(process.cwd(), 'content/momentum/');
+// export const SUPPORT_PATH: string = path.join(process.cwd(), 'content/support/');
+
+export const categoryPath = (category: string): string => {
+  return path.join(
+    process.cwd(),
+    `${process.env.ENV === 'test' ? 'cypress/' : ''}content/${category}/`,
+  );
+};
 
 /**
  * Gets all markdown posts paths in a specific directory.
  * This tells Next.js which routes the site needs.
  */
 export const getAllCategoryPostPaths = (category: string): string[] => {
-  let pathArray: string[];
+  let contentPath = `content/${category}`;
+  let prefixedContentPath = /^content\//;
+
+  // Sets the post path to a specific test content section
+  if (process.env.ENV === 'test') {
+    contentPath = `cypress/content/${category}`;
+    prefixedContentPath = /^cypress\/content\//;
+  }
+
   const categoryPostPaths = glob
-    .sync(`content/${category}/**/*.md`)
+    .sync(`${contentPath}/**/*.md`)
     // Replace `/index.md` paths with their parent directory for pretty urls
     .map((path) => (path.includes('index.md') ? path.replace(/\/index.md$/, '') : path))
     // Rip out trailing `.md` extensions
     .map((path) => path.replace(/.md$/, ''))
     // Rip out the prefixed `content`
-    .map((path) => path.replace(/^content\//, '/'));
+    .map((path) => path.replace(prefixedContentPath, '/'));
 
-  // Applies a sample size limit when building for cypress in our github actions
-  if (process.env.CYPRESS_SAMPLE_SIZE) {
-    let n = 0;
-    pathArray = [];
-    while (n < Number(process.env.CYPRESS_SAMPLE_SIZE)) {
-      n++;
-      const randomIndex = Math.floor(Math.random() * categoryPostPaths.length);
-      pathArray.push(categoryPostPaths[randomIndex]);
-      categoryPostPaths.splice(randomIndex, 1);
-    }
-  } else {
-    pathArray = categoryPostPaths;
-  }
-  return pathArray;
+  return categoryPostPaths;
 };
 
 /**
