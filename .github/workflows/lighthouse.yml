@@ -45,6 +45,6 @@ jobs:
         with:
           urls: |
             ${{ steps.netlify.outputs.url }}
-            ${{ steps.netlify.outputs.url }}/products/
+            ${{ steps.netlify.outputs.url }}/momentum/
           budgetPath: ./budget.json
           uploadArtifacts: true
