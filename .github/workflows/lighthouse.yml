@@ -1,8 +1,5 @@
 name: Lighthouse Audit
 on:
-  push:
-    branches:
-      - WE-307-lighthouse-github-action
   pull_request:
     branches:
       - next
@@ -31,7 +28,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: Install dependencies
         uses: bahmutov/npm-install@v1
-      - name: Prepare codebase with latest build for testing
+      - name: Run build
         env:
           CANCEL_SENTRY_CLI: true
           CYPRESS_SAMPLE_SIZE: 10
