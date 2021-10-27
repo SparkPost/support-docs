@@ -1,3 +1,4 @@
+import { getWindow } from 'utils/ssr';
 declare global {
   interface Window {
     dataLayer: object[];
@@ -6,8 +7,11 @@ declare global {
 
 // GTM
 export const pageview = (url: URL) => {
-  window.dataLayer.push({
-    event: 'pageview',
-    page: url,
-  });
+  const environment = getWindow();
+  if (environment && environment.dataLayer) {
+    environment.dataLayer.push({
+      event: 'pageview',
+      page: url,
+    });
+  }
 };

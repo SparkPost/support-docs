@@ -1,11 +1,12 @@
 import Script from 'next/script';
 import isbot from 'isbot';
 import * as snippet from '@segment/snippet';
+import { getWindow } from 'utils/ssr';
 
 const Segment = (): JSX.Element => {
   const isBotSSR = (): boolean => {
     let bot = false;
-    if (typeof window !== 'undefined') {
+    if (getWindow()) {
       bot = isbot(window.navigator.userAgent);
     }
 
