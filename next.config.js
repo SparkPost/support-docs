@@ -12,7 +12,7 @@ module.exports = {
 
   webpack: (config, { dev, isServer }) => {
     // This uploads sourcemaps to Sentry
-    if (!dev && !isServer && !process.env.CYPRESS_ENV) {
+    if (!dev && !isServer && !process.env.CANCEL_SENTRY_CLI) {
       config.plugins.push(
         new SentryPlugin({
           release: process.env.RELEASE,
