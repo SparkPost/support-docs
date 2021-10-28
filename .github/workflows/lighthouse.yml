@@ -46,5 +46,6 @@ jobs:
           urls: |
             ${{ steps.netlify.outputs.url }}
             ${{ steps.netlify.outputs.url }}/momentum/
-          budgetPath: ./budget.json
+          # TODO ERY: We will need to add this back in the future, but we need to deliberate on what we find an acceptable lighthouse budget to be
+          # budgetPath: ./lighthouse-budget.json
           uploadArtifacts: true
