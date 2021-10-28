@@ -6,7 +6,7 @@ import {
   getAllCategoryPostPaths,
   getSingleCategoryPost,
   getCategoryNavigation,
-  MOMENTUM_PATH,
+  categoryPath,
 } from 'lib/api';
 import components from 'components/markdown';
 import { MomentumNavigationItemProps } from 'components/site/momentumNavigation';
@@ -46,9 +46,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   if (!params?.slug) {
     return { props: {} };
   }
-
-  const { content, data } = getSingleCategoryPost(params.slug, MOMENTUM_PATH) || {};
-  const navigation = getCategoryNavigation(MOMENTUM_PATH) || null;
+  const { content, data } = getSingleCategoryPost(params.slug, categoryPath('momentum')) || {};
+  const navigation = getCategoryNavigation(categoryPath('momentum')) || null;
   return { props: { content, data: { ...data, navigation } } };
 };
 
