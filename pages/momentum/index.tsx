@@ -27,7 +27,6 @@ const IndexPage = (props: IndexPageProps): JSX.Element => {
 
 export const getStaticProps: GetStaticProps = async () => {
   const navigation = getCategoryNavigation(categoryPath('momentum')) || null;
-  console.log(`Building slug: ${navigation}`);
   return { props: { data: { navigation } } };
 };
 

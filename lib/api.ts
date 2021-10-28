@@ -4,7 +4,9 @@ import glob from 'glob';
 import matter, { GrayMatterFile } from 'gray-matter';
 import yaml from 'js-yaml';
 
-export const categoryPath = (category: string): string => {
+type CategoryOption = 'momentum' | 'support';
+
+export const categoryPath = (category: CategoryOption): string => {
   return path.join(
     process.cwd(),
     `${process.env.ENV === 'test' ? 'cypress/' : ''}content/${category}/`,
@@ -15,7 +17,7 @@ export const categoryPath = (category: string): string => {
  * Gets all markdown posts paths in a specific directory.
  * This tells Next.js which routes the site needs.
  */
-export const getAllCategoryPostPaths = (category: string): string[] => {
+export const getAllCategoryPostPaths = (category: CategoryOption): string[] => {
   let contentPath = `content/${category}`;
   let prefixedContentPath = /^content\//;
 
@@ -38,15 +40,15 @@ export const getAllCategoryPostPaths = (category: string): string[] => {
 };
 
 /**
- * Retrieves a single category post from a slug based on the categoryPath.
+ * Retrieves a single category post from a slug based on the category path ('catPath').
  */
 export const getSingleCategoryPost = (
   slug: string[] | string,
-  categoryPath: string,
+  catPath: string,
 ): GrayMatterFile<string> | void => {
   const postPath = typeof slug === 'string' ? slug : slug.join('/');
-  const filePath = path.join(categoryPath, `${postPath}.md`);
-  const indexPath = path.join(categoryPath, `${postPath}/index.md`);
+  const filePath = path.join(catPath, `${postPath}.md`);
+  const indexPath = path.join(catPath, `${postPath}/index.md`);
 
   // If file exists, it is not an index page.
   if (fs.existsSync(filePath)) {
@@ -61,10 +63,10 @@ export const getSingleCategoryPost = (
 };
 
 /**
- * Retrieves momentum navigation structure as JSON.
+ * Retrieves momentum navigation structure as JSON based on the category path ('catPath').
  */
-export const getCategoryNavigation = (categoryPath: string): unknown | void => {
-  const filePath = path.join(categoryPath, `navigation.yml`);
+export const getCategoryNavigation = (catPath: string): unknown | void => {
+  const filePath = path.join(catPath, `navigation.yml`);
 
   if (fs.existsSync(filePath)) {
     const data = fs.readFileSync(filePath, 'utf8');
