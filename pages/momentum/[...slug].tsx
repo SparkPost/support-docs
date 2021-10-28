@@ -2,7 +2,12 @@ import { GetStaticProps, GetStaticPaths } from 'next';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw';
-import { getAllMomentumPostPaths, getSingleMomentumPost, getMomentumNavigation } from 'lib/api';
+import {
+  getAllCategoryPostPaths,
+  getSingleCategoryPost,
+  getCategoryNavigation,
+  categoryPath,
+} from 'lib/api';
 import components from 'components/markdown';
 import { MomentumNavigationItemProps } from 'components/site/momentumNavigation';
 import MomentumLayout from 'components/site/momentumLayout';
@@ -41,15 +46,14 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   if (!params?.slug) {
     return { props: {} };
   }
-
-  const { content, data } = getSingleMomentumPost(params.slug) || {};
-  const navigation = getMomentumNavigation() || null;
+  const { content, data } = getSingleCategoryPost(params.slug, categoryPath('momentum')) || {};
+  const navigation = getCategoryNavigation(categoryPath('momentum')) || null;
   return { props: { content, data: { ...data, navigation } } };
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
-    paths: getAllMomentumPostPaths(),
+    paths: getAllCategoryPostPaths('momentum'),
     fallback: false,
   };
 };

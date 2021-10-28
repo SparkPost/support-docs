@@ -1,5 +1,5 @@
 import { GetStaticProps } from 'next';
-import { getMomentumNavigation } from 'lib/api';
+import { getCategoryNavigation, categoryPath } from 'lib/api';
 import { MomentumNavigationItemProps } from 'components/site/momentumNavigation';
 import SEO from 'components/site/seo';
 import MomentumLayout from 'components/site/momentumLayout';
@@ -26,7 +26,7 @@ const IndexPage = (props: IndexPageProps): JSX.Element => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const navigation = getMomentumNavigation() || null;
+  const navigation = getCategoryNavigation(categoryPath('momentum')) || null;
   return { props: { data: { navigation } } };
 };
 
