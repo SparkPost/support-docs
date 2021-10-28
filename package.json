@@ -62,10 +62,7 @@
     "algoliasearch": "^4.11.0",
     "cypress": "^8.6.0",
     "eslint": "^7.32.0",
-<<<<<<< HEAD
-=======
     "dotenv": "^10.0.0",
->>>>>>> ac79a4ea881f10b80ac9d9e0c9a6fb401558b7d6
     "eslint-config-next": "11.1.2",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-flowtype": "^6.1.1",
@@ -79,10 +76,7 @@
     "next-sitemap": "^1.6.192",
     "prettier": "2.4.1",
     "start-server-and-test": "^1.14.0",
-<<<<<<< HEAD
-=======
     "strip-markdown": "^5.0.0",
->>>>>>> ac79a4ea881f10b80ac9d9e0c9a6fb401558b7d6
     "typescript": "4.4.4"
   }
 }
