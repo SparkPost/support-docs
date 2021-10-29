@@ -143,14 +143,15 @@ const StyledLink = styled.a<{ level: number }>`
   }}
 `;
 
-const TocLink = React.forwardRef<
-  HTMLAnchorElement,
-  {
-    level: number;
-    url: string;
-    children: React.ReactNode;
-  }
->(function TocLink({ level, url, children }, ref) {
+type TocLinkProps = {
+  level: number;
+  url: string;
+  children: React.ReactNode;
+};
+
+const TocLink = React.forwardRef<HTMLAnchorElement, TocLinkProps>(function TocLink(props, ref) {
+  const { level, url, children } = props;
+
   return (
     <StyledLink href={url} level={level} ref={ref}>
       {children}
@@ -168,7 +169,7 @@ const MomentumHomePageContent = () => {
 
   return (
     <Stack>
-      <Text fontSize="600" lineHeight="600" fontWeight="medium">
+      <Text fontSize="600" lineHeight="600" fontWeight="semibold">
         Momentum Documentation
       </Text>
       {content.map((category, i) => {
