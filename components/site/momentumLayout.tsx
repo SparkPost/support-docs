@@ -25,8 +25,8 @@ const StyledSkipToContent = styled(Box)<BoxProps>`
 const MomentumLayout = (props: LayoutProps): JSX.Element => {
   const { children, navigation } = props;
   return (
-    <>
-      <Box display="flex" justifyContent="center" bg="gray.100">
+    <Box display="flex" flexDirection="column" minHeight="100vh">
+      <Box display="flex" justifyContent="center" bg="gray.100" flex="1">
         <div>
           <StyledSkipToContent
             as="a"
@@ -52,7 +52,7 @@ const MomentumLayout = (props: LayoutProps): JSX.Element => {
         </div>
       </Box>
       <Footer />
-    </>
+    </Box>
   );
 };
 
