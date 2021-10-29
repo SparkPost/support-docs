@@ -6,6 +6,7 @@ import { KeyboardArrowDown, KeyboardArrowUp, Forum, PeopleOutline, Code, DeviceH
 import styled from 'styled-components';
 import css from '@styled-system/css';
 import { tokens} from '@sparkpost/design-tokens';
+import useStatus from 'hooks/useStatus';
 
 export interface MomentumNavigationItemProps {
   title: string;
@@ -40,10 +41,19 @@ const StyledLink = styled(Box)<BoxProps & { $active?: boolean }>`
   }}
 `;
 
+const StatusColorMap = {
+  none: 'green.700',
+  minor: 'yellow.400',
+  major: 'brand.orange',
+  critical: 'red.700'
+}
+
 const MomentumNavigation = (props: MomentumNavigationProps): JSX.Element | null => {
   if (!props.data) {
     return null;
   }
+
+  const { status } = useStatus();
 
   return (
     <Box width="260px" position="sticky" top="0">
@@ -89,7 +99,7 @@ const MomentumNavigation = (props: MomentumNavigationProps): JSX.Element | null 
             <a target="_blank">
               {/* Placeholder until Circle icon is added to Matchbox */}
               <Box as="span" display="inline-block" width="20px" height="20px" verticalAlign="middle">
-                <Box width="16px" height="16px" backgroundColor="green.700" borderRadius="50%" />
+                <Box width="16px" height="16px" backgroundColor={StatusColorMap[status]} borderRadius="50%" />
               </Box>
               <Box as="span" pl="300">Service Status</Box>
             </a>  

@@ -9,7 +9,9 @@ import { Integrations } from '@sentry/tracing';
 import CookieConsent from 'components/site/cookieConsent';
 import Segment from 'components/site/segment';
 import GTM from 'components/site/gtm';
+import Status from 'components/site/status';
 import { getWindow } from 'utils/ssr';
+import Script from 'next/script';
 import '../public/assets/fonts.css';
 
 /**
@@ -52,6 +54,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
     <ThemeProvider>
       <Segment />
       <GTM />
+      <Status />
       <Component {...pageProps} />
       <CookieConsent />
     </ThemeProvider>
