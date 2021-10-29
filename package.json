@@ -14,8 +14,8 @@
     "precommit": "lint-staged",
     "build:test": "ENV=test next build",
     "test:ci": "start-server-and-test http://localhost:3000 test:e2e:headless",
-    "test:e2e:headless": "NODE_ENV=test node_modules/.bin/cypress run",
-    "test:e2e:gui": "NODE_ENV=test node_modules/.bin/cypress open"
+    "test:e2e:headless": "ENV=test node_modules/.bin/cypress run",
+    "test:e2e:gui": "ENV=test node_modules/.bin/cypress open"
   },
   "lint-staged": {
     "**/*.{tsx,ts,js,jsx}": [
