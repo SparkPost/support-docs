@@ -50,6 +50,7 @@ const StatusColorMap = {
 
 const MomentumNavigation = (props: MomentumNavigationProps): JSX.Element | null => {
   const { status } = useStatus();
+  const environment = getWindow();
   
   if (!props.data) {
     return null;
@@ -58,7 +59,11 @@ const MomentumNavigation = (props: MomentumNavigationProps): JSX.Element | null 
 
   return (
     <Box width="260px" position="sticky" top="0">
-      <Box as="h5" fontSize="200" fontWeight="semibold" py="200" lineHeight="200" px="500">Momentum Documentation</Box>
+      <StyledLink $active={environment?.location?.pathname === '/momentum'}>
+        <Link href="/momentum" passHref>
+          <Box as="a" display="inline-block" fontSize="200" fontWeight="semibold" py="200" lineHeight="200" px="500">Momentum Documentation</Box>
+        </Link>
+      </StyledLink>
       {props.data.map((item, i) => (
         <Item key={i} {...item} />
       ))}
