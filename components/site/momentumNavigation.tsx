@@ -2,7 +2,7 @@ import React from 'react';
 import { getWindow } from 'utils/ssr';
 import Link from 'next/link';
 import { Box, BoxProps } from '@sparkpost/matchbox';
-import { KeyboardArrowDown, KeyboardArrowUp } from '@sparkpost/matchbox-icons';
+import { KeyboardArrowDown, KeyboardArrowUp, Forum, PeopleOutline, Code, DeviceHub } from '@sparkpost/matchbox-icons';
 import styled from 'styled-components';
 import css from '@styled-system/css';
 import { tokens} from '@sparkpost/design-tokens';
@@ -51,6 +51,51 @@ const MomentumNavigation = (props: MomentumNavigationProps): JSX.Element | null 
       {props.data.map((item, i) => (
         <Item key={i} {...item} />
       ))}
+      <Box py="450" mt="450" borderTop="400">
+        <StyledLink px="500" py="200">
+          <Link href="http://slack.sparkpost.com" passHref>
+            <a target="_blank">
+              <Forum size={20} />
+              <Box as="span" pl="300">Community</Box>
+            </a>  
+          </Link>
+        </StyledLink>
+        <StyledLink px="500" py="200">
+          <Link href="https://www.sparkpost.com/case-studies/" passHref>
+            <a target="_blank">
+              <PeopleOutline size={20} />
+              <Box as="span" pl="300">Customers</Box>
+            </a>  
+          </Link>
+        </StyledLink>
+        <StyledLink px="500" py="200">
+          <Link href="https://www.sparkpost.com/blog/category/developer/" passHref>
+            <a target="_blank">
+              <Code size={20} />
+              <Box as="span" pl="300">Developer Blog</Box>
+            </a>  
+          </Link>
+        </StyledLink>
+        <StyledLink px="500" py="200">
+          <Link href="https://developers.sparkpost.com/" passHref>
+            <a target="_blank">
+              <DeviceHub size={20} />
+              <Box as="span" pl="300">Developer Hub</Box>
+            </a>  
+          </Link>
+        </StyledLink>
+        <StyledLink px="500" py="200">
+          <Link href="https://status.sparkpost.com/" passHref>
+            <a target="_blank">
+              {/* Placeholder until Circle icon is added to Matchbox */}
+              <Box as="span" display="inline-block" width="20px" height="20px" verticalAlign="middle">
+                <Box width="16px" height="16px" backgroundColor="green.700" borderRadius="50%" />
+              </Box>
+              <Box as="span" pl="300">Service Status</Box>
+            </a>  
+          </Link>
+        </StyledLink>
+      </Box>
     </Box>
   );
 };
