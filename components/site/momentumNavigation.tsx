@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { getWindow } from 'utils/ssr';
 import Link from 'next/link';
 import { Box, BoxProps } from '@sparkpost/matchbox';
