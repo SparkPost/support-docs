@@ -11,7 +11,6 @@ import Segment from 'components/site/segment';
 import GTM from 'components/site/gtm';
 import Status from 'components/site/status';
 import { getWindow } from 'utils/ssr';
-import Script from 'next/script';
 import '../public/assets/fonts.css';
 
 /**
