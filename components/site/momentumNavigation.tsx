@@ -46,7 +46,7 @@ const MomentumNavigation = (props: MomentumNavigationProps): JSX.Element | null 
   }
 
   return (
-    <Box borderRight="400" width="260px" height="100%">
+    <Box width="260px" position="sticky" top="0">
       <Box as="h5" fontSize="200" fontWeight="semibold" py="200" lineHeight="200" px="500">Momentum Documentation</Box>
       {props.data.map((item, i) => (
         <Item key={i} {...item} />
@@ -81,7 +81,7 @@ const Chevron = (props: { expanded: boolean }): JSX.Element => {
 }
 
 const Item = (props: MomentumNavigationItemProps): JSX.Element => {
-  const { link, title, items, level = 1 } = props;
+  const { link, title, items, level = 0 } = props;
   
   const environment = getWindow();
   const activeUrl = getActiveUrl(environment?.location);
@@ -95,23 +95,21 @@ const Item = (props: MomentumNavigationItemProps): JSX.Element => {
       lineHeight="200"
     >
       <StyledLink 
-        display="flex"
-        justifyContent="space-between"
         py="200"
         px="500"
-        pl={`calc(${tokens.spacing_200} * ${level})`}
+        pl={`calc(${tokens.spacing_500} + ${tokens.spacing_200} * ${level})`}
         $active={isActive}
       >
         <Link href={link} passHref>
-          <a>
+          <Box as="a" display="flex" justifyContent="space-between">
             <Box as="span">{title}</Box>
-          </a>
-        </Link>
-        {items && 
-          <Box width="18px" height="18px" ml="200">
-            <Chevron expanded={expanded} />
+            {items && 
+              <Box width="18px" height="18px" ml="200">
+                <Chevron expanded={expanded} />
+              </Box>
+            }
           </Box>
-        }
+        </Link>
       </StyledLink>
       <Box>{expanded && items && items.map((item, i) => <Item level={level + 1} key={i} {...item} />)}</Box>
     </Box>

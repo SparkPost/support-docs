@@ -45,7 +45,7 @@ const MomentumLayout = (props: LayoutProps): JSX.Element => {
             <Box flex="0">
               <MomentumNavigation data={navigation} />
             </Box>
-            <Box p="500" flex="1" id="main-content">
+            <Box p="500" flex="1" id="main-content" borderLeft="400">
               {children}
             </Box>
           </Box>
