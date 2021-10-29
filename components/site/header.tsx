@@ -1,8 +1,10 @@
 import React from 'react';
-import Logo from 'components/site/logo';
+import { useRouter } from 'next/router';
 import { Box, Button, TextField } from '@sparkpost/matchbox';
-import { Search, OpenInNew } from '@sparkpost/matchbox-icons';
+import { Search as SearchIcon, OpenInNew } from '@sparkpost/matchbox-icons';
 import Cookies from 'js-cookie';
+import Logo from 'components/site/logo';
+import Search from 'components/site/algolia/search';
 
 const DASHBOARD_LINK = 'https://app.sparkpost.com';
 const LOGIN_LINK = 'https://app.sparkpost.com/auth';
@@ -11,6 +13,9 @@ const SIGNUP_LINK =
 const AUTH_KEY = 'website_auth';
 
 const Header = () => {
+  const { route } = useRouter();
+  const category = route.split('/')[1];
+
   const isLoggedIn = React.useMemo(() => {
     return !!Cookies.get(AUTH_KEY);
   }, []);
@@ -36,12 +41,16 @@ const Header = () => {
         )}
       </Box>
       <Box maxWidth="1150">
-        <TextField
-          id="algolia-search"
-          label="Search"
-          prefix={<Search />}
-          placeholder="e.g. Getting Started"
-        />
+        {category === 'momentum' ? (
+          <Search indexName="next_momentum_documentation" />
+        ) : (
+          <TextField
+            id="algolia-search"
+            label="Search"
+            prefix={<SearchIcon />}
+            placeholder="e.g. Getting Started"
+          />
+        )}
       </Box>
     </Box>
   );
