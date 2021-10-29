@@ -1,6 +1,7 @@
 import { GetStaticProps } from 'next';
 import { getCategoryNavigation, categoryPath } from 'lib/api';
 import { MomentumNavigationItemProps } from 'components/site/momentumNavigation';
+import MomentumHomePageContent from 'components/site/momentumHomePageContent';
 import SEO from 'components/site/seo';
 import MomentumLayout from 'components/site/momentumLayout';
 
@@ -19,7 +20,7 @@ const IndexPage = (props: IndexPageProps): JSX.Element => {
         description="SparkPost Momentum Documentation"
       />
       <MomentumLayout navigation={data.navigation}>
-        <h1>Nothing here yet</h1>
+        <MomentumHomePageContent />
       </MomentumLayout>
     </>
   );
