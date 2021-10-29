@@ -49,11 +49,12 @@ const StatusColorMap = {
 }
 
 const MomentumNavigation = (props: MomentumNavigationProps): JSX.Element | null => {
+  const { status } = useStatus();
+  
   if (!props.data) {
     return null;
   }
 
-  const { status } = useStatus();
 
   return (
     <Box width="260px" position="sticky" top="0">
