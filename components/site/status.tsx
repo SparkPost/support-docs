@@ -22,7 +22,11 @@ const Status = () => {
             const sp = new environment.StatusPage.page({ page : '7ky1q6zd3fyp' })
 
             sp.status({
-              success: function(data) {
+              success: function(data: {
+                status: {
+                  indicator: 'none' | 'minor' | 'major' | 'critical'
+                }
+              }) {
                 const status = data?.status?.indicator
                 setStatus(status)
               }
