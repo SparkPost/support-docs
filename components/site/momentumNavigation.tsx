@@ -143,12 +143,20 @@ const Chevron = (props: { expanded: boolean }): JSX.Element => {
 
 const Item = (props: MomentumNavigationItemProps): JSX.Element => {
   const { link, title, items, level = 0 } = props;
+  const [ active, setActive ] = React.useState<boolean>(false);
+  const [ expanded, setExpanded ] = React.useState<boolean>(false);
   
   const environment = getWindow();
   const activeUrl = getActiveUrl(environment?.location);
   const hasActiveChild = items && findActiveChild(items, activeUrl);
-  const expanded = Boolean(hasActiveChild) || (activeUrl === link) || activeUrl.includes(link);
-  const isActive = activeUrl === link;
+
+  React.useEffect(() => {
+    const isExpanded = Boolean(hasActiveChild) || (activeUrl === link) || activeUrl.includes(link);
+    const isActive = activeUrl === link;
+    
+    setExpanded(isExpanded)
+    setActive(isActive)
+  }, [link, activeUrl])
 
   return (
     <Box
@@ -158,19 +166,21 @@ const Item = (props: MomentumNavigationItemProps): JSX.Element => {
       <StyledLink 
         py="200"
         px="500"
-        pl={`calc(${tokens.spacing_500} + ${tokens.spacing_200} * ${level})`}
-        $active={isActive}
+        display="flex"
+        justifyContent="space-between"
+        pl={`calc(${tokens.spacing_500} + ${tokens.spacing_300} * ${level})`}
+        $active={active}
       >
         <Link href={link} passHref>
-          <Box as="a" display="flex" justifyContent="space-between">
+          <Box as="a" display="flex" justifyContent="space-between" onClick={() => setExpanded(!expanded)}>
             <Box as="span">{title}</Box>
-            {items && 
-              <Box width="18px" height="18px" ml="200">
-                <Chevron expanded={expanded} />
-              </Box>
-            }
           </Box>
         </Link>
+        {items && 
+          <Box width="18px" height="18px" ml="200">
+            <Chevron expanded={expanded} />
+          </Box>
+        }
       </StyledLink>
       <Box>{expanded && items && items.map((item, i) => <Item level={level + 1} key={i} {...item} />)}</Box>
     </Box>
