@@ -21,6 +21,7 @@ export type MomentumNavigationProps = {
 
 const StyledLink = styled(Box)<BoxProps & { $active?: boolean }>`
   cursor: pointer;
+  overflow-wrap: anywhere;
   a, a:visited, a:hover, a:active {
     color: inherit;
     text-decoration: none;
@@ -168,7 +169,7 @@ const Item = (props: MomentumNavigationItemProps): JSX.Element => {
         px="500"
         display="flex"
         justifyContent="space-between"
-        pl={`calc(${tokens.spacing_500} + ${tokens.spacing_300} * ${level})`}
+        pl={`calc(${tokens.spacing_500} + ${tokens.spacing_200} * ${level})`}
         $active={active}
       >
         <Link href={link} passHref>
