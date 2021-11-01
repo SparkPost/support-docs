@@ -172,12 +172,12 @@ const Item = (props: MomentumNavigationItemProps): JSX.Element => {
         $active={active}
       >
         <Link href={link} passHref>
-          <Box as="a" display="flex" justifyContent="space-between" onClick={() => setExpanded(!expanded)}>
+          <Box as="a" display="flex" justifyContent="space-between">
             <Box as="span">{title}</Box>
           </Box>
         </Link>
         {items && 
-          <Box width="18px" height="18px" ml="200">
+          <Box width="18px" height="18px" ml="200" onClick={() => setExpanded(!expanded)}>
             <Chevron expanded={expanded} />
           </Box>
         }
