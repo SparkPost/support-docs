@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import { getWindow } from 'utils/ssr';
 import { Box } from '@sparkpost/matchbox';
 
-const getImageSrc = (asPath: string, src: string) => {
+const getImageSrc = (asPath: string, src?: string) => {
   const environment = getWindow();
   const parts = asPath.split('/');
   const dir = parts.splice(0, parts.length - 1).join('/');
