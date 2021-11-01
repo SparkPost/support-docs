@@ -116,7 +116,7 @@ const MomentumNavigation = (props: MomentumNavigationProps): JSX.Element | null 
   );
 };
 
-function getActiveUrl(location: any) {
+const getActiveUrl = (location: any) => {
   if(!location) {
     return '';
   }
@@ -124,7 +124,7 @@ function getActiveUrl(location: any) {
   return location.pathname + location.hash;
 }
 
-function findActiveChild(items: MomentumNavigationItemProps[], activeUrl: string): MomentumNavigationItemProps | undefined {
+const findActiveChild = (items: MomentumNavigationItemProps[], activeUrl: string): MomentumNavigationItemProps | undefined => {
   return items.find(item => {
     const hasDirectChild = item.link == activeUrl;
     
@@ -153,7 +153,7 @@ const Item = (props: MomentumNavigationItemProps): JSX.Element => {
   React.useEffect(() => {
     const isExpanded = Boolean(hasActiveChild) || (activeUrl === link) || activeUrl.includes(link);
     const isActive = activeUrl === link;
-    
+
     setExpanded(isExpanded)
     setActive(isActive)
   }, [link, activeUrl])
