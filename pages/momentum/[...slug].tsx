@@ -7,14 +7,8 @@ import rehypeRaw from 'rehype-raw';
 // @ts-ignore
 import remarkCode from 'remark-code-blocks';
 
-import {
-  getAllCategoryPostPaths,
-  getSingleCategoryPost,
-  getCategoryNavigation,
-  categoryPath,
-} from 'lib/api';
+import { getAllCategoryPostPaths, getSingleCategoryPost, categoryPath } from 'lib/api';
 import components from 'components/markdown';
-import { MomentumNavigationItemProps } from 'components/site/momentumNavigation';
 import MomentumLayout from 'components/site/momentumLayout';
 import SEO from 'components/site/seo';
 
@@ -23,16 +17,16 @@ type PostPageProps = {
   data: {
     title?: string;
     description?: string;
-    navigation?: MomentumNavigationItemProps[];
   };
 };
 
 const PostPage = (props: PostPageProps): JSX.Element => {
   const { content, data } = props;
+
   return (
     <>
       <SEO title={data.title} description={data.description} />
-      <MomentumLayout navigation={data.navigation}>
+      <MomentumLayout>
         <h1>{data?.title}</h1>
         <h6>{data?.description}</h6>
         <ReactMarkdown
@@ -52,8 +46,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     return { props: {} };
   }
   const { content, data } = getSingleCategoryPost(params.slug, categoryPath('momentum')) || {};
-  const navigation = getCategoryNavigation(categoryPath('momentum')) || null;
-  return { props: { content, data: { ...data, navigation } } };
+  return { props: { content, data } };
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {

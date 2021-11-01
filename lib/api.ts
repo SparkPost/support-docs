@@ -2,7 +2,6 @@ import fs from 'fs';
 import path from 'path';
 import glob from 'glob';
 import matter, { GrayMatterFile } from 'gray-matter';
-import yaml from 'js-yaml';
 
 type CategoryOption = 'momentum' | 'support';
 
@@ -57,20 +56,6 @@ export const getSingleCategoryPost = (
 
   if (fs.existsSync(indexPath)) {
     return matter(fs.readFileSync(indexPath, 'utf8'));
-  }
-
-  return;
-};
-
-/**
- * Retrieves momentum navigation structure as JSON based on the category path ('catPath').
- */
-export const getCategoryNavigation = (catPath: string): unknown | void => {
-  const filePath = path.join(catPath, `navigation.yml`);
-
-  if (fs.existsSync(filePath)) {
-    const data = fs.readFileSync(filePath, 'utf8');
-    return yaml.load(data);
   }
 
   return;

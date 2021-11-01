@@ -21,6 +21,12 @@ module.exports = {
       );
     }
 
+    config.module.rules.push({
+      test: /\.ya?ml$/,
+      type: 'json',
+      use: 'yaml-loader',
+    });
+
     // Important: return the modified config
     return config;
   },

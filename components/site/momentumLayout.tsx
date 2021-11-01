@@ -1,14 +1,11 @@
 import { Box, BoxProps } from '@sparkpost/matchbox';
 import Header from 'components/site/header';
 import Footer from 'components/site/footer';
-import MomentumNavigation, {
-  MomentumNavigationItemProps,
-} from 'components/site/momentumNavigation';
+import MomentumNavigation from 'components/site/momentumNavigation';
 import styled from 'styled-components';
 
 type LayoutProps = {
   children?: React.ReactNode;
-  navigation?: MomentumNavigationItemProps[];
 };
 
 const StyledSkipToContent = styled(Box)<BoxProps>`
@@ -23,7 +20,7 @@ const StyledSkipToContent = styled(Box)<BoxProps>`
 `;
 
 const MomentumLayout = (props: LayoutProps): JSX.Element => {
-  const { children, navigation } = props;
+  const { children } = props;
   return (
     <Box display="flex" flexDirection="column" minHeight="100vh">
       <Box display="flex" justifyContent="center" bg="gray.100" flex="1">
@@ -43,7 +40,7 @@ const MomentumLayout = (props: LayoutProps): JSX.Element => {
           <Header />
           <Box display="flex" maxWidth="1400" bg="white" border="400">
             <Box flex="0">
-              <MomentumNavigation data={navigation} />
+              <MomentumNavigation />
             </Box>
             <Box p="500" flex="1" id="main-content" borderLeft="400" overflow="hidden" position="relative">
               {children}
