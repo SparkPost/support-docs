@@ -12,7 +12,7 @@ const getImageSrc = (asPath: string, src: string) => {
 };
 
 type ImageProps = {
-  src: string;
+  src?: string;
   alt?: string;
 };
 
