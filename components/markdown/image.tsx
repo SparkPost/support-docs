@@ -7,7 +7,7 @@ const getImageSrc = (asPath: string, src?: string) => {
   const environment = getWindow();
   const parts = asPath.split('/');
   const dir = parts.splice(0, parts.length - 1).join('/');
-  const path = `${environment?.location.origin || 'http://localhost:3000'}/content${dir}/${src}`;
+  const path = `${environment?.location.origin || 'https://localhost:3000'}/content${dir}/${src}`;
   return path;
 };
 
@@ -19,6 +19,11 @@ type ImageProps = {
 const Image = (props: ImageProps): JSX.Element | null => {
   const { src, alt = '' } = props;
   const router = useRouter();
+
+  if (!getWindow()) {
+    return null;
+  }
+
   const imageSrc = getImageSrc(router.asPath, src);
 
   return (
