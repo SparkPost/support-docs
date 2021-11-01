@@ -1,5 +1,6 @@
 import Heading from './heading';
 import Paragraph from './paragraph';
+import Image from './image';
 
 type MarkdownComponentProps = {
   children?: React.ReactNode;
@@ -13,18 +14,7 @@ const components = {
   h5: (props: MarkdownComponentProps) => <Heading as="h5" {...props} />,
   h6: (props: MarkdownComponentProps) => <Heading as="h6" {...props} />,
   p: Paragraph,
-  /**
-   * TODO
-   * Other things to style:
-   * ul, ol
-   * blockquote
-   * hr
-   * image
-   * link
-   * tables
-   * inline code
-   * code block
-   */
+  img: Image,
 };
 
 export default components;
