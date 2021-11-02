@@ -2,6 +2,11 @@ import { GetStaticProps, GetStaticPaths } from 'next';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw';
+
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+import remarkCode from 'remark-code-blocks';
+
 import {
   getAllCategoryPostPaths,
   getSingleCategoryPost,
@@ -33,7 +38,7 @@ const PostPage = (props: PostPageProps): JSX.Element => {
         <ReactMarkdown
           components={components}
           rehypePlugins={[rehypeRaw]}
-          remarkPlugins={[remarkGfm]}
+          remarkPlugins={[remarkGfm, remarkCode]}
         >
           {content}
         </ReactMarkdown>

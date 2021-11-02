@@ -18,7 +18,8 @@
   "paths": {
     "@content/*": ["content/*"],
     "@lib/*": ["lib/*"],
-    "@utils/*": ["utils/*"]
+    "@utils/*": ["utils/*"],
+    "@hooks/*": ["hooks/*"],
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
