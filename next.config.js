@@ -30,4 +30,16 @@ module.exports = {
     // Important: return the modified config
     return config;
   },
+
+  async redirects() {
+    return [
+      // The site does not have a home page
+      // This redirects to support docs
+      {
+        source: '/',
+        destination: '/docs',
+        permanent: true,
+      },
+    ];
+  },
 };

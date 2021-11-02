@@ -1,3 +1,12 @@
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
+import rehypeRaw from 'rehype-raw';
+
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+import remarkCode from 'remark-code-blocks';
+
+// Markdown Components
 import Heading from './heading';
 import Paragraph from './paragraph';
 import Image from './image';
@@ -19,4 +28,20 @@ const components = {
   code: Code,
 };
 
-export default components;
+type MarkdownProps = {
+  children: string;
+};
+
+const Markdown = (props: MarkdownProps): JSX.Element => {
+  return (
+    <ReactMarkdown
+      components={components}
+      rehypePlugins={[rehypeRaw]}
+      remarkPlugins={[remarkGfm, remarkCode]}
+    >
+      {props.children}
+    </ReactMarkdown>
+  );
+};
+
+export default Markdown;
