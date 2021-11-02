@@ -3,10 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "predev": "npm run build:images",
+    "prebuild": "npm run build:images",
     "dev": "next dev",
     "build": "next build",
     "build:ssr": "next build && next export",
     "build:index:momentum": "node ./scripts/momentumIndex.mjs",
+    "build:images": "rimraf public/content && node ./scripts/copyImages.mjs",
     "postbuild": "next-sitemap",
     "start": "next start",
     "lint": "next lint",
@@ -82,6 +85,7 @@
     "lint-staged": "^11.2.3",
     "next-sitemap": "^1.6.192",
     "prettier": "2.4.1",
+    "rimraf": "^3.0.2",
     "start-server-and-test": "^1.14.0",
     "strip-markdown": "^5.0.0",
     "typescript": "4.4.4"

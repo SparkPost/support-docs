@@ -1,5 +1,6 @@
 import Heading from './heading';
 import Paragraph from './paragraph';
+import Image from './image';
 import Code from './code';
 
 type MarkdownComponentProps = {
@@ -14,6 +15,7 @@ const components = {
   h5: (props: MarkdownComponentProps) => <Heading as="h5" {...props} />,
   h6: (props: MarkdownComponentProps) => <Heading as="h6" {...props} />,
   p: Paragraph,
+  img: Image,
   code: Code,
 };
 
