@@ -1,9 +1,9 @@
 import fs from 'fs';
 import path from 'path';
 import glob from 'glob';
-import matter, { GrayMatterFile } from 'gray-matter';
+import matter from 'gray-matter';
 
-type CategoryOption = 'momentum' | 'support';
+type CategoryOption = 'momentum' | 'docs';
 
 export const categoryPath = (category: CategoryOption): string => {
   return path.join(
@@ -44,18 +44,18 @@ export const getAllCategoryPostPaths = (category: CategoryOption): string[] => {
 export const getSingleCategoryPost = (
   slug: string[] | string,
   catPath: string,
-): GrayMatterFile<string> | void => {
+): { [k: string]: any } | void => {
   const postPath = typeof slug === 'string' ? slug : slug.join('/');
   const filePath = path.join(catPath, `${postPath}.md`);
   const indexPath = path.join(catPath, `${postPath}/index.md`);
 
   // If file exists, it is not an index page.
   if (fs.existsSync(filePath)) {
-    return matter(fs.readFileSync(filePath, 'utf8'));
+    return { isIndex: false, ...matter(fs.readFileSync(filePath, 'utf8')) };
   }
 
   if (fs.existsSync(indexPath)) {
-    return matter(fs.readFileSync(indexPath, 'utf8'));
+    return { isIndex: true, ...matter(fs.readFileSync(indexPath, 'utf8')) };
   }
 
   return;
