@@ -29,7 +29,7 @@ const Image = (props: ImageProps): JSX.Element | null => {
   return (
     <Box position="relative" display="flex" justifyContent="center" width="100%" my="600">
       {/* Not using Next.js's image component because it doesn't support dynamic aspect ratios */}
-      <Box as="img" src={imageSrc} alt={alt} width="auto" maxHeight="500px" />
+      <Box as="img" src={imageSrc} alt={alt} width="auto" maxWidth="100%" maxHeight="500px" />
     </Box>
   );
 };

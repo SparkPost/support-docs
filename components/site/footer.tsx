@@ -27,7 +27,7 @@ const Footer = (): JSX.Element => {
       display="flex"
       justifyContent="center"
     >
-      <Box width="100%" maxWidth="945px">
+      <Box width="100%" maxWidth="1400" px="400">
         {/* Waiting on Copy */}
         {/* <Box fontSize="400" lineHeight="400" pb="200" fontWeight="semibold">Turpis nunc eget lorem dolor sed viverra ipsum</Box>
         <Box fontSize="400" lineHeight="400" pb="450">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Arcu vitae elementum curabitur vitae.</Box>
