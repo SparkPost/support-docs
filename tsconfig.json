@@ -19,8 +19,8 @@
     "@content/*": ["content/*"],
     "@lib/*": ["lib/*"],
     "@utils/*": ["utils/*"],
-    "@hooks/*": ["hooks/*"],
+    "@hooks/*": ["hooks/*"]
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "yaml.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
 }
