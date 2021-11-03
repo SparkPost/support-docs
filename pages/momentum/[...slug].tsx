@@ -3,6 +3,7 @@ import { getAllCategoryPostPaths, getSingleCategoryPost, categoryPath } from 'li
 import MomentumLayout from 'components/site/momentumLayout';
 import SEO from 'components/site/seo';
 import Markdown from 'components/markdown';
+import { Box, Tag } from '@sparkpost/matchbox';
 
 type PostPageProps = {
   content: string;
@@ -19,9 +20,17 @@ const PostPage = (props: PostPageProps): JSX.Element => {
     <>
       <SEO title={data.title} description={data.description} />
       <MomentumLayout>
-        <h1>{data?.title}</h1>
-        <h6>{data?.description}</h6>
-        <Markdown>{content}</Markdown>
+        <Box px="500">
+          <Box as="h1" fontSize="600" lineHeight="600" fontWeight="semibold">{data?.title}</Box>
+          <Box fontSize="200" lineHeight="200" pt="200">
+            Last updated
+            <Tag ml="300">September 2021</Tag>
+          </Box>
+        </Box>
+        <Box as="hr" my="500" />
+        <Box px="500">
+          <Markdown>{content}</Markdown>
+        </Box>
       </MomentumLayout>
     </>
   );
