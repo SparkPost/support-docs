@@ -146,6 +146,7 @@ curl --location --request PUT 'https://api.sparkpost.com/api/v1/inline-seeds/con
 ```
 
 Configuration cannot be deleted. Providing an empty array to the "match" field will make it so that no campaigns will be seeded.
+Some configuration changes will not take effect until after the next reset period.
 
 Automatic Inline Seeding is paused by default. Check out [our API docs](https://developers.sparkpost.com/api/inline-seeds) for information about how to pause/resume the feature, manage subaccounts, and more!
 
