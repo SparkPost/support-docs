@@ -39,12 +39,13 @@ If you’re using PowerMTA to send, you would still use the SparkPost UI or API 
 
 ### Setting Up Automatic Inline Seeding using the UI 
 
-Navigate to the “Seed List Settings” page through the SparkPost Dashboard > Configurations > Seedlists. 
+Navigate to the “Seed List Settings” page through the SparkPost Dashboard > Configurations > Seed List. 
 
-TODO: image here
+![Seed List Settings](media/automatic-inline-seeds/inline-seeds-config-list-page.png)
 
+Select the options icon for the account that you want to configure.
 
-
+![Seed List Config](media/automatic-inline-seeds/inline-seeds-config-edit-page.png)
 
 
 ### Automatic Inline Seeding Configuration Options
@@ -154,16 +155,16 @@ Automatic Inline Seeding is paused by default. Check out [our API docs](https://
 The Seeding Activity page is available for you to monitor the progress of the campaign_ids that you’ve chosen to seed. This page includes data on the current counts towards the threshold per campaign as well as how much time remains for the threshold to be hit before the count resets. Once a seed event has started, you can use the navigation on the right hand side to jump to the Reports page to see the results for a specific seeding campaign. 
 
 
-TODO: image here
+![Monitoring Activity](media/automatic-inline-seeds/inline-seeds-campaign-status-page.png)
 
 ### Viewing Results
 Within Signals Analytics (for Deliverability Analytics subscribers), you’ll have access to the eight additional Deliverability Metrics. These are accessed under the “Metrics” tab within the Analytics Report.
 
-TODO: image here
+![Inline Seeds Report](media/automatic-inline-seeds/inline-seeds-report-config-page.png)
 
 You can use the Report Builder to select some or all of these metrics and SparkPost will show the results of your seed results alongside any other metrics you’re plotting. This tool lets you see your inbox rate alongside other critical email health information like acceptance rate, delay rate, and unsubscribe rate to give you a full picture of your email sending.
 
-TODO: image here
+![Inline Seeds Report](media/automatic-inline-seeds/inline-seeds-report-page.png)
 
 
 ## Possible Use Case Scenarios
