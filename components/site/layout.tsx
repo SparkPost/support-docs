@@ -22,8 +22,8 @@ const StyledSkipToContent = styled(Box)<BoxProps>`
 const Layout = (props: LayoutProps): JSX.Element => {
   const { children, navigationComponent } = props;
   return (
-    <Box display="flex" flexDirection="column" minHeight="100vh">
-      <Box display="flex" justifyContent="center" bg="gray.100" flex="1">
+    <Box display="flex" flexDirection="column" minHeight="100vh" bg="gray.100">
+      <Box flex="1" mx="auto" px="400" maxWidth="1400" width="100%">
         <div>
           <StyledSkipToContent
             as="a"
@@ -38,7 +38,7 @@ const Layout = (props: LayoutProps): JSX.Element => {
             Skip to main content
           </StyledSkipToContent>
           <Header />
-          <Box display="flex" maxWidth="1400" bg="white" border="400">
+          <Box display="flex" width="100%" bg="white" border="400">
             <Box flex="0">{navigationComponent}</Box>
             <Box
               py="500"
