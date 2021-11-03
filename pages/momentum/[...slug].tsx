@@ -3,9 +3,7 @@ import { getAllCategoryPostPaths, getSingleCategoryPost, categoryPath } from 'li
 import MomentumLayout from 'components/site/momentumLayout';
 import DocumentationPage from 'components/site/documentationPage';
 import SEO from 'components/site/seo';
-import Breadcrumbs from 'components/site/breadcrumbs';
 import Markdown from 'components/markdown';
-import { Box, Tag } from '@sparkpost/matchbox';
 
 type PostPageProps = {
   content: string;
