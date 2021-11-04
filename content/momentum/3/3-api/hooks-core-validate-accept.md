@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "validate_accept"
 description: "validate accept int validate accept closure ac c void closure accept construct ac validate context c int has core validate accept hook void register core validate accept hook first hook closure ec hook core validate accept func t hook void closure void register core validate accept hook last hook closure..."
 ---

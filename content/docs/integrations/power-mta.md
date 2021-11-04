@@ -1,4 +1,5 @@
 ---
+lastUpdated: "06/23/2021"
 title: "Using SparkPost with PowerMTA"
 description: "If you’re interested in relaying mail through Power MTA to Spark Post there are only a few things you need to do First create a Spark Post account if you don't already have one Next create an API key with the Send via SMTP permission Now create and verify the..."
 ---

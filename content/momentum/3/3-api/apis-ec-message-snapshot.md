@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "ec_message_snapshot"
 description: "ec message snapshot Create a snapshot of an existing message ec message ec message snapshot orig ec message orig This reference page was automatically generated from functions found in the header files in the development branch The function described here may not exist in generally available versions of Momentum and..."
 ---

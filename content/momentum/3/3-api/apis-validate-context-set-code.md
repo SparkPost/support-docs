@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "validate_context_set_code"
 description: "validate context set code Set the SMTP response code and message for the session int validate context set code vctx code str validate context vctx int code const char str This reference page was automatically generated from functions found in the header files in the development branch The function described..."
 ---

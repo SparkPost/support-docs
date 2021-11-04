@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "scriptlet - Lua Policy Scripts"
 description: "The scriptlet module enables the use of Lua scripts to enforce policy For details about policy see Chapter 62 Implementing Policy with Momentum To use the scriptlet module the alerting module must be loaded as shown in the following example Example 71 84 scriptlet Configuration The scriptlet module is not..."
 ---

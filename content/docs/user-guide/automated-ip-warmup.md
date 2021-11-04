@@ -1,4 +1,5 @@
 ---
+lastUpdated: "02/08/2020"
 title: "Getting Started with our Automated IP Warmup Feature"
 description: "A guide to knowing when Automated IP Warmup is right for you and how to use it"
 ---

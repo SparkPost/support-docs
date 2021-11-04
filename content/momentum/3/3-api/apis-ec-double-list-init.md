@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "ec_double_list_init"
 description: "ec double list init Initialize a new list int ec double list init list ts ec double list list int ts Initialize a new double linked list list The list to be initialized ts If non zero enables the internal mutex lock On success this function returns 0 on failure..."
 ---

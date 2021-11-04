@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "ec_dkim_ctl"
 description: "ec dkim ctl manipulate the DK DKIM database opt msys ecelerity bin ec dkim ctl add dk domain selector keyfile opt msys ecelerity bin ec dkim ctl add dkim domain selector keyfile opt msys ecelerity bin ec dkim ctl delete dk domain opt msys ecelerity bin ec dkim ctl delete..."
 ---

@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "Redundancy"
 description: "Should any nodes fail you need a Quorum within both your Platform and Analytics servers in order for Momentum to continue functioning properly For Momentum you have a quorum when more than 50 of nodes are active What constitutes a quorum has implications for redundancy For example you cannot support..."
 ---

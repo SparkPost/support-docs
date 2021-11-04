@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "ec_xmpp_jid_parse"
 description: "ec xmpp jid parse parse a JID string ec xmpp jid ec xmpp jid parse jid result const char jid int result This reference page was automatically generated from functions found in the header files in the development branch The function described here may not exist in generally available versions..."
 ---

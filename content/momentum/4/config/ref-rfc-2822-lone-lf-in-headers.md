@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "rfc2822_lone_lf_in_headers"
 description: "rfc 2822 lone lf in headers rfc 2822 conformance rfc 2822 lone lf in headers fix rfc 2822 lone lf in headers pedantic RFC 2822 section 2 2 requires that all headers end with a carriage return CR and a linefeed LF Technically any MTA that accepts messages that do..."
 ---

@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "json.new"
 description: "json new Create an empty JSON object json new Create an empty JSON object Example 15 39 json new example json strerror and json decode..."
 ---

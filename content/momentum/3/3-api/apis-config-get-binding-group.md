@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "config_get_binding_group"
 description: "config get binding group Get the name of a binding group const char config get binding group caller scope slot generic module infrastructure caller scope int slot Get the name of the binding group The caller scope argument is virtually always NULL there is no reason for a consumer to..."
 ---

@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "spf Modules – spf_macros, spf_v1, and senderid (SPF v2)"
 description: "Sender Policy Framework SPF is an emerging standard for sender based authentication which provides a framework for administrators through DNS TXT records to specify authorized senders for the domains they control SP Fv 1 performs validation on the domain found in the envelope sender sometimes defined as the MAIL FROM..."
 ---

@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "hash_dump"
 description: "hash dump dump the contents of the hash to the paniclog hash dump hash hash dump dumps the contents of the hash to the paniclog This function can occasionally be useful when debugging but should be avoided in production especially on heavy throughput systems Example 16 108 hash dump example..."
 ---

@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "Security Considerations"
 description: "As of version 3 2 during installation you can choose to enforce the following security measures Require SSL connections to the database Enables native Postgre SQL support for SSL connections When you choose this option a private key is written to var db msyspg server key and a self signed..."
 ---

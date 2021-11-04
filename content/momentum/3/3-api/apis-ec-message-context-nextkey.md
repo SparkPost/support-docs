@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "ec_message_context_nextkey"
 description: "ec message context nextkey Returns a pointer to the next key in the appropriate per message dictionary NULL if there are no more keys const char ec message context nextkey m w lk ec message m int w const char lk This reference page was automatically generated from functions found..."
 ---

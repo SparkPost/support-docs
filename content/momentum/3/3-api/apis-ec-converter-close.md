@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "ec_converter_close"
 description: "ec converter close closes a converter void ec converter close conv ec converter conv This reference page was automatically generated from functions found in the header files in the development branch The function described here may not exist in generally available versions of Momentum and may change in behavior when..."
 ---

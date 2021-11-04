@@ -1,4 +1,5 @@
 ---
+lastUpdated: "02/08/2020"
 title: Upcoming Changes to API HTTP Error Responses
 description: Details on upcoming error changes that will occur on January 12, 2019
 ---

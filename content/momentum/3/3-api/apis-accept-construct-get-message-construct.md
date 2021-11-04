@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "accept_construct_get_message_construct"
 description: "accept construct get message construct Add a function to return message construct from accept construct struct message construct accept construct get message construct ac struct accept construct ac This reference page was automatically generated from functions found in the header files in the development branch The function described here may..."
 ---

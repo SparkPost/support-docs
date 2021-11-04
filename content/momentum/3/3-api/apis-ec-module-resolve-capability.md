@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "ec_module_resolve_capability"
 description: "ec module resolve capability resolve a capability by loading modules int ec module resolve capability capability string out const char capability string string out This reference page was automatically generated from functions found in the header files in the development branch The function described here may not exist in generally..."
 ---

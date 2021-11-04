@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "credmgr"
 description: "credmgr manipulate credentials used with the securecreds module opt msys ecelerity bin credmgr create db opt msys ecelerity bin credmgr create key opt msys ecelerity bin credmgr del cred opt msys ecelerity bin credmgr get cred opt msys ecelerity bin credmgr set cred credmgr is used in conjunction with the..."
 ---

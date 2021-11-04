@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "outbound_audit – Outbound traffic analytics"
 description: "The outbound audit module provides time series analytics on the behavior of receiving domains It is designed to help spot emergent issues such as blocking tarpitting etc The outbound audit module differs from the standard analytics available in Momentum in that it allows you to compare short term real time..."
 ---

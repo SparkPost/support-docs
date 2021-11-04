@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "postfix_logger – Postfix Logging"
 description: "Momentum supports logging in the same style as the Open Source MTA Postfix http www postfix org This is mainly of use to sites migrating from a Postfix installation or those that have log processing software that reads data in Postfix compliant format The postfix logger module writes to two..."
 ---

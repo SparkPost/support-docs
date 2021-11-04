@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "io_wrapper_lseek"
 description: "io wrapper lseek Reposition read write resource offset int io wrapper lseek io offset whence io object io off t offset int whence Reposition read write resource offset This function behaves like the system function lseek 2 io The resource offset The offset relative to whence whence The value such..."
 ---

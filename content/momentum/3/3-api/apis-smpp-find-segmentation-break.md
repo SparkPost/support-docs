@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "smpp_find_segmentation_break"
 description: "smpp find segmentation break Return a pointer to the break between two message segments within the complete text string const char smpp find segmentation break dp seg len data coding is gsm const char dp int seg len int data coding int is gsm Configuration Change This feature is available..."
 ---

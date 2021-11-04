@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "ec_rand"
 description: "ec rand generate a random number no larger than max 1 or a random string from a list ec rand max list ec rand returns a random number no larger than max 1 It returns a random string from a stringlist Example 16 86 ec rand example If you wished..."
 ---

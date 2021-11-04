@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "binding_group"
 description: "binding group logically group a set of bindings The binding group stanza is a logical container which allows you to group bindings together and conveniently collect common configuration options without repeating them throughout your configuration file The group name is an arbitrary string and holds no particular semantic value beyond..."
 ---

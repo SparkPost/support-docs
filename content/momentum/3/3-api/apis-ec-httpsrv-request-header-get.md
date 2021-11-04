@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "ec_httpsrv_request_header_get"
 description: "ec httpsrv request header get Gets the value of a specific HTTP request header int ec httpsrv request header get sess name value ec httpsrv session sess const char name const char value This reference page was automatically generated from functions found in the header files in the development branch..."
 ---

@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "initial_hash_buckets"
 description: "initial hash buckets Set the number of hash buckets used by the system initial hash buckets 32 This option sets the number of hash buckets used by the system Configuration Change This feature is available starting from Momentum 3 1 If this value is set too low the system will..."
 ---

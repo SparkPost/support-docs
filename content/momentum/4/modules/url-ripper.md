@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "url_ripper – URL Extraction"
 description: "The url ripper module is designed to be a comprehensive toolkit for DNS based content correlation The url ripper functions as a normal DNS block list DNSBL on the connecting IP address as well as a right hand side block list RHSBL on the domain of the envelope sender the..."
 ---

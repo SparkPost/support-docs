@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "The XMPP Logger Module"
 description: "The xmpp logger is similar to the SMPP and MMS loggers This module determines the location of the XMPP log file which types of records are created and the format of those records Use of this logger is optional For general information about Momentum logging capabilities see Logging Find below..."
 ---

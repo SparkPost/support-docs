@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "async_bounce_rendering"
 description: "async bounce rendering which thread pool to use for bounce rendering Async Bounce Rendering true When a message fails to be delivered due to a timeout a 5 XX error from the remote MTA or a reject or ec reject in a Sieve script Momentum generates and injects a bounce..."
 ---

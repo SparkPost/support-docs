@@ -1,4 +1,5 @@
 ---
+lastUpdated: "02/01/2021"
 title: "Creating A Template"
 description: "Create a Template Once you understand how to send an email transmission you'll want to know how to create templates in Spark Post Currently there are two ways you can create templates in Spark Post Create templates in Spark Post using the app Create templates in Spark Post using the..."
 ---

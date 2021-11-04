@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "Testing Your Installation"
 description: "You can test your installation by using telnet to connect to port 25 on a cluster node However the swaks tool provides an easier way to test your installation Message Systems does not provide support for the use of any third party tools that we include or reference by name..."
 ---

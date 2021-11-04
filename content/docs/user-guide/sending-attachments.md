@@ -1,4 +1,5 @@
 ---
+lastUpdated: "02/08/2020"
 title: "Sending Attachments"
 description: "A transmission is a collection of messages belonging to the same campaign It is also known as a mailing The Transmissions API provides the means to manage transmissions Messages in the transmissions are generated and sent to a specified list of recipients using a specified message template The recipient list..."
 ---

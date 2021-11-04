@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "msg:binding_group"
 description: "msg binding group Sets the binding group to the named binding if one is provided msg binding group value Sets the binding to one in the named binding group if one is provided Returns the current or new value for the binding group If the adaptive module is enabled the..."
 ---

@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "ec_cache_get_stats_by_name"
 description: "ec cache get stats by name get cache statistics for a named cache int ec cache get stats by name name stats const char name ec cache stats 2 stats This reference page was automatically generated from functions found in the header files in the development branch The function described..."
 ---

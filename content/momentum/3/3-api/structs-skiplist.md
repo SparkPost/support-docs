@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "Skiplist"
 description: "This struct and related structs are defined as follows To use this struct include the file skiplist h Chapter 45 Skiplist Functions..."
 ---

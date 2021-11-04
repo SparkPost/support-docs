@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "msys.commtouch.diagnose"
 description: "msys commtouch diagnose Scan messages using Commtouch msys commtouch diagnose msg accept vctx This function provides diagnosis of a message's virus or spam status You must load and correctly configure the commtouch ctasd module before using this function For details see Section 71 20 commtouch ctasd Commtouch Spam Protection It..."
 ---

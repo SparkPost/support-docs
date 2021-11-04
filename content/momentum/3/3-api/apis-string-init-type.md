@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "string_init_type"
 description: "string init type Initialize a string and pre allocate its storage specifying its backing type int string init type str size type string str size t size int type Initialize a string and pre allocate its storage specifying its backing type Objects created using string init type should be destroyed..."
 ---

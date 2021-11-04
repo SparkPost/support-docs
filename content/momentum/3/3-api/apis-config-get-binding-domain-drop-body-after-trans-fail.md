@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "config_get_binding_domain_drop_body_after_trans_fail"
 description: "config get binding domain drop body after trans fail Determine the value of the drop body after trans fail option int config get binding domain drop body after trans fail caller scope binding domain generic module infrastructure caller scope int binding const char domain Determine the value of the drop..."
 ---

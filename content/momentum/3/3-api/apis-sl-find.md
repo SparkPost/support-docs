@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "sl_find"
 description: "sl find Find a specific node and return the node's data void sl find sl key iter Skiplist sl const void key skiplistnode iter Find a specific node and return the node's data The iter parameter is optional sl The Skiplist key The key iter The list iterator This function..."
 ---

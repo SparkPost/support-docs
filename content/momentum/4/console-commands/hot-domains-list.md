@@ -1,4 +1,5 @@
 ---
+lastUpdated: "02/09/2021"
 title: "hot_domains list"
 description: "The hot_domains list command shows how the configured hot domains are spread across the maintainer threads, along with with thread ID (Linux process ID) for each of the event loops."
 ---

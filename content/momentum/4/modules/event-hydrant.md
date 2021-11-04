@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "event_hydrant – Message Tracking"
 description: "The event hydrant module is used for tracking messages from generation through engagement It exports a jlog file that provides the full disposition status of every message that goes through Momentum including message generation message reception message delivery and engagement tracking Note that this module combines the functionality of the..."
 ---

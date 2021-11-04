@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "set_delayed_queue_event"
 description: "set delayed queue event Schedule a mail queue maintainer for this mail queue void set delayed queue event mq now mail queue mq struct timeval now Schedule a mail queue maintainer for this mail queue mq A pointer to a mail queue struct For documentation of this data structure see..."
 ---

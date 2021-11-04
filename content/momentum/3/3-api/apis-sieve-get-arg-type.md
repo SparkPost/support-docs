@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "sieve_get_arg_type"
 description: "sieve get arg type Return the type of the specified Sieve argument enum sieve arg type sieve get arg type args n SIEVEARGS args int n Return the type of the specified Sieve argument args The argument list n Which argument to examine indexed from 0 The type of a..."
 ---

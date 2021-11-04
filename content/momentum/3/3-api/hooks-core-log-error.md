@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "log_error"
 description: "log error void log error closure now level format arg void closure struct timeval now int level const char format va list arg int has core log error hook void register core log error hook first hook closure ec hook core log error func t hook void closure void register..."
 ---

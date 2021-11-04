@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "msgpart:addLastChild"
 description: "msgpart add Last Child Adds a child as the last child on this part msgpart add Last Child child Adds a child as the last child on this part This part must already be a container for the addition to succeed Returns true on success false on error Example 15..."
 ---

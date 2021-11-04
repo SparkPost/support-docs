@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "ec_mt_asprintf"
 description: "ec mt asprintf Memory typed asprintf function int ec mt asprintf mt strp fmt int mt char strp const char fmt Memory typed asprintf function This is a version of asprintf that takes a Momentum memory type as an argument For a list of memory types see the section called..."
 ---

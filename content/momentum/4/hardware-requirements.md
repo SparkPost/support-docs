@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "Hardware Considerations"
 description: "The Momentum platform is designed to deliver high volumes of messaging traffic This is accomplished through architecture that can be scaled vertically on all nodes and horizontally by adding nodes When planning a Momentum deployment you must understand both the physical hardware and the deployment environment This section will help..."
 ---

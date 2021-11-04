@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "debug_flags"
 description: "debug flags configure debug verbosity Debug Flags tells Momentum which events to write to the log error handler of the logging subsystem When using the default logging module ec logger these messages will appear in the paniclog The mask is a decimal number representing the bit mask that is used..."
 ---

@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "msg:build"
 description: "msg build Create a message msg build headers parts attachments When calling this function msg must be an empty message created using msys core ec message new It requires the following inputs headers a table of header name header value pairs If the header's value contains non ASCII or non..."
 ---

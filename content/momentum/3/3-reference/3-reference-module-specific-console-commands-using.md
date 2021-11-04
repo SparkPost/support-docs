@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "Using Module-Specific Console Commands"
 description: "In version 3 0 most module specific system console commands have changed How commands are issued depends upon whether a module is a singleton or not Use the module list command from the system console to determine whether a module is a singleton or refer to Section 13 2 1..."
 ---

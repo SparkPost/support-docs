@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "validate_context_can_modify_rcpts"
 description: "validate context can modify rcpts Function to check if it is still ok to change rcpts list int validate context can modify rcpts ctx validate context ctx This reference page was automatically generated from functions found in the header files in the development branch The function described here may not..."
 ---

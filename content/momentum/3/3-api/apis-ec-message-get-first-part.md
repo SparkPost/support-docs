@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "ec_message_get_first_part"
 description: "ec message get first part Returns the top level mime part of the message ec message part ec message get first part mess headers only ec message mess int headers only Returns the top level mime part of the message This may result in a just in time message parse..."
 ---

@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "set_delayed_queue_event"
 description: "set delayed queue event int set delayed queue event closure mq now void closure mail queue mq struct timeval now int has core set delayed queue event hook void register core set delayed queue event hook first hook closure ec hook core set delayed queue event func t hook void..."
 ---

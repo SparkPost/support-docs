@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/08/2021"
 title: "What is the difference between a “Starter” plan and a “Premier” plan?"
 description: "The Starter plans are low-cost plans that make it easy for new or low-volume senders to get started. They include many of SparkPost’s great features, but some features are limited in order to keep costs low. See the chart below for a list of current feature limitations. The Premier plans are robust email packages for high-volume senders that include additional features to facilitate and manage sending large volumes of email."
 ---

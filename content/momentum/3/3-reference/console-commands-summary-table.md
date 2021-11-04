@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "System Console Command Summary"
 description: "This table lists all system console commands alphabetically giving a brief description Click the command name to see detailed information A check mark appears in the Module column for commands that are module specific For module specific commands to work you must have the module loaded Table 12 1 All..."
 ---

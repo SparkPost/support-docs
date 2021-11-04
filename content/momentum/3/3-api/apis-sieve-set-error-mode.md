@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "sieve_set_error_mode"
 description: "sieve set error mode Set the error mode of the Sieve engine void sieve set error mode seng mode SENG seng int mode Set the error mode of the Sieve engine seng The Sieve engine state mode Set this to either SIV ERROR MODE FAIL or SIV ERROR MODE CONTINUE..."
 ---

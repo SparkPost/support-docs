@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "ec_httpsrv_response_io"
 description: "ec httpsrv response io Set the session response to an IO object int ec httpsrv response io sess io immediate ec httpsrv session sess io object io int immediate This reference page was automatically generated from functions found in the header files in the development branch The function described here..."
 ---

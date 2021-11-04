@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "Vertica Updates"
 description: "It is best to perform these steps at a time of low volume Some services will need to be temporarily stopped and queues could back up if there is too much activity Also pay special attention to the verification steps some will take longer to complete and they will need..."
 ---

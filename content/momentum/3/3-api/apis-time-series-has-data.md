@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "time_series_has_data"
 description: "time series has data Returns true if at least one monitor of a time series contains data int time series has data ts time series ts This reference page was automatically generated from functions found in the header files in the development branch The function described here may not exist..."
 ---

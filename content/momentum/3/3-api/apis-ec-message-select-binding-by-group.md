@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "ec_message_select_binding_by_group"
 description: "ec message select binding by group Select a binding from a binding group ec binding slot ec message select binding by group msg group ec message msg const char group This reference page was automatically generated from functions found in the header files in the development branch The function described..."
 ---

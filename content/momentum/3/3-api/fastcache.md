@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "Fast Cache Functions"
 description: "Table of Contents ec fc caches find Find a cache with the provided name ec fc caches purge Purge all caches ec fc create Returns a new cache with maximum number of entries and a default expiration time ec fc delref Destroy cache if destruction has been deferred ec fc..."
 ---

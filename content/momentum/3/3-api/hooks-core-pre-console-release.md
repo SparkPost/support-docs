@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "pre_console_release"
 description: "pre console release void pre console release closure void closure int has core pre console release hook void register core pre console release hook first hook closure ec hook core pre console release func t hook void closure void register core pre console release hook last hook closure ec hook..."
 ---

@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "ec_mem_usage"
 description: "ec mem usage Return the amount of memory used by Momentum ec mem usage Action which returns the total amount of memory being used by Momentum in M Bs Example 16 80 ec mem usage example..."
 ---

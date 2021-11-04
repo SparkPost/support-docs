@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "strnchrn"
 description: "strnchrn Searches a string for the first occurence of any of a set of characters char strnchrn str nstr chars nchars const char str int nstr const char chars int nchars Searches a string for the first occurence of any of a set of characters Searches nstr chars starting at..."
 ---

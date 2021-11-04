@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "event_io_retry"
 description: "event io retry Continue a pending IO operation int event io retry e state Event e event io state state Continue a pending IO operation e For a description of this data type see Section 68 49 Event state For a description of this data type see Section 68 50..."
 ---

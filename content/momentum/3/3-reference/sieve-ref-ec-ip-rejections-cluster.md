@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "ec_ip_rejections_cluster"
 description: "ec ip rejections cluster Audit how many rejections an IP address has made cluster wide ec ip rejections cluster time series index mask ec ip rejections cluster hash ec ip rejections cluster returns a string containing the number of rejections that have occurred for a CIDR block within a configured..."
 ---

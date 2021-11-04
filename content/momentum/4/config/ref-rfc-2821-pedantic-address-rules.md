@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "rfc2821_pedantic_address_rules"
 description: "rfc 2821 pedantic address rules Allow relaxation of enforcement of the rfc 2821 address rules rfc 2821 pedantic address rules false rfc 2821 pedantic address rules true RFC 2821 has very strict guidelines about what address formats are allowable This option allows those guidelines to be relaxed If the option..."
 ---

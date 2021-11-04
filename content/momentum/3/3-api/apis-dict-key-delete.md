@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "dict_key_delete"
 description: "dict key delete Remove the specified key int dict key delete a b EC Dict a const char b Remove the specified key a The EC Dict An EC Dict is a typedef of an ec hash table b The key you wish to remove On success this function returns..."
 ---

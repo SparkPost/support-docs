@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "Converting MCMT to XMPP"
 description: "If you don't convert a plain text message to a SMS message stanza in Lua you can convert a MCMT message part to XMPP for delivery as an instant message In order to perform message conversion you must provide a valid XMPP stanza in the MCMT part of a message..."
 ---

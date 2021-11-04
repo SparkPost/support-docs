@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "ec_mime_boundary_create"
 description: "ec mime boundary create return a string to be used as a boundary when creating a MIME message ec mime boundary create ec mime boundary create returns a string that can be used as a boundary when creating a MIME message It doesn't include the required before or after the..."
 ---

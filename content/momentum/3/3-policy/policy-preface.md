@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "Preface"
 description: "The default policy scripts perform recipient and domain validation authorize users protect against directory harvest attacks and other such policy related actions The intended use case is to create policy suitable for a receiver domain accepting mail for a smaller set of recipient domains For example a company such as..."
 ---

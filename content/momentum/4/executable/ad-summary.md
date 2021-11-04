@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "ad_summary"
 description: "ad summary summarize the adaptive module actions opt msys ecelerity bin ad summary adlogdir path to adaptive log dir opt msys ecelerity bin ad summary bouncelog path to bouncelog opt msys ecelerity bin ad summary help opt msys ecelerity bin ad summary mailfrom addr opt msys ecelerity bin ad summary..."
 ---

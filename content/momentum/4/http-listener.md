@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "Configuring Inbound Mail Service Using HTTP"
 description: "The HTTP Listener is the listener that enables you to inject messages using HTTP and to use the REST API The HTTP Listener is configured in the msg gen conf file that is included from within ecelerity conf and specifies the end point s on which Momentum should listen for..."
 ---

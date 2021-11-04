@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "Lua Functions List"
 description: "This section contains tables of Lua functions The first table contains all Lua functions and the following tables show functions by type All tables are sorted alphabetically by function name and give a brief description Click the function name for details The Mobile specific Lua functions are listed here but..."
 ---

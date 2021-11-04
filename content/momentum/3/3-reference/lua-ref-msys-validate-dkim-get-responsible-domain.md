@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "msys.validate.dkim.get_responsible_domain"
 description: "msys validate dkim get responsible domain Return the domain responsible for the current message msys validate dkim get responsible domain msg vctx This function requires the dkim validate module msg is a mail message vctx is the validation context It returns the domain responsible for the current message Enable this..."
 ---

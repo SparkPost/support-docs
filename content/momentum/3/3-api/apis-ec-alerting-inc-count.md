@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "ec_alerting_inc_count"
 description: "ec alerting inc count Increment a counter for an arbitrary key for a given binding domain uint 64 t ec alerting inc count binding domain key int binding const char domain const char key Increment a counter for an arbitrary key for a given binding domain binding The binding of..."
 ---

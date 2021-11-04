@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "Sieve++, Momentum-specific extensions"
 description: "For greater flexibility Momentum allows Sieve scripts to execute inline during the various phases of an SMTP session and provides additional actions such as terminating the connected TCP session that don't make sense in traditional Sieve This phased execution of Sieve scripts places certain restrictions on the tests and actions..."
 ---

@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "sieve_arg_delref"
 description: "sieve arg delref Remove a reference to a Sieve argument void sieve arg delref arg SIEVEARGS arg Remove a Sieve argument Use this function with the values returned by sieve hash first item sieve hash next item and sieve get hash item arg The argument you wish to remove This..."
 ---

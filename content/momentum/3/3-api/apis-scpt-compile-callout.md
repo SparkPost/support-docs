@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "scpt_compile_callout"
 description: "scpt compile callout Compile and register a scriptlet entrypoint scpt callout scpt compile callout name rettype params const char name const char rettype const char params Compile and register a scriptlet entrypoint The entrypoint is defined in terms of the C function that it represents Once registered the function can..."
 ---

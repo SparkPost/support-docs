@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "ec_adaptive_log_config"
 description: "ec adaptive log config Log function for AD system to log config change to jlog void ec adaptive log config binding domain optname value const char binding const char domain const char optname const char value This reference page was automatically generated from functions found in the header files in..."
 ---

@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "Use Cases"
 description: "The default use case for routing to SMS via Mobile Momentum is simply to supply a phone number for the localpart of the RCPT TO address By using Lua scripts and adding lookup tables to the Postgre SQL database Mobile Momentum can easily be adapted to other use cases This..."
 ---

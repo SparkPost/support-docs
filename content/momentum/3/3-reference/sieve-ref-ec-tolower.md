@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "ec_tolower"
 description: "ec tolower change all characters to lower case ec tolower string Change all characters in the argument to lower case Numerals remain unchanged Example 16 99 ec tolower example..."
 ---

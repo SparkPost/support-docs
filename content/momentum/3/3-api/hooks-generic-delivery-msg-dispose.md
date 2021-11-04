@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "msg_dispose"
 description: "msg dispose Called immediately prior to disposing of an ec message int msg dispose closure msg void closure ec message msg Configuration Change This hook point is available as of Momentum version 3 5 5 When a message fails this hook is typically used to reroute messages to another channel..."
 ---

@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "validate_context_iterate_rcpt"
 description: "validate context iterate rcpt Function to iterate through recipient list int validate context iterate rcpt ctx pos addr validate context ctx int pos char addr This reference page was automatically generated from functions found in the header files in the development branch The function described here may not exist in..."
 ---

@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "ec_mailq_message_requeue"
 description: "ec mailq message requeue Re enqueues a message after a delivery attempt void ec mailq message requeue message now ec message message struct timeval now Re enqueues a message after a delivery attempt The domain to which the message is to be requeued to must be assigned to the message..."
 ---

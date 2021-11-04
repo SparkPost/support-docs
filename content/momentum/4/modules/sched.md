@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "sched – The Schedule Module"
 description: "The sched module is used to schedule tasks that can be run from the console The following configuration stanza loads the sched module Example 71 83 sched module backing store defines the path to a SQ Lite database If the specified file does not already exist it will be created..."
 ---

@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "ec_log_permanent_failure"
 description: "ec log permanent failure Records a permanent failure disposition of a message void ec log permanent failure mess dr now note ec message mess domain record dr struct timeval now const string note Records a permanent failure disposition of a message mess A pointer to an ec message struct For..."
 ---

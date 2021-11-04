@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "Adaptive Delivery Report"
 description: "Adaptive Delivery auto tunes your outbound email delivery parameters and traffic shaping in real time to avoid blocks to safeguard your reputation and to optimize delivery Adaptive delivery events occur when an adaptive rule is triggered or as a result of automatic performance tuning For details about Momentum's Adaptive Delivery..."
 ---

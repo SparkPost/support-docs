@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "ec_convert_buffer"
 description: "ec convert buffer Convert a fixed length buffer from one encoding to another int ec convert buffer fromcode frombuf frombuflen tocode tobuf tobuflen bytes consumed bytes produced const char fromcode const char frombuf size t frombuflen const char tocode char tobuf size t tobuflen size t bytes consumed size t..."
 ---

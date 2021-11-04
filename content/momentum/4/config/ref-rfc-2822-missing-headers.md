@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "rfc2822_missing_headers"
 description: "rfc 2822 missing headers rfc 2822 conformance rfc 2822 missing headers reject rfc 2822 missing headers allow RFC 2822 requires that all messages consist of headers and a body separated by a blank line By default Momentum will reject messages that are missing their headers but by setting the Missing..."
 ---

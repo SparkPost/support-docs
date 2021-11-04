@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "sieve_create_string_list"
 description: "sieve create string list Create a Sieve string list SIEVEARGS sieve create string list seng SENG seng Create a Sieve string list that you can then add strings to seng For a definition of this data type see structs seng This function returns a SIEVEARGS For information about this data..."
 ---

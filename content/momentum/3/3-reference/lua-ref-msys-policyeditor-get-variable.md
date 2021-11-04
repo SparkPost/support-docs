@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "msys.policyeditor.get_variable"
 description: "msys policyeditor get variable Return the value of a script variable msys policyeditor get variable ctx vars params Configuration Change This function is deprecated You can easily access the value of Lua variables within the Lua policy script Return the value of a script variable The ctx parameter is the..."
 ---

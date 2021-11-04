@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "io_wrapper_close"
 description: "io wrapper close Close an IO wrapper deprecated int io wrapper close io io object io Close an IO wrapper deprecated This API ignores refcounts and does not free Use io wrapper delref..."
 ---

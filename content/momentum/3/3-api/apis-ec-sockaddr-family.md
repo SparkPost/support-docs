@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "ec_sockaddr_family"
 description: "ec sockaddr family Get the family of a sockaddr for Lua u int 8 t ec sockaddr family s ec sockaddr s This reference page was automatically generated from functions found in the header files in the development branch The function described here may not exist in generally available versions..."
 ---

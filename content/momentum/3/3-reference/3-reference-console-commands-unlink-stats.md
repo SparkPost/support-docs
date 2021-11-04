@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "unlink stats"
 description: "unlink stats show statistics of removing messages from the disk unlink stats This command shows statistics of unlinking messages on the disk..."
 ---

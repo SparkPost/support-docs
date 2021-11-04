@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "retry_interval"
 description: "retry interval base retry interval Retry Interval 1200 The base retry period in seconds for a message which could not be delivered Momentum employs an exponential back off scheme for retrying messages On the first failure the message is retried Retry Interval seconds later On the second failure twice that..."
 ---

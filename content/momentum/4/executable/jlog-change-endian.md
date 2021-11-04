@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "jlog_change_endian"
 description: "jlog change endian change the endianness of a jlog opt msys jlog bin jlog change endian source tole tobe destination This command creates an exact copy of a jlog with the opposite endianness of the original If it detects a problem in the source jlog it will print an error..."
 ---
