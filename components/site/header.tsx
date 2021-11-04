@@ -19,7 +19,7 @@ const Header = (props: HeaderProps) => {
     <Box my="600">
       <Box as="header" height="650" display="flex" justifyContent="space-between" mb="400">
         <Logo />
-        <Box display={['block', null, 'none']}>
+        <Box display={['block', null, 'none']} marginTop="15px">
           <Menu {...getActivatorProps()} size={24} />
         </Box>
         <Box display={['none', null, 'block']}>
