@@ -61,12 +61,12 @@ const MomentumNavigation = (): JSX.Element | null => {
   const environment = getWindow();
 
   return (
-    <Box width="260px" position="sticky" top="0">
+    <Box width={['100%', null, '260px']} position="sticky" top="0">
       <StyledLink $active={environment?.location?.pathname === '/momentum'}>
         <Link href="/momentum" passHref>
           <Box
             as="a"
-            display="inline-block"
+            display={['none', null, 'inline-block']}
             fontSize="200"
             fontWeight="semibold"
             py="200"

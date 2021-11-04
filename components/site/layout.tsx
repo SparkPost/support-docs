@@ -1,7 +1,9 @@
-import { Box, BoxProps } from '@sparkpost/matchbox';
+import { Box, BoxProps, Drawer, useDrawer } from '@sparkpost/matchbox';
 import Header from 'components/site/header';
 import Footer from 'components/site/footer';
+import HeaderButtons from 'components/site/headerButtons';
 import styled from 'styled-components';
+import { useRouter } from 'next/router';
 
 type LayoutProps = {
   children?: React.ReactNode;
@@ -21,9 +23,22 @@ const StyledSkipToContent = styled(Box)<BoxProps>`
 
 const Layout = (props: LayoutProps): JSX.Element => {
   const { children, navigationComponent } = props;
+  const { getDrawerProps, getActivatorProps } = useDrawer();
+  const { route } = useRouter();
+  const category = route.split('/')[1];
+
   return (
     <Box display="flex" flexDirection="column" minHeight="100vh" bg="gray.100">
       <Box flex="1" mx="auto" px="400" maxWidth="1400" width="100%">
+        <Drawer {...getDrawerProps()} position="right" id="mobile-menu">
+          <Drawer.Header>
+            {category === 'momentum' ? 'Momentum' : 'Support'} Documentation
+          </Drawer.Header>
+          <Drawer.Content>{navigationComponent}</Drawer.Content>
+          <Drawer.Footer>
+            <HeaderButtons />
+          </Drawer.Footer>
+        </Drawer>
         <div>
           <StyledSkipToContent
             as="a"
@@ -37,17 +52,12 @@ const Layout = (props: LayoutProps): JSX.Element => {
           >
             Skip to main content
           </StyledSkipToContent>
-          <Header />
+          <Header getActivatorProps={getActivatorProps} />
           <Box display="flex" width="100%" bg="white" border="400">
-            <Box flex="0">{navigationComponent}</Box>
-            <Box
-              p="500"
-              flex="1"
-              id="main-content"
-              borderLeft="400"
-              overflow="hidden"
-              position="relative"
-            >
+            <Box flex="0" borderRight="400" display={['none', null, 'block']}>
+              {navigationComponent}
+            </Box>
+            <Box p="500" flex="1" id="main-content" overflow="hidden" position="relative">
               {children}
             </Box>
           </Box>
