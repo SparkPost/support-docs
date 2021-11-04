@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "Using Module-Specific Console Commands"
 description: "How module specific console commands are issued depends upon whether a module is a singleton To determine whether a module is a singleton refer to Chapter 65 Modules Summary or use the module list command from the console This command displays a full list of all loaded modules The following..."
 ---

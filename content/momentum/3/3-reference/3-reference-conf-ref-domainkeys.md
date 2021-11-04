@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "domainkeys"
 description: "domainkeys enable or disable domainkeys signing domainkeys enabled domainkeys disabled This directive is only valid if the Momentum dk sign module is loaded See Section 14 29 domainkeys Yahoo Domain Keys This directive instructs Momentum to enable or disable signing messages with a Domain Keys signature globally on a specific..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "Using the Web Console"
 description: "You can monitor and configure Momentum from a web browser The web console provides a convenient interface useful for viewing graphical representations of the state of Momentum changing configuration options viewing logs and reports and numerous other tasks You can open the web console from the server hosting the application..."
 ---

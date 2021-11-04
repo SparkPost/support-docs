@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "sieve_get_num_args"
 description: "sieve get num args Return the number of Sieve arguments int sieve get num args args SIEVEARGS args Return the number of Sieve arguments args The argument list This function returns the number of Sieve arguments It is legal to call this function in any thread Section 68 76 SIEVEARGS..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "ec_spool_ctx_remove_mid"
 description: "ec spool ctx remove mid Remove the specified message part int ec spool ctx remove mid ctx mid part ec spool ctx ctx message id mid unsigned char part Remove the specified message part from the spool context ctx The spool context mid The message id part The message part..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "pe2_mark_unsubscribed"
 description: "pe 2 mark unsubscribed log unsubscribe events when the pe 2 logger module is loaded passively pe 2 mark unsubscribed This function requires that the pe 2 logger module be loaded Use this function to log unsubscribe events when the pe 2 logger module is loaded in passive mode Note..."
 ---

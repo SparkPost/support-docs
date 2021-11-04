@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/17/2020"
 title: "Update on Pricing"
 description: "Information about pricing changes."
 ---

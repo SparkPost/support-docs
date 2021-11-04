@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "ec_ptr_array_remove"
 description: "ec ptr array remove remove an item from an ec ptr array and compact the array void ec ptr array remove array slot ec ptr array array int slot This reference page was automatically generated from functions found in the header files in the development branch The function described here..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "February 2020"
+lastUpdated: "02/08/2020"
 title: "Power BI Content Pack and SparkPost"
 description: "The Power BI content pack for Spark Post allows you to extract valuable datasets from your Spark Post account all into one insightful dashboard Using the Spark Post content pack you can visualize your overall email statistics including domains campaigns and engagement by ISP Connect to the Spark Post content..."
 ---

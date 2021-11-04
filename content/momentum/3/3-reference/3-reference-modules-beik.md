@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "beik – BEIK Module"
 description: "The beik module is an anti spam module that provides support for the Symantec Brightmail Engine Integration Kit BEIK Because BEIK is an in process version of the brightmail module it provides superior performance If you intend to use this module be sure to choose it during installation For more..."
 ---

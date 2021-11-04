@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "ec_rfc822_date"
 description: "ec rfc 822 date Renders a timeval into a buffer per RFC 822 size t ec rfc 822 date buf maxsize tv char buf size t maxsize struct timeval tv Renders a timeval into a buffer per RFC 822 buf The target buffer maxsize The size of buf in bytes..."
 ---

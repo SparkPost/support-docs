@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "The custom_policy.lua File"
 description: "Custom policy is configured using the custom policy lua file A sample configuration file is found in the opt msys ecelerity etc sample configs directory and is reproduced below If you do not implement any custom policy you need not be concerned with this file However you will need to..."
 ---

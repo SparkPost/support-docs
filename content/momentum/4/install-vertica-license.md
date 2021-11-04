@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "Upgrading the Vertica License"
 description: "Momentum 4 is shipped with a perpetual 0 1 TB license for Vertica If you were issued a Vertica license for a different volume level you must upgrade the license after installation If you are upgrading you will need a valid HP Vertica license and password If you have not..."
 ---

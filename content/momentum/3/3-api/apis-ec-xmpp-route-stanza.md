@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "ec_xmpp_route_stanza"
 description: "ec xmpp route stanza Submits the transmission of a Stanza void ec xmpp route stanza stanza xml Node Ptr stanza This reference page was automatically generated from functions found in the header files in the development branch The function described here may not exist in generally available versions of Momentum..."
 ---

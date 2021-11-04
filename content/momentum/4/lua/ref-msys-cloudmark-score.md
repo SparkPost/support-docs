@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "msys.cloudmark.score"
 description: "msys cloudmark score Scan messages using Cloudmark msys cloudmark score msg accept vctx Use this function to scan mail It can be invoked at the data spool or each rcpt phases and it will not work at the connect ehlo mailfrom or rcptto phases It takes the following parameters If..."
 ---

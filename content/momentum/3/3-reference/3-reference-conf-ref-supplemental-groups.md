@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "supplemental_groups"
 description: "supplemental groups security supplemental groups to assume after startup Example 9 17 supplemental groups example This security feature instructs Momentum to issue a setgroups system call to set the supplemental groups for the Momentum process This allows more flexibility for granting Momentum access to resources that are restricted based on..."
 ---

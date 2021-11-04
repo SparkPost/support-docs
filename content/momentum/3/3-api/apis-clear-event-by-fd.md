@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "clear_event_by_fd"
 description: "clear event by fd Clear the event related to the file descriptor Event clear event by fd fd int fd Clear the event related to the file descriptor This function returns the event because it's a convenience function to both get an event and clear it fd The file descriptor..."
 ---

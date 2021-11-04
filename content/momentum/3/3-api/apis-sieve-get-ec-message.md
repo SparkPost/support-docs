@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "sieve_get_ec_message"
 description: "sieve get ec message Get the message associated with the Sieve engine ec message sieve get ec message seng headers only SENG seng int headers only This function returns the message associated with the Sieve engine state seng The Sieve engine state headers only This parameter is no longer used..."
 ---

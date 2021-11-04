@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "ec_control_get_command_construct"
 description: "ec control get command construct gets the command construct for the currently dispatched session command construct ec control get command construct void This reference page was automatically generated from functions found in the header files in the development branch The function described here may not exist in generally available versions..."
 ---

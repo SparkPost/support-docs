@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "protocol_string_uc"
 description: "protocol string uc Returns a protocol string in uppercase const char protocol string uc p num intp num Returns a protocol string in uppercase A sample call proto protocol string uc mess recv method p num A protocol number This function returns the string version of a protocol such as..."
 ---

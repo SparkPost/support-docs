@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "SMPP_PDU"
 description: "This struct is defined as follows To use this struct include the file modules mobility smpp c Chapter 46 SMPP Functions..."
 ---

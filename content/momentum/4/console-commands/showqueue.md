@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "showqueue"
 description: "showqueue show queue information showqueue binding binding name domain name limit offset The showqueue command is used to list the messages in the queue for a particular domain The first optional argument is the binding name If no binding is specified the default binding will be used A domain name..."
 ---

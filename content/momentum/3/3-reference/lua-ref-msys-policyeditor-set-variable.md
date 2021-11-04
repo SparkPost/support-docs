@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "msys.policyeditor.set_variable"
 description: "msys policyeditor set variable Set the value of a script variable msys policyeditor set variable ctx vars params Configuration Change This function is deprecated You can easily set a Lua variable as follows local x y Set the value of a script variable The ctx parameter is the context containing..."
 ---

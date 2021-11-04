@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "ec_datasource_destroy_query"
 description: "ec datasource destroy query Release the resources used by the specified query void ec datasource destroy query q ecdata cache query q Release the resources used by the specified query q A pointer to an ecdata cache query The following typedef applies to this data type typedef struct ec datasource..."
 ---

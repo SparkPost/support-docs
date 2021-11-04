@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "ec_message_part_get_content_type3"
 description: "ec message part get content type 3 Returns the content type and charset for a given part void ec message part get content type 3 p pathway content type ct len charset charset len ec message part p const char pathway char content type int ct len char charset int..."
 ---

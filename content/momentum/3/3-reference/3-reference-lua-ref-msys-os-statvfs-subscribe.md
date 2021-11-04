@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "msys.os.statvfs_subscribe"
 description: "msys os statvfs subscribe Provide a stream for file system statistics statvfs updates msys os statvfs subscribe path interval This function provides a stream for statvfs updates It guarantees minimal blocking and it is safe to call this function from the context of any thread including the scheduler A ec..."
 ---

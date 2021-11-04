@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "ec_ssl_set_verify_errmsg"
 description: "ec ssl set verify errmsg Set the verify error message and code void ec ssl set verify errmsg ctx code msg ec ssl ctx ctx int code const char msg Set the verify error message and code The error message must be a single line without line endings it will..."
 ---

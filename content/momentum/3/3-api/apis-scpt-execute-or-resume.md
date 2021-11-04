@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "scpt_execute_or_resume"
 description: "scpt execute or resume Execute or resume execution of a thread int scpt execute or resume thr nargs scpt thread thr int nargs Execute or resume execution of a thread You are expected to have prepared the parameters appropriately thr The script thread For a description of this data type..."
 ---

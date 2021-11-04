@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "ec_config_option_def"
 description: "The members of this struct are as follows To use this struct include the file Valid ec config item type t constants are To use this struct include the file configuration h Section 1 3 5 1 Define the Configuration Object Section 68 21 ec config header Section 68 21..."
 ---

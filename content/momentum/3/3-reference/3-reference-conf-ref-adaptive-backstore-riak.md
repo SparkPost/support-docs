@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "adaptive_backstore_riak"
 description: "adaptive backstore riak set characteristics of the Riak backing store Configuration Change This feature is available as of version 3 6 Riak is the default backing store for the adaptive module Use the adaptive backstore riak scope to set the timeout and the connect timeout timeout defines the amount of..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "February 2020"
+lastUpdated: "02/08/2020"
 title: “What happens if I don’t use my Free SparkPost account?”
 description: “If you never send from your Free account, after 3 months we will close your account, or if you don’t send from your Free SparkPost account for 6 months we will close your account”
 ---

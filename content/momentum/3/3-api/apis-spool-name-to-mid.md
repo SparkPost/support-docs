@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "spool_name_to_mid"
 description: "spool name to mid Create a message ID int spool name to mid mid name message id mid const char name Create a message ID mid The message id name The spool name On success this function returns 1 on failure 0 is returned After execution mid contains the message..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "Adaptive Executables and Console Commands"
 description: "Find below a table of executables related to the adaptive module Table B 1 adaptive executables Command Description ad summary Summarize the adaptive module actions adaptive loader the script that loads the adaptive data used by the web UI adaptivedb deprecated Create the SQ Lite database used by the adaptive..."
 ---

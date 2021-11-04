@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "never_retry"
 description: "never retry whether or not to retry delivery of failed messages never retry false Whether or not to retry delivery of failed messages If it is set to true then instead of re queuing the message the message is failed with 554 5 4 7 internal exceeded max retries without..."
 ---

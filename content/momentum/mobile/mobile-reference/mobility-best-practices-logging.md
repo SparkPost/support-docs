@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "SMPP Logging"
 description: "The SMPP Logger records SMPP events in a compact format Log records are useful for report generation and problem analysis Configuration options in Section 2 5 smpp logger Module Configuration determine which events are recorded Mobile Momentum records the following event types in the SMPP log Table 5 1 SMPP..."
 ---

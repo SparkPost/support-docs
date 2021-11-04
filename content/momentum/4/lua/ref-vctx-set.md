@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "vctx:set"
 description: "vctx set Set the value of a context variable vctx set type key value Set the value of a context variable The type parameter can be either msys core VCTX MESS or msys core VCTX CONN Example 70 71 vctx set example Because this function is in the msys core..."
 ---

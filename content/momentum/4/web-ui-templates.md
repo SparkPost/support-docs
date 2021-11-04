@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "Managing Your Templates in the UI"
 description: "Configuration Change Version 4 1 and later support managing your templates using the UI You can manage your templates using the Templates API or the Templates section in the UI The UI enables you to easily view details about your templates create new templates preview test and update existing templates..."
 ---

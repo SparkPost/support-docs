@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "ec_mailq_insert_active"
 description: "ec mailq insert active Insert a message into the active queue void ec mailq insert active mq message mail queue mq ec message message Insert a message into the active queue The location of the message in the active queue is determined by its next attempt time as set by..."
 ---

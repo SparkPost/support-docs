@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "click_tracking_enabled"
 description: "click tracking enabled enable or disable click tracking for SMTP injections Click Tracking Enabled true false Configuration Change This option is available as of version 4 1 HF 4 When click tracking is enabled Momentum converts the target links in the top text plain and top text html part of..."
 ---

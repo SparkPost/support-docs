@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "chroot"
 description: "chroot chroot to a secure environment Security chroot chroot dir This security feature invokes the underlying operating system's chroot call to place Momentum in an alternate root directory This can be used to limit the portions of the file system that are available to Momentum and can be an added..."
 ---

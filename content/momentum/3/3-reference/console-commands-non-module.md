@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "System Console Commands"
 description: "This section documents all the non module specific system console commands Module specific system console commands are documented with their module See Chapter 14 Modules Reference Preceding a command with xml will output the results in XML format..."
 ---

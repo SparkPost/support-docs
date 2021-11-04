@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "ec_ptr_array_unshift"
 description: "ec ptr array unshift puts an item at the front of the array shifts existing data over int ec ptr array unshift array elt ec ptr array array void elt This reference page was automatically generated from functions found in the header files in the development branch The function described..."
 ---

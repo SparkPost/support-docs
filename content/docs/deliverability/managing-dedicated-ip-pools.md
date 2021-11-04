@@ -1,5 +1,5 @@
 ---
-lastUpdated: "January 2021"
+lastUpdated: "01/14/2021"
 title: "Managing dedicated IP Pools"
 description: "So now you have dedicated I Ps In which IP pools would you like them Would you like a marketing pool Would you like a transaction pool You can manage this in the SparkPost app In the SparkPost app select account IP Pools The default pool is already there for..."
 ---

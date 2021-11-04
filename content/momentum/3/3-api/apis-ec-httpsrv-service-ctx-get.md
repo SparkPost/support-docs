@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "ec_httpsrv_service_ctx_get"
 description: "ec httpsrv service ctx get Returns the closure parameter that was registered with the handler ec blobject ec httpsrv service ctx get sess ec httpsrv session sess This reference page was automatically generated from functions found in the header files in the development branch The function described here may not..."
 ---

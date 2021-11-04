@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "dns_cache_free_node"
 description: "dns cache free node Release a reference on a dns cache node void dns cache free node node dns cache cachenode node Release a reference on a dns cache node When the reference count falls to 0 the resources for the node are released After calling dns cache free node..."
 ---

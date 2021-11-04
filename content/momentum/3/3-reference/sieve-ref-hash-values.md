@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "hash_values"
 description: "hash values return all the string values of a hash as a stringlist hash values hash This function works on a hash created by hash create If the given hash stores strings as its values these values will be returned in a stringlist elements of which are in random order..."
 ---

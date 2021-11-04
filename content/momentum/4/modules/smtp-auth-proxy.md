@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "smtp_auth_proxy - SMTP Authentication Proxy"
 description: "Configuration Change This feature is available in Momentum 4 2 and later The smtp auth proxy module allows your edge SMTP servers to forward SMTP AUTH requests onto one or more SMTP servers with optional lookup of the authentication host for a particular user Example 71 89 Example Configuration Hosts..."
 ---

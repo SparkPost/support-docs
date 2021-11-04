@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "Route to SMS Based on the Sender IP Address"
 description: "When an email is sent from IP address 127 0 0 1 to phone number any messagesystems com it is sent to phone number test messagesystems com through SMS The mapping from any messagesystems com to test messagesystems com is determined by a database Create the following table in the..."
 ---

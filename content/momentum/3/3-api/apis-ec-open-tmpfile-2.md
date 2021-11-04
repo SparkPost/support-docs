@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "ec_open_tmpfile2"
 description: "ec open tmpfile 2 Open a file with a unique name and store the name in outname int ec open tmpfile 2 outname char outname Open a file with a unique name and store the name in outname outname A buffer of MAXPATHLEN bytes to store the file name On..."
 ---

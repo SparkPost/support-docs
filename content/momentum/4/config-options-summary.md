@@ -1,5 +1,5 @@
 ---
-lastUpdated: "September 2021"
+lastUpdated: "09/14/2021"
 title: "Configuration Options Summary"
 description: "This chapter lists all configuration options visible in the following scopes global domain host binding binding group security pathway pathway group listener listen peer threadpool debug flags and cluster as well as in the listener specific scope Module specific options are documented in the module documentation and options specific to..."
 ---

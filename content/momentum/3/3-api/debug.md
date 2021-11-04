@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "Debug Functions"
 description: "Table of Contents debug tools init initializes the debug tools layer debug tools register event func Register an event function for debugging ec debug printf Write debug information given a debug level ec mod vdebug Log debugging information for a module ec render my stack trace render a stack backtrace..."
 ---

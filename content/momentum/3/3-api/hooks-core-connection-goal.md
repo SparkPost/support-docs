@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "connection_goal"
 description: "connection goal void connection goal closure dr binding slot aq goal void closure domain record dr int binding slot Skiplist aq int goal int has core connection goal hook void register core connection goal hook first hook closure ec hook core connection goal func t hook void closure void register..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "rfc2821_ctx"
 description: "The members of this struct are as follows To use this struct include the file misc rfc 2821 addr h rfc 2821 address destroy Section 68 31 ec hash table..."
 ---

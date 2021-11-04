@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "msys.validate.opendkim.get_sig_canons"
 description: "msys validate opendkim get sig canons Fetch the canonicalizers used for a signature msys validate opendkim get sig canons dkim sig This function fetches the canonicalizers used for a signature Use msys validate opendkim get num sigs and msys validate opendkim get sig to get a DKIM SIGINFO object to..."
 ---

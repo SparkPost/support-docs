@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "ec_cache_create2"
 description: "ec cache create 2 Create a cache with max elts ec cache t ec cache create 2 max elts max lifetime dtor name unsigned int max elts unsigned int max lifetime ec cache elt dtor func dtor const char name Create a cache with max elts max elts The maximum..."
 ---

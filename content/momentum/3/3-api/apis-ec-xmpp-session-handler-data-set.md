@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "ec_xmpp_session_handler_data_set"
 description: "ec xmpp session handler data set Stash a per handler per session object void ec xmpp session handler data set sess handler blob ec xmpp session sess ec xmpp handler handler ec blobject blob This reference page was automatically generated from functions found in the header files in the development..."
 ---

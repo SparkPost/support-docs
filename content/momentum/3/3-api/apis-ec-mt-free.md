@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "ec_mt_free"
 description: "ec mt free Reclaim allocated memory void ec mt free def ptr size struct ec mem type def def void ptr size t size Configuration Change This feature is available starting from Momentum 3 0 18 Reclaim allocated memory This performs a raw free against the allocator backend Do not..."
 ---

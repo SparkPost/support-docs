@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "Upgrade Ecelerity and the Cassandra Schema on the First Platform Node"
 description: "The following steps connect Ecelerity and Cassandra These steps should be done only on the first Platform node Be sure you perform these steps in the order shown below Upgrade the RPM packages with yum this includes all Momentum and third party packages Set up Cassandra Momentum compatibility i e..."
 ---

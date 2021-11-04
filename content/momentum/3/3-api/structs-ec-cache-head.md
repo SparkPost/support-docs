@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "ec_cache_head"
 description: "This struct is defined as follows To use this struct include the file ec cache int h Also the following typedef applies to this data type typedef struct ec cache head ec cache t ec cache create ec cache create 2 ec cache delref ec cache destroy ec cache find..."
 ---

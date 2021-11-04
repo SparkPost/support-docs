@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "Configuring Riak in a Cluster"
 description: "In a cluster configuration by default Riak is installed on every node Each node requires a unique name to participate in the cluster During installation the installer automatically assigns names which are stored in the opt msys 3rd Party riak etc vm args configuration file and specified with the name..."
 ---

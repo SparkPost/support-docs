@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "send_notification"
 description: "send notification Allows you to override the MDN generation process that is determined by the DSN module int delay dsn send notification closure msg void closure ec message msg This hook allows you to override the MDN generation process that is determined by the DSN module This hook is an..."
 ---

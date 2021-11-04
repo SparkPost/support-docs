@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "ec_internal_inject_no_log"
 description: "ec internal inject no log injects and enqueues and internally generated message void ec internal inject no log mess now ec message mess struct timeval now This reference page was automatically generated from functions found in the header files in the development branch The function described here may not exist..."
 ---

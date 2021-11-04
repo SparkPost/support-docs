@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "generate_bounces"
 description: "generate bounces generate MD Ns if mail is failed after reception generate bounces true generate bounces false Momentum has the ability to generate failure messages to be delivered to the envelope sender of an undeliverable message In large outbound mail systems for example large mailing lists it is often desirable..."
 ---

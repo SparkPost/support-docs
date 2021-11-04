@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "scope_max_outbound_connections"
 description: "scope max outbound connections provide traffic shaping for outbound connections Scope Max Outbound Connections 20 Configuration Change This feature is available as of version 3 2 Scope Max Outbound Connections provides for finer grained manipulation of the number of outbound connections than does Server Max Outbound Connections When used in..."
 ---

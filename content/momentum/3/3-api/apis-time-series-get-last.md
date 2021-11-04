@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "time_series_get_last"
 description: "time series get last Remove the bucket before the current one void time series get last ts series id time series ts int series id This reference page was automatically generated from functions found in the header files in the development branch The function described here may not exist in..."
 ---

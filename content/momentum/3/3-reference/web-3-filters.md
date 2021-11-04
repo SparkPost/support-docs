@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "Filtering"
 description: "In addition to selecting a specific domain you can also filter for specific subclusters nodes bindings and in Momentum for Receiving pathways To do this choose the Filter menu option You should see something similar to the following Figure 3 8 Filtering In the SUB CLUSTERS NODES section as a..."
 ---

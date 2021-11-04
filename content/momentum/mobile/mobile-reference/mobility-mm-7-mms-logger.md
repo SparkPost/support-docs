@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "The mms_logger Module"
 description: "It is often desirable to look at MM 7 messages only The mms logger makes this easier by writing to a single file in delimited format The writing of mms logger format logs is configured in your ecelerity conf file To load the mms logger module add the following lines..."
 ---

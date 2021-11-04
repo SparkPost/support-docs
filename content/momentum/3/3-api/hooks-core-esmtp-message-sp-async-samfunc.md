@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "esmtp_message_sp_async_samfunc"
 description: "esmtp message sp async samfunc sp async message esmtp message sp async samfunc closure mc void closure message construct mc int has core esmtp message sp async samfunc hook void register core esmtp message sp async samfunc hook first hook closure ec hook core esmtp message sp async samfunc func..."
 ---

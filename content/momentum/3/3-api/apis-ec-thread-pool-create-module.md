@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "ec_thread_pool_create_module"
 description: "ec thread pool create module Create a module thread pool int ec thread pool create module self type concurrency stack size max queue len generic module infrastructure self const char type int concurrency size t stack size size t max queue len Create a module thread pool self The module..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "commtouch_scan"
 description: "commtouch scan email virus scan commtouch scan Use commtouch scan in a data phase Sieve script and then read the message context variable commtouch virus threat The possible return values are non virus unknown medium high virus Sieve scripts using commtouch scan can be used in the data phase Example..."
 ---

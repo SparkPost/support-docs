@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "thread.mutex"
 description: "thread mutex create a new mutex thread mutex type Configuration Change This feature is available as of version 3 2 Create a new mutex for coordinating access to critical sections The optional parameter may be one of the following thread MUTEX NORMAL this is the default value thread MUTEX RECURSIVE..."
 ---

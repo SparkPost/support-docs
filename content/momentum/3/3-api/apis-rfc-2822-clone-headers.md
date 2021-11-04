@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "rfc2822_clone_headers"
 description: "rfc 2822 clone headers Clones the headers portion of an rfc 2822 context rfc 2822 context rfc 2822 clone headers ctx rfc 2822 context ctx This reference page was automatically generated from functions found in the header files in the development branch The function described here may not exist in..."
 ---

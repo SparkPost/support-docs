@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "ec_forward"
 description: "ec forward forward a message ec forward sender address recipient address text subject counter This action will create a new message with the supplied sender address and recipient address on the envelope and will use the supplied text for the body of the new message If the optional subject is..."
 ---

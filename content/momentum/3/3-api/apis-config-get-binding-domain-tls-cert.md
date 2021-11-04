@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "config_get_binding_domain_tls_cert"
 description: "config get binding domain tls cert Get TLS certification data char config get tls cert caller scope binding domain generic module infrastructure caller scope int binding const char domain Get the TLS certification data for the specified domain and binding configuration The caller scope argument is virtually always NULL there..."
 ---

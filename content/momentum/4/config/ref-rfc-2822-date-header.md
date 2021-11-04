@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "rfc2822_date_header"
 description: "rfc 2822 date header rfc 2822 conformance rfc 2822 date header ignore rfc 2822 date header pedantic rfc 2822 date header ifneeded RFC 2822 requires that a Date header be present in all email messages This requirement can often pose problems with incompatible mail user agents that neglect to present..."
 ---

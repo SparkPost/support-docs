@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "ec_ptr_array_destroy"
 description: "ec ptr array destroy Destroy an ec ptr array void ec ptr array destroy array ec ptr array array Destroy an ec ptr array created using ec ptr array init array A pointer array See ec ptr array This function returns void It is legal to call this function in..."
 ---

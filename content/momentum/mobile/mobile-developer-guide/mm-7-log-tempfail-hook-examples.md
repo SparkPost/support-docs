@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "Examples"
 description: "Example 28 1 MM 7 Log Tempfail Hook Lua Example Example 28 2 MM 7 Log Tempfail Hook C Example..."
 ---

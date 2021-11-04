@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "ec_dns_lookup"
 description: "ec dns lookup perform a DNS record lookup ec dns lookup what a aaaa txt ptr ns mx server This function will perform a DNS resource record lookup on the provided string searching for the resource record type specified The return value should be assigned to a variable If no..."
 ---

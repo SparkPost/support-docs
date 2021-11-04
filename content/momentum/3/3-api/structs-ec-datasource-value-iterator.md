@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "ec_datasource_value_iterator"
 description: "This struct has the following members To use this struct include the file modules datasource ecdatasource h Use this construct to iterate over the column names and values of a data set ec datasource next column and Section 68 30 ec hash iter..."
 ---

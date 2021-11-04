@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "sp_make_swap_out_job"
 description: "sp make swap out job Create and return a job that will manage swap out processing ec async job sp make swap out job ac ctx mess samfunc info accept construct ac validate context ctx ec message mess sp async swapout samfunc samfunc void info This reference page was automatically..."
 ---

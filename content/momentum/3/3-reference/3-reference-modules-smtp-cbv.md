@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "smtp_cbv – SMTP Callback Verification"
 description: "This module allows Momentum to perform SMTP Callback Verification CBV in its validation process If this module is loaded for every inbound message Momentum will attempt to connect back to the sender domain to determine if the sender address is valid Example 14 97 smtp cbv module Configuration Change This..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "Bounce Functions"
 description: "Table of Contents bounce error classify Classify a buffer in the context of an out of band bounce bounce error classify 2 Classify a message in the context of an out of band bounce ec generate soft bounce creates an MDN and enqueues ec internal inject injects and enqueues an..."
 ---

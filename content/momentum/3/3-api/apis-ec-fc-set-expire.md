@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "ec_fc_set_expire"
 description: "ec fc set expire Sets a new expiration time for a given cache int ec fc set expire cache expire ec fc t cache unsigned int expire This reference page was automatically generated from functions found in the header files in the development branch The function described here may not..."
 ---

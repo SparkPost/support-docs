@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "ec_get_message_protocol"
 description: "ec get message protocol Return the protocol of the current message ec get message protocol ec get message protocol returns the protocol that the message was received via It takes the form of ESMTP ECSTREAM LMTP INTERNAL POP 3 IMAP or CLUSTER In the following script the protocol is checked..."
 ---

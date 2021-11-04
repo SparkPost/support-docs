@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "Updating Your Webhook"
 description: "You can edit any configuration option of an existing webhook From the Webhooks tab click the icon in the upper right corner of the webhook you want to update In the list click Edit Configuration as shown in Figure 60 7 Update Webhook Figure 60 7 Update Webhook Make your..."
 ---

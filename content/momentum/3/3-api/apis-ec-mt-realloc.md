@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "ec_mt_realloc"
 description: "ec mt realloc Reallocate memory against a given memtype void ec mt realloc def old oldsize size struct ec mem type def def void old size t oldsize size t size Configuration Change This feature is available starting from Momentum 3 0 18 Reallocate memory against a given memtype This..."
 ---

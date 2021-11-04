@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "post_assemble_fwd_message"
 description: "post assemble fwd message void post assemble fwd message closure orig forwarded void closure email message orig email message forwarded int has core post assemble fwd message hook void register core post assemble fwd message hook first hook closure ec hook core post assemble fwd message func t hook void..."
 ---

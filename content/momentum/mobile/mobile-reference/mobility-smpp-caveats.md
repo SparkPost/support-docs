@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "SMPP Caveats"
 description: "Since SMS messages do not contain all the information typically found in a standard email message and because of the difference in recipient addressing phone numbers versus user domain style addresses log entries for messages received over SMPP differ from those received over SMTP Specifically Envelope MAIL FROM and RCPT..."
 ---

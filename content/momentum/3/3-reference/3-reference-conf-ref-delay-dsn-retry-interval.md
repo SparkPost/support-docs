@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "delay_dsn_retry_interval"
 description: "delay dsn retry interval base interval for sending DS Ns to the sender of a message that has not yet been delivered Delay DSN Retry Interval 3600 The base retry period in seconds for sending warning messages delivery status notifications or DS Ns to the sender of a message which..."
 ---

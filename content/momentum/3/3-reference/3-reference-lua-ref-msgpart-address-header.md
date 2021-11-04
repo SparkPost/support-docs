@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "msgpart:address_header"
 description: "msgpart address header Parse each instance of the named header for RFC 2822 addresses msgpart address header headername component Parse each instance of the named header for RFC 2822 addresses Where the address header is made up of user detail domain the possible components are all the entire email address..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "Riak"
 description: "Configuration Change This feature is available as of version 3 3 Riak is a distributed key value data storage technology with excellent scalability properties incorporated into the Momentum 3 3 release It replaces the SQ Lite data store used with the adaptive module It is also used by Mobile Momentum..."
 ---

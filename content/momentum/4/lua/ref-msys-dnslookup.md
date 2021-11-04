@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "msys.dnsLookup"
 description: "msys dns Lookup Perform a DNS lookup msys dns Lookup name recordtype options Perform a DNS lookup The parameters are as follows name recordtype If not specified recordtype defaults to A Otherwise it is a string from the following list A Lookup the I Pv 4 address AAAA Lookup the..."
 ---

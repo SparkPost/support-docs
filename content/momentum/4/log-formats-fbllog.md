@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "fbllog"
 description: "When a user selects Mark as Spam the ISP generates a notification email and sends it to one of the recipients defined by the Addresses option in the fbl module When Momentum receives the message it extracts the X MSFBL header decodes it and then logs it A line is..."
 ---

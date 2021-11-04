@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "netlistener_def"
 description: "This struct is defined as follows The following typedef applies to this data type typedef int Event Func struct Event event int eventtype void closure struct timeval now To use this struct include the file netlistener h netlistener register 4..."
 ---

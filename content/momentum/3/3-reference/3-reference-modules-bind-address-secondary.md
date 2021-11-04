@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "bind_address_secondary – Dual-stack IPv4/IPv6 Support"
 description: "Configuration Change This feature is available as beta in Momentum 3 6 10 and later The bind address secondary module allows a binding to attach itself to an ipv 6 address as well as a ipv 4 one supporting multiple IP addresses for dual stack The secondary could be ipv..."
 ---

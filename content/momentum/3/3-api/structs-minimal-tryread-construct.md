@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "minimal_tryread_construct"
 description: "This struct is defined as follows To use this struct include the file ec growbuf h minimal tryread construct free..."
 ---

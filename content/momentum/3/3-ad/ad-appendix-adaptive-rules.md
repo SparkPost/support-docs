@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "The adaptive_rules.lua File"
 description: "The adaptive rules lua file shown below is the most current version found in the Message Systems repository The version being used by your installation of Momentum is found at opt msys ecelerity libexec scriptlets msys adaptive rules lua For readability some content that appears on a single line in..."
 ---

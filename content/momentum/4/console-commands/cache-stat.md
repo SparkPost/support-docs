@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "cache stat"
 description: "cache stat show detailed cache statistics for the specified cache cache stat cache name This command shows statistics for the specified cache Use the cache list command to determine the available caches Find sample output below This command shows much more detail than the cache stats command cache list cache..."
 ---

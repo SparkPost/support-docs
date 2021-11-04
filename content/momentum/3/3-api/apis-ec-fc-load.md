@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "ec_fc_load"
 description: "ec fc load Load an entry from the cache with the provided key and key length ec fc entry t ec fc load cache key key length ec fc t cache const void key size t key length This reference page was automatically generated from functions found in the header..."
 ---

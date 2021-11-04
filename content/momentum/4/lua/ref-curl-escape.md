@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "curl.escape"
 description: "curl escape URL encode a string curl escape str URL encode a string useful when building an URL Example 70 17 curl escape example Example 70 17 curl escape example outputs the following curl unescape..."
 ---

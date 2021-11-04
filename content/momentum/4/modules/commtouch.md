@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "commtouch_ctasd – Commtouch Spam Protection"
 description: "The commtouch ctasd module provides message diagnosis via the CYREN formerly known as Commtouch spam and phishing protection technology If you intend to use this module be sure to choose it during installation For more information see Section 12 1 Installing Partner Modules As with other Validation modules the commtouch..."
 ---

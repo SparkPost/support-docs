@@ -1,5 +1,5 @@
 ---
-lastUpdated: "February 2020"
+lastUpdated: "02/08/2020"
 title: "My DKIM Won't Verify"
 description: "Q Why won't my DKIM record verify A While configuring your Sending Domains you need to verify that the DNS entries you have made are available to Spark Post and ES Ps for use The DNS TXT records you create have a TTL Time To Live value associated with them..."
 ---

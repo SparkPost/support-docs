@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "ec_fc_create"
 description: "ec fc create Returns a new cache with maximum number of entries and a default expiration time ec fc t ec fc create name n entries expire destroy entry char name size t n entries unsigned int expire ec fc entry dtor destroy entry This reference page was automatically generated..."
 ---

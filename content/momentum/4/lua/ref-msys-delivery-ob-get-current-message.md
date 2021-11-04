@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "msys.delivery.ob_get_current_message"
 description: "msys delivery ob get current message Get the current message from the session context msys delivery ob get current message sess connh Get the current message from the session context Enable this function with the statement require msys delivery Example 70 57 msys delivery ob get current message example Momentum..."
 ---

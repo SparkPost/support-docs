@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "suffix_tree_stringprint_next"
 description: "suffix tree stringprint next print suffixes in the tree to a string one at a time int suffix tree stringprint next r t iter string r ec suffix tree t void iter This reference page was automatically generated from functions found in the header files in the development branch The..."
 ---

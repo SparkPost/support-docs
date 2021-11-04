@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "pre_swap_out_meta"
 description: "pre swap out meta int pre swap out meta closure mess flags void closure ec message mess int flags int has core pre swap out meta hook void register core pre swap out meta hook first hook closure ec hook core pre swap out meta func t hook void closure..."
 ---

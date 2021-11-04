@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "ecstream_port"
 description: "ecstream port configure the port for ecstream deliveries ecstream port 1825 Configuration Change This feature is available as of version 3 2 When Momentum is set to perform delivery via ecstream this option sets the destination port that will be used The default value for this option is 1825 Example..."
 ---

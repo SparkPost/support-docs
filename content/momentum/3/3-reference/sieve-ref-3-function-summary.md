@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "Sieve Function Summary"
 description: "This table lists all Sieve functions alphabetically giving a brief description Click the function name to see detailed information Table 16 1 Sieve functions Name Description Class Type Phases add recipient Add a new envelope recipient to the mail misc receiving data mailfrom rcptto spool address Return the address from..."
 ---

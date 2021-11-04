@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "ecelerity.conf"
 description: "ecelerity conf Momentum configuration file The ecelerity conf file is the master configuration file for the Momentum application server The easiest way to manipulate this file is through the web UI If you make manual changes to this file be sure to use eccfg to commit your changes For more..."
 ---

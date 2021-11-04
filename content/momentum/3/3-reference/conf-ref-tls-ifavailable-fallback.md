@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "tls_ifavailable_fallback"
 description: "tls ifavailable fallback determine the behavior if TLS negotiation fails TLS Ifavailable fallback true false Configuration Change This option is available as of version 3 5 10 for Momentum 3 5 and as of version 3 6 4 for Momentum 3 6 When opportunistic TLS is enabled this option determines..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "rfc2822_max_line_length"
 description: "rfc 2822 max line length rfc 2822 conformance rfc 2822 max line length ignore pedantic fix rfc 2822 max line length 2048 RFC 2822 requires that the maximum length of a single line of a message be no longer than 998 characters The default ignore behavior is to ignore the..."
 ---

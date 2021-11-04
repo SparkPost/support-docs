@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "smpp_get_message_id_from_pdu"
 description: "smpp get message id from pdu Retrieve the Message ID from the PDU string smpp get message id from pdu pdu SMPP PDU pdu Configuration Change This feature is available starting from Momentum 3 2 Retrieve the Message ID from the PDU pdu The SMPP PDU For a definition of..."
 ---

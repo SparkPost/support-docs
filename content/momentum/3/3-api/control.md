@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "Control Functions"
 description: "Table of Contents cli conn Establish an ec console control connection ec control factory init Initialize the Control Listener subsystem ec control get command construct gets the command construct for the currently dispatched session ec control register command Register a command handler deprecated ec control register command 2 Register a..."
 ---

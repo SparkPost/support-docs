@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "msys.audit_series.remove_item"
 description: "msys audit series remove item Remove a counter from a named series msys audit series remove item name key Removes a counter from a named series The interpretation of key depends on the key type For a CIDR series the key is interpreted as an IP specifying the address of..."
 ---

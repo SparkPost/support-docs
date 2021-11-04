@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "Preface"
 description: "Using HTTP or HTTPS as the transport protocol Momentum can generate push notifications to mobile devices in the same way that it generates messages for other channels A Mobile Push license is required to enable all supported Momentum Mobile Push protocols Creating push notifications extends Momentum and leverages existing technologies..."
 ---

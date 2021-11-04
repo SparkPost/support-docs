@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "scpt_register_autoload"
 description: "scpt register autoload register a set of autoloadable items in a namespace int scpt register autoload name space consts const char name space struct scpt autoload item consts This reference page was automatically generated from functions found in the header files in the development branch The function described here may..."
 ---

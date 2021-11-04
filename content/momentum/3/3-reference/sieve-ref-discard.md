@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "discard"
 description: "discard ec discard discard the current message it will not be delivered discard ec discard reason Discard is used to silently throw away the message It does so by simply canceling the implicit keep If discard is used with other actions the other actions still happen Discard is compatible with..."
 ---

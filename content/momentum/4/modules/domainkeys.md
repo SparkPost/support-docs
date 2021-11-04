@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "domainkeys – Yahoo! DomainKeys"
 description: "The domainkeys module comprised of dk sign and dk validate add Yahoo Domain Keys capabilities to Momentum Together these modules implement the Domain Keys standard providing for conditionally signing outbound messages and validating Domain Keys signatures for inbound messages Domain Keys is a technology proposal that can bring yes or..."
 ---

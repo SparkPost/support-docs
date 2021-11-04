@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "Using the Cluster Manager"
 description: "On start up the script etc init d eccmgr start runs eccmgr as a service on the Momentum cluster manager When this service is running you can log in to the system console as you would on a node by issuing the command opt msys ecelerity bin ec console For..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "ec_message_get_delivery_method"
 description: "ec message get delivery method Retrieve the delivery method of a message const char ec message get delivery method mess ec message mess Configuration Change This function is available as of Momentum version 3 5 5 Retrieve the delivery method of a message msg A pointer to an ec message..."
 ---

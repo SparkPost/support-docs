@@ -1,5 +1,5 @@
 ---
-lastUpdated: "September 2021"
+lastUpdated: "09/14/2021"
 title: "Category File"
 type: "custom"
 name: "Configuration Options Reference"

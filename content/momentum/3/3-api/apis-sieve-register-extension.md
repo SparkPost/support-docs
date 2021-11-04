@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "sieve_register_extension"
 description: "sieve register extension Register a Sieve extension int sieve register extension flags closure action reqd capability compile cb action cb int flags void closure const char action const char reqd capability sieve compile callback compile cb sieve action callback action cb Register a Sieve extension This function can be used..."
 ---

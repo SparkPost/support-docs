@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "msys.cloudmark.score_af"
 description: "msys cloudmark score af Set the Cloudmark Active Filter score threshold msys cloudmark score af msg accept vctx af threshold Set the Active Filter score threshold as part of the fourth argument in this function If a message is originally marked as not spam and later the message fingerprint exceeds..."
 ---

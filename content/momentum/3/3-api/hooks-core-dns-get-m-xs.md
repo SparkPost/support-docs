@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "dns_get_MXs"
 description: "dns get M Xs int dns get M Xs closure domain void closure const char domain int has core dns get M Xs hook void register core dns get M Xs hook first hook closure ec hook core dns get M Xs func t hook void closure void register core..."
 ---

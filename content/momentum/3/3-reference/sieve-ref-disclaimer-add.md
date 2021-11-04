@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "disclaimer_add"
 description: "disclaimer add add a disclaimer to an email disclaimer add hash Use the disclaimer add function to append a message to an email For example this function may be used to indicate that an email has been scanned Sieve scripts using disclaimer add can be used in any stage or..."
 ---

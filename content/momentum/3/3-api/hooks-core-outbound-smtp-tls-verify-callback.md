@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "outbound_smtp_tls_verify_callback"
 description: "outbound smtp tls verify callback This hook allows you to augment the built in TLS verification process for outbound SMTP sessions int core outbound smtp tls verify callback closure dc sslctx preverify ok subject issuer x 509 ctx void closure delivery construct dc ec ssl ctx sslctx int preverify ok..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "dns_cache_submit3"
 description: "dns cache submit 3 Submit a query to the dns cache asking an alternative ares channel void dns cache submit 3 q cb cl flags mychannel dns cache query q dns cache callback cb void cl int flags ares channel mychannel This reference page was automatically generated from functions found..."
 ---

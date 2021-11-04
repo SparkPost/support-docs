@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "ec_datasource_next_column"
 description: "ec datasource next column Move the cursor to the next column in the specified row int ec datasource next column ent nrow iter const ecdata cache ent ent int nrow ec datasource value iter iter Move the cursor to the next column in the specified row ent This parameter is..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "smtp_should_session_shutdown"
 description: "smtp should session shutdown Determine whether an SMTP session should be shut down int core smtp should session shutdown closure dc void closure delivery construct dc The smtp should session shutdown hook allows modules to apply logic to determine whether an SMTP session should be shut down This hook is..."
 ---

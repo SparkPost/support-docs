@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "response_eval"
 description: "response eval Process feedback from Google Cloud Messaging int response eval closure response msg void closure gcm response response ec message msg Configuration Change This feature is available as of version 3 5 5 The primary purpose of this hook is to process Google GCM feedback concerning token management Use..."
 ---

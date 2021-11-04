@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "smpp_write_seg_blob"
 description: "smpp write seg blob Change or write the text content of the current segment void smpp write seg blob m seg data ec message m struct smpp seg data seg data Configuration Change This feature is available starting from Momentum 3 2 Change or write the text content of the..."
 ---

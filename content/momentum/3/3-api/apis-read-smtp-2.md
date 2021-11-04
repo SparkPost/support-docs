@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "read_smtp2"
 description: "read smtp 2 Read the SMTP response from peer int read smtp 2 dc expected code now mask extra codes delivery construct dc int expected code struct timeval now int mask int extra codes Configuration Change This feature is available starting from Momentum 3 1 0 Read the SMTP response..."
 ---

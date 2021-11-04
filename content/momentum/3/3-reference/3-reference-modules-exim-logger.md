@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "exim_logger – Exim-Compatible Logging"
 description: "Momentum supports logging in the same style as the Open Source MTA Exim http www exim org This is mainly of use to sites which are moving from an Exim install or otherwise have log processing software that reads data in Exim compliant format The exim logger module writes to..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "cluster_scope_max_outbound_connections"
 description: "cluster scope max outbound connections provide traffic shaping for outbound connections in a cluster configuration Cluster Scope Max Outbound Connections 20 Configuration Change This feature is available starting from Momentum 3 0 16 Cluster Scope Max Outbound Connections is for use in a cluster configuration and is the equivalent of..."
 ---

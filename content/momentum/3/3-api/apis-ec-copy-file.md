@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "ec_copy_file"
 description: "ec copy file Copy a file from one location to another int ec copy file srcpath destpath flags mode const char srcpath const char destpath int flags int mode Copy a file from one location to another srcpath The location of the source file destpath The location of the destination..."
 ---

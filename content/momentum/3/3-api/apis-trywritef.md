@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "trywritef"
 description: "trywritef Write formatted data for an event int trywritef event buffer Event event const char buffer Write formatted data for an event This function assumes that the event closure is an Section 68 2 accept construct All events are assumed to be non blocking so the write semantics are non..."
 ---

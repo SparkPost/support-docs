@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "max_dns_ttl"
 description: "max dns ttl set the maximum DNS TTL max dns ttl 4294967295 max dns ttl and min dns ttl are optional overrides to the TTL values returned from DNS only as far as resolving SMTP destinations is concerned the DNS cache used by other parts of the system such as..."
 ---

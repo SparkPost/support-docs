@@ -1,5 +1,5 @@
 ---
-lastUpdated: "February 2020"
+lastUpdated: "02/08/2020"
 title: "When sending to Gmail subscribers I see this error: \"We've found that lots of messages from sparkpostmail.com are spam\""
 description: "You are receiving this error because Gmail uses the return path domain for that error message However it is your from domain that the reputation is actually referencing We have clients sending to Gmail from the same return path and I Ps that are not experiencing inbox issues Steps Towards..."
 ---

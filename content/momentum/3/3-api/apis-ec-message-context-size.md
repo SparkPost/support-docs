@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "ec_message_context_size"
 description: "ec message context size Returns the size of the appropriate per message dictionary int ec message context size m w ec message m int w This reference page was automatically generated from functions found in the header files in the development branch The function described here may not exist in..."
 ---

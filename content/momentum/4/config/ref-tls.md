@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "tls"
 description: "tls determine whether to use TLS connection for outbound mail TLS no ifavailable required Configuration Change Support for opportunistic TLS is available as of version 4 1 This option determines whether or not Transport Layer Security should be used when delivering email Note that this does not guarantee end to..."
 ---

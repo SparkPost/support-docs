@@ -1,5 +1,5 @@
 ---
-lastUpdated: "January 2021"
+lastUpdated: "01/14/2021"
 title: "Uploading and Storing a Recipient List as a CSV file"
 description: "Adding a New Recipient List In the SparkPost app first go to Lists Recipients the click the orange button that says New Recipient List Fill in the Label The ID Field will self fill and the Description Field Choose the File you would like to upload with the Choose..."
 ---

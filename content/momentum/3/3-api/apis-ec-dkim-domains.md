@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "ec_dkim_domains"
 description: "ec dkim domains Function to return a list of valid signing domains int ec dkim domains m ctx domains ec message m validate context ctx char domains This reference page was automatically generated from functions found in the header files in the development branch The function described here may not..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "ec_message_change_binding_slot"
 description: "ec message change binding slot Set the binding for a message void ec message change binding slot mess newslot ec message mess ec binding slot newslot Set the binding for a message mess A pointer to an ec message struct For documentation of this data structure see Section 68 38..."
 ---

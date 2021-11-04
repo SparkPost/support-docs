@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "ec_blobject_delref"
 description: "ec blobject delref Decrements the reference count of obj by 1 and releases the memory allocated to it if the reference count is decremented to 0 void ec blobject delref obj ec blobject obj Decrements the reference count of obj by 1 and releases the memory allocated to it if..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "ec_ptr_array_get"
 description: "ec ptr array get retrieve from a sparse ec ptr array void ec ptr array get array slot ec ptr array array int slot This reference page was automatically generated from functions found in the header files in the development branch The function described here may not exist in generally..."
 ---

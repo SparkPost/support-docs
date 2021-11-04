@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "Update Web UI Configuration"
 description: "Backup the production json file then copy the default json file to production Answer yes at the prompt Manually migrate environment specific settings from the opt msys app webui scripts config production json bkup file to the opt msys app webui scripts config production json file All api Ports and..."
 ---

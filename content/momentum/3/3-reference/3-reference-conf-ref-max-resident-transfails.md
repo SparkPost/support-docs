@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "max_resident_transfails"
 description: "max resident transfails the threshold for swapping transient failures out of memory max resident transfails 100 If the transfail queue grows beyond the size specified by this option messages are swapped out before being queued to the transfail queue thus mitigating a potential memory usage problem The default value for..."
 ---

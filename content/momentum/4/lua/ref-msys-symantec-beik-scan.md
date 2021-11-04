@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "msys.symantec_beik.scan"
 description: "msys symantec beik scan Scan using BEIK msys symantec beik scan msg vctx Use this function to scan email You must load and correctly configure the beik module before using this function Be sure to load the beik module in passive mode by setting Enabled to false For details see..."
 ---

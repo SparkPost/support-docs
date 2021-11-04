@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "ec_shared_throttle"
 description: "ec shared throttle create ec shared throttle inc ec shared throttle check ec shared throttle tarpit Shared Named Throttling ec shared throttle create name messages seconds epsilon ec shared throttle inc name ec shared throttle check name ec shared throttle tarpit name Allow any number of shared named throttles to..."
 ---

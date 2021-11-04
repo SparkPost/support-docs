@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "config_get_binding_domain_retry_interval"
 description: "config get binding domain retry interval Return the value of the max retry interval option int config get binding domain retry interval caller scope binding domain generic module infrastructure caller scope int binding const domain Determine the value of the max retry interval configuration option The caller scope argument is..."
 ---

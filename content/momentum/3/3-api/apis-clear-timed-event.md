@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "clear_timed_event"
 description: "clear timed event Clear the specified timed event void clear timed event evt Event evt Clear the specified timed event You cancel timed events using this function which will implicitly free the event if it was found in the system Otherwise it will return 0 and the caller is responsible..."
 ---

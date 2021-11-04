@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "msys.policyeditor.get_rcptto"
 description: "msys policyeditor get rcptto Return the recipient msys policyeditor get rcptto ctx vars params Configuration Change This function is deprecated Use local recip msg rcptto to get the RCPT TO email address For more information see msg rcptto Return the recipient The ctx parameter is the context containing objects from..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "ec_message_context_get"
 description: "ec message context get Returns a pointer to the value of the key in the appropriate dictionary otherwise it returns an empty string const char ec message context get m w k ec message m int w const char k Returns a pointer to the value for the key in..."
 ---

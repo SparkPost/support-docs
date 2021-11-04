@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "persist_io – Persistent IO Wrapper"
 description: "The persist io module provides a non volatile cache wrapper for any other IO wrapper For example one could load a file over the HTTP IO wrapper such that if the HTTP server is down then the consumer of the file will be provided with the locally cached copy This..."
 ---

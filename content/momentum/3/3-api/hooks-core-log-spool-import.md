@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "log_spool_import"
 description: "log spool import void log spool import closure m orig id now ctx result void closure ec message m message id orig id struct timeval now ec spool ctx ctx int result int has core log spool import hook void register core log spool import hook first hook closure ec..."
 ---

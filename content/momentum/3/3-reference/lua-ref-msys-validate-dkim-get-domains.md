@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "msys.validate.dkim.get_domains"
 description: "msys validate dkim get domains Return a list of valid signing domains msys validate dkim get domains msg vctx This function requires the dkim validate module msg is a mail message vctx is the validation context This function returns a list of valid signing domains Example 15 65 msys validate..."
 ---

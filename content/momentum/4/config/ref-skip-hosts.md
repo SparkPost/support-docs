@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "skip_hosts"
 description: "skip hosts skip the specified host but consider other hosts in the domain skip hosts 127 0 0 1 skip hosts 127 0 0 1 fe 80 a 00 1 Unlike prohibited hosts Skip hosts does not permanently deny a domain Instead it enables you to skip the specified host..."
 ---

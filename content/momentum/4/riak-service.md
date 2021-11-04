@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "Running the Riak Service"
 description: "Riak is configured to start automatically when the system boots The service can be controlled by the script located at etc init d msys riak This initialization script has the usual stop start and restart options The following additional options are also available reboot Perform a clean restart by first..."
 ---

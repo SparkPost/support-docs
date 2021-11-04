@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "msys.rfc3464.compute_delivery_status_string"
 description: "msys rfc 3464 compute delivery status string Generate RFC 3464 compliant delivery status headers msys rfc 3464 compute delivery status string response text This function is similar to the compute delivery status function but returns a string concatenation of the header value pairs separated by r n This string is..."
 ---

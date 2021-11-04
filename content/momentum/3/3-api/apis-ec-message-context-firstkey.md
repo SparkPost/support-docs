@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "ec_message_context_firstkey"
 description: "ec message context firstkey Returns a pointer to the first key in the appropriate per message dictionary NULL if the dictionary is empty const char ec message context firstkey m w ec message m int w This reference page was automatically generated from functions found in the header files in..."
 ---

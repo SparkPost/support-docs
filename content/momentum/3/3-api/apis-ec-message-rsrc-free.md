@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "ec_message_rsrc_free"
 description: "ec message rsrc free Allows the underlying operating system to reclaim memory and objects associated with the given resource void ec message rsrc free resource ec message resource t resource This reference page was automatically generated from functions found in the header files in the development branch The function described..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "ecelerity-cluster.conf"
 description: "ecelerity cluster conf The cluster specific configuration file included from within ecelerity conf ecelerity cluster conf configures cluster behavior The configuration options of the ecelerity cluster conf file are discussed here Example 10 2 The ecelerity cluster conf file I Pv 6 addresses are much more flexible than I Pv..."
 ---

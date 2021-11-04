@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "ec_control_send_command"
 description: "ec control send command Send a command over an ec console control connection int ec control send command fd command closure consumer int fd const char command void closure int void closure char buf int len consumer This reference page was automatically generated from functions found in the header files..."
 ---

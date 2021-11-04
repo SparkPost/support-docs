@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "adaptive_update"
 description: "adaptive update void adaptive update closure buf buflen void closure const char buf int buflen int has cluster adaptive update hook void register cluster adaptive update hook first hook closure ec hook cluster adaptive update func t hook void closure void register cluster adaptive update hook last hook closure ec..."
 ---

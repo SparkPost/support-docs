@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "msys.base64.decode"
 description: "msys base 64 decode Decode a base 64 encoded string msys base 64 decode encoded text charset encoded text is a base 64 encoded string This function returns the decoded bytes in a string If the input cannot be decoded it raises an error By default the character encoding for..."
 ---

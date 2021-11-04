@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "ec_ctl"
 description: "ec ctl start stop or restart the Momentum Application Server opt msys ecelerity bin ec ctl start stop restart ec ctl is a shell script that you can use to start stop or restart the Momentum Application Server ecelerity Aside from launching this process ec ctl performs various pre launch..."
 ---

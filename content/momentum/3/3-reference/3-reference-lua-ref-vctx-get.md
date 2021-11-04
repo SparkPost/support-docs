@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "vctx:get"
 description: "vctx get Get the value of a context variable vctx get type key Get the value of a context variable The type parameter can be either msys core VCTX MESS or msys core VCTX CONN The key parameter is the name of the context variable that you wish to retrieve..."
 ---

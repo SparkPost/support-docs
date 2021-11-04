@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "Overview"
 description: "Mobile Momentum is a set of additional features for Momentum that enables interoperability of Internet email Short Message Service SMS text messaging and Multimedia Messaging Service MMS rich media messaging From a user's point of view Mobile Momentum is implemented using the same module listener domain and binding infrastructure used..."
 ---

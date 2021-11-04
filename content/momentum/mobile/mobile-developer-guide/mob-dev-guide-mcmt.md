@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "The Multi-Channel Message Type (MCMT)"
 description: "A MCMT message is a multi part MIME message A required part of a MCMT message is an email attachment Content Type message rfc 2822 There are other optional parts with content suitable for delivery over non email channels such as SMPP and or MM 7 When an MCMT message..."
 ---

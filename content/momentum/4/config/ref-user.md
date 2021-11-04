@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "user"
 description: "user group security user identity to assume after startup If you are using the user and group options in a Security stanza it may be necessary to retain some root privileges An example of such a need is a module that can stop and start listeners during operation On Unix..."
 ---

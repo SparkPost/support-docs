@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "ec_convert_io"
 description: "ec convert io Convert an io stream from one encoding to another io object ec convert io from fromcode tocode io object from const char fromcode const char tocode This reference page was automatically generated from functions found in the header files in the development branch The function described here..."
 ---

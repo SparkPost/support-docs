@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "Persistent Connections"
 description: "Normally SMPP connections are established by Mobile Momentum whenever traffic is destined for an SMPP domain The connection is kept open until the SMPP inactivity timer expires While this may be fine for most MT based applications it does not guarantee an SMPP connection when an SMSC has SMS messages..."
 ---

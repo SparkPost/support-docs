@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "tryread_until"
 description: "tryread until Read data in growbuf sized chunks int tryread until event needmask mtc until Event event int needmask minimal tryread construct mtc const char until Read data in growbuf sized chunks All events are assumed to be non blocking so the read and write semantics are non blocking The..."
 ---

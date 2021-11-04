@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "check_outbound_conn_throttle"
 description: "check outbound conn throttle int check outbound conn throttle closure binding id dr now later void closure int binding id domain record dr struct timeval now struct timeval later int has core check outbound conn throttle hook void register core check outbound conn throttle hook first hook closure ec hook..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "January 2021"
+lastUpdated: "01/14/2021"
 title: "Getting Started with AMP for Email on SparkPost"
 description: "This support article covers the basic structure of AMPHTML emails and explains how to get started sending AMP for email on SparkPost."
 ---

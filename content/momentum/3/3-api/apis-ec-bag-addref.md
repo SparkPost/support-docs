@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "ec_bag_addref"
 description: "ec bag addref Add a reference to a bag ec bag ec bag addref bag ec bag bag Add a reference to the bag bag The ec bag This function returns a reference to an ec bag It is legal to call this function in any thread..."
 ---

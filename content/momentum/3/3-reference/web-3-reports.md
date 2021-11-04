@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "The Reporting Page"
 description: "Navigate to the Reports page and choose from the following options presented in the Report list box Deliveries Rejections As of version 3 0 23 Bounces Transient Failures Delivery Times Long Short Codes Mobile Momentum only Mobile Latency Mobile Momentum only Domain Adaptive Delivery Available only when the adaptive module..."
 ---

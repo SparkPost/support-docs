@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "ec_control_factory_init"
 description: "ec control factory init Initialize the Control Listener subsystem int ec control factory init factory Event Func factory This reference page was automatically generated from functions found in the header files in the development branch The function described here may not exist in generally available versions of Momentum and may..."
 ---

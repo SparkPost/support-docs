@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "Interface"
 description: "SMPP PDU structure A non negative return value is the response command status code Any non zero return value causes processing to cease for the current PDU The special return value of 1 means that SMPP ESME OK 0 will be used for the command status code in the SMPP..."
 ---

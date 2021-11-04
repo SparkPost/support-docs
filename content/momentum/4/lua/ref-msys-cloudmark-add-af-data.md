@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "msys.cloudmark.add_af_data"
 description: "msys cloudmark add af data Pass data for use with the Cloudmark Active Filter msys cloudmark add af data addr data Optionally pass the Cloudmark Active Filter an email address and a table of key value pairs You must load and correctly configure the cloudmark module and the maildir module..."
 ---

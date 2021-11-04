@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "binding_auto_replumb_interval"
 description: "binding auto replumb interval sets the time interval to check the plumbed state of statically plumbed bindings binding auto replumb interval 60 This option sets the time interval in seconds to check the plumbed state of statically plumbed bindings The default value is 60 binding auto replumb interval is valid..."
 ---

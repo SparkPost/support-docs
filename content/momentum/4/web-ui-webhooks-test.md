@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "Testing Your Webhook"
 description: "In addition to the validation performed when you create your webhook you can test your webhook by posting an example message event batch to the target URL The test sends an HTTP request to the client endpoint in the same way that the batch transmitter will This test will validate..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "Troubleshooting"
 description: "One troubleshooting strategy is to change the log level for the adaptive module Do this by making the following change to the configuration of the adaptive module adaptive debug level debug The different debug levels are described at Debug Levels Remove this setting when you have finished debugging You can..."
 ---

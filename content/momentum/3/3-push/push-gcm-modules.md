@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "GCM Modules"
 description: "In order to configure Momentum for GCM you must use the gcm module If you wish to log GCM notifications then you will also need to configure the gcm logger module Configuration Change This feature is available as of version 3 5 5 The gcm module is a requirement if..."
 ---

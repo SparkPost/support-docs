@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "ec_message_set_mailfrom"
 description: "ec message set mailfrom sets the entire protocol decorated mailfrom string int ec message set mailfrom mess str len take buffer ec message mess const char str int len int take buffer This reference page was automatically generated from functions found in the header files in the development branch The..."
 ---

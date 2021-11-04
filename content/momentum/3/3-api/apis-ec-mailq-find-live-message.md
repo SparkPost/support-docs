@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "ec_mailq_find_live_message"
 description: "ec mailq find live message Finds a message in the message queues and returns it ec message ec mailq find live message mid message id mid This function finds a message in the message queues and returns it The message is still queued mid A message id struct For a..."
 ---

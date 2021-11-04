@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "Examples"
 description: "The following Lua example temp fails all the MM 7 response with Status Code not equal to 1000 and re route the message submission Example 19 1 MT Submit Response Hook Lua Example The following C hook does the same as the Lua implementation above Example 19 2 MT Submit..."
 ---

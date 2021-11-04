@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "msys.db.fetch_row"
 description: "msys db fetch row If successful return the first row of the query result as a table msys db fetch row cachename query queryparams options Issue a query to a datasource The parameters are as follows cachename the name of the datasource cache to be queried query the query to..."
 ---

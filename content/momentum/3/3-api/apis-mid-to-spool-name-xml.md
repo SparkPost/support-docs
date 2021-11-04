@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "mid_to_spool_name"
 description: "mid to spool name Get the spool name from the message ID int mid to spool name mid buffer message id mid char buffer Get the spool name from the message ID mid The message id buffer The buffer for the spool name This buffer must be at least SPOOL..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "msg:text"
 description: "msg text Replace the entire message body msg text value type charset The entire message body is replaced by the supplied text The text will be converted to the specified charset and transfer encoding will be applied affecting the content type and related headers of the message Enable this function..."
 ---

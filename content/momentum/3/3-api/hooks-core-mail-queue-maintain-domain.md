@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "mail_queue_maintain_domain"
 description: "mail queue maintain domain void mail queue maintain domain closure dr now rv void closure domain record dr struct timeval now int rv int has core mail queue maintain domain hook void register core mail queue maintain domain hook first hook closure ec hook core mail queue maintain domain func..."
 ---

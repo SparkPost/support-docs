@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "ec_message_get_code"
 description: "ec message get code Fetches the code set for the message const char ec message get code mess ec message mess Returns the SMTP status code set for the message This status code is updated after a delivery attempt with the SMTP status returned by the remote MX server mess..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "dec_inbound_connections"
 description: "dec inbound connections void dec inbound connections closure conntype fd ac void closure char conntype int fd accept construct ac int has core dec inbound connections hook void register core dec inbound connections hook first hook closure ec hook core dec inbound connections func t hook void closure void register..."
 ---

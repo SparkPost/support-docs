@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "msys.getClassMetaTable"
 description: "msys get Class Meta Table Return the metatable for the named class msys get Class Meta Table classnamestring Returns the metatable for the named class See http www lua org pil 13 html for more information about Lua metatables Because this function is in the msys namespace an explicit require..."
 ---

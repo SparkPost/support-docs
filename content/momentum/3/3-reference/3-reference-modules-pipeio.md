@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "pipe_io – Pipe IO Wrapper"
 description: "The pipe io module provides facilities for writing content via an arbitrary program Momentum uses an I O abstraction layer for writing logs With this module you can post process or transform logs pipe io should not be used for post processing the paniclog on Momentum nodes For this module..."
 ---

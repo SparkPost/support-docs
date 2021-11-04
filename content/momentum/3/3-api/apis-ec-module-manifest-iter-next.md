@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "ec_module_manifest_iter_next"
 description: "ec module manifest iter next advances a module manifest iterator int ec module manifest iter next iter modulename ec module manifest iter t iter const char modulename This reference page was automatically generated from functions found in the header files in the development branch The function described here may not..."
 ---

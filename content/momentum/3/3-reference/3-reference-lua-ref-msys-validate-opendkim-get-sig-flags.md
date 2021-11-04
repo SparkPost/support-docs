@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "msys.validate.opendkim.get_sig_flags"
 description: "msys validate opendkim get sig flags Fetch the flags associated with a DKIM signature msys validate opendkim get sig flags dkim sig Configuration Change This function is available as of version 3 6 This function requires the opendkim module This function fetches the flags associated with a DKIM signature Use..."
 ---

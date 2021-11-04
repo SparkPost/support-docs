@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "Complex Centralized Logging Deployments"
 description: "More complex deployments may arrange for the logs for a given subcluster to be aggregated on a custer manager local to that subcluster Consider an environment with east and west subclusters where the intention is for logs from the east subcluster to be journalled on a cluster manager node physically..."
 ---

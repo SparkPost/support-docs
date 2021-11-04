@@ -1,5 +1,5 @@
 ---
-lastUpdated: "February 2020"
+lastUpdated: "02/08/2020"
 title: "Open Pixel Placement on SparkPost"
 description: "The open pixel is a 1x1 transparent gif that we insert into messages to track which recipients open messages (aka renders). When an end recipient has images turned on in their client, the pixel is downloaded from our server which allows us to record which recipient opened which message..."
 ---

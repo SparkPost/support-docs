@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "cloudmark_score"
 description: "cloudmark score Analyze a message with Cloudmark Authority cloudmark score Configuration Change This feature is available starting from Momentum 3 0 23 cloudmark score returns a string containing the numeric score assigned to the active message by the Cloudmark Authority Engine Additionally all of the validation context variables set by..."
 ---

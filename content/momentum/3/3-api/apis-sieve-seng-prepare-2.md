@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "sieve_seng_prepare2"
 description: "sieve seng prepare 2 Prepare to execute a Sieve script SENG sieve seng prepare 2 sieve phase bag SIEVE sieve const char phase ec bag bag Prepare to execute a Sieve script Use sieve free seng to release memory associated with a SENG sieve The script phase The phase in..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "Configuring the Environment File"
 description: "Environment variables should be set or adjusted on startup If Momentum is started up using the ec ctl script any environment variables included in the environment file will be set Environment variables can be set in the opt msys ecelerity etc environment file The variables that can be set are..."
 ---

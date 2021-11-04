@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "max_recipients_per_connection"
 description: "max recipients per connection maximum number of recipients to send on a connection Max Recipients Per Connection 0 If set to 0 the default then no maximum limit will be enforced otherwise it specifies the maximum number of RCPT TO commands that can be used on a given connection This..."
 ---

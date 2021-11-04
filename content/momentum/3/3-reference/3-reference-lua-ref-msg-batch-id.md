@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "msg.batch_id"
 description: "msg batch id Return the human readable ec message batch id msg batch id When used in a string context or explicitly forced into a string via tostring msg batch id this function returns the human readable ec message batch id Example 15 41 msg batch id example Enable this..."
 ---

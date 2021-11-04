@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "conntrol – Fine-Grained Connection Control"
 description: "The conntrol module is designed to allow control over how connections are established into Momentum The module currently implements one check early data sending which is designed to spot so called ratware Early sender detection causes Momentum to pause before its initial banner is sent to a connecting client If..."
 ---

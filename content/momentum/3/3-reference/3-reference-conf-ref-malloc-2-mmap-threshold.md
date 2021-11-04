@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "malloc2mmap_threshold"
 description: "malloc 2 mmap threshold use mmap when allocations exceed this amount malloc 2 mmap threshold 4092 When set to a positive value Momentum will use mmap to fulfill memory allocation requirements exeeding the malloc 2 mmap threshold size rather than allocating memory from the heap via malloc Lowering this setting..."
 ---

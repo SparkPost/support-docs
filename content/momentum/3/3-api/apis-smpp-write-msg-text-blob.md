@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "smpp_write_msg_text_blob"
 description: "smpp write msg text blob Write a text blob to an SMPP message void smpp write msg text blob m msg text msg text len key ec message m char msg text int msg text len const char key Configuration Change This feature is available starting from Momentum 3 2..."
 ---

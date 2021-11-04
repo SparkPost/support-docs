@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "sieve_suspend"
 description: "sieve suspend Suspend the current Sieve action void sieve suspend seng SENG seng Suspend the current Sieve action Use this function only if can go async is true Use sieve resume to resume the Sieve action seng The Sieve engine state This function returns void It is legal to call..."
 ---

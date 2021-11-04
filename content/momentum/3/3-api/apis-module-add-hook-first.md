@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "module_add_hook_first"
 description: "module add hook first Add a hook as the first hook ec atomic t module add hook first name proto hook closure flags const char name const char proto void hook void closure int flags This function is for internal use only Use the EC DECLARE VOID HOOK macro or..."
 ---

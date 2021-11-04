@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "Typographical Conventions Used in This Document"
 description: "The typographical conventions used in this document are as follows Text in this style indicates executable programs such as ecelerity Text in this style is used when referring to file names For example The ecelerity conf file is used to configure Momentum Text in this style is used when referring..."
 ---

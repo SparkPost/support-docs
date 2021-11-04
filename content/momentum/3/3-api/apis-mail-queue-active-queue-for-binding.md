@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "mail_queue_active_queue_for_binding"
 description: "mail queue active queue for binding Returns the active queue for a binding Skiplist mail queue active queue for binding mq binding create mail queue mq int binding int create Returns the active queue for a given binding queue A pointer to a mail queue struct For documentation of this..."
 ---

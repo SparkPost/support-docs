@@ -1,5 +1,5 @@
 ---
-lastUpdated: "February 2020"
+lastUpdated: "02/08/2020"
 title: "Subscriber Acquisition"
 description: "The Signals recommendation on how to acquire quality subscribers."
 ---

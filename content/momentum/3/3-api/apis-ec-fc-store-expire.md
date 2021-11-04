@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "ec_fc_store_expire"
 description: "ec fc store expire Store entry in the cache with the provided key key length and expiration time int ec fc store expire cache entry key key length expire ec fc t cache ec fc entry t entry const void key size t key length unsigned int expire This reference..."
 ---

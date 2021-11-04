@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "get_fd_event_set"
 description: "get fd event set Retrieve an event set void get fd event set set count Event set int count Retrieve an event set set The event set count The size of the event fetched This function returns void On success set points to the event set Only call this function..."
 ---

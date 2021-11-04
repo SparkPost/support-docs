@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "pre_mailq_message_requeue"
 description: "pre mailq message requeue Invoked immediately prior to a message requeue action caused by a delivery failure void core pre mailq message requeue closure msg now void closure ec message msg struct timeval now Functions registered at this hook will be invoked immediately prior to a message requeue action caused..."
 ---

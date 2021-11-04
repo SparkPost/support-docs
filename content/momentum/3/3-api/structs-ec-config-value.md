@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "ec_config_value"
 description: "The members of this struct are as follows To use this struct include the file configuration h config get binding domain tls verify Section 68 22 ec config option def and ec config release value..."
 ---

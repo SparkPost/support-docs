@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "sieve_charset_converter_buffer_string"
 description: "sieve charset converter buffer string perform character encoding conversion int int sieve charset converter buffer string srccharset destcharset inbuf inbuflen outstr const char srccharset const char destcharset char inbuf int inbuflen string outstr This reference page was automatically generated from functions found in the header files in the development branch..."
 ---

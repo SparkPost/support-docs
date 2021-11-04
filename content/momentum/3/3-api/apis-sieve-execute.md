@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "sieve_execute"
 description: "sieve execute Prepare and execute a sieve script int sieve execute sieve ctx m ac phase vseng SIEVE sieve validate context ctx email message m accept construct ac const char phase SENG vseng Use sieve seng prepare 3 and sieve seng execute instead Prepare and execute a sieve script..."
 ---

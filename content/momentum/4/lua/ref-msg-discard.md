@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "msg:discard"
 description: "msg discard Silently discard a message msg discard reason Silently discard a message The message will appear to the sender to have been accepted and delivered no error status or out of band delivery notification will occur but the message will be logged as a rejection Execution will continue after..."
 ---

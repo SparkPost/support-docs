@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "stringwrite_config_string"
 description: "stringwrite config string Output a string to the system console string stringwrite config string str label value xml string str const char label const char value int xml Output a string to the system console This function is deprecated in Momentum version 3 0 It is suitable only for supporting..."
 ---

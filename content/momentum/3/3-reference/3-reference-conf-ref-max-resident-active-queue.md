@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "max_resident_active_queue"
 description: "max resident active queue threshold above which messages are not held in memory Max Resident Active Queue 250 The maximum number of messages in a domain's active queue before certain destaging actions should be taken to prevent them from consuming excessive system memory This option is very useful for domains..."
 ---

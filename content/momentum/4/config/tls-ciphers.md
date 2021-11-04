@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "tls_ciphers"
 description: "tls ciphers specify allowable ciphers for TLS inbound and outbound sessions TLS Ciphers DEFAULT NORMAL Configuration Change Support for GNUTLS is available as of version 4 1 for SMTP reception and SMTP deliveries only This option specifies the allowable ciphers for a TLS session The allowable ciphers must be a..."
 ---

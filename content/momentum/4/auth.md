@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "Enforcing REST API/UI User Authentication"
 description: "Configuration Change As of version 4 1 user authentication is enforced on the web based UI and all REST API by default Enforcing authentication is recommend for security reasons However your system administrator can disable user authentication if your application does not require it Note that if you wish to..."
 ---

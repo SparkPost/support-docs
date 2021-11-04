@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "ec_message_swap_out"
 description: "ec message swap out cause a message to be written to disk int ec message swap out mess refs flags ec message mess ec message refs int flags This reference page was automatically generated from functions found in the header files in the development branch The function described here may..."
 ---

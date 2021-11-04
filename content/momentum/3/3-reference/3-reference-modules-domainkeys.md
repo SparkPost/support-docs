@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "domainkeys – Yahoo! DomainKeys"
 description: "Domain Keys is a technology proposal that can bring yes or no back to the decision process by giving email providers a mechanism for verifying both the domain of each email sender and the integrity of the messages sent i e that they were not altered during transit And once..."
 ---

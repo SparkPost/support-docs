@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "stringwrite_config_list"
 description: "stringwrite config list Output a list to the system console string stringwrite config list str label value xml string str const char label eclist node value int xml Output a list to the system console This function is deprecated in Momentum version 3 0 It is suitable only for supporting..."
 ---

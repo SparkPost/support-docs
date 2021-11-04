@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "clear_mail_queue_maintainers"
 description: "clear mail queue maintainers reschedule the mail queue maintainer clear mail queue maintainers false Reschedule the mail queue maintainer The default value for this option is false Configuration Change As of version 3 6 the default value for this option is true In some circumstances you may wish to set..."
 ---

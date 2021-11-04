@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "msys.qp.encode"
 description: "msys qp encode Quoted printable encode a string msys qp encode original charset original can be a string or a msys core ec string By default the character encoding for all text is UTF 8 If you would like to convert the text to a different character encoding before it..."
 ---

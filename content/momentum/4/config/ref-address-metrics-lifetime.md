@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "address_metrics_lifetime"
 description: "address metrics lifetime the TTL of address metrics address metrics lifetime 1800 Address metrics store data on the quality of service to a particular target host from a particular binding data such as the time since the last failure and how long it takes to connect and to deliver a..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "ec_message_mcmt_pre_fixup"
 description: "ec message mcmt pre fixup int ec message mcmt pre fixup closure msg mcmt reception void closure ec message msg int mcmt reception int has core ec message mcmt pre fixup hook void register core ec message mcmt pre fixup hook first hook closure ec hook core ec message mcmt..."
 ---

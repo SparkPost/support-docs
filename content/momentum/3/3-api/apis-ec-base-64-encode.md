@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "ec_base64_encode"
 description: "ec base 64 encode Perform Base 64 encoding of a string int ec base 64 encode src src len dest dest len const char src int src len const char dest int dest len Perform Base 64 encoding of a string src The buffer containing the string to Base 64..."
 ---

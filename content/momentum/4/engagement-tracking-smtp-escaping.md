@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "Escaping {{ and }} in SMTP Message Body"
 description: "Since Momentum inserts open tracked and click tracked UR Ls using its substitution engine any existing or that exist in the SMTP message must be escaped Before injection must be replaced with opening double curly and must be replaced with closing double curly..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "msys.db.query"
 description: "msys db query Query a datasource msys db query cachename query queryparams options Issue a query to a datasource The parameters are as follows cachename the name of the datasource cache to be queried query the query to be presented to the cache queryparams a Lua table object with parameters..."
 ---

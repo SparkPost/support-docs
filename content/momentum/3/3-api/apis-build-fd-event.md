@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "build_fd_event"
 description: "build fd event Create an event event relating to an open file descriptor Event build fd event fd mask aggressive callback closure int fd int mask int aggressive Event Func callback void closure Create a file descriptor event The Event structure encapsulates a file descriptor and an action that should..."
 ---

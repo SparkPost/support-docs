@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "config_get_domain_host_failure_retry"
 description: "config get domain host failure retry Determine whether there should be another delivery attempt int core config get host failure retry closure caller scope value void closure generic module infrastructure caller scope int value This hook is called to determine whether a delivery should be attempted after a connection failure..."
 ---

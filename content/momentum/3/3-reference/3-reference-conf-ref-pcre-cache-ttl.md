@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "pcre_cache_ttl"
 description: "pcre cache ttl set the maximum TTL for the ec pcre compile cache pcre cache size 300 Pcre Cache Size and Pcre Cache Ttl together set the maximum size and TTL of the ec pcre compile cache This cache is used by sieve sievelib the bounce classifier code and the..."
 ---

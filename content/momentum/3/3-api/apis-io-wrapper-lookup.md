@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "io_wrapper_lookup"
 description: "io wrapper lookup Look up the specified IO wrapper io wrapper io wrapper lookup name const char name This reference page was automatically generated from functions found in the header files in the development branch The function described here may not exist in generally available versions of Momentum and may..."
 ---

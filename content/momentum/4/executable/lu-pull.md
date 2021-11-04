@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "lu_pull"
 description: "lu pull update the Live Updates database opt msys ecelerity bin lu pull ad update only a opt msys ecelerity bin lu pull ad updatesdir path to updatesdir opt msys ecelerity bin lu pull feedback path to feedback dir opt msys ecelerity bin lu pull help opt msys ecelerity bin..."
 ---

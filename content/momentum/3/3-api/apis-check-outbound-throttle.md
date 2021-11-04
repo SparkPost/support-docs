@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "check_outbound_throttle"
 description: "check outbound throttle check an outbound throttle int check outbound throttle ob mess throttle now later throttle ob mess throttle struct timeval now struct timeval later This reference page was automatically generated from functions found in the header files in the development branch The function described here may not exist..."
 ---

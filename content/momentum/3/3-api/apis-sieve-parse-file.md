@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "sieve_parse_file"
 description: "sieve parse file Parse compile a Sieve script from a file SIEVE sieve parse file filename error log const char filename string error log Parse compile a Sieve script from a file The script must be UTF 8 encoded as per RFC 3028 filename The file name error log The..."
 ---

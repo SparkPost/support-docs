@@ -1,5 +1,5 @@
 ---
-lastUpdated: "July 2021"
+lastUpdated: "07/14/2021"
 title: "generate_rfc3464_message"
 description: "generate rfc 3464 message int generate rfc 3464 message closure message action mdn void closure ec message message dsn actype action ec message mdn int has core generate rfc 3464 message hook void register core generate rfc 3464 message hook first hook closure ec hook core generate rfc 3464 message..."
 ---

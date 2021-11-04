@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "response_transcode_pattern"
 description: "response transcode pattern the regex pattern for comparison to a server response response transcode pattern regex pattern This feature requires the Section 71 58 response transcode Module When the SMTP response from a remote sever indicates an error the response code falls in the range 400 to 599 then that..."
 ---

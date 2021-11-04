@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "scheduler_close_connection"
 description: "scheduler close connection Have the scheduler clean up a connection void scheduler close connection dc domain delivery construct dc const char domain Have the scheduler clean up a connection dc A delivery construct For documentation of this data structure see Section 68 11 delivery construct domain A string name of..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "string_destroy"
 description: "string destroy Destroy a string int string destroy str string str Destroy a string created using ec string init type str The string This function returns void It is legal to call this function in any thread string init type..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "scpt_register_objtype"
 description: "scpt register objtype Register an object type with the scriptlet runtime int scpt register objtype thr objtype scpt thread thr scpt objtype objtype This reference page was automatically generated from functions found in the header files in the development branch The function described here may not exist in generally available..."
 ---

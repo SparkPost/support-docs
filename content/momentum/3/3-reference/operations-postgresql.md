@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "PostgreSQL"
 description: "A Postgre SQL database stores the real time data displayed by the web console and it also contains the user authentication credentials for both the web console and the system console To log in to the web console the Postgre SQL server must be running In either a stand alone..."
 ---

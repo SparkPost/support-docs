@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "response_transcode_replace"
 description: "response transcode replace the replacement string for a server response Response Transcode Replace replacement string This feature requires the response transcode module See Section 14 58 response transcode Module for more information When the SMTP response from a remote sever indicates an error the response code falls in the range..."
 ---

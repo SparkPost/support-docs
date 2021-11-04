@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "msg:makePart"
 description: "msg make Part Creates a new unlinked singleton or leaf message part msg make Part mimetype body encoding Creates a new unlinked singleton or leaf message part mimetype specifies the MIME Content Type that is to be used and body is an optional io object that contains the raw message..."
 ---

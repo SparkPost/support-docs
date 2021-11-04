@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "Configuration Overview"
 description: "Momentum is an exceptionally powerful all in one email infrastructure solution As such it can be configured to provide the full range of digital messaging channels and more This chapter gives an overview of Momentum's configuration and provides the background needed to configure your system to meet your specific application..."
 ---

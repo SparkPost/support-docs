@@ -1,5 +1,5 @@
 ---
-lastUpdated: "January 2021"
+lastUpdated: "01/14/2021"
 title: "Health Score"
 description: "Learn about the Health Score, it's components, and recommendations on how to improve your sending."
 ---

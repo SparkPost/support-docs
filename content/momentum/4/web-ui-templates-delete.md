@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "Deleting a Template"
 description: "From the Templates tab you can select a template to delete Select the template you wish to delete by clicking its label The detailed view of the template is displayed To delete your template click the arrow on the right hand side of the Save Draft button In the list..."
 ---

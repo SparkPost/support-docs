@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "io_wrapper_open2"
 description: "io wrapper open 2 Open a handle to a resource with context io object io wrapper open 2 filename options mode context const char filename int options int mode EC Dict context This reference page was automatically generated from functions found in the header files in the development branch The..."
 ---

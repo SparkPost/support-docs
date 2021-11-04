@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "Interface"
 description: "Parameters passed into this hook a reference to the smpp conn structure an ec message an integer value of the total number of SMPP segments associated with the MT ec message a list of string values of the remote message ids assigned by the remote SMSC to each segment SUBMIT..."
 ---

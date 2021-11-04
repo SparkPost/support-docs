@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "smtp_client_args_delete"
 description: "smtp client args delete Remove an argument from an smtp client args structure void smtp client args delete args extension smtp client args args const char extension Remove an argument from an smtp client args structure For a description of this struct see Section 68 81 smtp client args args..."
 ---

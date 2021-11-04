@@ -1,5 +1,5 @@
 ---
-lastUpdated: "October 2021"
+lastUpdated: "10/05/2021"
 title: "Category File"
 type: "custom"
 name: "Hook Points and C Functions Reference"

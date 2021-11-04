@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "Setting and Getting Module Options from the Console"
 description: "There are no module specific commands related to setting or getting module options To set or get module specific options use the command Note that there is no between the Scope Name and the Instance Name and that no Instance Name is specified if the module is a singleton For..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "smtp_get_state"
 description: "smtp get state Fetch a particular SMTP client state smtp state smtp get state state int state Fetchs a particular SMTP client state passing the state ID state The SMTP connection state ID An smtp state pointer to the requested SMTP state NULL if the state was not found For..."
 ---

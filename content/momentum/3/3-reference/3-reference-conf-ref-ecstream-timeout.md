@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "ecstream_timeout"
 description: "ecstream timeout the amount of time to wait for an ecstream connection to be established ecstream timeout 600 Configuration Change This feature is available as of version 3 2 The amount of time in seconds to spend waiting for a remote ecstream connection to be established The default value for..."
 ---

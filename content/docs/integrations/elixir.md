@@ -1,5 +1,5 @@
 ---
-lastUpdated: "February 2020"
+lastUpdated: "02/08/2020"
 title: "Using SparkPost with Elixir"
 description: "This article assumes you are familiar with Elixir and the mix and iex CL Is We also assume that you have created an API key with the Send via SMTP permission This article will show you how to use Spark Post via SMTP with Elixir and the Mailman library mix..."
 ---

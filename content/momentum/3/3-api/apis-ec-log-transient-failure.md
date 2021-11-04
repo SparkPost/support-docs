@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "ec_log_transient_failure"
 description: "ec log transient failure Record a transient delivery failure void ec log transient failure message domain now notestr ec message message domain record domain struct timeval now const string notestr Records the fact that Momentum was temporarily unable to delivery a message message A pointer to an ec message struct..."
 ---

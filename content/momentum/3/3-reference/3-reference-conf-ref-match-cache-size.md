@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "match_cache_size"
 description: "match cache size the size of the cache that holds the results of looking up matching scopes match cache size 16384 In version 2 2 Momentum creates a separate cache for every scope instance that contains regex domains Consider the following configuration snippet Three caches would be created one for..."
 ---

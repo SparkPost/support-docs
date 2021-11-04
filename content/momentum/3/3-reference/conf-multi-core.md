@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "Configuring for Multiple Event Loops in Momentum 3.6"
 description: "Configuration Change This feature is available as of version 3 6 Prior to version 3 6 Momentum uses a single event scheduler thread With the ready availability of increasing numbers of CPU cores this single thread architecture can underutilized CPU capacity The aim of a multiple event loop configuration is..."
 ---

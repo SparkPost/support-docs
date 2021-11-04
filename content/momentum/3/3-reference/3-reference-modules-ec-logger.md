@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "ec_logger – Momentum-Style Logging"
 description: "ec logger module is a self contained entity that tracks the full disposition status of every message that goes through Momentum Everything either ends up in the mainlog or rejectlog Together these two logs provide a full picture of all the mail transiting the system ec logger writes three log..."
 ---

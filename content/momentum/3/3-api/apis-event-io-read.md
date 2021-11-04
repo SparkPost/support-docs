@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "event_io_read"
 description: "event io read Initiate or continue a read operation for a fixed length int event io read e buf buflen state Event e char buf int buflen event io state state Initiate or continue a read operation for a fixed length If you need a record based reader consider using..."
 ---

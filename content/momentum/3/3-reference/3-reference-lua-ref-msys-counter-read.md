@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "msys.counter.read"
 description: "msys counter read Read the specified counter msys counter read object or path Returns the current integer value of the given counter object or path For example msys counter read sites example errors and msys counter read c are valid where c was a successful return value of msys counter..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "Using Stored Recipient Lists"
 description: "Configuration Change Version 4 1 and later support stored recipient lists Introduction In the tutorial in Chapter 45 Generating a Transmission you sent emails by specifying your recipients inline This method may be sufficient for transactional transmissions yet it can quickly become unmanageable as your number of recipients grows Using..."
 ---

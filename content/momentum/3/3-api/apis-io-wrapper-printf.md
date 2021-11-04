@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "io_wrapper_printf"
 description: "io wrapper printf printf like function that operates on an io object pointer ssize t io wrapper printf io format io object io const char format This reference page was automatically generated from functions found in the header files in the development branch The function described here may not exist..."
 ---

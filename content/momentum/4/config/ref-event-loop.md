@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "event_loop"
 description: "event loop associate a pool of event loops within a listener scope to use multiple threads event loop pool name To use this option you must have a Supercharger license This option is used in a multiple event loop configuration To configure threading for email reception assign event loop the..."
 ---

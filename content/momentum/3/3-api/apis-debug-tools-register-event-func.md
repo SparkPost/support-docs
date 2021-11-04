@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "debug_tools_register_event_func"
 description: "debug tools register event func Register an event function for debugging void debug tools register event func fptr name type dumper Event Func fptr const char name const char type debug tools event dumper dumper Register an event function for debugging The following macro may be helpful define insert func..."
 ---

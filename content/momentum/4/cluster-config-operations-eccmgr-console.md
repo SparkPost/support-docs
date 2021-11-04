@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "Console Commands for the Cluster Manager"
 description: "The following console commands can be issued from within the eccmgr service These commands are mainly concerned with broadcasting or unicasting commands to other cluster nodes broadcast command Broadcast a console command to the cluster For a list of available console commands see Chapter 67 Console Commands Summary broadcast cluster..."
 ---

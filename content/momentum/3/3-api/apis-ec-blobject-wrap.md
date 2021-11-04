@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "ec_blobject_wrap"
 description: "ec blobject wrap Allocates memory for an ec blobject and initializes it ec blobject ec blobject wrap cls object ec blobject class cls void object Allocates memory for an Section 68 17 ec blobject initializes it using cls and object then returns the address of the allocated memory cls A..."
 ---

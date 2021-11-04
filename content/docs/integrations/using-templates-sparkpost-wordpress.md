@@ -1,5 +1,5 @@
 ---
-lastUpdated: "February 2020"
+lastUpdated: "02/08/2020"
 title: "Using Templates with the SparkPost WordPress Plugin"
 description: "When using stored templates with the Spark Post Word Press plugin we pass through substitution data that you can use as variables in your template to specify some dynamic settings content the main body of the email subject the subject of the email from the email address of the sender..."
 ---

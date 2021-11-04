@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "bind_address"
 description: "bind address source address for outbound connections Bind Address 10 0 0 1 Bind Address fe 80 a 00 1 Bind Address my local host name Configures the source address that Momentum uses for outbound connections When specified at the global scope Bind Address configures the source IP for the..."
 ---

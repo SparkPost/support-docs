@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "msys.core.mail_queue_delay_domain"
 description: "msys core mail queue delay domain Add a domain record to the delayed queue msys core mail queue delay domain dr note Add a domain record to the delayed queue For a code example see Example 70 33 register Control example To obtain domain record userdata use msys core dns..."
 ---

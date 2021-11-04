@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "Backups"
 description: "Riak data is distributed across the nodes in the cluster Provided that you have enough nodes remaining online the need to restore from a backup should be quite a rare event Riak offers the ability to backup all data present on a given node or all data present in the..."
 ---

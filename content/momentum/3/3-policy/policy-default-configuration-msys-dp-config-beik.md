@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "msys.dp_config.beik"
 description: "Scan messages using BEIK To use this configuration item you must have the beik module loaded For more information see BEIK Module This module is included in the default policy conf file Find below the sample excerpt included in the dp config lua file The elements of this configuration table..."
 ---

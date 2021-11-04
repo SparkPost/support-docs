@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "delivery_response_timeout"
 description: "delivery response timeout time to wait for a response to an outbound request delivery response timeout 5000 Configuration Change This feature is available as of version 3 5 5 The time in milliseconds to wait for a response to an outbound request Use this option when delivery method is set..."
 ---

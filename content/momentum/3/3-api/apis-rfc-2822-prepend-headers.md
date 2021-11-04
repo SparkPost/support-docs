@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "rfc2822_prepend_header"
 description: "rfc 2822 prepend header Prepend headers void rfc 2822 prepend header ctx hdr rfc 2822 context ctx rfc 2822 field hdr Prepend headers ctx The rfc 2822 context hdr The rfc 2822 field to be prepended This function returns void It is legal to call this function in any thread..."
 ---

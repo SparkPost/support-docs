@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "__mailq_get_next_active"
 description: "mailq get next active mailq get next active is an internal function called by the default implementation if the mailq get next active hook ec message mailq get next active dr binding slot connh domain record dr ec binding slot binding slot connection handle connh This reference page was automatically..."
 ---

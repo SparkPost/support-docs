@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "http_session"
 description: "This struct is defined as follows To use this struct include the file modules delivery http httpclnt h Chapter 63 Hooks in the generic delivery and httpclnt Scope and Momentum for Mobile Push Notifications..."
 ---

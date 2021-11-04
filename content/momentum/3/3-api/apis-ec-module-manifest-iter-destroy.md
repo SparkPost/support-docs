@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "ec_module_manifest_iter_destroy"
 description: "ec module manifest iter destroy destroy a module manifest iterator void ec module manifest iter destroy iter ec module manifest iter t iter This reference page was automatically generated from functions found in the header files in the development branch The function described here may not exist in generally available..."
 ---

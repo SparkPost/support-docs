@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "Implementing Policy Using Scriptlets"
 description: "In version 3 0 scripting via Lua has been adopted instead of extending Sieve for the following reasons Sieve has no concept of looping or iterators Simple comparative logic in Sieve is awkward to author Every module we add needs explicit C development to enable Sieve capabilities Many Lua functions..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "msys.bounce.classify_smtp_response"
 description: "msys bounce classify smtp response Create a bounce classification from SMTP response text and the domain name msys bounce classify smtp response response text domain This function takes the SMTP response text and the domain name as input and returns a tuple code code string description code is a numerical..."
 ---

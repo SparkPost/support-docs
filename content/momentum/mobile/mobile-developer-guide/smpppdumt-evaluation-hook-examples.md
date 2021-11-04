@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "Examples"
 description: "Example 15 1 SMPP PDU MT Transmit Evaluation Hook Lua Example Example 15 2 SMPP PDU MT Transmit Evaluation Hook C Example..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "ec_datasource_query_cache_entry"
 description: "The struct members are as follows To use this struct include the file modules datasource ecdatasource h The members of the ec cache elt struct are as follows To use this struct include the file modules datasource ecdatasource h Members of the ec cache elt struct are as follows To..."
 ---

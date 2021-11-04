@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "cluster_server_max_outbound_connections"
 description: "cluster server max outbound connections set the maximum number of outbound connections and enforce it across a cluster cluster server max outbound connections 800 Limits the number of total connections that will be established concurrently by a cluster of Momentum systems irrespective of bindings There is no limit enforced by..."
 ---

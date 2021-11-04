@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "Overview"
 description: "The Generic HTTP Client module is used in conjunction with the Generic Delivery module to provide connection services message queuing services message delivery via HTTP protocol response reception and message disposition handling These features provide the core framework of a custom delivery module However the message control payload and response..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "multicast_subscribe"
 description: "multicast subscribe void multicast subscribe closure sender sender len group group len data data len void closure const char sender int sender len const char group int group len const unsigned char data int data len int has msgc multicast subscribe hook void register msgc multicast subscribe hook first hook..."
 ---

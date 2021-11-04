@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "ec_get_default_conf_path"
 description: "ec get default conf path Return the default search path with parsed NODENAME and SUBCLUSTER references char ec get default conf path void This reference page was automatically generated from functions found in the header files in the development branch The function described here may not exist in generally available..."
 ---

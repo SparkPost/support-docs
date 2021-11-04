@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "domain all"
 description: "domain all show statistics for all domains domain all The domain all command shows statistics for all domains Sample output is shown below The output shows a summary for each domain stanza defined in your configuration file and totals for all domains The name of the domain is followed by..."
 ---

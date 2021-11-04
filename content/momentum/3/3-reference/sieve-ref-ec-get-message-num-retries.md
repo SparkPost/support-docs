@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "ec_get_message_num_retries"
 description: "ec get message num retries Return the num retries of the current message ec get message num retries ec get message num retries returns the number of retries the current message has had It returns this as an integer In the following script the num retries is checked and if..."
 ---

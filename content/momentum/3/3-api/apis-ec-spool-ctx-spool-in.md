@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "ec_spool_ctx_spool_in"
 description: "ec spool ctx spool in spool in a message with a given id from a spool context ec message ec spool ctx spool in ctx id ec spool ctx ctx message id id This reference page was automatically generated from functions found in the header files in the development branch..."
 ---

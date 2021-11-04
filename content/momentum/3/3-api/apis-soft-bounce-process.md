@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "soft_bounce_process"
 description: "soft bounce process decides if we should generate an MDN for a given message void soft bounce process am email message am Use ec soft bounce process instead Decides if we should generate an MDN for a given message..."
 ---

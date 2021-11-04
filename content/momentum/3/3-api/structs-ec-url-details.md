@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "ec_url_details"
 description: "This struct is defined as follows To use this struct include the file misc ec url parse h ec httpsrv request url get..."
 ---

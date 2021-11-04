@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "PostgreSQL"
 description: "Momentum includes a Postgre SQL database used by the MTA application There can be only one instance of this database In a cluster configuration it is installed on the Manager node The following describes the default directories and configuration related to the Postgre SQL database var db Root database directory..."
 ---

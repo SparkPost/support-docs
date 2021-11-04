@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "Glossary"
 description: "Definitions for many of these terms are taken from the 3rd Generation Partnership Project 3 GPP Aggregator A mobile aggregator is a company that acts as an intermediary between mobile operators and end users Aggregators may perform services such as reconciling payments for SMS messages Byte Order Mark BOM In..."
 ---

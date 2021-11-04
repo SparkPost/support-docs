@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "ec_message_part_add_child_last"
 description: "ec message part add child last Add part as the last child of another part int ec message part add child last parent child ec message part parent ec message part child This reference page was automatically generated from functions found in the header files in the development branch The..."
 ---

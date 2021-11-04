@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "io_wrapper_set_path"
 description: "io wrapper set path Set the path associated with an io object void io wrapper set path io path io object io const char path Set the path associated with an io object io The io object path The path to the io object This function returns void It is..."
 ---

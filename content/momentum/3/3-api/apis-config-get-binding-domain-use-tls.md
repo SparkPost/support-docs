@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "config_get_binding_domain_use_tls"
 description: "config get binding domain use tls Determine the value of the tls option int config get binding domain use tls caller scope binding domain generic module infrastructure caller scope int binding const domain Determine the value of the tls configuration option The caller scope argument is virtually always NULL there..."
 ---

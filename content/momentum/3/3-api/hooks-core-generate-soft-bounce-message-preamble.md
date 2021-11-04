@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "generate_soft_bounce_message_preamble"
 description: "generate soft bounce message preamble int generate soft bounce message preamble closure message body void closure email message message string body int has core generate soft bounce message preamble hook void register core generate soft bounce message preamble hook first hook closure ec hook core generate soft bounce message preamble..."
 ---

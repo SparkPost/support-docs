@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "ec_generate_rfc3464_delivery_status2"
 description: "ec generate rfc 3464 delivery status 2 renders an RFC 3464 report block into the provided string void ec generate rfc 3464 delivery status 2 mess custom fields action attempt tbl output ec message mess EC Dict custom fields dsn actype action struct timeval attempt EC Dict tbl char output..."
 ---

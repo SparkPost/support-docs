@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "threads"
 description: "threads stats threads io queue threads cpu queue Display summary statistics for thread pools threads cpu queue threads io queue threads stats threads stats shows summary information of thread pools This command displays statistics for any of the built in thread pools and also any thread pools that you have..."
 ---

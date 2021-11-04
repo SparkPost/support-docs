@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "fingerprint cache summary"
 description: "fingerprint cache summary display the current cache size fingerprint cache summary In order to use this command you must have the Policy Tools suite installed Passive OS fingerprinting is installed as part of the Policy Tools suite This functionality yields information about inbound connections For more information about installing the..."
 ---

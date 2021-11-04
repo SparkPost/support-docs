@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "gcm_classify_error"
 description: "gcm classify error Determine the meaning of the delivery status code int gcm classify error status int status Configuration Change This function is available as of Momentum version 3 5 5 In the context of a Google push notification determine the meaning of the delivery status code If you need..."
 ---

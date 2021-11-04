@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "ec_bounce_classify"
 description: "ec bounce classify perform bounce classification on the message code classification orig rcpt ec bounce classify ec bounce classify allows you to perform bounce classification on a message from within Sieve It returns a string list which contains three members code The numeric bounce classification code See Section E 2..."
 ---

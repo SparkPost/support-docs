@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "ec_vsnprintf"
 description: "ec vsnprintf Momentum vsnprintf function int ec vsnprintf str size fmt ap char str size t size const char fmt va list ap This reference page was automatically generated from functions found in the header files in the development branch The function described here may not exist in generally available..."
 ---

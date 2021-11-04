@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "Bounce Classification Codes"
 description: "The bounce classification codes are identical for all versions of Momentum Find below a list of these codes and their meanings Table E 12 Bounce classification codes Code Description 1 The response text could not be identified Undetermined 10 The recipient is invalid Invalid Recipient 20 The message soft bounced..."
 ---

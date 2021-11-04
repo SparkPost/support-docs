@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "stats_request"
 description: "stats request void stats request closure cclosure sender group command type which mess len void closure void cclosure char sender char group int command type int which char mess int len int has cluster stats request hook void register cluster stats request hook first hook closure ec hook cluster stats..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "03/26/2020"
 title: "generate_delay_dsn"
 description: "generate delay dsn Allows you to override a configured setting to generate a delay DSN for a given message int delay dsn generate delay dsn closure msg enabled void closure ec message msg int enabled The delay dsn module allows delivery status notifications DS Ns to be sent to the..."
 ---
