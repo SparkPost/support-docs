@@ -25,7 +25,7 @@ In order to use Automatic Inline Seeding in SparkPost you must have a SparkPost 
 
 Automatic Inline Seeding relies on the `campaign_id` (`job_id` for PowerMTA) field to group messages and to know which groups of messages should be seeded. You can set `campaign_id` on your messages when sending through API or SMTP.   
 
-A `campaign_id` requires a minimum of 1,000 messages sent before being seeded, to help prevent overseeding (sending to a disproportionately high number of seeds in a campaign). If the campaigns you want to seed are less than 1,000 recipients or if your campaign will send too fast for our systems to count, we recommend continuing to use our manual seeding tool. 
+A `campaign_id` requires a minimum of 1,000 messages sent before being seeded, to help prevent overseeding (sending to a disproportionately high number of seeds in a campaign). If the campaigns you want to seed are less than 1,000 recipients or if your campaign's duration is too short for our asynchronous seeding processes to complete we recommend continuing to use our manual seeding tool. 
 
 ### Getting Started
 
@@ -72,7 +72,7 @@ Select the options icon for the account that you want to configure.
 * The minimum threshold for seeding is 1,000 messages in a twenty four hour window. This is designed to protect your deliverability and avoid overseeding - an issue that can happen if your campaign includes too high a percentage of seed addresses. 
 
 #### Seeding Duration
-* Seeds are distributed evenly across the Seeding Duration. As a best practice, try to match your seeding duration to the approximate time it takes to send your campaign.
+* Seeds are distributed evenly across the Seeding Duration. As a best practice, try to match your seeding duration to the approximate time it takes to send your campaign. This will allow detection of changes in deliverability as the campaign is sending.
 * For burst campaigns, use the minimum Seeding Duration of 1,000 messages. 
 * For ongoing campaigns (examples include password resets, triggered marketing messages, and welcome emails), use a longer Seeding Duration to disperse your seeds over more of your sending.
 
