@@ -33,7 +33,7 @@ You can set up Automatic Inline Seeding in the user interface (UI) or using the 
 
 Using the UI, you can set up five campaign patterns to be seeded in less than 5 minutes! 
 
-The Automatic Inline Seeds API is the best approach if you need ultimate control for deeper integrations, campaign_ids that are system-generated and constantly changing, or if you prefer a code-first approach. 
+The Automatic Inline Seeds API is the best approach if you need ultimate control for deeper integrations, `campaign_id`s that are system-generated and constantly changing, or if you prefer a code-first approach. 
 
 If you’re using PowerMTA to send, you would still use the SparkPost UI or API to configure your seeding settings. See your PowerMTA User Guide to learn how to set up Automatic Inline Seeding within PowerMTA. 
 
@@ -55,20 +55,20 @@ Select the options icon for the account that you want to configure.
 
 #### Enable Inline Seeding
 * This setting lets you quickly turn Automatic Inline Seeding on or off. 
-* Toggling this setting to ON will apply the settings to your mailstreams. SparkPost will begin counting your campaign_id’s to seed your mailstream when at least 1,000 messages will be sent.
+* Toggling this setting to ON will apply the settings to your mailstreams. SparkPost will begin counting messages with a matching `campaign_id` to seed your mailstream when at least 1,000 messages will be sent.
 * Toggling this setting to OFF will stop SparkPost from counting any more messages towards your Seeding Thresholds. Your settings will be saved. Toggling this setting to OFF will not stop messages from being sent to seed addresses if the seeding process has already started.
 
 #### Campaigns to Seed 
-* This setting lets you to specify which campaign_id’s you want to seed. It is case-sensitive.  
-* This setting does not guarantee that these campaign_id’s will be seeded, but it will enable counting of the messages with these campaign_id’s to count towards the Seeding Threshold. 
+* This setting lets you to specify which campaigns you want to seed. It is case-sensitive.  
+* This setting does not guarantee that these campaigns will be seeded, but it will enable counting of the messages with these campaigns to count towards the Seeding Threshold. 
 * The Campaigns to Seed setting allows wildcard matching in some situations.
-  * For example: You may choose to use wildcard matching in order to seed all of your marketing campaigns. Set the campaign’s seed setting to `marketing-*` so that any campaign_id that started with `marketing-` would be eligible for seeding. 
-* You can set up to 5 campaign_id patterns to be eligible for seeding at any given time.
+  * For example: You may choose to use wildcard matching in order to seed all of your marketing campaigns. Set the campaign’s seed setting to `marketing-*` so that any `campaign_id` that started with `marketing-` would be eligible for seeding. 
+* You can set up to 5 `campaign_id` patterns to be eligible for seeding at any given time.
 * Conversely, you can use the Exclude setting to have SparkPost skip specific campaigns that you do not want to seed; all other campaigns will be seeded.
-* SparkPost uses a redaction mechanism to remove potential PII from the emails you send to seed inboxes. This redaction mechanism works by comparing messages with the same campaign_id and the obfuscating text or components that are unique. Note that personalization in images may have an impact on results.
+* SparkPost uses a redaction mechanism to remove potential PII from the emails you send to seed inboxes. This redaction mechanism works by comparing messages with the same `campaign_id` and the obfuscating text or components that are unique. Note that personalization in images may have an impact on results.
 
 #### Seeding Threshold
-* The Seeding Threshold sets how many messages should match a specific campaign_id before the system should begin seeding. 
+* The Seeding Threshold sets how many messages should match a specific `campaign_id` before the system should begin seeding. 
 * The minimum threshold for seeding is 1,000 messages in a twenty four hour window. This is designed to protect your deliverability and avoid overseeding - an issue that can happen if your campaign includes too high a percentage of seed addresses. 
 
 #### Seeding Duration
@@ -77,7 +77,7 @@ Select the options icon for the account that you want to configure.
 * For ongoing campaigns (examples include password resets, triggered marketing messages, and welcome emails), use a longer Seeding Duration to disperse your seeds over more of your sending.
 
 #### Seeding Reset Time
-* The Seeding Reset Time specifies how much time should pass before a campaign_id is reseeded.
+* The Seeding Reset Time specifies how much time should pass before a `campaign_id` is reseeded.
 * The minimum reset time is 22 hours to help avoid overseeding on your IPs. 
 * The Seeding Reset Time counter begins counting from the moment a campaign is eligible for seeding.
   * For example: A customer with a burst Daily Newsletter could choose a relatively low Seeding Threshold and a 22 hour Seeding Reset Time to seed their Daily Newsletter every day at about the same time.
@@ -152,7 +152,7 @@ Some configuration changes will not take effect until after the next reset perio
 Automatic Inline Seeding is paused by default. Check out [our API docs](https://developers.sparkpost.com/api/inline-seeds) for information about how to pause/resume the feature, manage subaccounts, and more!
 
 ## Monitoring Activity
-The Seeding Activity page is available for you to monitor the progress of the campaign_ids that you’ve chosen to seed. This page includes data on the current counts towards the threshold per campaign as well as how much time remains for the threshold to be hit before the count resets. Once a seed event has started, you can use the navigation on the right hand side to jump to the Reports page to see the results for a specific seeding campaign. 
+The Seeding Activity page is available for you to monitor the progress of the `campaign_id`s that you’ve chosen to seed. This page includes data on the current counts towards the threshold per campaign as well as how much time remains for the threshold to be hit before the count resets. Once a seed event has started, you can use the navigation on the right hand side to jump to the Reports page to see the results for a specific seeding campaign. 
 
 
 ![Monitoring Activity](media/automatic-inline-seeds/inline-seeds-campaign-status-page.png)
@@ -174,8 +174,8 @@ You can use the Report Builder to select some or all of these metrics and SparkP
 * A proactive approach would be to use the Automatic Inline Seeding functionality to seed your password reset campaign on a regular basis. This way, you could notice sooner that your password reset emails are going to the spam folder more often. This gives you the chance to identify the issue (like bad HTML, broken DKIM records, or a broken link) before it impacts your deliverability. 
 
 ### My Campaign_ID is Generated at the Time of Sending
-* If the campaign_ids you want to seed have a common prefix (for example “marketing”) you can set the Automatic Inline Seeding configuration to seed your campaign_id: marketing_* and SparkPost will count all your marketing messages for potential seeding. 
-* If your campaign_id’s are truly unique and have nothing that could be pattern-matched, you can pass the campaign_id to the Automatic Inline Seeds API a few seconds before clicking send. SparkPost will take care of the rest once the config is updated or you can use a very relaxed wildcard match. 
+* If the `campaign_id`s you want to seed have a common prefix (for example “marketing”) you can set the Automatic Inline Seeding configuration to seed your `campaign_id`: marketing_* and SparkPost will count all your marketing messages for potential seeding. 
+* If your `campaign_id`s are truly unique and have nothing that could be pattern-matched, you can pass the `campaign_id` to the Automatic Inline Seeds API a few seconds before clicking send. SparkPost will take care of the rest once the config is updated or you can use a very relaxed wildcard match. 
 
 ### My Campaign_ID’s Don’t Change Often and I want to Seed on a Recurring Basis
-* Imagine that you send a weekly newsletter or a regular welcome email. If your campaign_ids for these messages do not change often, you can tell SparkPost to seed these campaigns on a regular basis. For example, setting the Seed Reset Time to 7 days will let you seed your campaign_id: welcome-email every week and can indicate changes in your deliverability. 
+* Imagine that you send a weekly newsletter or a regular welcome email. If your `campaign_id`s for these messages do not change often, you can tell SparkPost to seed these campaigns on a regular basis. For example, setting the Seed Reset Time to 7 days will let you seed your `campaign_id`: welcome-email every week and can indicate changes in your deliverability. 
