@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "premigrate_outbound_connection"
 description: "premigrate outbound connection void premigrate outbound connection closure connh src dest void closure connection handle connh domain record src domain record dest int has core premigrate outbound connection hook void register core premigrate outbound connection hook first hook closure ec hook core premigrate outbound connection func t hook void closure..."
 ---

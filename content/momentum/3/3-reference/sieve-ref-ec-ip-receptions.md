@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "ec_ip_receptions"
 description: "ec ip receptions Audit how many receptions an IP address has made ec ip receptions time series index mask ec ip receptions hash ec ip receptions returns a string containing the number of receptions that have occurred for a CIDR block within a configured time window The referenced CIDR block..."
 ---

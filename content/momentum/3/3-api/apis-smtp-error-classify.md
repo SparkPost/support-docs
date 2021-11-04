@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "smtp_error_classify"
 description: "smtp error classify Classify the response code given in response to an SMTP command int smtp error classify response domain mid const char response const char domain message id mid Classify the response code given in response to an SMTP command This is identical to calling smtp error classify len..."
 ---

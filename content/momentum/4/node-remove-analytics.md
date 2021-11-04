@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "Removing an Analytics Node"
 description: "To remove an Analytics node Vertica Application from a cluster follow the documentation provided by HP on removing a Vertica node removing all NGINX upstream references and removing references in API configurations You cannot remove nodes that are critical for K safety For more information see HP Vertica documentation These..."
 ---

@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "msys.parseRFC2822Addresses"
 description: "msys parse RFC 2822 Addresses Parse the address string per the address parsing rules defined in RFC 2822 msys parse RFC 2822 Addresses addressstring component Parse the address string per the address parsing rules defined in RFC 2822 Note that this is NOT the same specification used to parse SMTP..."
 ---

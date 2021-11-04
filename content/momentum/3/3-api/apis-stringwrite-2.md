@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "stringwrite2"
 description: "stringwrite 2 Convert a character array to an ec string ssize t stringwrite 2 str iobuf iolen string str const char iobuf size t iolen Convert a character array to an ec string str An ec string type iobuf The character array iolen The length of iobuf On success this..."
 ---

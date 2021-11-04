@@ -1,4 +1,5 @@
 ---
+lastUpdated: "February 2020"
 name: "Integrations"
 title: "Category File"
 desk_id: 780292

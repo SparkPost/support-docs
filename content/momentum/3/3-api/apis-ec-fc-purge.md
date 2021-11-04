@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "ec_fc_purge"
 description: "ec fc purge Quickly purge all items from the cache unsigned int ec fc purge cache ec fc t cache This reference page was automatically generated from functions found in the header files in the development branch The function described here may not exist in generally available versions of Momentum..."
 ---

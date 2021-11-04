@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "msys.validate.opendkim.get_sig"
 description: "msys validate opendkim get sig Get a signature from a DKIM object msys validate opendkim get sig dkim num Configuration Change This function is available as of version 3 6 This function gets a signature DKIM SIGINFO from a DKIM object It requires the opendkim module The dkim parameter is..."
 ---

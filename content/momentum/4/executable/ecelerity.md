@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "ecelerity"
 description: "ecelerity Momentum Application Server opt msys ecelerity sbin ecelerity c configfile d h n service s ecelerity is the main server component of the Momentum Application Server On start up the script etc init d ecelerity start starts Momentum Use ec ctl to start stop or restart this process This..."
 ---

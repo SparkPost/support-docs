@@ -1,4 +1,5 @@
 ---
+lastUpdated: "January 2021"
 title: "Custom Tracking Domains"
 description: "A tracking domain is the domain that a tracked link will redirect through before reaching the final URL path of the original link. It is also used as the path for the tracking pixel to track message opens."
 ---

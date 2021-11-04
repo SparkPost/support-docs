@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "spool import_poll"
 description: "spool import poll check the status of a spool that is being imported spool import poll path to spool This command takes a single argument in the form of the path to the spool being imported and reports on the status of the spool migration Use this command in conjunction..."
 ---

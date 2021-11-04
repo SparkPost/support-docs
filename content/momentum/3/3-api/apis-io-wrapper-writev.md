@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "io_wrapper_writev"
 description: "io wrapper writev Write a vector io wrapper writev io iov iovcnt io object io const struct iovec iov int iovcnt Write a vector This function behaves like the system function writev 2 io The resource options An iovec struct iovcnt The number of bytes to write On success this..."
 ---

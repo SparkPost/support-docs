@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "ec_message_swap_in"
 description: "ec message swap in causes the message content to be read in from disk int ec message swap in mess flags ec message mess int flags This reference page was automatically generated from functions found in the header files in the development branch The function described here may not exist..."
 ---

@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "ec_growbuf_io_next_chunk"
 description: "ec growbuf io next chunk Return a pointer to the next growbuf chunk and its length int ec growbuf io next chunk io outbuf io object io char outbuf This reference page was automatically generated from functions found in the header files in the development branch The function described here..."
 ---

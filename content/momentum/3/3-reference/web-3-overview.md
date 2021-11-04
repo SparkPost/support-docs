@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "Web Console Overview"
 description: "The web console opens on the dashboard a page that gives you a quick overview of the state of your system The menu options are as shown below Figure 3 1 Overview The reporting page offers a more specific view of the data presented on the dashboard page and the..."
 ---

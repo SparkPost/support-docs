@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "ec_snprintf"
 description: "ec snprintf Momentum snprintf function int ec snprintf str size fmt char str size t size const char fmt This reference page was automatically generated from functions found in the header files in the development branch The function described here may not exist in generally available versions of Momentum and..."
 ---

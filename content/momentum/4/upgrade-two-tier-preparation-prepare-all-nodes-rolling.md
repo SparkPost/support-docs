@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "Before You Begin the Upgrade"
 description: "The steps in this section should be done prior to the upgrading your Momentum software We recommend you perform these steps several days before your planned software upgrade Consider a Cassandra manual compaction if disk space usage in var db casssandra data is sizeable even though disk space reclamation is..."
 ---

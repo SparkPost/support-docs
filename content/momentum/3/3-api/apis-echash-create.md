@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "echash_create"
 description: "echash create Create a hash table ec hash table echash create keyfree datafree EC Hash Free Func keyfree EC Hash Free Func datafree This function creates a hash table by allocating memory of the MEMTYPE EC HASH TABLE type Use echash delete or echash delete item to free memory used..."
 ---

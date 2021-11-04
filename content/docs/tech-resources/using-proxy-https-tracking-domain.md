@@ -1,4 +1,5 @@
 ---
+lastUpdated: "April 2021"
 title: "Using a Reverse Proxy for HTTPS Tracking Domain"
 description: "SparkPost supports HTTPS engagement tracking for customers via self-service for all SparkPost customers. To enable SSL engagement tracking for a domain, additional configuration for SSL keys is required.  This resource outlines the use of a reverse proxy to host SSL certificates"
 ---

@@ -1,4 +1,5 @@
 ---
+lastUpdated: "February 2020"
 title: "Using SparkPost with Postfix"
 description: "To use Spark Post as an SMTP relay for Postfix create an API key with the Send via SMTP permission enabled then enter the following into your Postfix config file typically main cf smtpsaslauth enable yes smtpsaslpasswordmaps static SMTP Injection your API key relayhost smtp sparkpostmail com 587 smtpsaslsecurity options..."
 ---

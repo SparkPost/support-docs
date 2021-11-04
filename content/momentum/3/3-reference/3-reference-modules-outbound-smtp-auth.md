@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "outbound_smtp_auth – Module"
 description: "This module enables users to specify authentication parameters for a given set of messages so that Momentum will authenticate against the peer server when it sends outbound mail It currently supports the AUTH LOGIN and AUTH PLAIN methods of authentication You can specify the parameters in configuration or in lua..."
 ---

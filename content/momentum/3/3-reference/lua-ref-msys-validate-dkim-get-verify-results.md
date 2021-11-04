@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "msys.validate.dkim.get_verify_results"
 description: "msys validate dkim get verify results return the number of DKIM signature results msys validate dkim get verify results vctx Configuration Change This feature is available as of version 3 5 This function returns the number of DKIM signature results and the results table If the optional parameter is not..."
 ---

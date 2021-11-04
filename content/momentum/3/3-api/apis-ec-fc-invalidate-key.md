@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "ec_fc_invalidate_key"
 description: "ec fc invalidate key Remove an entry from the cache with the associated key and key length int ec fc invalidate key cache key key length ec fc t cache const void key size t key length This reference page was automatically generated from functions found in the header files..."
 ---

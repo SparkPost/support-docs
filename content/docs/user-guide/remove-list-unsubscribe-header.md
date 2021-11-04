@@ -1,4 +1,5 @@
 ---
+lastUpdated: "February 2020"
 title: "Remove List-Unsubscribe Header"
 description: "If you’re not familiar with the difference between a transactional email and a non transactional email you can find out more by clicking here By default every email Spark Post sends contains a List Unsubscribe header so email clients like Gmail know when to include an Unsubscribe button when viewing..."
 ---

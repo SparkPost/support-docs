@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "ec_spool_ctx_set_always_regenerate_message_ids"
 description: "ec spool ctx set always regenerate message ids Determine whether a spool context regenerates message ids on import void ec spool ctx set always regenerate message ids ctx on ec spool ctx ctx int on Determine whether a spool context regenerates message ids on import ctx The spool context on..."
 ---

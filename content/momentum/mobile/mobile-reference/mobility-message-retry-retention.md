@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "Message Retention"
 description: "By default messages are stored in the Riak database for fourteen days 1209600 seconds This length of time is determined by expiry secs in the opt msys 3rd Party riak etc app config file The relevant section of this configuration file is reproduced below To adjust the length of time..."
 ---

@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "cache list"
 description: "cache list list all caches along with their associated attributes cache list attribute This command lists caches and related statistics When specific parameters such as the query rate are passed in this command displays usage by cache The cache list command is useful for determining the cache names to use..."
 ---

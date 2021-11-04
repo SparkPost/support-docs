@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "Configuration Functions I (binding/domain)"
 description: "These functions relate to obtaining the value of various Momentum configuration options See Options Summary for documentation of Momentum configuration options See also Section 1 3 5 Configuration API and Configuration Scopes and Fallback..."
 ---

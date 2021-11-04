@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "esmtp_message_factory"
 description: "esmtp message factory This function is the ESMTP server state machine int esmtp message factory event eventtype vclosure now Event event int eventtype void vclosure struct timeval now This function is the ESMTP server state machine This function should only be used under direct guidance from Message Systems professional services..."
 ---

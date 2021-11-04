@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "MM7-specific Configuration"
 description: "As with SMPP there are numerous options valid in the global domain and binding scopes These options only need to be configured when running an MM 7 client For a list of all the available options see Mobile Momentum MM 7 Options You can enable the MM 7 client by..."
 ---

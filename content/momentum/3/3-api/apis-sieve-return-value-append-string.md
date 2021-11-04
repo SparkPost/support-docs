@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "sieve_return_value_append_string"
 description: "sieve return value append string Append a string to the return value void sieve return value append string seng str len SENG seng const char str int len Append a string to the return value seng The Sieve engine state str The string value to append len The length of..."
 ---

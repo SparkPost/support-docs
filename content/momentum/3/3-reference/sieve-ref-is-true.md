@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "is_true"
 description: "is true test if a value is true is true variable is true variable 0 is true variable key The is true is intended to provide a simple logical test on the value of a variable Example 16 113 is true example..."
 ---

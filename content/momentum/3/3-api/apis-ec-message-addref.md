@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "ec_message_addref"
 description: "ec message addref Create a reference to an existing message ec message ec message addref sm ec message sm Create a reference to an existing message Intended to be used when performing async processing where part of the processing would otherwise free the message while it is still in use..."
 ---

@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "counter"
 description: "counter add counter help counter increment counter list counter reset counter unlink manage counters counter add counter name delta counter help counter increment counter name counter list counter reset counter name counter unlink counter name Lua makes use of generic counters These commands display and manipulate counters counter add Increments..."
 ---

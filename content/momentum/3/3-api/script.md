@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "Scriptlet (and Alerting) Functions"
 description: "Table of Contents ec alerting inc count Increment a counter for an arbitrary key for a given binding domain scpt autoload ns Wire up autoload items just in time scpt compile callout Compile and register a scriptlet entrypoint scpt compile hook callout Compile and register a scriptlet hook implementation entrypoint..."
 ---

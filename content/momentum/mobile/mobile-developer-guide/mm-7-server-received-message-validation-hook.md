@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "MM7 Server Received Message Validation Hook"
 description: "The MM 7 Server Received Message Validation Hook actually utilizes the Momentum's validate data spool each rcpt hook point to enable the user to inspect the incoming MM 7 request and perform context validation on a per recipient basis for example performing a anti virus check This hook is invoked..."
 ---

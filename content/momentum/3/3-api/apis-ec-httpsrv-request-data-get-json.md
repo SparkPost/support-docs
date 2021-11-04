@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "ec_httpsrv_request_data_get_json"
 description: "ec httpsrv request data get json Gets a JSON object representation of the request payload data int ec httpsrv request data get json sess json ec httpsrv session sess struct json object json This reference page was automatically generated from functions found in the header files in the development branch..."
 ---

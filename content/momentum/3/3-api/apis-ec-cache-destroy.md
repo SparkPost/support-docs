@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "ec_cache_destroy"
 description: "ec cache destroy Purge all entries from the cache and free all memory allocated to it void ec cache destroy cache ec cache t cache Purge all entries from the cache and free all memory allocated to it cache The address of the cache The following typedef applies to the..."
 ---

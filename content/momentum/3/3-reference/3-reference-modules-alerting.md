@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "alerting – alerting"
 description: "The alerting module provides the ability to send alerting emails when a script examines data If you intend to create scripts either using the web policy editor or manually you must have the alerting module loaded Loading this module when you are using Section 14 2 adaptive Adaptive Delivery is..."
 ---

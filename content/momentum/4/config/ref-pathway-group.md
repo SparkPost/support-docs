@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "pathway_group"
 description: "pathway group a container for pathways Currently esmtp listener options used in the pathway group scope are not recognized by ecelerity For this reason do not use pathway group as a configuration container As a workaround use the pathway scope only The pathway group scope is used to logically group..."
 ---

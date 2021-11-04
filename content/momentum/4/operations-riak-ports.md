@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "Riak Ports"
 description: "Riak uses the following ports TCP 8098 Defines the HTTP interface used to query and update the data store By default this is bound to the loopback interface but will need to be opened on a cluster private network so that Message Systems applications can communicate with it The port..."
 ---

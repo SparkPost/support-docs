@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "json.decode"
 description: "json decode Create a JSON object from a JSON string require json json decode str Create a JSON object from a JSON string On success this function returns a JSON object On failure the JSON object is nil and an error code and an error message are returned Use json..."
 ---

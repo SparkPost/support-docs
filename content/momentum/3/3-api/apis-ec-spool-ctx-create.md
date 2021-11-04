@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "ec_spool_ctx_create"
 description: "ec spool ctx create Create a spool context for a location on disk ec spool ctx ec spool ctx create basedir const char basedir Create a spool context for a location on disk basedir The location of the spool on disk This function returns a context representing the spool location..."
 ---

@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "http_logger – HTTP Requests and Responses"
 description: "The http logger module enables logging of HTTP requests and responses made by the httpsrv Module To configure the http logger module load it in the ecelerity conf file The following is the default configuration Example 71 65 http logger Configuration The following is the configuration option defined by this..."
 ---

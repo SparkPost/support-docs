@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "Getting Started with the Web-based User Interface"
 description: "The Momentum Web based User Interface has been deprecated and is no longer available as of the new MTA only architecture introduced in release 4 2 28 and in all subsequent new releases This section and all other support site content pertaining to the Web based User Interface is only..."
 ---

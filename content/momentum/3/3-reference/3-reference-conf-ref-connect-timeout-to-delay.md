@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "connect_timeout_to_delay"
 description: "connect timeout to delay time interval before sweeping mail into the delayed queue connect timeout to delay 900 When Momentum detects that a domain cannot be contacted for example due to a network block it will move all that domain's active messages into the delayed queue This setting allows you..."
 ---

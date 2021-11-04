@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "Audit Series Functions"
 description: "Table of Contents audit series add Add a value to the counter associated with a key in a named series audit series count Get the accumulated counts from a named series for a given key audit series define Define an named audit series audit series get items Return the item..."
 ---

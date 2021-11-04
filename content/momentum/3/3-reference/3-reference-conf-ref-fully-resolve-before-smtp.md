@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "fully_resolve_before_smtp"
 description: "fully resolve before smtp resolve all MX and A records before attempting delivery fully resolve before smtp true fully resolve before smtp false Momentum uses an asynchronous DNS architecture that allows delivery to commence as soon as there is a valid A record for any of a given domain's MX..."
 ---

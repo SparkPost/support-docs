@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "veto_host_connection"
 description: "veto host connection int veto host connection closure host dr binding slot max conns cur conns void closure host record host domain record dr int binding slot int max conns int cur conns int has core veto host connection hook void register core veto host connection hook first hook closure..."
 ---

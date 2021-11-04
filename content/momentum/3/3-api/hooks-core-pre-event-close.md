@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "pre_event_close"
 description: "pre event close void pre event close closure e void closure Event e int has core pre event close hook void register core pre event close hook first hook closure ec hook core pre event close func t hook void closure void register core pre event close hook last hook..."
 ---

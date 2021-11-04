@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "ec_ssl_is_event_ssl"
 description: "ec ssl is event ssl Determine whether an event is SSL related void ec ssl is event ssl e Event e Determine whether an event is SSL related e An Event This function returns 1 if the event is SSL related and 0 if it is not It is legal..."
 ---

@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "Message Mode"
 description: "By default SMS submission to the SMSC operate in store and forward message mode In the SMPP protocol this means that as soon as the SMSC receives the short message submission via submit sm it responds immediately submit sm resp Subsequent failures to deliver the message to the destination are..."
 ---

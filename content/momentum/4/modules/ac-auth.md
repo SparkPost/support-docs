@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "ac_auth – Authentication Handler"
 description: "Configuration Change This feature is available in Momentum 4 2 and later The ac auth module provides an auth handler that enables a Lua module to hook into the authentication mechanism but with the advantage of having access to the validation context ac auth registers the authentication URI scheme ac..."
 ---

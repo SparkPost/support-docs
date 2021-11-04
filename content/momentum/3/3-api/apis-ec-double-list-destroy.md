@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "ec_double_list_destroy"
 description: "ec double list destroy Destroy a list void ec double list destroy list ec double list list Destroy a list Note This does not free the data pointers list The list to destroy This function returns void It is legal to call this function in any thread Section 68 29..."
 ---

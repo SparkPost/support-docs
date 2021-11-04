@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "binding_group"
 description: "binding group logically group a set of bindings The Binding Group option allows you to logically group bindings together so that they can be more easily referenced from the regex binding 2 module The group name is an arbitrary string and holds no particular semantic value beyond being a symbolic..."
 ---

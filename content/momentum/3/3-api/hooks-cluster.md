@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "Hooks in the cluster Scope"
 description: "Table of Contents adaptive update membership update nodename stats request subcluster update trans metrics..."
 ---

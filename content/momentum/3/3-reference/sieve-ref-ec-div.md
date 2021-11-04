@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "ec_div"
 description: "ec div perform division of two numbers ec div number 1 number 2 ec div takes two numbers and divides the first number by the second and returns the result Example 16 33 ec div example..."
 ---

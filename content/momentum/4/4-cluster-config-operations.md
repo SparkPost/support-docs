@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "Using the Cluster Manager (eccmgr)"
 description: "eccmgr is the Momentum Cluster Manager henceforth referred to as the cluster manager On start up the script etc init d eccmgr start runs eccmgr as a service on the node designated as Manager For details about the available options see eccmgr Use eccmgr ctl to start stop or restart..."
 ---

@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "gcm_get_result_error_code"
 description: "gcm get result error code Get the error code from the response results error int gcm get result error code error const char error Configuration Change This function is available as of Momentum version 3 5 5 In the context of a Google push notification get the error code from..."
 ---

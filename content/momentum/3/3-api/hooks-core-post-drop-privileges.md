@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "post_drop_privileges"
 description: "post drop privileges int post drop privileges closure void closure int has core post drop privileges hook void register core post drop privileges hook first hook closure ec hook core post drop privileges func t hook void closure void register core post drop privileges hook last hook closure ec hook..."
 ---

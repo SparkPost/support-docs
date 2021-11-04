@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "Setting Context Based on Connecting IP"
 description: "It is often useful to bypass anti spam checks when you know that the sender is a machine on your network it could be either a local user or an internal mail exchange machine that is merely forwarding the mail on via Momentum In the former case it's not good..."
 ---

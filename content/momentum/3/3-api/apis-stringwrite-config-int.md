@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "stringwrite_config_int"
 description: "stringwrite config int Output an integer to the system console string stringwrite config int str label value xml string str const char label int value int xml Output an integer to the system console This function is deprecated in Momentum version 3 0 It is suitable only for supporting legacy..."
 ---

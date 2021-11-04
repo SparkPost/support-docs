@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "sysinfo"
 description: "sysinfo show system information sysinfo This command shows Momentum version information and the information of the operating system As of version 3 0 23 this command also displays the OS release..."
 ---

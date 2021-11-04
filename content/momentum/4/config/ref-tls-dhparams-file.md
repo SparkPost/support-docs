@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "tls_dhparams_file"
 description: "tls dhparams file specifies the file of Diffie Hellman DHE parameters that add per session randomness to the encryption Default parameters are built in the product if none are specified tls dhparams file path to dh pem The tls dhparams file option can be generated with the file openssl dhparam..."
 ---

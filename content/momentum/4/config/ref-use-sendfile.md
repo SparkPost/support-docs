@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "use_sendfile"
 description: "use sendfile use sendfile when sending mail use sendfile false use sendfile true When set to true Momentum will attempt to use sendfile or other system dependent equivalent to efficiently send mail to a remote MTA This typically means that the system will either pull data directly from disk using..."
 ---

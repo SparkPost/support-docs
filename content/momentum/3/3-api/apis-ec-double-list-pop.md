@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "ec_double_list_pop"
 description: "ec double list pop pops an item from the tail of the list void ec double list pop list ec double list list This reference page was automatically generated from functions found in the header files in the development branch The function described here may not exist in generally available..."
 ---

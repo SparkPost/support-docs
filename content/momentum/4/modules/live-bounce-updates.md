@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "Live Bounce Updates – Live Bounce Updates Service"
 description: "Momentum ships with a powerful bounce classification engine that canonicalizes bounce messages into a number of categories such as over quota or invalid user Over time however sites may change the error messages associated with specific bounces resulting in some messages not being canonicalized properly The Live Bounce Updates service..."
 ---

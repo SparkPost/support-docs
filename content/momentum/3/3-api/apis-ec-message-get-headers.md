@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "ec_message_get_headers"
 description: "ec message get headers Returns an rfc 2822 context struct which stores the headers for the message part rfc 2822 context ec message get headers part for read ec message part part int for read Returns an rfc 2822 context struct which stores the headers for the message part part..."
 ---

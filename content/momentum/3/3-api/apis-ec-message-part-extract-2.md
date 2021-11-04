@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "ec_message_part_extract2"
 description: "ec message part extract 2 Prepare to extract a message part in a streaming fashion io object ec message part extract 2 part pathway desired charset ec message part part const char pathway const char desired charset This reference page was automatically generated from functions found in the header files..."
 ---

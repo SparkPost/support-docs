@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "io_wrapper_open_memory"
 description: "io wrapper open memory Open a read only handle on some memory io object io wrapper open memory blob len memtype const char blob size t len int memtype This reference page was automatically generated from functions found in the header files in the development branch The function described here..."
 ---

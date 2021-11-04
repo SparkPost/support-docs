@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "cidr_ipv4_delete"
 description: "cidr ipv 4 delete Decrements the count for an IP address from a CIDR tree void cidr ipv 4 delete root ip cidrnode ipv 4 root struct in addr ip Decrements the count for an IP address from a CIDR tree If the count is decremented to zero then we..."
 ---

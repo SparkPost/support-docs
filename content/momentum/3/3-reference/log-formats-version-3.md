@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "Log Formats for Version 3.x"
 description: "This section documents the log formats used in Momentum version 3 0 and higher The mainlog ec file logs reception delivery transient failure permanent failure and heartbeat events The log entry format differs depending upon the event type The different formats are described in the following sections Every reception that..."
 ---

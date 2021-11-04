@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "ac:inbound_session_count"
 description: "ac inbound session count Return the current inbound session count to this listener for the connecting IP ac inbound session count cidr service type ac is an accept construct userdata data type For a description of the C struct see accept construct If called with no arguments this function returns..."
 ---

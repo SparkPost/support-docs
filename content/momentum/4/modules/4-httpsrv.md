@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "httpsrv – HTTP Server"
 description: "The httpsrv module is the HTTP server infrastructure module It along with the HTTP Listener enables you to use the REST API The httpsrv module must be loaded in the msg gen conf file as follows This module only supports the two options common to all modules namely enabled and..."
 ---

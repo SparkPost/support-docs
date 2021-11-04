@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "smtpapi – SMTP Engagement Tracking"
 description: "Configuration Change Engagement tracking for SMTP injections is available as of version 4 1 HF 4 The smtpapi module implements engagement tracking for SMTP injections and provides for open tracked images and click tracked links to be included in the message bodies Message Generation is a licensed feature that must..."
 ---

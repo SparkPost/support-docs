@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "sieve_get_arg_as_numeric"
 description: "sieve get arg as numeric obtain a numeric sieve argument from either a string or a number representation int sieve get arg as numeric args n number SIEVEARGS args int n int 64 t number This reference page was automatically generated from functions found in the header files in the..."
 ---

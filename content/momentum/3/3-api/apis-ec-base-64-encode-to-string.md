@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "ec_base64_encode_to_string"
 description: "ec base 64 encode to string Apply base 64 encoding to a string and store the result to an ec string where the previous content will be replaced int ec base 64 encode to string src src len deststring fold const char src size t src len string deststring int..."
 ---

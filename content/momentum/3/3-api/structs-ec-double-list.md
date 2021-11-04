@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "ec_double_list"
 description: "This struct is defined as follows To use this struct include the file misc ec double list h ec double list destroy..."
 ---

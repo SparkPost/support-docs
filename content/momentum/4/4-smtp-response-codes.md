@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "SMTP Response Codes"
 description: "The SMTP response codes and their meanings are shown in the following table Table C 1 SMTP response codes Code Meaning 211 System status or system help reply 214 Help message 220 example com service ready 221 example com service closing transmission channel 250 Requested mail action okay completed 251..."
 ---

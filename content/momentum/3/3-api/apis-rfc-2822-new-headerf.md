@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "rfc2822_new_headerf"
 description: "rfc 2822 new headerf Create a new header using a format specifier rfc 2822 field rfc 2822 new headerf name fmt const char name const char fmt Create a new header using a format specifier For example Remove headers using rfc 2822 remove header name The name of the new..."
 ---

@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "Roles and Behaviors"
 description: "Certain roles and behaviors are set up during installation An overview of each is provided below Platform nodes apart from the log aggregator handle message generation and transmission along with the traditional functionality of Momentum When performing a cluster installation you must begin with a Platform node This initial node..."
 ---

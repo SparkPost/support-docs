@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "System Requirements"
 description: "During installation the following roles are available database data store max 1 per deployment required for all deployments manager cluster service manager for a cluster of MT As mta for sending receiving email singlenode shortcut for the mta database and web roles web browser driven control panel When running the..."
 ---

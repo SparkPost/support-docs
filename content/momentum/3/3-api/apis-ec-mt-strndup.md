@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "ec_mt_strndup"
 description: "ec mt strndup Duplicate a string of the specified message type copying at most the specified number of bytes char ec mt strndup object type str len int object type const char str size t len Duplicate a string of the specified message type copying at most the specified number..."
 ---

@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "post_read_smtp"
 description: "post read smtp This hook is invoked immediately following data that has been read from the remote server during an outbound SMTP connection int core post read smtp closure dc len expected newstate now mask void closure delivery construct dc int len int expected int newstate struct timeval now int..."
 ---

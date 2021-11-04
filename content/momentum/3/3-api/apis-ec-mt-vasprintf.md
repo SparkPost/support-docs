@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "ec_mt_vasprintf"
 description: "ec mt vasprintf Memory typed vasprintf function int ec mt vasprintf mt strp fmt ap int mt char strp const char fmt va list ap Memory typed vasprintf function Version of vasprintf that takes an Momentum memory type as an argument mt The memory type to use for allocations For..."
 ---

@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "sieve_get_bag"
 description: "sieve get bag Get the bag associated with the Sieve engine ec bag sieve get bag seng SENG seng Get the bag associated with the Sieve engine seng Sieve engine state This function returns a pointer to an ec bag It is legal to call this function in any thread..."
 ---

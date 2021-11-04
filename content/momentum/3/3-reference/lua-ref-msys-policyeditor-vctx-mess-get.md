@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "msys.policyeditor.vctx_mess_get"
 description: "msys policyeditor vctx mess get Return a message validation context value msys policyeditor vctx mess get ctx vars params Configuration Change This function is deprecated Use local value msg context get msys core ECMESS CTX MESS key to get a message context value For more information see msg context get..."
 ---

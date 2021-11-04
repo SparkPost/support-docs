@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "ec_interfaces"
 description: "ec interfaces obtain a list of network interfaces ec interfaces This function returns a stringlist of all I Pv 4 addresses assigned to the local machine except for localhost 127 0 0 1 This feature is an extension to the Sieve system and can be made available by loading the..."
 ---

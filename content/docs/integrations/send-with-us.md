@@ -1,4 +1,5 @@
 ---
+lastUpdated: "February 2020"
 title: "Using SparkPost with the SendWithUs"
 description: "To connect your Spark Post account with Send With Us Transactional Email Management you will need A valid Spark Post account A verified configured Sending Domain for use with Spark Post Your Spark Post account password A valid Spark Post API Key A valid Send With Us account Once you..."
 ---

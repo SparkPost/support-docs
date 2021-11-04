@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "http_request_set_body"
 description: "http request set body Set the body of an HTTP request void http request set body sess body http session sess const char body Configuration Change This function is available as of version 3 6 Set the body of an HTTP request After modifying an http request you must call..."
 ---

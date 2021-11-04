@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "node:name"
 description: "node name Return the name of a node node name This function returns the element name of a node and returns the string text for text nodes Example 70 81 node name example The code shown in Example 70 81 node name example results in the following output If you..."
 ---

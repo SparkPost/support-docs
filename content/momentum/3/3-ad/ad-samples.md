@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "Sample Custom Configurations"
 description: "You may come across response codes that haven't yet been integrated into the Message Systems adaptive rules file In such cases you can customize the existing rules by adding a file For example For detailed instructions on customization see Chapter 4 Custom Rules You may discover codes that result in..."
 ---

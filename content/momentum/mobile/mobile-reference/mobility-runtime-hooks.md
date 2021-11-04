@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "SMS Conversion Hook Points"
 description: "Use SMS conversion hooks to override the default SMS email conversions There are four SMS conversion hooks two for MT messages and two for MO messages For each direction there is an SMS conversion hook invoked prior to the default conversion and one following default conversion Aside from context variable..."
 ---

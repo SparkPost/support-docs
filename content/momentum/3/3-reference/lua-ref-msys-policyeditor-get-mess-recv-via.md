@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "msys.policyeditor.get_mess_recv_via"
 description: "msys policyeditor get mess recv via Return the IP port combination on which the message was received msys policyeditor get mess recv via ctx vars params Configuration Change This function is deprecated Use local svc point msg listener addr ip to get the IP address of the listener that the..."
 ---

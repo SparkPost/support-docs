@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "ec_message_part_get_content_type"
 description: "ec message part get content type Returns the content type and charset for a given part void ec message part get content type p content type ct len charset charset len ec message part p char content type int ct len char charset int charset len This reference page was..."
 ---

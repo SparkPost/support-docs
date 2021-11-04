@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "module"
 description: "module manage loaded modules online module hooks module list The module list command displays a full list of all loaded modules as illustrated below In addition to supplying information about your configuration the scope name and the instance name shown by the module list command are required when issuing module..."
 ---

@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "dict_iter2_free"
 description: "dict iter 2 free Free the iterator object created by dict iter 2 void dict iter 2 free a i EC Dict a EC Dict Iterator i Free an iterator created using dict iter 2 Mainly used by LUA scripting a An EC Dict is a typedef of an ec..."
 ---

@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "ec_valid_binding"
 description: "ec valid binding ec valid binding group Check whether a named Multi VIP binding exists ec valid binding binding ec valid binding group binding group ec valid binding is a Sieve test that checks whether the specified binding binding exists ec valid binding group is a Sieve test that checks..."
 ---

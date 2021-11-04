@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "Connection Context Variables"
 description: "Connection context variables are set upon the creation of a successful connection and contain information regarding the remote client Connection context variables are predefined either in a global context or within a module The global variables are discussed in the next section and the module specific variables follow The following..."
 ---

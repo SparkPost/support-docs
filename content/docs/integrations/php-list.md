@@ -1,4 +1,5 @@
 ---
+lastUpdated: "February 2020"
 title: "Using SparkPost with PHPList"
 description: "PHP List ships with PHP Mailer hence it’s very easy to configure it to send emails through Spark Post SMTP Follow these instructions to configure PHP List Add a Sending Domain to Spark Post Create an API Key with Send via SMTP permission In your PHP List installation open config..."
 ---

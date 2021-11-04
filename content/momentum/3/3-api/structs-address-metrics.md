@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "address_metrics"
 description: "This struct is defined as follows To use this struct include the file binding h ec smtp closeconn..."
 ---

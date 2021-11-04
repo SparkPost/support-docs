@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "dec_outbound_connections"
 description: "dec outbound connections void dec outbound connections closure connh void closure connection handle connh int has core dec outbound connections hook void register core dec outbound connections hook first hook closure ec hook core dec outbound connections func t hook void closure void register core dec outbound connections hook last..."
 ---

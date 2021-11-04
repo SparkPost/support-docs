@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "ec_thread_pool_shutdown"
 description: "ec thread pool shutdown Shut down the current thread pool void ec thread pool shutdown void Shut down the current thread pool This function returns void It is legal to call this function in the Scheduler thread ec thread pool create module..."
 ---

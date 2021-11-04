@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "client:get_body"
 description: "client get body Get the body of an HTTP response client get body Get the body of an HTTP response msys http client new client set timeout client do request client get status client set header client parse headers client get headers..."
 ---

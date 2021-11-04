@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "hash_keys"
 description: "hash keys return all the keys of a hash as a stringlist hash keys hash This function works on a hash created by hash create and returns a stringlist containing all the keys of the hash If the given hash is not empty the elements in the returned stringlist are..."
 ---

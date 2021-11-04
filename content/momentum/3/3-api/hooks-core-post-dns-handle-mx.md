@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "post_dns_handle_mx"
 description: "post dns handle mx void post dns handle mx closure routes status abuf alen qdomain void closure mx routes routes int status unsigned char abuf int alen const char qdomain int has core post dns handle mx hook void register core post dns handle mx hook first hook closure ec..."
 ---

@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "Update the Web UI Configuration"
 description: "We recommend you make these changes on one Analytics node and then use the scp command to copy them to the other Analytics nodes Backup the production json file then copy the default json file to production Answer yes at the prompt Manually migrate environment specific settings from the opt..."
 ---

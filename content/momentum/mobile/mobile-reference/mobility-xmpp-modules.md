@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "Mobile Momentum XMPP"
 description: "As of Momentum version 3 4 the Extensible Messaging and Presence Protocol XMPP modules are available XMPP is a messaging protocol based on XML typically used for sending and receiving instant messages This protocol is sometimes called the Jabber protocol Implementing XMPP entails configuring the xmpp and xmpp logger modules..."
 ---

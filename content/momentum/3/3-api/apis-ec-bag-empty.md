@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "ec_bag_empty"
 description: "ec bag empty Empty a bag void ec bag empty bag ec bag bag Empty a bag bag The ec bag This function returns void It is legal to call this function in any thread..."
 ---

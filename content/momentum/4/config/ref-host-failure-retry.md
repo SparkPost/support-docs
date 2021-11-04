@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "host_failure_retry"
 description: "host failure retry time to wait before attempting a retry Host Failure Retry 120 The amount of time in seconds to wait after a connect or protocol failure on a connection to a specific IP address before attempting deliveries to that IP address again The default value is 120 host..."
 ---

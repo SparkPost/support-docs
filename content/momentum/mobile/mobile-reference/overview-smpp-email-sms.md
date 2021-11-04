@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "Message Conversions, Transformations, and Mappings"
 description: "Message conversions refer to the operations needed in order to generate SMS text messages from email and vice versa They include operations on the message content and also identifying an appropriate mapping of the destination address Mobile Momentum also provides four hook points during conversion where custom scripts may implement..."
 ---

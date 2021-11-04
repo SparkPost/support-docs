@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "_ec_atounum2"
 description: "ec atounum 2 Convert e string str to an unsigned integral value and store the result in nptr int ec atounum 2 str nptr width minval maxval endptr const char str void nptr int width long long minval long long maxval char endptr This reference page was automatically generated from..."
 ---

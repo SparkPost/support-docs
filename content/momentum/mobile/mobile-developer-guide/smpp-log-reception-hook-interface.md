@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "Interface"
 description: "Parameters passed into this hook a reference to the smpp conn structure an ec message a string value of the error message if failed to process the MO message For a successfully processed MO an empty string is passed in NONE..."
 ---

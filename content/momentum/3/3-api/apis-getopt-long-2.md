@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "getopt_long2"
 description: "getopt long 2 a thread safe re entrant getopt long int getopt long 2 state argc argv shortopts longopts longind struct getopt state state int argc char const argv const char shortopts const struct option longopts int longind This reference page was automatically generated from functions found in the header..."
 ---

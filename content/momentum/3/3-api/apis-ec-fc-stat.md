@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "ec_fc_stat"
 description: "ec fc stat Return statistics for given cache void ec fc stat cache st ec fc t cache struct ec fc stat st This reference page was automatically generated from functions found in the header files in the development branch The function described here may not exist in generally available..."
 ---

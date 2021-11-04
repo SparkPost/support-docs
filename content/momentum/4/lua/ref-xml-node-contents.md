@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "node:contents"
 description: "node contents Get or set a text node node contents text str When a parameter is passed a text node with the specified value is created If no string is passed the value of the text node is returned To remove text pass an empty string Example 70 79 node..."
 ---

@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "msys.gauge_cache.define"
 description: "msys gauge cache define Create a cache that can be used to maintain a set of counters msys gauge cache define name maxelems ttl replicated Creates a cache that can be used to maintain a set of counters based on a string key The ttl parameter is the number of..."
 ---

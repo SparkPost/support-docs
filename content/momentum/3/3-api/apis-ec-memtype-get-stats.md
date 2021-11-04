@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "ec_memtype_get_stats"
 description: "ec memtype get stats Return usage statistics for a given memtype int ec memtype get stats object type usage int object type struct ec mem type usage usage Configuration Change This feature is available starting from Momentum 3 0 18 Return usage statistics for a given memtype object type The..."
 ---

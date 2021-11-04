@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "ec_message_get_body_fd_for_mmap"
 description: "ec message get body fd for mmap Requests the file descriptor from the IO layer for the purpose of memory mapping int ec message get body fd for mmap mess ec message mess This reference page was automatically generated from functions found in the header files in the development branch..."
 ---

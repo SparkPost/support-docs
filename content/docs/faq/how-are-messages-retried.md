@@ -1,4 +1,5 @@
 ---
+lastUpdated: "February 2020"
 title: "How Are Messages Retried?"
 description: "Both Spark Post and Spark Post Enterprise employ the same settings for message retries including message expiration settings i e the maximum amount of time we will retry a message before we fail it for max attempts and retry intervals which is the time between successive delivery attempts Messages that..."
 ---

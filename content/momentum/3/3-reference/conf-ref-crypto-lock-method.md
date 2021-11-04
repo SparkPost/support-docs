@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "crypto_lock_method"
 description: "crypto lock method change the locking method used by the TLS layer Crypto Lock Method EC SSL SPINLOCK Crypto Lock Method EC SSL MUTEX Crypto Lock Method EC SSL DEFAULTLOCK This option affects how thread safe locking is performed You should not need to change the default value of this..."
 ---

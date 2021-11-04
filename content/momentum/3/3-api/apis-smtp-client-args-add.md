@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "smtp_client_args_add"
 description: "smtp client args add Add an argument to an smtp client args structure int smtp client args add args extension value smtp client args args const char extension const char value Add an argument to an smtp client args structure For a description of this struct see Section 68 81..."
 ---

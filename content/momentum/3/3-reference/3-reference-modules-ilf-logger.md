@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "ilf_logger Module"
 description: "Configuration Change This module is available as of version 3 5 6 The Incremental License Fee module is designed for users who have usage based licenses It provides an easy way to comply with the usage reporting requirements contained in the agreement with Message Systems Usage files are written to..."
 ---

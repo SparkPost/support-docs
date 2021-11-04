@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "dkim"
 description: "dkim enable or disable dkim signing dkim enabled dkim disabled This directive is only valid if the Momentum dkim sign module is loaded See Section 14 27 dkim Domain Keys Identified Mail Signatures This directive instructs Momentum to enable or disable signing messages with a DKIM signature globally on a..."
 ---

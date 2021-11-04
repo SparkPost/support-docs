@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "bounce_cache_ttl"
 description: "bounce cache ttl set the maximum TTL for the bounce classification cache bounce cache size 300 Configuration Change This feature is available as of version 3 6 9 bounce cache size and bounce cache ttl together set the maximum size and TTL of the bounce classify and bounce classify 2..."
 ---

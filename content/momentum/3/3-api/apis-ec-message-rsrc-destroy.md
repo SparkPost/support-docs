@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "ec_message_rsrc_destroy"
 description: "ec message rsrc destroy Removes the resource with the given name from the message in memory resource list and then passes the resource to ec message rsrc free void ec message rsrc destroy message name ec message message const char name This reference page was automatically generated from functions found..."
 ---

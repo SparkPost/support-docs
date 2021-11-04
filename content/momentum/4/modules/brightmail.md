@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "brightmail – Symantec Brightmail™ Content Scanning Support"
 description: "The brightmail module provides a mechanism for checking the current inbound message context for each recipient against a Symantec Brightmail Anti Spam content server If you intend to use this module be sure to choose it during installation You will also need to purchase a license from Symantac For more..."
 ---

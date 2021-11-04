@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "msys.policyeditor.send_email"
 description: "msys policyeditor send email Sends a simple email message msys policyeditor send email ctx vars params Configuration Change This function is deprecated Use a combination of msg build and msg inject to send a message For more information see msg build and msg inject Sends a simple email message Builds..."
 ---

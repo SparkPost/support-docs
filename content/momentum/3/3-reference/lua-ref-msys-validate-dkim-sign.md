@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "msys.validate.dkim.sign"
 description: "msys validate dkim sign Sign a message using a DKIM signature msys validate dkim sign msg vctx options This function requires the dkim sign module msg is a mail message vctx is the validation context It signs the message msg using a DKIM signature options is a table which allows..."
 ---

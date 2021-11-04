@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "sess:request_finalize"
 description: "sess request finalize Finalize changes to an HTTP request sess request finalize update Configuration Change This function is available as of version 3 6 Finalize changes to an HTTP session Call this function whenever the data in an http session has been modified Set update to 1 if you are..."
 ---

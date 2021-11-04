@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "Best Practices for Manually Changing Configuration Files"
 description: "The recommended method of making changes to your configuration is to use the web UI Chapter 3 Using the Web Console describes how to do this If you wish you can manually change your configuration by editing configuration files directly Since the configuration files are under revision control it is..."
 ---

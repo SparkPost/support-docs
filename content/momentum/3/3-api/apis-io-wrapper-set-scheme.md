@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "io_wrapper_set_scheme"
 description: "io wrapper set scheme Set the scheme associated with an io object void io wrapper set scheme io scheme io object io const char scheme This reference page was automatically generated from functions found in the header files in the development branch The function described here may not exist in..."
 ---

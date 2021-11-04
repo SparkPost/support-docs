@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "node:children"
 description: "node children Return an iterator of all child nodes node children Return an iterator of all child nodes of the specified node Any text nodes are also included Example 70 78 example xml parsexml..."
 ---

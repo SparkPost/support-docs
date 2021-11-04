@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "disk_queue_core_inject"
 description: "disk queue core inject void disk queue core inject closure em void closure email message em int has core disk queue core inject hook void register core disk queue core inject hook first hook closure ec hook core disk queue core inject func t hook void closure void register core..."
 ---

@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "msys.core.dns_get_domain"
 description: "msys core dns get domain Get a domain record msys core dns get domain domain Get domain record userdata by passing in the domain name For a code example see Example 15 32 register Control example Because this function is in the msys core namespace an explicit require msys core..."
 ---

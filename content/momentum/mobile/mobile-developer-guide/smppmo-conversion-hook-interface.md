@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "Interface"
 description: "ec message Table 12 1 SMPP MO Conversion ec message Context Variables Context Key Name C define name Description MO Email From Address email from address to use when converting MO sms to email MO Email To Address email to address to use when converting MO sms to email MO..."
 ---

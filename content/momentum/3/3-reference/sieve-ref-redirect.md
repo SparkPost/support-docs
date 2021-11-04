@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "redirect"
 description: "redirect ec redirect change the envelope recipient redirect address ec redirect address counter This action will replace the rcptto address on the envelope to the one supplied and redirect the message The headers and the body of the message will not be changed The optional counter parameter to ec redirect..."
 ---

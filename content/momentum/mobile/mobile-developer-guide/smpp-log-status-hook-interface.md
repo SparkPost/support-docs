@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "Interface"
 description: "Parameters passed into this hook a reference to the smpp conn structure an ec message an error description carried in the deliver receipt if there is one The ec message context variables carry the following extra information from the delivery receipt Table 10 1 SMPP Logger Status ec message Context..."
 ---

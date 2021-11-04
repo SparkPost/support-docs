@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "msys.policyeditor.send_trap"
 description: "msys policyeditor send trap Send an SNMP trap msys policyeditor send trap ctx vars params Configuration Change This function is deprecated Use msys snmp Trap to send an SNMP trap For more information see msys snmp Trap Send an SNMP trap The ctx parameter is the context containing objects from..."
 ---

@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "ec_get_message_received_from"
 description: "ec get message received from Return the IP address that the message was received from ec get message received from ec get message received from returns the IP address that the message was sent from It returns the address in dot decimal notation 192 126 1 20 for example In..."
 ---

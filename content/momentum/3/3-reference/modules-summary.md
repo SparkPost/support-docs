@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "Summary Module Information"
 description: "In this table all modules are listed alphabetically with a brief description Singleton and deprecated modules are identified If a singleton module is followed by a version number that number identifies when that module became a singleton The Auto column indicates whether a module is loaded automatically as required Note..."
 ---

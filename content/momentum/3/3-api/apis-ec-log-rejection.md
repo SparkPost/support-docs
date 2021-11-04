@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "ec_log_rejection"
 description: "ec log rejection Records the fact that Momentum rejected an incoming message deprecated void ec log rejection now ac ctx phase format struct timeval now accept construct ac validate context ctx int phase const char format Records the fact that Momentum rejected an incoming message Use ec log rejection 2..."
 ---

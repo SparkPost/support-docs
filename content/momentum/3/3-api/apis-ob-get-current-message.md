@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "ob_get_current_message"
 description: "ob get current message Utility function to return the current ec message ec message ob get current message connh connection handle connh Configuration Change This function is available as of Momentum version 3 5 5 A utility function to return the ec message that is currently being processed connh A..."
 ---

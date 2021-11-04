@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "unlink_on_spool_in_failure"
 description: "unlink on spool in failure Whether or not to remove malformed messages unlink on spool in failure true When Momentum encounters a malformed message in the spool that cannot be read in if this option is true the message will be removed from the spool If it is false the..."
 ---

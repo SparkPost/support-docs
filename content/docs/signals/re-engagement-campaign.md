@@ -1,4 +1,5 @@
 ---
+lastUpdated: "February 2020"
 title: "Email Reengagement"
 description: "The Signals recommendation on how to re-engage with subscribers who have disconnected from you."
 ---

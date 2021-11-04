@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "is_adaptive_scope_global"
 description: "is adaptive scope global check if a binding domain pair's adaptive scope is global or not int is adaptive scope global bname domain const char bname const char domain This reference page was automatically generated from functions found in the header files in the development branch The function described here..."
 ---

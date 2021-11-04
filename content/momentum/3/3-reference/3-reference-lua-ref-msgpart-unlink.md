@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "msgpart:unlink"
 description: "msgpart unlink Remove the part and its children from the MIME tree msgpart unlink Removes the part and its children from the MIME tree Because this function is in the msys core namespace an explicit require msys core is not necessary..."
 ---

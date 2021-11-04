@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "address"
 description: "address return the address from a header address header element string This function implements the standard address Sieve test it parses addresses out of the header you request and tests against them For more information see Section 8 2 Sieve's Basic Syntax Example 16 2 address example This function returns..."
 ---

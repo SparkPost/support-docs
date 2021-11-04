@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "ec_config_rsrc_get"
 description: "ec config rsrc get Return a resource list blobject from the configuration system ec blobject ec config rsrc get id registering ec atomic t id int registering This function returns a resource list blobject from the configuration system When you are finished with the returned object you must call ec..."
 ---

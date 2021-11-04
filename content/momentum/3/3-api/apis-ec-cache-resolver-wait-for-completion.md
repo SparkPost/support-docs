@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "ec_cache_resolver_wait_for_completion"
 description: "ec cache resolver wait for completion Blocks the caller until cache resolution completes ec cache elt ec cache resolver wait for completion cond ec cache resolver cond cond This reference page was automatically generated from functions found in the header files in the development branch The function described here may..."
 ---

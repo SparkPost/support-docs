@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "ec_rewrite_mailfrom"
 description: "ec rewrite mailfrom change the envelope sender ec rewrite mailfrom address counter This action will replace the envelope sender the MAIL FROM address on the envelope with the one supplied The headers and the body of the message will not be changed The optional counter parameter to ec rewrite mailfrom..."
 ---

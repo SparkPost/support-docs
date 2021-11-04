@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "ec_message_rsrc_copy"
 description: "ec message rsrc copy Duplicate resource identifiers from source into destination int ec message rsrc copy src dest ec message src ec message dest This reference page was automatically generated from functions found in the header files in the development branch The function described here may not exist in generally..."
 ---

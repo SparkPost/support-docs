@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "ec_spool_ctx"
 description: "This struct is defined as follows To use this struct include the file spool c ec spool ctx create..."
 ---

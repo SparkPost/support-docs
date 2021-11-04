@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "Adaptive Rules"
 description: "As of Momentum version 3 2 the adaptive rules lua file is included with all AD licences This file helps manage outbound traffic so that it complies with the requirements of major receivers AD is most effective when you include adaptive response rules in your configuration The rules defined in..."
 ---

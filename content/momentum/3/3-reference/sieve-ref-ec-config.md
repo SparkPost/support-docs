@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "ec_config"
 description: "ec config get Momentum configuration from Sieve ec config get eval anonymous scope name scope name instance name optname This action implements a subset of the console config command Only the get and eval actions are currently supported but otherwise behavior is identical Simple option values are returned as strings..."
 ---

@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "ec_message_get_rcptto"
 description: "ec message get rcptto returns the entire protocol decorated rcptto string const char ec message get rcptto mess ec message mess Returns the entire protocol decorated rcptto string via a read only buffer For example RCPT TO john doe example com CRLF mess A pointer to an ec message struct..."
 ---

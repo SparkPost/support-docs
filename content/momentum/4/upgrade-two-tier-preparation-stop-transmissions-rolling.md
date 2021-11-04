@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "Restore Transmissions to the First Platform Node and Stop Transmissions to all other Platform Nodes"
 description: "On all Analytics nodes edit opt msys 3rd Party nginx conf d momo upstream conf and restore the line identifying the first Platform node For a combined cluster upgrade perform this action on all nodes in the cluster Reload the NGINX configuration On all Analytics nodes edit opt msys 3rd..."
 ---

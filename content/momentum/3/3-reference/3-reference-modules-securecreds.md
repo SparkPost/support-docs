@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "securecreds – Module"
 description: "Configuration Change This feature is available as of version 3 2 The securecreds module enforces password encryption and implements credential retrieval operations when certain facilities are accessed If this module is enabled the following facilities make use of it All datasource modules ecconfigd repository management eccfg the user tool for..."
 ---

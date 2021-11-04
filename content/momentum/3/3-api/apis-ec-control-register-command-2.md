@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "ec_control_register_command2"
 description: "ec control register command 2 Register a command handler with the system void ec control register command 2 prefix closure func const char prefix void closure ec control function 2 func Register a command handler with the system The command stays registered with the system even across configuration generations Once..."
 ---

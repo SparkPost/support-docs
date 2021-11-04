@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "MM7 Logger Status Hook"
 description: "This hook is used to log the delivery status of an MM 7 MT submission The delivery status is reported in the Delivery Report Req sent from a remote MMSC regarding a request previously submitted by Mobile Momentum..."
 ---

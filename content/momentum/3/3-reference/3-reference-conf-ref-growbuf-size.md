@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "growbuf_size"
 description: "growbuf size The size of an element in a growbuf chain growbuf size 16384 Momentum uses a growbuf chain to hold message contents as they are received The chain allows reception of messages into memory without first having to know how much memory to allocate By default each element in..."
 ---

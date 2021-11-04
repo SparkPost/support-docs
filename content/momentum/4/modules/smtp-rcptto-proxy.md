@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "smtp_rcptto_proxy - SMTP Recipient-To Proxy"
 description: "Configuration Change This feature is available in Momentum 4 2 and later The smtp rcptto proxy module allows validation of a Lua recipient by doing an SMTP call forward This can be useful on edge MT As to discover whether a user is valid or not It will create an..."
 ---

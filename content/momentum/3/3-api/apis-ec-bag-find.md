@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "ec_bag_find"
 description: "ec bag find Find something in the specified bag void ec bag find bag typedname ec bag bag const char typedname Find something in the specified bag The default behavior is to attempt to find the type and then attempt to locate the type within other types provided that the..."
 ---

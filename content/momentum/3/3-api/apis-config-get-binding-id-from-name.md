@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "config_get_binding_id_from_name"
 description: "config get binding id from name Get the identifier associated with a binding name ec binding slot config get binding id from name name const char name Get the identifier associated with a binding name name The name of the binding This function returns a binding identifier An ec binding..."
 ---

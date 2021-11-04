@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "msys.gcm.gcm_get_result_error_code"
 description: "msys gcm gcm get result error code Get the error code from the response results error msys gcm gcm get result error code error Get the error code from the response results error The error code should be one of the following msys gcm GCM NO ERROR msys gcm GCM..."
 ---

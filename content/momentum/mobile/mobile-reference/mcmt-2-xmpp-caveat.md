@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "Filtering Out Chat State Notifications"
 description: "In XMPP you can send message stanzas whose sole purpose is to inform another user of one's present chat state For example if one user starts writing to a contact most clients will send that contact a chat state message telling them that their buddy is typing These stanzas are..."
 ---

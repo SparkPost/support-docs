@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "Implementing Policy with Momentum"
 description: "In order to effectively implement your site policy it is important to understand how mail transits through Momentum and when the policy is applied Figure 62 1 Momentum Policy Phases provides visual representations of mail injected via HTTP and SMTP Additional policy information is provided after the diagram For more..."
 ---

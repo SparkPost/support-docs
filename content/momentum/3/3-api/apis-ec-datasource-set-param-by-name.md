@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "ec_datasource_set_param_by_name"
 description: "ec datasource set param by name Initialize the value of a parameter using the name as a key int ec datasource set param by name q key val ecdata cache query q const char key const ecdata value val Initialize the value of a parameter using the name as a..."
 ---
