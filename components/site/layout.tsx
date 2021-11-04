@@ -41,7 +41,7 @@ const Layout = (props: LayoutProps): JSX.Element => {
           <Box display="flex" width="100%" bg="white" border="400">
             <Box flex="0">{navigationComponent}</Box>
             <Box
-              p="500"
+              py="500"
               flex="1"
               id="main-content"
               borderLeft="400"

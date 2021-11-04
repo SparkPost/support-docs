@@ -206,7 +206,7 @@ const Item = (props: MomentumNavigationItemProps): JSX.Element => {
         $active={active}
       >
         <Link href={link} passHref>
-          <Box as="a" display="flex" justifyContent="space-between">
+          <Box as="a" display="flex" justifyContent="space-between" flex="1">
             <Box as="span">{title}</Box>
           </Box>
         </Link>
