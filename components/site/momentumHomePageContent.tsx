@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, Stack, Panel } from '@sparkpost/matchbox';
+import { Text, Stack, Panel, Box } from '@sparkpost/matchbox';
 import Link from 'next/link';
 import styled from 'styled-components';
 import css from '@styled-system/css';
@@ -168,38 +168,40 @@ const MomentumHomePageContent = () => {
   }
 
   return (
-    <Stack>
-      <Text fontSize="600" lineHeight="600" fontWeight="semibold">
-        Momentum Documentation
-      </Text>
-      {content.map((category, i) => {
-        return (
-          <Panel key={i}>
-            <Panel.Section>
-              <Stack space="200">
-                {category.map(({ label, url, level }, j) => {
-                  if (url) {
-                    return (
-                      <Link href={url} passHref key={`${i}-${j}`}>
-                        <TocLink url={url} level={level}>
-                          {label}
-                        </TocLink>
-                      </Link>
-                    );
-                  }
+    <Box px="500">
+      <Stack>
+        <Text fontSize="600" lineHeight="600" fontWeight="semibold">
+          Momentum Documentation
+        </Text>
+        {content.map((category, i) => {
+          return (
+            <Panel key={i}>
+              <Panel.Section>
+                <Stack space="200">
+                  {category.map(({ label, url, level }, j) => {
+                    if (url) {
+                      return (
+                        <Link href={url} passHref key={`${i}-${j}`}>
+                          <TocLink url={url} level={level}>
+                            {label}
+                          </TocLink>
+                        </Link>
+                      );
+                    }
 
-                  return (
-                    <Text fontWeight="semibold" fontSize="400" lineHeight="400" key={`${i}-${j}`}>
-                      {label}
-                    </Text>
-                  );
-                })}
-              </Stack>
-            </Panel.Section>
-          </Panel>
-        );
-      })}
-    </Stack>
+                    return (
+                      <Text fontWeight="semibold" fontSize="400" lineHeight="400" key={`${i}-${j}`}>
+                        {label}
+                      </Text>
+                    );
+                  })}
+                </Stack>
+              </Panel.Section>
+            </Panel>
+          );
+        })}
+      </Stack>
+    </Box>
   );
 };
 

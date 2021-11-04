@@ -1,6 +1,7 @@
 import { GetStaticProps, GetStaticPaths } from 'next';
 import { getAllCategoryPostPaths, getSingleCategoryPost, categoryPath } from 'lib/api';
 import MomentumLayout from 'components/site/momentumLayout';
+import DocumentationPage from 'components/site/documentationPage';
 import SEO from 'components/site/seo';
 import Markdown from 'components/markdown';
 
@@ -9,6 +10,7 @@ type PostPageProps = {
   data: {
     title?: string;
     description?: string;
+    lastUpdated?: string;
   };
 };
 
@@ -19,9 +21,9 @@ const PostPage = (props: PostPageProps): JSX.Element => {
     <>
       <SEO title={data.title} description={data.description} />
       <MomentumLayout>
-        <h1>{data?.title}</h1>
-        <h6>{data?.description}</h6>
-        <Markdown>{content}</Markdown>
+        <DocumentationPage title={data.title} lastUpdated={data.lastUpdated}>
+          <Markdown>{content}</Markdown>
+        </DocumentationPage>
       </MomentumLayout>
     </>
   );
