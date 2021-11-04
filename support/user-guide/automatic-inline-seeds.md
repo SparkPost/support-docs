@@ -19,7 +19,7 @@ We recommend that you create a seeding strategy that allows you to seed across e
 
 ## How to Set Up Automatic Inline Seeding
 
-In order to use Automatic Inline Seeding in SparkPost you must have a SparkPost sending account or a valid license for PowerMTA (versions newer than 5.0r8) and paid access to either SparkPost Deliverability Analytics or SparkPost. 
+In order to use Automatic Inline Seeding in SparkPost you must have a SparkPost sending account or a valid license for PowerMTA (versions newer than 5.0r8) and paid access to SparkPost Deliverability Analytics. 
 
 ### Campaign Setup
 
