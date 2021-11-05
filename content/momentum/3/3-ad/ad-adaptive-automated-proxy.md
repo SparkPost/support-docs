@@ -11,9 +11,6 @@ If a proxy server is used to access updates you must make configuration changes 
 
 Add the following options to the `liveupdate.conf` file:
 
----
-
-
 PROXYHOST=*`hostname`*  #e.g. proxy.foobar.com
 PROXYTYPE=*`type`* #e.g. http
 PROXYPORT=*`port`* #e.g. 80
