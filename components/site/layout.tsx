@@ -57,7 +57,7 @@ const Layout = (props: LayoutProps): JSX.Element => {
             <Box flex="0" borderRight="400" display={['none', null, 'block']}>
               {navigationComponent}
             </Box>
-            <Box p="500" flex="1" id="main-content" overflow="hidden" position="relative">
+            <Box py="500" flex="1" id="main-content" overflow="hidden" position="relative">
               {children}
             </Box>
           </Box>
