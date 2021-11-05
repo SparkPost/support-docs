@@ -1,3 +1,4 @@
+import React from 'react';
 import styled from 'styled-components';
 import css from '@styled-system/css';
 
@@ -34,7 +35,7 @@ const StyledDescriptionList = styled.div`
   }
 `;
 
-const DescriptionLists = (props) => {
+const DescriptionLists = (props: { children?: React.ReactNode }) => {
   return <StyledDescriptionList>{props.children}</StyledDescriptionList>;
 };
 

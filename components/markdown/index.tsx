@@ -17,6 +17,7 @@ import Hr from './hr';
 import Link from './link';
 import { Ul, Ol } from './lists';
 import DescriptionLists from './descriptionLists';
+import BlockQuote from './blockquote';
 
 type MarkdownComponentProps = {
   children?: React.ReactNode;
@@ -37,6 +38,7 @@ const components = {
   a: Link,
   ul: Ul,
   ol: Ol,
+  blockquote: BlockQuote,
   tr: (props: MarkdownComponentProps) => <MBTable.Row {...props} />,
   td: (props: MarkdownComponentProps) => <MBTable.Cell {...props} />,
   th: (props: MarkdownComponentProps) => <MBTable.HeaderCell {...props} />,
