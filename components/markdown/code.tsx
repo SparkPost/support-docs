@@ -40,7 +40,7 @@ const Code = (props: CodeProps): JSX.Element | null => {
   }
 
   return (
-    <Box mb="400" p="400" bg="gray.1000" borderRadius="200" overflow="auto">
+    <Box mb="550" p="400" bg="gray.1000" overflow="auto">
       <SyntaxHighlighter
         language={language || 'text'}
         style={a11yDark}

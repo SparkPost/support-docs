@@ -6,9 +6,13 @@ description: "If a proxy server is used to access updates you must make configur
 
 If a proxy server is used to access updates you must make configuration changes or use command-line switches when running **lu_pull**.
 
+---
 ### <a name="ad.adaptive.automated.proxy.config"></a> Changing `liveupdate.conf`
 
 Add the following options to the `liveupdate.conf` file:
+
+---
+
 
 PROXYHOST=*`hostname`*  #e.g. proxy.foobar.com
 PROXYTYPE=*`type`* #e.g. http

@@ -13,6 +13,7 @@ import Paragraph from './paragraph';
 import Image from './image';
 import Code from './code';
 import Table from './table';
+import Hr from './hr';
 
 type MarkdownComponentProps = {
   children?: React.ReactNode;
@@ -29,6 +30,7 @@ const components = {
   img: Image,
   code: Code,
   table: Table,
+  hr: Hr,
   tr: (props: MarkdownComponentProps) => <MBTable.Row {...props} />,
   td: (props: MarkdownComponentProps) => <MBTable.Cell {...props} />,
   th: (props: MarkdownComponentProps) => <MBTable.HeaderCell {...props} />,
