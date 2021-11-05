@@ -40,7 +40,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Index Momentum Posts
-        run: npm run build:index:momentum
+        run: npm run build:index:momentum && npm run build:index:support
         env:
           NEXT_PUBLIC_ALGOLIA_APP_ID: ${{secrets.NEXT_PUBLIC_ALGOLIA_APP_ID}}
           ALGOLIA_SEARCH_ADMIN_KEY: ${{secrets.ALGOLIA_SEARCH_ADMIN_KEY}}
