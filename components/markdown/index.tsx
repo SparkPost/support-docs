@@ -16,6 +16,7 @@ import Table from './table';
 import Hr from './hr';
 import Link from './link';
 import { Ul, Ol } from './lists';
+import DescriptionLists from './descriptionLists';
 
 type MarkdownComponentProps = {
   children?: React.ReactNode;
@@ -47,13 +48,15 @@ type MarkdownProps = {
 
 const Markdown = (props: MarkdownProps): JSX.Element => {
   return (
-    <ReactMarkdown
-      components={components}
-      rehypePlugins={[rehypeRaw]}
-      remarkPlugins={[remarkGfm, remarkCode]}
-    >
-      {props.children}
-    </ReactMarkdown>
+    <DescriptionLists>
+      <ReactMarkdown
+        components={components}
+        rehypePlugins={[rehypeRaw]}
+        remarkPlugins={[remarkGfm, remarkCode]}
+      >
+        {props.children}
+      </ReactMarkdown>
+    </DescriptionLists>
   );
 };
 
