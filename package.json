@@ -9,6 +9,7 @@
     "build": "next build",
     "build:ssr": "next build && next export",
     "build:index:momentum": "node ./scripts/momentumIndex.mjs",
+    "build:index:support": "node ./scripts/supportIndex.mjs",
     "build:images": "rimraf public/content && node ./scripts/copyImages.mjs",
     "postbuild": "next-sitemap",
     "start": "next start",

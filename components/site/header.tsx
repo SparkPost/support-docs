@@ -1,7 +1,7 @@
 import React from 'react';
 import { useRouter } from 'next/router';
-import { Box, Button, TextField } from '@sparkpost/matchbox';
-import { Search as SearchIcon, OpenInNew } from '@sparkpost/matchbox-icons';
+import { Box, Button } from '@sparkpost/matchbox';
+import { OpenInNew } from '@sparkpost/matchbox-icons';
 import Cookies from 'js-cookie';
 import Logo from 'components/site/logo';
 import Search from 'components/site/algolia/search';
@@ -44,12 +44,7 @@ const Header = () => {
         {category === 'momentum' ? (
           <Search indexName="next_momentum_documentation" />
         ) : (
-          <TextField
-            id="algolia-search"
-            label="Search"
-            prefix={<SearchIcon />}
-            placeholder="e.g. Getting Started"
-          />
+          <Search indexName="next_support_documentation" />
         )}
       </Box>
     </Box>
