@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "ec_error_mode"
 description: "ec error mode set the error mode to fail or continue ec error mode continue fail ec error mode affects how Sieve handles certain kinds of errors for instance passing incorrect parameters to Sieve functions failed includes low memory conditions The default is to fail the incoming session with a..."
 ---

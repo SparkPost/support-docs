@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "scpt_autoload_ns"
 description: "scpt autoload ns Wire up autoload items just in time int scpt autoload ns thr name space scpt thread thr const char name space Wire up autoload items just in time Call this from an index function to perform just in time registration of global constants and other registered items..."
 ---

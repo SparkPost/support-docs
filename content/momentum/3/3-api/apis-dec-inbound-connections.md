@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "dec_inbound_connections"
 description: "dec inbound connections Decrement the number of global inbound connections by 1 void dec inbound connections typename fd ac char typename int fd accept construct ac Decrement the number of global inbound connections by 1 char The connection type such as SMTP fd The file descriptor of the connection ac..."
 ---

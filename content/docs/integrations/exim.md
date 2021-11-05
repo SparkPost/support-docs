@@ -1,4 +1,5 @@
 ---
+lastUpdated: "02/08/2020"
 title: "Using SparkPost with Exim"
 description: "Configuring Exim 4 to use Spark Post as the SMTP relay is very similar to the process described in this Ask Ubuntu com article Instead of your Gmail username use SMTP Injection and for your password use an API key you have generated from your Spark Post account with the..."
 ---

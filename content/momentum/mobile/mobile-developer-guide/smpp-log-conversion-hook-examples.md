@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "Examples"
 description: "Example 6 1 SMPP Log Conversion Hook Lua Example Example 6 2 SMPP Log Conversion Hook C Example..."
 ---

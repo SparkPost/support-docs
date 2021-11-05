@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "ec_httpsrv_request_data_get_string"
 description: "ec httpsrv request data get string Buffers request payload data to memory and returns a string pointer to it int ec httpsrv request data get string sess str ec httpsrv session sess string str This reference page was automatically generated from functions found in the header files in the development..."
 ---

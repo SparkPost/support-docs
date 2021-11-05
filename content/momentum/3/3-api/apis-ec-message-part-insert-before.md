@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "ec_message_part_insert_before"
 description: "ec message part insert before Insert a part ahead of another part int ec message part insert before toinsert insert before ec message part toinsert ec message part insert before This reference page was automatically generated from functions found in the header files in the development branch The function described..."
 ---

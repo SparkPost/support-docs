@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "msys.http.client.new"
 description: "msys http client new Create an HTTP client msys http client new Create an HTTP client This function returns an HTTP client object with the methods shown in the section called See Also client set timeout client set header client do request client get status client get body client parse..."
 ---

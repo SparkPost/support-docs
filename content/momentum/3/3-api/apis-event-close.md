@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "event_close"
 description: "event close Close the specified event int event close e Event e Close the specified event Freeing the event structure does not close the descriptor the user must do this e The Event that you wish to close On success this function returns the value of the system function close..."
 ---

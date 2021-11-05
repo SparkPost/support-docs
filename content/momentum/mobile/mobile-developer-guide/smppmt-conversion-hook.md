@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "SMPP MT Conversion Hook"
 description: "The SMPP MT Conversion Hook enables customization of the conversion of an ec message to an SMPP message The SMPP MT Conversion Hook exposes many of the information elements used to create SMPP messages such as message text and recipient addresses Applications may inspect and or modify information elements using..."
 ---

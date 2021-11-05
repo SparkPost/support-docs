@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "ec_message_assign_domain_by_name"
 description: "ec message assign domain by name Assign the domain field of an ec message based on the domain name string passed in as an argument domain record ec message assign domain by name mess domain name ec message mess const char domain name Modify the domain field of an ec..."
 ---

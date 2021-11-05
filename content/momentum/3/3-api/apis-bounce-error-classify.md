@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "bounce_error_classify"
 description: "bounce error classify Classify a buffer in the context of an out of band bounce int bounce error classify body body len orig rcpt ignorelist mid const char body int body len char orig rcpt const char ignorelist message id mid Use bounce error classify 2 instead Classify a buffer..."
 ---

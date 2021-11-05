@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "get_received_header_text"
 description: "get received header text Use this hook to set the text of the Received header in a message int core get received header text closure msg mc ac ctx response void closure ec message msg message construct mc accept construct ac validate context ctx string response Use this hook to..."
 ---

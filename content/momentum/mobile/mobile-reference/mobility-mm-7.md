@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "Mobile Momentum MM7"
 description: "MM 7 defines the standards used between a Multimedia Messaging service MMS value added service VAS application and a MMS center MM 7 is used to send messages from third party providers e g a bank sending a statement or an advertiser sending publicity It is based on SOAP with..."
 ---

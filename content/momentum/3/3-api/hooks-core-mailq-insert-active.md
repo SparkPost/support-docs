@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "mailq_insert_active"
 description: "mailq insert active int core mailq insert active closure mq msg void closure mail queue mq ec message msg When a message is attempted it is removed from the delayed queue and inserted into the active queue for a given domain This is done by invoking this hook The default..."
 ---

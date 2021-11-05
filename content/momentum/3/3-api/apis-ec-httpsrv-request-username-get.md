@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "ec_httpsrv_request_username_get"
 description: "ec httpsrv request username get Gets the authenticated user name const char ec httpsrv request username get sess ec httpsrv session sess This reference page was automatically generated from functions found in the header files in the development branch The function described here may not exist in generally available versions..."
 ---

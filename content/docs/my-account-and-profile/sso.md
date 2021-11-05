@@ -1,4 +1,5 @@
 ---
+lastUpdated: "01/25/2021"
 title: "Single Sign-On (SSO)"
 description: "Learn how to enable SSO for your SparkPost account and get answers to common SSO questions."
 ---

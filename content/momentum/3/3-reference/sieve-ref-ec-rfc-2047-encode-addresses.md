@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "ec_rfc2047_encode_addresses"
 description: "ec rfc 2047 encode addresses create an RFC 2047 compliant address ec rfc 2047 encode addresses addresses ec rfc 2047 encode addresses create an RFC 2047 compliant address and is intended for use in mail generation This function might be used in the following way If you are generating email..."
 ---

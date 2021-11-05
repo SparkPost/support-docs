@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "cidrrange_ipv4_merge"
 description: "cidrrange ipv 4 merge Inserts a node merging adjacent nodes with the same value void cidrrange ipv 4 merge root ip mask orientation cidrrange ipv 4 root struct in addr ip u int 32 t mask u int 32 t orientation This reference page was automatically generated from functions found..."
 ---

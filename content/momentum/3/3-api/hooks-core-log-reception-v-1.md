@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "log_reception_v1"
 description: "log reception v 1 Register a function with this hook whenever a reception event should be logged void log reception v 1 closure ac msg now note note len void closure accept construct ac ec message msg struct timeval now const char note int note len Register a function with..."
 ---

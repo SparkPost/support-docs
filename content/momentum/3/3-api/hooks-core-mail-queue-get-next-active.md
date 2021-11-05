@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "mail_queue_get_next_active"
 description: "mail queue get next active abstract message mail queue get next active closure dr binding slot connh void closure domain record dr int binding slot connection handle connh int has core mail queue get next active hook void register core mail queue get next active hook first hook closure ec..."
 ---

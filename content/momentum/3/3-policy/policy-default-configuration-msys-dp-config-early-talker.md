@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "msys.dp_config.early_talker"
 description: "Early talker detection requires that the conntrol module be loaded in the ecelerity conf file For more information about this module see conntrol Module Find below the sample excerpt included in the dp config lua file The elements of this configuration table are as follows check Whether or not to..."
 ---

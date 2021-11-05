@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "fingerprint – Host Fingerprinting"
 description: "Passive OS fingerprinting is installed as part of the Policy Tools suite This functionality yields information about inbound connections For more information about installing the Policy Tools suite see Section 1 9 Installing Additional Packages The Host Fingerprint module performs passive OS fingerprinting based on the incoming SMTP connections and..."
 ---

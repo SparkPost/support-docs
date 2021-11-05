@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "Adaptive Options"
 description: "Find below a table of options valid in the adaptive module scope Table A 1 adaptive module options Option Description Default ad response rule series prefix The suffix for rule series names ADRR series adaptive cache size The size of the adaptive cache 1048576 adaptive cache ttl The TTL for..."
 ---

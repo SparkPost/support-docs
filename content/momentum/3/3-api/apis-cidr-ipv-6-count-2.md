@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "cidr_ipv6_count2"
 description: "cidr ipv 6 count 2 Similar to cidr ipv 4 count but takes ec sockaddr mask or string representation cidr u int 32 t cidr ipv 6 count 2 root addr bit len cidr cidrnode ipv 6 root ec sockaddr addr u int 32 t bit len const char cidr..."
 ---

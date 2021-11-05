@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "validate_data_spool_each_rcpt"
 description: "validate data spool each rcpt This hook is invoked after the normal validate data spool each rcpt module callback void core validate data spool each rcpt closure msg ac ctx void closure ec message msg accept construct ac validate context ctx This hook is invoked after the normal validate data..."
 ---

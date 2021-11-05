@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "Bag Functions"
 description: "Table of Contents ec bag addref Add a reference to a bag ec bag create Create a bag ec bag delref Delete a reference to the specified bag ec bag empty Empty a bag ec bag find Find something in the specified bag ec bag get Get a specific data..."
 ---

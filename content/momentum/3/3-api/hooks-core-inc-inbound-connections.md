@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "inc_inbound_connections"
 description: "inc inbound connections void inc inbound connections closure conntype fd ac void closure char conntype int fd accept construct ac int has core inc inbound connections hook void register core inc inbound connections hook first hook closure ec hook core inc inbound connections func t hook void closure void register..."
 ---

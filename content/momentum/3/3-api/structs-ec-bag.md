@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "ec_bag"
 description: "This struct is defined as follows To use this struct include the file ec boh int h Chapter 5 Bag Functions..."
 ---

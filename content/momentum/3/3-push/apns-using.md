@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "Using APNs"
 description: "You can use Momentum to send push notifications to an application running on an Apple device As prerequisites you must have an app registered with Apple and also the SSL certificate provided by Apple You must be licensed by Message Systems to use Momentum's push notification capabilities if you do..."
 ---

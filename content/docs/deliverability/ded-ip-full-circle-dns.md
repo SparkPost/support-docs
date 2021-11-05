@@ -1,4 +1,5 @@
 ---
+lastUpdated: "02/08/2020"
 title: "Dedicated IPs - full-circle reverse DNS and EHLO hostnames on SparkPost"
 description: "Dedicated IP addresses issued from SparkPost address ranges automatically have Full Circle Reverse DNS"
 ---

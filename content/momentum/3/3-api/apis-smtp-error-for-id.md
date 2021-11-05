@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "smtp_error_for_id"
 description: "smtp error for id Fetch the details for a given SMTP classification id struct smtp error class smtp error for id smtp error type unsigned short smtp error type Fetch the details for a given SMTP classification id smtp error type The classification id returned from one of the classification..."
 ---

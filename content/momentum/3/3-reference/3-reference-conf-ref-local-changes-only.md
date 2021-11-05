@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "local_changes_only"
 description: "local changes only whether there is a file for writing local configuration changes Local Changes Only true The Local Changes Only option defaults to false If it is true the Local Changes File option must be defined and all changes are saved to the Local Changes File If it is..."
 ---

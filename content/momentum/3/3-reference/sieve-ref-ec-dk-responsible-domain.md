@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "ec_dk_responsible_domain"
 description: "ec dk responsible domain Return the responsible domain for the current message ec dk responsible domain ec dk responsible domain returns a string containing the responsible domain of the current message This can be used as an argument to the ec dk sign extension This feature requires the Domain Keys..."
 ---

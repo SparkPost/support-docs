@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "msg_gen.conf File"
 description: "The msg gen conf file contains the configuration relevant to message generation This file is included from within ecelerity conf Restart the ecelerity process if you make any changes to the msg gen conf file Running the config reload command will not suffice The following is an example msg gen..."
 ---

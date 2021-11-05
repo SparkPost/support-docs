@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/10/2021"
 title: "Custom Bounce Domains"
 description: "You can improve your deliverability and email branding by adding a custom bounce domain A custom bounce domain provides another layer to the branding that some ISPs care about."
 ---

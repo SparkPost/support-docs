@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "ec_message_blobject_store"
 description: "ec message blobject store Tag a message with a blobject void ec message blobject store msg key obj ec message msg const char key ec blobject obj Tag a message with a blobject using a key The object reference will be held in memory for the entire lifetime of the..."
 ---

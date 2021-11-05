@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "abstract_message"
 description: "This struct is defined as follows To use this struct include the file message compat h get msg expiration params..."
 ---

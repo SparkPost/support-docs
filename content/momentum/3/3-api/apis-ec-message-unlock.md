@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "ec_message_unlock"
 description: "ec message unlock Perform a message unlock operation void ec message unlock message ec message message Perform a mutex unlock operation on this message message A pointer to an ec message struct For documentation of this data structure see Section 68 38 ec message This function returns void It is..."
 ---

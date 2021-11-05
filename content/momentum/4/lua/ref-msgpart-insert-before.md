@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "msgpart:insertBefore"
 description: "msgpart insert Before Insert this part into the MIME tree before the given parameter msgpart insert Before before Insert this part into the MIME tree before the given parameter Enable this function with the statement require msys extended message msgpart insert After..."
 ---

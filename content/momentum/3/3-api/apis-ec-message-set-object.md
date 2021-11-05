@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "ec_message_set__object"
 description: "ec message set object set the object for a message maintaining appropriate accounting void ec message set object mess io ec message mess io object io This reference page was automatically generated from functions found in the header files in the development branch The function described here may not exist..."
 ---

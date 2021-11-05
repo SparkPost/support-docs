@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "Examples"
 description: "Example 25 1 MM 7 Log Permfail Hook Lua Example Example 25 2 MM 7 Log Permfail Hook C Example..."
 ---

@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "message_construct"
 description: "This struct is defined as follows To use this struct include the file esmtp factory h esmtp destroy message construct Section 68 31 ec hash table and Section 68 38 ec message..."
 ---

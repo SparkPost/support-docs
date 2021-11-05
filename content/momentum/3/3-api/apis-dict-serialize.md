@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "dict_serialize"
 description: "dict serialize Serialize a dictionary for writing to disk or network int dict serialize d dest EC Dict d string dest Serialize a dictionary for writing to disk or network a An EC Dict is a typedef of an ec hash table dest The Section 68 85 string This function..."
 ---

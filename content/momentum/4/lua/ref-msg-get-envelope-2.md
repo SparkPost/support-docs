@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "msg:get_envelope2"
 description: "msg get envelope 2 Get envelope values msg get envelope 2 flags localpart str domain str Return information from the envelope of the message The value of flags determines the source of the information flags may be an OR ed combination of the following constants If flags includes msys core..."
 ---

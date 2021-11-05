@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "validate_context_exists"
 description: "validate context exists Determine if the specified validation context key exists int validate context exists vctx which key validate context vctx int which const char key Determine if the specified validation context key exists vctx The validation context For documentation of this data structure see Section 68 86 validate context..."
 ---

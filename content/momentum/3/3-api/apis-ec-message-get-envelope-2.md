@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "ec_message_get_envelope2"
 description: "ec message get envelope 2 Return information from the envelope of the message int ec message get envelope 2 mess flags localpart domain isnull ec message mess int flags string localpart string domain int isnull Configuration Change This feature is available starting from Momentum 3 0 9 Returns information from..."
 ---

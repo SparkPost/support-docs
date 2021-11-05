@@ -1,4 +1,5 @@
 ---
+lastUpdated: "02/08/2020"
 title: "Validate an email list"
 description: "A guide on how to easily validate a large list of email addresses using Recipient Validation."
 ---

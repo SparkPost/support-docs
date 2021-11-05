@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "Installation on Solaris"
 description: "Momentum is packaged for 64 bit Intel and Sparc Solaris systems You must download the package for your architecture or you will not be able to run Momentum If you are making use of Dura VIP™ then You must install Ecelerity in a Solaris global zone Additionally the privileges option..."
 ---

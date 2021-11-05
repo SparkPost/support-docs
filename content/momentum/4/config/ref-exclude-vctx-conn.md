@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "exclude_vctx_conn"
 description: "exclude vctx conn exclude validation context keys from being journaled in the spool metadata Exclude VCTX Conn regex otherregex With more advanced policy configurations the aggregate size of the validation context data retained in memory may become significant especially if keep message dicts in memory is enabled Exclude VCTX Conn..."
 ---

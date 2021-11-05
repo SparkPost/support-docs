@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "ec_fc_entry_delref"
 description: "ec fc entry delref Delete a reference from an entry if no references exist then also call the destructor routine void ec fc entry delref entry ec fc entry t entry This reference page was automatically generated from functions found in the header files in the development branch The function..."
 ---

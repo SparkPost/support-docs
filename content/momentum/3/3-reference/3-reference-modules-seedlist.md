@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "seedlist – Seedlist Integration"
 description: "The seedlist module allows for seamless zero effort integration with the popular deliverability monitoring service Return Path's Mailbox Monitor Services of this nature automatically monitor your deliverability into various IS Ps by having you send a copy of every campaign mailing to a set of unique addresses which they then..."
 ---

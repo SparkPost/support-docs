@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "max_resident_messages"
 description: "max resident messages threshold above which messages are not held in memory Max Resident Messages 32768 max resident messages is used to control the maximum number of messages held concurrently in memory A value of 0 sets no limit A rough guide to setting this option is to divide the..."
 ---

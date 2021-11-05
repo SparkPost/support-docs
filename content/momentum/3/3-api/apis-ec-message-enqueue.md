@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "ec_message_enqueue"
 description: "ec message enqueue Enqueue a message int ec message enqueue message now ec message message struct timeval now Perform a message enqueue operation either delayed OR active queue message A pointer to an ec message struct For documentation of this data structure see Section 68 38 ec message now A..."
 ---

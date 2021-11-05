@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "control_pre_command"
 description: "control pre command This hook point occurs prior to the execution of a console command int core control pre command closure cc response void closure command construct cc string response Given the command console parameter hooks registered here can perform tasks prior to the built in console commands or even..."
 ---

@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "Logging Functions"
 description: "Table of Contents ec log attempt Records an attempt to deliver a message ec log delivery Record Momentum deliveries ec log permanent failure Records a permanent failure disposition of a message ec log reception Log a message reception ec log rejection Records the fact that Momentum rejected an incoming message..."
 ---

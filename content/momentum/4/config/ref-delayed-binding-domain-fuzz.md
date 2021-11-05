@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "delayed_binding_domain_fuzz"
 description: "delayed binding domain fuzz length of time to spread scheduled messages over when a bulk requeue is necessary delayed binding domain fuzz 0 When a bulk requeue is necessary this option sets the number of seconds to spread scheduled messages over This option must be a power of two value..."
 ---

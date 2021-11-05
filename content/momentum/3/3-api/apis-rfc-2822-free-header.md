@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "rfc2822_free_header"
 description: "rfc 2822 free header Free the specified header void rfc 2822 free header header rfc 2822 field header Free an rfc 2822 field header header For more information about this struct see rfc 2822 field header The name of the header This function returns void It is legal to call..."
 ---

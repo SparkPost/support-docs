@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "address_metrics_cleanse_interval"
 description: "address metrics cleanse interval the interval for refreshing address metrics Address Metrics Cleanse Interval 3600 Address metrics store data on the quality of service to a particular target host from a particular binding data such as the time since the last failure and how long it takes to connect and..."
 ---

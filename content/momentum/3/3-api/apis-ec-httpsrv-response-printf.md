@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "ec_httpsrv_response_printf"
 description: "ec httpsrv response printf Format and append a string to the session response output int ec httpsrv response printf sess fmt ec httpsrv session sess const char fmt This reference page was automatically generated from functions found in the header files in the development branch The function described here may..."
 ---

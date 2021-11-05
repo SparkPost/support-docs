@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "Use_MMAP"
 description: "Use MMAP use mmap when spooling messages from disk Use MMAP false Use MMAP true When set to true Momentum will attempt to memory map message bodies via mmap rather than allocating memory from the heap and reading the file from disk The default for this option is false This..."
 ---

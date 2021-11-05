@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "Implementing Adaptive Delivery"
 description: "AD is implemented using the adaptive module along with other Momentum modules These modules are as follows scriptlet adaptive response rules are implemented using Lua so this module must be enabled alerting this module provides notification when adaptive actions are taken and it is also required when the scriptlet module..."
 ---

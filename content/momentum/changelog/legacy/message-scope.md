@@ -1,4 +1,5 @@
 ---
+lastUpdated: "04/08/2020"
 title: "Message Scope Legacy Changelog"
 description: "Changelogs for legacy versions of Message Scope"
 ---

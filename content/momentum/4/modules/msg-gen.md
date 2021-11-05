@@ -1,4 +1,5 @@
 ---
+lastUpdated: "10/05/2021"
 title: "msg_gen – Message Generation"
 description: "The msg gen module handles message generation which is triggered by injecting messages using HTTP The module accepts the components of a transmission including recipient list template and message content and constructs a personalized message for each recipient The generated message is then queued for delivery Each transmission is handled..."
 ---

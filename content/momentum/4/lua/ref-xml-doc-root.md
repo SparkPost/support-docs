@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "doc:root"
 description: "doc root Return the root node of an XML document doc root Where doc is an XML object created using xml parsexml return the root node Example 70 73 doc root example xml parsexml..."
 ---

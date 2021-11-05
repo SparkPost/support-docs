@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "rfc2822_trace_headers"
 description: "rfc 2822 trace headers rfc 2822 conformance rfc 2822 trace headers true rfc 2822 trace headers false Trace headers are headers added to the email message as it passes through the system to provide evidence of its transit through the MTA These are of the form Return path and Received..."
 ---

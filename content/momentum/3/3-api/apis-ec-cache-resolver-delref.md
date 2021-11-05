@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "ec_cache_resolver_delref"
 description: "ec cache resolver delref Release a resolver object reference void ec cache resolver delref resolver ec cache resolver resolver This reference page was automatically generated from functions found in the header files in the development branch The function described here may not exist in generally available versions of Momentum and..."
 ---

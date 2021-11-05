@@ -1,4 +1,5 @@
 ---
+lastUpdated: "10/22/2021"
 title: "Deliverability Analytics"
 description: "Get the full picture of your email lifecycle by combining your sending, engagement, and deliverability data into a single view. Deliverability Analytics empowers you to make effective, timely, data-driven, and strategic decisions to maximize the success of your email program."
 ---

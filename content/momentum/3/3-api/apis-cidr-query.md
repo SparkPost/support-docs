@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "cidr_query"
 description: "cidr query Obtain data associated with a CIDR block int cidr query name addr ac bag value resumeptr resumefunc const char name char addr accept construct ac ec bag bag string value void resumeptr void void resumefunc Obtain data associated with a CIDR block In order to use this function..."
 ---

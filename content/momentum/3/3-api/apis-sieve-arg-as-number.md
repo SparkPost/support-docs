@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "sieve_arg_as_number"
 description: "sieve arg as number Get the specified argument s as a number int sieve arg as number args number SIEVEARGS args u int 32 t number Get the specified argument s as a number args The sieve argument For a definiton of this data type see structs sieve ast number..."
 ---

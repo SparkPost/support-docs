@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "post_swap_in_meta"
 description: "post swap in meta Allows modules to perform actions immediately after the metadata file has been read from the spool This hook is called even when the metadata fetch fails int core post swap in meta closure msg flags serror rv void closure ec message msg int flags int serror..."
 ---

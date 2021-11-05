@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "RFC Functions"
 description: "Table of Contents ec generate rfc 3464 delivery status renders an RFC 3464 report block into the provided string ec generate rfc 3464 delivery status 2 renders an RFC 3464 report block into the provided string ec generate rfc 3464 message creates an RFC 3464 MDN as an ec message..."
 ---

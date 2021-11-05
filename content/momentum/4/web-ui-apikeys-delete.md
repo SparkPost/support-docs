@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "Deleting an API Key"
 description: "From the Settings section you can delete an API key Click the icon to the right of the API key that you want to delete In the list click Delete as shown in Figure 44 6 Delete API Key Figure 44 6 Delete API Key In the Delete API Key..."
 ---

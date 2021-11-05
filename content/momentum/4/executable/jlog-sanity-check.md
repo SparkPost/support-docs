@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "jlog_sanity_check"
 description: "jlog sanity check validate that a jlog is free of errors opt msys jlog bin jlog sanity check le be jlog This command inspects the contents of a jlog and reports any errors or inconsistencies it finds If the jlog is OK nothing is printed The first argument indicates the..."
 ---

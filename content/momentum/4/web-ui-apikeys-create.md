@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "Creating an API Key"
 description: "In the Settings section click the New API Key icon in the upper right corner to open the Create New API Key form as shown in Figure 44 3 Create New API Key Figure 44 3 Create New API Key Enter the following information Label User friendly label for the..."
 ---

@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "vctx:tarpit"
 description: "vctx tarpit Issue a time cost on the inbound session vctx tarpit interval This instructs Momentum that the SMTP session should be put on hold for the specified number of seconds Currently only the SMTP listener supports this Example 15 74 vctx tarpit example Enable this function with the statement..."
 ---

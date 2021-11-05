@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "cloudmark_score"
 description: "cloudmark score Determine the Cloudmark score of a message int cloudmark score m acpt ctx ec message m accept construct acpt validate context ctx Determine the Cloudmark score of a message m The mail message to be scored For more information about this struct see Section 68 38 ec message..."
 ---

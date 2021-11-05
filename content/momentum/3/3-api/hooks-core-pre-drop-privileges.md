@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "pre_drop_privileges"
 description: "pre drop privileges int pre drop privileges closure void closure int has core pre drop privileges hook void register core pre drop privileges hook first hook closure ec hook core pre drop privileges func t hook void closure void register core pre drop privileges hook last hook closure ec hook..."
 ---

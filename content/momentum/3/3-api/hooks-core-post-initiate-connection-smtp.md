@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "post_initiate_connection_smtp"
 description: "post initiate connection smtp void post initiate connection smtp closure dr binding slot now conn fd void closure domain record dr int binding slot struct timeval now int conn fd int has core post initiate connection smtp hook void register core post initiate connection smtp hook first hook closure ec..."
 ---

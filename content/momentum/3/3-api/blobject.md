@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "Blobject Functions"
 description: "Table of Contents ec blobject addref Increments the reference count of obj by 1 ec blobject delref Decrements the reference count of obj by 1 and releases the memory allocated to it if the reference count is decremented to 0 ec blobject delref typeunsafe Decrements the reference count of blobject..."
 ---

@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "scpt_compile_hook_callout"
 description: "scpt compile hook callout Compile and register a scriptlet hook implementation entrypoint int scpt compile hook callout hookname coptr const char hookname scpt callout coptr Configuration Change This feature is available starting from Momentum 3 2 Compile and register a scriptlet hook implementation entrypoint Similar to scpt compile callout except..."
 ---

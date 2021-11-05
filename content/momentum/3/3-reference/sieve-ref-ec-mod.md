@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "ec_mod"
 description: "ec mod calculate the modulus of two numbers ec mod number 1 number 2 ec mod calculates the modulus of two numbers and returns the result Example 16 82 ec mod example..."
 ---

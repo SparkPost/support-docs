@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "post_body_assignment"
 description: "post body assignment int post body assignment closure msg json req json recip templ void closure ec message msg struct json object json req struct json object json recip const char templ int has restinj post body assignment hook void register restinj post body assignment hook first hook closure ec..."
 ---

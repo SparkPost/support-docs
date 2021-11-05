@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "binding_group_choose_binding"
 description: "binding group choose binding int binding group choose binding closure msg binding group void closure ec message msg const char binding group int has core binding group choose binding hook void register core binding group choose binding hook first hook closure ec hook core binding group choose binding func t..."
 ---

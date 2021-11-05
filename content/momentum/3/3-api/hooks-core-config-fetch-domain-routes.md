@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "config_fetch_domain_routes"
 description: "config fetch domain routes Override the routes setting int core config fetch domain routes closure valueptr from domain void closure ec config value valueptr ec config header from const char domain Use this hook to override the routes setting for a given domain closure The closure function valueptr The value..."
 ---

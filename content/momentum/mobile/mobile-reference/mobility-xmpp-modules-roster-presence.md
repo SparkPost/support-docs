@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "Roster and Presence"
 description: "Momentum 3 5 supports XMPP Roster and Presence as defined in RFC 6121 http xmpp org rfcs rfc 6121 html This requires the standard XMPP server configuration described in Section 10 1 The XMPP Module and Listener and an additional scriptlet source XMPP rosters are stored using Riak as the..."
 ---

@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "send_command"
 description: "send command Send a command over an ec console control connection char send command fd input max len int fd char input int max len Use ec control send command instead Send a command over an ec console control connection fd A connection established via cli conn input A command..."
 ---

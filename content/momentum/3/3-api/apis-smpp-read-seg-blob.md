@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "smpp_read_seg_blob"
 description: "smpp read seg blob Return the data for the current segment struct smpp seg data smpp read seg blob m ec message m Configuration Change This feature is available starting from Momentum 3 2 Return the data for the current segment m The ec message This function returns the current..."
 ---

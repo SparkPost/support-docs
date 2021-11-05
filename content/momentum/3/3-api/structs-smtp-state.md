@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "smtp_state"
 description: "The members of the smtp state struct are as follows To use this struct include the file dns ds h smtp next state and Chapter 47 SMTP related Functions..."
 ---

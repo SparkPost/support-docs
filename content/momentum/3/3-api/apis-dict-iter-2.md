@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "dict_iter2"
 description: "dict iter 2 To create an iterator object void dict iter 2 a i EC Dict a EC Dict Iterator i Configuration Change This feature is available starting from Momentum 3 1 Create a dictionary iterator This API is mainly used by LUA scripting To free this object use dict..."
 ---

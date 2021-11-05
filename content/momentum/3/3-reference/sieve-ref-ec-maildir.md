@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "ec_maildir"
 description: "ec maildir write the current message into a maildir mailbox ec maildir email address This action will store the current message into the maildir for the specified email address It can only be called in the each rcpt phase This is a terminal action no further Sieve rules will be..."
 ---

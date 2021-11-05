@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "1.3.6.1.4.1.19552.1.2 – Per-domain Metrics"
 description: "The per domain MIB is defined as 1 3 6 1 4 1 19552 1 2 L A B C S G where A B C indicates the domain name and L represents the length of that domain For example aol com would be represented as In this case 7..."
 ---

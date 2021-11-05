@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "msys.validate.opendkim.verify"
 description: "msys validate opendkim verify Verify a DKIM signature msys validate opendkim verify msg Configuration Change This function is available as of version 3 6 This function requires the opendkim module It verifies a DKIM signature and returns a DKIM handle to context specific information about the message Typically you would..."
 ---

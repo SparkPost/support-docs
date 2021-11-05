@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "fsecure – F-Secure"
 description: "Example 14 67 fsecure module In version 3 0 the antivirus module does not need to be explicitly included Configuration Change This module is not supported in version 3 1 daemon The F Secure antivirus runs as an independent process and relies on a Unix domain socket for synchronization The..."
 ---

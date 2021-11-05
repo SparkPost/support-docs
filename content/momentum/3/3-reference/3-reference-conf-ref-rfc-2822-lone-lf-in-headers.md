@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "rfc2822_lone_lf_in_headers"
 description: "rfc 2822 lone lf in headers rfc 2822 conformance RFC 2822 Lone LF in Headers fix RFC 2822 Lone LF in Headers pedantic This option is available as of version 3 0 and replaces the version 2 2 option of the same name declared in the RFC 2822 scope From..."
 ---

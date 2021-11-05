@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "ec_message_extract_part_to_string"
 description: "ec message extract part to string Extract a message part to a string decoding transfer encoding int ec message extract part to string part str desired charset ec message part part string str const char desired charset This reference page was automatically generated from functions found in the header files..."
 ---

@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "io_wrapper_fdopen"
 description: "io wrapper fdopen Open an io object on top of an existing descriptor io object io wrapper fdopen fd int fd This reference page was automatically generated from functions found in the header files in the development branch The function described here may not exist in generally available versions of..."
 ---

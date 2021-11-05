@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "time_series_init"
 description: "time series init Function to allocate and initialize a time series data structure time series time series init add data alloc bucket free bucket void void void add data void alloc bucket void void free bucket Function to allocate and initialize a time series data structure Use time series init..."
 ---

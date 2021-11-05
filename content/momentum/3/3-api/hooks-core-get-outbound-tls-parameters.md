@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "get_outbound_tls_parameters"
 description: "get outbound tls parameters Allows implementors to override and control the usage of TLS on a per message basis when delivering mail out of the system int get outbound tls parameters closure msg params void closure ec message msg ec ssl ctx params params Allows providers to override and control..."
 ---

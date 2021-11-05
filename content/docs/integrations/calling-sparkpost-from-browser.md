@@ -1,4 +1,5 @@
 ---
+lastUpdated: "02/08/2020"
 title: "Calling SparkPost From The Browser"
 description: "Background API Keys Spark Post uses API keys as authentication tokens you include an API key in each of your requests to identify yourself with Spark Post and for us serve you appropriately As a result your API keys must be considered secret since they identify you and enable API..."
 ---

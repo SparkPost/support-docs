@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "msys.httpclnt.http_status_classifier"
 description: "msys httpclnt http status classifier Determine the delivery status of the DLV Response Status variable msys httpclnt http status classifier status This function returns the delivery status of the DLV Response Status variable It classifies the DLV Response Status variable as one of the following msys delivery DELIVERY SUCCESS msys..."
 ---

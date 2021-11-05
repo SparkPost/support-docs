@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "pre_ec_can_relay_to"
 description: "pre ec can relay to void pre ec can relay to closure domain rv cont void closure const char domain int rv int cont int has core pre ec can relay to hook void register core pre ec can relay to hook first hook closure ec hook core pre ec..."
 ---

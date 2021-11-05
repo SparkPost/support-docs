@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "netlistener_stop_instance"
 description: "netlistener stop instance Stop service on a listener endpoint int netlistener stop instance addr const char addr This reference page was automatically generated from functions found in the header files in the development branch The function described here may not exist in generally available versions of Momentum and may change..."
 ---

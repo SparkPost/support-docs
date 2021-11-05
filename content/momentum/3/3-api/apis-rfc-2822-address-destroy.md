@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "rfc2822_address_destroy"
 description: "rfc 2822 address destroy Destroy an rfc 2822 address void rfc 2822 address destroy ctx struct rfc 2822 address context ctx Destroy an rfc 2822 address populated by rfc 2822 address parse ctx The context For more information see rfc 2822 context This function returns void It is legal to..."
 ---

@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "msys.dp_config.concurrent_connection_limits"
 description: "This table determines the behavior with respect to concurrent connection limits Find below the sample excerpt included in the dp config lua file The elements of this configuration table are as follows check Whether or not to use this configuration item mask The CIDR mask to use limit The number..."
 ---

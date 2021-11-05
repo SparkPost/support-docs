@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "mx_routes"
 description: "The members of this struct are as follows To use this struct include the file dns h ec config free mx routes..."
 ---

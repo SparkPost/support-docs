@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "Structs"
 description: "Table of Contents 68 1 abstract message 68 2 accept construct 68 3 address 68 4 address metrics 68 5 apn request 68 6 apn error response 68 7 cidrnode ipv 4 68 8 command construct 68 9 connection 68 10 connection handle 68 11 delivery construct 68 12 dns..."
 ---

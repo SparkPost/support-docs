@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "gcm_request"
 description: "Configuration Change This feature is available as of version 3 5 5 This struct is defined as follows To use this struct include the file modules mobility gcm gcm h Momentum for Mobile Push Notifications and Chapter 62 Hooks in the gcm Scope..."
 ---

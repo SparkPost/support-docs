@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "spool_in"
 description: "spool in read a message from the spool to the mail queue spool in mid This command takes a message id and tries to read the message specified by the mid from the spool to the mail queue If the message is already in queue it will do nothing except..."
 ---

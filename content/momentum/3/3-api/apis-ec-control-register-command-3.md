@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "ec_control_register_command3"
 description: "ec control register command 3 Register a command handler with the system int ec control register command 3 prefix closure func const char prefix ec blobject closure ec control function 2 func Configuration Change This feature is available starting from Momentum 3 2 Register a command handler with the system..."
 ---

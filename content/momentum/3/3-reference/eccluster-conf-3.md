@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "eccluster.conf"
 description: "eccluster conf Momentum Cluster Manager configuration file Whereas the ecelerity conf file configures the behavior of a node eccluster conf configures the behavior of the Momentum Cluster Manager eccmgr This file is found in the opt msys ecelerity etc conf default directory Configuration changes to eccluster conf cannot be made..."
 ---

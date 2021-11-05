@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "Buffer Functions"
 description: "Table of Contents ec growbuf io cur chunk Return a pointer to the current growbuf chunk and its length ec growbuf io next chunk Return a pointer to the next growbuf chunk and its length ec growbuf io open Allocate and initialize an io object for a new growbuf backed..."
 ---

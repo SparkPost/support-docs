@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "The dp_config.lua and custom_policy.lua Files"
 description: "This appendix reproduces the files referenced in the title Default policy is configured using the dp config lua file A sample configuration file is found in the opt msys ecelerity etc sample configs directory and is reproduced below..."
 ---

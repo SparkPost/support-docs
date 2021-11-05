@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "ec_log_reception"
 description: "ec log reception Log a message reception void ec log reception ac em now notestr accept construct ac ec message em struct timeval now const string notestr This function logs a message reception ac The accept construct For documentation of this data structure see Section 68 2 accept construct em..."
 ---

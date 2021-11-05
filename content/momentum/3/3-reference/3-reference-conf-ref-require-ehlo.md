@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "require_ehlo"
 description: "require ehlo reject mail from clients that don't say HELO Require EHLO false Require EHLO true This directive instructs Momentum to force clients to initiate conversations with an EHLO or HELO command Early RF Cs defining the SMTP protocol did not require or even define the HELO command notably RFC..."
 ---

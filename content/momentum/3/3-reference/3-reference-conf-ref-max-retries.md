@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "max_retries"
 description: "max retries override the system configured max retries max retries auto max retries none max retries 5 By default Momentum uses the message expiration configuration setting to determine when a message's lifetime has been exceeded Optionally max retries allows you to specify a fixed maximum number of delivery retries for..."
 ---

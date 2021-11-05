@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "rfc2047_utf8_decode_to_string"
 description: "rfc 2047 utf 8 decode to string decodes MIME header encoding and stores the decoded result to a string int rfc 2047 utf 8 decode to string header hdrlen out const char header int hdrlen string out This reference page was automatically generated from functions found in the header files..."
 ---

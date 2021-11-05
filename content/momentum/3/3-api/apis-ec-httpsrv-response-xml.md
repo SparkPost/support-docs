@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "ec_httpsrv_response_xml"
 description: "ec httpsrv response xml Set the session response to an XML object int ec httpsrv response xml sess xmldoc ec httpsrv session sess xml Doc Ptr xmldoc This reference page was automatically generated from functions found in the header files in the development branch The function described here may not..."
 ---

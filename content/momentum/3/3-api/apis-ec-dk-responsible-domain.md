@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "ec_dk_responsible_domain"
 description: "ec dk responsible domain Function to return responsible domain int ec dk responsible domain m ctx domain ec message m validate context ctx char domain This reference page was automatically generated from functions found in the header files in the development branch The function described here may not exist in..."
 ---

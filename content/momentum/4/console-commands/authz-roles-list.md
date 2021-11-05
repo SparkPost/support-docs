@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "authz roles list"
 description: "authz roles list display the currently defined roles authz roles list This command displays all the defined roles in XML format Execute this command and you should see output similar to the following authz id..."
 ---

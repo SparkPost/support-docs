@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "ec_host_fingerprint"
 description: "ec host fingerprint return genre and detail of the passive host fingerprinting operation ec host fingerprint Configuration Change This feature is available starting from Momentum 3 0 26 In order to use this command you must have the Policy Tools suite installed Passive OS fingerprinting is installed as part of..."
 ---
