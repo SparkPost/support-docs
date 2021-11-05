@@ -15,6 +15,7 @@ import Code from './code';
 import Table from './table';
 import Hr from './hr';
 import Link from './link';
+import { Ul, Ol } from './lists';
 
 type MarkdownComponentProps = {
   children?: React.ReactNode;
@@ -33,6 +34,8 @@ const components = {
   table: Table,
   hr: Hr,
   a: Link,
+  ul: Ul,
+  ol: Ol,
   tr: (props: MarkdownComponentProps) => <MBTable.Row {...props} />,
   td: (props: MarkdownComponentProps) => <MBTable.Cell {...props} />,
   th: (props: MarkdownComponentProps) => <MBTable.HeaderCell {...props} />,
