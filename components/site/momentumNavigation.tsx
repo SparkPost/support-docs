@@ -1,7 +1,7 @@
 import React from 'react';
 import { getWindow } from 'utils/ssr';
 import Link from 'next/link';
-import { Box, BoxProps } from '@sparkpost/matchbox';
+import { Box, BoxProps, ScreenReaderOnly, styles } from '@sparkpost/matchbox';
 import {
   KeyboardArrowDown,
   KeyboardArrowUp,
@@ -178,6 +178,23 @@ const Chevron = (props: { expanded: boolean }): JSX.Element => {
   return expanded ? <KeyboardArrowUp size={18} /> : <KeyboardArrowDown size={18} />;
 };
 
+const StyledChevronWrapper = styled(Box)<BoxProps & { $active?: boolean }>`
+  ${styles.buttonReset}
+  cursor: pointer;
+  &:hover {
+    ${({ $active }) => {
+      return css({
+        color: $active ? 'white' : 'blue.700',
+      });
+    }}
+  }
+  ${({ $active }) => {
+    return css({
+      color: $active ? 'white' : 'inherit',
+    });
+  }}
+`;
+
 const Item = (props: MomentumNavigationItemProps): JSX.Element => {
   const { link, title, items, level = 0 } = props;
   const [active, setActive] = React.useState<boolean>(false);
@@ -196,27 +213,36 @@ const Item = (props: MomentumNavigationItemProps): JSX.Element => {
   }, [link, activeUrl]);
 
   return (
-    <Box fontSize="200" lineHeight="200">
+    <Box fontSize="200" lineHeight="200" position="relative">
       <StyledLink
         py="200"
-        px="500"
-        display="flex"
-        justifyContent="space-between"
+        pr="700"
         pl={`calc(${tokens.spacing_500} + ${tokens.spacing_200} * ${level})`}
         $active={active}
       >
         <Link href={link} passHref>
-          <Box as="a" display="flex" justifyContent="space-between" flex="1">
-            <Box as="span">{title}</Box>
-          </Box>
+          <a>{title}</a>
         </Link>
-        {items && (
-          <Box width="18px" height="18px" ml="200" onClick={() => setExpanded(!expanded)}>
-            <Chevron expanded={expanded} />
-          </Box>
-        )}
       </StyledLink>
-      <Box>
+
+      {items && (
+        <StyledChevronWrapper
+          as="button"
+          position="absolute"
+          right="400"
+          top="6px"
+          width="24px"
+          height="24px"
+          onClick={() => setExpanded(!expanded)}
+          aria-expanded={expanded}
+          aria-controls={`${link}__items`}
+          $active={active}
+        >
+          <ScreenReaderOnly>Expand Menu</ScreenReaderOnly>
+          <Chevron expanded={expanded} />
+        </StyledChevronWrapper>
+      )}
+      <Box id={`${link}__items`}>
         {expanded && items && items.map((item, i) => <Item level={level + 1} key={i} {...item} />)}
       </Box>
     </Box>
