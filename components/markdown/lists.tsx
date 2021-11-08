@@ -54,6 +54,8 @@ export const Ul = (props: UlProps): JSX.Element => {
 };
 
 const StyledOl = styled.ol`
+  counter-reset: item;
+  list-style-type: none;
   ${css({
     pl: '550',
     m: '0',
@@ -68,9 +70,21 @@ const StyledOl = styled.ol`
   }
 
   li {
+    counter-increment: item;
+    position: relative;
     ${css({
       pl: '0',
       lineHeight: '300',
+    })}
+  }
+
+  li::before {
+    content: counter(item) '.';
+    display: inline-block;
+    position: absolute;
+    left: -1.25rem;
+    ${css({
+      fontWeight: 'medium',
     })}
   }
 `;
