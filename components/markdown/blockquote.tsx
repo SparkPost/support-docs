@@ -1,15 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
 import css from '@styled-system/css';
-import Container from './container';
 
 const StyledBlockQuote = styled.blockquote`
+  box-sizing: content-box;
   ${css({
     bg: 'blue.100',
     fontStyle: 'italic',
     p: '400',
-    m: '0',
+    mx: '500',
     mb: '550',
+    maxWidth: '1150',
     borderLeftColor: 'blue.300',
     borderLeftWidth: '4px',
     borderLeftStyle: 'solid',
@@ -22,11 +23,7 @@ const StyledBlockQuote = styled.blockquote`
 `;
 
 const BlockQuote = (props: { children?: React.ReactNode }): JSX.Element => {
-  return (
-    <Container>
-      <StyledBlockQuote>{props.children}</StyledBlockQuote>
-    </Container>
-  );
+  return <StyledBlockQuote>{props.children}</StyledBlockQuote>;
 };
 
 export default BlockQuote;

@@ -34,7 +34,7 @@ const Image = (props: ImageProps): JSX.Element | null => {
       width="100%"
       my="550"
       boxShadow="200"
-      border="400"
+      border="300"
     >
       {/* Not using Next.js's image component because it doesn't support dynamic aspect ratios */}
       <Box as="img" src={imageSrc} alt={alt} width="auto" maxWidth="100%" maxHeight="500px" />

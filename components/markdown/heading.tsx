@@ -16,7 +16,7 @@ type HeadingProps = {
   as: As;
 };
 
-const getFontSize = (as?: As): string => {
+export const getFontSize = (as?: As): string => {
   switch (as) {
     case 'h1':
       return '600';
@@ -34,7 +34,7 @@ const getFontSize = (as?: As): string => {
   }
 };
 
-const getMarginBottom = (as?: As): string => {
+export const getMarginBottom = (as?: As): string => {
   switch (as) {
     case 'h1':
       return '200';
@@ -50,7 +50,7 @@ const getMarginBottom = (as?: As): string => {
   }
 };
 
-const getPaddingTop = (as?: As): string => {
+export const getPaddingTop = (as?: As): string => {
   switch (as) {
     case 'h1':
     case 'h2':

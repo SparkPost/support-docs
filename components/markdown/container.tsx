@@ -5,12 +5,13 @@ type ContainerProps = {
   children?: React.ReactNode;
 };
 
+export const styles = {
+  maxWidth: '1150',
+  mx: '500',
+};
+
 const Container = (props: ContainerProps) => {
-  return (
-    <Box maxWidth="1150" px="500">
-      {props.children}
-    </Box>
-  );
+  return <Box {...styles}>{props.children}</Box>;
 };
 
 export default Container;
