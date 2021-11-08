@@ -5,7 +5,6 @@ import { Box, BoxProps } from '@sparkpost/matchbox';
 import { PeopleOutline, Code, DeviceHub, Article, Email } from '@sparkpost/matchbox-icons';
 import styled from 'styled-components';
 import css from '@styled-system/css';
-// import { tokens } from '@sparkpost/design-tokens';
 import useStatus from 'hooks/useStatus';
 
 const StyledLink = styled(Box)<BoxProps & { $active?: boolean }>`

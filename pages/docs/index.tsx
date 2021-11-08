@@ -9,7 +9,7 @@ const IndexPage = (): JSX.Element => {
         description="SparkPost Support Documentation"
       />
       <DocsLayout>
-        <div>There's nothing here yet...</div>
+        <div>There's nothing here yet</div>
       </DocsLayout>
     </>
   );
