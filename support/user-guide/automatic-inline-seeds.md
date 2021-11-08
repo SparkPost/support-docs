@@ -19,11 +19,11 @@ We recommend that you create a seeding strategy that allows you to seed across e
 
 ## How to Set Up Automatic Inline Seeding
 
-In order to use Automatic Inline Seeding in SparkPost you must have a SparkPost sending account or a valid license for PowerMTA (versions newer than 5.0r8) and paid access to SparkPost Deliverability Analytics. 
+In order to use Automatic Inline Seeding in SparkPost you must have a SparkPost sending account and paid access to SparkPost Deliverability Analytics. 
 
 ### Campaign Setup
 
-Automatic Inline Seeding relies on the `campaign_id` (`job_id` for PowerMTA) field to group messages and to know which groups of messages should be seeded. You can set `campaign_id` on your messages when sending through API or SMTP.   
+Automatic Inline Seeding relies on the `campaign_id` field to group messages and to know which groups of messages should be seeded. You can set `campaign_id` on your messages when sending through API or SMTP.   
 
 A `campaign_id` requires a minimum of 1,000 messages sent before being seeded, to help prevent overseeding (sending to a disproportionately high number of seeds in a campaign). If the campaigns you want to seed are less than 1,000 recipients or if your campaign's duration is too short for our asynchronous seeding processes to complete we recommend continuing to use our manual seeding tool. 
 
@@ -33,9 +33,7 @@ You can set up Automatic Inline Seeding in the user interface (UI) or using the 
 
 Using the UI, you can set up five campaign patterns to be seeded in less than 5 minutes! 
 
-The Automatic Inline Seeds API is the best approach if you need ultimate control for deeper integrations, `campaign_id`s that are system-generated and constantly changing, or if you prefer a code-first approach. 
-
-If you’re using PowerMTA to send, you would still use the SparkPost UI or API to configure your seeding settings. See your PowerMTA User Guide to learn how to set up Automatic Inline Seeding within PowerMTA. 
+The Automatic Inline Seeds API is the best approach if you need ultimate control for deeper integrations, `campaign_id`s that are system-generated and constantly changing, or if you prefer a code-first approach.
 
 ### Setting Up Automatic Inline Seeding using the UI 
 
