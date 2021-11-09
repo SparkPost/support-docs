@@ -1,4 +1,4 @@
-import { Panel, Table as MBTable } from '@sparkpost/matchbox';
+import { Panel, Box, Table as MBTable } from '@sparkpost/matchbox';
 
 type TableProps = {
   children?: React.ReactNode;
@@ -7,11 +7,13 @@ type TableProps = {
 const Table = (props: TableProps): JSX.Element => {
   const { children } = props;
   return (
-    <Panel>
-      <MBTable p="500">
-        {children}
-      </MBTable>
-    </Panel>
+    <Box mb="550" px="400">
+      <Panel>
+        <MBTable p="500">
+          {children}
+        </MBTable>
+      </Panel>
+    </Box>
   )
 }
 
