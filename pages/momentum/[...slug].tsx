@@ -1,5 +1,5 @@
-import { GetStaticProps, GetStaticPaths } from 'next';
-import { getAllCategoryPostPaths, getSingleCategoryPost, categoryPath } from 'lib/api';
+import { GetServerSideProps } from 'next';
+import { getSingleCategoryPost, categoryPath } from 'lib/api';
 import MomentumLayout from 'components/site/momentumLayout';
 import DocumentationPage from 'components/site/documentationPage';
 import SEO from 'components/site/seo';
@@ -29,19 +29,19 @@ const PostPage = (props: PostPageProps): JSX.Element => {
   );
 };
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
+export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   if (!params?.slug) {
     return { props: {} };
   }
-  const { content, data } = getSingleCategoryPost(params.slug, categoryPath('momentum')) || {};
-  return { props: { content, data } };
-};
+  const post = getSingleCategoryPost(params.slug, categoryPath('momentum')) || {};
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  return {
-    paths: getAllCategoryPostPaths('momentum'),
-    fallback: 'blocking',
-  };
+  if (!post.content) {
+    return {
+      notFound: true,
+    };
+  }
+
+  return { props: { content: post.content, data: post.data } };
 };
 
 export default PostPage;
