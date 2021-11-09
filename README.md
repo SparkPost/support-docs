@@ -22,15 +22,17 @@ For more information on SLIs/SLOs including uptime monitoring and error rate mon
     - [Frontmatter](#frontmatter)
   - [Images and other media](#images-and-other-media)
   - [Categories](#categories)
-    - [Category Types](#category-types)
   - [Navigation](#navigation)
 - [Deployment](#deployment)
   - [Pipeline](#pipeline)
 - [Development](#development)
   - [Installation](#installation)
+  - [Local Environment](#local-environment)
   - [Local environment variables](#local-environment-variables)
-  - [Sync locally](#sync-locally)
-  - [Cleaning WordPress](#cleaning-wordpress)
+  - [How to Preview Changes](#how-to-preview-changes)
+  - [How to Deploy Changes](#how-to-deploy-changes)
+  - [Lighthouse Performance Audit](#lighthouse-performance-audit)
+  - [Uptime Monitoring](#uptime-monitoring)
 
 ### Resources
 
@@ -145,7 +147,7 @@ Deployment of support articles is handled automatically through [Netlify](https:
 
 The following instructions walk you through how to sync your local version of this repository to your local version of the support.sparkpost.com website. This is only needed when you are debugging the sync scripts or adding new functionality.
 
-**This is not a required step in contributing to the documentation**
+_**This is not a required step in contributing to the documentation**_
 
 ### Installation
 
