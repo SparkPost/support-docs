@@ -69,7 +69,7 @@ const StyledOl = styled.ol`
     })}
   }
 
-  li {
+  & > li {
     counter-increment: item;
     position: relative;
     ${css({
@@ -78,7 +78,7 @@ const StyledOl = styled.ol`
     })}
   }
 
-  li::before {
+  & > li::before {
     content: counter(item) '.';
     display: inline-block;
     position: absolute;
