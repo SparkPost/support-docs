@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "rfc2822_header_stringwrite_ex"
 description: "rfc 2822 header stringwrite ex Renders the rfc 2822 header to a string with formatting options string rfc 2822 header stringwrite ex s field flags string s rfc 2822 field field int flags Renders the rfc 2822 header to a string with formatting options s The string to write to..."
 ---

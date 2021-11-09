@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "rfc2822_messageid_header"
 description: "rfc 2822 messageid header rfc 2822 conformance rfc 2822 messageid header ignore rfc 2822 messageid header ifneeded If a message is missing the Message ID header and Message ID Header is set to ifneeded Momentum will generate a suitable header and insert it into the message rfc 2822 messageid header..."
 ---

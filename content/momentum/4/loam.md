@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "Life of A Message"
 description: "Messages are injected into Momentum 4 x either through SMTP or HTTP SMTP injection requires you to have a fully formed message available for injection HTTP injection uses a transmission JSON object submitted through Momentum via the Transmissions API Transmissions specify a content template and a list of recipients both..."
 ---

@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "domainkeys"
 description: "domainkeys enable or disable domainkeys signing domainkeys enabled domainkeys disabled This directive instructs Momentum to enable or disable signing messages with a Domain Keys signature globally on a specific domain binding or domain within a binding To use this directive you must also configure the dk sign module When the..."
 ---

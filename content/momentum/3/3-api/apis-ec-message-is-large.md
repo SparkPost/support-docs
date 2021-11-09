@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "ec_message_is_large"
 description: "ec message is large Indicates if a message is large int ec message is large msg ec message msg Indicates whether or not a message is large which is configurable and determined by the value of the large message threshold option If a message is large we do not keep..."
 ---

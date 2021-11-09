@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "ec_spool_in"
 description: "ec spool in Spool in message meta data from disk deprecated ec message ec spool in id message id id Spool in message meta data from disk deprecated Use ec spool in 2 instead..."
 ---

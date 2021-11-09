@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "match_cache_life"
 description: "match cache life set the maximum number of seconds that the match cache will be valid match cache life 0 match cache life determines the maximum validity for cache entries in the match cache With a default match cache life of 0 cache entries will be kept for as long..."
 ---

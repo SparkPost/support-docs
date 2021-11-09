@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "client:parse_headers"
 description: "client parse headers Parse the headers of an HTTP response client parse headers headers Parse the headers of an HTTP response Use this function in the following way Returns a table with the header name as a key and the header value as the value msys http client new client..."
 ---

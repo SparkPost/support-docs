@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "ec_fc_invalidate"
 description: "ec fc invalidate Remove an entry from the cache and delete the cache reference int ec fc invalidate entry ec fc entry t entry This reference page was automatically generated from functions found in the header files in the development branch The function described here may not exist in generally..."
 ---

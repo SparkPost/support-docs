@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "audit_series_get_items"
 description: "audit series get items Return the item of the named series audit series item audit series get items series start end const char series int start int end This reference page was automatically generated from functions found in the header files in the development branch The function described here may..."
 ---

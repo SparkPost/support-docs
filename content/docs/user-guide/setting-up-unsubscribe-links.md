@@ -1,4 +1,5 @@
 ---
+lastUpdated: "02/08/2020"
 title: "Setting up Unsubscribe Links"
 description: "How to Implement Link Unsubscribe and List Unsubscribe Events Link Unsubscribe Example To use the link unsubscribe simply add a link in your email in the following format a data msys unsubscribe 1 href YOURAPPUNSUBSCRIBEHANDLER title USEFULNAME UNSUBSCRIBELINKDISPLAY NAME a YOURAPPUNSUBSCRIBE HANDLER is the webpage where we will redirect the..."
 ---

@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "pe2_logger – Module"
 description: "Use this module to track deliveries and bounces when the MTA is part of a Message Central configuration Configuration Change As of Momentum version 3 5 Message Central version 3 7 this module has been replaced by the mc logger Module Example 14 80 pe 2 logger outbound configuration batch..."
 ---

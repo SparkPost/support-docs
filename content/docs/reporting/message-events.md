@@ -1,4 +1,5 @@
 ---
+lastUpdated: "01/24/2021"
 title: "Events Search"
 description: "Events provides powerful searching for message event data based on recipients, campaigns, and more."
 ---

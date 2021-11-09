@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "ds_fetch_flat"
 description: "ds fetch flat query and fetch all rows from a datasource ds fetch flat cachename query params This function issues a query against a datasource cache If the data is available in the cache it will return a string list immediately containing all rows of the result If the data..."
 ---

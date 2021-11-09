@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "suppress_spool – Deferred Message Spooling"
 description: "The primary bottleneck for most MT As is spooling messages to disk To be fully RFC compliant an MTA must complete writing a message to disk before they communicate to the sender that it has been received The purpose of this is so that in the event of crash or..."
 ---

@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "version"
 description: "version show version information of Momentum version This command displays version information of the running Momentum instance As of version 3 0 23 this command also displays the product type..."
 ---

@@ -1,13 +1,10 @@
 #!/usr/bin/env node
 
-import algoliasearch from 'algoliasearch';
-import dotenv from 'dotenv';
 import fs from 'fs';
 import path from 'path';
 import glob from 'glob';
 import matter from 'gray-matter';
-import { remark } from 'remark';
-import strip from 'strip-markdown';
+import { buildIndex } from './algoliaIndex.mjs';
 
 const getAllMomentumPosts = () => {
   return glob.sync(`content/momentum/**/*.md`).map((file) => {
@@ -27,40 +24,6 @@ const getAllMomentumPosts = () => {
   });
 };
 
-function transformPostToSearchObject(post) {
-  const content = remark().use(strip).processSync(post.content);
-  const excerpt = String(content).replace(/\n/g, ' ').substring(0, 200);
-
-  return {
-    objectID: post.file,
-    slug: post.url,
-    title: post.data.title,
-    description: post.data.description,
-    excerpt,
-  };
-}
-
 (async function () {
-  dotenv.config();
-  const appId = process.env.NEXT_PUBLIC_ALGOLIA_APP_ID;
-  const adminKey = process.env.ALGOLIA_SEARCH_ADMIN_KEY;
-
-  if (!appId && !adminKey) {
-    console.error('Algolia credentials missing.');
-    process.exit(1);
-  }
-
-  try {
-    const client = algoliasearch(appId, adminKey);
-    const index = client.initIndex('next_momentum_documentation');
-    const posts = getAllMomentumPosts();
-    const transformed = posts.map(transformPostToSearchObject);
-
-    const algoliaResponse = await index.saveObjects(transformed);
-    console.log(`Added ${algoliaResponse.objectIDs.length} records to Algolia search`);
-    process.exit();
-  } catch (error) {
-    console.log(error);
-    process.exit(1);
-  }
+  buildIndex('next_momentum_documentation', getAllMomentumPosts);
 })();

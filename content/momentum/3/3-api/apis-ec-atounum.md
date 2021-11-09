@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "_ec_atounum"
 description: "ec atounum Convert e string str to an unsigned integral value and store the result in nptr int ec atounum str nptr width endptr const char str void nptr int width char endptr This reference page was automatically generated from functions found in the header files in the development branch..."
 ---

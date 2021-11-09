@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "ec_message_part_get_content_type"
 description: "ec message part get content type int ec message part get content type closure part content type buf ct len charset buf charset len void closure ec message part part char content type buf int ct len char charset buf int charset len int has core ec message part get..."
 ---

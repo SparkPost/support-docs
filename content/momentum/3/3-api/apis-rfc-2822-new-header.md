@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "rfc2822_new_header"
 description: "rfc 2822 new header Create a new header rfc 2822 field rfc 2822 new header name str const char name const char str Create a new header Headers should be removed using rfc 2822 remove header name The name of the new header str The content of the header This..."
 ---

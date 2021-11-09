@@ -1,4 +1,5 @@
 ---
+lastUpdated: "04/13/2020"
 title: "rollup_mx"
 description: "If set to 'true' traffic for the associated host domain will be routed to the MX host of the destination host domain specified by the argument of the related rollup_mx_name option. This enhances the ability of Adaptive Delivery to respond to feedback from receiving domains. Usable in host stanzas, which can be included in global, binding or binding_group scopes."
 ---

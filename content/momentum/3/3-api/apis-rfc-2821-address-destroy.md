@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "rfc2821_address_destroy"
 description: "rfc 2821 address destroy Destroy an rfc 2821 address void rfc 2821 address destroy ctx rfc 2821 ctx ctx Destroy an rfc 2821 address populated by rfc 2821 address parse ctx See structs rfc 2821 ctx This function returns void It is legal to call this function in any thread..."
 ---

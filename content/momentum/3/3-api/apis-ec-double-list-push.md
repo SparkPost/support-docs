@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "ec_double_list_push"
 description: "ec double list push Push an item to the tail of the list void ec double list push list data ec double list list void data Push an item to the tail of the list list The list data The data that will be the new tail It is legal..."
 ---

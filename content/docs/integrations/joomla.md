@@ -1,4 +1,5 @@
 ---
+lastUpdated: "02/08/2020"
 title: "Using SparkPost with Joomla"
 description: "Configuring Joomla to use Spark Post is very straightforward since it can be done from its administration panel Add Sending Domain to Spark Post Create an API Key with Send via SMTP permission Login to admin panel as an Administrator of your Joomla installation Open Server tab from System Global..."
 ---

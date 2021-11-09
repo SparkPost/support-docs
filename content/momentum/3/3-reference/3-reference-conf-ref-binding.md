@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "binding"
 description: "binding configure binding specific options Use the binding stanza to define per binding configuration options You can nest domain and host stanzas inside binding stanzas to create per binding per domain or per binding per host configurations Apart from the domain and host options the following options are commonly specified..."
 ---

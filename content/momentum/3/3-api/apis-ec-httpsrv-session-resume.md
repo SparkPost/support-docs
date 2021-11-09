@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "ec_httpsrv_session_resume"
 description: "ec httpsrv session resume Arranges for a suspended http session to be resumed int ec httpsrv session resume sess ec httpsrv session sess This reference page was automatically generated from functions found in the header files in the development branch The function described here may not exist in generally available..."
 ---

@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "ec_datasource_set_named_param_mode"
 description: "ec datasource set named param mode Initialize a query to use named parameters int ec datasource set named param mode q param count ecdata cache query q intparam count Initialize a query to use named parameters by setting the params positional member of the cache to 0 This function is..."
 ---

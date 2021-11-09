@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "antivirus – Antivirus Modules"
 description: "Momentum's antivirus framework currently ships with support for CSAPI and Clam AV antivirus engines These engines can be configured to run separately or together and to either reject a message or pass it back to a policy script for processing Example 14 7 antivirus module To configure the csapi or..."
 ---

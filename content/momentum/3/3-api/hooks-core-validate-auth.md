@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "validate_auth"
 description: "validate auth int validate auth closure c auth info auth status void closure validate context c struct ec auth info auth info int auth status int has core validate auth hook void register core validate auth hook first hook closure ec hook core validate auth func t hook void closure..."
 ---

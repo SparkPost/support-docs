@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "ec_memory_is_low"
 description: "ec memory is low Called when the core detects a memory shortage void ec memory is low void Configuration Change This feature is available starting from Momentum 3 0 18 Called when the core detects a memory shortage The purpose of this function is to try to flush or otherwise..."
 ---

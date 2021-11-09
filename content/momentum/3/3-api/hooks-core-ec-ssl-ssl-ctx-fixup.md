@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "ec_ssl_SSL_CTX_fixup"
 description: "ec ssl SSL CTX fixup This hook provides an opportunity for modules to alter the context and add passphrase callbacks via Open SSL functions void core ec ssl SSL CTX fixup closure sslctx type domain certfile keyfile clientca cipher list void closure struct ssl ctx st sslctx int type const..."
 ---

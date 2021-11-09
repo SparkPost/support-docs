@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "validate_context_exists_and_get"
 description: "validate context exists and get If a validation context key exists then retrieve its value int validate context exists and get vctx which key value validate context vctx int which const char key const char value If the specified validation context key exists then retrieve its value vctx The validation..."
 ---

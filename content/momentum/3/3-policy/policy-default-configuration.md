@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "Configuration Details"
 description: "Each configuration option is a Lua table This section describes these tables and their elements You may wish to whitelist IP addresses that will not be subjected to the policy in question When whitelist support is enabled each default policy can optionally honor one or more whitelists Whitelists can be..."
 ---

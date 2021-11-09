@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "Creating Stored Templates"
 description: "Introduction A key component of a successful campaign is managing your message templates Being able to design and reuse templates allows you to provide a consistent look and feel across all your campaigns Momentum's message generation supports template management enabling you to create update and reuse stored templates You can..."
 ---

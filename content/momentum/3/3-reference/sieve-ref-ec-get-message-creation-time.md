@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "ec_get_message_creation_time"
 description: "ec get message creation time Return the creation time of the current message ec get message creation time ec get message creation time returns the creation time of the current message It returns with seconds precision as an integer In the following script the creation time is checked against a..."
 ---

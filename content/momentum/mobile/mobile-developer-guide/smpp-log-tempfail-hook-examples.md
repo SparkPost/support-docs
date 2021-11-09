@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "Examples"
 description: "Example 11 1 SMPP Log Tempfail Hook Lua Example Example 11 2 SMPP Log Tempfail Hook C Example..."
 ---

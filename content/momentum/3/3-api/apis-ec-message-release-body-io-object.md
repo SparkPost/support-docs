@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "ec_message_release_body_io_object"
 description: "ec message release body io object Releases the body io object void ec message release body io object mess ec message mess Releases the body io object that is allocated by ec message get body io object It is important to realize that this function results in recovered system memory..."
 ---

@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "msys.registerModule"
 description: "msys register Module Register a Lua module with the system msys register Module modname table Register a Lua module with the system The first parameter is the name of the module This is currently only used in error messages but should be unique by module for future expansion The module..."
 ---

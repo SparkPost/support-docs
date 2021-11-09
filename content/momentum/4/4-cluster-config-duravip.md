@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "DuraVIP™: IP Fail over"
 description: "One of the most important features of Momentum cluster configuration is Dura VIP™ bindings Dura VIP™ maintains the availability of Multi VIP bindings and listener services on the associated IP addresses even when node s are down either administratively or due to failure When nodes share the same configuration Dura..."
 ---

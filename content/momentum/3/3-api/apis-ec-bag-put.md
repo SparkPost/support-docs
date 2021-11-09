@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "ec_bag_put"
 description: "ec bag put Put something in the specified bag int ec bag put bag typedname thing ec bag bag const char typedname void thing Put something in the bag bag The ec bag typedname The name of the data type that we are placing in the bag For an explanation..."
 ---

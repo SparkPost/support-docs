@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "msg:listener_addr"
 description: "msg listener addr Get the recv via IP and or PORT msg listener addr flag This function returns the IP and or PORT of the local listener that the message was received on In particular it returns the component of the sockaddr in human readable form as indicated by the..."
 ---

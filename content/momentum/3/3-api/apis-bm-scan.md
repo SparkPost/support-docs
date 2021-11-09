@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "bm_scan"
 description: "bm scan Invoke the Brightmail scanner int bm scan msg ac vctx verdict rules tracker is default ec message msg accept construct ac validate context vctx string verdict string rules string tracker int is default Invoke the Brightmail scanner msg The message to be scanned For documentation of this data..."
 ---

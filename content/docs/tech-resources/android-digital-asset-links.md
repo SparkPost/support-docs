@@ -1,4 +1,5 @@
 ---
+lastUpdated: "10/28/2020"
 title: "How do I use Android digital asset links with SparkPost Enterprise?"
 description: "Note This article is for Spark Post Enterprise only Table of Contents Use these quick links to jump to certain sections of this article Introduction What are the potential benefits to configuring Android digital asset links As a Spark Post Enterprise customer what steps do I need to take to..."
 ---

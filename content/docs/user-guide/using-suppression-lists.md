@@ -1,4 +1,5 @@
 ---
+lastUpdated: "04/06/2021"
 title: "Using Suppression Lists"
 description: "Protecting your sender reputation is essential to maximizing your email deliverability Many inbox providers e g Yahoo Gmail Hotmail Outlook com or AOL opt to limit or refuse message traffic based on it Continuing to send messages to invalid email addresses or to recipients who no longer want to receive..."
 ---

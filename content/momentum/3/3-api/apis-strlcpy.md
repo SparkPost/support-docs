@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "strlcpy"
 description: "strlcpy Size bounded C string copying function size t strlcpy dst src size char dst const char src size t size This reference page was automatically generated from functions found in the header files in the development branch The function described here may not exist in generally available versions of..."
 ---

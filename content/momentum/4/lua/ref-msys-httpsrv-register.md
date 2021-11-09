@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "msys.httpsrv.register"
 description: "msys httpsrv register Register a Lua function as an HTTP endpoint msys httpsrv register method endpoint function name Use this function to register a Lua function as an HTTP endpoint You can register the same endpoint multiple times with different methods A Lua function registered in this way has access..."
 ---

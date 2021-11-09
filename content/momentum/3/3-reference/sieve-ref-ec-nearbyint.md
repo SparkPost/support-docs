@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "ec_nearbyint"
 description: "ec nearbyint round to the nearest integer based on rounding direction ec nearbyint number ec nearbyint rounds the given number to the nearest integer based on rounding direction Example 16 84 ec nearbyint example..."
 ---

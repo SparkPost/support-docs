@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "echash_delete_all"
 description: "echash delete all This function removes all entries from a hash table and calls the specified keyfree and datafree functions void echash delete all ht keyfree datafree ec hash table ht EC Hash Free Func keyfree EC Hash Free Func datafree This function removes all entries from a hash table..."
 ---

@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "msys.av.scan_part"
 description: "msys av scan part Perform a virus scan on a specific message part using the named engine msys av scan part msg part av engine name validate context Use this function with AV engines that depend on the AV module such as the clamav module This function performs a virus..."
 ---

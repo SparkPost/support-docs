@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "ec_httpsrv_request_url_get"
 description: "ec httpsrv request url get Gets the request URL ec url details ec httpsrv request url get sess ec httpsrv session sess This reference page was automatically generated from functions found in the header files in the development branch The function described here may not exist in generally available versions..."
 ---

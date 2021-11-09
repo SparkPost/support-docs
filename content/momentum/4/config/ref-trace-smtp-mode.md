@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "trace_smtp_mode"
 description: "trace smtp mode set the default permissions of trace files trace smtp mode 0640 This option sets the default permissions of trace files created when using the console command trace smtp As always the permissions will be modified by the umask of the ecelerity process When running as user and..."
 ---

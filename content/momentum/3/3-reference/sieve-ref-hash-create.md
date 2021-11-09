@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "hash_create"
 description: "hash create create a hash hash create This function returns a new empty hash table You may use hash set to set elements in the hash and use array style syntax to retrieve the value of an element Example 16 107 hash create example hash set hash dump and hash..."
 ---

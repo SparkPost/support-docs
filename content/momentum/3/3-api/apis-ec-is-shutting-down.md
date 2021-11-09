@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "ec_is_shutting_down"
 description: "ec is shutting down Is the ecelerity process shutting down int ec is shutting down void A boolean function reporting whether or not ecelerity is shutting down NONE This function returns 0 false or 1 true It is legal to call this function in any thread ec shutdown ex..."
 ---

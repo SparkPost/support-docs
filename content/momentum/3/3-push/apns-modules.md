@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "APN Modules"
 description: "In order to configure Momentum for AP Ns you must use the apn module If you wish to log AP Ns notifications then you will also need to configure the apn logger module Configuration Change This feature is available as of version 3 5 4 The apn module is a..."
 ---

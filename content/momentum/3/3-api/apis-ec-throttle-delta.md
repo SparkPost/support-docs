@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "ec_throttle_delta"
 description: "ec throttle delta adjust the counter for a named throttle int ec throttle delta name amount const char name int amount This reference page was automatically generated from functions found in the header files in the development branch The function described here may not exist in generally available versions of..."
 ---

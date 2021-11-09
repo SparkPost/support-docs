@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "ec_cache_insert"
 description: "ec cache insert Insert a key value pair into a cache ec cache elt ec cache insert cache key keylen value ec cache t cache const char key int keylen void value Insert a key value pair into a cache cache The address of the cache The following typedef applies..."
 ---

@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "Interpolation Functions"
 description: "Table of Contents ec interpolate add job Adds work for an interpolator running in async or non blocking mode ec interpolate add reqs Add a set of requirements to an interpolation context ec interpolate calc deps Determine the requirements for a macro expansion ec interpolate crack macro Return the name..."
 ---

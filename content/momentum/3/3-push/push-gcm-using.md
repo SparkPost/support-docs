@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "Using GCM"
 description: "You can use Momentum to send push notifications to an application running on an Android device As prerequisites the application and a whitelist of IP addresses allowed to send notifications to the application must be registered with Google You must be licensed by Message Systems to use Momentum's push notification..."
 ---

@@ -1,4 +1,5 @@
 ---
+lastUpdated: "01/22/2021"
 title: "Getting Started with SparkPost"
 description: "This guide describes the steps you’ll need to follow to start sending mail using SparkPost."
 ---

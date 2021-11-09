@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "recip_response"
 description: "recip response void recip response closure msg sess resp req void closure ec message msg ec httpsrv session sess struct json object resp struct json object req int has restinj recip response hook void register restinj recip response hook first hook closure ec hook restinj recip response func t hook..."
 ---

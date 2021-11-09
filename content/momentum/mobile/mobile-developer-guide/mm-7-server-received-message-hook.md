@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "MM7 Server Received Message Hook"
 description: "The MM 7 Server Received Message Hook enables customer applications to inspect and modify MM 7 server requests received by Mobile Momentum The hook is invoked once for each incoming MM 7 request following parsing of the MM 7 soap message The following elements are available to the hook for..."
 ---

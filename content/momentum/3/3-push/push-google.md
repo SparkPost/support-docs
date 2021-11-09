@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "Configuring Momentum for Google Cloud Messages (GCM)"
 description: "Overview of Google Push Notifications If you have an application running on an Android device you can use Momentum to generate push notifications in the same way that it generates messages for other channels Google push notifications originate with Google Cloud Messaging GCM and are received by applications running on..."
 ---

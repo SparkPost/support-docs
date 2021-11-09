@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "watchdog_interval"
 description: "watchdog interval if Momentum is unresponsive for this length of time it will be restarted Watchdog Interval 60 Momentum starts as the child process of a parent watchdog process The watchdog attempts to restart Momentum if the MTA has been unresponsive for more than the watchdog interval number of seconds..."
 ---

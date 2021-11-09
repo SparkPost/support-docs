@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "http_basic_auth"
 description: "http basic auth Define the user credentials when using basic HTTP authentication http basic auth user password Define the user credentials when using basic HTTP authentication Use this option when the delivery method uses an HTTP protocol Use a to separate the username and password Theres is no default value..."
 ---

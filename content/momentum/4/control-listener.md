@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "Configuring Momentum's System Console"
 description: "Momentum's online administration management and analysis is through the Momentum System Console program ec console henceforth referred to as the console The Control Listener is Momentum's listener for incoming control connections made via this console It is configured in the ecelerity conf file for connection to the nodes and in..."
 ---

@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "ec_message_part_create_singleton"
 description: "ec message part create singleton Create a new singleton message part ec message part ec message part create singleton mimetype encoding body const char mimetype int encoding io object body This reference page was automatically generated from functions found in the header files in the development branch The function described..."
 ---

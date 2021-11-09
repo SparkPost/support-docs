@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "Rule Actions"
 description: "Actions are taken in response to temporary or permanent failure codes issued by receivers The actions implemented by the adaptive rules lua script are as follows suspend Suspend sending for a specified period This action results in an email alert to the address defined by adaptive alert email destination The..."
 ---

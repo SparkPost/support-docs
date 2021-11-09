@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "ping_scheduler"
 description: "ping scheduler Pings the master scheduler thread void ping scheduler void Pings the master scheduler thread Runs the ping scheduler function registered with the master scheduler thread This function returns void It is legal to call this function in any thread is scheduler thread scheduler recurrent func add and get..."
 ---

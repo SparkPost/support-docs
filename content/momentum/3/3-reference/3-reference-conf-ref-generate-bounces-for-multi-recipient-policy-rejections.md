@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "generate_bounces_for_multi_recipient_policy_rejections"
 description: "generate bounces for multi recipient policy rejections generate MD Ns after reception for policy rejections generate bounces for multi recipient policy rejections true generate bounces for multi recipient policy rejections false If you have configured a module or a policy script to reject mail in the each rcpt phase of..."
 ---

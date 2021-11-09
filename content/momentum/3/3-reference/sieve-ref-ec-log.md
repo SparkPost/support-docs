@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "ec_log"
 description: "ec log log to the paniclog ec log message ec log allows you to log arbitrary information to the paniclog The log record will be prefixed with the script source filename and the line number at which the ec log was executed The message is logged at the CRITICAL level..."
 ---

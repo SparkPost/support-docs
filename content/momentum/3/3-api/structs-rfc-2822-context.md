@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "rfc2822_context"
 description: "The members of this struct are as follows To use this struct include the file rfc 2822 parser h Section 68 67 rfc 2822 field and rfc 2822 find first header..."
 ---

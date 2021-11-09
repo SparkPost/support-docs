@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "module_get_hook_array_from_transaction"
 description: "module get hook array from transaction Get the hooks associated with the current transaction ec ptr array module get hook array from transaction transaction head ec config header transaction struct ec hook head head Get the hooks associated with the current transaction transaction For a description of this data type..."
 ---

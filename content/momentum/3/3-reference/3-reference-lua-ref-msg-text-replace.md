@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "msg:text_replace"
 description: "msg text replace Streaming interface to a PCRE replacement of textual content from the message body msg text replace pattern replacement Streaming interface to a PCRE replacement of textual content from the message body Only parts that have a text mime type will be included in the search Text parts..."
 ---

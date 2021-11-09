@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "smtp_client_args_exists_and_fetch"
 description: "smtp client args exists and fetch Check for the existence of and fetch an argument from an smtp client args structure int smtp client args exists and fetch args extension value smtp client args args const char extension const char value Check for the existence of and fetch an argument..."
 ---

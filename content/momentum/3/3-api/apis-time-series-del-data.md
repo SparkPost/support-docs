@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "time_series_del_data"
 description: "time series del data Delete data from all monitors in a time series void time series del data ts data time series ts void data This reference page was automatically generated from functions found in the header files in the development branch The function described here may not exist in..."
 ---

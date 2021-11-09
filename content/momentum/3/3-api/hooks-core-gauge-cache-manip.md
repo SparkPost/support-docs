@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "gauge_cache_manip"
 description: "gauge cache manip void gauge cache manip closure cache key keylen addend expiry time maxitems replicated void closure const char cache const char key int keylen int addend uint 64 t expiry time int maxitems int replicated int has core gauge cache manip hook void register core gauge cache manip..."
 ---

@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "event_post_dup"
 description: "event post dup Duplicate an event void event post dup dst src Event dst Event src Duplicate an event Use event free to release a duplicated event dst The duplicated Event src The original Event This function returns void Only call this function from the Scheduler thread Section 68 49..."
 ---

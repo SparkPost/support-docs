@@ -1,4 +1,5 @@
 ---
+lastUpdated: "02/08/2020"
 title: "Can I send from any domain?"
 description: "Domain Ownership And Control You can send mail through Spark Post from any domain that you or your customers control By verifying your sending domains with Spark Post you're letting us know that you control them and that you authorize delivery from those domains The SPF and DKIM domain verification..."
 ---

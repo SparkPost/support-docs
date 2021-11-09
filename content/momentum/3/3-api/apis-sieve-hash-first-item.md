@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "sieve_hash_first_item"
 description: "sieve hash first item Get the first item from a hash table and add a reference to it int sieve hash first item hash iter key item SIEVEARGS hash ec hash iter iter const char key SIEVEARGS item Get the first item from an ec hash table and add a..."
 ---

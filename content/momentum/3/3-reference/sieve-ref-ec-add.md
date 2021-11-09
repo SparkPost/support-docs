@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "ec_add"
 description: "ec add perform addition of two numbers ec add number 1 number 2 ec add takes two numbers and returns their sum Example 16 25 ec add example..."
 ---

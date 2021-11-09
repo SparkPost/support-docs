@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "sess:request_add_header"
 description: "sess request add header Add a header to an HTTP session sess request add header header value replace Set the header of an HTTP session Use header for the header identifier and value for its value If you are replacing an existing header set repace to 1 Otherwise set it..."
 ---

@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "msys.validate.opendkim.get_num_sigs"
 description: "msys validate opendkim get num sigs Return the number of DKIM signatures msys validate opendkim get num sigs dkim Configuration Change This function is available as of version 3 6 This function returns the number of DKIM signatures and requires the opendkim module The dkim parameter is an array of..."
 ---

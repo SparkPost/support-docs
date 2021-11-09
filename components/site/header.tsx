@@ -1,55 +1,44 @@
 import React from 'react';
 import { useRouter } from 'next/router';
-import { Box, Button, TextField } from '@sparkpost/matchbox';
-import { Search as SearchIcon, OpenInNew } from '@sparkpost/matchbox-icons';
-import Cookies from 'js-cookie';
+import { Box, ScreenReaderOnly, styles } from '@sparkpost/matchbox';
+import { Menu } from '@sparkpost/matchbox-icons';
 import Logo from 'components/site/logo';
 import Search from 'components/site/algolia/search';
+import HeaderButtons from 'components/site/headerButtons';
+import styled from 'styled-components';
 
-const DASHBOARD_LINK = 'https://app.sparkpost.com';
-const LOGIN_LINK = 'https://app.sparkpost.com/auth';
-const SIGNUP_LINK =
-  'https://app.sparkpost.com/join?plan=free-0817&sfdcid=7016000000198J1&src=SP-Website';
-const AUTH_KEY = 'website_auth';
+const StyledButton = styled.button`
+  ${styles.buttonReset}
+`;
 
-const Header = () => {
+type HeaderProps = {
+  getActivatorProps: () => object;
+};
+
+const Header = (props: HeaderProps) => {
+  const { getActivatorProps } = props;
   const { route } = useRouter();
   const category = route.split('/')[1];
 
-  const isLoggedIn = React.useMemo(() => {
-    return !!Cookies.get(AUTH_KEY);
-  }, []);
-
   return (
     <Box my="600">
-      <Box as="header" height="650" display="flex" justifyContent="space-between" mb="400">
+      <Box as="header" height="650" display="flex" justifyContent="space-between" mb="500">
         <Logo />
-        {isLoggedIn ? (
-          <Button as="a" color="blue" variant="outline" href={DASHBOARD_LINK}>
-            View Your Dashboard
-            <Button.Icon as={OpenInNew} ml="200" />
-          </Button>
-        ) : (
-          <Button.Group>
-            <Button as="a" color="blue" variant="outline" href={LOGIN_LINK}>
-              Login
-            </Button>
-            <Button as="a" color="blue" variant="outline" href={SIGNUP_LINK}>
-              Try Now
-            </Button>
-          </Button.Group>
-        )}
+        <Box display={['block', null, 'none']} marginTop="15px">
+          <StyledButton {...getActivatorProps()}>
+            <ScreenReaderOnly>Open Menu</ScreenReaderOnly>
+            <Menu size={24} />
+          </StyledButton>
+        </Box>
+        <Box display={['none', null, 'block']}>
+          <HeaderButtons />
+        </Box>
       </Box>
       <Box maxWidth="1150">
         {category === 'momentum' ? (
           <Search indexName="next_momentum_documentation" />
         ) : (
-          <TextField
-            id="algolia-search"
-            label="Search"
-            prefix={<SearchIcon />}
-            placeholder="e.g. Getting Started"
-          />
+          <Search indexName="next_support_documentation" />
         )}
       </Box>
     </Box>

@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "swap_out_multi"
 description: "swap out multi Swap out multiple messages int swap out multi head sp async message head Swap out multiple messages head A pointer to an sp async message struct For documentation of this data structure see Section 68 84 sp async message This function returns 1 for success and 0..."
 ---

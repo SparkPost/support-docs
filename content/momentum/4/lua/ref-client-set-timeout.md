@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "client:set_timeout"
 description: "client set timeout Set the timeout for an HTTP client client set timeout number Set the timeout for an HTTP client Setting the parameter to an integer value determines the length of the timeout Passing no parameter clears the timeout setting msys http client new client do request client get..."
 ---

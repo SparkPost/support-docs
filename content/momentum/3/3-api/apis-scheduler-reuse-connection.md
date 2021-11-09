@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "scheduler_reuse_connection"
 description: "scheduler reuse connection Have the scheduler re use the connection void scheduler reuse connection dc domain newe delivery construct dc const char domain Event newe Have the scheduler re use the connection The caller is responsible for creating newe as a copy of the original event allocating newe with the..."
 ---

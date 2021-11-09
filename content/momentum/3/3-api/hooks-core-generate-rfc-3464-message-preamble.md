@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "generate_rfc3464_message_preamble"
 description: "generate rfc 3464 message preamble int generate rfc 3464 message preamble closure message action body void closure ec message message dsn actype action string body int has core generate rfc 3464 message preamble hook void register core generate rfc 3464 message preamble hook first hook closure ec hook core generate..."
 ---

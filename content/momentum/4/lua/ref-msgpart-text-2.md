@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "msgpart:text"
 description: "msgpart text The entire message body part is replaced by the supplied text msgpart text value type charset This function has the same semantics and purpose as the Message equivalent see msg text except that it is scoped to the message part currently being referenced instead of the entire message..."
 ---

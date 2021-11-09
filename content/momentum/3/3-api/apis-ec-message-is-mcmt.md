@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "ec_message_is_mcmt"
 description: "ec message is mcmt returns 1 if the message is a MCMT container int ec message is mcmt msg ec message msg This reference page was automatically generated from functions found in the header files in the development branch The function described here may not exist in generally available versions..."
 ---

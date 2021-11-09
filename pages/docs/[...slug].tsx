@@ -3,12 +3,14 @@ import { getAllCategoryPostPaths, getSingleCategoryPost, categoryPath } from 'li
 import SEO from 'components/site/seo';
 import Markdown from 'components/markdown';
 import DocsLayout from 'components/site/docsLayout';
+import DocumentationPage from 'components/site/documentationPage';
 
 type PostPageProps = {
   content: string;
   data: {
     title?: string;
     description?: string;
+    lastUpdated?: string;
   };
 };
 
@@ -18,9 +20,9 @@ const PostPage = (props: PostPageProps): JSX.Element => {
     <>
       <SEO title={data.title} description={data.description} />
       <DocsLayout>
-        <h1>{data?.title}</h1>
-        <h6>{data?.description}</h6>
-        <Markdown>{content}</Markdown>
+        <DocumentationPage title={data.title} lastUpdated={data.lastUpdated}>
+          <Markdown>{content}</Markdown>
+        </DocumentationPage>
       </DocsLayout>
     </>
   );

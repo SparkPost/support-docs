@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "io_wrapper_set_app_context_and_dtor"
 description: "io wrapper set app context and dtor Set an application specific context value and destructor void io wrapper set app context and dtor io context on destroy io object io void context void io object on destroy Set an application specific context value and destructor An io object can store..."
 ---

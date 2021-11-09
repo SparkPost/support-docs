@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "msys.cloudmark.set_af_mode_movemsg"
 description: "msys cloudmark set af mode movemsg Set the Cloudmark Active Filter mode to MOVEMSG msys cloudmark set af mode movemsg inbox spam unread only This sets the Cloudmark Active Filter mode to MOVEMSG That is move messages around based on their status inbox The Inbox folder name spam The Spam..."
 ---

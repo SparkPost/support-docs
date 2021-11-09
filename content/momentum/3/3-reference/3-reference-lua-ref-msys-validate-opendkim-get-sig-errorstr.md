@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "msys.validate.opendkim.get_sig_errorstr"
 description: "msys validate opendkim get sig errorstr Fetch the error associated with a DKIM signature msys validate opendkim get sig errorstr dkim sig Configuration Change This function is available as of version 3 6 This function requires the opendkim module This function fetches the error associated with a DKIM signature Use..."
 ---

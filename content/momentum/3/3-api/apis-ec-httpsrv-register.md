@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "ec_httpsrv_register"
 description: "ec httpsrv register Registers an HTTP URI handler int ec httpsrv register instance method path job class closure handler const char instance const char method const char path int job class ec blobject closure ec httpsrv handler func handler This reference page was automatically generated from functions found in the..."
 ---

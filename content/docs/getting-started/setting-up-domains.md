@@ -1,4 +1,5 @@
 ---
+lastUpdated: "01/22/2021"
 title: "Setting up Domains"
 description: "How to set up domains and verify DNS Records."
 ---

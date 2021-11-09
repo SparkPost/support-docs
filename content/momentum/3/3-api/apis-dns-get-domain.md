@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "dns_get_domain"
 description: "dns get domain Retrieve information about the specified domain domain record dns get domain domain const char domain Retrieve the domain record struct from a domain name domain The domain name as a string This function returns a pointer to a domain record struct For documentation of this data structure..."
 ---

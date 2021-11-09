@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "http_request_add_header"
 description: "http request add header Add a header to an HTTP request int http request add header sess header value replace http session sess const char header const char value int replace Configuration Change This function is available as of version 3 6 Add a header to an HTTP request You..."
 ---

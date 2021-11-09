@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "ec_cache_get_stats"
 description: "ec cache get stats Get cache statistics deprecated void ec cache get stats cache stats ec cache t cache ec cache stats stats Get cache statistics deprecated Use ec cache get stats 2..."
 ---

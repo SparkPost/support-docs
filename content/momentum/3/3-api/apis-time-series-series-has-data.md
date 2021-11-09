@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "time_series_series_has_data"
 description: "time series series has data Returns true if a given monitor in a time series contains data int time series series has data ts series id time series ts int series id This reference page was automatically generated from functions found in the header files in the development branch The..."
 ---

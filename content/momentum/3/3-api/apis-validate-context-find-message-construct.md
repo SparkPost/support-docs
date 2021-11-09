@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "validate_context_find_message_construct"
 description: "validate context find message construct Find the specified message construct int validate context find message construct vctx mc validate context vctx message construct mc Find the specified message construct vctx The validation context For a description of this data type see Section 68 86 validate context mc A pointer to..."
 ---

@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "ec_thread_pool_set_backlog"
 description: "ec thread pool set backlog set the maximum backlog for an existing thread pool int ec thread pool set backlog jobclass backlog int jobclass size t backlog This reference page was automatically generated from functions found in the header files in the development branch The function described here may not..."
 ---

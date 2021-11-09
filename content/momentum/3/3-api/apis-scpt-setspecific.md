@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "scpt_setspecific"
 description: "scpt setspecific associate an arbitrary pointer with an execution context void scpt setspecific thr key object scpt thread thr const char key void object This reference page was automatically generated from functions found in the header files in the development branch The function described here may not exist in generally..."
 ---

@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "SMPP Log Conversion Hook"
 description: "This hook logs a message conversion event either from SMPP to SMS or the reverse The default logger implementation either log the event as smpp to ec message or ec message to smpp For MO an smpp to ec message event is logged for MT an ec message to smpp..."
 ---

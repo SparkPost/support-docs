@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "sieve_create_string"
 description: "sieve create string Create a Sieve string SIEVEARGS sieve create string str len const char str int len Create a Sieve string str The string you wish to create len The length of the string This function returns a SIEVEARGS For information about this data type see sieve ast It..."
 ---

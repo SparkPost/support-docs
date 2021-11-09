@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "ec_memtype_range_by_module"
 description: "ec memtype range by module Returns the range of memtypes associated with a given module int ec memtype range by module module lower upper const char module int lower int upper This function determines whether a specific range of memtypes is associated with a given module For more information about..."
 ---

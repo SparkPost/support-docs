@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "domain_for_unqualified_sender_address"
 description: "domain for unqualified sender address configure a domain which will be used to substitute for unqualified sender addresses domain for unqualified sender address example com When set domain for unqualified sender address will rewrite the envelope address internally although the original MAIL FROM is still available from Sieve during all..."
 ---

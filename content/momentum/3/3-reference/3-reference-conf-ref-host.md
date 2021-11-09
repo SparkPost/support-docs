@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "host"
 description: "host configure host specific options Use the Host stanza to define per host configuration options Host stanzas can be nested beneath Binding stanzas to define binding host configuration options Configuration Change As of version 3 6 11 Regex is supported in the Host stanza In addition to specifying a host..."
 ---

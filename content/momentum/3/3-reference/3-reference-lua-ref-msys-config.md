@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "msys.config"
 description: "msys config Set or get configuration values msys config action parameters Corresponds to the config system console command and can be used to get or set configuration values For example This function returns two values The value of the configuration option The textual output from the command what you would..."
 ---

@@ -1,4 +1,5 @@
 ---
+lastUpdated: "03/26/2020"
 title: "Complete the Software Set Up"
 description: "Complete the Vertica setup on the first Analytics node Open vsql Run the following commands This creates projections in Vertica so that queries can be optimized and executed more quickly and also converts domain names to lowercase to simplify searching Quit vsql Complete the Adaptive Delivery API setup on all..."
 ---
