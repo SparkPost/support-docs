@@ -197,7 +197,7 @@ You will also need a local version of the `.sentryclirc` file and an example can
 
 All of these actual variables can be found in [app's Netlify site settings](https://app.netlify.com/sites/support-docs/settings/deploys#environment). If you are having trouble building locally, it may be related to missing a key env variable. If you have access, grab these from the Netlify site settings. Otherwise, contact the FE team.
 
-#### How to preview changes
+### How to preview changes
 
 In order to preview changes, you will need access to [Netlify](https://app.netlify.com/sites/support-docs/deploys). Contact FE for assistance.
 
@@ -209,16 +209,16 @@ In order to preview changes, you will need access to [Netlify](https://app.netli
 
 - This will show a version for the PR current build of the static Netlify site
 
-#### How to deploy changes
+### How to deploy changes
 
 1. Complete the steps above in the "How to preview changes" section
 2. Once the PR is approved by a reviewer and the PR is merged and squashed, the build will kick off automatically.
 
-#### Lighthouse Performance Audit
+### Lighthouse Performance Audit
 
 We have created a github action (`.github/workflows/lighthouse.yml`) that runs a lighthouse process and creates an [lighthouse report artifact in github](https://github.com/SparkPost/support-docs/actions/workflows/lighthouse.yml). Our goal is to keep these scores in the green as much as possible.
 
-#### Uptime monitoring
+### Uptime monitoring
 
 We plan on leveraging CloudWatch Canary, but right now we have access to Netlify's uptime monitoring on their site.
 
