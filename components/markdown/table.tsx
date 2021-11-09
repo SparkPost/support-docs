@@ -7,7 +7,7 @@ type TableProps = {
 const Table = (props: TableProps): JSX.Element => {
   const { children } = props;
   return (
-    <Box mb="550" px="400">
+    <Box mb="550" px="500">
       <Panel>
         <MBTable p="500">
           {children}
