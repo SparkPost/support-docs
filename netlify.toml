@@ -1,9 +1,3 @@
-[build]
-publish = ".next"
-
-[[plugins]]
-package = "@netlify/plugin-nextjs"
-
 # A redirect rule with many of the supported properties
 [[redirects]]
   from = "/"
