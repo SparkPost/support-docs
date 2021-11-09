@@ -39,7 +39,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
     paths: getAllCategoryPostPaths('docs'),
-    fallback: false,
+    fallback: 'blocking',
   };
 };
 

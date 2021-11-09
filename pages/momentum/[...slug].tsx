@@ -40,7 +40,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
     paths: getAllCategoryPostPaths('momentum'),
-    fallback: false,
+    fallback: 'blocking',
   };
 };
 
