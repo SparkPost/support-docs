@@ -23,30 +23,33 @@ export interface MomentumNavigationItemProps {
   level?: number;
 }
 
-const StyledLink = styled(Box)<BoxProps & { $active?: boolean }>`
+const StyledLink = styled.a<{ $active?: boolean; $level?: number }>`
+  display: block;
   cursor: pointer;
   overflow-wrap: anywhere;
-  a,
-  a:visited,
-  a:hover,
-  a:active {
-    color: inherit;
+
+  &,
+  &:visited,
+  &:active {
     text-decoration: none;
+    ${({ $active, $level }) =>
+      css({
+        py: '200',
+        pr: '700',
+        pl: `calc(${tokens.spacing_500} + ${tokens.spacing_200} * ${$level})`,
+        bg: $active ? 'blue.700' : 'transparent',
+        color: $active ? 'white' : 'gray.900',
+      })}
   }
+
   &:hover {
     ${({ $active }) => {
       return css({
         bg: $active ? 'blue.700' : 'gray.200',
-        color: $active ? 'white' : 'inherit',
+        color: $active ? 'white' : 'gray.900',
       });
     }}
   }
-  ${({ $active }) => {
-    return css({
-      bg: $active ? 'blue.700' : 'transparent',
-      color: $active ? 'white' : 'inherit',
-    });
-  }}
 `;
 
 const StatusColorMap = {
@@ -62,68 +65,70 @@ const MomentumNavigation = (): JSX.Element | null => {
 
   return (
     <Box width={['100%', null, '260px']} position="sticky" top="0">
-      <StyledLink $active={environment?.location?.pathname === '/momentum'}>
-        <Link href="/momentum" passHref>
+      <Link href="/momentum" passHref>
+        <StyledLink $active={environment?.location?.pathname === '/momentum'}>
           <Box
-            as="a"
             display={['none', null, 'inline-block']}
             fontSize="200"
-            fontWeight="semibold"
-            py="200"
             lineHeight="200"
-            px="500"
+            fontWeight="semibold"
+            pl="500"
           >
             Momentum Documentation
           </Box>
-        </Link>
-      </StyledLink>
+        </StyledLink>
+      </Link>
       {data.map((item, i) => (
         <Item key={i} {...item} />
       ))}
       <Box py="450" mt="450" borderTop="400">
-        <StyledLink px="500" py="200">
-          <Link href="http://slack.sparkpost.com" passHref>
-            <a target="_blank">
+        <Link href="http://slack.sparkpost.com" passHref>
+          <StyledLink target="_blank" rel="noreferrer">
+            <Box px="500">
               <Forum size={20} />
               <Box as="span" pl="300">
                 Community
               </Box>
-            </a>
-          </Link>
-        </StyledLink>
-        <StyledLink px="500" py="200">
-          <Link href="https://www.sparkpost.com/case-studies/" passHref>
-            <a target="_blank">
+            </Box>
+          </StyledLink>
+        </Link>
+
+        <Link href="https://www.sparkpost.com/case-studies/" passHref>
+          <StyledLink target="_blank" rel="noreferrer">
+            <Box px="500">
               <PeopleOutline size={20} />
               <Box as="span" pl="300">
                 Customers
               </Box>
-            </a>
-          </Link>
-        </StyledLink>
-        <StyledLink px="500" py="200">
-          <Link href="https://www.sparkpost.com/blog/category/developer/" passHref>
-            <a target="_blank">
+            </Box>
+          </StyledLink>
+        </Link>
+
+        <Link href="https://www.sparkpost.com/blog/category/developer/" passHref>
+          <StyledLink target="_blank" rel="noreferrer">
+            <Box px="500">
               <Code size={20} />
               <Box as="span" pl="300">
                 Developer Blog
               </Box>
-            </a>
-          </Link>
-        </StyledLink>
-        <StyledLink px="500" py="200">
-          <Link href="https://developers.sparkpost.com/" passHref>
-            <a target="_blank">
+            </Box>
+          </StyledLink>
+        </Link>
+
+        <Link href="https://developers.sparkpost.com/" passHref>
+          <StyledLink target="_blank" rel="noreferrer">
+            <Box px="500">
               <DeviceHub size={20} />
               <Box as="span" pl="300">
                 Developer Hub
               </Box>
-            </a>
-          </Link>
-        </StyledLink>
-        <StyledLink px="500" py="200">
-          <Link href="https://status.sparkpost.com/" passHref>
-            <a target="_blank">
+            </Box>
+          </StyledLink>
+        </Link>
+
+        <Link href="https://status.sparkpost.com/" passHref>
+          <StyledLink target="_blank" rel="noreferrer">
+            <Box px="500">
               {/* Placeholder until Circle icon is added to Matchbox */}
               <Box
                 as="span"
@@ -142,9 +147,9 @@ const MomentumNavigation = (): JSX.Element | null => {
               <Box as="span" pl="300">
                 Service Status
               </Box>
-            </a>
-          </Link>
-        </StyledLink>
+            </Box>
+          </StyledLink>
+        </Link>
       </Box>
     </Box>
   );
@@ -214,16 +219,11 @@ const Item = (props: MomentumNavigationItemProps): JSX.Element => {
 
   return (
     <Box fontSize="200" lineHeight="200" position="relative">
-      <StyledLink
-        py="200"
-        pr="700"
-        pl={`calc(${tokens.spacing_500} + ${tokens.spacing_200} * ${level})`}
-        $active={active}
-      >
-        <Link href={link} passHref>
-          <a>{title}</a>
-        </Link>
-      </StyledLink>
+      <Link href={link} passHref>
+        <StyledLink $active={active} $level={level}>
+          {title}
+        </StyledLink>
+      </Link>
 
       {items && (
         <StyledChevronWrapper
