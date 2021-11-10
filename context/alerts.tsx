@@ -2,7 +2,7 @@ import React from 'react';
 import { SnackbarProps } from '@sparkpost/matchbox';
 import { createContext, useReducer } from 'react';
 
-type AlertProps = Pick<SnackbarProps, 'status'> & {
+export type AlertProps = Pick<SnackbarProps, 'status'> & {
   title: string;
   id: string;
 }
