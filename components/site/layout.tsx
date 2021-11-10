@@ -2,6 +2,7 @@ import { Box, BoxProps, Drawer, useDrawer } from '@sparkpost/matchbox';
 import Header from 'components/site/header';
 import Footer from 'components/site/footer';
 import HeaderButtons from 'components/site/headerButtons';
+import Alerts from 'components/site/alerts';
 import styled from 'styled-components';
 import { useRouter } from 'next/router';
 
@@ -29,6 +30,7 @@ const Layout = (props: LayoutProps): JSX.Element => {
 
   return (
     <Box display="flex" flexDirection="column" minHeight="100vh" bg="gray.100">
+      <Alerts />
       <Box flex="1" mx="auto" px="400" maxWidth="1400" width="100%">
         <Drawer {...getDrawerProps()} position="right" id="mobile-menu">
           <Drawer.Header>
