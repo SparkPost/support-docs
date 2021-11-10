@@ -12,7 +12,7 @@ const StyledButton = styled.button`
 `;
 
 type HeaderProps = {
-  getActivatorProps: () => object;
+  getActivatorProps?: () => object;
 };
 
 const Header = (props: HeaderProps) => {
@@ -25,10 +25,12 @@ const Header = (props: HeaderProps) => {
       <Box as="header" height="650" display="flex" justifyContent="space-between" mb="500">
         <Logo />
         <Box display={['block', null, 'none']} marginTop="15px">
-          <StyledButton {...getActivatorProps()}>
-            <ScreenReaderOnly>Open Menu</ScreenReaderOnly>
-            <Menu size={24} />
-          </StyledButton>
+          {getActivatorProps && (
+            <StyledButton {...getActivatorProps()}>
+              <ScreenReaderOnly>Open Menu</ScreenReaderOnly>
+              <Menu size={24} />
+            </StyledButton>
+          )}
         </Box>
         <Box display={['none', null, 'block']}>
           <HeaderButtons />
