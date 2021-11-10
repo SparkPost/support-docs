@@ -4,9 +4,9 @@
 
 This repo contains the SparkPost and Momentum documentation published at https://support.sparkpost.com/docs and https://support.sparkpost.com/momentum.
 
-SparkPost documentation is located in the `docs/` directory.
+SparkPost documentation is located in the `content/docs/` directory.
 
-Momentum documentation is located in the `momentum/` directory.
+Momentum documentation is located in the `content/momentum/` directory.
 
 All content is formatted in [Markdown](https://daringfireball.net/projects/markdown/syntax) and version control is managed by Github.
 
@@ -56,7 +56,7 @@ While this document
 
 ### Articles
 
-Markdown articles live in the `support` or `momentum` folders. Every folder inside of the `support` or `momentum` folder is category (e.g. api, billing). The articles are formatted using [Markdown](https://daringfireball.net/projects/markdown/syntax). Each article contains YAML metadata at the top, called frontmatter, used to set the title, description, and other options.
+Markdown articles live in the `docs` or `momentum` folders. Every folder inside of the `docs` or `momentum` folder is category (e.g. api, billing). The articles are formatted using [Markdown](https://daringfireball.net/projects/markdown/syntax). Each article contains YAML metadata at the top, called frontmatter, used to set the title, description, and other options.
 
 The rest of the article content is written in plain Markdown, a simple syntax that can be used to write content for the web. A [Markdown tutorial](http://www.markdowntutorial.com/) is available on GitHub.
 
