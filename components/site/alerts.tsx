@@ -12,7 +12,7 @@ const Alerts = (): JSX.Element => {
       <AnimatePresence>
         {state.alerts.map(alert => {
           return (
-            <Alert {...alert} />
+            <Alert key={alert.id} {...alert} />
           )
         })}
       </AnimatePresence>
