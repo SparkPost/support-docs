@@ -75,7 +75,7 @@ const Feedback = (): JSX.Element => {
     track('User Feedback', {
       url: asPath,
       docs: asPath.includes('momentum') ? 'momentum' : 'support',
-      helpful: 'yes'
+      helpful: true
     });
     createAlert();
   }
@@ -85,7 +85,7 @@ const Feedback = (): JSX.Element => {
     track('User Feedback', {
       url: asPath,
       docs: asPath.includes('momentum') ? 'momentum' : 'support',
-      helpful: 'No',
+      helpful: false,
       reason: reason?.label || ''
     })
     onClose();
