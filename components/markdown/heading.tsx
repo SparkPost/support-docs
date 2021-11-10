@@ -1,12 +1,36 @@
 import React from 'react';
 import { Box, BoxProps } from '@sparkpost/matchbox';
+import { tokens } from '@sparkpost/design-tokens';
 import * as Polymorphic from 'utils/types';
+import { slugify } from 'utils/string';
 import Container from './container';
+import css from '@styled-system/css';
 import styled from 'styled-components';
 
 const StyledHeading = styled(Box)<BoxProps>`
   div:first-child > & {
     padding-top: 0;
+  }
+`;
+
+const StyledAnchorLink = styled.a<{ $hovered?: boolean }>`
+  display: inline-block;
+  text-decoration: none;
+  transition: ${tokens.motionDuration_fast};
+
+  &,
+  &:visited {
+    ${({ $hovered }) =>
+      css({
+        color: 'gray.700',
+        pl: '200',
+        opacity: $hovered ? '1' : '0',
+      })}
+  }
+  &:hover {
+    ${css({
+      color: 'blue.700',
+    })}
   }
 `;
 
@@ -67,21 +91,33 @@ export const getPaddingTop = (as?: As): string => {
 
 const Heading = React.forwardRef<HTMLHeadingElement, HeadingProps>(function Heading(props, ref) {
   const { children, as } = props;
+  const [hovered, setHovered] = React.useState<boolean>(false);
+
+  const childrenAsString = React.Children.toArray(children)
+    .filter((child) => typeof child === 'string')
+    .join('-');
+  const slugified = slugify(childrenAsString);
 
   return (
     <Container>
-      <StyledHeading
-        as={as}
-        fontSize={getFontSize(as)}
-        lineHeight={getFontSize(as)}
-        mb={getMarginBottom(as)}
-        pt={getPaddingTop(as)}
-        fontWeight="medium"
-        ref={ref}
-        color="gray.1000"
-      >
-        {children}
-      </StyledHeading>
+      <div onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}>
+        <StyledHeading
+          as={as}
+          id={slugified}
+          fontSize={getFontSize(as)}
+          lineHeight={getFontSize(as)}
+          mb={getMarginBottom(as)}
+          pt={getPaddingTop(as)}
+          fontWeight="medium"
+          ref={ref}
+          color="gray.1000"
+        >
+          {children}
+          <StyledAnchorLink href={`#${slugified}`} aria-hidden="true" $hovered={hovered}>
+            #
+          </StyledAnchorLink>
+        </StyledHeading>
+      </div>
     </Container>
   );
 }) as Polymorphic.ForwardRefComponent<'div', BoxProps>;
