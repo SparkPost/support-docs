@@ -1,5 +1,6 @@
 import Breadcrumbs from 'components/site/breadcrumbs';
 import { Box, Tag } from '@sparkpost/matchbox';
+import Feedback from 'components/site/feedback';
 import React from 'react';
 
 type DocumentationPageProps = {
@@ -33,6 +34,7 @@ const DocumentationPage = ({
       </Box>
       <Box as="hr" my="500" />
       <Box px="0">{children}</Box>
+      <Feedback />
     </>
   );
 };

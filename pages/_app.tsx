@@ -11,6 +11,7 @@ import Segment from 'components/site/segment';
 import GTM from 'components/site/gtm';
 import Status from 'components/site/status';
 import { getWindow } from 'utils/ssr';
+import { AlertsProvider } from 'context/alerts';
 import '../public/assets/fonts.css';
 
 /**
@@ -54,7 +55,9 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
       <Segment />
       <GTM />
       <Status />
-      <Component {...pageProps} />
+      <AlertsProvider>
+        <Component {...pageProps} />
+      </AlertsProvider>
       <CookieConsent />
     </ThemeProvider>
   );
