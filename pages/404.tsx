@@ -74,12 +74,15 @@ const OhhhNoes: NextPage = () => {
               mt="500"
               mb={['700', null, '434px']}
             >
-              <Image className="next-image" src="/404.png" width="1179" height="532" />
+              <Image
+                className="next-image"
+                alt="404 image"
+                src="/404.png"
+                width="1179"
+                height="532"
+              />
             </Box>
           </Box>
-          {/* <div className={`next-image-wrapper`} style={style}> */}
-
-          {/* </div> */}
         </LayoutInnerContent>
       </LayoutWrap>
     </>
