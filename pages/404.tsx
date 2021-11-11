@@ -24,9 +24,6 @@ const StyledLink = styled(Box)`
 `;
 
 const OhhhNoes: NextPage = () => {
-  const width = 1179;
-  const height = 532;
-  const style = { paddingBottom: `clamp(350px, ${100 / (width / height)}%, 400px)` };
   return (
     <>
       <SEO
