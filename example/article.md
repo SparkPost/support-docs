@@ -55,7 +55,7 @@ You can link to external resources using this format: `[text here](link here)`. 
 
 ### Images
 
-Here's an image (put those in the `media` folder for the category in the root `public/content/` directory). For this example, the image path would be in `public/content/example/media/example.png`. This is because next.js requires that images be contained in `public/`:
+Here's an image (put those in the `media` folder for the category):
 
 ![Alternative text here](example/media/example.png)
 
