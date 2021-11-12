@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { ThemeProvider } from '@sparkpost/matchbox';
 import * as gtag from '../utils/gtm';
+import { page as segmentPage } from 'utils/segment';
 import * as Sentry from '@sentry/react';
 import { Integrations } from '@sentry/tracing';
 import CookieConsent from 'components/site/cookieConsent';
@@ -43,6 +44,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
   useEffect(() => {
     const handleRouteChange = (url: URL) => {
       gtag.pageview(url);
+      segmentPage();
     };
     router.events.on('routeChangeComplete', handleRouteChange);
     return () => {
