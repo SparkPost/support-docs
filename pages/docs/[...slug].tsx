@@ -1,5 +1,10 @@
 import { GetStaticProps, GetStaticPaths } from 'next';
-import { getAllCategoryPostPaths, getSingleCategoryPost, categoryPath } from 'lib/api';
+import {
+  getSupportDocsNavigation,
+  getAllCategoryPostPaths,
+  getSingleCategoryPost,
+  categoryPath,
+} from 'lib/api';
 import SEO from 'components/site/seo';
 import Markdown from 'components/markdown';
 import DocsLayout from 'components/site/docsLayout';
@@ -15,7 +20,8 @@ type PostPageProps = {
 };
 
 const PostPage = (props: PostPageProps): JSX.Element => {
-  const { content, data } = props;
+  const { content, data, navigationData } = props;
+  console.log(navigationData);
   return (
     <>
       <SEO title={data.title} description={data.description} />
@@ -33,7 +39,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     return { props: {} };
   }
   const { content, data } = getSingleCategoryPost(params.slug, categoryPath('docs')) || {};
-  return { props: { content, data } };
+  const navigationData = getSupportDocsNavigation() || 'test';
+  return { props: { content, data, navigationData } };
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {

@@ -60,3 +60,59 @@ export const getSingleCategoryPost = (
 
   return;
 };
+
+function insert(acc: { [key: string]: any }, item: { [key: string]: any }) {
+  const parts = item.url.split('/').slice(1);
+  const [docs, head, ...tail] = parts;
+
+  if (tail.length > 2) {
+  }
+  if (acc.find(({ category }) => category === head)) {
+    const index = acc.findIndex(({ category }) => category === head);
+    acc[index].items.push({
+      category: head,
+      items: [],
+      ...item,
+    });
+  } else {
+    acc.push({
+      category: head,
+      items: [],
+      ...item,
+    });
+  }
+
+  return acc;
+}
+
+export const getSupportDocsNavigation = () => {
+  // const insert = (children = [], [head, ...tail]) => {
+  //   console.log('insert');
+  //   let child = children.find((child) => child.name === head);
+  //   if (!child) children.push((child = { name: head, children: [] }));
+  //   if (tail.length > 0) {
+  //     insert(child.children, tail);
+  //   }
+  //   return children;
+  // };
+
+  const files = glob.sync('content/docs/**/*.md');
+
+  const data = files.reduce((acc, file) => {
+    const { data } = matter(fs.readFileSync(file, 'utf8'));
+    const withoutIndex = file.includes('index.md') ? file.replace(/\/index.md$/, '') : file;
+    const withoutExtensions = withoutIndex.replace(/.md$/, '');
+    const withoutContentPrefix = withoutExtensions.replace('docs/content/', '/');
+
+    acc.push({
+      title: data.title,
+      url: withoutContentPrefix,
+    });
+
+    return acc;
+  }, []);
+
+  const nestedData = data.reduce(insert, []);
+
+  return nestedData;
+};
