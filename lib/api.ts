@@ -12,6 +12,10 @@ export const categoryPath = (category: CategoryOption): string => {
   );
 };
 
+const readFile = (filePath: string) => {
+  return matter(fs.readFileSync(filePath, 'utf8'));
+};
+
 /**
  * Gets all markdown posts paths in a specific directory.
  * This tells Next.js which routes the site needs.
@@ -51,12 +55,40 @@ export const getSingleCategoryPost = (
 
   // If file exists, it is not an index page.
   if (fs.existsSync(filePath)) {
-    return { isIndex: false, ...matter(fs.readFileSync(filePath, 'utf8')) };
+    return { isIndex: false, ...readFile(filePath) };
   }
 
   if (fs.existsSync(indexPath)) {
-    return { isIndex: true, ...matter(fs.readFileSync(indexPath, 'utf8')) };
+    return { isIndex: true, ...readFile(indexPath) };
   }
 
   return;
+};
+
+/**
+ * Retrieves navigation data from /content/docs
+ */
+export const getSupportNavigation = () => {
+  // Get categories first
+  const categories = glob.sync('content/docs/**/index.md');
+  const categoryData = categories.map((file) => {
+    const { data } = readFile(file);
+    const link = file.replace(/\/index.md$/, '').replace(/^content/, '');
+    return { ...data, title: data.name, link };
+  });
+
+  // Then populate category items
+  const navigationData = categoryData.map((category) => {
+    const postsInCategory = glob.sync(`content${category.link}/*.md`);
+    return {
+      ...category,
+      items: postsInCategory.map((file) => {
+        const { data } = readFile(file);
+        const link = file.replace(/.md$/, '').replace(/^content/, '');
+        return { ...data, link };
+      }),
+    };
+  });
+
+  return navigationData;
 };

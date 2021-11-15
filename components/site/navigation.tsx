@@ -14,14 +14,19 @@ import styled from 'styled-components';
 import css from '@styled-system/css';
 import { tokens } from '@sparkpost/design-tokens';
 import useStatus from 'hooks/useStatus';
-import data from 'content/momentum/navigation.yml';
 
-export interface MomentumNavigationItemProps {
+export interface NavigationItemProps {
   title: string;
   link: string;
   items?: this[];
   level?: number;
 }
+
+type NavigationProps = {
+  data?: NavigationItemProps[];
+  title: string;
+  titleLink: string;
+};
 
 const StyledLink = styled.a<{ $active?: boolean; $level?: number }>`
   display: block;
@@ -59,14 +64,14 @@ const StatusColorMap = {
   critical: 'red.700',
 };
 
-const MomentumNavigation = (): JSX.Element | null => {
+const Navigation = (props: NavigationProps): JSX.Element | null => {
+  const { data = [], title, titleLink } = props;
   const { status } = useStatus();
-  const environment = getWindow();
 
   return (
     <Box width={['100%', null, '260px']} position="sticky" top="0">
-      <Link href="/momentum" passHref>
-        <StyledLink $active={environment?.location?.pathname === '/momentum'}>
+      <Link href={titleLink} passHref>
+        <StyledLink>
           <Box
             display={['none', null, 'inline-block']}
             fontSize="200"
@@ -74,7 +79,7 @@ const MomentumNavigation = (): JSX.Element | null => {
             fontWeight="semibold"
             pl="500"
           >
-            Momentum Documentation
+            {title}
           </Box>
         </StyledLink>
       </Link>
@@ -164,9 +169,9 @@ const getActiveUrl = (location: any) => {
 };
 
 const findActiveChild = (
-  items: MomentumNavigationItemProps[],
+  items: NavigationItemProps[],
   activeUrl: string,
-): MomentumNavigationItemProps | undefined => {
+): NavigationItemProps | undefined => {
   return items.find((item) => {
     const hasDirectChild = item.link == activeUrl;
 
@@ -200,7 +205,7 @@ const StyledChevronWrapper = styled(Box)<BoxProps & { $active?: boolean }>`
   }}
 `;
 
-const Item = (props: MomentumNavigationItemProps): JSX.Element => {
+const Item = (props: NavigationItemProps): JSX.Element => {
   const { link, title, items, level = 0 } = props;
   const [active, setActive] = React.useState<boolean>(false);
   const [expanded, setExpanded] = React.useState<boolean>(false);
@@ -249,4 +254,4 @@ const Item = (props: MomentumNavigationItemProps): JSX.Element => {
   );
 };
 
-export default MomentumNavigation;
+export default Navigation;
