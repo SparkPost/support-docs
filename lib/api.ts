@@ -79,7 +79,7 @@ export const getSupportNavigation = () => {
 
   // Then populate category items
   const navigationData = categoryData.map((category) => {
-    const postsInCategory = glob.sync(`content${category.link}/*.md`);
+    const postsInCategory = glob.sync(`content${category.link}/!(index).md`);
     return {
       ...category,
       items: postsInCategory.map((file) => {
