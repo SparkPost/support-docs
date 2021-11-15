@@ -3,7 +3,7 @@ import { Box, Tag } from '@sparkpost/matchbox';
 import Feedback from 'components/site/feedback';
 import React from 'react';
 
-type DocumentationPageProps = {
+type DocumentationContentProps = {
   children?: React.ReactNode;
   title?: string;
   lastUpdated?: string;
@@ -13,11 +13,11 @@ const formatDate = (date: string): string => {
   return new Date(date).toLocaleDateString('en-us', { month: 'long', year: 'numeric' });
 };
 
-const DocumentationPage = ({
+const DocumentationContent = ({
   children,
   title,
   lastUpdated,
-}: DocumentationPageProps): JSX.Element => {
+}: DocumentationContentProps): JSX.Element => {
   return (
     <>
       <Box px="500">
@@ -39,4 +39,4 @@ const DocumentationPage = ({
   );
 };
 
-export default DocumentationPage;
+export default DocumentationContent;
