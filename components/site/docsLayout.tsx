@@ -1,13 +1,22 @@
 import Layout from './layout';
-import DocsNavigation from './docsNavigation';
+import Navigation, { NavigationItemProps } from './navigation';
 
 type LayoutProps = {
   children?: React.ReactNode;
+  navigationData?: NavigationItemProps[];
 };
 
 const DocsLayout = (props: LayoutProps): JSX.Element => {
-  const { children } = props;
-  return <Layout navigationComponent={<DocsNavigation />}>{children}</Layout>;
+  const { children, navigationData } = props;
+  return (
+    <Layout
+      navigationComponent={
+        <Navigation data={navigationData} title="Documentation" titleLink="/docs" />
+      }
+    >
+      {children}
+    </Layout>
+  );
 };
 
 export default DocsLayout;

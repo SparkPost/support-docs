@@ -1,8 +1,16 @@
 import DocsHomePageContent from 'components/site/docsHomePageContent';
+import { GetStaticProps } from 'next';
 import SEO from 'components/site/seo';
 import DocsLayout from 'components/site/docsLayout';
+import { getSupportNavigation } from 'lib/api';
+import type { NavigationItemProps } from 'components/site/navigation';
 
-const IndexPage = (): JSX.Element => {
+type IndexPageProps = {
+  navigationData?: NavigationItemProps[];
+};
+
+const IndexPage = (props: IndexPageProps): JSX.Element => {
+  const { navigationData } = props;
   return (
     <>
       <SEO
@@ -14,6 +22,11 @@ const IndexPage = (): JSX.Element => {
       </DocsLayout>
     </>
   );
+};
+
+export const getStaticProps: GetStaticProps = async () => {
+  const navigationData = getSupportNavigation() || [];
+  return { props: { navigationData } };
 };
 
 export default IndexPage;

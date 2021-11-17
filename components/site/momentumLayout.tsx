@@ -1,5 +1,6 @@
-import MomentumNavigation from 'components/site/momentumNavigation';
+import Navigation from 'components/site/navigation';
 import Layout from './layout';
+import data from 'content/momentum/navigation.yml';
 
 type LayoutProps = {
   children?: React.ReactNode;
@@ -7,7 +8,15 @@ type LayoutProps = {
 
 const MomentumLayout = (props: LayoutProps): JSX.Element => {
   const { children } = props;
-  return <Layout navigationComponent={<MomentumNavigation />}>{children}</Layout>;
+  return (
+    <Layout
+      navigationComponent={
+        <Navigation data={data} title="Momentum Documentation" titleLink="/momentum" />
+      }
+    >
+      {children}
+    </Layout>
+  );
 };
 
 export default MomentumLayout;
