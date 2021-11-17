@@ -131,6 +131,7 @@ const BoxStyledLink = styled.a`
   border-style: solid;
   background-color: transparent;
   transition: background-color 0.3s;
+  min-width: 165px;
   ${css({
     color: 'gray.900',
     paddingX: '450',
@@ -282,7 +283,7 @@ const Card = (props: CardProps): JSX.Element => {
         borderWidth="1px"
         borderStyle="solid"
         borderColor="gray.300"
-        width={['48%', null, '31%']}
+        width={['100%', '48%', '31%']}
         position="relative"
         minWidth="175px"
         my={['500', null, '200']}
@@ -367,7 +368,7 @@ const DocsHomePageContent = () => {
         <hr />
         <Box px="800">
           <SectionContent title={help.title} desc={help.desc} desc2={help.desc2} />
-          <Box display="flex">
+          <Box display="flex" flexWrap="wrap">
             {help.content.map((links) => {
               return <HelpLinks {...links} />;
             })}
