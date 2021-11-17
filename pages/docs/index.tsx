@@ -17,7 +17,7 @@ const IndexPage = (props: IndexPageProps): JSX.Element => {
         title="Support Documentation - SparkPost"
         description="SparkPost Support Documentation"
       />
-      <DocsLayout>
+      <DocsLayout navigationData={navigationData}>
         <DocsHomePageContent />
       </DocsLayout>
     </>
