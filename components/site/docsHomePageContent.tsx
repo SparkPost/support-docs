@@ -90,7 +90,6 @@ const BlueStyledLink = styled.a`
     paddingX: '400',
     marginRight: '200',
   })}
-  /* background-color: transparent; */
   transition: background-color .3s;
   > svg {
     ${css({
@@ -327,8 +326,8 @@ const HelpLink = (props: HelpLinkProps): JSX.Element => {
 const DocsHomePageContent = () => {
   return (
     <>
-      <Stack>
-        <Box p="800">
+      <Stack space="200">
+        <Box px="800" pt="800">
           <Box as="h1" fontSize="600" lineHeight="600" fontWeight="semibold">
             Help & API
           </Box>
