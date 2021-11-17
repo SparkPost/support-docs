@@ -9,6 +9,7 @@ import {
   PeopleOutline,
   Code,
   DeviceHub,
+  Feedback,
 } from '@sparkpost/matchbox-icons';
 import styled from 'styled-components';
 import css from '@styled-system/css';
@@ -87,6 +88,17 @@ const Navigation = (props: NavigationProps): JSX.Element | null => {
         <Item key={i} {...item} />
       ))}
       <Box py="450" mt="450" borderTop="400">
+        <Link href="/submit-a-ticket" passHref>
+          <StyledLink>
+            <Box px="500">
+              <Feedback size={20} />
+              <Box as="span" pl="300">
+                Submit a Ticket
+              </Box>
+            </Box>
+          </StyledLink>
+        </Link>
+
         <Link href="http://slack.sparkpost.com" passHref>
           <StyledLink target="_blank" rel="noreferrer">
             <Box px="500">
