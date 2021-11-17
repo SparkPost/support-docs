@@ -48,7 +48,7 @@ export const getAllCategoryPostPaths = (category: CategoryOption): string[] => {
 export const getSingleCategoryPost = (
   slug: string[] | string,
   catPath: string,
-): { [k: string]: any } | void => {
+): { [k: string]: Object } | void => {
   const postPath = typeof slug === 'string' ? slug : slug.join('/');
   const filePath = path.join(catPath, `${postPath}.md`);
   const indexPath = path.join(catPath, `${postPath}/index.md`);

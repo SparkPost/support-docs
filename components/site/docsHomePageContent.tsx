@@ -1,10 +1,9 @@
 import React from 'react';
-import { Text, Stack, Panel, Box } from '@sparkpost/matchbox';
+import { Text, Stack, Box } from '@sparkpost/matchbox';
 import { Feedback, HelpOutline, QuestionAnswer } from '@sparkpost/matchbox-icons';
 import Link from 'next/link';
 import styled from 'styled-components';
 import css from '@styled-system/css';
-import { getWindow } from 'utils/ssr';
 import { Elixir, PHP, Java, NodeMailer, Python, Node, Go } from './icons';
 
 /*
@@ -314,7 +313,7 @@ const Library = (props: LibraryProps): JSX.Element => {
   );
 };
 
-const HelpLinks = (props: HelpLinkProps): JSX.Element => {
+const HelpLink = (props: HelpLinkProps): JSX.Element => {
   const { Icon, text, url } = props;
   return (
     <Link href={url} passHref>
@@ -326,13 +325,6 @@ const HelpLinks = (props: HelpLinkProps): JSX.Element => {
 };
 
 const DocsHomePageContent = () => {
-  // Hack to bypass a matchbox bug
-  // TypeError: Cannot read property 'matches' of undefined
-  // Panel relies on browser media queries which are not available on server
-  // if (!getWindow()) {
-  //   return null;
-  // }
-
   return (
     <>
       <Stack>
@@ -342,8 +334,8 @@ const DocsHomePageContent = () => {
           </Box>
           <SectionContent title={gettingStarted.title} desc={gettingStarted.desc} />
           <Box display="flex" justifyContent="space-between" flexWrap="wrap">
-            {gettingStarted.content.map((cc) => {
-              return <Card {...cc} />;
+            {gettingStarted.content.map((cc, i) => {
+              return <Card key={`cardKey${i}`} {...cc} />;
             })}
           </Box>
         </Box>
@@ -351,8 +343,8 @@ const DocsHomePageContent = () => {
         <Box px="800">
           <SectionContent title={migrationGuides.title} desc={migrationGuides.desc} />
           <Box>
-            {migrationGuides.content.map((link) => {
-              return <GuideLink {...link} />;
+            {migrationGuides.content.map((link, i) => {
+              return <GuideLink key={`guideLink${i}`} {...link} />;
             })}
           </Box>
         </Box>
@@ -360,8 +352,8 @@ const DocsHomePageContent = () => {
         <Box px="800">
           <SectionContent title={clientLibraries.title} desc={clientLibraries.desc} />
           <Box display="flex" flexWrap="wrap" justifyContent="space-between">
-            {clientLibraries.content.map((library) => {
-              return <Library {...library} />;
+            {clientLibraries.content.map((library, i) => {
+              return <Library key={`library${i}`} {...library} />;
             })}
           </Box>
         </Box>
@@ -369,8 +361,8 @@ const DocsHomePageContent = () => {
         <Box px="800">
           <SectionContent title={help.title} desc={help.desc} desc2={help.desc2} />
           <Box display="flex" flexWrap="wrap">
-            {help.content.map((links) => {
-              return <HelpLinks {...links} />;
+            {help.content.map((links, i) => {
+              return <HelpLink key={`helpLink${i}`} {...links} />;
             })}
           </Box>
         </Box>
