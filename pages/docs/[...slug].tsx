@@ -1,6 +1,6 @@
 import { GetStaticProps, GetStaticPaths } from 'next';
 import {
-  getCategorData,
+  getCategoryData,
   getSupportNavigation,
   getAllCategoryPostPaths,
   getSingleCategoryPost,
@@ -44,7 +44,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   }
   const { content, data } = getSingleCategoryPost(params.slug, categoryPath('docs')) || {};
   const navigationData = getSupportNavigation() || [];
-  const categoryData = getCategorData('docs');
+  const categoryData = getCategoryData('docs');
   return { props: { content, data, navigationData, categoryData } };
 };
 

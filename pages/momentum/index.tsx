@@ -1,5 +1,5 @@
 import { GetStaticProps } from 'next';
-import { getCategorData } from 'lib/api';
+import { getCategoryData } from 'lib/api';
 import MomentumHomePageContent from 'components/site/momentumHomePageContent';
 import SEO from 'components/site/seo';
 import MomentumLayout from 'components/site/momentumLayout';
@@ -25,7 +25,7 @@ const IndexPage = (props: IndexPageProps): JSX.Element => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const categoryData = getCategorData('momentum');
+  const categoryData = getCategoryData('momentum');
   return { props: { categoryData } };
 };
 

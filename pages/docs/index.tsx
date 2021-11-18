@@ -1,5 +1,5 @@
 import { GetStaticProps } from 'next';
-import { getCategorData } from 'lib/api';
+import { getCategoryData } from 'lib/api';
 import SEO from 'components/site/seo';
 import DocsLayout from 'components/site/docsLayout';
 import { getSupportNavigation } from 'lib/api';
@@ -28,7 +28,7 @@ const IndexPage = (props: IndexPageProps): JSX.Element => {
 
 export const getStaticProps: GetStaticProps = async () => {
   const navigationData = getSupportNavigation() || [];
-  const categoryData = getCategorData('docs');
+  const categoryData = getCategoryData('docs');
   return { props: { navigationData, categoryData } };
 };
 

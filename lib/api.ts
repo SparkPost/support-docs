@@ -96,7 +96,7 @@ export const getSupportNavigation = () => {
 /**
  * Retrieves category information for breadcrumb friendly labels
  */
-export const getCategorData = (category: CategoryOption) => {
+export const getCategoryData = (category: CategoryOption) => {
   const contentPath = `content/${category}`;
   const indexFilePaths = glob.sync(`${contentPath}/**/index.md`);
 
