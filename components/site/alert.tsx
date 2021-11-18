@@ -9,7 +9,7 @@ const DISMISS_MILLISECONDS = 3000;
 
 const MotionBox = styled(motion(Box))`
   ${css({
-    pt: '500'
+    pt: '500',
   })}
 `;
 
@@ -19,26 +19,26 @@ const Alert = (props: AlertProps): JSX.Element => {
 
   useEffect(() => {
     setTimeout(() => {
-      dispatch({ type: 'removeAlert', id: id })
-    }, DISMISS_MILLISECONDS)
-  }, [])
+      dispatch({ type: 'removeAlert', id: id });
+    }, DISMISS_MILLISECONDS);
+  });
 
   return (
-    <MotionBox 
+    <MotionBox
       key={id}
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{
         duration: 0.8,
-        ease: [0, 1, 0.25, 1]
+        ease: [0, 1, 0.25, 1],
       }}
     >
       <Snackbar onDismiss={() => dispatch({ type: 'removeAlert', id: id })} status={status}>
         {title}
       </Snackbar>
     </MotionBox>
-  )
-}
+  );
+};
 
 export default Alert;

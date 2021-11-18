@@ -172,7 +172,7 @@ const Navigation = (props: NavigationProps): JSX.Element | null => {
   );
 };
 
-const getActiveUrl = (location: any) => {
+const getActiveUrl = (location: Location | undefined) => {
   if (!location) {
     return '';
   }

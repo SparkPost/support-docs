@@ -5,7 +5,7 @@ import { getWindow } from 'utils/ssr';
 declare global {
   interface Window {
     StatusPage: {
-      page: any
+      page: any;
     };
   }
 }
@@ -16,26 +16,27 @@ const Status = () => {
 
   return (
     <>
-      <Script src="https://cdn.statuspage.io/se-v2.js"
-        onLoad={()=> {
-          if(environment && environment.StatusPage) {
-            const sp = new environment.StatusPage.page({ page : '7ky1q6zd3fyp' })
+      <Script
+        src="https://cdn.statuspage.io/se-v2.js"
+        onLoad={() => {
+          if (environment && environment.StatusPage) {
+            const sp = new environment.StatusPage.page({ page: '7ky1q6zd3fyp' });
 
             sp.status({
-              success: function(data: {
+              success: function (data: {
                 status: {
-                  indicator: 'none' | 'minor' | 'major' | 'critical'
-                }
+                  indicator: 'none' | 'minor' | 'major' | 'critical';
+                };
               }) {
-                const status = data?.status?.indicator
-                setStatus(status)
-              }
-            })
+                const status = data?.status?.indicator;
+                setStatus(status);
+              },
+            });
           }
-        }}  
+        }}
       />
     </>
-  )
-}
+  );
+};
 
 export default Status;

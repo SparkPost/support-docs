@@ -1,3 +1,4 @@
+import DocsHomePageContent from 'components/site/docsHomePageContent';
 import { GetStaticProps } from 'next';
 import SEO from 'components/site/seo';
 import DocsLayout from 'components/site/docsLayout';
@@ -17,7 +18,7 @@ const IndexPage = (props: IndexPageProps): JSX.Element => {
         description="SparkPost Support Documentation"
       />
       <DocsLayout navigationData={navigationData}>
-        <div>There's nothing here yet</div>
+        <DocsHomePageContent />
       </DocsLayout>
     </>
   );
