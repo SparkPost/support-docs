@@ -1,9 +1,7 @@
 ---
-lastUpdated: "03/26/2020"
-name: "Momentum 3.x"
-title: "Category File"
-description: ""
-type: "custom"
+lastUpdated: '03/26/2020'
+title: 'Momentum 3.x'
+description: ''
 ---
 
 ## Reference for Version 3.x
@@ -18,4 +16,4 @@ Confidential & Proprietary.
 
 This book documents Message Systems Momentum.
 
-* * *
+---
