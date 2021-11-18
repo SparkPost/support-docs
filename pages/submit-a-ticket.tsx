@@ -1,13 +1,20 @@
+import { GetStaticProps } from 'next';
 import type { NextPage } from 'next';
+import { getSupportNavigation } from 'lib/api';
 import { Box, Text, Button, Stack } from '@sparkpost/matchbox';
 import SEO from 'components/site/seo';
 import DocsLayout from 'components/site/docsLayout';
+import type { NavigationItemProps } from 'components/site/navigation';
 
-const SubmitATicketPage: NextPage = () => {
+type SubmitATicketPageProps = {
+  navigationData?: NavigationItemProps[];
+};
+
+const SubmitATicketPage: NextPage<SubmitATicketPageProps> = ({ navigationData }) => {
   return (
     <>
       <SEO title="Submit A Ticket" />
-      <DocsLayout>
+      <DocsLayout navigationData={navigationData}>
         <Box px="400" maxWidth="1150">
           <Stack>
             <Text as="h1" looksLike="h2">
@@ -42,6 +49,11 @@ const SubmitATicketPage: NextPage = () => {
       </DocsLayout>
     </>
   );
+};
+
+export const getStaticProps: GetStaticProps = async () => {
+  const navigationData = getSupportNavigation() || [];
+  return { props: { navigationData } };
 };
 
 export default SubmitATicketPage;
