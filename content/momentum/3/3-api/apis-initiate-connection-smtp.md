@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "initiate_connection_smtp"
 description: "initiate connection smtp initiates an SMTP connection int initiate connection smtp dr binding now domain record dr int binding struct timeval now This reference page was automatically generated from functions found in the header files in the development branch The function described here may not exist in generally available versions..."
 ---

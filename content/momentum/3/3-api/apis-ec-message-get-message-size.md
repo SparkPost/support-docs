@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "ec_message_get_message_size"
 description: "ec message get message size Returns the message size in bytes size t ec message get message size mess ec message mess Returns the message size mess A pointer to an ec message struct For documentation of this data structure see Section 68 38 ec message The size of the..."
 ---

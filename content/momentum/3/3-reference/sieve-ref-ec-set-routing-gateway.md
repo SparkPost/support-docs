@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "ec_set_routing_gateway"
 description: "ec set routing gateway dynamically change the gateway based on recipient ec set routing gateway address This action sets the gateway for the message in much the same way as the gateway configuration option the message will be queued to the domain specified by the gateway A gateway set with..."
 ---

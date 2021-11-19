@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "msys.validate.dkim.verify_results_get_count"
 description: "msys validate dkim verify results get count return a count of verification results msys validate dkim verify results get count results A message can contain zero or more DKIM signatures If more than one signature is found in a message they are normally found in the different parts of a..."
 ---

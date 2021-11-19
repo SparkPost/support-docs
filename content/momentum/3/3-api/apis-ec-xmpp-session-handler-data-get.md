@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "ec_xmpp_session_handler_data_get"
 description: "ec xmpp session handler data get Retrieve a per handler per session object previously stored via ec xmpp session handler data set ec blobject ec xmpp session handler data get sess handler ec xmpp session sess ec xmpp handler handler This reference page was automatically generated from functions found in..."
 ---

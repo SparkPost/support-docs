@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/05/2020"
+lastUpdated: "03/27/2020"
 title: "mxip - IP Addresses In MX Records"
 description: "Configuration Change This feature is available in Momentum 4 2 and later Several domains on the internet have configured their MX records so that the hostname field contains a textual IP address This is against the DNS standard RFC 1035 Domain Names Implementation and Specification which says that MX records..."
 ---

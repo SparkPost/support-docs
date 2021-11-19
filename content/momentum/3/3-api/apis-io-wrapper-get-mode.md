@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "io_wrapper_get_mode"
 description: "io wrapper get mode Retrieves the mode associated with an io object int io wrapper get mode io io object io This reference page was automatically generated from functions found in the header files in the development branch The function described here may not exist in generally available versions of..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "snmp_trap"
 description: "snmp trap Send SNMP traps from a Sieve script snmp trap hash snmp trap sends an SNM Pv 2 trap described by the given hash which must be created by hash create The hash may have the following elements address IP address of the server to send the trap to..."
 ---

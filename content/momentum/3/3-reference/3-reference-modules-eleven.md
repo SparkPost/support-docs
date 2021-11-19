@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "eleven – Module"
 description: "The eleven module implements the spam filter and e mail categorization service available from http www eleven de If you intend to use this module be sure to choose it during installation For more information see Section 1 9 Installing Additional Packages As of version 3 2 this module is..."
 ---

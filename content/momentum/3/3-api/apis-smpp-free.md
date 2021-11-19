@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "smpp_free"
 description: "smpp free Free memory of the memtype smpp type void smpp free x void x Configuration Change This feature is available starting from Momentum 3 2 Free memory of the memtype smpp type Use this function with memory allocated using smpp malloc x The buffer that will be released This..."
 ---

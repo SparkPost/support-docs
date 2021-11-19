@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "Data Replication"
 description: "The Clustered Replication feature set provided by the Momentum clustering suite is an extensive set of data sharing and aggregation facilities for representing information across node boundaries The following replication types are supported Replication Types cache replicate a data cache across the cluster inbound cidr replicate inbound SMTP connections outbound..."
 ---

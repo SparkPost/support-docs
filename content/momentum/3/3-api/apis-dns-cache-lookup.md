@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "dns_cache_lookup"
 description: "dns cache lookup Check to see if the results for a given query are in the DNS cache dns cache cachenode dns cache lookup query dns cache query query Check to see if the results for a given query are in the DNS cache query The dns cache query A..."
 ---

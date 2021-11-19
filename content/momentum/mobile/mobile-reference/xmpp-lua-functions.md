@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "Lua XMPP Functions"
 description: "The Lua functions used when converting a message to XMPP or the reverse are xmpp send xml stanza string this function accepts a string XMPP stanza as a parameter and returns a boolean to indicate whether the stanza was successfully parsed and routed jid user this function returns the user..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/05/2020"
+lastUpdated: "03/27/2020"
 title: "local_changes_only"
 description: "local changes only whether there is a file for writing local configuration changes local changes only true local changes only defaults to false If it is true it must be defined and all changes are saved to the local changes file If it is false changes are distributed as described..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/05/2020"
+lastUpdated: "03/27/2020"
 title: "Reports and Engagement Tracking in the UI"
 description: "Configuration Change Momentum 4 2 and later adds reporting by template in all reports filtering by domain in the Engagement report and an Adaptive Delivery report The UI provides a flexible easy to use interface to evaluate your message deliverability and campaign performance All the metrics provided in the Metrics..."
 ---

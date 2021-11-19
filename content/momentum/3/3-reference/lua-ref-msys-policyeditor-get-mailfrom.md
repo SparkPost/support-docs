@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "msys.policyeditor.get_mailfrom"
 description: "msys policyeditor get mailfrom Return the envelope sender msys policyeditor get mailfrom ctx vars params Configuration Change This function is deprecated Use local mf msg mailfrom to get the sending address For more information see msg mailfrom Return the envelope sender The ctx parameter is the context containing objects from..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "Glossary"
 description: "Apple Push Notification server AP Ns The Apple Push Notification service AP Ns is a gateway for push notifications sent to Apple devices Apple defines push notifications in the following way Push notifications also known as remote notifications arrive from outside a device They originate on a remote server the..."
 ---

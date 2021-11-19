@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "sl_previous"
 description: "sl previous move iter backward a node return new node's datum void sl previous sl iter Skiplist sl skiplistnode iter This reference page was automatically generated from functions found in the header files in the development branch The function described here may not exist in generally available versions of Momentum..."
 ---

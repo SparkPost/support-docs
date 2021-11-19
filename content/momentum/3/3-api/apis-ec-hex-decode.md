@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "ec_hex_decode"
 description: "ec hex decode decodes bytes from ASCII hex characters int ec hex decode src src len dest dest len const char src size t src len char dest size t dest len This reference page was automatically generated from functions found in the header files in the development branch The..."
 ---

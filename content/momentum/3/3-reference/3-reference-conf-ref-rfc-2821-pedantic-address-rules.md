@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "rfc2821_pedantic_address_rules"
 description: "rfc 2821 pedantic address rules Allow relaxation of enforcement of the rfc 2821 address rules RFC 2821 pedantic address rules false RFC 2821 pedantic address rules true This option is available as of version 3 0 and replaces the version 2 2 option of the same name declared in the..."
 ---

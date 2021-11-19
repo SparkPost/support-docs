@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "Disclaimer"
 description: "Except as expressly set forth in your license agreement Momentum and associated materials including this manual are provided without any warranty of any kind express or implied including without limitation any warranty of merchantability fitness for a particular purpose or non infringement which warranties are expressly disclaimed Without limiting the..."
 ---

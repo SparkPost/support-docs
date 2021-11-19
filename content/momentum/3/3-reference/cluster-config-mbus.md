@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "Message Bus"
 description: "The cluster utilitizes an extended virtual synchrony group communication messaging bus to share information and coordinate operations The message bus process mbusd must run on each node participating in the cluster In addition the mbusd conf configuration file must be identical across those nodes for correct operation of the cluster..."
 ---

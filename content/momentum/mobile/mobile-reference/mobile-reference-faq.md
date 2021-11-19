@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "FAQ"
 description: "6 1 1 I want to install the mobility module Am I right in assuming that configuration of domains specifically for SMPP as opposed to bindings will play a large part in setting up delivery of email to text SMS 6 1 2 When a message status is P permanent..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "ec_valid_mime"
 description: "ec valid mime determine if the message is valid MIME ec valid mime As a part of a conditional test ec valid mime evaluates true if Momentum's internal MIME parser did not find any MIME errors improper headers or encapsulation Note that Momentum's MIME parser follows the RFC mantra be..."
 ---

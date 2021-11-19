@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "audit_connections_on_service"
 description: "audit connections on service Return the number of connections currently established from a CIDR block audit connections on service address mask audit connections on service returns a stringlist containing a single member which is a string containing the number of connections the CIDR block argument currently has established to the..."
 ---

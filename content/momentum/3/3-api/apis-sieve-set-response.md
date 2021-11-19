@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "sieve_set_response"
 description: "sieve set response Set an SMTP response void sieve set response seng smtp code reason reasonlen SENG seng int smtp code const char reason int reasonlen Set an SMTP response seng The Sieve engine state smtp code The SMTP response code reason The reason associated with the code reasonlen The..."
 ---

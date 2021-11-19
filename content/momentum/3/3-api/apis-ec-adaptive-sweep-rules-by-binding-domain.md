@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "ec_adaptive_sweep_rules_by_binding_domain"
 description: "ec adaptive sweep rules by binding domain Return a list of applicable sweep rules for given binding domain pair ec adaptive sweep rule ec adaptive sweep rules by binding domain slot domain ec binding slot slot const char domain This reference page was automatically generated from functions found in the..."
 ---

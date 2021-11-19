@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "smpp_conn"
 description: "This struct is defined as follows To use this struct include the file modules mobility smpp h Chapter 46 SMPP Functions and Section 68 79 SMPP PDU..."
 ---

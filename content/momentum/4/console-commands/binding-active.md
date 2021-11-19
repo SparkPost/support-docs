@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/05/2020"
+lastUpdated: "03/27/2020"
 title: "binding active"
 description: "binding active show domains with active queue size bigger than threshold on a specified binding binding active binding name threshold The binding active command presents information concerning the domains on a given binding with a large number of active messages in queue The command takes a binding name and a..."
 ---

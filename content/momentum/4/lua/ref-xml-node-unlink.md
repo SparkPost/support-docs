@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/05/2020"
+lastUpdated: "03/27/2020"
 title: "node:unlink"
 description: "node unlink Unlink an XML node from its DOM container node unlink Unlink an XML node from its DOM container Call this function when you wish to save the node prior to its container being garbage collected This function returns the XML node object Example 70 83 node unlink example..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/05/2020"
+lastUpdated: "03/27/2020"
 title: "msgpart:header"
 description: "msgpart header If mode is replace or unspecified first deletes all other headers of that name before appending the new value to the message headers msgpart header name value mode If the mode is replace or unspecified first delete all other headers of that name before appending the new value..."
 ---

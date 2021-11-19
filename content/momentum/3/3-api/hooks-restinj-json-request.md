@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "json_request"
 description: "json request int json request closure sess req void closure ec httpsrv session sess struct json object req int has restinj json request hook void register restinj json request hook first hook closure ec hook restinj json request func t hook void closure void register restinj json request hook last..."
 ---

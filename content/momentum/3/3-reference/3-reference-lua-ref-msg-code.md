@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "msg:code"
 description: "msg code Get or set the message code msg code number str Get or set the message code In the case of a get call the parameter list is left empty In the case of set call if number is 0 then the number is taken from str otherwise the..."
 ---

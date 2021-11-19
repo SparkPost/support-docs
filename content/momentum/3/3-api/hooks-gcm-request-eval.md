@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "request_eval"
 description: "request eval Called prior to sending to a GCM notification int request eval closure request msg void closure gcm request request ec message msg Configuration Change This feature is available as of version 3 5 5 This hook is called prior to sending to the Google Cloud Messaging GCM notification..."
 ---

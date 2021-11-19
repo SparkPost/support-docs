@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "echash_init"
 description: "echash init Initialize a hash table void echash init h ec hash table h Initialize a hash table You must first create a hash table using echash create h A hash table created using echash create This function returns void It is legal to call this function in any thread..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "Module Overview"
 description: "All modules in version 3 0 load automatically if you use any of the options they declare or use other resources provided by them In order to set configuration options modules must be explicitly loaded However you need not explicitly declare modules such as the jlog module that don't have..."
 ---

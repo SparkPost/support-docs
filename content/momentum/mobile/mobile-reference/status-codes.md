@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "Command Status Codes"
 description: "The following Command Status Codes are taken from the SMPP 3 4 specification and may appear in smpp logs or the paniclog Table B 1 Command status codes Error Code Hex Value Description Failure Type ESME ROK 0 x 00000000 No Error NA ESME RINVMSGLEN 0 x 00000001 Message Length..."
 ---

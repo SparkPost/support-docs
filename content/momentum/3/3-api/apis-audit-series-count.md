@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "audit_series_count"
 description: "audit series count Get the accumulated counts from a named series for a given key int audit series count name start end key ac const char name int start int end char key accept construct ac This reference page was automatically generated from functions found in the header files in..."
 ---

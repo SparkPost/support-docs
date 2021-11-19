@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/05/2020"
+lastUpdated: "03/27/2020"
 title: "thread.mutex"
 description: "thread mutex create a new mutex thread mutex type Create a new mutex for coordinating access to critical sections The optional parameter may be one of the following thread MUTEX NORMAL this is the default value thread MUTEX RECURSIVE define a recursive lock Returns a mutex object that supports lock..."
 ---

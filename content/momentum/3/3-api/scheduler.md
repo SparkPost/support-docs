@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "Scheduler Functions"
 description: "Table of Contents is scheduler thread Determines whether or not the thread that calls this function is a scheduler thread ping scheduler Pings the master scheduler thread scheduler active queue reinsert Reinsert a delivery construct's messages into the active queue for re processing scheduler close connection Have the scheduler clean..."
 ---

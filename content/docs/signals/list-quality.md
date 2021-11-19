@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/06/2020"
+lastUpdated: "02/08/2020"
 title: "List Quality"
 description: "The Signals recommendation on how to manage your list quality."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/03/2021"
+lastUpdated: "02/24/2021"
 title: "Using Mobile Universal and App Links with SparkPost"
 description: "A guide to including iOS universal links and Android App Links in your SparkPost-delivered email"
 ---

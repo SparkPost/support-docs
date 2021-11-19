@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "msg:makeBoundary"
 description: "msg make Boundary Generates a unique boundary string msg make Boundary The MIME specification requires that each boundary be a unique string that is not a common prefix substring of any other boundary in the complete message This function generates a unique boundary string by assessing the boundaries defined for..."
 ---

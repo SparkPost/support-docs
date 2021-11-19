@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/05/2020"
+lastUpdated: "03/27/2020"
 title: "Using the X-MSYS-API Header for Engagement Tracking"
 description: "The X MSYS API header can be used to override the configuration option to enable or disable engagement tracking for a specific message Also you can specify engagement tracking data in the header fields For details about engagement tracking for SMTP injections see Chapter 41 Tracking Engagement for SMTP X..."
 ---

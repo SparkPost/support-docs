@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "ec_growbuf_io_cur_chunk"
 description: "ec growbuf io cur chunk Return a pointer to the current growbuf chunk and its length int ec growbuf io cur chunk io outbuf io object io char outbuf This reference page was automatically generated from functions found in the header files in the development branch The function described here..."
 ---

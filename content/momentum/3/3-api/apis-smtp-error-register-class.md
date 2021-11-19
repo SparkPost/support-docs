@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "smtp_error_register_class"
 description: "smtp error register class Register a user defined SMTP error class void smtp error register class class code name desc unsigned short class code const char name const char desc Register a user defined SMTP error class This is similar to the functionality provided by the bounce classifier override Module..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/06/2020"
+lastUpdated: "02/08/2020"
 title: "Posting Custom Headers with Webhooks Delivery"
 description: "As an additional security measure for webhooks batch POSTs, you may wish to include custom headers so that batches can be securely sent to your webhook endpoint(s). This gives you the option of rejecting webhook batches if these custom headers and associated values are not included in the batch."
 ---

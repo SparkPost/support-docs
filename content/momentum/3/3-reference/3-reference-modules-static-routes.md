@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "static-routes - Static Routes"
 description: "Configuration Change This feature is available as beta in Momentum 3 6 5 The static routes module routes all traffic to a given server by IP address and port It supports both I Pv 4 and I Pv 6 This module performs much better than the Routes configuration option The..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "msys.policyeditor.get_mess_recv_from"
 description: "msys policyeditor get mess recv from Return the IP port combination from which the message was received msys policyeditor get mess recv from ctx vars params Configuration Change This function is deprecated Use local rip msg reception peer ip to get the IP address of the injecting server For more..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/06/2020"
+lastUpdated: "02/08/2020"
 title: "SPF and ip4 Mechanisms"
 description: "Unfortunately we do not have the luxury of being assigned large blocks of IP space by our provider and so we cannot use the ip 4 mechanism in our SPF records this has meant we've had to look for more creative approaches ones that require extra DNS queries It would..."
 ---

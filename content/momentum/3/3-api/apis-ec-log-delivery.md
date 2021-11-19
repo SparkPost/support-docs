@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "ec_log_delivery"
 description: "ec log delivery Record Momentum deliveries void ec log delivery message domain now notestr ec message message domain record domain struct timeval now const string notestr This function records Momentum deliveries message A pointer to an ec message struct For documentation of this data structure see Section 68 38 ec..."
 ---

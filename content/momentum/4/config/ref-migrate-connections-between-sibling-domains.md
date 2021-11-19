@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/05/2020"
+lastUpdated: "03/27/2020"
 title: "migrate_connections_between_sibling_domains"
 description: "migrate connections between sibling domains optimize connections for sibling domains migrate connections between sibling domains true When this option is false if the active queue for a binding domain pair becomes empty its existing connection s sit idle When set to true Momentum attempts to find a sibling domain which..."
 ---

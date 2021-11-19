@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "tls"
 description: "tls determine whether to use TLS connection for outbound mail TLS no ifavailable required Configuration Change Support for opportunistic TLS is available as of version 3 5 10 for Momentum 3 5 and as of version 3 6 4 for Momentum 3 6 This directive determines whether or not Transport..."
 ---

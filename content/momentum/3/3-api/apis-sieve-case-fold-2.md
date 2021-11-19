@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "sieve_case_fold2"
 description: "sieve case fold 2 int sieve case fold 2 folding srccharset srcstring srclen destcharset folded foldlen int folding const char srccharset const char srcstring unsigned int srclen const char destcharset char folded int foldlen This reference page was automatically generated from functions found in the header files in the development..."
 ---

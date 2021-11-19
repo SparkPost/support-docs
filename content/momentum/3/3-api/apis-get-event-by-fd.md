@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "get_event_by_fd"
 description: "get event by fd Retrieve an event Event get event by fd fd int fd Retrieve an event using a file descriptor fd The file descriptor This function returns an Event Only call this function from the Scheduler thread Section 68 49 Event..."
 ---

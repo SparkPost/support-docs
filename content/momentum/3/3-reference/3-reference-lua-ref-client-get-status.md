@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "client:get_status"
 description: "client get status Return the status of an HTTP request client get status Return the status code and description of an HTTP request Example 15 12 client get status example msys http client new client set timeout client set header client do request client get body client parse headers client..."
 ---

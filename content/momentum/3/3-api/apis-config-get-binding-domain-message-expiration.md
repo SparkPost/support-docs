@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "config_get_binding_domain_message_expiration"
 description: "config get binding domain message expiration Return the value of the message expiration option int config get binding domain message expiration caller scope binding domain generic module infrastructure caller scope int binding const domain Determine the value of the message expiration configuration option The caller scope argument is virtually always..."
 ---

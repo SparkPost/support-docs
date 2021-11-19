@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "ec_rfc3464_delivery_status"
 description: "ec rfc 3464 delivery status return a string containing fields for a RFC 3464 DSN ec rfc 3464 delivery status hash ec rfc 3464 delivery status returns a string containing fields to populate the report part of a RFC 3464 compliant DSN Each field ends with r n Sample output..."
 ---

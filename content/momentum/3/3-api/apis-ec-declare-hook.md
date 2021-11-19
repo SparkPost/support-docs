@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "EC_DECLARE_HOOK"
 description: "EC DECLARE VOID HOOK EC DECLARE HOOK Runtime hooking If you're considering building extensions in a modular fashion where one module can optionally take advantage of features provided by another possibly third party module then you may wish to use the hooking infrastructure in Momentum Hooks are prototyped in a..."
 ---

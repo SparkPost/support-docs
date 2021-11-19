@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "Examples"
 description: "Example 10 1 SMPP Logger Status Hook Lua Example Example 10 2 SMPP Logger Status Hook C Example..."
 ---

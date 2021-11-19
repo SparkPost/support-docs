@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "message details"
 description: "message details show detailed message information message details full body message id While all messages are stored on disk in the spool and can be manually inspected there Momentum also provides a mechanism to view message details from within the console Given a message id you can request the metadata..."
 ---

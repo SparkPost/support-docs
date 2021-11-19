@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/05/2020"
+lastUpdated: "03/27/2020"
 title: "Adding and Removing Analytics Nodes"
 description: "This chapter describes how to add and remove Analytics nodes to and from an existing Momentum 4 2 cluster Adding an Analytics node Vertica Application to an existing cluster is not handled automatically with the current installer script but can be accomplished quickly using a role based meta package and..."
 ---

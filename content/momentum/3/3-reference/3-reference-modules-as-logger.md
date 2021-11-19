@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "as_logger – Audit series logger"
 description: "For background on replicated audit series please read Section 7 7 1 5 Replicated named audit series The as logger module is an eccmgr cluster manager module not an ecelerity module For this reason you cannot add this module using the web UI You must manually change the eccluster conf..."
 ---

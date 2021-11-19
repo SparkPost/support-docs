@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "add_recipient"
 description: "add recipient add a new envelope recipient to the mail add recipient address This action will add an envelope recipient a RCPT TO address to the current mail The headers and the body of the message will not be changed in any way Existing recipients will also not be affected..."
 ---

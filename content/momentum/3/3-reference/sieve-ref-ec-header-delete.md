@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "ec_header_delete"
 description: "ec header delete remove a header from the current message ec header delete field name This will delete the named RFC 2822 header from the current email message You should not use this function in the set binding phases regardless of version and as of Momentum 2 2 2 37..."
 ---

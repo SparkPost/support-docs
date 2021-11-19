@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "ec_convert_string"
 description: "ec convert string Convert a string from one encoding to another int ec convert string fromcode fromstring tocode deststring const char fromcode string fromstring const char tocode string deststring This reference page was automatically generated from functions found in the header files in the development branch The function described here..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/05/2020"
+lastUpdated: "03/27/2020"
 title: "masterdb_file"
 description: "masterdb file specify an alternate path for the statistics permastore masterdb file var log ecelerity ecdb The master db file is used to persistently store statistical information between instance restarts masterdb file is valid in the global scope..."
 ---

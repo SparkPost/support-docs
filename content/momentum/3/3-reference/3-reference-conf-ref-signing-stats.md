@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "signing_stats"
 description: "signing stats control how signing statistics are recorded Signing Stats all Signing Stats global Signing Stats off This option is used to control whether signing statistics are recorded per binding as a global summary only or disabled entirely You might consider setting this option to global or off if you..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "RFC Standard Sieve Enhancements"
 description: "This section describes a number of open standards or draft proposals for Sieve extensions that are implemented in Momentum and that may also be found in other implementations of Sieve The following comparisons and comparators are implemented as specified in RFC 3431 These relational comparisons require an argument that describes..."
 ---

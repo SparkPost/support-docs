@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "ec_base64_decode_space"
 description: "ec base 64 decode space This function returns the number of bytes required to decode a Base 64 encoded string int ec base 64 decode space len int len This function returns the number of bytes required to decode a Base 64 encoded string len The length of the Base..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/06/2020"
+lastUpdated: "02/08/2020"
 title: "Using SparkPost with the Ongage Email Marketing Platform"
 description: "To connect your Spark Post account into the Ongage platform log into your Spark Post account and do the following Set up your desired Sending Domain the domain you want to send email from on Ongage such as myawesomedomain com make sure the domain is verified after you've set up..."
 ---

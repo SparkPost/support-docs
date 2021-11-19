@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/05/2020"
+lastUpdated: "03/27/2020"
 title: "rfc2822_lone_lf_in_body"
 description: "rfc 2822 lone lf in body rfc 2822 conformance rfc 2822 lone lf in body ignore rfc 2822 lone lf in body pedantic rfc 2822 lone lf in body fix RFC 2822 section 2 3 strictly forbids Internet email from containing a carriage return CR or a linefeed LF by..."
 ---

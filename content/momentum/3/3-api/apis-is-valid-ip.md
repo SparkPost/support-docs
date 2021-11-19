@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "is_valid_IP"
 description: "is valid IP Determines whether or not string is a valid IP address int is valid IP string family address const char string u int 8 t family struct in 6 addr address Determines whether or not string is a valid IP address string The string to be validated family..."
 ---

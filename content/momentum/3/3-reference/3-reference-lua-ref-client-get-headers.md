@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "client:get_headers"
 description: "client get headers Get HTTP headers client get headers Get the HTTP headers Use this function in the following way This function returns the raw HTTP headers as a table Use client parse headers to create a key value table where the key is the header name msys http client..."
 ---

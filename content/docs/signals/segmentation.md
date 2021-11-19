@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/06/2020"
+lastUpdated: "02/08/2020"
 title: "Segmentation"
 description: "The Signals recommendation on how to best segment your recipients"
 ---

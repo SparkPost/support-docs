@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "ec_mt_alloc"
 description: "ec mt alloc Makes an allocation against a given memtype void ec mt alloc def size struct ec mem type def def size t size Configuration Change This feature is available starting from Momentum 3 0 18 Makes an allocation against a given memtype For a list of memory types..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/06/2020"
+lastUpdated: "02/08/2020"
 title: "SMTP Connection Problems"
 description: "If you are having problems connecting to Spark Post over SMTP here's a checklist of things to verify The SMTP server name should be smtp sparkpostmail com or on some systems tls smtp sparkpostmail com The port should be 587 Alternately port 2525 can be used in environments where port..."
 ---

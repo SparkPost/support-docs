@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "ec_adaptive_remove_suspension"
 description: "ec adaptive remove suspension function to remove one suspension from backstore int ec adaptive remove suspension spaths prefd nodename bdr err buf buf len const char spaths int prefd const char nodename ec adaptive bdr bdr char err buf size t buf len This reference page was automatically generated from..."
 ---

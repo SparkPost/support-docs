@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "ec_message_part"
 description: "The members of this struct are as follows To use this struct include the file ec message h Section 68 38 ec message and Chapter 34 Message Functions..."
 ---

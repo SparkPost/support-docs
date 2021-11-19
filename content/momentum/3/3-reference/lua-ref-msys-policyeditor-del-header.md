@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "msys.policyeditor.del_header"
 description: "msys policyeditor del header Remove a header from the message msys policyeditor del header ctx vars params Configuration Change This function is deprecated Use msg header X hdr to remove a header For more information see msg header Remove a header from the message The ctx parameter is the context..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "08/01/2021"
+lastUpdated: "08/23/2021"
 title: "Extended Error Codes"
 description: "When developing to the REST api you should be prepared to handle failed requests understand their meaning and what actions are needed to resolve them The following table is a complete list of extended error code responses organized by the four elements included in the response array Component The related..."
 ---

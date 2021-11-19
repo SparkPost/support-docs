@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "Module-related Functions"
 description: "For an overview of the Momentum module API see Section 1 3 1 Module API and for an overview of hooks see Section 1 3 2 Hooking API..."
 ---

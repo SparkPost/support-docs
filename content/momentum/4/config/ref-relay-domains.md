@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/05/2020"
+lastUpdated: "03/27/2020"
 title: "relay_domains"
 description: "relay domains configure the list of domains for which Momentum relays mail relay domains example com example net When Momentum is configured as an inbound mail relay or gateway it is necessary to specify for which domains you are willing to accept mail Accepting mail from anyone for any destination..."
 ---

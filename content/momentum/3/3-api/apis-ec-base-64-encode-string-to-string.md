@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "ec_base64_encode_string_to_string"
 description: "ec base 64 encode string to string Apply base 64 encoding to an ec string and store the result to another ec string where the previous content will be replaced int ec base 64 encode string to string srcstring deststring fold string srcstring string deststring int fold This reference page..."
 ---

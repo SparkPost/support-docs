@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "msgpart:raw_match"
 description: "msgpart raw match Streaming interface to a PCRE search of the current message part msgpart raw match pattern Streaming interface to a PCRE search of the current message part If no match is found false is returned Enable this function with the statement require msys extended message..."
 ---

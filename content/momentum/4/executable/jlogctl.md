@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/05/2020"
+lastUpdated: "03/27/2020"
 title: "jlogctl"
 description: "jlogctl analyze and maintain jlogs opt msys jlog bin jlogctl a subscriber c e subscriber d i l p subscriber r s v path to jlog 1 Use this command to maintain and analyze jlogs This command should be run as ecuser The option descriptions are as follows a subscriber..."
 ---

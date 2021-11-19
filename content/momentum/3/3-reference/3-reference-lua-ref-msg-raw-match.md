@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "msg:raw_match"
 description: "msg raw match Streaming interface to a PCRE search of the message content msg raw match pattern Streaming interface to a PCRE search of the message content This applies to the entire message content headers through body without decoding transfer encoding This function returns all matches If no match is..."
 ---

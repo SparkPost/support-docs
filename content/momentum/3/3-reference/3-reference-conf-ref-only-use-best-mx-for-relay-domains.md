@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "only_use_best_mx_for_relay_domains"
 description: "only use best mx for relay domains If this is set to true only the lowest numerical priority M Xs are used when sending to domains listed in Bounce Domains or Relay Domains only use best mx for relay domains false When the only use best mx for relay domains..."
 ---

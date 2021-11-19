@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "http_status_classifier"
 description: "http status classifier Determine the meaning of the delivery status code int http status classifier status int status Configuration Change This function is available as of Momentum version 3 5 5 In the context of an HTTP delivery determine the meaning of the delivery status code If you need to..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/05/2020"
+lastUpdated: "03/27/2020"
 title: "tracking_link_expiry"
 description: "tracking link expiry set the expiration time for engagement tracking for SMTP injections Tracking Link Expiry 31536000 Configuration Change This option is available as of version 4 1 HF 4 If open or click tracking is enabled this option determines the amount of time in seconds that Momentum will wait..."
 ---

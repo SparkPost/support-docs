@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "rfc2822_date_header"
 description: "rfc 2822 date header rfc 2822 conformance RFC 2822 Date Header ignore RFC 2822 Date Header pedantic RFC 2822 Date Header ifneeded This option is available as of version 3 0 and replaces the version 2 2 option of the same name declared in the RFC 2822 scope From the..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "default_binding"
 description: "default binding control usage of the default binding default binding normal default binding suspended default binding none The default binding is the binding that a message belongs to when no other binding applies For more information see the section called The default Binding For customers using Multi VIP interfaces it..."
 ---

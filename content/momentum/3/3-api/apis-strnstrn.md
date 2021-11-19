@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "strnstrn"
 description: "strnstrn Find a binary substring within a binary string const char strnstrn needle needle len haystack haystack len const char needle int needle len const char haystack int haystack len Find a binary substring within a binary string Search for needle in haystack NUL characters in the strings are ignored..."
 ---

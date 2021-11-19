@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "body_timeout"
 description: "body timeout network timeout once the DATA phase is complete Body Timeout 600 The amount of time in seconds to wait for a response once the DATA phase has been terminated by a CRLF CRLF This timeout is relatively long because this is the only phase of transmission which involves..."
 ---

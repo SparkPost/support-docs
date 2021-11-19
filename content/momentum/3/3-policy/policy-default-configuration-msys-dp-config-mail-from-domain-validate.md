@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "msys.dp_config.mail_from_domain_validate"
 description: "This table configures MAIL FROM domain validation Find below the sample excerpt included in the dp config lua file The elements of this configuration table are as follows check Whether or not to use this configuration item failure code The SMTP code to use when validation fails Typically this is..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/05/2020"
+lastUpdated: "03/27/2020"
 title: "routes"
 description: "routes configure message routing Routes smtp 1 2 3 4 pref 10 ttl 300 type mx Routes my local smart host Routes mx Routes smtp my local smart host pref 1 mx The routes option allows you to specify how you would like mail for a given domain to be..."
 ---

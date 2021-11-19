@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "ec_message_set_next_attempt"
 description: "ec message set next attempt Determines and sets the next attempt time for the message int ec message set next attempt mess now ec message mess struct timeval now Determines and sets the next attempt time for the message mess A pointer to an ec message struct For documentation of..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "auth_ds – Datasource based SMTP Authentication"
 description: "Configuration Change This module is loaded automatically as required and does not need to be explicitly included With this module Momentum can provide authenticated SMTP sessions via SMTP AUTH by using any supported datasource as the authentication bridge When a user connects to Momentum if authentication is supported it will..."
 ---

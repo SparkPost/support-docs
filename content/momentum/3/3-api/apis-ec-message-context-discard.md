@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "ec_message_context_discard"
 description: "ec message context discard Discards the context dictionaries They will be re fetched on demand void ec message context discard mess ec message mess Discards the message context dictionaries for this message They will be re fetched on demand mess A pointer to an ec message struct For documentation of..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "next_delay_dsn"
 description: "next delay dsn Override sending of DSN notifications int delay dsn next delay dsn closure mess now when void closure ec message mess struct timeval now time t when The delay dsn module allows delivery status notifications DS Ns to be sent to the sender of a message when that..."
 ---

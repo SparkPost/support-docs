@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "smpp_async_fail_ec_message"
 description: "smpp async fail ec message Fail an asynchronous SMPP message void smpp async fail ec message m force async ec message m int force async This function is like smpp fail ec message but you need to use ec message set code to set the error and you must also..."
 ---

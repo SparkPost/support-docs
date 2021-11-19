@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/05/2020"
+lastUpdated: "03/27/2020"
 title: "ecelerity-cluster.conf File"
 description: "The ecelerity cluster conf file is a cluster specific configuration file that configures cluster behavior This file is typically used to specify options common to all nodes e g the cluster topology It is included from within ecelerity conf The following is an example ecelerity cluster conf file Example 16..."
 ---

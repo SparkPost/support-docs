@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "ec_bag_remove"
 description: "ec bag remove Remove the specified data type from a bag void ec bag remove bag typedname ec bag bag const char typedname Remove the specified data type from a bag bag The ec bag typedname The data type that you wish to remove for example int This function returns..."
 ---

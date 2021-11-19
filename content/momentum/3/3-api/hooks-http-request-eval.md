@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "request_eval"
 description: "request eval Called prior to sending a generic HTTP request int request eval closure sess void closure http session sess Configuration Change This hook point is available as of Momentum version 3 5 5 Called prior to sending a generic HTTP request This hook point is similar to the gcm..."
 ---

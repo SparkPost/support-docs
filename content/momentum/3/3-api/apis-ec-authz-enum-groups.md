@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "ec_authz_enum_groups"
 description: "ec authz enum groups Check authorization of groups int ec authz enum groups authzinfo all groups session struct ec authz info authzinfo ec ptr array all groups Event session This reference page was automatically generated from functions found in the header files in the development branch The function described here..."
 ---

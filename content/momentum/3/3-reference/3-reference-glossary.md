@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "Glossary"
 description: "Abuse Reporting Format ARF A standard format for communicating feedback reports about email abuse See also Section 14 34 fbl Feedback Loop Module Access Control List ACL A list of permissions associated with an object Such a list usually specifies who is allowed to access which object s and the..."
 ---

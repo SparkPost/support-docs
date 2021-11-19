@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "inbound_throttle_messages"
 description: "inbound throttle messages rate limit inbound mail Inbound Throttle Messages 3 Inbound Throttle Messages 3 60 This allows you to limit the rate at which Momentum will accept messages from the network By default there are no artificial limitations on the acceptance rate it accepts as quickly as possible Sometimes..."
 ---

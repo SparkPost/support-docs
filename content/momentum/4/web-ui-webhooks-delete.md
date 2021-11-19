@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/05/2020"
+lastUpdated: "03/27/2020"
 title: "Deleting a Webhook"
 description: "From the Webhooks tab you can delete a webhook Click the icon in the upper right corner of the webhook you want to delete In the list click Delete Webhook as shown in Figure 60 9 Delete Webhook Figure 60 9 Delete Webhook In the Delete Webhook window click Delete..."
 ---

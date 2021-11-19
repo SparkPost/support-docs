@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "ec_malloc_size"
 description: "ec malloc size Allocate a block of memory of arbitrary size void ec malloc size object type size int object type size t size Allocate a block of memory of arbitrary size The memory is uninitialized This function is only valid with VSIZE memory type not a fixed size type..."
 ---

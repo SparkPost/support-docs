@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "ec_httpsrv_request_data_get"
 description: "ec httpsrv request data get Gets a handle on the request payload data int ec httpsrv request data get sess io ec httpsrv session sess io object io This reference page was automatically generated from functions found in the header files in the development branch The function described here may..."
 ---

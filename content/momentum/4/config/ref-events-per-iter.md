@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/05/2020"
+lastUpdated: "03/27/2020"
 title: "events_per_iter"
 description: "events per iter employ when using a concurrency greater than 1 events per iter 0 This option may be used when using a concurrency greater than 1 a threaded accept When running in this mode accept is called on a secondary thread specified by the pool name and the accepted..."
 ---

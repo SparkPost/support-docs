@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "smpp_free_string_and_buffer"
 description: "smpp free string and buffer Free a string object created using smpp get string and buffer void smpp free string and buffer s string s Configuration Change This feature is available starting from Momentum 3 2 Free a string object created using smpp get string and buffer Use of this..."
 ---

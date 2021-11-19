@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "rfc2822_lone_lf_in_body"
 description: "rfc 2822 lone lf in body rfc 2822 conformance RFC 2822 Lone LF in Body ignore RFC 2822 Lone LF in Body pedantic RFC 2822 Lone LF in Body fix This option is available as of version 3 0 and replaces the version 2 2 option of the same name..."
 ---

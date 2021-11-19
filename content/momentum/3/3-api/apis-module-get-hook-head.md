@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "module_get_hook_head"
 description: "module get hook head Fetch the arguments for a hook struct ec hook head module get hook head hook name proto const char hook name const char proto Retreive an ec hook head which contains the arguments for a hook hook name The hook name proto The hook prototype This..."
 ---

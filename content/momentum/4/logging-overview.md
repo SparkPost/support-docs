@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/05/2020"
+lastUpdated: "03/27/2020"
 title: "Logging Overview"
 description: "Momentum’s logging capabilities are implemented by various modules They are intended to maintain auditing and a history of events providing information such as system errors message disposition and engagement tracking The logging subsystems range from transactional logs on a server node to replicated server node logs aggregated on the designated..."
 ---

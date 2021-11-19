@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "ec_cache_purge"
 description: "ec cache purge Explicitly remove elements from the cache int ec cache purge cache now purge all ec cache t cache time t now int purge all Allows you to explicitly remove elements from the cache If the the cache was configured with a time to live for the elements..."
 ---

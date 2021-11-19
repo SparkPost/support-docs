@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/05/2020"
+lastUpdated: "03/27/2020"
 title: "ehlo_hostname"
 description: "ehlo hostname set the hostname used for EHLO in outbound mail EHLO Hostname example com EHLO Hostname message EHLO Hostname hostname When delivering messages to remote mail exchanges Momentum uses the SMTP protocol This requires initiating the conversation with the remote server using the EHLO or HELO command Both commands..."
 ---

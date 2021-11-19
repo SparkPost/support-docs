@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "vctx_mess_delete"
 description: "vctx mess delete delete a key from the message context vctx mess delete key Calling this action will remove the key value pair associated with the specified key from the current message context if that key exists..."
 ---

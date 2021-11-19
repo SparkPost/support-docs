@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "Examples"
 description: "Example 29 1 MM 7 Server Received Message Hook Lua Example Example 29 2 MM 7 Server Received Message Hook C Example..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "envelope"
 description: "envelope return the envelope sender or recipient recip envelope to sender envelope from sender domain envelope domain from Returns the envelope sender or recipient into a variable You may use the localpart domain user and detail subaddressing tags to obtain the corresponding parts of the address address..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/05/2020"
+lastUpdated: "03/27/2020"
 title: "clear_mail_queue_maintainers"
 description: "clear mail queue maintainers reschedule the mail queue maintainer clear mail queue maintainers true clear mail queue maintainers enables you to remove and reschedule events in the mail queue maintainer This prevents you from ending up with redundant events scheduled for a given domain which could potentially cause abnormally high..."
 ---

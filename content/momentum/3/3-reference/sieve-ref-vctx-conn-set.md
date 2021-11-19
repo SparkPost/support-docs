@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "vctx_conn_set"
 description: "vctx conn set set a value in the connection context vctx conn set key value Calling this action will set or replace the key value pair specified as arguments in the current session's connection context..."
 ---

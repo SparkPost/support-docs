@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "smpp_wrap_in_string_with_len"
 description: "smpp wrap in string with len Wrap a char string into a string object string smpp wrap in string with len c len const char c int len Configuration Change This feature is available starting from Momentum 3 2 Wrap a char string into a string object The returned string..."
 ---

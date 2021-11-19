@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/05/2020"
+lastUpdated: "03/27/2020"
 title: "transfail_drain_rate"
 description: "transfail drain rate the maximum number of messages to pop off the transient failure queue in a single scheduler iteration transfail drain rate 100 The maximum number of messages to pop off the transient failure queue in a single scheduler iteration mitigating the potential for watchdog timeout The default value..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "round"
 description: "round return the integral value nearest to x rounding half way cases away from zero regardless of the current rounding direction double round x double x This reference page was automatically generated from functions found in the header files in the development branch The function described here may not exist..."
 ---

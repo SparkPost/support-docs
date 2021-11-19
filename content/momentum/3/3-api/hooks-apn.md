@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "Hooks in the apn Scope"
 description: "The Apple Push Notification service AP Ns is supported as of Momentum version 3 5 5 Hook points in support of this service are described here These hook points are also supported from Lua Using them is described at AP Ns and Lua For more information about AP Ns see..."
 ---

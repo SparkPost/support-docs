@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "ec_message_should_reduce_resources"
 description: "ec message should reduce resources Determines whether or not a message should be removed from memory int ec message should reduce resources message ec message message Determines whether a message should be removed from memory based on the value of max resident messages message A pointer to an ec message..."
 ---

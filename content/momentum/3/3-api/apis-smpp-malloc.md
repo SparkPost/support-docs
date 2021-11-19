@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "smpp_malloc"
 description: "smpp malloc Allocate memory of memtype smpp type void smpp malloc size unsigned int size Configuration Change This feature is available starting from Momentum 3 2 Allocate memory of memtype smpp type Memory allocated using this function should be freed using smpp free size The number of bytes of requested..."
 ---

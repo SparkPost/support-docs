@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/05/2020"
+lastUpdated: "03/27/2020"
 title: "flush domain"
 description: "flush domain perform delivery attempt on delayed queue of a domain flush domain domain name The flush domain command takes a domain name as an argument and immediately performs a delivery attempt for each message in the delayed queue Momentum has its own retry schedule based on the the number..."
 ---

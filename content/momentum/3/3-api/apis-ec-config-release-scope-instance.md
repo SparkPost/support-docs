@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "ec_config_release_scope_instance"
 description: "ec config release scope instance Free the memory associated with an ec config header struct void ec config release scope instance tofree void tofree Use this function to release the ec config header struct acquired via ec config fetch globalconf Do not use free or ec free tofree A pointer..."
 ---

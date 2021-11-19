@@ -1,5 +1,5 @@
 ---
-lastUpdated: "10/02/2021"
+lastUpdated: "10/05/2021"
 title: "Modules"
 description: "Momentum's module API is at the core of how it is extended When a module is loaded it is named based on the module name specified in the configuration Some modules can have multiple instances loaded with different configurations e g to log different sets of information into different log..."
 ---

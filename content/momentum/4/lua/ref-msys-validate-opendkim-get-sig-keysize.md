@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/05/2020"
+lastUpdated: "03/27/2020"
 title: "msys.validate.opendkim.get_sig_keysize"
 description: "msys validate opendkim get sig keysize Fetch the size of the key used to generate a signature msys validate opendkim get sig keysize dkim sig This function fetches the size of the key used to generate a signature Use msys validate opendkim get num sigs and msys validate opendkim get..."
 ---

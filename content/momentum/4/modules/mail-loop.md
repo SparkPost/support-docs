@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/05/2020"
+lastUpdated: "03/27/2020"
 title: "mail_loop – Mail Loop Detection"
 description: "The mail loop module provides automatic suppression of potential mail loops with two standard mechanisms Suppression of delivery attempts to any configured IP interfaces on the machine Suppression of messages with more than a specified number of Received headers The most basic configuration for the mail loop module is to..."
 ---

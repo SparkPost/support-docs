@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "Sieve's Basic Syntax"
 description: "A Sieve script consists of an optional require block followed by a series of tests and commands Sieve scripts are stored using UTF 8 encoding and textual comparisons are performed in UTF 8 where possible require is a portability concession in the Sieve specification that allows scripts to be used..."
 ---

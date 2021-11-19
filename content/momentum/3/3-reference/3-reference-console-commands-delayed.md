@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "delayed"
 description: "delayed show domains with delayed queue size bigger than threshold delayed threshold The delayed command presents information concerning the domains with a large number of delayed messages in queue The command takes a single positive integer as an argument which specifies the threshold of interest The output will include all..."
 ---

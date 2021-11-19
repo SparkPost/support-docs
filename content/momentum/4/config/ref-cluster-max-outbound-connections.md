@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/05/2020"
+lastUpdated: "03/27/2020"
 title: "cluster_max_outbound_connections"
 description: "cluster max outbound connections set the maximum number of outbound connections for a scope and enforce it across a cluster Cluster Max Outbound Connections 128 This will limit the number of outbound connections across the cluster to an individual binding to the specified value It can also be set at..."
 ---

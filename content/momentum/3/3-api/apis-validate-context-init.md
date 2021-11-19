@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "validate_context_init"
 description: "validate context init Allocate resources for a validation context dictionary void validate context init vctx validate context vctx Allocate resources for a validation context dictionary vctx The validation context For documentation of this data structure see Section 68 86 validate context This function returns void It is only legal to..."
 ---

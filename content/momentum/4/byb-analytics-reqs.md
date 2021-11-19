@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/05/2020"
+lastUpdated: "03/27/2020"
 title: "Verifying Analytics Node Requirements"
 description: "Analytics nodes have very specific requirements for the HP Vertica Analytic Database Ensure that the node is suitable for Vertica prior to installation First verify that each Vertica Analytics node contains at least 8 GB of RAM overall and at least 2 GB of RAM per CPU Next run the..."
 ---

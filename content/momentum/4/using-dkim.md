@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/05/2020"
+lastUpdated: "03/27/2020"
 title: "Using DomainKeys Identified Mail (DKIM) Signatures"
 description: "Domain Keys Identified Mail DKIM is a mechanism that allows verification of the source and contents of email messages Using DKIM sending domains can include a cryptographic signature in outgoing email messages A message's signature may be verified by any or all MT As during transit and by the Mail..."
 ---

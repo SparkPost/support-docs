@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "msg:makeContainer"
 description: "msg make Container Creates a new unlinked container message part msg make Container mimetype boundary add terminator Creates a new unlinked container message part The mimetype parameter specifies the MIME Content Type that is to be used If boundary is left unspecified a random boundary will be generated on your..."
 ---

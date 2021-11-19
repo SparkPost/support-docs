@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "Security"
 description: "Table of Contents ec authz check Check if commands are authorized ec authz enum groups Check authorization of groups ec authz id Get the ID of the specified user ec register authz handler 2 Register the specified handler..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "SMS to Email Address Mappings"
 description: "After receiving an SMS delivery Mobile Momentum attempts to assign a recipient email address using the following methods Interworking parse Attempt to parse the email address from the beginning of the SMS text Reverse Address Mappings This is a database look up of the email address from data saved during..."
 ---

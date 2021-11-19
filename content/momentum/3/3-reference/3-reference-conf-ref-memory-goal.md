@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "memory_goal"
 description: "memory goal configure physical memory usage goal Memory Goal 90 The memory goal directive allows you to specify the maximum percentage of physical memory that should be used during normal operation If this threshold is exceeded the server will free up some resources to try to bring memory usage within..."
 ---

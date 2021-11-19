@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/05/2020"
+lastUpdated: "03/27/2020"
 title: "Policy Scriptlets"
 description: "Lua scripts provide you with the capability to express the logic behind your policy Aside from being very convenient policy scripts can be reloaded on the fly allowing real time adjustment of policy without interrupting service the Momentum implementation has extremely low overhead and tightly integrates with the event based..."
 ---

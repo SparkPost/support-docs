@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "cidrrange_ipv4_query"
 description: "cidrrange ipv 4 query Query the orientation stored for an IP int cidrrange ipv 4 query root ip const cidrrange ipv 4 root struct in addr ip This reference page was automatically generated from functions found in the header files in the development branch The function described here may not..."
 ---

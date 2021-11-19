@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/05/2020"
+lastUpdated: "03/27/2020"
 title: "count"
 description: "count count open connections count connection type CIDR The count counts open connections grouped by IP addresses It needs two arguments The first argument specifies the type of the connection It could be outbound outbound binding name for outbound connections over all bindings or outbound connections of a specified binding..."
 ---

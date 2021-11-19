@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "http_basic_auth"
 description: "http basic auth Define the user credentials when using basic HTTP authentication http basic auth user password Configuration Change This option is available as of version 3 5 6 Define the user credentials when using basic HTTP authentication Use this option when the delivery method uses an HTTP protocol Use..."
 ---

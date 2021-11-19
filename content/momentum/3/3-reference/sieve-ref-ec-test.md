@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "ec_test"
 description: "ec test generic test ec test comparison value other value Instead of building comparators into every extension function Momentum provides a generic test facility called ec test through which all comparators can be used See Section 8 2 3 Comparisons for a discussion of Sieve comparators A short example of..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "Callouts and Push Notifications"
 description: "In addition to the AP Ns and GCM callouts there are callouts directly related to push notifications These callouts are all applicable to managing Google Push notifications and MM 7 message types The generic delivery msg dispose callout can also be used with AP Ns Documentation of the C API..."
 ---

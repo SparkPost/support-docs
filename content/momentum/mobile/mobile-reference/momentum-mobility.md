@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "Mobile Momentum SMPP"
 description: "Mobile Momentum supports SMPP version 3 4 and provides the ability to identify and capture email for Short Message Peer to Peer Protocol SMPP delivery It provides a simple conversion of an email message to a Short Message Service SMS text message destined for a mobile phone Mobile Momentum provides..."
 ---

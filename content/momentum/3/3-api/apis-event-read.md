@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "event_read"
 description: "event read Read an event int event read e buf buflen needmask Event e char buf int buflen int needmask Initiates a read that will populate buf and buflen with the data requested e See Section 68 49 Event buf The buffer for storage buflen The length of buf needmask..."
 ---

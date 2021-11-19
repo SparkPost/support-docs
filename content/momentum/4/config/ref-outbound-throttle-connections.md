@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/05/2020"
+lastUpdated: "03/27/2020"
 title: "outbound_throttle_connections"
 description: "outbound throttle connections limit the rate at which connections are established outbound throttle connections 1 outbound throttle connections 1 60 This allows you to limit the rate at which Momentum will attempt to establish TCP IP connections It can be employed to globally limit connection allocation or to reduce the..."
 ---

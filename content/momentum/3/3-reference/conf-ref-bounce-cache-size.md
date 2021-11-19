@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "bounce_cache_size"
 description: "bounce cache size set the maximum size of the bounce classification cache bounce cache size 0 Configuration Change This feature is available as of version 3 6 9 bounce cache size and bounce cache ttl together set the maximum size and TTL of the bounce classify and bounce classify 2..."
 ---

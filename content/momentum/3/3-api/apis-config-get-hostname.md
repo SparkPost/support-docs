@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "config_get_hostname"
 description: "config get hostname Get the value of the hostname option char config get hostname caller scope generic module infrastructure caller scope Get the value of the hostname option The caller scope argument is virtually always NULL there is no reason for a consumer to make it anything else caller scope..."
 ---

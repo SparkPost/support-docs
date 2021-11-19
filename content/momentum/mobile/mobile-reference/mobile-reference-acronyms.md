@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "Acronyms"
 description: "This section displays acronyms sorted alphabetically and linked to their definition in the glossary 3 G Third Generation 3 GPP Third Generation Partnership Project BOM Byte Order Mark CDR Logging Call Detail Record Logging E 164 E 164 ESME External Short Messaging Entity GSM Global System for Mobile communications HSDPA..."
 ---

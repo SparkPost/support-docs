@@ -1,5 +1,5 @@
 ---
-lastUpdated: "10/02/2021"
+lastUpdated: "10/05/2021"
 title: "Lua Functions Summary"
 description: "This section contains tables of Lua functions Click the function name for details Table 64 1 Lua functions all Function Description Params Package Version Phases ac esmtp capability add Add a capability to the EHLO response name msys extended ac 4 0 connect ehlo ac esmtp capability remove Removes a..."
 ---

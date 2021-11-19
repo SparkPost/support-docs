@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "rfc2822_header_append_line"
 description: "rfc 2822 header append line Append a line to a header void rfc 2822 header append line hdr str rfc 2822 field hdr const char str Append a line to a header hdr The header that you wish to add to str The line you wish to appended This function..."
 ---

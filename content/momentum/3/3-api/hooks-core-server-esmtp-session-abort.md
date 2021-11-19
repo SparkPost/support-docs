@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "server_esmtp_session_abort"
 description: "server esmtp session abort void server esmtp session abort closure ac void closure accept construct ac int has core server esmtp session abort hook void register core server esmtp session abort hook first hook closure ec hook core server esmtp session abort func t hook void closure void register core..."
 ---

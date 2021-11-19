@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "DNS Functions"
 description: "Table of Contents dns cache free node Release a reference on a dns cache node dns cache lookup Check to see if the results for a given query are in the DNS cache dns cache lookup wait Perform a blocking DNS lookup utilizing the cache dns cache submit Submit a..."
 ---

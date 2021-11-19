@@ -1,5 +1,5 @@
 ---
-lastUpdated: "08/02/2020"
+lastUpdated: "08/25/2020"
 title: "Where do I find my username, account ID, or account email address?"
 description: "Sometimes when we communicate with you as a user, we ask you to identify your account by providing your username, account ID, or account email address. Having this info allows us to help you faster in situations where we don't already have these details about who you are."
 ---

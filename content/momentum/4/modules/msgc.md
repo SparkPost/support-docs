@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/05/2020"
+lastUpdated: "03/27/2020"
 title: "msgc – Message Systems Group Communication"
 description: "The Message Systems Group Communication msgc consists of two modules msgc server and msgc client These modules provide for communication between nodes in a cluster configuration By default the msgc server is loaded on every cluster node and the cluster manager This module is responsible for maintaining connections with all..."
 ---

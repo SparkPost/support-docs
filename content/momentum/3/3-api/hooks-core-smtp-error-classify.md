@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "smtp_error_classify"
 description: "smtp error classify int smtp error classify closure response domain void closure const char response const char domain int has core smtp error classify hook void register core smtp error classify hook first hook closure ec hook core smtp error classify func t hook void closure void register core smtp..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "ec_xmpp_session_send_stanza"
 description: "ec xmpp session send stanza Submits the transmission of a Stanza int ec xmpp session send stanza sess stanza ec xmpp session sess xml Node Ptr stanza This reference page was automatically generated from functions found in the header files in the development branch The function described here may not..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "resolv_conf"
 description: "resolv conf specify a custom resolv conf Resolv Conf my resolv conf This directive instructs Momentum to initialize its internal resolver with the configuration information located in the filename specified instead of etc resolv conf on Unix like platforms Momentum supports one option above what resolv conf 5 supports as..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "get_msg_expiration_params"
 description: "get msg expiration params Allows modules to customize the expiration parameters on a per message basis int core get msg expiration params closure am message expiration retry interval max retries void closure abstract message am time t message expiration time t retry interval int max retries Allows modules to customize..."
 ---

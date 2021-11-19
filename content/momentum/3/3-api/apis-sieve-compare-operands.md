@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "sieve_compare_operands"
 description: "sieve compare operands execute a sieve comparator match int sieve compare operands seng comp left right SENG seng struct sieve compare info comp SIEVEARGS left SIEVEARGS right This reference page was automatically generated from functions found in the header files in the development branch The function described here may not..."
 ---

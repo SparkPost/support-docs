@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/05/2020"
+lastUpdated: "03/27/2020"
 title: "tracking_domain"
 description: "tracking domain set the tracking domain to use for engagement tracking in SMTP injections tracking domain localhost 8080 Configuration Change This option is available as of version 4 1 HF 4 If open or click tracking is enabled this option sets the tracking domain to use in the hyperlink for..."
 ---

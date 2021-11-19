@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "ec_ptr_array_append"
 description: "ec ptr array append Append to an ec ptr array int ec ptr array append array element ec ptr array array void element Append an item to an ec ptr array array An ec ptr array See ec ptr array element The pointer that you wish to append On success..."
 ---

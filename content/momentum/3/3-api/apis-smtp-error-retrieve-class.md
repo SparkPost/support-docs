@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "smtp_error_retrieve_class"
 description: "smtp error retrieve class Return the name and description for a bounce code int smtp error retrieve class class code name name len desc desc len unsigned short class code char name int name len char desc int desc len Configuration Change This feature is available starting from Momentum 3..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "Maintaining APNs Recipient Lists"
 description: "You can maintain AP Ns recipient lists by using a Perl script such as the one shown here The CPAN module Net AP Ns Extended Feedback is used in the following script For more information about this module refer to the CPAN reference page Net AP Ns Extended Feedback..."
 ---

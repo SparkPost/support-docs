@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "scpt_push_object"
 description: "scpt push object Box a C structure to pass into a scriptlet routine void scpt push object thr objtype object scpt thread thr const char objtype void object Box a C structure to pass into a scriptlet routine thr The script thread For a description of this data type see..."
 ---

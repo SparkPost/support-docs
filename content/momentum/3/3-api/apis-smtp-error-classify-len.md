@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "smtp_error_classify_len"
 description: "smtp error classify len Classify the response code given in response to an SMTP command int smtp error classify len response len domain mid const char response int len const char domain message id mid Classify the response code given in response to an SMTP command response The buffer to..."
 ---

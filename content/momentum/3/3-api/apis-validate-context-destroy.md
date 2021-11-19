@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "validate_context_destroy"
 description: "validate context destroy Release resources associated with this validation context dictionary void validate context destroy vctx validate context vctx Release resources associated with this validation context dictionary vctx The validation context For documentation of this data structure see Section 68 86 validate context This function returns void It is only..."
 ---

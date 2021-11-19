@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/05/2020"
+lastUpdated: "03/27/2020"
 title: "msys.db.execute"
 description: "msys db execute Execute a query that is not expected to return data success errmsg msys db execute cachename query queryparams options Execute a query that is not expected to return data The parameters are as follows cachename Name of the datasource cache to be queried query Query to be..."
 ---

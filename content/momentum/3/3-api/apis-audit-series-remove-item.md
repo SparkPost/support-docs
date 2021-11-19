@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "audit_series_remove_item"
 description: "audit series remove item Remove the item identified by key in a named series int audit series remove item name key ac const char name char key accept construct ac This reference page was automatically generated from functions found in the header files in the development branch The function described..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "ec_authz_id"
 description: "ec authz id Get the ID of the specified user int ec authz id authzinfo user roles session struct ec authz info authzinfo const char user ec ptr array roles Event session This reference page was automatically generated from functions found in the header files in the development branch The..."
 ---

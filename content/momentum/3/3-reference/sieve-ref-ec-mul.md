@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "ec_mul"
 description: "ec mul perform multiplication of two numbers ec mul number 1 number 2 ec mul takes two numbers and returns the result of multiplication Example 16 83 ec mul example..."
 ---

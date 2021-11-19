@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/05/2020"
+lastUpdated: "03/27/2020"
 title: "ec_httpsrv_request_peer_address"
 description: "ec httpsrv request peer address Returns the remote peer address from the current session ec sockaddr ec httpsrv request peer address sess ec httpsrv session sess Configuration Change This option is available as of version 4 0 This function returns the remote peer IP address from the current session sess..."
 ---

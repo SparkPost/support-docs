@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/05/2020"
+lastUpdated: "03/27/2020"
 title: "Riak"
 description: "Riak is a distributed key value data storage technology with excellent scalability properties It is used by the adaptive module Adaptive Delivery reporting and Mobile Momentum for resubmission of messages Riak is freely available for use in a LAN deployment but WAN deployments that need to be synchronized require a..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "get_now"
 description: "get now Populates a struct timeval pointer with current data void get now toset struct timeval toset Populates a struct timeval pointer with current data toset A pointer to a timeval struct This function returns void It is legal to call this function in any thread..."
 ---

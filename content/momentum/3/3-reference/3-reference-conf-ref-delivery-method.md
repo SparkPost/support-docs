@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "delivery_method"
 description: "delivery method set the delivery method Delivery Method ESMTP Delivery Method SMTP Delivery Method LMTP Delivery Method ECSTREAM Delivery Method APN Delivery Method GCM Delivery Method MM 7 This option directs Momentum to perform deliveries via ESMTP LMTP Local Mail Transport Protocol SMTP ECSTREAM APN GCM and MM 7 The..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "ec_message_context_delete"
 description: "ec message context delete Delete a key value pair from the message context or connection context dictionary int ec message context delete m w k ec message m int w const char k Delete a key value pair from either the message context or connection context dictionary message A pointer..."
 ---

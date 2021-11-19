@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "ec_data_source_query_cache"
 description: "The members of this struct are as follows To use this struct include the file modules datasource ecdatasource h ec datasource cache query and Section 68 26 ec datasource closure..."
 ---

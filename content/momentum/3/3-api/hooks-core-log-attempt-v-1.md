@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "log_attempt_v1"
 description: "log attempt v 1 Register a function with this hook whenever a message attempt event should be logged void core log attempt v 1 closure msg dr now note note len void closure ec message msg domain record dr struct timeval now const char note int note len Register a..."
 ---

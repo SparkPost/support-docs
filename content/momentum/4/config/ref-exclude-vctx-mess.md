@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/05/2020"
+lastUpdated: "03/27/2020"
 title: "exclude_vctx_mess"
 description: "exclude vctx mess exclude validation context keys from being journaled in the spool metadata Exclude VCTX Mess regex otherregex With more advanced policy configurations the aggregate size of the validation context data retained in memory may become significant especially if keep message dicts in memory is enabled Exclude VCTX Mess..."
 ---

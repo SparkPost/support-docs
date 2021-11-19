@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "ec_dkim_sign"
 description: "ec dkim sign Sign a message with the DKIM protocol ec dkim sign parameters hash ec dkim sign signs the current message with a DKIM signature By default it uses the configured parameters on the DKIM module configuration stanza If desired a hash table of parameter overrides may be passed..."
 ---

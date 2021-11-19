@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/06/2020"
+lastUpdated: "02/08/2020"
 title: "The Benefits of Setting up Role Domains  (postmaster@ and abuse@)"
 description: "What are Role Based Domains Role based domains like admin help sales are email addresses that are not associated with a particular person but rather with a company department position or group of recipients Spark Post now provides the capability to verify your sending domains using abuse and postmaster role..."
 ---

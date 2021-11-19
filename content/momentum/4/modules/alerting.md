@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/05/2020"
+lastUpdated: "03/27/2020"
 title: "alerting – Send Alerting Emails"
 description: "The alerting module provides the ability to send alerting emails when a script examines data If you intend to create scripts using the scriptlet module you must have the alerting module loaded It is especially important to load this module when you are using Section 71 3 adaptive Adaptive Delivery..."
 ---

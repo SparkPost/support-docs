@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "soft_bounce_drain_rate"
 description: "soft bounce drain rate how many soft bounces to place into the mail queues in a single scheduler iteration soft bounce drain rate 100 When async bounce rendering is enabled soft bounces are queued internally This option defines how many are pulled from the internal queue and placed into the..."
 ---

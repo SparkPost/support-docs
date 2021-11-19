@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/05/2020"
+lastUpdated: "03/27/2020"
 title: "msys.cloudmark.set_af_mode_keep"
 description: "msys cloudmark set af mode keep Set the Cloudmark Active Filter mode to KEEP msys cloudmark set af mode keep This sets the Cloudmark Active Filter mode to KEEP That is move messages around based on their status You must set the Active Filter mode by invoking one of the..."
 ---

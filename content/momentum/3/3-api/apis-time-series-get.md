@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "time_series_get"
 description: "time series get Return specified bucket of a monitor void time series get ts series id bucket number time series ts int series id unsigned short bucket number This reference page was automatically generated from functions found in the header files in the development branch The function described here may..."
 ---

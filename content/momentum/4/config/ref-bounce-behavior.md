@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/05/2020"
+lastUpdated: "03/27/2020"
 title: "bounce_behavior"
 description: "bounce behavior configure the action taken when a message is classified as a bounce bounce behavior pass bounce behavior blackhole When an out of band bounce message is received by the server and satisfies both the bounce domains and bounce pattern configuration settings it will either be allowed to pass..."
 ---

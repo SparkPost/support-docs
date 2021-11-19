@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/05/2020"
+lastUpdated: "03/27/2020"
 title: "msg:get_delivery_method"
 description: "msg get delivery method Return the delivery method for a message msg get delivery method Return the delivery method for a message for example gcm Example 70 42 msg get delivery method example Because this function is in the msys core namespace an explicit require msys core is not necessary..."
 ---

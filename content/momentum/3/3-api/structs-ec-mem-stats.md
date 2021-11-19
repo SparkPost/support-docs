@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "ec_mem_stats"
 description: "This struct is defined as follows To use this struct include the file ec malloc h Chapter 33 Memory Functions and ec mem get stats..."
 ---

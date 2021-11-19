@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "cache list"
 description: "cache list list all caches along with their associated attributes cache list attribute Configuration Change This feature is available starting from Momentum 3 0 26 This command lists caches and related statistics When specific parameters such as the query rate are passed in this command displays usage by cache The..."
 ---

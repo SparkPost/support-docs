@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/05/2020"
+lastUpdated: "03/27/2020"
 title: "msg:reception_peer"
 description: "msg reception peer Get the recv from IP and or PORT msg reception peer flag This function returns the IP and or PORT of the remote injection source In particular it returns the component of the sockaddr in human readable form as indicated by the flag The value of the..."
 ---

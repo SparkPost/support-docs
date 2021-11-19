@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "ec_get_message_received_via_port"
 description: "ec get message received via port Return the local port that the message was received on ec get message received via port ec get message received via port returns the local port on which the message was received It takes the form of an integer In the following script the..."
 ---

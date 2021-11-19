@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "post_generate_rfc3464_message"
 description: "post generate rfc 3464 message void post generate rfc 3464 message closure orig bounce action void closure ec message orig ec message bounce dsn actype action int has core post generate rfc 3464 message hook void register core post generate rfc 3464 message hook first hook closure ec hook core..."
 ---

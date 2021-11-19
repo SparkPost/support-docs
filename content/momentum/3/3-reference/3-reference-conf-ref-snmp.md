@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "SNMP"
 description: "SNMP Simple Network Management Protocol Support Momentum contains an embedded SNM Pv 2 agent primarily used to provide statistical data to Momentum utilities such as ec stat watcher However the agent may be queried by third party SNMP Managers Momentum's SNMP agent supports and provides information for Mail Monitoring MIB..."
 ---

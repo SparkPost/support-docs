@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "Custom Callback Functions"
 description: "This section describes the custom callback functions that are needed to augment the Generic Delivery and Generic HTTP Client modules when implementing a custom delivery channel Your build request callback handler must build customized HTTP request messages for the service you are implementing The underlying httpclnt module uses HTTP for..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "Examples"
 description: "Example 7 1 SMPP Log Delivery Hook Lua Example Example 7 2 SMPP Log Delivery Hook C Example..."
 ---

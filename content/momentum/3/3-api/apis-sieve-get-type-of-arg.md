@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "sieve_get_type_of_arg"
 description: "sieve get type of arg Return the type of a Sieve argument enum sieve arg type sieve get type of arg arg SIEVEARGS arg Return the type of a Sieve argument The type of a Sieve argument may not be known at compile time Use this function to find out..."
 ---

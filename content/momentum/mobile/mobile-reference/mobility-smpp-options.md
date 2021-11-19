@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "Mobile Momentum SMPP Options"
 description: "This table displays all the non module specific configuration options used in configuring SMPP options that are valid outside the module scope Options are sorted alphabetically by name If an option has a default value this value is shown and if there are a limited number of legal values these..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "ec_fc_set_capacity"
 description: "ec fc set capacity Sets a new capacity for a given cache int ec fc set capacity cache expire ec fc t cache unsigned int expire This reference page was automatically generated from functions found in the header files in the development branch The function described here may not exist..."
 ---

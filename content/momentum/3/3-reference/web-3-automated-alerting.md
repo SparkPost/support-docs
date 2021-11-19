@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "Automated Alerting Configuration"
 description: "To navigate to the automated alerting page choose Automated Alerting Configuration from the Administration menu You can use automated alerting to track the following events Rejections Track when permanent failure rates on a Binding or a Domain exceed a defined percentage Errors Track when a line is written to paniclog..."
 ---

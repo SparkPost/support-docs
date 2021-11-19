@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "fbl – Feedback Loop Module"
 description: "The feedback loop module is used to manage feedback loop services offered by many IS Ps Providers like Yahoo AOL Hotmail Comcast and others offer this service to qualified senders The ISP will send a notification email to the sender every time that one of their users clicks on a..."
 ---

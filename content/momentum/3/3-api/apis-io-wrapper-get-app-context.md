@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "io_wrapper_get_app_context"
 description: "io wrapper get app context Retrieve the application context value void io wrapper get app context io io object io Retrieve the application context value io The io object Retreive the application defined context value that was set via io wrapper set context and dtor It is legal to call..."
 ---

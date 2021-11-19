@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "Live Bounce Updates – Module"
 description: "Momentum ships with a powerful bounce classification engine that canonicalizes bounce messages into a number of categories such as over quota or invalid user See Section 14 11 bounce classifier Bounce Classifier Over time however sites may change the error messages associated with specific bounces resulting in some messages not..."
 ---

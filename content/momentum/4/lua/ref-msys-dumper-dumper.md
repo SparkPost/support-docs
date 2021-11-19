@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/05/2020"
+lastUpdated: "03/27/2020"
 title: "msys.dumper.Dumper"
 description: "msys dumper Dumper Dump information about an object msys dumper Dumper res Dump information about an object This function is typically used for debugging purposes Enable this function with the statement require msys dumper..."
 ---

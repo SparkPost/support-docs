@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "ec_spool_ctx_enum_messages"
 description: "ec spool ctx enum messages Enumerate messages in a spool int ec spool ctx enum messages ctx ht on insert closure ec spool ctx ctx ec hash table ht ec spool ctx insertion func on insert void closure This reference page was automatically generated from functions found in the header..."
 ---

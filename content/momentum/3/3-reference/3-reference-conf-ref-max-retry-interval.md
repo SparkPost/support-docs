@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "max_retry_interval"
 description: "max retry interval maximum retry interval Max Retry Interval 43200 The maximum interval between successive retries for a message This provides a cap on the effective retry calculated from Retry Interval The default value for this option is 43200 seconds 12 hours Note that the Max Retries setting has a..."
 ---

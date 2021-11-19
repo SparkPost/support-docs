@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "Interface"
 description: "This hook is the same as other Lua hooks The Lua implementations must use the function name mod mms log status This hook is the same as the other C hooks The function name is not significant as long as it is registered during module initialization as mms log status..."
 ---

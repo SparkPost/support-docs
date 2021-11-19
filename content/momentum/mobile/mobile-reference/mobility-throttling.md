@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "Throttling"
 description: "Outbound throttles for SMS submissions may be set in the SMPP domain stanza using the same parameter as for email throttles Additionally the SMSC may set the command status code to ESME ETHROTTLED to indicate messages are arriving too quickly The SMPP ESME Throttled Timeout parameter may also be set..."
 ---

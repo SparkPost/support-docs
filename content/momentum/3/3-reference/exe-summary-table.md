@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "Executable Command Summary"
 description: "This table lists all executable commands alphabetically giving a brief description Click the command name to see detailed information Table 11 1 Executable commands Command Description Class ad summary Summarize the adaptive module actions adaptive adaptivedb deprecated Create the SQ Lite database used by the adaptive module adaptive create ssl..."
 ---

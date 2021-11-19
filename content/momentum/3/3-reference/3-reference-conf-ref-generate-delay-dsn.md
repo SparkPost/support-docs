@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "generate_delay_dsn"
 description: "generate delay dsn generate DS Ns if mail is delayed generate delay dsn true generate delay dsn false Momentum has the ability to generate warning messages delivery status notifications or DS Ns that are delivered to the envelope sender of a message that has not yet been delivered The default..."
 ---

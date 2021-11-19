@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "Template Files"
 description: "The following conditions apply to template files used with the injection API The template must be a valid 7 bit RFC 821 compatible message blob The template engine does not automatically handle MIME encoding when performing substitution Neither header encoding nor body transfer encoding will be performed The value data..."
 ---

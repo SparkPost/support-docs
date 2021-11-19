@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/05/2020"
+lastUpdated: "03/27/2020"
 title: "cidrdb – CIDRDB"
 description: "The cidrdb module exposes scripting functions that check the IP of incoming transactions against CIDR blocks defined within a database a blacklist for example For more information on CIDR blocks see http en wikipedia org wiki Classless Inter Domain Routing CIDR blocks The cidrdb module can query the data source..."
 ---

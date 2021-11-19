@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "The Policy Configuration Editor"
 description: "In version 3 0 of Momentum you can implement policy using the policy editor To use the editor navigate to the Administration page and choose the Policy Configuration Editor You should see a screen similar to the following Figure 3 46 Configuring policy There are three phases that policies may..."
 ---

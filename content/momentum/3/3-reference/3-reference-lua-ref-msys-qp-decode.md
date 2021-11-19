@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "msys.qp.decode"
 description: "msys qp decode Decode a quoted printable message msys qp decode encoded txt charset encoded text is a quoted printable encoded string This function returns the decoded bytes in a string If the text cannot be decoded it raises an error By default the character encoding for the decoded text..."
 ---

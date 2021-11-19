@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "ec_get_message_received_via"
 description: "ec get message received via Return the IP address that the message was received via ec get message received via ec get message received via returns the IP address of the interface that the message was received on It returns the address in dot decimal notation 192 126 1 20..."
 ---

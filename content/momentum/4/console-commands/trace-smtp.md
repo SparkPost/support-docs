@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/05/2020"
+lastUpdated: "03/27/2020"
 title: "trace smtp"
 description: "trace smtp trace smtp transactions trace smtp add binding name domain name file name trace smtp list trace smtp remove tracer id The trace smtp command allows fine grained SMTP transaction level logging to a specified file It can be enabled by binding and domain combination If is specified for..."
 ---

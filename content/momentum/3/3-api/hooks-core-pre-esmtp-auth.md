@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "pre_esmtp_auth"
 description: "pre esmtp auth int pre esmtp auth closure ac mc c void closure accept construct ac message construct mc validate context c int has core pre esmtp auth hook void register core pre esmtp auth hook first hook closure ec hook core pre esmtp auth func t hook void closure..."
 ---

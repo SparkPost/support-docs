@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/05/2020"
+lastUpdated: "03/27/2020"
 title: "pidfile"
 description: "pidfile set the PID file path pidfile path to ecelerity pid Sets the path to the PID file This is used by ec ctl to determine whether Momentum is running The PID file can be used by other processes to determine if the instance is running therefore each instance must..."
 ---

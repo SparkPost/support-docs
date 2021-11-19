@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "ec_fc_purge_time"
 description: "ec fc purge time Purge the cache's LRU and expired entries relative to tv tv sec unsigned int ec fc purge time cache tv ec fc t cache struct timeval tv This reference page was automatically generated from functions found in the header files in the development branch The function..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "06/03/2021"
+lastUpdated: "06/09/2021"
 title: "SMTP and REST API Injection Best Practices for Improved Performance"
 description: "SparkPost wants to make sure all of our customers have the best sending experience through our service We have a few recommendations to ensure you are injecting in the most efficient manner and to optimize overall message throughput Sending via the Transmission REST API We recommend that you send..."
 ---

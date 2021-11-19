@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "msys.validate.opendkim.get_sig_domain"
 description: "msys validate opendkim get sig domain Fetch the signing domain from a DKIM SIGINFO object msys validate opendkim get sig domain dkim sig Configuration Change This function is available as of version 3 6 This function requires the opendkim module Fetch the signing domain from a DKIM SIGINFO object Use..."
 ---

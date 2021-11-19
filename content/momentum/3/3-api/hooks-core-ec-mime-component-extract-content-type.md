@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "ec_mime_component_extract_content_type"
 description: "ec mime component extract content type int ec mime component extract content type closure part content type buf ct len charset buf charset len void closure ec mime component part char content type buf int ct len char charset buf int charset len int has core ec mime component extract..."
 ---

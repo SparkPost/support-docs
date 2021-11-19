@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "ec_messagescope_query"
 description: "ec messagescope query Query for reputation record int ec messagescope query listname m ac ctx ip to from error text error len status expiration version parameter const char listname ec message m accept construct ac validate context ctx const char ip const char to const char from char error text..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "Multi Protocol Domain Naming"
 description: "In Momentum there is a strong association between a destination domain and its routing information and the domain system is SMTP centric This means that drivers for other protocols need to have a mechanism for naming domains such that they can use them to key into protocol specific routing information..."
 ---

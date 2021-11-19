@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "msys.dp_config.antivirus"
 description: "enable AV scanning In order for AV scanning to work you must separately load the antivirus module in ecelerity conf and configure each engine you reference in the configuration stanza below Valid engines are platform dependent and can be found in the Momentum documentation Find below the sample excerpt included..."
 ---

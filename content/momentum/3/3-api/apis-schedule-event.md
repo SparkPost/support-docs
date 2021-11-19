@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "schedule_event"
 description: "schedule event Schedule an event from any thread void schedule event e Event e Schedule an event from any thread e The event This function returns void It is legal to call this function from the Scheduler thread Section 68 49 Event..."
 ---

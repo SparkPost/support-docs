@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "MM7 Log Reception Hook"
 description: "This hook is used to log MM 7 MO messages e g Deliver Req Delivery Report Req Read Reply Req received by Mobile Momentum MM 7 MO messages are as follows Deliver Req Delivery Report Req Read Reply Req..."
 ---

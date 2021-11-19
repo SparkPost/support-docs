@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "dns_cache_submit2"
 description: "dns cache submit 2 Submit a query to the dns cache void dns cache submit 2 query callback closure flags dns cache query query dns cache callback callback void closure int flags Submit a query to the dns cache When the query completes the completion callback will be called If..."
 ---

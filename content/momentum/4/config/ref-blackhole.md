@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/05/2020"
+lastUpdated: "03/27/2020"
 title: "blackhole"
 description: "blackhole blackhole mail Blackhole false Blackhole true Blackhole inline Blackhole internal This option may be specified globally or inside a domain binding group or binding stanza If specified in the domain scope Momentum immediately fails all messages queued for that domain Likewise if it is specified in the binding or..."
 ---

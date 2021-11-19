@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "msys.httpclnt.http_status_classifier"
 description: "msys httpclnt http status classifier Determine the delivery status of the DLV Response Status variable msys httpclnt http status classifier status Configuration Change This function is available as of Momentum version 3 5 5 This function returns the delivery status of the DLV Response Status variable It classifies the DLV..."
 ---

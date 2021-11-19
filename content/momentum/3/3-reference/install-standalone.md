@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "Performing a Stand-alone Installation"
 description: "A stand alone installation should be performed when you intend to install the product on a single machine To perform a stand alone installation Download and extract the installation bundle as discussed in the operating system specific installation sections Run the installer script When prompted enter singlenode for the role..."
 ---

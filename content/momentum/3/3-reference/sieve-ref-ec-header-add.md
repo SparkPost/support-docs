@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "ec_header_add"
 description: "ec header add prepend a header to the current message ec header add field name field body This will prepend an RFC 2822 header named field name with the content field body to the current message You should not use this function in the set binding phases regardless of version..."
 ---

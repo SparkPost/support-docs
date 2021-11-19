@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "Route to SMS Based on the Recipient Address"
 description: "When a specific email address appears in the To header you can map the email address to a phone number Create a Lua script named change SMS lua and save it in a directory that is in the Lua search path opt msys ecelerity etc conf default policy for example..."
 ---

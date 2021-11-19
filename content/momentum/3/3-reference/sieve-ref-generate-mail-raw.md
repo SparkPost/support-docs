@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "generate_mail_raw"
 description: "generate mail raw generate and send out a message generate mail raw from addr to addr addr list text This function generates and sends out a message It sets the envelope from and to using the addresses given and uses the string contained in the third parameter as the message..."
 ---

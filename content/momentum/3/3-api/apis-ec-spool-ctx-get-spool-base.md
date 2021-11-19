@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "ec_spool_ctx_get_spool_base"
 description: "ec spool ctx get spool base Returns the spool base for a given spool context const char ec spool ctx get spool base ctx ec spool ctx ctx This reference page was automatically generated from functions found in the header files in the development branch The function described here may..."
 ---

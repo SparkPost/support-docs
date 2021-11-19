@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "ec_cache_find"
 description: "ec cache find Find a cache item determined by a key ec cache elt ec cache find cache key keylen ec cache t cache const char key int keylen Find a cache item determined by a key If the element is found its reference count will be incremented and the..."
 ---

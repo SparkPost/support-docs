@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "Extended Commands"
 description: "The following extended commands may appear in your editrc or may be entered directly into the console by entering extended command mode Esc X by default and then typing in the extended command and pressing Enter Without options list all bound keys and the editor command to which each is..."
 ---

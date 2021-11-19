@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "sieve_get_arg_lineno"
 description: "sieve get arg lineno Get the current line number sieve get arg lineno args n SIEVEARGS args int n Get the current line number typically used with sieve error args The argument list On success the line number is returned otherwise 0 is returned It is legal to call this..."
 ---

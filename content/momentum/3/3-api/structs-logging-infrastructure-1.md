@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "logging_infrastructure_1"
 description: "This struct is defined as follows The following type definitions also apply To use this struct include the file log module h Section 68 74 shared module infrastructure 8 log attempt v 1 log delivery v 1 log permanent failure v 1 log rejection and log transient failure v 1..."
 ---

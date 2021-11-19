@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "CIDR Functions"
 description: "Table of Contents cidr ipv 4 count 2 Similar to cidr ipv 4 count but takes ec sockaddr mask or string representation cidr cidr ipv 4 delete Decrements the count for an IP address from a CIDR tree cidr ipv 6 count 2 Similar to cidr ipv 4 count but..."
 ---

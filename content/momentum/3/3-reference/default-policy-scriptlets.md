@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "Default Policy Scriptlets"
 description: "As of version 3 2 default Lua policy scripts are included with Momentum for receiving These scriptlets are found in the opt msys ecelerity libexec scriptlets msys default policy lua file These files are discussed in detail in the Default Policy User Guide In order to use the default policy..."
 ---

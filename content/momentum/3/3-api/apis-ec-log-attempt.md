@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "ec_log_attempt"
 description: "ec log attempt Records an attempt to deliver a message void ec log attempt mess dr now note ec message mess domain record dr struct timeval now const string note Records an attempt to deliver a message mess A pointer to an ec message struct For documentation of this data..."
 ---

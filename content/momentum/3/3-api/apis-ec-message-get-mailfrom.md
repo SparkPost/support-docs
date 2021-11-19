@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "ec_message_get_mailfrom"
 description: "ec message get mailfrom Returns the entire protocol decorated mailfrom string const char ec message get mailfrom mess ec message mess Returns the entire protocol decorated mailfrom string via a read only buffer For example MAIL FROM john doe example com CRLF mess A pointer to an ec message struct..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "audit_series"
 description: "audit series Return the audit series count associated with an IP address or CIDR block over a window range audit series series name interval number mask start window end window audit series hash Audit series enable IP address based events to be tracked over a rolling set of time windows..."
 ---

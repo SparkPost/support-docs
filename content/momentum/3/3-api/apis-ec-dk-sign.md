@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "ec_dk_sign"
 description: "ec dk sign Function to sign a mail message int ec dk sign m ctx base domain selector key file key ec message m validate context ctx const char base domain const char selector const char key file const char key This reference page was automatically generated from functions found..."
 ---

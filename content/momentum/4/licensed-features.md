@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/05/2020"
+lastUpdated: "03/27/2020"
 title: "Licensed Features"
 description: "Message Generation enables you to inject your recipient list template and message content separately using the HTTP protocol It takes these components of a transmission and generates personalized messages for each recipient The generation and transmission of messages is triggered by the REST API interface You must choose to enable..."
 ---

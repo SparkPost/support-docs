@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "reject"
 description: "reject ec reject reject the message returning an MDN to the sender reject message ec reject message counter This action will cause Momentum to bounce the current message and stop processing further rules The message parameter will be used to form the body of the bounce message that is sent..."
 ---

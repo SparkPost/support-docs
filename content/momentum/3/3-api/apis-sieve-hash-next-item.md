@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "sieve_hash_next_item"
 description: "sieve hash next item Get the next item from a hash argument and add a reference to it int sieve hash first item hash iter key item SIEVEARGS hash ec hash iter iter const char key SIEVEARGS item Get the next item from a hash argument and add a reference..."
 ---

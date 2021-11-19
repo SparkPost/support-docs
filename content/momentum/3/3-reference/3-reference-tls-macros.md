@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "tls_macros Module"
 description: "The tls macros module provides several macros supporting custom logging of TLS related data Configuration Change This module is available as of version 3 6 5 Support for GNUTLS is available as beta for SMTP reception and SMTP deliveries only The tls macros module must be loaded as follows Table..."
 ---

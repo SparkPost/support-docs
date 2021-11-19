@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "Sieve++"
 description: "Momentum contains a fully loaded Sieve compiler and execution engine The sieve module provides a mechanism for you to specify Sieve scripts that should run at different phases of an SMTP transaction In Momentum version 3 x Sieve continues to be supported but scripting via Lua is preferred for the..."
 ---

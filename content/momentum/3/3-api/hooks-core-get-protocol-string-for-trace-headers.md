@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "get_protocol_string_for_trace_headers"
 description: "get protocol string for trace headers const char get protocol string for trace headers closure ac ctx mess void closure accept construct ac validate context ctx email message mess int has core get protocol string for trace headers hook void register core get protocol string for trace headers hook first..."
 ---

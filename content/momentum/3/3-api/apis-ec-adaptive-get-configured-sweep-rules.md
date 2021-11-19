@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "ec_adaptive_get_configured_sweep_rules"
 description: "ec adaptive get configured sweep rules Return a list of configured sweep rules ec adaptive sweep rule ec adaptive get configured sweep rules void This reference page was automatically generated from functions found in the header files in the development branch The function described here may not exist in generally..."
 ---

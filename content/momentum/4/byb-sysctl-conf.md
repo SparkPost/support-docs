@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/05/2020"
+lastUpdated: "03/27/2020"
 title: "Adjusting /etc/sysctl.conf"
 description: "Momentum 4 uses a large number of connections and is able to establish them quickly This can overwhelm the operating system if special parameters are not used These issues can be addressed by configuring the following lines in etc sysctl conf These options are described below net ipv 4 tcp..."
 ---

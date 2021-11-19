@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "Examples"
 description: "See Chapter 8 SMPP Log Permfail Hook..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "icu – ICU"
 description: "The International Component for Unicode ICU is a mature portable set of C C libraries for Unicode support software internationalization I 18 N and globalization G 11 N giving applications the same results on all platforms The icu module for Momentum leverages ICU s robust set of unicode character set..."
 ---

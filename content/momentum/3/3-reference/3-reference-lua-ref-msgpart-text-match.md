@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "msgpart:text_match"
 description: "msgpart text match Streaming a PCRE search across the transfer decoded UTF 8 text version of the message body part msgpart text match pattern Streaming a PCRE search across the transfer decoded UTF 8 text version of the message body part If no match is found false is returned Enable..."
 ---

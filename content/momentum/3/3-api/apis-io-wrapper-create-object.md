@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "io_wrapper_create_object"
 description: "io wrapper create object manufactures an io object on the fly io object io wrapper create object wrapper handle io wrapper wrapper void handle This reference page was automatically generated from functions found in the header files in the development branch The function described here may not exist in generally..."
 ---

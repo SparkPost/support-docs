@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "ec_set_binding"
 description: "ec set binding ec set binding group Assign a message to a Multi VIP binding ec set binding binding ec set binding group binding group ec set binding assigns the current message to the binding you specify If the binding does not exist then an error message will be logged..."
 ---

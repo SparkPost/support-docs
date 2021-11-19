@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/05/2020"
+lastUpdated: "03/27/2020"
 title: "Additional Configuration Notes"
 description: "Momentum writes a copy of every message to the spool disk to assure no loss of messages Sending at high volumes requires sufficient disk IOP capacity particularly for the spool disk Message Systems recommends the use of ext 4 file systems You can also use SA Ns or network attached..."
 ---

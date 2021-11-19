@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "Miscellaneous Functions"
 description: "Table of Contents apn status classifier Determine the meaning of the delivery status code ec converter close closes a converter ec converter convert Convert a chunk of data ec converter open open a converter ec if list Retrieve a list of interfaces ec md enabled Determines if hand tuned assembly..."
 ---

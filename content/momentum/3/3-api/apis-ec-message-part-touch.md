@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "ec_message_part_touch"
 description: "ec message part touch Flags a message part as having been modified void ec message part touch part what ec message part part int what Flags a message part as having been modified The touched status propagates up to the top level and is used to determine how the message..."
 ---

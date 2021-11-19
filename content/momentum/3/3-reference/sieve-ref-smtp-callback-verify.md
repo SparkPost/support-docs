@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "smtp_callback_verify"
 description: "smtp callback verify Perform smtp callback on an email address smtp callback verify email address sender address smtp callback verify performs a smtp callback on an email address you specify You need to load the Section 14 67 smtp cbv SMTP Callback Verification module passively to use this action You..."
 ---

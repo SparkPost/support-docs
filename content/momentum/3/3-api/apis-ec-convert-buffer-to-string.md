@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "ec_convert_buffer_to_string"
 description: "ec convert buffer to string Convert a buffer from one encoding to another int ec convert buffer to string fromcode frombuf frombuflen tocode deststring const char fromcode const char frombuf int frombuflen const char tocode string deststring This reference page was automatically generated from functions found in the header files..."
 ---

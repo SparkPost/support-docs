@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "antivirus"
 description: "f secure avscan clamav avscan csapi avscan antivirus functions for Sieve f secure avscan clamav avscan csapi avscan These Sieve tests and actions are provided by the Section 14 5 antivirus Antivirus Modules you must have loaded and correctly configured it before you can successfully use them They can be..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "ec_mailq_first_delayed"
 description: "ec mailq first delayed returns the first delayed message in the supplied mail queue ec message ec mailq first delayed mq mail queue mq This reference page was automatically generated from functions found in the header files in the development branch The function described here may not exist in generally..."
 ---

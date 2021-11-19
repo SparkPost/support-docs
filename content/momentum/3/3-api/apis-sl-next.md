@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "sl_next"
 description: "sl next Move iter forward a node and return the new node's data void sl next sl iter Skiplist sl skiplistnode iter Move iter forward a node and return the new node's data sl The Skiplist iter The list iterator This function returns void When a value is returned the..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/05/2020"
+lastUpdated: "03/27/2020"
 title: "json.strerror"
 description: "json strerror Return the description of a JSON error code json strerror code This function returns a description of the JSON error code returned when json decode fails Example 70 39 json strerror example The follow constants are defined and can be used to determine the cause of failure in..."
 ---

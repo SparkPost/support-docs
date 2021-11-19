@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/05/2020"
+lastUpdated: "03/27/2020"
 title: "session:response_status_set_std"
 description: "session response status set std Set the HTTP status for the session response session response status set std cod message mimetype code numeric message string mimetype string optional Use this function with msys httpsrv register to set the HTTP status for the session response For example code see Example 70..."
 ---

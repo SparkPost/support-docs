@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/05/2020"
+lastUpdated: "03/27/2020"
 title: "Key Binding Reference for ec_console"
 description: "ec console uses the libedit library to provide command line editing facilities By default libedit starts in Emacs mode which provides built in commands that you can combine into macros to automate your work You can change the default setting by configuring your editrc file Table D 1 Editor Commands..."
 ---

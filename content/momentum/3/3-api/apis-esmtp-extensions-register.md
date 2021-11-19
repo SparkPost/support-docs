@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "esmtp_extensions_register"
 description: "esmtp extensions register Register ESMTP extensions void esmtp extensions register command s f closure const char command ESMTP Extension Setup s ESMTP Extension Func f void closure Register ESMTP extensions command The extension that you wish to register for example XCLIENT s A pointer to the setup function typedef ed..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "http_request_delete_header"
 description: "http request delete header Delete a header from an HTTP request int http request delete header sess header http session sess const char header Configuration Change This function is available as of version 3 6 Delete a header from an HTTP request You must call http request finalize after invoking..."
 ---

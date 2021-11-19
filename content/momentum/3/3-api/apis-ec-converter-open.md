@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "ec_converter_open"
 description: "ec converter open open a converter ec converter ec converter open fromcode tocode status const char fromcode const char tocode int status This reference page was automatically generated from functions found in the header files in the development branch The function described here may not exist in generally available versions..."
 ---

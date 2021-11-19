@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "time_series_init_series"
 description: "time series init series Add a monitor to the series int time series init series ts base interval num intervals time series ts time t base interval unsigned short num intervals This reference page was automatically generated from functions found in the header files in the development branch The function..."
 ---

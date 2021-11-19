@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/05/2020"
+lastUpdated: "03/27/2020"
 title: "Security Considerations"
 description: "This section will document security issues and fixes for those issues A umask setting of 0027 in the shell startup file typically bashrc when using the bash shell will cause installation to fail because directories created by root will be inaccessible to the user ecuser With a umask setting of..."
 ---

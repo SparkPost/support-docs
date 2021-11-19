@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/05/2020"
+lastUpdated: "03/27/2020"
 title: "xml.parsexml"
 description: "xml parsexml Create an XML document object xml parsexml strxml keep blanks This function parses an XML string and returns an XML document object The second argument keep blanks is an optional integer value When not set or set to 0 ignorable white spaces will be ignored otherwise text nodes..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/05/2020"
+lastUpdated: "03/27/2020"
 title: "msys.threadpool.stat"
 description: "msys threadpool stat Return stats regarding a threadpool msys threadpool stat threadpoolname or jobclassid Supply a job class ID integer or name string to this function A table is returned with the following fields name invocations avg concurrency saturation avg wallclock time per op queue sz num threads num active..."
 ---

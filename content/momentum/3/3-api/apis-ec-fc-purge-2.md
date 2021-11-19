@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "ec_fc_purge2"
 description: "ec fc purge 2 Quickly purge all items from the cache unsigned int ec fc purge 2 cache reset key index ec fc t cache int reset key index This reference page was automatically generated from functions found in the header files in the development branch The function described here..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/05/2020"
+lastUpdated: "03/27/2020"
 title: "msys.audit.connections"
 description: "msys audit connections Return the number of connections that have occurred for a CIDR block within a configured time window msys audit connections monitor options Returns the number of connections that have occurred for a CIDR block within a configured time window This feature supports I Pv 6 I Pv..."
 ---

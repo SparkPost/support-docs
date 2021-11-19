@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "ec_message_mcmt_fixup"
 description: "ec message mcmt fixup int ec message mcmt fixup closure msg void closure ec message msg int has core ec message mcmt fixup hook void register core ec message mcmt fixup hook first hook closure ec hook core ec message mcmt fixup func t hook void closure void register core..."
 ---

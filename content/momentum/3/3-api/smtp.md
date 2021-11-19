@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "SMTP-related Functions"
 description: "Table of Contents esmtp destroy message construct Destroy the specified message construct esmtp extensions register Register ESMTP extensions esmtp message factory This function is the ESMTP server state machine esmtp message factory state Determine the state of a message read smtp Reads the SMTP response from peer read smtp 2..."
 ---

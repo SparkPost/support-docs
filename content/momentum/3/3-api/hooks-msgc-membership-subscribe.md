@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "membership_subscribe"
 description: "membership subscribe void membership subscribe closure mode sender sender len group group len capabilities capabilities len gid void closure int mode const char sender int sender len const char group int group len const char capabilities int capabilities len u int 32 t gid int has msgc membership subscribe hook..."
 ---

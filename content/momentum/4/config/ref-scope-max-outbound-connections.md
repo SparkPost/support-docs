@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/05/2020"
+lastUpdated: "03/27/2020"
 title: "scope_max_outbound_connections"
 description: "scope max outbound connections provide traffic shaping for outbound connections scope max outbound connections 20 scope max outbound connections provides for finer grained manipulation of the number of outbound connections than does server max outbound connections When used in different scopes its behavior is as follows In the global scope..."
 ---

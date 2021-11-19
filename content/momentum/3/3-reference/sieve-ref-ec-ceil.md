@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "ec_ceil"
 description: "ec ceil round up to the nearest integer ec ceil number ec ceil rounds the given number up to the nearest integer Example 16 29 ec ceil example..."
 ---

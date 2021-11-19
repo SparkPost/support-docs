@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/05/2020"
+lastUpdated: "03/27/2020"
 title: "Creating an API Key"
 description: "Configuration Change As of version 4 1 API authentication is enabled by default For instructions to disable it see Chapter 21 Enforcing REST API UI User Authentication When disabled an apikey and Authorization header is no longer required Introduction Momentum offers a set of REST API enabling client applications to..."
 ---

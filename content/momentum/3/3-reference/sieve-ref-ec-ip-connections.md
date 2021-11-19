@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "ec_ip_connections"
 description: "ec ip connections Audit how many connections an IP address has made ec ip connections time series index mask ec ip connections hash ec ip connections returns a string containing the number of connections that have occurred for a CIDR block within a configured time window The referenced CIDR block..."
 ---

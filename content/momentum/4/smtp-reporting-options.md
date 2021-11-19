@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/05/2020"
+lastUpdated: "03/27/2020"
 title: "Reporting Options"
 description: "For every message injected Momentum reports data tracking its full disposition status You can view this reporting data using the following Web based User Interface Using this flexible easy to use interface you can evaluate your message deliverability and track engagement See the tutorial in Chapter 56 Using the UI..."
 ---

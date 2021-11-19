@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/05/2020"
+lastUpdated: "03/27/2020"
 title: "fail domain quiet"
 description: "fail domain quiet fail messages for a domain without generating bounces fail domain quiet domain name The fail domain quiet command allows the administrative failure of all messages bound for the specified domain without sending a bounce message even if Generate Bounces is set in the configuration file Its usage..."
 ---

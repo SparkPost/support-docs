@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/05/2020"
+lastUpdated: "03/27/2020"
 title: "adaptive_scope"
 description: "adaptive scope define the scope applicable to adaptive delivery AD adaptive scope auto This directive is only valid if the Momentum adaptive module is loaded See Section 71 3 adaptive Adaptive Delivery This option controls the scope of adaptive delivery making it local to the node or cluster wide i..."
 ---

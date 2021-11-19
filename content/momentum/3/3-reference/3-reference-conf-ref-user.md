@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "user"
 description: "user group security user identity to assume after startup This security feature instructs Momentum if run as root to drop its superuser privileges before processing mail By doing this Momentum can limit the damage that could be caused by an attack on the system that results in compromise If you..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "ec_datasource_cache_query"
 description: "ec datasource cache query Execute a query against a datasource cache int ec datasource cache query cachename query params closure const char cachename const char query EC Dict params ec datasource closure closure Execute a query against a datasource cache When you are done call ec datasource cache delref on..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/06/2020"
+lastUpdated: "02/08/2020"
 title: "Message Delivery: Understanding Delays and Bounces"
 description: "The final disposition for all messages sent from Spark Post is either delivered or bounced but messages can be delayed and delivery retried a number of times before the final state is determined Delays aka Temporary Failures or 4 xx Errors When we receive a 4 xx rejection from the..."
 ---

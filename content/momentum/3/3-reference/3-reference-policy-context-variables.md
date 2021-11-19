@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "Validation Context Variables"
 description: "As mentioned in Chapter 5 Implementing Policy with Momentum context variables have a significant role to play when policy is enforced using scripts There is a description of a user defined connection context variables set within a listener stanza in Context In addition to user defined variables there are predefined..."
 ---

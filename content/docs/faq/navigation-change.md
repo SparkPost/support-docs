@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/06/2020"
+lastUpdated: "02/08/2020"
 title: "Navigation change"
 description: "Outlining the changes to the navigation inside the SparkPost app."
 ---

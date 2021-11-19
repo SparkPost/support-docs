@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "Message Conversion Parameters"
 description: "The following parameters may be used to tailor Email to SMS message conversion and the SMS Email interworking format of Mobile Momentum SMS transmissions SMPP Max Sms Message Size default 140 SMPP Sms Segment Size default 140 SMPP Max Sms From Size default 0 SMPP Max Sms Subject Size default..."
 ---

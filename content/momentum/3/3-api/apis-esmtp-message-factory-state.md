@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "esmtp_message_factory_state"
 description: "esmtp message factory state Determine the state of a message const char esmtp message factory state state int state Determine the state of a message state The integer representation of the message state On success the return value will be one of the following On failure unknown is returned It..."
 ---

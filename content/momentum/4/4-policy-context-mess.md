@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/05/2020"
+lastUpdated: "03/27/2020"
 title: "Message Context Variables"
 description: "Message context variables yield information about the current message These variables are predefined either in a global context or within a module The following tables list the global and module specific variables It is also possible to define context variables using configuration options These variables are discussed in Section 63..."
 ---

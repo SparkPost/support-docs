@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "connection"
 description: "This struct is defined as follows To use this struct include the file dns ds h Section 68 10 connection handle..."
 ---

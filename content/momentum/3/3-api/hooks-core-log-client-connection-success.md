@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "log_client_connection_success"
 description: "log client connection success Register a function with this hook that will be invoked whenever an outbound connection attempt succeeds void core log client connection failure closure addr dr binding slot now void closure struct sockaddr addr domain record dr int binding slot struct timeval now Register a function with..."
 ---

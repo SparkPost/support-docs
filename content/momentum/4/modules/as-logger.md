@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/05/2020"
+lastUpdated: "03/27/2020"
 title: "as_logger – Audit Series Logger"
 description: "The as logger module is designed for use on an eccmgr instance It journals replicated audit series to disk at a configurable periodic interval Audit series can be included or excluded from being journalled by specifying regular expressions in an inclusion or exclusion list The files are stored in a..."
 ---

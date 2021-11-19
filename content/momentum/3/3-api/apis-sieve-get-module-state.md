@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "sieve_get_module_state"
 description: "sieve get module state Get the current module state void sieve get module state seng SENG seng Get the current module state seng The Sieve engine state This function returns a pointer to the module data field of the SENG It is legal to call this function in any thread..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/05/2020"
+lastUpdated: "03/27/2020"
 title: "domain"
 description: "domain show domain statistics domain domain name The domain command takes a single argument specifying a domain to inspect The DNS cache is searched and if the domain is current in the cache detailed information about its DNS records queues and connections are displayed It is important to note the..."
 ---

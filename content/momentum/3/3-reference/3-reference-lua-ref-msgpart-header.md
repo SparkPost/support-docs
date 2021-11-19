@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "msgpart:header"
 description: "msgpart header Return an array of header values for the given name msgpart header name Returns an array of header values for the given name Enable this function with the statement require msys extended message..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/05/2020"
+lastUpdated: "03/27/2020"
 title: "xclient"
 description: "xclient use the xclient extension to SMTP for outbound mail xclient no ifavailable required xclient allows information regarding the original sending host such as the connecting IP address to be communicated with the next hop and is useful when Momentum is deployed as a gateway device in a configuration where..."
 ---

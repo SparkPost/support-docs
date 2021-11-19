@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/05/2020"
+lastUpdated: "03/27/2020"
 title: "prohibited_hosts"
 description: "prohibited hosts prevent mail from being delivered to invalid destinations prohibited hosts 127 0 0 1 prohibited hosts 127 0 0 1 fe 80 a 00 1 Some providers use DNS tricks to deter systems they feel are abusing their resources One technique is to return a loopback or other..."
 ---

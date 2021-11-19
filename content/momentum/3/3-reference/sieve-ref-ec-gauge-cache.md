@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "ec_gauge_cache"
 description: "ec gauge cache init ec gauge cache inc ec gauge cache dec ec gauge cache get gauge cache functions for Sieve ec gauge cache init name for the cache max number of elements time to expiration of an element replicate ec gauge cache inc name for the cache name for..."
 ---

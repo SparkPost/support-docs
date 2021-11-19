@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/04/2020"
+lastUpdated: "03/26/2020"
 title: "smpp_logger Module Configuration"
 description: "The smpp logger module determines the location of the SMPP log file which types of records are created and the format of those records Find below a sample smpp logger configuration smpp logger module configuration options can be set through the web UI in exactly the same way as other..."
 ---
