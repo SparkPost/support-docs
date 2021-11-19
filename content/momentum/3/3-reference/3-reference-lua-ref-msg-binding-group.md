@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "msg:binding_group"
 description: "msg binding group Sets the binding group to the named binding if one is provided msg binding group value Sets the binding to one in the named binding group if one is provided using logic similar to the Sieve function ec set binding group Returns the current or new value..."
 ---

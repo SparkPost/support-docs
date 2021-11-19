@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "SSL Functions"
 description: "Table of Contents ec ssl ctx from event Get an SSL context from an event ec ssl is event ssl Determine whether an event is SSL related ec ssl set ctx param Set an ec ssl ctx param member ec ssl set ctx verify mode sets the tls verify ec..."
 ---

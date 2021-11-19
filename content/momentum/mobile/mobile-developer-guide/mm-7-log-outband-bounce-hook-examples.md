@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "Examples"
 description: "Example 21 1 MM 7 Log Outband Bounce Hook Lua Example Example 21 2 MM 7 Log Outband Bounce Hook C Example..."
 ---

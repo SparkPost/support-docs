@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "msys.dp_config.rbls"
 description: "Configure RB Ls Find below the sample excerpt included in the dp config lua file The elements of this configuration option are as follows name The name of the RBL This name must be unique type The legal values for this element are either dns or rbldnsd The other elements..."
 ---

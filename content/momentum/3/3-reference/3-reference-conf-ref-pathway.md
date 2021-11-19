@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "pathway"
 description: "pathway a grouping of inbound configuration options Configuration Change This feature is available starting from Momentum 3 0 24 The Pathway scope is used to group inbound configuration options that you wish to apply to a specific ESMTP Listener A Pathway scope may be defined in the global scope or..."
 ---

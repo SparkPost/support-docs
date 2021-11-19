@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "__get_global_mail_queue"
 description: "get global mail queue Allocates memory and initializes the global mail queue Skiplist get global mail queue void Allocates memory and initializes the global mail queue This function returns the address of a newly allocated global mail queue This is an address of a Section 68 77 Skiplist Only call..."
 ---

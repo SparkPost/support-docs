@@ -1,5 +1,5 @@
 ---
-lastUpdated: "June 2021"
+lastUpdated: "05/03/2021"
 title: "Are you sending emails as Encrypted messages?"
 description: "SparkPost supports Transport Layer Security(TLS). TLS is a cryptographic protocol that provides security on the Internet and lets you encrypt emails during transit. All incoming API calls to SparkPost use HTTPS and are SSL/TLS encrypted. SparkPost also offers TLS support for incoming SMTP traffic if the user chooses to enable it."
 ---

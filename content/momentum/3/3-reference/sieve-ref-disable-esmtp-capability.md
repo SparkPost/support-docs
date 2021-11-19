@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "disable_esmtp_capability"
 description: "disable esmtp capability remove a string from the EHLO response disable esmtp capability string Use this function to remove a string from the EHLO response This function is typically used in the connect phase To add a string use advertize esmtp capability Example 16 16 disable esmtp capability example advertize..."
 ---

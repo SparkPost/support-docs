@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "sieve_parse_text"
 description: "sieve parse text parse compile a sieve script from a memory buffer SIEVE sieve parse text sourcename script scriptlen error log const char sourcename const char script int scriptlen string error log This reference page was automatically generated from functions found in the header files in the development branch The..."
 ---

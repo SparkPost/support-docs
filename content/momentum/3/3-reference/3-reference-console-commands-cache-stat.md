@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "cache stat"
 description: "cache stat show detailed cache statistics for the specified cache cache stat cache name Configuration Change This feature is available starting from Momentum 3 0 26 This command shows statistics for the specified cache Use the cache list command to determine the available caches Find sample output below This command..."
 ---

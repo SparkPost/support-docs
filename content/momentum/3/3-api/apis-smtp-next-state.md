@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "smtp_next_state"
 description: "smtp next state Change the SMTP state for the current connection to another state void smtp next state dc connh state now delivery construct dc connection handle connh smtp state state struct timeval now Change the SMTP state for the current connection to another state dc The address of a..."
 ---

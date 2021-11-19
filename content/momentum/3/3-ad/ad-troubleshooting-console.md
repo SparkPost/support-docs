@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "Using the System Console"
 description: "There are system console commands specific to the adaptive module that are useful for troubleshooting adaptive suspensions Show suspended deliveries Pass in parameters to view suspended deliveries from a specific binding to a specific domain adaptive list Show the values of the shaping parameters Again you may specify particular binding..."
 ---

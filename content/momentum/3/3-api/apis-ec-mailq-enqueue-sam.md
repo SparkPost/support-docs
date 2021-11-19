@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "ec_mailq_enqueue_sam"
 description: "ec mailq enqueue sam Enqueue multiple messages in a batch atomically prior to running mail queue maintainers void ec mailq enqueue sam head now sp async message head struct timeval now This reference page was automatically generated from functions found in the header files in the development branch The function..."
 ---

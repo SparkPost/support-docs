@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "pe2_mark_bounced"
 description: "pe 2 mark bounced log bounce events when the pe 2 logger module is loaded passively pe 2 mark bounced reason bounce code This function requires that the pe 2 logger module be loaded Use this function to log bounce events when the pe 2 logger module is loaded in..."
 ---

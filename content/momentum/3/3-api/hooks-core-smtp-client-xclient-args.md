@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "smtp_client_xclient_args"
 description: "smtp client xclient args int smtp client xclient args closure dc args void closure delivery construct dc smtp client args args int has core smtp client xclient args hook void register core smtp client xclient args hook first hook closure ec hook core smtp client xclient args func t hook..."
 ---

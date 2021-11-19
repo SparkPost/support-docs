@@ -1,5 +1,5 @@
 ---
-lastUpdated: "February 2020"
+lastUpdated: "01/06/2020"
 title: "Why do we need to configure DKIM to send anything?"
 description: "Q I tried sending after configuring my sending domain but it didn't go through I m getting the error that it's not configured I did not configure DKIM because I was sending via SMTP Why is it necessary A As a leader in the sending industry your sending reputation and..."
 ---

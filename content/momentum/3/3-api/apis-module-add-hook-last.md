@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "module_add_hook_last"
 description: "module add hook last Add a hook as the last hook ec atomic t module add hook last name proto hook closure flags const char name const char proto void hook void closure int flags This function is for internal use only Use the EC DECLARE VOID HOOK macro or..."
 ---

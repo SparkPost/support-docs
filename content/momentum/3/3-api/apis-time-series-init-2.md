@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "time_series_init2"
 description: "time series init 2 Similar to time series init and supporting deleting item from a bucket time series time series init 2 add data del data alloc bucket free bucket void void void add data void void void del data void alloc bucket void void free bucket This reference page..."
 ---

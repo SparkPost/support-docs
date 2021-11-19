@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "ec_message_builder"
 description: "ec message builder Convenience routine for building messages in a blocking fashion io object ec message builder mess size hint ec message mess size t size hint Convenience routine for building messages in a blocking fashion If you are constructing a message internally this API will return an IO object..."
 ---

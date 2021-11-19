@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "fingerprint rejection summary"
 description: "fingerprint rejection summary display details related to the current inbound connection fingerprint rejection summary Configuration Change This feature is available starting from Momentum 3 0 26 In order to use this command you must have the Policy Tools suite installed Passive OS fingerprinting is installed as part of the Policy..."
 ---

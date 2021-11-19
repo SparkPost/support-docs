@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "scpt_push_object_and_allocate"
 description: "scpt push object and allocate Allocate room to hold a boxed C structure of a particular type void scpt push object and allocate thr objtype objsize scpt thread thr const char objtype size t objsize Allocate room to hold a boxed C structure of a particular type This is intended..."
 ---

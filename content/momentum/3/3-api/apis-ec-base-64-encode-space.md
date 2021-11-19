@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "ec_base64_encode_space"
 description: "ec base 64 encode space Returns the number of bytes required to Base 64 encode a string int ec base 64 encode space len int len Returns the number of bytes required to Base 64 encode a string len The length of the string to Base 64 encode in bytes..."
 ---

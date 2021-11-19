@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "Configuration for MM7"
 description: "Prior to Momentum version 3 5 6 MM 7 domains are configured in the following way Example 7 4 Configuration prior to 3 5 6 In Momentum 3 6 domains continue to be configured in the same way as shown in Example 7 4 Configuration prior to 3 5 6..."
 ---

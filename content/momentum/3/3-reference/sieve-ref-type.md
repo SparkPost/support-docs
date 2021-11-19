@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "type"
 description: "type test the type of the value in a Sieve variable type variable string Some actions such as ec config can return more than one type of value Use this test to check the type of the value in a Sieve variable Possible types are string number stringlist hash tag..."
 ---

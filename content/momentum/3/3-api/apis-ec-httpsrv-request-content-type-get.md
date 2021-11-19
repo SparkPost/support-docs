@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "ec_httpsrv_request_content_type_get"
 description: "ec httpsrv request content type get Gets the content type and charset from the session request int ec httpsrv request content type get sess content type charset ec httpsrv session sess const char content type const char charset This reference page was automatically generated from functions found in the header..."
 ---

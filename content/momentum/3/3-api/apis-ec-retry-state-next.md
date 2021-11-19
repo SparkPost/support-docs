@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "ec_retry_state_next"
 description: "ec retry state next Return next offset associated with a retry state distribution bounded to ceiling unsigned int ec retry state next state ceiling ec retry state t state unsigned int ceiling This reference page was automatically generated from functions found in the header files in the development branch The..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "scpt_callout"
 description: "This struct is defined as follows To use this struct include the file modules scriptlets ec scriptlet h Chapter 42 Scriptlet and Alerting Functions and Section 68 72 scpt thread..."
 ---

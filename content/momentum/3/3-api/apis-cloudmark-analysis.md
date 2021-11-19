@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "cloudmark_analysis"
 description: "cloudmark analysis Analyzes the header returned by cloudmark score and returns score category sub category and rescan int cloudmark analysis cm header m score const char cm header ec message m unsigned int score This reference page was automatically generated from functions found in the header files in the development..."
 ---

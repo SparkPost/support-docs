@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/05/2020"
 title: "open_tracking_enabled"
 description: "open tracking enabled enable or disable open tracking for SMTP injections Open Tracking Enabled true false Configuration Change This option is available as of version 4 1 HF 4 When open tracking is enabled Momentum inserts an open tracked image into the top text html part of SMTP injected messages..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/05/2020"
 title: "Log Aggregation"
 description: "The log aggregation capability of the cluster provides a reliable durable centralized logging facility The default cluster configuration implements centralized logging in addition to the regular loggers and maintains its own local logs in the usual location There is no requirement that log aggregation be enabled These logs are gathered..."
 ---

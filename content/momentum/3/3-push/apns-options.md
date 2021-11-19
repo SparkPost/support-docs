@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "APNs Options"
 description: "This chapter describes the non module options related to the Apple Push Notification server AP Ns For a description of the options valid within the scope of the AP Ns modules see Chapter 2 APN Modules There is only one AP Ns specific option apn expiry and it is valid..."
 ---

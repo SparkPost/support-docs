@@ -1,5 +1,5 @@
 ---
-lastUpdated: "February 2020"
+lastUpdated: "01/06/2020"
 title: "Mandrill Migration Guide"
 description: "In the wake of the changes at Mandrill Spark Post has offered to take on any departing Mandrill users and to honor Mandrill’s pricing for those users As a company Spark Post would like to make the transition as seamless as possible Please view our Migration guide We also have..."
 ---

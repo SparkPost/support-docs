@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "msys.dp_config.message_size_limits"
 description: "Message size limits Multiple can be defined with different whitelist honoring settings This configuration table defines Find below the sample excerpt included in the dp config lua file The elements of this configuration table are as follows check Whether or not to use this configuration item size The limitation you..."
 ---

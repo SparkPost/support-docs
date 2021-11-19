@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "ec_message_rsrc_get"
 description: "ec message rsrc get This will return the I O object associated with the resource name as well as the state io object ec message rsrc get message name state ec message message const char name int state This reference page was automatically generated from functions found in the header..."
 ---

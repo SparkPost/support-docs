@@ -1,5 +1,5 @@
 ---
-lastUpdated: "April 2020"
+lastUpdated: "03/03/2020"
 title: "Message Central Legacy Changelog"
 description: "Changelogs for legacy versions of Message Central"
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "ec_message_render_headers_to_string"
 description: "ec message render headers to string Renders the headers of the first part of a message to a string int ec message render headers to string mess str flags ec message mess string str int flags Renders the headers of the first part of a message to a string Example..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "gcm_logger Module"
 description: "The gcm logger logs Google notifications to file writing to a single file in delimited format Configuration Change This feature is available as of version 3 5 5 Like other loggers the gcm logger is configured in the ecelerity conf file To load this module add the following lines to..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "cache stats"
 description: "cache stats show cache statistics cache stats cache name This command shows statistics for all caches if no parameter is passed in Otherwise it shows the statistics for the specified cache or caches For example cache stats ds core ecdb will produce metrics such as For each cache this command..."
 ---

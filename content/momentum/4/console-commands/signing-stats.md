@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/05/2020"
 title: "signing_stats"
 description: "signing stats show DK DKIM signing stats signing stats This command shows DKIM and Domainkeys signing statistics since startup or the last reset of statistics Global and Per Binding statistics are persistent across Momentum shutdown and startup Per Domain and Per Binding Per Domain statistics are not persistent Global The..."
 ---

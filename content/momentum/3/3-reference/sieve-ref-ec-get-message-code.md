@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "ec_get_message_code"
 description: "ec get message code Returns the current SMTP status code for a message ec get message code ec get message code returns the current SMTP code and description associated with a message The code reflects the status of the message from the point of view of the mail system It..."
 ---

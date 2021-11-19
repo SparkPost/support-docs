@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "Conclusion"
 description: "That's essentially all there is to implementing policy Sieve or Lua scripts provide you with enough flexibility to express the logic behind your policy Aside from being very convenient policy scripts can be reloaded on the fly allowing real time adjustment of policy without interrupting service the Momentum implementation has..."
 ---

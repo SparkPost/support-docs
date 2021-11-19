@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/05/2020"
 title: "Upgrade Ecelerity on the Remaining Platform Nodes"
 description: "Upgrade the packages on the remaining Platform Nodes Upgrade the RPM packages with yum this includes all Momentum and third party packages If you are performing an upgrade on a Combined Node you must exclude Vertica Start Momentum If Ecelerity fails to start due to a licensing issue copy your..."
 ---

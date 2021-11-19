@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "ec_interpolate_add_reqs"
 description: "ec interpolate add reqs Add a set of requirements to an interpolation context void ec interpolate add reqs ctx reqs ec interpolate context ctx int reqs Add a set of requirements to an interpolation context A macro implementation would use this to hint at the kind of environment needed for..."
 ---

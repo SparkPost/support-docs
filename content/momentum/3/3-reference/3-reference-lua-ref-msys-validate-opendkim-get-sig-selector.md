@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "msys.validate.opendkim.get_sig_selector"
 description: "msys validate opendkim get sig selector Fetch the selector associated with a DKIM signature msys validate opendkim get sig selector dkim sig Configuration Change This function is available as of version 3 6 This function requires the opendkim module It fetches the selector from a DKIM SIGINFO object Use msys..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "validate_context_remove_all_rcpts"
 description: "validate context remove all rcpts Function to remove all addr from recipient list int validate context remove all rcpts ctx validate context ctx This reference page was automatically generated from functions found in the header files in the development branch The function described here may not exist in generally available..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "scpt_push_ref"
 description: "scpt push ref Push a reference onto the stack void scpt push ref thr ref scpt thread thr int ref Push a reference onto the stack thr The script thread For a description of this data type see Section 68 72 scpt thread ref The reference that you wish to..."
 ---

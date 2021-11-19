@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/05/2020"
 title: "relay_hosts"
 description: "relay hosts configure the list of hosts for which Momentum relays mail relay hosts 10 0 0 1 Momentum is a powerful mail delivery system As an operator you can expose your system to abuse by allowing unauthorized machines to send e mail to domains for which the local instance..."
 ---

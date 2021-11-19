@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "config_get_binding_domain_tls_ciphers"
 description: "config get binding domain tls ciphers Determine the value of the tls ciphers option char config get binding domain tls ciphers caller scope binding domain generic module infrastructure caller scope int binding const domain Determine the value of the tls ciphers configuration option The caller scope argument is virtually always..."
 ---

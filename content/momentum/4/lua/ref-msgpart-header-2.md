@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/05/2020"
 title: "msgpart:header"
 description: "msgpart header Unset the header name of the current message part msgpart header name nil Unset the header name of the current message part Enable this function with the statement require msys extended message..."
 ---

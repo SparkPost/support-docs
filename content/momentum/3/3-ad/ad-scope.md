@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "What Does Adaptive Delivery Do?"
 description: "The Momentum Adaptive Delivery AD feature dynamically tunes parameters to help manage outbound traffic in accordance with the best practices of receivers The following diagram gives an overview of AD showing how the adaptive module responds to input and adjusts outbound traffic Figure 1 1 Adaptive Delivery This module can..."
 ---

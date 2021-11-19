@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "Hooks in the gcm Scope"
 description: "The Google Cloud Messaging GCM service is supported as of Momentum version 3 5 5 Hook points in support of this service are described here These hook points are also supported from Lua Using them is described at GCM and Lua Instead of using the GCM specific hook points you..."
 ---

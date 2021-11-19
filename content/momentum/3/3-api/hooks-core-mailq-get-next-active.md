@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "mailq_get_next_active"
 description: "mailq get next active ec message mailq get next active closure dr binding slot connh void closure domain record dr int binding slot connection handle connh int has core mailq get next active hook void register core mailq get next active hook first hook closure ec hook core mailq get..."
 ---

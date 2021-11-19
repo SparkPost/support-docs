@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "sys_init"
 description: "sys init void sys init closure void closure int has core sys init hook void register core sys init hook first hook closure ec hook core sys init func t hook void closure void register core sys init hook last hook closure ec hook core sys init func t hook..."
 ---

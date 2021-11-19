@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "__ec_hook_head"
 description: "The members of this structure are as folllows To use this struct include the file module hooks h module get hook array from transaction and module get hook head..."
 ---

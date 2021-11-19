@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "bounce_error_classify2"
 description: "bounce error classify 2 Classify a message in the context of an out of band bounce int bounce error classify 2 mess orig rcpt ignorelist limit ec message mess char orig rcpt const char ignorelist int limit This reference page was automatically generated from functions found in the header files..."
 ---

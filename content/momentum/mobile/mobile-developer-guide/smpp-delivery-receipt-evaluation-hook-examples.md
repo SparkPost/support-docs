@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "Examples"
 description: "Example 2 1 SMPP Delivery Receipt Evaluation Hook Lua Example Example 2 2 SMPP Delivery Receipt Evaluation Hook C Example..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "ec_message_set_first_part"
 description: "ec message set first part Accessor function for changing the top level mime part for a message void ec message set first part mess part ec message mess ec message part part Set or change the top level mime part for a message You should not set mess top directly..."
 ---

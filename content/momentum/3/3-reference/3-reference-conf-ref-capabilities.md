@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "capabilities"
 description: "capabilities selectively retain root capabilities Security capabilities linux capability set This option is only available on Linux since Momentum 1 2 12 Configuration Change The Solaris equivalent of Capabilities is Privileges and is available as of version 3 0 For more information see privileges It is generally agreed that running..."
 ---

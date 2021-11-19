@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/05/2020"
 title: "drop_body_after_trans_fail"
 description: "drop body after trans fail number of retry attempts before freeing message memory drop body after trans fail 3 Momentum aggressively attempts to keep messages in memory to avoid reading their contents from disk For domains which have a large number of transient failures or for which messages often remain..."
 ---

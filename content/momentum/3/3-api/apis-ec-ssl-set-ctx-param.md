@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "ec_ssl_set_ctx_param"
 description: "ec ssl set ctx param Set an ec ssl ctx param member int ec ssl set ctx param param value char param const char value Set an ec ssl ctx param member Call this function from core get inbound tls parameters hook or core get outbound tls parameters hook param..."
 ---

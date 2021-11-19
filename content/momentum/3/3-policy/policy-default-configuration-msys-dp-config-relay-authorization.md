@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "msys.dp_config.relay_authorization"
 description: "This policy allows SMTP authenticated users to relay To use this policy you must configure SMTP authentication in ecelerity conf using the auth ds Module and the appropriate ESMTP Listener options Onnet IP addresses If this option is defined the source IP address will be checked against the configured datasource..."
 ---

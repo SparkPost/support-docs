@@ -1,5 +1,5 @@
 ---
-lastUpdated: "February 2020"
+lastUpdated: "01/06/2020"
 title: "My daily limit is bigger than my monthly plan limit - which one is correct?"
 description: "You may see that your daily limit is larger than your monthly limit. In this situation the monthly limit takes precedence and you will be allowed to send to your monthly limit in a single day. "
 ---

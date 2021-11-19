@@ -1,5 +1,5 @@
 ---
-lastUpdated: "February 2020"
+lastUpdated: "01/06/2020"
 title: "Using SparkPost with SendBlaster"
 description: "To use Spark Post as your SMTP Relay with Send Blaster click Send under the Messages Menu on the left hand navigation to bring up a dialogue box and follow these steps Set up your Sender e mail address to be an address from one of your Spark Post verified..."
 ---

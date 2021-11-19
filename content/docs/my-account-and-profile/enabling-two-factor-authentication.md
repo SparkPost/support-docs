@@ -1,5 +1,5 @@
 ---
-lastUpdated: "December 2020"
+lastUpdated: "11/03/2020"
 title: "Two-Factor Authentication"
 description: "How to enable two factor authentication on your account."
 ---

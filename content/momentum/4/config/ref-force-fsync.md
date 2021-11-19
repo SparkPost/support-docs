@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/05/2020"
 title: "force_fsync"
 description: "force fsync ensure that data is synced to disk on reception force fsync false force fsync true Upon receiving a message but before a 250 response is sent to the client confirming receipt of that message Momentum must write the message to the spool If the system does not invoke..."
 ---

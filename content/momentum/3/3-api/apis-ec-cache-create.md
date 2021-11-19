@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "ec_cache_create"
 description: "ec cache create Create a cache with max elts ec cache t ec cache create max elts max lifetime dtor unsigned int max elts unsigned int max lifetime ec cache elt dtor func dtor Create a cache with max elts This is equivalent to calling ec cache create 2 with..."
 ---

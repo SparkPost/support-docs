@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/05/2020"
 title: "EC_logger – Momentum-Style Logging"
 description: "The EC logger module is used for tracking messages from generation through delivery It creates log files that provide the disposition status of every message that goes through Momentum including message generation message reception and message delivery This module provides up to five logs depending upon its configuration For details..."
 ---

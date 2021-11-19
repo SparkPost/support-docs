@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "sl_destruct"
 description: "sl destruct Destroy a Skiplist void sl destruct sl myfree Skiplist sl Free Func myfree Remove all nodes and their clones in other Skiplists free each datum using the myfree function and free Skiplist memory sl The Skiplist myfree This is the optional user defined function that frees a data..."
 ---

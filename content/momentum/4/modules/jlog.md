@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/05/2020"
 title: "jlog – jlog-Formatted Logging"
 description: "jlog formatted logs are binary logs with independent producers which write the logs and subscribers which consume the logs Momentum jlogs present themselves as directories in the filesystem Momentum produces jlogs in the following Aggregated cluster node logging see Section 16 3 ecelerity cluster conf File event hydrant module used..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "Configuring Momentum for Apple Push Notification service (APNs)"
 description: "Overview of Apple Push Notifications The Apple Push Notification service AP Ns is a gateway for push notifications sent to Apple devices Apple defines push notifications in the following way Push notifications also known as remote notifications arrive from outside a device They originate on a remote server the application’s..."
 ---

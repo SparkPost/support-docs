@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "The MCMT_Reception option"
 description: "A Multi Channel Message Type MCMT message is a multi part MIME message A MCMT message has a required email attachment with the Content Type message rfc 2822 and optionally other parts with content suitable for delivery over non email channels such as SMPP and MM 7 You can configure..."
 ---

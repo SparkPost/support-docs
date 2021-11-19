@@ -1,5 +1,5 @@
 ---
-lastUpdated: "February 2020"
+lastUpdated: "01/06/2020"
 title: "Using SparkPost with EasyMail"
 description: "Using Spark Post with G Lock Software's Easy Mail 7 is easy Just click on Add Outgoing Mail Server Account in the Getting Started window Then set up a new profile for your Spark Post account entering your From Name Email address Reply E mail address and Organization name don't..."
 ---

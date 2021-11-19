@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/05/2020"
 title: "match_cache_size"
 description: "match cache size the size of the cache that holds the results of looking up matching scopes match cache size 16384 This option determines the maximum number of elements in a cache that holds the results of looking up matching scopes It applies to regex domains Peer scopes in listeners..."
 ---

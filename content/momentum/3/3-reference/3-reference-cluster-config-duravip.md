@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "DuraVIP™: IP Fail over"
 description: "Dura VIP™ maintains the availability of Multi VIP bindings and listener services on the associated IP addresses even when node s are down either administratively or due to failure Dura VIP™ completely manages the IP addresses that you associate with bindings and listeners It does this by adding or removing..."
 ---

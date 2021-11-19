@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "ec_httpsrv_response_flush"
 description: "ec httpsrv response flush Flush pending session response output int ec httpsrv response flush sess final ec httpsrv session sess int final This reference page was automatically generated from functions found in the header files in the development branch The function described here may not exist in generally available versions..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "chunk_logger – Asynchronous Logging"
 description: "Configuration Change This feature is available as beta in Momentum 3 6 5 The chunk logger module provides a safe interface for logging asynchronously from Lua C and C Historically the paniclog has been used for low volume logging via print in Lua ec log in Sieve or ec mod..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "February 2020"
+lastUpdated: "01/06/2020"
 title: "What are the differences between CC, BCC, and archive recipients?"
 description: "SparkPost allows you to designate recipients with the X MSYS API header as cc bcc or archive recipients. SparkPost will generate a unique message for each valid CC BCC and Archive recipient."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "ec_async_fail"
 description: "ec async fail Fails a message and removes it from the system void ec async fail vm force async ec message vm int force async Fails a message and removes it from the system Removes the message from the spool logs a permanent failure and frees the message After calling..."
 ---

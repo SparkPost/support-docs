@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/05/2020"
 title: "response_transcode_replace"
 description: "response transcode replace the replacement string for a server response response transcode replace replacement string This feature requires the Section 71 58 response transcode Module When the SMTP response from a remote sever indicates an error the response code falls in the range 400 to 599 then that response is..."
 ---

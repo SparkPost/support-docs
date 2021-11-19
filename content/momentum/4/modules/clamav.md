@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/05/2020"
 title: "clamav – ClamAV"
 description: "The clamav module is an open source antivirus engine that is part of the default Momentum installation The following is an example configuration Example 71 28 clamav Configuration In order to use this module you must install Clam AV on your server and update it as needed or desired Configure..."
 ---

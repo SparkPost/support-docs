@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "MIB Files"
 description: "For your convenience the OMNITI SNMP MIB txt file found in the opt msys ecelerity docs directory is reproduced in this appendix The per domain metrics exposed via Momentum's OCC MIB do not support the SNMP GETNEXT operation This means that you can't walk the domain statistics with programs such..."
 ---

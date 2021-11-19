@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/05/2020"
 title: "msg:rcptto"
 description: "msg rcptto Sets the RCPT TO email address if one is provided msg rcptto Sets the RCPT TO email address if one is provided and returns the current or new value Enable this function with the statement require msys extended message The function may be used to return the current..."
 ---

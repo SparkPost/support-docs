@@ -1,5 +1,5 @@
 ---
-lastUpdated: "September 2020"
+lastUpdated: "08/02/2020"
 title: "Upcoming Breaking Changes to the Transmissions API - Communications Log"
 description: "Single-recipient transmissions and inline content validation will become asynchronous."
 ---

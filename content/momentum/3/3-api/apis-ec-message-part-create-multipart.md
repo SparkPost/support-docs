@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "ec_message_part_create_multipart"
 description: "ec message part create multipart Create a new multipart container part ec message part ec message part create multipart mimetype boundary const char mimetype const char boundary This reference page was automatically generated from functions found in the header files in the development branch The function described here may not..."
 ---

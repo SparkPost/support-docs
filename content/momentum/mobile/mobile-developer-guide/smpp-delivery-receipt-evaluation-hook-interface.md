@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "Interface"
 description: "This is the function interface for Lua This is the function interface for C SMPP CONTINUE SMPP DELIVERED..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "SMPP Log Delivery Hook"
 description: "Table of Contents 7 1 Purpose 7 2 Interface 7 3 Examples This hook is used to log successfully delivered SMPP MT messages..."
 ---

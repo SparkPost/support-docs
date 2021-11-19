@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "log_reopen"
 description: "log reopen This is invoked when reopen logs is issued though ec console void core log reopen closure void closure This is invoked when reopen logs is issued though ec console It is used to tell the module that the log files need to be reopened it may or may..."
 ---

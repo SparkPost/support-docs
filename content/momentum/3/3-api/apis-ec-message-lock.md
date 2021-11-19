@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "ec_message_lock"
 description: "ec message lock Perform a mutex lock operation void ec message lock message ec message message Perform a mutex lock operation on this message message A pointer to an ec message struct For documentation of this data structure see Section 68 38 ec message This function returns void It is..."
 ---

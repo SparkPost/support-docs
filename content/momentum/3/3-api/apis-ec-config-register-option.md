@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "ec_config_register_option"
 description: "ec config register option Register a module option int ec config register option option ec config option def option Register a module option After registering an option use ec config null value to initialize the value of the option option A pointer to an ec config option def struct On..."
 ---

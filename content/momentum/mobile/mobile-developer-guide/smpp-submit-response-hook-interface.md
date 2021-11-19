@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "Interface"
 description: "ec message SMPP PDU SMPP CONTINUE SMPP DELIVERED SMPP PERMFAILED SMPP TEMPFAILED..."
 ---

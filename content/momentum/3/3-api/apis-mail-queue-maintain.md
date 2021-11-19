@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "__mail_queue_maintain"
 description: "mail queue maintain mail queue maintain is the default implementation if the mail queue maintain hook int mail queue maintain closure dr binding slot sl now goalsz reserve void closure domain record dr ec binding slot binding slot Skiplist sl struct timeval now int goalsz int reserve This reference page..."
 ---

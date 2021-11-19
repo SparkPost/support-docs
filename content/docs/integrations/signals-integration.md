@@ -1,5 +1,5 @@
 ---
-lastUpdated: "April 2020"
+lastUpdated: "03/01/2020"
 title: "Signals Integration"
 description: "How the Signals integration works."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/05/2020"
 title: "cluster_scope_max_outbound_connections"
 description: "cluster scope max outbound connections provide traffic shaping for outbound connections in a cluster configuration cluster scope max outbound connections 20 cluster scope max outbound connections is for use in a cluster configuration and is the equivalent of scope max outbound connections It provides for finer grained manipulation of the..."
 ---

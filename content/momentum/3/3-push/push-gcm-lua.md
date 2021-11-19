@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "GCM and Lua"
 description: "Support for GCM includes new Lua functionality and Lua callouts This chapter covers these topics GCM related changes to the C API and to C hook points are documented in Hooks in the gcm Scope In addition to the callouts documented here you can also use the callouts documented at..."
 ---

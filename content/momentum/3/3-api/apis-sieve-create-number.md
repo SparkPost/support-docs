@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "sieve_create_number"
 description: "sieve create number Create a Sieve number SIEVEARGS sieve create number number u int 32 t number Create a Sieve number number The number you wish to create This function returns a SIEVEARGS For information about this data type see sieve ast It is legal to call this function in..."
 ---

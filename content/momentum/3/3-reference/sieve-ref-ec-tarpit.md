@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "ec_tarpit"
 description: "ec tarpit impose a time penalty ec tarpit seconds counter This instructs Momentum that the SMTP session should be put on hold for the specified number of seconds The optional counter string is used to count the number of hits for this particular action if omitted the script filename and..."
 ---

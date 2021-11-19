@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "ec_cache_resolver_set_complete"
 description: "ec cache resolver set complete Stores the resolved cache element in the resolver void ec cache resolver set complete resolver elt ec cache resolver resolver ec cache elt elt This reference page was automatically generated from functions found in the header files in the development branch The function described here..."
 ---

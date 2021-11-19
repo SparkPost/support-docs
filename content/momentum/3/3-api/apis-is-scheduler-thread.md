@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "is_scheduler_thread"
 description: "is scheduler thread Determines whether or not the thread that calls this function is a scheduler thread int is scheduler thread void Determines whether the thread that calls this function is a scheduler thread This is a Boolean function that returns 1 if this is a scheduler thread and 0..."
 ---

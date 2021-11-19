@@ -1,5 +1,5 @@
 ---
-lastUpdated: "February 2020"
+lastUpdated: "01/06/2020"
 title: "Setting Up Marketing Rocket with SparkPost!"
 description: "Setting up Marketing Rocket to use the Spark Post integration is simple and takes only a couple of minutes To correctly authenticate setup SparkPost to send emails with your domain follow these steps Log Into your SparkPost account Go to Configuration Sending Domains ADD NEW DOMAIN Enter the..."
 ---

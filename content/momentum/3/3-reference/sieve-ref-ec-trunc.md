@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "ec_trunc"
 description: "ec trunc round toward zero ec trunc number ec trunc rounds the given number toward 0 Example 16 100 ec trunc example..."
 ---

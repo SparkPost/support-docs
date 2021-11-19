@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "Sweep Rules – Configuring Bounce and FBL Behavior"
 description: "In Momentum 3 2 sweep rules were introduced in order to enable AD based on bounce and FBL statistics To use this feature you must configure the following modules in addition to the adaptive module and its dependencies The fbl Module If you want to create sweep rules using FBL..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "sieve_hard_error"
 description: "sieve hard error Report an error in a Sieve extension int sieve hard error seng msg SENG seng const char msg Report an error in a Sieve extension The purpose of this routine is to log error information such as invalid parameters to the panic log and return from a..."
 ---

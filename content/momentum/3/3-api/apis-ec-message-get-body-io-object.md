@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "ec_message_get_body_io_object"
 description: "ec message get body io object Requests an io object from the IO layer io object ec message get body io object mess ec message mess Requests an io object from the IO layer You should call ec message get body io object when you have finished consuming the io..."
 ---

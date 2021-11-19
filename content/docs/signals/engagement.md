@@ -1,5 +1,5 @@
 ---
-lastUpdated: "February 2020"
+lastUpdated: "01/06/2020"
 title: "Engagement"
 description: "The Signals recommendation on how to build and keep engaged lists."
 ---

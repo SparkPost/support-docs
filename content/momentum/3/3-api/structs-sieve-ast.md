@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "SIEVEARGS (sieve_ast)"
 description: "This struct is defined as follows The sieve ast struct is typedef ed as follows typedef struct sieve ast SIEVEARGS To use this struct include the file sieve sieve parser internals h Chapter 44 Sieve Functions..."
 ---

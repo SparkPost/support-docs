@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "Netlistener Functions"
 description: "Table of Contents accept construct get message construct Add a function to return message construct from accept construct netlistener clean accept construct Deletes a reference to a netlistener instance netlistener instantiate addr Start service on a listener endpoint netlistener stop instance Stop service on a listener endpoint netlistener register 4..."
 ---

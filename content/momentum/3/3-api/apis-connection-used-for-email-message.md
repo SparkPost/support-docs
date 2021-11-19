@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "connection_used_for_email_message"
 description: "connection used for email message Associate a message and a connection deprecated void connection used for email message h m connection handle h email message m Associate a message and a connection Use connection used for message instead..."
 ---

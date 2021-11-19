@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "delivery_construct"
 description: "This struct is defined as follows To use this struct include the file smtp h ec smtp closeconn and smtp should session shutdown..."
 ---

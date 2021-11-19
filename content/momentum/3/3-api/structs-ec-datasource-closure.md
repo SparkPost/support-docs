@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "ec_datasource_closure"
 description: "This struct is also typedef ed as ec data closure The struct members are as follows To use this struct include the file modules datasource ecdatasource h Values for the status field are ECDS QUERY LIMBO 0 uninitialized ECDS QUERY FAIL 1 query failed ECDS QUERY OK 2 query succeeded..."
 ---

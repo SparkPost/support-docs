@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "msys.validate.opendkim.get_sig_hdrsigned"
 description: "msys validate opendkim get sig hdrsigned Determine whether a given header was signed msys validate opendkim get sig hdrsigned dkim sig header name Configuration Change This function is available as of version 3 6 This function requires the opendkim module This function determines whether a header has been signed Use..."
 ---

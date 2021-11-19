@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "lookuptable_add2"
 description: "lookuptable add 2 Adds a message to the lookuptable and calls dns get M Xs if the domain wasn't in the lookuptable already void lookuptable add 2 mess routing domain ec message mess const char routing domain This reference page was automatically generated from functions found in the header files..."
 ---

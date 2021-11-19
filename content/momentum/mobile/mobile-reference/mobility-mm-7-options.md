@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "Mobile Momentum MM7 Options"
 description: "This table displays all the non module specific configuration options used in configuring MM 7 options that are valid outside the mm 7 module scope Options are sorted alphabetically by name If an option has a default value this value is shown and if there are a limited number of..."
 ---

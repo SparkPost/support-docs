@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "outbound_tls_verify"
 description: "outbound tls verify int outbound tls verify closure message void closure email message message int has core outbound tls verify hook void register core outbound tls verify hook first hook closure ec hook core outbound tls verify func t hook void closure void register core outbound tls verify hook last..."
 ---

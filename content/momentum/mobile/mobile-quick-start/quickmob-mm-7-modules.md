@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "The MM7 Modules"
 description: "There are four MM 7 modules mm 7 mm 7 serv mms logger and mms bounce logger The mm 7 module the MM 7 client is loaded automatically as required so we need not be concerned with it You only need to configure it if you wish to set the..."
 ---

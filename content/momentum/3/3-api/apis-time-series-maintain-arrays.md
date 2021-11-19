@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "time_series_maintain_arrays"
 description: "time series maintain arrays Remove the staled data from all monitors of a time series void time series maintain arrays ts time series ts This reference page was automatically generated from functions found in the header files in the development branch The function described here may not exist in generally..."
 ---

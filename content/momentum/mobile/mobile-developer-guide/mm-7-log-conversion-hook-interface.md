@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "Interface"
 description: "As with the other C hooks the function name is not significant as long as it is registered as mms log conversion as follows register mms log conversion hook first sampel mm 7 log conversion during module initialization See Example 23 2 MM 7 Log Conversion Hook C Example an..."
 ---

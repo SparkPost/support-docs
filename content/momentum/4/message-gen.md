@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/05/2020"
 title: "Generating a Transmission"
 description: "Introduction Message generation is one of Momentum's most powerful and flexible features When using SMTP your client mail application must send fully formed messages to Momentum But what if the components of your transmission are in different systems Momentum offers a set of REST API enabling you to inject your..."
 ---

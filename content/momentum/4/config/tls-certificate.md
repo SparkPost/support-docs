@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/05/2020"
 title: "tls_certificate"
 description: "tls certificate certificate to use for inbound and outbound mail TLS Certificate path to cert Specifies the filename of a file containing a PEM encoded certificate that Momentum should present to remote mail exchanges it is a client certificate The file may contain both a certificate and a key The..."
 ---

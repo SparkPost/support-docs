@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/05/2020"
 title: "domain"
 description: "domain configure domain specific options Use the domain stanza to define per domain configuration options You can nest domain stanzas beneath binding stanzas creating a binding domain configuration For additional details see Section 15 3 Configuration Scopes and Fallback In addition to defining domain stanzas using domain names you can..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "ec_ssl_ctx_from_event"
 description: "ec ssl ctx from event Get an SSL context from an event ec ssl ctx ec ssl ctx from event e Event e Get an SSL context from an event e The Event On success this function returns an ec ssl ctx struct on failure NULL is returned It is..."
 ---

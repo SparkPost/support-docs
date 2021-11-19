@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "sieve_parse_args"
 description: "sieve parse args Parses arguments for a Sieve extension int sieve parse args args errbuf errbuflen offset fmt SIEVEARGS args char errbuf int errbuflen int offset const char fmt This function parses arguments for a Sieve extension args The arguments to parse errbuf The buffer to hold the reason for..."
 ---

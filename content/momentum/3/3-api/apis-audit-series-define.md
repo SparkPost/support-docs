@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "audit_series_define"
 description: "audit series define Define an named audit series int audit series define name type interval num windows serialize replicate persisted const char name const char type int interval int num windows int serialize char replicate int persisted This reference page was automatically generated from functions found in the header files..."
 ---

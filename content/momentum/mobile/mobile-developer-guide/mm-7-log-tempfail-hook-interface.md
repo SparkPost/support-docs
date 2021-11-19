@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "Interface"
 description: "The C hook must be registered as mms log tempfail for example register mms log tempfail hook first sampel mm 7 log tempfail See Example 28 2 MM 7 Log Tempfail Hook C Example The parameter passed into this hook is ec message Most MM 7 related data are stored..."
 ---

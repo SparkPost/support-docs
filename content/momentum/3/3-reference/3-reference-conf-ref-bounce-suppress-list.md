@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "bounce_suppress_list"
 description: "bounce suppress list configure a list of email addresses that may not be considered original recipients bounce suppress list comma separated list of email addresses When a Message Delivery Notification MDN is received this option will suppress certain addresses from being identified as the purported original sender An MDN is..."
 ---

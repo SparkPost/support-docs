@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "Examples"
 description: "Example 26 1 MM 7 Log Reception Hook Lua Example Example 26 2 MM 7 Log Reception Hook C Example..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "ec_mt_strdup"
 description: "ec mt strdup Duplicate a string of the specified memory type ec mt strdup object type str int object type const char str Duplicate a string of the specified memory type The built in memtypes are enumerated at the section called Memory Types To create your own memory type use..."
 ---

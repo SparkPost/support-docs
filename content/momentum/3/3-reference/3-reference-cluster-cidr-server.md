@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "The cidr_server"
 description: "The cidr server is part of a cluster console installation It queries the data created by an as logger module and displays the result in the cluster console The cidr server is run as a daemon so it starts automatically whenever the host server is rebooted Instructions for starting this..."
 ---

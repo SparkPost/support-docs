@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "msys.pcre.replace"
 description: "msys pcre replace Perform a PCRE replace operation msys pcre replace subject pattern replacement Perform a PCRE replace operation Enable this function with the statement require msys pcre msys pcre match msys pcre split..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "ec_queue_async_job"
 description: "ec queue async job Enqueue an asynchronous job int ec queue async job job ec async job job Enqueue an asynchronous job The ec queue async job function without a terminating underscore invokes ec queue async job and is defined in the following way define ec queue async job job..."
 ---

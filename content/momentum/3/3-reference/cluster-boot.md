@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "cluster.boot"
 description: "cluster boot determines how the cluster configuration files are managed This file is created on the cluster manager and on any nodes when the opt msys ecelerity bin eccfg bootstrap command is used during installation You can find this file in the opt msys ecelerity etc directory Find below the..."
 ---

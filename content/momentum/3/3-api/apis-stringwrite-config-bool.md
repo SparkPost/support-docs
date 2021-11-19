@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "stringwrite_config_bool"
 description: "stringwrite config bool Output a boolean to the system console string stringwrite config bool str label value xml string str const char label int value int xml Output a boolean to the system console This function is deprecated in Momentum version 3 0 It is suitable only for supporting legacy..."
 ---

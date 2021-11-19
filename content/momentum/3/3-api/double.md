@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "ec_double Functions"
 description: "Table of Contents ec double list apply apply a callback function to each element in the list ec double list destroy Destroy a list ec double list init Initialize a new list ec double list pop pops an item from the tail of the list ec double list push Push..."
 ---

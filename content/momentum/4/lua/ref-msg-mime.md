@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/05/2020"
 title: "msg:mime"
 description: "msg mime Returns the top of the MIME tree for the message a message part msg mime readonly Returns the top of the MIME tree for the message a message part Setting readonly to false indicates that modifications are going to be made and a MIME tree optimized for modifications..."
 ---

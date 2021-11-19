@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/05/2020"
 title: "DomainKeys Validation"
 description: "To perform validation on all inbound messages received via SMTP load the dk validate module in your configuration For details see Section 71 28 domainkeys Yahoo Domain Keys When a message is received it is inspected to determine the responsible sending party which is either the Sender or the From..."
 ---

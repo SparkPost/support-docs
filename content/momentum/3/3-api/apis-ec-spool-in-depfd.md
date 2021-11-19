@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "ec_spool_in_depfd"
 description: "ec spool in depfd Spool in message meta data from disk deprecated ec message ec spool in depfd id depfd message id id int depfd Spool in message meta data from disk deprecated Use ec spool in 2 instead..."
 ---

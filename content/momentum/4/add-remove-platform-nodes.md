@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/05/2020"
 title: "Adding and Removing Platform Nodes"
 description: "This chapter describes how to add and remove a Platform node MTA Cassandra to and from an existing Momentum 4 2 cluster This section describes how to add a Platform node which involves installing the new node then making some manual configuration changes on the new node and on the..."
 ---

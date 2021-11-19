@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "shutdown"
 description: "shutdown shutdown Momentum shutdown This command immediately causes Momentum to shutdown Momentum must close its sockets and file descriptors cleanly so this may not happen instantaneously After this command is issued no further SMTP EC Stream or console connections will be allowed This command does not work on Solaris To..."
 ---

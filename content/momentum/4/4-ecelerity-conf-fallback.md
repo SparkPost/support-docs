@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/05/2020"
 title: "Configuration Scopes and Fallback"
 description: "Momentum has a flexible configuration system that allows many options to be set to different values for different hosts domains bindings and binding groups binding group stanza to configure binding group specific options binding stanza to configure binding specific options domain stanza to configure Multi VIP domain specific options host..."
 ---

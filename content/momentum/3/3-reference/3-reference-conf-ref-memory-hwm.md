@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "memory_hwm"
 description: "memory hwm configure physical memory usage high water mark Memory HWM 95 The memory hwm directive allows you to specify the maximum percentage of physical memory that should be used during normal operation If this threshold is exceeded new mail will be transiently failed and the server will aggressively free..."
 ---

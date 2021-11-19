@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/05/2020"
 title: "async_bounce_rendering"
 description: "async bounce rendering which thread pool to use for bounce rendering async bounce rendering true When a message fails to be delivered due to a timeout or a 5 XX error from the remote MTA Momentum generates and injects a bounce message If async bounce rendering is true this job..."
 ---

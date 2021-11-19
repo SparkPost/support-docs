@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "ec_adaptive_get_backstore_job_class"
 description: "ec adaptive get backstore job class Get the backstore job class int ec adaptive get backstore job class void This reference page was automatically generated from functions found in the header files in the development branch The function described here may not exist in generally available versions of Momentum and..."
 ---

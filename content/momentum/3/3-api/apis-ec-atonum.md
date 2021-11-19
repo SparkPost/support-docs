@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "_ec_atonum"
 description: "ec atonum Convert e string str to a signed integral value and store the result in nptr int ec atonum str nptr width endptr const char str void nptr int width char endptr This reference page was automatically generated from functions found in the header files in the development branch..."
 ---

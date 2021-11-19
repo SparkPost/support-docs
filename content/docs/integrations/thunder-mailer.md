@@ -1,5 +1,5 @@
 ---
-lastUpdated: "February 2020"
+lastUpdated: "01/06/2020"
 title: "Using SparkPost with Thunder Mailer"
 description: "The following steps will walk you through using Spark Post with Thunder Mailer Click on Connections and bring up the list of SMTP servers Click on the green symbol to create a new SMTP server profile and enter the information as shown Set the SMTP Mail Server name to smtp..."
 ---

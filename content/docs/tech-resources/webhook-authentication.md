@@ -1,5 +1,5 @@
 ---
-lastUpdated: "October 2021"
+lastUpdated: "09/05/2021"
 title: "Event Webhook Authentication and Security"
 description: "Spark Post offers optional but highly recommended security measures that can be implemented when setting up a webhook namely, SSL, OAuth 2.0, mTLS, and Basic Authentication These measures increase the security of your webhook event data and ensure that the data delivered originates from Spark Post OAuth 2..."
 ---

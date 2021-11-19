@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "refresh domain"
 description: "refresh domain refresh the DNS information for a domain refresh domain domain This command takes a single argument in the form of a domain name and refreshes the DNS information for the specified domain Instead of specifying a domain name you may specify all to view all domains This console..."
 ---

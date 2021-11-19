@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "SMPP PDU Operation Definitions"
 description: "The following SMPP PDU Operation Definitions are taken from the SMPP 3 4 specification bind resp Where is replaced by receiver transmitter or transciever depending upon circumstances The SMPP bind resp PDU is used to reply to a bind request of the specified type deliver sm The deliver sm is..."
 ---

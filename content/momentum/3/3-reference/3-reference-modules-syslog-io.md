@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "syslog_io – The syslog_io Module"
 description: "syslog io is a wrapper module that uses the syslog library routines to log to the system logger facility Example 14 103 syslog io version 3 0 default facility The default facility having a default value mail ident The identification string having a default value ecelerity When this module is..."
 ---

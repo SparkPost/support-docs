@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "smpp_seg_data"
 description: "This struct is defined as follows To use this struct include the file modules mobility smpp smpp util h Chapter 46 SMPP Functions and smpp write seg blob..."
 ---

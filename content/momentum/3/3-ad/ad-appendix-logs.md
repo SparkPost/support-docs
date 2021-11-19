@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "Adaptive Logs"
 description: "The following table shows the log entries at the various debug levels Table C 1 adaptive log entries Error Level Error Message Action DEBUG closing io wrapper path See message DEBUG opened filename See message DEBUG ec adaptive sweep rules by binding domain find instances scope for domain domain name..."
 ---

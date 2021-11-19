@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "ec_throttle_create_named"
 description: "ec throttle create named create a named throttle int ec throttle create named name maximum time period const char name uint 64 t maximum unsigned int time period This reference page was automatically generated from functions found in the header files in the development branch The function described here may..."
 ---

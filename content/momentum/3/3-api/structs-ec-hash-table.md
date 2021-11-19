@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "ec_hash_table"
 description: "The ec hash table struct has the following members To use this struct include the file echash h The hash table data structure is not thread safe any simultaneous access needs to be coordinated by the API consumer An EC Dict is an ec hash table ec datasource cache query..."
 ---

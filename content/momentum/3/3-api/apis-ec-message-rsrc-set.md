@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "ec_message_rsrc_set"
 description: "ec message rsrc set This function associates I O object source with the resource name for message int ec message rsrc set message name io ec message message const char name io object io This reference page was automatically generated from functions found in the header files in the development..."
 ---

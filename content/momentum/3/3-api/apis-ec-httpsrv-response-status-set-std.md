@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "ec_httpsrv_response_status_set_std"
 description: "ec httpsrv response status set std Sets the HTTP status for the session response int ec httpsrv response status set std sess code message mimetype ec httpsrv session sess int code const char message const char mimetype This reference page was automatically generated from functions found in the header files..."
 ---

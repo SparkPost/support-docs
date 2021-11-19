@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "ec_log_file"
 description: "ec log file log to a file io wrapper ec log file file uri arbitrary text ec log file allows you to log arbitrary information to a specified file or io wrapper Unlike the ec log action the raw message plus an appended newline will be written to the file..."
 ---

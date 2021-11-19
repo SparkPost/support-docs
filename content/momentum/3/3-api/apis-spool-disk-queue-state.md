@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "spool_disk_queue_state"
 description: "spool disk queue state Show the state of the queue on disk void spool disk queue state total progress int total int progress Show the state of the queue on disk total The size of the disk queue progress How much of the queue has been processed This function returns..."
 ---

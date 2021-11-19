@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "ec_message_swap_out_meta"
 description: "ec message swap out meta Write message meta data to disk int ec message swap out meta mess force ec message mess int force Write message meta data to disk mess A pointer to an ec message struct For documentation of this data structure see Section 68 38 ec message..."
 ---

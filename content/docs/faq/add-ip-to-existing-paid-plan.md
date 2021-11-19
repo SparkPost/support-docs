@@ -1,5 +1,5 @@
 ---
-lastUpdated: "February 2020"
+lastUpdated: "01/06/2020"
 title: "Can I add a dedicated IP to my existing Paid plan?"
 description: "The older paid plans no longer offer the ability to add dedicated IPs to your account."
 ---

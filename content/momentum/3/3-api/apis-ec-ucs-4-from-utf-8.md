@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "ec_ucs4_from_utf8"
 description: "ec ucs 4 from utf 8 Decodes a single code point from a utf 8 buffer u int 32 t ec ucs 4 from utf 8 ptr lim unsigned char ptr unsigned char lim This reference page was automatically generated from functions found in the header files in the development..."
 ---

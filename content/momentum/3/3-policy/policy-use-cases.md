@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "Use Cases"
 description: "The following table describes the configuration options in the sample dp config lua file and indicates whether or not the policy is enabled in the default configuration If an option is dependent upon a configuration module that module is identified The enabled column in this table indicates the status of..."
 ---

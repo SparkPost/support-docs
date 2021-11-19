@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "msg:body_replace"
 description: "msg body replace Streaming interface to a PCRE replacement of a message body minus headers msg body replace pattern replacement Streaming interface to a PCRE replacement of a message body minus headers This function has the same semantics as msg body match If no match is found false is returned..."
 ---

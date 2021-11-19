@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "msys.runInPool"
 description: "msys run In Pool Run a function in a separate threadpool msys run In Pool pool closure Configuration Change This feature is available as of version 3 2 This function runs a process in a separate threadpool This can be done in a number of ways The first parameter passed..."
 ---

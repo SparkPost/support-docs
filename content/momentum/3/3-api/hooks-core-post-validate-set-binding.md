@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "post_validate_set_binding"
 description: "post validate set binding void post validate set binding closure m void closure ec message m int has core post validate set binding hook void register core post validate set binding hook first hook closure ec hook core post validate set binding func t hook void closure void register core..."
 ---

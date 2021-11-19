@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "Best Practices for Manually Created Policy Scripts"
 description: "Following best practices when manually creating policy scripts is important especially in a cluster environment when scripts are used on more than one node Making use of the revision control system built in to Momentum is the best way to easily maintain policy scripts shared by different nodes If you..."
 ---

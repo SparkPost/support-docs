@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "Validation Context Functions"
 description: "Table of Contents validate context add rcpt Function to append an addr to the list validate context can modify rcpts Function to check if it is still ok to change rcpts list validate context delete Remove the specified key from either the message context or connection context validate context destroy..."
 ---

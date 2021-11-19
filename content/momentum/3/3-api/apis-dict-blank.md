@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "dict_blank"
 description: "dict blank Create a new dictionary EC Dict dict blank void Create a new dictionary There are no parameters for this function This function returns an EC Dict An EC Dict is a typedef of an ec hash table It is legal to call this function in any thread Section..."
 ---

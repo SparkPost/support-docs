@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "response_eval"
 description: "response eval Called when there is a response from AP Ns int response eval closure response void closure apn response response Configuration Change This feature is available as of version 3 5 5 This hook is called when there is a response from AP Ns closure The closure function response..."
 ---

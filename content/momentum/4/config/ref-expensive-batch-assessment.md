@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/05/2020"
 title: "expensive_batch_assessment"
 description: "expensive batch assessment only treat messages as different if the headers are rendered differently expensive batch assessment false When looking for messages that can be delivered as a batch Momentum checks the headers and bodies of every MIME part of messages that were submitted as a batch a batch being..."
 ---

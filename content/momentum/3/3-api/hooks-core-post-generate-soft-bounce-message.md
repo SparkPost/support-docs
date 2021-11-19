@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "post_generate_soft_bounce_message"
 description: "post generate soft bounce message void post generate soft bounce message closure orig bounce void closure email message orig email message bounce int has core post generate soft bounce message hook void register core post generate soft bounce message hook first hook closure ec hook core post generate soft bounce..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "ec_memtype_by_name"
 description: "ec memtype by name Returns the memtype id for a given memtype name int ec memtype by name name const char name Returns the memtype id for a given memtype name This walks the list of memtypes each time it is invoked it is recommended that this function be called..."
 ---

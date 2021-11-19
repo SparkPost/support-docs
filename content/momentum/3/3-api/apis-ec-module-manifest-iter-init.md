@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "ec_module_manifest_iter_init"
 description: "ec module manifest iter init initialize a module manifest iterator void ec module manifest iter init iter ec module manifest iter t iter This reference page was automatically generated from functions found in the header files in the development branch The function described here may not exist in generally available..."
 ---

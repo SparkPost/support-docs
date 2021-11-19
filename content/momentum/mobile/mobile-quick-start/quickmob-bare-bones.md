@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "Bare Bones Configurations"
 description: "This section describes the absolute minimum configurations for using Mobile Momentum However your aggregator or provider may require additional parameters In bare bones configurations loggers are not required for either SMPP or MM 7 A minimal SMPP client can be configured as follows Example 5 1 smpp client A minimal..."
 ---

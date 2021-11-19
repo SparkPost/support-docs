@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/05/2020"
 title: "Configure the Analytics Nodes"
 description: "To help configure NGINX on Application nodes copy the sample configuration files from any MTA node to the first Application node only which is arbitrary On the first Analytics node configure the files that provide server information about Vertica and or Cassandra nodes for use by various AP Is These..."
 ---

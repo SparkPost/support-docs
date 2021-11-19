@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "audit_series_add"
 description: "audit series add Add a value to the counter associated with a key in a named series int audit series add name count key ac prefix len const char name int count char key accept construct ac int prefix len This reference page was automatically generated from functions found in..."
 ---

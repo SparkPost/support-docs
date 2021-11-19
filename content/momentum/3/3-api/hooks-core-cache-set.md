@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "cache_set"
 description: "cache set void cache set closure name key klen value vlen whence void closure const char name const void key int klen void value int vlen u int 32 t whence int has core cache set hook void register core cache set hook first hook closure ec hook core cache..."
 ---

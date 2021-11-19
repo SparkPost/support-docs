@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "Base64 Encode/Decode and Related Functions"
 description: "Table of Contents ec base 64 decode Perform Base 64 decoding of a string ec base 64 decode space This function returns the number of bytes required to decode a Base 64 encoded string ec base 64 encode Perform Base 64 encoding of a string ec base 64 encode space..."
 ---

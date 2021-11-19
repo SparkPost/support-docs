@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/05/2020"
 title: "Setting Hostnames"
 description: "You must set up system hostnames in a manner that is consistent with Momentum however this can be difficult to do in an Amazon Web Services AWS environment Momentum's installation requires that each node is able to resolve its own hostname e g the value of HOSTNAME as well as..."
 ---

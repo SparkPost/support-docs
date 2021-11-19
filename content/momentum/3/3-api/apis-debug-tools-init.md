@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "debug_tools_init"
 description: "debug tools init initializes the debug tools layer void debug tools init argv 0 char argv 0 This reference page was automatically generated from functions found in the header files in the development branch The function described here may not exist in generally available versions of Momentum and may change..."
 ---

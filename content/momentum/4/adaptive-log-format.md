@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/05/2020"
 title: "adaptive Log"
 description: "The adaptive log is configured in the adaptive module The adaptive log entry is an delimited string such as the following The following is a description of the fields Table 35 3 Adaptive Record Fields Offset Example Field Description 0 12345679 Date in Unix timestamp format seconds since 00 00..."
 ---

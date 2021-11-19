@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "_mail_queue_maintain_domain"
 description: "mail queue maintain domain mail queue maintain domain is an internal function that is called if no mail queue maintain domain hook is registered int mail queue maintain domain dr now goalsz reserve domain record dr struct timeval now int goalsz int reserve This reference page was automatically generated from..."
 ---

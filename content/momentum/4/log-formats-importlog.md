@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/05/2020"
 title: "importlog"
 description: "The importlog records the outcome of a spool import operation It is configured in the ec logger The following is a description of the fields Table 35 8 Import Record Fields Offset Example Field Description 0 1064869327 Date of the event in Unix timestamp format seconds since 00 00 00..."
 ---

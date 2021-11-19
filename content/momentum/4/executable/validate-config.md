@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/05/2020"
 title: "validate_config"
 description: "validate config check the validity of the configuration files opt msys ecelerity bin validate config This script checks the validity of configuration files It returns the following messages Configuration valid Your configuration is valid No configuration found There is no configuration file No message is displayed Your configuration is invalid..."
 ---

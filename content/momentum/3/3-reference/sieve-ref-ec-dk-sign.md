@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "ec_dk_sign"
 description: "ec dk sign Sign a message with the Domain Keys protocol ec dk sign parameters hash ec dk sign signs the current message with a Domain Key signature By default it uses the configured parameters on the Domain Key module configuration stanza If desired a hash table of parameter overrides..."
 ---

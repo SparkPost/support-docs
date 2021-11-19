@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/05/2020"
 title: "bounce_logger – Momentum-Style Bounce Logging"
 description: "The ec logger and event hydrant modules provide full disposition status of every message that goes through Momentum However it is often convenient to view status of only bounced messages The bounce logger module writes only inband or protocol time and out of band bounces to a single log file..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "ec_ptr_array_insert"
 description: "ec ptr array insert insert into a sparse ec ptr array int ec ptr array insert array slot elt ec ptr array array int slot void elt This reference page was automatically generated from functions found in the header files in the development branch The function described here may not..."
 ---

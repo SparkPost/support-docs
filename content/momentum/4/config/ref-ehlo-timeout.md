@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/05/2020"
 title: "ehlo_timeout"
 description: "ehlo timeout network timeout for EHLO ehlo timeout 300 The amount of time in seconds to wait for a response to the EHLO command The default value is 300 ehlo timeout is valid in the binding binding group domain and global scopes..."
 ---

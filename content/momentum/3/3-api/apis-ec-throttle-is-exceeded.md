@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "ec_throttle_is_exceeded"
 description: "ec throttle is exceeded check to see if a throttle is over budget int ec throttle is exceeded name now later const char name struct timeval now struct timeval later This reference page was automatically generated from functions found in the header files in the development branch The function described..."
 ---

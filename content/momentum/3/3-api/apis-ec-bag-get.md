@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "ec_bag_get"
 description: "ec bag get Get a specific data type out of a bag void ec bag get bag typedname ec bag bag const char typedname Get a specific data type out of a bag bag The ec bag typedname The data type that you wish to retrieve for example int This..."
 ---

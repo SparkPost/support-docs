@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "config_get_binding_domain_max_resident_active_queue_size"
 description: "config get binding domain max resident active queue size Return the value of the max resident active queue size option int config get binding domain max resident active queue size caller scope binding domain generic module infrastructure caller scope int binding const domain Determine the value of the max resident..."
 ---

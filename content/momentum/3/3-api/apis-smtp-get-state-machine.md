@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "smtp_get_state_machine"
 description: "smtp get state machine Fetch the head of the SMTP client state machine smtp state smtp get state machine void This function fetches the head of the SMTP client state machine This function returns an smtp state pointer that is the beginning of the SMTP client state machine For a..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "post_smtp_command"
 description: "post smtp command void post smtp command closure b c d void closure int b message construct c validate context d int has core post smtp command hook void register core post smtp command hook first hook closure ec hook core post smtp command func t hook void closure void..."
 ---

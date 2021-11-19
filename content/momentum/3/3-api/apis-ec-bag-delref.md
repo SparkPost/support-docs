@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "ec_bag_delref"
 description: "ec bag delref Delete a reference to the specified bag void ec bag delref bag ec bag bag Delete a reference to a bag created using ec bag create bag The bag you wish to delete This function returns void It is legal to call this function in any thread..."
 ---

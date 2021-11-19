@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "scheduler_recurrent_func_add"
 description: "scheduler recurrent func add Registers a recurrent function and a closure for the master scheduler thread void scheduler recurrent func add func closure Recur Func func void closure Registers a recurrent function and a closure for the master scheduler thread func The recurrent function to register for the master scheduler..."
 ---

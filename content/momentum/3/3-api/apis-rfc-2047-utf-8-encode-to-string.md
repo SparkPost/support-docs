@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "rfc2047_utf8_encode_to_string"
 description: "rfc 2047 utf 8 encode to string Applies MIME header encoding and stores the encoded result to a string int rfc 2047 utf 8 encode to string in in len out const char in int in len string out This reference page was automatically generated from functions found in the..."
 ---

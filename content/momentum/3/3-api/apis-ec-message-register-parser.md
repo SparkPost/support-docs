@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "ec_message_register_parser"
 description: "ec message register parser Replaces the core message parser int ec message register parser parser struct ec message parser parser This reference page was automatically generated from functions found in the header files in the development branch The function described here may not exist in generally available versions of Momentum..."
 ---

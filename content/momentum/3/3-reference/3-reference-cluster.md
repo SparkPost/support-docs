@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "Clustering"
 description: "The clustering capabilities of the product enable the following features Centralized management of configuration for multiple MTA nodes Replicated redundant configuration repository with revision control Log aggregation pulls log files from MTA nodes to centralized location s on the network Replication of a variety of real time metrics to allow..."
 ---

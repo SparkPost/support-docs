@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/05/2020"
 title: "Log Formats"
 description: "The acctlog contains both authentication entries and authorization entries for the ESMTP Listener and Control Listener It is configured in the ec logger module If enabled for the listener authentication events for Unix domain sockets are logged one per line The log entry is an delimited string such as the..."
 ---

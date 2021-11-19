@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "default_charset"
 description: "default charset control usage of the default character set default charset charset default charset is intended to allow the customer to specify what the default assumed character set within the product is This does not prevent the product from interpreting other character sets as normal This is helpful to international..."
 ---

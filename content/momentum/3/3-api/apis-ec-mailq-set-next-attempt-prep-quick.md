@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "ec_mailq_set_next_attempt_prep_quick"
 description: "ec mailq set next attempt prep quick pre calculates next attempt times void ec mailq set next attempt prep quick binding slot dr now cdate thresh interval max times ec binding slot binding slot domain record dr struct timeval now time t cdate thresh time t interval int max times..."
 ---

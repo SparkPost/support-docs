@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "mail_queue_insert_active"
 description: "mail queue insert active int mail queue insert active closure mq message void closure mail queue mq abstract message message int has core mail queue insert active hook void register core mail queue insert active hook first hook closure ec hook core mail queue insert active func t hook void..."
 ---

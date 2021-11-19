@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "bounce_error_classify"
 description: "bounce error classify int bounce error classify closure body len pos void closure const char body int len int pos int has core bounce error classify hook void register core bounce error classify hook first hook closure ec hook core bounce error classify func t hook void closure void register..."
 ---

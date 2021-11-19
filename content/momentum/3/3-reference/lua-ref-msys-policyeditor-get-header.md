@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "msys.policyeditor.get_header"
 description: "msys policyeditor get header Return the value of a header field msys policyeditor get header ctx vars params Configuration Change This function is deprecated Use local x msg header X Custom Hdr to get a header For more information see msg header Return the value of a header field The..."
 ---

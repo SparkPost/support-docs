@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/05/2020"
 title: "node:tostring"
 description: "node tostring Output a node as a string node tostring Where node is an XML element this method returns a string representation of the XML source of the node and its children This same method is also available as a tostring metamethod so node tostring and tostring node are equivalent..."
 ---

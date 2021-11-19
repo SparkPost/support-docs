@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "msg:forward"
 description: "msg forward Forward the current message to recipients other than the original recipients msg forward sender rcptto text subject charset Forward the current message to recipients other than the original recipients A new message is created and the original message is attached to it The parameters are as follows sender..."
 ---

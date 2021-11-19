@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "Datasource Functions"
 description: "Table of Contents ec datasource cache delref Delete a reference to a datasource cache entry ec datasource cache query Execute a query against a datasource cache ec datasource destroy query Release the resources used by the specified query ec datasource first column Move the cursor to the first column of..."
 ---

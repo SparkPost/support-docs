@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "ec_adaptive_throttle_time_until_clear"
 description: "ec adaptive throttle time until clear check to see how long it will be until a throttle is under budget int ec adaptive throttle time until clear name is shared delta const char name int is shared int delta This reference page was automatically generated from functions found in the..."
 ---

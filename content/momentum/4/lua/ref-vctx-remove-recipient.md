@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/05/2020"
 title: "vctx:remove_recipient"
 description: "vctx remove recipient Remove an address from the recipient list vctx remove recipient address Removes an address which may be a table representing multiple addresses from the recipient list If used in an invalid phase after rcptlist final this function raises an error Enable this function with the statement require..."
 ---

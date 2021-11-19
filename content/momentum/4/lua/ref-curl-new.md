@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/05/2020"
 title: "curl.new"
 description: "curl new Create a c URL object curl new Create a new curl object The curl object serves as the main point of context for managing a session You must create an object to be able to use any of the networking operations of the c URL library Example 70..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/05/2020"
 title: "MIB Files"
 description: "A Management Information Base MIB file contains information used to manage entities in a network This information is accessed by a protocol such as Simple Network Management Protocol SNMP Every managed device and SNMP equipment vendor in the network maintains values in the MIB Object Identifiers OI Ds uniquely identify..."
 ---

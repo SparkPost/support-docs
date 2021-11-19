@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "The MCMT Format"
 description: "Modules and subsystems wanting to obtain and process the optional parts of an MCMT message must use the message resources API which is under the ec message rsrc namespace See Figure A 1 MCMT message flow for a simplified control flow of MCMT A MCMT message is a MIME message..."
 ---

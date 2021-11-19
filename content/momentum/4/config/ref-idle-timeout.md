@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/05/2020"
 title: "idle_timeout"
 description: "idle timeout time to maintain idle outbound connections idle timeout 5 The amount of time in seconds to hold open an idle connection when there are no messages currently deliverable for that domain Momentum holds SMTP sessions open for this amount of time in case another message should enter the..."
 ---

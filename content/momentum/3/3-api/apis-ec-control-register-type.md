@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "ec_control_register_type"
 description: "ec control register type Register a command handler deprecated void ec control register type type ec control type type Register a command handler deprecated Momentum 3 0 offers better AP Is See ec control register command 3 and ec control register command 2..."
 ---

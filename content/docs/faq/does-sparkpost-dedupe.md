@@ -1,5 +1,5 @@
 ---
-lastUpdated: "February 2020"
+lastUpdated: "01/06/2020"
 title: "Does SparkPost Dedupe?"
 description: "List management is pretty important to senders and Spark Post customers are no different Because Spark Post is largely transactional there is no dedupe function when you are sending messages Thus if you have duplicates in a list they will be sent additional emails There are a few reasons why..."
 ---

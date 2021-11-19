@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "ec_throttle_time_until_clear"
 description: "ec throttle time until clear check to see how long it will be until a throttle is under budget int ec throttle time until clear name const char name This reference page was automatically generated from functions found in the header files in the development branch The function described here..."
 ---

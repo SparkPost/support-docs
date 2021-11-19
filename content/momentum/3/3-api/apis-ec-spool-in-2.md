@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "ec_spool_in2"
 description: "ec spool in 2 spool in message meta data from disk int ec spool in 2 id msg message id id ec message msg This reference page was automatically generated from functions found in the header files in the development branch The function described here may not exist in generally..."
 ---

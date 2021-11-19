@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/05/2020"
 title: "Reconfig_Message Option"
 description: "Inbound SMTP connections check if the configuration has changed between messages and while handling the RSET command If the connection discovers that it is using an old configuration a 421 code will be returned in response to the MAIL FROM or RSET command that triggered the check and the connection..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/05/2020"
 title: "Post-Installation"
 description: "After you install Momentum 4 you will need to perform some additional actions and consider some potential security issues in order to complete your installation Section 12 1 Installing Partner Modules Section 12 2 Reviewing Configuration Files Section 12 3 Rotating Logfiles Section 12 5 Upgrading the Vertica License Section..."
 ---

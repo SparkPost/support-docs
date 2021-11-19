@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "msys.dp_config.audit_series.virus_mailfrom"
 description: "virus MAIL FROM rate limiting Find below the sample excerpt included in the dp config lua file The elements of this configuration table are as follows type The only legal value for this element is string interval The time interval that you wish to look at measured in seconds A..."
 ---

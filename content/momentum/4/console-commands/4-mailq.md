@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/05/2020"
 title: "mailq"
 description: "mailq show the status of the mail queues mailq domain d domain name binding b binding name limit l number When issued with no arguments this command shows counts for the active queue and the delayed queues sorted by binding groups and bindings Sample output is shown below The Group..."
 ---

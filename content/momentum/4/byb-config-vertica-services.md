@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/05/2020"
 title: "Configuring Locale"
 description: "Ensure that your locale is a UTF 8 setting by invoking the locale command There are two environment variables that identify non default locale settings LANG and LC ALL We recommend that you set LANG to en US UTF 8 If either variable is set for an ISO value e..."
 ---

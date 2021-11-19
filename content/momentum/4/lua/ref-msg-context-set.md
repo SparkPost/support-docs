@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/05/2020"
 title: "msg:context_set"
 description: "msg context set Sets a context variable msg context set type key value Set a context variable Legal values for type are msys core ECMESS CTX MESS msys core ECMESS CTX CONN The companion function msg context get always returns a string If for example My Value is a local..."
 ---

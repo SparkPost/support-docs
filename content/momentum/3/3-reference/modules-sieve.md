@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "sieve – The Sieve Module"
 description: "Sieve script management is handled through the sieve module This module allows for Sieve scripts to be specified for each phase of the SMTP transaction online reconfiguration and reloading of Sieve scripts and access to counters and metrics stored in Momentum's internal Sieve engine In Momentum version 3 x Sieve..."
 ---

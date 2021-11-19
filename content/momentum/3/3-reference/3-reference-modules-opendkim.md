@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "opendkim – OpenDKIM module"
 description: "The opendkim module adds Open DKIM capabilities to Momentum Open DKIM is an open source implementation of the DKIM Domain Keys Identified Mail sender authentication system that implements the DKIM service For a full description see Open DKIM org Configuration Change This module is available in Momentum 3 6 The..."
 ---

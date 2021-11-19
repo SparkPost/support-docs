@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "io_wrapper_vprintf"
 description: "io wrapper vprintf vprintf like function that operates on an io object pointer ssize t io wrapper vprintf io format ap io object io const char format va list ap This reference page was automatically generated from functions found in the header files in the development branch The function described..."
 ---

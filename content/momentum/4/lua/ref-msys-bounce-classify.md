@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/05/2020"
 title: "msys.bounce.classify"
 description: "msys bounce classify Create a bounce classification for a message msys bounce classify msg This function takes a mail message msys core ec message and returns a tuple code code string description orig rcpt code is a numerical classification code code string is the string representation of the code such..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/05/2020"
 title: "custom_logger – User-defined Logging"
 description: "Using the custom logger module Momentum can write logs for every stage of a message's life cycle in user defined formats and including user defined data You can log each stage to its own logfile or use a combined logfile for all stages Logging of the various stages can be..."
 ---

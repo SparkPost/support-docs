@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "echash Functions"
 description: "Table of Contents echash create Create a hash table echash delete This function removes an item from the hash table and calls the specified keyfree and datafree functions echash delete all This function removes all entries from a hash table and calls the specified keyfree and datafree functions echash delete..."
 ---

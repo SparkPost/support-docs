@@ -1,5 +1,5 @@
 ---
-lastUpdated: "February 2020"
+lastUpdated: "01/06/2020"
 title: "List-unsubscribe Functionality"
 description: "Every non transactional message sent through your account will carry a list unsubscribe header The presence of this header is intended to capture unsubscribe requests for recipients who no longer wish to receive your messages The presence of the list unsubscribe header is not a replacement for traditional unsubscribe links..."
 ---

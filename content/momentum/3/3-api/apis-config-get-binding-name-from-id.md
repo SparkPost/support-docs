@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "config_get_binding_name_from_id"
 description: "config get binding name from id Get the binding name associated with the specified identifier char config get binding name from id slot ec binding slot slot Get the binding name associated with the specified identifier slot This parameter is an ec binding slot which is defined as typedef int..."
 ---

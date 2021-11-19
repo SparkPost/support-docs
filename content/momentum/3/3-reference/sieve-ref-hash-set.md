@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "hash_set"
 description: "hash set set an element in a hash hash set hash key value This function sets a value in a hash table for a particular key Hash keys must be strings but can be expressions that resolve to strings whereas hash values can be any valid Sieve value string number..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/05/2020"
 title: "starttls_injection_policy"
 description: "starttls injection policy protect against SMTP injections prior to TLS Starttls Injection Policy allow ignore reject This option deals with the security issue described by CVE 2011 0411 namely that SMTP commands can be injected before the MTA switches to TLS Consequently a man in the middle could inject SMTP..."
 ---

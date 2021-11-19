@@ -1,5 +1,5 @@
 ---
-lastUpdated: "February 2020"
+lastUpdated: "01/06/2020"
 title: "Sending Transmission with Skip Suppression Functionality"
 description: "Note This Knowledge Base Article Is For Spark Post Enterprise Only Introduction The skip suppression feature provides the ability to override the suppression of recipient addresses that are listed in the suppression list Moreover this feature allows you to override the intended functionality of the suppression list namely the checking..."
 ---

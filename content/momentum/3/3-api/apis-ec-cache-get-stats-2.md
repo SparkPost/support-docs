@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "ec_cache_get_stats2"
 description: "ec cache get stats 2 get cache statistics void ec cache get stats 2 cache stats ec cache t cache ec cache stats 2 stats This reference page was automatically generated from functions found in the header files in the development branch The function described here may not exist in..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "MM7 Log Conversion Hook"
 description: "This hook logs message conversion from or to an MM 7 SOAP message The default logger implementation will either log the event as mm 7 to ec message or ec message to mm 7 based on the value of recv method in the ec message If the ec message originates..."
 ---

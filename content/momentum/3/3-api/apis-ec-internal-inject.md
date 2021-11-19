@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "ec_internal_inject"
 description: "ec internal inject injects and enqueues an internally generated message void ec internal inject mess now ec message mess struct timeval now This reference page was automatically generated from functions found in the header files in the development branch The function described here may not exist in generally available versions..."
 ---

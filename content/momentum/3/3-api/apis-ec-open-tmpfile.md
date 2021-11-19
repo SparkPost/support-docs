@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "ec_open_tmpfile"
 description: "ec open tmpfile Open a file with a unique name unlink the file from disk and returns its descriptor int ec open tmpfile void Open a file with a unique name unlink the file from disk and return its descriptor On success this function returns a file descriptor on failure..."
 ---

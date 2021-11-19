@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "min_dns_ttl"
 description: "min dns ttl override DNS TT Ls smaller than this value min dns ttl 0 Any DNS response with a TTL of less than the value of Min DNS TTL will be increased to the value of Min DNS TTL The default value for this option is 0 min dns..."
 ---

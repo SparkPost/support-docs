@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "ec_pcre_match"
 description: "ec pcre match perform a regular expression match ec pcre match string pattern ec pcre match performs a regular expression match and returns a stringlist containing the matched strings The zeroth element of the stringlist consists of the part of the string that matched the whole given pattern the first..."
 ---

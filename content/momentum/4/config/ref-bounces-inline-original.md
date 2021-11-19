@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/05/2020"
 title: "bounces_inline_original"
 description: "bounces inline original how much of the original message to include in MD Ns bounces inline original headers bounces inline original none bounces inline original all If the system has been configured to generate bounce messages for failed deliveries the bounce message will start with a brief description of the..."
 ---

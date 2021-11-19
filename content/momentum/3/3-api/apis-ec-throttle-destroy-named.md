@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "ec_throttle_destroy_named"
 description: "ec throttle destroy named destroy a named throttle int ec throttle destroy named name const char name This reference page was automatically generated from functions found in the header files in the development branch The function described here may not exist in generally available versions of Momentum and may change..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "io_wrapper_create_read_job"
 description: "io wrapper create read job Creates a job to read the contents of a file io job io wrapper create read job filename const char filename This reference page was automatically generated from functions found in the header files in the development branch The function described here may not exist..."
 ---

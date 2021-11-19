@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "rfc2822_header_stringwrite"
 description: "rfc 2822 header stringwrite Renders the rfc 2822 header to a string as it will be sent over the network string rfc 2822 header stringwrite s field string s rfc 2822 field field This reference page was automatically generated from functions found in the header files in the development branch..."
 ---

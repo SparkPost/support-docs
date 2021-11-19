@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "gateway"
 description: "gateway configure a static SMTP route for mail Gateway 10 0 0 1 Gateway fe 80 a 00 1 Gateway my local smart host This directive allows for what other MT As call smarthosting If this option is specified at the global configuration level all outbound connections will be made..."
 ---

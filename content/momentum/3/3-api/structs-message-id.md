@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "message_id"
 description: "This struct is defined as follows To use this struct include the file message message id h ec mailq dequeue live message and ec spool ctx remove mid..."
 ---

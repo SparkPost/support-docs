@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "ec_cache_elt"
 description: "This struct is defined as follows To use this struct include the file ec cache h ec cache create ec cache create 2 ec cache delref ec cache destroy ec cache find and ec cache insert..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "sieve_set_operation_complete"
 description: "sieve set operation complete Set the action of the Sieve engine upon completion void sieve set operation complete seng mode SENG seng int mode Set the action of the Sieve engine upon completion seng The Sieve engine state mode Set this to either SIV ERROR MODE CONTINUE or SIV ERROR..."
 ---

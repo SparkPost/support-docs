@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "hash_get"
 description: "hash get get the value associated with the specified key hash get hash key Get the value of the specified key from a hash Hash keys must be strings or expressions that resolve to strings Sieve scripts using hash get can be used in any phase Configuration Change This feature..."
 ---

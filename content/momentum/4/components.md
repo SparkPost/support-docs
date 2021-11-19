@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/05/2020"
 title: "Components"
 description: "The principle components that make up Momentum 4 are Platform nodes and Analytics nodes Platform nodes handle the MTA including injection and message generation the configuration server engagement tracking and engagement proxy server responsibilities They also host the distributed online transaction processing OLTP database and event hose Analytics nodes host..."
 ---

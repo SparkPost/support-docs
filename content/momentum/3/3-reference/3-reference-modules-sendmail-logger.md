@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "sendmail_logger – Sendmail-Compatible Logging"
 description: "Momentum supports logging in the same style as the Open Source MTA Sendmail http www sendmail org This is mainly of use to sites which are moving from a Sendmail install or otherwise have log processing software that reads data in Sendmail compliant format The sendmail logger module writes to..."
 ---

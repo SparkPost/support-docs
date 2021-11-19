@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "scpt_thread"
 description: "scpt thread is a typedef of lua State which is an opaque structure that holds the complete state of a Lua interpreter For more information see A First Example Chapter 42 Scriptlet and Alerting Functions..."
 ---

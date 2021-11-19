@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "ec_interpolate_register_constant"
 description: "ec interpolate register constant Register a macro that expands to a constant string void ec interpolate register constant macro expansion const char macro const char expansion This reference page was automatically generated from functions found in the header files in the development branch The function described here may not exist..."
 ---

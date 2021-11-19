@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "delay_dsn_max_retry_interval"
 description: "delay dsn max retry interval maximum interval for sending DS Ns to the sender of a message that has not yet been delivered Delay DSN Max Retry Interval 43200 The maximum interval between successive warning messages delivery status notifications or DS Ns sent to the sender of a message that..."
 ---

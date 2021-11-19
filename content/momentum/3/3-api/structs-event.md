@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "Event"
 description: "This struct is defined as follows To use this struct include the file event h ec smtp closeconn esmtp message factory and Chapter 24 Event Functions..."
 ---

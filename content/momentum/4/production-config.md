@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/05/2020"
 title: "Production Environment Configurations"
 description: "This section provides hardware specifications for different target volume levels All systems are rated for use with CPU utilization at 50 in order to accommodate traffic spikes All volumes are specified with the assumption of an average message size of 100 k B The Enterprise Basic Configuration consists of three..."
 ---

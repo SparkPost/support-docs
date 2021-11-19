@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "Examples"
 description: "Example 4 1 SMPP Log Outband Bounce Hook Lua Example Example 4 2 SMPP Log Outband Bounce Hook C Example..."
 ---

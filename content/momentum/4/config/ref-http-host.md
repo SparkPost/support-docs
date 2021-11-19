@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/05/2020"
 title: "http_host"
 description: "http host Define the HTTP host http host android google apis com Define the HTTP host when the delivery method uses an HTTP protocol There is no default value for this option http host is valid in the global binding group binding and domain scopes delivery method http basic auth..."
 ---

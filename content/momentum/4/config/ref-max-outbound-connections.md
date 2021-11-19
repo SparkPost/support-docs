@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/05/2020"
 title: "max_outbound_connections"
 description: "max outbound connections set the maximum number of outbound connections for a domain Max Outbound Connections 32 This option will limit the number of outbound connections to an individual domain to the specified value It can be set at a global level which enforces the limit on every domain in..."
 ---

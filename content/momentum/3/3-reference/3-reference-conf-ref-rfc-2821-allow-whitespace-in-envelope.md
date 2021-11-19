@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "rfc2821_allow_whitespace_in_envelope"
 description: "rfc 2821 allow whitespace in envelope permit trailing whitespace before the final CRLF rfc 2821 allow whitespace in envelope false Configuration Change This feature is available starting from Momentum 3 0 26 In RFC 2821 in the interest of improved interoperability SMTP receivers are encouraged to tolerate trailing white space..."
 ---

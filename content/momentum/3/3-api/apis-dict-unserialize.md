@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "dict_unserialize"
 description: "dict unserialize Deserialize a dictionary EC Dict dict unserialize str string str Deserialize a dictionary This function takes a string parameter and returns the deserialized dictionary An EC Dict is a typedef of an ec hash table str The Section 68 85 string This function returns the deserialized dictionary It..."
 ---

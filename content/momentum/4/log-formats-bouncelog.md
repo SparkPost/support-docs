@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/05/2020"
 title: "bouncelog"
 description: "The bouncelog records both in band and out of band bounces It is configured in the bounce logger module A bounce line is written to the bouncelog for every bounce that Momentum witnesses The log entry is an delimited string such as the following The following is a description of..."
 ---

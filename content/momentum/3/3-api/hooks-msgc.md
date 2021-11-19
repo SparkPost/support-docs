@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "Hooks in the msgc Scope"
 description: "Table of Contents get private name join membership subscribe multicast publish multicast subscribe..."
 ---

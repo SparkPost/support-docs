@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "ec_interpolate_string"
 description: "ec interpolate string Performs string interpolation int ec interpolate string input output mode bag job default namespace flags const char input string output int mode ec bag bag ec async job job const char default namespace int flags This reference page was automatically generated from functions found in the header..."
 ---

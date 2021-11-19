@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "sieve_compare_compile"
 description: "sieve compare compile pre compile matching state for a sieve comparator int sieve compare compile sieve comp right SIEVE sieve struct sieve compare info comp SIEVEARGS right This reference page was automatically generated from functions found in the header files in the development branch The function described here may not..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/05/2020"
 title: "Running the PostgreSQL Server"
 description: "The Postgre SQL server is installed as a daemon and starts up whenever the system is rebooted To start the Postgre SQL server immediately after installation issue the command To determine the options that can be used with the msyspg command issue the command The following output is displayed where..."
 ---

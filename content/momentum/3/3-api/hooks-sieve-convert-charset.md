@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "convert_charset"
 description: "convert charset int convert charset closure srccharset destcharset inbuf inbytesleft outbuf outbytesleft void closure const char srccharset const char destcharset char inbuf size t inbytesleft char outbuf size t outbytesleft int has sieve convert charset hook void register sieve convert charset hook first hook closure ec hook sieve convert charset..."
 ---

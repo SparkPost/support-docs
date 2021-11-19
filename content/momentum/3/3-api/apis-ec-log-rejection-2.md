@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "ec_log_rejection2"
 description: "ec log rejection 2 Records rejection of an incoming message void ec log rejection 2 now ac ctx msg phase format struct timeval now accept construct ac validate context ctx ec message msg int phase const char format Configuration Change This feature is available starting from Momentum 3 5 Records..."
 ---

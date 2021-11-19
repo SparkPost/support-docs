@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "Pointer Array Functions"
 description: "Table of Contents ec ptr array append Append to an ec ptr array ec ptr array destroy Destroy an ec ptr array ec ptr array get retrieve from a sparse ec ptr array ec ptr array init Initialize an ec ptr array struct ec ptr array insert insert into a..."
 ---

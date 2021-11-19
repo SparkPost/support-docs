@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/05/2020"
 title: "c:setopt"
 description: "c setopt Set the option value of a curl object c setopt option value Where c is a curl object set an option value The first parameter is a number representing a c URL option it can be any one of the options listed below at the section called Callback..."
 ---

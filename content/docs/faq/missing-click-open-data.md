@@ -1,5 +1,5 @@
 ---
-lastUpdated: "February 2020"
+lastUpdated: "01/06/2020"
 title: "I'm Missing Click/Open Data"
 description: "There are a few reasons why you may not be seeing open click data for your transmissions Please review the following list of conditions and configurations to debug your open click data not displaying If you're using a Template in your transmissions does the template have the Open Tracking and..."
 ---

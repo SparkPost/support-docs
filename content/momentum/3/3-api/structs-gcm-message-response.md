@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "gcm_message_response"
 description: "Configuration Change This feature is available as of version 3 5 5 This struct is defined as follows To use this struct include the file modules mobility gcm gcm h Momentum for Mobile Push Notifications and Chapter 62 Hooks in the gcm Scope..."
 ---

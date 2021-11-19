@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "ac_auth – Authentication Handler"
 description: "Configuration Change This feature is available as beta in Momentum 3 6 5 The ac auth module provides an auth handler that enables a Lua module to hook into the authentication mechanism but with the advantage of having access to the validation context The scheme name is ac auth ac..."
 ---

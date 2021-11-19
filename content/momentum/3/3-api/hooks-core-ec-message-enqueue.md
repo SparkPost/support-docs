@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "ec_message_enqueue"
 description: "ec message enqueue This hook is called whenever a message is passed to the ec message enqueue API int core ec message enqueue closure msg now void closure ec message msg struct timeval now This hook is called whenever a message is passed to the ec message enqueue API closure..."
 ---

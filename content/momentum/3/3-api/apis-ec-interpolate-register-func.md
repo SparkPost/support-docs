@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "ec_interpolate_register_func"
 description: "ec interpolate register func Register a macro expansion function void ec interpolate register func macro closure func flags const char macro void closure ec interpolator func func int flags Register a macro expansion function The macro string will be matched using a literal string comparison unless the macro string contains..."
 ---

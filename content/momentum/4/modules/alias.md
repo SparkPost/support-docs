@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/05/2020"
 title: "alias – Alias Expansion"
 description: "The alias module lets you rewrite the recipient addresses of messages passing through Momentum It is similar in spirit to sendmail's etc aliases but alias expansions can be stored in any backend supported by Momentum's datasource layer Section 71 29 ds core Datasource Query Core When the alias module is..."
 ---

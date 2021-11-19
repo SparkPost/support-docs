@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "netlistener_clean_accept_construct"
 description: "netlistener clean accept construct Deletes a reference to a netlistener instance void netlistener clean accept construct ac accept construct ac Deletes a reference to a netlistener instance ac The address of an Section 68 2 accept construct associated with the session A reference to the netlistener instance field is deleted..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "ec_message_context_exists"
 description: "ec message context exists Determines whether a provided key exists in the connection context or message context dictionary int ec message context exists m w k ec message m int w const char k Determine whether a key value pair exists in either the message context or connection context dictionary..."
 ---

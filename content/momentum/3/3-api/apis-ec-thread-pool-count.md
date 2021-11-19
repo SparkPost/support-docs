@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "ec_thread_pool_count"
 description: "ec thread pool count Returns the number of thread pools int ec thread pool count void This reference page was automatically generated from functions found in the header files in the development branch The function described here may not exist in generally available versions of Momentum and may change in..."
 ---

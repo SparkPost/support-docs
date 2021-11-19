@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "Console Commands"
 description: "Besides the commands listed here there are also module specific console commands Links to these commands are listed in Section 13 3 Module Specific Console Commands You can also create custom commands as described at Section 4 2 12 Custom Console Commands Preceding a command with xml will output the..."
 ---

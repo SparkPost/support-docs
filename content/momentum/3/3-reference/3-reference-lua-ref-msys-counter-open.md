@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "msys.counter.open"
 description: "msys counter open Create a counter object msys counter open counter path semantics For performance it is always recommended that counter handles be used rather than strings Momentum counters are generic counters that may be associated with a name in the counter namespace This namespace may be exported to other..."
 ---

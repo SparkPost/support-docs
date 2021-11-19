@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "delivery_pool"
 description: "delivery pool associate an eventloop with mail delivery delivery pool pool Configuration Change This option is available as of version 3 6 In order to use this option you must have a Supercharger license For more see Section 2 4 Configuring for Multiple Event Loops in Momentum 3 6 This..."
 ---

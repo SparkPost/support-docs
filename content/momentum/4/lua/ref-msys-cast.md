@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/05/2020"
 title: "msys.cast"
 description: "msys cast Cast an object to the specified class msys cast object classnamestring Forces object to be re interpreted as the specified class This is provided primarily to map void object proxies to the correct underlying class type This will result in crashes if the cast is used incorrectly use..."
 ---

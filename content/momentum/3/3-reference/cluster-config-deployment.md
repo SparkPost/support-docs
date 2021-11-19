@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "Cluster Deployment"
 description: "A cluster is comprised of at least one Manager node and one or more MTA nodes The Manager node in the cluster must be installed with the database role via the installer this will be your central point of management for the cluster The installer will create a default cluster..."
 ---

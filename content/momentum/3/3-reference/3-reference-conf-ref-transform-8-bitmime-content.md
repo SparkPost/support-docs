@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "transform_8bitmime_content"
 description: "transform 8 bitmime content Enable 8 BITMIME downconversion when sending mail transform 8 bitmime content no transform 8 bitmime content ifneeded transform 8 bitmime content strict transform 8 bitmime content strip When set to ifneeded if a message to be sent to a remote MTA contains 8 bit data and..."
 ---

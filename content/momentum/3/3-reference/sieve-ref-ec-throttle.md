@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "ec_throttle"
 description: "ec throttle create ec throttle inc ec throttle dec ec throttle check ec throttle tarpit Named Throttling ec throttle create name messages seconds ec throttle inc name ec throttle dec name ec throttle check name ec throttle tarpit name Allow any number of named throttles to be created within Sieve..."
 ---

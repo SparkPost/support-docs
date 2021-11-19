@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "ec_message_new"
 description: "ec message new Create a new message ec message ec message new now struct timeval now Create a new message now A pointer to a timeval struct which may be NULL Configuration Change Prior to version 3 0 NULL was not an allowed value A reference to an ec message..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "ec_message_rsrc_remove"
 description: "ec message rsrc remove This will set the resource name in message to state EC MESSAGE RSRC DELETED void ec message rsrc remove message name ec message message const char name This reference page was automatically generated from functions found in the header files in the development branch The function..."
 ---

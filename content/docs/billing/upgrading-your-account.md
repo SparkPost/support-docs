@@ -1,5 +1,5 @@
 ---
-lastUpdated: "February 2020"
+lastUpdated: "01/06/2020"
 title: "Upgrading Your Account"
 description: "On the dashboard go to Account Billing There you will be able to see the plan you are currently on as well as all of the other plans we provide Once you decide on the plan you would like to upgrade to click on it A window will drop down..."
 ---

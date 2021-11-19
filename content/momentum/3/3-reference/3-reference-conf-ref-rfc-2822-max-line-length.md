@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "rfc2822_max_line_length"
 description: "rfc 2822 max line length rfc 2822 conformance RFC 2822 Max Line Length ignore pedantic fix RFC 2822 Max Line Length 2048 This option is available as of version 3 0 and replaces the version 2 2 option of the same name declared in the RFC 2822 scope From the..."
 ---

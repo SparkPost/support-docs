@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "fail domain"
 description: "fail domain fail messages for a domain with a bounce message fail domain domain name The fail domain command allows the administrative failure of all messages bound for the specified domain If political issues arise that cannot be resolved or if the domain has been discontinued it may be necessary..."
 ---

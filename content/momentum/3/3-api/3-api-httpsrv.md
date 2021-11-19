@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "httpsrv Functions"
 description: "Table of Contents ec httpsrv ctx get Gets the per request closure blobject from a session ec httpsrv ctx set Sets a per request closure blobject on a session ec httpsrv register Registers an HTTP URI handler ec httpsrv request accept construct get Returns the accept construct from the current..."
 ---

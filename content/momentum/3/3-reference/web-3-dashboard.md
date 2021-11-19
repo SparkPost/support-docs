@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "The Dashboard"
 description: "The dashboard is meant to give you a quick overview of the state of your MTA Summary statistics are shown on the left side of the page as pictured below Figure 3 2 Summary statistics Summary statistics and queue sizes are shown by protocol There is provision for displaying SMPP..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "SMPP Functions"
 description: "Table of Contents smpp append encoded integer Encode an integer into an octet string smpp async fail ec message Fail an asynchronous SMPP message smpp config fetch using connection Fetch the specified SMPP configuration option smpp data coding name Retrieve the data coding name from the PDU smpp date to..."
 ---

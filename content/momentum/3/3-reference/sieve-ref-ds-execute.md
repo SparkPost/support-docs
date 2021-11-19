@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "ds_execute"
 description: "ds execute execute a query on a datasource ds execute cachename query params This function executes a query that does not return a result set The query will be queued to the thread pool and the current Sieve script will be suspended until the query completes While the Sieve script..."
 ---

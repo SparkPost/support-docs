@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "license"
 description: "license specify an alternate license location License opt msys ecelerity etc license This configuration directive is used to override the default license file location Changing the value of this option at runtime requires restarting the ecelerity process issuing the ec console command config reload will not suffice license is valid..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/05/2020"
 title: "fingerprint rejection summary"
 description: "fingerprint rejection summary display details related to the current inbound connection fingerprint rejection summary In order to use this command you must have the Policy Tools suite installed Passive OS fingerprinting is installed as part of the Policy Tools suite This functionality yields information about inbound connections For more information..."
 ---

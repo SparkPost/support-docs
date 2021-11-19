@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "ec_find_conf_file2"
 description: "ec find conf file 2 Find a filename in the given search path and return the resulting path int ec find conf file 2 path base outstr errstr const char path const char base string outstr string errstr Find a filename in the given search path and return the resulting..."
 ---

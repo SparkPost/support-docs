@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "ec_generate_connection_id"
 description: "ec generate connection id Generate a connection ID void ec generate connection id cid nowsec message id cid time t nowsec This reference page was automatically generated from functions found in the header files in the development branch The function described here may not exist in generally available versions of..."
 ---

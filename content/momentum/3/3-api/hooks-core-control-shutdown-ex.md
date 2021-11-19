@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "control_shutdown_ex"
 description: "control shutdown ex Invoked when shutdown occurs void core control shutdown ex closure die ret file lineno void closure int die int ret const char file int lineno This hook is invoked when an instance shutdown occurs This typically occurs when a shutdown command is issued over ec console However..."
 ---

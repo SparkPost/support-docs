@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/05/2020"
 title: "dns_expire_interval"
 description: "dns expire interval how often to check for domains with expired DNS information dns expire interval 10 How often the garbage collector should check for domains with expired DNS entries and resubmit them for lookup The default is 10 seconds dns expire interval is valid in the global scope..."
 ---

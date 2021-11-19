@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "msys.pcre.split"
 description: "msys pcre split Perform a PCRE split operation msys pcre split subject pattern Perform a PCRE split operation Enable this function with the statement require msys pcre msys pcre match msys pcre replace..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "ec_smtp_closeconn"
 description: "ec smtp closeconn Close an SMTP connection int ec smtp closeconn dc e conn connh domain binding slot am now file line delivery construct dc Event e connection conn connection handle connh domain record domain ec binding slot binding slot address metrics am struct timeval now const char file int..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "sl_getlist"
 description: "sl getlist Get the first node in a Skiplist struct skiplistnode sl getlist sl Skiplist sl Get the first node according to the main index in a Skiplist sl The Skiplist On success this function returns the first node on failure NULL is returned It is legal to call this..."
 ---

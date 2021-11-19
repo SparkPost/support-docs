@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/05/2020"
 title: "msys.audit.inbound_session_count"
 description: "msys audit inbound session count Count connections currently established from the specified cidr to the specified service msys audit inbound session count cidr servicename This function counts connections currently established from the specified cidr to the specified service cidr is of the form 24 evaluates to connecting IP 24 32..."
 ---

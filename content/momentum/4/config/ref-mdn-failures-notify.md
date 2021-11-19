@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/05/2020"
 title: "mdn_failures_notify"
 description: "mdn failures notify mailbox to which to send null recipient MD Ns mdn failures notify postmaster example com If mdn failures notify is set to an email address Momentum will send the MDN to that mailbox allowing a postmaster to review and perhaps take action on those bounces When generating..."
 ---

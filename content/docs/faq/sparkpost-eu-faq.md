@@ -1,5 +1,5 @@
 ---
-lastUpdated: "February 2021"
+lastUpdated: "01/05/2021"
 title: "SparkPost EU FAQ"
 description: "FAQ for our EU based Service..."
 ---

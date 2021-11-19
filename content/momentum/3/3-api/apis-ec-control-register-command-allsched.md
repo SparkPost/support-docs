@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "ec_control_register_command_allsched"
 description: "ec control register command allsched Register a command handler deprecated void ec control register command allsched prefix closure func const char prefix void closure ec control function func Register a command handler deprecated Momentum 3 0 offers better AP Is See ec control register command 3 and ec control register..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "msgpart:raw_replace"
 description: "msgpart raw replace Streaming interface to a PCRE replacement message part content msgpart raw replace pattern replacement Streaming interface to a PCRE replacement message part content Enable this function with the statement require msys extended message..."
 ---

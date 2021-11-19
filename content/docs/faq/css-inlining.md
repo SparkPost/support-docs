@@ -1,5 +1,5 @@
 ---
-lastUpdated: "February 2020"
+lastUpdated: "01/06/2020"
 title: "CSS Inlining"
 description: "When creating HTML content for email CSS is often an issue Many email clients use HTML themselves so special care is needed to avoid clashing with their page layout and style The traditional solution is to ensure your email's HTML uses only inline styles that is CSS is used only..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "ec_message_mcmt_fixup"
 description: "ec message mcmt fixup This function is to be called by a listener when an injected message is a MCMT container i e int ec message mcmt fixup msg ec message msg This reference page was automatically generated from functions found in the header files in the development branch The..."
 ---

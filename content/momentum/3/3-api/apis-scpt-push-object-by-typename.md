@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "scpt_push_object_by_typename"
 description: "scpt push object by typename box a C structure to pass into a scriptlet routine void scpt push object by typename thr type name typep object flags scpt thread thr const char type name scpt objtype typep void object int flags Configuration Change This feature is available starting from Momentum..."
 ---

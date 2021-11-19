@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "sess:request_delete_header"
 description: "sess request delete header Delete a header from an HTTP session sess request delete header header Delete a header from an HTTP session header is the key that you wish to delete You must call sess request finalize after invoking this function Use this function in the http request eval..."
 ---

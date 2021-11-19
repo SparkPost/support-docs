@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "minimal_tryread_construct_free"
 description: "minimal tryread construct free Release the resources of a minimal tryread construct void minimal tryread construct free mtc minimal tryread construct mtc Release the resources of a Section 68 61 minimal tryread construct struct mtc The address of the Section 68 61 minimal tryread construct struct that you wish to..."
 ---

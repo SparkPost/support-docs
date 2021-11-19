@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "msg:context_delete"
 description: "msg context delete Delete a context variable msg context delete type key Delete a context variable Legal values for type are msys core ECMESS CTX MESS msys core ECMESS CTX CONN For a code example see Example 15 59 msys gcm gcm classify error example Because this function is in..."
 ---

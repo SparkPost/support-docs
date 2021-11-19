@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "ec_message_get_message_memory"
 description: "ec message get message memory Returns a pointer to the message memory char ec message get message memory mess ec message mess This reference page was automatically generated from functions found in the header files in the development branch The function described here may not exist in generally available versions..."
 ---

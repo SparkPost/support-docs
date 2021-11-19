@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/05/2020"
 title: "Upgrade Vertica on the Analytics Nodes"
 description: "Stop services Ensure ET Ls are stopped on all Platform nodes Some ETLS may already be stopped For a combined cluster upgrade perform this action on all nodes in the cluster Stop the Webhooks API on all Analytics nodes For a combined cluster upgrade perform this action on all nodes..."
 ---

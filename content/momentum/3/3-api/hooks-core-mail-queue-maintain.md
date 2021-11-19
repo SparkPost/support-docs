@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "__mail_queue_maintain"
 description: "mail queue maintain int mail queue maintain closure dr binding slot sl now goalsz reserve void closure domain record dr int binding slot Skiplist sl struct timeval now int goalsz int reserve int has core mail queue maintain hook void register core mail queue maintain hook first hook closure ec..."
 ---

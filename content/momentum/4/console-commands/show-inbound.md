@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/05/2020"
 title: "show inbound"
 description: "show inbound show all inbound connections show inbound This command shows all inbound connections In the following example the output has been wrapped for display purpose 23 is the file descriptor of the related event async body response for 0 264 s shows the last state of the messages coming..."
 ---

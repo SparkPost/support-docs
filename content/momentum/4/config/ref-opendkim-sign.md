@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/05/2020"
 title: "opendkim_sign"
 description: "opendkim sign whether or not to enable Open DKIM signing opendkim sign true Use this option to enable or disable Open DKIM signing To use Open DKIM you must also configure the opendkim module Default value is true opendkim sign is valid in the binding binding group domain and global..."
 ---

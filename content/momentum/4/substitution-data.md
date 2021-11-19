@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/05/2020"
 title: "Using Substitution Data"
 description: "Introduction With the ever increasing demand for their attention your customers are bombarded with all sorts of messages Generic broadcast messaging will definitely be ignored Momentum's message generation supports dynamic content enabling you to send relevant and personalized messages to every recipient You can easily address each recipient by name..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "bounce_logger – Momentum-Style Bounce Logging"
 description: "The ec logger module provides a full picture of all the mail transiting the system However it is often convenient to look at bounced messages only The bounce logger makes this much easier by writing bounces both in band and out of band bounce messages to a single file in..."
 ---

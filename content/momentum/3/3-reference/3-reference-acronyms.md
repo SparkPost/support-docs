@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "Acronyms"
 description: "This section displays acronyms sorted alphabetically and linked to their definition in the glossary AAA Authentication Authorization and Accounting ACL Access Control List ADSP Author Domain Signing Practises ARF Abuse Reporting Format ARP Address Resolution Protocol BIND Berkeley Internet Name Domain C 14 N Canonicalization CBV SMTP Callback Verification CIDR..."
 ---

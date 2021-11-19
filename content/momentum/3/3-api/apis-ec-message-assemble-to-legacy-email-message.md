@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "ec_message_assemble_to_legacy_email_message"
 description: "ec message assemble to legacy email message glue the parts back together into an in memory email message int ec message assemble to legacy email message messsg ec message messsg This reference page was automatically generated from functions found in the header files in the development branch The function described..."
 ---

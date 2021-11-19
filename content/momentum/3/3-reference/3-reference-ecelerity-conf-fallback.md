@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "Configuration Scopes and Fallback"
 description: "Momentum has a flexible configuration system that allows many options to be set to different values for different hosts domains bindings and binding groups The Binding Group stanza is used to create binding group specific options the Binding stanza is used to configure binding specific options the Domain stanza for..."
 ---

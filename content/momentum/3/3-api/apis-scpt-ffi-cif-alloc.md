@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "scpt_ffi_cif_alloc"
 description: "scpt ffi cif alloc Allocate an ffi cif via the cache void scpt ffi cif alloc nargs key ret type args int nargs const char key void ret type void args This reference page was automatically generated from functions found in the header files in the development branch The function..."
 ---

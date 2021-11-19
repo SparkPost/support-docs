@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "Use_IPv6"
 description: "Use I Pv 6 Affects the selection of I Pv 6 hosts in the SMTP client Use I Pv 6 false Use I Pv 6 true When set to false Momentum will ignore AAAA records in the list of hosts resolved from MX lookups This will effectively prevent the use..."
 ---

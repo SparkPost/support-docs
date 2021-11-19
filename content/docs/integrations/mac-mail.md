@@ -1,5 +1,5 @@
 ---
-lastUpdated: "February 2020"
+lastUpdated: "01/06/2020"
 title: "Using SparkPost with Mac Mail"
 description: "The following article will walk you through integrating Mac Mail to use your Spark Post account for outgoing mail and how to configure Mac Mail to use the Spark Post SMTP API to enable open and click tracking To start you will need A Mac with Mac Mail Spark Post..."
 ---

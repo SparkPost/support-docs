@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "Implementing Policy with Momentum"
 description: "Figure 5 1 Mail flow through Momentum In order to effectively implement your site policy in Momentum it is important to understand how mail transits through Momentum Figure 5 1 Mail flow through Momentum gives a visual representation that will be useful in the following discussion Momentum waits for connections..."
 ---

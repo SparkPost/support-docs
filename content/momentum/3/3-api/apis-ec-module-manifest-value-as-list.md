@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "ec_module_manifest_value_as_list"
 description: "ec module manifest value as list retrieves a list of manifest values for a named module int ec module manifest value as list iter modulename keyname list ec module manifest iter t iter const char modulename const char keyname ec ptr array list This reference page was automatically generated from..."
 ---

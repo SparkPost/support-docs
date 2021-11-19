@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "_unsafe_spool"
 description: "unsafe spool allow dangerous spool semantics to be used Unsafe Spool false Use of this option is not recommended unless you have complete control over the generation and delivery process See Section 14 72 suppress spool Deferred Message Spooling for more details on its use The default value for this..."
 ---

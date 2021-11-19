@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "ec_httpsrv_response_status_not_found"
 description: "ec httpsrv response status not found Sets the HTTP status to indicate a 404 error and sets content type int ec httpsrv response status not found sess type ec httpsrv session sess const char type This reference page was automatically generated from functions found in the header files in the..."
 ---

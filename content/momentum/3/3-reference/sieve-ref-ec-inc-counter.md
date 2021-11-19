@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "ec_inc_counter"
 description: "ec inc counter increment a Sieve counter ec inc counter counter ec inc counter allows you to increment an arbitrary Sieve counter The convention for naming counters is a short category name followed by a colon followed by a more descriptive name for the counter The counter values can be..."
 ---

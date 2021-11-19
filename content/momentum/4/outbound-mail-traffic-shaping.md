@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/05/2020"
 title: "Throttling and Traffic Shaping"
 description: "Momentum provides a variety of options that allows you to control its network traffic profile such as the rate at which outbound connections are established the rate at which messages are transmitted and the number of connections that are established to a given domain These options can be set per..."
 ---

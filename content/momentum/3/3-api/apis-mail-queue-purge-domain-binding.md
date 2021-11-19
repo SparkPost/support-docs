@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "mail_queue_purge_domain_binding"
 description: "mail queue purge domain binding Fail all messages for a binding domain with a given status code int mail queue purge domain binding dr binding slot note quiet domain record dr ec binding slot binding slot char note int quiet Fail all messages for a binding domain with a given..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/05/2020"
 title: "inbound_audit – Inbound traffic analytics"
 description: "The inbound audit module provides time series analytics on the behavior of sending I Ps It is designed to help spot emergent issues such as abuse and to provide a mechanism for implementing counter based policy on I Ps The inbound audit module differs from the standard analytics available in..."
 ---

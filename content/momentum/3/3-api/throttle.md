@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "Throttle Functions"
 description: "Table of Contents check outbound throttle check an outbound throttle ec throttle create named create a named throttle ec throttle delta adjust the counter for a named throttle ec throttle destroy named destroy a named throttle ec throttle is exceeded check to see if a throttle is over budget ec..."
 ---

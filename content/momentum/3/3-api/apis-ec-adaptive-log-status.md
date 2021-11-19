@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "ec_adaptive_log_status"
 description: "ec adaptive log status Log function for AD system to log status change to jlog void ec adaptive log status binding domain status const char binding const char domain int status This reference page was automatically generated from functions found in the header files in the development branch The function..."
 ---

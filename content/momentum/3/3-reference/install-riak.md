@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "Riak Server"
 description: "The Riak server is implemented in Momentum version 3 3 In a cluster configuration when upgrading to Momentum 3 3 the order in which the roles are upgraded is important because the web UI and MTA roles will be participating in a Riak cluster You must upgrade the database role..."
 ---

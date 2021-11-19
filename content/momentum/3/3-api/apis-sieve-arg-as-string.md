@@ -1,5 +1,5 @@
 ---
-lastUpdated: "March 2020"
+lastUpdated: "02/04/2020"
 title: "sieve_arg_as_string"
 description: "sieve arg as string Get the specified argument as a string int sieve arg as string args str len SIEVEARGS args char str int len Get the specified argument as a string Note This returns a character array and not an ec string args The Sieve argument s For a..."
 ---
