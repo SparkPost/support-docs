@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "The ecelerity.conf File"
 description: "This chapter serves as an introduction to the Momentum configuration file describing how to configure Momentum for some common use cases A more detailed reference can be found in ecelerity conf The recommended way of changing configuration options is to use the web UI This is described in Chapter 3..."
 ---

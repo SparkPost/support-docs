@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "Starting Momentum (ecelerity)"
 description: "ecelerity is the main server component of the Momentum Application Server On start up the script etc init d ecelerity start starts Momentum For details about the available options see ecelerity To run this script you must have root privileges Use ec ctl to start stop or restart this process..."
 ---

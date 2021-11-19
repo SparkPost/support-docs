@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "io_wrapper_set_context"
 description: "io wrapper set context Sets the context for an io object void io wrapper set context io ctx io object io EC Dict ctx This reference page was automatically generated from functions found in the header files in the development branch The function described here may not exist in generally..."
 ---

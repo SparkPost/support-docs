@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "ec_httpsrv_request_method_get"
 description: "ec httpsrv request method get Gets the method from the session request const char ec httpsrv request method get sess ec httpsrv session sess This reference page was automatically generated from functions found in the header files in the development branch The function described here may not exist in generally..."
 ---

@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "ec_config_release_value"
 description: "ec config release value Free the memory associated with a ec config value struct void ec config release value tofree void tofree Use this function to free the memory associated with an ec config value struct Do not use free or ec free tofree A pointer to an ec config..."
 ---

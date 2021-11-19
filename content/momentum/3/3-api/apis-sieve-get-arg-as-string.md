@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "sieve_get_arg_as_string"
 description: "sieve get arg as string Return the specified argument as a string int sieve get arg as string args n str len SIEVEARGS args int n char str int len Return the argument at the specified zero based index as a string args The argument list n Which argument to..."
 ---

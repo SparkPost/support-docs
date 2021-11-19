@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "ec_shutdown_ex"
 description: "ec is shutting down Initiates a shutdown of the ecelerity process void ec shutdown ex die ret file lineno int die int ret const char file int lineno Initiates a shutdown of the ecelerity process die Passing a non zero integer value for die indicates that this function was invoked..."
 ---

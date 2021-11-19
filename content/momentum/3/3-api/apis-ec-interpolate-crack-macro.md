@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "ec_interpolate_crack_macro"
 description: "ec interpolate crack macro Return the name and argument portions of a macro string int ec interpolate crack macro input style namestart nameend argstart argend const string input int style const char namestart const char nameend const char argstart const char argend This function returns the name and argument portions..."
 ---

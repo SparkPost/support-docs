@@ -1,5 +1,4 @@
 ---
-lastUpdated: "10/29/2020"
 title: "IP Warm-up Strategy Overview"
 description: "IP warming is the process of methodically adding email volume to a new IP address gradually over several days and weeks in order to establish a positive sending reputation with mailbox providers. Mailbox providers view email from a new IP address as suspicious until..."
 ---

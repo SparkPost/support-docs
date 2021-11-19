@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "ec_url_ripper"
 description: "ec url ripper Extract domains and urls for lookup in DNSBL ec url ripper ec url ripper runs in the data phase It extracts domains and urls in an email's headers and body and looks them up in the DNSBL specified in your Momentum configuration file Additionally those domains and..."
 ---

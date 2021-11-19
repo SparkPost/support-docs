@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "Interface"
 description: "The C hook has to be registered as smpp log permfail in the following way register smpp log permfail hook first sample smpp log permfail Parameters are passed into this hook a reference to the smpp conn structure an ec message a string value of the error description NONE..."
 ---

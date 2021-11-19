@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "Inbound TLS"
 description: "Transport Layer Security TLS can be easily configured on an SMTP listener using the following configuration snippet The following are the configuration options related to inbound TLS tls allow renegotiation tls certificate tls ciphers tls client ca tls dhparams file tls enable dhe ciphers tls key tls protocols tls verified..."
 ---

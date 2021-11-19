@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "ec_bag_find"
 description: "ec bag find void ec bag find closure bag type name void closure ec bag bag const char type name int has core ec bag find hook void register core ec bag find hook first hook closure ec hook core ec bag find func t hook void closure void register..."
 ---

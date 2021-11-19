@@ -1,5 +1,4 @@
 ---
-lastUpdated: "02/03/2021"
 title: "Alerts"
 description: "Get notified about deliverability issues as they happen."
 ---

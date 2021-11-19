@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "Installer Options"
 description: "The following installation options may be used with the installer script upgrade Use the same answers as the last installation This option can only be used when upgrading within major versions for example when upgrading from 3 num to a higher version number It cannot be used for upgrading from..."
 ---

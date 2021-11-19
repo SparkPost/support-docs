@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "msys.dp_config.cloudmark"
 description: "Scan messages using Cloudmark To use this configuration item you must have the cloudmark module loaded For more information see cloudmark Module Find below the sample excerpt included in the dp config lua file The elements of this configuration table are as follows scan Whether or not to scan using..."
 ---

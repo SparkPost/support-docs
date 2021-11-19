@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "keep"
 description: "keep ec keep keep the current message stop processing further rules keep ec keep reason The keep and ec keep actions are used to explicitly indicate that the mail should be kept Momentum will continue to deliver it to its final destination This is a terminal action no further Sieve..."
 ---

@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "delay_dsn – Delay DSN Generation"
 description: "The delay dsn module allows delivery status notifications DS Ns to be sent to the purported sender of a message when that message has not yet been delivered By default no delay DS Ns are sent When enabled delay DS Ns are sent based on an exponential back off schedule..."
 ---

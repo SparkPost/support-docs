@@ -1,5 +1,4 @@
 ---
-lastUpdated: "04/13/2020"
 title: "rollup_mx_name"
 description: "If the associated rollup_mx option is set to 'true', rollup_mx_name specifies the MX host domain to route the traffic to. Valid in host, binding, and binding_group scopes. Usable in Host stanzas, which can be included in global, binding or binding_group scopes."
 ---

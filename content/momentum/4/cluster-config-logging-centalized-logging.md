@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "Centralized Logging Example"
 description: "This section provides an example of log aggregation when a custom logger and an fbl module are defined The following is an example configuration for the custom logger module Note The format options in the custom logger module above should be unbroken in your configuration file The following is an..."
 ---

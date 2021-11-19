@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "msys.readfile"
 description: "msys readfile Read the entire contents of the specified file or URI msys readfile filename or uri Reads the entire contents of the specified file or URI and returns it as a string Where possible the act of reading will be delegated to an IO thread and the current session..."
 ---

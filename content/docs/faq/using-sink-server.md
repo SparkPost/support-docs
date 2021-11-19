@@ -1,5 +1,4 @@
 ---
-lastUpdated: "09/13/2021"
 title: "How Do I Test Using the Sink Server on SparkPost?"
 description: "Sink testing allows you to send messages through Spark Post for integration testing without the messages being attempted for delivery to actual email addresses Any messages using the sink server email address format will automatically fail as intended To use the sink server you will need to append the email..."
 ---

@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "Examples"
 description: "Example 8 1 SMPP Log Permfail Hook Lua Example Example 8 2 SMPP Log Permfail Hook C Example..."
 ---

@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "ec_util_power_2"
 description: "ec util power 2 Round input to next highest power of 2 if it is not a power of 2 INLINE uint 32 t ec util power 2 x uint 32 t x This reference page was automatically generated from functions found in the header files in the development branch..."
 ---

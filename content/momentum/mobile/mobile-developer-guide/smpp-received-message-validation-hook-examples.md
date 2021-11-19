@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "Examples"
 description: "Example 16 1 SMPP Received Message Validation Hook Lua Example..."
 ---

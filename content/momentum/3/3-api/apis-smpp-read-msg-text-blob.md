@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "smpp_read_msg_text_blob"
 description: "smpp read msg text blob Retrieve text blob context variable from an ec message string smpp read msg text blob m key ec message m const char key Configuration Change This feature is available starting from Momentum 3 2 Retrieve text blob context variable from an ec message Valid keys..."
 ---

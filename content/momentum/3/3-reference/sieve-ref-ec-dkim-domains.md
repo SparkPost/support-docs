@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "ec_dkim_domains"
 description: "ec dkim domains Return a list of valid signing domains ec dkim domains ec dkim domains returns a stringlist of the domain portion of the identities which had valid DKIM signatures for the current message Note that since DKIM allows for third party signatures one should check that there is..."
 ---

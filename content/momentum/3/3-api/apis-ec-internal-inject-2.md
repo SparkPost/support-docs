@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "ec_internal_inject2"
 description: "ec internal inject 2 Enqueues an internally generated message void ec internal inject 2 mess now flags ec message mess struct timeval now int flags Enqueues an internally generated message Ensures that the message is correctly swapped and has a proper binding assignment mess A pointer to an ec message..."
 ---

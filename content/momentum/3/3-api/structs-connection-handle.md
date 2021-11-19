@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "connection_handle"
 description: "This struct is defined as follows To use this struct include the file dns h Section 68 9 connection..."
 ---

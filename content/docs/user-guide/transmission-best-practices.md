@@ -1,5 +1,4 @@
 ---
-lastUpdated: "02/08/2020"
 title: "Transmission Best Practices"
 description: "This is a guide to best practices for sending transmissions and monitoring the results for errors and is intended for a technical audience Multiple Recipient Transmissions Generally when sending promotional mailings to a large number of recipients it makes sense to send multi recipient transmissions to maximize performance For best..."
 ---

@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "multicast_publish"
 description: "multicast publish void multicast publish closure group group len data data len result void closure const char group u int 16 t group len const unsigned char data u int 32 t data len int result int has msgc multicast publish hook void register msgc multicast publish hook first hook..."
 ---

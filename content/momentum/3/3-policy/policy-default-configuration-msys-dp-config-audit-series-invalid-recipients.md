@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "msys.dp_config.audit_series.invalid_recipients"
 description: "This table sets the Directory Harvest Attack DHA parameters Find below the sample excerpt included in the dp config lua file The elements of this configuration table are as follows type Legal values for this element are cidr and as of version 3 4 cidr ipv 6 interval The time..."
 ---

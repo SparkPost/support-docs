@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "msys.audit.rejections"
 description: "msys audit rejections Return the number of rejections that have occurred for a CIDR block within a configured time window msys audit rejections monitor options Returns the number of rejections that have occurred for a CIDR block within a configured time window monitor corresponds to one of the monitors defined..."
 ---

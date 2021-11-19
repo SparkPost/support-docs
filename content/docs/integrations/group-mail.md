@@ -1,5 +1,4 @@
 ---
-lastUpdated: "02/08/2020"
 title: "Using SparkPost with Group-Mail"
 description: "The following steps will walk you through using Spark Post with Infacta's Group Mail Go to the Accounts dialog and set up a New Account Enter your details on the main account settings page as appropriate IMPORTANT The email address and reply to address MUST be set to an address..."
 ---

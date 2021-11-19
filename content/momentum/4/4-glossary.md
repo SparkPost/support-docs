@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "Glossary"
 description: "Advanced Message Queuing Protocol AMQP AMQP is an open standard for message oriented middleware used by Momentum 4 For more information see ampq org Aggregator In a Momentum 4 cluster configuration an aggregator or cluster aggregation node is a node used for cluster log aggregation If you require log aggregation..."
 ---

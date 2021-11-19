@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "dns_fallback_to_tcp"
 description: "dns fallback to tcp whether or not to fail over to TCP in place of UDP dns fallback to tcp false Momentum uses User Datagram Protocol UDP for DNS queries However the size of a UDP packet is limited and a DNS query can exceed it Set this option to..."
 ---

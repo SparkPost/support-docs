@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "get_floating_event_set"
 description: "get floating event set Retrieve a floating event set void get floating event set set count Event set int count Retrieve a floating event set set The event set count The size of the event fetched This function returns void On success set points to the event set Only call..."
 ---

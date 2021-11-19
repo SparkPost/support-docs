@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "binding fail domain"
 description: "binding fail domain fail messages for a domain on a binding with a bounce message binding fail domain binding name domain name message The binding fail domain command allows the administrative failure of all messages bound for the specified domain on the specified binding If political issues arise that cannot..."
 ---

@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "sieve_inc_counter"
 description: "sieve inc counter Increment the specified counter void sieve inc counter counter clen phase plen type const char counter int clen const char phase int plen int type Increment the specified counter counter The counter to increment clen The length of the counter parameter phase The phase in which to..."
 ---

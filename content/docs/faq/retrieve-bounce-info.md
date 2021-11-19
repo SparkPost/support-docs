@@ -1,5 +1,4 @@
 ---
-lastUpdated: "02/08/2020"
 title: "How Do I Retrieve Bounce Info from SparkPost?"
 description: "Spark Post provides two options for pulling bounce info from Spark Post a push mechanism and a pull mechanism This article will explain both solutions in detail so that you may choose the one most appropriate to your use case and expertise Push Mechanism Webhooks The push mechanism that Spark..."
 ---

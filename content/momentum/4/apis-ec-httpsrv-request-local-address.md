@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "ec_httpsrv_request_local_address"
 description: "ec httpsrv request local address Returns the local IP address from the current session ec sockaddr ec httpsrv request local address sess ec httpsrv session sess Configuration Change This option is available as of version 4 0 This function returns the local IP address from the current session sess session..."
 ---

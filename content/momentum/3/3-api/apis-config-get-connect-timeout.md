@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "config_get_connect_timeout"
 description: "config get connect timeout Get the value of the connect timeout option int config get connect timeout caller scope generic module infrastructure caller scope Get the value of the connect timeout option The caller scope argument is virtually always NULL there is no reason for a consumer to make it..."
 ---

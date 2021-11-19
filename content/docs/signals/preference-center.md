@@ -1,5 +1,4 @@
 ---
-lastUpdated: "02/08/2020"
 title: "Preference Center"
 description: "The Signals recommendations on setting up a Preference Center for your subscribers."
 ---

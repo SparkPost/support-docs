@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "sp_async_schedule_event"
 description: "sp async schedule event Schedule an asynchronous event from any thread and optionally dispatch the callback void sp async schedule event e dispatch mask Event e int dispatch mask Schedule an event from any thread and optionally dispatch the callback This adds the event scheduling and dispatch work to a..."
 ---

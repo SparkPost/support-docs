@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "msg:body_match"
 description: "msg body match Streaming interface to a PCRE search of a message body minus headers msg body match pattern Streaming interface to a PCRE search of a message body minus headers If matches are found they are returned Otherwise this function returns false Enable this function with the statement require..."
 ---

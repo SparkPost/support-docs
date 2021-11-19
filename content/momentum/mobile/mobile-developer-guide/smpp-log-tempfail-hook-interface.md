@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "Interface"
 description: "The C hook has to be registered as smpp log tempfail for example register smpp log tempfail hook first sampel smpp log tempfail Parameters are passed into this hook a reference to the smpp conn structure an ec message a string value of the error description if there is any..."
 ---

@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "sieve_seng_prepare3"
 description: "sieve seng prepare 3 prepare to execute a sieve script SENG sieve seng prepare 3 sieve phase bag can SIEVE sieve const char phase ec bag bag int can This reference page was automatically generated from functions found in the header files in the development branch The function described here..."
 ---

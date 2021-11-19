@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "signing_stats reset"
 description: "signing stats reset reset signing stats signing stats reset This command resets all DKIM and Domainkeys signing statistics Section 71 28 domainkeys Yahoo Domain Keys Section 71 50 opendkim Open Source DKIM signing stats and signing stats..."
 ---

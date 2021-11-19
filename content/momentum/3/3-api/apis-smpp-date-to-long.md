@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "smpp_date_to_long"
 description: "smpp date to long Convert date string to time t value long int smpp date to long date str char date str Configuration Change This feature is available starting from Momentum 3 2 Convert a date string to time t value date str The input date string in the format..."
 ---

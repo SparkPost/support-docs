@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "Preparing the System"
 description: "While Momentum will install and run out of the box with very little configuration some steps should be taken to remove or reduce obvious performance bottlenecks Like all MT As Momentum must journal the messages it receives to disk before responding to the sender with a positive reception code This..."
 ---

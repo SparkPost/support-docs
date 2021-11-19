@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "config_get_binding_domain_tls_verify"
 description: "config get binding domain tls verify Determine the value of the tls verify option int config get binding domain tls verify caller scope binding domain generic module infrastructure caller scope int binding const domain Determine the value of the tls verify configuration option The caller scope argument is virtually always..."
 ---

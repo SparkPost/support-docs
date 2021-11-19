@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "io_wrapper_async_close"
 description: "io wrapper async close Close an IO wrapper deprecated void io wrapper async close io io object io Close an IO wrapper deprecated This API ignores refcounts and does not free Use io wrapper async destroy instead..."
 ---

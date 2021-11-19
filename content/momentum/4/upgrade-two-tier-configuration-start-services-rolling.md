@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "Start Services"
 description: "Start the following services on all nodes Adaptive Delivery Services will be started later Confirm that the following services have been started on all Platform nodes For a combined cluster upgrade perform this action on all nodes in the cluster..."
 ---

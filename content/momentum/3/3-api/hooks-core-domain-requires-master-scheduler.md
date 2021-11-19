@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "domain_requires_master_scheduler"
 description: "domain requires master scheduler int domain requires master scheduler closure domain void closure const char domain int has core domain requires master scheduler hook void register core domain requires master scheduler hook first hook closure ec hook core domain requires master scheduler func t hook void closure void register core..."
 ---

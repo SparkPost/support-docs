@@ -1,5 +1,4 @@
 ---
-lastUpdated: "02/08/2020"
 title: "Sending email from Microsoft Windows PowerShell through SparkPost"
 description: "To send email Microsoft Windows PowerShell through SparkPost, there are only a few things you need to do First create a Spark Post account if you don't already have one Next create an API key with the Send via SMTP permission"
 ---

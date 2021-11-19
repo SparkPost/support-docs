@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "swap_out_multi"
 description: "swap out multi Override or augment the internal call to swap out multi int core swap out multi closure head success void closure sp async message head int success The swap out multi hook allows modules to override or augment the internal call to swap out multi This hook is..."
 ---

@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "Hooks in the restinj Scope"
 description: "Table of Contents body assignment json request post body assignment recip response..."
 ---

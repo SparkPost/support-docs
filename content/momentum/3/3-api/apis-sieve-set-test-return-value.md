@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "sieve_set_test_return_value"
 description: "sieve set test return value Set a test result return value void sieve set test return value seng rv SENG seng int rv Set a test result return value for a test registered via sieve register extension seng The Sieve engine state rv The desired return value It is legal..."
 ---

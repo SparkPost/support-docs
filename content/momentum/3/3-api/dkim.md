@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "DKIM/DK Functions"
 description: "Table of Contents ec dk responsible domain Function to return responsible domain ec dk sign Function to sign a mail message ec dkim domains Function to return a list of valid signing domains ec dkim domains string Function to return a list of valid signing domains ec dkim get verify..."
 ---

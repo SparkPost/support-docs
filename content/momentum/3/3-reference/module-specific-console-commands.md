@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "Module-Specific Console Commands"
 description: "In addition to the regular console commands there are also system console commands specific to particular modules Module specific commands are documented within the module documentation The links to these commands are listed below Section 14 2 9 adaptive Management Using System Console Commands Section 14 10 4 beik Management..."
 ---

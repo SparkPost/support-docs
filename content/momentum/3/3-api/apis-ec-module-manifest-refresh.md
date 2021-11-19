@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "ec_module_manifest_refresh"
 description: "ec module manifest refresh refreshes the manifest list void ec module manifest refresh void This reference page was automatically generated from functions found in the header files in the development branch The function described here may not exist in generally available versions of Momentum and may change in behavior when..."
 ---

@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "io_wrapper_destroy"
 description: "io wrapper destroy Decrements the refcount on the io object and closes and frees it if the refcount reaches 0 void io wrapper destroy io io object io Decrement the refcount on the io object and close and frees it if the refcount reaches 0 Use io wrapper delref instead..."
 ---

@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "Dumping and Restoring the Database"
 description: "In some circumstances you may need to change the machine that hosts Momentum and migrate your data to new hardware When moving to a host with the same operating system architecture and bit size you can simply archive the var db msyspg directory and then restore it Otherwise you can..."
 ---

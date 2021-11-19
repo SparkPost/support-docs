@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "ec_round"
 description: "ec round round away from zero ec round number ec round rounds the given number to the nearest integer but away from 0 Example 16 90 ec round example..."
 ---

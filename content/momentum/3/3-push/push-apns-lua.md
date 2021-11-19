@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "APNs and Lua"
 description: "Support for AP Ns includes new Lua functionality and Lua callouts This chapter covers those topics AP Ns related changes to the C API and to C hook points are documented in Hooks in the apn Scope For a description of how to use Lua scripts see The scriptlet Module..."
 ---

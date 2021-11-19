@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "accept_construct"
 description: "This struct is defined as follows To use this struct include the file netlistener h sieve get accept construct..."
 ---

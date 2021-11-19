@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "sp_async_message"
 description: "This struct is defined as follows To use this struct include the file sp async h swap out multi..."
 ---

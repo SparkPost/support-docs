@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "ec_growbuf_io_open"
 description: "ec growbuf io open Allocate and initialize an io object for a new growbuf backed string io object ec growbuf io open size size t size This reference page was automatically generated from functions found in the header files in the development branch The function described here may not exist..."
 ---

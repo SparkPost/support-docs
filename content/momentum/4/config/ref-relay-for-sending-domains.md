@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "relay_for_sending_domains"
 description: "relay for sending domains domains that may use the MTA as a relay relay for sending domains example com Provides a mechanism for finer control over SMTP relaying If specified with no parameters it allows unrestricted use of the instance as an SMTP relay a k a open relay from..."
 ---

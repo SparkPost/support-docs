@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "scpt_register_objtype_augmentation"
 description: "scpt register objtype augmentation Manually augment a set of methods for an objtype int scpt register objtype augmentation type name methods const char type name struct scpt obj method methods This reference page was automatically generated from functions found in the header files in the development branch The function described..."
 ---

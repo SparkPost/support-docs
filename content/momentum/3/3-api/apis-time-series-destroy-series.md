@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "time_series_destroy_series"
 description: "time series destroy series Destroy a monitor identified by a sequence number void time series destroy series ts series id time series ts int series id This reference page was automatically generated from functions found in the header files in the development branch The function described here may not exist..."
 ---

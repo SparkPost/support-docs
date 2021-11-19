@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "Hooks in the core scope"
 description: "Table of Contents mail queue maintain aaa log annotate batch Allow a module to assume responsibility for batch annotation assess batch Allow a module to assume responsibility for batch assessment binding group choose binding body modify bounce error classify cache get cache set check outbound conn throttle check outbound mess..."
 ---

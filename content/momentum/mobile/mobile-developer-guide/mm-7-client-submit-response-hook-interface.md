@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "Interface"
 description: "Lua implementations use the following interface The parameter msg is an ec message Lua implementations must use the function name mod mm 7 handle submit Rsp C implementations use the following interface e g Note that unlike Lua the function name is not significant since the function is registered during..."
 ---

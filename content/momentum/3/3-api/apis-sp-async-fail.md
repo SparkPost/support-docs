@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "sp_async_fail"
 description: "sp async fail Fail a message deprecated void sp async fail mess force async abstract message mess int force async Fail a message deprecated Use ec async fail instead..."
 ---

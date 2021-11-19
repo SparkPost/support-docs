@@ -1,5 +1,4 @@
 ---
-lastUpdated: "09/09/2021"
 title: "SCIM User Provisioning Through Okta"
 description: "Learn how to enable SCIM user provisioning through Okta for your SparkPost account."
 ---

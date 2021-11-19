@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "maintainer_pool"
 description: "maintainer pool configure mail queues DNS lookup and module events to use multiple threads maintainer pool pool name Configuration Change This option is available as of version 3 6 In order to use this option you must have a Supercharger license For more information see Section 2 4 Configuring for..."
 ---

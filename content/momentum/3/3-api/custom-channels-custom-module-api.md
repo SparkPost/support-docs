@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "Custom Delivery Module Setup"
 description: "The following sections provide details about setting up a custom delivery module that extends the Generic HTTP Client module The information given is a subset of the topics discussed in Section 1 3 Primary Momentum AP Is Your delivery module must have a ecm file which defines the name of..."
 ---

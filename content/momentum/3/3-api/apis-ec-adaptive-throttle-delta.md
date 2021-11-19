@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "ec_adaptive_throttle_delta"
 description: "ec adaptive throttle delta adjust the counter for a named throttle int ec adaptive throttle delta name is shared amount const char name int is shared int amount This reference page was automatically generated from functions found in the header files in the development branch The function described here may..."
 ---

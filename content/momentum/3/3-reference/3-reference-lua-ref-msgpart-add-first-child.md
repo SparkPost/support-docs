@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "msgpart:addFirstChild"
 description: "msgpart add First Child Adds a child as the first child on this part msgpart add First Child child Adds a child as the first child on this part This part must already be a container for the addition to succeed Returns true on success false on error Enable this..."
 ---

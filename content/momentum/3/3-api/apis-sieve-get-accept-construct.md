@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "sieve_get_accept_construct"
 description: "sieve get accept construct Get an accept construct from the Sieve engine accept construct sieve get accept construct seng SENG seng Get an accept construct from the Sieve engine seng The Sieve engine This function returns an accept construct It is legal to call this function in the Scheduler thread..."
 ---

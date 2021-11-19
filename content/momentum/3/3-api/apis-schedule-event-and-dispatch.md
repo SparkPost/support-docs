@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "schedule_event_and_dispatch"
 description: "schedule event and dispatch Schedule an event from any thread and optionally dispatch the callback void schedule event and dispatch e dispatch mask Event e int dispatch mask Schedule an event from any thread and optionally dispatch the callback When called from the scheduler thread scheduling and dispatch can happen..."
 ---

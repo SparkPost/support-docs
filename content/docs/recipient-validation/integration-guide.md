@@ -1,5 +1,4 @@
 ---
-lastUpdated: "11/10/2020"
 title: "Integrating the Recipient Validation API"
 description: "Learn how to integrate Recipient Validation into your forms so you can reject bad emails before you add them to your lists."
 ---

@@ -1,5 +1,4 @@
 ---
-lastUpdated: "10/05/2021"
 title: "Configuring XFER for Outbound Mail Delivery"
 description: "By default Momentum will attempt to deliver mail via the SMTP protocol to the destination MX server.  The XFER delivery method can be used to transfer mail over HTTP to another Momentum server that will handle delivery."
 ---

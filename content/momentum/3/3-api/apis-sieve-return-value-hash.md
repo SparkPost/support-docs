@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "sieve_return_value_hash"
 description: "sieve return value hash Set the return value to a hash void sieve return value hash seng hash SENG seng SIEVEARGS hash Set the return value to a hash seng The Sieve engine state hash The hash return value This function returns void It is legal to call this function..."
 ---

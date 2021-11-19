@@ -1,5 +1,4 @@
 ---
-lastUpdated: "01/14/2021"
 title: "User Management"
 description: "How to add users to your SparkPost account and manage their permissions."
 ---

@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "sl_insert"
 description: "sl insert Insert data and return the resulting node void sl insert sl data Skiplist sl void data Insert data and return the resulting node sl The Skiplist data The data On success this function returns the inserted node on failure it returns 0 It is legal to call this..."
 ---

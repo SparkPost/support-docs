@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "msys.dp_config.commtouch"
 description: "Scan messages using Commtouch To use this configuration item you must have the commtouch module loaded For more information see commtouch Module Find below the sample excerpt included in the dp config lua file The elements of this configuration table are as follows scan Whether or not to scan using..."
 ---

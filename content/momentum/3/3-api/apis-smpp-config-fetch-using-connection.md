@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "smpp_config_fetch_using_connection"
 description: "smpp config fetch using connection Fetch the specified SMPP configuration option ec config value smpp config fetch using connection option slot conn int option slot smpp conn conn Configuration Change This feature is available starting from Momentum 3 2 Fetch the specified configuration option value using the smpp conn option..."
 ---

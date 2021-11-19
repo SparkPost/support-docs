@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "assess_batch"
 description: "assess batch Allow a module to assume responsibility for batch assessment int core assess batch closure dc dr bs conn limit pb limit pc void closure delivery construct dc domain record dr ec binding slot bs connection conn int limit pb int limit pc This hook allows a module to..."
 ---

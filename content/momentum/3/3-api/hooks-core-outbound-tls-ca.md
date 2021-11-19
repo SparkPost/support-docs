@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "outbound_tls_ca"
 description: "outbound tls ca char outbound tls ca closure message void closure email message message int has core outbound tls ca hook void register core outbound tls ca hook first hook closure ec hook core outbound tls ca func t hook void closure void register core outbound tls ca hook last..."
 ---

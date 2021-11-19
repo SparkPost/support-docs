@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "ec_memory_print_allocator_details"
 description: "ec memory print allocator details Render low level allocator information to a string buffer void ec memory print allocator details str flags string str int flags Configuration Change This feature is available starting from Momentum 3 0 18 Render low level allocator information to a string buffer The information available..."
 ---

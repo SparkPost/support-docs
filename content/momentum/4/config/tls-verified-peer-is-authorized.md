@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "tls_verified_peer_is_authorized"
 description: "tls verified peer is authorized Marks requests that use a verified SSL Client certificate as being authorized TLS Verified Peer Is Authorized true false This option marks requests that use a verified SSL Client certificate as being authorized The default value is false tls verified peer is authorized is valid..."
 ---

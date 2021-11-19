@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "Examples"
 description: "Example 30 1 MM 7 Server Received Message Validation Hook Lua Example..."
 ---

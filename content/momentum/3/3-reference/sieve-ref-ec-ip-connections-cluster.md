@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "ec_ip_connections_cluster"
 description: "ec ip connections cluster Audit how many connections an IP address has made cluster wide ec ip connections cluster time series index mask ec ip connections cluster hash ec ip connections cluster returns a string containing the number of connections that have occurred for a CIDR block within a configured..."
 ---

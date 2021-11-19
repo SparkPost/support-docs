@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "session:request_url_get"
 description: "session request url get Get the request URL session request url get Use an ec httpsrv session object and this method to return an ec url details object For example code see Example 70 35 session request url get Example and Example 70 30 msys httpsrv register Example You can..."
 ---

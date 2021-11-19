@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "Installation on Linux"
 description: "Momentum is packaged for a number of Linux distributions Choosing the correct package for your OS is critical to Momentum performing correctly as different Linux distributions utilize different versions of critical system libraries and Momentum also uses certain platform specific optimizations The installation package for Linux is distributed as a..."
 ---

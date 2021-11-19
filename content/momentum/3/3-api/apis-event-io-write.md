@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "event_io_write"
 description: "event io write initiate a write to an event int event io write e buf buflen state Event e const char buf int buflen event io state state This reference page was automatically generated from functions found in the header files in the development branch The function described here may..."
 ---

@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "Mail Queue Functions"
 description: "Table of Contents mail queue maintain mail queue maintain is the default implementation if the mail queue maintain hook mailq get next active mailq get next active is an internal function called by the default implementation if the mailq get next active hook mail queue maintain domain mail queue maintain..."
 ---

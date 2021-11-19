@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "Installing Additional Packages"
 description: "If you are installing Momentum with the mta role after entering your admin and service account password you will be asked whether you wish to install additional packages The additonal packages vary depending upon whether you are installing Momentum receiving or sending Not all packages are supported on all operating..."
 ---

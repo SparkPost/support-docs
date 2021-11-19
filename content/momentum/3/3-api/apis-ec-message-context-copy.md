@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "ec_message_context_copy"
 description: "ec message context copy Copy a context variable from one ec message to another int ec message context copy src dest ctx ec message src ec message dest const char ctx Configuration Change This function is available as of Momentum version 3 5 6 Copy a context variable from one..."
 ---

@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "tls_verify"
 description: "tls verify specify how to handle the remote presented certificate tls verify no If TLS is set to required or ifavailable and TLS is negotiated with the remote mail exchange this option will specify how the remote presented certificate should be handled If this option is set to no then..."
 ---

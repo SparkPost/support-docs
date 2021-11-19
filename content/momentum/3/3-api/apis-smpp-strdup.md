@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "smpp_strdup"
 description: "smpp strdup Duplicate a string char smpp strdup c const char c Configuration Change This feature is available starting from Momentum 3 2 Duplicate a string Use smpp free to free the returned buffer c The character string to duplicate This function returns a pointer to the duplicated string It..."
 ---

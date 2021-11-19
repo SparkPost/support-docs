@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "generate_soft_bounce_message"
 description: "generate soft bounce message email message generate soft bounce message closure message void closure email message message int has core generate soft bounce message hook void register core generate soft bounce message hook first hook closure ec hook core generate soft bounce message func t hook void closure void register..."
 ---

@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "Utility Functions"
 description: "Table of Contents binding address family matches Validate that the binding in question matches the address family provided ec gethostname lowercase gethostname replacement ec hex decode decodes bytes from ASCII hex characters ec hex encode encodes bytes into ASCII hex characters ec parse url parses an RFC 3986 URI ec..."
 ---

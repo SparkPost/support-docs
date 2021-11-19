@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "rfc3464_inline_message_fragment"
 description: "rfc 3464 inline message fragment int rfc 3464 inline message fragment closure response message action void closure string response ec message message dsn actype action int has core rfc 3464 inline message fragment hook void register core rfc 3464 inline message fragment hook first hook closure ec hook core rfc..."
 ---

@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "Java Runtime Environment (JRE)"
 description: "You must have an official Oracle Java 7 release installed as Java 8 is not supported for use with Cassandra and Momentum Run the following command to ensure that the version of Java installed on each Platform node is compatible with Cassandra Your results should look something like this Open..."
 ---

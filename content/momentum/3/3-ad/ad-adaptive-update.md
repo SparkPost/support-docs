@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "Automated Updates for the Adaptive Rules"
 description: "During installation you can choose to install AD rule updates See Installing Additional Packages If you choose this option you will automatically receive updates to the adaptive rules You also have the option of manually installing these rules Doing this is described in the following section This section applies to..."
 ---

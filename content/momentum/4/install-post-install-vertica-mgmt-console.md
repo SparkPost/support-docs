@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "Download and Install the Vertica Management Console"
 description: "Install the Vertica Management Console on any Vertica node Download v 7 1 x of the Vertica Management Console from the HP Vertica Community Portal Note This will require registration on HP s site if you are not already registered Click the links below to install and configure the console..."
 ---

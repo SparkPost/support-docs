@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "Installation"
 description: "The binary packages are designed for easy installation Each platform uses its native installation format RPM for Linux pkg for Solaris All installations have identical installation paths so no path translations are required in this section The supported platforms are as follows Red Hat Enterprise Linux 5 x 86 64..."
 ---

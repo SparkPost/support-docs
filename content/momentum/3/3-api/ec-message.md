@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "Message Functions"
 description: "Table of Contents add Add disclaimer to a message ec async fail Fails a message and removes it from the system ec message addref Create a reference to an existing message ec message assemble to legacy email message glue the parts back together into an in memory email message ec..."
 ---

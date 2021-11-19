@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "msg:is_mcmt"
 description: "msg is mcmt Determine whether a message is a MCMT message msg is mcmt Determine whether a message is a Multi Channel Message Type MCMT message For more information about this message type see The MCMT Reception Option Because this function is in the msys core namespace an explicit require..."
 ---

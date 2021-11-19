@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "ec_dkim_responsible_domain_string"
 description: "ec dkim responsible domain string Function to return responsible domain int ec dkim responsible domain string m ctx domain ec message m validate context ctx string domain This reference page was automatically generated from functions found in the header files in the development branch The function described here may not..."
 ---

@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "ec_spool_ctx_construct_filename"
 description: "ec spool ctx construct filename Create a file name for the specified message int ec spool ctx construct filename ctx id filename ec spool ctx ctx message id id char filename Create a file name for the specified message ctx The spool context id The id of the message filename..."
 ---

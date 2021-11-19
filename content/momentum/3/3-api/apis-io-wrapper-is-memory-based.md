@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "io_wrapper_is_memory_based"
 description: "io wrapper is memory based returns the memtype if an io object is an in memory io object int io wrapper is memory based io buf len io object io char buf size t len This reference page was automatically generated from functions found in the header files in the..."
 ---

@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "get_now_ts"
 description: "get now ts Get the current time get now ts void void This function can be called from any thread If it is called from a scheduler thread it will return the time from the current Section 68 41 ec scheduler inst structure If it is called from a non..."
 ---

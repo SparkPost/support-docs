@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "msys.threadpool.find"
 description: "msys threadpool find Find a thread pool name from a job class ID or a job class ID from a thread pool name msys threadpool find threadpoolname or jobclassid Finds a thread pool name from a job class ID or a job class ID from a thread pool name Returns..."
 ---

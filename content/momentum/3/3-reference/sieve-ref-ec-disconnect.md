@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "ec_disconnect"
 description: "ec disconnect set SMTP status and close the SMTP connection ec disconnect smtp code reason counter This takes the same argument and performs the same action as ec action except that subsequent to sending the response to the remote MTA the SMTP session is terminated NOTE to be strictly RFC..."
 ---

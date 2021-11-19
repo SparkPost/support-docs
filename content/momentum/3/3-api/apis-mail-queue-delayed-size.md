@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "mail_queue_delayed_size"
 description: "mail queue delayed size Get the size of a delayed queue int mail queue delayed size queue mail queue queue Returns the size of this mail queue's delayed queue queue A pointer to a mail queue struct For documentation of this data structure see Section 68 58 mail queue This..."
 ---

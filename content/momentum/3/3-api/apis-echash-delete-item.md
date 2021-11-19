@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "echash_delete_item"
 description: "echash delete item Remove the specified item from the hash table int echash delete item ht k klen ec hash table ht const char k int klen This function removes the specified item from the hash table If keyfree and datafree functions were specified when the table was created they..."
 ---

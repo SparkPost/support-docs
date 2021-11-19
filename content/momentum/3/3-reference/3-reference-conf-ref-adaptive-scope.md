@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "adaptive_scope"
 description: "adaptive scope define the scope applicable to adaptive delivery adaptive scope auto Configuration Change This feature is available as of version 3 3 This directive is only valid if the Momentum adaptive module is loaded See Section 14 2 adaptive Adaptive Delivery Use this option to set the scope of..."
 ---

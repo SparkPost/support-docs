@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "paniclog"
 description: "The paniclog is a debugging log in which system events are logged depending on the level of Debug Flags set in your configuration It is configured in the ec logger Under normal circumstances Debug Flags should be empty or should be omitted from the ecelerity conf file For debugging purposes..."
 ---

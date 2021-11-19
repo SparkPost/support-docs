@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "ec_vprintf"
 description: "ec vprintf vprintf like function that takes an output parameter and a write function int ec vprintf out writefunc format ap void out ssize t writefunc const char format va list ap This reference page was automatically generated from functions found in the header files in the development branch The..."
 ---

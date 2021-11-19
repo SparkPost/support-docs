@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "create_ssl_cert"
 description: "create ssl cert create a self signed SSL certificate opt msys ecelerity bin create ssl cert service hostname prefix user During installation self signed SSL certificates valid for one year are created for some services Use this command to create a new certificate when the original expires When a certificate..."
 ---

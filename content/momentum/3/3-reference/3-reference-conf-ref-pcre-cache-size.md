@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "pcre_cache_size"
 description: "pcre cache size set the maximum size of the ec pcre compile cache pcre cache size 0 Pcre Cache Size and Pcre Cache Ttl together set the maximum size and TTL of the ec pcre compile cache This cache is used by sieve sievelib the bounce classifier code and the..."
 ---

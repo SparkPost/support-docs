@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "Editor Commands"
 description: "Vi paste previous deletion to the right of the cursor Vi paste previous deletion to the left of the cursor Vi move to the previous space delimited word Vi move to the previous word Vi move to the next space delimited word Vi move to the next word Vi change..."
 ---

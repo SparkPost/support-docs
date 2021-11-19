@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "cache_get"
 description: "cache get int cache get closure name key klen value vlen void closure const char name const void key int klen void value int vlen int has core cache get hook void register core cache get hook first hook closure ec hook core cache get func t hook void closure..."
 ---

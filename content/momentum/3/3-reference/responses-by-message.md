@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "Responses Sorted by Message"
 description: "Table F 2 Responses sorted by message SMTP Code Enhanced Code Message Comment 550 5 7 1 550 internal oob bounce logger module 550 5 6 0 Body line too long see RFC 2822 section 3 5 See message 503 5 5 1 DATA without MAIL FROM See message 503..."
 ---

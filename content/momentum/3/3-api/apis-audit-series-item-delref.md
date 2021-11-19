@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "audit_series_item_delref"
 description: "audit series item delref Function to release the key list returned from audit series get items in head the head of linked list of items void audit series item delref head audit series item head This reference page was automatically generated from functions found in the header files in the..."
 ---

@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "Validation Context Variables"
 description: "As mentioned in Section 62 1 Validation and the Validation Context context variables play a significant role when policy is enforced using scripts In addition to user defined variables there are predefined validation context variables accessible in both the connection context and the message context Not all context variables will..."
 ---

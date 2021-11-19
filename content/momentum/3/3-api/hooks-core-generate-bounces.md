@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "generate_bounces"
 description: "generate bounces int generate bounces closure mess enabled void closure ec message mess int enabled int has core generate bounces hook void register core generate bounces hook first hook closure ec hook core generate bounces func t hook void closure void register core generate bounces hook last hook closure ec..."
 ---

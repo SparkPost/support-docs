@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "binding_auto_replumb"
 description: "binding auto replumb enable or disable the auto replumber binding auto replumb enabled binding auto replumb disabled This directive instructs Momentum to enable or disable the auto replumber The replumber periodically checks the plumbed state for bindings with static addresses and replumbs any that are unplumbed Bindings can become unplumbed..."
 ---

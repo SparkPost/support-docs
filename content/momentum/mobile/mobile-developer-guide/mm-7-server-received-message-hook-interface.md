@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "Interface"
 description: "The parameter trx is the type of mm 7 transaction defined in Section 29 1 Purpose The C implementation uses the following interface This hook is the same as the other C hooks The function name is not significant as long as it is registered during module initialization See Example..."
 ---

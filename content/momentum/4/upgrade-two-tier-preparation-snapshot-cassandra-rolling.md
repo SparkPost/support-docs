@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "Perform a Cassandra Snapshot"
 description: "Prepare the database on each node for a snapshot Perform the following steps on the first Platform node then repeat on the remaining Platform nodes The size of your snapshot will depend on the size of your instance If you do not have enough space available to create a snapshot..."
 ---

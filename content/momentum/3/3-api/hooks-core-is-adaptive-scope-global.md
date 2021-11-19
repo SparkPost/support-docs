@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "is_adaptive_scope_global"
 description: "is adaptive scope global int is adaptive scope global closure binding slot domain void closure int binding slot const char domain int has core is adaptive scope global hook void register core is adaptive scope global hook first hook closure ec hook core is adaptive scope global func t hook..."
 ---

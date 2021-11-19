@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "Control_Listener Authorization"
 description: "The authorization subsystem allows you to restrict the ability to run console commands based on the role of the user The role membership of the user is determined based on the authenticated username Pluggable authorization modules provide the means to map the username to a number of roles or groups..."
 ---

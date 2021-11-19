@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "eclist_node"
 description: "This struct is defined as follows This struct is typedef ed as follows typedef struct ec list node eclist node To use this struct include the file eclist h stringwrite config list..."
 ---

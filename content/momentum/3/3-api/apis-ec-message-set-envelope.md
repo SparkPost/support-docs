@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "ec_message_set_envelope"
 description: "ec message set envelope Sets envelope information for the message int ec message set envelope mess flags localpart llen domain dlen ec message mess int flags const char localpart int llen const char domain int dlen Sets envelope information for the message Example 34 5 ec message set envelope Example..."
 ---

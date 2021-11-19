@@ -1,7 +1,8 @@
 ---
-lastUpdated: '03/26/2020'
-title: 'Mobile Momentum'
-description: ''
+name: "Mobile Momentum"
+title: "Category File"
+description: ""
+type: "custom"
 ---
 
 ### Message Systems, Inc.
@@ -13,5 +14,3 @@ Confidential & Proprietary.
 **Abstract**
 
 This book is an administration guide for Mobile Momentum.
-
----

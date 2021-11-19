@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "msg:inject"
 description: "msg inject Use this function to send mail msg inject mailfrom rcptto Use this function to send mail mailfrom is the address of the sender in the form of localpart domain rcptto is the address of the recipient in the form of localpart domain If you want to send this..."
 ---

@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "ec_httpsrv_request_data_get_xml"
 description: "ec httpsrv request data get xml Gets an XML object representation of the request payload data int ec httpsrv request data get xml sess xml ec httpsrv session sess xml Doc Ptr xml This reference page was automatically generated from functions found in the header files in the development branch..."
 ---

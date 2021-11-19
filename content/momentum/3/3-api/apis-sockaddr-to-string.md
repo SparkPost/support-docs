@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "sockaddr_to_string"
 description: "sockaddr to string Renders a socket address into human readable form char sockaddr to string sa buffer len struct sockaddr sa char buffer int len Renders a socket address into human readable form You may find that sockaddr to string 2 is slightly easier to use sa The socket address..."
 ---

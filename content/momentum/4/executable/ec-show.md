@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "ec_show"
 description: "ec show show spool or message information opt msys ecelerity bin ec show c config file end date PCRE h m message id n recipient PCRE s sender PCRE start date PCRE ec show is a utility to show spool or message information It can also show messages matching a..."
 ---

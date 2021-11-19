@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "msys.dp_config.audit_series.mailfrom"
 description: "MAIL FROM rate limiting Note this is disabled by default as there is a potential for a Do S attack using garbage sender addresses Find below the sample excerpt included in the dp config lua file The elements of this configuration table are as follows type The only legal value..."
 ---

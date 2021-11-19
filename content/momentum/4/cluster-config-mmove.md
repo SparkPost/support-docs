@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "duravip_follow and the #mmove Binding"
 description: "The mmove binding is the cluster message movement binding in the default binding group This is a virtual binding for moving messages between nodes The current design of Momentum assumes that mmove traffic will be the exception rather than the rule If you are seeing a lot of traffic on..."
 ---

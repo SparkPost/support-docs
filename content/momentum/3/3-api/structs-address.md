@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "address"
 description: "This struct is defined as follows To use this struct include the file dns ds h connection address and Section 68 4 address metrics..."
 ---

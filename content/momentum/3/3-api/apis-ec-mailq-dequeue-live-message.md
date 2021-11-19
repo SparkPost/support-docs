@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "ec_mailq_dequeue_live_message"
 description: "ec mailq dequeue live message Removes a message from the mail queues and returns it if found ec message ec mailq dequeue live message mid message id mid Removes a message from the mail queues and returns it if found When this function returns an ec message it must take..."
 ---

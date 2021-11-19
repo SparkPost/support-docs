@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "host"
 description: "host configure host specific options Use the host stanza to define per host configuration options You can nest host stanzas beneath binding stanzas to define binding host configuration options For additional details see Section 15 3 Configuration Scopes and Fallback The following options can be specified in a host stanza..."
 ---

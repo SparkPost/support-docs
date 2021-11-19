@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "ec_message_parser_defaults"
 description: "ec message parser defaults Obtain message parsing validation defaults void ec message parser defaults params struct ec message parser parameters params This reference page was automatically generated from functions found in the header files in the development branch The function described here may not exist in generally available versions of..."
 ---

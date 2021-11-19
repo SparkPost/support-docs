@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "msys.validate.opendkim.get_sig_signalg"
 description: "msys validate opendkim get sig signalg Return the signing algorithm as a string msys validate opendkim get sig signalg dkim sig This function returns the DKIM signing algorithm string Use msys validate opendkim get num sigs and msys validate opendkim get sig to get a DKIM SIGINFO object to pass..."
 ---

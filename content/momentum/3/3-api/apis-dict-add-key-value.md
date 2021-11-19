@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "dict_add_key_value"
 description: "dict add key value Add the specified key value pair void dict add key value a key val EC Dict a const char key const char val Add the specified key value pair to the dictionary a The EC Dict An EC Dict is a typedef of an ec hash..."
 ---

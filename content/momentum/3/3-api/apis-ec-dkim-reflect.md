@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "ec_dkim_reflect"
 description: "ec dkim reflect Function to reflect validation result to email address specified in rcpts int ec dkim reflect m ctx sender rcpts subject note ec message m validate context ctx const char sender const char rcpts const char subject const char note This reference page was automatically generated from functions..."
 ---

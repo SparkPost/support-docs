@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "scpt_register_funcs"
 description: "scpt register funcs registers a set of functions in a namespace int scpt register funcs thr name space funcs scpt thread thr const char name space struct scpt obj method funcs This reference page was automatically generated from functions found in the header files in the development branch The function..."
 ---

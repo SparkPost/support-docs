@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "binding delayed"
 description: "binding delayed show domains with delayed queue size bigger than threshold on a specified binding binding delayed binding name threshold The binding delayed command presents information concerning the domains on a particular binding with a large number of delayed messages in queue The command takes a binding name and a..."
 ---

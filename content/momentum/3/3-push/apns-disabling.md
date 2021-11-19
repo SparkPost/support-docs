@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "Disabling APNs"
 description: "To disable AP Ns at the domain level remove the routes and the delivery method options from the scope where you wish to disable AP Ns In Example 3 1 Configuring for AP Ns all you need do is remove them from the apn example com domain If you have..."
 ---

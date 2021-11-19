@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "custom_logger – Customizable Logging"
 description: "The custom logger module provides completely configurable logging similar to Apache's mod log config module For more information on logging in general see Section 4 5 Logging If you wish you can set up multiple custom loggers Currently various custom logger options cannot be set from the web UI As..."
 ---

@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "sieve_resume"
 description: "sieve resume Resume the current Sieve action void sieve resume seng SENG seng Resume a Sieve action that was suspended using sieve suspend seng The Sieve engine state This function returns void It is legal to call this function in any thread Section 68 73 SENG sieve engine sieve suspend..."
 ---

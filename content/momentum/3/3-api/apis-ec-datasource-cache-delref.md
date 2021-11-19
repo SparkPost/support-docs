@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "ec_datasource_cache_delref"
 description: "ec datasource cache delref Delete a reference to a datasource cache entry void ec cache delref entry struct ec datasource query cache entry entry Delete a reference to a datasource cache entry entry A pointer to an ec datasource query cache entry struct This function returns void It is legal..."
 ---

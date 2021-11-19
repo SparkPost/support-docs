@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "Stop Transmissions to the First Platform Node"
 description: "Be sure that the first Platform node will no longer have transmission requests routed to it On all Analytics nodes edit opt msys 3rd Party nginx conf d momo upstream conf and either delete or comment out the line identifying the Platform node to be upgraded For a combined cluster..."
 ---

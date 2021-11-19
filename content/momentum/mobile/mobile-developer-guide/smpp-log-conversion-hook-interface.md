@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "Interface"
 description: "This interface is the same as other C hooks The function name is not significant as long as it is registered as smpp log conversion as register smpp log conversion hook first sample smpp log conversion during module initialization See Section 6 3 Examples a reference to the smpp conn..."
 ---

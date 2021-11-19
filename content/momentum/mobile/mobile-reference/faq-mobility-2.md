@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "Domains"
 description: "6 2 1 I want to view the status of one of the domains associated with the mobility module How can I do this 6 2 2 Is it possible to add new domain stanzas without restarting Momentum 6 2 1 I want to view the status of one of..."
 ---

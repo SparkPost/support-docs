@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "scpt_push_double"
 description: "scpt push double pushes a double on to the stack void scpt push double thr value scpt thread thr double value Push a double on to the stack thr The script thread For a description of this data type see Section 68 72 scpt thread value The double that you..."
 ---

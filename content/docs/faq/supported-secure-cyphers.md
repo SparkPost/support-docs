@@ -1,5 +1,4 @@
 ---
-lastUpdated: "02/08/2020"
 title: "What Secure Ciphers does SparkPost Support?"
 description: "To ensure the highest degree of security and stability for our customers, SparkPost will be disabling a number of insecure TLS and stream cipher protocols on October 15. These include TLSv1, ECDHE-RSA-RC4-SHA, RC4-MD5, and RC4-SHA. This change will affect both REST and SMTP injection endpoints"
 ---

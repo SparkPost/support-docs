@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "esmtp_destroy_message_construct"
 description: "esmtp destroy message construct Destroy the specified message construct void esmtp destroy message construct info message construct info Destroy the specified message construct info The message construct This function returns void It is legal to call this function in the Scheduler thread Section 68 59 message construct..."
 ---

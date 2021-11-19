@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "msys.gauge_cache.dec"
 description: "msys gauge cache dec Decrement the value associated with keystring in the named cache msys gauge cache dec cachename keystring Decrements the value associated with keystring in the named cache Enable this function with the statement require msys gauge cache msys gauge cache define Section 7 7 1 9 Shared..."
 ---

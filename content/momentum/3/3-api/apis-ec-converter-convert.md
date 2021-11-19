@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "ec_converter_convert"
 description: "ec converter convert Convert a chunk of data int ec converter convert conv srcbuf srcbuflen destbuf destbuflen src consumed dest used ec converter conv const char srcbuf size t srcbuflen char destbuf size t destbuflen size t src consumed size t dest used This reference page was automatically generated from..."
 ---

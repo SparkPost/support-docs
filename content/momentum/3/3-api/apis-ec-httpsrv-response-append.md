@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "ec_httpsrv_response_append"
 description: "ec httpsrv response append Append data to the session response output int ec httpsrv response append sess buf len ec httpsrv session sess const void buf size t len This reference page was automatically generated from functions found in the header files in the development branch The function described here..."
 ---

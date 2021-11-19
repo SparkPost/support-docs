@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "Prohibited_Hosts"
 description: "Some providers use DNS tricks to deter systems they feel are abusing their resources One technique is to return a loopback or other local address to you when you query their MX records There are some addresses you may never want to deliver mail to For example when configured as..."
 ---

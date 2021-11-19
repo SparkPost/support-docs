@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "opendkim – Open Source DKIM"
 description: "The opendkim module adds Open DKIM capabilities to Momentum It implements the DKIM standard and provides for signing email messages on a global per domain per binding or per binding per domain basis You can choose to sign messages through module configuration settings or do so at runtime using Lua..."
 ---

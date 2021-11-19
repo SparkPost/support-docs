@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "validate_expand_string"
 description: "validate expand string int validate expand string closure result s local part domain current domain ac ctx need void closure char result char s char local part char domain char current domain accept construct ac validate context ctx dns cache query need int has core validate expand string hook void..."
 ---

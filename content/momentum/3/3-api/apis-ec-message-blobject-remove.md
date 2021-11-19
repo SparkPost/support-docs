@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "ec_message_blobject_remove"
 description: "ec message blobject remove Remove a blobject tag int ec message blobject remove msg key ec message msg const char key Remove a blobject tag If the object is found in the hash delete the reference to it msg A pointer to an ec message struct For documentation of this..."
 ---

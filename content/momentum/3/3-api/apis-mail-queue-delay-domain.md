@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "mail_queue_delay_domain"
 description: "mail queue delay domain Add the specified domain record to the delayed queue void mail queue delay domain dr note domain record dr char note Add the specified domain record to the delayed queue dr The domain record For a description of this struct see Section 68 14 domain record..."
 ---

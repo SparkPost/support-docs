@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "join"
 description: "join join stringlist elements into a single string join delimiter stringlist This function uses its first argument as a delimiter to join all the elements in the stringlist and returns the result as a string For example to join MX records with a we could Example 16 114 join example..."
 ---

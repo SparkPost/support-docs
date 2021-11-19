@@ -1,5 +1,4 @@
 ---
-lastUpdated: "02/08/2020"
 title: "How to Use Binding Groups"
 description: "Your SparkPost Enterprise environment was provisioned with your specific messaging needs and industry segmentation best practices in mind. Bindings enable routing of individual messages over a designated group of IP addresses."
 notification: "Binding groups are deprecated in favor of IP pools."

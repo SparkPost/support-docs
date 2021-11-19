@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "Examples"
 description: "Example 23 1 MM 7 Log Conversion Hook Lua Example Example 23 2 MM 7 Log Conversion Hook C Example..."
 ---

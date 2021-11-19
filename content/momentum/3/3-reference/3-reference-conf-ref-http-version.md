@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "http_version"
 description: "http version Define the HTTP version to use http version 1 1 Configuration Change This option is available as of version 3 5 6 Define which version of HTTP to use when delivery method is set to an HTTP protocol This option may be set to any one of the..."
 ---

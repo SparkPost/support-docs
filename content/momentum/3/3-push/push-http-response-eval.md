@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "http_response_eval"
 description: "Use this callout to process feedback from Google typically feedback related to token management An example follows Example 9 3 http response eval example You must use require msys httpclnt to enable this hook point and to access the sess userdata This callout accepts as a parameter userdata of the..."
 ---

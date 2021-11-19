@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "ec_get_message_rcptto"
 description: "ec get message rcptto Return the rcptto of the current message ec get message rcptto ec get message rcptto returns the rcptto of the current message It has the form of RCPT TO bar bar com In the following script the rcptto is checked against a specific value and the..."
 ---

@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "disclaimer – Module"
 description: "Use the disclaimer module to append a message to an email For example this module may be used to indicate that an email has been scanned The message will be inserted into the footer of the email Configuration Change In version 3 0 this module is loaded automatically as required..."
 ---

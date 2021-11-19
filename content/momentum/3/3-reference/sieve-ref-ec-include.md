@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "ec_include"
 description: "ec include include and run a Sieve script ec include uri stringlist of args The ec include action will fetch the named script from the script cache if it is not present in the cache it will be fetched from the underlying storage If the storage driver supports it the..."
 ---

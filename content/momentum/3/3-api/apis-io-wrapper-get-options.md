@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "io_wrapper_get_options"
 description: "io wrapper get options Retrieve the options associated with an io object int io wrapper get options io io object io This reference page was automatically generated from functions found in the header files in the development branch The function described here may not exist in generally available versions of..."
 ---

@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "securecreds – Password Encryption/Credential Retrieval"
 description: "The securecreds module enforces password encryption and implements credential retrieval operations when certain facilities are accessed If this module is enabled the following facilities make use of it All datasource modules ecconfigd Momentum configuration management server eccfg Momentum version control management tool Open SSL s EVP API performs the encryption..."
 ---

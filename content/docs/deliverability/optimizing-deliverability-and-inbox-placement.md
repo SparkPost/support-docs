@@ -1,5 +1,4 @@
 ---
-lastUpdated: "02/08/2020"
 title: "Optimizing Deliverability and Inbox Placement"
 description: "In order to get the best deliverability and inbox placement rates you need to establish yourself as a legitimate sender by developing a good reputation with mailbox providers like Gmail and Hotmail Here’s how Permission only email to the people who have subscribed to receive your mail Transparency make sure..."
 ---

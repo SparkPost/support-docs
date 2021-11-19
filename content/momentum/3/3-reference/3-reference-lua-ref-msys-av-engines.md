@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "msys.av.engines"
 description: "msys av engines Return a list of configured engine names in a table msys av engines Returns a list of configured engine names in a table Access the individual names using names 1 names 2 etc Enable this function with the statement require msys av Section 14 5 antivirus Antivirus..."
 ---

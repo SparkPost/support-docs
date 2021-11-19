@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "validate_connect"
 description: "validate connect void validate connect closure ac c void closure accept construct ac validate context c int has core validate connect hook void register core validate connect hook first hook closure ec hook core validate connect func t hook void closure void register core validate connect hook last hook closure..."
 ---

@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "Using the API"
 description: "The injection API resides at the endpoint v 1 0 inject and accepts a JSON payload describing the injection parameters A JSON payload will be returned to indicate the outcome of the injection The API does not support XML input or output template keys to and from default to the..."
 ---

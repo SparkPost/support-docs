@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "msg:context_get"
 description: "msg context get Get a context variable msg context get type key Get a context variable Legal values for type are msys core ECMESS CTX MESS msys core ECMESS CTX CONN This function always returns a string In the code example given above the context variable key is returned as..."
 ---

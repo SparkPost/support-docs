@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "vctx:disconnect"
 description: "vctx disconnect Disconnect the session associated with the current validation context vctx disconnect code message This function disconnects the current session associated with the validation context Pass in a code and a message Use this function in the following way Example 70 70 vctx disconnect example Because this function is..."
 ---

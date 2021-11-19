@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "ec_fc_destroy"
 description: "ec fc destroy Destroys the cache is no references exist to it void ec fc destroy cache ec fc t cache This reference page was automatically generated from functions found in the header files in the development branch The function described here may not exist in generally available versions of..."
 ---

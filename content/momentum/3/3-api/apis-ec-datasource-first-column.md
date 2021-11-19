@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "ec_datasource_first_column"
 description: "ec datasource first column Move the cursor to the first column of the specified row int ec datasource first column ent nrow iter const ecdata cache ent ent int nrow ec datasource value iter iter Move the cursor to the first column of the specified row ent This parameter is..."
 ---

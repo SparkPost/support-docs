@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "Setting Up Active Directory Authentication With Momentum 3.2.2"
 description: "Momentum 3 2 2 supports authenticating the web UI configuration system and command console ec console against an Active Directory system using the Internet standard LDAP Lightweight Directory Access Protocol If you choose to authenticate against Active Directory the User Management menu documented at Section 3 9 Administering Users From..."
 ---

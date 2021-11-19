@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "ec_message_get_envelope"
 description: "ec message get envelope Returns information from the envelope of the message int ec message get envelope mess flags localpart llen domain dlen isnull ec message mess int flags char localpart int llen char domain int dlen int isnull Fetches information from the envelope of the message Example 34 1..."
 ---

@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "config_get_binding_domain_max_retries"
 description: "config get binding domain max retries Return the value of the max retries option int config get binding domain max retries caller scope binding domain generic module infrastructure caller scope int binding const domain Determine the value of the max retries configuration option The caller scope argument is virtually always..."
 ---

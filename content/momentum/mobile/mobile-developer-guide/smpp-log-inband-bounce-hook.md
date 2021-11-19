@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "SMPP Log Inband Bounce Hook"
 description: "An SMS MT message submitted by Mobile Momentum is treated as an inband message When such a submission is failed permanently it will be logged in the SMPP bounce log as well as the SMPP mainlog through default hook implementation of the SMPP log permfail hook smpp log permfail This..."
 ---

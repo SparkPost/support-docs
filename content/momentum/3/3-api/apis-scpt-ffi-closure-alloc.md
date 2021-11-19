@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "scpt_ffi_closure_alloc"
 description: "scpt ffi closure alloc allocates an ffi closure via the cache void scpt ffi closure alloc thr cif glue func ref ctx scpt thread thr void cif void glue func int ref void ctx This reference page was automatically generated from functions found in the header files in the development..."
 ---

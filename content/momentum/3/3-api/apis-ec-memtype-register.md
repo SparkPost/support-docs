@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "ec_memtype_register"
 description: "ec memtype register Register a new memtype with the system int ec memtype register def const mem type def def Register a new memtype with the system The build in memtypes are enumerated at the section called Memory Types Given a mem type def structure this function registers the memtype..."
 ---

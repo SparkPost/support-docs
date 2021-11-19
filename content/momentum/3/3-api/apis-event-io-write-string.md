@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "event_io_write_string"
 description: "event io write string Initiate a write of the contents of a string to an event int event io write string e str state Event e string str event io state state Initiate a write of the contents of a string to an event Writes a string buffer to an..."
 ---

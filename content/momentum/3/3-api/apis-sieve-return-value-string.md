@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "sieve_return_value_string"
 description: "sieve return value string Set the return value to a string void sieve return value string seng str len SENG seng const char str int len Set the return value to a string seng The Sieve engine state str The string return value len The length of the string This..."
 ---

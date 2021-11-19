@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "ec_generate_soft_bounce"
 description: "ec generate soft bounce creates an MDN and enqueues void ec generate soft bounce message ec message message This reference page was automatically generated from functions found in the header files in the development branch The function described here may not exist in generally available versions of Momentum and may..."
 ---

@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "ec_httpsrv_request_event_get"
 description: "ec httpsrv request event get Returns the Event from the current session Event ec httpsrv request event get sess ec httpsrv session sess This reference page was automatically generated from functions found in the header files in the development branch The function described here may not exist in generally available..."
 ---

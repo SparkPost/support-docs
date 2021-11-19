@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "allow_null_envelope_sender"
 description: "allow null envelope sender allow the null envelope sender in e mail addresses allow null envelope sender true This directive instructs Momentum to respect or reject null envelope senders Null envelope senders MAIL FROM are used by systems to send Delivery Status Notifications DS Ns and Message Disposition Notifications MD..."
 ---

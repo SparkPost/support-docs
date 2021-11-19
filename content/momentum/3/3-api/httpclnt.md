@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "httpclnt Functions"
 description: "The AP Is documented here relate to generic delivery For more information see Generic HTTP Delivery and Push See also Chapter 63 Hooks in the generic delivery and httpclnt Scope..."
 ---

@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "h_to_c"
 description: "h to c Returns the connection data associated with a connection handle connection h to c a connection handle a Returns the connection data associated with a connection handle a A pointer to a connection handle struct For documentation of this data structure see Section 68 10 connection handle This..."
 ---

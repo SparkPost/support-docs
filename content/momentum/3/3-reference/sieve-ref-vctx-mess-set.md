@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "vctx_mess_set"
 description: "vctx mess set set a value in the message context vctx mess set key value Calling this action will set or replace the key value pair specified as arguments in the current message context..."
 ---

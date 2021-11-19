@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "Cluster-specific Configuration"
 description: "Clustering is based on the concept of having a cluster of machines that communicate using a group communication messaging bus A cluster is comprised of at least one Manager node and one or more MTA nodes The Manager in the cluster will be your central point of management for the..."
 ---

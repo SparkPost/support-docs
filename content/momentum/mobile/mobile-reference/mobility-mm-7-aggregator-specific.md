@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "Aggregator-specific Requirements"
 description: "This table documents aggregator specific requirements with respect to MM 7 If applicable a link to the appropriate configuration option is provided Table 7 2 Recommended settings Name Option Description m Blox mm 7 delivery report MMS delivery reports are sent unless explicitly disabled m Blox disable chunked Does not..."
 ---

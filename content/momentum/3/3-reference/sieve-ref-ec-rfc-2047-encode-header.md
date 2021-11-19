@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "ec_rfc2047_encode_header"
 description: "ec rfc 2047 encode header encode a header to be RFC 2047 compliant ec rfc 2047 encode header raw ec rfc 2047 encode header takes a string and encodes the string following according to RFC 2047 using UTF 8 for the character encoding It will avoid encoding the string if..."
 ---

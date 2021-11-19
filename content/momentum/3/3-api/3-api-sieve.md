@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "Sieve Functions"
 description: "Table of Contents sieve arg as number Get the specified argument s as a number sieve arg as numeric Obtain a numeric Sieve argument from either a string or a number representation sieve arg as string Get the specified argument as a string sieve arg delref Remove a reference to..."
 ---

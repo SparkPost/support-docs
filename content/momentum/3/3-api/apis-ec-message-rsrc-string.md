@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "ec_message_rsrc_string"
 description: "ec message rsrc string Returns a string representation of the resources associated with the message void ec message rsrc string message response flags ec message message string response int flags This reference page was automatically generated from functions found in the header files in the development branch The function described..."
 ---

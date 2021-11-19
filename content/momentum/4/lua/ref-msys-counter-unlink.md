@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "msys.counter.unlink"
 description: "msys counter unlink Unlink a counter msys counter unlink counter path This removes the counter from the global counter index The handle will remain in the Lua counter cache for 5 minutes by default For a code example see Example 70 54 msys counter read example Enable this function with..."
 ---

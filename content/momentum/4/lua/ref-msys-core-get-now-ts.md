@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "msys.core.get_now_ts"
 description: "msys core get now ts Get the current time msys core get now ts If this function is called from a scheduler thread it will return the time from the current ec scheduler inst structure If it is called from a non scheduler thread it will return the value returned..."
 ---

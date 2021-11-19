@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "Interface"
 description: "This hook is the same as the other C hooks The function name is not significant as long as it is registered as mms log permfail during module initialization in the following way register mms log permfail hook first sampel mm 7 log permfail See Example 25 2 MM 7..."
 ---

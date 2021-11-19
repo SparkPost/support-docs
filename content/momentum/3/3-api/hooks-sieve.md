@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "Hooks in the sieve scope"
 description: "Table of Contents compile script convert charset fetch script..."
 ---

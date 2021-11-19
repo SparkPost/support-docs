@@ -1,5 +1,4 @@
 ---
-lastUpdated: "04/08/2020"
 title: "Momentum 4.x Legacy Changelog"
 description: "Changelogs for legacy versions of Momentum 4.x"
 ---

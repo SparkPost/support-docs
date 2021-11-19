@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "ec_thread_pool_get_queue_size"
 description: "ec thread pool get queue size get the number of jobs queued against a jobclass ec thread pool get queue size jobclass This action returns the number of jobs currently queued against the named jobclass It can be run in any phase One suggested use case is turning away incoming..."
 ---

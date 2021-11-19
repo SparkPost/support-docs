@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "apn_status_classifier"
 description: "apn status classifier Determine the meaning of the delivery status code int apn status classifier status int status Configuration Change This function is available as of Momentum version 3 5 5 In the context of an Apple push notification determine the meaning of the delivery status code If you need..."
 ---

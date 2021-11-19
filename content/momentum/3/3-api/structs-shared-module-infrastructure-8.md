@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "shared_module_infrastructure_8"
 description: "This struct is defined as follows To use this struct include the file shared module h log attempt v 1 log delivery v 1 log rejection log permanent failure v 1 log reopen and log transient failure v 1..."
 ---

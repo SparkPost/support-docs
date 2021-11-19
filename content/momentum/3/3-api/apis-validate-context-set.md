@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "validate_context_set"
 description: "validate context set Create or set a validation context keypair determined by key void validate context set vctx which key value validate context vctx int which const char key const char value Create or set a validation context keypair determined by key vctx The validation context For documentation of this..."
 ---

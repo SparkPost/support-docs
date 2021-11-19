@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "ec_blobject"
 description: "This struct is a typedef of ec blobject It is defined as follows To use this struct include the file ec blobject h Section 68 18 ec blobject class ec message blobject get ec message blobject store ec blobject wrap ec blobject addref and ec blobject delref..."
 ---

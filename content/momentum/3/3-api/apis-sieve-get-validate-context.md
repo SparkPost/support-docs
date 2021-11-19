@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "sieve_get_validation_context"
 description: "sieve get validation context Get the validation context validation context sieve get validation context seng SENG seng Get an validation context from the Sieve engine seng The Sieve engine This function returns a validation context It is legal to call this function in any thread Section 68 73 SENG sieve..."
 ---

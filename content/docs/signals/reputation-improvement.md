@@ -1,5 +1,4 @@
 ---
-lastUpdated: "02/08/2020"
 title: "Reputation Improvement"
 description: "The Signals recommendations for improving your sending reputation."
 ---

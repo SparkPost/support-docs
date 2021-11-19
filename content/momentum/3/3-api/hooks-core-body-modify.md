@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "body_modify"
 description: "body modify void body modify closure mess iop void closure const ec message mess io object iop int has core body modify hook void register core body modify hook first hook closure ec hook core body modify func t hook void closure void register core body modify hook last hook..."
 ---

@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "dns_get_As"
 description: "dns get As int dns get As closure name mxinfo void closure const char name mx info closure mxinfo int has core dns get As hook void register core dns get As hook first hook closure ec hook core dns get As func t hook void closure void register core..."
 ---

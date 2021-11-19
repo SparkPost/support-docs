@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "ec_fc_init"
 description: "ec fc init Initializes the faster cache subsystem void ec fc init void This reference page was automatically generated from functions found in the header files in the development branch The function described here may not exist in generally available versions of Momentum and may change in behavior when it..."
 ---

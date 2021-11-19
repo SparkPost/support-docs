@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "sieve_return_value_string_list"
 description: "sieve return value string list Set the return value to a string list void sieve return value string list seng SENG seng Declare that the return value will be a string list seng The Sieve engine state This function returns void It is legal to call this function in any..."
 ---

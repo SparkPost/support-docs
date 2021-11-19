@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "ec_atoui"
 description: "ec atoui Converts an ASCII string to an unsigned integer int ec atoui var value const char var unsigned int value Converts an ASCII string to an unsigned integer var The string to convert to an unsigned int This function assumes the string is an ASCII version of a hexadecimal..."
 ---

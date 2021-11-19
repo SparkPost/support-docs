@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "msys.dp_config.audit_series.invalid_smtp_auth"
 description: "Failed SMTP AUTH limiting This is essentially the same as Directory Harvest Attack DHA prevention for invalid recipient handling except it is applied to failed AUTH LOGIN requests This configuration table is currently disabled in the default policy lua file Uncommenting this table will have no effect Find below the..."
 ---

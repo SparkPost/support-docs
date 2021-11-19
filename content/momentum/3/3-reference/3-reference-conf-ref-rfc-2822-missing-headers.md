@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "rfc2822_missing_headers"
 description: "rfc 2822 missing headers rfc 2822 conformance RFC 2822 missing headers reject RFC 2822 missing headers allow Configuration Change This option is available as of version 3 0 and replaces the version 2 2 option of the same name declared in the RFC 2822 scope From the web UI when..."
 ---

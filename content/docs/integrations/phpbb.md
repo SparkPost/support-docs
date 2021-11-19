@@ -1,5 +1,4 @@
 ---
-lastUpdated: "02/08/2020"
 title: "Using SparkPost with PHPBB"
 description: "You can configure PHPBB to use Spark Post either while setting up a fresh new forum or by modifying settings of an existing forum For a new forum we recommend you to configure it after the forum installation is completed as the E mail Configuration step in the installation process..."
 ---

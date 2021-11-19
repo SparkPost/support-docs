@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "ec_config_fetch_globalconf"
 description: "ec config fetch globalconf Return the current configuration context ec config header ec config fetch globalconf void Return the current configuration context No parameters are passed to this function This function returns an ec config header use ec config release scope instance when you no longer need the ec config..."
 ---

@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "tls_ifavailable_fallback"
 description: "tls ifavailable fallback determine the behavior if TLS negotiation fails TLS Ifavailable fallback true false Configuration Change This option is available as of version 4 1 When opportunistic TLS is enabled this option determines the behavior if the TLS negotiation fails This option can be set to the following true..."
 ---

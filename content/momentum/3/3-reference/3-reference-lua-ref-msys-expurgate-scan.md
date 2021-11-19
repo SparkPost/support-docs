@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "msys.expurgate.scan"
 description: "msys expurgate scan Scan using the Eleven antivirus engine msys expurgate scan msg accept vctx You must load and correctly configure the eleven module before using this function Be sure to set the module option Enabled to false This function can be invoked at the data spool or each rcpt..."
 ---

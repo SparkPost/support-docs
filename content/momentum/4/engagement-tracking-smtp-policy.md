@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "Using Policy for Engagement Tracking"
 description: "To enable or disable engagement tracking for a specific message you can use policy to override the X MSYS API header and configuration option In addition engagement data specified in the policy's context variables will take precedence over the corresponding X MSYS API header fields For details about engagement tracking..."
 ---

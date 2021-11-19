@@ -1,5 +1,4 @@
 ---
-lastUpdated: "02/03/2021"
 title: "Engagement Recency"
 description: "Engagement Recency Cohort reports show you the breakdown of how recently the recipients you're sending to have engaged, and how the different cohorts are interacting with your emails."
 ---

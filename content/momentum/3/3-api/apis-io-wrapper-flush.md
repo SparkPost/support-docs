@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "io_wrapper_flush"
 description: "io wrapper flush Flush a resource int io wrapper flush io io object io Flush a resource prior to destroying it io The resource On success this function returns 0 on failure it returns 1 and errno is set appropriately It is legal to call this function in any thread..."
 ---

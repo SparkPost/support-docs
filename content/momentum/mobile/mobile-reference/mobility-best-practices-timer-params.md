@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "SMPP Timer Parameters"
 description: "There are three main timers in SMPP 3 4 These are configurable using the following options smpp response timer smpp enquire link timer smpp inactivity timer The response timer sets the amount of time allowed following an SMPP request before considering the requested operation lost The response timer is set..."
 ---

@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "c:close"
 description: "c close Close a curl object c close Close a curl object created using curl new equivalent to c nil This function can be used to force closure of all resources associated with the curl object It is called automatically when the curl object is garbage collected so you will..."
 ---

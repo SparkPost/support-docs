@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "msg.conn_id"
 description: "msg conn id Return the human readable ec message conn id msg conn id When used in a string context or explicitly forced into a string via tostring msg conn id this function returns the human readable ec message conn id Enable this function with the statement require msys extended..."
 ---

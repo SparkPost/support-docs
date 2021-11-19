@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "msys.qp.encode"
 description: "msys qp encode Quoted printable encode a string msys qp encode original charset dotstuffing original can be a string msys core ec string or msys core io object Use charset to convert the text to a different character encoding before it is quoted printable encoded Use dotstuffing to specify whether..."
 ---

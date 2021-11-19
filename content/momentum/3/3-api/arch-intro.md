@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "Introduction"
 description: "Momentum is the core platform upon which all Message Systems products are built While its architecture has evolved over the years it maintains a series of premises that are very important to understand when extending it Scheduler A non blocking event time and IO multiplexor Momentum implements an abstraction layer..."
 ---

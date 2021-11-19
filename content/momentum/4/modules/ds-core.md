@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "ds_core - Datasource Query Core"
 description: "The datasource core ds core module provides a modular data access and caching layer for consumption by other Momentum modules Datasource driver modules can be loaded to provide access to third party data stores such as LDAP ODBC etc A C language SDK is available to allow third parties to..."
 ---

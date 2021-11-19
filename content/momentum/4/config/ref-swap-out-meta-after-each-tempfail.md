@@ -1,5 +1,4 @@
 ---
-lastUpdated: "07/27/2021"
 title: "swap_out_meta_after_each_tempfail"
 description: "controls whether or not Momentum will update metadata such as num_retries, next_attempt, and message context on disk after each tempfail"
 ---

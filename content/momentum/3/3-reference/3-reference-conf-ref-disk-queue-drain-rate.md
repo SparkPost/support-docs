@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "disk_queue_drain_rate"
 description: "disk queue drain rate control the rate at which messages are spooled in on start up Disk Queue Drain Rate 100 Every iteration through the system messages are taken from the disk queue The disk queue's asynchronous population commences at Momentum's startup As messages are ready swapped in they are..."
 ---

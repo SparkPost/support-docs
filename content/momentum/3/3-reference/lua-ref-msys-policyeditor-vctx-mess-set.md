@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "msys.policyeditor.vctx_mess_set"
 description: "msys policyeditor vctx mess set Set a message validation context value msys policyeditor vctx mess set ctx vars params Configuration Change This function is deprecated Use msg context set msys core ECMESS CTX MESS key value to set a message context value For more information see msg context set Set..."
 ---

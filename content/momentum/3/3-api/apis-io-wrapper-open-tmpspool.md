@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "io_wrapper_open_tmpspool"
 description: "io wrapper open tmpspool creates a temporary file in the spool io object io wrapper open tmpspool void This reference page was automatically generated from functions found in the header files in the development branch The function described here may not exist in generally available versions of Momentum and may..."
 ---

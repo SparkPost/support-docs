@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "msg:address_header"
 description: "msg address header Returns address components as an array msg address header Parses each instance of the named header for RFC 2822 addresses and returns the component of those addresses as an array The ellipsis in the parameter list indicates that this function has any number of arguments Enable this..."
 ---

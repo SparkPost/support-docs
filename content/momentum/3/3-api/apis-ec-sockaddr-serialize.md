@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "ec_sockaddr_serialize"
 description: "ec sockaddr serialize Serialize an ec sockaddr structure void ec sockaddr serialize ser s ec sockaddr serialized ser ec sockaddr s This reference page was automatically generated from functions found in the header files in the development branch The function described here may not exist in generally available versions of..."
 ---

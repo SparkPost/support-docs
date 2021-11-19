@@ -1,5 +1,4 @@
 ---
-lastUpdated: "02/08/2020"
 title: "Welcome Campaign"
 description: "The Signals recommendation on running a Welcome Campaign."
 ---

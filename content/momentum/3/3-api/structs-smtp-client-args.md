@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "smtp_client_args"
 description: "This struct is defined as follows An EC Dict is a Section 68 31 ec hash table To use this struct include the file smtp h Chapter 47 SMTP related Functions..."
 ---

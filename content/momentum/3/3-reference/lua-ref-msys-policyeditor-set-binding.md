@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "msys.policyeditor.set_binding"
 description: "msys policyeditor set binding Assign the message to a named binding msys policyeditor set binding ctx vars params Configuration Change This function is deprecated Use msg binding bnd to set a binding For more information see msg binding Assign the message to a named binding If commas appear it's a..."
 ---

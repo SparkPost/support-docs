@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "ec_opendkim_verify"
 description: "ec opendkim verify Function to validate a message's DKIM signature int ec opendkim verify m dkim status resume func resume closure ec message m DKIM dkim int status Open DKIM Resume Func resume func void resume closure This reference page was automatically generated from functions found in the header files..."
 ---

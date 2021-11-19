@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "msgpart:body_match"
 description: "msgpart body match Streaming interface to a PCRE search of a message body part minus headers msgpart body match pattern Streaming interface to a PCRE search of a message body part minus headers If no match is found false is returned Enable this function with the statement require msys extended..."
 ---

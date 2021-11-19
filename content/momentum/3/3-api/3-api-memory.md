@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "Memory Functions"
 description: "For an overview of the Momentum memory API see Memory API Memory usage information is available from the ec console memory command For SMPP related memory functions see Chapter 46 SMPP Functions..."
 ---

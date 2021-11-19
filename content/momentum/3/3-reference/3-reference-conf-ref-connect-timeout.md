@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "connect_timeout"
 description: "connect timeout set the connection timeout Connect Timeout 300 The amount of time in seconds to spend waiting for the connect system call to return The default value for this option is 300 connect timeout is valid in the binding binding group domain and global scopes..."
 ---

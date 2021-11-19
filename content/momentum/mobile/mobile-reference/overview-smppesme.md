@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "The Short Message Peer-to-Peer Protocol (SMPP) ESME Module"
 description: "The linchpin of Mobile Momentum's capabilities is the Short Message Peer to Peer Protocol SMPP SMPP runs over a TCP connection and provides the communication link for sending and receiving SMS text messages between Mobile Momentum and a device in the carrier or aggregator network known as a Short Message..."
 ---

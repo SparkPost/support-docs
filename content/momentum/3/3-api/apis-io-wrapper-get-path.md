@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "io_wrapper_get_path"
 description: "io wrapper get path Retrieve the path associated with an io object const char io wrapper get path io io object io Retrieve the path associated with an io object io The io object The path The buffer is guaranteed to exist only until the next call to io wrapper..."
 ---

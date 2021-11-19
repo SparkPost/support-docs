@@ -1,5 +1,4 @@
 ---
-lastUpdated: "02/08/2020"
 title: "SparkPost abuse@  and postmaster@ Verification and Google Apps"
 description: "If you’re using Google Apps to host your corporate email you won’t be able to create abuse or postmaster emails under your domain To get around this you need to create groups named abuse and postmaster Users that are members of these groups will receive emails sent to those addresses..."
 ---

@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "DuraVIP™ Configuration Conflicts and Ambiguities"
 description: "The Dura VIP™ subsystem attempts to make the most intelligent and safe decision regardless of the situation encountered The Dura VIP™ configuration attribute duravip preference is not a boolean attribute that dictates whether the locally configured node should prefer a particular IP address The reasoning is that if configuration files..."
 ---

@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "ecstream_timeout"
 description: "ecstream timeout the amount of time to wait for an ecstream connection to be established ecstream timeout 600 The amount of time in seconds to spend waiting for a remote ecstream connection to be established The default value is 600 ecstream timeout is valid in the binding binding group domain..."
 ---

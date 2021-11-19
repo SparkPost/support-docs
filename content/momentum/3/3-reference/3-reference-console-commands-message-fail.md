@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "message fail"
 description: "message fail fail a message message fail message id This command takes a single argument in the form of a message id and will permanently fail the delivery of the message with the error 554 manually failed message fail quiet..."
 ---

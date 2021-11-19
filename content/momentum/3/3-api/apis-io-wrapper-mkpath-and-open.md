@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "io_wrapper_mkpath_and_open"
 description: "io wrapper mkpath and open Open a handle to a resource creating any missing directories if necessary and options and O CREAT io object io wrapper mkpath and open filename options dirmode filemode const char filename int options int dirmode int filemode This reference page was automatically generated from functions..."
 ---

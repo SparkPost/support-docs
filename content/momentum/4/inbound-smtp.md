@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "ESMTP_Listener Authentication"
 description: "Momentum can be configured to perform authentication on SMTP connections It provides out of the box support for authenticating remote users against a flat file using CRAM MD 5 DIGEST MD 5 and LOGIN authentication extensions to SMTP Additional authentication back ends can be plugged into Momentum in the form..."
 ---

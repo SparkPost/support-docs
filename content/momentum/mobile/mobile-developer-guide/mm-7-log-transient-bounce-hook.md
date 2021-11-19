@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "MM7 Log Transient Bounce Hook"
 description: "A temporarily failed MM 7 submission will be requeued and retried and is considered a transient failure Such a failure will be logged to the bounce log and the main log through the default hook implementation of the MM 7 log tempfail hook mms log tempfail This hook is triggered..."
 ---

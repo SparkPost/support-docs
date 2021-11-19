@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "strlcat"
 description: "strlcat Size bounded C string concatenation function size t strlcat dst src size char dst const char src size t size This reference page was automatically generated from functions found in the header files in the development branch The function described here may not exist in generally available versions of..."
 ---

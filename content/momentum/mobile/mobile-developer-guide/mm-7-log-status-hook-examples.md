@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "Examples"
 description: "Example 27 1 MM 7 Logger Status Hook Lua Example Example 27 2 MM 7 Logger Status Hook C Example..."
 ---

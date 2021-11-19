@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "client:do_request"
 description: "client do request Perform an HTTP request client do request type url data Perform an HTTP request The legal values for the type parameter are as follows GET POST PUT DELETE The url parameter defines the URL that will process the request The data parameter does not need to be..."
 ---

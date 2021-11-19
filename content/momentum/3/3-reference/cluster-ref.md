@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "Cluster Configuration Reference"
 description: "Table of Contents eccluster conf Momentum Cluster Manager configuration file ecelerity cluster conf The cluster specific configuration file included from within ecelerity conf cluster boot determines how the cluster configuration files are managed mbus conf Momentum Cluster Messaging Bus configuration file..."
 ---

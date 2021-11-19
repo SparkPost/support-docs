@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "The Paths Page"
 description: "Configuration Change This feature is available starting from Momentum 3 0 23 As of version 3 0 23 the Paths page is available for Momentum for Receiving When Momentum is first installed no audit series are displayed on this page Figure 3 30 Paths In order to populate the Series..."
 ---

@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "sieve_delref"
 description: "sieve delref Delete a reference to a compiled Sieve script void sieve delref script SIEVE script Delete a reference to a compiled Sieve script The script will be freed when its refcount falls to zero script The script to delete For more information about this data type see sieve This..."
 ---

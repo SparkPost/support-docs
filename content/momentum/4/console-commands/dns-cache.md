@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "dns_cache"
 description: "dns cache stats dns cache refcnts dns cache submit dns cache lookup manage Momentum's DNS cache dns cache lookup record type dns cache refcnts dns cache stats dns cache submit record type The following commands help you to collect information on Momentum's dns cache dns cache stats shows summary statistics..."
 ---

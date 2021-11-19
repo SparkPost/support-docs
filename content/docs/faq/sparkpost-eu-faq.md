@@ -1,5 +1,4 @@
 ---
-lastUpdated: "02/26/2021"
 title: "SparkPost EU FAQ"
 description: "FAQ for our EU based Service..."
 ---

@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "time_series_clear"
 description: "time series clear Remove a bucket specified by bucket number in a monitor and return the removed bucket void time series clear ts series id bucket number time series ts int series id unsigned short bucket number This reference page was automatically generated from functions found in the header files..."
 ---

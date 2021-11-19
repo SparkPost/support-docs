@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "statp – Stats Producer Module"
 description: "The stats producer module is used internally by the MTA to provide real time graphing data for both the single node web console as well as the cluster wide web console However you must also configure the logging modules as described in Section 4 5 5 Logging and the Web..."
 ---

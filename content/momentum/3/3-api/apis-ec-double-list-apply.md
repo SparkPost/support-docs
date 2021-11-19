@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "ec_double_list_apply"
 description: "ec double list apply apply a callback function to each element in the list void ec double list apply list f udata ec double list list EC List Apply Func f void udata This reference page was automatically generated from functions found in the header files in the development branch..."
 ---

@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "msys.expandMacro"
 description: "msys expand Macro Expand macros such as sieve spf and custom logger macros msys expand Macro Expands macros such as sieve spf and custom logger macros present in the supplied input string and returns the expanded result The parameter passed to msys expand Macro expands the built in validation context..."
 ---

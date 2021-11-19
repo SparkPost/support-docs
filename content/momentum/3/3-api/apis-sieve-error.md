@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "sieve_error"
 description: "sieve error Create a Sieve error message void sieve error sieve lineno fmt SIEVE sieve int lineno const char fmt Write a Sieve error message This function appends output to the sieve state error log if that data member is set sieve The active script For more information about this..."
 ---

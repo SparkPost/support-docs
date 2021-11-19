@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "domain_for_unqualified_recipient_addresses"
 description: "domain for unqualified recipient addresses configure a domain which will be used to resolve delivery for unqualified addresses Domain for unqualified recipient addresses example com RFC 2821 section 4 5 1 requires that all compliant MTA s accept the special address of RCPT TO postmaster without a domain name Mail..."
 ---

@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "cidrrange_ipv4_update"
 description: "cidrrange ipv 4 update Inserts a node void cidrrange ipv 4 update root ip mask orientation cidrrange ipv 4 root struct in addr ip u int 32 t mask u int 32 t orientation This reference page was automatically generated from functions found in the header files in the development..."
 ---

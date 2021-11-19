@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "Installing Mobile Momentum"
 description: "Installation of Mobile Momentum is identical to the procedure described in the Momentum manual at Installation you just need to answer yes when the installer asks the following question If you are unfamiliar with Message Systems installation instructions you can run the installer with the dry run option This will..."
 ---

@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "Lua Functions"
 description: "This section details all Lua functions Functions are ordered alphabetically by name Many Lua functions act as wrappers for C code which means that the calling code needs to take steps to ensure safety When calling a C API make sure that all the arguments are valid as an unexpected..."
 ---

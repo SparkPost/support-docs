@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "Using the UI for Reporting"
 description: "Introduction How do I know what happened to the email This question is just as important as How do I send email To run a successful messaging campaign you need to know that your messages were successfully injected into the MTA and accepted by the recipient's ISP If they were..."
 ---

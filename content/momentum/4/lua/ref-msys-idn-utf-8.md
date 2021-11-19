@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "msys.idn.to_utf8"
 description: "msys idn to utf 8 Converts an IDN formatted string to unicode msys idn to utf 8 name Configuration Change This feature is available as beta in Momentum 4 2 to utf 8 attempts to convert an IDN formatted string to unicode If it is successful it returns the result..."
 ---

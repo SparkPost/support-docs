@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "response_transcode_pattern"
 description: "response transcode pattern the regex pattern for comparison to a server response Response Transcode Pattern regex pattern This feature requires the response transcode module See Section 14 58 response transcode Module for more information When the SMTP response from a remote sever indicates an error the response code falls in..."
 ---

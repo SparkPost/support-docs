@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "ec_memory_pretty_mem_amount"
 description: "ec memory pretty mem amount A utility to render an amount with commas char ec memory pretty mem amount buf amount char buf uint 64 t amount A utility to render the amount of memory with appropriately placed commas buf A character array use dto hold the result amount The..."
 ---

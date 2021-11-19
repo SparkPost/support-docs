@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "Install the Adaptive Delivery API"
 description: "You must upgrade the Analytics node first On all Analytics nodes install the following packages using the new RP Ms For a combined cluster upgrade perform this action on all nodes in the cluster On all Platform nodes install the following packages using the new RP Ms For a combined..."
 ---

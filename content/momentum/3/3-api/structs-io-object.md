@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "io_object"
 description: "This struct is defined as follows To use this struct include the file io wrapper int h ec spool ctx filter open io wrapper openand Section 68 56 io wrapper..."
 ---

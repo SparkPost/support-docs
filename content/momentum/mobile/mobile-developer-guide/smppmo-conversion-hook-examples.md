@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "Examples"
 description: "The following examples print out all the context variables in the ec message and modify the converted email content using UTF 8 data coding Example 12 1 SMPP MO Conversion Hook Lua Examples As of Momentum version 3 2 3 do not invoke msys core ec blobject delref This object..."
 ---

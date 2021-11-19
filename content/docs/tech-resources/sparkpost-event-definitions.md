@@ -1,5 +1,4 @@
 ---
-lastUpdated: "06/25/2020"
 title: "SparkPost Events"
 description: "Descriptions for each type of event that SparkPost logs."
 ---

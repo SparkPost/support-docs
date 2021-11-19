@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "trywrite"
 description: "trywrite Write a string of buflen bytes for an event int trywrite event buffer buflen Event event const char buffer int buflen Write a string of buflen bytes for an event This function assumes that the event closure is an Section 68 2 accept construct All events are assumed to..."
 ---

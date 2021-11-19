@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/12/2021"
 title: "prefer_ipv6_mxs"
 description: "prefer IPv6 over IPv4 at a given MX priority level"
 ---

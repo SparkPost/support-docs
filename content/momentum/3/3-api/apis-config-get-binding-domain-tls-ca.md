@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "config_get_binding_domain_tls_ca"
 description: "config get binding domain tls ca Determine the value of the tls ca option char config get binding domain tls ca caller scope binding domain generic module infrastructure caller scope int binding const domain Determine the value of the tls ca configuration option The caller scope argument is virtually always..."
 ---

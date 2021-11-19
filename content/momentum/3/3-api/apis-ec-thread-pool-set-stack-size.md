@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "ec_thread_pool_set_stack_size"
 description: "ec thread pool set stack size set the stack size for an existing thread pool int ec thread pool set stack size jobclass size int jobclass size t size This reference page was automatically generated from functions found in the header files in the development branch The function described here..."
 ---

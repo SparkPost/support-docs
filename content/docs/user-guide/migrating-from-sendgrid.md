@@ -1,5 +1,4 @@
 ---
-lastUpdated: "08/25/2020"
 title: "Migrating From SendGrid"
 description: "Changing email providers can be a time consuming process, but if you're coming from SendGrid, we've got you covered. Many differences between SendGrid and SparkPost can be attributed to terminology and approach, both of which you can get help with by referring to our..."
 ---

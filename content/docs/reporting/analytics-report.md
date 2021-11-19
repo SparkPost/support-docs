@@ -1,5 +1,4 @@
 ---
-lastUpdated: "06/18/2021"
 title: "Analytics Report"
 description: "Analytics Report is a powerful and flexible tool designed to make it easy for you to visualize time-series trends in your data."
 ---

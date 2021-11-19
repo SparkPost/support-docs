@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "fbl - Feedback Loop"
 description: "The feedback loop fbl module is used to manage feedback loop services offered by many IS Ps It provides for FBL message processing original message header processing and log file generation based on these services Providers such as Yahoo AOL Hotmail Comcast and others offer feedback loop services to qualified..."
 ---

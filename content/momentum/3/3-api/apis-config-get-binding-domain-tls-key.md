@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "config_get_binding_domain_tls_key"
 description: "config get binding domain tls key Determine the value of the tls key option char config get binding domain tls key caller scope binding domain generic module infrastructure caller scope int binding const domain Determine the value of the tls key configuration option The caller scope argument is virtually always..."
 ---

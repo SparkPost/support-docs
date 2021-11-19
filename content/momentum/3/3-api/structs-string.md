@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "string"
 description: "This struct is a typedef of ec string It is defined in the following way To use this struct include the file misc ec string h string init type..."
 ---

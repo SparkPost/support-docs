@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "io_wrapper_read"
 description: "io wrapper read Read the specified number of bytes int io wrapper read io buf nbytes io object io void buf int nbytes Read the specified number of bytes into the buffer This function behaves like the system function read 2 io The resource buf The buffer to read into..."
 ---

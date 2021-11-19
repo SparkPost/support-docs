@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "Options that Must Change"
 description: "The default configuration files provide default values such that there should be very few changes required to start sending mail through the Momentum server However there are a few parameters you will almost certainly need to change They are Relay Hosts Relay Domains ESMTP Listeners and Authentication Many other parameters..."
 ---

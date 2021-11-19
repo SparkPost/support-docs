@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "ec_config_free_mx_routes"
 description: "ec config free mx routes Free the memory associated with an mx routes struct void ec config free mx routes r mx routes r Free the memory associated with an mx routes struct Be sure to use this function to free memory of the MEMTYPE MX ROUTES type Do not..."
 ---

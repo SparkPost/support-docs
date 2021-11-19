@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "Modules Summary"
 description: "All modules are listed alphabetically with a brief description Singleton modules are also identified The Version column indicates when the module was introduced into the system Note all modules listed as 4 0 modules were actually introduced in prior versions of Momentum The Auto column indicates whether a module is..."
 ---

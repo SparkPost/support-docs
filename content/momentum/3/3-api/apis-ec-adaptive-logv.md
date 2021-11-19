@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "ec_adaptive_logv"
 description: "ec adaptive logv Log function for AD system to log operational logs void ec adaptive logv level binding domain msgfmt ap int level const char binding const char domain const char msgfmt va list ap This reference page was automatically generated from functions found in the header files in the..."
 ---

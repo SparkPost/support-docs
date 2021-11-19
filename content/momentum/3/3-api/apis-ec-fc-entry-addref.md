@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "ec_fc_entry_addref"
 description: "ec fc entry addref Add a reference to an entry void ec fc entry addref entry ec fc entry t entry This reference page was automatically generated from functions found in the header files in the development branch The function described here may not exist in generally available versions of..."
 ---

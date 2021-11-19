@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "Configuring Momentum to Use the Injector"
 description: "Messages are injected into Momentum by activating the httpsrv restinjector and HTTP Listener modules A simple configuration follows Example 2 1 Configuring Momentum for REST Injection Manually changing the ecelerity conf file is described in Best Practices for Manually Changing Configuration Files You can also make these changes through the..."
 ---

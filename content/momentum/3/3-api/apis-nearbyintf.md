@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "nearbyintf"
 description: "nearbyintf return the integral value nearest to x according to the prevailing rounding mode float nearbyintf x float x This reference page was automatically generated from functions found in the header files in the development branch The function described here may not exist in generally available versions of Momentum and..."
 ---

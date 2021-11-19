@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "domain"
 description: "domain configure domain specific options Use the domain stanza to define per domain configuration options domain stanzas can be nested beneath binding stanzas creating a binding domain configuration In addition to defining domain stanzas using domain names you can also use IP addresses for example domain 192 0 43 10..."
 ---

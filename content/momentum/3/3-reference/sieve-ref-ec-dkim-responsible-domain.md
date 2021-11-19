@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "ec_dkim_responsible_domain"
 description: "ec dkim responsible domain Return the responsible domain for the current message ec dkim responsible domain ec dkim responsible domain returns a string containing the responsible domain of the current message This can be used as an argument to the ec dkim sign extension or as a comparison against the..."
 ---

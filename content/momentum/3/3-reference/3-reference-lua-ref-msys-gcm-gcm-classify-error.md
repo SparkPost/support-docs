@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "msys.gcm.gcm_classify_error"
 description: "msys gcm gcm classify error Determine the delivery status of the DLV Response Status variable msys gcm gcm classify error status Configuration Change This function is available as of Momentum version 3 5 5 This function returns the delivery status of the DLV Response Status variable It classifies the DLV..."
 ---

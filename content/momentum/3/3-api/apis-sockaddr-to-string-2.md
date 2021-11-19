@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "sockaddr_to_string2"
 description: "sockaddr to string 2 Renders a socket address into human readable form int sockaddr to string 2 sa buffer buf size struct sockaddr sa char buffer int buf size Renders the socket address to human readable form Uses the provided buffer to render the socket address to a string sa..."
 ---

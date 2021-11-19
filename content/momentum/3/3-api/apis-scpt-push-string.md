@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "scpt_push_string"
 description: "scpt push string Push a string onto the stack void scpt push string thr buf buflen scpt thread thr const char buf int buflen Push a string onto the stack thr The script thread For a description of this data type see Section 68 72 scpt thread buf The string..."
 ---

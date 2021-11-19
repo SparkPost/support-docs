@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "control_allow_writable_config"
 description: "control allow writable config int control allow writable config closure cc response void closure command construct cc string response int has core control allow writable config hook void register core control allow writable config hook first hook closure ec hook core control allow writable config func t hook void closure..."
 ---

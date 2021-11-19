@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "msys.db.query"
 description: "msys db query Query a datasource msys db query cachename query queryparams options Issue a query to a datasource Enable this function with the statement require msys db and also include the statement require msys datasource The parameters are as follows cachename Name of the datasource cache to be queried..."
 ---

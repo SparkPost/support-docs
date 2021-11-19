@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "ec_httpsrv_session_suspend"
 description: "ec httpsrv session suspend Arranges for an http session to be suspended int ec httpsrv session suspend sess ec httpsrv session sess Arranges for an http session to be suspended You must call this before returning EC HTTPSRV HANDLER ASYNC from a handler sess The session to suspend A pointer..."
 ---

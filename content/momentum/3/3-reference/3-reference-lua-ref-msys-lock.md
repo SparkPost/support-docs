@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "msys.lock"
 description: "msys lock The current running OS level thread obtains a lock on the named mutex msys lock mutexname The current running OS level thread obtains a lock on the named mutex The caller is responsible for releasing the lock at the earliest appropriate opportunity Note that the lock is not..."
 ---

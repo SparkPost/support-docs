@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "eccfg"
 description: "eccfg Subversion repository management opt msys ecelerity bin eccfg h opt msys ecelerity bin eccfg bootstrap quiet debug username name password pass wc path clustername name singlenode host port opt msys ecelerity bin eccfg clone quiet debug username name password pass wc path source destination opt msys ecelerity bin eccfg..."
 ---

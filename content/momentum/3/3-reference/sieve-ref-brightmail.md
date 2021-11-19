@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "brightmail"
 description: "brightmail is default brightmail rules brightmail verdict brightmail scanner brightmail tracker brightmail functions for Sieve brightmail verdict brightmail is default brightmail rules brightmail scanner brightmail tracker These Sieve tests and actions are provided by the Section 14 14 brightmail Brightmail Module you must load and correctly configured this module before..."
 ---

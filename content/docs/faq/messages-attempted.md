@@ -1,5 +1,4 @@
 ---
-lastUpdated: "02/08/2020"
 title: "How can I account for all messages attempted through SparkPost?"
 description: "Injection Phase For all messages you pass to Spark Post defined as accepted in REST transmissions or 250 Ok for SMTP injections an injection event OR one of three error events is logged An injection event is recorded if Spark Post is able to generate a message and queue it..."
 ---

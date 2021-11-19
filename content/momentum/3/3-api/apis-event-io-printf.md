@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "event_io_printf"
 description: "event io printf Initiate a formatted write to an event int event io printf e state fmt Event e event io state state const char fmt Initiate a formatted write to an event Expands the printf style format string into an internal stack buffer that is 8192 bytes in size..."
 ---

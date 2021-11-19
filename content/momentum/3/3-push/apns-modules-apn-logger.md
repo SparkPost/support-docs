@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "The apn_logger Module"
 description: "The apn logger logs Apple push notifications to file writing to a single file in delimited format Configuration Change This feature is available as of version 3 5 4 Like other loggers the apn logger is configured in the ecelerity conf file To load this module add the following lines..."
 ---

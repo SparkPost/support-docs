@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "Connection-related Functions"
 description: "Table of Contents default connection goal default connection goal is the internally used connection goal determination function connection address Returns the address data associated with a connection connection used for email message Associate a message and a connection deprecated connection used for message Associate a message and a connection dec..."
 ---

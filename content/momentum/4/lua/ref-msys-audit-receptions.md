@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "msys.audit.receptions"
 description: "msys audit receptions Return the number of receptions that have occurred for a CIDR block within a configured time window msys audit receptions monitor options Returns the number of receptions that have occurred for a CIDR block within a configured time window monitor corresponds to one of the monitors defined..."
 ---

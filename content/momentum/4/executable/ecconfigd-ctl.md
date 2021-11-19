@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "ecconfigd_ctl"
 description: "ecconfigd ctl start stop or restart the Momentum Configuration Server opt msys ecelerity bin ecconfigd ctl start stop restart ecconfigd ctl is a shell script that you can use to start stop or restart the Momentum configuration server ecconfigd The TRY environment variable is one of the variables that may..."
 ---

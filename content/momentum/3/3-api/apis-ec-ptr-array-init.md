@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "ec_ptr_array_init"
 description: "ec ptr array init Initialize an ec ptr array struct int ec ptr array init array prealloc size free func ec ptr array array int prealloc size ec ptr array free func free func Initialize an ec ptr array struct array A pointer array See ec ptr array prealloc size..."
 ---

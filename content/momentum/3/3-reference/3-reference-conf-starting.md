@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "Starting Momentum"
 description: "If your Max Outbound Connections setting is larger than 1000 you will need to adjust your system wide and shell specific open file limits to avoid errors Assume root privileges Run etc init d ecelerity start All errors from the program are placed in var log ecelerity paniclog ec Once..."
 ---

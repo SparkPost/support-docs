@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "msys.audit_series.add"
 description: "msys audit series add Adjust the counter for the current time window of a named series msys audit series add name options Adjusts the counter for the current time window of a named series options can be a table that provides the following additional parameters that affect the adjustment count..."
 ---

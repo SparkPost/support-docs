@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "ec_thread_pool_auto_shrink"
 description: "ec thread pool auto shrink set a thread pool to auto shrink void ec thread pool auto shrink jobclass int jobclass This reference page was automatically generated from functions found in the header files in the development branch The function described here may not exist in generally available versions of..."
 ---

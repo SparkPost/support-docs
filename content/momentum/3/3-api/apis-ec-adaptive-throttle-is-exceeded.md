@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "ec_adaptive_throttle_is_exceeded"
 description: "ec adaptive throttle is exceeded check to see if a throttle is over budget int ec adaptive throttle is exceeded name is shared now later delta const char name int is shared struct timeval now struct timeval later int delta This reference page was automatically generated from functions found in..."
 ---

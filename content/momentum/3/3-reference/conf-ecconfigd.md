@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "The Momentum Configuration Server: ecconfigd"
 description: "Both stand alone and clustered installations take advantage of the revision control system for configuration files Furthermore the web UI component embraces this concept any configuration changes made via the UI are effected by committing to the configuration server ecconfigd The ecconfigd service consists of two processes in a cluster..."
 ---

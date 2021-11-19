@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "Environmental Considerations"
 description: "Momentum can send very high volumes of traffic however it can be constrained by external factors in the deployment environment such as network throughput You should consider the impact of Momentum traffic volumes on your environment You must consider the total bandwidth required to support your traffic volumes A single..."
 ---

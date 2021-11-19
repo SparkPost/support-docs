@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "compress_spool – Dynamic Spool Compression"
 description: "One of the principle bottlenecks in handling a large amount of inbound mail is writing spool messages to disk on reception and then reading them back from disk again when they need to be delivered The spool compression module attempts to assist in the IO demands of large messages by..."
 ---

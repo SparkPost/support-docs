@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "msgc_server.conf File"
 description: "The msgc server conf file contains the configuration relevant to the cluster messaging bus This file is referenced from the eccluster conf file on the cluster manager and from the ecelerity cluster conf file on nodes It MUST live in the global portion of the repository as it must be..."
 ---

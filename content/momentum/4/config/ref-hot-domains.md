@@ -1,5 +1,4 @@
 ---
-lastUpdated: "02/09/2021"
 title: "hot_domains"
 description: "Configure the list of high-traffic domains that should be spread across maintainer threads"
 ---

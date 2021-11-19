@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "maintainer_pool"
 description: "maintainer pool associate a pool of event loops with mail queues DNS lookup and module events to use multiple threads maintainer pool pool name To use this option you must have a Supercharger license This option is used in a multiple event loop configuration To configure threading for mail queues..."
 ---

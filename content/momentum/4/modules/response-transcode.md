@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "response_transcode – Module"
 description: "The response transcode module can be used to work around broken remote servers that send incorrect response codes For example with you can change a hard bounce to a soft bounce enabling you to log the bounce in order to later resend the message Since it is possible to rewrite..."
 ---

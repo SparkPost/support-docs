@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "msys.validate.dkim.verify_results_get_item"
 description: "msys validate dkim verify results get item Return the DKIM signature result at the specified index msys validate dkim verify results get item results index value Return the DKIM signature result at the specified index For an example of how this function is used see Example 15 36 msys dkim..."
 ---

@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "Examples"
 description: "Example 17 1 SMPP Submit Response Hook Lua Example Example 17 2 SMPP Submit Response Hook C Example..."
 ---

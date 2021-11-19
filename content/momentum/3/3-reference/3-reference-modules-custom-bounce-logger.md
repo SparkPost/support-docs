@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "custom_bounce_logger – Custom Bounce Logging"
 description: "Configuration Change This feature is available as beta in Momentum 3 6 5 The custom bounce logger is similar to the bounce logger module It supports the same functionality as the bounce logger and adds the capability to append a User String to the end of each bounce record This..."
 ---

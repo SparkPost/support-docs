@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "connection_post_bind"
 description: "connection post bind int connection post bind closure dr binding slot fd addr addr len void closure domain record dr int binding slot int fd struct sockaddr addr int addr len int has core connection post bind hook void register core connection post bind hook first hook closure ec hook..."
 ---

@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "msys.validate.dkim.reflect"
 description: "msys validate dkim reflect Send an email to receiver addrs regarding the validation result of the current message msys validate dkim reflect msg vctx sender addrs receiver addrs subj note This function requires the dkim validate module It should be used before the data validate phase to instruct the system..."
 ---

@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "ec_swap_remove_meta"
 description: "ec swap remove meta removes meta data for the message from the IO layer void ec swap remove meta mess ec message mess This reference page was automatically generated from functions found in the header files in the development branch The function described here may not exist in generally available..."
 ---

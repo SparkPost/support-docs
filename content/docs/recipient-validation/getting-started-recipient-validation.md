@@ -1,5 +1,4 @@
 ---
-lastUpdated: "02/08/2020"
 title: "Getting Started with Recipient Validation"
 description: "Recipient Validation is an easy, efficient way to verify that email addresses are valid before you send."
 ---

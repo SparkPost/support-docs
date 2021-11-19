@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "auth_radius – RADIUS based SMTP Authentication"
 description: "The auth radius module allows Momentum to provide authenticated SMTP sessions via SMTP AUTH using up to 10 RADIUS servers The authentication mode is limited to simple authentication challenge response RADIUS authentication is not supported The following example demonstrates how to configure Momentum to pass LOGIN credentials through to RADIUS..."
 ---

@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "io_wrapper_supports_lseek"
 description: "io wrapper supports lseek Indicates if a stream is seekable int io wrapper supports lseek io io object io This reference page was automatically generated from functions found in the header files in the development branch The function described here may not exist in generally available versions of Momentum and..."
 ---

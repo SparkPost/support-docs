@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "msys.gauge_cache.inc"
 description: "msys gauge cache inc Increment the value associated with keystring in the named cache msys gauge cache inc cachename keystring Increments the value associated with keystring in the named cache Enable this function with the statement require msys gauge cache msys gauge cache define msys gauge cache dec Section 28..."
 ---

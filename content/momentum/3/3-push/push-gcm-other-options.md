@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "Other Configuration Options Used with GCM"
 description: "Other options not directly related to GCM must also be set in order to use this service As of Momentum version 3 5 6 the delivery method option includes a number of additional connection types gcm an HTTP protocol being one of them When using GCM you must set delivery..."
 ---

@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "mail_queue_check_vm_interval"
 description: "mail queue check vm interval how often to apply memory management reduction on mail queues mail queue check vm interval 60 How often to apply memory management reduction on mail queues based on the configured memory utilization limits By default the system checks once a minute to see if too..."
 ---

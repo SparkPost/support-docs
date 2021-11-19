@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "request_eval"
 description: "request eval Called prior to sending to AP Ns int request eval closure request msg void closure apn request request ec message msg Configuration Change This feature is available as of version 3 5 5 This hook is called prior to sending to the Apple push notification server closure The..."
 ---

@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "dict_key_exists_and_fetch"
 description: "dict key exists and fetch If the specified key exists retrieve its value int dict key exists and fetch a key value EC Dict a const char key const char value If the specified key exists retrieve its value a The dictionary An EC Dict is a typedef of an..."
 ---

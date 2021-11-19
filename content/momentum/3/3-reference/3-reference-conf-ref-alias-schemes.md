@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "alias_schemes"
 description: "alias schemes Enable named alias expansion schemes Alias Schemes ldapaliases When the alias module is loaded the Alias Schemes option can be used to configure alias expansion on a per domain basis with optional global behavior When alias expansion is run Momentum looks to see if Alias Schemes is configured..."
 ---

@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "ec_message_assign_domain"
 description: "ec message assign domain Modify the domain record of an ec message void ec message assign domain mess dr ec message mess domain record dr Modify the domain record of an ec message This will increment the reference count on the domain record passed in You MUST use ec message..."
 ---

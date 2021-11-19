@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "ec_memory_get_total_allocated"
 description: "ec memory get total allocated Return the total memory allocated via ec malloc and related functions uint 64 t ec memory get total allocated void Configuration Change This feature is available starting from Momentum 3 0 18 Return the total memory allocated via ec mallocec malloc and related functions In..."
 ---

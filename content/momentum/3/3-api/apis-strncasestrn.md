@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "strncasestrn"
 description: "strncasestrn Find a binary substring within a binary string case insensitive const char strncasestrn needle needle len haystack haystack len const char needle int needle len const char haystack int haystack len This reference page was automatically generated from functions found in the header files in the development branch The..."
 ---

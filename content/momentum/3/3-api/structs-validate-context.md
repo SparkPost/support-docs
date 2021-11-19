@@ -1,5 +1,4 @@
 ---
-lastUpdated: "03/26/2020"
 title: "validate_context"
 description: "This struct is defined as follows To use this struct include the file validate module h Chapter 18 Dictionary Functions..."
 ---
