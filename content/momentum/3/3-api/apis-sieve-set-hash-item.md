@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "sieve_set_hash_item"
 description: "sieve set hash item Set the specified hash item int sieve set hash item hash key arg SIEVEARGS hash const char key SIEVEARGS arg Set the specified hash item hash A pointer to the ec hash table of the SIEVETOKEN value of the specified SIEVEARG key The key to the..."
 ---

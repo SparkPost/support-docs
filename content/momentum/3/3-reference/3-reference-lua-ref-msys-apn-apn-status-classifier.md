@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "msys.apn.apn_status_classifier"
 description: "msys apn apn status classifier Determine whether the delivery status code represents a permanent or temporary failure msys apn apn status classifier status Configuration Change This function is available as of Momentum version 3 5 5 Determine the delivery status of the DLV Response Status variable in the context of..."
 ---

@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "crypto_engine"
 description: "crypto engine Enable hardware cryptography acceleration Crypto Engine engine name crypto engine is an option to allow hardware acceleration of the cryptographic processes in Momentum The right hand side takes the value of the specific hardware acceleration engine present There is no default value for this option The example below..."
 ---

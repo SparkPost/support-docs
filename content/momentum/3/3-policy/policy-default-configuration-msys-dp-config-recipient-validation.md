@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "msys.dp_config.recipient_validation"
 description: "Use this policy if you wish to perform per recipient or per domain recipient validation Recipient Validation requires that a datasource be setup in the ecelerity conf file For instructions on how to create datasources see ds core Module The name of this datasource is used as the value for..."
 ---

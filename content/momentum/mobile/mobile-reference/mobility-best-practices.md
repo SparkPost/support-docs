@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "SMPP Configuration Best Practices"
 description: "This chapter describes best practices for Mobile Momentum including configurations for various usage scenarios SMSC bind parameters also called bind credentials specify the values needed to enter a bound state on an SMPP connection The SMPP connection must be in a bound state before SMS messages may be sent or..."
 ---

@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "stringwrite_strings"
 description: "stringwrite strings write 1 or more NUL terminated C strings to the provided string INLINE ssize t stringwrite strings str nstr string str int nstr This reference page was automatically generated from functions found in the header files in the development branch The function described here may not exist in..."
 ---

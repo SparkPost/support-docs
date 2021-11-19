@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "msys.snmpTrap"
 description: "msys snmp Trap Issue an SNMP trap msys snmp Trap traptable Issue an SNMP trap traptable has the following permitted keys type specifies the type of the payload Can be one of string counter gauge or IP payload if type is a string payload must be a string If type..."
 ---

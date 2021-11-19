@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "ec_message_part_insert_after"
 description: "ec message part insert after Insert a part after another part int ec message part insert after toinsert insert after ec message part toinsert ec message part insert after This reference page was automatically generated from functions found in the header files in the development branch The function described here..."
 ---

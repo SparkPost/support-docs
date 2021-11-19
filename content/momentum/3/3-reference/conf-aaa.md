@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "Authentication, Authorization and Accounting"
 description: "Momentum can be configured to perform authentication on SMTP and Control connections Momentum 2 2 introduces an extensible authorization and accounting subsystem that can be configured to restrict access to console commands based on role while recording an audit trail Momentum provides out of the box support for authenticating remote..."
 ---

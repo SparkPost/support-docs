@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "Hooks in the publish Scope"
 description: "Table of Contents packet..."
 ---

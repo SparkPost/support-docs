@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "SMTP Response Codes"
 description: "The SMTP response codes and their meanings are shown in the following table Prior to versions 3 1 and 2 2 3 47 Momentum would not respond correctly to a 251 User not local Will be forwarded response from a remote server It put the message in the delayed queue..."
 ---

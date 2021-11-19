@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "authorization"
 description: "authorization configure the console commands applicable to users Example 9 4 authorization The authorization stanza will prevent console commands from being run unless an allow entry is explicitly configured The authorization process first enumerates the roles group membership of the user by querying the authorization module configured in the listener..."
 ---

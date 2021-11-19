@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "ec_spool_ctx_lock"
 description: "ec spool ctx lock Lock a spool context int ec spool ctx lock ctx ec spool ctx ctx Lock a spool context ctx The spool context to lock Returns 0 on success or the pid of the process that holds the lock On error it returns 1 It is legal..."
 ---

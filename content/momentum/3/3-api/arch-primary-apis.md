@@ -1,4 +1,5 @@
 ---
+lastUpdated: "July 2021"
 title: "Primary Momentum APIs"
 description: "Momentum's module API is at the core of how it is extended Without the module API no extension to Momentum is possible Modules within Momentum are defined in terms of a module infrastructure which the configuration system learns of through a series of files called ecm files The module infrastructure..."
 ---

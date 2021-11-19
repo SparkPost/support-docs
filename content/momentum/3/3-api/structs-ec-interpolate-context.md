@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "ec_interpolate_context"
 description: "This struct is defined as follows To use this struct include the file misc expand string re ec interpolate add reqs..."
 ---

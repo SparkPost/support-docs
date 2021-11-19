@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "Previewing and Testing Your Template"
 description: "You can preview and test your template by specifying test data in the New Template form Test data must be in the form of a JSON object of key value pairs of recipient specific data Click Edit select the Test Data tab and type your test data using the online..."
 ---

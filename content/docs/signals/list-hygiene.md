@@ -1,4 +1,5 @@
 ---
+lastUpdated: "February 2020"
 title: "List Hygiene"
 description: "The Signals recommendations for maintaining clean lists."
 ---

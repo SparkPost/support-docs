@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "ec_httpsrv_response_json"
 description: "ec httpsrv response json Set the session response to a JSON object int ec httpsrv response json sess json ec httpsrv session sess struct json object json This reference page was automatically generated from functions found in the header files in the development branch The function described here may not..."
 ---

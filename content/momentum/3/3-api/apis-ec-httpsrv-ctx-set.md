@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "ec_httpsrv_ctx_set"
 description: "ec httpsrv ctx set Sets a per request closure blobject on a session void ec httpsrv ctx set sess blobject ec httpsrv session sess ec blobject blobject This reference page was automatically generated from functions found in the header files in the development branch The function described here may not..."
 ---

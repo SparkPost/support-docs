@@ -1,4 +1,5 @@
 ---
+lastUpdated: "February 2020"
 title: "Preparing For Asynchronous Suppressions"
 description: "How to prepare your code for upcoming changes to suppression list checking in the Transmissions API endpoint and SMTP"
 ---

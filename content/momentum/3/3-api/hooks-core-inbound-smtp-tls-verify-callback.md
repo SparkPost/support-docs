@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "inbound_smtp_tls_verify_callback"
 description: "inbound smtp tls verify callback int inbound smtp tls verify callback closure mc ctx preverify ok subject issuer x 509 ctx void closure message construct mc ec ssl ctx ctx int preverify ok const char subject const char issuer struct ssl x 509 store ctx st x 509 ctx int..."
 ---

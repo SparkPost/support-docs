@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "_ec_atonum2"
 description: "ec atonum 2 Convert e string str to a signed integral value and store the result in nptr int ec atonum 2 str nptr width minval maxval endptr const char str void nptr int width long long minval long long maxval char endptr This reference page was automatically generated from..."
 ---

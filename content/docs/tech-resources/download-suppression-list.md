@@ -1,4 +1,5 @@
 ---
+lastUpdated: "February 2020"
 title:  How Do I Download My Entire Suppression List
 description: How to retrieve an entire suppression list using cursor based paging.
 ---

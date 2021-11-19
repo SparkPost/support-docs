@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "time_series_destroy"
 description: "time series destroy Destroy a time series void time series destroy ts time series ts This reference page was automatically generated from functions found in the header files in the development branch The function described here may not exist in generally available versions of Momentum and may change in behavior..."
 ---

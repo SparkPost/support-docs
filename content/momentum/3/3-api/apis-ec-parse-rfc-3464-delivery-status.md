@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "ec_parse_rfc3464_delivery_status"
 description: "ec parse rfc 3464 delivery status Parses an rfc 3464 dsn into its attributes recorded into a EC Dict int ec parse rfc 3464 delivery status mess fields ec message mess EC Dict fields This reference page was automatically generated from functions found in the header files in the development..."
 ---

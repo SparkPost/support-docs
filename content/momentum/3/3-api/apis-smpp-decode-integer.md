@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "smpp_decode_integer"
 description: "smpp decode integer Decode an octet string into integer long smpp decode integer os pos octets string os long pos int octets Configuration Change This feature is available starting from Momentum 3 2 Decode an octet string into integer pos is the offset of the beginning of the octet string..."
 ---

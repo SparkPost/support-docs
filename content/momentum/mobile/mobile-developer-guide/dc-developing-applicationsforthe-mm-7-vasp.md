@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "Developing Applications for the MM7 VASP"
 description: "Chapter 29 MM 7 Server Received Message Hook Chapter 30 MM 7 Server Received Message Validation Hook Chapter 18 MM 7 MT Submit Request Hook Chapter 19 MM 7 MT Submit Response Hook As with other Momentum modules such as SMTP and SMPP the following logger hooks are available for..."
 ---

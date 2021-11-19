@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "ec_adtool"
 description: "ec adtool adjust adaptive parameters in a cluster configuration opt msys ecelerity bin ec adtool delete common options node opt msys ecelerity bin ec adtool move common options old node new node k keep o override Adaptive parameters are saved to Riak as blog data a JSON object ec adtool..."
 ---

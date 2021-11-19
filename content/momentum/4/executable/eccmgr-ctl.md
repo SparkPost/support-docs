@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "eccmgr_ctl"
 description: "eccmgr ctl start stop or restart the Momentum Cluster Manager opt msys ecelerity bin eccmgr ctl start stop restart eccmgr ctl is a shell script that you can use to start stop or restart the Momentum Cluster Manager eccmgr eccmgr..."
 ---

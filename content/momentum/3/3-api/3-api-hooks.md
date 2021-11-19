@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "Hooks"
 description: "About Hooks This part documents Momentum's hooking API The most useful hook points are defined within the core of Momentum and are called core hooks These hooks are found at Chapter 60 Hooks in the core scope You can use these predefined hook points from custom modules To do this..."
 ---

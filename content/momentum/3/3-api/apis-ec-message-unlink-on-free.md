@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "ec_message_unlink_on_free"
 description: "ec message unlink on free Marks the message as to be removed from disk when the last reference is dropped void ec message unlink on free mess ec message mess Marks the message as needing to be removed from disk when the last reference is dropped This should only happen..."
 ---

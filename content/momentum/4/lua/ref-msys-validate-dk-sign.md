@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "msys.validate.dk.sign"
 description: "msys validate dk sign Sign a message using a Domain Key msys validate dk sign msg vctx options This function signs a message using a Domain Key signature This function requires the dk sign module Enable this function with the statement require msys sign dk It requires the following parameters..."
 ---

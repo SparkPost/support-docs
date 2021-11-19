@@ -1,4 +1,5 @@
 ---
+lastUpdated: "August 2020"
 title: "How to get Help"
 description: "This guide will help you find the best resource for your inquiry and fastest resolution As a general rule first search in the latest API docs and knowledge base articles and then try the following Service Status Find out whether the service is up down sideways on vacation or going..."
 ---

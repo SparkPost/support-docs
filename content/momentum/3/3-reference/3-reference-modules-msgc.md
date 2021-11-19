@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "msgc – Modules"
 description: "Configuration Change This feature is available as of version 3 4 Message Systems Group Communication is a replacement for the messaging bus used in cluster configurations in earlier versions of Momentum It fully supports all existing Momentum features and is less susceptible to latency issues There are two msgc modules..."
 ---

@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "mx_failures_to_delay"
 description: "mx failures to delay number of consecutive failures before a domain is auto delayed MX Failures To Delay 50 When Momentum detects that a domain has no contactable M Xs it will move all that domain's active messages into the delayed queue This setting allows you to configure the sensitivity..."
 ---

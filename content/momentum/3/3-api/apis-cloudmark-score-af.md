@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "cloudmark_score_af"
 description: "cloudmark score af Examine a message using Cloudmark Active Filter int cloudmark score af m acpt ctx af id af score threshold ec message m accept construct acpt validate context ctx const char af id unsigned int af score threshold Cloudmark Active Filter tracks fingerprints of previously scanned and delivered..."
 ---

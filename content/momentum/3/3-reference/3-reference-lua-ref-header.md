@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "msg:header"
 description: "msg header Manipulate message headers msg header hdr value mode This Lua function may not give expected results for multi part MIME messages such as an MCMT message It will behave as expected in the first MIME part Consider using msgpart header This function may be used to manipulate message..."
 ---

@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "pre_read_smtp"
 description: "pre read smtp int pre read smtp closure dc expected newstate now mask void closure delivery construct dc int expected int newstate struct timeval now int mask int has core pre read smtp hook void register core pre read smtp hook first hook closure ec hook core pre read smtp..."
 ---

@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "ec_message_rsrc_create"
 description: "ec message rsrc create This creates an empty container for a resource identified with name int ec message rsrc create message name ec message message const char name This reference page was automatically generated from functions found in the header files in the development branch The function described here may..."
 ---

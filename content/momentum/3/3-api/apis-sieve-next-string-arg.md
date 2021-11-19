@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "sieve_next_string_arg"
 description: "sieve next string arg Return the next string argument int sieve next string arg arg iter str len SIEVEARGS arg sieve string arg iterator iter char str int len Return the next string argument arg The argument list iter The iterator The data type of this parameter is defined as..."
 ---

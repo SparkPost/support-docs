@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "curl.unescape"
 description: "curl unescape Unescape URL encoding in strings curl unescape str This function unescapes URL encoding in strings and is suitable for use when decomposing UR Ls Example 70 19 curl unescape example Example 70 19 curl unescape example outputs curl escape..."
 ---

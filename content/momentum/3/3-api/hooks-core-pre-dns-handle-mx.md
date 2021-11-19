@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "pre_dns_handle_mx"
 description: "pre dns handle mx int pre dns handle mx closure routes status abuf alen qdomain void closure mx routes routes int status unsigned char abuf int alen const char qdomain int has core pre dns handle mx hook void register core pre dns handle mx hook first hook closure ec..."
 ---

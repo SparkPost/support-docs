@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "msys.registerAuth"
 description: "msys register Auth Register an authentication authorization scheme that can be used for SMTP or control channel authentication msys register Auth schemename authtable This function registers an authentication authorization scheme that can be used for SMTP or control channel authentication schemename is the name used in the appropriate listener authentication..."
 ---

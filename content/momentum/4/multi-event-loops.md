@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "Configuring Multiple Event Loops"
 description: "To fully utilize the capacity of multi core CPU architectures you can configure Momentum for multiple event loops This configuration enables Momentum to scale so that the overall performance is not limited by a single event scheduler thread Instead a pool of event scheduler instances is created running in separate..."
 ---

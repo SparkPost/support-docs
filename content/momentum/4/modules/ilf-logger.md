@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "ilf_logger – Incremental License Fee Logging"
 description: "The Incremental License Fee ilf logger module is designed for users who have usage based licenses It provides an easy way to comply with the usage reporting requirements contained in the agreement with Message Systems Usage files are written to var log ecelerity ilf Bundle these files and sent them..."
 ---

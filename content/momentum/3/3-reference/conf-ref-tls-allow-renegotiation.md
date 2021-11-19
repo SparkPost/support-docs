@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "tls_allow_renegotiation"
 description: "tls allow renegotiation whether to enable Open SSL TLS renegotiation tls allow renegotiation true This option determines whether Open SSL TLS renegotiation is enabled or not The default value for this option is true Configuration Change This option is available as of version 3 5 4 SSL TLS renegotiation has..."
 ---

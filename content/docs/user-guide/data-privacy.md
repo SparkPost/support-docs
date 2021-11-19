@@ -1,4 +1,5 @@
 ---
+lastUpdated: "February 2021"
 title: "Data Privacy"
 description: "Submit GDPR and CCPA data privacy requests."
 ---

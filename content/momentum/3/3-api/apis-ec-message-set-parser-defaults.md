@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "ec_message_set_parser_defaults"
 description: "ec message set parser defaults Set message parsing validation defaults void ec message set parser defaults mess ec message mess This reference page was automatically generated from functions found in the header files in the development branch The function described here may not exist in generally available versions of Momentum..."
 ---

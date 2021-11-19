@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "control_post_command"
 description: "control post command void control post command closure cc response void closure command construct cc string response int has core control post command hook void register core control post command hook first hook closure ec hook core control post command func t hook void closure void register core control post..."
 ---

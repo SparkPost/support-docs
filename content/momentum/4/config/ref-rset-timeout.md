@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "rset_timeout"
 description: "rset timeout set the timeout after RSET rset timeout 30 The amount of time in seconds to wait for a response to a RSET command RSET commands are used to reset the state of an SMTP session in which a transaction has only partially succeeded It allows subsequent messages to..."
 ---

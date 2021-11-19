@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "ec_dkim_sign"
 description: "ec dkim sign Function to sign a mail message int ec dkim sign m ctx base domain header canon body canon digest headerlist identity selector key file key body length limit ec message m validate context ctx const char base domain const char header canon const char body canon const..."
 ---

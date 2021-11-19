@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "event_io_state_clean"
 description: "event io state clean Release resources held in an event io state structure void event io state clean state event io state state Release resources held in an event io state structure state For a description of this data type see Section 68 50 event io state This function returns..."
 ---

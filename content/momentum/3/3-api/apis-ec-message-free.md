@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "ec_message_free"
 description: "ec message free Release resources held by this message void ec message free message ec message message Drops the reference to the message or frees memory if it's the last reference to the ec message message A pointer to an ec message struct For documentation of this data structure see..."
 ---

@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "msys.dp_config.audit_series.spam_mailfrom"
 description: "Spam MAIL FROM rate limiting Note This is disabled by default as there is a potential for a Do S attack using garbage sender addresses Find below the sample excerpt included in the dp config lua file The elements of this configuration table are as follows type The only legal..."
 ---

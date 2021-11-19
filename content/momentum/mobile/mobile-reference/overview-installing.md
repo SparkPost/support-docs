@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "Installing Momentum"
 description: "The Mobile Momentum SMPP bundle consists of the Momentum core augmented with modules implementing the SMPP protocol and SMPP logging and the MM 7 protocol and MM 7 logging The installation steps are identical to those used to install other Momentum based products namely decompress the bundle and then navigate..."
 ---

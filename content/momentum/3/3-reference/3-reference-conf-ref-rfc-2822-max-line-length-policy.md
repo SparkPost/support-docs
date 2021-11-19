@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "rfc2822_max_line_length_policy"
 description: "rfc 2822 max line length policy determine how non RFC compliant line lengths are handled rfc 2822 max line length policy none Configuration Change This feature is available starting from Momentum 3 0 26 This option defines how messages with non RFC compliant line lengths are handled When set to..."
 ---

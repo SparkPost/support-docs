@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "ec_spool_ctx_unlock"
 description: "ec spool ctx unlock Unlock a spool context Note that it is not safe to unlock the global spool context int ec spool ctx unlock ctx ec spool ctx ctx Unlock a spool context Note that it is not safe to unlock the global spool context ctx The spool context..."
 ---

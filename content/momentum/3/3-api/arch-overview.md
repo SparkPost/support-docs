@@ -1,4 +1,5 @@
 ---
+lastUpdated: "July 2021"
 title: "General Architecture Overview"
 description: "Momentum's memory management model is one of a monolithic address space with multiple threads of execution accessing it Said another way all threads of execution within Momentum have access to all memory in the system in a literal sense Consequently third party code can corrupt the system or otherwise cause..."
 ---

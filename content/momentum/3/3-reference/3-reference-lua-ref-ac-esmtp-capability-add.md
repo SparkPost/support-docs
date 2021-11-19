@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "ac:esmtp_capability_add"
 description: "ac esmtp capability add Add a capability to the EHLO response ac esmtp capability add name This function is equivalent to the Sieve advertize esmtp capability action It adds a capability string to the EHLO response It is most useful in the connect phase and raises an error if the..."
 ---

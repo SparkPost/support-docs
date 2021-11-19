@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "sieve_register_action"
 description: "sieve register action Register a sieve action int sieve register action closure action reqd capability compile cb action cb void closure const char action const char reqd capability sieve compile callback compile cb sieve action callback action cb Use sieve register extension instead Register a sieve action flags A combination..."
 ---

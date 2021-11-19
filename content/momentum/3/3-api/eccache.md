@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "ec_cache Functions"
 description: "A common requirement for high performance modules is to cache information that is expensive to obtain The generic cache implementation in Momentum operates by having an upper bound on the number of elements to be stored in a cache pushing out the least recently used item when an insert is..."
 ---

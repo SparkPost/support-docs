@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "active"
 description: "active show domains with active queue size bigger than threshold active threshold The active command presents information concerning the domains with a large number of active messages in queue The command takes a single positive integer as an argument which specifies the threshold of interest The output will include all..."
 ---

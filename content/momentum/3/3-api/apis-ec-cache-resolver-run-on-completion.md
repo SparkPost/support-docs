@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "ec_cache_resolver_run_on_completion"
 description: "ec cache resolver run on completion Schedule a function to run when the resolver completes void ec cache resolver run on completion resolver func closure ec cache resolver resolver ec cache resolver completion func func void closure This reference page was automatically generated from functions found in the header files..."
 ---

@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "Using Stored Templates"
 description: "Introduction In the tutorial in Chapter 45 Generating a Transmission you sent emails using an inline template While in line templates might be best for one off transmissions it is more efficient to create stored templates for high volume message campaigns Using stored templates enables you to control the look..."
 ---

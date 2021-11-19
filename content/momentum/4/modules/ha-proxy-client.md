@@ -1,4 +1,5 @@
 ---
+lastUpdated: "October 2021"
 title: "ha_proxy_client - HAProxy protocol client module"
 description: "The ha_proxy_client module is used to configure Momentum to use HAProxy's PROXY protocol version 2 for outbound connections (see https://github.com/haproxy/haproxy/blob/master/doc/proxy-protocol.txt).  This can be leveraged in cases where your sending IPs are deployed on a different machine than Momentum."
 ---

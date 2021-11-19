@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "brightmail – Brightmail Module"
 description: "The Brightmail module provides a mechanism for checking the current inbound message context for each recipient against a Symantec Brightmail Anti Spam content server In Momentum version 3 x Sieve continues to be supported but scripting via Lua is preferred for the following reasons Sieve has no concept of looping..."
 ---

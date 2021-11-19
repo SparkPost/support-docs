@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "http_request_finalize"
 description: "http request finalize Finalize changes to an HTTP request http request finalize sess update http session sess int update Configuration Change This function is available as of version 3 6 Finalize changes to an HTTP request Call this function whenever the structural data in an http request has been modified..."
 ---

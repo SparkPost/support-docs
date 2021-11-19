@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "msys.dp_config.audit_series.auth_user"
 description: "SMTP AUTH user rate limiting This check is never evaluated if the sender is not authenticated with SMTP authentication Find below the sample excerpt included in the dp config lua file The elements of this configuration table are as follows type The only legal value for this element is string..."
 ---

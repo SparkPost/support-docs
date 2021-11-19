@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "adaptive_enabled"
 description: "adaptive enabled enable or disable the adaptive module adaptive enabled true adaptive enabled false This directive is only valid if the Momentum adaptive module is loaded See Section 71 3 adaptive Adaptive Delivery This directive instructs Momentum to enable or disable the adaptive module globally on a specific domain binding..."
 ---

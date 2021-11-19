@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "update_trans_metrics"
 description: "update trans metrics void update trans metrics closure msg void closure const ec cluster metrics msg int has cluster update trans metrics hook void register cluster update trans metrics hook first hook closure ec hook cluster update trans metrics func t hook void closure void register cluster update trans metrics..."
 ---

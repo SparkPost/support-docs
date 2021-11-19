@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "post_validate_data_spool_each_rcpt_v1"
 description: "post validate data spool each rcpt v 1 void post validate data spool each rcpt v 1 closure m ac c void closure ec message m accept construct ac validate context c int has core post validate data spool each rcpt v 1 hook void register core post validate data..."
 ---

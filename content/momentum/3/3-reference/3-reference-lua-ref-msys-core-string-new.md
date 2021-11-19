@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "msys.core.string_new"
 description: "msys core string new Create an ec string msys core string new Create userdata of the ec string type Some functions such as msg get envelope 2 require ec string type userdata the Lua rendering of the C struct string Because this function is in the msys core namespace an..."
 ---

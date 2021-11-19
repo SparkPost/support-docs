@@ -1,4 +1,5 @@
 ---
+lastUpdated: "February 2020"
 title: "Using SparkPost with Hoolie"
 description: "The following steps will walk you through using Spark Post with Infacta's Hoolie NOTE Please make sure you have upgraded your version of Hoolie to the latest version that includes updated SSL and TLS support Version 1 9389 or later When running Hoolie click on Preferences and go to the..."
 ---

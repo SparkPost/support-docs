@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "httplog"
 description: "The httplog logs HTTP requests and responses It is configured in the http logger module A line is written to the httplog for every HTTP request and response The fields in the log entry are delimited by spaces such as the following The following is a description of the fields..."
 ---

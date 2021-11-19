@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "ec_if_list"
 description: "ec if list Retrieve a list of interfaces int ec if list ifp family flags ec interface ifp int family int flags This reference page was automatically generated from functions found in the header files in the development branch The function described here may not exist in generally available versions..."
 ---

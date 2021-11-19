@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "scpt_parse_params"
 description: "scpt parse params Parse scriptlet function parameters void scpt parse params thr fmt scpt thread thr const char fmt Configuration Change This feature is available as of version 3 2 Parse scriptlet function parameters thr script thread fmt A format string that specifies the types of the arguments The variable..."
 ---

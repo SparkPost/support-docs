@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "ec_double_list_shift"
 description: "ec double list shift Shift the head of the list off the list void ec double list shift list ec double list list Shifts the head of the list off the list list The list This function returns the data associated with the head or NULL if the list is..."
 ---

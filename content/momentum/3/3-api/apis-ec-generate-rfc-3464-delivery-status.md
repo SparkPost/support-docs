@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "ec_generate_rfc3464_delivery_status"
 description: "ec generate rfc 3464 delivery status renders an RFC 3464 report block into the provided string void ec generate rfc 3464 delivery status output mess custom fields action attempt string output ec message mess EC Dict custom fields dsn actype action struct timeval attempt This reference page was automatically generated..."
 ---

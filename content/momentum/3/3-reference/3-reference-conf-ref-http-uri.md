@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "http_uri"
 description: "http uri Define the HTTP URI that you wish to connect to http uri gcm send Configuration Change This option is available as of version 3 5 6 When using the HTTP protocol this option defines the HTTP URI that you wish to connect to This option is used in..."
 ---

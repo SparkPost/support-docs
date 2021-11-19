@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "Message Context Variables"
 description: "Policy decisions associated with Mobile Momentum can be implemented using Sieve or Lua scripts For more information see Implementing Policy Using Scriptlets and Implementing Policy Using Sieve ec message context variables for SMPP that are accessible from policy scripts are as follows MO Email From Address email from address to..."
 ---

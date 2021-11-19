@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "MM7 Log Inband Bounce Hook"
 description: "An MM 7 MT message submitted by Mobile Momentum is treated as an inband message When such a submission permanently fails it will be logged to the bounce log as well as the main log using the hook implementation of the MM 7 log permfail hook mms log permfail This..."
 ---

@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "ec_httpsrv_response_status_ok"
 description: "ec httpsrv response status ok Sets the HTTP status to indicate success and sets content type int ec httpsrv response status ok sess type ec httpsrv session sess const char type This reference page was automatically generated from functions found in the header files in the development branch The function..."
 ---

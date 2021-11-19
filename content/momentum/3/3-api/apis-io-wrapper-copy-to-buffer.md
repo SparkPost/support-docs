@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "io_wrapper_copy_to_buffer"
 description: "io wrapper copy to buffer copies up to len bytes from the io object and writes them to buf int io wrapper copy to buffer io buf buflen len io object io char buf int buflen int len This reference page was automatically generated from functions found in the header..."
 ---

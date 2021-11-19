@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "adaptive_backstore_leveldb"
 description: "adaptive backstore leveldb use Level DB as the backing store for Adaptive Delivery adaptive backstore leveldb path var log ecelerity adaptive leveldb Riak is the default backing store for the adaptive module In some circumstances it may not provide the required level of performance As an alternate backing store you..."
 ---

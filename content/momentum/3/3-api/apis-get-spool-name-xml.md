@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "get_spool_name"
 description: "get spool name Get the spool name from the message ID char get spool name mid message id mid Get the spool name from the message ID mid The message id On success this function returns the spool name It is legal to call this function in the Scheduler thread..."
 ---

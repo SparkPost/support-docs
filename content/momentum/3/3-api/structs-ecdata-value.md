@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "ecdata_value"
 description: "The members of the ecdata value struct are as follows To use this struct include the file modules datasource ecdatasource h ec datasource set param by name..."
 ---

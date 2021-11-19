@@ -1,4 +1,5 @@
 ---
+lastUpdated: "June 2021"
 title: "Getting Started with the Events Search API"
 description: "How to integrate with the Events API"
 ---

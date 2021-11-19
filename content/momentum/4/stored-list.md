@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "Creating Stored Recipient Lists"
 description: "Configuration Change Version 4 1 and later support stored recipient lists Introduction As consumer behaviors and preferences continue to change rapidly it’s critical that you send the right message to the right customer at the right time and place Creating different recipient lists based on various demographic information enables you..."
 ---

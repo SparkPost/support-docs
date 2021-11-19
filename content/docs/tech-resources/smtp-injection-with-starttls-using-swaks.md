@@ -1,4 +1,5 @@
 ---
+lastUpdated: "February 2020"
 title: "SMTP Injection with STARTTLS using swaks"
 description: "One of our customers recently ran into issues attempting to send a test email via SMTP injection using STARTTLS while working with the openssl client Our resolution is to utilize the swaks Swiss Army Knife for SMTP This command line utility makes it easy to send a test email via..."
 ---

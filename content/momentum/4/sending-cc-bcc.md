@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "Sending Emails as CC and BCC"
 description: "Configuration Change Sending emails as BCC is supported as of version 4 1 HF 4 Introduction An email's header provides details about the sender and recipients in addition to descriptive information about the message Typically the header will include From displaying who sent the message and To displaying who received..."
 ---

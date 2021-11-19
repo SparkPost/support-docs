@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "is_valid_email"
 description: "is valid email Determines whether emailaddr is a valid email address int is valid email emailaddr mailbox desc mailbox desclen localpart lplen domain domainlen const char emailaddr char mailbox desc int mailbox desclen char localpart int lplen char domain int domainlen Determines whether emailaddr is a valid email address If..."
 ---

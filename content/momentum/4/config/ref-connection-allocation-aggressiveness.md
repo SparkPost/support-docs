@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "connection_allocation_aggressiveness"
 description: "connection allocation aggressiveness tune the aggressiveness for establishing new connections to domains connection allocation aggressiveness normal connection allocation aggressiveness high When set to high Momentum will be more aggressive when opening up new connections to domains Momentum achieves this by considering the max outbound connections setting global or domain specific..."
 ---

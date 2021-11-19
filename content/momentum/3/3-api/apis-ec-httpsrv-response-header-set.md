@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "ec_httpsrv_response_header_set"
 description: "ec httpsrv response header set Sets a header in the session response int ec httpsrv response header set sess name value ec httpsrv session sess const char name const char value This reference page was automatically generated from functions found in the header files in the development branch The function..."
 ---

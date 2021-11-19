@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "doc:tostring"
 description: "doc tostring Output a DOM document as a string doc tostring Where doc is an XML document this method returns a string representation of the XML source of the entire document This same method is also available as a tostring metamethod so doc tostring and tostring doc are equivalent Example..."
 ---

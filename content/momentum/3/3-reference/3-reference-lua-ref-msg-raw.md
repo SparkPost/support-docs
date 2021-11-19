@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "msg:raw"
 description: "msg raw Set or returns the message content msg raw value If a value is provided set the content of the message to that value Otherwise this function returns the full RFC 2822 message as a string Enable this function with the statement require msys extended message..."
 ---

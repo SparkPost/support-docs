@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "Bounce Classification Codes"
 description: "The following is a list of bounce classification codes and their meanings Table 35 16 Bounce Classification Codes Classification Name Description Category 1 Undetermined The response text could not be identified Undetermined 10 Invalid Recipient The recipient is invalid Hard 20 Soft Bounce The message soft bounced Soft 21 DNS..."
 ---

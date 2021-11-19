@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "ec_datasource_cache_query"
 description: "The members of this struct are as follows To use this struct include the file modules datasource ecdatasource h The ec data cache query is a typedef of this struct ec datasource cache query Section 68 27 ec datasource query cache entry Section 68 24 ec data source query cache..."
 ---

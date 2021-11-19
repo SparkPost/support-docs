@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "ec_authz_check"
 description: "ec authz check Check if commands are authorized int ec authz check cc e unpriv commands command construct cc Event e const char unpriv commands This reference page was automatically generated from functions found in the header files in the development branch The function described here may not exist in..."
 ---

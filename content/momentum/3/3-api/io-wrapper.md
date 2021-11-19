@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "io_wrapper Functions"
 description: "Table of Contents io wrapper addref Add a reference to the specified io object io wrapper async close Close an IO wrapper deprecated io wrapper async destroy schedules an io wrapper destroy in the IO thread pool if you're not in the scheduler thread you can use io wrapper destroy..."
 ---

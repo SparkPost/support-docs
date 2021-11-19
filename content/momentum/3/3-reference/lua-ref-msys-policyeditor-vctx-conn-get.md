@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "msys.policyeditor.vctx_conn_get"
 description: "msys policyeditor vctx conn get Return a connection validation context value msys policyeditor vctx conn get ctx vars params Configuration Change This function is deprecated Use local value msg context get msys core ECMESS CTX CONN key to get a connection context value For more information see msg context get..."
 ---

@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "dns_cache_submit"
 description: "dns cache submit Submit a query to the dns cache void dns cache submit q cb cl dns cache query q dns cache callback cb void cl This reference page was automatically generated from functions found in the header files in the development branch The function described here may not..."
 ---

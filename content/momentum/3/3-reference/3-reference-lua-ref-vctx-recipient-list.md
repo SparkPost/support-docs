@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "vctx:recipient_list"
 description: "vctx recipient list Return or set the current recipient list vctx recipient list addresses If called with no arguments this function returns the current recipient list If passed an addresses parameter this replaces the current recipient list The parameter may be a single address or a table of addresses This..."
 ---

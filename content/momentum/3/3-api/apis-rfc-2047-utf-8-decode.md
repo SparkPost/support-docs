@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "rfc2047_utf8_decode"
 description: "rfc 2047 utf 8 decode Decode rfc 2047 encoding returning a string that is utf 8 encoded char rfc 2047 utf 8 decode header hdrlen outlen needs free const char header int hdrlen int outlen int needs free Decode rfc 2047 encoding returning a string that is utf 8 encoded..."
 ---

@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "cloudmark – Cloudmark Authority® Content Scanning"
 description: "Configuration Change This feature is available in Momentum 4 2 and later The cloudmark module provides message diagnosis via the Cloudmark Authority spam and phishing protection technology If you intend to use this module be sure to choose it during installation For more information see Section 12 1 Installing Partner..."
 ---

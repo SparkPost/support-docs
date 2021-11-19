@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "ec_log_trace"
 description: "ec log trace parse Momentum log files opt msys ecelerity bin ec log trace opt msys ecelerity bin ec log trace binding name opt msys ecelerity bin ec log trace binding regex regex opt msys ecelerity bin ec log trace count opt msys ecelerity bin ec log trace date opt..."
 ---

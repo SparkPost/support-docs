@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "smpp_get_deliver_mo_msg"
 description: "smpp get deliver mo msg Retrieve the text message in received MO request string smpp get deliver mo msg p SMPP PDU p Configuration Change This feature is available starting from Momentum 3 2 Retrieve the text message in a received MO request p The SMPP PDU struct For a..."
 ---

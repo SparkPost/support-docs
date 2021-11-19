@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "ec_generate_rfc3464_notification"
 description: "ec generate rfc 3464 notification creates an RFC 3464 MDN and enqueues void ec generate rfc 3464 notification message action ec message message dsn actype action This reference page was automatically generated from functions found in the header files in the development branch The function described here may not exist..."
 ---

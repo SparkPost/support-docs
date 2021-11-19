@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "log_delivery_v1"
 description: "log delivery v 1 Register a function with this hook whenever a delivery event should be logged void core log delivery v 1 closure msg dr now note note len void closure ec message msg domain record dr struct timeval now const char note int note len Register a function..."
 ---

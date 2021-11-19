@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "io_wrapper_copy_memory"
 description: "io wrapper copy memory Creates a copy of a memory buffer and returns a handle to that buffer io object io wrapper copy memory blob len memtype const char blob size t len int memtype This reference page was automatically generated from functions found in the header files in the..."
 ---

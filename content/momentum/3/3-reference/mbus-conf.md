@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "mbus.conf"
 description: "mbus conf Momentum Cluster Messaging Bus configuration file opt msys ecelerity etc conf global mbus conf configures the behavior of the Momentum Cluster Messaging Bus mbusd Configuration changes to the message bus cannot be made through the web UI you must manually change mbus conf For instructions on doing this..."
 ---

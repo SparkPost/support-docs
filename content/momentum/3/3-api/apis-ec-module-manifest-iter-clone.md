@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "ec_module_manifest_iter_clone"
 description: "ec module manifest iter clone clone a module manifest iterator void ec module manifest iter clone dst src ec module manifest iter t dst ec module manifest iter t src This reference page was automatically generated from functions found in the header files in the development branch The function described..."
 ---

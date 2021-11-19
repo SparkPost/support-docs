@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "control_post_control"
 description: "control post control void control post control closure cc argc argv input output void closure command construct cc int argc const char argv ec control context input ec control context output int has core control post control hook void register core control post control hook first hook closure ec hook..."
 ---

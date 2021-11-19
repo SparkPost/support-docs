@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "smtp_client_rcptto_args"
 description: "smtp client rcptto args int smtp client rcptto args closure dc args void closure delivery construct dc smtp client args args int has core smtp client rcptto args hook void register core smtp client rcptto args hook first hook closure ec hook core smtp client rcptto args func t hook..."
 ---

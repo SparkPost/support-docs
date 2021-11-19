@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "Overview"
 description: "Mobile Momentum 2 1 provides hooks for the customization of SMPP and MMS message processing Hooks are message processing points where customer written scripts or scriptlets and programs may be used to enforce policy and or extend functionality Hook instances may be implemented in C or Lua In addition instances..."
 ---

@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "ec_message_set_code"
 description: "ec message set code Set the message delivery code meta information int ec message set code message code codestr ec message message int code const char codestr Set the message delivery code meta information Before setting the code you must lock the message using ec message lock Once the code..."
 ---

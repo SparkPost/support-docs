@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "Update on Pricing"
 description: "Information about pricing changes."
 ---

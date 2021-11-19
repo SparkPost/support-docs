@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "msys.os.statvfs_read"
 description: "msys os statvfs read Request a snapshot of the stream msys os statvfs read path This function provides a stream for statvfs updates This guarantees minimal blocking and it is safe to call this functions from the context of any thread The developer first requests an ec statvfs record t..."
 ---

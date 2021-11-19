@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "apn_error_response"
 description: "Configuration Change This feature is available as of version 3 5 5 This struct is defined as follows For a list of valid values for the status field see response eval To use this struct include the file modules mobility apn apn h Momentum for Mobile Push Notifications and Chapter..."
 ---

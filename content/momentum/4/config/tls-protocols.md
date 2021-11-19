@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "tls_protocols"
 description: "tls protocols allowable ciphers for TLS inbound and outbound sessions tls protocols baseprotocol additional protocols Configuration Change This option is available as of version 4 1 0 2 tls protocols specifies the allowable protocols for an Open SSL TLS session The available protocols are ALL SS Lv 2 SS Lv..."
 ---

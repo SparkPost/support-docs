@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "Delivery Receipts"
 description: "Delivery receipts are messages generated from carrier and or aggregator network equipment notifying a short message submitter of an intermediate or final status of an SMS submission Two parameters in Mobile Momentum control deliver receipt handling First delivery receipts are requested for message submissions by setting the SMPP Registered Delivery..."
 ---

@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "ec_fc_store"
 description: "ec fc store Store entry in the cache with the provided key and key length int ec fc store cache entry key key length ec fc t cache ec fc entry t entry const void key size t key length This reference page was automatically generated from functions found in..."
 ---

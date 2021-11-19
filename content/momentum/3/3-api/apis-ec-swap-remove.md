@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "ec_swap_remove"
 description: "ec swap remove removes the message from the spool void ec swap remove mess ec message mess This reference page was automatically generated from functions found in the header files in the development branch The function described here may not exist in generally available versions of Momentum and may change..."
 ---

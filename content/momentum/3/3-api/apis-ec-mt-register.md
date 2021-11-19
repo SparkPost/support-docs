@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "ec_mt_register"
 description: "ec mt register Implementation specific memtype initialization routine int ec mt register def impl data const mem type def def void impl data Configuration Change This feature is available starting from Momentum 3 0 18 Implementation specific memtype initialization routine For more information about memory types see Memory Types Do..."
 ---

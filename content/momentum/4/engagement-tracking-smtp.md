@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "Tracking Engagement for SMTP"
 description: "Configuration Change Engagement tracking for SMTP injections is available as of version 4 1 HF 4 Understanding how your messaging is or isn't performing is a critical factor in creating a successful campaign Just knowing that your messages are being delivered is not enough You need to know how your..."
 ---

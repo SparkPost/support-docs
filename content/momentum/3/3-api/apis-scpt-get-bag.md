@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "scpt_get_bag"
 description: "scpt get bag Returns the environmental bag associated with the current callout ec bag scpt get bag thr scpt thread thr Configuration Change This feature is available starting from Momentum 3 1 This function returns the environmental bag associated with the current callout This function is intended to be called..."
 ---

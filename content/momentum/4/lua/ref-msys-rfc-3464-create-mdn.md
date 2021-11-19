@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "msys.rfc3464.create_mdn"
 description: "msys rfc 3464 create mdn Generate an MDN from a message msys rfc 3464 create mdn msg action Generates an MDN from the input msg action can be one of msys core FAILED msys core DELAYED msys core DELIVERED msys core RELAYED and msys core EXPANDED Returns the generated MDN..."
 ---

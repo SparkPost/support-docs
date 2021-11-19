@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "ec_message_parser_strerror"
 description: "ec message parser strerror Returns a string representation of a message parsing error code const char ec message parser strerror err int err Returns a string representation of a message parsing error code in the form of an SMTP response line err An integer representing a parsing error code This..."
 ---

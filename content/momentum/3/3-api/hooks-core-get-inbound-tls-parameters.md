@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "get_inbound_tls_parameters"
 description: "get inbound tls parameters Allows implementors to override and control the usage of TLS on a per message basis when accepting mail into the system int core get inbound tls parameters closure mc ctx params void closure message construct mc validate context ctx ec ssl ctx params params Allows providers..."
 ---

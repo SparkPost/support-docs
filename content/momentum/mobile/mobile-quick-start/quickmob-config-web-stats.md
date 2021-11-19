@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "Configuring for Web UI Stats"
 description: "In the Mobile Momentum web UI you can view statistics by protocol In order to do this you must create additional SMPP and MM 7 modules that log in jlog format Add the following modules to your configuration in order to view web statistics by protocol Example 3 7 Configuration..."
 ---

@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "annotate_batch"
 description: "annotate batch Allow a module to assume responsibility for batch annotation int core annotate batch closure head void closure sp async message head This hook allows a module to assume responsibility for batch annotation Add the custom annotation to the message context of each message in the batch When using..."
 ---

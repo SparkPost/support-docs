@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "Spool-related Functions"
 description: "Table of Contents ec spool ctx construct filename Create a file name for the specified message ec spool ctx create Create a spool context for a location on disk ec spool ctx enum messages Enumerate messages in a spool ec spool ctx filter open Access the spool in the specified..."
 ---

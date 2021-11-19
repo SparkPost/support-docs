@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "ec_mem_type_def"
 description: "This struct is defined as follows MEMTYPE MAX is the maximum possible number of memory types and is defined in ec malloc h as follows define MEMTYPE MAX 512 To use this struct include the file memory c Chapter 33 Memory Functions..."
 ---

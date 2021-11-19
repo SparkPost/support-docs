@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "Conversion"
 description: "Table of Contents ec atonum Convert e string str to a signed integral value and store the result in nptr ec atonum 2 Convert e string str to a signed integral value and store the result in nptr ec atounum Convert e string str to an unsigned integral value and..."
 ---

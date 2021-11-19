@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "sli_removet"
 description: "sli remove Remove a node by key int sli remove sl m myfree Skiplist sl skiplistnode m Free Func myfree This function is similar to sl remove but you pass in the node that you wish to remove Any clones will also be removed sl The Skiplist m The node..."
 ---

@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "ec_message_context_exists_and_get"
 description: "ec message context exists and get Determines whether a dictionary key exists and if so supplies a reference to the value int ec message context exists and get m w k v ec message m int w const char k const char v Determine whether a key value pair exists..."
 ---

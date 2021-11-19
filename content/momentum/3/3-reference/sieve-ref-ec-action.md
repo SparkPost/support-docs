@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "ec_action"
 description: "ec action set SMTP status code ec action smtp code reason counter This action will issue the provided SMTP code and reason to the remote MTA Multi line reasons may be provided each line will be prefixed with the SMTP code for you automatically The optional counter string is used..."
 ---

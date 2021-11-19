@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "ec_message_set_next_attempt"
 description: "ec message set next attempt Allows modules to set the next attempt time of a message int core ec message set next attempt closure msg now rv void closure ec message msg struct timeval now int rv Allows modules to set the next attempt time of a message closure A..."
 ---

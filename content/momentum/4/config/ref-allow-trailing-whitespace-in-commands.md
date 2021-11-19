@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "allow_trailing_whitespace_in_commands"
 description: "allow trailing whitespace in commands permit trailing whitespace at the end of an SMTP command allow trailing whitespace in commands false When set to true this directive instructs Momentum to ignore white spaces found between an address and angle brackets in the RCPT TO or MAIL FROM commands for example..."
 ---

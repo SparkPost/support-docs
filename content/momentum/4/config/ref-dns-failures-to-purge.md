@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "dns_failures_to_purge"
 description: "dns failures to purge configure the maximum number of DNS lookups dns failures to purge 10 After the specified number of failed DNS lookups a message will be failed permanently The default value is 10 dns failures to purge is valid in the domain and global scopes mx failures fallback..."
 ---

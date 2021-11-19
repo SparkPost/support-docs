@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "msys.gcm.gcm_get_result_error_code"
 description: "msys gcm gcm get result error code Get the error code from the response results error msys gcm gcm get result error code error Configuration Change This function is available as of Momentum version 3 5 5 Get the error code from the response results error The error code should..."
 ---

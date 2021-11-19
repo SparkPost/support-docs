@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "msys.brightmail.scan"
 description: "msys brightmail scan Use Brightmail to scan messages msys brightmail scan msg accept vctx Use this function to scan the mail You must load and correctly configure the brightmail module before using this function Be sure to set the brightmail module option sieve mode to on For details see Section..."
 ---

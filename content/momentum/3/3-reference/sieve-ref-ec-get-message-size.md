@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "ec_get_message_size"
 description: "ec get message size Return the size of the current message ec get message size ec get message size returns the size of the current message in bytes It returns this as a string In the following script the size is checked and if it is greater than 1 megabyte..."
 ---

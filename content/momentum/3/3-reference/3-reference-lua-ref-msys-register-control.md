@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "msys.registerControl"
 description: "msys register Control Register a command with the control channel subsystem msys register Control prefix closure This function registers a command with the control channel subsystem see ec console A command prefixed with prefix will be dispatched to closure Because this function registers a control it is not associated with..."
 ---

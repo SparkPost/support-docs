@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "Using the System Console (ec_console)"
 description: "Momentum's online administration management and analysis is through the Momentum System Console program ec console henceforth referred to as the console For details about the available options see ec console The console can connect to a Momentum instance via a Unix domain socket or a TCP IP socket with an..."
 ---

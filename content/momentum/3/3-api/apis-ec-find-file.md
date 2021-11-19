@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "ec_find_file"
 description: "ec find file Find a file in the given search path and return the resulting path int ec find file search path base outstr errstr const char search path const char base string outstr string errstr Find a filename in the given search path and return the resulting path search..."
 ---

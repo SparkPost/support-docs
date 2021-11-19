@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "check_outbound_mess_throttle"
 description: "check outbound mess throttle int check outbound mess throttle closure binding id dr now later void closure int binding id domain record dr struct timeval now struct timeval later int has core check outbound mess throttle hook void register core check outbound mess throttle hook first hook closure ec hook..."
 ---

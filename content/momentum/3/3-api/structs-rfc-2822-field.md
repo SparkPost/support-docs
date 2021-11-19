@@ -1,4 +1,5 @@
 ---
+lastUpdated: "March 2020"
 title: "rfc2822_field"
 description: "The members of this struct are as follows To use this struct include the file rfc 2822 parser h rfc 2822 header stringwrite ex and rfc 2822 header append line..."
 ---
