@@ -12,16 +12,17 @@ type PostPageProps = {
     description?: string;
     lastUpdated?: string;
   };
+  isIndex: boolean;
 };
 
 const PostPage = (props: PostPageProps): JSX.Element => {
-  const { content, data } = props;
+  const { content, data, isIndex } = props;
 
   return (
     <>
       <SEO title={data.title} description={data.description} />
       <MomentumLayout>
-        <DocumentationContent title={data.title} lastUpdated={data.lastUpdated}>
+        <DocumentationContent title={data.title} lastUpdated={data.lastUpdated} isIndex={isIndex}>
           <Markdown>{content}</Markdown>
         </DocumentationContent>
       </MomentumLayout>
