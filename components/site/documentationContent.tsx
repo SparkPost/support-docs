@@ -41,7 +41,7 @@ const DocumentationContent = ({
       </Box>
       <Box as="hr" my="500" />
       <Box px="0">{children}</Box>
-      <Feedback />
+      {!isIndex && <Feedback />}
     </>
   );
 };
