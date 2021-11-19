@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "Connection Stages"
 description: "The connection stages are identical for all versions of Momentum Find below a list of the codes for the stages and their meanings Table E 13 Connection stages Phase Description 0 while not connected 1 while idle 2 during MAIL FROM 3 after MAIL FROM 4 during RCPT TO 5..."
 ---

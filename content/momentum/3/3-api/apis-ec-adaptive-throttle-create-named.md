@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "ec_adaptive_throttle_create_named"
 description: "ec adaptive throttle create named create a named throttle within the adaptive context int ec adaptive throttle create named name is shared maximum time period const char name int is shared uint 64 t maximum unsigned int time period This reference page was automatically generated from functions found in the..."
 ---

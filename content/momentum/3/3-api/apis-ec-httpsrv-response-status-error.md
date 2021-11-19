@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "ec_httpsrv_response_status_error"
 description: "ec httpsrv response status error Sets the HTTP status to indicate a server error and sets content type int ec httpsrv response status error sess type ec httpsrv session sess const char type This reference page was automatically generated from functions found in the header files in the development branch..."
 ---

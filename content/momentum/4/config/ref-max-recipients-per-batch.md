@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/05/2020"
+lastUpdated: "03/05/2020"
 title: "max_recipients_per_batch"
 description: "max recipients per batch maximum number of recipients to send in a single outbound message transaction max recipients per batch 100 For a given multi recipient message leaving the system this configuration directive specifies the maximum number of recipients to be sent for a given batch The default value is..."
 ---

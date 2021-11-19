@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "tls_client_ca"
 description: "tls client ca certificate authority for inbound mail TLS Client Ca path to C Alist TLS Client Ca specifies a file containing a trusted certificate authority list These certificates should be in PEM format This CA list will be referenced if TLS Verify is set to either ca or host..."
 ---

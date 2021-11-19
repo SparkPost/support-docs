@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "ec_malloc"
 description: "ec malloc Allocate a new instance of a defined object type void ec malloc object type int object type Allocate a new instance of a defined memory type The instance contains uninitialized memory This function is only valid with VSIZE memory type not a fixed size type For more information..."
 ---

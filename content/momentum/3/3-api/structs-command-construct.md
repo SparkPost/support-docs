@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "command_construct"
 description: "This struct is defined as follows To use this struct include the file control h run command 2 and Console Commands..."
 ---

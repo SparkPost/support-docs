@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "msg:mailfrom"
 description: "msg mailfrom Sets the MAIL FROM email address if one is provided msg mailfrom Sets the MAIL FROM email address if one is provided and returns the current or new value..."
 ---

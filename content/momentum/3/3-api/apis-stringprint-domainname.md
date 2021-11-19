@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "stringprint_domainname"
 description: "stringprint domainname Renders a domain name respecting the raw domain rendering mode size t stringprint domainname str cc name string str command construct cc const char name This reference page was automatically generated from functions found in the header files in the development branch The function described here may not..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "fetch_script"
 description: "fetch script int fetch script closure uri optional args script seng error log void closure const char uri SIEVEARGS optional args string script SENG seng string error log int has sieve fetch script hook void register sieve fetch script hook first hook closure ec hook sieve fetch script func t..."
 ---

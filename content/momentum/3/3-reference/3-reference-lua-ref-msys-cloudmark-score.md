@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "msys.cloudmark.score"
 description: "msys cloudmark score Scan messages using Cloudmark msys cloudmark score msg accept vctx You must load and correctly configure the cloudmark module before using this function Be sure to set the module option Enabled to false This function can be invoked at the data spool or each rcpt phases It..."
 ---

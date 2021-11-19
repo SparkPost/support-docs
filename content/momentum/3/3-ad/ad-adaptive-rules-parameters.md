@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "Parameters Adjusted by the Rules"
 description: "The default adaptive rules lua file adjusts parameters in real time based on individual rule sets for each of the ES Ps listed in Section 3 1 Receivers Managed by Adaptive Rules and takes actions based on the specific responses of receivers The following parameters are automatically adjusted in adaptive..."
 ---

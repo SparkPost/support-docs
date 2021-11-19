@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "Disabling GCM"
 description: "If you enable GCM at the domain level you can disable GCM for a specific domain by removing the routes and the delivery method options from the scope where you wish to disable GCM In Example 7 1 Configuring for GCM all you need do is remove the GCM related..."
 ---

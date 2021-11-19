@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/05/2020"
+lastUpdated: "03/05/2020"
 title: "config_rsrc_setup"
 description: "config rsrc setup Register a resource int config rsrc setup closure transaction void closure ec config header transaction This hook point is suitable for registering resources using the ec config rsrc get function with the EC CFG RSRC REGISTERING flag This hook must be used by non singleton modules to..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "XMPP Functions"
 description: "Table of Contents ec xmpp jid parse parse a JID string ec xmpp register handler Registers an XMPP handler ec xmpp route stanza Submits the transmission of a Stanza ec xmpp session handler data get Retrieve a per handler per session object previously stored via ec xmpp session handler data..."
 ---

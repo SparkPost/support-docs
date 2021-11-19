@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "sieve_return_value_number"
 description: "sieve return value number Set the return value to a number void sieve return value number seng number SENG seng u int 32 t number Set the return value to a number seng The Sieve engine state number The number return value This function returns void It is legal to..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "msys.validate.dkim.verify_status_to_string"
 description: "msys validate dkim verify status to string Return a status string of DKIM verification msys validate dkim verify status to string status Return a textual representation of ec dkim verify result status that's suitable for use in an Authentication Results header For more information about status results see RFC 5451..."
 ---

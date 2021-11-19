@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/05/2020"
+lastUpdated: "03/05/2020"
 title: "mailerdaemon"
 description: "mailerdaemon set the From address for MD Ns mailerdaemon mailer daemon hostname When sending bounce messages upon a permanent delivery failure of a message the recipient is specified as the original sender the envelop sender is null but the From header is dictated by Momentum as mailer daemon hostname where..."
 ---

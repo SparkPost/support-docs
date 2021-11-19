@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "msg:text"
 description: "msg text Return the transfer decoded text for the body msg text This function returns the transfer decoded text for the body in UTF 8 Only parts that have a text mime type will be included If there are multiple text parts they are returned as a table Enable this..."
 ---

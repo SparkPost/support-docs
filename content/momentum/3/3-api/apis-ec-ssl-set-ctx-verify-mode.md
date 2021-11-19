@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "ec_ssl_set_ctx_verify_mode"
 description: "ec ssl set ctx verify mode sets the tls verify ec ssl ctx param member int ec ssl set ctx verify mode tls value ec ssl ctx params tls const char value This reference page was automatically generated from functions found in the header files in the development branch The..."
 ---

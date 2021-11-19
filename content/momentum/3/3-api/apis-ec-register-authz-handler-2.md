@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "ec_register_authz_handler2"
 description: "ec register authz handler 2 Register the specified handler int ec register authz handler 2 handler ec authz handler handler This reference page was automatically generated from functions found in the header files in the development branch The function described here may not exist in generally available versions of Momentum..."
 ---

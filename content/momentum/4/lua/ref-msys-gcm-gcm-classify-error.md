@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/05/2020"
+lastUpdated: "03/05/2020"
 title: "msys.gcm.gcm_classify_error"
 description: "msys gcm gcm classify error Determine the delivery status of the DLV Response Status variable msys gcm gcm classify error status This function returns the delivery status of the DLV Response Status variable It classifies the DLV Response Status variable as one of the following msys delivery DELIVERY SUCCESS msys..."
 ---

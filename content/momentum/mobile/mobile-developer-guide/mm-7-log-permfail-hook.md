@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "MM7 Log Permfail Hook"
 description: "This hook is similar to the mms log permfail hook and is used to log MM 7 MT submissions which are permanently failed based on the remote response to the MT submission or the hook return value from mm 7 handle submit Rsp A permanently failed message will not be..."
 ---

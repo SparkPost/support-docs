@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/05/2021"
+lastUpdated: "03/05/2021"
 title: "ipv6_lookup – Multi-address-family MX Records"
 description: "Configuration Change This feature is available in Momentum 4 2 and later The ipv 6 lookup module supports multi address family MX records enabling A record lookups for I Pv 6 addresses This module keeps track of whether the A record query succeeded and if it did when getting the..."
 ---

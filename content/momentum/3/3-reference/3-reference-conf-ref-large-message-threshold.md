@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "large_message_threshold"
 description: "large message threshold Consider a message large when its size exceeds this amount large message threshold 131072 For performance reasons Momentum prefers to keep message contents in memory From time to time messages that are much larger than average enter the system Such messages may either be transiently rejected because..."
 ---

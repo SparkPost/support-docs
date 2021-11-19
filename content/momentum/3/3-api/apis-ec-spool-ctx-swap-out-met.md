@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "ec_spool_ctx_swap_out_met"
 description: "ec spool ctx swap out met Swap out everything about the message except for the body int ec spool ctx swap out met ctx mid force ec spool ctx ctx message id mid int force Swap out everything about a message such as the envelope size context dictionaries etc except..."
 ---

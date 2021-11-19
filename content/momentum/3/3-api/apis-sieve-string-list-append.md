@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "sieve_string_list_append"
 description: "sieve string list append Append a value to a string list void sieve string list append seng sl arg SENG seng SIEVEARGS sl SIEVEARGS arg Append a value to a string list seng The Sieve engine state sl The string list to append to arg The argument to append This..."
 ---

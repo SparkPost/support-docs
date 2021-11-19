@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "Default emacs key bindings"
 description: "Ctrl em set mark Ctrl A ed move to beg Ctrl B ed prev char Ctrl C ed tty sigint Ctrl D em delete or list Ctrl E ed move to end Ctrl F ed next char Ctrl H ed delete prev char Ctrl J ed newline Ctrl K ed..."
 ---

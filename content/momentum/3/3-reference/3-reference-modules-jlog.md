@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "jlog – The jlog Module"
 description: "jlog formatted logs are binary logs used by the web console and by centralized cluster logging Additionally custom deployments can log data to jlog files for consumption by perl scripts In turn these scripts may push the data elsewhere to a database for example We expressly recommend against writing jlogs..."
 ---

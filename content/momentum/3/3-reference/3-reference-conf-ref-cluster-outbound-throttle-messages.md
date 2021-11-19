@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "cluster_outbound_throttle_messages"
 description: "cluster outbound throttle messages limit the rate at which messages are delivered and enforce it across the cluster Cluster Outbound Throttle Messages 1 Cluster Outbound Throttle Messages 1 60 This allows you to limit the rate at which Momentum will attempt to deliver mail It can be employed to globally..."
 ---

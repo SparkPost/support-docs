@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "local_changes_file"
 description: "local changes file the file for writing local configuration changes Local Changes File opt msys ecelerity etc local changes conf The Local Changes File option sets the name of a configuration file which must be writable and which is implicitly loaded after all other configuration files regardless of its placement..."
 ---

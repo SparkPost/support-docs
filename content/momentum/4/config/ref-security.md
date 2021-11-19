@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/05/2020"
+lastUpdated: "03/05/2020"
 title: "security"
 description: "security Scope for defining which permissions are retained by which user security It is generally agreed that running with root privileges is dangerous for Internet servers As such Linux exposes a security system that allows a non privileged user to retain certain root privileges The following is an example of..."
 ---

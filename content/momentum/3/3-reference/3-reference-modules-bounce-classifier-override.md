@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "bounce_classifier_override – The Bounce Classifier Override Module"
 description: "As of version 3 1 the bounce classifier module is deprecated This module replaces it Also note that as of version 3 1 the Live Bounce Updates service is provided free of charge with your support agreement You must configure this module if you wish to make use of this..."
 ---

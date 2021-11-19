@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "rs_getlist"
 description: "rs getlist Returns the address of the tail node in the R Splay Tree struct rsplaynode rs getlist sl R Splay Tree sl Returns the address of the tail node in the R Splay Tree sl The root of an Section 68 69 rsplaytree Returns the address of the tail..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/05/2020"
+lastUpdated: "03/05/2020"
 title: "reserve_maintenance_interval"
 description: "reserve maintenance interval how often to perform mail queue maintenance reserve maintenance interval 15 This option specifies how often to perform mail queue maintenance to evaluate whether reserved connections should be established to get mail out of the system The system will usually limit the number of connections to server..."
 ---

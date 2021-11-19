@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "membership_update"
 description: "membership update void membership update closure spc sender void closure sp closure t spc const char sender int has cluster membership update hook void register cluster membership update hook first hook closure ec hook cluster membership update func t hook void closure void register cluster membership update hook last hook..."
 ---

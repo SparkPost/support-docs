@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/05/2020"
+lastUpdated: "03/05/2020"
 title: "msg:routing_domain"
 description: "msg routing domain Set or return the routing domain for a message msg routing domain Set or return the routing domain for a message To return the routing domain use this function with no parameter Ensure that you return the routing domain in lower case In order to set the..."
 ---

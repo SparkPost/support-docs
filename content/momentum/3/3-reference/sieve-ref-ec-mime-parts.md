@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "ec_mime_parts"
 description: "ec mime parts test against metadata for each MIME part in a message ec mime parts comparison metadata value This test allows the metadata of every MIME part of a message to be inspected The metadata attribute is extracted from each MIME part and compared to the specified value using..."
 ---

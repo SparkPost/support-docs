@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "reroute queue"
 description: "reroute queue move messages from queues of one domain to queues of the other reroute queue domain name 1 domain name 2 The reroute queue command requires two domain names as its arguments It will move messages from queues of the first domain to the queues of the second domain..."
 ---

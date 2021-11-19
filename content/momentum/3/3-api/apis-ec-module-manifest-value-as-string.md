@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "ec_module_manifest_value_as_string"
 description: "ec module manifest value as string retrieves a manifest value for a named module int ec module manifest value as string iter modulename keyname string val ec module manifest iter t iter const char modulename const char keyname const char string val This reference page was automatically generated from functions..."
 ---

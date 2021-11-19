@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "sieve_get_hash_item"
 description: "sieve get hash item Get the specified hash item int sieve get hash item hash key arg SIEVEARGS hash const char key SIEVEARGS arg Get the specified hash item You must call sieve arg delref when you are done using the item hash A pointer to the ec hash table..."
 ---

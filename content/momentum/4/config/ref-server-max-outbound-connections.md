@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/05/2020"
+lastUpdated: "03/05/2020"
 title: "server_max_outbound_connections"
 description: "server max outbound connections sets the maximum number of outbound connections Server Max Outbound Connections 20000 Limits the number of total connections that will be established concurrently within Momentum irrespective of bindings While 20 000 is the value assigned to this option in the configuration file it may be reasonable..."
 ---

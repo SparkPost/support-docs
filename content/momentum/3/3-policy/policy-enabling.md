@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "Enabling the Policy Scripts"
 description: "As of version 3 2 default Lua policy scripts are included with Momentum After installing Momentum you can configure policy by editing the opt msys ecelerity etc sample configs dp config lua file This document describes the available options notes their default status and explains the policies that they enforce..."
 ---

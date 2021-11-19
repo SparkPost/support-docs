@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "validate_context_delete"
 description: "validate context delete Remove the specified key from either the message context or connection context void validate context delete vctx which key validate context vctx int which const char key Remove the key value pair specified by key from either the message context or connection context vctx The validation context..."
 ---

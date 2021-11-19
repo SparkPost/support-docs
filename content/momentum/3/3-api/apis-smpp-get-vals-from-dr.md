@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "smpp_get_vals_from_dr"
 description: "smpp get vals from dr Extract delivery receipt from the SMS text EC Dict smpp get vals from dr pdu SMPP PDU pdu Configuration Change This feature is available starting from Momentum 3 2 Extract the delivery receipt from the SMS text based on appendix B of the 3 4..."
 ---

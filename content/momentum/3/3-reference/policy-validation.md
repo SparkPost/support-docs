@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "Validation and the Validation Context"
 description: "The validation process in Momentum is extensible designed to consist of any number of disparate modules provided either by Message Systems a third party vendor or developed directly by a customer Momentum provides a validation context which allows validation modules to store and share validation information so that the final..."
 ---

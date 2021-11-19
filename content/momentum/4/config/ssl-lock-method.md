@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/05/2020"
+lastUpdated: "03/05/2020"
 title: "ssl_lock_method"
 description: "ssl lock method the SSL lock method SSL Lock Method mutex spinlock This option specifies the SSL lock method This option should be changed in consultation with Message Systems support only if SSL performance issues are encountered with the default method This option can be set to the following mutex..."
 ---

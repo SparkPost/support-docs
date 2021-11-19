@@ -1,5 +1,5 @@
 ---
-lastUpdated: "04/05/2020"
+lastUpdated: "05/05/2020"
 title: "Content Refresh"
 description: "The Signals recommendation on how to best refresh your content."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/05/2020"
+lastUpdated: "03/05/2020"
 title: "msys.core.io_wrapper_open"
 description: "msys core io wrapper open Open a handle to a resource msys core io wrapper open filename options mode This function opens a resource and returns a handle to it For the methods that can be used with this file handle see The Simple I O Model Valid options are..."
 ---

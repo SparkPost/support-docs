@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "vctx_mess_get"
 description: "vctx mess get obtain the value of a message context key vctx mess get key Calling this function will return the value associated with the specified key in the current message context..."
 ---

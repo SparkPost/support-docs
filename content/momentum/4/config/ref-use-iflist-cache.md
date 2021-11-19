@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/05/2020"
+lastUpdated: "03/05/2020"
 title: "use_iflist_cache"
 description: "use iflist cache Whether or not to cache the list of network interfaces configured by the system use iflist cache 0 This option determines whether or not to use cached information about the state of the network interfaces namely which ones are in use and their state The default value..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "Ports Used by Momentum"
 description: "Depending upon the options you choose during installation and how you configure the application various ports are used by Momentum Find below a listing of the services along with the typical or default port setting Table 1 1 Momentum ports Service Port Description Required Link Adaptive Delivery Rules Update 443..."
 ---

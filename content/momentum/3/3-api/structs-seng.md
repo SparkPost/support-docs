@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "SENG (sieve_engine)"
 description: "This struct is defined as follows The sieve engine struct is typedef ed in the following way typedef struct sieve engine SENG To use this struct include the file sieve parser internals Chapter 44 Sieve Functions..."
 ---

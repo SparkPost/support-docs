@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "Overview of Mobile Momentum"
 description: "Mobile Momentum is a set of additional features for the Momentum core enabling interoperability of Internet email and Short Message Service SMS text messaging In the most basic use case email senders may address an email to an SMS capable telephone as 4445551234 somewhere com In this case somewhere com..."
 ---

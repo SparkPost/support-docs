@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "ec_adaptive_persist_configurations"
 description: "ec adaptive persist configurations function to save suspensions and optvals for a binding domain to backstore int ec adaptive persist configurations spaths prefd nodename bdr ages ages lock suspensions suspensions lock optvals optvals lock err buf buf len const char spaths int prefd const char nodename ec adaptive bdr bdr..."
 ---

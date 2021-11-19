@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/05/2020"
+lastUpdated: "03/05/2020"
 title: "ec_lic"
 description: "ec lic fetch a new license file from Message Systems opt msys ecelerity bin ec lic a username password opt msys ecelerity bin ec lic c conffile opt msys ecelerity bin ec lic d opt msys ecelerity bin ec lic e path opt msys ecelerity bin ec lic f opt..."
 ---

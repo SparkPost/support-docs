@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "msys.dp_config.keyword_filter"
 description: "This configuration table defines keywords to search for The datasource scopes that may be needed by this module are configured in the default policy conf file The supported character sets are UTF 8 GBK ISO 8859 1 ISO 2022 JP Big 5 All datasource character sets are found in the..."
 ---

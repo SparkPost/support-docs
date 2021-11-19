@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "Administration"
 description: "The options available from the Administration page are pictured in the following image Figure 3 32 Administration options Use Advanced Configuration Editor to change the configuration of Momentum You can add or remove modules or listeners and also change their configuration The Policy Configuration Editor menu option provides a graphical..."
 ---

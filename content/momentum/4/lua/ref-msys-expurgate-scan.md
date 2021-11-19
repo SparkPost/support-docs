@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/05/2020"
+lastUpdated: "03/05/2020"
 title: "msys.expurgate.scan"
 description: "msys expurgate scan Scan using the Eleven antivirus engine msys expurgate scan msg accept vctx Use this function to scan the mail You must load and correctly configure the eleven module before using this function Be sure to set the eleven module option Enabled to false For details see Section..."
 ---

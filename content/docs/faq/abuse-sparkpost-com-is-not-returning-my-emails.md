@@ -1,5 +1,5 @@
 ---
-lastUpdated: "01/06/2020"
+lastUpdated: "02/06/2020"
 title: "Abuse@sparkpost.com is Not Returning My Emails"
 description: "If you have received an email from abuse sparkpost com and sent your reply but never heard back it could be because the email wasn't received for some reason This can sometimes happen if there is a problem with your IP reputation or if perhaps there are bad links in..."
 ---

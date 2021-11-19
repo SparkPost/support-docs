@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "outbound_throttle_messages"
 description: "outbound throttle messages limit the rate at which messages are delivered Outbound Throttle Messages 1 Outbound Throttle Messages 1 60 This option allows you to limit the rate at which Momentum will attempt to deliver mail It can be employed to globally limit throughput or to reduce the rate sent..."
 ---

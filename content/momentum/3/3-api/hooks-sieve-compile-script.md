@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "compile_script"
 description: "compile script int compile script closure uri optional args script ptr seng error log void closure const char uri SIEVEARGS optional args SIEVE script ptr SENG seng string error log int has sieve compile script hook void register sieve compile script hook first hook closure ec hook sieve compile script..."
 ---

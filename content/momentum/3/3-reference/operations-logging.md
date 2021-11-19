@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "Logging"
 description: "Momentum provides an extremely flexible and robust logging API and ships with five bundled implementations ec logger Exim format Postfix format Sendmail format and a freeform custom logger that lets you specify your own logging format For a list of configuration options related to logging see Table 9 7 logging..."
 ---

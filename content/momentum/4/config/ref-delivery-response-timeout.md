@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/05/2020"
+lastUpdated: "03/05/2020"
 title: "delivery_response_timeout"
 description: "delivery response timeout time to wait for a response to an outbound request delivery response timeout 5000 The time in milliseconds to wait for a response to an outbound request Use this option when delivery method is set to an HTTP protocol The default value is 5000 This option was..."
 ---

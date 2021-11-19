@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/02/2021"
+lastUpdated: "03/02/2021"
 title: "Scheduling Your Emails Using the Transmissions API"
 description: "Sometimes you may want your emails to be delivered at a later date and time. In this guide, we walk you through how to schedule your emails using the Transmissions API."
 ---

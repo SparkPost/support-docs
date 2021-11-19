@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/05/2020"
+lastUpdated: "03/05/2020"
 title: "msg:raw_replace"
 description: "msg raw replace Streaming interface to a PCRE replacement of message content msg raw replace pattern replacement Streaming interface to a PCRE replacement of message content This function has the same semantics as raw match Enable this function with the statement require msys extended message msg raw match..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "rfc2822_find_next_header"
 description: "rfc 2822 find next header Return the next header rfc 2822 field rfc 2822 find next header last rfc 2822 field last Return the next header last The previous header On success this function returns the next header on failure it returns NULL For a definition of this struct see..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "msys.validate.opendkim.sign"
 description: "msys validate opendkim sign Sign a message using Open DKIM msys validate opendkim sign msg vctx options Configuration Change This function is available as of version 3 6 This function requires the opendkim module This function requires the opendkim module msg is a mail message vctx is the validation context..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "ec_bag_create"
 description: "ec bag create Create a bag ec bag ec bag create void Create a bag Use ec bag delref to destroy a bag created using this function No parameters are passed to this function This function returns an ec bag It is legal to call this function in any thread..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "ec_mem_get_stats"
 description: "ec mem get stats Return usage statistics for all memtypes int ec mem get stats sysstats usage by type nelems struct ec mem stats sysstats struct ec mem type usage usage by type unsigned int nelems Configuration Change This feature is available starting from Momentum 3 0 18 Return usage..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "Other Configuration Options Used with APNs"
 description: "Other options not directly related to AP Ns must also be set in order to use this service In order to configure Momentum for delivery of Apple push notifications you must use the routes and delivery method options You can also set the delivery response timeout and idle timeout options..."
 ---

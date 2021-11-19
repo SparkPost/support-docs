@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/05/2020"
+lastUpdated: "03/05/2020"
 title: "msys.counter.inc"
 description: "msys counter inc Increment a counter msys counter inc object or path The first argument is either a path to a counter for example sites sit name errors or a counter object that was returned by msys counter open If a string is provided containing the path to a counter..."
 ---

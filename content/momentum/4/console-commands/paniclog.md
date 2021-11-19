@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/05/2020"
+lastUpdated: "03/05/2020"
 title: "paniclog"
 description: "paniclog show last several entries written to paniclog paniclog Momentum maintains in memory the last several messages that were written to the paniclog This command will display the last 10 messages seen on each log level see the debug flags for details..."
 ---

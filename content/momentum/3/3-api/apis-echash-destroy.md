@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "echash_destroy"
 description: "echash destroy Destroy a hash table created using echash create void echash destroy h keyfree datafree ec hash table h EC Hash Free Func keyfree EC Hash Free Func datafree Destroy a hash table created using echash create h The hash table that you wish to destroy keyfree A pointer..."
 ---

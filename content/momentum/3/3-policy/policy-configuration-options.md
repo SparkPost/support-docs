@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "Configuration Items"
 description: "The configuration options in the dp config lua file affect how the default policy script default policy lua behaves You can configure the following items msys dp config whitelist define IP addresses that are exempt from scripts msys dp config rbls configure both DNS and RBLDNSD RB Ls msys dp..."
 ---

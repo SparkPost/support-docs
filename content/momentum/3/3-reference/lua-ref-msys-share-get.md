@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "msys.shareGet"
 description: "msys share Get Retrieve the value associated with keystring set by an earlier call to msys share Set msys share Get keystring Retrieves the value associated with keystring set by an earlier call to msys share Set If there is no value associated with the keystring this function returns nil..."
 ---

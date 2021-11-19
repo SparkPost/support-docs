@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "ec_render_my_stack_trace"
 description: "ec render my stack trace render a stack backtrace to a string void ec render my stack trace r start end string r int start int end This reference page was automatically generated from functions found in the header files in the development branch The function described here may not..."
 ---

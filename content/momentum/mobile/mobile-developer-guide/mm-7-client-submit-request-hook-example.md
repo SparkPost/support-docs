@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "Examples"
 description: "The following Lua example enables Delivery Report and Read Reply and sets values for Reply Charging variables Example 18 1 MM 7 MT Submit Request Hook Lua Example The following C hook does the same as the Lua implementation above Example 18 2 MM 7 MT Submit Request Hook C..."
 ---

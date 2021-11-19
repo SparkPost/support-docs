@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "smpp_append_encoded_integer"
 description: "smpp append encoded integer Encode an integer into an octet string void smpp append encoded integer os u octets string os unsigned long u long octets Configuration Change This feature is available starting from Momentum 3 2 Encode an integer into an octet string os The input octet string u..."
 ---

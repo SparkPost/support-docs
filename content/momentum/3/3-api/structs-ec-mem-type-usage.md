@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "ec_mem_type_usage"
 description: "This struct is defined as follows To use this struct include the file ec malloc h Chapter 33 Memory Functions..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "Custom Rules"
 description: "The system rules for adaptive behavior are contained in the opt msys ecelerity libexec scriptlets msys adaptive rules lua file You can customize these rules using Lua scripts that invoke the msys adaptive register Rules function To do this create new rules in the following format Example 4 1 Custom..."
 ---

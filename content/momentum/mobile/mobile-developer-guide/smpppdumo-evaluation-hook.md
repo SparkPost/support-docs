@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "SMPP PDU MO (Receiver) Evaluation Hook"
 description: "Table of Contents 14 1 Purpose 14 2 Interface 14 3 Examples Inspect and modify incoming MO deliver sm and data sm PDU s..."
 ---

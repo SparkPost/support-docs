@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "msys.policyeditor.set_binding_group"
 description: "msys policyeditor set binding group Assign the message to a named binding group msys policyeditor set binding group ctx vars params Configuration Change This function is deprecated Use msg binding group bndgp to set a binding group For more information see msg binding group Assigns the message to a named..."
 ---

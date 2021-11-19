@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "Interface"
 description: "See validate data spool each rcpt Currently this hook is only implemented in Lua..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/05/2020"
+lastUpdated: "03/05/2020"
 title: "keep_message_dicts_in_memory"
 description: "keep message dicts in memory preserve memory representation of metadata when memory is low keep message dicts in memory false Momentum aggressively uses RAM to speed up processing and to make that approach successful it also needs to realize that it should reclaim and re use memory for messages that..."
 ---

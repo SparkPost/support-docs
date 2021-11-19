@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/05/2020"
+lastUpdated: "03/05/2020"
 title: "tls_key"
 description: "tls key TLS key to use for outbound or inbound mail TLS Key path to key TLS Key specifies the location of the PEM encoded key associated with the certificate if the key is not contained within the certificate file Both TLS Certificate and TLS Key are optional and the..."
 ---

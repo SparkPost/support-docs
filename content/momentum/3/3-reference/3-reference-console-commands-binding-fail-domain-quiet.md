@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "binding fail domain quiet"
 description: "binding fail domain quiet fail messages for a domain on a binding without generating bounces binding fail domain quiet binding name domain name The binding fail domain quiet command allows the administrative failure of all messages bound for the specified domain on the specified binding in such a way that..."
 ---

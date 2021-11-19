@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "echash_next"
 description: "echash next Move to the next item in the hash table int echash next h iter k klen data ec hash table h ec hash iter iter const char k int klen void data Move to the next item found after the specified key If a next item exists the..."
 ---

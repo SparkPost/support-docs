@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "Using a Proxy Server"
 description: "If a proxy server is used to access updates you must make configuration changes or use command line switches when running lu pull Add the following options to the liveupdate conf file If this file does not already exist you will need to create it in the opt msys ecelerity..."
 ---

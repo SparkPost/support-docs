@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/05/2020"
+lastUpdated: "03/05/2020"
 title: "Data Replication"
 description: "The clustered Replication feature provided by the Momentum clustering suite is an extensive set of data sharing and aggregation facilities for representing information across node boundaries Replication is managed using the Replication scope within the cluster module For details about this scope see Section 71 19 2 Replication Scope There..."
 ---

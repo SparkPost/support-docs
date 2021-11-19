@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "get_disk_queue_size"
 description: "get disk queue size Gets the number of messages on the disk queue int get disk queue size void Gets the number of messages on the disk queue This function returns the number of messages on the disk queue It is legal to call this function in any thread..."
 ---

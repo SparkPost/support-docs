@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "dkim – DomainKeys Identified Mail Signatures"
 description: "Domain Keys Identified Mail DKIM specified in Internet Draft draft ietf dkim base 00 is a mechanism that allows verification of the source and contents of email messages Using DKIM sending domains can include a cryptographic signature in outgoing email messages A message's signature may be verified by any or..."
 ---

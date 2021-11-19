@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/05/2020"
+lastUpdated: "03/05/2020"
 title: "msys.gauge_cache.get"
 description: "msys gauge cache get Look up the value associated with keystring in the named cache msys gauge cache get cachename keystring Looks up the value associated with keystring in the named cache Enable this function with the statement require msys gauge cache msys gauge cache define msys gauge cache inc..."
 ---

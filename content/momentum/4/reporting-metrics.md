@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/05/2020"
+lastUpdated: "03/05/2020"
 title: "Using the Metrics API for Reporting"
 description: "Introduction Throughout the previous sections you have used the UI to provide insight into your message deliverability and campaign performance The examples provided have been simple in nature yet Momentum provides a vast amount of reporting and analytics data All the capabilities provided in the UI are also available using..."
 ---

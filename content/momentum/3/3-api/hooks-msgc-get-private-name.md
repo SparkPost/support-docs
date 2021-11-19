@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "get_private_name"
 description: "get private name void get private name closure buf buf len void closure char buf int buf len int has msgc get private name hook void register msgc get private name hook first hook closure ec hook msgc get private name func t hook void closure void register msgc get..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/05/2020"
+lastUpdated: "03/05/2020"
 title: "eleven – Eleven eXpurgate Content Scanning"
 description: "The eleven module implements the spam filter and e mail categorization service available from http www eleven de If you intend to use this module be sure to choose it during installation For more information see Section 12 1 Installing Partner Modules As with other Validation modules eleven may be..."
 ---

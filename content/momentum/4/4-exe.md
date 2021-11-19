@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/05/2020"
+lastUpdated: "03/05/2020"
 title: "Executable Command Summary"
 description: "This table lists all executable commands alphabetically giving a brief description Click the command name to see detailed information Table 68 1 Executable commands Command Description Class ad summary Summarize the adaptive module actions adaptive create ssl cert Create a self signed SSL certificate security credmgr Manipulate credentials used with..."
 ---

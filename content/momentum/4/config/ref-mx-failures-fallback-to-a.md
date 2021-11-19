@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/03/2020"
+lastUpdated: "04/03/2020"
 title: "mx_failures_fallback_to_a"
 description: "mx failures fallback to a configure the maximum number of times an MX lookup will be attempted mx failures fallback to a 3 The number of times an MX lookup will be attempted before attempting an A lookup The default value is 3 mx failures fallback to a is valid..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "Responses Sorted By Codes"
 description: "Responses are sorted by SMTP code and then enhanced code Table F 1 Responses sorted by code SMTP Code Enhanced Code Message Comment 4 3 0 Resource limitations please try later See message 4 3 5 configuration error please try later See message 4 3 5 message not yet parsed..."
 ---

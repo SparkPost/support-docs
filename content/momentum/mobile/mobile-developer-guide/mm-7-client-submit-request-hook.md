@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "MM7 MT Submit Request Hook"
 description: "The MM 7 MT Submit Request Hook enables custom applications to inspect and modify an ec message before it is converted to an MM 7 Submit Req sent out by Mobile Momentum This hook is invoked once for each outgoing ec message sent to a MM 7 domain The main..."
 ---

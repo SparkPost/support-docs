@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "vctx_conn_get"
 description: "vctx conn get obtain the value of a connection context key vctx conn get key Calling this function will return the value associated with the specified key in the current session's connection context..."
 ---

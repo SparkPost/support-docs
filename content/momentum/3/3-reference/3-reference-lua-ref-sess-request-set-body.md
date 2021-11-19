@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "sess:request_set_body"
 description: "sess request set body Set the body of an HTTP session sess request set body request Set the body of an HTTP session request is a JSON formatted string You must call sess request finalize after invoking this function For a code example see http request eval sess request finalize..."
 ---

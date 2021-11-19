@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/05/2020"
+lastUpdated: "03/05/2020"
 title: "spool_mode"
 description: "spool mode set the file mode for newly created spool files spool mode 0640 spool mode allows you to set the mode for the open system call used to create spool files The value must be specified in octal format The default is 0640 Changing the value of this option..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/05/2020"
+lastUpdated: "03/05/2020"
 title: "msys.apn.apn_status_classifier"
 description: "msys apn apn status classifier Determine whether the delivery status code represents a permanent or temporary failure msys apn apn status classifier status Determine the delivery status of the DLV Response Status variable in the context of an Apple push notification This function classifies the DLV Response Status variable and..."
 ---

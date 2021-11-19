@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "maildir – Maildir Delivery Support"
 description: "The maildir I O module subverts the regular spooling actions for qualified messages to storage in maildir format as specified by qmail http www qmail org man man 5 maildir html Example 14 74 maildir module all domains If set to true all domains will be delivered to the maildir..."
 ---

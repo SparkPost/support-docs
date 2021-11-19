@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "SIEVE (sieve_state)"
 description: "This struct is defined as follows The struct sieve state is typedef ed in the following way typedef struct sieve state SIEVE To use this struct include the file sieve parser internals h Chapter 44 Sieve Functions..."
 ---

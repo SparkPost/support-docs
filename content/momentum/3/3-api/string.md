@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "String Functions"
 description: "Table of Contents ec asprintf Momentum asprintf function ec snprintf Momentum snprintf function ec vasprintf Momentum vasprintf function ec vprintf vprintf like function that takes an output parameter and a write function ec vsnprintf Momentum vsnprintf function string destroy Destroy a string string init type Initialize a string and pre..."
 ---

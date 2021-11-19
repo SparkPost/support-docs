@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/05/2020"
+lastUpdated: "03/05/2020"
 title: "http_method"
 description: "http method Define the HTTP method to use http method POST Define the HTTP method to use when delivery method is set to an HTTP protocol This option may be set to the following values POST SET GET DELETE The default value for this option is POST http method is..."
 ---

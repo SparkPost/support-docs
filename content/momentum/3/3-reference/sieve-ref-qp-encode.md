@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "qp_encode"
 description: "qp encode quoted printable encode a string qp encode string charset Quoted printable encode all the encodable characters in a string and return the result A character encoding may be specified as an optional second argument Example 16 118 qp encode example..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "control_client_timeout"
 description: "control client timeout network timeout for Momentum control client connections Control Client Timeout 60 Specifies the timeout in seconds that will be used for control client connections The eccmgrio wrapper used in clustered configurations is one example of a control client connection The default value for option is 60 control..."
 ---

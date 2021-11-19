@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/05/2020"
+lastUpdated: "03/05/2020"
 title: "server_max_file_descriptors"
 description: "server max file descriptors sets the maximum number of file descriptors usable by the system Server Max File Descriptors 80000 This parameter sets the OS file descriptor limit for the Momentum Process It may require OS kernel parameters to be modified to support the value you configure There is no..."
 ---

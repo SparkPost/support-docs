@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "ec_open_tmpfile3"
 description: "ec open tmpfile 3 Open a file with a unique name in the specified a directory int ec open tmpfile 3 outname base char outname const char base Open a file with a unique name in the specified a directory Configuration Change This feature is available starting from Momentum 3..."
 ---

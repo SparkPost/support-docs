@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "io_wrapper_open"
 description: "io wrapper open Open a handle to a resource io object io wrapper open filename options mode const char filename int options int mode Open a handle to a resource This function may induce IO or otherwise block the caller Blocking in the scheduler thread will lead to degraded performance..."
 ---

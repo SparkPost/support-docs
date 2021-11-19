@@ -1,5 +1,5 @@
 ---
-lastUpdated: "01/06/2020"
+lastUpdated: "02/06/2020"
 title: "Changing your account email address"
 description: "There may be situations when you need to change your primary email address associated with your Spark Post account All you need to do it add a new admin user and then delete the old account Adding a new Administrator To add a new address follow these steps Login to..."
 ---

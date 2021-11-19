@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "stringwrite_canonical_crlf"
 description: "stringwrite canonical crlf Write a string terminated by a carriage return and line feed string stringwrite canonical crlf str buf buflen string str const char buf int buflen Write a string with the canonical carriage return and line feed indicating a line break str An ec string buf The character..."
 ---

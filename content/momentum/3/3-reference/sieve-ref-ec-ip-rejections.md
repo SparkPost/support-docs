@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "ec_ip_rejections"
 description: "ec ip rejections Audit how many rejections an IP address has made ec ip rejections time series index mask ec ip rejections hash ec ip rejections returns a string containing the number of rejections that have occurred for a CIDR block within a configured time window The referenced CIDR block..."
 ---

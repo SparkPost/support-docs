@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "ec_message_get_routing_domain2"
 description: "ec message get routing domain 2 Get the routing domain of the message int ec message get routing domain 2 message domain ec message message string domain Get the routing domain of a message message A pointer to an ec message struct For documentation of this data structure see Section..."
 ---

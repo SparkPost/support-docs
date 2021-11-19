@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "ec_cluster_cache_get"
 description: "ec cluster cache get Retrieve a value from a cluster wide replicated cache ec cluster cache get replication name key ec cluster cache get retrieves the value for the given key and cache name This feature requires the cluster module The cluster configuration stanza must include a replicate directive that..."
 ---

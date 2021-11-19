@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "ec_spool_space"
 description: "ec spool space Return information about the free space on the spool partition ec spool space Method which returns the total and available space in M Bs and the percentage of used space as an int from 0 to 100 on the disk partition with the Momentum spool Example 16..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/05/2020"
+lastUpdated: "03/05/2020"
 title: "tls_ca"
 description: "tls ca certificate authority for outbound mail TLS Ca path to C Alist TLS Ca specifies a file containing a trusted certificate authority list These certificates should be in PEM format This CA list will be referenced if TLS Verify is set to either ca or host tls ca is..."
 ---

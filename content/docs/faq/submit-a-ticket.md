@@ -1,5 +1,5 @@
 ---
-lastUpdated: "00/04/2021"
+lastUpdated: "01/04/2021"
 title: "Submitting a support case"
 description: "User guide for raising a support case with the team"
 ---

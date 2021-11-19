@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "ec_ptr_array"
 description: "The members of this struct are as follows To use this struct include the file misc ec ptr array h ec ptr array init and module get hook array from transaction..."
 ---

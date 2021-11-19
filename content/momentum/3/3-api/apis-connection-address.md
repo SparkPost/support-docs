@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "connection_address"
 description: "connection address Returns the address data associated with a connection address connection address c connection c Returns the address data associated with a connection c A pointer to a connection struct For documentation of this data structure see Section 68 9 connection This function either returns valid address data associated..."
 ---

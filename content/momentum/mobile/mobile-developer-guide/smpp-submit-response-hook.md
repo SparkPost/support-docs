@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "SMPP Submit Response Hook"
 description: "Use this hook to inspect a SUBMIT SM RESP from a remote SMSC In this hook you can use any business logic to handle a response to a MT submission but an intuitive utilization of this hook is to initiate a requeue retry of a failed MT submission based on..."
 ---

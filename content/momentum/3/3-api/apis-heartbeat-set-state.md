@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "heartbeat_set_state"
 description: "heartbeat set state Changes the heartbeat state void heartbeat set state state enum heartbeat state state This reference page was automatically generated from functions found in the header files in the development branch The function described here may not exist in generally available versions of Momentum and may change in..."
 ---

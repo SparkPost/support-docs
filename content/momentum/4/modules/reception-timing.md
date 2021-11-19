@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/05/2020"
+lastUpdated: "03/05/2020"
 title: "reception_timing - Reception Timing Modules"
 description: "Configuration Change This feature is available in Momentum 4 2 and later The reception timing and reception timing logger modules provide information on how long it takes Momentum to receive or reject messages over SMTP The timing information which is reported for receptions rejections and unexpected disconnections during SMTP reception..."
 ---

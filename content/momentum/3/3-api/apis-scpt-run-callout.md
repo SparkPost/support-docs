@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "scpt_run_callout"
 description: "scpt run callout Execute or resume execution of a scriptlet callout int scpt run callout thr resuming selfref co nargs args scpt thread thr int resuming void selfref scpt callout co int nargs void args This reference page was automatically generated from functions found in the header files in the..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "Interface"
 description: "The parameter passed into this hook is an ec message Most MM 7 related data is stored in context variables as a key value pairs NONE..."
 ---

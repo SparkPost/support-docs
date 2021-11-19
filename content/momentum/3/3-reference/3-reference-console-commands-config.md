@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "config"
 description: "config online configuration tuning for Momentum config begin config begin from scratch config commit config locate scope name regex config reload alternate path config get eval unset scope name optname config replay config rollback config set scope name optname value config show scope name option name config showrecurse scope name..."
 ---

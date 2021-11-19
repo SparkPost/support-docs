@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "sl_removet"
 description: "sl remove Remove a node by key int sl remove sl key myfree Skiplist sl const void key Free Func myfree Remove node and all it's clones by key and free datum with the myfree function sl The Skiplist key The key myfree This is the optional user defined function..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "ds_fetch"
 description: "ds fetch query and fetch a row from a datasource ds fetch cachename query params This function issues a query against a datasource cache If the data is available in the cache it will return immediately with the first row of the data If the data is not cached the..."
 ---

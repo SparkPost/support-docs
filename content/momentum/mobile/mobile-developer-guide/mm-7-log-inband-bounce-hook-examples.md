@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "Examples"
 description: "See Chapter 25 MM 7 Log Permfail Hook..."
 ---

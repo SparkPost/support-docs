@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "ec_message_blobject_get"
 description: "ec message blobject get Retrieve a blobject tag ec blobject ec message blobject get msg key ec message msg const char key Retrieve a blobject tag using the key If the object is found it adds a reference to it and returns the ec blobject address to the caller The..."
 ---

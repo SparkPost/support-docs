@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "sieve_get_arg"
 description: "sieve get arg Get the argument at the specified index SIEVEARGS sieve get arg args n SIEVEARGS args int n Get the argument at the specified zero based index You must call sieve arg delref when you are done using the item args The argument list n Which argument to..."
 ---

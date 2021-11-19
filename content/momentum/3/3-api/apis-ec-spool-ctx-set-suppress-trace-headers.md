@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "ec_spool_ctx_set_suppress_trace_headers"
 description: "ec spool ctx set suppress trace headers Sets a spool context to disable the addition of trace headers void ec spool ctx set suppress trace headers ctx on ec spool ctx ctx int on This reference page was automatically generated from functions found in the header files in the development..."
 ---

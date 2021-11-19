@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "get_scheduler_pid"
 description: "get scheduler pid Get the Process ID PID of the master scheduler thread pid t get scheduler pid void Get the PID of the master scheduler thread This function returns the PID of the master scheduler The following typedef applies to this return value typedef int pid t It is..."
 ---

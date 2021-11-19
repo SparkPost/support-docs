@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "ec_cache_delref"
 description: "ec cache delref Delete a reference from a cached item determined by elt in a cache void ec cache delref cache elt ec cache t cache ec cache elt elt Decrement a reference from a cached item determined by elt in a cache If the refcount falls to zero then..."
 ---

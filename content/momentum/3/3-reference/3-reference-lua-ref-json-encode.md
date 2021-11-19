@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "json.encode"
 description: "json encode Convert a Lua variable or an expression for use with a JSON object require json json encode obj Convert a Lua variable or expression so that it can be added to a JSON object The following scalar values directly map to JSON fields so do not need to..."
 ---

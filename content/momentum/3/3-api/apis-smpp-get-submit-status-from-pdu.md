@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "smpp_get_submit_status_from_pdu"
 description: "smpp get submit status from pdu Retrieve the status code from submit response PDU u int 64 t smpp get submit status from pdu pdu SMPP PDU pdu Configuration Change This feature is available starting from Momentum 3 2 Retrieve the status code from submit response PDU pdu The SMPP..."
 ---

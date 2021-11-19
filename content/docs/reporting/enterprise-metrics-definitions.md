@@ -1,5 +1,5 @@
 ---
-lastUpdated: "01/06/2020"
+lastUpdated: "02/06/2020"
 title: "Enterprise Metrics Definitions"
 description: "Metrics definitions for Enterprise accounts"
 ---

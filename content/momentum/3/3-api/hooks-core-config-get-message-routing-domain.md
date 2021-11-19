@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "config_get_message_routing_domain"
 description: "config get message routing domain Determine where to place a message int core config get message routing domain closure cs m buff len void closure generic module infrastructure cs ec message m char buff int len This hook is called when the system needs to determine what domain to send..."
 ---

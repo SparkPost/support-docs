@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/05/2020"
+lastUpdated: "03/05/2020"
 title: "DKIM Validation"
 description: "When DKIM is enabled as decribed in Section 23 1 DKIM Signing DKIM signature verification is performed on all inbound messages received via SMTP Unlike DKIM signing verification of DKIM messages is driven only through Lua policy Links to the appropriate Lua functions are listed at Section 71 50 2..."
 ---

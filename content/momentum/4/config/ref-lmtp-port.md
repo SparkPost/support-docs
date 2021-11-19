@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/05/2020"
+lastUpdated: "03/05/2020"
 title: "lmtp_port"
 description: "lmtp port configure the port for LMTP deliveries LMTP Port 2003 If Momentum is set to perform local delivery via LMTP this directive allows the remote port for LMTP delivery to be specified The default value for this option is 2003 lmtp port is valid in the binding binding group..."
 ---

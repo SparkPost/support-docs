@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "Configuring Momentum for High Availability and Failover"
 description: "Momentum's architecture supports fault tolerant configurations This means that you can operate in an environment that is readily configured to support failing over automatically Components that support high availability and fault tolerance include ecconfigd Dura VIP™ bindings Command delegation in a cluster Centralized logging Per node data CIDR server as..."
 ---

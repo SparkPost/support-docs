@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "ec_message_part_unlink"
 description: "ec message part unlink Unlink part from the mime tree void ec message part unlink part ec message part part This reference page was automatically generated from functions found in the header files in the development branch The function described here may not exist in generally available versions of Momentum..."
 ---

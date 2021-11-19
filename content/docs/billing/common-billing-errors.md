@@ -1,5 +1,5 @@
 ---
-lastUpdated: "00/04/2021"
+lastUpdated: "01/04/2021"
 title: Common Billing Errors
 description: >-
   Common Billing Errors If you have found your way here you are probably

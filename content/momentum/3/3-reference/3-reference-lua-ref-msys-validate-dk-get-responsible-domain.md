@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "msys.validate.dk.get_responsible_domain"
 description: "msys validate dk get responsible domain Return the domain responsible for the current message msys validate dk get responsible domain msg vctx This function requires the dk validate module msg is a mail message ctx is the validation context This function returns the domain responsible for the current message Enable..."
 ---

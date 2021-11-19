@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "sievelib – The sievelib Module"
 description: "The sievelib module is defined in the following way Example 14 95 sievelib module The sievelib console commands add subtract delete and view gauge cache counters created using the the Sieve ec gauge cache init command For more information about this command see ec gauge cache Add a number to..."
 ---

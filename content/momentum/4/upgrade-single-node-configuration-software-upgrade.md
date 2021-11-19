@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/05/2020"
+lastUpdated: "03/05/2020"
 title: "Software Upgrade"
 description: "You must upgrade the Analytics packages first Install the following Analytics packages using the new RP Ms Install the following Platform packages using the new RP Ms..."
 ---

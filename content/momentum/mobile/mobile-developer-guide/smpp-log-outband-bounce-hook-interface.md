@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "Interface"
 description: "Lua implementations must use the function name mod smpp log bounce outband This hook is the same as the other C hooks The function name is not significant as long as it is registered as smpp log bounce outband for example register smpp log bounce outband hook first sample smpp..."
 ---

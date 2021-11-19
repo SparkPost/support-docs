@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "msys.type"
 description: "msys type Return the type name of the supplied parameter msys type parameter Returns the type name of the supplied parameter just like the built in Lua type function The difference is that for userdata created by Momentum the underlying object name will be returned instead of userdata Because this..."
 ---

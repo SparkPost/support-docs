@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "scheduler"
 description: "scheduler override the default IO scheduler Scheduler scheduler name Momentum automatically selects the best available I O scheduling mechanism for the platform on which it is running You should not change this option unless advised by a Message Systems support engineer Changing the value of this option at runtime requires..."
 ---

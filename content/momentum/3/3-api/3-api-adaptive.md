@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "Adaptive Functions"
 description: "The AP Is documented here relate to the adaptive module See the Momentum reference manual for more information about Adaptive Delivery Also see Adaptive Delivery User Guide..."
 ---

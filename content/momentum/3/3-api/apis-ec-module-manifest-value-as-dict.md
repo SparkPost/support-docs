@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "ec_module_manifest_value_as_dict"
 description: "ec module manifest value as dict retrieves a dictionary of manifest values for a named module int ec module manifest value as dict iter modulename keyname dict ec module manifest iter t iter const char modulename const char keyname EC Dict dict This reference page was automatically generated from functions..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "ec_config_null_value"
 description: "ec config null value Initialize storage for a configuration option ec config value ec config null value option slot int option slot Initialize storage for the value associated with a configuration option If the option specified by option slot exists return a pointer to an ec config value associated with..."
 ---

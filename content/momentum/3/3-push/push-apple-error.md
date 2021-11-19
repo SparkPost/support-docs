@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "Apple Status Codes"
 description: "The DLV Response Status context variable returns codes specific to the protocol used except when no errors are encountered When a message is successful DLV Response Status does not exist Use msys apn apn status classifier to determine the error type The AP Ns codes are as follows Table B..."
 ---

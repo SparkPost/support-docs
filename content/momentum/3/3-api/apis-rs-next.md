@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "rs_next"
 description: "rs next Move to the next node in the R Splay Tree and return the data void rs next sl iter R Splay Tree sl struct rsplaynode iter Move to the next node in the R Splay Tree and return the data sl The root of an Section 68 69..."
 ---

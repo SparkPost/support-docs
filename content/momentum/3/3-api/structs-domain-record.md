@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "domain_record"
 description: "The members of this struct are as follows To use this struct include the file dns ds h See also Chapter 20 DNS Functions..."
 ---

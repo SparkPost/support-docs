@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "read_smtp"
 description: "read smtp Reads the SMTP response from peer int read smtp dc expected code now mask delivery construct dc int expected code struct timeval now int mask Reads the SMTP response from peer dc The delivery construct For a description of this data type see Section 68 11 delivery construct..."
 ---

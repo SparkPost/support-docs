@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "msc_thread_id"
 description: "msc thread id Generate a thread id according the following format msg id in spool name format node name suffix void msc thread id mid suffix thread id thread id len message id mid const char suffix char thread id int thread id len This reference page was automatically generated..."
 ---

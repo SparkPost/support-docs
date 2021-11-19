@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "ec_httpsrv_request_event_get_scheduler_inst"
 description: "ec httpsrv request event get scheduler inst Returns the scheduler for an Event from the current session ec scheduler inst ec httpsrv request event get scheduler inst sess ec httpsrv session sess Returns the scheduler for an Event from the current session sess The current session to interrogate For documentation..."
 ---

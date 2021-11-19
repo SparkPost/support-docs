@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "ec_get_message_mailfrom"
 description: "ec get message mailfrom Return the mailfrom of the current message ec get message mailfrom ec get message mailfrom returns the mail from of the current message It has the form of MAIL FROM bar bar com In the following script the mailfrom is checked against a specific value and..."
 ---

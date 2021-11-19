@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "GCM Status Codes"
 description: "The DLV Response Status context variable returns codes specific to the protocol used except when no errors are encountered When a message is successful DLV Response Status does not exist Use msys gcm gcm classify error to determine the error type The GCM codes are as follows Table C 1..."
 ---

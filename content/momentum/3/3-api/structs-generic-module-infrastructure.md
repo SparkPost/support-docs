@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "generic_module_infrastructure"
 description: "This struct is defined as follows To use this struct include the file module h Section 68 74 shared module infrastructure 8 and Section 1 3 1 2 The Module Infrastructure..."
 ---

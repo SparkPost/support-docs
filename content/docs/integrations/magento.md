@@ -1,5 +1,5 @@
 ---
-lastUpdated: "01/06/2020"
+lastUpdated: "02/06/2020"
 title: "Using SparkPost with Magento"
 description: "This article will show how to send email from Magento through Spark Post These instructions assume that you are using the excellent SMTP Pro extension and have a Spark Post account with a verified sending domain Follow these steps to configure Magento and SMTP Pro to send through your Spark..."
 ---

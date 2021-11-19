@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "ec_floor"
 description: "ec floor round down to the nearest integer ec floor number ec floor rounds the given number down to the nearest integer Example 16 40 ec floor example..."
 ---

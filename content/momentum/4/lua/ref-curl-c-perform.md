@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/05/2020"
+lastUpdated: "03/05/2020"
 title: "c:perform"
 description: "c perform Perform the file transfer c perform After all setopt calls have been made perform a file transfer Example 70 15 c perform example See c setopt for an explanation of the parameters passed to setopt..."
 ---

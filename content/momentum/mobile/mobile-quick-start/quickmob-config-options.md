@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "Configuration Options in the Global, Domain and Binding Scopes"
 description: "The previous chapter described configuration of the Momentum Mobile modules This chapter describes the configuration options visible outside specific modules Again SMPP configuration and MM 7 configuration are described in separate sections Mobile Momentum provides an SMPP client within Momentum for transforming and forwarding email messages as SMS messages It..."
 ---

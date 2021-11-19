@@ -1,5 +1,5 @@
 ---
-lastUpdated: "01/06/2020"
+lastUpdated: "02/06/2020"
 title: "554 5.7.1 - Recipient address was suppressed due to system policy"
 description: "The system policy that this error is referring to is actually our suppression list Spark Post has its own suppression list that encompasses many alias email addresses that are often sent to by spammer and malware senders An example of this would be unsubscribe and in some cases individual email..."
 ---

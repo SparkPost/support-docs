@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "Administering Users From the Web Console"
 description: "In order to administer users you must be logged in as a superuser The user named admin created during installation is a superuser You cannot create superusers through the web UI use ec uipasswd instead If you choose to authenticate against Active Directory the User Management menu will be removed..."
 ---

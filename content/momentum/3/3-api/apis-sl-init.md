@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "sl_init"
 description: "sl init Initialize a Skiplist void sl init sl Skiplist sl Initialize a Skiplist sl The Skiplist This function returns void It is legal to call this function in any thread but Skiplist functions are not thread safe Section 68 77 Skiplist..."
 ---

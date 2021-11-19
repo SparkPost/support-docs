@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "ec_spool_ctx_set_max_retention"
 description: "ec spool ctx set max retention set the maximum retention time for a spool context void ec spool ctx set max retention ctx retention ec spool ctx ctx int retention This reference page was automatically generated from functions found in the header files in the development branch The function described..."
 ---

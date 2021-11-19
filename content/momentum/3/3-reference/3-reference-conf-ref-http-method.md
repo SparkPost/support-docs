@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "http_method"
 description: "http method Define the HTTP method to use http method POST Configuration Change This option is available as of version 3 5 6 Define the HTTP method to use when delivery method is set to an HTTP protocol This option may be set to the following values POST SET GET..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/05/2020"
+lastUpdated: "03/05/2020"
 title: "msg:binding"
 description: "msg binding Set or get the message binding msg binding Set the binding to the specified parameter When you set a binding the binding name is also the return value of this function This function returns nil if the binding parameter is invalid The binding you set must exist in..."
 ---

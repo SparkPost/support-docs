@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "commtouch_ctasd – Commtouch_ctasd Module"
 description: "The commtouch ctasd module provides message diagnosis via industry leading spam and phishing protection technology If you intend to use this module be sure to choose it during installation For more information see Section 1 9 Installing Additional Packages Momentum version 3 3 uses version 3 01 0017 of Commtouch..."
 ---

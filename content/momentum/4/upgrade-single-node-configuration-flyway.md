@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/05/2020"
+lastUpdated: "03/05/2020"
 title: "Prepare and Run Flyway"
 description: "Configure the tables for running the Flyway data migration tool Baseline the Flyway schema table Clean out the var tmp vertica migrations folder Copy the new schema files into the vertica migrations folder Truncate the existing schema version table Run the Flyway baseline which adds a BASELINE record to the..."
 ---

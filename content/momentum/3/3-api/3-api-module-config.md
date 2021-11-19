@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "Module Configuration Functions"
 description: "Table of Contents ec config fetch globalconf Return the current configuration context ec config free mx routes Free the memory associated with an mx routes struct ec config null value Initialize storage for a configuration option ec config option slot from capability Determine an option identifier from a capability ec..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "ec_config_option_slot_from_capability"
 description: "ec config option slot from capability Determine an option identifier from a capability int ec config option slot from capability capability char capability A capability is a fully qualified option name such as config Global dkim sign all headers capability The fully qualified option name On success this function returns..."
 ---

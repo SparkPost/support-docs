@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "eleven_scan"
 description: "eleven scan email virus scan eleven scan Configuration Change This feature is available starting from Momentum 3 1 Use of this function requires that the eleven module be loaded The eleven module implements the spam filter and e mail categorization service available from http www eleven de Use eleven scan..."
 ---

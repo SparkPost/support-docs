@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "sieve_set_module_state"
 description: "sieve set module state Set the current module state void sieve set module state seng data SENG seng void data Set the current module state seng The Sieve engine state data The data for the module data field of the Sieve engine This function returns void It is legal to..."
 ---

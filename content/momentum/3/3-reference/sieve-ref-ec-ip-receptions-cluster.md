@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "ec_ip_receptions_cluster"
 description: "ec ip receptions cluster Audit how many receptions an IP address has made cluster wide ec ip receptions cluster time series index mask ec ip receptions cluster hash ec ip receptions cluster returns a string containing the number of receptions that have occurred for a CIDR block within a configured..."
 ---

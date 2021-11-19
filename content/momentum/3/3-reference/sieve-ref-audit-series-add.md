@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "audit_series_add"
 description: "audit series add Add to a named series audit series add series name interval number amount to add audit series add hash Audit series enable IP address based events to be tracked over a rolling set of time windows For further background see the section called Audit series As of..."
 ---

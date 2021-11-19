@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "dict_iter"
 description: "dict iter Create a dictionary iterator EC Dict Iterator dict iter a EC Dict a Create a dictionary iterator a An EC Dict is a typedef of an ec hash iter Returns an EC Dict Iterator This iterator is a typedef of an ec hash iter It is legal to..."
 ---

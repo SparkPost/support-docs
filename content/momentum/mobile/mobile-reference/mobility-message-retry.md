@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "Retrying Messages"
 description: "If a message is delivered via SMPP or MM 7 and it is not possible to deliver it immediately it can be stored and resent later This is done using the mstore module For an SMPP message delivery is indicated by a delivery receipt and for MM 7 by a..."
 ---

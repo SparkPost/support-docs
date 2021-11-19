@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "ec_message_set_rcptto"
 description: "ec message set rcptto sets the entire protocol decorated rcptto string int ec message set rcptto mess str len take buffer ec message mess const char str int len int take buffer This reference page was automatically generated from functions found in the header files in the development branch The..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/05/2020"
+lastUpdated: "03/05/2020"
 title: "open_relay"
 description: "open relay whether the MTA is an open relay or not open relay true The relay hosts option is valid in the Peer scope but using open relay is more succinct open relay is valid in the esmtp listener listen pathway pathway group and peer scopes relay hosts..."
 ---

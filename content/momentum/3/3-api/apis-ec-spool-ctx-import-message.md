@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "ec_spool_ctx_import_message"
 description: "ec spool ctx import message import a message from a spool context into the system spool int ec spool ctx import message src id ec spool ctx src message id id This reference page was automatically generated from functions found in the header files in the development branch The function..."
 ---

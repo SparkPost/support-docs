@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "Example LDAP webui-common.conf File"
 description: "This appendix provides a sample webui common conf file for use when setting up Active Directory authentication with Momentum 3 2 2 For more information see Section 2 3 Setting Up Active Directory Authentication With Momentum 3 2 2 The character in the following example is used to indicate that..."
 ---

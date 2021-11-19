@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "ec_cache_delete"
 description: "ec cache delete Delete an item determined by key from a cache int ec cache delete cache key keylen ec cache t cache const char key int keylen Delete an item determined by key from a cache cache The address of the cache The following typedef applies to the ec..."
 ---

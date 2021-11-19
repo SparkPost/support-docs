@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "echash_delref"
 description: "echash delref Delete a reference to a hash table void echash delref ht ec hash table ht Delete a reference to a hash table Use echash destroy to destroy a hash table If the refcount falls to zero This function implicitly calls echash delete with the keyfree datafree functions supplied..."
 ---

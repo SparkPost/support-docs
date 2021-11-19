@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "event_free"
 description: "event free Free an event void event free e Event e Free an event Example 24 2 event free example dst The Event This function returns void Only call this function from the Scheduler thread Section 68 49 Event and build event from now f..."
 ---

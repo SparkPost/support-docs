@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/05/2020"
+lastUpdated: "03/05/2020"
 title: "max_timed_events_per_iter"
 description: "max timed events per iter the maximum numer of timed events per scheduler iteration max timed events per iter 1024 This option provides an upper boundary on how many timed events are dispatched in a single scheduler iteration This caps the number of timed events that will be processed by..."
 ---

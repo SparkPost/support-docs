@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "scpt_get_traceback"
 description: "scpt get traceback Populate the top of the scriptlet stack with a traceback of the current excution stack int scpt get traceback thr skip scpt thread thr int skip Populate the top of the scriptlet stack with a traceback of the current excution stack thr The script thread For a..."
 ---

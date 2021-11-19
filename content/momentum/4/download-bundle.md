@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/05/2020"
+lastUpdated: "03/05/2020"
 title: "Download the Software Bundle and Prepare"
 description: "Whether you intend to perform a new install or an upgrade you need to download the software bundle on all nodes Download the appropriate Momentum software bundle from the Message Systems Support website for every node that you will install or upgrade Copy the bundle to the var tmp directory..."
 ---

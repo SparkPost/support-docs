@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "Configuring the Mobile Momentum Modules"
 description: "Once installation is complete you can configure Mobile Momentum Configuring it requires configuration of the modules specific to Mobile Momentum configuration of other mobile related options or scopes This chapter describes configuring the Mobile Momentum modules The subsequent chapter deals with other configuration requirements In both cases configuration MM 7..."
 ---

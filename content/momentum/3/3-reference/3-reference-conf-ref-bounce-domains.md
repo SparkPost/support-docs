@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "bounce_domains"
 description: "bounce domains configure the list of domains eligible for bounce processing by Momentum Bounce Domains example com example net When configured as an inbound mail relay it is necessary to set this option to have mail delivery notifications be reported as bounces Momentum will treat the listed domains as relay..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "rfc2822_find_first_header"
 description: "rfc 2822 find first header Return the first header with the specified name rfc 2822 field rfc 2822 find first header ctx header name rfc 2822 context ctx const char header name Return the first header with the specified name ctx For more information about this struct see rfc 2822..."
 ---

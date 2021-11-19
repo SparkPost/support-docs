@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "control_allow_writable_config2"
 description: "control allow writable config 2 int control allow writable config 2 closure cc argc argv input output void closure command construct cc int argc const char argv ec control context input ec control context output int has core control allow writable config 2 hook void register core control allow writable..."
 ---

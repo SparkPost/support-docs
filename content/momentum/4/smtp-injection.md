@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/05/2020"
+lastUpdated: "03/05/2020"
 title: "Adjusting your Client Mail Application"
 description: "Introduction How do I send email Many companies ask this question Enterprises of all kinds need to send email but few know where to even start Whether you are sending a few transactional messages or managing high volume marketing campaigns Momentum easily integrates with your new or existing applications It..."
 ---

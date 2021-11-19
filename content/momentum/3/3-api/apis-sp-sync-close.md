@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "sp_sync_close"
 description: "sp sync close Close the specified file descriptor and optionally dispatch the callback int sp sync close fd wants shutdown int fd int wants shutdown Close the specified file descriptor and optionally dispatch the callback fd The file descriptor wants shutdown Set this option to 0 or 1 depending upon..."
 ---

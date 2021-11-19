@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "http_host"
 description: "http host Define the HTTP host http host android google apis com Configuration Change This option is available as of version 3 5 6 Define the HTTP host when the delivery method uses an HTTP protocol There is no default value for this option http host is valid in the..."
 ---

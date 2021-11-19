@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/05/2020"
+lastUpdated: "03/05/2020"
 title: "msys.rfc3464.compute_delivery_status"
 description: "msys rfc 3464 compute delivery status Generate RFC 3464 compliant delivery status headers msys rfc 3464 compute delivery status msg action Generates RFC 3464 compliant delivery status headers It takes two inputs msg and action msg is an msys core ec message and action is one of the following integers..."
 ---

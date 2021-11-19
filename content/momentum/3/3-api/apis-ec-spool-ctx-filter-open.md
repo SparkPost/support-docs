@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "ec_spool_ctx_filter_open"
 description: "ec spool ctx filter open Access the spool in the specified way io object ec spool ctx filter open ctx mess what filename options mode ec spool ctx ctx ec message mess int what const char filename int options int mode Access the spool in the specified way ctx The..."
 ---

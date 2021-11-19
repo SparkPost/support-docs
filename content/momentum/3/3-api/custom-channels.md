@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "Custom Delivery Modules"
 description: "With the ever increasing demand more and more channels are needed for message delivery Yet most outbound delivery channels can share many of the same functionalities such as connection establishment and management message queuing management and delivery result handling Given these similarities custom channels can be implemented with a reusable..."
 ---

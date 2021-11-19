@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "ec_realloc"
 description: "ec realloc Re allocate a block of memory changing its size void ec realloc object type old size int object type void old size t size Re allocate a block of memory changing its size This function returns NULL if the size could not be altered the original pointer is..."
 ---

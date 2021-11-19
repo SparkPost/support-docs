@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "msys.dp_config.fcdns"
 description: "This table determines the behavior when performing a Full Circle DNS FCDNS Also know as forward confirmed reverse DNS Find below the sample excerpt included in the dp config lua file The elements of this configuration table are as follows check Whether or not to use this configuration item rdns..."
 ---

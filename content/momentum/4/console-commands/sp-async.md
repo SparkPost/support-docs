@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/05/2020"
+lastUpdated: "03/05/2020"
 title: "sp_async"
 description: "sp async Access the asynchronous I O subsystem sp async stats Display summary statistics for asynchronous I O..."
 ---

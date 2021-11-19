@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/05/2020"
+lastUpdated: "03/05/2020"
 title: "Separate Vertica Partition"
 description: "In many cases Message Systems recommends creating a separate partition var db vertica for Vertica's data and workspace sometimes on dedicated drives Before installing Vertica we will create a new user vertica dba and new group verticadba Doing this pre step will avoid the following ownership warnings during installation..."
 ---

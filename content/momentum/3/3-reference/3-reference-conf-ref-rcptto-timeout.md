@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "rcptto_timeout"
 description: "rcptto timeout timeout after RCPT TO Rcptto Timeout 300 The amount of time in seconds to wait for a response to the RCPT TO command The default value for this option is 300 rcptto timeout is valid in the binding binding group domain and global scopes..."
 ---

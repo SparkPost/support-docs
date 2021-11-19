@@ -1,5 +1,5 @@
 ---
-lastUpdated: "01/06/2020"
+lastUpdated: "02/06/2020"
 title: "I have paid for overages or have a dedicated IP on my Free plan, how does this affect my support moving forward?"
 description: "Free plans even with Add-ons such as a dedicated IP or previous overages are still subject to the same Free plan support changes"
 ---

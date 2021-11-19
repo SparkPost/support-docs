@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "run_command"
 description: "run command deprecated use run command 2 int run command cc response command construct cc string response This API is deprecated use run command 2 instead It is legal to call this function in the Scheduler thread..."
 ---

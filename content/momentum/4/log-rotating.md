@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/05/2020"
+lastUpdated: "03/05/2020"
 title: "Rotating Logs ec_rotate"
 description: "Momentum provides a utility script ec rotate that you can use to rotate and compress logs that Momentum writes It is recommended that you run this script daily from your system's crontab etc cron d msys ecelerity core To invoke ec rotate execute ec rotate as the root user By..."
 ---

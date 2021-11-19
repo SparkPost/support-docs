@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "msys.policyeditor.get_binding_domain_failure_rate"
 description: "msys policyeditor get binding domain failure rate Get the failure rate for a particular domain and binding combination msys policyeditor get binding domain failure rate ctx vars params Gets the failure rate for a particular domain and binding combination The function only returns a value if it is statistically valid..."
 ---

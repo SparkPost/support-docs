@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/05/2020"
+lastUpdated: "03/05/2020"
 title: "eccmgr"
 description: "eccmgr Momentum Cluster Manager opt msys ecelerity sbin eccmgr c configfile g group n v e d V eccmgr is the Momentum Cluster Manager On start up the script etc init d eccmgr start runs eccmgr as a service on the node designated as cluster manager Use eccmgr ctl to..."
 ---

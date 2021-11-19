@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "build_event"
 description: "build event Create an event Event build event when whence fd callback closure struct timeval when int whence int fd Event Func callback void closure Create an event The Event structure encapsulates a file descriptor and an action that should be triggered when IO is signalled on that descriptor The..."
 ---

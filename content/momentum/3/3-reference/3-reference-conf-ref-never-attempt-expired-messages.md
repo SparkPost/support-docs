@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "never_attempt_expired_messages"
 description: "never attempt expired messages Never attempt delivery of expired messages Never Attempt Expired Messages false Momentum's default behavior is to always attempt delivery of a message when it gets to the front of the queue regardless of whether or not it should have expired based on the values of message..."
 ---

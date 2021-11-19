@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "Hooks in the generic_delivery and httpclnt Scope"
 description: "These hook points are supported as of Momentum version 3 5 5 These hook points are used with mobile push notifications and with MMS The request and response hook points can replace the Google Cloud Messaging GCM hook points of the same name For more information about these hook points..."
 ---

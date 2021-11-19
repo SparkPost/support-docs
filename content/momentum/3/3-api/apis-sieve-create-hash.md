@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "sieve_create_hash"
 description: "sieve create hash Create a Sieve hash SIEVEARGS sieve create hash void void Create a Sieve hash This function returns SIEVEARGS For information about this data type see sieve ast It is legal to call this function in any thread..."
 ---

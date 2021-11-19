@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "ec_retry_state_delref"
 description: "ec retry state delref Removes a reference from a retry state and destroys it if no more exist void ec retry state delref state ec retry state t state This reference page was automatically generated from functions found in the header files in the development branch The function described here..."
 ---

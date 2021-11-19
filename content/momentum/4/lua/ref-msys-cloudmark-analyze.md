@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/05/2020"
+lastUpdated: "03/05/2020"
 title: "msys.cloudmark.analyze"
 description: "msys cloudmark analyze Analyze a message using Cloudmark msys cloudmark analyze hdr msg vctx This function analyzes the input string hdr and returns a table of the following key value pairs score Authority score for the message a number between 0 and 100 The higher the number the more certain..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/05/2020"
+lastUpdated: "03/05/2020"
 title: "Inbound SSL"
 description: "Secure Sockets Layer SSL can be configured on an SMTP listener using the following configuration snippet SSL Listeners function similarly to STARTTLS Listeners except that connections are handed up to SSL immediately For this reason SSL is mutually exclusive with STARTTLS and cannot be configured on the same listener The..."
 ---

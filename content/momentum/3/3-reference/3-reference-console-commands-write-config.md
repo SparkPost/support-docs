@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "write config"
 description: "write config display current running configuration write config path to file Instruct Momentum to display the current running configuration over the console If a file name is passed as a parameter Momentum will open and write the configuration to that file on the server running Momentum not necessarily the machine..."
 ---

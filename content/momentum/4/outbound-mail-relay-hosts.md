@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/05/2020"
+lastUpdated: "03/05/2020"
 title: "Outbound Email Relay"
 description: "When configuring Momentum as an outbound e mail relay you must take care to not expose your system to abuse by allowing unauthorized machines to send e mail to domains for which the local instance does not provide mail service Doing so makes your system an open relay Only trusted..."
 ---

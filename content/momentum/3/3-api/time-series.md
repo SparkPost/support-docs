@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "Time Series Functions"
 description: "Table of Contents time series add data Add data to all monitors in a time series time series add data at Add data to all monitors in a time series time series clear Remove a bucket specified by bucket number in a monitor and return the removed bucket time series..."
 ---

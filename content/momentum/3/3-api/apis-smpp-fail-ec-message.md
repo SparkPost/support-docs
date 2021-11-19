@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "smpp_fail_ec_message"
 description: "smpp fail ec message Fail an SMPP message void smpp fail ec message conn m error smpp conn conn ec message m const char error Fail an SMPP message with the specified error conn The smpp conn m The message to fail error The error code will be set to..."
 ---

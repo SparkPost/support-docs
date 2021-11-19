@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "smpp_wrap_in_string"
 description: "smpp wrap in string Wrap a char string into a string object string smpp wrap in string c const char c Configuration Change This feature is available starting from Momentum 3 2 Wrap a char string into a string object The returned string object must be freed by calling smpp..."
 ---

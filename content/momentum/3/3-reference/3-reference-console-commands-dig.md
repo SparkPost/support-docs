@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "dig"
 description: "dig submit a domain for DNS MX query dig domain This command submits a domain for DNS MX query This console command manipulates the route cache and likewise with the domain and refresh domain commands The DNS cache as manipulated by the dns cache series of console commands..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "suspend_delivery"
 description: "suspend delivery prevent outbound mail delivery Suspend Delivery false When set to true this directive forces Momentum not to attempt any deliveries at all in the scope it is configured The default value is false The following example suspends delivery for a specific binding within a binding group Within a..."
 ---

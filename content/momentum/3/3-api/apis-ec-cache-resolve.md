@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "ec_cache_resolve"
 description: "ec cache resolve Look up an element from the cache int ec cache resolve cache key keylen elt resolver ec cache t cache const char key int keylen ec cache elt elt ec cache resolver resolver This reference page was automatically generated from functions found in the header files in..."
 ---

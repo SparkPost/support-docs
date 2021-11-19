@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "msgpart:body_replace"
 description: "msgpart body replace Streaming interface to a PCRE replacement of a message body part minus headers msgpart body replace pattern replacement Streaming interface to a PCRE replacement of a message body part minus headers Enable this function with the statement require msys extended message..."
 ---

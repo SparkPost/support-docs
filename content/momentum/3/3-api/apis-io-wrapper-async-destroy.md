@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "io_wrapper_async_destroy"
 description: "io wrapper async destroy schedules an io wrapper destroy in the IO thread pool if you're not in the scheduler thread you can use io wrapper destroy directly void io wrapper async destroy io io object io This reference page was automatically generated from functions found in the header files..."
 ---

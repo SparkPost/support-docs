@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "stop"
 description: "stop stop processing the current script stop The stop action is used to explicitly indicate that the current script should stop processing This is similar to the keep function keep but does not increment any internal stats counters This is a terminal action no further Sieve rules will be run..."
 ---

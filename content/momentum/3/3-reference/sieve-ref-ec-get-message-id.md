@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "ec_get_message_id"
 description: "ec get message id Returns the message's unique ID ec get message id ec get message id returns the unique on this Momentum instance ID of this message This is the same value that is returned in the 250 OK response when a message is accepted by Momentum and is..."
 ---

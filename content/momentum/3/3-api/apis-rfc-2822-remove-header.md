@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "rfc2822_remove_header"
 description: "rfc 2822 remove header Create a new header int rfc 2822 remove header ctx h rfc 2822 context ctx const char h Remove a header created using rfc 2822 new header When you remove a header the memory associated with it is freed be sure to deal with any external..."
 ---

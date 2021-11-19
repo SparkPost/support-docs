@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "Socket Address Functions"
 description: "Table of Contents ec sockaddr family Get the family of a sockaddr for Lua ec sockaddr serialize Serialize an ec sockaddr structure ec sockaddr unserialize Unserialize an ec sockaddr structure sock address equal compares two socket addresses for equality sockaddr to string Renders a socket address into human readable form..."
 ---

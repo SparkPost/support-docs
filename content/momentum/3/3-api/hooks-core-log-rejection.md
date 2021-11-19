@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "log_rejection"
 description: "log rejection Register a function with this hook that will be called whenever a logging event due to message rejection occurs void core log rejection closure now ac ctx phase format args void closure struct timeval now accept construct ac validate context ctx int phase const char format va list..."
 ---

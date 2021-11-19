@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/02/2021"
+lastUpdated: "03/02/2021"
 title: "Daily and Monthly Sending Limits"
 description: "Accounts have daily and monthly limit based on their sending plan."
 ---

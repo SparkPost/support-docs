@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "Listener Configuration for MCMT"
 description: "A typical configuration Listener Configuration for MCMT follows The following options are unique to the listeners used with Mobile Momentum The disable chunked is a boolean option used within the listener scopes It is specific to Mobile Momentum and is used for aggregators that do not support chunked transfer coding..."
 ---

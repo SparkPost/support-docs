@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "initiate_connection"
 description: "initiate connection Intiate an outbound connection connection handle initiate connection dr binding now finish connect func timeout func user data error domain record dr int binding struct timeval now Event Func finish connect func Event Func timeout func void user data int error This reference page was automatically generated from..."
 ---

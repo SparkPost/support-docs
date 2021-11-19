@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/05/2020"
+lastUpdated: "03/05/2020"
 title: "dns_cache_purge_interval"
 description: "dns cache purge interval how often the DNS response cache is scanned for stale entries dns cache purge interval 60 How often the DNS response cache is scanned for stale entries The default value is 60 seconds dns cache purge interval is valid in the global scope..."
 ---

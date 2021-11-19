@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/05/2020"
+lastUpdated: "03/05/2020"
 title: "Outbound XCLIENT support"
 description: "It is often useful for a relay to be able to propagate the original sender IP address to a remote relay so that it can apply more intelligent policy rules to the message The XCLIENT SMTP extension specifies a protocol for doing exactly that The XCLIENT configuration option allows you..."
 ---

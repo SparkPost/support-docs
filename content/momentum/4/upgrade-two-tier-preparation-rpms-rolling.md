@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/05/2020"
+lastUpdated: "03/05/2020"
 title: "Upgrade Remaining RPMs on Analytics Nodes"
 description: "If you are performing an upgrade on a Combined Node skip this section Upgrade existing RP Ms on all Analytics nodes except Vertica since that was done in the previous section..."
 ---

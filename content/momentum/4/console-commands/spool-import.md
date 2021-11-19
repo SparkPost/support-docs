@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/05/2020"
+lastUpdated: "03/05/2020"
 title: "spool import"
 description: "spool import import an alternative spool spool import path to spoolbase concurrency suppress trace headers This command instructs Momentum to scan the specified directory as an Momentum spool directory and to migrate the messages within into its active Spool Base This command is useful for disaster recovery actions where a..."
 ---

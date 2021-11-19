@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "ec_httpsrv_request_accept_construct_get"
 description: "ec httpsrv request accept construct get Returns the accept construct from the current session accept construct ec httpsrv request accept construct get sess ec httpsrv session sess This reference page was automatically generated from functions found in the header files in the development branch The function described here may not..."
 ---

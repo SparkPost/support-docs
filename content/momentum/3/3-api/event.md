@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "Event Functions"
 description: "The event system in Momentum tracks both IO and time based events using the event structure For sample code and a detailed discussion of events see Section 1 3 3 The Event API..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "msys.sleep"
 description: "msys sleep When called in the scheduler thread suspend the current session for the specified duration msys sleep duration in seconds When called in the scheduler thread this function suspends the current session for the specified duration When called in a secondary thread or if called on the scheduler thread..."
 ---

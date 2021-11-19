@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "Interface"
 description: "SMPP PDU SMPP CONTINUE continue normal processing SMPP DELIVERED drop the message Consider it delivered and do not process as a failure SMPP TEMPFAILED tempfail the message SMPP PERMFAILED permfail the message..."
 ---

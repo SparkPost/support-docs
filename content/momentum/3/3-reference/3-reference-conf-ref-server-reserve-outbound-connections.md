@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "server_reserve_outbound_connections"
 description: "server reserve outbound connections sets the server wide connection limit reserve Server Reserve Outbound Connections 200 Server Reserve Outbound Connections configures the server wide connection limit reserve The sum of Server Reserve Outbound Connections and Server Max Outbound Connections is used to set the ceiling on the total number of..."
 ---

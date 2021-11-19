@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "smtp_parse_capabilities"
 description: "smtp parse capabilities Parse the remote capabilities from the EHLO response void smtp parse capabilities dc conn delivery construct dc connection conn Parse the remote capabilities from the EHLO response This is primarly a helper for clients who want to write modify their own SMTP client state machine dc The..."
 ---

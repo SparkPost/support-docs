@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "ec_adaptive_restore_configuration"
 description: "ec adaptive restore configuration function to refresh parameters from backstore int ec adaptive restore configuration spaths prefd is global nodename ids err buf buf len const char spaths int prefd int is global const char nodename char ids char err buf size t buf len This reference page was automatically..."
 ---

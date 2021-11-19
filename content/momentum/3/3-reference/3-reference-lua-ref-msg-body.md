@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "msg:body"
 description: "msg body Set the message body minus headers if provided msg body This function sets the message body minus headers if it is provided and returns the message body minus headers This applies to the body not headers without decoding transfer encoding When called without parameters this function returns content..."
 ---

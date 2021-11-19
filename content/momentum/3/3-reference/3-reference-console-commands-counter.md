@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "counter"
 description: "counter add counter help counter increment counter list counter reset counter unlink manage counters counter add counter name delta counter help counter increment counter name counter list counter reset counter name counter unlink counter name Configuration Change This feature is available starting from Momentum 3 1 Both Sieve and Lua..."
 ---

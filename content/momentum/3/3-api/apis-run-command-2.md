@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "run_command2"
 description: "run command 2 Execute the console command referenced by a command construct int run command 2 cc response session command construct cc string response Event session Execute the console command referenced by a command construct For a list of the available commands see Console Commands cc The command that you..."
 ---

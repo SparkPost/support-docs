@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "ec_atoi"
 description: "ec atoi Converts an ASCII string to a signed integer int ec atoi var value const char var int value Converts an ASCII string to a signed integer var The string to convert to a signed int This function assumes the string is an ASCII version of a hexadecimal octal..."
 ---

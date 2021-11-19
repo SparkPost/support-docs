@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "split"
 description: "split ec explode split a string into a stringlist split delimiter string ec explode delimiter string split uses its first argument as a delimiter to explode a given string into a stringlist For example to split an IP address into its component octets we might do something like this Example..."
 ---

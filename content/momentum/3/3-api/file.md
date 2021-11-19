@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "File-related Functions"
 description: "Table of Contents ec copy file Copy a file from one location to another ec find conf file Find a filename in the default search path and return the resulting path ec find conf file 2 Find a filename in the given search path and return the resulting path ec..."
 ---

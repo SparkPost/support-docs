@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "cidrnode_ipv4"
 description: "This struct is a typedef of cidrnode ipv 4 It is defined as follows To use this struct include the file cidrtree h Chapter 10 CIDR Functions..."
 ---

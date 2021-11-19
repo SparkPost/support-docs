@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "ec_free"
 description: "ec free Free memory allocated void ec free object type ptr int object type void ptr Returns memory allocated by ec malloc ec malloc size or ec realloc to the allocator layer ready for reuse Other functions which allocate memory and must use ec free are and ec mt strdup..."
 ---

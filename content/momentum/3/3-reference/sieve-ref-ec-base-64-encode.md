@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "ec_base64_encode"
 description: "ec base 64 encode base 64 encode text ec base 64 encode plain text Convert plain text to a base 64 representation Sieve scripts using ec base 64 encode can be used in any phase Example 16 27 ec base 64 encode example ec base 64 decode..."
 ---

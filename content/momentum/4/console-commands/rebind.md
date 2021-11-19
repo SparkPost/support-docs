@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/05/2020"
+lastUpdated: "03/05/2020"
 title: "rebind"
 description: "rebind rebind the messages in a binding or domain rebind binding name domain name The rebind command directs Momentum to re evaluate the binding assignment of the messages in the specified binding or domain Typically this is performed when an online change to binding assignments has been made and the..."
 ---

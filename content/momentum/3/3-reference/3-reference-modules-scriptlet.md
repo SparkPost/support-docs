@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "scriptlet – Module"
 description: "The scriptlet module enables the use of Lua scripts to enforce policy providing a more flexible alternative to Sieve In version 3 0 scriptlets are the preferred scripting method If you are unfamiliar with Lua you can create basic policy scripts using the web UI For more information see Section..."
 ---

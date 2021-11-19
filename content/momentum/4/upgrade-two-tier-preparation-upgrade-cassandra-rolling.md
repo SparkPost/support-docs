@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/05/2020"
+lastUpdated: "03/05/2020"
 title: "Upgrade Cassandra on the Platform Nodes"
 description: "To allow for continuous functioning of the Cassandra cluster only one Cassandra server instance should be stopped for upgrade at any one time Run the following command to check the Cassandra cluster status This should be done after each node is updated to verify the cluster is fully functional before..."
 ---

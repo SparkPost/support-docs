@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/05/2020"
+lastUpdated: "03/05/2020"
 title: "Extended Commands"
 description: "The following extended commands may appear in your editrc or may be entered directly into the console by entering extended command mode Esc X by default and then typing in the extended command and pressing Enter Table D 2 Extended Commands Extended Command Description bind Without options list all bound..."
 ---

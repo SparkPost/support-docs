@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "inc_outbound_connections"
 description: "inc outbound connections void inc outbound connections closure connh void closure connection handle connh int has core inc outbound connections hook void register core inc outbound connections hook first hook closure ec hook core inc outbound connections func t hook void closure void register core inc outbound connections hook last..."
 ---

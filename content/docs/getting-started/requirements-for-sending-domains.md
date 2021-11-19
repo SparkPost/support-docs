@@ -1,5 +1,5 @@
 ---
-lastUpdated: "06/05/2021"
+lastUpdated: "07/05/2021"
 title: "Requirements For Sending and Bounce Domains"
 description: "To protect the sending reputation of all of our customers, SparkPost sending and bounce domains must be officially verified and validated."
 ---

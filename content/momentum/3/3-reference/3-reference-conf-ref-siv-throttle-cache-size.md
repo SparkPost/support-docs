@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "siv_throttle_cache_size"
 description: "siv throttle cache size set the maximum number of named throttles siv throttle cache size 1000 This option sets the maximum number of named throttles created by the Sieve command ec throttle create and by Lua scripts If you try to create more throttles than this value throttles created earlier..."
 ---

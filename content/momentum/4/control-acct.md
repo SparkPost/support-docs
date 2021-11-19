@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/05/2020"
+lastUpdated: "03/05/2020"
 title: "Control_Listener Accounting"
 description: "Momentum contains an extensible authorization and accounting subsystem that can be configured to restrict access to console commands based on role while recording an audit trail Accounting is enabled by default for Unix socket connections However if you are connecting via TCP IP then accounting for the Control Listener will..."
 ---

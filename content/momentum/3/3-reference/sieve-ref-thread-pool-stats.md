@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "thread_pool_stats"
 description: "thread pool stats Obtain information about thread pools thread pool stats poolname jobname thread pool stats takes a thread pool name as its first argument and returns a hash containing various information about the pool including the number of threads in the pool queue size and number of invocations If..."
 ---

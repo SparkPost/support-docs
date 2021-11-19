@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/05/2020"
+lastUpdated: "03/05/2020"
 title: "msgpart:content_type"
 description: "msgpart content type Returns a table of content type related information msgpart content type Returns a table of content type related information with the following fields mimetype text plain charset utf 8 encoding base 64 is attachment This element is a boolean and is always true when there is a..."
 ---

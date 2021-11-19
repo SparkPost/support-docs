@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/05/2020"
+lastUpdated: "03/05/2020"
 title: "msys.base64.encode"
 description: "msys base 64 encode Base 64 encode a string msys base 64 encode original fold charset original can be a string or a msys core ec string This function returns a base 64 encoded string If fold is true the encoded string is folded at every 76 bytes by inserting..."
 ---

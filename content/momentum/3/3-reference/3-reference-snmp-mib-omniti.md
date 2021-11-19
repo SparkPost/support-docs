@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "The OMNITI-SNMP-MIB.txt file"
 description: "Find the OMNITI SNMP MIB txt file below..."
 ---

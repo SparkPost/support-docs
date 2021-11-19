@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/05/2020"
+lastUpdated: "03/05/2020"
 title: "binding flush domain"
 description: "binding flush domain perform delivery attempt on delayed queue of a domain on a binding binding flush domain binding name domain name The binding flush domain command takes a domain name and a binding name as arguments and immediately performs a delivery attempt for each message in the delayed queue..."
 ---

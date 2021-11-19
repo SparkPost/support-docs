@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "msys.symantec_beik.scan"
 description: "msys symantec beik scan Scan using BEIK msys symantec beik scan msg vctx In order for this function to work you must configure the beik module Be sure to load the module in passive mode by setting Enabled to false This function can be invoked in the data spool or..."
 ---

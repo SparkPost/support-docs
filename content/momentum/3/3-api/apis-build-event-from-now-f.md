@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "build_event_from_now_f"
 description: "build event from now f Create a timed event Event build event from now f offset fd callback closure float offset int fd Eventfunc callback void closure Create a timed event It's a common requirement to need to schedule some work to occur either at a particular time or at..."
 ---

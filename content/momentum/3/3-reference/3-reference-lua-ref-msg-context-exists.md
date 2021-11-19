@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "msg:context_exists"
 description: "msg context exists Check if a context variable exists msg context exists type key Check if a context variable exists Legal values for type are msys core ECMESS CTX MESS msys core ECMESS CTX CONN This function returns 1 if the key exists and 0 if the key does not..."
 ---

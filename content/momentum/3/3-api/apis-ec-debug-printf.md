@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "ec_debug_printf"
 description: "ec debug printf Write debug information given a debug level int ec debug printf level mask s int level int mask const char s Write debug information given a debug level level The debug level mask A mask s The debug string to write This may contain format specifiers The..."
 ---

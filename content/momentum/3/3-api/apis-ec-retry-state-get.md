@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "ec_retry_state_get"
 description: "ec retry state get Retrieves or allocates a retry state associated with the given binding and domain struct ec retry state ec retry state get binding domain ec binding slot binding const char domain This reference page was automatically generated from functions found in the header files in the development..."
 ---

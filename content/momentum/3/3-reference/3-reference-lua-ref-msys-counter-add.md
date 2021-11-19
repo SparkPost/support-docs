@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "msys.counter.add"
 description: "msys counter add Add to the current value of the specified counter msys counter add object or path delta The first argument is either a path to a counter for example sites site name errors or a counter object that was returned by msys counter open If a string is..."
 ---

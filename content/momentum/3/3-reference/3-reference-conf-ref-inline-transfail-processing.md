@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "inline_transfail_processing"
 description: "inline transfail processing how to handle transient failure processing inline transfail processing 1 When true transient failure processing is handled inline in the scheduler thread Momentum's traditional behavior If you have custom loggers or other modules that react to transient failures and examine messages you may experience poor performance excessive..."
 ---

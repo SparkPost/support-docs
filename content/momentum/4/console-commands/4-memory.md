@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/05/2020"
+lastUpdated: "03/05/2020"
 title: "memory"
 description: "memory report detailed memory usage memory memory type The memory command provides a detailed overview of the type count and size of the various memory objects that Momentum uses internally Sample output is displayed below The output of this command can be used to diagnose memory growth issues and help..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "ec_cluster_cache_set"
 description: "ec cluster cache set Set a value in a cluster wide replicated cache ec cluster cache set replication name key value ttl ec cluster cache set sets the value for the given key and cache name The ttl is a string specifying the number of seconds until the value expires..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "09/05/2020"
+lastUpdated: "10/05/2020"
 title: "Coming Soon: Data Rollups"
 description: "Learn about how we've changed our data storage schema and what changes you may see"
 ---

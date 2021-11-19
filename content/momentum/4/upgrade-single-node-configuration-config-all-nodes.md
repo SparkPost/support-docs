@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/05/2020"
+lastUpdated: "03/05/2020"
 title: "Configuration Changes"
 description: "Update the following files by copying the root application vertica stanza to root vertica opt msys app metrics api config production json opt msys app webhooks api config production json In the webhooks api version a Cassandra stanza follows the Application stanza so you will need to add a comma..."
 ---

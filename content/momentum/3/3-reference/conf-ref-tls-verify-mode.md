@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "tls_verify_mode"
 description: "tls verify mode determine whether a TLS certificate is required TLS Verify Mode none require This option determines whether a TLS certificate is required for inbound mail if TLS is started It is not a means for requiring TLS Momentum does have an authentication hook core validate auth hook for..."
 ---

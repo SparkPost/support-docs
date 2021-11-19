@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "netlistener_instantiate_addr"
 description: "netlistener instantiate addr Start service on a listener endpoint int netlistener instantiate addr listener hdr addr netlistener def listener ec config header hdr const char addr This reference page was automatically generated from functions found in the header files in the development branch The function described here may not exist..."
 ---

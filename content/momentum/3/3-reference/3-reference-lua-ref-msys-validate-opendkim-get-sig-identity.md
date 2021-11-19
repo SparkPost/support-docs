@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "msys.validate.opendkim.get_sig_identity"
 description: "msys validate opendkim get sig identity Fetch the identity associated with a DKIM signature msys validate opendkim get sig identity dkim dkim sig Configuration Change This function is available as of version 3 6 This function requires the opendkim module Fetch the identity associated with a DKIM signature The dkim..."
 ---

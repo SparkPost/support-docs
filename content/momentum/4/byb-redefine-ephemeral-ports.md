@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/05/2020"
+lastUpdated: "03/05/2020"
 title: "Redefining Ephemeral Ports"
 description: "The lower limits of the port range as currently defined on Centos are too low as Vertica listens on 5433 and Riak listens on 8099 Redefine the Ephemeral Ports lower limit to a safer value for example Confirm the new port range If you are installing Momentum in AWS do..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/05/2020"
+lastUpdated: "03/05/2020"
 title: "bounce_pattern"
 description: "bounce pattern configure the pattern that inbound email addresses must match in order to be considered bounces Bounce Pattern Perl compatible regular expression When a message passed through the server bounces due to an in band SMTP failure or is received out of band as a notification of failed delivery..."
 ---

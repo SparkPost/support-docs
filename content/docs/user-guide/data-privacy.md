@@ -1,5 +1,5 @@
 ---
-lastUpdated: "01/01/2021"
+lastUpdated: "02/01/2021"
 title: "Data Privacy"
 description: "Submit GDPR and CCPA data privacy requests."
 ---

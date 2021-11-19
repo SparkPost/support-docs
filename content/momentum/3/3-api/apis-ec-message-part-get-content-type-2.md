@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "ec_message_part_get_content_type2"
 description: "ec message part get content type 2 Returns the content type and charset for a given part using strings void ec message part get content type 2 p content type charset ec message part p string content type string charset This reference page was automatically generated from functions found in..."
 ---

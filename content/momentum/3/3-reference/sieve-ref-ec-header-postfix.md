@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "ec_header_postfix"
 description: "ec header postfix append to a header of the current message ec header postfix field name field body This will find the header named field name and should it exist append the specified newtext to the field body of the header You should not use this function in the set..."
 ---

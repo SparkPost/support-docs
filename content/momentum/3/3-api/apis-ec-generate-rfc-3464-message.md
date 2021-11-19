@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "ec_generate_rfc3464_message"
 description: "ec generate rfc 3464 message creates an RFC 3464 MDN as an ec message ec message ec generate rfc 3464 message message action ec message message dsn actype action This reference page was automatically generated from functions found in the header files in the development branch The function described here..."
 ---

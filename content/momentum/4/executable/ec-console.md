@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/05/2020"
+lastUpdated: "03/05/2020"
 title: "ec_console"
 description: "ec console connect to Momentum to perform introspection and administration opt msys ecelerity bin ec console remoteaddr command man Runtime administration of Momentum can be performed through the Momentum System Console ec console Through the console you can view and change the value of configuration options This command has the..."
 ---

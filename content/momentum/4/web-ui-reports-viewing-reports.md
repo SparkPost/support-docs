@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/05/2020"
+lastUpdated: "03/05/2020"
 title: "Viewing Your Reports"
 description: "After you have selected your metrics and filters view your reports by going to the corresponding sections as described in Figure 57 1 Navigating Reports The UI generates all the reports using the filters that you selected in the Summary section with the exception of the Engagement and Adaptive Delivery..."
 ---

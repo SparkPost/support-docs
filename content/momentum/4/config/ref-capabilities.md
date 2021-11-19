@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/05/2020"
+lastUpdated: "03/05/2020"
 title: "capabilities"
 description: "capabilities selectively retain root capabilities Security capabilities linux capability set It is generally agreed that running with root privileges is dangerous for Internet servers As such Linux exposes a capabilities system that allows a non privileged user to retain certain root privileges The capability system makes this possible The list..."
 ---

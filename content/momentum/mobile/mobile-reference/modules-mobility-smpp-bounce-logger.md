@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "The smpp_bounce_logger Module"
 description: "It is often convenient to look at bounced SMPP messages only The smpp bounce logger makes this much easier by writing bounces both in band and out of band bounce messages to a single file in delimited format The writing of smpp bounce logger format logs is configured in your..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "ec_sub"
 description: "ec sub perform subtraction of two numbers ec sub number 1 number 2 ec sub takes two numbers subtracts the second number from the first number and returns the result Example 16 96 ec sub example..."
 ---

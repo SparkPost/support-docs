@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/05/2020"
+lastUpdated: "03/05/2020"
 title: "msg.batch_id"
 description: "msg batch id Return the human readable ec message batch id msg batch id When used in a string context or explicitly forced into a string via tostring msg batch id this function returns the human readable ec message batch id Enable this function with the statement require msys extended..."
 ---

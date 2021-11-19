@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "csapi – The Content Scanning API Module"
 description: "The Content Scanning Application Programming Interface CSAPI module provides integration to Symantec's suite of content scanners If you intend to use this module be sure to choose it during installation For more information see Section 1 9 Installing Additional Packages This module runs in an external process opt msys ecelerity..."
 ---

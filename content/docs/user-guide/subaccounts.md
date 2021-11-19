@@ -1,5 +1,5 @@
 ---
-lastUpdated: "01/01/2021"
+lastUpdated: "02/01/2021"
 title: "Subaccounts in SparkPost and SparkPost Enterprise"
 description: "Table of Contents Use these links to jump to certain sections of this article Overview Terminology Summary of Subaccount Features Use Cases Primary Account Managing Subaccounts Primary Account Reporting by Subaccount Primary Account Operating on Behalf of a Subaccount Subaccount Self Service a id Overview name Overview Overview a This..."
 ---

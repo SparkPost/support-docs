@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "sl_set_compare"
 description: "sl set compare Set the comparison functions void sl set compare sl comp compk Skiplist sl Skiplist Comparator comp Skiplist Comparator compk Set the data to data and key to data comparison functions sl The Skiplist comp A Skiplist comparator A Skiplist comparator is defined as follows typedef int Skiplist..."
 ---

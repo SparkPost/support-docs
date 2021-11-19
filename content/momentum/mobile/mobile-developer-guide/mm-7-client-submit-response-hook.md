@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "MM7 MT Submit Response Hook"
 description: "The MM 7 MT Submit Response Hook is invoked following the parsing of an MM 7 response to an MM 7 MT message and before regular processing of the response It enables inspection of message submission response status for the purposes of initiating requeue retry of failed message submissions and..."
 ---

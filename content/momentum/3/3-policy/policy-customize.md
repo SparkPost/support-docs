@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "Customizing Policy"
 description: "To create custom policy adapt the opt msys ecelerity etc sample configs custom policy lua file and move it to a directory under the opt msys ecelerity etc conf directory Add the file to the repository as described in Best Practices for Adding Configuration Files If you do not implement..."
 ---

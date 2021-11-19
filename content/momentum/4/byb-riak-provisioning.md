@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/05/2020"
+lastUpdated: "03/05/2020"
 title: "Riak Provisioning"
 description: "Riak can be deployed as a single node or in a cluster of nodes More nodes allow for improved redundancy and load distribution It is recommended that there be a minimum of three nodes in a clustered configuration For most deployments no special additional configuration is required but if you..."
 ---

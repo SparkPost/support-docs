@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "time_series_get_current_alpha"
 description: "time series get current alpha When getting the counts from current bucket of a monitor the raw value does not reflect the truth since the value from current bucket is only partial value float time series get current alpha ts series id time series ts int series id This reference..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "config_get_domain_relay"
 description: "config get domain relay int config get domain relay closure cs domain retval void closure generic module infrastructure cs const char domain int retval int has core config get domain relay hook void register core config get domain relay hook first hook closure ec hook core config get domain relay..."
 ---

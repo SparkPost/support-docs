@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/05/2020"
+lastUpdated: "03/05/2020"
 title: "Decommissioning a Log Aggregator"
 description: "To decommission a log aggregator complete the following operational procedure Modify the ecelerity cluster conf file s for the affected subclusters and remove the log aggregator from the subscriber list s in the log file names Apply that configuration to the cluster Allow time for the log aggregator to drain..."
 ---

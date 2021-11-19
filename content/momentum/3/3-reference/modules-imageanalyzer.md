@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "imageanalyzer – Module"
 description: "Configuration Change This feature is available starting from Momentum 3 0 23 The imageanalyzer module supports the Image Analyzer engine used to identify pornographic or inappropriate image content within email For more information see Image Analyzer You cannot configure this module using the web UI To manually configure it be..."
 ---

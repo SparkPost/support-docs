@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/05/2020"
+lastUpdated: "03/05/2020"
 title: "msys.pcre.match"
 description: "msys pcre match Perform a PCRE regex match operation msys pcre match subject pattern Perform a PCRE regex match operation Captures return their matches in numeric order and are referenced using the numeric index preceded by a dollar sign The first capture is referenced using 1 the second using 2..."
 ---

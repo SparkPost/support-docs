@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "ec_soft_bounce_process"
 description: "ec soft bounce process decides if we should generate an MDN for a given message void ec soft bounce process vm ec message vm This reference page was automatically generated from functions found in the header files in the development branch The function described here may not exist in generally..."
 ---

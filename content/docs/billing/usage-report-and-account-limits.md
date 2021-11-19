@@ -1,5 +1,5 @@
 ---
-lastUpdated: "01/06/2020"
+lastUpdated: "02/06/2020"
 title: "Usage Report and Account Limits"
 description: "The Usage Report allows you to easily keep track of how many emails you've sent over the last month day and hour It also displays your sending limits for each time period along with any overages above your monthly limit Note that free accounts are not permitted any overage Attempts..."
 ---

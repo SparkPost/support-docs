@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "Structs"
 description: "This section documents all the structs used by the C API functions and hooks these structs are listed alphabetically All structs with names that begin with an underscore have been typedef ed in the following way define EC TYPES DEF x struct x typedef struct x x Table of Contents..."
 ---

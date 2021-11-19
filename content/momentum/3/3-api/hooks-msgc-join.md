@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "join"
 description: "join void join closure group group len capabilities capabilities len void closure const char group u int 16 t group len const char capabilities u int 16 t capabilities len int has msgc join hook void register msgc join hook first hook closure ec hook msgc join func t hook..."
 ---

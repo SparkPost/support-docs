@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "beik_scan_job_create"
 description: "beik scan job create function used by Lua binding function to return a job ec async job beik scan job create m ctx stage ec message m validate context ctx struct lua beik closure stage This reference page was automatically generated from functions found in the header files in the..."
 ---

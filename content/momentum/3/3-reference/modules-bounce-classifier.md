@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "bounce_classifier – Bounce Classifier"
 description: "As of version 3 1 this module is deprecated Use Section 14 12 bounce classifier override The Bounce Classifier Override Module instead The bounce classifier module allows you to augment and override the built in bounce classification system It allows new rules static and wildcarded to be registered within the..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "ec_mod_vdebug"
 description: "ec mod vdebug Log debugging information for a module void ec mod vdebug mod level fmt arg generic module infrastructure mod int level const char fmt va list arg Log debugging information for a module mod The module to log on behalf of This is a pointer to a generic..."
 ---

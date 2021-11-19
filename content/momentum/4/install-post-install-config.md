@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/05/2020"
+lastUpdated: "03/05/2020"
 title: "Reviewing Configuration Files"
 description: "During installation configuration files with reasonable defaults are added to the local copy of the configuration repository Message Systems recommends you review the files found in opt msys ecelerity etc conf before using Momentum in a production environment For information about the configuration files see Chapter 66 Configuration Options Summary..."
 ---

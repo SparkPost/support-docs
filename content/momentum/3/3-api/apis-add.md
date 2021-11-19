@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "add"
 description: "add Add disclaimer to a message int add mess plain text html text ec message mess const char plain text const char html text This reference page was automatically generated from functions found in the header files in the development branch The function described here may not exist in generally..."
 ---

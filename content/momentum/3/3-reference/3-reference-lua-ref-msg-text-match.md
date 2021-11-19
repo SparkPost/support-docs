@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "msg:text_match"
 description: "msg text match Streaming PCRE search across the transfer decoded UTF 8 text version of the message body msg text match pattern Streaming PCRE search across the transfer decoded UTF 8 text version of the message body Only parts that have a text mime type will be included in the..."
 ---

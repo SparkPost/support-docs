@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "_smtp_error_class"
 description: "This struct is defined as follows This struct has not been typedef ed to remove the leading underscore To use this struct include the file misc smtp error classify h Chapter 47 SMTP related Functions and smtp error for id..."
 ---

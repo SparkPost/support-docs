@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "post_event_write"
 description: "post event write void post event write closure e buf buflen void closure Event e const char buf ssize t buflen int has core post event write hook void register core post event write hook first hook closure ec hook core post event write func t hook void closure void..."
 ---

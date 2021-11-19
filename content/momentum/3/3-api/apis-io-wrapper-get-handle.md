@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "io_wrapper_get_handle"
 description: "io wrapper get handle Gets the internal handle for an io object void io wrapper get handle io io object io This reference page was automatically generated from functions found in the header files in the development branch The function described here may not exist in generally available versions of..."
 ---

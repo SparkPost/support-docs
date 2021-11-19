@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/05/2020"
+lastUpdated: "03/05/2020"
 title: "Using Complex Templates"
 description: "Introduction Most likely your messaging needs go way beyond the simple examples provided in the previous tutorials Yet these examples form the basis for creating effective high volume messaging campaigns By further exploring the capabilities of Momentum's powerful templating language you can create templates that implement complex structures such as..."
 ---

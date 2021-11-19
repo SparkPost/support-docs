@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/05/2020"
+lastUpdated: "03/05/2020"
 title: "Control_Listener Authentication"
 description: "Momentum can be configured to perform authentication on Control connections by using the authentication modules The following is an example Control Listener stanza Example 17 1 Control Listener Stanza The usual fallback semantics apply to the Enable Authentication option In the example access to the control listener via TCP requires..."
 ---

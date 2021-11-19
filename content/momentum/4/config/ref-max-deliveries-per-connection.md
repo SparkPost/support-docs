@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/05/2020"
+lastUpdated: "03/05/2020"
 title: "max_deliveries_per_connection"
 description: "max deliveries per connection maximum number of messages to deliver before closing a connection max deliveries per connection 0 The maximum number of messages that will be sent over a single SMTP connection This option limits successful deliveries only If you wish to limit the number of attempted RCPT TO..."
 ---

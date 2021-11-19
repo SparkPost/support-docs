@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "msys.audit_series.define"
 description: "msys audit series define Define an audit series msys audit series define name type interval num windows options Defines an audit series interval is the period over which data will be gathered in seconds and num windows specifies the number of equally sized buckets into which the information will be..."
 ---

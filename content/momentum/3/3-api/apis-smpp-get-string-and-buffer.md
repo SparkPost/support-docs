@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "smpp_get_string_and_buffer"
 description: "smpp get string and buffer Create a string object using memory type of memtype smpp string smpp get string and buffer len int len Configuration Change This feature is available starting from Momentum 3 2 Create a string object using memory type of memtype smpp The returned string object must..."
 ---

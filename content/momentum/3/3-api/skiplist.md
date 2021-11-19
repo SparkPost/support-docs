@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "Skiplist Functions"
 description: "Table of Contents sl destruct Destroy a Skiplist sl find Find a specific node and return the node's data sl getlist Get the first node in a Skiplist sl init Initialize a Skiplist sl insert Insert data and return the resulting node sl next Move iter forward a node and..."
 ---

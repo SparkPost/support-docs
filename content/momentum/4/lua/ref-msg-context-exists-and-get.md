@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/05/2020"
+lastUpdated: "03/05/2020"
 title: "msg:context_exists_and_get"
 description: "msg context exists and get Check if a context variable exists and get it msg context exists and get type key Check if a context variable exists and get it Legal values for type are msys core ECMESS CTX MESS msys core ECMESS CTX CONN If the context variable key..."
 ---

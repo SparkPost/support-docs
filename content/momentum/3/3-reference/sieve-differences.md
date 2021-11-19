@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "The differences between Sieve and Sieve++"
 description: "The Sieve language is a mail filtering language defined in RFC 3028 and further extended in RFC 3685 Essentially Sieve is a standardized way of processing email and taking actions based on complicated logic It is a programming language that is specifically tailored to meet the requirements of processing and..."
 ---

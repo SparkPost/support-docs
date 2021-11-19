@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "scpt_objtype"
 description: "This struct is defined as follows To use this struct include the file modules scriptlets ec scriptlet h Chapter 42 Scriptlet and Alerting Functions Section 68 31 ec hash table and Section 68 72 scpt thread..."
 ---

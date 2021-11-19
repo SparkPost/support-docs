@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "msys.threadpool.count"
 description: "msys threadpool count Return the current number of thread pools msys threadpool count Configuration Change This feature is available as of version 3 2 Returns the current number of thread pools Enable this function with the statement require msys threadpool msys threadpool find msys threadpool stat threadpool..."
 ---

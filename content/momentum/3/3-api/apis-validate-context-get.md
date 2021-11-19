@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "validate_context_get"
 description: "validate context get Retrieve the value associated with a message context key or connection context key const char validate context get vctx which key validate context vctx int which const char key Retrieve the value associated with a message context key or connection context key vctx The validation context For..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "binding_address_family_matches"
 description: "binding address family matches Validate that the binding in question matches the address family provided int binding address family matches binding slot family ec binding slot binding slot u int 8 t family This reference page was automatically generated from functions found in the header files in the development branch..."
 ---

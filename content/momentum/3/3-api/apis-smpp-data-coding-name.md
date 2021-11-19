@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "smpp_data_coding_name"
 description: "smpp data coding name Retrieve the data coding name from the PDU char smpp data coding name pdu SMPP PDU pdu Configuration Change This feature is available starting from Momentum 3 2 Retrieve the data coding name from the PDU pdu For information about this data structure see SMPP PDU..."
 ---

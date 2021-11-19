@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "message_body_in_core"
 description: "message body in core int message body in core closure mess pull result void closure email message mess int pull int result int has core message body in core hook void register core message body in core hook first hook closure ec hook core message body in core func t..."
 ---

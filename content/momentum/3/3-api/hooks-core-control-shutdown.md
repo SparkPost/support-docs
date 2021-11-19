@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "control_shutdown"
 description: "control shutdown void control shutdown closure void closure int has core control shutdown hook void register core control shutdown hook first hook closure ec hook core control shutdown func t hook void closure void register core control shutdown hook last hook closure ec hook core control shutdown func t hook..."
 ---

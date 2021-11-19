@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "ec_dkim_get_verify_results"
 description: "ec dkim get verify results Return the number of DKIM signature results int ec dkim get verify results vctx results validate context vctx ec dkim verify results results This reference page was automatically generated from functions found in the header files in the development branch The function described here may..."
 ---

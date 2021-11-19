@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/05/2020"
+lastUpdated: "03/05/2020"
 title: "Creating a Template"
 description: "In the New Template form you can specify your template details enter your template content preview and test your template using test data and update your template Templates can be saved as drafts or set to published To open the New Template form click the New Template icon in the..."
 ---

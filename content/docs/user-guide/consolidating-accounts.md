@@ -1,5 +1,5 @@
 ---
-lastUpdated: "01/06/2020"
+lastUpdated: "02/06/2020"
 title: "Consolidating/Migrating SparkPost Accounts"
 description: "Guidance for consolidating SparkPost accounts. It is important to also become familiar with the subaccounts feature before beginning consolidation. "
 ---

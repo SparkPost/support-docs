@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "Configuration Management"
 description: "A Momentum cluster installation is configured using the ecelerity conf file just like a Momentum single node configuration However the ecelerity conf file in a cluster configuration also includes the ecelerity cluster conf file This file is typically used to specify options common to all nodes the cluster topology for..."
 ---

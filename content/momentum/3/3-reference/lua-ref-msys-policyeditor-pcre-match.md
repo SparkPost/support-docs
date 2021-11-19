@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "msys.policyeditor.pcre_match"
 description: "msys policyeditor pcre match Perform a PCRE regex match operation msys policyeditor pcre match ctx vars params Configuration Change This function is deprecated Use local str msys pcre match string pattern to perform a PCRE match For more information see msys pcre match Perform a PCRE regex match operation A..."
 ---

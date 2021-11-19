@@ -1,5 +1,5 @@
 ---
-lastUpdated: "05/02/2020"
+lastUpdated: "06/02/2020"
 title: "mainlog"
 description: "The mainlog logs reception delivery transient failure permanent failure and heartbeat events It is configured in the ec logger Every event is written to the mainlog file as a single line Fixed position codes signify whether the log line represents a reception R delivery D transient failure T or permanent..."
 ---

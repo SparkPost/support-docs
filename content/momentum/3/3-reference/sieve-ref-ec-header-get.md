@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "ec_header_get"
 description: "ec header get obtain the values for a particular header ec header get field name This will find all headers with the matching field name and return a string list of their bodies Example 16 56 ec header get example 1 Example 16 57 ec header get example 2 The..."
 ---

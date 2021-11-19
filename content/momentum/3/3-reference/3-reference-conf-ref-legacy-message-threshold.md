@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "legacy_message_threshold"
 description: "legacy message threshold The maximum size allowed for messages being passed to legacy modules legacy message threshold 1048576 For performance reasons Momentum prefers to keep message contents in memory From time to time messages that are much larger than the average for a given Momentum instance enter the system and..."
 ---

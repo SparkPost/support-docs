@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "response_eval"
 description: "response eval The response phase in generic HTTP delivery int response eval closure sess void closure http session sess Configuration Change This hook point is available as of Momentum version 3 5 5 This hook is called at the response phase in generic HTTP delivery If an HTTP 200 response..."
 ---

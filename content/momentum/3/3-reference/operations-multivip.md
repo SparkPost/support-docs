@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "MultiVIP© Interfaces"
 description: "Multi VIP technology allows Momentum to transparently deliver different messages from different IP addresses This is most commonly used when two or more customers are sending mail through a single Momentum instance and it is desirable for quality of service reasons for messages from each client to originate from unique..."
 ---

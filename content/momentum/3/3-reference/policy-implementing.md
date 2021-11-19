@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "Implementing Policy Using Sieve"
 description: "Implementation of your site policy is a matter of loading and configuring the appropriate modules via ecelerity conf and optionally using the sieve module to make decisions based on the validation context A number of the available modules predate the sieve module and can be configured to either take an..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "msys.gauge_cache.remove_item"
 description: "msys gauge cache remove item Remove the value associated with keystring from the named cache msys gauge cache remove item cachename keystring Removes the value associated with keystring from the named cache Enable this function with the statement require msys gauge cache msys gauge cache inc msys gauge cache dec..."
 ---

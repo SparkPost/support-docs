@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/04/2020"
+lastUpdated: "03/04/2020"
 title: "spoolbase"
 description: "spoolbase set the base directory for the spool Spool Base var spool ecelerity Spool Base allows you to place your spool at an alternate location on the disk The default value is var spool ecelerity spoolbase is valid in the global scope spool mode..."
 ---
