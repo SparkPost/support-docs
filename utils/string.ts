@@ -19,3 +19,7 @@ export const slugify = (str: string): string => {
 
   return str;
 };
+
+export const formatDate = (date: string): string => {
+  return new Date(date).toLocaleDateString('en-us', { month: 'long', year: 'numeric' });
+};
