@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/27/2020"
+lastUpdated: "03/26/2020"
 title: "ec_sendmail"
 description: "ec sendmail a sendmail compatibility interface opt msys ecelerity bin ec sendmail F full name f email address h i t ec sendmail is a command line utility for Unix systems that requires a local binary to perform submission to the local MTA It has the following options F full..."
 ---

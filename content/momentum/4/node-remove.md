@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/27/2020"
+lastUpdated: "03/26/2020"
 title: "Removing a Platform Node"
 description: "This section describes how to remove a functional Platform node which involves removing the node from the Cassandra and Momentum clusters and making some manual configuration changes on the remaining Platform nodes and on the existing Analytics nodes These instructions apply to Momentum 4 2 1 x where x or..."
 ---

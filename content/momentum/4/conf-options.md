@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/27/2020"
+lastUpdated: "03/26/2020"
 title: "Configuration Options"
 description: "Momentum provides a rich set of configuration options Some options are simple configuration options while other configuration options are more complex such as defining data structures These configuration options can be defined in the following scopes global domain host binding binding group security pathway pathway group listener listen peer threadpool..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/27/2020"
+lastUpdated: "03/26/2020"
 title: "Creating root and vertica_dba Accounts"
 description: "root and vertica dba accounts must have their own RSA or Digital Signature Algorithm DSA keysets This requirement is necessary only if the local security policy has configured SSH Strict Host Key Checking to yes The vertica dba public key s must be in the var db vertica ssh authorized..."
 ---

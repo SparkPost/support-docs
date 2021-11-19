@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/27/2020"
+lastUpdated: "03/26/2020"
 title: "SMTP Extensions"
 description: "Implements the receiving side of an XCLIENT capable interaction XCLIENT allows trusted senders to alter the connecting IP address and other connection level identifiers to appear to be someone they are not This is used for internally trusted re mailing More information on XCLIENT can be found at http www..."
 ---

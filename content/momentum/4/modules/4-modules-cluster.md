@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/27/2020"
+lastUpdated: "03/26/2020"
 title: "cluster – Cluster"
 description: "The cluster module is used to specify cluster behavior The cluster module is configured in the ecelerity cluster conf file The following is the default configuration Example 71 32 cluster Configuration The following are the configuration options defined within this module arp all hosts When plumbing a Dura VIP™ you..."
 ---

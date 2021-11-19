@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/27/2020"
+lastUpdated: "03/26/2020"
 title: "msys.idn.to_idn"
 description: "msys idn to idn Attempts to convert the domain to the IDN format msys idn to idn name Configuration Change This feature is available as beta in Momentum 4 2 to idn assumes its argument to be a utf 8 formatted domain name It attempts to convert the domain to..."
 ---

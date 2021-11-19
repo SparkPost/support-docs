@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/27/2020"
+lastUpdated: "03/26/2020"
 title: "Updating an API Key"
 description: "You can edit the label and grants of an existing API key From the Settings section click the icon to the right of the API key that you want to update In the list click Edit as shown in Figure 44 4 Update API Key Figure 44 4 Update API..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/27/2020"
+lastUpdated: "03/26/2020"
 title: "Logging Configuration"
 description: "You control Momentum's logging behaviour by configuring the selected logging modules in one of Momentum's configuration files eccluster conf configures the behaviour of logging on the Momentum Cluster Manager ecelerity conf configures the behaviour of logging on a node ecelerity cluster con configures the files used to create aggregated logs..."
 ---

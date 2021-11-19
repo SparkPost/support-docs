@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/27/2020"
+lastUpdated: "03/26/2020"
 title: "msys.cidr.query"
 description: "msys cidr query Look up address against the named CIDR msys cidr query name address This function looks up addresses against the named CIDR When using the datasource or rbldnsd types the return value will always be a string and will either be the value of the value column or..."
 ---

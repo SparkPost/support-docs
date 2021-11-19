@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/27/2020"
+lastUpdated: "03/26/2020"
 title: "Managing Your API Keys"
 description: "Configuration Change As of version 4 1 API authentication is enabled by default For instructions to disable it see Chapter 21 Enforcing REST API UI User Authentication Version 4 2 and later add View Adaptive Delivery Data grant type When API authentication is enabled all AP Is require that you..."
 ---

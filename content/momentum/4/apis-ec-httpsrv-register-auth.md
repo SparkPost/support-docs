@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/27/2020"
+lastUpdated: "03/26/2020"
 title: "ec_httpsrv_register_auth"
 description: "ec httpsrv register auth Register an HTTP handler for authenticating a URI int ec httpsrv register auth instance method path closure handler const char instance const char method const char path ec blobject closure ec httpsrv auth handler func handler This function registers an HTTP handler for authenticating a URI..."
 ---

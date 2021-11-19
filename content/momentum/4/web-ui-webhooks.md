@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/27/2020"
+lastUpdated: "03/26/2020"
 title: "Managing Your Webhooks in the UI"
 description: "Configuration Change Version 4 1 and later support managing your webhooks using the UI Version 4 2 and later add adaptive delivery events You can manage your webhooks using the Webhooks API or the Webhooks section in the UI The UI provides a flexible easy to use interface to view..."
 ---

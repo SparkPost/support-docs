@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/27/2020"
+lastUpdated: "03/26/2020"
 title: "Configuring Inbound Mail Service Using ECStream"
 description: "The EC Stream Listener is the listener that enables you to inject message using EC Stream The EC Stream protocol is a bare bones high performance injection mechanism It does not support any extended properties Momentum can listen on any number of Unix domain sockets and or IP port addresses..."
 ---

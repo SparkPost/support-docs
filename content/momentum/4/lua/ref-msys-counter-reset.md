@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/27/2020"
+lastUpdated: "03/26/2020"
 title: "msys.counter.reset"
 description: "msys counter reset Reset a counter msys counter reset object or path Resets the given counter object or counter associated with the given path to 0 If the supplied counter path does not have a counter associated with it then it is created with strict semantics Enable this function with..."
 ---

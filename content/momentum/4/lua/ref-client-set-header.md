@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/27/2020"
+lastUpdated: "03/26/2020"
 title: "client:set_header"
 description: "client set header Set an HTTP header client set header header Set a client's HTTP header To set multiple headers invoke this function multiple times Calling this function with no arguments will clear the headers Example 70 13 client set header example msys http client new client set timeout client..."
 ---

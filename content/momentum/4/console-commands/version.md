@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/27/2020"
+lastUpdated: "03/26/2020"
 title: "version"
 description: "version show version information of Momentum version This command displays version information and the product type of the running Momentum instance..."
 ---

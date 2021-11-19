@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/27/2020"
+lastUpdated: "03/26/2020"
 title: "vctx:set_code"
 description: "vctx set code Set the inbound disposition and response message vctx set code codenum message Sets the inbound disposition and response message This can cause the current message to be rejected if the codenum is set to an appropriate value Because this function is in the msys core namespace an..."
 ---

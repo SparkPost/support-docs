@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/27/2020"
+lastUpdated: "03/26/2020"
 title: "Before You Begin"
 description: "This chapter describes issues that need to be considered or addressed prior to preparing for the installation on Analytics and or Platform MTA nodes For each of your servers that run the MTA you will need a license file in this directory opt msys ecelerity etc You will need to..."
 ---

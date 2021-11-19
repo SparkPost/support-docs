@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/27/2020"
+lastUpdated: "03/26/2020"
 title: "msgpart:text"
 description: "msgpart text Returns the transfer decoded text for the message part in UTF 8 msgpart text Returns the transfer decoded text for the message part in UTF 8 The ellipsis indicates that this function accepts any number of arguments This function does not always return a string It can return..."
 ---

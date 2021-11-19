@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/27/2020"
+lastUpdated: "03/26/2020"
 title: "delayed_queue_scan_interval"
 description: "delayed queue scan interval how often to call the maintainer for a domain delayed queue scan interval 15 The primary function of the delayed queue scan interval option is to determine how often to call the maintainer for a domain If there are messages on the active queue then it..."
 ---

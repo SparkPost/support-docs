@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/27/2020"
+lastUpdated: "03/26/2020"
 title: "chunk_logger Module"
 description: "Configuration Change This feature is available in Momentum 4 2 and later The chunk logger module provides a safe interface for logging asynchronously from Lua C and C Historically the paniclog has been used for low volume logging via print in Lua or ec mod debug log error in C..."
 ---

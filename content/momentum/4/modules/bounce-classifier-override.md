@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/27/2020"
+lastUpdated: "03/26/2020"
 title: "bounce_classifier_override – Override/Augment Bounce Classifications"
 description: "The Live Bounce Updates service is provided free of charge with your support agreement however you must configure this module in order to use the service For more information see Section 71 44 Live Bounce Updates Live Bounce Updates Service Use the bounce classifier override module to augment and override..."
 ---

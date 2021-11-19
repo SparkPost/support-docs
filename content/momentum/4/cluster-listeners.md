@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/27/2020"
+lastUpdated: "03/26/2020"
 title: "Cluster-specific Listeners"
 description: "This section describes the listeners that are used in a cluster configuration Any direct point to point communication between cluster nodes that does not require membership wide ordering semantics will be performed over TCP IP via the port specified in the Listen stanza within the EC Cluster Listener scope Any..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/27/2020"
+lastUpdated: "03/26/2020"
 title: "pipe_transport – Module"
 description: "Instead of immediately spooling messages to disk the pipe transport I O module causes them to be piped into a program on the local machine This module provides a means of running a program whenever there is mail for a specific domain or domains The success of that program affects..."
 ---

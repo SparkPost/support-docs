@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/27/2020"
+lastUpdated: "03/26/2020"
 title: "doc:xpath"
 description: "doc xpath Perform an X Path query doc xpath query contextnode This function performs an X Path query and returns an iterator over the resultant set of nodes You may specify an optional node from the same document to use as context for the X Path query Note If you..."
 ---

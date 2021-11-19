@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/27/2020"
+lastUpdated: "03/26/2020"
 title: "msys.audit_series.count"
 description: "msys audit series count Return the total associated with the named series msys audit series count name options This function returns the total associated with the named series that is passed in as the first argument options may be a table that provides additional query parameters For all series types..."
 ---

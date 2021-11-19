@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/27/2020"
+lastUpdated: "03/26/2020"
 title: "context"
 description: "context use to set arbitrary connection context key value pairs context name value Provides a mechanism to set arbitrary connection context key value pairs The connection context is visible to all validation modules and scriptlets It allows the efficient assignment of metadata to connections based on the listener and arbitrary..."
 ---

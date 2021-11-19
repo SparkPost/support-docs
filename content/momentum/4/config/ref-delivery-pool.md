@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/27/2020"
+lastUpdated: "03/26/2020"
 title: "delivery_pool"
 description: "delivery pool associate a pool of event loops with email delivery to use multiple threads delivery pool pool name To use this option you must have a Supercharger license This option is used in a multiple event loop configuration To configure threading for email delivery assign delivery pool the name..."
 ---

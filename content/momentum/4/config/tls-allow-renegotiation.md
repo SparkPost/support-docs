@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/27/2020"
+lastUpdated: "03/26/2020"
 title: "tls_allow_renegotiation"
 description: "tls allow renegotiation determine whether to enable TLS renegotiation TLS Allow Renegotiation true false Configuration Change Support for GNUTLS is available as of version 4 1 for SMTP reception and SMTP deliveries only This option determines whether TLS renegotiation is enabled or disabled Open SSL When TLS Engine is set..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/27/2020"
+lastUpdated: "03/26/2020"
 title: "node:doc"
 description: "node doc Return the document object that contains the specified node node doc Return the document object that contains the specified node Example 70 80 example doc tostring and xml parsexml..."
 ---

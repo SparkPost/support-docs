@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/27/2020"
+lastUpdated: "03/26/2020"
 title: "message_expiration"
 description: "message expiration the time to live for messages Message Expiration 604800 The maximum amount of time in seconds a message will remain undelivered in the system If a message remains undeliverable for this amount of time it will be removed and a delivery failure log entry will be made If..."
 ---

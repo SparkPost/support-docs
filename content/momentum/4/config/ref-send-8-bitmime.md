@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/27/2020"
+lastUpdated: "03/26/2020"
 title: "send_8bitmime"
 description: "send 8 bitmime Enable advertising of 8 BITMIME when sending mail send 8 bitmime no send 8 bitmime ifavailable When set to ifavailable if a message to be sent to a remote MTA contains 8 bit data and the remote MTA advertises support for 8 BITMIME then Momentum will add..."
 ---

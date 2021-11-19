@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/27/2020"
+lastUpdated: "03/26/2020"
 title: "msys.cidr.define"
 description: "msys cidr define Define a named CIDR object msys cidr define name options Defines a named CIDR object A CIDR object is used to efficiently track information keyed by network address This function is intended to be used from a module init function Example 70 51 msys cidr define example..."
 ---

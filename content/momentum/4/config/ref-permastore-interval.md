@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/27/2020"
+lastUpdated: "03/26/2020"
 title: "permastore_interval"
 description: "permastore interval the frequency for saving various statistics permastore interval 300 Statistics related to global connections global and per binding signing and sieve are stored in an SQ Lite database whose location is configured by the masterdb file Every permastore interval a snapshot of these statistics is saved so that..."
 ---

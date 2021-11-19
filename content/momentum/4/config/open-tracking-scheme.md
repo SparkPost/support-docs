@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/27/2020"
+lastUpdated: "03/26/2020"
 title: "open_tracking_scheme"
 description: "open tracking scheme set the hyperlink scheme to use for open tracking links in SMTP injections open tracking scheme http Configuration Change This option is available as of version 4 1 HF 4 If open or click tracking is enabled this option sets the hyperlink scheme to use for open..."
 ---

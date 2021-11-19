@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/27/2020"
+lastUpdated: "03/26/2020"
 title: "msys.rfc3464.send_mdn"
 description: "msys rfc 3464 send mdn Generate and enqueue an MDN msys rfc 3464 send mdn msg action Generate and enqueue an MDN from the input msg action can be one of msys core FAILED msys core DELAYED msys core DELIVERED msys core RELAYED and msys core EXPANDED Returns 1 if..."
 ---

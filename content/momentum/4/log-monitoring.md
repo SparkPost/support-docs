@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/27/2020"
+lastUpdated: "03/26/2020"
 title: "Log Monitoring"
 description: "This chapter lists and describes the logs associated with Momentum 4 Table 33 1 Log Monitoring Log File Name and Location Node Type Description var log ecelerity paniclog ec Platform Error level information for ecelerity is written here var log eccluster paniclog ec Manager Error level information for eccmgr is..."
 ---

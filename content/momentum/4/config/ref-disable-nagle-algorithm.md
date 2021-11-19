@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/27/2020"
+lastUpdated: "03/26/2020"
 title: "disable_nagle_algorithm"
 description: "disable nagle algorithm disable nagle algorithm on sockets disable nagle algorithm false Momentum can be configured to disable the Nagle algorithm on the TCP connections it manages The default for this option is false This is an advanced option Thorough testing is recommended before deployment in a production environment disable..."
 ---

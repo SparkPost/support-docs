@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/27/2020"
+lastUpdated: "03/26/2020"
 title: "msys.cloudmark.set_af_mode_discard"
 description: "msys cloudmark set af mode discard Set the Cloudmark Active Filter mode to DISCARD msys cloudmark set af mode discard Set the Cloudmark Active Filter mode to DISCARD You must set the Active Filter mode by invoking one of the following functions msys cloudmark set af mode discard msys cloudmark..."
 ---

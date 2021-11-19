@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/27/2020"
+lastUpdated: "03/26/2020"
 title: "Configuration Changes"
 description: "Move the Vertica stanza to the root level in the configuration files on all nodes as detailed below Multiple stanzas in the root must be separated by commas For example in the webhooks api version a Cassandra stanza follows the Application stanza so you will need to add a comma..."
 ---

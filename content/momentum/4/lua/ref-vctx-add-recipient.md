@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/27/2020"
+lastUpdated: "03/26/2020"
 title: "vctx:add_recipient"
 description: "vctx add recipient Add an address to the recipient list for the inbound session vctx add recipient address This function adds an address or a table representing multiple addresses to the recipient list for the inbound session If it is used in an invalid phase after rcptlist final it raises..."
 ---

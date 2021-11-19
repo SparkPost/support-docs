@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/27/2020"
+lastUpdated: "03/26/2020"
 title: "siv_throttle_cache_size"
 description: "siv throttle cache size set the maximum number of named throttles siv throttle cache size 1000 This option sets the maximum number of named throttles created by Lua scripts If you try to create more throttles than this value throttles created earlier will be destroyed The default value is 1000..."
 ---

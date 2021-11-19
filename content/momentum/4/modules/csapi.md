@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/27/2020"
+lastUpdated: "03/26/2020"
 title: "csapi – Symantec CSAPI Antivirus Support"
 description: "The Content Scanning Application Programming Interface CSAPI module provides integration to Symantec's suite of content scanners This module runs in an external process opt msys ecelerity sbin ec avscan initiated by Momentum during startup If you intend to use this module be sure to choose it during installation For more..."
 ---

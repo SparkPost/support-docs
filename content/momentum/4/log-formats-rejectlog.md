@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/27/2020"
+lastUpdated: "03/26/2020"
 title: "rejectlog"
 description: "The rejectlog stores records of inbound messages that are rejected by Momentum either due to policy or protocol deviations It lists the full context for all rejected messages as well as a summary of why the message was rejected and it is configured in the ec logger A rejection line..."
 ---

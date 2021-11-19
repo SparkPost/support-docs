@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/27/2020"
+lastUpdated: "03/26/2020"
 title: "msys.validate.opendkim.verify"
 description: "msys validate opendkim verify Verify a DKIM signature msys validate opendkim verify msg This function verifies a DKIM signature and returns a DKIM handle to context specific information about the message Typically you would pass the return value of this function to other functions such as msys validate opendkim get..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/27/2020"
+lastUpdated: "03/26/2020"
 title: "Creating Custom Console Commands"
 description: "In addition to the built in console commands you can create your own commands using the Lua function msys register Control If for example you have domains that are heavily throttled and discard messages that are over the limit you can create a console command to push emails for these..."
 ---

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/27/2020"
+lastUpdated: "03/26/2020"
 title: "ec_dump_config"
 description: "ec dump config output the ecelerity conf file as XML opt msys ecelerity bin ec dump config c configfile e extdir f outputfile ec dump config will generate an XML version of the default configuration file and output to STDOUT If the configuration is invalid an error message is displayed..."
 ---

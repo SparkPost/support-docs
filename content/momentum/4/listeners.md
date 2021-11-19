@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/27/2020"
+lastUpdated: "03/26/2020"
 title: "Listeners"
 description: "Momentum is built around a powerful event based scheduling engine A key part of that engine is responding to events that occur on inbound sockets known as listeners These listeners are configured in Momentum's configuration files The following is an example of a basic listener syntax In this example the..."
 ---

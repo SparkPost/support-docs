@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/27/2020"
+lastUpdated: "03/26/2020"
 title: "engagement_tracker – HTTP Engagement Tracking"
 description: "Configuration Change For version 4 1 and earlier metadata is included in open tracking only As of version 4 1 HF 4 metadata can also be included in click tracking based on the click tracking include metadata option The engagement tracker module handles the creation of open tracked and click..."
 ---

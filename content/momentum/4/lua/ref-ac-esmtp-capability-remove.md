@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/27/2020"
+lastUpdated: "03/26/2020"
 title: "ac:esmtp_capability_remove"
 description: "ac esmtp capability remove Remove a capability string from the EHLO response ac esmtp capability remove name Removes a capability string from the EHLO response It is most useful in the connect phase and raises an error if the session is not attached to an SMTP listener ac is an..."
 ---

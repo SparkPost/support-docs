@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/27/2020"
+lastUpdated: "03/26/2020"
 title: "allow_ip_literal"
 description: "allow ip literal allow IP addresses in email addresses allow ip literal true This directive instructs Momentum to respect or reject IP addresses in e mail addresses If this option is set to false email addresses such as jimsmith 192 168 0 1 will not deliver successfully as the DNS..."
 ---

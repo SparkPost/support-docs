@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/27/2020"
+lastUpdated: "03/26/2020"
 title: "adaptive – Adaptive Delivery"
 description: "Adaptive Delivery AD provides the ability to dynamically tune parameters to help manage your outbound mail traffic in a way that is more in line with the best practices in use by receivers AD also helps maintain and improve your sending reputation and makes better use of system resources Using..."
 ---

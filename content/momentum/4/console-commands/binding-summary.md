@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/27/2020"
+lastUpdated: "03/26/2020"
 title: "binding summary"
 description: "binding summary show binding statistics binding summary binding name binding slot group binding group binding summary will produce metrics such as queue sizes message counts and throughput rates since startup over all the bindings If a specific binding name binding slot or binding group name is given the metrics will..."
 ---

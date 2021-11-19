@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/27/2020"
+lastUpdated: "03/26/2020"
 title: "node:addchild"
 description: "node addchild Add a child node node addchild value When the parameter passed to this function is a string this function creates a node and adds it as a child of the existing node returning the new node The parameter passed to this method is the name of the XML..."
 ---

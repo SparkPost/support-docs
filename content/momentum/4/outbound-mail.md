@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/27/2020"
+lastUpdated: "03/26/2020"
 title: "Configuring Outbound Mail Delivery"
 description: "By default Momentum will use DNS to resolve the MX records for a destination domain to decide which machine s it will connect to when delivering the mail You can override the use of MX records using the Gateway or Routes configuration options When set Momentum will attempt to resolve..."
 ---

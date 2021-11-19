@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/27/2020"
+lastUpdated: "03/26/2020"
 title: "Creating a Webhook"
 description: "In the Webhooks tab click the New Webhook icon in the upper right corner to open the Create New Webhook form as shown in Figure 60 2 Create New Webhook Figure 60 2 Create New Webhook Enter the following information Webhook Name User friendly name for the webhook Target URL..."
 ---

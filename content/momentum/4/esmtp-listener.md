@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/27/2020"
+lastUpdated: "03/26/2020"
 title: "Configuring Inbound Mail Service Using SMTP"
 description: "The ESMTP Listener is the listener that enables you to inject message using SMTP Momentum can listen on any number of Unix domain sockets and or IP port addresses for TCP IP service The ESMTP Listener supports all of the extended properties and extensions described below The ESMTP Listener is..."
 ---
