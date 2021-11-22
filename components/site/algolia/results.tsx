@@ -1,9 +1,12 @@
+import React from 'react';
+import { CategoriesContext } from 'context/categories';
 import { Box, Inline, Stack } from '@sparkpost/matchbox';
 import { ChevronRight } from '@sparkpost/matchbox-icons';
 import { connectStateResults, Highlight, Hits } from 'react-instantsearch-dom';
 import Link from 'next/link';
 import css from '@styled-system/css';
 import styled from 'styled-components';
+import { toTitleCase } from 'utils/string';
 
 const ResultsWrapper = styled.div`
   .ais-Hits-item {
@@ -68,6 +71,7 @@ const Result = ({ hit }: ResultProps) => {
   const parts = hit.slug.split('/');
   const crumbLength = parts.length - 1;
   const crumbs = parts.slice(1, crumbLength);
+  const categories = React.useContext(CategoriesContext);
 
   return (
     <Link href={hit.slug} passHref>
@@ -79,9 +83,11 @@ const Result = ({ hit }: ResultProps) => {
               <Inline space="100">
                 In
                 {crumbs.map((crumb, i) => {
+                  const category = categories.find(({ key }) => key === crumb);
+                  const label = category?.label || toTitleCase(crumb);
                   return (
                     <span key={i}>
-                      {crumb} {i !== crumbs.length - 1 ? <ChevronRight size={16} /> : null}
+                      {label} {i !== crumbs.length - 1 ? <ChevronRight size={16} /> : null}
                     </span>
                   );
                 })}
