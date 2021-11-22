@@ -40,12 +40,6 @@ module.exports = {
         destination: '/docs',
         permanent: true,
       },
-      // This path was accidentally used in the announcement email
-      {
-        source: '/docs/user-guide/automatic-inline-seeding-user-guide',
-        destination: '/docs/user-guide/automatic-inline-seeds',
-        permanent: true,
-      },
     ];
   },
 };
