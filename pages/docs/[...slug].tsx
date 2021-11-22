@@ -1,10 +1,12 @@
 import { GetStaticProps, GetStaticPaths } from 'next';
 import {
+  getCategoryData,
   getSupportNavigation,
   getAllCategoryPostPaths,
   getSingleCategoryPost,
   categoryPath,
 } from 'lib/api';
+import { CategoriesProvider, Category } from 'context/categories';
 import SEO from 'components/site/seo';
 import Markdown from 'components/markdown';
 import DocsLayout from 'components/site/docsLayout';
@@ -22,13 +24,14 @@ type PostPageProps = {
   };
   navigationData?: NavigationItemProps[];
   isIndex: boolean;
+  categoryData: Category[];
 };
 
 const PostPage = (props: PostPageProps): JSX.Element => {
-  const { content, data, navigationData, isIndex } = props;
+  const { content, data, navigationData, isIndex, categoryData } = props;
   const router = useRouter();
   return (
-    <>
+    <CategoriesProvider data={categoryData}>
       <SEO title={data.title} description={data.description} />
       <DocsLayout navigationData={navigationData}>
         <DocumentationContent
@@ -46,7 +49,7 @@ const PostPage = (props: PostPageProps): JSX.Element => {
           )}
         </DocumentationContent>
       </DocsLayout>
-    </>
+    </CategoriesProvider>
   );
 };
 
@@ -57,7 +60,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   const { content, data, isIndex } = getSingleCategoryPost(params.slug, categoryPath('docs')) || {};
   const navigationData = getSupportNavigation() || [];
-  return { props: { content, data, navigationData, isIndex } };
+  const categoryData = getCategoryData('docs');
+  return { props: { content, data, navigationData, isIndex, categoryData } };
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {

@@ -23,3 +23,9 @@ export const slugify = (str: string): string => {
 export const formatDate = (date: string): string => {
   return new Date(date).toLocaleDateString('en-us', { month: 'long', year: 'numeric' });
 };
+
+export const toTitleCase = (str: string): string => {
+  return str.replace(/\w\S*/g, function (txt) {
+    return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+  });
+};

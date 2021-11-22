@@ -92,3 +92,22 @@ export const getSupportNavigation = () => {
 
   return navigationData;
 };
+
+/**
+ * Retrieves category information for breadcrumb friendly labels
+ */
+export const getCategoryData = (category: CategoryOption) => {
+  const contentPath = `content/${category}`;
+  const indexFilePaths = glob.sync(`${contentPath}/**/index.md`);
+
+  const categoryData = indexFilePaths.map((file) => {
+    const { data } = readFile(file);
+    const parts = file.split('/');
+    return {
+      label: data.name || data.title,
+      key: parts[parts.length - 2],
+    };
+  });
+
+  return categoryData;
+};

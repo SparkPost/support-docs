@@ -1,5 +1,11 @@
 import { GetStaticProps, GetStaticPaths } from 'next';
-import { getAllCategoryPostPaths, getSingleCategoryPost, categoryPath } from 'lib/api';
+import {
+  getCategoryData,
+  getAllCategoryPostPaths,
+  getSingleCategoryPost,
+  categoryPath,
+} from 'lib/api';
+import { CategoriesProvider, Category } from 'context/categories';
 import MomentumLayout from 'components/site/momentumLayout';
 import DocumentationContent from 'components/site/documentationContent';
 import SEO from 'components/site/seo';
@@ -13,20 +19,21 @@ type PostPageProps = {
     lastUpdated?: string;
   };
   isIndex: boolean;
+  categoryData: Category[];
 };
 
 const PostPage = (props: PostPageProps): JSX.Element => {
-  const { content, data, isIndex } = props;
+  const { content, data, isIndex, categoryData } = props;
 
   return (
-    <>
+    <CategoriesProvider data={categoryData}>
       <SEO title={data.title} description={data.description} />
       <MomentumLayout>
         <DocumentationContent title={data.title} lastUpdated={data.lastUpdated} isIndex={isIndex}>
           <Markdown>{content}</Markdown>
         </DocumentationContent>
       </MomentumLayout>
-    </>
+    </CategoriesProvider>
   );
 };
 
@@ -35,7 +42,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     return { props: {} };
   }
   const { content, data } = getSingleCategoryPost(params.slug, categoryPath('momentum')) || {};
-  return { props: { content, data } };
+  const categoryData = getCategoryData('momentum');
+  return { props: { content, data, categoryData } };
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
