@@ -7,3 +7,9 @@
   # path as the one defined in the `from` property. Setting `force` to `true`
   # will make the redirect rule take precedence over any existing files.
   force = true
+
+# This path was accidentally used in the announcement email
+[[redirects]]
+  from = "/docs/user-guide/automatic-inline-seeding-user-guide"
+  to = "/docs/user-guide/automatic-inline-seeds"
+  status = 301
