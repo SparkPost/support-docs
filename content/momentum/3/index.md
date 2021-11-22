@@ -1,9 +1,7 @@
 ---
 lastUpdated: "03/26/2020"
-name: "Momentum 3.x"
-title: "Category File"
+title: "Momentum 3.x"
 description: ""
-type: "custom"
 ---
 
 ## Reference for Version 3.x

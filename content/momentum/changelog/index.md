@@ -1,8 +1,6 @@
 ---
 lastUpdated: "04/08/2020"
-title: "Category File"
-type: "custom"
-name: "Momentum Changelogs"
+title: "Momentum Changelogs"
 description: "Momentum Changelogs"
 ---
 
