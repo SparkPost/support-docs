@@ -8,8 +8,14 @@
   # will make the redirect rule take precedence over any existing files.
   force = true
 
-# This path was accidentally used in the announcement email
+# This path was accidentally used in the public announcement email
 [[redirects]]
   from = "/docs/user-guide/automatic-inline-seeding-user-guide"
+  to = "/docs/user-guide/automatic-inline-seeds"
+  status = 301
+
+# This path was accidentally used in the internal announcement email
+[[redirects]]
+  from = "/docs/user-guide/automatic-inline-seeding"
   to = "/docs/user-guide/automatic-inline-seeds"
   status = 301
