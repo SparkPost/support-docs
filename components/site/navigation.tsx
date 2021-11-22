@@ -21,6 +21,8 @@ export interface NavigationItemProps {
   link: string;
   items?: this[];
   level?: number;
+  lastUpdated?: string;
+  description?: string;
 }
 
 type NavigationProps = {

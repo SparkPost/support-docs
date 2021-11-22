@@ -74,7 +74,7 @@ export const getSupportNavigation = () => {
   const categoryData = categories.map((file) => {
     const { data } = readFile(file);
     const link = file.replace(/\/index.md$/, '').replace(/^content/, '');
-    return { ...data, title: data.name, link };
+    return { ...data, link };
   });
 
   // Then populate category items

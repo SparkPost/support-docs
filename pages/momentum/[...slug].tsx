@@ -18,17 +18,18 @@ type PostPageProps = {
     description?: string;
     lastUpdated?: string;
   };
+  isIndex: boolean;
   categoryData: Category[];
 };
 
 const PostPage = (props: PostPageProps): JSX.Element => {
-  const { content, data, categoryData } = props;
+  const { content, data, isIndex, categoryData } = props;
 
   return (
     <CategoriesProvider data={categoryData}>
       <SEO title={data.title} description={data.description} />
       <MomentumLayout>
-        <DocumentationContent title={data.title} lastUpdated={data.lastUpdated}>
+        <DocumentationContent title={data.title} lastUpdated={data.lastUpdated} isIndex={isIndex}>
           <Markdown>{content}</Markdown>
         </DocumentationContent>
       </MomentumLayout>

@@ -1,7 +1,6 @@
 ---
-lastUpdated: "02/08/2020"
-name: "Getting Started"
-title: "Category File"
-desk_id: 770787
-description: ""
+lastUpdated: '02/08/2020'
+title: 'Getting Started'
+name: 'Category File'
+description: 'Welcome to SparkPost! Get familiar with our product and explore its features.'
 ---
