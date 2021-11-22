@@ -16,4 +16,4 @@ Confidential & Proprietary.
 
 This book documents Message Systems Momentum.
 
-* * *
+---
