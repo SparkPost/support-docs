@@ -17,11 +17,13 @@ const Search = (props: SearchProps): JSX.Element => {
   const [query, setQuery] = React.useState('');
   const [hasFocus, setHasFocus] = React.useState(false);
   const container = React.useRef<HTMLDivElement>(null);
+  const menu = React.useRef<HTMLDivElement>(null);
 
   useWindowEvent('click', function (e) {
     const isInside = container && container.current?.contains(e.target as Node);
+    const isInsideMenu = menu && menu.current?.contains(e.target as Node);
 
-    if (hasFocus && !isInside) {
+    if ((hasFocus && !isInside) || isInsideMenu) {
       setHasFocus(false);
     }
   });
@@ -34,7 +36,7 @@ const Search = (props: SearchProps): JSX.Element => {
         onSearchStateChange={({ query }) => setQuery(query)}
       >
         <SearchBox onFocus={() => setHasFocus(true)} hasFocus={hasFocus} />
-        <SearchResults show={query.length > 0 && hasFocus} />
+        <SearchResults ref={menu} show={query.length > 0 && hasFocus} />
       </InstantSearch>
     </Box>
   );
