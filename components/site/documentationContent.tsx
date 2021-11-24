@@ -26,18 +26,15 @@ const DocumentationContent = ({
         <Box as="h1" fontSize="600" lineHeight="600" fontWeight="semibold">
           {title}
         </Box>
-        {description ||
-          (lastUpdated && (
-            <Box fontSize="200" lineHeight="200" pt="200">
-              {lastUpdated && !isIndex ? (
-                <>
-                  Last updated <Tag ml="300">{formatDate(lastUpdated)}</Tag>
-                </>
-              ) : (
-                description
-              )}
-            </Box>
-          ))}
+        <Box fontSize="200" lineHeight="200" pt="200" maxWidth="1150">
+          {lastUpdated && !isIndex ? (
+            <>
+              Last updated <Tag ml="300">{formatDate(lastUpdated)}</Tag>
+            </>
+          ) : (
+            description
+          )}
+        </Box>
       </Box>
       <Box as="hr" my="500" />
       <Box px="0">{children}</Box>

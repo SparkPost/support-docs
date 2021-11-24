@@ -26,7 +26,11 @@ const DocsIndexListPageContent = (props: DocsIndexListPageContentProps) => {
                     <Tag>{formatDate(item.lastUpdated)}</Tag>
                   </Box>
                 )}
-                {item.description && <Box as="p">{item.description}</Box>}
+                {item.description && (
+                  <Box as="p" maxWidth="1150">
+                    {item.description}
+                  </Box>
+                )}
                 <Box pt="400">
                   <Link href={item.link} passHref>
                     <Button variant="outline" color="blue">
