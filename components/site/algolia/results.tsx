@@ -107,7 +107,10 @@ type SearchResultsProps = {
   show?: boolean;
 };
 
-const SearchResults = (props: SearchResultsProps): JSX.Element | null => {
+const SearchResults = React.forwardRef<HTMLDivElement, SearchResultsProps>(function SearchResults(
+  props,
+  ref,
+) {
   const { show } = props;
 
   if (!show) {
@@ -115,7 +118,7 @@ const SearchResults = (props: SearchResultsProps): JSX.Element | null => {
   }
 
   return (
-    <Box>
+    <Box ref={ref}>
       <Box
         position="absolute"
         width="100%"
@@ -136,6 +139,6 @@ const SearchResults = (props: SearchResultsProps): JSX.Element | null => {
       </Box>
     </Box>
   );
-};
+});
 
 export default SearchResults;
