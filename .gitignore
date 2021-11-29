@@ -1,12 +1,43 @@
-node_modules
-deploy-key
-.DS_Store
-.idea
-.cache
-# Ignore all admin files except config.yml and article.css
-cms/admin/*
-!config.yml
-!article.css
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-# vim swap files
-**/.*.sw?
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+/cypress/videos
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+/public/robots.txt
+/public/sitemap.xml
+/public/sitemap-*.xml
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# local env files
+.env.local
+.env.*.local
+
+# vercel
+.vercel
+
+# Sentry
+.sentryclirc
+.env
+
+# Auto generated images
+public/content

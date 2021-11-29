@@ -1,0 +1,7 @@
+---
+lastUpdated: "03/26/2020"
+title: "Message Mode"
+description: "By default SMS submission to the SMSC operate in store and forward message mode In the SMPP protocol this means that as soon as the SMSC receives the short message submission via submit sm it responds immediately submit sm resp Subsequent failures to deliver the message to the destination are..."
+---
+
+By default, SMS submission to the SMSC operate in store-and-forward message mode. In the SMPP protocol, this means that as soon as the SMSC receives the short message submission (via submit_sm), it responds immediately (submit_sm_resp). Subsequent failures to deliver the message to the destination are indicated asynchronously in the delivery receipt. An optional mode of SMS submission is transaction message mode. Transaction message mode may by selected for an SMPP domain or binding using the [smpp_smsc_default_message_mode](/momentum/mobile/mobile-reference/mobility-conf-smpp-smsc-default-message-mode) and [smpp_message_mode](/momentum/mobile/mobile-reference/mobility-conf-smpp-message-mode) configuration parameters. In transaction mode, the SMSC does not send submit_sm_resp until the short message has been delivered to the handset. Before using transaction mode, check with the mobile network operator to ensure support for this option.

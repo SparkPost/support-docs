@@ -1,0 +1,91 @@
+{
+  "env": {
+    "node": true,
+    "es2021": true
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"],
+        "moduleDirectory": ["node_modules", "./"]
+      },
+      "typescript": {}
+    }
+  },
+  "parserOptions": {
+    "ecmaVersion": 8,
+    "sourceType": "module",
+    "allowImportExportEverywhere": true
+  },
+  "ignorePatterns": ["node_modules/*", ".next/*", ".out/*", "!.prettierrc.js"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:jsx-a11y/recommended",
+    "next/core-web-vitals"
+  ],
+  "rules": {
+    "no-unused-vars": [
+      "error",
+      {
+        "varsIgnorePattern": "^_",
+        "ignoreRestSiblings": true
+      }
+    ],
+    "import/no-unresolved": [
+      2,
+      {
+        "ignore": ["^(all|part):"]
+      }
+    ],
+    "max-lines": "off",
+    "import/no-anonymous-default-export": "off",
+    "react/prop-types": "off"
+  },
+  "overrides": [
+    {
+      "files": ["**/*.ts", "**/*.tsx"],
+      "parser": "@typescript-eslint/parser",
+      "settings": { "react": { "version": "detect" } },
+      "env": {
+        "browser": true,
+        "node": true,
+        "es2021": true
+      },
+      "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:react/recommended",
+        "plugin:react-hooks/recommended",
+        "plugin:jsx-a11y/recommended"
+      ],
+      "plugins": ["prettier"],
+      "rules": {
+        "react/no-unescaped-entities": "off",
+        "react/prop-types": "off",
+        "react/react-in-jsx-scope": "off",
+        "react/display-name": "off",
+        "jsx-a11y/anchor-is-valid": "off",
+        "@typescript-eslint/ban-types": "off",
+        "@typescript-eslint/no-unused-vars": [
+          "error",
+          {
+            "varsIgnorePattern": "^_",
+            "ignoreRestSiblings": true
+          }
+        ],
+        "@typescript-eslint/explicit-function-return-type": "off",
+        "@typescript-eslint/explicit-module-boundary-types": "off"
+      }
+    },
+    {
+      "parser": "babel-parser",
+      "files": ["bin/**/*.js", "lib/**/*.js"],
+      "rules": {
+        "no-console": 0,
+        "no-process-exit": 0
+      }
+    }
+  ]
+}

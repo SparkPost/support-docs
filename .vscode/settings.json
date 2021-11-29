@@ -1,6 +1,5 @@
 {
-    "cSpell.words": [
-        "appcompat",
-        "mydomain"
-    ]
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "typescript.validate.enable": true
 }

@@ -1,0 +1,1997 @@
+- link: /momentum/4
+  title: Momentum 4.x
+  items:
+    - link: /momentum/4/4-preface
+      title: Preface
+      items:
+        - link: '/momentum/4/4-preface#typographical'
+          title: Typographical Conventions Used in This Document
+    - link: /momentum/4/p-intro
+      title: Introduction to Momentum
+      items:
+        - link: /momentum/4/components
+          title: Components
+        - link: /momentum/4/loam
+          title: Life of A Message
+        - link: /momentum/4/roles-behaviors
+          title: Roles and Behaviors
+        - link: /momentum/4/licensed-features
+          title: Licensed Features
+          items:
+            - link: >-
+                /momentum/4/licensed-features#licensed_features.message.generation
+              title: Message Generation
+            - link: /momentum/4/licensed-features-adaptive-delivery
+              title: Adaptive Delivery
+            - link: /momentum/4/licensed-features-supercharger
+              title: Supercharger
+    - link: /momentum/4/p-installing
+      title: Installing Momentum
+      items:
+        - link: /momentum/4/hardware-requirements
+          title: Hardware Considerations
+          items:
+            - link: '/momentum/4/hardware-requirements#hardware.server_roles'
+              title: Server Roles
+            - link: /momentum/4/hardware-config-options
+              title: Configuration Options
+            - link: /momentum/4/hardware-scaling
+              title: Hardware Scaling Approach
+            - link: /momentum/4/hardware-environmental
+              title: Environmental Considerations
+            - link: /momentum/4/hardware-config
+              title: Hardware Deployment Configuration
+            - link: /momentum/4/production-config
+              title: Production Environment Configurations
+            - link: /momentum/4/addl-config-notes
+              title: Additional Configuration Notes
+            - link: /momentum/4/before-you-begin
+              title: Before You Begin
+            - link: '/momentum/4/before-you-begin#byb.msg.gen.license'
+              title: Momentum License
+            - link: /momentum/4/byb-os
+              title: Operating System
+            - link: /momentum/4/byb-redundancy
+              title: Redundancy
+            - link: /momentum/4/byb-load-balancing
+              title: Load Balancing
+            - link: /momentum/4/byb-disable-selinux
+              title: Disable SELinux
+            - link: /momentum/4/byb-ntp
+              title: Enable Network Time Protocol (NTP)
+            - link: /momentum/4/byb-sysctl-conf
+              title: Adjusting /etc/sysctl.conf
+            - link: /momentum/4/byb-set-hostnames
+              title: Setting Hostnames
+            - link: /momentum/4/byb-jre
+              title: Java Runtime Environment (JRE)
+            - link: /momentum/4/byb-root-and-vertica-dba
+              title: Creating root and vertica_dba Accounts
+            - link: /momentum/4/byb-redefine-ephemeral-ports
+              title: Redefining Ephemeral Ports
+            - link: /momentum/4/byb-config-vertica-services
+              title: Configuring Locale
+            - link: /momentum/4/byb-config-ssh-and-sshd
+              title: Configuring SSH and SSHD
+            - link: /momentum/4/byb-basic-packages
+              title: Basic Required Packages
+            - link: /momentum/4/byb-riak-provisioning
+              title: Riak Provisioning
+            - link: /momentum/4/byb-vertica-partition
+              title: Separate Vertica Partition
+            - link: /momentum/4/byb-disable-postfix
+              title: Disable Postfix and QPIDD
+            - link: /momentum/4/byb-analytics-reqs
+              title: Verifying Analytics Node Requirements
+        - link: /momentum/4/download-bundle
+          title: Download the Software Bundle and Prepare
+        - link: /momentum/4/install-upgrade-packages
+          title: Install / Upgrade the Packages
+        - link: /momentum/4/new-installation
+          title: New Installation - All Configurations
+          items:
+            - link: '/momentum/4/new-installation#install.mta_node'
+              title: Configure Your MTA Nodes
+            - link: /momentum/4/install-configure-cassandra
+              title: Configure the Cassandra Nodes
+            - link: /momentum/4/install-analytics-nodes
+              title: Configure the Analytics Nodes
+            - link: /momentum/4/install-start-remaining-services
+              title: Start Remaining Services
+        - link: /momentum/4/upgrade-single-node
+          title: Upgrade - Single Node
+          items:
+            - link: '/momentum/4/upgrade-single-node#upgrade.single_node.preparation'
+              title: Preparation
+            - link: /momentum/4/upgrade-single-node-vertica-updates
+              title: Vertica Updates
+            - link: /momentum/4/upgrade-single-node-configuration-flyway
+              title: Prepare and Run Flyway
+            - link: /momentum/4/upgrade-single-node-configuration-config-all-nodes
+              title: Configuration Changes
+            - link: /momentum/4/upgrade-single-node-configuration-software-upgrade
+              title: Software Upgrade
+            - link: /momentum/4/upgrade-single-node-configuration-webui
+              title: Update Web UI Configuration
+            - link: /momentum/4/upgrade-single-node-configuration-start-services
+              title: Start Services
+            - link: /momentum/4/upgrade-single-node-complete-setup
+              title: Complete the Software Set Up
+            - link: /momentum/4/upgrade-single-node-configuration-next-steps
+              title: Next Steps
+        - link: /momentum/4/upgrade-two-tier-configuration-rolling
+          title: Rolling Upgrade - Two-Tier Configuration and Combined Node
+          items:
+            - link: >-
+                /momentum/4/upgrade-two-tier-configuration-rolling#upgrade.two_tier.preparation_rolling
+              title: Overview
+            - link: >-
+                /momentum/4/upgrade-two-tier-preparation-prepare-all-nodes-rolling
+              title: Before You Begin the Upgrade
+            - link: >-
+                /momentum/4/upgrade-two-tier-preparation-snapshot-cassandra-rolling
+              title: Perform a Cassandra Snapshot
+            - link: >-
+                /momentum/4/upgrade-two-tier-preparation-upgrade-cassandra-rolling
+              title: Upgrade Cassandra on the Platform Nodes
+            - link: >-
+                /momentum/4/upgrade-two-tier-preparation-stop-generations-rolling
+              title: Stop Transmissions to the First Platform Node
+            - link: /momentum/4/upgrade-two-tier-preparation-ecelerity-rolling
+              title: >-
+                Upgrade Ecelerity and the Cassandra Schema on the First Platform
+                Node
+            - link: >-
+                /momentum/4/upgrade-two-tier-preparation-stop-transmissions-rolling
+              title: >-
+                Restore Transmissions to the First Platform Node and Stop
+                Transmissions to all other Platform Nodes
+            - link: >-
+                /momentum/4/upgrade-two-tier-preparation-upgrade-ecelerity-rolling
+              title: Upgrade Ecelerity on the Remaining Platform Nodes
+            - link: >-
+                /momentum/4/upgrade-two-tier-preparation-restore-tranmissions-rolling
+              title: Restore Transmissions to the Remaining Platform Nodes
+            - link: /momentum/4/upgrade-two-tier-preparation-upgrade-vertica-rolling
+              title: Upgrade Vertica on the Analytics Nodes
+            - link: /momentum/4/upgrade-two-tier-configuration-flyway-rolling
+              title: Prepare and Run Flyway
+            - link: /momentum/4/upgrade-two-tier-preparation-rpms-rolling
+              title: Upgrade Remaining RPMs on Analytics Nodes
+            - link: >-
+                /momentum/4/upgrade-two-tier-configuration-config-all-nodes-rolling
+              title: Configuration Changes
+            - link: >-
+                /momentum/4/upgrade-two-tier-configuration-software-upgrade-rolling
+              title: Install the Adaptive Delivery API
+            - link: /momentum/4/upgrade-two-tier-configuration-webui-rolling
+              title: Update the Web UI Configuration
+            - link: >-
+                /momentum/4/upgrade-two-tier-configuration-start-services-rolling
+              title: Start Services
+            - link: /momentum/4/upgrade-two-tier-complete-setup-rolling
+              title: Complete the Software Set Up
+        - link: /momentum/4/post-installation
+          title: Post-Installation
+          items:
+            - link: '/momentum/4/post-installation#install.additional.packages'
+              title: Installing Partner Modules
+            - link: /momentum/4/install-post-install-config
+              title: Reviewing Configuration Files
+            - link: /momentum/4/install-post-install-rotate
+              title: Rotating Logfiles
+            - link: /momentum/4/install-post-install-vertica-mgmt-console
+              title: Download and Install the Vertica Management Console
+            - link: /momentum/4/install-vertica-license
+              title: Upgrading the Vertica License
+            - link: /momentum/4/install-security-considerations
+              title: Security Considerations
+        - link: /momentum/4/add-remove-platform-nodes
+          title: Adding and Removing Platform Nodes
+          items:
+            - link: '/momentum/4/add-remove-platform-nodes#node_add'
+              title: Adding a Platform Node
+            - link: /momentum/4/node-remove
+              title: Removing a Platform Node
+        - link: /momentum/4/add-remove-analytics-nodes
+          title: Adding and Removing Analytics Nodes
+          items:
+            - link: '/momentum/4/add-remove-analytics-nodes#node_add_analytics'
+              title: Adding an Analytics Node
+            - link: /momentum/4/node-remove-analytics
+              title: Removing an Analytics Node
+    - link: /momentum/4/p-configuration
+      title: Configuring Momentum
+      items:
+        - link: /momentum/4/conf-overview
+          title: Configuration Overview
+          items:
+            - link: '/momentum/4/conf-overview#conf.files'
+              title: Configuration Files
+            - link: /momentum/4/conf-options
+              title: Configuration Options
+            - link: /momentum/4/4-ecelerity-conf-fallback
+              title: Configuration Scopes and Fallback
+            - link: /momentum/4/listeners
+              title: Listeners
+            - link: /momentum/4/4-module-config
+              title: Modules
+            - link: /momentum/4/config/ref-ecelerity-conf
+              title: ecelerity.conf File
+        - link: /momentum/4/4-cluster
+          title: Cluster-specific Configuration
+          items:
+            - link: '/momentum/4/4-cluster#cluster.config_files'
+              title: Cluster-specific Configuration Files
+            - link: /momentum/4/config/ref-eccluster-conf
+              title: eccluster.conf File
+            - link: /momentum/4/config/ref-ecelerity-cluster-conf
+              title: ecelerity-cluster.conf File
+            - link: /momentum/4/config/ref-msgc-server-conf
+              title: msgc_server.conf File
+            - link: /momentum/4/cluster-listeners
+              title: Cluster-specific Listeners
+            - link: /momentum/4/4-cluster-config-failover
+              title: Configuring Momentum for High Availability and Failover
+            - link: /momentum/4/cluster-riak-configuration
+              title: Configuring Riak in a Cluster
+        - link: /momentum/4/control-listener
+          title: Configuring Momentum's System Console
+          items:
+            - link: '/momentum/4/control-listener#control_listener.config'
+              title: Control_Listener Configuration
+            - link: /momentum/4/control-auth
+              title: Control_Listener Authentication
+            - link: /momentum/4/control-acct
+              title: Control_Listener Accounting
+            - link: /momentum/4/control-authz
+              title: Control_Listener Authorization
+        - link: /momentum/4/ecstream-listener
+          title: Configuring Inbound Mail Service Using ECStream
+          items:
+            - link: '/momentum/4/ecstream-listener#ecstream_listener.config'
+              title: ECStream_Listener Configuration
+        - link: /momentum/4/esmtp-listener
+          title: Configuring Inbound Mail Service Using SMTP
+          items:
+            - link: '/momentum/4/esmtp-listener#esmtp_listener.config'
+              title: ESMTP_Listener Configuration
+            - link: /momentum/4/esmtp-listener-relay-domains
+              title: Inbound Email Relay or Gateway
+            - link: /momentum/4/esmtp-listener-reconfig-message
+              title: Reconfig_Message Option
+            - link: /momentum/4/esmtp-listener-extensions
+              title: SMTP Extensions
+            - link: /momentum/4/inbound-smtp
+              title: ESMTP_Listener Authentication
+            - link: /momentum/4/inbound-ssl
+              title: Inbound SSL
+            - link: /momentum/4/inbound-tls
+              title: Inbound TLS
+        - link: /momentum/4/http-listener
+          title: Configuring Inbound Mail Service Using HTTP
+          items:
+            - link: '/momentum/4/http-listener#http_listener.config'
+              title: HTTP_Listener Configuration
+            - link: /momentum/4/config/ref-msg-gen-conf
+              title: msg_gen.conf File
+        - link: /momentum/4/auth
+          title: Enforcing REST API/UI User Authentication
+        - link: /momentum/4/using-domainkeys
+          title: Using Yahoo! DomainKeys
+          items:
+            - link: '/momentum/4/using-domainkeys#using_domainkeys.signing'
+              title: DomainKeys Signing
+            - link: /momentum/4/using-domainkeys-validation
+              title: DomainKeys Validation
+        - link: /momentum/4/using-dkim
+          title: Using DomainKeys Identified Mail (DKIM) Signatures
+          items:
+            - link: '/momentum/4/using-dkim#using_dkim.signing'
+              title: DKIM Signing
+            - link: /momentum/4/using-dkim-validation
+              title: DKIM Validation
+        - link: /momentum/4/multi-event-loops
+          title: Configuring Multiple Event Loops
+        - link: /momentum/4/outbound-mail
+          title: Configuring Outbound Mail Delivery
+          items:
+            - link: '/momentum/4/outbound-mail#outbound_mail.routing.mail'
+              title: Routing Mail
+            - link: /momentum/4/outbound-mail-prohibited-hosts
+              title: Prohibited_Hosts
+            - link: /momentum/4/outbound-mail-multivip-interfaces
+              title: MultiVIP© Interfaces
+            - link: /momentum/4/outbound-mail-traffic-shaping
+              title: Throttling and Traffic Shaping
+            - link: /momentum/4/tls-option
+              title: Outbound TLS
+            - link: /momentum/4/outbound-mail-outbound-xclient
+              title: Outbound XCLIENT support
+            - link: /momentum/4/outbound-mail-relay-hosts
+              title: Outbound Email Relay
+            - link: /momentum/4/outbound-xfer
+              title: Configuring XFER for Outbound Mail Delivery
+        - link: /momentum/4/log-aggregation
+          title: Log Aggregation
+          items:
+            - link: '/momentum/4/log-aggregation#log_aggregation.configuration'
+              title: Configuring Log Aggregation
+            - link: /momentum/4/cluster-config-logging-centalized-logging
+              title: Centralized Logging Example
+            - link: /momentum/4/cluster-config-logging-complex
+              title: Complex Centralized Logging Deployments
+            - link: /momentum/4/cluster-config-logging-redundancy
+              title: Redundant Logs
+            - link: /momentum/4/cluster-config-logging-decommissioning
+              title: Decommissioning a Log Aggregator
+        - link: /momentum/4/4-cluster-config-duravip
+          title: 'DuraVIP™: IP Fail over'
+          items:
+            - link: >-
+                /momentum/4/4-cluster-config-duravip#cluster.config.duravip_follow
+              title: IP Addresses and duravip_follow
+            - link: /momentum/4/cluster-config-mmove
+              title: 'duravip_follow and the #mmove Binding'
+            - link: /momentum/4/cluster-config-arp-all-hosts
+              title: Address Resolution Protocol (ARP) traffic
+            - link: /momentum/4/cluster-duravip-conflict
+              title: DuraVIP™ Configuration Conflicts and Ambiguities
+        - link: /momentum/4/4-cluster-config-replication
+          title: Data Replication
+          items:
+            - link: >-
+                /momentum/4/4-cluster-config-replication#cluster.replication.features
+              title: Replication Configurations
+        - link: /momentum/4/postgresql
+          title: PostgreSQL
+          items:
+            - link: '/momentum/4/postgresql#postgresql.overview'
+              title: PostgreSQL Overview
+            - link: /momentum/4/postgresql-server
+              title: Running the PostgreSQL Server
+            - link: /momentum/4/postgresql-client
+              title: Using the PostgreSQL Client Program
+            - link: /momentum/4/postgresql-migrating
+              title: Dumping and Restoring the Database
+        - link: /momentum/4/riak
+          title: Riak
+          items:
+            - link: '/momentum/4/riak#riak.overview'
+              title: Riak Overview
+            - link: /momentum/4/riak-service
+              title: Running the Riak Service
+            - link: /momentum/4/operations-riak-ports
+              title: Riak Ports
+            - link: /momentum/4/operations-riak-backups
+              title: Backups
+        - link: /momentum/4/environment-file
+          title: Configuring the Environment File
+    - link: /momentum/4/p-logs
+      title: Logging
+      items:
+        - link: /momentum/4/logging-overview
+          title: Logging Overview
+          items:
+            - link: '/momentum/4/logging-overview#logging.overview.files'
+              title: Log Files
+            - link: /momentum/4/logging-configuration
+              title: Logging Configuration
+        - link: /momentum/4/log-monitoring
+          title: Log Monitoring
+        - link: /momentum/4/log-rotating
+          title: Rotating Logs ec_rotate
+          items:
+            - link: '/momentum/4/log-rotating#conf.ref.ec_rotate.conf'
+              title: ec_rotate.conf File
+        - link: /momentum/4/4-log-formats
+          title: Log Formats
+          items:
+            - link: '/momentum/4/4-log-formats#log_formats.acctlog'
+              title: acctlog
+            - link: /momentum/4/adaptive-log-format
+              title: adaptive Log
+            - link: /momentum/4/log-formats-bouncelog
+              title: bouncelog
+            - link: /momentum/4/log-formats-fbllog
+              title: fbllog
+            - link: /momentum/4/log-formats-httplog
+              title: httplog
+            - link: /momentum/4/log-formats-importlog
+              title: importlog
+            - link: /momentum/4/log-formats-mainlog
+              title: mainlog
+            - link: /momentum/4/log-formats-paniclog
+              title: paniclog
+            - link: /momentum/4/log-formats-rejectlog
+              title: rejectlog
+            - link: /momentum/4/4-bounce-logger-classification-codes
+              title: Bounce Classification Codes
+            - link: /momentum/4/4-log-formats-connection-stages
+              title: Connection Stages
+    - link: /momentum/4/p-operations
+      title: Using the System Console
+      items:
+        - link: /momentum/4/4-conf-starting
+          title: Starting Momentum (ecelerity)
+          items:
+            - link: '/momentum/4/4-conf-starting#startup.scripts'
+              title: Startup Scripts
+        - link: /momentum/4/4-operations
+          title: Using the System Console (ec_console)
+          items:
+            - link: '/momentum/4/4-operations#operations.console'
+              title: Connecting to the Console
+            - link: /momentum/4/4-operations-console-commands
+              title: Console Commands
+            - link: /momentum/4/4-module-specific-console-commands-using
+              title: Using Module-Specific Console Commands
+            - link: /momentum/4/modules/options-console
+              title: Setting and Getting Module Options from the Console
+            - link: /momentum/4/operations-console-lua
+              title: Creating Custom Console Commands
+        - link: /momentum/4/4-cluster-config-operations
+          title: Using the Cluster Manager (eccmgr)
+          items:
+            - link: '/momentum/4/4-cluster-config-operations#idp4323200'
+              title: Connecting to the Console on the Cluster Manager
+            - link: /momentum/4/cluster-config-operations-eccmgr-console
+              title: Console Commands for the Cluster Manager
+        - link: /momentum/4/4-cluster-cidr-server
+          title: CIDR Server
+          items:
+            - link: '/momentum/4/4-cluster-cidr-server#cluster.cidr_cli'
+              title: cidr_cli Utility
+    - link: /momentum/4/p-smtp-injections
+      title: SMTP Injection
+      items:
+        - link: /momentum/4/smtp-injection
+          title: Adjusting your Client Mail Application
+        - link: /momentum/4/engagement-tracking-smtp
+          title: Tracking Engagement for SMTP
+          items:
+            - link: >-
+                /momentum/4/engagement-tracking-smtp#engagement_tracking_smtp.intro
+              title: Introduction
+            - link: /momentum/4/x-msys-api-header
+              title: Using the X-MSYS-API Header for Engagement Tracking
+            - link: /momentum/4/engagement-tracking-smtp-policy
+              title: Using Policy for Engagement Tracking
+            - link: /momentum/4/engagement-tracking-smtp-escaping
+              title: 'Escaping {{ and }} in SMTP Message Body'
+        - link: /momentum/4/smtp-reporting-options
+          title: Reporting Options
+    - link: /momentum/4/p-http-rest
+      title: Message Generation (HTTP)
+      items:
+        - link: /momentum/4/create-apikey
+          title: Creating an API Key
+        - link: /momentum/4/web-ui-apikeys
+          title: Managing Your API Keys
+          items:
+            - link: '/momentum/4/web-ui-apikeys#web-ui.apikeys.viewing'
+              title: Viewing Your API Keys
+            - link: /momentum/4/web-ui-apikeys-create
+              title: Creating an API Key
+            - link: /momentum/4/web-ui-apikeys-update
+              title: Updating an API Key
+            - link: /momentum/4/web-ui-apikeys-delete
+              title: Deleting an API Key
+        - link: /momentum/4/message-gen
+          title: Generating a Transmission
+        - link: /momentum/4/substitution-data
+          title: Using Substitution Data
+        - link: /momentum/4/stored-template
+          title: Creating Stored Templates
+        - link: /momentum/4/web-ui-templates
+          title: Managing Your Templates in the UI
+          items:
+            - link: '/momentum/4/web-ui-templates#web-ui.templates.view'
+              title: Viewing Your Templates
+            - link: /momentum/4/web-ui-templates-create
+              title: Creating a Template
+            - link: /momentum/4/web-ui-templates-preview
+              title: Previewing and Testing Your Template
+            - link: /momentum/4/web-ui-update-template
+              title: Updating Your Template
+            - link: /momentum/4/web-ui-templates-publish
+              title: Publishing Your Template
+            - link: /momentum/4/web-ui-templates-delete
+              title: Deleting a Template
+        - link: /momentum/4/using-template
+          title: Using Stored Templates
+        - link: /momentum/4/stored-list
+          title: Creating Stored Recipient Lists
+          items:
+            - link: '/momentum/4/stored-list#manage_list_ui'
+              title: Managing Recipient Lists using the UI
+        - link: /momentum/4/using-list
+          title: Using Stored Recipient Lists
+        - link: /momentum/4/sending-cc-bcc
+          title: Sending Emails as CC and BCC
+        - link: /momentum/4/complex-template
+          title: Using Complex Templates
+    - link: /momentum/4/p-analytics
+      title: Reporting and Engagement Tracking
+      items:
+        - link: /momentum/4/http-reporting-options
+          title: Reporting Options
+        - link: /momentum/4/web-ui
+          title: Getting Started with the Web-based User Interface
+          items:
+            - link: '/momentum/4/web-ui#web-ui.recipients'
+              title: Recipient Lists
+        - link: /momentum/4/reporting-ui
+          title: Using the UI for Reporting
+        - link: /momentum/4/web-ui-reports
+          title: Reports and Engagement Tracking in the UI
+          items:
+            - link: >-
+                /momentum/4/web-ui-reports#web-ui.reports.selecting.metrics.filters
+              title: Selecting Your Metrics and Filters
+            - link: /momentum/4/web-ui-reports-viewing-reports
+              title: Viewing Your Reports
+            - link: /momentum/4/web-ui-reports-adaptive-delivery
+              title: Adaptive Delivery Report
+            - link: /momentum/4/web-ui-reports-evaluating-campaign-performance
+              title: Evaluating Your Campaign Performance
+        - link: /momentum/4/reporting-metrics
+          title: Using the Metrics API for Reporting
+        - link: /momentum/4/reporting-webhooks
+          title: Using Webhooks for Event Data
+        - link: /momentum/4/web-ui-webhooks
+          title: Managing Your Webhooks in the UI
+          items:
+            - link: '/momentum/4/web-ui-webhooks#web-ui.webhooks.viewing'
+              title: Viewing Your Webhooks
+            - link: /momentum/4/web-ui-webhooks-create
+              title: Creating a Webhook
+            - link: /momentum/4/web-ui-webhooks-test
+              title: Testing Your Webhook
+            - link: /momentum/4/web-ui-webhooks-update
+              title: Updating Your Webhook
+            - link: /momentum/4/web-ui-webhooks-delete
+              title: Deleting a Webhook
+        - link: /momentum/4/engagement-tracking-http
+          title: Tracking Engagement for HTTP
+    - link: /momentum/4/p-policy
+      title: Writing Policy
+      items:
+        - link: /momentum/4/4-policy
+          title: Implementing Policy with Momentum
+          items:
+            - link: '/momentum/4/4-policy#policy.validation'
+              title: Validation and the Validation Context
+            - link: /momentum/4/4-implementing-policy-scriptlets
+              title: Policy Scriptlets
+        - link: /momentum/4/4-policy-context-variables
+          title: Validation Context Variables
+          items:
+            - link: >-
+                /momentum/4/4-policy-context-variables#policy.predefined-context-conn
+              title: Connection Context Variables
+            - link: /momentum/4/4-policy-context-mess
+              title: Message Context Variables
+    - link: /momentum/4/p-reference
+      title: Reference
+      items:
+        - link: /momentum/4/4-lua-summary-table
+          title: Lua Functions Summary
+        - link: /momentum/4/modules/summary-all-modules
+          title: Modules Summary
+        - link: /momentum/4/config-options-summary
+          title: Configuration Options Summary
+        - link: /momentum/4/4-console-commands
+          title: Console Commands Summary
+        - link: /momentum/4/4-exe
+          title: Executable Command Summary
+        - link: /momentum/4/hooks/
+          title: Hook Points and C Functions Reference
+        - link: /momentum/4/lua/
+          title: Lua Functions Reference
+        - link: /momentum/4/modules/
+          title: Modules Reference
+        - link: /momentum/4/config/
+          title: Configuration Options Reference
+        - link: /momentum/4/console-commands/
+          title: Non-Module-Specific Console Commands
+        - link: /momentum/4/executable/
+          title: Executable Commands Reference
+    - link: /momentum/4/p-appendix
+      title: Appendix
+      items:
+        - link: /momentum/4/message-responses
+          title: Message Responses
+          items:
+            - link: '/momentum/4/message-responses#responses-by-code'
+              title: Responses Sorted By Codes
+        - link: /momentum/4/4-snmp-mib
+          title: MIB Files
+          items:
+            - link: '/momentum/4/4-snmp-mib#snmp-mib-per-domain-metrics'
+              title: 1.3.6.1.4.1.19552.1.2 – Per-domain Metrics
+            - link: /momentum/4/4-snmp-mib-pergroup
+              title: 'Per-group (binding) Metrics, 1.3.6.1.4.1.19552.1.3'
+            - link: /momentum/4/4-snmp-mib-omniti
+              title: The OMNITI-SNMP-MIB.txt file
+        - link: /momentum/4/4-smtp-response-codes
+          title: SMTP Response Codes
+        - link: /momentum/4/4-libedit
+          title: Key Binding Reference for ec_console
+          items:
+            - link: '/momentum/4/4-libedit#libedit.emacs.editor'
+              title: Editor Commands
+            - link: /momentum/4/4-libedit-extended
+              title: Extended Commands
+    - link: /momentum/4/4-glossary
+      title: Glossary
+    - link: /momentum/4/4-copyrights
+      title: Copyright Notices
+      items:
+        - link: '/momentum/4/4-copyrights#copyright.ack'
+          title: Acknowledgements
+        - link: /momentum/4/4-copyright-3-rdparty-disclaimer
+          title: Disclaimers for Redistributed Third-Party Software
+- link: /momentum/3
+  title: Momentum 3.x
+  items:
+    - link: /momentum/3/3-reference
+      title: Momentum Reference Manual
+      items:
+        - link: /momentum/3/3-reference/3-reference-preface
+          title: Preface
+          items:
+            - link: /momentum/3/3-reference/3-reference-typographical
+              title: Typographical Conventions Used in This Document
+        - link: /momentum/3/3-reference/p-guide
+          title: Configuration Guide
+          items:
+            - link: /momentum/3/3-reference/install
+              title: Installation
+              items:
+                - link: /momentum/3/3-reference/install-requirements
+                  title: System Requirements
+                - link: /momentum/3/3-reference/install-ports
+                  title: Ports Used by Momentum
+                - link: /momentum/3/3-reference/install-security
+                  title: Security Considerations
+                - link: /momentum/3/3-reference/install-prepare
+                  title: Preparing the System
+                - link: /momentum/3/3-reference/install-os-specific
+                  title: Operating System Specific Preparation
+                - link: /momentum/3/3-reference/install-linux
+                  title: Installation on Linux
+                - link: /momentum/3/3-reference/install-solaris
+                  title: Installation on Solaris
+                - link: /momentum/3/3-reference/install-options
+                  title: Installer Options
+                - link: /momentum/3/3-reference/install-additional-packages
+                  title: Installing Additional Packages
+                - link: /momentum/3/3-reference/install-riak
+                  title: Riak Server
+                - link: /momentum/3/3-reference/install-standalone
+                  title: Performing a Stand-alone Installation
+                - link: /momentum/3/3-reference/install-cluster
+                  title: Installing a Cluster
+            - link: /momentum/3/3-reference/conf
+              title: Configuration
+              items:
+                - link: /momentum/3/3-reference/conf-ecelerity-conf
+                  title: The ecelerity.conf File
+                - link: /momentum/3/3-reference/conf-aaa
+                  title: 'Authentication, Authorization and Accounting'
+                - link: /momentum/3/3-reference/conf-ldaps
+                  title: >-
+                    Setting Up Active Directory Authentication With Momentum
+                    3.2.2
+                - link: /momentum/3/3-reference/conf-multi-core
+                  title: Configuring for Multiple Event Loops in Momentum 3.6
+                - link: /momentum/3/3-reference/conf-initial-conf
+                  title: Options that Must Change
+                - link: /momentum/3/3-reference/3-reference-ecelerity-conf-fallback
+                  title: Configuration Scopes and Fallback
+                - link: /momentum/3/3-reference/conf-ecconfigd
+                  title: 'The Momentum Configuration Server: ecconfigd'
+                - link: /momentum/3/3-reference/conf-manual-changes
+                  title: Best Practices for Manually Changing Configuration Files
+                - link: /momentum/3/3-reference/conf-adding-configuration-files
+                  title: Best Practices for Adding Configuration Files
+                - link: /momentum/3/3-reference/3-reference-conf-starting
+                  title: Starting Momentum
+                - link: /momentum/3/3-reference/conf-testing-installation
+                  title: Testing Your Installation
+            - link: /momentum/3/3-reference/web-3
+              title: Using the Web Console
+              items:
+                - link: /momentum/3/3-reference/web-3-starting-web-console
+                  title: Starting the Web Console
+                - link: /momentum/3/3-reference/web-3-overview
+                  title: Web Console Overview
+                - link: /momentum/3/3-reference/web-3-dashboard
+                  title: The Dashboard
+                - link: /momentum/3/3-reference/web-3-status
+                  title: Cluster Status
+                - link: /momentum/3/3-reference/web-3-filters
+                  title: Filtering
+                - link: /momentum/3/3-reference/web-3-reports
+                  title: The Reporting Page
+                - link: /momentum/3/3-reference/web-3-paths-page
+                  title: The Paths Page
+                - link: /momentum/3/3-reference/web-3-administration
+                  title: Administration
+                - link: /momentum/3/3-reference/web-3-users
+                  title: Administering Users From the Web Console
+                - link: /momentum/3/3-reference/web-3-policy-editor
+                  title: The Policy Configuration Editor
+                - link: /momentum/3/3-reference/web-3-automated-alerting
+                  title: Automated Alerting Configuration
+            - link: /momentum/3/3-reference/3-reference-operations
+              title: Operations
+              items:
+                - link: /momentum/3/3-reference/operations-console
+                  title: The Momentum System Console
+                - link: >-
+                    /momentum/3/3-reference/3-reference-operations-console-commands
+                  title: Console Commands
+                - link: /momentum/3/3-reference/operations-postgresql
+                  title: PostgreSQL
+                - link: /momentum/3/3-reference/operations-riak
+                  title: Riak
+                - link: /momentum/3/3-reference/operations-logging
+                  title: Logging
+                - link: /momentum/3/3-reference/operations-multivip
+                  title: MultiVIP© Interfaces
+            - link: /momentum/3/3-reference/3-reference-policy
+              title: Implementing Policy with Momentum
+              items:
+                - link: /momentum/3/3-reference/policy-validation
+                  title: Validation and the Validation Context
+                - link: >-
+                    /momentum/3/3-reference/3-reference-implementing-policy-scriptlets
+                  title: Implementing Policy Using Scriptlets
+                - link: /momentum/3/3-reference/default-policy-scriptlets
+                  title: Default Policy Scriptlets
+                - link: /momentum/3/3-reference/policy-implementing
+                  title: Implementing Policy Using Sieve
+                - link: /momentum/3/3-reference/policy-context-based-on-ip
+                  title: Setting Context Based on Connecting IP
+                - link: /momentum/3/3-reference/policy-best-practices
+                  title: Best Practices for Manually Created Policy Scripts
+                - link: /momentum/3/3-reference/policy-conclusion
+                  title: Conclusion
+            - link: /momentum/3/3-reference/3-reference-policy-context-variables
+              title: Validation Context Variables
+              items:
+                - link: /momentum/3/3-reference/policy-predefined-context-conn
+                  title: Connection Context Variables
+                - link: /momentum/3/3-reference/3-reference-policy-context-mess
+                  title: Message Context Variables
+            - link: /momentum/3/3-reference/3-reference-cluster
+              title: Clustering
+              items:
+                - link: /momentum/3/3-reference/subclusters
+                  title: Subclusters
+                - link: /momentum/3/3-reference/cluster-config-management
+                  title: Configuration Management
+                - link: /momentum/3/3-reference/cluster-config-mbus
+                  title: Message Bus
+                - link: /momentum/3/3-reference/cluster-config-deployment
+                  title: Cluster Deployment
+                - link: /momentum/3/3-reference/3-reference-cluster-config-duravip
+                  title: 'DuraVIP™: IP Fail over'
+                - link: /momentum/3/3-reference/cluster-config-logging
+                  title: Log Aggregation
+                - link: >-
+                    /momentum/3/3-reference/3-reference-cluster-config-replication
+                  title: Data Replication
+                - link: >-
+                    /momentum/3/3-reference/3-reference-cluster-config-operations
+                  title: Using the Cluster Manager
+                - link: /momentum/3/3-reference/3-reference-cluster-config-failover
+                  title: Configuring Momentum for High Availability and Failover
+                - link: /momentum/3/3-reference/3-reference-cluster-cidr-server
+                  title: The cidr_server
+            - link: /momentum/3/3-reference/3-reference-sieve
+              title: Sieve++
+              items:
+                - link: /momentum/3/3-reference/sieve-differences
+                  title: The differences between Sieve and Sieve++
+                - link: /momentum/3/3-reference/sieve-syntax-basic
+                  title: Sieve's Basic Syntax
+                - link: /momentum/3/3-reference/sieve-enhancements
+                  title: RFC Standard Sieve Enhancements
+                - link: /momentum/3/3-reference/sieve-ecaddons
+                  title: 'Sieve++, Momentum-specific extensions'
+        - link: /momentum/3/3-reference/p-command-ref
+          title: Command Reference
+          items:
+            - link: /momentum/3/3-reference/conf-ref
+              title: Ecelerity.conf Configuration Reference
+              items:
+                - link: /momentum/3/3-reference/options-summary
+                  title: Options Summary
+                - link: /momentum/3/3-reference/conf-ref-files
+                  title: Configuration Files and Option Details
+            - link: /momentum/3/3-reference/cluster-ref
+              title: Cluster Configuration Reference
+            - link: /momentum/3/3-reference/3-reference-exe
+              title: Momentum Command Line Reference
+              items:
+                - link: /momentum/3/3-reference/exe-summary-table
+                  title: Executable Command Summary
+                - link: /momentum/3/3-reference/exe-commands-details
+                  title: Executable Commands
+            - link: /momentum/3/3-reference/3-reference-console-commands
+              title: Momentum System Console Commands Reference
+              items:
+                - link: /momentum/3/3-reference/console-commands-summary-table
+                  title: System Console Command Summary
+                - link: /momentum/3/3-reference/console-commands-non-module
+                  title: System Console Commands
+            - link: /momentum/3/3-reference/modules-overview
+              title: Modules
+              items:
+                - link: /momentum/3/3-reference/modules-overview-implicit
+                  title: Module Overview
+                - link: /momentum/3/3-reference/modules-summary
+                  title: Summary Module Information
+                - link: /momentum/3/3-reference/module-specific-console-commands
+                  title: Module-Specific Console Commands
+                - link: >-
+                    /momentum/3/3-reference/3-reference-module-specific-console-commands-using
+                  title: Using Module-Specific Console Commands
+            - link: /momentum/3/3-reference/3-reference-modules
+              title: Modules Reference
+            - link: /momentum/3/3-reference/lua
+              title: Lua Function Reference
+              items:
+                - link: /momentum/3/3-reference/3-reference-lua-summary-table
+                  title: Lua Functions List
+                - link: /momentum/3/3-reference/3-reference-lua-function-details
+                  title: Lua Functions
+            - link: /momentum/3/3-reference/sieve-ref-3
+              title: Sieve++ Function Reference
+              items:
+                - link: /momentum/3/3-reference/sieve-ref-3-function-summary
+                  title: Sieve Function Summary
+                - link: /momentum/3/3-reference/sieve-ref-files
+                  title: Sieve Function Details
+        - link: /momentum/3/3-reference/p-appendices
+          title: Appendices
+          items:
+            - link: /momentum/3/3-reference/3-reference-faq
+              title: Frequently Asked Questions
+            - link: /momentum/3/3-reference/3-reference-snmp-mib
+              title: MIB Files
+              items:
+                - link: /momentum/3/3-reference/snmp-mib-per-domain-metrics
+                  title: 1.3.6.1.4.1.19552.1.2 – Per-domain Metrics
+                - link: /momentum/3/3-reference/3-reference-snmp-mib-pergroup
+                  title: 'Per-group (binding) Metrics, 1.3.6.1.4.1.19552.1.3'
+                - link: /momentum/3/3-reference/3-reference-snmp-mib-omniti
+                  title: The OMNITI-SNMP-MIB.txt file
+            - link: /momentum/3/3-reference/3-reference-smtp-response-codes
+              title: SMTP Response Codes
+            - link: /momentum/3/3-reference/webui-common-example
+              title: Example LDAP webui-common.conf File
+            - link: /momentum/3/3-reference/3-reference-log-formats
+              title: Log Formats
+              items:
+                - link: /momentum/3/3-reference/log-formats-version-3
+                  title: Log Formats for Version 3.x
+                - link: >-
+                    /momentum/3/3-reference/3-reference-bounce-logger-classification-codes
+                  title: Bounce Classification Codes
+                - link: >-
+                    /momentum/3/3-reference/3-reference-log-formats-connection-stages
+                  title: Connection Stages
+            - link: /momentum/3/3-reference/responses
+              title: Message Responses
+              items:
+                - link: /momentum/3/3-reference/responses-by-code
+                  title: Responses Sorted By Codes
+                - link: /momentum/3/3-reference/responses-by-message
+                  title: Responses Sorted by Message
+            - link: /momentum/3/3-reference/3-reference-libedit
+              title: Key Binding Reference for ec_console
+              items:
+                - link: /momentum/3/3-reference/libedit-keys-emacs
+                  title: Default emacs key bindings
+                - link: /momentum/3/3-reference/libedit-editor-commands
+                  title: Editor Commands
+                - link: /momentum/3/3-reference/3-reference-libedit-extended
+                  title: Extended Commands
+            - link: /momentum/3/3-reference/disclaimer
+              title: Disclaimer
+              items:
+                - link: /momentum/3/3-reference/copyright-ack
+                  title: Acknowledgements
+                - link: >-
+                    /momentum/3/3-reference/3-reference-copyright-3-rdparty-disclaimer
+                  title: Disclaimers for Redistributed Third-Party Software
+            - link: /momentum/3/3-reference/3-reference-copyrights
+              title: Copyrights
+            - link: /momentum/3/3-reference/3-reference-acronyms
+              title: Acronyms
+        - link: /momentum/3/3-reference/3-reference-glossary
+          title: Glossary
+    - link: /momentum/3/3-push
+      title: Momentum for Mobile Push Notifications
+      items:
+        - link: /momentum/3/3-push/3-push-preface
+          title: Preface
+        - link: /momentum/3/3-push/push-apple
+          title: Configuring Momentum for Apple Push Notification service (APNs)
+          items:
+            - link: /momentum/3/3-push/apns-options
+              title: APNs Options
+              items:
+                - link: '/momentum/3/3-push/apns-options#apns.apns-specific.options'
+                  title: APNs-specific Configuration Option
+                - link: /momentum/3/3-push/apns-other-options
+                  title: Other Configuration Options Used with APNs
+            - link: /momentum/3/3-push/apns-modules
+              title: APN Modules
+              items:
+                - link: '/momentum/3/3-push/apns-modules#apns.apn_module'
+                  title: apn Module
+                - link: /momentum/3/3-push/apns-modules-apn-logger
+                  title: The apn_logger Module
+            - link: /momentum/3/3-push/apns-using
+              title: Using APNs
+              items:
+                - link: '/momentum/3/3-push/apns-using#apns.using.mcmt'
+                  title: Message Injection and the APNs Payload
+                - link: /momentum/3/3-push/apns-disabling
+                  title: Disabling APNs
+            - link: /momentum/3/3-push/push-apns-lua
+              title: APNs and Lua
+              items:
+                - link: '/momentum/3/3-push/push-apns-lua#apns.hooks.lua.callouts'
+                  title: Lua Callouts
+            - link: /momentum/3/3-push/push-maintaining
+              title: Maintaining APNs Recipient Lists
+            - link: /momentum/3/3-push/push-apple-error
+              title: Apple Status Codes
+        - link: /momentum/3/3-push/push-google
+          title: Configuring Momentum for Google Cloud Messages (GCM)
+          items:
+            - link: /momentum/3/3-push/push-gcm-options
+              title: GCM Options
+              items:
+                - link: >-
+                    /momentum/3/3-push/push-gcm-options#push.gcm.gcm-specific.options
+                  title: GCM-specific Configuration Options
+                - link: /momentum/3/3-push/push-gcm-other-options
+                  title: Other Configuration Options Used with GCM
+            - link: /momentum/3/3-push/push-gcm-modules
+              title: GCM Modules
+              items:
+                - link: '/momentum/3/3-push/push-gcm-modules#push.modules.gcm'
+                  title: gcm Module
+                - link: /momentum/3/3-push/push-modules-gcm-logger
+                  title: gcm_logger Module
+            - link: /momentum/3/3-push/push-gcm-using
+              title: Using GCM
+              items:
+                - link: '/momentum/3/3-push/push-gcm-using#push.gcm.using.mcmt'
+                  title: Message Injection and the GCM Payload
+                - link: /momentum/3/3-push/push-gcm-disabling
+                  title: Disabling GCM
+            - link: /momentum/3/3-push/push-gcm-lua
+              title: GCM and Lua
+              items:
+                - link: '/momentum/3/3-push/push-gcm-lua#gcm.hooks.lua.callouts'
+                  title: Lua Callouts
+            - link: /momentum/3/3-push/push-gcm-error
+              title: GCM Status Codes
+        - link: /momentum/3/3-push/push-generic-delivery
+          title: Generic HTTP Delivery and Push
+          items:
+            - link: /momentum/3/3-push/push-generic-delivery-lua
+              title: Callouts and Push Notifications
+              items:
+                - link: >-
+                    /momentum/3/3-push/push-generic-delivery-lua#push.generic_delivery_lua.msg_dispose
+                  title: generic_delivery_msg_dispose
+                - link: /momentum/3/3-push/push-http-request-eval
+                  title: http_request_eval
+                - link: /momentum/3/3-push/push-http-response-eval
+                  title: http_response_eval
+        - link: /momentum/3/3-push/push-gloss
+          title: Glossary
+    - link: /momentum/3/3-policy
+      title: Default Policy User Guide
+      items:
+        - link: /momentum/3/3-policy/policy-preface
+          title: Preface
+        - link: /momentum/3/3-policy/policy-enabling
+          title: Enabling the Policy Scripts
+        - link: /momentum/3/3-policy/policy-configuration-options
+          title: Configuration Items
+        - link: /momentum/3/3-policy/policy-use-cases
+          title: Use Cases
+          items:
+            - link: '/momentum/3/3-policy/policy-use-cases#policy.inbound'
+              title: Policy Categories
+        - link: /momentum/3/3-policy/policy-default-configuration
+          title: Configuration Details
+          items:
+            - link: >-
+                /momentum/3/3-policy/policy-default-configuration#policy.default.configuration.msys.dp_config.whitelist
+              title: msys.dp_config.whitelist
+            - link: >-
+                /momentum/3/3-policy/policy-default-configuration-msys-dp-config-rbls
+              title: msys.dp_config.rbls
+            - link: >-
+                /momentum/3/3-policy/policy-default-configuration-msys-dp-config-early-talker
+              title: msys.dp_config.early_talker
+            - link: >-
+                /momentum/3/3-policy/policy-default-configuration-msys-dp-config-fcdns
+              title: msys.dp_config.fcdns
+            - link: >-
+                /momentum/3/3-policy/policy-default-configuration-msys-dp-config-concurrent-connection-limits
+              title: msys.dp_config.concurrent_connection_limits
+            - link: >-
+                /momentum/3/3-policy/policy-default-configuration-msys-dp-config-audit-series
+              title: msys.dp_config.audit_series
+            - link: >-
+                /momentum/3/3-policy/policy-default-configuration-msys-dp-config-audit-series-invalid-smtp-auth
+              title: msys.dp_config.audit_series.invalid_smtp_auth
+            - link: >-
+                /momentum/3/3-policy/policy-default-configuration-msys-dp-config-audit-series-connections
+              title: msys.dp_config.audit_series.connections
+            - link: >-
+                /momentum/3/3-policy/policy-default-configuration-msys-dp-config-audit-series-mailfrom
+              title: msys.dp_config.audit_series.mailfrom
+            - link: >-
+                /momentum/3/3-policy/policy-default-configuration-msys-dp-config-audit-series-auth-user
+              title: msys.dp_config.audit_series.auth_user
+            - link: >-
+                /momentum/3/3-policy/policy-default-configuration-msys-dp-config-mail-from-domain-validate
+              title: msys.dp_config.mail_from_domain_validate
+            - link: >-
+                /momentum/3/3-policy/policy-default-configuration-msys-dp-config-recipient-validation
+              title: msys.dp_config.recipient_validation
+            - link: >-
+                /momentum/3/3-policy/policy-default-configuration-msys-dp-config-relay-authorization
+              title: msys.dp_config.relay_authorization
+            - link: >-
+                /momentum/3/3-policy/policy-default-configuration-msys-dp-config-audit-series-invalid-recipients
+              title: msys.dp_config.audit_series.invalid_recipients
+            - link: >-
+                /momentum/3/3-policy/policy-default-configuration-msys-dp-config-audit-series-messages
+              title: msys.dp_config.audit_series.messages
+            - link: >-
+                /momentum/3/3-policy/policy-default-configuration-msys-dp-config-audit-series-spam-mailfrom
+              title: msys.dp_config.audit_series.spam_mailfrom
+            - link: >-
+                /momentum/3/3-policy/policy-default-configuration-msys-dp-config-audit-series-spam
+              title: msys.dp_config.audit_series.spam
+            - link: >-
+                /momentum/3/3-policy/policy-default-configuration-msys-dp-config-audit-series-virus
+              title: msys.dp_config.audit_series.virus
+            - link: >-
+                /momentum/3/3-policy/policy-default-configuration-msys-dp-config-audit-series-virus-mailfrom
+              title: msys.dp_config.audit_series.virus_mailfrom
+            - link: >-
+                /momentum/3/3-policy/policy-default-configuration-msys-dp-config-message-size-limits
+              title: msys.dp_config.message_size_limits
+            - link: >-
+                /momentum/3/3-policy/policy-default-configuration-msys-dp-config-beik
+              title: msys.dp_config.beik
+            - link: >-
+                /momentum/3/3-policy/policy-default-configuration-msys-dp-config-commtouch
+              title: msys.dp_config.commtouch
+            - link: >-
+                /momentum/3/3-policy/policy-default-configuration-msys-dp-config-cloudmark
+              title: msys.dp_config.cloudmark
+            - link: >-
+                /momentum/3/3-policy/policy-default-configuration-msys-dp-config-antivirus
+              title: msys.dp_config.antivirus
+            - link: >-
+                /momentum/3/3-policy/policy-default-configuration-dp-config-keyword-filter
+              title: msys.dp_config.keyword_filter
+        - link: /momentum/3/3-policy/policy-customize
+          title: Customizing Policy
+        - link: /momentum/3/3-policy/policy-appendix
+          title: The dp_config.lua and custom_policy.lua Files
+          items:
+            - link: >-
+                /momentum/3/3-policy/policy-appendix#policy.appendixdp_config.lua
+              title: The dp_config.lua File
+            - link: /momentum/3/3-policy/policy-appendix-custom-policy-lua
+              title: The custom_policy.lua File
+    - link: /momentum/3/3-ad
+      title: Adaptive Delivery User Guide
+      items:
+        - link: /momentum/3/3-ad/ad-scope
+          title: What Does Adaptive Delivery Do?
+        - link: /momentum/3/3-ad/ad-using
+          title: Implementing Adaptive Delivery
+          items:
+            - link: '/momentum/3/3-ad/ad-using#ad.adaptive.setup'
+              title: Setting up Adaptive Delivery
+        - link: /momentum/3/3-ad/ad-adaptive-rules
+          title: Adaptive Rules
+          items:
+            - link: '/momentum/3/3-ad/ad-adaptive-rules#ad.adaptive.rules.receivers'
+              title: Receivers Managed by Adaptive Rules
+            - link: /momentum/3/3-ad/ad-adaptive-rules-parameters
+              title: Parameters Adjusted by the Rules
+            - link: /momentum/3/3-ad/ad-adaptive-rules-actions
+              title: Rule Actions
+        - link: /momentum/3/3-ad/ad-custom-rules
+          title: Custom Rules
+        - link: /momentum/3/3-ad/ad-samples
+          title: Sample Custom Configurations
+        - link: /momentum/3/3-ad/ad-adaptive-update
+          title: Automated Updates for the Adaptive Rules
+          items:
+            - link: '/momentum/3/3-ad/ad-adaptive-update#ad.adaptive.update.manual'
+              title: Manually Installing New Rules
+            - link: /momentum/3/3-ad/ad-adaptive-automated-proxy
+              title: Using a Proxy Server
+        - link: /momentum/3/3-ad/ad-rules-sweep-rules
+          title: Sweep Rules – Configuring Bounce and FBL Behavior
+        - link: /momentum/3/3-ad/ad-troubleshooting
+          title: Troubleshooting
+          items:
+            - link: '/momentum/3/3-ad/ad-troubleshooting#ad.troubleshooting.logs'
+              title: 'Logs, Alerts and Summaries'
+            - link: /momentum/3/3-ad/ad-troubleshooting-console
+              title: Using the System Console
+        - link: /momentum/3/3-ad/ad-options
+          title: Adaptive Options
+        - link: /momentum/3/3-ad/ad-executables
+          title: Adaptive Executables and Console Commands
+        - link: /momentum/3/3-ad/ad-appendix-logs
+          title: Adaptive Logs
+        - link: /momentum/3/3-ad/ad-appendix-adaptive-rules
+          title: The adaptive_rules.lua File
+    - link: /momentum/3/3-rest
+      title: The Momentum REST Injector
+      items:
+        - link: /momentum/3/3-rest/rest-overview
+          title: Overview
+        - link: /momentum/3/3-rest/rest-configuring
+          title: Configuring Momentum to Use the Injector
+          items:
+            - link: '/momentum/3/3-rest/rest-configuring#rest.httpsrv'
+              title: The httpsrv and restinjector Modules
+            - link: /momentum/3/3-rest/rest-http-listener
+              title: HTTP_Listener
+        - link: /momentum/3/3-rest/rest-sample-templates
+          title: Template Files
+        - link: /momentum/3/3-rest/rest-using-api
+          title: Using the API
+    - link: /momentum/3/3-api
+      title: Momentum API Reference (3.x)
+      items:
+        - link: /momentum/3/3-api/3-api-preface
+          title: Preface
+          items:
+            - link: /momentum/3/3-api/3-api-typographical
+              title: Typographical Conventions Used in This Document
+        - link: /momentum/3/3-api/pt-arch
+          title: Momentum Architecture
+          items:
+            - link: /momentum/3/3-api/extending-arch
+              title: Momentum Architecture Overview
+              items:
+                - link: /momentum/3/3-api/arch-intro
+                  title: Introduction
+                - link: /momentum/3/3-api/arch-overview
+                  title: General Architecture Overview
+                - link: /momentum/3/3-api/arch-primary-apis
+                  title: Primary Momentum APIs
+                - link: /momentum/3/3-api/arch-secondary-apis
+                  title: Secondary Momentum APIs
+        - link: /momentum/3/3-api/pt-apis
+          title: C API
+          items:
+            - link: /momentum/3/3-api/3-api-adaptive
+              title: Adaptive Functions
+            - link: /momentum/3/3-api/3-api-antivirus
+              title: AV/Scanning Functions
+            - link: /momentum/3/3-api/audit-series
+              title: Audit Series Functions
+            - link: /momentum/3/3-api/bag
+              title: Bag Functions
+            - link: /momentum/3/3-api/base-64
+              title: Base64 Encode/Decode and Related Functions
+            - link: /momentum/3/3-api/blobject
+              title: Blobject Functions
+            - link: /momentum/3/3-api/bounce
+              title: Bounce Functions
+            - link: /momentum/3/3-api/buffer
+              title: Buffer Functions
+            - link: /momentum/3/3-api/cidr
+              title: CIDR Functions
+            - link: /momentum/3/3-api/config-get-1
+              title: Configuration Functions I (binding/domain)
+            - link: /momentum/3/3-api/config-get-other
+              title: Configuration Functions II
+            - link: /momentum/3/3-api/connection
+              title: Connection-related Functions
+            - link: /momentum/3/3-api/control
+              title: Control Functions
+            - link: /momentum/3/3-api/data-type-conversion
+              title: Conversion
+            - link: /momentum/3/3-api/datasource
+              title: Datasource Functions
+            - link: /momentum/3/3-api/debug
+              title: Debug Functions
+            - link: /momentum/3/3-api/dict
+              title: Dictionary Functions
+            - link: /momentum/3/3-api/dkim
+              title: DKIM/DK Functions
+            - link: /momentum/3/3-api/dns
+              title: DNS Functions
+            - link: /momentum/3/3-api/eccache
+              title: ec_cache Functions
+            - link: /momentum/3/3-api/double
+              title: ec_double Functions
+            - link: /momentum/3/3-api/echash
+              title: echash Functions
+            - link: /momentum/3/3-api/event
+              title: Event Functions
+            - link: /momentum/3/3-api/fastcache
+              title: Fast Cache Functions
+            - link: /momentum/3/3-api/file
+              title: File-related Functions
+            - link: /momentum/3/3-api/httpclnt
+              title: httpclnt Functions
+            - link: /momentum/3/3-api/3-api-httpsrv
+              title: httpsrv Functions
+            - link: /momentum/3/3-api/interpolation
+              title: Interpolation Functions
+            - link: /momentum/3/3-api/io-wrapper
+              title: io_wrapper Functions
+            - link: /momentum/3/3-api/logging
+              title: Logging Functions
+            - link: /momentum/3/3-api/3-api-mailq
+              title: Mail Queue Functions
+            - link: /momentum/3/3-api/3-api-memory
+              title: Memory Functions
+            - link: /momentum/3/3-api/ec-message
+              title: Message Functions
+            - link: /momentum/3/3-api/misc
+              title: Miscellaneous Functions
+            - link: /momentum/3/3-api/3-api-module-config
+              title: Module Configuration Functions
+            - link: /momentum/3/3-api/3-api-module
+              title: Module-related Functions
+            - link: /momentum/3/3-api/netlistener
+              title: Netlistener Functions
+            - link: /momentum/3/3-api/ptr-array
+              title: Pointer Array Functions
+            - link: /momentum/3/3-api/rfc
+              title: RFC Functions
+            - link: /momentum/3/3-api/scheduler
+              title: Scheduler Functions
+            - link: /momentum/3/3-api/script
+              title: Scriptlet (and Alerting) Functions
+            - link: /momentum/3/3-api/security
+              title: Security
+            - link: /momentum/3/3-api/3-api-sieve
+              title: Sieve Functions
+            - link: /momentum/3/3-api/skiplist
+              title: Skiplist Functions
+            - link: /momentum/3/3-api/smpp
+              title: SMPP Functions
+            - link: /momentum/3/3-api/smtp
+              title: SMTP-related Functions
+            - link: /momentum/3/3-api/sockaddr
+              title: Socket Address Functions
+            - link: /momentum/3/3-api/spool
+              title: Spool-related Functions
+            - link: /momentum/3/3-api/ssl
+              title: SSL Functions
+            - link: /momentum/3/3-api/string
+              title: String Functions
+            - link: /momentum/3/3-api/threadpool
+              title: Threadpool Functions
+            - link: /momentum/3/3-api/throttle
+              title: Throttle Functions
+            - link: /momentum/3/3-api/time-series
+              title: Time Series Functions
+            - link: /momentum/3/3-api/utility
+              title: Utility Functions
+            - link: /momentum/3/3-api/validate
+              title: Validation Context Functions
+            - link: /momentum/3/3-api/xmpp
+              title: XMPP Functions
+        - link: /momentum/3/3-api/3-api-hooks
+          title: Hooks
+          items:
+            - link: /momentum/3/3-api/hooks-apn
+              title: Hooks in the apn Scope
+            - link: /momentum/3/3-api/hooks-cluster
+              title: Hooks in the cluster Scope
+            - link: /momentum/3/3-api/hooks-core
+              title: Hooks in the core scope
+            - link: /momentum/3/3-api/hooks-delay-dsn
+              title: Hooks in the delay_dsn Scope
+            - link: /momentum/3/3-api/hooks-gcm
+              title: Hooks in the gcm Scope
+            - link: /momentum/3/3-api/hooks-generic-delivery
+              title: Hooks in the generic_delivery and httpclnt Scope
+            - link: /momentum/3/3-api/hooks-msgc
+              title: Hooks in the msgc Scope
+            - link: /momentum/3/3-api/hooks-publish
+              title: Hooks in the publish Scope
+            - link: /momentum/3/3-api/hooks-restinj
+              title: Hooks in the restinj Scope
+            - link: /momentum/3/3-api/hooks-sieve
+              title: Hooks in the sieve scope
+        - link: /momentum/3/3-api/pt-structs
+          title: Structs
+          items:
+            - link: /momentum/3/3-api/structs
+              title: Structs
+        - link: /momentum/3/3-api/custom-channels
+          title: Custom Delivery Modules
+          items:
+            - link: /momentum/3/3-api/custom-channels-overview
+              title: Overview
+            - link: /momentum/3/3-api/custom-channels-momo-module-api
+              title: Momentum Modules
+            - link: /momentum/3/3-api/custom-channels-custom-module-api
+              title: Custom Delivery Module Setup
+            - link: /momentum/3/3-api/custom-channels-custom-routines
+              title: Custom Callback Functions
+            - link: /momentum/3/3-api/custom-channels-compiling
+              title: Compiling in C
+- link: /momentum/mobile
+  title: Momentum Mobile
+  items:
+    - link: /momentum/mobile/mobile-reference
+      title: Reference Manual
+      items:
+        - link: /momentum/mobile/mobile-reference/mobile-reference-preface
+          title: Preface
+          items:
+            - link: >-
+                /momentum/mobile/mobile-reference/mobile-reference-preface#typographical
+              title: Typographical Conventions Used in This Document
+        - link: /momentum/mobile/mobile-reference/mobile-reference-p-smpp
+          title: Mobile Momentum SMPP
+          items:
+            - link: /momentum/mobile/mobile-reference/overview
+              title: Overview of Mobile Momentum
+              items:
+                - link: >-
+                    /momentum/mobile/mobile-reference/overview#overview-architecture
+                  title: Architecture
+                - link: /momentum/mobile/mobile-reference/overview-smppesme
+                  title: The Short Message Peer-to-Peer Protocol (SMPP) ESME Module
+                - link: /momentum/mobile/mobile-reference/overview-smpp-email-sms
+                  title: 'Message Conversions, Transformations, and Mappings'
+                - link: /momentum/mobile/mobile-reference/overview-installing
+                  title: Installing Momentum
+            - link: /momentum/mobile/mobile-reference/momentum-mobility
+              title: Mobile Momentum SMPP
+              items:
+                - link: >-
+                    /momentum/mobile/mobile-reference/momentum-mobility#modules.mobility.smpp_logger
+                  title: The smpp Modules
+                - link: >-
+                    /momentum/mobile/mobile-reference/mobility-persistent-connections
+                  title: Persistent Connections
+                - link: /momentum/mobile/mobile-reference/mobility-throttling
+                  title: Throttling
+                - link: /momentum/mobile/mobile-reference/mobility-smpp-caveats
+                  title: SMPP Caveats
+                - link: >-
+                    /momentum/mobile/mobile-reference/mobility-configuration-smpp
+                  title: smpp_logger Module Configuration
+                - link: >-
+                    /momentum/mobile/mobile-reference/modules-mobility-smpp-bounce-logger
+                  title: The smpp_bounce_logger Module
+                - link: /momentum/mobile/mobile-reference/mobility-runtime
+                  title: Message Context Variables
+                - link: /momentum/mobile/mobile-reference/mobility-runtime-hooks
+                  title: SMS Conversion Hook Points
+            - link: /momentum/mobile/mobile-reference/mobility-smpp-options
+              title: Mobile Momentum SMPP Options
+              items:
+                - link: >-
+                    /momentum/mobile/mobile-reference/mobility-smpp-options#mobility.conf
+                  title: SMPP Configuration Option Details
+            - link: /momentum/mobile/mobile-reference/admin-use-cases
+              title: Use Cases
+              items:
+                - link: >-
+                    /momentum/mobile/mobile-reference/admin-use-cases#admin.use.case.regex
+                  title: Route to SMS Matching a Regex in the Subject Header
+                - link: >-
+                    /momentum/mobile/mobile-reference/admin-use-case-recipient-address
+                  title: Route to SMS Based on the Recipient Address
+                - link: /momentum/mobile/mobile-reference/admin-use-case-sender-ip
+                  title: Route to SMS Based on the Sender IP Address
+                - link: >-
+                    /momentum/mobile/mobile-reference/admin-use-case-sender-address
+                  title: Route to SMS Based on the Sender Address
+            - link: /momentum/mobile/mobile-reference/mobility-best-practices
+              title: SMPP Configuration Best Practices
+              items:
+                - link: >-
+                    /momentum/mobile/mobile-reference/mobility-best-practices#mobility.best.practices.bind.params
+                  title: SMSC Bind Parameters
+                - link: >-
+                    /momentum/mobile/mobile-reference/mobility-best-practices-conversion
+                  title: Message Conversion Parameters
+                - link: >-
+                    /momentum/mobile/mobile-reference/mobility-best-practices-timer-params
+                  title: SMPP Timer Parameters
+                - link: >-
+                    /momentum/mobile/mobile-reference/mobility-best-practices-delivery-receipts
+                  title: Delivery Receipts
+                - link: >-
+                    /momentum/mobile/mobile-reference/mobility-best-practices-persistent-cnnections
+                  title: Persistent Connections
+                - link: >-
+                    /momentum/mobile/mobile-reference/mobility-best-practices-sms-to-email
+                  title: SMS to Email Address Mappings
+                - link: >-
+                    /momentum/mobile/mobile-reference/mobility-best-practices-throttling
+                  title: Throttling
+                - link: >-
+                    /momentum/mobile/mobile-reference/mobility-best-practices-logging
+                  title: SMPP Logging
+                - link: >-
+                    /momentum/mobile/mobile-reference/mobility-best-practices-message-mode
+                  title: Message Mode
+            - link: /momentum/mobile/mobile-reference/mobile-reference-faq
+              title: FAQ
+              items:
+                - link: >-
+                    /momentum/mobile/mobile-reference/mobile-reference-faq#faq-mobility1
+                  title: Configuration
+                - link: /momentum/mobile/mobile-reference/faq-mobility-2
+                  title: Domains
+        - link: /momentum/mobile/mobile-reference/mobile-reference-p-mm-7
+          title: Mobile Momentum MMS
+          items:
+            - link: /momentum/mobile/mobile-reference/mobility-mm-7
+              title: Mobile Momentum MM7
+              items:
+                - link: >-
+                    /momentum/mobile/mobile-reference/mobility-mm-7#mobility.configuration.mm7
+                  title: The mm7_serv Module
+                - link: /momentum/mobile/mobile-reference/mobility-mm-7-mms-logger
+                  title: The mms_logger Module
+                - link: >-
+                    /momentum/mobile/mobile-reference/mobility-mm-7-mms-bounce-logger
+                  title: The mms_bounce_logger Module
+                - link: >-
+                    /momentum/mobile/mobile-reference/mobility-mm-7-multiprotocol
+                  title: Multi Protocol Domain Naming
+                - link: /momentum/mobile/mobile-reference/mm-7-mcmt-reception
+                  title: The MCMT_Reception option
+                - link: /momentum/mobile/mobile-reference/mobility-mm-7-listener
+                  title: Listener Configuration for MCMT
+                - link: >-
+                    /momentum/mobile/mobile-reference/mobility-mm-7-aggregator-specific
+                  title: Aggregator-specific Requirements
+                - link: /momentum/mobile/mobile-reference/mobility-mm-7-config
+                  title: Configuration for MM7
+            - link: /momentum/mobile/mobile-reference/mobility-mm-7-options
+              title: Mobile Momentum MM7 Options
+              items:
+                - link: >-
+                    /momentum/mobile/mobile-reference/mobility-mm-7-options#mm7.conf
+                  title: MM7 Configuration Option Details
+            - link: /momentum/mobile/mobile-reference/mobility-aggregator-apis
+              title: Aggregator APIs
+              items:
+                - link: >-
+                    /momentum/mobile/mobile-reference/mobility-aggregator-apis#mobility.aggregator.apis.mblox
+                  title: The mBlox API
+        - link: /momentum/mobile/mobile-reference/p-xmpp
+          title: Mobile Momentum XMPP
+          items:
+            - link: /momentum/mobile/mobile-reference/mobility-xmpp-modules
+              title: Mobile Momentum XMPP
+              items:
+                - link: >-
+                    /momentum/mobile/mobile-reference/mobility-xmpp-modules#modules.xmpp
+                  title: The XMPP Module and Listener
+                - link: /momentum/mobile/mobile-reference/modules-xmpp-logger
+                  title: The XMPP Logger Module
+                - link: >-
+                    /momentum/mobile/mobile-reference/mobility-xmpp-modules-roster-presence
+                  title: Roster and Presence
+                - link: /momentum/mobile/mobile-reference/xmpp-lua-functions
+                  title: Lua XMPP Functions
+                - link: /momentum/mobile/mobile-reference/mcmt-2-xmpp
+                  title: Converting MCMT to XMPP
+                - link: /momentum/mobile/mobile-reference/mcmt-2-xmpp-caveat
+                  title: Filtering Out Chat State Notifications
+        - link: /momentum/mobile/mobile-reference/p-retry
+          title: Retrying Messages
+          items:
+            - link: /momentum/mobile/mobile-reference/mobility-message-retry
+              title: Retrying Messages
+              items:
+                - link: >-
+                    /momentum/mobile/mobile-reference/mobility-message-retry#mobility.message.retry.modules.mstore
+                  title: The mstore Module
+                - link: >-
+                    /momentum/mobile/mobile-reference/mobility-message-retry-retention
+                  title: Message Retention
+        - link: /momentum/mobile/mobile-reference/mobile-reference-glossary
+          title: Glossary
+        - link: /momentum/mobile/mobile-reference/mobile-reference-acronyms
+          title: Acronyms
+        - link: /momentum/mobile/mobile-reference/status-codes
+          title: Command Status Codes
+        - link: /momentum/mobile/mobile-reference/smpp-pdu-definitions
+          title: SMPP PDU Operation Definitions
+    - link: /momentum/mobile/mobile-quick-start
+      title: Quick Start
+      items:
+        - link: /momentum/mobile/mobile-quick-start/quickmob-overview
+          title: Overview
+        - link: /momentum/mobile/mobile-quick-start/quickmob-installing
+          title: Installing Mobile Momentum
+        - link: /momentum/mobile/mobile-quick-start/quickmob-config-modules
+          title: Configuring the Mobile Momentum Modules
+          items:
+            - link: >-
+                /momentum/mobile/mobile-quick-start/quickmob-config-modules#quickmob.smpp.modules
+              title: The SMPP Modules
+            - link: /momentum/mobile/mobile-quick-start/quickmob-mm-7-modules
+              title: The MM7 Modules
+            - link: /momentum/mobile/mobile-quick-start/quickmob-config-web-stats
+              title: Configuring for Web UI Stats
+        - link: /momentum/mobile/mobile-quick-start/quickmob-config-options
+          title: 'Configuration Options in the Global, Domain and Binding Scopes'
+          items:
+            - link: >-
+                /momentum/mobile/mobile-quick-start/quickmob-config-options#quickmob.smpp.specific
+              title: SMPP-specific Configuration
+            - link: /momentum/mobile/mobile-quick-start/quickmob-mm-7-specific
+              title: MM7-specific Configuration
+        - link: /momentum/mobile/mobile-quick-start/quickmob-bare-bones
+          title: Bare Bones Configurations
+    - link: /momentum/mobile/mobile-developer-guide
+      title: Developer Guide
+      items:
+        - link: /momentum/mobile/mobile-developer-guide/p-overview
+          title: Customization
+          items:
+            - link: >-
+                /momentum/mobile/mobile-developer-guide/developerand-customization
+              title: Overview
+              items:
+                - link: >-
+                    /momentum/mobile/mobile-developer-guide/developerand-customization#DC.developapplications
+                  title: Developing Applications for Mobile Momentum 2.1
+                - link: >-
+                    /momentum/mobile/mobile-developer-guide/dc-developing-applicationsforthe-smppesme
+                  title: Developing Applications for the SMPP ESME
+                - link: >-
+                    /momentum/mobile/mobile-developer-guide/dc-developing-applicationsforthe-mm-7-vasp
+                  title: Developing Applications for the MM7 VASP
+        - link: >-
+            /momentum/mobile/mobile-developer-guide/mobile-developer-guide-p-smpp
+          title: SMPP Hooks
+          items:
+            - link: >-
+                /momentum/mobile/mobile-developer-guide/smpp-delivery-receipt-evaluation-hook
+              title: SMPP Delivery Receipt Evaluation Hook
+              items:
+                - link: >-
+                    /momentum/mobile/mobile-developer-guide/smpp-delivery-receipt-evaluation-hook#SMPPDeliveryReceiptEvaluationHook.purpose
+                  title: Purpose
+                - link: >-
+                    /momentum/mobile/mobile-developer-guide/smpp-delivery-receipt-evaluation-hook-interface
+                  title: Interface
+                - link: >-
+                    /momentum/mobile/mobile-developer-guide/smpp-delivery-receipt-evaluation-hook-examples
+                  title: Examples
+            - link: >-
+                /momentum/mobile/mobile-developer-guide/smpp-log-inband-bounce-hook
+              title: SMPP Log Inband Bounce Hook
+              items:
+                - link: >-
+                    /momentum/mobile/mobile-developer-guide/smpp-log-inband-bounce-hook#SMPPLogInbandBounceHook.purpose
+                  title: Purpose
+                - link: >-
+                    /momentum/mobile/mobile-developer-guide/smpp-log-inband-bounce-hook-interface
+                  title: Interface
+                - link: >-
+                    /momentum/mobile/mobile-developer-guide/smpp-log-inband-bounce-hook-examples
+                  title: Examples
+            - link: >-
+                /momentum/mobile/mobile-developer-guide/smpp-log-outband-bounce-hook
+              title: SMPP Log Outband Bounce Hook
+              items:
+                - link: >-
+                    /momentum/mobile/mobile-developer-guide/smpp-log-outband-bounce-hook#SMPPLogOutbandBounceHook.purpose
+                  title: Purpose
+                - link: >-
+                    /momentum/mobile/mobile-developer-guide/smpp-log-outband-bounce-hook-interface
+                  title: Interface
+                - link: >-
+                    /momentum/mobile/mobile-developer-guide/smpp-log-outband-bounce-hook-examples
+                  title: Examples
+            - link: >-
+                /momentum/mobile/mobile-developer-guide/smpp-log-transient-bounce-hook
+              title: SMPP Log Transient Bounce Hook
+              items:
+                - link: >-
+                    /momentum/mobile/mobile-developer-guide/smpp-log-transient-bounce-hook#SMPPLogTransientBounceHook.purpose
+                  title: Purpose
+                - link: >-
+                    /momentum/mobile/mobile-developer-guide/smpp-log-transient-bounce-hook-interface
+                  title: Function Interface
+                - link: >-
+                    /momentum/mobile/mobile-developer-guide/smpp-log-transient-bounce-hook-examples
+                  title: Examples
+            - link: /momentum/mobile/mobile-developer-guide/smpp-log-conversion-hook
+              title: SMPP Log Conversion Hook
+              items:
+                - link: >-
+                    /momentum/mobile/mobile-developer-guide/smpp-log-conversion-hook#SMPPLogConversionHook.purpose
+                  title: Purpose
+                - link: >-
+                    /momentum/mobile/mobile-developer-guide/smpp-log-conversion-hook-interface
+                  title: Interface
+                - link: >-
+                    /momentum/mobile/mobile-developer-guide/smpp-log-conversion-hook-examples
+                  title: Examples
+            - link: /momentum/mobile/mobile-developer-guide/smpp-log-delivery-hook
+              title: SMPP Log Delivery Hook
+              items:
+                - link: >-
+                    /momentum/mobile/mobile-developer-guide/smpp-log-delivery-hook#SMPPLogDeliveryHook.purpose
+                  title: Purpose
+                - link: >-
+                    /momentum/mobile/mobile-developer-guide/smpp-log-delivery-hook-interface
+                  title: Interface
+                - link: >-
+                    /momentum/mobile/mobile-developer-guide/smpp-log-delivery-hook-examples
+                  title: Examples
+            - link: /momentum/mobile/mobile-developer-guide/smpp-log-permfail-hook
+              title: SMPP Log Permfail Hook
+              items:
+                - link: >-
+                    /momentum/mobile/mobile-developer-guide/smpp-log-permfail-hook#SMPPLogPermfailHook.purpose
+                  title: Purpose
+                - link: >-
+                    /momentum/mobile/mobile-developer-guide/smpp-log-permfail-hook-interface
+                  title: Interface
+                - link: >-
+                    /momentum/mobile/mobile-developer-guide/smpp-log-permfail-hook-examples
+                  title: Examples
+            - link: /momentum/mobile/mobile-developer-guide/smpp-log-reception-hook
+              title: SMPP Log Reception Hook
+              items:
+                - link: >-
+                    /momentum/mobile/mobile-developer-guide/smpp-log-reception-hook#SMPPLogReceptionHook.purpose
+                  title: Purpose
+                - link: >-
+                    /momentum/mobile/mobile-developer-guide/smpp-log-reception-hook-interface
+                  title: Interface
+                - link: >-
+                    /momentum/mobile/mobile-developer-guide/smpp-log-reception-hook-examples
+                  title: Examples
+            - link: /momentum/mobile/mobile-developer-guide/smpp-log-status-hook
+              title: SMPP Logger Status Hook
+              items:
+                - link: >-
+                    /momentum/mobile/mobile-developer-guide/smpp-log-status-hook#SMPPLogStatusHook.purpose
+                  title: Purpose
+                - link: >-
+                    /momentum/mobile/mobile-developer-guide/smpp-log-status-hook-interface
+                  title: Interface
+                - link: >-
+                    /momentum/mobile/mobile-developer-guide/smpp-log-status-hook-examples
+                  title: Examples
+            - link: /momentum/mobile/mobile-developer-guide/smpp-log-tempfail-hook
+              title: SMPP Log Tempfail Hook
+              items:
+                - link: >-
+                    /momentum/mobile/mobile-developer-guide/smpp-log-tempfail-hook#SMPPLogTempfailHook.purpose
+                  title: Purpose
+                - link: >-
+                    /momentum/mobile/mobile-developer-guide/smpp-log-tempfail-hook-interface
+                  title: Interface
+                - link: >-
+                    /momentum/mobile/mobile-developer-guide/smpp-log-tempfail-hook-examples
+                  title: Examples
+            - link: /momentum/mobile/mobile-developer-guide/smppmo-conversion-hook
+              title: SMPP MO Conversion Hook
+              items:
+                - link: >-
+                    /momentum/mobile/mobile-developer-guide/smppmo-conversion-hook#SMPPMOConversionHook.purpose
+                  title: Purpose
+                - link: >-
+                    /momentum/mobile/mobile-developer-guide/smppmo-conversion-hook-interface
+                  title: Interface
+                - link: >-
+                    /momentum/mobile/mobile-developer-guide/smppmo-conversion-hook-examples
+                  title: Examples
+            - link: /momentum/mobile/mobile-developer-guide/smppmt-conversion-hook
+              title: SMPP MT Conversion Hook
+              items:
+                - link: >-
+                    /momentum/mobile/mobile-developer-guide/smppmt-conversion-hook#SMPPMTConversionHook.interface
+                  title: Interface
+                - link: >-
+                    /momentum/mobile/mobile-developer-guide/smppmt-conversion-hook-examples
+                  title: Examples
+            - link: >-
+                /momentum/mobile/mobile-developer-guide/smpppdumo-evaluation-hook
+              title: SMPP PDU MO (Receiver) Evaluation Hook
+              items:
+                - link: >-
+                    /momentum/mobile/mobile-developer-guide/smpppdumo-evaluation-hook#SMPPPDUMOEvaluationHook.purpose
+                  title: Purpose
+                - link: >-
+                    /momentum/mobile/mobile-developer-guide/smpppdumo-evaluation-hook-interface
+                  title: Interface
+                - link: >-
+                    /momentum/mobile/mobile-developer-guide/smpppdumo-evaluation-hook-examples
+                  title: Examples
+            - link: >-
+                /momentum/mobile/mobile-developer-guide/smpppdumt-evaluation-hook
+              title: SMPP PDU MT (Transmit) Evaluation Hook
+              items:
+                - link: >-
+                    /momentum/mobile/mobile-developer-guide/smpppdumt-evaluation-hook#SMPPPDUMTEvaluationHook.purpose
+                  title: Purpose
+                - link: >-
+                    /momentum/mobile/mobile-developer-guide/smpppdumt-evaluation-hook-interface
+                  title: Interface
+                - link: >-
+                    /momentum/mobile/mobile-developer-guide/smpppdumt-evaluation-hook-examples
+                  title: Examples
+            - link: >-
+                /momentum/mobile/mobile-developer-guide/smpp-received-message-validation-hook
+              title: SMPP Received Message Validation Hook
+              items:
+                - link: >-
+                    /momentum/mobile/mobile-developer-guide/smpp-received-message-validation-hook#SMPPReceivedMessageValidationHook.purpose
+                  title: Purpose
+                - link: >-
+                    /momentum/mobile/mobile-developer-guide/smpp-received-message-validation-hook-interface
+                  title: Interface
+                - link: >-
+                    /momentum/mobile/mobile-developer-guide/smpp-received-message-validation-hook-examples
+                  title: Examples
+            - link: >-
+                /momentum/mobile/mobile-developer-guide/smpp-submit-response-hook
+              title: SMPP Submit Response Hook
+              items:
+                - link: >-
+                    /momentum/mobile/mobile-developer-guide/smpp-submit-response-hook#SMPPSubmitResponseHook.purpose
+                  title: Purpose
+                - link: >-
+                    /momentum/mobile/mobile-developer-guide/smpp-submit-response-hook-interface
+                  title: Interface
+                - link: >-
+                    /momentum/mobile/mobile-developer-guide/smpp-submit-response-hook-examples
+                  title: Examples
+        - link: >-
+            /momentum/mobile/mobile-developer-guide/mobile-developer-guide-p-mm-7
+          title: MM7 Hooks
+          items:
+            - link: >-
+                /momentum/mobile/mobile-developer-guide/mm-7-client-submit-request-hook
+              title: MM7 MT Submit Request Hook
+              items:
+                - link: >-
+                    /momentum/mobile/mobile-developer-guide/mm-7-client-submit-request-hook#MM7ClientSubmitRequestHook.purpose
+                  title: Purpose
+                - link: >-
+                    /momentum/mobile/mobile-developer-guide/mm-7-client-submit-request-hook-interface
+                  title: Interface
+                - link: >-
+                    /momentum/mobile/mobile-developer-guide/mm-7-client-submit-request-hook-example
+                  title: Examples
+            - link: >-
+                /momentum/mobile/mobile-developer-guide/mm-7-client-submit-response-hook
+              title: MM7 MT Submit Response Hook
+              items:
+                - link: >-
+                    /momentum/mobile/mobile-developer-guide/mm-7-client-submit-response-hook#MM7ClientSubmitResponseHook.purpose
+                  title: Purpose
+                - link: >-
+                    /momentum/mobile/mobile-developer-guide/mm-7-client-submit-response-hook-interface
+                  title: Interface
+                - link: >-
+                    /momentum/mobile/mobile-developer-guide/mm-7-client-submit-response-hook-examples
+                  title: Examples
+            - link: >-
+                /momentum/mobile/mobile-developer-guide/mm-7-log-inband-bounce-hook
+              title: MM7 Log Inband Bounce Hook
+              items:
+                - link: >-
+                    /momentum/mobile/mobile-developer-guide/mm-7-log-inband-bounce-hook#MM7LogInbandBounceHook.purpose
+                  title: Purpose
+                - link: >-
+                    /momentum/mobile/mobile-developer-guide/mm-7-log-inband-bounce-hook-interface
+                  title: Interface
+                - link: >-
+                    /momentum/mobile/mobile-developer-guide/mm-7-log-inband-bounce-hook-examples
+                  title: Examples
+            - link: >-
+                /momentum/mobile/mobile-developer-guide/mm-7-log-outband-bounce-hook
+              title: MM7 Log Outband Bounce Hook
+              items:
+                - link: >-
+                    /momentum/mobile/mobile-developer-guide/mm-7-log-outband-bounce-hook#MM7LogOutbandBounceHook.purpose
+                  title: Purpose
+                - link: >-
+                    /momentum/mobile/mobile-developer-guide/mm-7-log-outband-bounce-hook-interface
+                  title: Interface
+                - link: >-
+                    /momentum/mobile/mobile-developer-guide/mm-7-log-outband-bounce-hook-examples
+                  title: Examples
+            - link: >-
+                /momentum/mobile/mobile-developer-guide/mm-7-log-transient-bounce-hook
+              title: MM7 Log Transient Bounce Hook
+              items:
+                - link: >-
+                    /momentum/mobile/mobile-developer-guide/mm-7-log-transient-bounce-hook#MM7LogTransientBounceHook.purpose
+                  title: Purpose
+                - link: >-
+                    /momentum/mobile/mobile-developer-guide/mm-7-log-transient-bounce-hook-interface
+                  title: Interface
+                - link: >-
+                    /momentum/mobile/mobile-developer-guide/mm-7-log-transient-bounce-hook-examples
+                  title: Examples
+            - link: /momentum/mobile/mobile-developer-guide/mm-7-log-conversion-hook
+              title: MM7 Log Conversion Hook
+              items:
+                - link: >-
+                    /momentum/mobile/mobile-developer-guide/mm-7-log-conversion-hook#MM7LogConversionHook.purpose
+                  title: Purpose
+                - link: >-
+                    /momentum/mobile/mobile-developer-guide/mm-7-log-conversion-hook-interface
+                  title: Interface
+                - link: >-
+                    /momentum/mobile/mobile-developer-guide/mm-7-log-conversion-hook-examples
+                  title: Examples
+            - link: /momentum/mobile/mobile-developer-guide/mm-7-log-delivery-hook
+              title: MM7 Log Delivery Hook
+              items:
+                - link: >-
+                    /momentum/mobile/mobile-developer-guide/mm-7-log-delivery-hook#MM7LogDeliveryHook.purpose
+                  title: Purpose
+                - link: >-
+                    /momentum/mobile/mobile-developer-guide/mm-7-log-delivery-hook-interface
+                  title: Interface
+                - link: >-
+                    /momentum/mobile/mobile-developer-guide/mm-7-log-delivery-hook-examples
+                  title: Examples
+            - link: /momentum/mobile/mobile-developer-guide/mm-7-log-permfail-hook
+              title: MM7 Log Permfail Hook
+              items:
+                - link: >-
+                    /momentum/mobile/mobile-developer-guide/mm-7-log-permfail-hook#MM7LogPermfailHook.purpose
+                  title: Purpose
+                - link: >-
+                    /momentum/mobile/mobile-developer-guide/mm-7-log-permfail-hook-interface
+                  title: Interface
+                - link: >-
+                    /momentum/mobile/mobile-developer-guide/mm-7-log-permfail-hook-examples
+                  title: Examples
+            - link: /momentum/mobile/mobile-developer-guide/mm-7-log-reception-hook
+              title: MM7 Log Reception Hook
+              items:
+                - link: >-
+                    /momentum/mobile/mobile-developer-guide/mm-7-log-reception-hook#MM7LogReceptionHook.purpose
+                  title: Purpose
+                - link: >-
+                    /momentum/mobile/mobile-developer-guide/mm-7-log-reception-hook-interface
+                  title: Interface
+                - link: >-
+                    /momentum/mobile/mobile-developer-guide/mm-7-log-reception-hook-examples
+                  title: Examples
+            - link: /momentum/mobile/mobile-developer-guide/mm-7-log-status-hook
+              title: MM7 Logger Status Hook
+              items:
+                - link: >-
+                    /momentum/mobile/mobile-developer-guide/mm-7-log-status-hook#MM7LogStatusHook.purpose
+                  title: Purpose
+                - link: >-
+                    /momentum/mobile/mobile-developer-guide/mm-7-log-status-hook-interface
+                  title: Interface
+                - link: >-
+                    /momentum/mobile/mobile-developer-guide/mm-7-log-status-hook-examples
+                  title: Examples
+            - link: /momentum/mobile/mobile-developer-guide/mm-7-log-tempfail-hook
+              title: MM7 Log Tempfail Hook
+              items:
+                - link: >-
+                    /momentum/mobile/mobile-developer-guide/mm-7-log-tempfail-hook#MM7LogTempfailHook.purpose
+                  title: Purpose
+                - link: >-
+                    /momentum/mobile/mobile-developer-guide/mm-7-log-tempfail-hook-interface
+                  title: Interface
+                - link: >-
+                    /momentum/mobile/mobile-developer-guide/mm-7-log-tempfail-hook-examples
+                  title: Examples
+            - link: >-
+                /momentum/mobile/mobile-developer-guide/mm-7-server-received-message-hook
+              title: MM7 Server Received Message Hook
+              items:
+                - link: >-
+                    /momentum/mobile/mobile-developer-guide/mm-7-server-received-message-hook#MM7ServerReceivedMessageHook.purpose
+                  title: Purpose
+                - link: >-
+                    /momentum/mobile/mobile-developer-guide/mm-7-server-received-message-hook-interface
+                  title: Interface
+                - link: >-
+                    /momentum/mobile/mobile-developer-guide/mm-7-server-received-message-hook-examples
+                  title: Examples
+            - link: >-
+                /momentum/mobile/mobile-developer-guide/mm-7-server-received-message-validation-hook
+              title: MM7 Server Received Message Validation Hook
+              items:
+                - link: >-
+                    /momentum/mobile/mobile-developer-guide/mm-7-server-received-message-validation-hook#MM7ServerReceivedMessageValidationHook.purpose
+                  title: Purpose
+                - link: >-
+                    /momentum/mobile/mobile-developer-guide/mm-7-server-received-message-validation-hook-interface
+                  title: Interface
+                - link: >-
+                    /momentum/mobile/mobile-developer-guide/mm-7-server-received-message-validation-hook-examples
+                  title: Examples
+            - link: /momentum/mobile/mobile-developer-guide/mob-dev-guide-mcmt
+              title: The Multi-Channel Message Type (MCMT)
+              items:
+                - link: >-
+                    /momentum/mobile/mobile-developer-guide/mob-dev-guide-mcmt#mobility.mcmt
+                  title: The Multi-Channel Message Type (MCMT)
+                - link: >-
+                    /momentum/mobile/mobile-developer-guide/mobility-mcmt-injection
+                  title: The MCMT Format
+- link: /momentum/changelog
+  title: Changelog
+  items:
+    - link: /momentum/changelog/4
+      title: Momentum 4.x Changelog
+      items: 
+        - link: /momentum/changelog/4/4-4-0
+          title: Momentum 4.4.0 Changelog
+        - link: /momentum/changelog/4/4-3-1
+          title: Momentum 4.3.1 Changelog
+        - link: /momentum/changelog/4/4-3-0
+          title: Momentum 4.3.0 Changelog
+        - link: /momentum/changelog/4/4-2-40
+          title: Momentum 4.2.40 Changelog
+        - link: /momentum/changelog/4/4-2-38
+          title: Momentum 4.2.38 Changelog
+        - link: /momentum/changelog/4/4-2-31
+          title: Momentum 4.2.31 Changelog
+        - link: /momentum/changelog/4/4-2-28
+          title: Momentum 4.2.28 Changelog
+    - link: /momentum/changelog/legacy
+      title: Momentum Legacy Changelogs
+      items:
+        - link: /momentum/changelog/legacy/4-x-legacy
+          title: Momentum 4.x Legacy Changelog
+        - link: /momentum/changelog/legacy/3-x-legacy-2013-2016
+          title: Momentum 3.x Legacy Changelog from 2013-2016
+        - link: /momentum/changelog/legacy/3-x-legacy-2011-2012
+          title: Momentum 3.x Legacy Changelog from 2011-2012
+        - link: /momentum/changelog/legacy/3-x-legacy-2009-2010
+          title: Momentum 3.x Legacy Changelog from 2009-2010
+        - link: /momentum/changelog/legacy/2-x-legacy-2009-2013
+          title: Momentum 2.x Legacy Changelog from 2009-2013
+        - link: /momentum/changelog/legacy/2-x-legacy-2008
+          title: Momentum 2.x Legacy Changelog for 2008
+        - link: /momentum/changelog/legacy/2-x-legacy-2007
+          title: Momentum 2.x Legacy Changelog for 2007
+        - link: /momentum/changelog/legacy/2-x-legacy-2003-2006
+          title: Momentum 2.x Legacy Changelog from 2003-2006
+        - link: /momentum/changelog/legacy/message-central
+          title: Message Central Legacy Changelog
+        - link: /momentum/changelog/legacy/message-scope
+          title: Message Scope Legacy Changelog

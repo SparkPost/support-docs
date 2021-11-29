@@ -1,0 +1,93 @@
+---
+lastUpdated: "03/26/2020"
+title: "sieve_register_test"
+description: "sieve register test Register a sieve test int sieve register test closure action reqd capability compile cb action cb void closure const char action const char reqd capability sieve compile callback compile cb sieve action callback action cb Use sieve register extension instead Register a sieve test flags A combination..."
+---
+
+<a name="apis.sieve_register_test"></a> 
+## Name
+
+sieve_register_test — Register a sieve test
+
+## Synopsis
+
+`#include "sieve/ecsieve.h"`
+
+| `int **sieve_register_test** (` | <var class="pdparam">closure</var>, |   |
+|   | <var class="pdparam">action</var>, |   |
+|   | <var class="pdparam">reqd_capability</var>, |   |
+|   | <var class="pdparam">compile_cb</var>, |   |
+|   | <var class="pdparam">action_cb</var>`)`; |   |
+
+`void * <var class="pdparam">closure</var>`;
+`const char * <var class="pdparam">action</var>`;
+`const char * <var class="pdparam">reqd_capability</var>`;
+`sieve_compile_callback <var class="pdparam">compile_cb</var>`;
+`sieve_action_callback <var class="pdparam">action_cb</var>`;<a name="idp60527840"></a> 
+## Description
+
+### Deprecated
+
+Use [sieve_register_extension](/momentum/3/3-api/apis-sieve-register-extension) instead.
+
+Register a sieve test.
+
+**<a name="idp60530960"></a> Parameters**
+
+<dl class="variablelist">
+
+<dt>flags</dt>
+
+<dd>
+
+A combination of SIV_EXT_* flags (if any).
+
+</dd>
+
+<dt>closure</dt>
+
+<dd>
+
+Pointer that's passed to callbacks.
+
+</dd>
+
+<dt>action</dt>
+
+<dd>
+
+Name of the extension in Sieve scripts.
+
+</dd>
+
+<dt>reqd_capability</dt>
+
+<dd>
+
+Name that the script needs to require; NULL means the same. as action
+
+</dd>
+
+<dt>compile_cb</dt>
+
+<dd>
+
+Callback for compile phase.
+
+</dd>
+
+<dt>action_cb</dt>
+
+<dd>
+
+Callback for execution phase.
+
+</dd>
+
+</dl>
+
+This is equivalent to calling [sieve_register_extension](/momentum/3/3-api/apis-sieve-register-extension) with the SIV_EXT_SUPPORTS_V0|SIV_EXT_IS_ONLY_A_TEST flags. (SIV_EXT_SUPPORTS_V0 flag introduces overhead for compatibility). New code should use [sieve_register_extension](/momentum/3/3-api/apis-sieve-register-extension) instead.
+
+**<a name="idp60544800"></a> Return Values**
+
+Returns 1 on success, 0 on failure.

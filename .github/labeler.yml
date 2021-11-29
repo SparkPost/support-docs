@@ -1,0 +1,5 @@
+':eyes: needs review':
+  - '**/*'
+
+'type: content change':
+  - 'content/**/*'

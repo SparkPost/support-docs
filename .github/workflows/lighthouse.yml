@@ -1,0 +1,51 @@
+name: Lighthouse Audit
+on:
+  pull_request:
+    branches:
+      - next
+      - main
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [16.x]
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Install dependencies
+        uses: bahmutov/npm-install@v1
+      - name: Run build
+        env:
+          CANCEL_SENTRY_CLI: true
+          CYPRESS_SAMPLE_SIZE: 10
+        run: npm run build
+      - name: Wait for the Netlify Preview
+        uses: jakepartusch/wait-for-netlify-action@v1
+        id: netlify
+        with:
+          site_name: 'support-docs'
+          # Unfortunately our build time is ~20min, so I'm setting the timeout to 22min.
+          max_timeout: 1320
+      - name: Audit URLs using Lighthouse
+        uses: treosh/lighthouse-ci-action@v8
+        with:
+          urls: |
+            ${{ steps.netlify.outputs.url }}
+            ${{ steps.netlify.outputs.url }}/momentum/
+          # TODO ERY: We will need to add this back in the future, but we need to deliberate on what we find an acceptable lighthouse budget to be
+          # budgetPath: ./lighthouse-budget.json
+          uploadArtifacts: true
