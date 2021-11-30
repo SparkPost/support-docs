@@ -1,11 +1,11 @@
 import { GetStaticProps, GetStaticPaths } from 'next';
 import {
-  getCategoryData,
+  // getCategoryData,
   getAllCategoryPostPaths,
   getSingleCategoryPost,
   categoryPath,
 } from 'lib/api';
-import { CategoriesProvider, Category } from 'context/categories';
+import { CategoriesProvider } from 'context/categories';
 import MomentumLayout from 'components/site/momentumLayout';
 import DocumentationContent from 'components/site/documentationContent';
 import SEO from 'components/site/seo';
@@ -19,11 +19,12 @@ type PostPageProps = {
     lastUpdated?: string;
   };
   isIndex: boolean;
-  categoryData: Category[];
+  // categoryData: Category[];
 };
 
 const PostPage = (props: PostPageProps): JSX.Element => {
-  const { content, data, isIndex, categoryData } = props;
+  const { content, data, isIndex } = props;
+  const categoryData = [{}];
 
   return (
     <CategoriesProvider data={categoryData}>
@@ -42,8 +43,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     return { props: {} };
   }
   const { content, data } = getSingleCategoryPost(params.slug, categoryPath('momentum')) || {};
-  const categoryData = getCategoryData('momentum');
-  return { props: { content, data, categoryData } };
+  // const categoryData = getCategoryData('momentum');
+  return { props: { content, data } };
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
