@@ -1,9 +1,3 @@
-[build]
-publish = ".next"
-
-[[plugins]]
-package = "@netlify/plugin-nextjs"
-
 # By default, redirects won’t be applied if there’s a file with the same
 # path as the one defined in the `from` property. Setting `force` to `true`
 # will make the redirect rule take precedence over any existing files.
@@ -25,3 +19,9 @@ force = true
   from = "/docs/user-guide/automatic-inline-seeding"
   to = "/docs/user-guide/automatic-inline-seeds"
   status = 301
+
+[build]
+publish = ".next"
+
+[[plugins]]
+package = "@netlify/plugin-nextjs"
