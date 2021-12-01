@@ -3,7 +3,7 @@ const SentryPlugin = require('@sentry/webpack-plugin');
 
 module.exports = {
   reactStrictMode: true,
-  target: 'serverless',
+  swcMinify: true,
 
   // Sourcemaps are enabled to be uploaded to Sentry
   // Warning: Can significantly increase build times
