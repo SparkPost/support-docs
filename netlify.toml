@@ -32,6 +32,111 @@ package = "@netlify/plugin-nextjs"
 #
 
 [[redirects]]
+  from = "/docs/billing/common-billing-questions"
+  to = "/docs/billing/common-billing-errors"
+  status = 301
+
+[[redirects]]
+  from = "/docs/faq/dkim-record-verify"
+  to = "/docs/faq/dkim-wont-verify"
+  status = 301
+
+[[redirects]]
+  from = "/docs/integrations/ecampaign-11"
+  to = "/docs/integrations/e-campaign-11"
+  status = 301
+
+[[redirects]]
+  from = "/docs/integrations/push-notifications-sparkpost-enterprise"
+  to = "/docs/integrations"
+  status = 301
+
+[[redirects]]
+  from = "/docs/introduction"
+  to = "/docs"
+  status = 301
+
+[[redirects]]
+  from = "/docs/my-account-and-profile/scim-user-provisioning-okta"
+  to = "/docs/my-account-and-profile/scim"
+  status = 301
+
+[[redirects]]
+  from = "/docs/reporting/coming-soon-data-rollups"
+  to = "/docs/reporting/data-rollups"
+  status = 301
+
+[[redirects]]
+  from = "/docs/reporting/reporting-and-analytics"
+  to = "/docs/reporting"
+  status = 301
+
+[[redirects]]
+  from = "/docs/reporting/signals-analytics"
+  to = "/docs/reporting"
+  status = 301
+
+[[redirects]]
+  from = "/docs/signals/overview"
+  to = "/docs/reporting"
+  status = 301
+
+[[redirects]]
+  from = "/docs/signals/user-guide/overview"
+  to = "/docs/reporting"
+  status = 301
+
+[[redirects]]
+  from = "/docs/tech-resources/enabling-inbound-email"
+  to = "/docs/tech-resources/inbound-email-relay-webhook"
+  status = 301
+
+[[redirects]]
+  from = "/docs/tech-resources/ios-universal-links"
+  to = "/docs/tech-resources/deep-links-self-serve"
+  status = 301
+
+[[redirects]]
+  from = "/docs/tech-resources/managing-webhook-data"
+  to = "/docs/tech-resources/webhook-data-streams"
+  status = 301
+
+[[redirects]]
+  from = "/docs/tech-resources/recipient-validation-sparkpost"
+  to = "/docs/recipient-validation/getting-started-recipient-validation"
+  status = 301
+
+[[redirects]]
+  from = "/docs/transmissions-api"
+  to = "https://developers.sparkpost.com/api/transmissions/#transmissions"
+  status = 301
+
+[[redirects]]
+  from = "/docs/user-guide/managing-sending-domains"
+  to = "/docs/getting-started/setting-up-domains"
+  status = 301
+
+[[redirects]]
+  from = "/docs/user-guide/mandrill-migration-guide"
+  to = "https://www.sparkpost.com/migration-guides/mandrill/"
+  status = 301
+
+[[redirects]]
+  from = "/docs/user-guide/migrating-from-sendgrid"
+  to = "https://www.sparkpost.com/migration-guides/sendgrid/"
+  status = 301
+
+[[redirects]]
+  from = "/docs/user-guide/overview"
+  to = "/docs/user-guide"
+  status = 301
+
+[[redirects]]
+  from = "/docs/user-guide/signals"
+  to = "/docs/reporting"
+  status = 301
+
+[[redirects]]
   from = "/docs/using-unsubscribe-events"
   to = "/docs/user-guide/setting-up-unsubscribe-links"
   status = 301
