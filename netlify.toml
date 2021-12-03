@@ -25,3 +25,853 @@ package = "@netlify/plugin-nextjs"
   from = "/docs/user-guide/automatic-inline-seeding"
   to = "/docs/user-guide/automatic-inline-seeds"
   status = 301
+
+#
+# todo, the following redirects should be monitored and if they are no longer being used
+#  they should be removed
+#
+
+[[redirects]]
+  from = "/docs/billing/common-billing-questions"
+  to = "/docs/billing/common-billing-errors"
+  status = 301
+
+[[redirects]]
+  from = "/docs/faq/dkim-record-verify"
+  to = "/docs/faq/dkim-wont-verify"
+  status = 301
+
+[[redirects]]
+  from = "/docs/integrations/ecampaign-11"
+  to = "/docs/integrations/e-campaign-11"
+  status = 301
+
+[[redirects]]
+  from = "/docs/integrations/push-notifications-sparkpost-enterprise"
+  to = "/docs/integrations"
+  status = 301
+
+[[redirects]]
+  from = "/docs/introduction"
+  to = "/docs"
+  status = 301
+
+[[redirects]]
+  from = "/docs/my-account-and-profile/scim-user-provisioning-okta"
+  to = "/docs/my-account-and-profile/scim"
+  status = 301
+
+[[redirects]]
+  from = "/docs/reporting/coming-soon-data-rollups"
+  to = "/docs/reporting/data-rollups"
+  status = 301
+
+[[redirects]]
+  from = "/docs/reporting/reporting-and-analytics"
+  to = "/docs/reporting"
+  status = 301
+
+[[redirects]]
+  from = "/docs/reporting/signals-analytics"
+  to = "/docs/reporting"
+  status = 301
+
+[[redirects]]
+  from = "/docs/signals/overview"
+  to = "/docs/reporting"
+  status = 301
+
+[[redirects]]
+  from = "/docs/signals/user-guide/overview"
+  to = "/docs/reporting"
+  status = 301
+
+[[redirects]]
+  from = "/docs/tech-resources/enabling-inbound-email"
+  to = "/docs/tech-resources/inbound-email-relay-webhook"
+  status = 301
+
+[[redirects]]
+  from = "/docs/tech-resources/ios-universal-links"
+  to = "/docs/tech-resources/deep-links-self-serve"
+  status = 301
+
+[[redirects]]
+  from = "/docs/tech-resources/managing-webhook-data"
+  to = "/docs/tech-resources/webhook-data-streams"
+  status = 301
+
+[[redirects]]
+  from = "/docs/tech-resources/recipient-validation-sparkpost"
+  to = "/docs/recipient-validation/getting-started-recipient-validation"
+  status = 301
+
+[[redirects]]
+  from = "/docs/transmissions-api"
+  to = "https://developers.sparkpost.com/api/transmissions/#transmissions"
+  status = 301
+
+[[redirects]]
+  from = "/docs/user-guide/managing-sending-domains"
+  to = "/docs/getting-started/setting-up-domains"
+  status = 301
+
+[[redirects]]
+  from = "/docs/user-guide/mandrill-migration-guide"
+  to = "https://www.sparkpost.com/migration-guides/mandrill/"
+  status = 301
+
+[[redirects]]
+  from = "/docs/user-guide/migrating-from-sendgrid"
+  to = "https://www.sparkpost.com/migration-guides/sendgrid/"
+  status = 301
+
+[[redirects]]
+  from = "/docs/user-guide/overview"
+  to = "/docs/user-guide"
+  status = 301
+
+[[redirects]]
+  from = "/docs/user-guide/signals"
+  to = "/docs/reporting"
+  status = 301
+
+[[redirects]]
+  from = "/docs/using-unsubscribe-events"
+  to = "/docs/user-guide/setting-up-unsubscribe-links"
+  status = 301
+
+[[redirects]]
+  from = "/docs/api/a-b-testing-sparkpost"
+  to = "/docs/tech-resources/a-b-testing-sparkpost"
+  status = 301
+
+[[redirects]]
+  from = "/docs/api/download-suppression-list"
+  to = "/docs/tech-resources/download-suppression-list"
+  status = 301
+
+[[redirects]]
+  from = "/docs/api/managing-sending-domains"
+  to = "/docs/tech-resources/managing-sending-domains"
+  status = 301
+
+[[redirects]]
+  from = "/docs/getting-started/creating-sending-domains"
+  to = "/docs/getting-started/getting-started-sparkpost#preparing-your-from-address"
+  status = 301
+
+[[redirects]]
+  from = "/docs/getting-started/sending-your-first-email"
+  to = "/docs/getting-started/getting-started-sparkpost#sending-email"
+  status = 301
+
+[[redirects]]
+  from = "/docs/getting-started/setting-up-dkim-with-domain-providers"
+  to = "/docs/getting-started/getting-started-sparkpost"
+  status = 301
+
+[[redirects]]
+  from = "/docs/getting-started/sparkpost-new-user-guide"
+  to = "/docs/getting-started/getting-started-sparkpost"
+  status = 301
+
+[[redirects]]
+  from = "/docs/getting-started/verify-sending-domains"
+  to = "/docs/getting-started/getting-started-sparkpost#step-2-verify-domain"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/2139249"
+  to = "/docs/tech-resources/enabling-multiple-custom-tracking-domains"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/2458110"
+  to = "/docs/faq/recipient-address-was-suppressed-due-to-customer-policy"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/2458146"
+  to = "/docs/faq/post-to-webhook-target-failed"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/2142595"
+  to = "/docs/faq/profile-info"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/1974248"
+  to = "/docs/faq/recipient-address-was-suppressed-due-to-customer-policy"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/2038351"
+  to = "/docs/faq/recipient-address-was-suppressed-due-to-system-policy"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/1955060"
+  to = "/docs/faq/relaying-denied-error"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/2461190"
+  to = "/docs/faq/retrieve-bounce-info"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/1988470"
+  to = "/docs/faq/smtp-connection-problems"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/2003491"
+  to = "/docs/faq/storing-images"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/2087911"
+  to = "/docs/faq/suppression-timing"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/2444819"
+  to = "/docs/faq/understanding-delays-bounces"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/2560839"
+  to = "/docs/faq/using-sink-server"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/1950126"
+  to = "/docs/faq/why-configure-dkim"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/2179779"
+  to = "/docs/getting-started/benefits-role-domains"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/1933377"
+  to = "/docs/getting-started/create-api-keys"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/1933318"
+  to = "/docs/getting-started/creating-sending-domains"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/1929890"
+  to = "/docs/getting-started/creating-template"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/2456522"
+  to = "/docs/getting-started/how-to-get-help"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/topics/770787"
+  to = "/docs/getting-started"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/1929893"
+  to = "/docs/getting-started/previewing-and-sending-test-emails"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/2661031"
+  to = "/docs/getting-started/requirements-for-sending-domains"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/1929887"
+  to = "/docs/getting-started/sending-your-first-email"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/2034498"
+  to = "/docs/getting-started/setting-up-dkim-with-domain-providers"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/2034521"
+  to = "/docs/getting-started/setting-up-domains"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/2778789"
+  to = "/docs/getting-started/signing-up-valid-email-address"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/2670627"
+  to = "/docs/getting-started/sparkpost-new-user-guide"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/1933360"
+  to = "/docs/getting-started/verify-sending-domains"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/2750871"
+  to = "/docs/getting-started/what-counts-daily-monthly-usage"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/2092471"
+  to = "/docs/integrations/atomic-mail-sender"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/2455133"
+  to = "/docs/integrations/calling-sparkpost-from-browser"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/2040317"
+  to = "/docs/integrations/direct-mail"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/2340644"
+  to = "/docs/integrations/discourse"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/2169630"
+  to = "/docs/integrations/django"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/2092525"
+  to = "/docs/integrations/e-campaign-11"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/2039973"
+  to = "/docs/integrations/easy-mail"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/2278407"
+  to = "/docs/integrations/elixir"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/2039925"
+  to = "/docs/integrations/exim"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/2032944"
+  to = "/docs/integrations/group-mail"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/2046445"
+  to = "/docs/integrations/hoolie"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/topics/780292"
+  to = "/docs/integrations"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/2780873"
+  to = "/docs/integrations/joomla"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/2045652"
+  to = "/docs/integrations/mac-mail"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/2356667"
+  to = "/docs/integrations/magento"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/2036581"
+  to = "/docs/integrations/mail-wizz"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/2160178"
+  to = "/docs/integrations/marketing-rocket"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/1930046"
+  to = "/docs/integrations/ongage"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/2082477"
+  to = "/docs/integrations/patch-interspire-email-marketer"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/2782464"
+  to = "/docs/integrations/php-list"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/2782409"
+  to = "/docs/integrations/phpbb"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/2030960"
+  to = "/docs/integrations/postfix"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/2177799"
+  to = "/docs/integrations/power-bi"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/2155339"
+  to = "/docs/integrations/power-mta"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/2477781"
+  to = "/docs/integrations/push-notifications-sparkpost-enterprise"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/2036575"
+  to = "/docs/integrations/send-blaster"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/2455201"
+  to = "/docs/my-account-and-profile/account-suspension"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/2467929"
+  to = "/docs/my-account-and-profile/changing-your-account-email-address"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/1948449"
+  to = "/docs/my-account-and-profile/enabling-two-factor-authentication"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/topics/779853"
+  to = "/docs/my-account-and-profile"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/topics/815732"
+  to = "/docs/reporting"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/2240051"
+  to = "/docs/reporting/message-events"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/2524845"
+  to = "/docs/reporting/metrics-definitions"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/1929895"
+  to = "/docs/reporting/reporting-and-analytics"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/2661260"
+  to = "/docs/faq/error-messages-smtp"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/topics/764218"
+  to = "/docs/faq"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/2314148"
+  to = "/docs/tech-resources/abuse-postmaster-google-apps"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/2754251"
+  to = "/docs/tech-resources/android-digital-asset-links"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/2085201"
+  to = "/docs/tech-resources/binding-groups"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/2247030"
+  to = "/docs/tech-resources/change-log-sparkpost-enterprise"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/1936102"
+  to = "/docs/tech-resources/change-log-sparkpost"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/2371794"
+  to = "/docs/tech-resources/custom-bounce-domain"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/2039614"
+  to = "/docs/tech-resources/enabling-inbound-email"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/2707424"
+  to = "/docs/tech-resources/enabling-multiple-custom-tracking-domains"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/2140916"
+  to = "/docs/tech-resources/extended-error-codes"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/2676543"
+  to = "/docs/tech-resources/extracting-email-attachments-from-relay-webhooks"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/topics/782250"
+  to = "/docs/tech-resources"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/2089764"
+  to = "/docs/tech-resources/list-unsubscribe-functionality"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/2220552"
+  to = "/docs/tech-resources/managing-webhook-data"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/2115678"
+  to = "/docs/tech-resources/skip-suppression-functionality"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/2539063"
+  to = "/docs/tech-resources/smtp-engagement-tracking"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/1980377"
+  to = "/docs/tech-resources/smtp-injection-with-starttls-using-swaks"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/2429473"
+  to = "/docs/tech-resources/smtp-rest-api-performance"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/2112385"
+  to = "/docs/tech-resources/webhook-authentication"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/1976204"
+  to = "/docs/tech-resources/webhook-event-reference"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/2558436"
+  to = "/docs/user-guide/consolidating-accounts"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/topics/779849"
+  to = "/docs/user-guide"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/2216798"
+  to = "/docs/user-guide/managing-sending-domains"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/2350727"
+  to = "/docs/user-guide/mandrill-migration-guide"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/2458291"
+  to = "/docs/user-guide/remove-list-unsubscribe-header"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/2214831"
+  to = "/docs/user-guide/sending-attachments"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/1929894"
+  to = "/docs/user-guide/setting-up-unsubscribe-links"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/2360320"
+  to = "/docs/user-guide/subaccounts"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/2249268"
+  to = "/docs/user-guide/transmission-best-practices"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/2237907"
+  to = "/docs/user-guide/unconfigured-sending-domain"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/2351320"
+  to = "/docs/user-guide/uploading-recipient-list"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/1929891"
+  to = "/docs/user-guide/using-suppression-lists"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/1929976"
+  to = "/docs/user-guide/using-unsubscribe-reports"
+  status = 301
+
+[[redirects]]
+  from = "/customer/en/portal/*"
+  to = "/customer/portal/:splat"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/2472157"
+  to = "/docs/getting-started/sparkpost-new-user-guide"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/2361300"
+  to = "/docs/faq/using-sink-server"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/2756679"
+  to = "/docs/api/a-b-testing-sparkpost"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/1930049"
+  to = "/docs/integrations/send-with-us"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/2092518"
+  to = "/docs/integrations/thunder-mailer"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/2207582"
+  to = "/docs/integrations/using-sparkpost-heroku-add-on"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/2409547"
+  to = "/docs/integrations/using-templates-sparkpost-wordpress"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/2463012"
+  to = "/docs/billing/common-billing-errors"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/topics/770788"
+  to = "/docs/billing"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/2035665"
+  to = "/docs/billing/upgrading-your-account"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/1929897"
+  to = "/docs/billing/usage-report-and-account-limits"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/2039628"
+  to = "/docs/deliverability/global-suppression-list"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/1929896"
+  to = "/docs/deliverability/bounce-classification-codes"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/1972209"
+  to = "/docs/deliverability/ip-warm-up-overview"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/2002977"
+  to = "/docs/deliverability/dedicated-ip-pools"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/2133774"
+  to = "/docs/deliverability/delivery-errors-when-sending-to-gmail-subscribers"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/topics/779851"
+  to = "/docs/deliverability"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/2460212"
+  to = "/docs/deliverability/managing-dedicated-ip-pools"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/2396826"
+  to = "/docs/deliverability/optimizing-deliverability-and-inbox-placement"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/2521756"
+  to = "/docs/deliverability/spf-and-ip4-mechanisms"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/2124161"
+  to = "/docs/faq/abuse-sparkpost-com-is-not-returning-my-emails"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/1929977"
+  to = "/docs/faq/access-rest-apis"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/1929982"
+  to = "/docs/faq/after-receiving-a-250-ok-why-are-messages-being-rejected"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/2615300"
+  to = "/docs/faq/are-you-sending-emails-as-encrypted-messages"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/2458261"
+  to = "/docs/faq/can-attachments-be-sent-when-using-templates"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/2457916"
+  to = "/docs/faq/can-i-send-from-any-domain"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/2113763"
+  to = "/docs/faq/cancel-my-account"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/2164371"
+  to = "/docs/faq/cc-bcc-archive-recipients"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/2432290"
+  to = "/docs/faq/cc-bcc-with-rest-api"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/2457861"
+  to = "/docs/faq/css-inlining"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/2030894"
+  to = "/docs/faq/daily-and-monthly-quota-limits"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/1929984"
+  to = "/docs/faq/dkim-wont-verify"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/topics/777406"
+  to = "/docs/faq"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/1940360"
+  to = "/docs/faq/does-sparkpost-dedupe"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/2588293"
+  to = "/docs/faq/gmail-shows-mailing-list"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/2241721"
+  to = "/docs/faq/how-are-messages-retried"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/2456461"
+  to = "/docs/faq/international-smtp-performance"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/2537369"
+  to = "/docs/faq/messages-attempted"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/2457866"
+  to = "/docs/faq/migrating-mandrill-templates"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/2120938"
+  to = "/docs/faq/out-of-band-bounces"
+  status = 301
+
+[[redirects]]
+  from = "/customer/portal/articles/1929979"
+  to = "/docs/faq/missing-click-open-data"
+  status = 301
