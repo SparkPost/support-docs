@@ -158,12 +158,12 @@ package = "@netlify/plugin-nextjs"
 
 [[redirects]]
   from = "/docs/getting-started/creating-sending-domains"
-  to = "/docs/getting-started/getting-started-sparkpost/#preparing-your-from-address"
+  to = "/docs/getting-started/getting-started-sparkpost#preparing-your-from-address"
   status = 301
 
 [[redirects]]
   from = "/docs/getting-started/sending-your-first-email"
-  to = "/docs/getting-started/getting-started-sparkpost/#sending-email"
+  to = "/docs/getting-started/getting-started-sparkpost#sending-email"
   status = 301
 
 [[redirects]]
@@ -178,7 +178,7 @@ package = "@netlify/plugin-nextjs"
 
 [[redirects]]
   from = "/docs/getting-started/verify-sending-domains"
-  to = "/docs/getting-started/getting-started-sparkpost/#step-2-verifying-domain-ownership"
+  to = "/docs/getting-started/getting-started-sparkpost#step-2-verify-domain"
   status = 301
 
 [[redirects]]
