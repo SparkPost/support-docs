@@ -50,7 +50,7 @@ For more information on SLIs/SLOs including uptime monitoring and error rate mon
 
 ## Content
 
-In order to maintain readability, usability and keep our UX consistent, we are [following the guidelines provided to us by the UX team](https://docs.google.com/document/d/1dej9J7N9M8lcbJXnT9kxyNB_EFBPHIBLZBbHaxRWqhQ/edit). \***\*Please know these document guidelines before proceeding with content contributions.\*\***
+In order to maintain readability, usability, and keep our UX consistent we are [following the guidelines provided to us by the UX team](https://docs.google.com/document/d/1dej9J7N9M8lcbJXnT9kxyNB_EFBPHIBLZBbHaxRWqhQ/edit). \***\*Please review these guidelines before contributing.\*\***
 
 Currently, all content is edited using [Github](https://github.com/SparkPost/support-docs). You are free to either edit the content using the [web app in github](https://docs.github.com/en/repositories/working-with-files/managing-files/editing-files) or [cli](https://cli.github.com/). Whatever you are most comfortable with.
 
