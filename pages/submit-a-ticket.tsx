@@ -52,8 +52,18 @@ const SubmitATicketPage: NextPage<SubmitATicketPageProps> = ({ navigationData })
 };
 
 export const getStaticProps: GetStaticProps = async () => {
+  let navigationData;
+
   console.log('submit-a-ticket.tsx');
-  const navigationData = getSupportNavigation() || [];
+
+  try {
+    navigationData = getSupportNavigation() || [];
+  } catch (e) {
+    console.error(e);
+  }
+
+  console.log('navigationData', navigationData);
+
   return { props: { navigationData } };
 };
 
