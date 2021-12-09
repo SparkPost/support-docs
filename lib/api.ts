@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import glob from 'glob';
 import matter from 'gray-matter';
+import { cwd } from 'process';
 
 type CategoryOption = 'momentum' | 'docs';
 
@@ -89,6 +90,12 @@ export const getSupportNavigation = () => {
       }),
     };
   });
+
+  console.log('getSupportNavigation');
+  console.log('categories', categories);
+  console.log('categoryData', categoryData);
+  console.log('navigationData', navigationData);
+  console.log('process.cwd()', cwd());
 
   return navigationData;
 };
