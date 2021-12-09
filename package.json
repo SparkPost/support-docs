@@ -11,7 +11,7 @@
     "build:index:momentum": "node ./scripts/momentumIndex.mjs",
     "build:index:support": "node ./scripts/supportIndex.mjs",
     "build:images": "rimraf public/content && node ./scripts/copyImages.mjs",
-    "postbuild": "next-sitemap",
+    "postbuild": "next-sitemap && ls -al ./out/server/pages && ls -al ./out/server/pages/docs",
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --write .",

@@ -2,9 +2,11 @@
   command = "npm run build"
   publish = "out"
 
-
 [[plugins]]
 package = "@netlify/plugin-nextjs"
+
+[[plugins]]
+package = "netlify-plugin-cache-nextjs"
 
 # A redirect rule with many of the supported properties
 [[redirects]]
