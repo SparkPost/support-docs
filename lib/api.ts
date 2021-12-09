@@ -2,7 +2,6 @@ import fs from 'fs';
 import path from 'path';
 import glob from 'glob';
 import matter from 'gray-matter';
-import { cwd } from 'process';
 
 type CategoryOption = 'momentum' | 'docs';
 
