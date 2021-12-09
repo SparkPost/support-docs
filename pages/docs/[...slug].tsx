@@ -53,11 +53,8 @@ const PostPage = (props: PostPageProps): JSX.Element => {
   );
 };
 
-export const getStaticProps: GetStaticProps = async ({ params, ...rest }) => {
-  console.log('docs/[...slug.tsx]');
-
+export const getStaticProps: GetStaticProps = async ({ params }) => {
   if (!params?.slug) {
-    console.log('Undefined slug', params, rest);
     return { props: {} };
   }
 

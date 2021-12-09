@@ -91,14 +91,6 @@ export const getSupportNavigation = () => {
     };
   });
 
-  if (navigationData.length === 0) {
-    console.log('navigationData is empty');
-    console.log('categories', categories);
-    console.log('categoryData', categoryData);
-    console.log('navigationData', navigationData);
-    console.log('process.cwd()', cwd());
-  }
-
   return navigationData;
 };
 

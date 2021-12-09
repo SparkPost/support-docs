@@ -28,7 +28,6 @@ const IndexPage = (props: IndexPageProps): JSX.Element => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  console.log('docs/index.tsx');
   const navigationData = getSupportNavigation() || [];
   const categoryData = getCategoryData('docs');
   return { props: { navigationData, categoryData } };

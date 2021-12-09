@@ -2,6 +2,7 @@
 const SentryPlugin = require('@sentry/webpack-plugin');
 
 module.exports = {
+  distDir: 'out',
   reactStrictMode: true,
   swcMinify: true,
 
