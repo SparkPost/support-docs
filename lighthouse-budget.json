@@ -8,23 +8,23 @@
       },
       {
         "metric": "first-meaningful-paint",
-        "budget": 2000
+        "budget": 5000
       }
     ],
     "resourceSizes": [
       {
         "resourceType": "script",
-        "budget": 150
+        "budget": 500
       },
       {
         "resourceType": "total",
-        "budget": 500
+        "budget": 1000
       }
     ],
     "resourceCounts": [
       {
         "resourceType": "third-party",
-        "budget": 100
+        "budget": 200
       }
     ]
   }
