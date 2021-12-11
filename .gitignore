@@ -41,3 +41,6 @@ yarn-error.log*
 
 # Auto generated images
 public/content
+
+# Netlify
+.netlify/*
