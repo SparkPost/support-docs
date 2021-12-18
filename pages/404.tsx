@@ -67,7 +67,7 @@ const OhhhNoes: NextPage = () => {
                 my={['400', null, '500']}
               >
                 Return to{' '}
-                <Link prefetch={false} href="/docs" passHref>
+                <Link href="/docs" passHref>
                   <StyledLink as="a" href="/docs">
                     Home
                   </StyledLink>

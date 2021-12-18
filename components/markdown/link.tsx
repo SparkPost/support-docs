@@ -26,7 +26,7 @@ export type LinkProps = React.ComponentPropsWithoutRef<'a'> & {
 
 const AnchorLink = (props: LinkProps): JSX.Element => {
   return (
-    <Link prefetch={false} passHref href={props.href || '/'}>
+    <Link passHref href={props.href || '/'}>
       <StyledLink as="a">{props.children}</StyledLink>
     </Link>
   );

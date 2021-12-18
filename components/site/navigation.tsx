@@ -73,7 +73,7 @@ const Navigation = (props: NavigationProps): JSX.Element | null => {
 
   return (
     <Box width={['100%', null, '260px']} position="sticky" top="0">
-      <Link prefetch={false} href={titleLink} passHref>
+      <Link href={titleLink} passHref>
         <StyledLink>
           <Box
             display={['none', null, 'inline-block']}
@@ -90,7 +90,7 @@ const Navigation = (props: NavigationProps): JSX.Element | null => {
         <Item key={i} {...item} />
       ))}
       <Box py="450" mt="450" borderTop="400">
-        <Link prefetch={false} href="/submit-a-ticket" passHref>
+        <Link href="/submit-a-ticket" passHref>
           <StyledLink>
             <Box px="500">
               <Feedback size={20} />
@@ -101,7 +101,7 @@ const Navigation = (props: NavigationProps): JSX.Element | null => {
           </StyledLink>
         </Link>
 
-        <Link prefetch={false} href="http://slack.sparkpost.com" passHref>
+        <Link href="http://slack.sparkpost.com" passHref>
           <StyledLink target="_blank" rel="noreferrer">
             <Box px="500">
               <Forum size={20} />
@@ -112,7 +112,7 @@ const Navigation = (props: NavigationProps): JSX.Element | null => {
           </StyledLink>
         </Link>
 
-        <Link prefetch={false} href="https://www.sparkpost.com/case-studies/" passHref>
+        <Link href="https://www.sparkpost.com/case-studies/" passHref>
           <StyledLink target="_blank" rel="noreferrer">
             <Box px="500">
               <PeopleOutline size={20} />
@@ -123,7 +123,7 @@ const Navigation = (props: NavigationProps): JSX.Element | null => {
           </StyledLink>
         </Link>
 
-        <Link prefetch={false} href="https://www.sparkpost.com/blog/category/developer/" passHref>
+        <Link href="https://www.sparkpost.com/blog/category/developer/" passHref>
           <StyledLink target="_blank" rel="noreferrer">
             <Box px="500">
               <Code size={20} />
@@ -134,7 +134,7 @@ const Navigation = (props: NavigationProps): JSX.Element | null => {
           </StyledLink>
         </Link>
 
-        <Link prefetch={false} href="https://developers.sparkpost.com/" passHref>
+        <Link href="https://developers.sparkpost.com/" passHref>
           <StyledLink target="_blank" rel="noreferrer">
             <Box px="500">
               <DeviceHub size={20} />
@@ -145,7 +145,7 @@ const Navigation = (props: NavigationProps): JSX.Element | null => {
           </StyledLink>
         </Link>
 
-        <Link prefetch={false} href="https://status.sparkpost.com/" passHref>
+        <Link href="https://status.sparkpost.com/" passHref>
           <StyledLink target="_blank" rel="noreferrer">
             <Box px="500">
               {/* Placeholder until Circle icon is added to Matchbox */}
@@ -238,7 +238,7 @@ const Item = (props: NavigationItemProps): JSX.Element => {
 
   return (
     <Box fontSize="200" lineHeight="200" position="relative">
-      <Link prefetch={false} href={link} passHref>
+      <Link href={link} passHref>
         <StyledLink $active={active} $level={level}>
           {title}
         </StyledLink>

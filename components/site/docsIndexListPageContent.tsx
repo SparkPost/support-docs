@@ -32,7 +32,7 @@ const DocsIndexListPageContent = (props: DocsIndexListPageContentProps) => {
                   </Box>
                 )}
                 <Box pt="400">
-                  <Link prefetch={false} href={item.link} passHref>
+                  <Link href={item.link} passHref>
                     <Button variant="outline" color="blue">
                       Read More
                     </Button>

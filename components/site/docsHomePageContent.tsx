@@ -227,7 +227,7 @@ const help = {
   desc2: (
     <>
       To find the best resource for your question and fastest resolution, check out our
-      <Link prefetch={false} href="/" passHref>
+      <Link href="/" passHref>
         <SimpleStyledLink $inlineBlock={true}>how to get help guide</SimpleStyledLink>
       </Link>
     </>
@@ -270,7 +270,7 @@ const SectionContent = (props: SectionContentProps): JSX.Element => {
 const GuideLink = (props: GuideLinkProps) => {
   const { url, text } = props;
   return (
-    <Link prefetch={false} href={url} passHref>
+    <Link href={url} passHref>
       <SimpleStyledLink>{text}</SimpleStyledLink>
     </Link>
   );
@@ -279,7 +279,7 @@ const GuideLink = (props: GuideLinkProps) => {
 const Card = (props: CardProps): JSX.Element => {
   const { url, title, desc, linkText } = props;
   return (
-    <Link prefetch={false} href={url} passHref>
+    <Link href={url} passHref>
       <StyledCard
         p="16px 20px"
         borderWidth="1px"
@@ -308,7 +308,7 @@ const Card = (props: CardProps): JSX.Element => {
 const Library = (props: LibraryProps): JSX.Element => {
   const { Icon, name, url } = props;
   return (
-    <Link prefetch={false} href={url} passHref>
+    <Link href={url} passHref>
       <BoxStyledLink>
         <Icon /> {name}
       </BoxStyledLink>
@@ -319,7 +319,7 @@ const Library = (props: LibraryProps): JSX.Element => {
 const HelpLink = (props: HelpLinkProps): JSX.Element => {
   const { Icon, text, url } = props;
   return (
-    <Link prefetch={false} href={url} passHref>
+    <Link href={url} passHref>
       <BlueStyledLink>
         <Icon /> {text}
       </BlueStyledLink>

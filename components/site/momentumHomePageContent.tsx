@@ -181,7 +181,7 @@ const MomentumHomePageContent = () => {
                   {category.map(({ label, url, level }, j) => {
                     if (url) {
                       return (
-                        <Link prefetch={false} href={url} passHref key={`${i}-${j}`}>
+                        <Link href={url} passHref key={`${i}-${j}`}>
                           <TocLink url={url} level={level}>
                             {label}
                           </TocLink>

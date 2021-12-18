@@ -74,7 +74,7 @@ const Result = ({ hit }: ResultProps) => {
   const categories = React.useContext(CategoriesContext);
 
   return (
-    <Link prefetch={false} href={hit.slug} passHref>
+    <Link href={hit.slug} passHref>
       <StyledLink href={hit.slug}>
         <Stack space="100">
           <Box fontSize="400" color="gray.900">
