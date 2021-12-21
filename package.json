@@ -17,6 +17,7 @@
     "format": "prettier --write .",
     "precommit": "lint-staged",
     "build:test": "ENV=test next build",
+    "sync": "REACT_APP_GITHUB_API_TOKEN=$(security find-internet-password -l github.com -w) node scripts/syncContributors.mjs",
     "test:ci": "start-server-and-test http://localhost:3000 test:e2e:headless",
     "test:e2e:headless": "ENV=test node_modules/.bin/cypress run",
     "test:e2e:gui": "ENV=test node_modules/.bin/cypress open"
@@ -73,6 +74,7 @@
     "@typescript-eslint/eslint-plugin": "^5.1.0",
     "@typescript-eslint/parser": "^5.1.0",
     "algoliasearch": "^4.11.0",
+    "axios": "^0.24.0",
     "cypress": "^9.0.0",
     "dotenv": "^10.0.0",
     "eslint": "^7.32.0",
