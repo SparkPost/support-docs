@@ -48,8 +48,6 @@ This document includes step by step guides for the following CDNs.
     * [Create a Domain](#azure-create)
     * [Issue a Certificate](#azure-cert)
 
-> If you plan to use [deep linking](./deep-links-self-serve) with Android apps, CloudFlare serves files via a `301` redirect, which can prevent Android apps autoverifying domains.
-
 If you are using a CDN not listed here, the steps will differ in workflow. Please refer to your CDN documentation and contact their respective support departments if you have any questions.
 
 ## <a name="endpoints"></a>SparkPost tracking endpoints
@@ -69,84 +67,78 @@ After configuring your CDN, you need instruct SparkPost to encode your links usi
 ---
 ## <a name="cloudflare"></a> Step by Step Guide with CloudFlare
 
-1. Create CloudFlare account.
+_Updated: December 2021. Now uses a simpler forwarding method without the need for custom page rules, and to reflect the current web UI._
 
-1. Go to “DNS” tab on the CloudFlare UI:
+CloudFlare requires you to use their nameservers, i.e. to give them control over routing for the entire organizational domain. That means it works a bit differently to the other CDNs listed here.
 
-    ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudflare_UI.png)
+1. Create (or log in to your existing) CloudFlare account.
 
-1. Add domain and then add the following Cloudflare NS records (**please note**, for other providers, the NS records to be used will differ):
+1. Add your domain, if it is not already served by CloudFlare.
+
+   Go to the "websites" option in the navigation menu on the CloudFlare UI.
+
+   ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudflare_UI.png)
+
+   Choose "Add a Site". CloudFlare will scan your existing DNS provider and collect records.
+
+   Review your DNS records.
+
+   If you are using other nameservers, CloudFlare will prompt you to change to point to specifically-named CloudFlare nameservers (yours may be different to the example shown below). You will require a login to your existing DNS provider to be able to change them; beyond the scope of this document.
+
+   Wait for the changes to take effect. You can monitor this in the CloudFlare UI.
+
+     ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudflare_ns_change.png)
+
+   Note that the old nameservers may still be cached for other users, including your local machine. You can, optionally, check the nameservers that your machine sees using `dig NS`:
 
     ```
-    NS	aron.ns.cloudflare.com
-    NS	peyton.ns.cloudflare.com
-    ```
-    These values can be found under the DNS tab on the Cloudflare UI.
-
-    **Example:**
-
-    Using the domain `track.example.com`, below is a command line DIG command to confirm that the NS records have been updated to reflect the required changes:
-
-    ```
-    dig example.com NS
-
-    ; <<>> DiG 9.8.3-P1 <<>> track.example.com NS
-    	;; global options: +cmd
-    	;; Got answer:
-    	;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 25635
-    	;; flags: qr rd ra; QUERY: 1, ANSWER: 2, AUTHORITY: 0, ADDITIONAL: 0
-
-    	;; QUESTION SECTION:
-    	;track.example.com.			IN	NS
-
-    	;; ANSWER SECTION:
-    	track.example.com.		86400	IN	NS	peyton.ns.cloudflare.com.
-    	track.example.com.		86400	IN	NS	aron.ns.cloudflare.com.
-
-    	;; Query time: 128 msec
-    	;; SERVER: 10.76.3.194#53(10.76.3.194)
-    	;; WHEN: Tue May  9 10:15:20 2017
-    	;; MSG SIZE  rcvd: 88
+    dig NS myexample.com
     ```
 
-1. Create the appropriate page rule settings for the domain.
+    ```
+    ; <<>> DiG 9.8.2rc1-RedHat-9.8.2-0.68.rc1.87.amzn1 <<>> NS myexample.com
+    ;; global options: +cmd
+    ;; Got answer:
+    ;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 4325
+    ;; flags: qr rd ra; QUERY: 1, ANSWER: 2, AUTHORITY: 0, ADDITIONAL: 0
 
-    * In the page rules tab: Create Page Rule:
+    ;; QUESTION SECTION:
+    ;myexample.com.		IN	NS
 
-        ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudflare_create_page_rule.png)
+    ;; ANSWER SECTION:
+    myexample.com.	300	IN	NS	athena.ns.cloudflare.com.
+    myexample.com.	300	IN	NS	sam.ns.cloudflare.com.
 
-    * Enter your domain with a trailing `/*`, e.g. `track.yourdomain.com/*`.
+    ;; Query time: 8 msec
+    ;; SERVER: 172.31.0.2#53(172.31.0.2)
+    ;; WHEN: Tue Dec 21 18:02:00 2021
+    ;; MSG SIZE  rcvd: 92
+    ```
 
-    * Add a Setting -> Forwarding URL (specify the 301 redirect option).
+1. Check, and if necessary add the tracking domain CNAME.
 
-    * Destination URL is `https://<CNAME_VALUE>/$1`. Replace `<CNAME_VALUE>` with the correct endpoint address for your service, see [here](#endpoints).
+   In CloudFlare, go to the "DNS" management menu. If you already have a plain (HTTP) tracking domain set up with SparkPost, is should be already present in the records. Check that it's set to "Proxied".
 
-        ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudflare_page_rule_edit.png)
+   If you are setting up a new tracking domain, then use the "Add record" option.
 
-    * Save and Deploy (turn page rule on).
+   * Select record type "CNAME"
+   * Enter the subdomain you have chosen (in our example, this is `track`). Enter just the subdomain part.
+   * Specify the target as the correct SparkPost tracking endpoint address for your service, see [here](#endpoints)
+   * Ensure Proxy status is enabled
 
-1. Cloudflare has Universal SSL for all accounts on the client side, but it's good to ensure that the origin side (towards SparkPost) also uses HTTPS.
+      ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudflare_create_cname.png)
 
-    * Create a new page rule:
+   * Select "Save".
 
-        ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudflare_SSL_full.png)
+1. Check that CloudFlare is set to use HTTPS.
 
-    * Enter your domain with a leading and trailing `/*`, e.g. `*.track.yourdomain.com/*`
+   In CloudFlare, go to the "SSL/TLS" management menu. You should see an Overview  screen showing the encryption mode as "Full".
 
-    * Select settings "SSL" and "Full".
+   ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudflare_SSL_full.png)
 
-    * Save and Deploy.
+   More information on CloudFlare SSL options can be found in [this article](https://support.cloudflare.com/hc/en-us/articles/200170416).
 
-    * Turn the page rule ON. Using the priority buttons, ensure that the SSL rule is first and the forwarding rule is second.
-
-        ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudflare_SSL_priority.png)
-
-        More information on CloudFlare SSL options can be found in [this article](https://support.cloudflare.com/hc/en-us/articles/200170416).
-
-
-1. Cloudflare does not offer control of cache "time to live" (TTL) on free accounts. This may mask repeat opens/clicks, as described [here](#ttl). If you have a paid account, under Caching, set your TTL value.
-
-1. Add a CNAME entry into DNS for your tracking domain. The value in the record doesn't matter; the record simply needs to exist. For example, if your tracking domain is `track.example.com`, a CNAME value of `example.com` is sufficient. Without a record to reference, the the page rule never gets triggered, and the proper redirection will not occur. Please note that the typical time to propagation of new CNAME records is often around five to ten minutes, but can be longer depending on your DNS provider.
+1. Cloudflare does not offer control of cache "time to live" (TTL) on free accounts. This may mask repeat opens/clicks, as described [here](#ttl). If you have a paid account, under Caching, check and set your TTL value.
 
 1. Follow [these steps](#switch-to-secure) to update and verify your tracking domain.
 
@@ -300,7 +292,7 @@ For up to date information on creating a distribution via CloudFront, please ref
 
 
     * Select "Save changes". The update will take a few minutes to deploy.
-    
+
     * You can verify that the routing is successful using `ping` on your created record. You should see a response from CloudFront.
 
 1. Follow [these steps](#switch-to-secure) to update and verify your tracking domain.
