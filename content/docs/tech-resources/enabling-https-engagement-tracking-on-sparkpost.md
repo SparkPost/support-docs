@@ -89,7 +89,7 @@ CloudFlare requires you to use their nameservers, i.e. to give them control over
 
      ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudflare_ns_change.png)
 
-   Note that the old nameservers may still be cached for other users, including your local machine. You can, optionally, check the nameservers that your machine sees using `dig NS`:
+   Note that (as the above screen mentions) the old nameservers may still be cached in the Internet and will take time to update. You can check the nameservers that a machine sees using `dig NS`:
 
     ```
     dig NS myexample.com
@@ -117,9 +117,9 @@ CloudFlare requires you to use their nameservers, i.e. to give them control over
 
 1. Check, and if necessary add the tracking domain CNAME.
 
-   In CloudFlare, go to the "DNS" management menu. If you already have a plain (HTTP) tracking domain set up with SparkPost, is should be already present in the records. Check that it's set to "Proxied".
+   In CloudFlare, go to the "DNS" management menu. If you already have a plain (HTTP) tracking domain set up with SparkPost, it should be already present in the records. Check that it's set to "Proxied".
 
-   If you are setting up a new tracking domain, then use the "Add record" option.
+   If you are setting up a new tracking domain, then use the "Add record" option:
 
    * Select record type "CNAME"
    * Enter the subdomain you have chosen (in our example, this is `track`). Enter just the subdomain part.
@@ -127,7 +127,6 @@ CloudFlare requires you to use their nameservers, i.e. to give them control over
    * Ensure Proxy status is enabled
 
       ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudflare_create_cname.png)
-
    * Select "Save".
 
 1. Check that CloudFlare is set to use HTTPS.
@@ -136,9 +135,12 @@ CloudFlare requires you to use their nameservers, i.e. to give them control over
 
    ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudflare_SSL_full.png)
 
+
    More information on CloudFlare SSL options can be found in [this article](https://support.cloudflare.com/hc/en-us/articles/200170416).
 
-1. Cloudflare does not offer control of cache "time to live" (TTL) on free accounts. This may mask repeat opens/clicks, as described [here](#ttl). If you have a paid account, under Caching, check and set your TTL value.
+   You can verify that the routing is correct using `ping` to your tracking domain. See also [troubleshooting tips](#troubleshooting).
+
+   Cloudflare does not offer control of cache "time to live" (TTL) on free accounts. This may mask repeat opens/clicks, as described [here](#ttl). If you have a paid account, under Caching, check and set your TTL value.
 
 1. Follow [these steps](#switch-to-secure) to update and verify your tracking domain.
 
