@@ -44,7 +44,6 @@ const Code = (props: CodeProps): JSX.Element | null => {
       <SyntaxHighlighter
         language={language || 'text'}
         style={a11yDark}
-        showLineNumbers
         PreTag={Pre}
       >
         {String(children).replace(/\n$/, '')}
