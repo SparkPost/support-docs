@@ -20,12 +20,12 @@ During the Warm-up phase the more consistent you are with volume, frequency, com
 
 This is a question that we hear a lot and there isn’t a one-size-fits-all answer. Here are a few questions to ask yourself to help you determine just how many IP’s are needed to support your sending program. And if you need more help, please login and create a ticket.
 
-1. How many unique message streams do I have? 
- * Separating message streams on separate IP’s is a best practice and ensures that the sending activity from your Marketing emails doesn’t impact your ability to get your Transactional emails delivered to the inbox for example. 
- * Other message stream examples: transactional, marketing, individual brands, regions, etc.
+1. How many unique message streams do I have?
+  * Separating message streams on separate IP’s is a best practice and ensures that the sending activity from your Marketing emails doesn’t impact your ability to get your Transactional emails delivered to the inbox for example. 
+  * Other message stream examples: transactional, marketing, individual brands, regions, etc.
 2. What is the maximum volume that I need to send in a single day for each message stream?
- * A single IP address can technically send a large volume of mail quickly depending on sending reputation - that’s millions of messages per hour. For most senders the recommended volume after a proper warmup is 2 to 5 million per day from a single IP.
- * Senders with volume less than 500k messages per month or with inconsistent volume from week to week may not have enough volume to build and maintain a positive sending reputation with mailbox providers. In this case, a shared IP pool may result in better delivery and deliverability. 
+  * A single IP address can technically send a large volume of mail quickly depending on sending reputation - that’s millions of messages per hour. For most senders the recommended volume after a proper warmup is 2 to 5 million per day from a single IP.
+  * Senders with volume less than 500k messages per month or with inconsistent volume from week to week may not have enough volume to build and maintain a positive sending reputation with mailbox providers. In this case, a shared IP pool may result in better delivery and deliverability. 
 
 ### IP Warm-up Plan 
 
