@@ -138,6 +138,7 @@ _Updated December 2021. Uses a simpler forwarding method without the need for cu
 
    Cloudflare does not offer control of cache "time to live" (TTL) on free accounts. This may mask repeat opens/clicks, as described [here](#cache-time-to-live-ttl-settings). If you have a paid account, under Caching, check and set your TTL value.
 
+
 1. Follow [these steps](#switch-tracking-domain-to-secure-and-validate) to update and verify your tracking domain.
 
 ---
