@@ -1,21 +1,9 @@
 #!/usr/bin/env python3
-import argparse, sys, re
+import argparse, sys, re, slugify
 
-# this is a heuristic based on what we see in output files - not definitive
+# Return a "slug" (HTTP safe) name - https://stackoverflow.com/questions/19335215/what-is-a-slug
 def markdown_title_name(t):
-    # Strip leading and trailing spaces, use lowercase
-    title = t.lower().strip()
-    # change non-alphanumeric to dash -, unless we already have a dash
-    for i in range(0, len(title)):
-        if not title[i].isalnum():
-            title = title[0:i] + '-' + title[i+1:]
-    # replace any repeated dashes
-    while '--' in title:
-        title = title.replace('--', '-')
-    # remove any leading & trailing dashes
-    title = title.strip('-')
-    return title
-
+    return slugify.slugify(t)
 
 class markup_doc:
     def __init__(self, f):

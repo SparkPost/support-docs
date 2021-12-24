@@ -8,7 +8,7 @@ description: "SparkPost supports HTTPS engagement tracking for customers via sel
 
 SparkPost supports secure tracking domains through the use of content delivery networks (CDNs), reverse proxies, or any method where the customer can host the necessary SSL/TLS certificates.  It is recommended that our customers use SSL as it provides secure transport for engagement data. It's also necessary to support SparkPost engagement tracking with Google’s AMP for Email.
 
-> Alternative: to configure HTTPS engagement tracking using a CDN, see [this article](./enabling-https-engagement-tracking-on-sparkpost.md).
+> Alternative: to configure HTTPS engagement tracking using a CDN, see [this article](./enabling-https-engagement-tracking-on-sparkpost).
 
 This post covers how to configure a SparkPost tracking domain, provision an SSL certificate, and be able to use it immediately at SparkPost using a simple reverse proxy.
 
@@ -341,5 +341,5 @@ Both proxies set the `X-Forwarded-For` header, which enables SparkPost to report
 
 * Set up engagement tracking with the [SMTP API](https://www.sparkpost.com/docs/tech-resources/smtp-engagement-tracking/) for your SMTP traffic to SparkPost.
 
-* If you have a mobile app, and want to enable it to open when a recipient clicks an email link, see [this article](./deep-links-self-serve.md).
+* If you have a mobile app, and want to enable it to open when a recipient clicks an email link, see [this article](./deep-links-self-serve).
 
