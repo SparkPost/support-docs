@@ -7,12 +7,6 @@ package = "@netlify/plugin-nextjs"
 [[plugins]]
 package = "netlify-plugin-cache-nextjs"
 
-[context.production]
-  environment = { EXPERIMENTAL_ODB_TTL = true }
-
-[context.deploy-preview]
-  environment = { EXPERIMENTAL_ODB_TTL = true }
-
 # A redirect rule with many of the supported properties
 [[redirects]]
   from = "/"
