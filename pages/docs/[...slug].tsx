@@ -68,6 +68,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   return {
     paths: getAllCategoryPostPaths('docs'),
     fallback: false,
+    revalidate: 60,
   };
 };
 

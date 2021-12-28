@@ -50,6 +50,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   return {
     paths: getAllCategoryPostPaths('momentum'),
     fallback: false,
+    revalidate: 60,
   };
 };
 
