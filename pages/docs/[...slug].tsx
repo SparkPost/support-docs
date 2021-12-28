@@ -55,20 +55,19 @@ const PostPage = (props: PostPageProps): JSX.Element => {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   if (!params?.slug) {
-    return { props: {} };
+    return { props: {}, revalidate: 60 };
   }
 
   const { content, data, isIndex } = getSingleCategoryPost(params.slug, categoryPath('docs')) || {};
   const navigationData = getSupportNavigation() || [];
   const categoryData = getCategoryData('docs');
-  return { props: { content, data, navigationData, isIndex, categoryData } };
+  return { props: { content, data, navigationData, isIndex, categoryData }, revalidate: 60 };
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
     paths: getAllCategoryPostPaths('docs'),
     fallback: false,
-    revalidate: 60,
   };
 };
 
