@@ -7,6 +7,9 @@ package = "@netlify/plugin-nextjs"
 [[plugins]]
 package = "netlify-plugin-cache-nextjs"
 
+[functions]
+included_files = ["!.next/server/pages/**/*"]
+
 # A redirect rule with many of the supported properties
 [[redirects]]
   from = "/"
