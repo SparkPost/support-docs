@@ -24,14 +24,6 @@
         "uriFormat": "%s",
         "action": "debugWithChrome"
       }
-    },
-    {
-      "name": "Python: migration tool",
-      "type":"python",
-      "request":"launch",
-      "program":"${file}",
-      "console":"integratedTerminal",
-      "args": ["migration-tools/test.md"],
-    },
+    }
   ]
 }
