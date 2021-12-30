@@ -1113,7 +1113,7 @@ The domains entitlement in your app(s) must match your tracking domain. This can
 
 Getting your app to auto-verify requires the `assetlinks.json` file to be available on your _specific_ tracking domain rather than relying on the organizational domain (main website).
 
-To test auto-verify works for your domain(s), start with a fresh install of your app, as mentioned in [this article](#article-on-android-deep-links-https-levelup-gitconnected-com-the-wrong-hacked-and-correct-way-of-android-deep-linking-for-redirected-multisite-with-autoverify-5c72fb1f8053-the-wrong-and-right-way-specifically-auto-verify-on-variations-of-your-different-domains), because Android remembers the user's choice.
+To test auto-verify works for your domain(s), start with a fresh install of your app, as mentioned in [this article](https://levelup.gitconnected.com/the-wrong-hacked-and-correct-way-of-android-deep-linking-for-redirected-multisite-with-autoverify-5c72fb1f8053), because Android remembers the user's choice.
 
 If you are getting the ["ask" prompt](#forwarding-clicks-from-android-to-sparkpost-ask) to choose which application opens the link, you can use the `adb` debugger to investigate the status of your app. If the Status is shown as `ask` then auto-verify is not working as intended. The value `always : 200000000` means it is verified.
 
@@ -1130,7 +1130,7 @@ App verification status:
   Status:  always : 200000000
 ```
 
-If your app has more than one associated domain, the status will be "`ask`" if _any_ of them fail to auto-verify. You can use `adb` to check your setup from Android Studio without having to delete/reinstall. For more information on using the `adb` debugger, see [this article](#article-on-investigating-android-deep-link-problems-with-adb-https-medium-com-mobile-app-development-publication-unrealized-deeplink-bug-on-many-apps-6ac78a557702).
+If your app has more than one associated domain, the status will be "`ask`" if _any_ of them fail to auto-verify. You can use `adb` to check your setup from Android Studio without having to delete/reinstall. For more information on using the `adb` debugger, see [this article](https://medium.com/mobile-app-development-publication/unrealized-deeplink-bug-on-many-apps-6ac78a557702).
 
 ## Further reading
 
