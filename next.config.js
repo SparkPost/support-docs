@@ -4,6 +4,10 @@ const SentryPlugin = require('@sentry/webpack-plugin');
 module.exports = {
   reactStrictMode: true,
   swcMinify: true,
+  generateBuildId: async () => {
+    // You can, for example, get the latest git commit hash here
+    return 'support-docs-build';
+  },
 
   // Sourcemaps are enabled to be uploaded to Sentry
   // Warning: Can significantly increase build times

@@ -1,7 +1,7 @@
 import { GetStaticProps, GetStaticPaths } from 'next';
 import {
   getCategoryData,
-  getAllCategoryPostPaths,
+  // getAllCategoryPostPaths,
   getSingleCategoryPost,
   categoryPath,
 } from 'lib/api';
@@ -39,17 +39,18 @@ const PostPage = (props: PostPageProps): JSX.Element => {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   if (!params?.slug) {
-    return { props: {} };
+    return { props: {}, revalidate: 60 };
   }
   const { content, data } = getSingleCategoryPost(params.slug, categoryPath('momentum')) || {};
   const categoryData = getCategoryData('momentum');
-  return { props: { content, data, categoryData } };
+  return { props: { content, data, categoryData }, revalidate: 60 };
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
-    paths: getAllCategoryPostPaths('momentum'),
-    fallback: false,
+    // paths: getAllCategoryPostPaths('momentum'),
+    paths: [],
+    fallback: 'blocking',
   };
 };
 
