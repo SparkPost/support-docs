@@ -1,7 +1,7 @@
 import { GetStaticProps, GetStaticPaths } from 'next';
 import {
   getCategoryData,
-  getAllCategoryPostPaths,
+  // getAllCategoryPostPaths,
   getSingleCategoryPost,
   categoryPath,
 } from 'lib/api';
@@ -48,7 +48,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
-    paths: getAllCategoryPostPaths('momentum'),
+    // paths: getAllCategoryPostPaths('momentum'),
+    paths: [],
     fallback: 'blocking',
   };
 };
