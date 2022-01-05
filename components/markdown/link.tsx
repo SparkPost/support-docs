@@ -30,10 +30,10 @@ const AnchorLink = (props: LinkProps): JSX.Element => {
   const checkLink = (href: string): string => {
     let link = href;
     if (href.startsWith('./') && !href.includes('./media')) {
-      let routeComponents = router.asPath.split('/');
+      const routeComponents = router.asPath.split('/');
       routeComponents.pop();
 
-      let updatedHref = href.replace('./', '');
+      const updatedHref = href.replace('./', '');
       routeComponents.push(updatedHref);
 
       link = routeComponents.join('/');
