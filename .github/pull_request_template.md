@@ -1,12 +1,15 @@
-// Give your PR a recognizable title. For example: "FE-123: Add new prop to component" or "Resolve Issue #123: Fix bug in component" // Your PR title will be visible in changelogs
+- Give your PR a recognizable title. For example: "FE-123: Add new prop to component" or "Resolve Issue #123: Fix bug in component"
+- Your PR title will be visible in changelogs
 
 ### What Changed
 
-// What changes does this PR propose? // Provide screenshots or [screen recordings](https://getkap.co/) for any visual changes.
+- What changes does this PR propose?
+- Provide screenshots or [screen recordings](https://getkap.co/) for any visual changes.
 
 ### How To Test or Verify
 
-// Describe any steps that may help reviewers verify changes. // Anything beyond basic unit testing, such as assistive tech usage, or special interactions.
+- Describe any steps that may help reviewers verify changes.
+- Anything beyond basic unit testing, such as assistive tech usage, or special interactions.
 
 ### PR Checklist
 
@@ -26,7 +29,8 @@ If you are submitting a feature addition, enhancement, or bug fix, your checklis
 
 - [ ] Give your pull request a meaningful name.
 - [ ] Use lowercase filenames.
-- [ ] Pull request approval from the FE team or content experts that isn't the content creator.
+- [ ] Apply at least one team label according to which team is the content expert (ie. `team-FE` or `team-SAZ`)
+- [ ] Pull request approval from the FE team or content experts (see label applied above) that isn't the content creator.
 
 #### Content Changes Checklist
 
