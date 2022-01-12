@@ -10,7 +10,8 @@ type SubmitATicketPageProps = {
   navigationData?: NavigationItemProps[];
 };
 
-const SubmitATicketPage: NextPage<SubmitATicketPageProps> = ({ navigationData }) => {
+const SubmitATicketPage = (props: SubmitATicketPageProps): JSX.Element => {
+  const { navigationData } = props;
   return (
     <>
       <SEO title="Submit A Ticket" />
