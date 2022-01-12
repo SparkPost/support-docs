@@ -1,5 +1,4 @@
 import { GetStaticProps } from 'next';
-import type { NextPage } from 'next';
 import { getSupportNavigation } from 'lib/api';
 import { Box, Text, Button, Stack } from '@sparkpost/matchbox';
 import SEO from 'components/site/seo';
