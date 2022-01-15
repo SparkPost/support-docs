@@ -1,5 +1,5 @@
 ---
-lastUpdated: "08/20/2021"
+lastUpdated: "12/22/2021"
 title: "Enabling HTTPS Engagement Tracking on SparkPost"
 description: "SparkPost supports HTTPS engagement tracking for customers via self-service for all SparkPost customers. To enable SSL engagement tracking for a domain, additional configuration for SSL keys is required."
 ---
@@ -33,26 +33,24 @@ Use a CDN such as [Cloudflare](http://www.cloudflare.com), [Fastly](http://www.f
 This document includes step by step guides for the following CDNs.
 
 * CloudFlare:
-    * [Create a Domain](#cloudflare)
+    * [Create a Domain](#step-by-step-guide-with-cloudflare)
         * (Cloudflare certificates are auto-issued)
 * AWS CloudFront:
-    * [Create a Domain](#aws-create)
-    * [Issue a Certificate](#aws-cert)
+    * [Create a Domain](#step-by-step-guide-with-aws-cloudfront)
+    * [Issue a Certificate](#using-aws-certificate-manager-acm-to-issue-a-certificate-for-your-domains)
 * Fastly:
-    * [Create a Domain](#fastly-create)
-    * [Issue a Certificate](#fastly-cert)
+    * [Create a Domain](#step-by-step-guide-with-fastly)
+    * [Issue a Certificate](#issue-a-certificate-with-fastly)
 * Google Cloud Platform:
-    * [Create a Domain](#gcp-create)
-    * [Issue a Certificate](#gcp-cert)
+    * [Create a Domain](#step-by-step-guide-with-google-cloud-platform)
+    * [Issue a Certificate](#issue-a-certificate-with-google-cloud)
 * Microsoft Azure:
-    * [Create a Domain](#azure-create)
-    * [Issue a Certificate](#azure-cert)
-
-> If you plan to use [deep linking](./deep-links-self-serve) with Android apps, CloudFlare serves files via a `301` redirect, which can prevent Android apps autoverifying domains.
+    * [Create a Domain](#step-by-step-guide-with-microsoft-azure)
+    * [Issue a Certificate](#issue-a-certificate-with-microsoft-azure)
 
 If you are using a CDN not listed here, the steps will differ in workflow. Please refer to your CDN documentation and contact their respective support departments if you have any questions.
 
-## <a name="endpoints"></a>SparkPost tracking endpoints
+## SparkPost tracking endpoints
 
 This address is configured as the address your CDN forwards HTTPS requests to, usually known as the "origin server".
 |Service|Endpoint|
@@ -64,94 +62,87 @@ This address is configured as the address your CDN forwards HTTPS requests to, u
 
 ## Create a secure tracking domain on SparkPost
 
-After configuring your CDN, you need instruct SparkPost to encode your links using HTTPS and verify your domain - instructions [here](#switch-to-secure).
+After configuring your CDN, you need instruct SparkPost to encode your links using HTTPS and verify your domain - instructions [here](#switch-tracking-domain-to-secure-and-validate).
 
 ---
-## <a name="cloudflare"></a> Step by Step Guide with CloudFlare
+## Step by Step Guide with CloudFlare
 
-1. Create CloudFlare account.
+_Updated December 2021. Uses a simpler forwarding method without the need for custom page rules. Images and descriptions follow the current CloudFlare web UI._
 
-1. Go to “DNS” tab on the CloudFlare UI:
+> CloudFlare requires you to use their nameservers, i.e. to give them control over routing for the entire organizational domain. That means it works differently to the other CDNs listed here.
 
-    ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudflare_UI.png)
+1. Create (or log in to your existing) CloudFlare account.
 
-1. Add domain and then add the following Cloudflare NS records (**please note**, for other providers, the NS records to be used will differ):
+1. Go to the "websites" option in the navigation menu on the CloudFlare UI.
+
+   ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudflare_UI.png)
+
+   If your organizational domain is already shown here, you can skip this step. Otherwise choose "Add a Site".
+
+   CloudFlare will scan your existing DNS provider to collect records, and prompt you to change to use specifically-named CloudFlare nameservers (yours may be different to the example shown below). You will require a login to your existing DNS provider to be able to change them; beyond the scope of this document.
+
+   Wait for the changes to take effect. You can monitor this in the CloudFlare UI.
+
+     ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudflare_ns_change.png)
+
+   Note that (as the above screen mentions) the old nameservers may still be cached in the Internet and will take time to update. You can check the nameservers that a machine sees using `dig NS`:
 
     ```
-    NS	aron.ns.cloudflare.com
-    NS	peyton.ns.cloudflare.com
-    ```
-    These values can be found under the DNS tab on the Cloudflare UI.
-
-    **Example:**
-
-    Using the domain `track.example.com`, below is a command line DIG command to confirm that the NS records have been updated to reflect the required changes:
-
-    ```
-    dig example.com NS
-
-    ; <<>> DiG 9.8.3-P1 <<>> track.example.com NS
-    	;; global options: +cmd
-    	;; Got answer:
-    	;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 25635
-    	;; flags: qr rd ra; QUERY: 1, ANSWER: 2, AUTHORITY: 0, ADDITIONAL: 0
-
-    	;; QUESTION SECTION:
-    	;track.example.com.			IN	NS
-
-    	;; ANSWER SECTION:
-    	track.example.com.		86400	IN	NS	peyton.ns.cloudflare.com.
-    	track.example.com.		86400	IN	NS	aron.ns.cloudflare.com.
-
-    	;; Query time: 128 msec
-    	;; SERVER: 10.76.3.194#53(10.76.3.194)
-    	;; WHEN: Tue May  9 10:15:20 2017
-    	;; MSG SIZE  rcvd: 88
+    dig NS myexample.com
     ```
 
-1. Create the appropriate page rule settings for the domain.
+    ```
+    ; <<>> DiG 9.8.2rc1-RedHat-9.8.2-0.68.rc1.87.amzn1 <<>> NS myexample.com
+    ;; global options: +cmd
+    ;; Got answer:
+    ;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 4325
+    ;; flags: qr rd ra; QUERY: 1, ANSWER: 2, AUTHORITY: 0, ADDITIONAL: 0
 
-    * In the page rules tab: Create Page Rule:
+    ;; QUESTION SECTION:
+    ;myexample.com.		IN	NS
 
-        ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudflare_create_page_rule.png)
+    ;; ANSWER SECTION:
+    myexample.com.	300	IN	NS	athena.ns.cloudflare.com.
+    myexample.com.	300	IN	NS	sam.ns.cloudflare.com.
 
-    * Enter your domain with a trailing `/*`, e.g. `track.yourdomain.com/*`.
+    ;; Query time: 8 msec
+    ;; SERVER: 172.31.0.2#53(172.31.0.2)
+    ;; WHEN: Tue Dec 21 18:02:00 2021
+    ;; MSG SIZE  rcvd: 92
+    ```
 
-    * Add a Setting -> Forwarding URL (specify the 301 redirect option).
+1. Check, and if necessary add the tracking domain CNAME.
 
-    * Destination URL is `https://<CNAME_VALUE>/$1`. Replace `<CNAME_VALUE>` with the correct endpoint address for your service, see [here](#endpoints).
+   In CloudFlare, go to the "DNS" management menu. If you already have a plain (HTTP) tracking domain set up with SparkPost, it should be already present in the records. Check that it's set to "Proxied".
 
-        ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudflare_page_rule_edit.png)
+   If you are setting up a new tracking domain, then select the "Add record" option:
 
-    * Save and Deploy (turn page rule on).
+   * Select record type "CNAME".
+   * Enter the subdomain you have chosen (in our example, this is `track`). Enter just the subdomain part.
+   * Specify the target as the correct SparkPost tracking endpoint address for your service, see [here](#sparkpost-tracking-endpoints).
+   * Ensure Proxy status is enabled.
 
-1. Cloudflare has Universal SSL for all accounts on the client side, but it's good to ensure that the origin side (towards SparkPost) also uses HTTPS.
+      ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudflare_create_cname.png)
+   * Select "Save".
 
-    * Create a new page rule:
+1. Check that CloudFlare is set to use HTTPS.
 
-        ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudflare_SSL_full.png)
+   In CloudFlare, go to the "SSL/TLS" management menu. You should see an Overview  screen showing the encryption mode as "Full".
 
-    * Enter your domain with a leading and trailing `/*`, e.g. `*.track.yourdomain.com/*`
-
-    * Select settings "SSL" and "Full".
-
-    * Save and Deploy.
-
-    * Turn the page rule ON. Using the priority buttons, ensure that the SSL rule is first and the forwarding rule is second.
-
-        ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudflare_SSL_priority.png)
-
-        More information on CloudFlare SSL options can be found in [this article](https://support.cloudflare.com/hc/en-us/articles/200170416).
+   ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudflare_SSL_full.png)
 
 
-1. Cloudflare does not offer control of cache "time to live" (TTL) on free accounts. This may mask repeat opens/clicks, as described [here](#ttl). If you have a paid account, under Caching, set your TTL value.
+   More information on CloudFlare SSL options can be found in [this article](https://support.cloudflare.com/hc/en-us/articles/200170416).
 
-1. Add a CNAME entry into DNS for your tracking domain. The value in the record doesn't matter; the record simply needs to exist. For example, if your tracking domain is `track.example.com`, a CNAME value of `example.com` is sufficient. Without a record to reference, the the page rule never gets triggered, and the proper redirection will not occur. Please note that the typical time to propagation of new CNAME records is often around five to ten minutes, but can be longer depending on your DNS provider.
+   After a few minutes, you can verify that the routing is correct using `ping` to your tracking domain. See also [troubleshooting tips](#troubleshooting-tips).
 
-1. Follow [these steps](#switch-to-secure) to update and verify your tracking domain.
+   Cloudflare does not offer control of cache "time to live" (TTL) on free accounts. This may mask repeat opens/clicks, as described [here](#cache-time-to-live-ttl-settings). If you have a paid account, under Caching, check and set your TTL value.
+
+
+1. Follow [these steps](#switch-tracking-domain-to-secure-and-validate) to update and verify your tracking domain.
 
 ---
-## <a name="aws-create"></a> Step by Step Guide with AWS CloudFront
+## Step by Step Guide with AWS CloudFront
 
 *Updated for CloudFront Console v3, as of July 2021.*
 
@@ -168,7 +159,7 @@ For up to date information on creating a distribution via CloudFront, please ref
 
 1. Origin
 
-   * Origin Domain: enter the correct endpoint address for your service, see [here](#endpoints).
+   * Origin Domain: enter the correct endpoint address for your service, see [here](#sparkpost-tracking-endpoints).
 
    * Origin Path: leave blank.
 
@@ -214,7 +205,7 @@ For up to date information on creating a distribution via CloudFront, please ref
 
     * Set Maximum TTL to 10 seconds
 
-    * Set default TTL to 10 seconds. For more information see [Cache Time To Live (TTL) settings](#ttl).
+    * Set default TTL to 10 seconds. For more information see [Cache Time To Live (TTL) settings](#cache-time-to-live-ttl-settings).
 
       ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_cache1.png)
 
@@ -274,7 +265,7 @@ For up to date information on creating a distribution via CloudFront, please ref
 
     * Under "Custom SSL Certificate", select **Custom SSL Certificate** - Upload certificates as needed.
 
-        > If you want to have AWS create a new certificate within AWS instead of importing an existing one, click "Request certificate" and follow the steps [here](#aws-cert) before continuing.
+        > If you want to have AWS create a new certificate within AWS instead of importing an existing one, click "Request certificate" and follow the steps [here](#using-aws-certificate-manager-acm-to-issue-a-certificate-for-your-domains) before continuing.
 
     * Leave the other settings at default / recommended values.
 
@@ -282,7 +273,7 @@ For up to date information on creating a distribution via CloudFront, please ref
 
         ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_created_new_dist.png)
 
-1. <a name="cname"></a> Create, or update, a CNAME record with your DNS service to route queries for tracking domain(s) with your CloudFront distribution ID. This will be specific to your DNS service.
+1. Create, or update, a CNAME record with your DNS service to route queries for tracking domain(s) with your CloudFront distribution ID. This will be specific to your DNS service.
 
    * Get the "Domain Name" for your distribution from the Distributions page. You can use the square "copy" button.
 
@@ -300,13 +291,13 @@ For up to date information on creating a distribution via CloudFront, please ref
 
 
     * Select "Save changes". The update will take a few minutes to deploy.
-    
+
     * You can verify that the routing is successful using `ping` on your created record. You should see a response from CloudFront.
 
-1. Follow [these steps](#switch-to-secure) to update and verify your tracking domain.
+1. Follow [these steps](#switch-tracking-domain-to-secure-and-validate) to update and verify your tracking domain.
 
 ---
-### <a name="aws-cert"></a>Using AWS Certificate Manager (ACM) to issue a certificate for your domain(s)
+### Using AWS Certificate Manager (ACM) to issue a certificate for your domain(s)
 
 Once your CNAME is set up with your DNS provider, instead of providing an existing certificate, you can have AWS issue a certificate for your custom tracking domain(s).
 
@@ -340,10 +331,10 @@ Once your CNAME is set up with your DNS provider, instead of providing an existi
 
 1. At the bottom of the page, click on the "Save Changes" button.
 
-1. Follow [these steps](#switch-to-secure) to update and verify your tracking domain, as this requires the certificate to be present and valid.
+1. Follow [these steps](#switch-tracking-domain-to-secure-and-validate) to update and verify your tracking domain, as this requires the certificate to be present and valid.
 
 ---
-## <a name="fastly-create"></a> Step by Step Guide with Fastly
+## Step by Step Guide with Fastly
 
 Sign up for Fastly or log in to an existing account.
 
@@ -352,7 +343,7 @@ Sign up for Fastly or log in to an existing account.
     ![](media/enabling-https-engagement-tracking-on-sparkpost/fastly-create-service.png)
 
 
-1. Select "Origins" on the left. Add the correct endpoint address for your service, see [here](#endpoints).
+1. Select "Origins" on the left. Add the correct endpoint address for your service, see [here](#sparkpost-tracking-endpoints).
 
     ![](media/enabling-https-engagement-tracking-on-sparkpost/fastly-origin-hosts.png)
 
@@ -362,11 +353,11 @@ Sign up for Fastly or log in to an existing account.
 
     Fastly default settings pass the `user_agent` and `ip_address` through to SparkPost engagement tracking as expected.
 
-1. On "Settings", "Cache Settings", set the "Fallback TTL" to ten seconds (explanation [here](#ttl)).
+1. On "Settings", "Cache Settings", set the "Fallback TTL" to ten seconds (explanation [here](#cache-time-to-live-ttl-settings)).
 
     ![](media/enabling-https-engagement-tracking-on-sparkpost/fastly-ttl.png)
 
-## <a name="fastly-cert"></a> Issue a certificate with Fastly
+## Issue a certificate with Fastly
 
 1. Select the "HTTPS and network" tab, then "Get Started".
 
@@ -403,7 +394,7 @@ Sign up for Fastly or log in to an existing account.
 
     You can verify that the routing is successful using `ping` on your created record.
 
-1. Follow [these steps](#switch-to-secure) to update and verify your tracking domain.
+1. Follow [these steps](#switch-tracking-domain-to-secure-and-validate) to update and verify your tracking domain.
 
 Fastly keeps previous versions of your configuration, and can show the "diff" between them. You can also set up advanced routing rules using the VCL language, and monitor statistics on served requests.
 
@@ -411,9 +402,9 @@ Fastly keeps previous versions of your configuration, and can show the "diff" be
 
 ---
 
-## <a name="gcp-create"></a> Step by Step Guide with Google Cloud Platform
+## Step by Step Guide with Google Cloud Platform
 
-Unlike some other services, [Google Cloud Platform](https://cloud.google.com/) (GCP) can route tracking domains to SparkPost via an ["external" HTTPS load-balancer](https://cloud.google.com/load-balancing/docs/https), with certificate and routing rules. This is conceptually simpler than using a CDN in front of SparkPost tracking, as there is no caching [Time to Live](#ttl) to consider.
+Unlike some other services, [Google Cloud Platform](https://cloud.google.com/) (GCP) can route tracking domains to SparkPost via an ["external" HTTPS load-balancer](https://cloud.google.com/load-balancing/docs/https), with certificate and routing rules. This is conceptually simpler than using a CDN in front of SparkPost tracking, as there is no caching [Time to Live](#cache-time-to-live-ttl-settings) to consider.
 
 GCP organizes resources under named projects.
 
@@ -475,7 +466,7 @@ GCP organizes resources under named projects.
 
     * Set Default port to 443.
     * On "Add through", leave this set at "Fully qualified domain name and port".
-    * On "Fully qualified domain name", add the correct endpoint address for your service, see [here](#endpoints).
+    * On "Fully qualified domain name", add the correct endpoint address for your service, see [here](#sparkpost-tracking-endpoints).
     * Select "Create".
 
     You should now see your "Network Endpoint Group" exists.
@@ -501,7 +492,7 @@ GCP organizes resources under named projects.
 
       For "Host and path rules": the above default configuration (shown in gray) passes all traffic on the load balancer through to our back end; this is sufficient.
 
-1. <a name="gcp-frontend"></a>Frontend configuration
+1. Frontend configuration
 
     * Enter a name.
     * For Protocol, select "HTTPS (includes HTTP/2)".
@@ -512,7 +503,7 @@ GCP organizes resources under named projects.
 
       ![](media/enabling-https-engagement-tracking-on-sparkpost/gcp-front-end-cert.png)
 
-    * For a new certificate, [additional steps](#gcp-cert) are necessary after you review and finalize. The certificate will be available only after you point your domain to the frontend service.
+    * For a new certificate, [additional steps](#issue-a-certificate-with-google-cloud) are necessary after you review and finalize. The certificate will be available only after you point your domain to the frontend service.
 
 1. Review and finalize
 
@@ -526,17 +517,17 @@ GCP organizes resources under named projects.
 
     ![](media/enabling-https-engagement-tracking-on-sparkpost/gcp-lb-created.png)
 
-## <a name="gcp-cert"></a> Issue a certificate with Google Cloud
+## Issue a certificate with Google Cloud
 
 Creating a new certificate is done through the HTTP(S) load balancer configuration. On the main menu (top left), navigate to "Network Services" then "Load balancing". Select your load balancer by clicking on its name.
 
-If you don't have a named certificate present under the "Frontend" section, follow the menu [above](#gcp-frontend) to begin the process.
+If you don't have a named certificate present under the "Frontend" section, follow step "Frontend configuration" above to begin the process.
 
 Once you have a named certificate on your frontend, it should look like this. It may take a few minutes after creating the load balancer for the `IP:Port` to appear.
 
 ![](media/enabling-https-engagement-tracking-on-sparkpost/gcp-front-end-got-ip-port.png)
 
-The gray `(i)` indicates the certificate is in the "provisioning" state, not yet fully active.
+The gray (i) indicates the certificate is in the "provisioning" state, not yet fully active.
 
 * Click on the certificate name (underlined in blue). You should see the status similar to this.
 
@@ -556,13 +547,13 @@ The gray `(i)` indicates the certificate is in the "provisioning" state, not yet
 
     ![](media/enabling-https-engagement-tracking-on-sparkpost/gcp-cert-success.png)
 
-    It can take a further few minutes after this before the certificate is fully active on the endpoint. You can check this using the [troubleshooting tips](#troubleshooting).
+    It can take a further few minutes after this before the certificate is fully active on the endpoint. You can check this using the [troubleshooting tips](#troubleshooting-tips).
 
-1. Once the certificate is fully active, follow [these steps](#switch-to-secure) to update and verify your tracking domain.
+1. Once the certificate is fully active, follow [these steps](#switch-tracking-domain-to-secure-and-validate) to update and verify your tracking domain.
 
 ---
 
-## <a name="azure-create"></a> Step by Step Guide with Microsoft Azure
+## Step by Step Guide with Microsoft Azure
 
 [Microsoft Azure](https://azure.microsoft.com/)  offers a range of [load-balancer types](https://docs.microsoft.com/en-us/azure/architecture/guide/technology-choices/load-balancing-overview). Most of these are for routing to destinations within Azure. The [Azure Front Door](https://docs.microsoft.com/en-us/azure/frontdoor/front-door-overview) service provides SSL offload with certificate, custom domains, path-based routing, and forwarding to external destinations such as SparkPost tracking. It is a [global service](https://docs.microsoft.com/en-us/azure/frontdoor/front-door-faq#what-regions-is-the-service-available-in), not tied to any specific Azure region.
 
@@ -595,7 +586,7 @@ The steps below are based on [this guide](https://docs.microsoft.com/en-us/azure
 
     ![](media/enabling-https-engagement-tracking-on-sparkpost/azure-front-door4.png)
 
-1. Select "Add a backend". Set the backend host type to be "Custom host". Set the backend host name to be the correct endpoint address for your service, see [here](#endpoints).
+1. Select "Add a backend". Set the backend host type to be "Custom host". Set the backend host name to be the correct endpoint address for your service, see [here](#sparkpost-tracking-endpoints).
 
     ![](media/enabling-https-engagement-tracking-on-sparkpost/azure-front-door5.png)
 
@@ -627,7 +618,7 @@ The steps below are based on [this guide](https://docs.microsoft.com/en-us/azure
 
     You should see a default `302` response from SparkPost via your Front Door.
 
-## <a name="azure-cert"></a> Issue a certificate with Microsoft Azure
+## Issue a certificate with Microsoft Azure
 
 The front door created so far has a certificate for `*.azurefd.net`. Here we set up a custom domain and enable a matching certificate for the custom domain. The following steps are based on [this tutorial](https://docs.microsoft.com/en-us/azure/frontdoor/front-door-custom-domain) followed by [this tutorial](https://docs.microsoft.com/en-us/azure/frontdoor/front-door-custom-domain-https), taking the option "Use a certificate managed by Front Door" and the regular CNAME verification method.
 
@@ -661,13 +652,13 @@ The front door created so far has a certificate for `*.azurefd.net`. Here we set
 
     ![](media/enabling-https-engagement-tracking-on-sparkpost/azure-cert6.png)
 
-    You can check the certificate is being served correctly on your domain using the [troubleshooting tips](#troubleshooting).
+    You can check the certificate is being served correctly on your domain using the [troubleshooting tips](#troubleshooting-tips).
 
-1. Once the certificate is fully active, follow [these steps](#switch-to-secure) to update and verify your tracking domain.
+1. Once the certificate is fully active, follow [these steps](#switch-tracking-domain-to-secure-and-validate) to update and verify your tracking domain.
 
 ---
 
-## <a name="ttl"></a> Cache Time To Live (TTL) settings
+## Cache Time To Live (TTL) settings
 
 CDNs apply caching, with a "Time to Live" (TTL) for each unique request URL. When a request is first fetched, it is cached. Within the TTL, later requests *may* be served to the client from the CDN cache, without touching the SparkPost endpoint. The client is redirected to the landing page as usual, but a side-effect is that SparkPost does not record the repeat opens/clicks.
 
@@ -678,7 +669,7 @@ A TTL of zero means "always pass through to the origin", which is, perhaps surpr
 To enable SparkPost to record human-driven repeat opens/clicks, while screening robot-driven repeat opens/clicks, we suggest setting the default TTL to 10 seconds.
 
 
-## <a name="switch-to-secure"></a> Switch tracking domain to secure, and validate
+## Switch tracking domain to secure, and validate
 
 If you have previously created a tracking domain (whether verified or unverified), and wish to switch it from insecure (the default) to secure, use the [Update a Tracking Domain API](https://developers.sparkpost.com/api/tracking-domains/#tracking-domains-put-update-a-tracking-domain) `PUT` call, to update the tracking domain with the `"secure": true` string.
 
@@ -700,7 +691,7 @@ If you have previously created a tracking domain (whether verified or unverified
 
 1. Check that clicking the links takes you to the expected landing page.
 
-### <a name="troubleshooting"></a> Troubleshooting tips
+### Troubleshooting tips
 
 You can test that your tracking domain is correctly routed to SparkPost, using `curl -v` (verbose). Note the `/f/` path.
 
