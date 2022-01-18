@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import type { NextPage } from 'next';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import SEO from 'components/site/seo';
 import LayoutWrap from 'components/site/layoutWrap';
 import LayoutInnerContent from 'components/site/layoutInnerContent';
@@ -24,6 +25,9 @@ const StyledLink = styled(Box)`
 `;
 
 const OhhhNoes: NextPage = () => {
+  const { asPath } = useRouter();
+  const category = asPath.split('/')[1];
+
   return (
     <>
       <SEO
@@ -67,7 +71,7 @@ const OhhhNoes: NextPage = () => {
                 my={['400', null, '500']}
               >
                 Return to{' '}
-                <Link href="/docs" passHref>
+                <Link href={`/${category}`} passHref>
                   <StyledLink as="a" href="/docs">
                     Home
                   </StyledLink>
@@ -81,7 +85,6 @@ const OhhhNoes: NextPage = () => {
               justifyContent="center"
               width="100%"
               mt="500"
-              // mb={['700', null, '434px']}
               mb="700"
             >
               <Image

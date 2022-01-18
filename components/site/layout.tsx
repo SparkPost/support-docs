@@ -12,8 +12,8 @@ type LayoutProps = {
 const Layout = (props: LayoutProps): JSX.Element => {
   const { children, navigationComponent } = props;
   const { getDrawerProps, getActivatorProps } = useDrawer();
-  const { route } = useRouter();
-  const category = route.split('/')[1];
+  const { asPath } = useRouter();
+  const category = asPath.split('/')[1];
 
   return (
     <LayoutWrap>

@@ -17,8 +17,8 @@ type HeaderProps = {
 
 const Header = (props: HeaderProps) => {
   const { getActivatorProps } = props;
-  const { route } = useRouter();
-  const category = route.split('/')[1];
+  const { asPath } = useRouter();
+  const category = asPath.split('/')[1];
 
   return (
     <Box my="600">

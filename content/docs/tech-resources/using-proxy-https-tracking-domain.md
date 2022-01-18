@@ -8,7 +8,7 @@ description: "SparkPost supports HTTPS engagement tracking for customers via sel
 
 SparkPost supports secure tracking domains through the use of content delivery networks (CDNs), reverse proxies, or any method where the customer can host the necessary SSL/TLS certificates.  It is recommended that our customers use SSL as it provides secure transport for engagement data. It's also necessary to support SparkPost engagement tracking with Google’s AMP for Email.
 
-> Alternative: to configure HTTPS engagement tracking using a CDN, see [this article](./enabling-https-engagement-tracking-on-sparkpost.md).
+> Alternative: to configure HTTPS engagement tracking using a CDN, see [this article](./enabling-https-engagement-tracking-on-sparkpost).
 
 This post covers how to configure a SparkPost tracking domain, provision an SSL certificate, and be able to use it immediately at SparkPost using a simple reverse proxy.
 
@@ -25,8 +25,8 @@ This post covers how to configure a SparkPost tracking domain, provision an SSL 
 This example uses a t2.micro Ubuntu instance on Amazon Web Services and a tracking domain of click.nddurant.com that is CNAME'd to the instance public IPv4 DNS.
 
 Step-by-step instructions follow, for:
-* [nginx](#nginx)
-* [Apache](#apache)
+* [nginx](#configuring-nginx)
+* [Apache](#configuring-apache)
 
 ## Migration planning
 
@@ -40,7 +40,7 @@ If you want to end up with your proxy serving the original domain:
 * You need to consider your certificates (which may be specific to your subdomain, or may use subdomain wild-card)
 * You need to change your DNS setting on the original tracking domain(s) to point to the proxy, only when your proxy is tested and working.
 
-## <a name="nginx"></a> Configuring nginx
+## Configuring nginx
 
 This section uses [nginx](https://www.nginx.com/).  It is easy to get installed and configured as a reverse proxy and Let’s Encrypt for SSL certificates has support for it.  To install nginx, follow the guidelines for your Linux distribution.
 
@@ -73,7 +73,7 @@ Creating this file in **/etc/nginx/conf.d** and executing a nginx reload will ma
 sudo nginx -s reload
 ```
 
-## <a name="verify"></a> Verify tracking domain, send test email
+## Verify tracking domain, send test email
 
 At this point, if your DNS is pointing to this nginx server, you should be able to verify the tracking domain in SparkPost.  Add your desired tracking domain to your SparkPost account, either through the user interface or [API](https://developers.sparkpost.com/api/tracking-domains/).  Once verified, you can associate the tracking domain with a [sending domain](https://developers.sparkpost.com/api/tracking-domains/#header-association-to-sending-domains-and-defaults) and manually test the tracking links with cURL commands.  The following example is a simple cURL command to send an email through SparkPost with engagement tracking enabled:
 
@@ -149,7 +149,7 @@ After completing this, you will have free SSL certificates installed on your ngi
 
 After the certificate is created, you will be asked if you wish to redirect **http** to **https**.  It is recommended that you do not redirect, as you may wish to change your tracking domain back to **http** in the future if it becomes necessary.
 
-## <a name="set-sec"></a> Set SparkPost tracking domain to "secure"
+## Set SparkPost tracking domain to "secure"
 
 Once completed, set your tracking domain to “secure” using the [tracking domains API](https://developers.sparkpost.com/api/tracking-domains/#tracking-domains-put-update-a-tracking-domain).  This will make any new emails using your associated tracking domains to use **https** instead of the **http** protocol; instructions [here](enabling-https-engagement-tracking-on-sparkpost.md#switch-to-secure).
 
@@ -247,12 +247,12 @@ This shows:
 * A GET request from a mail client (in this case via Google Image Proxy), fetching a SparkPost open pixel. The request was forwarded to SparkPost and received a `200` (OK) response.
 * The second GET request is a link click. The IP address is of the mail client (in this case, Gmail in Safari). Again it's forwarded to SparkPost and received a `302` (Found) response, redirecting the client to the landing page.
 
-Finally, [check your client IP address](#client_ip) and user_agent is reported in SparkPost.
+Finally, [check your client IP address](#nginx-and-apache-check-client-ip-address) and user_agent is reported in SparkPost.
 
 
 ---
 
-## <a name="apache"></a> Configuring Apache
+## Configuring Apache
 
 This section describes how to use [Apache](https://httpd.apache.org/) as a reverse proxy for SparkPost HTTPS engagement tracking.
 
@@ -268,7 +268,7 @@ Add the following configuration (putting your own tracking domain into the `Serv
 ```
 
 
-* [Verify](#verify) tracking domain, and send test email.
+* [Verify](#verify-tracking-domain-send-test-email) tracking domain, and send test email.
 
 * Get SSL certificate. Letsencrypt certificates can be issued using "certbot", which automates the process - see [here](https://certbot.eff.org/all-instructions) for detailed steps on many platforms.
 
@@ -291,7 +291,7 @@ Create an additional port 443 proxy configuration as follows. Set the  certifica
 
 Ensure your have `https:` in the `ProxyPass` and `ProxyPassReverse` lines.
 
-* [Set SparkPost](#set-sec) tracking domain to "secure" and verify. Continue steps below when done.
+* [Set SparkPost](#set-sparkpost-tracking-domain-to-secure) tracking domain to "secure" and verify. Continue steps below when done.
 
 * If you are going to use HTTPS tracking _only_, you could remove the initial `_default_:80` configuration block.
 
@@ -326,7 +326,7 @@ This shows:
 
 ---
 
-### <a name="client_ip"></a>NGINX and Apache: Check Client IP address
+### NGINX and Apache: Check Client IP address
 
 Both proxies set the `X-Forwarded-For` header, which enables SparkPost to report the original client IP address. If you look in your SparkPost events, you should see this reported as client `ip_address` and `user_agent`, useful for your analytics.
 
@@ -341,4 +341,5 @@ Both proxies set the `X-Forwarded-For` header, which enables SparkPost to report
 
 * Set up engagement tracking with the [SMTP API](https://www.sparkpost.com/docs/tech-resources/smtp-engagement-tracking/) for your SMTP traffic to SparkPost.
 
-* If you have a mobile app, and want to enable it to open when a recipient clicks an email link, see [this article](./deep-links-self-serve.md).
+* If you have a mobile app, and want to enable it to open when a recipient clicks an email link, see [this article](./deep-links-self-serve).
+
