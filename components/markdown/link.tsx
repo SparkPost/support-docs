@@ -31,6 +31,13 @@ const AnchorLink = (props: LinkProps): JSX.Element => {
     let link = href;
     if (href.startsWith('./') && !href.includes('./media')) {
       const routeComponents = router.asPath.split('/');
+
+      // Trailing slashes
+      if (!routeComponents[routeComponents.length - 1]) {
+        routeComponents.pop();
+      }
+
+      // Remove the last item in the url since we're staying in the same directory
       routeComponents.pop();
 
       const updatedHref = href.replace('./', '');
