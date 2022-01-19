@@ -85,7 +85,6 @@ export const getSupportNavigation = () => {
       items: postsInCategory.map((file) => {
         const { data } = readFile(file);
         const link = file.replace(/.md$/, '/').replace(/^content/, '');
-        // console.log('postsInCategory link', link);
         return { ...data, link };
       }),
     };

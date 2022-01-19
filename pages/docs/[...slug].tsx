@@ -30,12 +30,6 @@ type PostPageProps = {
 const PostPage = (props: PostPageProps): JSX.Element => {
   const { content, data, navigationData, isIndex, categoryData } = props;
   const router = useRouter();
-  console.log('PostPage props', props);
-  console.log('PostPage router path', router.asPath);
-  console.log(
-    'PostPage props find filtered',
-    navigationData ? navigationData.find((navData) => navData.link === router.asPath) : 'nada',
-  );
   return (
     <CategoriesProvider data={categoryData}>
       <SEO title={data.title} description={data.description} />
