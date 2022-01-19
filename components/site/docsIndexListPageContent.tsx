@@ -13,7 +13,6 @@ const DocsIndexListPageContent = (props: DocsIndexListPageContentProps) => {
   const postsPerClick = 7;
   const [paginationCount, setPaginationCount] = useState<number>(postsPerClick);
   const { navigationData } = props;
-  console.log('DocsIndexListPageContent props', props);
   return (
     <>
       {navigationData && navigationData.items ? (
