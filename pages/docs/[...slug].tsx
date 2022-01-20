@@ -30,6 +30,15 @@ type PostPageProps = {
 const PostPage = (props: PostPageProps): JSX.Element => {
   const { content, data, navigationData, isIndex, categoryData } = props;
   const router = useRouter();
+
+  // This is to check for a url that either contains a trailing slash or not (since netlify will show either)
+  const trailingSlashOrNo = (navData: NavigationItemProps): boolean => {
+    const linkComponents = navData.link.split('/');
+    linkComponents.pop();
+    const link = linkComponents.join('/');
+
+    return link === router.asPath || link + '/' === router.asPath;
+  };
   return (
     <CategoriesProvider data={categoryData}>
       <SEO title={data.title} description={data.description} />
@@ -41,9 +50,7 @@ const PostPage = (props: PostPageProps): JSX.Element => {
           description={data.description}
         >
           {isIndex && navigationData ? (
-            <DocsIndexListPageContent
-              navigationData={navigationData.find((navData) => navData.link === router.asPath)}
-            />
+            <DocsIndexListPageContent navigationData={navigationData.find(trailingSlashOrNo)} />
           ) : (
             <Markdown>{content}</Markdown>
           )}
