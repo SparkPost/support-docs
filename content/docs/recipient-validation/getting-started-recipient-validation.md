@@ -8,7 +8,7 @@ Send with confidence: Recipient Validation helps you remove bad email addresses 
 
 You can quickly [validate your email lists](./validate-an-email-list/) or [integrate Recipient Validation](./integration-guide/) into your sign up flow through the API.
 
-Recipient Validation is available to all SparkPost senders on the Starter plan and higher.
+Recipient Validation is available to all SparkPost accounts.
 
 ## Validate an email list in app
 
