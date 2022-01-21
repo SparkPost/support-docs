@@ -50,8 +50,11 @@ This is an ordered list:
 
 You can link to external resources using this format: `[text here](link here)`. For example:
 
+- [Duck, duck, GO! (quick check)](https://duckduckgo.com/)
 - [SparkPost website](https://www.sparkpost.com)
 - [SparkPost API docs](https://developers.sparkpost.com/api)
+- [Relative to current directory Link](./relative-link-test)
+- [Internal Link](/momentum/1st-level)
 
 ### Images
 

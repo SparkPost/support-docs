@@ -73,7 +73,7 @@ export const getSupportNavigation = () => {
   const categories = glob.sync('content/docs/**/index.md');
   const categoryData = categories.map((file) => {
     const { data } = readFile(file);
-    const link = file.replace(/\/index.md$/, '').replace(/^content/, '');
+    const link = file.replace(/\/index.md$/, '/').replace(/^content/, '');
     return { ...data, link };
   });
 
@@ -84,7 +84,7 @@ export const getSupportNavigation = () => {
       ...category,
       items: postsInCategory.map((file) => {
         const { data } = readFile(file);
-        const link = file.replace(/.md$/, '').replace(/^content/, '');
+        const link = file.replace(/.md$/, '/').replace(/^content/, '');
         return { ...data, link };
       }),
     };
