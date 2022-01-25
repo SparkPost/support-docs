@@ -50,9 +50,7 @@ const AnchorLink = (props: LinkProps): JSX.Element => {
 
   return (
     <Link passHref href={checkLink(props.href || '/')}>
-      <StyledLink as="a" href={checkLink(props.href || '/')}>
-        {props.children}
-      </StyledLink>
+      <StyledLink as="a">{props.children}</StyledLink>
     </Link>
   );
 };

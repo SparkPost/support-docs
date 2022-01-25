@@ -18,4 +18,4 @@ None of these ports should be exposed to the public Internet; we strongly recomm
 
 ### <a name="operations.riak.ports.erlang"></a> Erlang and Firewalls
 
-The maximum number of concurrent ports used by Erlang is defined in the `/opt/msys/3rdParty/riak/etc/vm.args` file by the variable `ERL_MAX_PORTS`. If port usage needs to be restricted, we recommend defining a range of ports equal to the number of nodes in the cluster. For details on network security and firewall configurations, consult the [Riak](http://docs.basho.com/riak/latest/) documentation.
+The maximum number of concurrent ports used by Erlang is defined in the `/opt/msys/3rdParty/riak/etc/vm.args` file by the variable `ERL_MAX_PORTS`. If port usage needs to be restricted, we recommend defining a range of ports equal to the number of nodes in the cluster. For details on network security and firewall configurations, consult the [Riak](https://docs.riak.com/riak/latest/) documentation.

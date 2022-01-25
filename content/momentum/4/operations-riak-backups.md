@@ -8,7 +8,7 @@ Riak data is distributed across the nodes in the cluster. Provided that you have
 
 Riak offers the ability to backup all data present on a given node or all data present in the cluster. The backup is stored in a file named by the administrator. This backup can later be used to restore the state of the node or cluster depending on the nature of the backup file.
 
-For details about backing up Riak, consult the [Riak](http://docs.basho.com/riak/latest/) documentation.
+For details about backing up Riak, consult the [Riak](https://docs.riak.com/riak/latest/) documentation.
 
 ### Note
 
