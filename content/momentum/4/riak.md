@@ -8,7 +8,7 @@ description: 'Riak is a distributed key value data storage technology with excel
 
 Riak is a distributed key-value data storage technology with excellent scalability properties. It is used by the [adaptive](/momentum/4/modules/4-adaptive) module, Adaptive Delivery reporting, and Mobile Momentum for resubmission of messages.
 
-Riak is freely available for use in a LAN deployment, but WAN deployments that need to be synchronized require a commercially licensed variant. Note that multiple data centers may still use Riak if each data center has its own local Riak cluster. For more information, see the [Riak](http://docs.basho.com/riak/latest/) documentation.
+Riak is freely available for use in a LAN deployment, but WAN deployments that need to be synchronized require a commercially licensed variant. Note that multiple data centers may still use Riak if each data center has its own local Riak cluster. For more information, see the [Riak](https://docs.riak.com/riak/latest/) documentation.
 
 ## <a name="riak.overview"></a> Riak Overview
 
