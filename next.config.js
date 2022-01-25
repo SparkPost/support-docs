@@ -38,7 +38,7 @@ module.exports = {
       // This redirects to support docs
       {
         source: '/',
-        destination: '/docs',
+        destination: '/docs/',
         permanent: true,
       },
     ];
