@@ -6,7 +6,9 @@ import { Box } from '@sparkpost/matchbox';
 const getImageSrc = (asPath: string, src?: string) => {
   const environment = getWindow();
   const parts = asPath.split('/');
-  const dir = parts.splice(0, parts.length - 1).join('/');
+  const dirArr = parts.splice(0, parts.length - 1);
+  dirArr.pop();
+  const dir = dirArr.join('/');
   const path = `${environment?.location.origin || 'https://localhost:3000'}/content${dir}/${src}`;
   return path;
 };
