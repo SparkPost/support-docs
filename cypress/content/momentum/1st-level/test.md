@@ -60,9 +60,9 @@ You can link to external resources using this format: `[text here](link here)`. 
 
 Here's an example of how an image should be written (put those in the `media` folder for the category in the root `public/content/` directory). For this example, the image path would be in `public/content/momentum/media/test/testing-image.png`. This is because next.js requires that images be contained in `public/`. Creating the link can contain `./` or just `media/`:
 
-![Without ./](media/upgrading-your-account/upgrade-page.png)
+![Without ./](media/test/testing-image.png)
 
-![With ./](./media/upgrading-your-account/upgrade-page.png)
+![With ./](./media/test/testing-image.png)
 
 ### Code
 
