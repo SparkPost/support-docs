@@ -55,8 +55,9 @@ The following table is a complete list of extended error code responses, organiz
 |                       | 2005        | No published version of template exists          | 422              |                                              |
 |                       | 2006        | Transmission record in invalid state             | 409              |                                              |
 |                       | 2101        | Exceed Sending Limit (hourly)                    | 420              |                                              |
-|                       | 2102        | Exceed Sending Limit (daily)                     | Deprecated       |                                              |
+|                       | 2102        | Exceed Sending Limit (daily)                     | 420              |                                              |
 |                       | 2103        | Exceed Sending Limit (sandbox)                   | 420              |                                              |
+|                       | 2105        | Exceed Sending Limit (monthly)                   | 420              |                                              |
 |                       | 2106        | Invalid Template ID (sandbox)                    | 422              |                                              |
 | *Template*            | *3000~3999* |                                                  |                  |                                              |
 |                       | 3000        | template language syntax error                   | 422              | fix content and retry                        |
