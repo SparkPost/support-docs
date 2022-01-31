@@ -5,6 +5,7 @@
   "scripts": {
     "predev": "npm run build:images",
     "prebuild": "npm run build:images",
+    "prebuild:test": "npm run build:images",
     "dev": "next dev",
     "build": "next build",
     "build:ssr": "next build && next export",

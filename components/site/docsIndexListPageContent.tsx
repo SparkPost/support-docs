@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import { Box, Tag, Button } from '@sparkpost/matchbox';
 import { KeyboardArrowDown } from '@sparkpost/matchbox-icons';
@@ -16,9 +16,9 @@ const DocsIndexListPageContent = (props: DocsIndexListPageContentProps) => {
   return (
     <>
       {navigationData && navigationData.items ? (
-        navigationData.items.slice(0, paginationCount).map((item) => {
+        navigationData.items.slice(0, paginationCount).map((item, i) => {
           return (
-            <>
+            <React.Fragment key={`navDataItem${i}`}>
               <Box px="500" py="650">
                 <Box as="h3">{item.title}</Box>
                 {item.lastUpdated && (
@@ -40,7 +40,7 @@ const DocsIndexListPageContent = (props: DocsIndexListPageContentProps) => {
                 </Box>
               </Box>
               <hr />
-            </>
+            </React.Fragment>
           );
         })
       ) : (

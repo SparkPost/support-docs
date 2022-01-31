@@ -1,3 +1,5 @@
+import { NextRouter } from 'next/router';
+
 /**
  * Slugifies a string
  */

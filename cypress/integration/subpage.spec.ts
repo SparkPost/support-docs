@@ -5,7 +5,7 @@ describe('Sub section page', () => {
     });
   });
 
-  describe('test page in subsection', () => {
+  describe('test page in sub section', () => {
     it('Should display without error', () => {
       cy.visit('/momentum/1st-level/test');
     });
@@ -33,6 +33,26 @@ describe('Sub section page', () => {
       cy.visit('/momentum/1st-level/test');
       cy.contains('Relative to current directory Link').click();
       cy.location('pathname').should('eq', '/momentum/1st-level/relative-link-test/');
+    });
+  });
+});
+
+describe('images', () => {
+  it('Should display without error without ./', () => {
+    cy.visit('/docs/billing/upgrading-your-account/');
+    cy.get('[alt="Billing plan selection without ./"]').should(($img) => {
+      const img = $img.get(0) as HTMLImageElement;
+      const width = img.naturalWidth;
+      expect(width).to.be.greaterThan(0);
+    });
+  });
+
+  it('Should display without error with ./', () => {
+    cy.visit('/docs/billing/upgrading-your-account/');
+    cy.get('[alt="Plan upgrade form with ./"]').should(($img) => {
+      const img = $img.get(0) as HTMLImageElement;
+      const width = img.naturalWidth;
+      expect(width).to.be.greaterThan(0);
     });
   });
 });
