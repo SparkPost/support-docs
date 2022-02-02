@@ -5,10 +5,14 @@ import { Box } from '@sparkpost/matchbox';
 
 const getImageSrc = (asPath: string, src?: string) => {
   const environment = getWindow();
-  const parts = asPath.split('/');
-  const dirArr = parts.splice(0, parts.length - 1);
-  dirArr.pop();
-  const dir = dirArr.join('/');
+  const pathArr = asPath.split('/');
+
+  // Check for 'trailing slash'
+  if (!pathArr[pathArr.length - 1]) {
+    pathArr.pop();
+  }
+  pathArr.pop();
+  const dir = pathArr.join('/');
   const path = `${environment?.location.origin || 'https://localhost:3000'}/content${dir}/${src}`;
   return path;
 };
