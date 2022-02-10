@@ -2,6 +2,7 @@ import type { SearchBoxProvided } from 'react-instantsearch-core';
 import { connectSearchBox } from 'react-instantsearch-dom';
 import { TextField, useWindowEvent } from '@sparkpost/matchbox';
 import { Search as SearchIcon } from '@sparkpost/matchbox-icons';
+import { FormEvent } from 'react';
 
 type InputProps = SearchBoxProvided & {
   hasFocus?: boolean;
@@ -15,8 +16,12 @@ const Input = ({ currentRefinement, onFocus, hasFocus, refine }: InputProps) => 
     }
   });
 
+  const onSubmit = (e: FormEvent) => {
+    e.preventDefault();
+  };
+
   return (
-    <form noValidate action="" autoComplete="off" role="search">
+    <form noValidate action="" autoComplete="off" role="search" onSubmit={onSubmit}>
       <TextField
         id="algolia-search"
         label="Search"
