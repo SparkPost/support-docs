@@ -36,7 +36,7 @@ const Search = (props: SearchProps): JSX.Element => {
         onSearchStateChange={({ query }) => setQuery(query)}
       >
         <SearchBox onFocus={() => setHasFocus(true)} hasFocus={hasFocus} />
-        <SearchResults ref={menu} show={query.length > 0 && hasFocus} />
+        <SearchResults ref={menu} show={query?.length > 0 && hasFocus} />
       </InstantSearch>
     </Box>
   );
