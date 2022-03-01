@@ -86,15 +86,21 @@ Save your report for quick access in the future and to avoid reconfiguring your 
 
 #### Preset Reports
 
-Your account comes with several preset saved reports which are available from the report dropdown. All preset reports are also available through a menu by clicking the “View All Reports” button in the upper right-hand corner.
+Your account comes with several preset saved reports which are available from the sidebar. All preset reports are also available through a menu by clicking the All Reports” button at the bottom of the sidebar.
 
 ![Finding Preset Reports](media/analytics-report/preset.gif)
 
 #### Your Reports
 
-Reports that you’ve saved will also appear in the same dropdown along with preset saved reports. All saved reports are also available through a menu by clicking the “View All Reports” button in the upper right-hand corner. Saved reports are automatically shared with other users on your SparkPost account.
+All saved reports are available through a modal by clicking the "All Reports” button at the bottom of the sidebar. Saved reports are automatically shared with other users on your SparkPost account.
 
 ![Finding Saved Reports](media/analytics-report/reportselection.gif)
+
+#### Favorite Reports
+
+For quick and easy access to your reports, you can save them as favorites by clicking the dropdown menu next to the reports in the sidebar.
+
+![Finding Saved Reports](media/analytics-report/favorite.gif)
 
 ## Scheduling Your Reports
 
@@ -104,7 +110,7 @@ Keep yourself and your stakeholders informed by scheduling any saved report to b
 
 ## Deleting Your Reports
 
-Reports can only be deleted by the user that created them. To delete a report, first click on “View All Reports” in the upper right-hand corner, then under the “My Reports” tab, find the report you want to delete. The delete button is found in the dropdown menu on the right side of each report.
+Reports can only be deleted by the user that created them. To delete a report, first click on "All Reports” at the bottom of the sidebar, then under the “My Reports” tab, find the report you want to delete. The delete button is found in the dropdown menu on the right side of each report. You can also delete reports from the sidebar directly.
 
 ## Limits/Limitations
 
