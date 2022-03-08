@@ -7,7 +7,7 @@ type SeoProps = {
 };
 
 const SEO = (props: SeoProps): JSX.Element => {
-  const { title = "SparkPost Support", description = "SparkPost Support Docs" } = props;
+  const { title = 'SparkPost Support', description = 'SparkPost Support Docs' } = props;
   const router = useRouter();
 
   return (
@@ -17,32 +17,35 @@ const SEO = (props: SeoProps): JSX.Element => {
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="canonical" href={router.asPath}></link>
       <link rel="shortcut icon" type="image/png" href="/favicon.png" />
-      <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+      <meta
+        name="robots"
+        content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      />
       {title && (
         <>
           <title>{title}</title>
-          <meta property="og:title" content={title} />
+          {/* <meta property="og:title" content={title} />
           <meta name="twitter:title" content={title} />
-          <meta name="og:site_name" content={title} />
+          <meta name="og:site_name" content={title} /> */}
         </>
       )}
       {description && (
         <>
-          <meta name="description" content={description} />
+          {/* <meta name="description" content={description} />
           <meta property="og:description" content={description} />
-          <meta name="twitter:description" content={description} />
+          <meta name="twitter:description" content={description} /> */}
         </>
       )}
-      <meta name="og:locale" content="en_US" />
+      {/* <meta name="og:locale" content="en_US" />
       <meta name="og:url" content={router.asPath} />
       <meta name="og:site_name" content="SparkPost Support" />
       <meta name="twitter:site" content="SparkPost Support"></meta>
       <meta property="og:type" content="article"></meta>
       <meta property="og:image" content="/SparkPostLogo.png" />
       <meta name="twitter:image" content="/SparkPostLogo.png" />
-      <meta name="twitter:card" content="summary_large_image"></meta>
+      <meta name="twitter:card" content="summary_large_image"></meta> */}
     </Head>
-  )
-}
+  );
+};
 
 export default SEO;
