@@ -4,4 +4,4 @@ title: 'Relative Link Test Page'
 description: 'This is to verify that relative linking in current directory works as expected'
 ---
 
-Does it work? Idk, but I hope so!
+Does it work? I hope so!
