@@ -26,7 +26,11 @@ backend out
     mode tcp
     source 0.0.0.0 usesrc clientip
     server foo 0.0.0.0
+```
 
+A simple **example configuration** to use that HAProxy in a binding would be:
+
+```
 binding {
   ha_proxy_server = "10.0.0.1:8085"
   ha_proxy_src_addr = "9.9.9.9"
