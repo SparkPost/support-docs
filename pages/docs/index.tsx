@@ -18,7 +18,7 @@ const IndexPage = (props: IndexPageProps): JSX.Element => {
     <CategoriesProvider data={categoryData}>
       <SEO
         title="Support Documentation - SparkPost"
-        description="SparkPost Support Documentation"
+        description="SparkPost Sloppy Docs"
       />
       <DocsLayout navigationData={navigationData}>
         <DocsHomePageContent />
