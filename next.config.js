@@ -1,35 +1,7 @@
 /** @type {import('next').NextConfig} */
 const SentryPlugin = require('@sentry/webpack-plugin');
-
-const customHeaders = {
-  source: '/:path*',
-  headers: [
-    {
-      key: 'cache-control',
-      value: 'no-store, no-cache, must-revalidate, proxy-revalidate',
-    },
-    {
-      key: 'pragma',
-      value: 'no-cache',
-    },
-    {
-      key: 'strict-transport-security',
-      value: 'max-age=5184000'
-    },
-    {
-      key: 'x-content-type-options',
-      value: 'nosniff'
-    },
-    {
-      key: 'x-frame-options',
-      value: 'DENY'
-    },
-    {
-      key: 'x-xss-protection',
-      value: '1; mode=block'
-    }
-  ]
-}
+const customHeaders = require('./custom-headers');
+const customRedirects = require('./custom-redirects');
 
 module.exports = {
   reactStrictMode: true,
@@ -63,15 +35,7 @@ module.exports = {
   },
 
   async redirects() {
-    return [
-      // The site does not have a home page
-      // This redirects to support docs
-      {
-        source: '/',
-        destination: '/docs/',
-        permanent: true,
-      },
-    ];
+    return customRedirects;
   },
   async headers() {
     return [customHeaders]
