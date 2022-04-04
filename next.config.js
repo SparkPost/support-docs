@@ -1,6 +1,36 @@
 /** @type {import('next').NextConfig} */
 const SentryPlugin = require('@sentry/webpack-plugin');
 
+const customHeaders = {
+  source: '/',
+  headers: [
+    {
+      key: 'cache-control',
+      value: 'no-store, no-cache, must-revalidate, proxy-revalidate',
+    },
+    {
+      key: 'pragma',
+      value: 'no-cache',
+    },
+    {
+      key: 'strict-transport-security',
+      value: 'max-age=5184000'
+    },
+    {
+      key: 'x-content-type-options',
+      value: 'nosniff'
+    },
+    {
+      key: 'x-frame-options',
+      value: 'DENY'
+    },
+    {
+      key: 'x-xss-protection',
+      value: '1; mode=block'
+    }
+  ]
+}
+
 module.exports = {
   reactStrictMode: true,
   swcMinify: true,
@@ -43,4 +73,7 @@ module.exports = {
       },
     ];
   },
+  async headers() {
+    return [customHeaders]
+  }
 };
