@@ -2,7 +2,7 @@
 const SentryPlugin = require('@sentry/webpack-plugin');
 
 const customHeaders = {
-  source: '/',
+  source: '/:path*',
   headers: [
     {
       key: 'cache-control',
