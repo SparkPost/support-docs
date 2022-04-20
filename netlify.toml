@@ -4,6 +4,15 @@ publish = ".next"
 [[plugins]]
 package = "@netlify/plugin-nextjs"
 
+[[headers]]
+  # Define which paths this specific [[headers]] block will cover.
+  for = "/*"
+
+  [headers.values]
+    Strict-Transport-Security = '''
+    max-age=31536000;
+    includeSubDomains;'''
+    
 # A redirect rule with many of the supported properties
 [[redirects]]
   from = "/"
