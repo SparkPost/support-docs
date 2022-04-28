@@ -16,8 +16,7 @@ package = "@netlify/plugin-nextjs"
     Content-Security-Policy = '''
     frame-ancestors
       'self';
-    upgrade-insecure-requests
-      1;
+    upgrade-insecure-requests;
     script-src
       'self'
       'report-sample'
