@@ -18,11 +18,13 @@ package = "@netlify/plugin-nextjs"
       'self';
     upgrade-insecure-requests;
     script-src
+      *
       'self'
-      'report-sample'
-      'unsafe-inline'
       eval:
-      *;
+      data:
+      blob:
+      'unsafe-inline'
+      'unsafe-eval';
     style-src
       'self'
       'report-sample'
