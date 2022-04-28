@@ -13,7 +13,7 @@ package = "@netlify/plugin-nextjs"
     max-age=31536000;
     includeSubDomains;'''
 
-    Content-Security-Policy = '''
+    Content-Security-Policy-Report-Only = '''
     frame-ancestors
       'self';
     upgrade-insecure-requests;
