@@ -13,7 +13,7 @@ package = "@netlify/plugin-nextjs"
     max-age=31536000;
     includeSubDomains;'''
 
-    Content-Security-Policy-Report-Only = '''
+    Content-Security-Policy = '''
     frame-ancestors
       'self';
     upgrade-insecure-requests;
@@ -24,7 +24,9 @@ package = "@netlify/plugin-nextjs"
       data:
       blob:
       'unsafe-inline'
-      'unsafe-eval';
+      'unsafe-eval'
+      googletagmanager.com
+      ;
     style-src
       'self'
       'report-sample'
@@ -43,10 +45,14 @@ package = "@netlify/plugin-nextjs"
       *;
     font-src
       'self'
+      data:
+      fonts.gstatic.com
       support.sparkpost.com;
     connect-src
-      'self'
-      *;
+      *
+      data:
+      blob:
+      'unsafe-inline';
     manifest-src
       'self';
     base-uri
