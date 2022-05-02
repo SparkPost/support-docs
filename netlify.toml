@@ -45,8 +45,10 @@ package = "@netlify/plugin-nextjs"
       'self'
       support.sparkpost.com;
     connect-src
-      'self'
-      *;
+      *
+      data:
+      blob:
+      'unsafe-inline';
     manifest-src
       'self';
     base-uri
