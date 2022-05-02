@@ -43,6 +43,8 @@ package = "@netlify/plugin-nextjs"
       *;
     font-src
       'self'
+      data:
+      fonts.gstatic.com
       support.sparkpost.com;
     connect-src
       *
