@@ -1,42 +1,34 @@
 ---
-lastUpdated: "01/25/2021"
+lastUpdated: "01/25/2022"
 title: "Single Sign-On (SSO)"
-description: "Learn how to enable SSO for your SparkPost account and get answers to common SSO questions."
+description: "Single Sign-On (SSO)"
 ---
 
-SparkPost supports single sign-on (SSO) through any SAML provider. SSO is enabled via the UI by an Admin level user. You can also set up [SCIM user provisioning through OKTA](https://www.sparkpost.com/docs/my-account-and-profile/scim/).
+Single sign-on (SSO) allows you login to your account using your company's preffered identify provider. You can enable SSO through any provider that supports SAML. You can also set up [SCIM user provisioning through OKTA](https://www.sparkpost.com/docs/my-account-and-profile/scim/).
 
 Check this [article](https://www.sparkpost.com/docs/faq/difference-between-starter-and-premier/) to verify that your account's plan level supports SSO.
 
-## Enable SSO
+## Enable Single Sign-On
 
 Enabling SSO is a 3-step process:
 
 ### 1. Enable for Account:
-Go to your [Account Settings](https://app.sparkpost.com/account/settings)([EU](https://app.eu.sparkpost.com/account/settings)) and click on "Provision SSO" to upload your SAML configuration file. Once provisioned, you can enable SSO for the account.
+Go to your [Account Settings page](https://app.sparkpost.com/account/settings)([EU](https://app.eu.sparkpost.com/account/settings)) and click on "Provision SSO" to upload your SAML configuration file. Copy the callback URL to configure your identity provider.
 
-### 2. Enable for users:
-Update your users in from the [Users](https://app.sparkpost.com/account/users)([EU](https://app.eu.sparkpost.com/account/users)) page to enable SSO.
+### 2. Configure your identity provider with the callback URL:
+Configure your identity provider with the callbackURL from the previous step. Refer to your identity provider documentation for instructions on where to submit this information.
 
-### 3. Configure your identity provider with the callback URL:
-1. Your identity provider will need the callback URL for SparkPost. Please refer to your identity provider for specific instructions on where to submit this information.
-1. The callback URL is:
-US: `https://api.sparkpost.com/api/v1/users/saml/consume`
+### 3. Re-invite your users:
+Users have to be re-invited in order to start signing in with SSO. You can delete current users and re-invite them from the  [Users](https://app.sparkpost.com/account/users)([EU](https://app.eu.sparkpost.com/account/users)) page.
 
-EU: `https://api.eu.sparkpost.com/api/v1/users/saml/consume`
-
-Enterprise: `https://<api-host>/api/v1/users/saml/consume`
-*(Note: Enterprise accounts must replace < api-host > with your SparkPost tenant API URL. For example https://< tenant >.api.e.sparkpost.com Please see your TAM if you need assistance determining your callback URL.)*
-
-## Disable SSO
-
-Disabling SSO is a 2-step process.
+## Disable Single Sign-On
+Disabling SSO is a 2-step process:
 
 ### 1. Disable for account:
 Go to your [Account Settings](https://app.sparkpost.com/account/settings)([EU](https://app.eu.sparkpost.com/account/settings)) and click on "Provision SSO" to upload your SAML configuration file. Once provisioned, you can enable SSO for the account.
 
-### 2. Disable users:
-Update your users in from the [Users](https://app.sparkpost.com/account/users)([EU](https://app.eu.sparkpost.com/account/users)) page to disable SSO.
+### 2. Re-invite your users:
+Users have to be re-invited in order to set their passwords. You can delete current users and re-invite them from the  [Users](https://app.sparkpost.com/account/users)([EU](https://app.eu.sparkpost.com/account/users)) page.
 
 ## FAQ
 
@@ -105,8 +97,8 @@ Yes, an admin user can change the user role for any user (including SSO users) a
 ### Is there a way to bypass SSO once its enabled?
 An admin can enable or disable SSO for each user at any time. However, there is no way to bypass SSO if it is enabled for a specific user - the admin must disable for that user in order to login via password.
 
-### Can I use both two-factor authentication (2FA) and SSO?
-Each individual user can only use either 2FA or SSO. However, you may have some users at your company use 2FA and others use SSO.
+### Can I use both SSO and multi-factor authentication (MFA)?
+No. Users can only use either MFA or SSO.
 
 ### Is automatic provisioning of users supported?
 SCIM provisioning is supported for [OKTA](https://www.sparkpost.com/docs/my-account-and-profile/scim/).
