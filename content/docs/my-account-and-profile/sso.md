@@ -1,12 +1,12 @@
 ---
 lastUpdated: "01/25/2022"
 title: "Single Sign-On (SSO)"
-description: "Single Sign-On (SSO)"
+description: "How to enable Single Sign-On (SSO) in SparkPost."
 ---
 
-Single sign-on (SSO) allows you login to your account using your company's preffered identify provider. You can enable SSO through any provider that supports SAML. You can also set up [SCIM user provisioning through OKTA](https://www.sparkpost.com/docs/my-account-and-profile/scim/).
+Single sign-on (SSO) allows you login to your account using your company's preffered identify provider. You can enable SSO through any provider that supports SAML. You can also set up [SCIM user provisioning through OKTA](https://support.sparkpost.com/docs/my-account-and-profile/scim/).
 
-Check this [article](https://www.sparkpost.com/docs/faq/difference-between-starter-and-premier/) to verify that your account's plan level supports SSO.
+Check this [article](https://support.sparkpost.com/docs/faq/difference-between-starter-and-premier/) to verify that your account's plan level supports SSO.
 
 ## Enable Single Sign-On
 
@@ -101,4 +101,4 @@ An admin can enable or disable SSO for each user at any time. However, there is 
 No. Users can only use either MFA or SSO.
 
 ### Is automatic provisioning of users supported?
-SCIM provisioning is supported for [OKTA](https://www.sparkpost.com/docs/my-account-and-profile/scim/).
+SCIM provisioning is supported for [OKTA](https://support.sparkpost.com/docs/my-account-and-profile/scim/).
