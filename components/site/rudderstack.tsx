@@ -3,14 +3,14 @@ import isbot from 'isbot';
 import { getWindow } from 'utils/ssr';
 
 const RudderStack = (): JSX.Element => {
-  const isBotSSR = (): boolean => {
-    let bot = false;
-    if (getWindow()) {
-      bot = isbot(window.navigator.userAgent);
-    }
+  // const isBotSSR = (): boolean => {
+  //   let bot = false;
+  //   if (getWindow()) {
+  //     bot = isbot(window.navigator.userAgent);
+  //   }
 
-    return bot;
-  };
+  //   return bot;
+  // };
 
   return (
     <>
