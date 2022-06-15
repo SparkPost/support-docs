@@ -1,6 +1,6 @@
 import Script from 'next/script';
-import isbot from 'isbot';
-import { getWindow } from 'utils/ssr';
+// import isbot from 'isbot';
+// import { getWindow } from 'utils/ssr';
 
 const RudderStack = (): JSX.Element => {
   // const isBotSSR = (): boolean => {
