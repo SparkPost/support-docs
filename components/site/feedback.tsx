@@ -3,7 +3,7 @@ import { Box, Button, Modal, useModal, Radio, TextField } from '@sparkpost/match
 import { useRouter } from 'next/router';
 import { v4 as uuid } from 'uuid';
 import { AlertsContext } from 'context/alerts';
-import { track } from 'utils/segment';
+import { track } from 'utils/rudderstack';
 
 const reasonList = [
   {

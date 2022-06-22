@@ -4,11 +4,11 @@ import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { ThemeProvider } from '@sparkpost/matchbox';
 import * as gtag from '../utils/gtm';
-import { page as segmentPage } from 'utils/segment';
+import { page as rudderPage } from 'utils/rudderstack';
 import * as Sentry from '@sentry/react';
 import { Integrations } from '@sentry/tracing';
 import CookieConsent from 'components/site/cookieConsent';
-import Segment from 'components/site/segment';
+import RudderStack from 'components/site/rudderstack';
 import GTM from 'components/site/gtm';
 import Status from 'components/site/status';
 import { getWindow } from 'utils/ssr';
@@ -44,7 +44,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
   useEffect(() => {
     const handleRouteChange = (url: URL) => {
       gtag.pageview(url);
-      segmentPage();
+      rudderPage();
     };
     router.events.on('routeChangeComplete', handleRouteChange);
     return () => {
@@ -54,7 +54,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
 
   return (
     <ThemeProvider>
-      <Segment />
+      <RudderStack />
       <GTM />
       <Status />
       <AlertsProvider>
