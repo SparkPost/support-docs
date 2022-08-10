@@ -47,18 +47,9 @@ describe('images', () => {
     });
   });
 
-  it('Should display without error with ./', () => {
-    cy.visit('/docs/billing/upgrading-your-account/');
-    cy.get('[alt="Plan upgrade form with ./"]').should(($img) => {
-      const img = $img.get(0) as HTMLImageElement;
-      const width = img.naturalWidth;
-      expect(width).to.be.greaterThan(0);
-    });
-  });
-
   it('Should load urls with trailing / and build image paths correctly', () => {
-    cy.visit('/docs/getting-started/getting-started-sparkpost/');
-    cy.get('[alt="Summary report"]').should(($img) => {
+    cy.visit('/docs/billing/upgrading-your-account/');
+    cy.get('[alt="Billing plan selection without ./"]').should(($img) => {
       const img = $img.get(0) as HTMLImageElement;
       const width = img.naturalWidth;
       expect(width).to.be.greaterThan(0);
@@ -66,8 +57,8 @@ describe('images', () => {
   });
 
   it('Should load urls with # links and build image paths correctly', () => {
-    cy.visit('/docs/getting-started/getting-started-sparkpost/#signals-analytics');
-    cy.get('[alt="Summary report"]').should(($img) => {
+    cy.visit('/docs/billing/upgrading-your-account/#testing-image');
+    cy.get('[alt="Billing plan selection without ./"]').should(($img) => {
       const img = $img.get(0) as HTMLImageElement;
       const width = img.naturalWidth;
       expect(width).to.be.greaterThan(0);
