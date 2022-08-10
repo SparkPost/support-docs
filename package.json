@@ -2,9 +2,6 @@
   "name": "support-docs",
   "version": "0.1.0",
   "private": true,
-  "engines": {
-    "node": ">=18.6.0"
-  },
   "scripts": {
     "predev": "npm run build:images",
     "prebuild": "npm run build:images",
