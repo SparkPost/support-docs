@@ -48,5 +48,5 @@ public/content
 # Cypress
 cypress/screenshots
 
-# nodenv - use 16+
+# nodenv - use 16.16.0
 .node-version
