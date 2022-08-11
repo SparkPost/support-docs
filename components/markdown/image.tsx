@@ -5,7 +5,8 @@ import { Box } from '@sparkpost/matchbox';
 
 const getImageSrc = (asPath: string, src?: string) => {
   const environment = getWindow();
-  const pathArr = asPath.split('/');
+  // replace any trailing #page-link info from the end first, then split
+  const pathArr = asPath.replace(/#.*$/g, '').split('/');
 
   // Check for 'trailing slash'
   if (!pathArr[pathArr.length - 1]) {

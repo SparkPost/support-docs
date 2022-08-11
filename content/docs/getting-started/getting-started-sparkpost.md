@@ -14,9 +14,9 @@ Note: SparkPost is available in multiple regions. "SparkPost" refers to the Spar
 * [Preparing Your "From:" Address](#preparing-your-from-address)
 * [Important: Coming From Other Email Services](#important-coming-from-other-email-services)
 * [Sending Email](#sending-email)
-* [Tracking Recipient Behavior](#tracking-recipient-behavior)
+* [Tracking Recipient Behavior](#tracking-analytics)
 * [Improving Reputation And Branding](#improving-reputation-and-branding)
-* [Signals Analytics and Tracking](#signals-analytics-and-tracking)
+* [Signals Analytics and Tracking](#signals-analytics)
 * [Where To Next?](#where-to-next)
 * [How To Get Help](#how-to-get-help)
 

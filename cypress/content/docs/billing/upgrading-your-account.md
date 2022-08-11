@@ -6,6 +6,8 @@ description: 'This is to test images.'
 
 In order to have a working test, you have to maintain the same directory path of the image or else the image build process won't work.
 
+### Testing Image
+
 Testing Image 1 without ./
 
 ![Billing plan selection without ./](media/upgrading-your-account/billing-page.png)

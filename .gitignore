@@ -44,3 +44,9 @@ public/content
 
 # Netlify
 /.netlify/
+
+# Cypress
+cypress/screenshots
+
+# nodenv - use 16.12.0
+.node-version
