@@ -21,7 +21,7 @@ import '../public/assets/fonts.css';
  */
 if (process.env.NODE_ENV === 'production') {
   Sentry.init({
-    dsn: 'https://3b9d989425bd4cf0892613a46c2f9804@o104929.ingest.sentry.io/6004403',
+    dsn: 'https://2d95367da3ea460dbd19301aed1d6de9@o113111.ingest.sentry.io/4504084278607872',
     integrations: [new Integrations.BrowserTracing()],
 
     // Set tracesSampleRate to 1.0 to capture 100%
