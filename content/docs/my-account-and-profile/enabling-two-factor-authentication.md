@@ -23,4 +23,4 @@ In the pop up window, click **Use Another Method or Recovery Code**, then click 
 # Recovering Access to Account
 In the event that you lose or replace your authentication device, you have a few options to recover access to your account:
 * Use your saved recovery code to login, then re-configure your MFA settings.
-* If you have lost your recovery code, contact SparkPost support to request that your MFA configuration be reset. Upon your next login, you will be prompted to re-configure your MFA settings.
+* Admin users can reset a user's MFA setting from the [Users page](https://app.sparkpost.com/account/users) ([EU](https://app.eu.sparkpost.com/account/users)). Upon the user's next login, they will be prompted to re-configure their MFA settings.
