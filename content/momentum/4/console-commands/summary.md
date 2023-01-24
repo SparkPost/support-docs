@@ -208,3 +208,7 @@ Use the `with-mobile` option to display the status of SMPP and MM7 message queue
 ## See Also
 
 [binding summary](/momentum/4/console-commands/binding-summary), [summary reset](/momentum/4/console-commands/summary-reset)
+
+## Attention
+
+This command is unsafe to be executed in production and should be avoided. It is recommended to use the `summary` HTTP endpoint instead.
