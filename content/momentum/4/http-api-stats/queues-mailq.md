@@ -17,8 +17,6 @@ description: "/stats/queues/mailq show the status of the mail queues When issued
 
 `GET /stats/queues/mailq?binding=ip_1.2.3.4`
 
-`GET /stats/queues/mailq?ip=1.2.3.4`
-
 <a name="TODO"></a>
 
 ## Description
@@ -60,7 +58,7 @@ Sample output is shown below:
 
 The `group` and `binding` fields shows the group and the binding that a domain belongs to. `aq` shows the items in the active queue and `aq` shows the items in the delayed queue. The number of receptions, permanent failures, transient failures, and deliveries are shown in the `receptions`, `permfails`, `transfails`, and `deliveries` fields respectively.
 
-Use this request with the `domain=a.specific.domain` argument to show the statistics for a specific domain. The `binding` and the `ip` argument can be used in the same way, but they're exclusive and the `ip` argument will be ignored in case both are specified. The output cannot be limited or split into multiple pages.
+Use this request with the `domain=a.specific.domain` argument to show the statistics for a specific domain, and the `binding=name` can be used in the same way to show a specific binding. The output cannot be limited or split into multiple pages.
 
 Examples of using the optional arguments:
 
@@ -69,12 +67,7 @@ Examples of using the optional arguments:
 curl -sS "localhost:2081/stats/queues/mailq?domain=gmail.com"
 
 # Check the queue for the "gmail.com" domain related to the IP 1.2.3.4
-curl -sS "localhost:2081/stats/queues/mailq?domain=gmail.com&ip=1.2.3.4"
-# ... or
 curl -sS "localhost:2081/stats/queues/mailq?domain=gmail.com&binding=ip_1.2.3.4"
-
-# Check the queue for the IP 1.2.3.4
-curl -sS "localhost:2081/stats/queues/mailq?ip=1.2.3.4"
 ```
 
 The output might be a somewhat large JSON array, so to make it easier to read, you can try using `jq` and `column` to convert it to a table:
