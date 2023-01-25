@@ -17,8 +17,6 @@ description: "/stats/queues/mailq show the status of the mail queues When issued
 
 `GET /stats/queues/mailq?binding=ip_1.2.3.4`
 
-<a name="TODO"></a>
-
 ## Description
 
 When issued with no arguments this command shows counts for the active queue and the delayed queues sorted by binding groups and bindings.

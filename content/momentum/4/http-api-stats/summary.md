@@ -13,8 +13,6 @@ description: "stats summary show global metrics Perhaps the most common API comm
 
 `GET /stats/summary`
 
-<a name="TODO"></a>
-
 ## Description
 
 Perhaps the most common API command, `/stats/summary` will produce global metrics such as queue sizes, message counts and throughput rates since startup or the last reset of statistics.
