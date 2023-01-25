@@ -19,3 +19,5 @@ scriptlet "scriptlet" {
   }
 }
 ```
+
+This API is only supported when Supercharger is enabled and a `Maintainer_Pool` `EventLoop` is set up.
