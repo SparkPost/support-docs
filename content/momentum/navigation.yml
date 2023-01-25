@@ -518,8 +518,6 @@
           title: Summary
         - link: /momentum/4/http-api-stats/queues-mailq
           title: Mail Queue
-        - link: /momentum/4/http-api-stats/queues-summary-sizes
-          title: Queues Sizes
     - link: /momentum/4/p-analytics
       title: Reporting and Engagement Tracking
       items:
