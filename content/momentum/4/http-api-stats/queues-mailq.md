@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/01/2023"
+lastUpdated: "31/01/2023"
 title: "Mail Queue"
 description: "/stats/queues/mailq show the status of the mail queues When issued with no arguments this command shows counts for the active queue and the delayed queues sorted by binding groups and bindings This request shall be done to the port 2081 using any..."
 ---

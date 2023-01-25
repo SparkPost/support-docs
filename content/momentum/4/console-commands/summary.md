@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/26/2020"
+lastUpdated: "31/01/2023"
 title: "summary"
 description: "summary show global metrics summary with mobile Perhaps the most common and useful command for the console summary will produce global metrics such as queue sizes message counts and throughput rates since startup or the last reset of statistics If you have configured your control listener to listen on the..."
 ---
