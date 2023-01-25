@@ -211,4 +211,4 @@ Use the `with-mobile` option to display the status of SMPP and MM7 message queue
 
 ## Attention
 
-This command is unsafe to be executed in production and should be avoided. It is recommended to use the `summary` HTTP endpoint instead.
+On a busy system, if this command is run frequently, it may result in a Momentum watchdog restart. If `summary` data is needed multiple times per hour then it is recommended to use the [summary HTTP endpoint](/momentum/4/http-api-stats/summary.md) instead.

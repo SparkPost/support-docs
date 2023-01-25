@@ -32,4 +32,4 @@ Use this command with the `--domain` *`domain_name`* argument to show the statis
 
 ## Attention
 
-This command is unsafe to be executed in production and should be avoided. It is recommended to use the `mailq` HTTP endpoint instead.
+On a busy system, if this command is run frequently, it may result in a Momentum watchdog restart. If `mailq` data is needed multiple times per hour then it is recommended to use the [mailq HTTP endpoint](/momentum/4/http-api-stats/queues-mailq.md) instead.
