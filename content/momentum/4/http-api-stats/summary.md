@@ -146,7 +146,7 @@ The average number of DNS queries/second performed since startup or last summary
 
 <dd>
 
-TODO
+The number of message bodies held in memory.
 
 </dd>
 
@@ -154,9 +154,7 @@ TODO
 
 <dd>
 
-TODO
-
-The progress of the message queue being written to the disk: the current amount and the total/target amount.
+The message spool in progress.
 
 </dd>
 
@@ -179,8 +177,6 @@ The number of outbound messages permanently failed since it was started or since
 <dt>TransientFailures</dt>
 
 <dd>
-
-TODO
 
 The number of outbound messages transiently failed since it was started or since the last summary reset.
 
