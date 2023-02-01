@@ -610,7 +610,7 @@ The steps below are based on [this guide](https://docs.microsoft.com/en-us/azure
 
     ![](media/enabling-https-engagement-tracking-on-sparkpost/azure-front-door8.png)
 
-    Your front door is now active on the subdomain we set up, and can be checked using `curl` with added path `/f/a`, for example:
+    Your front door is now active on the subdomain we set up, and can be checked using `curl` with added path `/f/a/b/c/d`, for example:
 
     ```
     curl -v https://my-tracking-domain.azurefd.net/f/a/b/c/d
