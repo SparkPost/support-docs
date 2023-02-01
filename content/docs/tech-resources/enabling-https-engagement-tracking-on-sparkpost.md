@@ -613,7 +613,7 @@ The steps below are based on [this guide](https://docs.microsoft.com/en-us/azure
     Your front door is now active on the subdomain we set up, and can be checked using `curl` with added path `/f/a`, for example:
 
     ```
-    curl -v https://my-tracking-domain.azurefd.net/f/a/
+    curl -v https://my-tracking-domain.azurefd.net/f/a/b/c/d
     ```
 
     You should see a default `302` response from SparkPost via your Front Door.
@@ -693,10 +693,10 @@ If you have previously created a tracking domain (whether verified or unverified
 
 ### Troubleshooting tips
 
-You can test that your tracking domain is correctly routed to SparkPost, using `curl -v` (verbose). Note the `/f/` path.
+You can test that your tracking domain is correctly routed to SparkPost with the following command:
 
 ```
-curl -v https://track.mydomain.com/f/
+curl -v https://track.mydomain.com/f/a/b/c/d
 ```
 The output will show the TLS negotiation including info on the certificate served by your CDN for your domain. Example:
 
@@ -710,10 +710,10 @@ The output will show the TLS negotiation including info on the certificate serve
 *  SSL certificate verify ok.
 ```
 
-If forwarding is configured properly, you will see a response relayed back from the SparkPost endpoint. The `server` header value below indicates that your CDN is routed to a SparkPost endpoint.
+If forwarding is configured properly, you will see a 302 response relayed back from the SparkPost endpoint. The `server` header value below indicates that your CDN is routed to a SparkPost endpoint. Bear in mind CloudFlare may overwrite this header. There may be slight differences between headers returned by EU (eu.spgo.io) and US (spgo.io).
 
 ```
-< HTTP/2 200
+< HTTP/2 302
 < content-type: text/plain
 < content-length: 0
 < date: Sat, 31 Oct 2020 10:52:44 GMT
