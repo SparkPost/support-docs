@@ -304,6 +304,16 @@ Specify the name of a persisted named series to be used to hold the total delive
 
 </dd>
 
+<dt><a name="modules.adaptive.force_max_binding_age"></a> force_max_binding_age</dt>
+
+<dd>
+
+Introduced in Momentum 4.4.
+
+If set to `true`, when calculating message throttles, adaptive will treat all binding ages as the maximum age.  It may be beneficial to set this to true if you regularly introduce new bindings which you know are associated with already warm outbound sending IPs.  This will avoid the need to use the adaptive warmup ec_console command on each binding.  Default value is `false`.
+
+</dd>
+
 <dt><a name="modules.adaptive.jlog_file"></a> jlog_file</dt>
 
 <dd>
