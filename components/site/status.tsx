@@ -12,7 +12,7 @@ declare global {
 
 const Status = () => {
   const { setStatus } = useStatus();
-  const environment = getWindow();
+	const environment = getWindow();
 
   return (
     <>
@@ -20,7 +20,8 @@ const Status = () => {
         src="https://cdn.statuspage.io/se-v2.js"
         onLoad={() => {
           if (environment && environment.StatusPage) {
-            const sp = new environment.StatusPage.page({ page: '7ky1q6zd3fyp' });
+            const pathStartsWithAnalyst = /^\/analyst/.test(environment.location.pathname);
+            const sp = new environment.StatusPage.page({ page: pathStartsWithAnalyst ? 'hj13jvlxdqwx' : '7ky1q6zd3fyp' });
 
             sp.status({
               success: function (data: {

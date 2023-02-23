@@ -13,6 +13,7 @@ const StyledButton = styled.button`
 
 type HeaderProps = {
   getActivatorProps?: () => object;
+	hideDrawerButtons?: boolean;
 };
 
 const Header = (props: HeaderProps) => {
@@ -32,9 +33,9 @@ const Header = (props: HeaderProps) => {
                 <Menu size={24} />
               </StyledButton>
             </Box>
-            <Box display={['none', null, 'block']}>
+						{!props.hideDrawerButtons && (<Box display={['none', null, 'block']}>
               <HeaderButtons />
-            </Box>
+            </Box>)}
           </>
         )}
       </Box>
