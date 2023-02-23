@@ -3,7 +3,7 @@ import { GetStaticProps } from 'next';
 import { getAnalystSupportNavigation, getCategoryData } from 'lib/api';
 import SEO from 'components/site/seo';
 import AnalystLayout from 'components/site/analystLayout';
-import type { NavigationItemProps } from 'components/site/navigation';
+import type { NavigationItemProps } from 'components/site/baseNavigation';
 import { CategoriesProvider, Category } from 'context/categories';
 
 type IndexPageProps = {

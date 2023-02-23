@@ -4,7 +4,7 @@ import { getCategoryData } from 'lib/api';
 import SEO from 'components/site/seo';
 import DocsLayout from 'components/site/docsLayout';
 import { getSupportNavigation } from 'lib/api';
-import type { NavigationItemProps } from 'components/site/navigation';
+import type { NavigationItemProps } from 'components/site/baseNavigation';
 import { CategoriesProvider, Category } from 'context/categories';
 
 type IndexPageProps = {

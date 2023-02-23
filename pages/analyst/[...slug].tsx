@@ -11,8 +11,8 @@ import SEO from 'components/site/seo';
 import Markdown from 'components/markdown';
 import AnalystLayout from 'components/site/analystLayout';
 import DocumentationContent from 'components/site/documentationContent';
-import AnalystIndexListPageContent from 'components/site/analystIndexListPageContent';
-import type { NavigationItemProps } from 'components/site/analystNavigation';
+import IndexListPageContent from 'components/site/docsIndexListPageContent';
+import type { NavigationItemProps } from 'components/site/baseNavigation';
 import { useRouter } from 'next/router';
 
 type PostPageProps = {
@@ -50,7 +50,7 @@ const PostPage = (props: PostPageProps): JSX.Element => {
           description={data.description}
         >
           {isIndex && navigationData ? (
-            <AnalystIndexListPageContent navigationData={navigationData.find(trailingSlashOrNo)} />
+            <IndexListPageContent navigationData={navigationData.find(trailingSlashOrNo)} />
           ) : (
             <Markdown>{content}</Markdown>
           )}

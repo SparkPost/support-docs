@@ -12,7 +12,7 @@ import Markdown from 'components/markdown';
 import DocsLayout from 'components/site/docsLayout';
 import DocumentationContent from 'components/site/documentationContent';
 import DocsIndexListPageContent from 'components/site/docsIndexListPageContent';
-import type { NavigationItemProps } from 'components/site/navigation';
+import type { NavigationItemProps } from 'components/site/baseNavigation';
 import { useRouter } from 'next/router';
 
 type PostPageProps = {

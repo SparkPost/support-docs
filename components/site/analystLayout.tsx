@@ -1,5 +1,6 @@
 import Layout from './layout';
-import AnalystNavigation, { NavigationItemProps } from 'components/site/analystNavigation';
+import { NavigationItemProps } from './baseNavigation';
+import AnalystNavigation from 'components/site/analystNavigation';
 
 type LayoutProps = {
   children?: React.ReactNode;

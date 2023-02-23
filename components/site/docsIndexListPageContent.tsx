@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { Box, Tag, Button } from '@sparkpost/matchbox';
 import { KeyboardArrowDown } from '@sparkpost/matchbox-icons';
 import { formatDate } from 'utils/string';
-import type { NavigationItemProps } from 'components/site/navigation';
+import type { NavigationItemProps } from 'components/site/baseNavigation';
 
 interface DocsIndexListPageContentProps {
   navigationData: NavigationItemProps | undefined;

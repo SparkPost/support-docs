@@ -1,5 +1,6 @@
 import Layout from './layout';
-import Navigation, { NavigationItemProps } from './navigation';
+import { NavigationItemProps } from './baseNavigation';
+import Navigation from './navigation';
 
 type LayoutProps = {
   children?: React.ReactNode;
