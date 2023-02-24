@@ -2,7 +2,7 @@ import React from 'react';
 import { Feedback, HelpOutline, QuestionAnswer } from '@sparkpost/matchbox-icons';
 import Link from 'next/link';
 import { Elixir, PHP, Java, NodeMailer, Python, Node, Go } from './icons';
-import BaseHomePageContent, {SimpleStyledLink} from './baseHomePageContent';
+import BaseHomePageContent, { SimpleStyledLink } from './baseHomePageContent';
 
 /*
  ██████╗ ██████╗ ███╗   ██╗████████╗███████╗███╗   ██╗████████╗
@@ -98,11 +98,11 @@ const help = {
 const DocsHomePageContent = () => {
   return (
     <BaseHomePageContent
-			gettingStarted={gettingStarted}
-			help={help}
-			clientLibraries={clientLibraries}
-			migrationGuides={migrationGuides}
-		/>
+      gettingStarted={gettingStarted}
+      help={help}
+      clientLibraries={clientLibraries}
+      migrationGuides={migrationGuides}
+    />
   );
 };
 

@@ -6,12 +6,12 @@ import {
   Feedback,
 } from '@sparkpost/matchbox-icons';
 import useStatus from 'hooks/useStatus';
-import BaseNavigation, {NavigationProps, StyledLink, StatusColorMap} from './baseNavigation';
+import BaseNavigation, { NavigationProps, StyledLink, StatusColorMap } from './baseNavigation';
 
 const AnalystNavigation = (props: NavigationProps): JSX.Element | null => {
   const { data = [], title, titleLink } = props;
   const { status } = useStatus();
-	
+
   return (
     <BaseNavigation data={data} title={title} titleLink={titleLink}>
       <Box py="450" mt="450" borderTop="400">
@@ -31,7 +31,7 @@ const AnalystNavigation = (props: NavigationProps): JSX.Element | null => {
             <Box px="500">
               <DeviceHub size={20} />
               <Box as="span" pl="300">
-								API Docs
+                API Docs
               </Box>
             </Box>
           </StyledLink>
@@ -61,8 +61,8 @@ const AnalystNavigation = (props: NavigationProps): JSX.Element | null => {
             </Box>
           </StyledLink>
         </Link>
-			</Box>
-		</BaseNavigation>
+      </Box>
+    </BaseNavigation>
   );
 };
 

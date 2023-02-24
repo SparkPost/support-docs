@@ -1,7 +1,7 @@
 import React from 'react';
 import { Feedback } from '@sparkpost/matchbox-icons';
 import Link from 'next/link';
-import BaseHomePageContent, {SimpleStyledLink} from './baseHomePageContent';
+import BaseHomePageContent, { SimpleStyledLink } from './baseHomePageContent';
 
 /* #Content */
 const gettingStarted = {
@@ -14,7 +14,7 @@ const gettingStarted = {
       desc: 'General platform definitions & common account-level inquiries',
       linkText: 'Learn More',
     },
-		{
+    {
       url: '/analyst/inbox-and-design-tracker/',
       title: 'Inbox Tracker & Design Tracker',
       desc: 'A collection of How-To Guides',
@@ -60,15 +60,15 @@ const help = {
   ),
   content: [
     { text: 'Submit a ticket', url: 'mailto:support@emailanalyst.com', Icon: Feedback },
-	],
+  ],
 };
 
 const AnalystHomePageContent = () => {
   return (
     <BaseHomePageContent
-			gettingStarted={gettingStarted}
-			help={help}
-		/>
+      gettingStarted={gettingStarted}
+      help={help}
+    />
   );
 };
 

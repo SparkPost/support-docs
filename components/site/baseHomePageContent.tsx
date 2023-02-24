@@ -41,10 +41,10 @@ type SimpleStyledLinkProp = {
 };
 
 export type BaseHomePageContentProps = {
-	gettingStarted?: {content: CardProps[]} & SectionContentProps;
-	migrationGuides?: {content: GuideLinkProps[]} & SectionContentProps;
-	clientLibraries?: {content: LibraryProps[]} & SectionContentProps;
-	help?: {content: HelpLinkProps[]} & SectionContentProps;
+  gettingStarted?: { content: CardProps[] } & SectionContentProps;
+  migrationGuides?: { content: GuideLinkProps[] } & SectionContentProps;
+  clientLibraries?: { content: LibraryProps[] } & SectionContentProps;
+  help?: { content: HelpLinkProps[] } & SectionContentProps;
 };
 
 /* Styles */
@@ -53,44 +53,44 @@ export const SimpleStyledLink = styled.a<SimpleStyledLinkProp>`
   text-decoration: none;
   transition: color 0.3s;
   ${css({
-    marginY: '200',
-  })}
+  marginY: '200',
+})}
   &,
   &:visited {
     ${css({
-      color: 'gray.900',
-    })}
+  color: 'gray.900',
+})}
   }
 
   &:hover {
     ${css({
-      color: 'blue.700',
-    })}
+  color: 'blue.700',
+})}
   }
 
   ${css({
-    fontWeight: 'normal',
-    textDecoration: 'underline',
-  })}
+  fontWeight: 'normal',
+  textDecoration: 'underline',
+})}
 `;
 
 const BlueStyledLink = styled.a`
   text-decoration: none;
   ${css({
-    paddingY: '200',
-    paddingX: '400',
-    marginRight: '200',
-  })}
+  paddingY: '200',
+  paddingX: '400',
+  marginRight: '200',
+})}
   transition: background-color .3s;
   > svg {
     ${css({
-      marginRight: '200',
-    })}
+  marginRight: '200',
+})}
   }
   &:hover {
     ${css({
-      backgroundColor: 'blue.200',
-    })}
+  backgroundColor: 'blue.200',
+})}
   }
 `;
 
@@ -105,8 +105,8 @@ const StyledCard = styled(Box)`
     width: calc(100% + 2px);
     height: 4px;
     ${css({
-      backgroundColor: 'blue.700',
-    })}
+  backgroundColor: 'blue.700',
+})}
   }
 `;
 
@@ -122,24 +122,24 @@ const BoxStyledLink = styled.a`
   transition: background-color 0.3s;
   min-width: 165px;
   ${css({
-    color: 'gray.900',
-    paddingX: '450',
-    paddingY: '300',
-    borderColor: 'gray.900',
-    marginBottom: '500',
-    fontSize: '200',
-    lineHeight: '200',
-  })}
+  color: 'gray.900',
+  paddingX: '450',
+  paddingY: '300',
+  borderColor: 'gray.900',
+  marginBottom: '500',
+  fontSize: '200',
+  lineHeight: '200',
+})}
   &:hover {
     ${css({
-      backgroundColor: 'gray.300',
-      color: 'gray.900',
-    })}
+  backgroundColor: 'gray.300',
+  color: 'gray.900',
+})}
   }
   > svg {
     ${css({
-      marginRight: '300',
-    })}
+  marginRight: '300',
+})}
   }
 `;
 
@@ -221,56 +221,56 @@ const HelpLink = (props: HelpLinkProps): JSX.Element => {
 };
 
 const BaseHomePageContent = (props: BaseHomePageContentProps) => {
-	const {gettingStarted, migrationGuides, clientLibraries, help} = props;
+  const { gettingStarted, migrationGuides, clientLibraries, help } = props;
   return (
     <>
       <Stack space="200">
-				{gettingStarted && (<>
-					<Box px="800" pt="800">
-						<Box as="h1" fontSize="600" lineHeight="600" fontWeight="semibold">
-							Help & API
-						</Box>
-						<SectionContent title={gettingStarted.title} desc={gettingStarted.desc} />
-						<Box display="flex" justifyContent="space-between" flexWrap="wrap">
-							{gettingStarted.content.map((cc, i) => {
-								return <Card key={`cardKey${i}`} {...cc} />;
-							})}
-						</Box>
-					</Box>
-				</>)}
-				{migrationGuides && (<>
-					<hr />
-					<Box px="800">
-						<SectionContent title={migrationGuides.title} desc={migrationGuides.desc} />
-						<Box>
-							{migrationGuides.content.map((link, i) => {
-								return <GuideLink key={`guideLink${i}`} {...link} />;
-							})}
-						</Box>
-					</Box>
-				</>)}
-				{clientLibraries && (<>
-					<hr />
-					<Box px="800">
-						<SectionContent title={clientLibraries.title} desc={clientLibraries.desc} />
-						<Box display="flex" flexWrap="wrap" justifyContent="space-between">
-							{clientLibraries.content.map((library, i) => {
-								return <Library key={`library${i}`} {...library} />;
-							})}
-						</Box>
-					</Box>
-				</>)}
-				{help && (<>
-				<hr />
-					<Box px="800">
-						<SectionContent title={help.title} desc={help.desc} desc2={help.desc2} />
-						<Box display="flex" flexWrap="wrap">
-							{help.content.map((links, i) => {
-								return <HelpLink key={`helpLink${i}`} {...links} />;
-							})}
-						</Box>
-					</Box>
-				</>)}
+        {gettingStarted && (<>
+          <Box px="800" pt="800">
+            <Box as="h1" fontSize="600" lineHeight="600" fontWeight="semibold">
+              Help & API
+            </Box>
+            <SectionContent title={gettingStarted.title} desc={gettingStarted.desc} />
+            <Box display="flex" justifyContent="space-between" flexWrap="wrap">
+              {gettingStarted.content.map((cc, i) => {
+                return <Card key={`cardKey${i}`} {...cc} />;
+              })}
+            </Box>
+          </Box>
+        </>)}
+        {migrationGuides && (<>
+          <hr />
+          <Box px="800">
+            <SectionContent title={migrationGuides.title} desc={migrationGuides.desc} />
+            <Box>
+              {migrationGuides.content.map((link, i) => {
+                return <GuideLink key={`guideLink${i}`} {...link} />;
+              })}
+            </Box>
+          </Box>
+        </>)}
+        {clientLibraries && (<>
+          <hr />
+          <Box px="800">
+            <SectionContent title={clientLibraries.title} desc={clientLibraries.desc} />
+            <Box display="flex" flexWrap="wrap" justifyContent="space-between">
+              {clientLibraries.content.map((library, i) => {
+                return <Library key={`library${i}`} {...library} />;
+              })}
+            </Box>
+          </Box>
+        </>)}
+        {help && (<>
+          <hr />
+          <Box px="800">
+            <SectionContent title={help.title} desc={help.desc} desc2={help.desc2} />
+            <Box display="flex" flexWrap="wrap">
+              {help.content.map((links, i) => {
+                return <HelpLink key={`helpLink${i}`} {...links} />;
+              })}
+            </Box>
+          </Box>
+        </>)}
       </Stack>
     </>
   );

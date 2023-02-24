@@ -12,7 +12,7 @@ declare global {
 
 const Status = () => {
   const { setStatus } = useStatus();
-	const environment = getWindow();
+  const environment = getWindow();
 
   return (
     <>

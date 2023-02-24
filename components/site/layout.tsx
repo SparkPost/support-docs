@@ -7,7 +7,7 @@ import LayoutInnerContent from './layoutInnerContent';
 type LayoutProps = {
   children?: React.ReactNode;
   navigationComponent?: React.ReactNode;
-	hideDrawerButtons?: boolean;
+  hideDrawerButtons?: boolean;
 };
 
 const Layout = (props: LayoutProps): JSX.Element => {
@@ -24,7 +24,7 @@ const Layout = (props: LayoutProps): JSX.Element => {
         </Drawer.Header>
         <Drawer.Content>{navigationComponent}</Drawer.Content>
         <Drawer.Footer>
-					{!props.hideDrawerButtons && (<HeaderButtons />)}
+          {!props.hideDrawerButtons && (<HeaderButtons />)}
         </Drawer.Footer>
       </Drawer>
       <LayoutInnerContent getActivatorProps={getActivatorProps} hideDrawerButtons={props.hideDrawerButtons}>

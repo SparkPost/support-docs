@@ -20,7 +20,7 @@ export interface NavigationItemProps {
 }
 
 export type NavigationProps = {
-	children?: React.ReactNode;
+  children?: React.ReactNode;
   data?: NavigationItemProps[];
   title: string;
   titleLink: string;
@@ -36,22 +36,22 @@ export const StyledLink = styled.a<{ $active?: boolean; $level?: number }>`
   &:active {
     text-decoration: none;
     ${({ $active, $level }) =>
-      css({
-        py: '200',
-        pr: '700',
-        pl: `calc(${tokens.spacing_500} + ${tokens.spacing_200} * ${$level})`,
-        bg: $active ? 'blue.700' : 'transparent',
-        color: $active ? 'white' : 'gray.900',
-      })}
+    css({
+      py: '200',
+      pr: '700',
+      pl: `calc(${tokens.spacing_500} + ${tokens.spacing_200} * ${$level})`,
+      bg: $active ? 'blue.700' : 'transparent',
+      color: $active ? 'white' : 'gray.900',
+    })}
   }
 
   &:hover {
     ${({ $active }) => {
-      return css({
-        bg: $active ? 'blue.700' : 'gray.200',
-        color: $active ? 'white' : 'gray.900',
-      });
-    }}
+    return css({
+      bg: $active ? 'blue.700' : 'gray.200',
+      color: $active ? 'white' : 'gray.900',
+    });
+  }}
   }
 `;
 
@@ -83,7 +83,7 @@ const BaseNavigation = (props: NavigationProps): JSX.Element | null => {
       {data.map((item, i) => (
         <Item key={i} {...item} />
       ))}
-			{children}
+      {children}
     </Box>
   );
 };
@@ -116,15 +116,15 @@ const Chevron = (props: { expanded: boolean }): JSX.Element => {
   return expanded ? <KeyboardArrowUp size={18} /> : <KeyboardArrowDown size={18} />;
 };
 
-const StyledChevronWrapper = styled(Box)<BoxProps & { $active?: boolean }>`
+const StyledChevronWrapper = styled(Box) <BoxProps & { $active?: boolean }>`
   ${styles.buttonReset}
   cursor: pointer;
   &:hover {
     ${({ $active }) => {
-      return css({
-        color: $active ? 'white' : 'blue.700',
-      });
-    }}
+    return css({
+      color: $active ? 'white' : 'blue.700',
+    });
+  }}
   }
   ${({ $active }) => {
     return css({
