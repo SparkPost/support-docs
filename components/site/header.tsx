@@ -20,6 +20,12 @@ const Header = (props: HeaderProps) => {
   const { getActivatorProps } = props;
   const { asPath } = useRouter();
   const category = asPath.split('/')[1];
+  let searchBox = (<Search indexName="next_support_documentation" />);
+  if (category === 'momentum') {
+    searchBox = (<Search indexName="next_momentum_documentation" />);
+  } else if (category === 'analyst') {
+    searchBox = (<Search indexName="next_analyst_documentation" />);
+  }
 
   return (
     <Box my="600">
@@ -40,11 +46,7 @@ const Header = (props: HeaderProps) => {
         )}
       </Box>
       <Box maxWidth="1150">
-        {category === 'momentum' ? (
-          <Search indexName="next_momentum_documentation" />
-        ) : (
-          <Search indexName="next_support_documentation" />
-        )}
+        {searchBox}
       </Box>
     </Box>
   );
