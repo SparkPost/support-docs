@@ -1,9 +1,8 @@
-import DocsHomePageContent from 'components/site/docsHomePageContent';
+import AnalystHomePageContent from 'components/site/analystHomePageContent';
 import { GetStaticProps } from 'next';
-import { getCategoryData } from 'lib/api';
+import { getAnalystSupportNavigation, getCategoryData } from 'lib/api';
 import SEO from 'components/site/seo';
-import DocsLayout from 'components/site/docsLayout';
-import { getSupportNavigation } from 'lib/api';
+import AnalystLayout from 'components/site/analystLayout';
 import type { NavigationItemProps } from 'components/site/baseNavigation';
 import { CategoriesProvider, Category } from 'context/categories';
 
@@ -17,20 +16,20 @@ const IndexPage = (props: IndexPageProps): JSX.Element => {
   return (
     <CategoriesProvider data={categoryData}>
       <SEO
-        title="Support Documentation - SparkPost"
-        description="SparkPost Support Documentation"
+        title="Analyst Documentation - SparkPost"
+        description="SparkPost Analyst Documentation"
       />
-      <DocsLayout navigationData={navigationData}>
-        <DocsHomePageContent />
-      </DocsLayout>
+      <AnalystLayout navigationData={navigationData}>
+        <AnalystHomePageContent />
+      </AnalystLayout>
     </CategoriesProvider>
   );
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const navigationData = getSupportNavigation() || [];
-  const categoryData = getCategoryData('docs');
-  return { props: { navigationData, categoryData } };
+  const navigationData = getAnalystSupportNavigation() || [];
+  const categoryData = getCategoryData('analyst');
+  return { props: { categoryData, navigationData } };
 };
 
 export default IndexPage;

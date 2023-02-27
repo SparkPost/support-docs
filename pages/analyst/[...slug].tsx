@@ -1,7 +1,7 @@
 import { GetStaticProps, GetStaticPaths } from 'next';
 import {
   getCategoryData,
-  getSupportNavigation,
+  getAnalystSupportNavigation,
   getAllCategoryPostPaths,
   getSingleCategoryPost,
   categoryPath,
@@ -9,9 +9,9 @@ import {
 import { CategoriesProvider, Category } from 'context/categories';
 import SEO from 'components/site/seo';
 import Markdown from 'components/markdown';
-import DocsLayout from 'components/site/docsLayout';
+import AnalystLayout from 'components/site/analystLayout';
 import DocumentationContent from 'components/site/documentationContent';
-import DocsIndexListPageContent from 'components/site/docsIndexListPageContent';
+import IndexListPageContent from 'components/site/docsIndexListPageContent';
 import type { NavigationItemProps } from 'components/site/baseNavigation';
 import { useRouter } from 'next/router';
 
@@ -42,7 +42,7 @@ const PostPage = (props: PostPageProps): JSX.Element => {
   return (
     <CategoriesProvider data={categoryData}>
       <SEO title={data.title} description={data.description} />
-      <DocsLayout navigationData={navigationData}>
+      <AnalystLayout navigationData={navigationData}>
         <DocumentationContent
           title={data.title}
           lastUpdated={data.lastUpdated}
@@ -50,12 +50,12 @@ const PostPage = (props: PostPageProps): JSX.Element => {
           description={data.description}
         >
           {isIndex && navigationData ? (
-            <DocsIndexListPageContent navigationData={navigationData.find(trailingSlashOrNo)} />
+            <IndexListPageContent navigationData={navigationData.find(trailingSlashOrNo)} />
           ) : (
             <Markdown>{content}</Markdown>
           )}
         </DocumentationContent>
-      </DocsLayout>
+      </AnalystLayout>
     </CategoriesProvider>
   );
 };
@@ -65,15 +65,15 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     return { props: {} };
   }
 
-  const { content, data, isIndex } = getSingleCategoryPost(params.slug, categoryPath('docs')) || {};
-  const navigationData = getSupportNavigation() || [];
-  const categoryData = getCategoryData('docs');
+  const { content, data, isIndex } = getSingleCategoryPost(params.slug, categoryPath('analyst')) || {};
+  const navigationData = getAnalystSupportNavigation() || [];
+  const categoryData = getCategoryData('analyst');
   return { props: { content, data, navigationData, isIndex, categoryData } };
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
-    paths: getAllCategoryPostPaths('docs'),
+    paths: getAllCategoryPostPaths('analyst'),
     fallback: false,
   };
 };

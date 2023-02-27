@@ -1,18 +1,19 @@
 import Layout from './layout';
 import { NavigationItemProps } from './baseNavigation';
-import Navigation from './navigation';
+import AnalystNavigation from 'components/site/analystNavigation';
 
 type LayoutProps = {
   children?: React.ReactNode;
   navigationData?: NavigationItemProps[];
 };
 
-const DocsLayout = (props: LayoutProps): JSX.Element => {
+const AnalystLayout = (props: LayoutProps): JSX.Element => {
   const { children, navigationData } = props;
   return (
     <Layout
+      hideDrawerButtons={true}
       navigationComponent={
-        <Navigation data={navigationData} title="Documentation" titleLink="/docs" />
+        <AnalystNavigation data={navigationData} title="Analyst Documentation" titleLink="/analyst" />
       }
     >
       {children}
@@ -20,4 +21,4 @@ const DocsLayout = (props: LayoutProps): JSX.Element => {
   );
 };
 
-export default DocsLayout;
+export default AnalystLayout;
