@@ -18,7 +18,7 @@ description: Take a few minutes to create a customizable set of alerts to notify
 * **Type** is what you want the platform to examine for alerting criteria. Here is an outline of the different types and what they can be used for:
 
 	+ **Account** can be used to track event usage, such as seed or Analytics Tracker events
-	+ **Account IP Group** allows you to set alerts on a specific set of IPs within an IP Group. *Account Managers can create or edit IP groups in Settings > Account IP Management. Here's a [video](https://youtu.be/EQsL7GoGskA) with more information.*
+	+ **Account IP Group** allows you to set alerts on a specific set of IPs within an IP Group. *Account Managers can create or edit IP groups in Settings > Account IP Management.*
 	+ **Campaign** gives the option of setting specific alerting criteria for campaigns that meet certain deliverability thresholds, such as from name, age, etc. See below for an example.
 	+ **Domain** alerts on deliverability, blocklists, spam traps, and more for a single domain.
 	+ **IP** alerts on a single or range of IPs. For large IP ranges, we recommend using Account IP Groups instead
@@ -30,7 +30,7 @@ description: Take a few minutes to create a customizable set of alerts to notify
 	+ **ISP** can be set for a specific service provider on deliverability thresholds and throttling
 	+ **Profile Types** 
 	
-		- **Account Profiles** can be created to include all the domains on your account. This is helpful for accounts with 100+ domains. Here's a [video tutorial](https://youtu.be/pD_OWfZMMxw) on how to create an Account Profile.
+		- **Account Profiles** can be created to include all the domains on your account. This is helpful for accounts with 100+ domains.
 		- **User Profile** are profiles unique to your own workspace.
 * **Method(s)** is where you want the alerts to go. We recommend email or [Slack](/analyst/inbox-and-design-tracker/configuring-slack-for-inbox-tracker), so multiple people can keep an eye on your alerts.
 * **Schedule** is how often you want the system to check/notify you of your alert criteria. Note that some deliverability threshold alerts can fire prematurely without collecting all data if set to *Hourly*
@@ -77,7 +77,7 @@ description: Take a few minutes to create a customizable set of alerts to notify
 	+ We recommend creating an alert for both Gmail and Outlook (or any other ISP you want to closely watch)
 	+ The "Minimum campaign volume" looks at the number of panelists detected on a campaign for a specific ISP ***if*** one is set.
 	
-		- If you average a large amount of panelists on most of your campaigns, you may want to increase this minimum threshold to a larger value. Here's a [video](https://youtu.be/y4wTV0E_lmY) how to check your average panel distribution
+		- If you average a large amount of panelists on most of your campaigns, you may want to increase this minimum threshold to a larger value.
 
 ![](media/getting_started_with_alerts/image_3.png)
 

@@ -39,7 +39,7 @@ description: Everything you need to know about setting up Outlook SNDS and synci
 | Red | Spam > 90% |
 
 
- For example, if you notice low deliverability rates to Outlook within Inbox Tracker, you should first check [how much panel coverage](https://youtu.be/y4wTV0E_lmY) the campaign(s) have. From there, SNDS can be used as a confirmation of whether a send was or was not well received.
+ For example, if you notice low deliverability rates to Outlook within Inbox Tracker, you should first check how much panel coverage the campaign(s) have. From there, SNDS can be used as a confirmation of whether a send was or was not well received.
 
  SNDS configuration also unlocks two additional metrics within the platform: The number of Outlook spam complaints (Dashboard) and SNDS trap hits (Spam Trap Monitor).
 
@@ -52,7 +52,7 @@ description: Everything you need to know about setting up Outlook SNDS and synci
 **There are three requirements for setting up Outlook SNDS:** 
 
 1. **You must be marked as a Manager on your Inbox Tracker account.** If you are unsure whether you are a Manager, please contact our support team for guidance.
-2. **You have to be sending on dedicated IPs.** If you are unsure whether you are sending on shared or dedicated IPs, here's a [quick video](https://www.youtube.com/watch?v=xZ0JAXdrjB0&feature=youtu.be) on how to check.
+2. **You have to be sending on dedicated IPs.** If you are unsure whether you are sending on shared or dedicated IPs.
 3. **You will need to know your ESP’s abuse/postmaster address** 
 
 	1. For example, for SparkPost, it’s [abuse@sparkpostmail.com](mailto:abuse@sparkpostmail.com)
