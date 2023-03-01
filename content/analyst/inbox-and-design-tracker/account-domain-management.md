@@ -30,7 +30,7 @@ description: How to add and remove sending domains on your account
 
 ![](media/account_domain_management/image_2.png)
 
-**3. Inbox Tracker automatically monitors the requested domain for DNS validation.** 
+3. **Inbox Tracker automatically monitors the requested domain for DNS validation.** 
 
 ![](media/account_domain_management/image_3.png)
 

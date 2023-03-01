@@ -91,7 +91,7 @@ description: Everything you need to know about setting up Outlook SNDS and synci
 
 ![](media/microsoft_snds_set_up_and_configuration/image_7.png)
 
-**Step 5 - Once automated access has been enabled, you will see two links that for your automated SNDS data feed and your access key.** The first line (the one ending with "data.aspx") is the one you will need to integrate your SNDS data feed with Inbox Tracker. Copy this link for Step 6.
+**Step 5 - Once automated access has been enabled, you will see two links for your automated SNDS data feed and your access key.** The first line (the one ending with "data.aspx") is the one you will need to integrate your SNDS data feed with Inbox Tracker. Copy this link for Step 6.
 
 ![](media/microsoft_snds_set_up_and_configuration/image_8.png)
 
@@ -121,7 +121,7 @@ description: Everything you need to know about setting up Outlook SNDS and synci
 * **Why do all my SNDS traps show as Mixed?** 
 	+ Mixed traps are the designation of spam traps when the provider does not specify whether the hit was Pristine or Recycled. Mixed should be considered more serious than recycled traps since some of the hits may be pristine.
 	+ Here is Microsoft's reasoning behind showing their traps as mixed from their
-	 [SNDS FAQ](https://sendersupport.olc.protection.ou%20tlook.com/snds/FAQ.aspx) 
+	 [SNDS FAQ](https://sendersupport.olc.protection.outlook.com/snds/FAQ.aspx) 
 	 page:
 	*Trap accounts are accounts maintained by Outlook.com that don't solicit any mail. Thus any messages sent to trap accounts are very likely to be spam. Well-behaved senders will hit very few such accounts because they're generally sending to people who give them their address and because they collect and process their NDRs. Spammers have a much harder time avoiding them because, in general, they can't and don't do either of those good practices.* 
 	*We recognize that providing the actual trap messages would be useful to legitimate businesses trying to clean lists or customers that are hitting these accounts, however this is another unfortunate case where the risk of the data being useful to spammers is too great.*

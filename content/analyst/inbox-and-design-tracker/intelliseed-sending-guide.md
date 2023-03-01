@@ -77,11 +77,12 @@ description: An all-encompassing guide that covers everything you need to know a
 
  As mentioned earlier, it is not recommended to incorporate the entire IntelliSeed™ list when you are first beginning to seed. Here is how you can create a subset of seeds to begin sending to:
 
-1. Click on *Settings*  *Configure/Download IntelliSeed™ list* 
+1\. Click on *Settings*  *Configure/Download IntelliSeed™ list* 
 
 ![](media/intelliseed_sending_guide/image_8.png)
-2. Select *Add New*
-3. We recommend the below settings for your first seed list. Other things you may want to adjust are which ISPs are included in the list. For example, a North American sender would only want the Primary Webmail, North America - US, and B2B regions selected.
+2\. Select *Add New*
+
+3\. We recommend the below settings for your first seed list. Other things you may want to adjust are which ISPs are included in the list. For example, a North American sender would only want the Primary Webmail, North America - US, and B2B regions selected.
 
 ![](media/intelliseed_sending_guide/image_9.png)
 

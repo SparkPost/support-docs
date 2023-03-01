@@ -12,7 +12,7 @@ description: This reference guide covers everything you need to know about getti
 
 * **[What is a user panel?](/analyst/general/what-is-a-user-panel)** Learn more about our panel and how it makes our data unique.
 * **[Common Terminology & Definitions.](/analyst/general/common-terminology-and-definitions)** This article covers our most common terms, phrases and words and what they actually mean within the platform.
-* **[Naming conventions:](/analyst/general/name-mapping-sparkpost-vs-validty)** Validity/Return Path to Inbox Tracker
+* **[Naming conventions:](/analyst/general/name-mapping-sparkpost-vs-validity)** Validity/Return Path to Inbox Tracker
 
 ---
 
@@ -34,13 +34,13 @@ description: This reference guide covers everything you need to know about getti
 
 *Red: more than 90% of the time* 
 
-* **Google Postmaster Tools Integration.** Similarly to Outlook SNDS, Google Postmaster allows you to see how Google is rating you as a sender. If you already have a Google Postmaster account, here is a [guide](/analyst/inbox-and-design-tracker/how-to-set-up-google-postmaster-tools) on integrating its data into the platform. If you do not have one configured, refer to [this guide](https://support.google.com/mail/answer/6227174?hl=en) from Google to get started.
-* **Begin seeding.** In addition to our panel, you can send to a seed list to get better deliverability coverage across your campaigns. Refer to our [seeding guide(s)](/analyst/inbox-and-design-tracker/inbox-design-tracker#seeding) for guidance on integrating these addresses into your mail streams to increase the amount of campaign-level data.
+* **Google Postmaster Tools Integration.** Similarly to Outlook SNDS, Google Postmaster allows you to see how Google is rating you as a sender. If you already have a Google Postmaster account, here is a [guide](/analyst/inbox-and-design-tracker/google-postmaster-set-up-and-configuration/) on integrating its data into the platform. If you do not have one configured, refer to [this guide](https://support.google.com/mail/answer/6227174?hl=en) from Google to get started.
+* **Begin seeding.** In addition to our panel, you can send to a seed list to get better deliverability coverage across your campaigns. Refer to our [seeding guide(s)](/analyst/inbox-and-design-tracker/intelliseed-sending-guide) for guidance on integrating these addresses into your mail streams to increase the amount of campaign-level data.
 * **Setting up alerts.** If you want to monitor your deliverability, traps, blocklists, etc. from afar, alerts are a great way to do that. Here is [a guide](/analyst/inbox-and-design-tracker/getting-started-with-alerts) on how to create a base-set of alerts to begin monitoring changes in your set up or performance.
 
 ![](media/inbox_tracker_reference_guide/image_2.png)
 
-*Alerts can be configured to go through your email or via [Slack](/analyst/inbox-and-design-tracker/how-to-configure-slack-for-inbox-tracker)*
+*Alerts can be configured to go through your email or via [Slack](/analyst/inbox-and-design-tracker/configuring-slack-for-inbox-tracker/)*
 
 ---
 
@@ -65,7 +65,7 @@ description: This reference guide covers everything you need to know about getti
 
 
 * **[Cloudmark Troubleshooting Guide](/analyst/inbox-and-design-tracker/cloudmark-reputation-troubleshooting-guide).** Learn more about Cloudmark and get direction on how to handle email content flags.
-* **[How to View/Interpret Your Google Postmaster Data](/analyst/inbox-and-design-tracker/how-to-view-interpret-your-google-postmaster-data)**
+* **[How to View/Interpret Your Google Postmaster Data](/analyst/inbox-and-design-tracker/how-to-interpret-google-postmaster-tools)**
 * **[Spam Trap Types and Sources](/analyst/inbox-and-design-tracker/spam-trap-types-and-sources)**
 
 ---

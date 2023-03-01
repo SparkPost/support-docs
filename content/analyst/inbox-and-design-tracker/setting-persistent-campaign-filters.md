@@ -13,19 +13,13 @@ description: Persistent Campaign Filters and Scheduled Analytics Exports
 
  The available campaign filters are:
 
- -- Subject Line Keyword
-
- -- Campaign ID
-
- -- From Address
-
- -- Emotion
-
- -- Deliverability (Inbox or Spam Percentage) *(New)* 
-
- -- Target Country *(New)* 
-
- -- Custom Header Key *(New)* 
+ - Subject Line Keyword
+ - Campaign ID
+ - From Address
+ - Emotion
+ - Deliverability (Inbox or Spam Percentage)
+ - Target Country
+ - Custom Header Key
 
 **The best news is this is very easy to apply, and the payoff is immediate.** All you have to do is apply a filter and if you want to persist the filter for the profile just enable the lock on the filter.  Once filters are locked, simply update the name of your user profile to describe the targeted results.
 
