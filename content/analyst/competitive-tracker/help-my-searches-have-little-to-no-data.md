@@ -20,7 +20,7 @@ Research builds the structure and correlation between all the sending domains, b
 
     *   European senders (since our panel coverage to Europe is small)
 
-Regardless of the reasoning, if your searches are coming back with no data, please reach out to our research team directly by emailing [research@sparkpost.com](mailto:research@sparkpost.com). From there, they can diagnose if a brand or domain is simply not being tracked, or whether seeds need to be added to a brand's mailing list to bring back data.
+Regardless of the reasoning, if your searches are coming back with no data, you can request tracking for a domain via our Support Request. From there, they can diagnose if a brand or domain is simply not being tracked, or whether seeds need to be added to a brand's mailing list to bring back data.
 
 You can also contact research for corrections and suggestions on making our data more accurate. For example, if you believe a brand should be categorized under a different industry, or has a different headquarters address than what we show, please let us know.
 
