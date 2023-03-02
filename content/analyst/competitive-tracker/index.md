@@ -1,5 +1,5 @@
 ---
 lastUpdated: '02/22/2023'
 title: 'Competitive Tracker'
-description: ''
+description: 'Guides for optimizing your use of Competitive Tracker'
 ---
