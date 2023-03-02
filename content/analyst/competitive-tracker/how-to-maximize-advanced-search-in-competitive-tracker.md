@@ -40,7 +40,7 @@ description: Keep track of your competition’s best and worst email campaigns u
 
 **Boolean operators** 
 
-* + Indicates it must be present; - indicates it must not be present
+* \+ Indicates it must be present; - indicates it must not be present
 * The + and – only affects the terms to the right of the operator. Example: Fall +Sale
 * Familiar operators AND, OR and NOT are also supported. NOT takes precedence over AND. AND takes precedence over OR
 

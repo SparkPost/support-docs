@@ -15,7 +15,7 @@ description: This article covers basic platform knowledge, reporting recommendat
 
 ## Report Building
 
-* **[How to Export Data.](/analyst/inbox-and-design-tracker/how-to-export-your-eds-data)** Learn what page(s) contain exportable data for you to download and use outside of the platform.
+* **[How to Export Data.](/analyst/inbox-and-design-tracker/how-to-export-data)** Learn what page(s) contain exportable data for you to download and use outside of the platform.
 * **[How to Create a Pivot Table.](/analyst/competitive-tracker/organize-exported-data-with-pivot-tables)** Recommended for report-creation of all Competitive Tracker exports.
 
 ---

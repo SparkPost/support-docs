@@ -4,7 +4,7 @@ title: Sending Domain
 description: What insights can I learn from the Sending Domain page of Competitive Tracker?
 ---
 
-[**Here is a video going over all the data on the Sending Domain page:**](https://www.youtube.com/embed/pwuBpFFKRfM)
+[**Here is a video going over all the data on the Sending Domain page:**](https://www.youtube.com/watch?v=pwuBpFFKRfM)
 
 **Other Sending Domains -** This lists the other sending domains of the same brand.
 

@@ -19,7 +19,7 @@ description: What insights can I learn from Company Tracker?
 ### Brand and Company Tracker Video
 
 
- Taken from our [Competitive Tracker Training series](/analyst/general/need-help-here-is-how-to-reach-us), please see our video below for details on our Brand and Company Tracker pages:
+ Taken from our [Competitive Tracker Training series](/analyst/general/need-help-here-is-how-to-reach-us), [please see our video for details on our Brand and Company Tracker pages.](https://youtu.be/faIo8qR_pnQ)
 
 ---
 

@@ -14,7 +14,7 @@ description: Learn how to create a Pivot Table in Excel to organize your exporte
 * **[Recommended Pivot Tables by Use-Case.](#recommended-pivot-tables-by-use-case)**
  Recommended reports from your Advanced Search exports.
 
-	+ **[Industry Benchmarks.](#industry-benchmark-)** Create a benchmark report to understand how your deliverability and engagement rates compare to industry averages.
+	+ **[Industry Benchmarks.](#industry-benchmarks-)** Create a benchmark report to understand how your deliverability and engagement rates compare to industry averages.
 	+ **[Targeting + Subject Line Analysis.](#targeting-subject-line-analysis-)** Research specific subject lines, and see whether the level of targeting affects the engagement.
 	+ **[Sales Prospecting.](#sales-prospecting)** Make a customized prospecting report containing brands, volume thresholds, company headquarters, and senders on specific service providers to help inform your sales research.
 

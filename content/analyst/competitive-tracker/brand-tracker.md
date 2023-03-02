@@ -15,7 +15,7 @@ description: What insights can I learn from Brand Tracker?
 
 ### Brand and Company Tracker Video
 
- Taken from our [Competitive Tracker Training series](/analyst/general/need-help-here-is-how-to-reach-us), please see our video below for details on our Brand and Company Tracker pages:
+ Taken from our [Competitive Tracker Training series](/analyst/general/need-help-here-is-how-to-reach-us), [please see our video for details on our Brand and Company Tracker pages.](https://www.youtube.com/watch?v=faIo8qR_pnQ)
 
 ---
 
@@ -63,7 +63,7 @@ description: What insights can I learn from Brand Tracker?
 
 *Visual Mode* displays the same information but highlights the creatives for each campaign.
 
- We redact all identifying features of an email to protect our [panelists’ privacy](/analyst/privacy-gdpr/consumer-panel-data-collection-privacy-practices) . For example, the person’s name, shipping address, products ordered, etc. will either be replaced with “[REDACTED]” in List Mode or blurred out in Visual Mode.
+ We redact all identifying features of an email to protect our [panelists’ privacy](/analyst/privacy-gdpr/consumer-panel-data-collection-and-privacy-practices) . For example, the person’s name, shipping address, products ordered, etc. will either be replaced with “[REDACTED]” in List Mode or blurred out in Visual Mode.
 
 
 ---

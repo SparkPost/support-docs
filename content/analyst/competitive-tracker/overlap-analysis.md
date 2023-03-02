@@ -16,7 +16,7 @@ description: Identify the sending domains that you are directly competing agains
 
 ### Overlap Analysis Video:
 
- Taken from our [Competitive Tracker Training series](/analyst/general/need-help-here-is-how-to-reach-us), please see our video below for details on our Overlap Analysis page:
+ Taken from our [Competitive Tracker Training series](/analyst/general/need-help-here-is-how-to-reach-us), [please see our video for details on our Overlap Analysis page.](https://www.youtube.com/watch?v=m_GG2YpHWS0)
 
 ---
 
