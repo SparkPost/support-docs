@@ -26,7 +26,8 @@ description: This guide helps Salesforce Marketing Cloud admins install SparkPos
 * Please return to the [installation page](https://mc.exacttarget.com/cloud/#app/Administration/InstalledPackages/65c86684-92a4-4dc0-841d-893ad935bd34/install). In the top tab, select *Access* 
 
 ![](media/inbox_tracker_installation_guide/image_1.png)
-* This page allows you to enable a user's access to the Inbox Tracker application within SFMC. Upon granting access, these users will see our application listed in the AppExchange dropdown (as shown in Step 2). **There are two prerequisites to granting this access:** 
+
+1. This page allows you to enable a user's access to the Inbox Tracker application within SFMC. Upon granting access, these users will see our application listed in the AppExchange dropdown (as shown in Step 2). **There are two prerequisites to granting this access:** 
 
 	1. Users must have logins to Inbox Tracker
 	
@@ -34,8 +35,9 @@ description: This guide helps Salesforce Marketing Cloud admins install SparkPos
 
 	2. Individual users must have **Content Creator** rights in Salesforce or have custom role defined by organization that grants access to read/write content, data, applications, audiences, journeys
 
-* If you want to grant access to *ALL* users that meet the above criteria, select *License All Users* in the top right corner
-* If you only want certain users to access the application, select your individual business units on the left and select which users you would like to delegate access. Make sure to press *Save* in the top right.
+2. If you want to grant access to *ALL* users that meet the above criteria, select *License All Users* in the top right corner
+
+3. If you only want certain users to access the application, select your individual business units on the left and select which users you would like to delegate access. Make sure to press *Save* in the top right.
 
 ### Step 4. Begin the collection process of your sends
 
@@ -50,7 +52,7 @@ description: This guide helps Salesforce Marketing Cloud admins install SparkPos
 
 ### Additional Information
 
- The configuration for the application, seed lists, and other information will be stored in the Data Extension folder named “SparkPost Integrations <MID Number>”.
+ The configuration for the application, seed lists, and other information will be stored in the Data Extension folder named “SparkPost Integrations \<MID Number\>”.
 
 * There are two ways to find the Data Extension
 	+ Email Studio > Email > Subscribers > Data Extensions

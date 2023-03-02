@@ -24,7 +24,7 @@ description: This article will provide you with an overview of the seeding capab
 
 ![](media/auto_seeding_with_salesforce_marketing_cloud_inbox_tracker_app/image_0.png)
 
- Within the Inbox Tracker UI, you can configure custom sets of IntelliSeed™ lists by selecting the *Settings Cog*  *Configure/Download IntelliSeed™ List.* Please read [this article](/analyst/inbox-and-design-tracker/how-to-deploy-intelliseed-and-seed-lists#h_495ecb3d2f) for best practice guidance to consider when making these groups.
+ Within the Inbox Tracker UI, you can configure custom sets of IntelliSeed™ lists by selecting the *Settings Cog*  *Configure/Download IntelliSeed™ List.* Please read [this article](/analyst/inbox-and-design-tracker/intelliseed-sending-guide) for best practice guidance to consider when making these groups.
 
 ![](media/auto_seeding_with_salesforce_marketing_cloud_inbox_tracker_app/image_1.png)
 
