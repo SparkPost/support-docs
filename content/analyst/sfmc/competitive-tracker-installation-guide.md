@@ -23,11 +23,11 @@ If you are a Salesforce Marketing Cloud Administrator, please follow these one-t
 
 ### Step 3. Assigning users
 
-* Please return to the [installation page](https://mc.exacttarget.com/cloud/#app/Administration/InstalledPackages/8283ba88-2804-4250-bf1d-e1e2b643747a/install). In the top tab, select *Access* 
+1. Please return to the [installation page](https://mc.exacttarget.com/cloud/#app/Administration/InstalledPackages/8283ba88-2804-4250-bf1d-e1e2b643747a/install). In the top tab, select *Access* 
 
 ![](media/competitive_tracker_installation_guide/image_1.png)
 
-1.   This page allows you to enable a user's access to the Competitive Tracker application within SFMC. Upon granting access, these users will see our application listed in the AppExchange dropdown (as shown in Step 2). **There are two prerequisites to granting this access:**  
+2.   This page allows you to enable a user's access to the Competitive Tracker application within SFMC. Upon granting access, these users will see our application listed in the AppExchange dropdown (as shown in Step 2). **There are two prerequisites to granting this access:**  
 
      1.  Users must have logins to Competitive Tracker
 
@@ -35,9 +35,9 @@ If you are a Salesforce Marketing Cloud Administrator, please follow these one-t
 
      2.  Individual users must have **Content Creator** rights in Salesforce or have custom role defined by organization that grants access to read/write content, data, applications, audiences, journeys
 
-2.   If you want to grant access to _ALL_ users that meet the above criteria, select _License All Users_ in the top right corner  
+3.   If you want to grant access to _ALL_ users that meet the above criteria, select _License All Users_ in the top right corner  
 
-3.   If you only want certain users to access the application, select your individual business units on the left and select which users you would like to delegate access. Make sure to press _Save_ in the top right.
+4.   If you only want certain users to access the application, select your individual business units on the left and select which users you would like to delegate access. Make sure to press _Save_ in the top right.
 
 ### Step 4. Begin the collection process of your sends
 
