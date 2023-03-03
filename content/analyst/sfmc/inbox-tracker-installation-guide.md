@@ -23,21 +23,21 @@ description: This guide helps Salesforce Marketing Cloud admins install SparkPos
 
 ### Step 3. Assigning users
 
-1. Please return to the [installation page](https://mc.exacttarget.com/cloud/#app/Administration/InstalledPackages/65c86684-92a4-4dc0-841d-893ad935bd34/install). In the top tab, select *Access* 
+* Please return to the [installation page](https://mc.exacttarget.com/cloud/#app/Administration/InstalledPackages/65c86684-92a4-4dc0-841d-893ad935bd34/install). In the top tab, select *Access* 
 
 ![](media/inbox_tracker_installation_guide/image_1.png)
 
-2. This page allows you to enable a user's access to the Inbox Tracker application within SFMC. Upon granting access, these users will see our application listed in the AppExchange dropdown (as shown in Step 2). **There are two prerequisites to granting this access:** 
+* This page allows you to enable a user's access to the Inbox Tracker application within SFMC. Upon granting access, these users will see our application listed in the AppExchange dropdown (as shown in Step 2). **There are two prerequisites to granting this access:** 
 
-	1. Users must have logins to Inbox Tracker
+	* Users must have logins to Inbox Tracker
 	
 		+ Related: [How to Add Users](/analyst/general/how-to-manage-your-user-list/)
 
-	2. Individual users must have **Content Creator** rights in Salesforce or have custom role defined by organization that grants access to read/write content, data, applications, audiences, journeys
+	* Individual users must have **Content Creator** rights in Salesforce or have custom role defined by organization that grants access to read/write content, data, applications, audiences, journeys
 
-3. If you want to grant access to *ALL* users that meet the above criteria, select *License All Users* in the top right corner
+* If you want to grant access to *ALL* users that meet the above criteria, select *License All Users* in the top right corner
 
-4. If you only want certain users to access the application, select your individual business units on the left and select which users you would like to delegate access. Make sure to press *Save* in the top right.
+* If you only want certain users to access the application, select your individual business units on the left and select which users you would like to delegate access. Make sure to press *Save* in the top right.
 
 ### Step 4. Begin the collection process of your sends
 
