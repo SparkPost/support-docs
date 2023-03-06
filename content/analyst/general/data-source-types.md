@@ -23,7 +23,7 @@ Note: Virtual Characters are not included as part of our metrics such as Read or
 
 **IntelliSeeds**™ _(Inbox Tracker only)_
 
-The IntelliSeed™ List allows clients to [deploy virtual users](/analyst/inbox-and-design-tracker/how-to-deploy-intelliseed-and-seed-lists) from the IntelliX AI Network™ directly into their email lists. IntelliSeeds™ interact with emails using real behavior attributes, based on engagement profiles from our consumer panel. IntelliSeeds™ provide senders with a more realistic view of inbox performance since mailbox providers consider engagement when making inbox placement decisions. This provides [more valuable data-points](/analyst/inbox-and-design-tracker/inside-intelliseeds-tools-and-techniques) for senders to monitor mailings, craft their communications strategy, and drive decision-making.
+The IntelliSeed™ List allows clients to [deploy virtual users](/analyst/inbox-and-design-tracker/intelliseed-sending-guide) from the IntelliX AI Network™ directly into their email lists. IntelliSeeds™ interact with emails using real behavior attributes, based on engagement profiles from our consumer panel. IntelliSeeds™ provide senders with a more realistic view of inbox performance since mailbox providers consider engagement when making inbox placement decisions. This provides [more valuable data-points](/analyst/inbox-and-design-tracker/inside-intelliseeds-tools-and-techniques) for senders to monitor mailings, craft their communications strategy, and drive decision-making.
 
 Note: IntelliSeed™ results are not considered in engagement metrics.
 
@@ -33,7 +33,7 @@ Please contact your TAM or [support@edatasource.com](mailto:support@edatasource.
 
 **Traditional Seed List** _(Inbox Tracker only)_
 
-A traditional seed list is an additional set of well-known, static email addresses used exclusively for testing email delivery and inbox placement. The traditional seed list should be [added to your email send](/analyst/inbox-and-design-tracker/how-to-download-the-seed-lists) regardless of whether they match your target recipient list. The platform will automatically disable the processing of any new seed tests once your account reaches your contract's [seed limits](/analyst/inbox-and-design-tracker/what-happens-if-i-go-over-my-monthly-or-annual-seed-test-design-previews-or-open-analytics-limits).
+A traditional seed list is an additional set of well-known, static email addresses used exclusively for testing email delivery and inbox placement. The traditional seed list should be [added to your email send](/analyst/inbox-and-design-tracker/intelliseed-sending-guide/#how-do-i-implement-the-seed-lists) regardless of whether they match your target recipient list. The platform will automatically disable the processing of any new seed tests once your account reaches your contract's [seed limits](/analyst/inbox-and-design-tracker/what-happens-if-i-go-over-my-monthly-or-annual-seed-test-design-previews-or-open-analytics-limits).
 
 Note: A seed address will never engage with an email message, which makes it look like your most unengaged recipients to the ISPs.
 
