@@ -115,7 +115,7 @@ Here are migration guides for other popular Email Services:
 
 ## Sending Email
 
-If you'd like to dive right in, you can read the [API reference documentation](https://developers.sparkpost.com/api/) and we have a [collection](https://www.postman.com/run-collection/81ee1dd2790d7952b76a) for [Postman](https://www.postman.com/) to help you experiment with manual API calls.
+If you'd like to dive right in, you can read the [API reference documentation](https://developers.sparkpost.com/api/) and we have a [collection](https://god.postman.co/run-collection/ee44dcd644445e8bd864?action=collection%2Fimport) for [Postman](https://www.postman.com/) to help you experiment with manual API calls.
 
 In case you need it, SparkPost also supports [SMTP-based email delivery](#header-SMTP) with a few modern twists.
 
