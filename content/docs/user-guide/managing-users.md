@@ -25,7 +25,7 @@ Admin users can add new users to their account by from the [Manage Users](https:
 
 	![](media/user-management/add-user.png)
 
-5. The new user will receive an email to join your account similar to the one below.
+5. The new user will receive an email to join your account similar to the one below. The invite link expires in 72 hours.
 
 	![](media/user-management/invitation-email.png)
 	
