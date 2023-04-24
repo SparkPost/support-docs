@@ -95,4 +95,4 @@ elit:1:sit           ip_4.5.6.7  hotmail.com  4   0   223         0          0  
 
 ## Note
 
-This command was implemented in Momentum 4.5.
+This command was implemented in Momentum 4.4.1.

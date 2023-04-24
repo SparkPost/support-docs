@@ -254,4 +254,4 @@ The number of seconds that Momentum has been running continuously.
 
 ## Note
 
-This command was implemented in Momentum 4.5.
+This command was implemented in Momentum 4.4.1.
