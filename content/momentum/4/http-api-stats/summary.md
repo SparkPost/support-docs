@@ -1,5 +1,5 @@
 ---
-lastUpdated: "01/31/2023"
+lastUpdated: "05/08/2023"
 title: "Summary"
 description: "stats summary show global metrics Perhaps the most common API command stats summary will produce global metrics such as queue sizes message counts and throughput rates since startup or the last reset of statistics"
 ---

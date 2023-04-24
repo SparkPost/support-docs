@@ -1,5 +1,5 @@
 ---
-lastUpdated: "01/31/2023"
+lastUpdated: "05/08/2023"
 title: "Stats HTTP API"
 description: "Welcome to the HTTP API section"
 ---
