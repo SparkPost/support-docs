@@ -11,18 +11,18 @@ description: Interested to learn more about your subscribers? Create a tracking 
 
 **Navigate to Analytics Tracker and select “New Analytics Campaign”** 
 
-![](media/how_to_use_analytics_tracker/image_0.png)
+![](media/how_to_use_analytics_tracker/newanalyticscampaign.png)
 
 **Follow the simple steps to create the tracking code:** 
 
 1. Enter a name that you will recognize and connect to the email campaign
 2. Set an expiration date when we should stop collecting new engagement data for this campaign
 
-![](media/how_to_use_analytics_tracker/image_1.png)
+![](media/how_to_use_analytics_tracker/trackingcode.png)
 
  Next, select your email deployment software (If you don’t see your ESP in the list, select “Other” and input the merge tag that your provider uses to dynamically publish the recipient’s email address into your email content. Example: %%emailaddr%%)
 
-![](media/how_to_use_analytics_tracker/image_2.png)
+![](media/how_to_use_analytics_tracker/trackingcode2.png)
 
  Copy the tracking code and place it into your HTML. Once added, send a preview of your email campaign to the test address shown:
 
