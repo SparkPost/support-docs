@@ -39,7 +39,7 @@ description: Interested to learn more about your subscribers? Create a tracking 
 
  Here is a look at the all the export options that are available:
 
-![](media/how_to_use_analytics_tracker/image_4.png)
+![](media/how_to_use_analytics_tracker/export.png)
 
  Use your findings to prioritize optimization of your email template across email clients, browser and devices. Understand where your subscribers are located throughout the world and how much time they spend viewing your email.
 
