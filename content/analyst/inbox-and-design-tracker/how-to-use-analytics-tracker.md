@@ -15,20 +15,19 @@ description: Interested to learn more about your subscribers? Create a tracking 
 
 **Follow the simple steps to create the tracking code:** 
 
-1. Enter a name that you will recognize and connect to the email campaign
-2. Set an expiration date when we should stop collecting new engagement data for this campaign
+Step 1. Name Your Tracking Code
+Enter a tracking code name, set an expiration date for tracking this campaign, and select your Marketing Software to proceed to the next step.
 
 ![](media/how_to_use_analytics_tracker/trackingcode.png)
 
- Next, select your email deployment software (If you don’t see your ESP in the list, select “Other” and input the merge tag that your provider uses to dynamically publish the recipient’s email address into your email content. Example: %%emailaddr%%)
+Step 2. Place Tracking Code In Your Email
+From the pulldown, select your email deployment software (If you don’t see your ESP in the list, select “Other” and input the merge tag that your provider uses to dynamically publish the recipient’s email address into your email content. Example: %%emailaddr%%)
 
 ![](media/how_to_use_analytics_tracker/trackingcode2.png)
 
- Copy the tracking code and place it into your HTML. Once added, send a preview of your email campaign to the test address shown:
-
-![](media/how_to_use_analytics_tracker/image_3.png)
-
- Once you’ve mailed the campaign, come back to Analytics Tracker and view the results for the campaign. Each time one of your subscriber's opens the email containing the pixel, that is one Analytics event. Data will continue to be collected until the expiration date that you defined in the tracking code setup.
+Finally, copy the tracking code and place it into your HTML. Once you’ve mailed the campaign, come back to Analytics Tracker and view the results for the campaign. If you want to verify the tracking code before deployment select the "Verify Code" button.
+ 
+Note: Each time one of your subscriber's opens the email containing the pixel, that is one Analytics event. Data will continue to be collected until the expiration date that you defined in the tracking code setup.
 
 ## Scheduled Analytics Exports
 
