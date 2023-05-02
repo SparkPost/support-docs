@@ -54,11 +54,3 @@ Note: Each time one of your subscriber's opens the email containing the pixel, t
 
 ![](media/how_to_use_analytics_tracker/Geolocation.png)
 
-
-![](media/how_to_use_analytics_tracker/image_9.png)
-
-
-![](media/how_to_use_analytics_tracker/image_10.png)
-
-
-![](media/how_to_use_analytics_tracker/image_11.png)
