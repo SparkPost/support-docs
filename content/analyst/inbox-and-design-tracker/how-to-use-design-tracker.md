@@ -33,7 +33,7 @@ There are two ways to test an email in Design Tracker:
 ## Retest an email campaign
 You can use either method of testing to retest the same email. Design Tracker will group emails based on Subject Line, so if you previously submitted your HTML directly but would now like to send to the static email, use the same Subject Line to have both test results appear in the same **Email Previews Dashboard**. You can then go between them using the drop-down menu that appears when an email has more than one test. 
 
-![Retested Email Results drop-down](https://user-images.githubusercontent.com/83723763/235182153-4e35cf7a-8cc2-4226-9e5f-29df9f568356.png)
+![Retested Email Results drop-down](media/how-to-use-design-tracker/retest-email-results-dropdown.png)
 
 ### Retest an email campaign using the static email address
 - Send your updated email to your static email address. 
