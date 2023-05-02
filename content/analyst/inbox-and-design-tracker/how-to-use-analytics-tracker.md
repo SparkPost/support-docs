@@ -4,21 +4,19 @@ title: How to Use Analytics Tracker
 description: Interested to learn more about your subscribers? Create a tracking pixel to include in your email campaigns.
 ---
 
-## Place the EDS engagement pixel in the HTML of your next email campaign to find out:
+## Place the engagement pixel in the HTML of your next email campaign to find out:
 
-* How much time subscribers spend reading the email
-* What browser or device they open with
+* What browser or device they use to open the campaign
 * Where in the world they're located when they interact with the campaign
 
-**Navigate to Analytics Tracker and select “New Tracking Code”** 
+**Navigate to Analytics Tracker and select “New Analytics Campaign”** 
 
 ![](media/how_to_use_analytics_tracker/image_0.png)
 
 **Follow the simple steps to create the tracking code:** 
 
 1. Enter a name that you will recognize and connect to the email campaign
-2. Select the sending domain that you will use for the email campaign
-3. Set an expiration date when we should stop collecting new engagement data for this campaign
+2. Set an expiration date when we should stop collecting new engagement data for this campaign
 
 ![](media/how_to_use_analytics_tracker/image_1.png)
 
@@ -26,7 +24,7 @@ description: Interested to learn more about your subscribers? Create a tracking 
 
 ![](media/how_to_use_analytics_tracker/image_2.png)
 
- Copy the tracking code and place it into your HTML. Once added, send a preview of your email campaign to the test address shown (Pro Tip: If this isn’t your first rodeo, “Skip this” to end the tracking code setup):
+ Copy the tracking code and place it into your HTML. Once added, send a preview of your email campaign to the test address shown:
 
 ![](media/how_to_use_analytics_tracker/image_3.png)
 
