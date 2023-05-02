@@ -31,7 +31,7 @@ description: Interested to learn more about your subscribers? Create a tracking 
 
 ![](media/how_to_use_analytics_tracker/trackingcode2.png)
 
-Note: Each time one of your subscriber's opens the email containing the pixel, that is one Analytics event. Data will continue to be collected until the expiration date that you defined in the tracking code setup.
+*Note: Each time one of your subscriber's opens the email containing the pixel, that is one Analytics event. Data will continue to be collected until the expiration date that you defined in the tracking code setup.*
 
 ## Scheduled Analytics Exports
 
@@ -43,7 +43,7 @@ Note: Each time one of your subscriber's opens the email containing the pixel, t
 
  Use your findings to prioritize optimization of your email template across email clients, browser and devices. Understand where your subscribers are located throughout the world and how much time they spend viewing your email.
 
-![](media/how_to_use_analytics_tracker/Counts.png)
+![](media/how_to_use_analytics_tracker/counts.png)
 
 
 ![](media/how_to_use_analytics_tracker/engagement.png)
@@ -52,5 +52,5 @@ Note: Each time one of your subscriber's opens the email containing the pixel, t
 ![](media/how_to_use_analytics_tracker/EmailClients.png)
 
 
-![](media/how_to_use_analytics_tracker/Geolocation.png)
+![](media/how_to_use_analytics_tracker/geolocation.png)
 
