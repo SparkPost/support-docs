@@ -43,7 +43,7 @@ Note: Each time one of your subscriber's opens the email containing the pixel, t
 
  Use your findings to prioritize optimization of your email template across email clients, browser and devices. Understand where your subscribers are located throughout the world and how much time they spend viewing your email.
 
-![](media/how_to_use_analytics_tracker/counts.png)
+![](media/how_to_use_analytics_tracker/Counts.png)
 
 
 ![](media/how_to_use_analytics_tracker/engagement.png)
@@ -52,7 +52,7 @@ Note: Each time one of your subscriber's opens the email containing the pixel, t
 ![](media/how_to_use_analytics_tracker/EmailClients.png)
 
 
-![](media/how_to_use_analytics_tracker/geolocation.png)
+![](media/how_to_use_analytics_tracker/Geolocation.png)
 
 
 ![](media/how_to_use_analytics_tracker/image_9.png)
