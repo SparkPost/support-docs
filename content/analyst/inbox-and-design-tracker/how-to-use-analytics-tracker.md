@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/23/2023"
+lastUpdated: "05/02/2023"
 title: How to Use Analytics Tracker
 description: Interested to learn more about your subscribers? Create a tracking pixel to include in your email campaigns.
 ---
