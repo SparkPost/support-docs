@@ -54,6 +54,9 @@ sudo apt-get install nginx
 
 On a Debian distribution, this command will install nginx with a sample configuration, located at **/etc/nginx/**.  To enable a reverse proxy back to SparkPost for your tracking domain, see the sample configuration file below (sample tracking domain is click.nddurant.com).
 
+Note: we need to set the `proxy_pass` directive with a variable so the ip address of the domain will be looked up
+dynamically and result will be cached for 5 minutes. Otherwise, it would be only looked up at server startup
+
 ```apacheconf
 server { # simple reverse-proxy
    listen       80;
@@ -62,7 +65,8 @@ server { # simple reverse-proxy
 
    # pass requests for dynamic content to rails/turbogears/zope, et al
    location / {
-     proxy_pass      https://spgo.io;
+     set $backend "spgo.io";
+     proxy_pass https://$backend;
    }
 }
 ```
