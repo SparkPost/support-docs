@@ -49,7 +49,7 @@ description: Interested to learn more about your subscribers? Create a tracking 
 ![](media/how_to_use_analytics_tracker/engagement.png)
 
 
-![](media/how_to_use_analytics_tracker/EmailClients.png)
+![](media/how_to_use_analytics_tracker/emailclients.png)
 
 
 ![](media/how_to_use_analytics_tracker/geolocation.png)
