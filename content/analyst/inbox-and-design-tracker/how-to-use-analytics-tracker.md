@@ -19,7 +19,7 @@ description: Interested to learn more about your subscribers? Create a tracking 
 
 - Enter a tracking code name
 - Set an expiration date for tracking this campaign
-- Select your Marketing Software to proceed to the next step.
+- Click "Select your marketing software" button to proceed to the next step.
 
 ![](media/how_to_use_analytics_tracker/trackingcode.png)
 
