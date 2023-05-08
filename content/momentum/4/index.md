@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/26/2020"
+lastUpdated: "05/08/2023"
 title: "Momentum 4.x"
 description: "Message Systems Inc Copyright 2014 Message Systems Inc Confidential Proprietary Abstract This book documents Momentum 4 Document generated on 2018 Aug 28 Table of Contents Preface 1 Typographical Conventions Used in This Document I Introduction to Momentum 1 Components 2 Life of A Message 3 Roles and Behaviors 4 Licensed..."
 ---
@@ -22,6 +22,7 @@ Document generated on: 2018-Aug-28
 
 ### Momentum 4.x Changelogs
 
+- [Momentum 4.4.1 Changelogs](/momentum/changelog/4/4-4-1)
 - [Momentum 4.4.0 Changelogs](/momentum/changelog/4/4-4-0)
 - [Momentum 4.3.1 Changelogs](/momentum/changelog/4/4-3-1)
 - [Momentum 4.3.0 Changelogs](/momentum/changelog/4/4-3-0)
