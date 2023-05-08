@@ -511,6 +511,13 @@
           title: Sending Emails as CC and BCC
         - link: /momentum/4/complex-template
           title: Using Complex Templates
+    - link: /momentum/4/http-api-stats
+      title: Stats HTTP API
+      items:
+        - link: /momentum/4/http-api-stats/summary
+          title: Summary
+        - link: /momentum/4/http-api-stats/queues-mailq
+          title: Mail Queue
     - link: /momentum/4/p-analytics
       title: Reporting and Engagement Tracking
       items:
