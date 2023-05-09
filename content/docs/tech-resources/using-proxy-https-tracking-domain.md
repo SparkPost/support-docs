@@ -216,6 +216,8 @@ curl -v https://click.nddurant.com/f/a/MV0K99nv-x6425iJtSb-qg~~/AALoUwA~/RgResx-
 
 The updated configuration file is:
 ```apacheconf
+resolver 10.0.0.2 valid=10s;
+
 server { # simple reverse-proxy
     listen       80;
     listen       443 ssl http2;
@@ -230,7 +232,8 @@ server { # simple reverse-proxy
 
     # pass all other requests through to SparkPost engagement tracking
     location / {
-        proxy_pass      https://spgo.io;
+        set $backend "spgo.io";
+        proxy_pass https://$backend;
         proxy_set_header X-Forwarded-For $remote_addr; # pass the client IP to the open & click tracker
         server_tokens off; # suppress NGINX giving version/OS information on error pages
     }
