@@ -57,7 +57,7 @@ On a Debian distribution, this command will install nginx with a sample configur
 Note: you must store `spgo.io` in a variable so that nginx re-resolves the domain when its TTL expires. You also have to include the `resolver` directive to explicitly specify a DNS server to resolve the hostname. By including the `valid` parameter to the directive, you can tell nginx to ignore the TTL and to re‑resolve names at a specified frequency. In the sample below, nginx re‑resolves names every 10 seconds.
 
 ```apacheconf
-resolver 10.0.0.2 valid=10s
+resolver 10.0.0.2 valid=10s;
 
 server { # simple reverse-proxy
    listen       80;
