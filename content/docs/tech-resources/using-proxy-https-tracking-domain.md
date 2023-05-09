@@ -1,5 +1,5 @@
 ---
-lastUpdated: "04/13/2021"
+lastUpdated: "05/03/2023"
 title: "Using a Reverse Proxy for HTTPS Tracking Domain"
 description: "SparkPost supports HTTPS engagement tracking for customers via self-service for all SparkPost customers. To enable SSL engagement tracking for a domain, additional configuration for SSL keys is required.  This resource outlines the use of a reverse proxy to host SSL certificates"
 ---
@@ -54,7 +54,11 @@ sudo apt-get install nginx
 
 On a Debian distribution, this command will install nginx with a sample configuration, located at **/etc/nginx/**.  To enable a reverse proxy back to SparkPost for your tracking domain, see the sample configuration file below (sample tracking domain is click.nddurant.com).
 
+Note: you must store `spgo.io` in a variable so that nginx re-resolves the domain when its TTL expires. You also have to include the `resolver` directive to explicitly specify a DNS server to resolve the hostname. By including the `valid` parameter to the directive, you can tell nginx to ignore the TTL and to re‑resolve names at a specified frequency. In the sample below, nginx re‑resolves names every 10 seconds.
+
 ```apacheconf
+resolver 10.0.0.2 valid=10s;
+
 server { # simple reverse-proxy
    listen       80;
    listen       443 ssl;
@@ -62,7 +66,8 @@ server { # simple reverse-proxy
 
    # pass requests for dynamic content to rails/turbogears/zope, et al
    location / {
-     proxy_pass      https://spgo.io;
+     set $backend "spgo.io";
+     proxy_pass https://$backend;
    }
 }
 ```
@@ -211,6 +216,8 @@ curl -v https://click.nddurant.com/f/a/MV0K99nv-x6425iJtSb-qg~~/AALoUwA~/RgResx-
 
 The updated configuration file is:
 ```apacheconf
+resolver 10.0.0.2 valid=10s;
+
 server { # simple reverse-proxy
     listen       80;
     listen       443 ssl http2;
@@ -225,7 +232,8 @@ server { # simple reverse-proxy
 
     # pass all other requests through to SparkPost engagement tracking
     location / {
-        proxy_pass      https://spgo.io;
+        set $backend "spgo.io";
+        proxy_pass https://$backend;
         proxy_set_header X-Forwarded-For $remote_addr; # pass the client IP to the open & click tracker
         server_tokens off; # suppress NGINX giving version/OS information on error pages
     }
