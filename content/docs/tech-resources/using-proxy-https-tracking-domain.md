@@ -54,10 +54,11 @@ sudo apt-get install nginx
 
 On a Debian distribution, this command will install nginx with a sample configuration, located at **/etc/nginx/**.  To enable a reverse proxy back to SparkPost for your tracking domain, see the sample configuration file below (sample tracking domain is click.nddurant.com).
 
-Note: we need to set the `proxy_pass` directive with a variable so the ip address of the domain will be looked up
-dynamically and result will be cached for 5 minutes. Otherwise, it would be only looked up at server startup
+Note: you must store `spgo.io` in a variable so that nginx re-resolves the domain when its TTL expires. You also have to include the `resolver` directive to explicitly specify a DNS server to resolve the hostname. By including the `valid` parameter to the directive, you can tell nginx to ignore the TTL and to re‑resolve names at a specified frequency. In the sample below, nginx re‑resolves names every 10 seconds.
 
 ```apacheconf
+resolver 10.0.0.2 valid=10s
+
 server { # simple reverse-proxy
    listen       80;
    listen       443 ssl;
