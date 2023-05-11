@@ -15,7 +15,7 @@ const AnalystNavigation = (props: NavigationProps): JSX.Element | null => {
   return (
     <BaseNavigation data={data} title={title} titleLink={titleLink}>
       <Box py="450" mt="450" borderTop="400">
-        <Link href="mailto:support@emailanalyst.com" passHref>
+        <Link href="mailto:support@edatasource.com" passHref>
           <StyledLink>
             <Box px="500">
               <Feedback size={20} />
