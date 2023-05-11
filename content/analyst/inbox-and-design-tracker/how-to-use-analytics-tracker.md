@@ -1,36 +1,37 @@
 ---
-lastUpdated: "02/23/2023"
+lastUpdated: "05/02/2023"
 title: How to Use Analytics Tracker
 description: Interested to learn more about your subscribers? Create a tracking pixel to include in your email campaigns.
 ---
 
-## Place the EDS engagement pixel in the HTML of your next email campaign to find out:
+## Place the engagement pixel in the HTML of your next email campaign to find out:
 
-* How much time subscribers spend reading the email
-* What browser or device they open with
+* What browser or device they use to open the campaign
 * Where in the world they're located when they interact with the campaign
 
-**Navigate to Analytics Tracker and select “New Tracking Code”** 
+**Navigate to Analytics Tracker and select “New Analytics Campaign”** 
 
-![](media/how_to_use_analytics_tracker/image_0.png)
+![](media/how_to_use_analytics_tracker/newanalyticscampaign.png)
 
-**Follow the simple steps to create the tracking code:** 
+## Follow the simple steps to create the tracking code: ##
 
-1. Enter a name that you will recognize and connect to the email campaign
-2. Select the sending domain that you will use for the email campaign
-3. Set an expiration date when we should stop collecting new engagement data for this campaign
+**Step 1. Name Your Tracking Code**
 
-![](media/how_to_use_analytics_tracker/image_1.png)
+- Enter a tracking code name
+- Set an expiration date for tracking this campaign
+- Click "Select your marketing software" button to proceed to the next step.
 
- Next, select your email deployment software (If you don’t see your ESP in the list, select “Other” and input the merge tag that your provider uses to dynamically publish the recipient’s email address into your email content. Example: %%emailaddr%%)
+![](media/how_to_use_analytics_tracker/trackingcode.png)
 
-![](media/how_to_use_analytics_tracker/image_2.png)
+**Step 2. Place Tracking Code In Your Email**
 
- Copy the tracking code and place it into your HTML. Once added, send a preview of your email campaign to the test address shown (Pro Tip: If this isn’t your first rodeo, “Skip this” to end the tracking code setup):
+- From the pulldown, select your email deployment software (If you don’t see your ESP in the list, select “Other” and input the merge tag that your provider uses to dynamically publish the recipient’s email address into your email content. Example: %%emailaddr%%)
+- Copy the tracking code and place it into your HTML and select Done. (If you want to verify the tracking code before deployment select the "Verify Code" button.)
+- After you email the campaign, come back to Analytics Tracker and view the results for the campaign.
 
-![](media/how_to_use_analytics_tracker/image_3.png)
+![](media/how_to_use_analytics_tracker/trackingcode2.png)
 
- Once you’ve mailed the campaign, come back to Analytics Tracker and view the results for the campaign. Each time one of your subscriber's opens the email containing the pixel, that is one Analytics event. Data will continue to be collected until the expiration date that you defined in the tracking code setup.
+*Note: Each time one of your subscriber's opens the email containing the pixel, that is one Analytics event. Data will continue to be collected until the expiration date that you defined in the tracking code setup.*
 
 ## Scheduled Analytics Exports
 
@@ -38,26 +39,18 @@ description: Interested to learn more about your subscribers? Create a tracking 
 
  Here is a look at the all the export options that are available:
 
-![](media/how_to_use_analytics_tracker/image_4.png)
+![](media/how_to_use_analytics_tracker/export.png)
 
  Use your findings to prioritize optimization of your email template across email clients, browser and devices. Understand where your subscribers are located throughout the world and how much time they spend viewing your email.
 
-![](media/how_to_use_analytics_tracker/image_5.png)
+![](media/how_to_use_analytics_tracker/counts.png)
 
 
-![](media/how_to_use_analytics_tracker/image_6.png)
+![](media/how_to_use_analytics_tracker/engagement.png)
 
 
-![](media/how_to_use_analytics_tracker/image_7.png)
+![](media/how_to_use_analytics_tracker/emailclients.png)
 
 
-![](media/how_to_use_analytics_tracker/image_8.png)
+![](media/how_to_use_analytics_tracker/geolocation.png)
 
-
-![](media/how_to_use_analytics_tracker/image_9.png)
-
-
-![](media/how_to_use_analytics_tracker/image_10.png)
-
-
-![](media/how_to_use_analytics_tracker/image_11.png)
