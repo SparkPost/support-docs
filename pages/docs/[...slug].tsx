@@ -33,10 +33,10 @@ const PostPage = (props: PostPageProps): JSX.Element => {
   const router = useRouter();
 
   useEffect(() => {
-    const path = router.asPath.split('?')[0];
+    const [path, queryParams] = router.asPath.split('?');
     const tagId = router.asPath.split('#')[1];
 
-    router.push(path + (tagId ? '#' + tagId : ''))
+    router.push(path + (tagId && queryParams ? '#' + tagId : ''))
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
