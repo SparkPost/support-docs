@@ -48,7 +48,7 @@ Note: SparkPost expects to see a [legitimate web presence](https://www.sparkpost
 
 If you didn't add a sending domain during your sign up process, you can [add one now in the SparkPost app](https://app.sparkpost.com/domains/create) ([EU](https://app.eu.sparkpost.com/domains/create)). If you already added a domain, visit the [Domains](https://app.sparkpost.com/domains/list) ([EU](https://app.eu.sparkpost.com/domains/list)) page to find your existing domain and click on the domain to complete the domain set up.
 
-![Editing domain settings](media/getting-started-sparkpost/domain-edit-page.png)
+![Editing domain settings](./media/getting-started-sparkpost/domain-edit-page.png)
 
 ### Step 2: Verify Domain
 
