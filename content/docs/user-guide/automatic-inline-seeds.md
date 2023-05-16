@@ -50,6 +50,7 @@ Select the options icon for the account that you want to configure.
 ### Automatic Inline Seeding Configuration Options
 #### Account Selection
 * If you’re logged in under the primary account, Account Selection lets you choose which Account you will apply the Automatic Inline Seeding settings to. Only subaccounts with Deliverability Analytics enabled will show in this selection screen. 
+* You have to enable Deliverability Analytics within the subaccount UI before navigating back to the Seeding Configuration page to permit seeding.
 * If you’re logged in as a subaccount user, you will not see the Account Selection option. All settings and control will apply directly to the subaccount you are logged in to.
 
 #### Enable Inline Seeding

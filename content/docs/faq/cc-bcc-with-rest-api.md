@@ -35,7 +35,8 @@ By default, the SparkPost Transmission endpoint puts the recipient's email addre
 ### CC Example
 
 To create the CC effect for a recipient, you would set header_to to the primary recipient and include your CC recipient in a CC header.  Here's an example [transmission request](https://developers.sparkpost.com/api/#/reference/transmissions/create):
-```
+
+```json
 {
   "recipients": [
     {
@@ -64,8 +65,10 @@ To create the CC effect for a recipient, you would set header_to to the primary 
 ### BCC Example
 
 To create the BCC effect for a recipient, you would put the primary recipient into header_to for each CC or BCC recipient.  Here's an example transmission request with a primary recipient and a BCC recipient:
-```
-"recipients": [
+
+```json
+{
+  "recipients": [
     {
       "address": {
         "email": "to@thisperson.com"
@@ -79,7 +82,7 @@ To create the BCC effect for a recipient, you would put the primary recipient in
     }
   ],
   "content": {
-    "from": "you@fromyou.com"
+    "from": "you@fromyou.com",
     "subject": "To and BCC",
     "text": "This mail was sent To to@thisperson.com while BCCing an unnamed recipient. Sneaky."
   }
@@ -89,7 +92,8 @@ To create the BCC effect for a recipient, you would put the primary recipient in
 ### CC and BCC Example
 
 Finally, here's an example with both CC and BCC recipients.  You set header_to to the primary recipient on all CC and BCC recipients and you put only the CC recipients into a CC header.  Remember to leave BCC recipients out of your CC header.  Here's a full sample transmission request:
-```
+
+```json
 {
   "recipients": [
     {

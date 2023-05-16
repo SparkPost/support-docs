@@ -2,12 +2,17 @@
   "name": "support-docs",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "=16.12.0"
+  },
   "scripts": {
     "predev": "npm run build:images",
     "prebuild": "npm run build:images",
+    "prebuild:test": "npm run build:images",
     "dev": "next dev",
     "build": "next build",
     "build:ssr": "next build && next export",
+    "build:index:analyst": "node ./scripts/analystIndex.mjs",
     "build:index:momentum": "node ./scripts/momentumIndex.mjs",
     "build:index:support": "node ./scripts/supportIndex.mjs",
     "build:images": "rimraf public/content && node ./scripts/copyImages.mjs",
@@ -16,6 +21,7 @@
     "lint": "next lint",
     "format": "prettier --write .",
     "precommit": "lint-staged",
+    "test": "npm run build:test && npm run test:e2e:headless",
     "build:test": "ENV=test next build",
     "test:ci": "start-server-and-test http://localhost:3000 test:e2e:headless",
     "test:e2e:headless": "ENV=test node_modules/.bin/cypress run",
@@ -42,7 +48,7 @@
     "gray-matter": "^4.0.3",
     "isbot": "^3.3.4",
     "js-cookie": "^3.0.1",
-    "next": "^12.0.4",
+    "next": "^12.1.0",
     "react": "^17.0.2",
     "react-day-picker": "^7.4.10",
     "react-dom": "^17.0.2",
@@ -58,7 +64,7 @@
     "uuid": "^8.3.2"
   },
   "devDependencies": {
-    "@netlify/plugin-nextjs": "^4.0.0-beta.12",
+    "@netlify/plugin-nextjs": "^4.26.0",
     "@sentry/types": "^6.13.3",
     "@types/glob": "^7.2.0",
     "@types/gtag.js": "^0.0.7",

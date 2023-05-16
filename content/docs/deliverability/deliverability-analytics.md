@@ -53,7 +53,7 @@ Never fear - that’s where a “seed list” comes in! A seed list is a set of 
 
 #### Panel Data
 
-Complementing our extensive seed list is permissioned data from our [consumer panel](https://support.emailanalyst.com/en/articles/927828-what-is-a-user-panel), which is powered by a free email app called [Boxbe](http://support.emailanalyst.com/en/articles/2100545-consumer-panel-data-collection-privacy-practices). Boxbe is an email concierge app that allows consumers to better manage and control which messages make it to their inbox. We currently have subscribers at 42 global providers including Gmail, Outlook, AOL, Yahoo, Time Warner, Comcast, Apple Mail, and many others. Our panel data gives us a deeper look into deliverability, allowing us to measure and report data about actions that people take, like the effect of engagement on deliverability as well as when an email is moved to spam or moved to the inbox.
+Complementing our extensive seed list is permissioned data from our [consumer panel](/analyst/general/what-is-a-user-panel), which is powered by a free email app called [Boxbe](/analyst/privacy-gdpr/consumer-panel-data-collection-and-privacy-practices). Boxbe is an email concierge app that allows consumers to better manage and control which messages make it to their inbox. We currently have subscribers at 42 global providers including Gmail, Outlook, AOL, Yahoo, Time Warner, Comcast, Apple Mail, and many others. Our panel data gives us a deeper look into deliverability, allowing us to measure and report data about actions that people take, like the effect of engagement on deliverability as well as when an email is moved to spam or moved to the inbox.
 
 ## What makes our deliverability analytics better?
 
@@ -73,7 +73,7 @@ Set up your campaign per your standard process, and include the seeds in your re
 
 Send your campaign, and watch the results roll in! You can expect to see seed list results within a few minutes.
 
-Learn more about seed list best practices [here](https://support.emailanalyst.com/en/articles/2440819-how-to-deploy-intelliseed-and-seed-lists).
+Learn more about seed list best practices [here](/analyst/inbox-and-design-tracker/intelliseed-sending-guide/).
 
 The seed list is updated periodically, as we regularly expand our panel coverage as well as swap out stale seed addresses. We’ll send you an email when an updated seed list is available. An old seed list will still work, but using the most current version will give you the best insight into your deliverability. The email notifications will go to all active users on the account, including subaccount reporting users [who have access to deliverability metrics](#enabling-access). A user may unsubscribe at any time to stop receiving these notifications.
 

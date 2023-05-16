@@ -12,26 +12,12 @@ Additional resources: [Webhook Authentication](https://www.sparkpost.com/docs/te
 
 ## Event Types
 
-Events which are sent from SparkPost webhooks are organized into different event types. Below is a table that provides you with a list of these event types and map containing each event which fall into their respective event types.
-
-<div id="content-event-types"></div>
-<script id="event-type-template" type="text/x-handlebars-template"><table id="event-types"> <thead> <tr> <td>Event Type</td> <td>JSON Key</td> <td>Description</td> <td>Events</td> </tr> </thead> <tbody> {{#each this}} <tr> <td>{{ name }}</td> <td>{{ key }}</td> <td>{{ description }}</td> <td>{{ events }}</td> </tr> {{/each}} </tbody> </table></script>
+Events which are sent from SparkPost webhooks are organized into different event types. Below is a table that provides you with a [list of these event types](https://developers.sparkpost.com/api/webhooks/#header-webhook-event-types) and map containing each event which fall into their respective event types.
 
 ## Events
 
 Each event which SparkPost sends you about your email transmissions has some valuable recipient-level information about every email SparkPost sends on your domain's behalf. EVERY event created by SparkPost has a "type" property which refers to the Event Type JSON Key.
 
-<div id="content-events"></div>
-<script id="events-template" type="text/x-handlebars-template"><table id="events"> <thead> <tr> <td>Event</td> <td>JSON Key</td> <td>Description</td> <td>Event Properties(full description below)</td> </tr> </thead> <tbody> {{#each this}} <tr> <td>{{ name }}</td> <td>{{ key }}</td> <td>{{ description }}</td> <td>{{ props }}</td> </tr> {{/each}} </tbody> </table></script>
-
 ## Event Properties
 
 Each event has different properties which are described below for your reference.You can also use the SparkPost API Webhook resource's [List sample values and event descriptions](https://developers.sparkpost.com/api/#/reference/webhooks/events-documentation) to see a complete set of event properties mapped to each event type.
-
-<div id="content-event-props"></div>
-<script id="event-props-template" type="text/x-handlebars-template"> <table id="events"> <thead> <tr> <td>JSON Key</td> <td>Description</td> <td>Sample Value</td> </tr> </thead> <tbody> {{#each this}} <tr> <td>{{ key }}</td> <td>{{ description }}</td> <td>{{ sample }}</td> </tr> {{/each}} </tbody> </table> </script>
-
-<script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.3/handlebars.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.min.js"></script>
-<script src="//sparkpost.github.io/code-snippets/javascripts/webhook-table/fetch.js"></script>

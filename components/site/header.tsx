@@ -13,12 +13,19 @@ const StyledButton = styled.button`
 
 type HeaderProps = {
   getActivatorProps?: () => object;
+	hideDrawerButtons?: boolean;
 };
 
 const Header = (props: HeaderProps) => {
   const { getActivatorProps } = props;
-  const { route } = useRouter();
-  const category = route.split('/')[1];
+  const { asPath } = useRouter();
+  const category = asPath.split('/')[1];
+  let searchBox = (<Search indexName="next_support_documentation" />);
+  if (category === 'momentum') {
+    searchBox = (<Search indexName="next_momentum_documentation" />);
+  } else if (category === 'analyst') {
+    searchBox = (<Search indexName="next_analyst_documentation" />);
+  }
 
   return (
     <Box my="600">
@@ -32,18 +39,14 @@ const Header = (props: HeaderProps) => {
                 <Menu size={24} />
               </StyledButton>
             </Box>
-            <Box display={['none', null, 'block']}>
+						{!props.hideDrawerButtons && (<Box display={['none', null, 'block']}>
               <HeaderButtons />
-            </Box>
+            </Box>)}
           </>
         )}
       </Box>
       <Box maxWidth="1150">
-        {category === 'momentum' ? (
-          <Search indexName="next_momentum_documentation" />
-        ) : (
-          <Search indexName="next_support_documentation" />
-        )}
+        {searchBox}
       </Box>
     </Box>
   );

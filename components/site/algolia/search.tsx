@@ -6,7 +6,7 @@ import SearchBox from 'components/site/algolia/searchBox';
 import SearchResults from 'components/site/algolia/results';
 
 type SearchProps = {
-  indexName: 'next_momentum_documentation' | 'next_support_documentation';
+  indexName: 'next_momentum_documentation' | 'next_support_documentation' | 'next_analyst_documentation';
 };
 
 const Search = (props: SearchProps): JSX.Element => {
@@ -36,7 +36,7 @@ const Search = (props: SearchProps): JSX.Element => {
         onSearchStateChange={({ query }) => setQuery(query)}
       >
         <SearchBox onFocus={() => setHasFocus(true)} hasFocus={hasFocus} />
-        <SearchResults ref={menu} show={query.length > 0 && hasFocus} />
+        <SearchResults ref={menu} show={query?.length > 0 && hasFocus} />
       </InstantSearch>
     </Box>
   );

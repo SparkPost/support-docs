@@ -40,7 +40,7 @@ const components = {
   ol: Ol,
   blockquote: BlockQuote,
   tr: (props: MarkdownComponentProps) => <MBTable.Row {...props} />,
-  td: (props: MarkdownComponentProps) => <MBTable.Cell {...props} />,
+  td: (props: MarkdownComponentProps) => <MBTable.Cell {...props} style={{ wordBreak: 'normal' }} />,
   th: (props: MarkdownComponentProps) => <MBTable.HeaderCell {...props} />,
 };
 

@@ -5,8 +5,15 @@ import { Box } from '@sparkpost/matchbox';
 
 const getImageSrc = (asPath: string, src?: string) => {
   const environment = getWindow();
-  const parts = asPath.split('/');
-  const dir = parts.splice(0, parts.length - 1).join('/');
+  // replace any trailing #page-link info from the end first, then split
+  const pathArr = asPath.replace(/#.*$/g, '').split('/');
+
+  // Check for 'trailing slash'
+  if (!pathArr[pathArr.length - 1]) {
+    pathArr.pop();
+  }
+  pathArr.pop();
+  const dir = pathArr.join('/');
   const path = `${environment?.location.origin || 'https://localhost:3000'}/content${dir}/${src}`;
   return path;
 };

@@ -6,6 +6,8 @@ import styled from 'styled-components';
 type LayoutInnerContentProps = {
   children?: React.ReactNode;
   getActivatorProps?: () => object;
+  hideDrawerButtons?: boolean;
+
 };
 
 const StyledSkipToContent = styled(Box)<BoxProps>`
@@ -36,7 +38,7 @@ const LayoutInnerContent = (props: LayoutInnerContentProps): JSX.Element => {
       >
         Skip to main content
       </StyledSkipToContent>
-      <Header getActivatorProps={getActivatorProps} />
+      <Header getActivatorProps={getActivatorProps} hideDrawerButtons={props.hideDrawerButtons} />
       {children}
     </div>
   );

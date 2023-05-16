@@ -14,9 +14,9 @@ Note: SparkPost is available in multiple regions. "SparkPost" refers to the Spar
 * [Preparing Your "From:" Address](#preparing-your-from-address)
 * [Important: Coming From Other Email Services](#important-coming-from-other-email-services)
 * [Sending Email](#sending-email)
-* [Tracking Recipient Behavior](#tracking-recipient-behavior)
+* [Tracking Recipient Behavior](#tracking-analytics)
 * [Improving Reputation And Branding](#improving-reputation-and-branding)
-* [Signals Analytics and Tracking](#signals-analytics-and-tracking)
+* [Signals Analytics and Tracking](#signals-analytics)
 * [Where To Next?](#where-to-next)
 * [How To Get Help](#how-to-get-help)
 
@@ -48,13 +48,13 @@ Note: SparkPost expects to see a [legitimate web presence](https://www.sparkpost
 
 If you didn't add a sending domain during your sign up process, you can [add one now in the SparkPost app](https://app.sparkpost.com/domains/create) ([EU](https://app.eu.sparkpost.com/domains/create)). If you already added a domain, visit the [Domains](https://app.sparkpost.com/domains/list) ([EU](https://app.eu.sparkpost.com/domains/list)) page to find your existing domain and click on the domain to complete the domain set up.
 
-![Editing domain settings](media/getting-started-sparkpost/domain-edit-page.png)
+![Editing domain settings](/media/getting-started-sparkpost/domain-edit-page.png)
 
 ### Step 2: Verify Domain
 
 Before you can send mail using your domain, we need to verify that you own it. Adding a DNS record to your domain is the recommended way to complete this verification. In the **DNS Verification** section you can find the TXT record Hostname and Value you need to add to your domain's DNS records.
 
-![Domain DNS verification section](media/getting-started-sparkpost/domain-verification-section.png)
+![Domain DNS verification section](/media/getting-started-sparkpost/domain-verification-section.png)
 
 If you are using a subdomain, we recommend you also add the CNAME record specified under the **Bounce** section. Top-level domains should skip this step and add a [custom bounce domain](#header-Bounce-Domains).
 
@@ -77,7 +77,7 @@ Here are some how-to documents for editing DNS records with common DNS providers
 
 Once your DNS record has been found, your domain's status will change to "Pending". This means the domain is in our final review process which will verify that the domain meets [our best practice requirements](https://www.sparkpost.com/docs/getting-started/requirements-for-sending-domains/). This usually takes just a few minutes, but can sometimes take up to an hour. Once the review is complete, the domain will be ready to send.
 
-![Ready to send](media/getting-started-sparkpost/status-section.png)
+![Ready to send](/media/getting-started-sparkpost/status-section.png)
 
 ## Important: Coming From Other Email Services
 
@@ -115,7 +115,7 @@ Here are migration guides for other popular Email Services:
 
 ## Sending Email
 
-If you'd like to dive right in, you can read the [API reference documentation](https://developers.sparkpost.com/api/) and we have a [collection](https://www.postman.com/run-collection/81ee1dd2790d7952b76a) for [Postman](https://www.postman.com/) to help you experiment with manual API calls.
+If you'd like to dive right in, you can read the [API reference documentation](https://developers.sparkpost.com/api/) and we have a [collection](https://god.postman.co/run-collection/ee44dcd644445e8bd864?action=collection%2Fimport) for [Postman](https://www.postman.com/) to help you experiment with manual API calls.
 
 In case you need it, SparkPost also supports [SMTP-based email delivery](#header-SMTP) with a few modern twists.
 
@@ -182,7 +182,7 @@ By default, SparkPost uses a generic bounce domain for your email, such as *spar
 
 To do this, visit the [Domains](https://app.sparkpost.com/domains/list) ([EU](https://app.eu.sparkpost.com/domains/list)) page and either add a new domain or edit an existing domain. In either case, **you will need to edit DNS records to set up your bounce domain**. Add the CNAME record with the value shown under **Bounce** and verify. DNS updates can take up to 24 hours to complete, but are usually available within an hour. Once verified the domain will be ready for use as a Bounce domain.
 
-![Domain DNS verification section](media/getting-started-sparkpost/domain-verification-section.png)
+![Domain DNS verification section](/media/getting-started-sparkpost/domain-verification-section.png)
 
 ### Tracking Domain
 
@@ -193,7 +193,7 @@ In order to track clicks on your emails, SparkPost wraps links in your emails to
 
 Signal Analytics, Events, and Webhooks help you keep track of your SparkPost account activity and email delivery performance. Metrics and events are both available visually and through the API, while webhooks offer an efficient way to have SparkPost push message events directly to your own app.
 
-![Summary report](media/getting-started-sparkpost/summary-report-section.png)
+![Summary report](/media/getting-started-sparkpost/summary-report-section.png)
 
 <div align="center"><em>Summary report</em></div>
 
@@ -201,7 +201,7 @@ Signal Analytics, Events, and Webhooks help you keep track of your SparkPost acc
 
 When you send an email through SparkPost, it emits a sequence of events so you can see when it's delivered, when the recipient opens it and clicks on links, and various related events. Here's a chart of SparkPost's major message events in sequence:
 
-![SparkPost message events in sequence](media/getting-started-sparkpost/message-events.png)
+![SparkPost message events in sequence](/media/getting-started-sparkpost/message-events.png)
 
 <div align="center"><em>SparkPost message events in sequence</em></div>
 
@@ -221,7 +221,7 @@ Beyond the basics, SparkPost also has a slew of additional capabilities which ma
 
 ### Email Templates And Personalization
 
-If you're sending similar content to lots of people, Templates let you write the message once using substitution variables and logic for personalization. You can create and edit templates on your account in the [Templates](https://app.sparkpost.com/templates) ([EU](https://app.eu.sparkpost.com/templates)) page. Check the SparkPost [template language](https://developers.sparkpost.com/api/template-language/) for information on how to personalize your emails.
+If you are sending similar content to lots of people, Templates let you write the message once using substitution variables and logic for personalization. You can create and edit templates on your account in the [Templates](https://app.sparkpost.com/templates) ([EU](https://app.eu.sparkpost.com/templates)) page. Check the SparkPost [template language](https://developers.sparkpost.com/api/template-language/) for information on how to personalize your emails.
 
 ### Service Providers - Subaccounts
 

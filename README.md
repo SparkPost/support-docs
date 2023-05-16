@@ -151,6 +151,10 @@ The following instructions walk you through how to sync your local version of th
 
 _**This is not a required step in contributing to the documentation**_
 
+### Node Version
+
+16.12.0
+
 ### Installation
 
 Navigate in your terminal to the root directory (`support-docs/` or whatever you named it) and install all dependencies:
@@ -168,6 +172,14 @@ npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+### Local Cypress Tests
+
+After setting your local node version, installing deps, and running `npm run start`:
+
+```bash
+npm run test
+```
 
 ### Learn More About Next.js
 

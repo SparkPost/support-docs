@@ -7,13 +7,14 @@ import LayoutInnerContent from './layoutInnerContent';
 type LayoutProps = {
   children?: React.ReactNode;
   navigationComponent?: React.ReactNode;
+  hideDrawerButtons?: boolean;
 };
 
 const Layout = (props: LayoutProps): JSX.Element => {
   const { children, navigationComponent } = props;
   const { getDrawerProps, getActivatorProps } = useDrawer();
-  const { route } = useRouter();
-  const category = route.split('/')[1];
+  const { asPath } = useRouter();
+  const category = asPath.split('/')[1];
 
   return (
     <LayoutWrap>
@@ -23,10 +24,10 @@ const Layout = (props: LayoutProps): JSX.Element => {
         </Drawer.Header>
         <Drawer.Content>{navigationComponent}</Drawer.Content>
         <Drawer.Footer>
-          <HeaderButtons />
+          {!props.hideDrawerButtons && (<HeaderButtons />)}
         </Drawer.Footer>
       </Drawer>
-      <LayoutInnerContent getActivatorProps={getActivatorProps}>
+      <LayoutInnerContent getActivatorProps={getActivatorProps} hideDrawerButtons={props.hideDrawerButtons}>
         <Box display="flex" width="100%" bg="white" border="400">
           <Box flex="0" borderRight="400" display={['none', null, 'block']}>
             {navigationComponent}

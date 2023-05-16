@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/26/2020"
+lastUpdated: "05/08/2023"
 title: "summary"
 description: "summary show global metrics summary with mobile Perhaps the most common and useful command for the console summary will produce global metrics such as queue sizes message counts and throughput rates since startup or the last reset of statistics If you have configured your control listener to listen on the..."
 ---
@@ -208,3 +208,7 @@ Use the `with-mobile` option to display the status of SMPP and MM7 message queue
 ## See Also
 
 [binding summary](/momentum/4/console-commands/binding-summary), [summary reset](/momentum/4/console-commands/summary-reset)
+
+## Attention
+
+On a busy system, if this command is run frequently, it may result in a Momentum watchdog restart. If `summary` data is needed multiple times per hour then it is recommended to use the [summary HTTP endpoint](/momentum/4/http-api-stats/summary.md) instead.
