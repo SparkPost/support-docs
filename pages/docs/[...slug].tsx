@@ -14,6 +14,7 @@ import DocumentationContent from 'components/site/documentationContent';
 import DocsIndexListPageContent from 'components/site/docsIndexListPageContent';
 import type { NavigationItemProps } from 'components/site/baseNavigation';
 import { useRouter } from 'next/router';
+import { useEffect } from 'react';
 
 type PostPageProps = {
   content: string;
@@ -31,6 +32,14 @@ const PostPage = (props: PostPageProps): JSX.Element => {
   const { content, data, navigationData, isIndex, categoryData } = props;
   const router = useRouter();
 
+  useEffect(() => {
+    const path = router.asPath.split('?')[0];
+    const tagId = router.asPath.split('#')[1];
+
+    router.push(path + (tagId ? '#' + tagId : ''))
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   // This is to check for a url that either contains a trailing slash or not (since netlify will show either)
   const trailingSlashOrNo = (navData: NavigationItemProps): boolean => {
     const linkComponents = navData.link.split('/');
@@ -39,6 +48,7 @@ const PostPage = (props: PostPageProps): JSX.Element => {
 
     return link === router.asPath || link + '/' === router.asPath;
   };
+
   return (
     <CategoriesProvider data={categoryData}>
       <SEO title={data.title} description={data.description} />
