@@ -9,7 +9,7 @@ description: Interested to learn more about your subscribers? Create a tracking 
 * What browser or device are used to open the email
 * What regions recipients are located in when they interact with the email
 
-Watch this short [video to learn how to use Analytics Tracker]([url](https://www.veed.io/view/b458f788-07e1-4553-b743-2d469a356ba2?panel=share)).
+Watch this short [video to learn how to use Analytics Tracker](https://www.veed.io/view/b458f788-07e1-4553-b743-2d469a356ba2?panel=share).
 
 ## Create a new tracking code: ##
 
