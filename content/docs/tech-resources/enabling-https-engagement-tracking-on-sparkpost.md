@@ -1,5 +1,5 @@
 ---
-lastUpdated: "12/22/2021"
+lastUpdated: "06/14/2023"
 title: "Enabling HTTPS Engagement Tracking on SparkPost"
 description: "SparkPost supports HTTPS engagement tracking for customers via self-service for all SparkPost customers. To enable SSL engagement tracking for a domain, additional configuration for SSL keys is required."
 ---
@@ -237,11 +237,15 @@ For up to date information on creating a distribution via CloudFront, please ref
 
     * Enable forwarding of the `User-Agent` header. Type in `User-Agent` and click "Add". This allows `User-Agent` data to be present in your engagement events received from SparkPost.
 
+      ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_cache5.png)
+    
+    * Enable forwarding of the `Host` header. Type in `Host` and click "Add". This allows `Host` data to be present in your engagement events received from SparkPost.
+
       ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_cache6.png)
 
     * Leave Query string and Cookies set to defaults (None). Your origin request settings should now look like this.
 
-      ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_cache5.png)
+      ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_cache7.png)
 
     * Click "Create" (on first time) / "Save Changes" (if modifying).
 
