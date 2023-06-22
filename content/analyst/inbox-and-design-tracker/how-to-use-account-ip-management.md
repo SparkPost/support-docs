@@ -1,5 +1,5 @@
 ---
-lastUpdated: '02/22/2023'
+lastUpdated: '06/22/2023'
 title: 'How to Use Account IP Management'
 description: 'This is an account-level setting. The platform will automatically detect your sending IPs based on the traffic from your sending domains. Those IPs will appear in the “Likely IPs” section. You may customize this by creating static groups of IPs. As you add or remove IPs from your sending infrastructure, you must make those changes in your IP groups as well.'
 ---
