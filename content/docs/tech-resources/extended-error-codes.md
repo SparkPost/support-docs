@@ -54,6 +54,7 @@ The following table is a complete list of extended error code responses, organiz
 |                       | 2004        | No draft version of template exists              | 422              |                                              |
 |                       | 2005        | No published version of template exists          | 422              |                                              |
 |                       | 2006        | Transmission record in invalid state             | 409              |                                              |
+|                       | 2007        | Metadata size too large                          | 422              |                                              |
 |                       | 2101        | Exceed Sending Limit (hourly)                    | 420              |                                              |
 |                       | 2102        | Exceed Sending Limit (daily)                     | 420              |                                              |
 |                       | 2103        | Exceed Sending Limit (sandbox)                   | 420              |                                              |
