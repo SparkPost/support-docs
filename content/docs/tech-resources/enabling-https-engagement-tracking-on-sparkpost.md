@@ -338,71 +338,71 @@ Once your CNAME is set up with your DNS provider, instead of providing an existi
 1. Follow [these steps](#switch-tracking-domain-to-secure-and-validate) to update and verify your tracking domain, as this requires the certificate to be present and valid.
 
 ---
-## Step by Step Guide with Fastly
+## Step-by-Step Guide with Fastly
 
-Sign up for Fastly or log in to an existing account.
+Sign up for [Fastly](https://www.fastly.com/) or log in to an existing account.
 
-1. Select the **Configure** tab on the Dashboard, then "Create Service". Give your service a name, and add your tracking domain under "Domains".
+1. Select the **Deliver** tab on the Dashboard, then click the **Create a delivery service** button. Give your service a name in the _Options_ menu and clicking **Edit service name**.
 
-    ![](media/enabling-https-engagement-tracking-on-sparkpost/fastly-create-service.png)
+     ![](media/enabling-https-engagement-tracking-on-sparkpost/fastly-2023-create-a-delivery-service.png)
 
+1. In the **Domains** section, insert your tracking domain into the provided field and click **Add**. A subdomain (like *click*.domain.com, rather than just domain.com) is recommended.
 
-1. Select "Origins" on the left. Add the correct endpoint address for your service, see [here](#sparkpost-tracking-endpoints).
+     ![](media/enabling-https-engagement-tracking-on-sparkpost/fastly-2023-add-domain.png)
 
-    ![](media/enabling-https-engagement-tracking-on-sparkpost/fastly-origin-hosts.png)
+1. Select **Origins** in the left-side menu. In the **Hosts** section, add the correct tracking endpoint for your service (also known as hostname), see possible values [here](#sparkpost-tracking-endpoints).
+     
+     ![](media/enabling-https-engagement-tracking-on-sparkpost/fastly-2023-add-host.png)
 
-    Fastly detects that SparkPost supports TLS, and shows the host entry like this. Optionally you can use the "pencil" edit icon to set a meaningful name.
+     Fastly detects that SparkPost supports TLS, and shows the host entry like below. Optionally you can use the "pencil" edit icon to set a meaningful name.
 
-    ![](media/enabling-https-engagement-tracking-on-sparkpost/fastly-origin.png)
+     ![](media/enabling-https-engagement-tracking-on-sparkpost/fastly-2023-host-added.png)
 
-    Fastly default settings pass the `user_agent` and `ip_address` through to SparkPost engagement tracking as expected.
+     Fastly forwards the `user_agent` and `host` HTTP headers by default to SparkPost engagement tracking as expected.
 
-1. On "Settings", "Cache Settings", set the "Fallback TTL" to ten seconds (explanation [here](#cache-time-to-live-ttl-settings)).
+1. Click **Settings** in the left-side menu, and scroll down to the **Fallback TTL** section. Click on the "pencil" icon to set the Fallback TTL to **10** seconds.
 
-    ![](media/enabling-https-engagement-tracking-on-sparkpost/fastly-ttl.png)
+     ![](media/enabling-https-engagement-tracking-on-sparkpost/fastly-2023-fallback-ttl.png)
+
+1. Still in the **Settings** page, be sure the **Override host** option is **disabled**. For each CDN request, the `Host` HTTP header should be forwarded to SparkPost in order for your domain to be identified by engagement tracking. If this option is enabled, requests to SparkPost won't contain your host value.
+
+     ![](media/enabling-https-engagement-tracking-on-sparkpost/fastly-2023-override-host.png)
+
+1. Activate your service by clicking on the **Activate** button in the top right corner of the page.
 
 ## Issue a certificate with Fastly
 
-1. Select the "HTTPS and network" tab, then "Get Started".
+1. Under the *Secure* tab, select *TLS management*. If you have no TLS domains, click **Get started**. Otherwise, click the **Secure another domain** in the upper-right corner of the page.
 
-    ![](media/enabling-https-engagement-tracking-on-sparkpost/fastly-cert1.png)
+    ![](media/enabling-https-engagement-tracking-on-sparkpost/fastly-2023-tls-get-started.png)
 
+1. Enter your tracking domain and click **Add**. Let's Encrypt certificates are free, and can be auto-renewed by Fastly via an additional CNAME record that you will need to create with your DNS provider. You can upload your own private key & certificate instead of using Let's Encrypt.
 
-1. Enter your tracking domain. Let's Encrypt certificates are free, and can be auto-renewed by Fastly, via an additional CNAME record that you will need to create with your DNS provider.
+    ![](media/enabling-https-engagement-tracking-on-sparkpost/fastly-2023-submit-tls-domain.png)
 
-    ![](media/enabling-https-engagement-tracking-on-sparkpost/fastly-cert2.png)
+    Once finished, click **Submit**.
 
-    Other options are to use GlobalSign, or to upload your own private key & certificate.
+1. For Let's Encrypt option: verify your domain ownership creating a CNAME record with your DNS provider using the values provided by Fastly.
 
-1. For Let's Encrypt option: copy the information shown and create a CNAME record in your DNS provider's account.
+    ![](media/enabling-https-engagement-tracking-on-sparkpost/fastly-2023-tls-pending.png)
 
-    ![](media/enabling-https-engagement-tracking-on-sparkpost/fastly-cert-letsencrypt-cname.png)
+1. After you create the CNAME, Fastly will request the certificate to Let's Encrypt.
 
-1. After you create the CNAME, Fastly requests the certificate.
+    ![](media/enabling-https-engagement-tracking-on-sparkpost/fastly-2023-tls-issuing.png)
 
-    ![](media/enabling-https-engagement-tracking-on-sparkpost/fastly-cert-letsencrypt2.png)
+    After a short time, the certificate should be issued as below:
 
-    After a short time, you should see
+    ![](media/enabling-https-engagement-tracking-on-sparkpost/fastly-2023-tls-issued.png)
 
-    ![](media/enabling-https-engagement-tracking-on-sparkpost/fastly-cert-letsencrypt3.png)
+1. Select *More Details...* and look for **CNAME records**. This is the address the Fastly will use to serve your incoming requests.
 
-1. Select "More Details .." and look for "CNAME records". This is the address the Fastly will use to serve your incoming requests.
+    ![](media/enabling-https-engagement-tracking-on-sparkpost/fastly-2023-cname-records.png)
 
-    ![](media/enabling-https-engagement-tracking-on-sparkpost/fastly-service-cname.png)
-
-1. Create the CNAME record within your DNS service (this will be specific to your provider). If you have a TTL (time to live) field, we suggest to set this to 1 hour.
-
-    ![](media/enabling-https-engagement-tracking-on-sparkpost/fastly-cname.png)
-
-    _Example DNS provider CNAME setup_
-
-    You can verify that the routing is successful using `ping` on your created record.
+1. Create the CNAME record for the tracking domain within your DNS service (this will be specific to your provider) pointing to the CNAME address provided by Fastly (as seen above). If you have a TTL (time to live) field, we suggest to set this to 1 hour. You can verify that the routing is successful using `ping` on your created record.
 
 1. Follow [these steps](#switch-tracking-domain-to-secure-and-validate) to update and verify your tracking domain.
 
 Fastly keeps previous versions of your configuration, and can show the "diff" between them. You can also set up advanced routing rules using the VCL language, and monitor statistics on served requests.
-
-![](media/enabling-https-engagement-tracking-on-sparkpost/fastly-stats.png)
 
 ---
 
