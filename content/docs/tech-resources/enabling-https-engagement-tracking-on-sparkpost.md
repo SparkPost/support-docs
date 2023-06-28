@@ -358,7 +358,7 @@ Sign up for [Fastly](https://www.fastly.com/) or log in to an existing account.
 
     ![](media/enabling-https-engagement-tracking-on-sparkpost/fastly-2023-host-added.png)
 
-    Fastly default settings pass the `User-Agent` HTTP header through to SparkPost engagement tracking as expected.
+    Fastly default settings pass the `User-Agent` and `X-Forwarded-For` HTTP headers through to SparkPost engagement tracking as expected.
 
 1. Click **Settings** in the left-side menu, and scroll down to the **Fallback TTL** section. Click on the "pencil" icon to set the Fallback TTL to **10** seconds.
 
