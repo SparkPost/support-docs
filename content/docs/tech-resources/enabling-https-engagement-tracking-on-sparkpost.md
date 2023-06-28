@@ -338,35 +338,35 @@ Once your CNAME is set up with your DNS provider, instead of providing an existi
 1. Follow [these steps](#switch-tracking-domain-to-secure-and-validate) to update and verify your tracking domain, as this requires the certificate to be present and valid.
 
 ---
-## Step-by-Step Guide with Fastly
+## Step by Step Guide with Fastly
 
 Sign up for [Fastly](https://www.fastly.com/) or log in to an existing account.
 
 1. Select the **Deliver** tab on the Dashboard, then click the **Create a delivery service** button. Give your service a name in the _Options_ menu and clicking **Edit service name**.
 
-     ![](media/enabling-https-engagement-tracking-on-sparkpost/fastly-2023-create-a-delivery-service.png)
+    ![](media/enabling-https-engagement-tracking-on-sparkpost/fastly-2023-create-a-delivery-service.png)
 
 1. In the **Domains** section, insert your tracking domain into the provided field and click **Add**. A subdomain (like *click*.domain.com, rather than just domain.com) is recommended.
 
-     ![](media/enabling-https-engagement-tracking-on-sparkpost/fastly-2023-add-domain.png)
+    ![](media/enabling-https-engagement-tracking-on-sparkpost/fastly-2023-add-domain.png)
 
 1. Select **Origins** in the left-side menu. In the **Hosts** section, add the correct tracking endpoint for your service (also known as hostname), see possible values [here](#sparkpost-tracking-endpoints).
      
-     ![](media/enabling-https-engagement-tracking-on-sparkpost/fastly-2023-add-host.png)
+    ![](media/enabling-https-engagement-tracking-on-sparkpost/fastly-2023-add-host.png)
 
-     Fastly detects that SparkPost supports TLS, and shows the host entry like below. Optionally you can use the "pencil" edit icon to set a meaningful name.
+    Fastly detects that SparkPost supports TLS, and shows the host entry like below. Optionally you can use the "pencil" edit icon to set a meaningful name.
 
-     ![](media/enabling-https-engagement-tracking-on-sparkpost/fastly-2023-host-added.png)
+    ![](media/enabling-https-engagement-tracking-on-sparkpost/fastly-2023-host-added.png)
 
-     Fastly forwards the `user_agent` and `host` HTTP headers by default to SparkPost engagement tracking as expected.
+    Fastly default settings pass the `User-Agent` HTTP header through to SparkPost engagement tracking as expected.
 
 1. Click **Settings** in the left-side menu, and scroll down to the **Fallback TTL** section. Click on the "pencil" icon to set the Fallback TTL to **10** seconds.
 
-     ![](media/enabling-https-engagement-tracking-on-sparkpost/fastly-2023-fallback-ttl.png)
+    ![](media/enabling-https-engagement-tracking-on-sparkpost/fastly-2023-fallback-ttl.png)
 
 1. Still in the **Settings** page, be sure the **Override host** option is **disabled**. For each CDN request, the `Host` HTTP header should be forwarded to SparkPost in order for your domain to be identified by engagement tracking. If this option is enabled, requests to SparkPost won't contain your host value.
 
-     ![](media/enabling-https-engagement-tracking-on-sparkpost/fastly-2023-override-host.png)
+    ![](media/enabling-https-engagement-tracking-on-sparkpost/fastly-2023-override-host.png)
 
 1. Activate your service by clicking on the **Activate** button in the top right corner of the page.
 
