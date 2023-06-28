@@ -339,6 +339,7 @@ Once your CNAME is set up with your DNS provider, instead of providing an existi
 
 ---
 ## Step by Step Guide with Fastly
+_Updated June 2023. Images and descriptions follow the current Fastly web UI._
 
 Sign up for [Fastly](https://www.fastly.com/) or log in to an existing account.
 
