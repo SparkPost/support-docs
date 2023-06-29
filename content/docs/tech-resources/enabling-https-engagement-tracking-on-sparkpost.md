@@ -67,7 +67,7 @@ After configuring your CDN, you need instruct SparkPost to encode your links usi
 ---
 ## Step by Step Guide with CloudFlare
 
-_Updated June 2023. Uses a simpler forwarding method without the need for custom page rules. Images and descriptions follow the current CloudFlare web UI._
+_Updated for Cloudflare web UI as of June 2023._
 
 > CloudFlare requires you to use their nameservers, i.e. to give them control over routing for the entire organizational domain. That means it works differently to the other CDNs listed here.
 
