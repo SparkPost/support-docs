@@ -1,5 +1,5 @@
 ---
-lastUpdated: "06/14/2023"
+lastUpdated: "06/30/2023"
 title: "Enabling HTTPS Engagement Tracking on SparkPost"
 description: "SparkPost supports HTTPS engagement tracking for customers via self-service for all SparkPost customers. To enable SSL engagement tracking for a domain, additional configuration for SSL keys is required."
 ---
