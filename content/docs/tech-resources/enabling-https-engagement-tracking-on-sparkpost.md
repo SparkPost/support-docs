@@ -343,7 +343,7 @@ _Updated June 2023. Images and descriptions follow the current Fastly web UI._
 
 Sign up for [Fastly](https://www.fastly.com/) or log in to an existing account.
 
-1. Select the **Deliver** tab on the Dashboard, then click the **Create a delivery service** button. Give your service a name in the _Options_ menu and clicking **Edit service name**.
+1. Select the **Deliver** tab on the Dashboard, then click the **Create a delivery service** button. Give your service a name in the _Options_ menu by clicking **Edit service name**.
 
     ![](media/enabling-https-engagement-tracking-on-sparkpost/fastly-2023-create-a-delivery-service.png)
 
