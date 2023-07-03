@@ -1,5 +1,5 @@
 ---
-lastUpdated: "06/14/2023"
+lastUpdated: "06/30/2023"
 title: "Enabling HTTPS Engagement Tracking on SparkPost"
 description: "SparkPost supports HTTPS engagement tracking for customers via self-service for all SparkPost customers. To enable SSL engagement tracking for a domain, additional configuration for SSL keys is required."
 ---
@@ -67,23 +67,21 @@ After configuring your CDN, you need instruct SparkPost to encode your links usi
 ---
 ## Step by Step Guide with CloudFlare
 
-_Updated December 2021. Uses a simpler forwarding method without the need for custom page rules. Images and descriptions follow the current CloudFlare web UI._
+_Updated for Cloudflare web UI as of June 2023._
 
 > CloudFlare requires you to use their nameservers, i.e. to give them control over routing for the entire organizational domain. That means it works differently to the other CDNs listed here.
 
 1. Create (or log in to your existing) CloudFlare account.
 
-1. Go to the "websites" option in the navigation menu on the CloudFlare UI.
+1. In CloudFlare, select the **Websites** management menu on the left. If your organizational domain is already shown on the app, click on it. Otherwise choose **Add a Site**. Enter your domain and confirm.
 
-   ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudflare_UI.png)
-
-   If your organizational domain is already shown here, you can skip this step. Otherwise choose "Add a Site".
+   ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudflare-2023-add-site.png)
 
    CloudFlare will scan your existing DNS provider to collect records, and prompt you to change to use specifically-named CloudFlare nameservers (yours may be different to the example shown below). You will require a login to your existing DNS provider to be able to change them; beyond the scope of this document.
 
-   Wait for the changes to take effect. You can monitor this in the CloudFlare UI.
+   Wait for the changes to take effect. You can monitor this in the CloudFlare dashboard.
 
-     ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudflare_ns_change.png)
+     ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudflare-2023-add-nameservers.png)
 
    Note that (as the above screen mentions) the old nameservers may still be cached in the Internet and will take time to update. You can check the nameservers that a machine sees using `dig NS`:
 
@@ -102,8 +100,8 @@ _Updated December 2021. Uses a simpler forwarding method without the need for cu
     ;myexample.com.		IN	NS
 
     ;; ANSWER SECTION:
-    myexample.com.	300	IN	NS	athena.ns.cloudflare.com.
-    myexample.com.	300	IN	NS	sam.ns.cloudflare.com.
+    myexample.com.	300	IN	NS	clay.ns.cloudflare.com.
+    myexample.com.	300	IN	NS	coco.ns.cloudflare.com.
 
     ;; Query time: 8 msec
     ;; SERVER: 172.31.0.2#53(172.31.0.2)
@@ -113,31 +111,41 @@ _Updated December 2021. Uses a simpler forwarding method without the need for cu
 
 1. Check, and if necessary add the tracking domain CNAME.
 
-   In CloudFlare, go to the "DNS" management menu. If you already have a plain (HTTP) tracking domain set up with SparkPost, it should be already present in the records. Check that it's set to "Proxied".
+   In CloudFlare, go to the **DNS** management menu. If you already have a plain (HTTP) tracking domain set up with SparkPost, it should be already present in the records. Check that it's set to "Proxied".
 
    If you are setting up a new tracking domain, then select the "Add record" option:
 
-   * Select record type "CNAME".
-   * Enter the subdomain you have chosen (in our example, this is `track`). Enter just the subdomain part.
-   * Specify the target as the correct SparkPost tracking endpoint address for your service, see [here](#sparkpost-tracking-endpoints).
-   * Ensure Proxy status is enabled.
+   * Select **CNAME** as record type.
+   * Enter the subdomain you have chosen (in our example, this is _`track`_) in the **Name** field.
+   * Specify the **Target** as the correct SparkPost tracking endpoint address for your service. See the possible endpoint addresses [here](#sparkpost-tracking-endpoints).
+   * Ensure *Proxy status* is **enabled**.
 
-      ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudflare_create_cname.png)
-   * Select "Save".
+      ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudflare-2023-add-cname.png)
+   * Select **Save**.
 
 1. Check that CloudFlare is set to use HTTPS.
 
-   In CloudFlare, go to the "SSL/TLS" management menu. You should see an Overview  screen showing the encryption mode as "Full".
+   In CloudFlare, go to the **SSL/TLS** management menu. You should see an Overview screen showing the encryption mode as **Full**.
 
-   ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudflare_SSL_full.png)
+   ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudflare-2023-ssl-full.png)
 
-
-   More information on CloudFlare SSL options can be found in [this article](https://support.cloudflare.com/hc/en-us/articles/200170416).
+   More information on CloudFlare SSL options can be found in [this article](https://developers.cloudflare.com/ssl/origin-configuration/ssl-modes#available-encryption-modes).
 
    After a few minutes, you can verify that the routing is correct using `ping` to your tracking domain. See also [troubleshooting tips](#troubleshooting-tips).
 
-   Cloudflare does not offer control of cache "time to live" (TTL) on free accounts. This may mask repeat opens/clicks, as described [here](#cache-time-to-live-ttl-settings). If you have a paid account, under Caching, check and set your TTL value.
+   Cloudflare does not offer control of cache "time to live" (TTL) on free accounts. This may mask repeat opens/clicks, as described [here](#cache-time-to-live-ttl-settings). If you have a paid account, under **Caching** on the left side menu, check and set your TTL value.
 
+1. Confirm that `User-Agent` and `Host` HTTP headers from original requests are correctly forwarded to SparkPost. In CloudFlare, go to the **Rules** management menu.
+
+   ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudflare-2023-rules.png)
+
+    In **Page Rules**, be sure that there are no configured page rules with the *Host Header Override* setting.
+
+    In **Transform Rules**, be sure that there are no configured transform rules that modify the `User-Agent` and `Host` headers.
+
+    In **Origin Rules**, be sure that there are no origin rules configured to rewrite the `Host` header.
+
+    If your CloudFlare account has Load Balancing enabled, go to **Traffic** management menu on the left and select **Load Balancing**. Be sure that the option to override the `Host` header is disabled in your load balancer.
 
 1. Follow [these steps](#switch-tracking-domain-to-secure-and-validate) to update and verify your tracking domain.
 
