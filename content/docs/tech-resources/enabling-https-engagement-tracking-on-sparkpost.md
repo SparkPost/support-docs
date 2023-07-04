@@ -1,5 +1,5 @@
 ---
-lastUpdated: "06/30/2023"
+lastUpdated: "07/04/2023"
 title: "Enabling HTTPS Engagement Tracking on SparkPost"
 description: "SparkPost supports HTTPS engagement tracking for customers via self-service for all SparkPost customers. To enable SSL engagement tracking for a domain, additional configuration for SSL keys is required."
 ---
@@ -580,28 +580,30 @@ The steps below are based on [this guide](https://docs.microsoft.com/en-us/azure
 
     ![](media/enabling-https-engagement-tracking-on-sparkpost/azure-select-resource-group.png)
 
-1. From the home page or the Azure menu, select Create a resource. Select Networking > See All > Front Door.
+1. From the home page or the Azure menu, select Create a resource. Select Media > Front Door and CDN profiles.
 
     ![](media/enabling-https-engagement-tracking-on-sparkpost/azure-front-door1.png)
 
-    Choose Create.
+    Choose Explore other offerings, choose Azure Front Door (classic) and then Continue.
 
     ![](media/enabling-https-engagement-tracking-on-sparkpost/azure-front-door2.png)
 
     Select your resource group. Select "Next: Configuration".
 
+    ![](media/enabling-https-engagement-tracking-on-sparkpost/azure-front-door3.png)
+
 1. In Frontends/domains, select `+` to open "Add a frontend host". Give your host a name - this needs to be a valid, unique subdomain of the domain `.azurefd.net`. Choosing a name based on your custom tracking domain should help to ensure uniqueness; you should see a green check mark appear on the right. (We will change this later to be your actual custom domain.)
 
-    ![](media/enabling-https-engagement-tracking-on-sparkpost/azure-front-door3.png)
+    ![](media/enabling-https-engagement-tracking-on-sparkpost/azure-front-door4.png)
 
 1. Next, we create a backend pool that contains just the SparkPost tracking domain. In Backend pools, select + to open Add a backend pool. Give this a name.
 
 
-    ![](media/enabling-https-engagement-tracking-on-sparkpost/azure-front-door4.png)
+    ![](media/enabling-https-engagement-tracking-on-sparkpost/azure-front-door5.png)
 
 1. Select "Add a backend". Set the backend host type to be "Custom host". Set the backend host name to be the correct endpoint address for your service, see [here](#sparkpost-tracking-endpoints).
 
-    ![](media/enabling-https-engagement-tracking-on-sparkpost/azure-front-door5.png)
+    ![](media/enabling-https-engagement-tracking-on-sparkpost/azure-front-door6.png)
 
     * The backend host header field will be automatically filled in for you. Leave the HTTP port and HTTPS port settings at defaults. Click Add.
 
@@ -613,15 +615,15 @@ The steps below are based on [this guide](https://docs.microsoft.com/en-us/azure
 
     Set the Path to `/*` to match all incoming requests. Leave Route type set to the default "Forward", and set Forwarding Protocol to "Match request". Select "Add".
 
-    ![](media/enabling-https-engagement-tracking-on-sparkpost/azure-front-door6.png)
+    ![](media/enabling-https-engagement-tracking-on-sparkpost/azure-front-door7.png)
 
 1. Select "Review + create", then "Create".
 
-    ![](media/enabling-https-engagement-tracking-on-sparkpost/azure-front-door7.png)
+    ![](media/enabling-https-engagement-tracking-on-sparkpost/azure-front-door8.png)
 
     You should see "Deployment is in progress", followed by a "deployment complete" message.
 
-    ![](media/enabling-https-engagement-tracking-on-sparkpost/azure-front-door8.png)
+    ![](media/enabling-https-engagement-tracking-on-sparkpost/azure-front-door9.png)
 
     Your front door is now active on the subdomain we set up, and can be checked using `curl` with added path `/f/a/b/c/d`, for example:
 
