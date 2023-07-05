@@ -609,6 +609,8 @@ The steps below are based on [this guide](https://docs.microsoft.com/en-us/azure
 
     * Leave the Health probe inactive, as there is only one backend.
 
+    * This will forward the `Host` and `User-Agent` HTTP headers to SparkPost properly, which is necessary for Engagement Tracking to work as expected.
+
 1. On "Routing rules", select `+`. Give your rule a name.
 
     Leave "Accepted protocol" as the default "HTTP and HTTPS". Ensure your "Frontends/domains" setting is your previously configured subdomain name.
