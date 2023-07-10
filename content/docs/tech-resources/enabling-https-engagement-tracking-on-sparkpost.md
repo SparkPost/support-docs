@@ -1,5 +1,5 @@
 ---
-lastUpdated: "07/07/2023"
+lastUpdated: "07/10/2023"
 title: "Enabling HTTPS Engagement Tracking on SparkPost"
 description: "SparkPost supports HTTPS engagement tracking for customers via self-service for all SparkPost customers. To enable SSL engagement tracking for a domain, additional configuration for SSL keys is required."
 ---
@@ -416,6 +416,8 @@ Fastly keeps previous versions of your configuration, and can show the "diff" be
 ---
 
 ## Step by Step Guide with Google Cloud Platform
+
+_Updated for Google Cloud Platform as of July 2023._
 
 Unlike some other services, [Google Cloud Platform](https://cloud.google.com/) (GCP) can route tracking domains to SparkPost via an ["external" HTTPS load-balancer](https://cloud.google.com/load-balancing/docs/https), with certificate and routing rules. This is conceptually simpler than using a CDN in front of SparkPost tracking, as there is no caching [Time to Live](#cache-time-to-live-ttl-settings) to consider.
 
