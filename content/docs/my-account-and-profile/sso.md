@@ -1,10 +1,10 @@
 ---
-lastUpdated: "01/25/2022"
+lastUpdated: "07/17/2023"
 title: "Single Sign-On (SSO)"
 description: "How to enable Single Sign-On (SSO) in SparkPost."
 ---
 
-Single sign-on (SSO) allows you login to your account using your company's preffered identify provider. You can enable SSO through any provider that supports SAML. You can also set up [SCIM user provisioning through OKTA](https://support.sparkpost.com/docs/my-account-and-profile/scim/).
+Single sign-on (SSO) allows you to login to your account using your company's preffered identify provider. You can enable SSO through any provider that supports SAML. You can also set up [SCIM user provisioning through OKTA](https://support.sparkpost.com/docs/my-account-and-profile/scim/).
 
 Check this [article](https://support.sparkpost.com/docs/faq/difference-between-starter-and-premier/) to verify that your account's plan level supports SSO.
 
@@ -16,24 +16,24 @@ Enabling SSO is a 3-step process:
 Go to your [Account Settings page](https://app.sparkpost.com/account/settings)([EU](https://app.eu.sparkpost.com/account/settings)) and click on "Provision SSO" to upload your SAML configuration file. Copy the callback URL to configure your identity provider.
 
 ### 2. Configure your identity provider with the callback URL:
-Configure your identity provider with the callbackURL from the previous step. Refer to your identity provider documentation for instructions on where to submit this information.
+Configure your identity provider with the callback URL from the previous step. Refer to your identity provider documentation for instructions on where to submit this information.
 
 ### 3. Re-invite your users:
-Users have to be re-invited in order to start signing in with SSO. You can delete current users and re-invite them from the  [Users](https://app.sparkpost.com/account/users)([EU](https://app.eu.sparkpost.com/account/users)) page.
+Users have to be re-invited in order to start signing in with SSO. You can delete current users and re-invite them from the [Users](https://app.sparkpost.com/account/users)([EU](https://app.eu.sparkpost.com/account/users)) page.
 
 ## Disable Single Sign-On
 Disabling SSO is a 2-step process:
 
 ### 1. Disable for account:
-Go to your [Account Settings](https://app.sparkpost.com/account/settings)([EU](https://app.eu.sparkpost.com/account/settings)) and click on "Provision SSO" to upload your SAML configuration file. Once provisioned, you can enable SSO for the account.
+Go to your [Account Settings](https://app.sparkpost.com/account/settings)([EU](https://app.eu.sparkpost.com/account/settings)) and click on "Disable SSO".
 
 ### 2. Re-invite your users:
-Users have to be re-invited in order to set their passwords. You can delete current users and re-invite them from the  [Users](https://app.sparkpost.com/account/users)([EU](https://app.eu.sparkpost.com/account/users)) page.
+Users have to be re-invited in order to set their passwords. You can delete current users and re-invite them from the [Users](https://app.sparkpost.com/account/users)([EU](https://app.eu.sparkpost.com/account/users)) page.
 
 ## FAQ
 
-### What do I need to provide to my idendity provider?
-The specifics for configuring SSO in your idendity provider varies by provider, so we recommend you reference their documentation for full details. In general, you will need to provide the callback URL as described above. You may also be asked for metadata in some cases. If so, here is the metadata you can provide to your idendity provider:
+### What do I need to provide to my identity provider?
+The specifics for configuring SSO in your identity provider varies by provider, so we recommend you reference their documentation for full details. In general, you will need to provide the callback URL as described above. You may also be asked for metadata in some cases. If so, here is the metadata you can provide to your identity provider:
 
 *Note: the entity ID for legacy SAML configurations is `passport-saml`.*
 
@@ -94,8 +94,8 @@ No, there is no default user role - role is decided by the admin user when addin
 ### Can the user role be changed after a SSO user has been created?
 Yes, an admin user can change the user role for any user (including SSO users) at any time.
 
-### Is there a way to bypass SSO once its enabled?
-An admin can enable or disable SSO for each user at any time. However, there is no way to bypass SSO if it is enabled for a specific user - the admin must disable for that user in order to login via password.
+### Is there a way to bypass SSO once it's enabled?
+An admin can disable SSO by following the steps in the "Disable Single Sign-On" section above.
 
 ### Can I use both SSO and multi-factor authentication (MFA)?
 No. Users can only use either MFA or SSO.
