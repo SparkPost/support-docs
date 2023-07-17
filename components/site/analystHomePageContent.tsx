@@ -22,7 +22,7 @@ const gettingStarted = {
     },
     {
       url: '/analyst/competitive-tracker/',
-      title: 'Competitve Tracker',
+      title: 'Competitive Tracker',
       desc: 'Guides for optimizing your use of Competitive Tracker',
       linkText: 'Learn More',
     },
