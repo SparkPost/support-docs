@@ -4,7 +4,7 @@ title: "Single Sign-On (SSO)"
 description: "How to enable Single Sign-On (SSO) in SparkPost."
 ---
 
-Single sign-on (SSO) allows you login to your account using your company's preffered identify provider. You can enable SSO through any provider that supports SAML. You can also set up [SCIM user provisioning through OKTA](https://support.sparkpost.com/docs/my-account-and-profile/scim/).
+Single sign-on (SSO) allows you to login to your account using your company's preffered identify provider. You can enable SSO through any provider that supports SAML. You can also set up [SCIM user provisioning through OKTA](https://support.sparkpost.com/docs/my-account-and-profile/scim/).
 
 Check this [article](https://support.sparkpost.com/docs/faq/difference-between-starter-and-premier/) to verify that your account's plan level supports SSO.
 
@@ -33,7 +33,7 @@ Users have to be re-invited in order to set their passwords. You can delete curr
 ## FAQ
 
 ### What do I need to provide to my identity provider?
-The specifics for configuring SSO in your identity provider varies by provider, so we recommend you reference their documentation for full details. In general, you will need to provide the callback URL as described above. You may also be asked for metadata in some cases. If so, here is the metadata you can provide to your idendity provider:
+The specifics for configuring SSO in your identity provider varies by provider, so we recommend you reference their documentation for full details. In general, you will need to provide the callback URL as described above. You may also be asked for metadata in some cases. If so, here is the metadata you can provide to your identity provider:
 
 *Note: the entity ID for legacy SAML configurations is `passport-saml`.*
 
