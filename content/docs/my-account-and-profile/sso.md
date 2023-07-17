@@ -94,7 +94,7 @@ No, there is no default user role - role is decided by the admin user when addin
 ### Can the user role be changed after a SSO user has been created?
 Yes, an admin user can change the user role for any user (including SSO users) at any time.
 
-### Is there a way to bypass SSO once its enabled?
+### Is there a way to bypass SSO once it's enabled?
 An admin can disable SSO by following the steps in the "Disable Single Sign-On" section above.
 
 ### Can I use both SSO and multi-factor authentication (MFA)?
