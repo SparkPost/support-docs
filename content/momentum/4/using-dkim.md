@@ -1,13 +1,13 @@
 ---
-lastUpdated: "03/26/2020"
+lastUpdated: "08/02/2023"
 title: "Using DomainKeys Identified Mail (DKIM) Signatures"
-description: "Domain Keys Identified Mail DKIM is a mechanism that allows verification of the source and contents of email messages Using DKIM sending domains can include a cryptographic signature in outgoing email messages A message's signature may be verified by any or all MT As during transit and by the Mail..."
+description: "Domain Keys Identified Mail DKIM lets a receiving email server verify of the source and content of an email message. This is an anti-spoofing (and anti-phishing) measure. Using DKIM sending domains can include a cryptographic signature in outgoing email messages A message's signature may be verified by any or all MT As during transit and by the Mail..."
 ---
 
 
-DomainKeys Identified Mail (DKIM) is a mechanism that allows verification of the source and contents of email messages. Using DKIM, sending domains can include a cryptographic signature in outgoing email messages. A message's signature may be verified by any (or all) MTAs during transit and by the Mail User Agent (MUA) upon delivery. A verified signature indicates the message was sent by the sending domain and the message was not altered in transit. A signature that fails verification indicates the message may have been altered during transit or that the sender is fraudulently using the sending domain name. Unsigned messages contain no guarantee about the sending domain or integrity of the message contents. For more information about DKIM, see [draft-ietf-dkim-base-00](http://tools.ietf.org/html/draft-ietf-dkim-base-00).
+DomainKeys Identified Mail (DKIM) lets a receiving email server verify the source and content of an email message. This is an anti-spoofing (and anti-phishing) measure. Using DKIM, sending domains can include a cryptographic signature in outgoing email messages. A message's signature can be verified by any (or all) MTAs during transit and by the Mail User Agent (MUA) upon delivery. A verified signature means the message was sent by the sending domain and it was not altered in transit. A signature that fails verification indicates the message may have been altered during transit or that the sender is fraudulently using the sending domain name. Unsigned messages contain no guarantee about the sending domain or integrity of the message contents. For more information, see the [DKIM Internet Standard](https://www.rfc-editor.org/rfc/rfc6376).
 
-To determine subsequent handling of incoming email messages, service providers may use the success/failure of DKIM signature verification or the lack of a DKIM signature. The provider can drop invalid messages without impacting the final recipient, exposing the results of DKIM verification directly to the recipient, or exposing the lack of a signature directly to the recipient. Additionally, service providers may use signature verification as the basis for persistent reputation profiles to support anti-spam policy systems or to share with other service providers.
+To determine how to handle incoming email messages, service providers may use the success/failure of DKIM signature verification or the lack of a DKIM signature. The provider can drop invalid messages without impacting the final recipient, exposing the results of DKIM verification directly to the recipient, or exposing the lack of a signature directly to the recipient. Service providers could also use signature verification as the basis for persistent reputation profiles to support anti-spam policy systems, or to share with other service providers.
 
 [“DKIM schematic”](/momentum/4/using-dkim#figure_dkim_schematic) gives a graphical view of how DKIM works.
 
@@ -20,25 +20,25 @@ To determine subsequent handling of incoming email messages, service providers m
 
 1.  Set up
 
-    The domain owner (typically the team running the email systems within a company or service provider) generates a public/private key pair to use for signing all outgoing messages (multiple key pairs are allowed). The public key is published in DNS, and the private key is made available to their DKIM-enabled outbound email servers. This is step "A" in the diagram to the right.
+    The domain owner (typically the team running the email systems within a company or service provider) generates a public/private key pair to use for signing all outgoing messages (multiple key pairs are allowed). The public key is published in DNS, and the private key is made available to their DKIM-enabled outbound email servers. This is step "A" in the diagram.
 
 2.  Signing
 
-    When each email is sent by an authorized end-user within the domain, the DKIM-enabled email system automatically uses the stored private key to generate a digital signature of the message. This signature is included in a DKIM-Signature header and prepended to the email. The email is then sent on to the recipient's mail server. This is step "B" in the diagram to the right.
+    When each email is sent by an authorized end-user within the domain, the DKIM-enabled email system automatically uses the stored private key to generate a digital signature of the message. This signature is included in a DKIM-Signature header and prepended to the email. The email is then sent on to the recipient's mail server. This is step "B" in the diagram.
 
 ## <a name="idp3402048"></a> For Receiving Servers
 
 1.  Preparation
 
-    The DKIM-enabled receiving email system extracts and parses the message's DKIM-Signature header. The signing domain asserted by the header is used to fetch the signer's public key from DNS. This is step "C" in the diagram to the right.
+    The DKIM-enabled receiving email system extracts and parses the message's DKIM-Signature header. The signing domain asserted by the header is used to fetch the signer's public key from DNS. This is step "C" in the diagram.
 
 2.  Verification
 
-    The signer's public key is then used by the receiving mail system to verify that the signature contained in the DKIM-Signature header was generated by the sending domain's private key. This proves that the email was truly sent by, and with the permission of, the claimed sending domain. It also provides that all the headers signed by the sending domain and the message body were not altered during transit.
+    The signer's public key is then used by the receiving mail system to verify that the signature in the DKIM-Signature header was generated by the sending domain's private key. This proves that the email was truly sent by, and with the permission of, the claimed sending domain. It also checks to see that all the headers signed by the sending domain and the message body were not altered during transit.
 
 3.  Delivery
 
-    The receiving email system uses the outcome of signature verification along with other local policies and tests to determine the disposition of the message. If local policy does not prohibit delivery, the message is passed to the user's inbox. Optionally, the email recipient may be informed of the results of the signature verification. This is step "D" in the diagram on the right.
+    The receiving email system uses the outcome of signature verification along with other local policies and tests to decide what happens to the message. If local policy does not prohibit delivery, the message is passed to the user's inbox. Optionally, the email recipient may be informed of the results of the signature verification. This is step "D" in the diagram.
 
 ## <a name="using_dkim.signing"></a> DKIM Signing
 
