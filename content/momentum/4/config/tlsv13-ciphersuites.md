@@ -22,7 +22,7 @@ allowable ciphersuites must be a subset of the available TLSv1.3 ciphersuites on
 
 **OpenSSL**
 
-When TLS_Engine is set to `openssl`, TLSv13_Ciphersuites specifies a "ciphersuite list", which is a
+When TLS_Engine is set to `openssl`, `TLSv13_Ciphersuites` specifies a "ciphersuite list", which is a
 colon (":") separated list of the supported TLSv1.3 ciphersuite names in order of preference.
 There are 5 valid TLSv1.3 ciphersuites that are supported by OpenSSL 1.1.1:
 ```
@@ -41,6 +41,7 @@ For more information about the TLSv1.3 cihersuites, see
 
 
 * To set the option to all the 5 TLSv1.3 ciphersuites supported by OpenSSL 1.1.1:
+
 `TLSv13_Ciphersuites = "TLS_AES_256_GCM_SHA384:TLS_CHACHA20_POLY1305_SHA256:TLS_AES_128_GCM_SHA256:TLS_AES_128_CCM_8_SHA256:TLS_AES_128_CCM_SHA256"`
 
 The default value (when this option is left unset) is
