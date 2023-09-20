@@ -18,7 +18,9 @@ tls_protocols — allowable ciphers for TLS inbound and outbound sessions
 
 **Configuration Change. ** This option is available as of version 4.1.0.2\.
 
-`tls_protocols` specifies the allowable protocols for an OpenSSL TLS session. The available protocols are `ALL`, `SSLv2`, `SSLv3`, `TLSv1.0`, `TLSv1.1`, and `TLSv1.2`. Each set can be enabled or disabled by prefixing its name with a “+” or “-“ respectively. The following example shows the SSLv2 and SSLv3 protocols being disabled:
+`tls_protocols` specifies the allowable protocols for an OpenSSL TLS session. The available
+protocols are `ALL`, `SSLv2`, `SSLv3`, `TLSv1.0`, `TLSv1.1`, `TLSv1.2` and `TLSv1.3` (since Momentum
+4.6). Each set can be enabled or disabled by prefixing its name with a “+” or “-“ respectively. The following example shows the SSLv2 and SSLv3 protocols being disabled:
 
 `TLS_Protocols = "+ALL:-SSLv2:-SSLv3"`
 

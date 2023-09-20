@@ -32,6 +32,8 @@ By default, TLS is disabled. To use TLS, you must change the `TLS` option in the
 
 *   [tls_ciphers](/momentum/4/config/tls-ciphers)
 
+*   [tlsv13_ciphersuites](/momentum/4/config/tlsv13-ciphersuites)
+
 *   [tls_dhparams_file](/momentum/4/config/ref-tls-dhparams-file)
 
 *   [tls_enable_dhe_ciphers](/momentum/4/config/ref-tls-enable-dhe-ciphers)
