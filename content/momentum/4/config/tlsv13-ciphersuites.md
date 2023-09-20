@@ -1,6 +1,6 @@
 ---
 lastUpdated: "09/20/2023"
-title: "tlsv13_ciphersuits"
+title: "tlsv13_ciphersuites"
 description: "specify allowable ciphersuites for TLS inbound and outbound sessions when TLSv1.3 protocol is negotiated and used"
 ---
 
@@ -11,7 +11,7 @@ tlsv13_ciphersuites — specify allowable TLSv1.3 ciphersuites for TLS inbound a
 
 ## Synopsis
 
-`TLSv13_Ciphersuites = "<ciphersuite<[:<another ciphersuite>]"`
+`TLSv13_Ciphersuites = "<ciphersuite>[:<another ciphersuite>]"`
 
 ## Description
 
@@ -42,7 +42,9 @@ For more information about the TLSv1.3 cihersuites, see
 
 * To set the option to all the 5 TLSv1.3 ciphersuites supported by OpenSSL 1.1.1:
 
-`TLSv13_Ciphersuites = "TLS_AES_256_GCM_SHA384:TLS_CHACHA20_POLY1305_SHA256:TLS_AES_128_GCM_SHA256:TLS_AES_128_CCM_8_SHA256:TLS_AES_128_CCM_SHA256"`
+```
+TLSv13_Ciphersuites = "TLS_AES_256_GCM_SHA384:TLS_CHACHA20_POLY1305_SHA256:TLS_AES_128_GCM_SHA256:TLS_AES_128_CCM_8_SHA256:TLS_AES_128_CCM_SHA256"
+```
 
 The default value (when this option is left unset) is
 `"TLS_AES_256_GCM_SHA384:TLS_CHACHA20_POLY1305_SHA256:TLS_AES_128_GCM_SHA256"`.
