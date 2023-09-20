@@ -30,7 +30,7 @@ The default value is “+ALL”.
 
 ### Note
 
-In Centos/RHEL 5, which are typically shipped with OpenSSL 0.98, TLSv1.1 and TLSv1.2 are not available.
+In Centos/RHEL 5, which are typically shipped with OpenSSL 0.98, TLSv1.1, TLSv1.2 and TLSv1.3 are not available.
 
 <a name="idp26999712"></a> 
 ## Scope

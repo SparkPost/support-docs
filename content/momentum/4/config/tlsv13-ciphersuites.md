@@ -11,15 +11,14 @@ tlsv13_ciphersuites — specify allowable TLSv1.3 ciphersuites for TLS inbound a
 
 ## Synopsis
 
-`TLSv13_Ciphersuites = "TLS_AES_256_GCM_SHA384:TLS_CHACHA20_POLY1305_SHA256:TLS_AES_128_GCM_SHA256"`
+`TLSv13_Ciphersuites = "<ciphersuite<[:<another ciphersuite>]"`
 
 ## Description
 
-**Configuration Change. ** Support for OpenSSL is available as of version 4.6 for SMTP reception,
-    HTTP reception, and SMTP deliveries only.
+**Configuration Change. ** This option is available as of version 4.6, for SMTP reception, HTTP reception, and SMTP deliveries only.
 
 This option specifies the allowable ciphersuites for a TLS session using TLSv1.3 protocol. The
-allowable ciphersuites must be a subset of the available ciphersuites on the host system.
+allowable ciphersuites must be a subset of the available TLSv1.3 ciphersuites on the host system.
 
 **OpenSSL**
 
@@ -42,10 +41,10 @@ For more information about the TLSv1.3 cihersuites, see
 
 
 * To set the option to all the 5 TLSv1.3 ciphersuites supported by OpenSSL 1.1.1:
-`TLS_AES_256_GCM_SHA384:TLS_CHACHA20_POLY1305_SHA256:TLS_AES_128_GCM_SHA256:TLS_AES_128_CCM_8_SHA256:TLS_AES_128_CCM_SHA256`
+`TLSv13_Ciphersuites = "TLS_AES_256_GCM_SHA384:TLS_CHACHA20_POLY1305_SHA256:TLS_AES_128_GCM_SHA256:TLS_AES_128_CCM_8_SHA256:TLS_AES_128_CCM_SHA256"`
 
-The default value (when this option leaves unset) is
-`TLS_AES_256_GCM_SHA384:TLS_CHACHA20_POLY1305_SHA256:TLS_AES_128_GCM_SHA256`.
+The default value (when this option is left unset) is
+`"TLS_AES_256_GCM_SHA384:TLS_CHACHA20_POLY1305_SHA256:TLS_AES_128_GCM_SHA256"`.
 
 **GNUTLS**
 
