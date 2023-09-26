@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/26/2020"
+lastUpdated: "09/26/2023"
 title: "Using DomainKeys Identified Mail (DKIM) Signatures"
 description: "Domain Keys Identified Mail DKIM is a mechanism that allows verification of the source and contents of email messages Using DKIM sending domains can include a cryptographic signature in outgoing email messages A message's signature may be verified by any or all MT As during transit and by the Mail..."
 ---
@@ -120,7 +120,7 @@ Key type. This tag defines the syntax and semantics of the p= tag value. Current
 
 <dd>
 
-Hash algorithm. Currently, this tag should have the value "sha1" or "sha256".  Use of sha256 is recommended.
+Hash algorithm. Currently, this tag should have the value "sha1" or "sha256".  Use of sha256 is strongly recommended.
 
 </dd>
 

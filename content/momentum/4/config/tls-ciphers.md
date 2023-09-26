@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/26/2020"
+lastUpdated: "09/26/2023"
 title: "tls_ciphers"
 description: "tls ciphers specify allowable ciphers for TLS inbound and outbound sessions TLS Ciphers DEFAULT NORMAL Configuration Change Support for GNUTLS is available as of version 4 1 for SMTP reception and SMTP deliveries only This option specifies the allowable ciphers for a TLS session The allowable ciphers must be a..."
 ---
@@ -18,7 +18,7 @@ tls_ciphers — specify allowable ciphers for TLS inbound and outbound sessions
 
 **Configuration Change. ** Support for GNUTLS is available as of version 4.1 for SMTP reception and SMTP deliveries only.
 
-This option specifies the allowable ciphers for a TLS session using TLSv1.2 or below. The allowable ciphers must be a subset of the available ciphers on the host system.  For TLSv1.3, see tlsv13_ciphersuites.
+This option specifies the allowable ciphers for a TLS session using TLSv1.2 or below. The allowable ciphers must be a subset of the available ciphers on the host system.  For TLSv1.3, see [tlsv13_ciphersuites](/momentum/4/config/tls-v13_ciphersuites).
 
 **OpenSSL**
 
