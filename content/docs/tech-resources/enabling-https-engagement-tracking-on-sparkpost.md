@@ -1,5 +1,5 @@
 ---
-lastUpdated: "07/10/2023"
+lastUpdated: "09/27/2023"
 title: "Enabling HTTPS Engagement Tracking on SparkPost"
 description: "SparkPost supports HTTPS engagement tracking for customers via self-service for all SparkPost customers. To enable SSL engagement tracking for a domain, additional configuration for SSL keys is required."
 ---
@@ -37,7 +37,7 @@ This document includes step by step guides for the following CDNs.
         * (Cloudflare certificates are auto-issued)
 * AWS CloudFront:
     * [Create a Domain](#step-by-step-guide-with-aws-cloudfront)
-    * [Issue a Certificate](#using-aws-certificate-manager-acm-to-issue-a-certificate-for-your-domains)
+    * [Issue a Certificate](#using-aws-certificate-manager-acm-to-issue-a-certificate-for-your-domain)
 * Fastly:
     * [Create a Domain](#step-by-step-guide-with-fastly)
     * [Issue a Certificate](#issue-a-certificate-with-fastly)
@@ -181,6 +181,8 @@ For up to date information on creating a distribution via CloudFront, please ref
 
    * Optionally, change the name (you can leave this at default).
 
+   * Under "Add custom header", click "Add header". Enter `X-Forwarded-Host` as the header name and your custom tracking domain as the header value.
+
    * Leave "Enable Origin Shield" disabled.
 
    * Skip the "Additional settings".
@@ -246,14 +248,14 @@ For up to date information on creating a distribution via CloudFront, please ref
     * Enable forwarding of the `User-Agent` header. Type in `User-Agent` and click "Add". This allows `User-Agent` data to be present in your engagement events received from SparkPost.
 
       ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_cache5.png)
-    
-    * Enable forwarding of the `Host` header. Type in `Host` and click "Add". This allows `Host` data to be present in your engagement events received from SparkPost.
+
+    * Under "Query strings", select "Include the following query strings".
+
+    * Under "Add query string", enter `target`.
+
+    * Leave Cookies set to default (None). Your origin request settings should now look like this.
 
       ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_cache6.png)
-
-    * Leave Query string and Cookies set to defaults (None). Your origin request settings should now look like this.
-
-      ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_cache7.png)
 
     * Click "Create" (on first time) / "Save Changes" (if modifying).
 
@@ -277,7 +279,7 @@ For up to date information on creating a distribution via CloudFront, please ref
 
     * Under "Custom SSL Certificate", select **Custom SSL Certificate** - Upload certificates as needed.
 
-        > If you want to have AWS create a new certificate within AWS instead of importing an existing one, click "Request certificate" and follow the steps [here](#using-aws-certificate-manager-acm-to-issue-a-certificate-for-your-domains) before continuing.
+        > If you want to have AWS create a new certificate within AWS instead of importing an existing one, click "Request certificate" and follow the steps [here](#using-aws-certificate-manager-acm-to-issue-a-certificate-for-your-domain) before continuing.
 
     * Leave the other settings at default / recommended values.
 
@@ -285,7 +287,7 @@ For up to date information on creating a distribution via CloudFront, please ref
 
         ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_created_new_dist.png)
 
-1. Create, or update, a CNAME record with your DNS service to route queries for tracking domain(s) with your CloudFront distribution ID. This will be specific to your DNS service.
+1. Create, or update, a CNAME record with your DNS service so that requests to your tracking domain are routed to your CloudFront distribution. This will be specific to your DNS service.
 
    * Get the "Domain Name" for your distribution from the Distributions page. You can use the square "copy" button.
 
@@ -309,13 +311,13 @@ For up to date information on creating a distribution via CloudFront, please ref
 1. Follow [these steps](#switch-tracking-domain-to-secure-and-validate) to update and verify your tracking domain.
 
 ---
-### Using AWS Certificate Manager (ACM) to issue a certificate for your domain(s)
+### Using AWS Certificate Manager (ACM) to issue a certificate for your domain
 
-Once your CNAME is set up with your DNS provider, instead of providing an existing certificate, you can have AWS issue a certificate for your custom tracking domain(s).
+Once your CNAME is set up with your DNS provider, instead of providing an existing certificate, you can have AWS issue a certificate for your custom tracking domain.
 
 1. Navigate to the AWS Certificate Manager (ACM). Choose Request a Certificate, then select Request a public certificate.
 
-    Add your domain name(s), select Next.
+    Add your domain name, select Next.
 
     ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_request_cert.png)
 
@@ -323,7 +325,7 @@ Once your CNAME is set up with your DNS provider, instead of providing an existi
 
     ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_request_cert2.png)
 
-1. On your DNS provider, create the CNAME records that are used to by AWS to validate that these domain(s) are yours.
+1. On your DNS provider, create the CNAME records that are used by AWS to validate that the domain is yours.
 
     ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_validate_cert.png)
 
@@ -337,7 +339,7 @@ Once your CNAME is set up with your DNS provider, instead of providing an existi
 
     ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_edit.png)
 
-1. Enter your domain names, select "Custom SSL certificate", and select from the drop-down list.
+1. Enter your domain name, select "Custom SSL certificate", and select from the drop-down list.
 
     ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_select_cert.png)
 
