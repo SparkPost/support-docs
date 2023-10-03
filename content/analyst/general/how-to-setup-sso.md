@@ -25,7 +25,7 @@ description: This guide helps go through the process of setting up SSO for your 
 
 ![](media/general_how_to_setup_sso_1.png)
 
-_Optional, if the account is configured on our end to allow it) Attribute Statements:_
+_Optional (if the account is configured on our end to allow it) Attribute Statements:_
 * nativeUserId
 * nativeAccountId
 
