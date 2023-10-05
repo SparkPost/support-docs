@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/24/2021"
+lastUpdated: "09/30/2023"
 title: "Using Mobile Universal and App Links with SparkPost"
 description: "A guide to including iOS universal links and Android App Links in your SparkPost-delivered email"
 ---
@@ -444,9 +444,10 @@ To get Android to [auto-verify](#auto-verify) your app's domains (skipping the u
 #
 <VirtualHost _default_:80>
   ServerName yourtrackingdomain.example.com
-  ProxyPass "/f/" "http://spgo.io/f/"
+  # The backend IPs can change, so disablereuse=On is required
+  ProxyPass "/f/" "http://spgo.io/f/" disablereuse=On
   ProxyPassReverse "/f/" "http://spgo.io/f/"
-  ProxyPass "/q/" "http://spgo.io/q/"
+  ProxyPass "/q/" "http://spgo.io/q/" disablereuse=On
   ProxyPassReverse "/q/" "http://spgo.io/q/"
 
   Alias "/.well-known" "/var/www/html/securetrack/.well-known"
@@ -454,9 +455,9 @@ To get Android to [auto-verify](#auto-verify) your app's domains (skipping the u
 
 <VirtualHost _default_:443>
   ServerName yourtrackingdomain.example.com
-  ProxyPass "/f/" "http://spgo.io/f/"
+  ProxyPass "/f/" "http://spgo.io/f/" disablereuse=On
   ProxyPassReverse "/f/" "http://spgo.io/f/"
-  ProxyPass "/q/" "http://spgo.io/q/"
+  ProxyPass "/q/" "http://spgo.io/q/" disablereuse=On
   ProxyPassReverse "/q/" "http://spgo.io/q/"
 
   Alias "/.well-known" "/var/www/html/securetrack/.well-known"
@@ -488,6 +489,8 @@ To check your files are served correctly and Android auto-verify is working - se
 1. Add `location` blocks to your config to declare the spec files on your tracking domain, which will allow Android to [auto-verify](#android-testing-auto-verify). Here is a complete example, including the engagement-tracking `proxy-pass` block done in step 1.
 
     ```
+    resolver 10.0.0.2 valid=10s;
+
     server {
         listen 80;
         listen 443 ssl http2;
@@ -513,7 +516,9 @@ To check your files are served correctly and Android auto-verify is working - se
 
         # pass all other requests through to SparkPost engagement tracking
         location / {
-            proxy_pass      https://spgo.io;
+            set $backend "spgo.io";
+            proxy_pass      https://$backend;
+            proxy_set_header Host $host;
             proxy_set_header X-Forwarded-For $remote_addr; # pass the client IP to the open & click tracker
             server_tokens off; # suppress NGINX giving version/OS information on error pages
         }

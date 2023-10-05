@@ -1,5 +1,5 @@
 ---
-lastUpdated: "05/03/2023"
+lastUpdated: "09/29/2023"
 title: "Using a Reverse Proxy for HTTPS Tracking Domain"
 description: "SparkPost supports HTTPS engagement tracking for customers via self-service for all SparkPost customers. To enable SSL engagement tracking for a domain, additional configuration for SSL keys is required.  This resource outlines the use of a reverse proxy to host SSL certificates"
 ---
@@ -56,18 +56,20 @@ On a Debian distribution, this command will install nginx with a sample configur
 
 Note: you must store `spgo.io` in a variable so that nginx re-resolves the domain when its TTL expires. You also have to include the `resolver` directive to explicitly specify a DNS server to resolve the hostname. By including the `valid` parameter to the directive, you can tell nginx to ignore the TTL and to re‑resolve names at a specified frequency. In the sample below, nginx re‑resolves names every 10 seconds.
 
+Note: as shown in the sample configuration file below, you should forward the `Host` header so that SparkPost can determine the tracking domain used in a request.
+
 ```apacheconf
 resolver 10.0.0.2 valid=10s;
 
 server { # simple reverse-proxy
    listen       80;
-   listen       443 ssl;
    server_name  click.nddurant.com;
 
    # pass requests for dynamic content to rails/turbogears/zope, et al
    location / {
      set $backend "spgo.io";
      proxy_pass https://$backend;
+     proxy_set_header Host $host;
    }
 }
 ```
@@ -234,6 +236,7 @@ server { # simple reverse-proxy
     location / {
         set $backend "spgo.io";
         proxy_pass https://$backend;
+        proxy_set_header Host $host;
         proxy_set_header X-Forwarded-For $remote_addr; # pass the client IP to the open & click tracker
         server_tokens off; # suppress NGINX giving version/OS information on error pages
     }
@@ -270,7 +273,8 @@ Add the following configuration (putting your own tracking domain into the `Serv
 <VirtualHost _default_:80>
   ServerName yourtrackingdomain.example.com
   ServerPath "/"
-  ProxyPass "/" "http://spgo.io/"
+  # The backend IPs can change, so disablereuse=On is required
+  ProxyPass "/" "http://spgo.io/" disablereuse=On
   ProxyPassReverse "/" "http://spgo.io/"
 </VirtualHost>
 ```
@@ -291,7 +295,7 @@ Create an additional port 443 proxy configuration as follows. Set the  certifica
   SSLCertificateFile "/opt/apache2/conf/server.crt"
   SSLCertificateKeyFile "/opt/apache2/conf/server.key"
   ServerPath "/"
-  ProxyPass "/" "https://spgo.io/"
+  ProxyPass "/" "https://spgo.io/" disablereuse=On
   ProxyPassReverse "/" "https://spgo.io/"
   SSLProxyEngine on
 </VirtualHost>
