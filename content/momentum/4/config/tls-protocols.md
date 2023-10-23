@@ -35,4 +35,4 @@ In Centos/RHEL 5, which are typically shipped with OpenSSL 0.98, TLSv1.1, TLSv1.
 <a name="idp26999712"></a> 
 ## Scope
 
-`tls_ciphers` is valid in the binding, binding_group, domain, ecstream_listener, esmtp_listener, global, http_listener, listen, pathway, pathway_group and peer scopes.
+`tls_protocols` is valid in the binding, binding_group, domain, ecstream_listener, esmtp_listener, global, http_listener, listen, pathway, pathway_group and peer scopes.

@@ -36,7 +36,7 @@ By default (if not explicitly specified through this configuration option), only
 On the host machine, `openssl11 ciphers -s -tls1_3` can show the default TLSv1.3 ciphersuites;
 `openssl11 ciphers -tls1_3 -v -s -ciphersuites TLS_AES_128_CCM_8_SHA256:TLS_AES_128_CCM_SHA256` can
 check whether the last two ciphersuites are supported if enabled.
-For more information about the TLSv1.3 cihersuites, see
+For more information about the TLSv1.3 ciphersuites, see
 [https://wiki.openssl.org/index.php/TLS1.3#Ciphersuites](https://wiki.openssl.org/index.php/TLS1.3#Ciphersuites).
 
 
