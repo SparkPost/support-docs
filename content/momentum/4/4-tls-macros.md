@@ -15,71 +15,18 @@ The tls_macros module must be loaded in a configuration file, as follows:
 `tls_macros {}`
 ### <a name="tls_macros.macros"></a> TLS Logging Macros
 
-[Table 71.2, “TLS Logging Macros”](/momentum/4/4-tls-macros#tls-macros-table) lists the TLS logging macros.
-
 <a name="tls-macros-table"></a> 
-
 
 | Macro | Description | Examples |
 | --- | --- | --- |
-| outbound_tls:outbound_tls | Whether TLS was used or not | 
-
-*   SMTP ("SMTP" = no TLS)
-
-*   TLS
-
-*   unknown
-
- |
-| outbound_tls:outbound_tls_type | TLS type of connection | 
-
-When TLS is being used, this matches the value of the TLS configuration variable.
-
-*   no ("no" = no TLS)
-
-*   ifavailable
-
-*   required
-
- |
+| outbound_tls:outbound_tls | Indicates whether TLS was used or not | * SMTP ("SMTP" = no TLS)<br>* TLS<br>* unknown |
+| outbound_tls:outbound_tls_type | When TLS is being used, this matches the value of the TLS configuration variable. | * no ("no" = no TLS)<br> * ifavailable<br> * required |
 | outbound_tls:local_ip | IP address to which the message was sent | 1.2.3.4 |
-| outbound_tls:outbound_tls_cipher | Cipher suite for TLS session | 
-
-Currently, the cipher suite names are specific to the TLS library used and are different between OpenSSL and GNUTLS.
-
-*   For OpenSSL: ECDHE_RSA_AES_128_GCM_SHA256
-
-*   For GNUTLS: AES256-GCM-SHA384
-
- |
-| outbound_tls:outbound_tls_cipher_algbits | 
-
-*   For OpenSSL: outbound_tls_cipher_algbits returns the bits processed by chosen algorithm.
-
-*   For GNUTLS: outbound_tls_cipher_algbits returns the key size.
-
- |   |
-| outbound_tls:outbound_tls_cipher_usebits | 
-
-*   For OpenSSL: outbound_tls_cipher_usebits returns the secret bits used by chosen cipher.
-
-*   For GNUTLS: outbound_tls_cipher_usebits returns the key size.
-
- |   |
-| outbound_tls:outbound_tls_protocol | TLS/SSL protocol version string | 
-
-*   For OpenSSL: TLSv1.2
-
-*   For GNUTLS: TLS1.2
-
- |
-| outbound_tls:outbound_tls_verified | Whether the certificate passed verification (including subject verification) | 
-
-*   verified
-
-*   unverified
-
- |
+| outbound_tls:outbound_tls_cipher | Cipher suite for TLS session | For OpenSSL: ECDHE_RSA_AES_128_GCM_SHA256<br> For GNUTLS: AES256-GCM-SHA384 |
+| outbound_tls:outbound_tls_cipher_algbits | For OpenSSL: outbound_tls_cipher_algbits returns the bits processed by chosen algorithm.<br> For GNUTLS: outbound_tls_cipher_algbits returns the key size. |   |
+| outbound_tls:outbound_tls_cipher_usebits | For OpenSSL: outbound_tls_cipher_usebits returns the secret bits used by chosen cipher.<br> For GNUTLS: outbound_tls_cipher_usebits returns the key size. |   |
+| outbound_tls:outbound_tls_protocol | TLS/SSL protocol version string | For OpenSSL: TLSv1.2<br> For GNUTLS: TLS1.2 |
+| outbound_tls:outbound_tls_verified | Whether the certificate passed verification (including subject verification) | * verified<br>* unverified |
 | outbound_tls:outbound_tls_issuer | Issuer from TLS certificate | ca.test.messagesystems.com |
 | outbound_tls:outbound_tls_subject | Subject from TLS certificate | server.ectest.examplecompany.com |
 

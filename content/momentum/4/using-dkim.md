@@ -1,11 +1,12 @@
 ---
-lastUpdated: "03/26/2020"
+lastUpdated: "09/26/2023"
 title: "Using DomainKeys Identified Mail (DKIM) Signatures"
 description: "Domain Keys Identified Mail DKIM is a mechanism that allows verification of the source and contents of email messages Using DKIM sending domains can include a cryptographic signature in outgoing email messages A message's signature may be verified by any or all MT As during transit and by the Mail..."
 ---
 
 
-DomainKeys Identified Mail (DKIM) is a mechanism that allows verification of the source and contents of email messages. Using DKIM, sending domains can include a cryptographic signature in outgoing email messages. A message's signature may be verified by any (or all) MTAs during transit and by the Mail User Agent (MUA) upon delivery. A verified signature indicates the message was sent by the sending domain and the message was not altered in transit. A signature that fails verification indicates the message may have been altered during transit or that the sender is fraudulently using the sending domain name. Unsigned messages contain no guarantee about the sending domain or integrity of the message contents. For more information about DKIM, see [draft-ietf-dkim-base-00](http://tools.ietf.org/html/draft-ietf-dkim-base-00).
+DomainKeys Identified Mail (DKIM) is a mechanism that allows verification of the source and contents of email messages. Using DKIM, sending domains can include a cryptographic signature in outgoing email messages. A message's signature may be verified by any (or all) MTAs during transit and by the Mail User Agent (MUA) upon delivery. A verified signature indicates the message was sent by the sending domain and the message was not altered in transit. A signature that fails verification indicates the message may have been altered during transit or that the sender is fraudulently using the sending domain name. Unsigned messages contain no guarantee about the sending domain or integrity of the message contents.
+For more information about DKIM, see [RFC 6376](https://www.rfc-editor.org/rfc/rfc6376.html).
 
 To determine subsequent handling of incoming email messages, service providers may use the success/failure of DKIM signature verification or the lack of a DKIM signature. The provider can drop invalid messages without impacting the final recipient, exposing the results of DKIM verification directly to the recipient, or exposing the lack of a signature directly to the recipient. Additionally, service providers may use signature verification as the basis for persistent reputation profiles to support anti-spam policy systems or to share with other service providers.
 
@@ -60,13 +61,13 @@ To control how OpenDKIM signing statistics are recorded, see [signing_stats](/mo
 
 ### <a name="using_dkim.generating"></a> Generating DKIM Keys
 
-The OpenSSL cryptography toolkit is used to generate RSA keys for DKIM. As an example, the following openssl commands are used to generate public and private keys for the domain `example.com` with a selector called `dkim1024`. Typically, the directory `/opt/msys/ecelerity/etc/conf/dkim` is used for key storage.
+The OpenSSL cryptography toolkit is used to generate RSA keys for DKIM. As an example, the following openssl commands are used to generate public and private keys for the domain `example.com` with a selector called `dkim2048`. Typically, the directory `/opt/msys/ecelerity/etc/conf/dkim` is used for key storage.
 
 ```
 # mkdir -p /opt/msys/ecelerity/etc/conf/dkim/example.com
-# openssl genrsa -out /opt/msys/ecelerity/etc/conf/dkim/example.com/dkim1024.key 1024
-# openssl rsa -in /opt/msys/ecelerity/etc/conf/dkim/example.com/dkim1024.key \
-        -out /opt/msys/ecelerity/etc/conf/dkim/example.com/dkim1024.pub -pubout -outform PEM
+# openssl genrsa -out /opt/msys/ecelerity/etc/conf/dkim/example.com/dkim2048.key 2048
+# openssl rsa -in /opt/msys/ecelerity/etc/conf/dkim/example.com/dkim2048.key \
+        -out /opt/msys/ecelerity/etc/conf/dkim/example.com/dkim2048.pub -pubout -outform PEM
 ```
 
 All DKIM verification implementations must support key sizes of 512, 768, 1024, 1536, and 2048 bits. A signer may choose to sign messages using any of these sizes and may use a different size for different selectors. Larger key sizes provide greater security but impose higher CPU costs during message signing and verification.
@@ -74,6 +75,8 @@ All DKIM verification implementations must support key sizes of 512, 768, 1024, 
 ### Warning
 
 Note that Google requires all senders to sign with a 1024 bit or greater DKIM key size.
+
+It is recommended that a key size of at least 2048 bits is used.
 
 The resulting public key should look similar to:
 
@@ -86,10 +89,10 @@ Q7jIOnF5fG9AQNd1UQIDAQAB
 -----END PUBLIC KEY-----
 ```
 
-Once the public and private keys have been generated, create a DNS text record for `dkim1024._domainkey.example.com`. The DNS record contains several DKIM "tag=value" pairs and should be similiar to the record shown below:
+Once the public and private keys have been generated, create a DNS text record for `dkim2048._domainkey.example.com`. The DNS record contains several DKIM "tag=value" pairs and should be similiar to the record shown below:
 
 ```
-dkim1024._domainkey.example.com. 86400 IN TXT
+dkim2048._domainkey.example.com. 86400 IN TXT
 "v=DKIM1; k=rsa; h=sha256; t=y; p=MHww...QAB"
 ```
 
@@ -117,7 +120,7 @@ Key type. This tag defines the syntax and semantics of the p= tag value. Current
 
 <dd>
 
-Hash algorithm. Currently, this tag should have the value "sha1" or "sha256".
+Hash algorithm. Currently, this tag should have the value "sha1" or "sha256".  Use of sha256 is strongly recommended.
 
 </dd>
 

@@ -5,9 +5,10 @@ description: "The installation and upgrade instructions in Chapters 8 through 11
 ---
 
 
-### Warning
+| **WARNING** |
+| -- |
+| **The installation and upgrade instructions in this section are only applicable in their entirety for Momentum 4.x releases prior to 4.2.28.** For release 4.2.28 and beyond, please refer to the installation and upgrade PDF documents available under the desired release's folder on the Message Systems Support website's [Downloads page](https://support.messagesystems.com/start.php/). If you are uncertain as to which document is applicable to your situation, please contact your technical support representative.|
 
-**The installation and upgrade instructions in Chapters 8 through 11 are only applicable in their entirety for Momentum 4.x releases prior to 4.2.28.**                                                                                                                                                 For release 4.2.28 and beyond, please refer to the installation and upgrade PDF documents available under the desired release's folder on the Message Systems Support website's [Downloads page](https://support.messagesystems.com/start.php/). If you are uncertain as to which document is applicable to your situation, please contact your technical support representative.
 
 This section documents the installation procedures for use in either a local or Amazon Web Services (AWS) environment. This installation can be scaled for a variety of installation configurations, including singlenode, a cluster with three combined Platform and Analytics nodes, and two-tiered topologies that have multiple Platform and multiple, separate Analytics nodes.
 
