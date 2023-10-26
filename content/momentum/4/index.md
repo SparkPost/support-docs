@@ -6,9 +6,9 @@ description: "Message Systems Inc Copyright 2014-2023 Message Systems Inc Confid
 
 ### Message Systems, Inc.
 
-Copyright © 204-2023 Message Systems, Inc.
+Copyright © 2014-2023 Message Systems, Inc.
 
-<a name="idp102528"></a> 
+<a name="idp102528"></a>
 
 Confidential & Proprietary.
 
