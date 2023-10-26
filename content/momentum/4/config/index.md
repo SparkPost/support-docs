@@ -1,5 +1,5 @@
 ---
-lastUpdated: "09/14/2021"
+lastUpdated: "09/20/2023"
 title: "Category File"
 type: "custom"
 name: "Configuration Options Reference"
@@ -206,6 +206,7 @@ description: "This chapter provides the definitions of the configuration options
 | [tls_ca](/momentum/4/config/tls-ca) | certificate authority for outbound mail |
 | [tls_certificate](/momentum/4/config/tls-certificate) | certificate to use for inbound and outbound mail |
 | [tls_ciphers](/momentum/4/config/tls-ciphers) | specify allowable ciphers for TLS inbound and outbound sessions |
+| [tlsv13_ciphersuites](/momentum/4/config/tlsv13-ciphersuites) | specify allowable TLSv1.3 ciphersuites for TLS inbound and outbound sessions |
 | [tls_client_ca](/momentum/4/config/tls-client-ca) | certificate authority for inbound mail |
 | [tls_dhparams_file](/momentum/4/config/ref-tls-dhparams-file) | specifies the file of Diffie Hellman (DHE) parameters that add per-session randomness to the encryption. Default parameters are built in the product if none are specified. |
 | [tls_enable_dhe_ciphers](/momentum/4/config/ref-tls-enable-dhe-ciphers) | controls whether or not Diffie Hellman (DHE) ciphers are available |

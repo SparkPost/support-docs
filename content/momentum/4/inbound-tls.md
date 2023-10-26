@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/26/2020"
+lastUpdated: "09/20/2023"
 title: "Inbound TLS"
 description: "Transport Layer Security TLS can be easily configured on an SMTP listener using the following configuration snippet The following are the configuration options related to inbound TLS tls allow renegotiation tls certificate tls ciphers tls client ca tls dhparams file tls enable dhe ciphers tls key tls protocols tls verified..."
 ---
@@ -26,6 +26,8 @@ The following are the configuration options related to inbound TLS:
 *   [tls_certificate](/momentum/4/config/tls-certificate)
 
 *   [tls_ciphers](/momentum/4/config/tls-ciphers)
+
+*   [tlsv13_ciphersuites](/momentum/4/config/tlsv13-ciphersuites)
 
 *   [tls_client_ca](/momentum/4/config/tls-client-ca)
 

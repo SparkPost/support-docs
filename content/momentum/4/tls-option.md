@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/26/2020"
+lastUpdated: "09/20/2023"
 title: "Outbound TLS"
 description: "A recent initiative among the large IS Ps and receiving domains is to use Transport Layer Security protocol TLS by default for mail traffic TLS is a standard for providing cryptographic protection of communication sessions between two systems It is derived from the earlier standard Secure Sockets Layer SSL and..."
 ---
@@ -31,6 +31,8 @@ By default, TLS is disabled. To use TLS, you must change the `TLS` option in the
 *   [tls_certificate](/momentum/4/config/tls-certificate)
 
 *   [tls_ciphers](/momentum/4/config/tls-ciphers)
+
+*   [tlsv13_ciphersuites](/momentum/4/config/tlsv13-ciphersuites)
 
 *   [tls_dhparams_file](/momentum/4/config/ref-tls-dhparams-file)
 
