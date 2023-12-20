@@ -70,6 +70,7 @@ The following table is a complete list of extended error code responses, organiz
 |                       | 3030        | template already exists                          | 400              |                                              |
 |                       | 3040        | template content is corrupt                      | 422              | fix content and retry                        |
 |                       | 3050        | template HTML content is invalid                 | 422              | fix content and retry                        |
+|                       | 3051        | Sandbox template should not be modified          | 422              |                                              |
 | *Recipient List*      | *5000-5999* |                                                  |                  |                                              |
 |                       | 5000        | List created with validation errors              | 200              |                                              |
 |                       | 5001        | List already exists                              | 400              |                                              |
