@@ -168,6 +168,8 @@ The ODBC driver accepts `?` and `:named` style parameters in prepared statements
 
 There is an ODBC-specific internal parameter, `long_threshold`, used for determining whether a field data type should be treated as a long value. Changing this parameter without the guidance of support is not recommended.
 
+If you're using **Momentum 4.7** or later which use system's "unixODBC" package, the paths that refer to `/opt/msys/3rdParty/` don't apply.  For example, the configuration files `odbc.ini` and `odbcinst.ini` are to be placed under `/etc` instead of `/opt/msys/3rdParty/etc`.
+
 **<a name="idp21356560"></a> unixODBC**
 
 The following apply when using unixODBC:
