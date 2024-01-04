@@ -7,10 +7,10 @@ import BaseHomePageContent, { SimpleStyledLink } from './baseHomePageContent';
 /*
  ██████╗ ██████╗ ███╗   ██╗████████╗███████╗███╗   ██╗████████╗
 ██╔════╝██╔═══██╗████╗  ██║╚══██╔══╝██╔════╝████╗  ██║╚══██╔══╝
-██║     ██║   ██║██╔██╗ ██║   ██║   █████╗  ██╔██╗ ██║   ██║   
-██║     ██║   ██║██║╚██╗██║   ██║   ██╔══╝  ██║╚██╗██║   ██║   
-╚██████╗╚██████╔╝██║ ╚████║   ██║   ███████╗██║ ╚████║   ██║   
- ╚═════╝ ╚═════╝ ╚═╝  ╚═══╝   ╚═╝   ╚══════╝╚═╝  ╚═══╝   ╚═╝   
+██║     ██║   ██║██╔██╗ ██║   ██║   █████╗  ██╔██╗ ██║   ██║
+██║     ██║   ██║██║╚██╗██║   ██║   ██╔══╝  ██║╚██╗██║   ██║
+╚██████╗╚██████╔╝██║ ╚████║   ██║   ███████╗██║ ╚████║   ██║
+ ╚═════╝ ╚═════╝ ╚═╝  ╚═══╝   ╚═╝   ╚══════╝╚═╝  ╚═══╝   ╚═╝
 */
 
 const gettingStarted = {
@@ -44,14 +44,14 @@ const migrationGuides = {
   content: [
     {
       text: 'SendGrid Migration Guide',
-      url: 'https://www.sparkpost.com/migration-guides/sendgrid/',
+      url: '/docs/user-guide/migrating-from-sendgrid',
     },
     {
       text: 'Mandrill Migration Guide',
-      url: 'https://www.sparkpost.com/migration-guides/mandrill/',
+      url: '/docs/user-guide/mandrill-migration-guide',
     },
-    { text: 'Mailgun Migration Guide', url: 'https://www.sparkpost.com/migration-guides/mailgun/' },
-    { text: 'Mailjet Migration Guide', url: 'https://www.sparkpost.com/migration-guides/mailjet/' },
+    { text: 'Mailgun Migration Guide', url: '/docs/user-guide/mailgun-migration-guide' },
+    { text: 'Mailjet Migration Guide', url: '/docs/user-guide/mailjet-migration-guide' },
   ],
 };
 
