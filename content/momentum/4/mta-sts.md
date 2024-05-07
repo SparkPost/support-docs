@@ -88,4 +88,6 @@ MX patterns defined in the MTA-STS policy since the policy mode is not `enforce`
 
 ## Related Configuration Options
 - [use_mta_sts](/momentum/4/config/mta-sts/use-mta-sts)
-- [enable_mta_sts](/momentum/4/coonfig/mta-sts/enable-mta-sts)
+- [enable_mta_sts](/momentum/4/config/mta-sts/enable-mta-sts)
+- [mta_sts_dns_cname_max_depth](/momentum/4/config/mta-sts/mta-sts-dns-cname-max-depth)
+- [mta_sts_policy_store](/momentum/4/config/mta-sts/mta-sts-policy-store)
