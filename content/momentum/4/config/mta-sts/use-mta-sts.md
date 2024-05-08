@@ -15,8 +15,8 @@ use_mta_sts — specify whether Momentum should do MTA-STS policy fetching for a
 
 ## Description
 
-This option specified whether Momentum shall attempt to discover the recipient domain's MTA-STS
- policy (via a DNS lookup to retrieve the MTA-STS policy ID and a HTTPS lookup to retrieve the
+This option specifies whether Momentum shall attempt to discover the recipient domain's MTA-STS
+ policy (via a DNS TXT lookup to retrieve the MTA-STS policy ID and a HTTPS lookup to retrieve the
  MTA-STS policy)
 
 The default value is `false`.

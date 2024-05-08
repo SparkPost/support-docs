@@ -7,9 +7,7 @@ description: "the location to store the MTA-STS policy"
 <a name="config.mta-sts-policy-store"></a>
 ## Name
 
-mta_sts_policy_store — specifies how many continous cname lookups are allowed when doing DNS
- lookups for MTA-STS TXT record for a domain. Exceeding the configured value will be treated as a DNS
- lookup failure, which will be further treated as no MTA-STS policy available.
+mta_sts_policy_store — specifies the location to keep the MTA-STS policy details for the domains.
 
 ## Synopsis
 
@@ -17,7 +15,7 @@ mta_sts_policy_store — specifies how many continous cname lookups are allowed 
 
 ## Description
 
-Momentum stores MTA-STS policy for a domain in file on disk, and accesses the HTTPS endpoint to refresh the
+Momentum stores MTA-STS policy for a domain in a file on disk, and accesses the HTTPS endpoint to refresh the
  policy once every 24 hours. This config option specifies the directory where the policies are stored
  on the disk.
 
