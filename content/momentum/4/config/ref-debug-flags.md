@@ -57,6 +57,7 @@ Use ‘`ALL`’ instead of listing each service debug flag.
 | LOG1 | LOG1 |
 | DNS | DNS |
 | DNS data structures | DNSDS |
+| MTA-STS | MTA_STS |
 | Network | NET |
 | Signals | SIG |
 | Memory Management | MEM |
