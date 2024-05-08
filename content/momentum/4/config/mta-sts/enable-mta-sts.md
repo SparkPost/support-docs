@@ -19,6 +19,8 @@ This option is only effective when [use_mta_sts](/momentum/4/config/mta-sts/use-
 for a recipient domain.
 This option specified whether Momentum should try to apply the retrieved MTA-STS policies when sending
 emails to a remote site. See [mta-sts](/momentum/4/mta-sts) for more details.
+
+
 When this option is `true`, the MTA-STS policy mode will be considered along with the configuration
  values for [TLS](/momentum/4.config/tls) and [TLS_Verify](/momentum/4/config/tls-verify).
  The more strict policy will apply. E.g. When the MTA-STS policy mode is `enforce`, regardless the
