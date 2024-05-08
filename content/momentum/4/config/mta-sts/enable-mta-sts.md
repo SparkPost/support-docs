@@ -18,17 +18,19 @@ enable_mta_sts — specify whether Momentum should apply MTA-STS policies on out
 This option is only effective when [use_mta_sts](/momentum/4/config/mta-sts/use-mta-sts) is `true`
 for a recipient domain.
 This option specified whether Momentum should try to apply the retrieved MTA-STS policies when sending
-emails to a remote site. See [mta-sts](/momentum/4/mta-sts) for more details.
+emails to a remote site. See [MTA-STS support in Momentum](/momentum/4/mta-sts) for more details.
 
 
 When this option is `true`, the MTA-STS policy mode will be considered along with the configuration
- values for [TLS](/momentum/4.config/tls) and [TLS_Verify](/momentum/4/config/tls-verify).
+ values for [TLS](/momentum/4/config/ref-tls) and [TLS_Verify](/momentum/4/config/tls-verify).
  The more strict policy will apply. E.g. When the MTA-STS policy mode is `enforce`, regardless the
  values for `TLS` and `TLS_Verify`, Momentum will enforce TLS (equivalent to `TLS = required`) and
  will fail the delivery upon a failed certificate validation (equivalent to `TLS_Verify = host`).
+
  When the MTA-STS policy mode is `testing`, Momentum will apply `TLS = ifavailable` (unless
  `TLS = required` is specified) and `TLS_Verify = optional` (unless `TLS_Verify = host` is
  specified).
+
  When the MTA-STS policy mode is `none`, the configuration values for `TLS` and `TLS_Verify` will be
  respected.
 
