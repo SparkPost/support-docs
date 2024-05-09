@@ -40,7 +40,7 @@ Domain 'gmail.com' has MTA-STS TXT and a TTL of 185 seconds
         mode: enforce
         mxlist:
                gmail-smtp-in.l.google.com
-               gmail-smtp-in.l.google.com
+               *.gmail-smtp-in.l.google.com
 ```
 
 **mta-sts refresh policy {domain name}**     - forces MTA-STS policy refresh by fetching the policy
