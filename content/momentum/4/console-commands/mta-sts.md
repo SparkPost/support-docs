@@ -28,7 +28,7 @@ Total domains: 1
 ```
 
 **mta-sts show domain { domain name }**     - shows MTA-STS TXT record and policy details of a given domain.
- The same content will show in [domain](/momentum/4/console-commands/domain) command output also if
+ The same content will be shown in [domain](/momentum/4/console-commands/domain) command output also if
  available.
 
 
