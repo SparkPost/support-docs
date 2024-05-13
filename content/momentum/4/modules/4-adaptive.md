@@ -370,6 +370,16 @@ Specify how often, in seconds, to perform a sweep that checks for expired suspen
 
 </dd>
 
+<dt><a name="modules.adaptive.resume_from_cache"></a> resume_from_cache</dt>
+
+<dd>
+
+Introduced in Momentum 4.8.
+
+If set to `true`, the adaptive option values (typically message throttles) cached before a domain was suspended will be considered when it gets resumed (returns from suspension).  It may be beneficial to set this to true if you want to avoid a domain being suspended over and over because of adaptive rules applied on default values.  Default value is `false`.
+
+</dd>
+
 </dl>
 
 ### <a name="modules.adaptive.options"></a> Options That Affect Specific Domains
