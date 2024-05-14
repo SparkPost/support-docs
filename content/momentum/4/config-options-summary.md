@@ -149,6 +149,7 @@ The `Version` column indicated the version(s) of Momentum that support the optio
 | [enable_authorization](/momentum/4/control-authz) – Whether or not to enable authorization for console commands | receiving |   | 4.0 and later | control_listener, listen, peer |
 | [enable_duravip](/momentum/4/4-cluster-config-duravip) – Whether to enable Durable MultiVIP© bindings (cluster-specific) | both |   | 4.0 and later | binding, listen |
 | [enable_fbl_header_insertion](/momentum/4/config/ref-enable-fbl-header-insertion) – Enable or disable fbl header insertion | sending |   | 4.0 and later | binding, binding_group, domain, global |
+| [enable_mta_sts](/momentum/4/config/mta-sts/enable_mta_sts) – Enable or disable MTA-STS policy application | sending |   | 4.8 and later | binding, binding_group, domain, global |
 | **enabled** – Whether or not the module is enabled (cluster-specific) | na | true | 4.0 and later | cluster |
 | [error](/momentum/4/config/ref-debug-flags) – Set the debug level | na | ALL | 4.0 and later | debug_flags |
 | [esmtp_listener](/momentum/4/esmtp-listener) *(scope)* – Listener for incoming SMTP connections | receiving |   | 4.0 and later | global |
@@ -237,6 +238,8 @@ The `Version` column indicated the version(s) of Momentum that support the optio
 | [max_resident_active_queue](/momentum/4/config/ref-max-resident-active-queue) – Threshold above which messages are not held in memory | sending | 250 | 4.0 and later | binding, binding_group, domain, global |
 | [max_resident_messages](/momentum/4/config/ref-max-resident-messages) – Threshold above which messages are not held in memory | sending | 32768 | 4.0 and later | binding, binding_group, global |
 | [max_resident_transfails](/momentum/4/config/ref-max-resident-transfails) – If the transient failure queue grows beyond this size, messages are swapped out of memory | sending | 100 | 4.0 and later | global |
+| [mta_sts_dns_cname_max_depth](/momentum/4/config/mta-sts/mta-sts-dns-cname-max-depth) – Maximum number of continous CNAME lookups allowed while doing MTA-STS DNS lookup | sending | 5 | 4.8 and later | global |
+| [mta_sts_policy_store](/momentum/4/config/mta-sts/mta-sts-policy-store) – Directory to store MTA-STS policy files | sending | /var/spool/ecelerity/mtasts (*non-dynamic*) | 4.8 and later | global |
 | [swap_out_meta_after_each_tempfail](/momentum/4/config/ref-swap-out-meta-after-each-tempfail) – If this is set to false, Momentum will only update metadata on disk after each tempfail if the message context is dirty, and the num_retires, next_attempt and message context may not be accurate if Momentum crashes | sending | true | 4.3.1 and later | global |
 | [max_retries](/momentum/4/config/ref-max-retries) – Override the system configured max_retries | sending |   | 4.0 and later | binding, binding_group, domain, global |
 | [max_retry_interval](/momentum/4/config/ref-max-retry-interval) – Maximum retry interval | sending | 43200 | 4.0 and later | binding, binding_group, domain, global |
@@ -365,6 +368,7 @@ The `Version` column indicated the version(s) of Momentum that support the optio
 | [use_iflist_cache](/momentum/4/config/ref-use-iflist-cache) – Whether or not to cache the list of interfaces configured by the system | sending | 0 (*non-dynamic*) | 4.0 and later | global |
 | [use_ipv6](/momentum/4/config/ref-use-ipv-6) – Affects the selection of IPv6 hosts in the SMTP client | sending | false | 4.0 and later | global |
 | [use_mmap](/momentum/4/config/ref-use-mmap) – Use mmap when spooling messages from disk | na | false | 4.0 and later | global |
+| [use_mta_sts](/momentum/4/config/mta-sts/use-mta-sts) – Enable MTA-STS policy fetching on a domain | sending | false | 4.8 and later | global, domain |
 | [use_sendfile](/momentum/4/config/ref-use-sendfile) – Use sendfile() when sending mail | sending | false | 4.0 and later | global |
 | **use_ssl** – Whether or not to use SSL verification | receiving | false | 4.0 and later | ecstream_listener, esmtp_listener, http_listener, listen, pathway, pathway_group, peer |
 | [user](/momentum/4/config/ref-user) – User identity to assume after startup | na | ecuser (*non-dynamic*) | 4.0 and later | security |
