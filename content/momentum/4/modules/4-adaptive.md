@@ -358,9 +358,9 @@ Specify the name of the outbound throttle messages series. Default name is `OBTM
 
 <dd>
 
-Introduced in Momentum 4.8.
+_Introduced in Momentum 4.8._
 
-If set to `true`, the adaptive option values (typically message throttles) cached before a domain was suspended will be considered when it gets resumed (returns from suspension).  It may be beneficial to set this to true if you want to avoid a domain being suspended over and over because of adaptive rules applied on default values.  Default value is `false`.
+If set to `true`, the adaptive option values (typically message throttles) that were cached _before_ a domain was suspended will be considered when it gets resumed (returns from suspension).  It may be beneficial to set this to __true__ if you want to avoid a domain being suspended over and over because of default values being applied.  Default value is `false`.
 
 </dd>
 
