@@ -354,7 +354,7 @@ Specify the name of the outbound throttle messages series. Default name is `OBTM
 
 </dd>
 
-<dt><a name="modules.adaptive.resume_from_cache"></a> resume_from_cache</dt>
+<dt><a name="modules.adaptive.read_cache_after_suspension"></a> read_cache_after_suspension</dt>
 
 <dd>
 
