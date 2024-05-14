@@ -46,7 +46,6 @@ description: "This section documents all the non module specific console command
 | [module](/momentum/4/console-commands/4-module)                                               | manage loaded modules online                                                      |
 | [mta_sts](/momentum/4/console-commands/mta_sts)                                             | commands to display and manage MTA-STS policy for a domain                        |
 | [\pager](/momentum/4/console-commands/pager)                                                | Page output of long console commands in the console.                              |
-| [\pager](/momentum/4/console-commands/pager)                                                | Page output of long console commands in the console.                              |
 | [paniclog](/momentum/4/console-commands/paniclog)                                           | show last several entries written to paniclog                                     |
 | [pid](/momentum/4/console-commands/pid)                                                     | show process id of Momentum                                                       |
 | [rebind](/momentum/4/console-commands/rebind)                                               | rebind the messages in a binding or domain                                        |

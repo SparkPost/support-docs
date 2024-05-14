@@ -28,10 +28,20 @@ Debug_Flags {
         CRITICAL = (TIME FD SMTP LOG1 DNS DNSDS NET SIG MEM DB LIC SSL MOD START ALL)
 }
 ```
-
 ### Note
-
 Use ‘`ALL`’ instead of listing each service debug flag.
+
+
+The example below enables more (at `WARNING` level) MTA-STS and SSL related logging, along with default
+`ERROR` and `CRITICAL` loggings:
+```
+Debug_Flags {
+    WARNING = (MTA_STS SSL)
+    ERROR = (ALL)
+    CRITICAL = (ALL)
+}
+```
+
 
 <a name="conf.ref.debug.levels"></a> 
 

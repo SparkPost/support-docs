@@ -89,7 +89,7 @@ MX patterns defined in the MTA-STS policy since the policy mode is not `enforce`
 
 
 ## Related Configuration Options
-- [MTA-STS configuration Options](/momentum/4/config/mta-sts)
+- [MTA-STS configuration Options](/momentum/4/config/mta-sts/index)
 
 
 ## Related [Debug_Flags](/momentum/4/config/ref-debug-flags)
