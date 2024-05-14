@@ -1,19 +1,21 @@
 ---
 lastUpdated: "06/01/2024"
-title: "MTA-STS support in Momentum"
-description: "MTA-STS support in Momentum"
+title: "MTA-STS support"
+description: "MTA-STS support"
 ---
 
 MTA-STS (MTA Strict Transport Security) improves email security by requiring authentication
 checks and encryption for delivering email.  RFC 8461 describes the use of MTA-STS for improving
-SMTP security between MTAs.
+SMTP security between MTAs. Momentum starts to support MTA-STS in 4.8.
 
-If the per-domain config option [use_mta_sts](/momentum/4/config/mta-sts/use-mta-sts) is set to `true`,
+If the config option [use_mta_sts](/momentum/4/config/mta-sts/use-mta-sts) for a domain is set to `true`,
  Momentum will attempt to discover the recipient domain's MTA-STS policy
  (via a DNS lookup to retrieve the MTA-STS policy ID and a HTTPS lookup to retrieve the
-  MTA-STS policy) and use it for validating the connection to the remote site.
+  MTA-STS policy), and if the [enable_mta_sts](/momentum/4/config/mta-sts/enable-mta-sts)
+  for the binding/domain is `true`, Momentum will apply the MTA-STS policy for validating
+  the connection to the remote site.
  If the recipient domain enforces MTA-STS, Momentum delivers email to the remote
-domain's MX if and only if the following conditions are satisfied:
+ domain's MX if and only if the following conditions are satisfied:
  - remote site matches at least one of the MX patterns defined in the recipient domain's MTA-STS
    policy
  - connection to remote site can be encrypted (via the use of STARTTLS)
@@ -35,7 +37,7 @@ For all examples the recipient domain would be `domain.com`.
 
 ### Example 1: Recipient domain enforces MTA-STS and MX is allowed as per the MTA-STS policy
 
-> **MTA-STS policy retrieved from https://mta-sts.domain.com/.well-known/mta-sts.txt**
+> **MTA-STS policy retrieved from `https://mta-sts.domain.com/.well-known/mta-sts.txt`**
 ```
 version: STSv1
 mode: enforce
@@ -52,7 +54,7 @@ MX patterns defined in the MTA-STS policy.
 
 ### Example 2: Recipient domain enforces MTA-STS and MX is not allowed as per the MTA-STS policy
 
-> **MTA-STS policy retrieved from https://mta-sts.domain.com/.well-known/mta-sts.txt**
+> **MTA-STS policy retrieved from `https://mta-sts.domain.com/.well-known/mta-sts.txt`**
 ```
 version: STSv1
 mode: enforce
@@ -70,7 +72,7 @@ MX patterns defined in the MTA-STS policy.
 ### Example 3: Recipient domain does not enforce MTA-STS and MX is not allowed as per the MTA-STS
 policy
 
-> **MTA-STS policy retrieved from https://mta-sts.domain.com/.well-known/mta-sts.txt**
+> **MTA-STS policy retrieved from `https://mta-sts.domain.com/.well-known/mta-sts.txt`**
 ```
 version: STSv1
 mode: testing
@@ -87,13 +89,12 @@ MX patterns defined in the MTA-STS policy since the policy mode is not `enforce`
 
 
 ## Related Configuration Options
-- [use_mta_sts](/momentum/4/config/mta-sts/use-mta-sts)
-- [enable_mta_sts](/momentum/4/config/mta-sts/enable-mta-sts)
-- [mta_sts_dns_cname_max_depth](/momentum/4/config/mta-sts/mta-sts-dns-cname-max-depth)
-- [mta_sts_policy_store](/momentum/4/config/mta-sts/mta-sts-policy-store)
+- [MTA-STS configuration Options](/momentum/4/config/mta-sts)
+
 
 ## Related [Debug_Flags](/momentum/4/config/ref-debug-flags)
 - MTA_STS
+
 
 ## ec_console commands
 - [mta_sts](/momentum/4/console-commands/mta-sts)

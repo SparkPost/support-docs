@@ -149,7 +149,7 @@ The `Version` column indicated the version(s) of Momentum that support the optio
 | [enable_authorization](/momentum/4/control-authz) – Whether or not to enable authorization for console commands | receiving |   | 4.0 and later | control_listener, listen, peer |
 | [enable_duravip](/momentum/4/4-cluster-config-duravip) – Whether to enable Durable MultiVIP© bindings (cluster-specific) | both |   | 4.0 and later | binding, listen |
 | [enable_fbl_header_insertion](/momentum/4/config/ref-enable-fbl-header-insertion) – Enable or disable fbl header insertion | sending |   | 4.0 and later | binding, binding_group, domain, global |
-| [enable_mta_sts](/momentum/4/config/mta-sts/enable_mta_sts) – Enable or disable MTA-STS policy application | sending |   | 4.8 and later | binding, binding_group, domain, global |
+| [enable_mta_sts](/momentum/4/config/mta-sts/enable-mta-sts) – Enable or disable MTA-STS policy application | sending |   | 4.8 and later | binding, binding_group, domain, global |
 | **enabled** – Whether or not the module is enabled (cluster-specific) | na | true | 4.0 and later | cluster |
 | [error](/momentum/4/config/ref-debug-flags) – Set the debug level | na | ALL | 4.0 and later | debug_flags |
 | [esmtp_listener](/momentum/4/esmtp-listener) *(scope)* – Listener for incoming SMTP connections | receiving |   | 4.0 and later | global |

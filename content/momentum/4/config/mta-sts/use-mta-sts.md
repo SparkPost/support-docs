@@ -7,7 +7,7 @@ description: "config option to enable MTA-STS policy fetching for a domain"
 <a name="config.use-mta-sts"></a>
 ## Name
 
-use_mta_sts — specify whether Momentum should do MTA-STS policy fetching for a domain or not
+use_mta_sts — specify whether Momentum should do MTA-STS policy fetching for a domain
 
 ## Synopsis
 
