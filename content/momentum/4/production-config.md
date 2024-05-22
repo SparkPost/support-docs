@@ -1,7 +1,7 @@
 ---
 lastUpdated: "05/21/2024"
 title: "Production Environment Configurations"
-description: "This section provides hardware specifications for different target volume levels. All systems are rated for use with CPU utilization at 50% in order to accommodate traffic spikes. All volumes are specified with the assumption of an average message size of 100 kB."
+description: "This section provides hardware specifications for different target volume levels"
 ---
 
 This section provides hardware specifications for different target volume levels. All systems are rated for use with CPU utilization at 50% in order to accommodate traffic spikes. All volumes are specified with the assumption of an average message size of 100 kB.
