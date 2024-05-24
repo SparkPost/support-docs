@@ -10,13 +10,6 @@ Momentum's memory management model is one of a monolithic address space with mul
 
 Momentum also maintains its own memory management interface with type counters both for built-in types as well as types available to external modules. These counters provide some sanity checking but their best use is in monitoring memory use and detecting memory leaks. Another benefit of using the Momentum memory management interface is that it provides access to the third party allocators Momentum uses. `jemalloc` has demonstrated excellent performance and stability and is in the process of becoming the default allocator.
 
-> __TIP:__ For the best performance of `jemalloc`, it is recommended to add these lines to the `/opt/msys/environment` file (or create it):
-> ```
-> MALLOC_CONF="background_thread:true"
-> export MALLOC_CONF
-> ```
-> then (re)start the `ecelerity` service.
-
 Threads within Momentum are designed to be long-lived; either for the entire life of the server, or, in the case of thread pools that are online tunable in size, for a single configuration generation. Thread Pools are where blocking tasks should be performed. Momentum provides APIs for creating and maintaining appropriate thread pool sizes (as configured within the system) such that, should you need to perform a blocking task, just push the job to the thread pool and await completion.
 
 ### <a name="arch.task.management"></a> Task Management
