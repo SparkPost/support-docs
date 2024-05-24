@@ -1,8 +1,12 @@
 ---
-lastUpdated: "03/26/2020"
+lastUpdated: "05/21/2024"
 title: "ecconfigd"
-description: "ecconfigd Momentum Configuration Server opt msys ecelerity sbin ecconfigd log level level debug ecconfigd is the Momentum Configuration Server Configuration files are maintained in a version control repository and exported via this service The user for this service is ecuser The associated password is created during installation The service consists..."
+description: "ecconfigd is the Momentum Configuration Server Configuration files are maintained in a version control repository and exported via this service The user for this service is ecuser The associated password is created during installation"
 ---
+
+| **WARNING** |
+| -- |
+| **This feature was deprecated in version 4.3.1.** |
 
 <a name="executable.ecconfigd"></a> 
 ## Name
