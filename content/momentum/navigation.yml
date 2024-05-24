@@ -49,8 +49,6 @@
               title: Before You Begin
             - link: '/momentum/4/before-you-begin#byb.msg.gen.license'
               title: Momentum License
-            - link: /momentum/4/byb-os
-              title: Operating System
             - link: /momentum/4/byb-redundancy
               title: Redundancy
             - link: /momentum/4/byb-load-balancing
@@ -210,6 +208,8 @@
               title: Configuration Files
             - link: /momentum/4/conf-options
               title: Configuration Options
+            - link: /momentum/4/conf-performance-tips
+              title: Performance Tips
             - link: /momentum/4/4-ecelerity-conf-fallback
               title: Configuration Scopes and Fallback
             - link: /momentum/4/listeners
