@@ -15,7 +15,8 @@ The Single Node Lab system is designed to support multiple functions in your env
 | Memory | 32 GiB (min. 16 GiB) RAM |
 | Network Interface | 1 Gbps NIC |
 
-__NOTE:__ If running in cloud environments, CPU-optimized instances are recommended over general-purpose and memory-optimized instances.
+---
+> __TIP:__ If running in cloud environments, CPU-optimized instances are recommended over general-purpose and memory-optimized instances.
 
 ### <a name="single_node_lab_storage_array"></a> Storage Configuration
 
@@ -29,7 +30,7 @@ __NOTE:__ If running in cloud environments, CPU-optimized instances are recommen
 
 ### <a name="single_node_lab_ref_meas"></a> Reference Measurements
 
-With the hardware specifications above, the system was able to sustain an ESMTP injection rate of:
+With the hardware specifications above, a reference system is able to sustain an ESMTP injection rate of:
 
 - 1.8 M messages/hour
 - 100 kiB each message

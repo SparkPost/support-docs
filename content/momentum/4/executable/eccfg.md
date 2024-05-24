@@ -393,4 +393,4 @@ Request that the cluster's nominal MASTER attempt to resolve the CONFLICT state.
 <a name="idp11529472"></a> 
 ## See Also
 
-[ecconfigd](/momentum/4/executable/ecconfigd), [Section 15.1.3, “Configuration Management (**ecconfigd**)”](conf.overview#conf.ecconfigd "15.1.3. Configuration Management (ecconfigd)")
+[ecconfigd](/momentum/4/executable/ecconfigd)

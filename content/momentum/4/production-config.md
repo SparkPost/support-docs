@@ -6,7 +6,8 @@ description: "This section provides hardware specifications for different target
 
 This section provides hardware specifications for different target volume levels. The system deploys to a dedicated server supporting the cluster management and other servers supporting other typical Momentum functionalities of an MTA node.
 
-__NOTE:__ If running in cloud environments, CPU-optimized instances are recommended over general-purpose and memory-optimized instances.
+---
+> __TIP:__ If running in cloud environments, CPU-optimized instances are recommended over general-purpose and memory-optimized instances.
 
 ## <a name="production.config.cluster.manager"></a> Cluster Manager Node
 
@@ -24,7 +25,10 @@ The Cluster Manager is a dedicated node that aggregates the logs of all MTAs of 
 
 The MTA nodes are the workhorses of the Momentum cluster. The following topologies are rated for use with CPU utilization at 50% in order to accommodate traffic spikes. All volumes are specified with the assumption of an average message size of 100 kiB.
 
-__NOTE:__ The Cluster Manager node is not counted in the following configurations.
+---
+> __NOTE:__ The Cluster Manager node is not counted in the following configurations.
+---
+> __TIP:__ More the number of CPU cores in the configurations below, higher performance ratings than listed can be achieved with the [Supercharger](/momentum/4/licensed-features-supercharger) feature, i.e., configuring [multiple event loops](/momentum/4/multi-event-loops).
 
 ### <a name="production.config.basic.cluster"></a> Enterprise Basic
 
