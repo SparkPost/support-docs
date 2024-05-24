@@ -4,138 +4,156 @@ title: "Production Environment Configurations"
 description: "This section provides hardware specifications for different target volume levels"
 ---
 
-This section provides hardware specifications for different target volume levels. All systems are rated for use with CPU utilization at 50% in order to accommodate traffic spikes. All volumes are specified with the assumption of an average message size of 100 kB.
+This section provides hardware specifications for different target volume levels. The system deploys to a dedicated server supporting the cluster management and other servers supporting other typical Momentum functionalities of an MTA node.
 
-### <a name="production.config.basic.cluster"></a> Enterprise Basic Cluster
+__NOTE:__ If running in cloud environments, CPU-optimized instances are recommended over general-purpose and memory-optimized instances.
 
-The Enterprise Basic Configuration consists of three nodes running all roles with the resources specified below. The system supports the following performance ratings.
+## <a name="production.config.cluster.manager"></a> Cluster Manager Node
 
-<a name="enterprise_basic_performance_ratings"></a> 
+The Cluster Manager is a dedicated node that aggregates the logs of all MTAs of the cluster and optionally centralizes some data storage in a PostgreSQL server. The Cluster Manager node is not intended to process any email traffic. The hardware specifications for this specific node are:
 
-| Node Capacity | Cluster Capacity<br><em>(2 Nodes Operational)</em> | Peak Cluster Capacity<br><em>(3 Nodes Operational)</em> |
-| --- | --- | --- |
-| 500,000 msgs/hr | 1 M msgs/hr | 1.5 M msgs/hr |
-
-<a name="enterprise_basic_cluster_hw_reqs"></a> 
-
-| Resource | Minimum Specification |
+| Resource | Specification |
 | --- | --- |
-| CPU | 8 x 2.5 GHz Cores (Min Speed) |
-| Memory | 32 GB RAM |
-| Network Interface | 1 GB NIC |
+| CPU Cores | 8 |
+| CPU Speed | 3.2 GHz (min. 2.5 GHz) |
+| Memory | 16 GiB RAM |
+| Network Interface | 1 Gbps NIC |
+| Storage | 2 x 600 GiB 15k RPM HDD in RAID1 |
 
-<a name="enterprise_basic_cluster_storage_array"></a> 
+## <a name="production.config.cluster.mtas"></a> MTA Nodes
 
-| Array | Mount Points | Configuration |
-| --- | --- | --- |
-| All Storage |   | 6 x 300 GB 15k RPM HDD |
-| Message Spools* | /var/spool/ecelerity | 2 x 300 GB in RAID1 |
-| OS<br>App Binaries<br>Logs<br>Platform DB<br>Analytics DB | / (root)<br>/opt/msys<br>/var/log/ecelerity<br>/var/db/cassandra<br>/var/db/vertica | 2 x 300 GB in RAID1 |
+The MTA nodes are the workhorses of the Momentum cluster. The following topologies are rated for use with CPU utilization at 50% in order to accommodate traffic spikes. All volumes are specified with the assumption of an average message size of 100 kiB.
 
-(*) Note: This array should be dedicated to the spools.
+__NOTE:__ The Cluster Manager node is not counted in the following configurations.
 
-### <a name="production.config.standard.cluster"></a> Enterprise Standard Cluster
+### <a name="production.config.basic.cluster"></a> Enterprise Basic
 
-The Enterprise Standard Configuration consists of three nodes running all roles with the resources specified below. The system supports the following performance ratings.
+The Enterprise Basic configuration consists of three nodes running all MTA roles with the resources specified below.
 
-<a name="enterprise_standard_performance_ratings"></a> 
+#### <a name="production.config.basic.cluster.perf"></a> Performance Ratings
 
-| Node Capacity | Cluster Capacity<br><em>(2 Nodes Operational)</em> | Peak Cluster Capacity<br><em>(3 Nodes Operational)</em> |
-| --- | --- | --- |
-| 1 M msgs/hr | 2 M msgs/hr | 3 M msgs/hr |
-
-<a name="enterprise_standard_cluster_hw_reqs"></a> 
-
-| Resource | Minimum Specification |
-| --- | --- |
-| CPU | 16 x 2.5 GHz Cores (Min Speed) |
-| Memory | 64 GB RAM |
-| Network Interface | 1 GB NIC |
-
-<a name="enterprise_standard_cluster_storage_array"></a> 
-
-| Array | Mount Points | Configuration |
-| --- | --- | --- |
-| All Storage |   | 8 x 300 GB 15k RPM HDD |
-| Message Spools* | /var/spool/ecelerity | 4 x 300 GB in RAID10 |
-| OS<br>App Binaries<br>Logs<br>Platform DB | / (root)<br>/opt/msys<br>/var/log/ecelerity<br>/var/db/cassandra | 2 x 300 GB in RAID1 |
-| Analytics DB* | /var/db/vertica | 2 x 300 GB in RAID1 |
-
-(*) Note: These arrays should be dedicated.
-
-### <a name="production.config.plus.cluster"></a> Enterprise Plus Cluster
-
-The Enterprise Plus Configuration consists of three nodes running all roles with the resources specified below. The system supports the following performance ratings.
-
-<a name="enterprise_plus_performance_ratings"></a> 
-
-| Node Capacity | Cluster Capacity<br><em>(2 Nodes Operational)</em> | Peak Cluster Capacity<br><em>(3 Nodes Operational)</em> |
+| MTA Node Capacity | Cluster Capacity<br><em>(2 Nodes Operational)</em> | Peak Cluster Capacity<br><em>(3 Nodes Operational)</em> |
 | --- | --- | --- |
 | 1.5 M msgs/hr | 3 M msgs/hr | 4.5 M msgs/hr |
 
-<a name="enterprise_plus_cluster_hw_reqs"></a> 
+#### <a name="production.config.basic.cluster.hw_specs"></a> Hardware Specifications
 
-| Resource | Minimum Specification |
+| Resource | Specification |
 | --- | --- |
-| CPU | 20 x 2.5 GHz Cores (Min Speed) |
-| Memory | 64 GB RAM |
-| Network Interface | 1 GB NIC |
+| CPU Cores | 8 |
+| CPU Speed | 3.2 GHz (min. 2.5 GHz) |
+| Memory | 32 GiB (min. 16 GiB) RAM |
+| Network Interface | 1 Gbps NIC |
 
-<a name="enterprise_plus_cluster_storage_array"></a> 
+#### <a name="production.config.basic.cluster.storage_array"></a> Storage Configuration
 
 | Array | Mount Points | Configuration |
 | --- | --- | --- |
-| All Storage |   | 8 x 600 GB 15k RPM HDD |
-| Message Spools* | /var/spool/ecelerity | 4 x 600 GB in RAID10 |
-| OS<br>App Binaries<br>Logs<br>Platform DB | / (root)<br>/opt/msys<br>/var/log/ecelerity<br>/var/db/cassandra | 2 x 600 GB in RAID1 |
-| Analytics DB* | /var/db/vertica | 2 x 600 GB in RAID1 |
+| All Storage |   | 6 x 300 GiB 15k RPM HDD |
+| Message Spools* | `/var/spool/ecelerity` | 2 x 300 GiB in RAID1 |
+| OS<br>App Binaries<br>Logs<br>Platform DB<br>Analytics DB | `/` (root)<br>`/opt/msys`<br>`/var/log/ecelerity`<br>`/var/db/cassandra`<br>`/var/db/vertica` | 2 x 300 GiB in RAID1 |
 
-(*) Note: These arrays should be dedicated.
+(*) _This array should be dedicated to the spools._
 
-### <a name="production.config.scaling.cluster"></a> Enterprise Scaling Cluster
+### <a name="production.config.standard.cluster"></a> Enterprise Standard
 
-The Enterprise Scaling Configuration consists of both an Analytics Cluster and a Platform Cluster. Because large volume deployments require more resources for sending than for analytics, Message Systems recommends separating the Platform and Analytics roles to separate clusters. This configuration allows you to scale the Platform cluster independent of the analytics cluster. The baseline configuration consists of a three-node Analytics Cluster and a three-node Platform Cluster. You may scale sending capacity by incrementally adding Platform nodes to the cluster as needed.
+The Enterprise Standard configuration consists of three nodes running all MTA roles with the resources specified below.
 
-The baseline system supports the following performance ratings.
+#### <a name="production.config.standard.cluster.perf"></a> Performance Ratings
 
-<a name="enterprise_scaling_performance_ratings"></a> 
+| MTA Node Capacity | Cluster Capacity<br><em>(2 Nodes Operational)</em> | Peak Cluster Capacity<br><em>(3 Nodes Operational)</em> |
+| --- | --- | --- |
+| 3 M msgs/hr | 6 M msgs/hr | 9 M msgs/hr |
+
+#### <a name="production.config.standard.cluster.hw_specs"></a> Hardware Specifications
+
+| Resource | Specification |
+| --- | --- |
+| CPU Cores | 16 |
+| CPU Speed | 3.2 GHz (min. 2.5 GHz) |
+| Memory | 64 GiB (min. 32 GiB) RAM |
+| Network Interface | 1 Gbps NIC |
+
+#### <a name="production.config.standard.cluster.storage_array"></a> Storage Configuration
+
+| Array | Mount Points | Configuration |
+| --- | --- | --- |
+| All Storage |   | 8 x 300 GiB 15k RPM HDD |
+| Message Spools* | `/var/spool/ecelerity` | 4 x 300 GiB in RAID10 |
+| OS<br>App Binaries<br>Logs<br>Platform DB | `/` (root)<br>`/opt/msys`<br>`/var/log/ecelerity`<br>`/var/db/cassandra` | 2 x 300 GiB in RAID1 |
+| Analytics DB* | `/var/db/vertica` | 2 x 300 GiB in RAID1 |
+
+(*) _These arrays should be dedicated._
+
+### <a name="production.config.plus.cluster"></a> Enterprise Plus
+
+The Enterprise Plus configuration consists of three nodes running all MTA roles with the resources specified below.
+
+#### <a name="production.config.plus.cluster.perf"></a> Performance Ratings
+
+| MTA Node Capacity | Cluster Capacity<br><em>(2 Nodes Operational)</em> | Peak Cluster Capacity<br><em>(3 Nodes Operational)</em> |
+| --- | --- | --- |
+| 6 M msgs/hr | 12 M msgs/hr | 18 M msgs/hr |
+
+#### <a name="production.config.plus.cluster.hw_specs"></a> Hardware Specifications
+
+| Resource | Specification |
+| --- | --- |
+| CPU Cores | 32 |
+| CPU Speed | 3.2 GHz (min. 2.5 GHz) |
+| Memory | 64 GiB RAM |
+| Network Interface | 1 Gbps NIC |
+
+#### <a name="production.config.plus.cluster.storage_array"></a> Storage Configuration
+
+| Array | Mount Points | Configuration |
+| --- | --- | --- |
+| All Storage |   | 8 x 600 GiB 15k RPM HDD |
+| Message Spools* | `/var/spool/ecelerity` | 4 x 600 GiB in RAID10 |
+| OS<br>App Binaries<br>Logs<br>Platform DB | `/` (root)<br>`/opt/msys`<br>`/var/log/ecelerity`<br>`/var/db/cassandra` | 2 x 600 GiB in RAID1 |
+| Analytics DB* | `/var/db/vertica` | 2 x 600 GiB in RAID1 |
+
+(*) _These arrays should be dedicated._
+
+## <a name="production.config.scaling.cluster"></a> Enterprise Scaling Cluster
+
+The Enterprise Scaling configuration consists of both an Analytics Cluster and a Platform Cluster. Because large volume deployments require more resources for sending than for analytics, Message Systems recommends separating the Platform and Analytics roles to separate clusters. This configuration allows you to scale the Platform cluster independent of the analytics cluster.
+
+The baseline configuration consists of a three-node Analytics Cluster and a three-node Platform Cluster. You may scale sending capacity by incrementally adding Platform nodes to the cluster as needed.
+
+### <a name="production.config.scaling.cluster.perf"></a> Baseline Performance Ratings
 
 | Baseline Cluster Capacity<br><em>(2 Nodes Operational)</em> | Baseline Peak Cluster Capacity<br><em>(3 Nodes Operational)</em> | Incremental Platform Node Capacity |
 | --- | --- | --- |
-| 3 M msgs/hr | 4.5 M msgs/hr | 1.5 M msgs/hr |
+| 12 M msgs/hr | 18 M msgs/hr | 6 M msgs/hr |
 
-<a name="enterprise_scaling_platform_node_cluster_hw_reqs"></a> 
+### <a name="production.config.scaling.cluster.hw_specs"></a> Hardware Specifications
 
-| Resource | Minimum Specification |
+| Resource | Specification |
 | --- | --- |
-| CPU | 20 x 2.5 GHz Cores (Min Speed) |
-| Memory | 64 GB RAM |
-| Network Interface | 1 GB NIC |
+| CPU Cores | 32 |
+| CPU Speed | 3.2 GHz (min. 2.5 GHz) |
+| Memory | 64 GiB RAM |
+| Network Interface | 1 Gbps NIC |
 
-<a name="enterprise_scaling_platform_node_cluster_storage_array"></a> 
+### <a name="production.config.scaling.cluster.storage_array"></a> Storage Configuration
+
+#### <a name="production.config.scaling.cluster.storage_array.platform"></a> Platform Node
 
 | Array | Mount Points | Configuration |
 | --- | --- | --- |
-| All Storage |   | 6 x 600 GB 15k RPM HDD |
-| Message Spools* | /var/spool/ecelerity | 4 x 600 GB in RAID10 |
-| OS<br>App Binaries<br>Logs<br>Platform DB | / (root)<br>/opt/msys<br>/var/log/ecelerity<br>/var/db/cassandra | 2 x 600 GB in RAID1 |
+| All Storage |   | 6 x 600 GiB 15k RPM HDD |
+| Message Spools* | `/var/spool/ecelerity` | 4 x 600 GiB in RAID10 |
+| OS<br>App Binaries<br>Logs<br>Platform DB | `/` (root)<br>`/opt/msys`<br>`/var/log/ecelerity`<br>`/var/db/cassandra` | 2 x 600 GiB in RAID1 |
 
-(*) Note: This array should be dedicated to the spools.
+(*) _This array should be dedicated to the spools._
 
-<a name="enterprise_scaling_analytics_node_cluster_hw_reqs"></a> 
-
-| Resource | Minimum Specification |
-| --- | --- |
-| CPU | 20 x 2.5 GHz Cores (Min Speed) |
-| Memory | 64 GB RAM |
-| Network Interface | 1 GB NIC |
-
-<a name="enterprise_scaling_analytics_node_cluster_storage_array"></a> 
+#### <a name="production.config.scaling.cluster.storage_array.analytics"></a> Analytics Node
 
 | Array | Mount Points | Configuration |
 | --- | --- | --- |
-| All Storage |   | 4 x 600 GB 15k RPM HDD |
-| OS<br>App Binaries<br>Logs | / (root)<br>/opt/msys<br>/var/log/ecelerity | 2 x 600 GB in RAID1 |
-| Analytics DB* | /var/db/vertica | 2 x 600 GB in RAID1 |
+| All Storage |   | 4 x 600 GiB 15k RPM HDD |
+| OS<br>App Binaries<br>Logs | `/` (root)<br>`/opt/msys`<br>`/var/log/ecelerity` | 2 x 600 GiB in RAID1 |
+| Analytics DB* | `/var/db/vertica` | 2 x 600 GiB in RAID1 |
 
-(*) Note: This array should be dedicated to the Analytics DB.
+(*) _This array should be dedicated to the Analytics DB._
