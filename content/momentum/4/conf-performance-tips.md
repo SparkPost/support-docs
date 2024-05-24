@@ -10,7 +10,7 @@ Momentum is an exceptionally powerful all-in-one email infrastructure solution. 
 
 With [Supercharger](/momentum/4/licensed-features-supercharger) licensed feature, Momentum runs on top of several [event loop](/momentum/4/multi-event-loops) schedulers and uses multicore CPUs with improved efficiency. In this model, it is also possible to assign dedicated event loops to listeners (e.g. the HTTP one) with desired concurrency. On the other hand, the default configuration is based solely on the thread pools to offload specific tasks, therefore Momentum keeps running on top of the original master event loop only, and it can be occasionally bottlenecked.
 
-The Supercharger's *"75% of CPU cores"* formula works fine on systems largely SMTP-driven. For systems with larger [message generation](momentum/4/message-gen.md) flows (i.e., REST injections), the number of event loops can be limited to 4 or 5, with higher concurrency values assigned to the `msg_gen` thread pools (see `gen_transactional_threads` configuration [here](momentum/4/modules/msg-gen.md)). For instance:
+The Supercharger's *"75% of CPU cores"* formula works fine on systems largely SMTP-driven. For systems with larger [message generation](momentum/4/message-gen) flows (i.e., REST injections), the number of event loops can be limited to 4 or 5, with higher concurrency values assigned to the `msg_gen` thread pools (see `gen_transactional_threads` configuration [here](momentum/4/modules/msg-gen)). For instance:
 
 ```
 msg_gen  {
@@ -130,7 +130,7 @@ max_resident_messages = 100000
 
 ## <a name="conf.tips.misc"></a> Miscellaneous Tips
 
-- Don't forget to [adjust `sysctl` settings](momentum/4/byb-sysctl-conf.md) for best TCP connections performance;
-- Prefer [chunk_logger](momentum/4/modules/chunk-logger.md) over logging to `paniclog`. The reasons are taken from the `chunk_logger` page:
+- Don't forget to [adjust `sysctl` settings](momentum/4/byb-sysctl-conf) for best TCP connections performance;
+- Prefer [chunk_logger](momentum/4/modules/chunk-logger) over logging to `paniclog`. The reasons are taken from the `chunk_logger` page:
 
 > _Logging to the_ `paniclog` _in the scheduler thread (the main thread) can limit throughput and cause watchdog kills. (...) [It] involves disk I/O, and writing to the_ `paniclog` _in the scheduler thread may block its execution for a long time, thereby holding up other tasks in the scheduler thread and decreasing throughput._
