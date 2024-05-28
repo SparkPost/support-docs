@@ -1,7 +1,7 @@
 ---
-lastUpdated: "03/26/2020"
+lastUpdated: "05/21/2024"
 title: "Adding and Removing Platform Nodes"
-description: "This chapter describes how to add and remove a Platform node MTA Cassandra to and from an existing Momentum 4 2 cluster This section describes how to add a Platform node which involves installing the new node then making some manual configuration changes on the new node and on the..."
+description: "This chapter describes how to add and remove a Platform node MTA Cassandra to and from an existing Momentum 4 cluster"
 ---
 
 
@@ -73,13 +73,10 @@ These instructions apply to Momentum 4.2.1.*`x`*, where `x` > or = `11`
         }
         ```
 
-2.  Use eccfg to commit the modified configuration, substituting your own admin password if environmental variable $ADMINPASS is not defined.
-
-    `/opt/msys/ecelerity/bin/eccfg commit -u admin -p $ADMINPASS -m 'Add new Platform node to ecelerity cluster'`
-3.  Restart affected services.
+2.  Restart affected services.
 
     `service ecelerity restart`
-4.  Update the nginx configuration files.
+3.  Update the nginx configuration files.
 
     1.  Update the `click_proxy_upstream.conf` nginx configuration file by adding a "server" line for the new Platform host.
 
@@ -132,12 +129,7 @@ These instructions apply to Momentum 4.2.1.*`x`*, where `x` > or = `11`
 2.  Install the meta package `msys-role-platform`.
 
     `yum install -y --config momentum.repo --enablerepo momentum msys-role-platform`
-3.  Bootstrap the Ecelerity configuration from the first server, substituting your own admin password if environmental variable $ADMINPASS is not defined. .
-
-    chown -R ecuser:ecuser /opt/msys/ecelerity/etc/
-    cd /opt/msys/ecelerity/etc/
-    ../bin/eccfg bootstrap --clustername default -u admin -p $ADMINPASS *`FIRST.NODE.FQDN`*
-4.  Copy the existing configuration files from the first Platform node to the new node, substituting or setting the new node's hostname for environmental variable $NEWNODE.
+3.  Copy the existing configuration files from the first Platform node to the new node, substituting or setting the new node's hostname for environmental variable $NEWNODE.
 
     ```
     # execute this on the first Platform node
@@ -154,7 +146,7 @@ These instructions apply to Momentum 4.2.1.*`x`*, where `x` > or = `11`
     done
     ```
 
-5.  Update the `cassandra.yaml` file on the new Platform node to replace `listen_address` with the correct local IP address for the new node.
+4.  Update the `cassandra.yaml` file on the new Platform node to replace `listen_address` with the correct local IP address for the new node.
 
     ```
     # example
@@ -163,14 +155,14 @@ These instructions apply to Momentum 4.2.1.*`x`*, where `x` > or = `11`
     listen_address: 10.77.0.245
     ```
 
-6.  Start Cassandra on the new node.
+5.  Start Cassandra on the new node.
 
     `# service msys-cassandra start`
     ### Note
 
     Depending on the amount of existing data in your Cassandra database, this may falsely report as failed (because the init script only waits a fixed amount of time for the service to start). Perform the next step below to determine the real status. If you do not get the indicated result, submit the start service command again, and if the desired result still does not result, check logs at `/var/log/msys-cassandra/` for error messages.
 
-7.  After Cassandra starts, check that the database has been replicated (UN means Up Normal) using `service msys-cassandra status` or `/opt/msys/3rdParty/cassandra/bin/nodetool status`. You should expect to see the new node participating in the Cassandra cluster.
+6.  After Cassandra starts, check that the database has been replicated (UN means Up Normal) using `service msys-cassandra status` or `/opt/msys/3rdParty/cassandra/bin/nodetool status`. You should expect to see the new node participating in the Cassandra cluster.
 
     ```
     service msys-cassandra status
@@ -187,7 +179,7 @@ These instructions apply to Momentum 4.2.1.*`x`*, where `x` > or = `11`
     UN  10.77.0.227  203.12 KB  256     27.3%  5525b410-3f3e-49ec-a176-0efa2383f3f4  rack1
     ```
 
-8.  Configure RabbitMQ on the new platform node.
+7.  Configure RabbitMQ on the new platform node.
 
     ```
     # kill off qpidd service, which (if running) can interfere with RabbitMQ
@@ -208,7 +200,7 @@ These instructions apply to Momentum 4.2.1.*`x`*, where `x` > or = `11`
     $RABBITMQCTL delete_user guest
     ```
 
-9.  Start all remaining services on the new node.
+8.  Start all remaining services on the new node.
 
     ```
     /etc/init.d/msys-riak start

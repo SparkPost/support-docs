@@ -1,14 +1,12 @@
 ---
-lastUpdated: "03/26/2020"
+lastUpdated: "05/21/2024"
 title: "msgc_server.conf File"
-description: "The msgc server conf file contains the configuration relevant to the cluster messaging bus This file is referenced from the eccluster conf file on the cluster manager and from the ecelerity cluster conf file on nodes It MUST live in the global portion of the repository as it must be..."
+description: "The msgc server conf file contains the configuration relevant to the cluster messaging bus This file is referenced from the eccluster conf file on the cluster manager and from the ecelerity cluster conf file on nodes"
 ---
 
 The `msgc_server.conf` file contains the configuration relevant to the cluster messaging bus. This file is referenced from the `eccluster.conf` file on the cluster manager and from the `ecelerity-cluster.conf` file on nodes. It MUST live in the global portion of the repository, as it must be the same for all nodes in the cluster.
 
 ### Note
-
-Restart [Section 15.1.3, “Configuration Management (**ecconfigd**)”](conf.overview#conf.ecconfigd "15.1.3. Configuration Management (ecconfigd)") after making extensive changes to `msgc_server.conf`, such as adding multiple nodes. Use the command **`/etc/init.d/ecconfigd restart`**         .
 
 For a discussion of scopes and fallbacks, see [“Configuration Scopes and Fallback”](/momentum/4/4-ecelerity-conf-fallback).
 

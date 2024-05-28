@@ -1,8 +1,12 @@
 ---
-lastUpdated: "03/26/2020"
+lastUpdated: "05/21/2024"
 title: "eccfg"
-description: "eccfg Subversion repository management opt msys ecelerity bin eccfg h opt msys ecelerity bin eccfg bootstrap quiet debug username name password pass wc path clustername name singlenode host port opt msys ecelerity bin eccfg clone quiet debug username name password pass wc path source destination opt msys ecelerity bin eccfg..."
+description: "eccfg is the Momentum version control management tool used to track and update configuration file changes"
 ---
+
+| **WARNING** |
+| -- |
+| **This feature was deprecated in version 4.3.1.** |
 
 <a name="executable.eccfg"></a> 
 ## Name
@@ -389,4 +393,4 @@ Request that the cluster's nominal MASTER attempt to resolve the CONFLICT state.
 <a name="idp11529472"></a> 
 ## See Also
 
-[ecconfigd](/momentum/4/executable/ecconfigd), [Section 15.1.3, “Configuration Management (**ecconfigd**)”](conf.overview#conf.ecconfigd "15.1.3. Configuration Management (ecconfigd)")
+[ecconfigd](/momentum/4/executable/ecconfigd)

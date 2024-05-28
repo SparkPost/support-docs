@@ -1,7 +1,7 @@
 ---
-lastUpdated: "03/26/2020"
+lastUpdated: "05/21/2024"
 title: "credmgr"
-description: "credmgr manipulate credentials used with the securecreds module opt msys ecelerity bin credmgr create db opt msys ecelerity bin credmgr create key opt msys ecelerity bin credmgr del cred opt msys ecelerity bin credmgr get cred opt msys ecelerity bin credmgr set cred credmgr is used in conjunction with the..."
+description: "Use it to create the credentials database and the credentials key and to set, get, and delete credentials"
 ---
 
 <a name="executable.credmgr"></a> 
@@ -115,10 +115,6 @@ Facility names are as follows:
 *   `ldap` – any LDAP services
 
 *   `proxy` – any proxy server service
-
-*   `eccfg` – version control management tool. Use the hostname `ecconfigd` and the username `ecuser` with this facility.
-
-*   `ecconfigd` – configuration management server. Use the hostname `_ecconfigd_` and the username `ecuser` with this facility
 
 </dd>
 

@@ -1,7 +1,7 @@
 ---
-lastUpdated: "03/26/2020"
+lastUpdated: "05/21/2024"
 title: "ec_rotate"
-description: "ec rotate rotate Momentum logfiles opt msys ecelerity bin ec rotate c compress opt msys ecelerity bin ec rotate conf path to config file opt msys ecelerity bin ec rotate d default opt msys ecelerity bin ec rotate l logfile path to logfile opt msys ecelerity bin ec rotate logdir..."
+description: "Momentum opens its logfiles at startup and maintains an open filehandle to them throughout its life cycle When you invoke ec_rotate the mainlog ec file is moved to mainlog ec 1 Momentum is instructed to re open its logfiles and a new mainlog ec file is created"
 ---
 
 <a name="executable.ec_rotate"></a> 
@@ -50,13 +50,7 @@ The `ec_rotate.conf` file specifies the configuration for this command. By defau
 
 *   `/var/log/ecelerity/smpplog.ec`
 
-*   `/var/log/ecelerity/ecconfigd.log`
-
 *   `/var/log/ecelerity/httplog.ec`
-
-*   `/var/ecconfigd/apache/access.log`
-
-*   `/var/ecconfigd/apache/error.log`
 
 *   `/var/log/ecelerity/adaptive`
 

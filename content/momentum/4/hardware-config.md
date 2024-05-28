@@ -1,43 +1,43 @@
 ---
-lastUpdated: "03/26/2020"
+lastUpdated: "05/01/2024"
 title: "Hardware Deployment Configuration"
-description: "The Single Node Lab system is designed to support multiple functions in your environment including development testing staging and other non production roles The system deploys to a single server supporting all Momentum functionality The Single Node Lab System should not be used for performance testing nor is it recommended..."
+description: "The Single Node Lab system is designed to support multiple functions in your environment including development testing staging and other non production roles"
 ---
 
-The Single Node Lab system is designed to support multiple functions in your environment, including development, testing staging, and other non-production roles. The system deploys to a single server supporting all Momentum functionality. The Single Node Lab System should not be used for performance testing, nor is it recommended for production use due to its lack of redundancy.
+The Single Node Lab system is designed to support multiple functions in your environment, including development, testing staging, and other non-production roles. The system deploys to a single server supporting all Momentum functionality. The Single Node Lab System should not be used for performance testing, nor it is recommended for production use due to its lack of redundancy.
 
-<a name="single_node_lab_hw_reqs"></a> 
+### <a name="single_node_lab_hw_spec"></a> Hardware Specifications
 
-
-| Resource | Minimum Specification |
+| Resource | Specification |
 | --- | --- |
-| CPU | 8 x 2.5 GHz Cores (Min Speed) |
-| Memory | 32 GB RAM |
-| Network Interface | 1 GB NIC |
+| CPU Cores | 8 |
+| CPU Speed | 3.2 GHz (min. 2.5 GHz) |
+| Memory | 32 GiB (min. 16 GiB) RAM |
+| Network Interface | 1 Gbps NIC |
 
-<a name="single_node_lab_storage_array"></a> 
+---
+> __TIP:__ If running in cloud environments, CPU-optimized instances are recommended over general-purpose and memory-optimized instances.
 
+### <a name="single_node_lab_storage_array"></a> Storage Configuration
 
-| Array | Configuration | Mount Points and Notes |
+| Array | Mount Points | Configuration |
 | --- | --- | --- |
-| All Storage | 4 x 150 GB 15k RPM HDD |   |
-| Message Spools | 2 x 150 GB in RAID1 | 
+| All Storage |   | 4 x 150 GiB 15k RPM HDD |
+| Message Spools* | `/var/spool/ecelerity` | 2 x 150 GiB in RAID1 |
+| OS<br>App Binaries<br>Logs<br>Platform DB<br>Analytics DB | `/` (root)<br>`/opt/msys`<br>`/var/log/ecelerity`<br>`/var/db/cassandra`<br>`/var/db/vertica` | 2 x 150 GiB in RAID1 |
 
-/var/spool/ecelerity
+(*) _This array should be dedicated to the spools._
 
-Note: This array should be dedicated to the spools.
+### <a name="single_node_lab_ref_meas"></a> Reference Measurements
 
- |
-| OS, App Binaries, Logs, Platform DB, Analytics DB | 2 x 150 GB in RAID1 | 
+With the hardware specifications above, a reference system is able to sustain an ESMTP injection rate of:
 
-*   OS - / (root)
+- 1.8 M messages/hour
+- 100 kiB each message
 
-*   Logs - /var/log/ecelerity
+with:
 
-*   App Binaries - /opt./msys
-
-*   Platform DB - /var/db/cassandra
-
-*   Analytics DB - /var/db/vertica
-
- |
+- CPU Usage: __65%__ (5-6 cores out of 8)
+- Memory usage:
+    - Virtual: __2.2 GiB__
+    - Resident: __500 MiB__

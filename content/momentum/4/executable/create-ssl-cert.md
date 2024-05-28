@@ -1,7 +1,7 @@
 ---
-lastUpdated: "03/26/2020"
+lastUpdated: "05/21/2024"
 title: "create_ssl_cert"
-description: "create ssl cert create a self signed SSL certificate opt msys ecelerity bin create ssl cert service hostname prefix user During installation self signed SSL certificates valid for one year are created for some services Use this command to create a new certificate when the original expires When a certificate..."
+description: "During installation self signed SSL certificates valid for one year are created for some services Use this command to create a new certificate when the original expires"
 ---
 
 <a name="executable.create_ssl_cert"></a> 
@@ -16,19 +16,12 @@ create_ssl_cert — create a self-signed SSL certificate
 <a name="idp14360800"></a> 
 ## Description
 
-During installation, self-signed SSL certificates valid for one year are created for some services. Use this command to create a new certificate when the original expires. When a certificate expires, you will see an error such as the following:
+During installation, self-signed SSL certificates valid for one year are created. Use this command to create a new certificate when the original expires. When a certificate expires, you will get an error message.
 
-```
-ERROR: premature EOF in "svn update '--config-dir' '/opt/msys/ecelerity/etc/.eccfg' »
-'--username' 'ecuser' '--no-auth-cache' '--non-interactive' '--trust-server-cert' '.'"
-svn: OPTIONS of 'https://mail2:2027/config/default/boot': Server certificate »
-verification failed: certificate has expired, issuer is not trusted
-```
+To create a new certificate, first stop the appropriate service and remove the old certificate. Then issue the **create_ssl_cert** command:
 
-To create a new certificate, first stop the appropriate service and remove the old certificate. Then issue the **create_ssl_cert** command. For example, the following command creates a certificate for the **ecconfigd** service:
-
-shell> /opt/msys/ecelerity/bin/create_ssl_cert ecconfigd *`hostname`* \
-/var/ecconfigd/apache ecuser
+shell> /opt/msys/ecelerity/bin/create_ssl_cert *`service`* *`hostname`* \
+*`prefix`* *`user`*
 
 The parameters passed to this command are as follows:
 
@@ -38,17 +31,7 @@ The parameters passed to this command are as follows:
 
 <dd>
 
-The following services can be specified with this command:
-
-*   `ecconfigd` - Momentum Configuration Server
-
-    The **ecconfigd** service requires SSL and a certificate is created when Momentum is installed. For this reason, you will see the following message during installation:
-
-    ```
-    Generating a 2048 bit RSA private key
-    ...
-    writing new private key to '/var/ecconfigd/apache/server.key'
-    ```
+Currently, only this service can be specified with this command:
 
 *   `msyspg` - Postgresql Server
 
@@ -68,7 +51,7 @@ Specify the hostname of the machine that hosts the service for which you are cre
 
 <dd>
 
-For the **ecconfigd** service, use `/var/ecconfigd/apache`. For the **msyspg** service, use `/opt/msys/3rdParty/share/postgresql`.
+For the **msyspg** service, use `/opt/msys/3rdParty/share/postgresql`.
 
 </dd>
 
@@ -76,7 +59,7 @@ For the **ecconfigd** service, use `/var/ecconfigd/apache`. For the **msyspg** s
 
 <dd>
 
-For the **ecconfigd** service, use `ecuser`. For the **msyspg** service, use `msyspg`. If you do not specify a user, the user defaults to `ecuser`.
+For the **msyspg** service, use `msyspg`. If you do not specify a user, the user defaults to `ecuser`.
 
 </dd>
 
@@ -85,4 +68,4 @@ For the **ecconfigd** service, use `ecuser`. For the **msyspg** service, use `ms
 <a name="idp14556320"></a> 
 ## See Also
 
-[ecconfigd](/momentum/4/executable/ecconfigd), [“Running the PostgreSQL Server”](/momentum/4/postgresql-server)
+[“Running the PostgreSQL Server”](/momentum/4/postgresql-server)

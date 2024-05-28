@@ -1,7 +1,7 @@
 ---
-lastUpdated: "03/26/2020"
+lastUpdated: "05/21/2024"
 title: "Configuration Overview"
-description: "Momentum is an exceptionally powerful all in one email infrastructure solution As such it can be configured to provide the full range of digital messaging channels and more This chapter gives an overview of Momentum's configuration and provides the background needed to configure your system to meet your specific application..."
+description: "Momentum is an exceptionally powerful all in one email infrastructure solution As such it can be configured to provide the full range of digital messaging channels and more This chapter gives an overview of Momentum's configuration and provides the background needed to configure your system to meet your specific application"
 ---
 
 
@@ -24,8 +24,6 @@ The `ecelerity.conf` file is the master configuration file for Momentum; while o
 *   [`msg_gen.conf`](/momentum/4/config/ref-msg-gen-conf) - Message Generation configuration file included from within `ecelerity.conf`
 
 *   [`msgc_server.conf`](/momentum/4/config/ref-msgc-server-conf) - Momentum cluster messaging bus configuration file
-
-If you make changes to a configuration file, be sure to use the [Momentum Configuration Server](/momentum/4/conf-overview#conf.ecconfigd) to commit your changes.
 
 ### <a name="conf.files.comments"></a> Comments and Whitespace
 
@@ -105,43 +103,11 @@ Finally, if the scope instance containing the change was only encountered in rea
 
 Any configuration files included with the `readonly_include` directive are read-only. Any configuration files included multiple times (overall, not necessarily from the same file) are read-only. Any configuration files loaded from a URI with a scheme other than 'file://', 'persist://' are read-only. All other configuration files are considered writable.
 
-### <a name="conf.ecconfigd"></a> Configuration Management (ecconfigd)
-
-Both single-node and clustered installations take advantage of Momentum's revision control system for configuration files. Any configuration changes should be committed to the Momentum Configuration Server **ecconfigd**, henceforth referred to as the configuration server. On start up, the script in the `/etc/init.d` directory runs the **ecconfigd** as a service on the node designated as Manager. For details about the configuration server, see [ecconfigd](/momentum/4/executable/ecconfigd). For details about the **ecconfigd** service in a cluster configuration, see [“Cluster-specific Configuration Management”](/momentum/4/4-cluster#cluster.config_files.mgmt).
-
-Use **ecconfigd_ctl** to start, stop, or restart the configuration server. For details about this command, see [ecconfigd_ctl](/momentum/4/executable/ecconfigd-ctl).
-
-Momentum's version control management tool is **eccfg**. It is used to track and update configuration file changes. For details about using this tool, see [eccfg](/momentum/4/executable/eccfg).
-
-**<a name="conf.ecconfigd.singlenode"></a> 15.1.3.1. Repository Working Copy for Single Node**
-
-The repository working copy directories are located at `/opt/msys/ecelerity/etc/conf/`. There are a number of directories below this. What they are depends upon whether you have installed Momentum in a single-node or cluster configuration and whether you have defined any subclusters. The following are descriptions of the subdirectories in a single-node configuration:
-
-*   `global` – This directory exists but is not used in a single-node configuration.
-
-*   `default` – files used by a single-node configuration
-
-By default the order is:
-
-```
-/opt/msys/ecelerity/etc
-/opt/msys/ecelerity/etc/conf/global
-/opt/msys/ecelerity/etc/conf/default
-```
-
-Directories are separated by the standard path separator.
-
-If you wish to change the search order, set the environment variable `EC_CONF_SEARCH_PATH`. For more information about `EC_CONF_SEARCH_PATH`, see [*Configuring the Environment File*](/momentum/4/environment-file) .
-
-For details about the working copy of the repository in a cluster configuration, see [“Repository Working Copy for Cluster”](/momentum/4/4-cluster#cluster.config_files.mgmt.cluster).
-
 ### <a name="conf.manual.changes"></a> Changing Configuration Files
 
-Since the configuration files are under revision control, it is important to take steps to avoid conflicts with changes made elsewhere in the system and to be able to track changes. For this reason, perform the following actions when editing any configuration files or script files:
+It is important to take steps to avoid conflicts with changes made elsewhere in the system and to be able to track changes. For this reason, perform the following actions when editing any configuration files or script files:
 
-1.  Familiarize yourself with the Momentum repository management tool [eccfg](/momentum/4/executable/eccfg).
-
-2.  Navigate to the appropriate directory:
+1.  Navigate to the appropriate directory:
 
     *   For a single-node configuration, navigate to `/opt/msys/ecelerity/etc/conf/default` .
 
@@ -149,28 +115,18 @@ Since the configuration files are under revision control, it is important to tak
 
     *   For node-specific configuration, navigate to the sub-directory on the cluster manager that is below `/opt/msys/ecelerity/etc/conf` and bears the name of the node: /opt/msys/ecelerity/etc/conf/*`nodename`*.
 
-3.  Make sure that the working copy of the repository is up-to-date by issuing the command:
+2.  Make the necessary changes to the configuration file using the text editor of your choice.
 
-    eccfg pull --username *`name`* --password *`passwd`*
-4.  Make the necessary changes to the configuration file using the text editor of your choice.
-
-5.  Test the validity of your changes using the [validate_config](/momentum/4/executable/validate-config) script:
+3.  Test the validity of your changes using the [validate_config](/momentum/4/executable/validate-config) script:
 
     `/opt/msys/ecelerity/bin/validate_config`
-6.  Check that your changes are valid by reloading the configuration before committing it. Issue the following command:
+4.  Check that your changes are valid by reloading the configuration before committing it. Issue the following command:
 
     `/opt/msys/ecelerity/bin/ec_console /tmp/2025 config reload`
 
     If there are any errors, the new configuration will not load and the error message, `"Reconfigure failed"`, will be displayed.
 
-7.  Once you are satisfied with your changes, commit them using the following command:
-
-    /opt/msys/ecelerity/bin/eccfg commit --username *`admin_user`* \
-     --password *`password`*
-
-    If you are configuring a cluster, you should allow about a minute or so for the changes to propagate to all nodes.
-
-8.  Implement your changes.
+5.  Implement your changes.
 
     *   For a single-node configuration, open the console and issue the command:
 
@@ -198,9 +154,7 @@ Avoid leaving uncommitted changes pending, especially in the working copy on a n
 
 As discussed in [“Using the `include` and `readonly_include` Directives”](/momentum/4/conf-overview#conf.files.includes), you can split your Momentum configuration into any number of configuration files. However, if you add new configuration files you must also add them to the repository. Follow these steps:
 
-1.  Familiarize yourself with the Momentum repository management tool [eccfg](/momentum/4/executable/eccfg).
-
-2.  Navigate to the appropriate directory for the changes you intend to make. You will save your files to a different directory on a different node depending upon how narrowly or widely your configuration applies.
+1.  Navigate to the appropriate directory for the changes you intend to make. You will save your files to a different directory on a different node depending upon how narrowly or widely your configuration applies.
 
     *   For a single-node configuration, navigate to `/opt/msys/ecelerity/etc/conf/default`.
 
@@ -208,30 +162,20 @@ As discussed in [“Using the `include` and `readonly_include` Directives”](/m
 
     *   For node-specific configuration, create a sub-directory on the cluster manager that is below `/opt/msys/ecelerity/etc/conf` and bears the name of the node: /opt/msys/ecelerity/etc/conf/*`nodename`*. Copy the appropriate configuration files from the `default` directory.
 
-3.  Make sure that the working copy of the repository is up-to-date by issuing the command:
+2.  Create and save the new configuration file.
 
-    eccfg pull --username *`name`* --password *`passwd`*
-4.  Create and save the new configuration file.
+3.  Open the appropriate configuration file and include the new file using the `include` directive.
 
-5.  Open the appropriate configuration file and include the new file using the `include` directive.
-
-6.  Test the validity of your changes using the [validate_config](/momentum/4/executable/validate-config) script:
+4.  Test the validity of your changes using the [validate_config](/momentum/4/executable/validate-config) script:
 
     `/opt/msys/ecelerity/bin/validate_config`
-7.  Check that your changes are valid by reloading the configuration before committing it. Issue the following command:
+5.  Check that your changes are valid by reloading the configuration before committing it. Issue the following command:
 
     `/opt/msys/ecelerity/bin/ec_console /tmp/2025 config reload`
 
     If there are any errors, the new configuration will not load and the error message, `"Reconfigure failed"`, will be displayed.
 
-8.  Once you are satisfied with your changes, commit them using the following command:
-
-    /opt/msys/ecelerity/bin/eccfg commit --username *`admin_user`* \
-     --password *`password`*
-
-    If you are configuring a cluster, you should allow about a minute or so for the changes to propagate to all nodes.
-
-9.  Implement your changes.
+6.  Implement your changes.
 
     *   For a single-node configuration, open the console and issue the command:
 
