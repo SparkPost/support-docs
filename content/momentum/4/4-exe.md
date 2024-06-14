@@ -22,7 +22,7 @@ This table lists all executable commands alphabetically giving a brief descripti
 | [ec_lic](/momentum/4/executable/ec-lic) – Fetch a new license file from Message Systems | misc |
 | [ec_log_trace](/momentum/4/executable/ec-log-trace) – Parse Momentum log files | logs |
 | [ec_md5passwd](/momentum/4/executable/ec-md-5-passwd) – Change the password for a system user's password | security |
-| [ec_mta_sts_purge](/momentum/4/executable/ec-mta-sts-purge) - remove expired MTA-STS policy files |
+| [ec_mta_sts_purge](/momentum/4/executable/ec-mta-sts-purge) - remove expired MTA-STS policy files | misc |
 | [ec_rotate](/momentum/4/executable/ec-rotate) – Rotate Momentum logfiles | misc |
 | [ec_sendmail](/momentum/4/executable/ec-sendmail) – A sendmail compatibility interface | misc |
 | [ec_show](/momentum/4/executable/ec-show) – Show spool or message information | messages |

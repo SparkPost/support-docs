@@ -21,11 +21,11 @@ ec_mta_sts_purge — Remove expired MTA-STS policies from the file system
 
 The **ec_mta_sts_purge** command is a utility script used to remove expired MTA-STS policies from the file system.
 
-Momentum caches MTA-STS policies on the file system.  This is to reduce how often Momentum needs to fetch the policies using HTTP.  This also prevents a large number of fetches on a restart.  These policies will normally get updated regularly, but if a domain is not used for a long time, this command can be used to delete the expired policy file for this domain from the file system.
+Momentum caches MTA-STS policies on the file system.  This is to reduce how often Momentum needs to fetch the policies using HTTP.  This also prevents a large number of fetches on a restart.  These policies will normally get updated regularly, but if some domains have not been used for a long time, this command can be used to delete the expired policy files for these domains from the file system.
 
 ### Note
 
-The **ec_mta_sts_purge** script will by default delete files in the default location. If you have specified a different location via `mta_sts_policy_store`, the `-dir` option must be used.
+The **ec_mta_sts_purge** script will delete files in the default location. If you have specified a different location via `mta_sts_policy_store`, the `-dir` option must be used.
 
 The following options change the behavor of the **ec_mta_sts_purge** command:
 
@@ -35,7 +35,7 @@ The following options change the behavor of the **ec_mta_sts_purge** command:
 
 <dd>
 
-Specify the full path to the directory where the policy files are stored. Default is '/var/spool/ecelerity/mtasts'.
+Specify the full path to the directory where the policy files are stored. Default is `/var/spool/ecelerity/mtasts`.
 
 </dd>
 
@@ -43,7 +43,7 @@ Specify the full path to the directory where the policy files are stored. Defaul
 
 <dd>
 
-If this option is specified, the script will just print files that would be deleted.
+If this option is specified, the script will just list the files that would be deleted.
 
 </dd>
 
@@ -51,6 +51,6 @@ If this option is specified, the script will just print files that would be dele
 
 The following is an example:
 
-```
+```sh
 /opt/msys/ecelerity/bin/ec_mta_sts_purge -dryrun -dir /path/to/policy/files
 ```
