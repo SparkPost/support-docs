@@ -13,9 +13,9 @@ mta_sts - commands for MTA-STS related data
 
 `mta_sts list all`
 
-`mta-sts show domain {domain name}`
+`mta_sts show domain {domain name}`
 
-`mta-sts refresh policy {domain name}`
+`mta_sts refresh policy {domain name}`
 
 ## Description
 

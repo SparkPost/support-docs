@@ -24,4 +24,4 @@ The default value is `/var/spool/ecelerity/mtasts`.
 
 ## Scope
 
-`mta_sts_dns_cname_max_depth` is valid in the global scope.
+`mta_sts_policy_store` is valid in the global scope.
