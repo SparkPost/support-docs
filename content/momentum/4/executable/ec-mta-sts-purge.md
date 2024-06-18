@@ -21,7 +21,7 @@ ec_mta_sts_purge — Remove expired MTA-STS policies from the file system
 
 The **ec_mta_sts_purge** command is a utility script used to remove expired MTA-STS policies from the file system.
 
-Momentum caches MTA-STS policies on the file system.  This is to reduce how often Momentum needs to fetch the policies using HTTP.  This also prevents a large number of fetches on a restart.  These policies will normally get updated regularly, but if some domains have not been used for a long time, this command can be used to delete the expired policy files for these domains from the file system.
+Momentum caches MTA-STS policies on the file system.  This is to reduce how often Momentum needs to fetch the policies using HTTPS.  This also prevents a large number of fetches on a restart.  These policies will normally get updated regularly, but if some domains have not been used for a long time, this command can be used to delete the expired policy files for these domains from the file system.
 
 ### Note
 
@@ -31,7 +31,7 @@ The following options change the behavor of the **ec_mta_sts_purge** command:
 
 <dl class="variablelist">
 
-<dt>-dir *`directory`*</dt>
+<dt>-dir directory</dt>
 
 <dd>
 
