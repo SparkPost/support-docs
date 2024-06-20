@@ -46,10 +46,10 @@ DANE works independently from and take preference over the configuration control
  behavior.
 
 When MTA-STS is also enabled on a binding domain, MTA-STS policy will apply to MX selection for
- email delivery, but if available, only the DANE TLS validation will be applied to establish the
- STARTTLS connection. If STARTTLS failed, no fallback to other verification means (e.g. MTA-STS, or
- administrator configured STARTTLS behaviors defined by [tls](/momentum/4/config/ref-tls) or
- [tls_verify](/momentum/4/config/tls-verify)).
+ email delivery, but if secure TLSA record is available, only the DANE TLS validation will be
+ applied to establish the STARTTLS connection. If DANE TLS failed, no fallback to other
+ verification means (e.g. MTA-STS, or administrator configured STARTTLS behaviors defined by
+ [tls](/momentum/4/config/ref-tls) or [tls_verify](/momentum/4/config/tls-verify)).
 
 ### <a name="modules.dane.configuration.example"></a> Configuration
 
