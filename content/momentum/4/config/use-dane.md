@@ -20,7 +20,7 @@ This option is only effective when [dane modue](/momentum/4/modules/dane) is con
 
 This option specifies whether Momentum shall check the DNSSEC status of a domain's MX and A record,
  and if both pass DNSSEC validation, corresponding TLSA record will be fetched and DNSSEC status
- checked for DANE.
+ checked.
 
 The default value is `false`.
 

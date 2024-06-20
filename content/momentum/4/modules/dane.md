@@ -24,7 +24,8 @@ DANE for SMTP security allows the remote side to enforce the use of STARTTLS whe
 
 Momentum 4.8 and above supports the use of DANE for enforcing SMTP security.
  It is strictly required that Momentum is to be configured with a DNS resolver that supports DNSSEC.
- If the new per-domain directive [use_dane](/momentum/4/config/use-dane) is set to `true`,
+ If the new [dane module](/momentum/4/modules/dane) is enabled and the new per-domain directive
+ [use_dane](/momentum/4/config/use-dane) is set to `true`,
  Momentum will lookup the remote site's STARTTLS preferences (through DNS resolution) and use that
  information to influence whether STARTTLS is established or not with the remote site prior to
  transferring email to it. If the remote site requires the use of STARTTLS, Momentum will only
@@ -45,12 +46,14 @@ DANE works independently from and take preference over the configuration control
  behavior.
 
 When MTA-STS is also enabled on a binding domain, MTA-STS policy will apply to MX selection for
- email delivery, but the DANE TLS validation if available will be applied to establish the STARTTLS
- connection.
+ email delivery, but if available, only the DANE TLS validation will be applied to establish the
+ STARTTLS connection. If STARTTLS failed, no fallback to other verification means (e.g. MTA-STS, or
+ administrator configured STARTTLS behaviors defined by [tls](/momentum/4/config/ref-tls) or
+ [tls_verify](/momentum/4/config/tls-verify)).
 
 ### <a name="modules.dane.configuration.example"></a> Configuration
 
-You need to enable the dane module in the ecelerit configuration file to use the feature:
+You need to enable the dane module in the ecelerity configuration file to use the feature:
 
 ```
 dane {}
@@ -71,16 +74,17 @@ dane {}
 use_dane = true
 ```
 
-[domain](/momentum/4/console-commands/domain) command is update to show the TLSA record if availabe,
- and a flag of `+dnssec` is added to the domain and the hosts to indicate that they are DNSSEC
- validated. An example as shown here:
+[domain](/momentum/4/console-commands/domain) command is updated to show the TLSA record if availabe,
+ and a flag of `+dnssec` is added to each DNS record to indicate that they are DNSSEC
+ validated. An example is shown here:
 
 ```
 Domain 'comcast.net' has 8 MXs and a TTL of 58 seconds +dnssec
   [50 mx2c1.comcast.net. TTL:7198] +dnssec
 TLSA '_25._tcp.mx2c1.comcast.net' has a TTL of 120 seconds +dnssec
   3 1 1 29b116c43593748345aa7f4c43717e792f94137a88b93d674de2ce1162f98625
-  [96.102.18.146]:0 IPv4 (0.00ms con 0.00ms dlv)
+  [96.102.18.146]:0 IPv4 (0.00ms con 0.00ms dlv)\
+...
 ```
 
 

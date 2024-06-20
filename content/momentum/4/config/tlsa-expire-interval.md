@@ -16,8 +16,8 @@ tlsa_expire_interval — how often to check for expired TLSA records
 
 How often the garbage collector should check for expired TLSA records. During email delivery,
  a related TLSA record will be checked for expiration and refreshed if expired.
- Garbage collection controlled by this configuration option is to retire the stale TLSA
- records which are not actively in use.
+ The purpose of garbage collection controlled by this configuration option is to retire
+ the stale TLSA records which are not actively in use.
 
 The default is `3600` seconds.
 
