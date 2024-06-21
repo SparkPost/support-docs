@@ -1965,6 +1965,8 @@
     - link: /momentum/changelog/4
       title: Momentum 4.x Changelog
       items: 
+        - link: /momentum/changelog/4/4-8
+          title: Momentum 4.8 Changelog
         - link: /momentum/changelog/4/4-7
           title: Momentum 4.7 Changelog
         - link: /momentum/changelog/4/4-6

@@ -6,7 +6,7 @@ description: "Message Systems Inc Copyright 2014-2023 Message Systems Inc Confid
 
 ### Message Systems, Inc.
 
-Copyright © 2014-2023 Message Systems, Inc.
+Copyright © 2014-2024 Message Systems, Inc.
 
 <a name="idp102528"></a>
 
@@ -16,12 +16,13 @@ Confidential & Proprietary.
 
 This book documents Momentum 4.
 
-Document generated on: 2023-Oct-26
+Document generated on: 2024-Jun-30
 
 ---
 
 ### Momentum 4.x Changelogs
 
+- [Momentum 4.8 Changelogs](/momentum/changelog/4/4-8)
 - [Momentum 4.7 Changelogs](/momentum/changelog/4/4-7)
 - [Momentum 4.6 Changelogs](/momentum/changelog/4/4-6)
 - [Momentum 4.4.1 Changelogs](/momentum/changelog/4/4-4-1)
