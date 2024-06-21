@@ -67,6 +67,13 @@ Alias for `options attempts:2`
 
 </dl>
 
+## Note
+
+Momentum does not support the `rotate` option of `resolv.conf`. An upstream server supporting
+ nameserver rotation can be used in `resolv.conf` to achieve the goal for Momentum to use the
+ de facto rotated nameservers for DNS lookups.
+
+
 <a name="idp25959392"></a> 
 ## Scope
 
