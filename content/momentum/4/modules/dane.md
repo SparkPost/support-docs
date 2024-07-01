@@ -7,7 +7,7 @@ description: "DANE support TLSA DNSSEC"
 The dane module handles DANE related DNS lookups and outbound STARTTLS enforcement and
  verifications.
 
-DANE (DNS-Based Authentication of Named Entities) is a new standard for improving transport security.
+DANE (DNS-Based Authentication of Named Entities) is a standard for improving transport security.
  [RFC 7672](https://datatracker.ietf.org/doc/html/rfc7672) describes the use of DANE for improving
  SMTP security between MTAs.
 
@@ -24,8 +24,8 @@ DANE for SMTP security allows the remote side to enforce the use of STARTTLS whe
 
 Momentum 4.8 and above supports the use of DANE for enforcing SMTP security.
  It is strictly required that Momentum is to be configured with a DNS resolver that supports DNSSEC.
- If the new [dane module](/momentum/4/modules/dane) is enabled and the new per-domain directive
- [use_dane](/momentum/4/config/use-dane) is set to `true`,
+ If the new [dane module](/momentum/4/modules/dane) is enabled and the new directive
+ [use_dane](/momentum/4/config/use-dane) for a domain is set to `true`,
  Momentum will lookup the remote site's STARTTLS preferences (through DNS resolution) and use that
  information to influence whether STARTTLS is established or not with the remote site prior to
  transferring email to it. If the remote site requires the use of STARTTLS, Momentum will only
@@ -45,7 +45,8 @@ See RFC 7672 for more descriptions on how certificate matching is specified via 
 DANE works independently from and take preference over the configuration controlled STARTTLS
  behavior.
 
-When MTA-STS is also enabled on a binding domain, MTA-STS policy will apply to MX selection for
+When [MTA-STS](/momentum/4/mta-sts) is also enabled on a binding domain,
+ MTA-STS policy will apply to MX selection for
  email delivery, but if secure TLSA record is available, only the DANE TLS validation will be
  applied to establish the STARTTLS connection. If DANE TLS failed, no fallback to other
  verification means (e.g. MTA-STS, or administrator configured STARTTLS behaviors defined by
@@ -60,7 +61,7 @@ dane {}
 ```
 
 ### Note
-With dane module enabled, you still need to have the following globel/binding/domain scope
+With dane module enabled, you still need to have the following global/binding/domain scope
  configuration options to fully enable the feature application on email sending.
 
 - [use_dane](/momentum/4/config/use-dane)
@@ -74,7 +75,7 @@ dane {}
 use_dane = true
 ```
 
-[domain](/momentum/4/console-commands/domain) command is updated to show the TLSA record if availabe,
+[domain](/momentum/4/console-commands/domain) command is updated to show the TLSA record if available,
  and a flag of `+dnssec` is added to each DNS record to indicate that they are DNSSEC
  validated. An example is shown here:
 
