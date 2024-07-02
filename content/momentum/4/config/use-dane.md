@@ -7,8 +7,8 @@ description: "config option to enable DANE TLSA DNS lookup for a domain"
 <a name="config.use-dane"></a>
 ## Name
 
-use_dane — specify whether Momentum should check DNS record DNSSEC status and look up for TLSA
- record if applicable.
+use_dane — specify whether Momentum should check DNS record DNSSEC status and look up TLSA
+ records if applicable.
 
 ## Synopsis
 

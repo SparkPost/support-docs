@@ -18,12 +18,13 @@ Momentum has supported STARTTLS for a long time. The use of STARTTLS for establi
 DANE for SMTP security allows the remote side to enforce the use of STARTTLS whenever clients like
  Momentum connect to the site to transfer email. RFC 7672 describes various methods through which
  remote sites could advertise the availability of STARTTLS with them, and whether they require
- the connecting clients must always use STARTTLS when communicating with them.
+ the connecting clients to always use STARTTLS when communicating with them.
  DANE requires that the DNS resolver support DNSSEC, a secure way of looking up DNS records.
  Google DNS (8.8.8.8) is an example of a DNS lookup service that supports DNSSEC.
 
 Momentum 4.8 and above supports the use of DANE for enforcing SMTP security.
- It is strictly required that Momentum is to be configured with a DNS resolver that supports DNSSEC.
+ When DANE is enabled, Momentum must be configured with a DNS resolver that supports DNSSEC in order
+ for DANE to work properly.
  If the new [dane module](/momentum/4/modules/dane) is enabled and the new directive
  [use_dane](/momentum/4/config/use-dane) for a domain is set to `true`,
  Momentum will lookup the remote site's STARTTLS preferences (through DNS resolution) and use that
@@ -33,7 +34,7 @@ Momentum 4.8 and above supports the use of DANE for enforcing SMTP security.
  to the remote site. And, in accordance with the DANE standard, Momentum will attempt to verify
  the certificate presented by the remote host during STARTTLS based on the fingerprints it obtained
  through DNS TLSA records. If the remote site is strict about the use of STARTTLS,
- and Momentum could not perform STARTTLS successfully (for e.g, Momentum failed to verify that the
+ and Momentum could not perform STARTTLS successfully (e.g, Momentum failed to verify that the
  fingerprint of the certificate presented by the remote site matches the fingerprint of the
  certificate specified in the TLSA DNS records), Momentum will not transfer email to the remote
  server. Email is held in the queue until Momentum can establish STARTTLS successfully in accordance
@@ -42,7 +43,7 @@ Momentum 4.8 and above supports the use of DANE for enforcing SMTP security.
 See RFC 7672 for more descriptions on how certificate matching is specified via the use of
  TLSA DNS records. Please contact support if you have any further questions about DANE protocol.
 
-DANE works independently from and take preference over the configuration controlled STARTTLS
+DANE works independently from and takes preference over the configuration controlled STARTTLS
  behavior.
 
 When [MTA-STS](/momentum/4/mta-sts) is also enabled on a binding domain,
