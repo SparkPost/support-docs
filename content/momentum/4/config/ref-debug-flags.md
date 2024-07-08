@@ -65,6 +65,7 @@ Debug_Flags {
 | File Descriptors | FD |
 | SMTP | SMTP |
 | LOG1 | LOG1 |
+| DANE | DANE |
 | DNS | DNS |
 | DNS data structures | DNSDS |
 | MTA-STS | MTA_STS |
