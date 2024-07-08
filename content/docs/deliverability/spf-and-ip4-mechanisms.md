@@ -14,4 +14,4 @@ We recognize that SPF 7208 says the ptr mechanism **SHOULD NOT** be used, but it
 
 We recognize that our SPF record does not pass muster with sites such as [dmarcian.com](http://dmarcian.com/), but rest assured that it does result in verdicts of pass on mail sent using the SPF record we publish.
 
-You can also use our SPF tools for your SPF needs [SPF Inspector](https://tools.sparkpost.com/spf/inspector) and [SPF Builder](https://tools.sparkpost.com/spf/builder).
+You can also use these online SPF tools for your SPF needs [SPF Record Check](https://mxtoolbox.com/spf.aspx) and [SPF Record Generator](https://mxtoolbox.com/SPFRecordGenerator.aspx).

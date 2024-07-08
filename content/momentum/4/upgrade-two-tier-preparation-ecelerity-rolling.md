@@ -1,7 +1,7 @@
 ---
-lastUpdated: "03/26/2020"
+lastUpdated: "05/21/2024"
 title: "Upgrade Ecelerity and the Cassandra Schema on the First Platform Node"
-description: "The following steps connect Ecelerity and Cassandra These steps should be done only on the first Platform node Be sure you perform these steps in the order shown below Upgrade the RPM packages with yum this includes all Momentum and third party packages Set up Cassandra Momentum compatibility i e..."
+description: "The following steps connect Ecelerity and Cassandra These steps should be done only on the first Platform node"
 ---
 
 1.  The following steps connect Ecelerity and Cassandra. These steps should be done only on the **first Platform node** . Be sure you perform these steps in the order shown below.
@@ -12,10 +12,7 @@ description: "The following steps connect Ecelerity and Cassandra These steps sh
     2.  Set up Cassandra-Momentum compatibility (i.e., the Cassandra schema to be used) (**first Platform node only** ).
 
         `/opt/msys/ecelerity/bin/cassandra_momo_setup.sh --multinode /opt/msys/ecelerity/etc`
-    3.  Start ecconfigd (**first Platform node only** ).
-
-        `service ecconfigd start`
-    4.  Start Momentum.
+    3.  Start Momentum.
 
         `service ecelerity start`
         ### Note

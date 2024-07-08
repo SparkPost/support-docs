@@ -354,6 +354,16 @@ Specify the name of the outbound throttle messages series. Default name is `OBTM
 
 </dd>
 
+<dt><a name="modules.adaptive.read_cache_after_suspension"></a> read_cache_after_suspension</dt>
+
+<dd>
+
+_Introduced in Momentum 4.8._
+
+If set to `true`, the adaptive option values (typically message throttles) that were cached _before_ a domain was suspended will be considered when it gets resumed (returns from suspension).  It may be beneficial to set this to __true__ if you want to avoid a domain being suspended over and over because of default values being applied.  Default value is `false`.
+
+</dd>
+
 <dt><a name="modules.adaptive.split_logs_by_binding"></a> split_logs_by_binding</dt>
 
 <dd>

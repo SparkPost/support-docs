@@ -1,7 +1,7 @@
 ---
-lastUpdated: "03/26/2020"
+lastUpdated: "05/21/2024"
 title: "Security Considerations"
-description: "This section will document security issues and fixes for those issues A umask setting of 0027 in the shell startup file typically bashrc when using the bash shell will cause installation to fail because directories created by root will be inaccessible to the user ecuser With a umask setting of..."
+description: "This section will document security issues and fixes for those issues"
 ---
 
 This section will document security issues and fixes for those issues.
@@ -10,22 +10,11 @@ This section will document security issues and fixes for those issues.
 
 A umask setting of `0027` in the shell startup file, typically `~/.bashrc` when using the bash shell, will cause installation to fail because directories created by root will be inaccessible to the user `ecuser`.
 
-With a umask setting of `0027`, when the initial configuration is being created, ecconfigd is started, but the Apache instance will not start. You will see output such as the following:
-
-```
-shell> CFG-07961 failed to stat
-'/opt/msys/etc/installer/ecelerity.d/': Permission denied
-Reconfigure failed.
-Global configuration error.
-```
-
 This is also true of any files that are created as the root user under the `/opt/msys/ecelerity/etc/conf` directory.
 
 To resolve this use a more permissive mask, for example `umask 0022`.
 
 Another option is to `chown ecuser:ecuser` all new configuration files, or make them world readable. Likewise for directories.
-
-If you get the permissions wrong, then you will also not be able to log in to the web UI or use the **ecconfigd** command.
 
 ### <a name="install.security.poodle"></a> POODLE Vulnerability Fix
 

@@ -1,7 +1,7 @@
 ---
-lastUpdated: "03/26/2020"
+lastUpdated: "05/21/2024"
 title: "Policy Scriptlets"
-description: "Lua scripts provide you with the capability to express the logic behind your policy Aside from being very convenient policy scripts can be reloaded on the fly allowing real time adjustment of policy without interrupting service the Momentum implementation has extremely low overhead and tightly integrates with the event based..."
+description: "Lua scripts provide you with the capability to express the logic behind your policy Momentum implementation has extremely low overhead and tightly integrates with the event based architecture"
 ---
 
 Lua scripts provide you with the capability to express the logic behind your policy. Aside from being very convenient (policy scripts can be reloaded on the fly, allowing real-time adjustment of policy without interrupting service), the Momentum implementation has extremely low overhead and tightly integrates with the event-based architecture, being able to suspend processing until asynchronous operations (such as DNS resolution, or database queries) complete. Note that variables used in a policy script are scoped locally and only persist in the particular policy script in which it is defined. Use the [validation context](/momentum/4/4-policy#policy.validation) to persist data over different policy phases and policy scripts.
@@ -106,23 +106,11 @@ In the `default_policy.conf` file, you should also enable the datasource(s) suit
 
 ### <a name="policy.best.practices"></a> Creating Policy Scripts
 
-Following best practices when creating policy scripts is important, especially in a cluster environment when scripts are used on more than one node. Scripts should take advantage of Momentum's built-in revision control and be added to the repository using the [eccfg](/momentum/4/executable/eccfg) command.
+Following best practices when creating policy scripts is important, especially in a cluster environment when scripts are used on more than one node.
 
 To create a policy script, perform the following:
 
-1.  Take steps to avoid conflicts.
-
-    When working with files that are under revision control, it is important to take steps to avoid conflicts with changes made elsewhere in the system and to be able to track changes. For this reason, perform the following actions before creating any policy scripts:
-
-    *   Provision a user account for each admin user, so that the history in the repository is meaningful.
-
-    *   Ensure that you have the latest updates on the node where you are creating the scripts by running **`/opt/msys/ecelerity/bin/eccfg pull`**      .
-
-        ### Note
-
-        Pay special attention to the instructions for using the **pull** command—if the configuration is updated your current directory may be invalidated. For more information, see [eccfg](/momentum/4/executable/eccfg).
-
-2.  Create a directory for your script.
+1.  Create a directory for your script.
 
     Scripts should be created in a directory that is under revision control. Create a directory for your scripts in the working copy of the repository on a node where you intend to run the script:
 
@@ -130,7 +118,7 @@ To create a policy script, perform the following:
 
     *   If your scripts apply to only one node, create a node-specific directory.
 
-3.  Write your script.
+2.  Write your script.
 
     All scripts must
 
@@ -175,7 +163,7 @@ To create a policy script, perform the following:
 
     These messages indicate a scriptlet error and give both the name of the script and the callout that failed.
 
-4.  Update your configuration to properly reference your script.
+3.  Update your configuration to properly reference your script.
 
     After writing a script and saving it to the repository, you must include it in the [`scriptlet`](/momentum/4/modules/scriptlet) module using a `script` stanza in your `ecelerity.conf` file.
 
@@ -219,7 +207,7 @@ To create a policy script, perform the following:
 
     For additional details about editing your configuration files, see [“Changing Configuration Files”](/momentum/4/conf-overview#conf.manual.changes).
 
-5.  Check the validity of your script.
+4.  Check the validity of your script.
 
     Since a malformed configuration file will not reload, using **config reload**        is one way of validating your scriptlet syntax. After your configuration has been changed, issue the command:
 
@@ -244,7 +232,7 @@ To create a policy script, perform the following:
 
     However, please note that Message Systems does not provide support for the use of any third party tools included or referenced by name within our products or product documentation; support is the sole responsibility of the third party provider.
 
-6.  Debug your script.
+5.  Debug your script.
 
     Successfully reloading the configuration file does not guarantee that your script will run. Your script may be syntactically correct but have semantic errors. As always, you should test the functionality of scripts before implementing them in a production environment.
 
@@ -287,24 +275,6 @@ To create a policy script, perform the following:
         1251390180:scriptlet: return { recipient="no-reply@mydomain.com",
           note="No email received at this address", code="550"}
         ```
-
-7.  Commit your changes.
-
-    Once you are satisfied that your scripts function correctly, commit your changes. From the directory above your newly created directory, use **eccfg** to add both the directory and the script to the repository:
-
-    *   If you are adding a new script, issue the command
-
-        **eccfg commit ––username *`admin_user`* ––password *`passwd`* ––add-all --message *`message here`***                                                                                             .
-
-    *   If you are editing a script, you need not use the `––add-all` option.
-
-8.  Repply your changes, if required.
-
-    In all cases, edits made to the local configuration will need to be manually applied to the node via **config reload** . The **eccfg commit**        command will not do it for you. If you have not reloaded your configuration, issue the console command:
-
-    **`/opt/msys/ecelerity/bin/ec_console /tmp/2025 config reload`**                         
-
-    If your changes affect more than one node, each node will check for an updated configuration each minute and automatically check out your changes and issue a **config reload** .
 
 ### <a name="policy.scriptlets.examples"></a> Examples
 

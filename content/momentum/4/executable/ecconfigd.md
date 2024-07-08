@@ -1,8 +1,12 @@
 ---
-lastUpdated: "03/26/2020"
+lastUpdated: "05/21/2024"
 title: "ecconfigd"
-description: "ecconfigd Momentum Configuration Server opt msys ecelerity sbin ecconfigd log level level debug ecconfigd is the Momentum Configuration Server Configuration files are maintained in a version control repository and exported via this service The user for this service is ecuser The associated password is created during installation The service consists..."
+description: "ecconfigd is the Momentum Configuration Server Configuration files are maintained in a version control repository and exported via this service The user for this service is ecuser The associated password is created during installation"
 ---
+
+| **WARNING** |
+| -- |
+| **This feature was deprecated in version 4.3.1.** |
 
 <a name="executable.ecconfigd"></a> 
 ## Name
@@ -55,4 +59,4 @@ Set the log file verbosity. The log level is a number from 0 to 7, where higher 
 <a name="idp9377248"></a> 
 ## See Also
 
-[ecconfigd_ctl](/momentum/4/executable/ecconfigd-ctl), [eccfg](/momentum/4/executable/eccfg), [Section 15.1.3, “Configuration Management (**ecconfigd**)”](conf.overview#conf.ecconfigd "15.1.3. Configuration Management (ecconfigd)"), [create_ssl_cert](/momentum/4/executable/create-ssl-cert)
+[ecconfigd_ctl](/momentum/4/executable/ecconfigd-ctl), [eccfg](/momentum/4/executable/eccfg)

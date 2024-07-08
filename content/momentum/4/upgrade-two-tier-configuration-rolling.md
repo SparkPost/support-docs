@@ -17,7 +17,7 @@ Instructions for upgrading a combined node configuration are included as additio
 
 ### Tip
 
-In a combined node configuration, Analytics and Platform nodes are the same nodes, which means instructions will be done on all nodes unless specified otherwise. In addition, primary nodes (i.e., the first Platform node and the first Analytics node) are the same node, and this node runs the `ecconfigd` configuration manager process.
+In a combined node configuration, Analytics and Platform nodes are the same nodes, which means instructions will be done on all nodes unless specified otherwise.
 
 ### Note
 

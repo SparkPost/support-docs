@@ -1,7 +1,7 @@
 ---
-lastUpdated: "03/26/2020"
+lastUpdated: "05/21/2024"
 title: "Rotating Logs ec_rotate"
-description: "Momentum provides a utility script ec rotate that you can use to rotate and compress logs that Momentum writes It is recommended that you run this script daily from your system's crontab etc cron d msys ecelerity core To invoke ec rotate execute ec rotate as the root user By..."
+description: "Momentum provides a utility script ec rotate that you can use to rotate and compress logs that Momentum writes"
 ---
 
 
@@ -63,10 +63,7 @@ logfiles =  /var/log/ecelerity/mainlog.ec \
             /var/log/ecelerity/bouncelog.ec \
             /var/log/ecelerity/acctlog.ec \
             /var/log/ecelerity/smpplog.ec \
-            /var/log/ecelerity/ecconfigd.log \
-            /var/log/ecelerity/httplog.ec \
-            /var/ecconfigd/apache/access.log \
-            /var/ecconfigd/apache/error.log 
+            /var/log/ecelerity/httplog.ec 
 logdirs = /var/log/ecelerity/adaptive 
 
 retention = 7

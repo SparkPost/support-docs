@@ -221,7 +221,7 @@ description: "This chapter provides the definitions of the configuration options
 | [tls_verified_peer_is_authorized](/momentum/4/config/tls-verified-peer-is-authorized) | Marks requests that use a verified SSL Client certificate as being authorized |
 | [tls_verify](/momentum/4/config/tls-verify) | specify how to handle the remote presented certificate |
 | [tls_verify_mode](/momentum/4/config/tls-verify-mode) | determine whether a TLS certificate is required |
-| [tlsa_expire_interval](/momentum/4/config/tlsa-expire-interval) | how often to check for expired TLSA records |
+| [tlsa_expire_interval](/momentum/4/config/ref-tlsa-expire-interval) | how often to check for domains with expired DANE TLSA information |
 | [trace_smtp_mode](/momentum/4/config/ref-trace-smtp-mode) | set the default permissions of trace files |
 | [tracking_domain](/momentum/4/config/tracking-domain) | set the tracking domain to use for engagement tracking in SMTP injections |
 | [tracking_link_expiry](/momentum/4/config/tracking-link-expiry) | set the expiration time for engagement tracking for SMTP injections |

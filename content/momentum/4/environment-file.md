@@ -1,7 +1,7 @@
 ---
-lastUpdated: "03/26/2020"
+lastUpdated: "05/21/2024"
 title: "Configuring the Environment File"
-description: "Environment variables should be set or adjusted on startup If Momentum is started up using the ec ctl script any environment variables included in the environment file will be set Environment variables can be set in the opt msys ecelerity etc environment file The variables that can be set are..."
+description: "Environment variables should be set or adjusted on startup If Momentum is started up using the ec ctl script any environment variables included in the environment file will be set"
 ---
 
 Environment variables should be set or adjusted on startup. If Momentum is started up using the [ec_ctl](/momentum/4/executable/ec-ctl) script, any environment variables included in the `environment` file will be set.
@@ -15,10 +15,6 @@ Environment variables can be set in the `/opt/msys/ecelerity/etc/environment` fi
 *   `CONTROL` – path to a Unix domain control listener endpoint
 
     This parameter should match what you have configured for your Control_Listener in `ecelerity.conf`.
-
-*   `EC_CONF_SEARCH_PATH` – this value defines the search path used by [**ecconfigd**](/momentum/4/conf-overview#conf.ecconfigd) to determine the applicable configuration file
-
-    Add this variable to the environment file if you wish to change the search order.
 
 *   `EC_DIGEST_REALM` – MD5 digest realm (see [ec_md5passwd](/momentum/4/executable/ec-md-5-passwd).)
 
@@ -60,7 +56,7 @@ Environment variables can be set in the `/opt/msys/ecelerity/etc/environment` fi
 
 *   `TRY` – number of times to loop waiting for Momentum to start up
 
-    For examples of usage, see [ec_ctl](/momentum/4/executable/ec-ctl) and [ecconfigd_ctl](/momentum/4/executable/ecconfigd-ctl).
+    For an example of usage, see [ec_ctl](/momentum/4/executable/ec-ctl).
 
 ### Note
 

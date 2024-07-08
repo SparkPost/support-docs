@@ -1,7 +1,7 @@
 ---
-lastUpdated: "03/26/2020"
+lastUpdated: "05/21/2024"
 title: "Removing a Platform Node"
-description: "This section describes how to remove a functional Platform node which involves removing the node from the Cassandra and Momentum clusters and making some manual configuration changes on the remaining Platform nodes and on the existing Analytics nodes These instructions apply to Momentum 4 2 1 x where x or..."
+description: "This section describes how to remove a functional Platform node which involves removing the node from the Cassandra and Momentum clusters and making some manual configuration changes on the remaining Platform nodes and on the existing Analytics nodes"
 ---
 
 This section describes how to remove a functional Platform node, which involves removing the node from the Cassandra and Momentum clusters and making some manual configuration changes on the remaining Platform nodes and on the existing Analytics nodes.
@@ -144,10 +144,7 @@ You can perform the following steps on any remaining Platform node.
     }
     ```
 
-3.  Use eccfg to commit the modified configuration, substituting your own admin password if environmental variable $ADMINPASS is not defined.
-
-    `$ /opt/msys/ecelerity/bin/eccfg commit -u admin -p $ADMINPASS -m 'Removing a platform node from the cluster'`
-4.  Restart ecelerity on ALL of the remaining Platform nodes.
+3.  Restart ecelerity on ALL of the remaining Platform nodes.
 
     `$ service ecelerity restart`
 
