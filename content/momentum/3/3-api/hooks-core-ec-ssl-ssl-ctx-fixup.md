@@ -13,23 +13,16 @@ ec_ssl_SSL_CTX_fixup — This hook provides an opportunity for modules to alter 
 
 `#include "hooks/core/ec_ssl_SSL_CTX_fixup.h"`
 
-| `void **core_ec_ssl_SSL_CTX_fixup** (` | <var class="pdparam">closure</var>, |   |
-|   | <var class="pdparam">sslctx</var>, |   |
-|   | <var class="pdparam">type</var>, |   |
-|   | <var class="pdparam">domain</var>, |   |
-|   | <var class="pdparam">certfile</var>, |   |
-|   | <var class="pdparam">keyfile</var>, |   |
-|   | <var class="pdparam">clientca</var>, |   |
-|   | <var class="pdparam">cipher_list</var>`)`; |   |
-
-`void * <var class="pdparam">closure</var>`;
-`struct ssl_ctx_st * <var class="pdparam">sslctx</var>`;
-`int <var class="pdparam">type</var>`;
-`const char * <var class="pdparam">domain</var>`;
-`const char * <var class="pdparam">certfile</var>`;
-`const char * <var class="pdparam">keyfile</var>`;
-`const char * <var class="pdparam">clientca</var>`;
-`const char * <var class="pdparam">cipher_list</var>`;<a name="idp42798880"></a> 
+```
+void core_ec_ssl_SSL_CTX_fixup (void *closure,
+                                struct ssl_ctx_st *ctx,
+                                int type,
+                                const char *domain,
+                                const char *certfile,
+                                const char *keyfile,
+                                const char *clientca,
+                                const char *cipher_list);
+```
 ## Description
 
 This hook is called after the SSL_CTX (struct ssl_ctx_st) context has been allocated, but before the private key has been loaded.
@@ -55,7 +48,7 @@ A pointer to the closure.
 
 <dd>
 
-An `ec_ssl_ctx` struct. For documentation of this data structure see [“ec_ssl_ctx”](/momentum/3/3-api/structs-ec-ssl-ctx).
+This struct would be passed as-is to OpenSSL functions as the SSL_CTX parameter.
 
 </dd>
 
