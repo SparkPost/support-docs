@@ -75,7 +75,9 @@ description: "This chapter provides the definitions of the configuration options
 | [ecstream_timeout](/momentum/4/config/ref-ecstream-timeout) | the amount of time to wait for an ecstream connection to be established |
 | [ehlo_hostname](/momentum/4/config/ref-ehlo-hostname) | set the hostname used for EHLO in outbound mail |
 | [ehlo_timeout](/momentum/4/config/ref-ehlo-timeout) | network timeout for EHLO |
+| [enable_dane](/momentum/4/config/enable-dane) | enable application of DANE TLS verification on email delivery to a remote domain |
 | [enable_fbl_header_insertion](/momentum/4/config/ref-enable-fbl-header-insertion) | enable or disable fbl header insertion |
+| [enable_mta_sts](/momentum/4/config/mta-sts/enable-mta-sts) | enable application of MTA-STS policy on email delivery to a remote domain |
 | [event_loop](/momentum/4/config/ref-event-loop) | associate a pool of event loops within a listener scope to use multiple threads |
 | [eventloop](/momentum/4/config/ref-eventloop) | define a pool of event loops to enable multiple event loop configuration |
 | [events_per_iter](/momentum/4/config/ref-events-per-iter) | employ when using a concurrency greater than 1. |
@@ -136,6 +138,8 @@ description: "This chapter provides the definitions of the configuration options
 | [migrate_connections_between_sibling_domains](/momentum/4/config/ref-migrate-connections-between-sibling-domains) | optimize connections for sibling domains |
 | [mime_parse_large_messages_during_reception](/momentum/4/config/ref-mime-parse-large-messages-during-reception) | configure whether large messages are parsed upon reception or just in time. |
 | [min_dns_ttl](/momentum/4/config/ref-min-dns-ttl) | override DNS TTLs smaller than this value |
+| [mta_sts_dns_cname_max_depth](/momentum/4/config/mta-sts/mta-sts-dns-cname-max-depth) | the maximum number of continuous CNAME lookups while doing MTA-STS DNS TXT lookup |
+| [mta_sts_policy_store](/momentum/4/config/mta-sts/mta-sts-policy-store) | the directory to store MTA-STS policy files |
 | [mx_failures_fallback_to_a](/momentum/4/config/ref-mx-failures-fallback-to-a) | configure the maximum number of times an MX lookup will be attempted |
 | [mx_failures_to_delay](/momentum/4/config/ref-mx-failures-to-delay) | number of consecutive failures before a domain is auto-delayed |
 | [never_attempt_expired_messages](/momentum/4/config/ref-never-attempt-expired-messages) | Never attempt delivery of expired messages |
@@ -217,7 +221,7 @@ description: "This chapter provides the definitions of the configuration options
 | [tls_verified_peer_is_authorized](/momentum/4/config/tls-verified-peer-is-authorized) | Marks requests that use a verified SSL Client certificate as being authorized |
 | [tls_verify](/momentum/4/config/tls-verify) | specify how to handle the remote presented certificate |
 | [tls_verify_mode](/momentum/4/config/tls-verify-mode) | determine whether a TLS certificate is required |
-| [tlsa_expire_interval](/momentum/4/config/ref-tlsa-expire-interval) | how often to check for domains with expired DANE TLSA information |
+| [tlsa_expire_interval](/momentum/4/config/tlsa-expire-interval) | how often to check for expired TLSA records |
 | [trace_smtp_mode](/momentum/4/config/ref-trace-smtp-mode) | set the default permissions of trace files |
 | [tracking_domain](/momentum/4/config/tracking-domain) | set the tracking domain to use for engagement tracking in SMTP injections |
 | [tracking_link_expiry](/momentum/4/config/tracking-link-expiry) | set the expiration time for engagement tracking for SMTP injections |
@@ -225,9 +229,11 @@ description: "This chapter provides the definitions of the configuration options
 | [transform_8bitmime_content](/momentum/4/config/ref-transform-8-bitmime-content) | Enable 8BITMIME downconversion when sending mail |
 | [unlink_on_spool_in_failure](/momentum/4/config/ref-unlink-on-spool-in-failure) | Whether or not to remove malformed messages |
 | [_unsafe_spool](/momentum/4/config/ref-unsafe-spool) | allow dangerous spool semantics to be used |
+| [use_dane](/momentum/4/config/use-dane) | enable DNSSEC validation on MX/A records, if both secure, TLSA record is fetched and DNSSEC validation is done for a domain |
 | [use_iflist_cache](/momentum/4/config/ref-use-iflist-cache) | Whether or not to cache the list of network interfaces configured by the system |
 | [use_ipv6](/momentum/4/config/ref-use-ipv-6) | Affects the selection of IPv6 hosts in the SMTP client |
 | [use_mmap](/momentum/4/config/ref-use-mmap) | use mmap when spooling messages from disk |
+| [use_mta_sts](/momentum/4/config/mta-sts/use-mta-sts) | fetch MTA-STS policy for a domain |
 | [use_sendfile](/momentum/4/config/ref-use-sendfile) | use sendfile() when sending mail |
 | [user](/momentum/4/config/ref-user) | security: user identity to assume after startup |
 | [xclient](/momentum/4/config/ref-xclient) | use the xclient extension to SMTP for outbound mail |
