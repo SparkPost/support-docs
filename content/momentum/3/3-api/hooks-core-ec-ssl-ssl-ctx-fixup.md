@@ -1,13 +1,13 @@
 ---
-lastUpdated: "03/26/2020"
+lastUpdated: "06/30/2024"
 title: "ec_ssl_SSL_CTX_fixup"
-description: "ec ssl SSL CTX fixup This hook provides an opportunity for modules to alter the context and add passphrase callbacks via Open SSL functions void core ec ssl SSL CTX fixup closure sslctx type domain certfile keyfile clientca cipher list void closure struct ssl ctx st sslctx int type const..."
+description: "ec ssl SSL CTX fixup This hook provides an opportunity for modules to alter the context and add passphrase callbacks via Open SSL functions"
 ---
 
 <a name="hooks.core.ec_ssl_SSL_CTX_fixup"></a> 
 ## Name
 
-ec_ssl_SSL_CTX_fixup — This hook provides an opportunity for modules to alter the context and add passphrase callbacks via OpenSSL functions
+ec_ssl_SSL_CTX_fixup — This hook provides an opportunity for modules to alter the context and add passphrase callbacks via OpenSSL functions.
 
 ## Synopsis
 
@@ -15,7 +15,7 @@ ec_ssl_SSL_CTX_fixup — This hook provides an opportunity for modules to alter 
 
 ```
 void core_ec_ssl_SSL_CTX_fixup (void *closure,
-                                struct ssl_ctx_st *ctx,
+                                struct ssl_ctx_st *sslctx,
                                 int type,
                                 const char *domain,
                                 const char *certfile,
@@ -25,7 +25,7 @@ void core_ec_ssl_SSL_CTX_fixup (void *closure,
 ```
 ## Description
 
-This hook is called after the SSL_CTX (struct ssl_ctx_st) context has been allocated, but before the private key has been loaded.
+This hook is called after the SSL_CTX (`struct ssl_ctx_st`) context has been allocated, but before the private key has been loaded.
 
 This hook provides an opportunity for modules to alter the context and add passphrase callbacks via these OpenSSL functions:
 
