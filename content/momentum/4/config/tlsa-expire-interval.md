@@ -6,7 +6,7 @@ description: "tlsa expire interval how often to check for expired TLSA DNS recor
 
 ## Name
 
-tlsa_expire_interval — how often to check for expired TLSA records
+tlsa_expire_interval — how often to check for expired TLSA records.
 
 ## Synopsis
 

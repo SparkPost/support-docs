@@ -355,6 +355,7 @@ The `Version` column indicated the version(s) of Momentum that support the optio
 | [tls_verified_peer_is_authorized](/momentum/4/config/tls-verified-peer-is-authorized) – Mark requests that use a verified SSL Client certificate as being authorized | sending | false | 4.0 and later | http_listener, listen, pathway, peer |
 | [tls_verify](/momentum/4/config/tls-verify) – Specify how to handle the remote presented certificate | sending | no | 4.0 and later | binding, binding_group, domain, global |
 | [tls_verify_mode](/momentum/4/config/tls-verify-mode) – Determine whether a TLS certificates is required | receiving |   | 4.0 and later | ecstream_listener, esmtp_listener, http_listener, listen, pathway, pathway_group, peer, xmpp_listener |
+| [tlsa_expire_interval](/momentum/4/config/tlsa-expire-interval) – How often to check for domains with expired DANE TLSA information | sending | 3600 | 4.8 and later | global |
 | [topology](/momentum/4/4-cluster-config-duravip) *(scope)* – Define the cluster network topology (cluster-specific) | na |   | 4.0 and later | cluster |
 | [trace_smtp_mode](/momentum/4/config/ref-trace-smtp-mode) – Set the default permissions of trace files | sending | 0640 (*non-dynamic*) | 4.0 and later | global |
 | [tracking_domain](/momentum/4/config/tracking-domain) – Set the tracking domain to use for engagement tracking in SMTP injections | string | localhost:8080 | 4.1-HF4 (beta) | esmtp_listener, listen, pathway, pathway_group, peer |
