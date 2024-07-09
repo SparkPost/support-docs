@@ -19,18 +19,18 @@ If the config option [use_mta_sts](/momentum/4/config/mta-sts/use-mta-sts) for a
  - remote site matches at least one of the MX patterns defined in the recipient domain's MTA-STS
    policy
  - connection to remote site can be encrypted (via the use of STARTTLS)
- - Momentum can authenticate both - the certificate chain presented by the server on the connection
+ - Momentum can authenticate both: the certificate chain presented by the server on the connection,
    and the server name in the certificate
 
 For verifying certificates, Momentum uses the configured CA for outbound email defined by
  [TLS_CA](/momentum/4/config/tls-ca).
- Momentum does not currently check for certificate revocation via the Online Certificate Status
+ Momentum does *not* currently check for certificate revocation via the Online Certificate Status
 Protocol (RFC 6960).
 
 Momentum caches the MTA-STS policy for up to `max-age` specified in the policy, and attempts to
 refresh the cached policy once every 24 hours.
 
-Momentum does not currently implement SMTP TLS Reporting (RFC 8460).
+Momentum does *not* currently implement SMTP TLS Reporting (RFC 8460).
 
 The examples below illustrate a few cases describing how Momentum implements MTA-STS.
 For all examples the recipient domain would be `domain.com`.
@@ -89,7 +89,7 @@ MX patterns defined in the MTA-STS policy since the policy mode is not `enforce`
 
 
 ## Related Configuration Options
-- [MTA-STS configuration Options](/momentum/4/config/mta-sts)
+- [MTA-STS configuration options](/momentum/4/config/mta-sts)
 
 
 ## Related [Debug_Flags](/momentum/4/config/ref-debug-flags)

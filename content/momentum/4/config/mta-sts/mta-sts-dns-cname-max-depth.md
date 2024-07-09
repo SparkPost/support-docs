@@ -1,14 +1,14 @@
 ---
 lastUpdated: "06/01/2024"
 title: "mta_sts_dns_cname_max_depth"
-description: "config option on how many continous cname lookups are allowed when doing MTA-STS TXT
+description: "config option on how many continuous CNAME lookups are allowed when doing MTA-STS TXT
 record lookup for a domain"
 ---
 
 <a name="config.mta-sts-dns-cname-max-depth"></a>
 ## Name
 
-mta_sts_dns_cname_max_depth — specifies how many continous cname lookups are allowed when doing DNS
+mta_sts_dns_cname_max_depth — specifies how many continuous `CNAME` lookups are allowed when doing DNS
  lookups for MTA-STS TXT record for a domain. Exceeding the configured value will be treated as a DNS
  lookup failure, which will be further treated as no MTA-STS policy available.
 

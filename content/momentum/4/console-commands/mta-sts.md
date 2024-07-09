@@ -7,7 +7,7 @@ description: "mta_sts ec_console commands"
 <a name="console_commands.mta-sts"></a>
 ## Name
 
-mta_sts - commands for MTA-STS related data
+mta_sts - commands for MTA-STS related data.
 
 ## Synopsis
 
@@ -19,7 +19,7 @@ mta_sts - commands for MTA-STS related data
 
 ## Description
 
-**mta_sts list all**     - lists all the active domains which have MTA-STS policies
+**mta_sts list all** - lists all the active domains which have MTA-STS policies
 
 ```
 15:42:38 /tmp/2025> mta_sts list all
@@ -27,8 +27,8 @@ gmail.com
 Total domains: 1
 ```
 
-**mta-sts show domain { domain name }**     - shows MTA-STS TXT record and policy details of a given domain.
- The same content will be shown in [domain](/momentum/4/console-commands/domain) command output also if
+**mta_sts show domain { domain name }** - shows MTA-STS TXT record and policy details of a given domain.
+ The same content will be shown in [domain](/momentum/4/console-commands/domain) command output also, if
  available.
 
 
@@ -43,8 +43,8 @@ Domain 'gmail.com' has MTA-STS TXT and a TTL of 185 seconds
                *.gmail-smtp-in.l.google.com
 ```
 
-**mta-sts refresh policy {domain name}**     - forces MTA-STS policy refresh by fetching the policy
- from the HTTPS endpoint for a given domain
+**mta_sts refresh policy {domain name}** - forces MTA-STS policy refresh by fetching the policy
+ from the HTTPS endpoint for a given domain.
 
 
 ```

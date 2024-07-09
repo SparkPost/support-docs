@@ -7,7 +7,7 @@ description: "config option to enable MTA-STS policy application for outbound ma
 <a name="config.enable-mta-sts"></a>
 ## Name
 
-enable_mta_sts — specify whether Momentum should apply MTA-STS policies for outbound emails
+enable_mta_sts — specify whether Momentum should apply MTA-STS policies for outbound emails.
 
 ## Synopsis
 
@@ -23,15 +23,15 @@ emails to a remote site. See [MTA-STS support in Momentum](/momentum/4/mta-sts) 
 
 When this option is `true`, the MTA-STS policy mode will be considered along with the configuration
  values for [TLS](/momentum/4/config/ref-tls) and [TLS_Verify](/momentum/4/config/tls-verify).
- The more strict policy will apply. E.g. When the MTA-STS policy mode is `enforce`, regardless of the
+ The more strict policy will apply:
+ 
+- When the MTA-STS policy mode is `enforce`, regardless of the
  values for `TLS` and `TLS_Verify`, Momentum will enforce TLS (equivalent to `TLS = required`) and
  will fail the delivery upon a failed certificate validation (equivalent to `TLS_Verify = host`).
-
-When the MTA-STS policy mode is `testing`, Momentum will apply `TLS = ifavailable` (unless
+- When the MTA-STS policy mode is `testing`, Momentum will apply `TLS = ifavailable` (unless
  `TLS = required` is specified) and `TLS_Verify = optional` (unless `TLS_Verify = host` is
  specified).
-
-When the MTA-STS policy mode is `none`, the policy will be ignored and the configuration values for
+- When the MTA-STS policy mode is `none`, the policy will be ignored and the configuration values for
  `TLS` and `TLS_Verify` will be respected.
 
 The default value is `true` when `use_mta_sts` is `true` for a domain.
@@ -39,4 +39,4 @@ The default value is `true` when `use_mta_sts` is `true` for a domain.
 
 ## Scope
 
-`enable_mta_sts` is valid in the binding, binding_group, domain and global scopes.
+`enable_mta_sts` is valid in the domain, binding, binding_group, and global scopes.
