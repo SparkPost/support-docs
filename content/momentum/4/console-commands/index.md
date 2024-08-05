@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/09/2021"
+lastUpdated: "06/01/2024"
 title: "Category File"
 type: "custom"
 name: "Non-Module-Specific Console Commands"
@@ -44,6 +44,7 @@ description: "This section documents all the non module specific console command
 | [message fail quiet](/momentum/4/console-commands/message-fail-quiet)                       | fail a message and do not create a non-delivery receipt (NDR)                     |
 | [message retry](/momentum/4/console-commands/message-retry)                                 | perform an immediate delivery attempt on a message                                |
 | [module](/momentum/4/console-commands/4-module)                                               | manage loaded modules online                                                      |
+| [mta_sts](/momentum/4/console-commands/mta_sts)                                             | commands to display and manage MTA-STS policy for a domain                        |
 | [\pager](/momentum/4/console-commands/pager)                                                | Page output of long console commands in the console.                              |
 | [paniclog](/momentum/4/console-commands/paniclog)                                           | show last several entries written to paniclog                                     |
 | [pid](/momentum/4/console-commands/pid)                                                     | show process id of Momentum                                                       |

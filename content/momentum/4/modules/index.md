@@ -34,6 +34,7 @@ description: "Table of Contents 71 1 Introduction 71 2 ac auth Authentication Ha
 | [csapi](/momentum/4/modules/csapi) | Symantec CSAPI Antivirus Support |
 | [custom_bounce_logger](/momentum/4/modules/custom-bounce-logger) | Custom Bounce Logging |
 | [custom_logger](/momentum/4/modules/custom-logger) | User-defined Logging |
+| [dane](/momentum/4/modules/dane) | DANE related DNS Lookups and TLS Verifications |
 | [delay_dsn](/momentum/4/modules/delay-dsn) | Delay DSN Generation |
 | [dnsbuf](/momentum/4/modules/dnsbuf) | Dynamically Set the DNS UDP Buffer Size |
 | [domainkeys](/momentum/4/modules/domainkeys) | Yahoo! DomainKeys |

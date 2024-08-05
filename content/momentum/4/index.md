@@ -1,12 +1,12 @@
 ---
-lastUpdated: "10/26/2023"
+lastUpdated: "06/30/2024"
 title: "Momentum 4.x"
-description: "Message Systems Inc Copyright 2014-2023 Message Systems Inc Confidential Proprietary Abstract This book documents Momentum 4 Document generated on 2023 Oct 26 Table of Contents Preface 1 Typographical Conventions Used in This Document I Introduction to Momentum 1 Components 2 Life of A Message 3 Roles and Behaviors 4 Licensed..."
+description: "Message Systems Inc Copyright 2014-2024 Message Systems Inc Confidential Proprietary Abstract This book documents Momentum 4 Document generated on 2024 Jun 30 Table of Contents Preface 1 Typographical Conventions Used in This Document I Introduction to Momentum 1 Components 2 Life of A Message 3 Roles and Behaviors 4 Licensed..."
 ---
 
 ### Message Systems, Inc.
 
-Copyright © 2014-2023 Message Systems, Inc.
+Copyright © 2014-2024 Message Systems, Inc.
 
 <a name="idp102528"></a>
 
@@ -16,12 +16,13 @@ Confidential & Proprietary.
 
 This book documents Momentum 4.
 
-Document generated on: 2023-Oct-26
+Document generated on: 2024-Jun-30
 
 ---
 
 ### Momentum 4.x Changelogs
 
+- [Momentum 4.8 Changelogs](/momentum/changelog/4/4-8)
 - [Momentum 4.7 Changelogs](/momentum/changelog/4/4-7)
 - [Momentum 4.6 Changelogs](/momentum/changelog/4/4-6)
 - [Momentum 4.4.1 Changelogs](/momentum/changelog/4/4-4-1)

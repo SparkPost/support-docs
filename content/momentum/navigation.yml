@@ -511,6 +511,10 @@
           title: Sending Emails as CC and BCC
         - link: /momentum/4/complex-template
           title: Using Complex Templates
+    - link: /momentum/4/mta-sts
+      title: MTA-STS support
+    - link: /momentum/4/modules/dane
+      title: DANE support
     - link: /momentum/4/http-api-stats
       title: Stats HTTP API
       items:
@@ -1965,6 +1969,8 @@
     - link: /momentum/changelog/4
       title: Momentum 4.x Changelog
       items: 
+        - link: /momentum/changelog/4/4-8
+          title: Momentum 4.8 Changelog
         - link: /momentum/changelog/4/4-7
           title: Momentum 4.7 Changelog
         - link: /momentum/changelog/4/4-6

@@ -20,6 +20,7 @@ description: "Table of Contents ad summary summarize the adaptive module actions
 | [ec_lic](/momentum/4/executable/ec-lic) | fetch a new license file from Message Systems |
 | [ec_log_trace](/momentum/4/executable/ec-log-trace) | parse Momentum log files |
 | [ec_md5passwd](/momentum/4/executable/ec-md-5-passwd) | changes the password for a system user's password |
+| [ec_mta_sts_purge](/momentum/4/executable/ec-mta-sts-purge) | remove expired MTA-STS policy files |
 | [ec_rotate](/momentum/4/executable/ec-rotate) | rotate Momentum logfiles |
 | [ec_sendmail](/momentum/4/executable/ec-sendmail) | a sendmail compatibility interface |
 | [ec_show](/momentum/4/executable/ec-show) | show spool or message information |

@@ -38,6 +38,7 @@ All modules are listed alphabetically with a brief description. Singleton module
 | [“csapi – Symantec CSAPI Antivirus Support”](/momentum/4/modules/csapi) | 4.0 | Integration for Symantec content scanners |   |   |  ✓ |   |
 | [“custom_bounce_logger – Custom Bounce Logging”](/momentum/4/modules/custom-bounce-logger) | 4.2 | Append a "User_String" to the end of each bounce record |  ✓ |   |   | [“bounce_logger – Momentum-Style Bounce Logging”](/momentum/4/modules/bounce-logger) |
 | [“custom_logger – User-defined Logging”](/momentum/4/modules/custom-logger) | 4.0 | Create custom logs |   |   |   |   |
+| ["dane - DNS-based Authentication of Named Entities"](/momentum/4/modules/dane) | 4.8 | Support for DANE |   |   |   |   |
 | [“delay_dsn – Delay DSN Generation”](/momentum/4/modules/delay-dsn) | 4.0 | Configure and send delay DSNs |   |   |   |   |
 | [dk_sign](/momentum/4/modules/domainkeys) | 4.0 | Attach domain keys signatures to outbound mail |   |   |  ✓ |   |
 | [dk_validate](/momentum/4/modules/domainkeys) | 4.0 | Validate inbound mail checking domain keys signatures |   |   |  ✓ |   |

@@ -118,6 +118,9 @@ This table lists all console commands alphabetically giving a brief description.
 | [message retry](/momentum/4/console-commands/message-retry) – Perform an immediate delivery attempt on a message | 4.0 |   | message |
 | [module hooks](/momentum/4/console-commands/4-module) – Manage loaded module hooks | 4.0 |   | module |
 | [module list](/momentum/4/console-commands/4-module) – Show loaded modules | 4.0 |   | module |
+| [mta_sts list all](/momentum/4/console-commands/mta-sts) – list active domains which have MTA-STS policy | 4.8 |   | mta-sts |
+| [mta_sts show domain](/momentum/4/console-commands/mta-sts) – show MTA-STS policy details for a domain | 4.8 |   | mta-sts |
+| [mta_sts refresh policy](/momentum/4/console-commands/mta-sts) – refresh MTA-STS policy for a domain | 4.8 |   | mta-sts |
 | [outbound_audit:instance_name clear all](/momentum/4/modules/outbound-audit#modules.outbound_audit.console) – Zero-out all statistics | 4.0 | outbound_audit | module |
 | [outbound_audit:instance_name clear domain](/momentum/4/modules/outbound-audit#modules.outbound_audit.console) – Zero-out a domain's statistics | 4.0 | outbound_audit | module |
 | [outbound_audit:instance_name domain_list](/momentum/4/modules/outbound-audit#modules.outbound_audit.console) – Runtime addition/deletion of a domain in the monitoring list | 4.0 | outbound_audit | module |
