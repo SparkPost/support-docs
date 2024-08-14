@@ -4,7 +4,7 @@ title: How to Update Campaign Tracking Method
 description: Campaigns are organized by Subject Line/Date. Update your tracking method to a custom field to see campaigns grouped by a value you define. 
 ---
 
-## For brand new accounts, our system identifies a unique campaign when it has a unique combination between the Subject Line and the Date. However, you can update your tracking method to have the system identify a campaign on a value that you define.
+## For brand new accounts, our system identifies a unique campaign when it has a unique combination between the Subject Line and the Date. However, as a manager you can update your tracking method to have the system identify a campaign on a value that you define.
 
  Our system offers four alternative methods for tracking campaigns:
 
