@@ -20,7 +20,7 @@ AD is intended to be largely self managed and auto-tuning, but still allows you 
 
 In a cluster configuration, suspension of a binding can result in excessive "#mmoves" between nodes. To avoid this possibility always assign a `duravip_preference` for any bindings used with the adaptive module. For more information about mmove and DuraVIP™ see [“DuraVIP™: IP Fail over”](/momentum/3/3-reference/3-reference-cluster-config-duravip).
 
-There is no upper limit to the number of bindings that can be in a binding group. When Adaptive Delivery is enabled, a large number of bindings in a binding group will affect performance since significant CPU time is spent checking for suspended bindings. For this reason, when using the adpative module, the recommended best practice is not to exceed 32 bindings per binding group.
+There is no upper limit to the number of bindings that can be in a binding group. When Adaptive Delivery is enabled, a large number of bindings in a binding group will affect performance since significant CPU time is spent checking for suspended bindings. For this reason, when using the adaptive module, the recommended best practice is not to exceed 32 bindings per binding group.
 
 The adaptive module makes heavy use of throttles. For this reason the `siv_throttle_cache_size` default was increased to `1000` as of version 3.0.24.
 
