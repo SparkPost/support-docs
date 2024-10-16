@@ -1,5 +1,5 @@
 ---
-lastUpdated: "06/30/2024"
+lastUpdated: "09/30/2024"
 title: "ec_mta_sts_purge"
 description: "ec mta_sts_purge Remove expired MTA-STS policies from the file system"
 ---
