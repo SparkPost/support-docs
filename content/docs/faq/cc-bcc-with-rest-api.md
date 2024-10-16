@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/08/2020"
+lastUpdated: "10/16/2024"
 title: "Using CC and BCC with the REST API"
 description: "Before getting started please read What are the differences between CC BCC and archive recipients Note to use CC BCC and Archiving with SMTP check out our SMTP API reference documentation Note Please be advised that CC and BCC messages count towards your usage What is CC CC is a..."
 ---
@@ -121,6 +121,80 @@ Finally, here's an example with both CC and BCC recipients. Â You set header_toÂ
     },
     "subject": "To, CC and BCC",
     "text": "This mail was sent To to@thisperson.com while CCing cc@thatperson.com and BCCing an unnamed recipient. You know who you are."
+  }
+}
+```
+
+### Using CC and BCC with Stored Templates
+
+Header values must be set directly within the stored template, so manually adding CC and BCC will not be honored when a stored template is used. To use CC and BCC with a stored template, the template must be created through the API.
+
+One method is to use substitution data for your templates that you want to have a CC line. For example, you could create a template like this:
+
+```json
+{
+  "id": "cc_template_3",
+  "name": "cc_template_3",
+  "description": "",
+  "published": true,
+  "options": {
+    "click_tracking": true,
+    "open_tracking": false
+  },
+  "shared_with_subaccounts": false,
+  "last_update_time": "2018-12-14T17:15:12+00:00",
+  "last_use": "2018-12-14T17:15:49+00:00",
+  "has_published": true,
+  "has_draft": false,
+  "content": {
+    "from": "you@fromyou.com",
+    "headers": {
+      "CC": "{{ cc_data or '' }}"
+    },
+    "subject": "CC 2",
+    "text": " cc email"
+  }
+}
+```
+
+Then, for the transmission, set the substitution data for the CC:
+
+```json
+{
+  "options": {
+    "open_tracking": true,
+    "click_tracking": true,
+    "transactional": true
+  },
+  "campaign_id": "mycampaign-msys",
+  "return_path": "you@bounce.fromyou.com",
+  "header_from": "Single Recipient",
+  "metadata": {
+    "key": "value"
+  },
+  "recipients": [
+    {
+      "address": {
+        "email": "to@thisperson.com"
+      },
+      "tags": [
+        "greeting",
+        "prehistoric",
+        "fred",
+        "flintstone"
+      ],
+      "header_to": "Wilma Flintstone",
+      "metadata": {
+        "place": "Bedrock",
+        "host": "google.com"
+      }
+    }
+  ],
+  "substitution_data": {
+    "cc_data": "cc@thatperson.com"
+  },
+  "content": {
+    "template_id": "cc_template_3"
   }
 }
 ```
