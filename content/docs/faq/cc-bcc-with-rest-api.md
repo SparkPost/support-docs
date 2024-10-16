@@ -131,29 +131,29 @@ Header values must be set directly within the stored template, so manually addin
 
 One method is to use substitution data for your templates that you want to have a CC line. For example, you could create a template like this:
 
-```
+```json
 {
-        "id": "cc_template_3",
-        "name": "cc_template_3",
-        "description": "",
-        "published": true,
-        "options": {
-            "click_tracking": true,
-            "open_tracking": false
-        },
-        "shared_with_subaccounts": false,
-        "last_update_time": "2018-12-14T17:15:12+00:00",
-        "last_use": "2018-12-14T17:15:49+00:00",
-        "has_published": true,
-        "has_draft": false,
-        "content": {
-            "from": "you@fromyou.com",
-            "headers": {
-                "CC": "{{ cc_data or '' }}"
-            },
-            "subject": "CC 2",
-            "text": " cc email"
-        }
+  "id": "cc_template_3",
+  "name": "cc_template_3",
+  "description": "",
+  "published": true,
+  "options": {
+    "click_tracking": true,
+    "open_tracking": false
+  },
+  "shared_with_subaccounts": false,
+  "last_update_time": "2018-12-14T17:15:12+00:00",
+  "last_use": "2018-12-14T17:15:49+00:00",
+  "has_published": true,
+  "has_draft": false,
+  "content": {
+    "from": "you@fromyou.com",
+    "headers": {
+      "CC": "{{ cc_data or '' }}"
+    },
+    "subject": "CC 2",
+    "text": " cc email"
+  }
 }
 ```
 
