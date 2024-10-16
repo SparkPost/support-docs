@@ -159,40 +159,42 @@ One method is to use substitution data for your templates that you want to have 
 
 Then, for the transmission, set the substitution data for the CC:
 
-```
+```json
 {
-  "options" : {
-    "open_tracking" : true,
-    "click_tracking" : true,
-    "conversion_tracking" : false,
+  "options": {
+    "open_tracking": true,
+    "click_tracking": true,
     "transactional": true
   },
-  "campaign_id" : "mycampaign-msys",
-  "return_path" : "you@bounce.fromyou.com",
-  "header_from" : "Single Recipient",
-  "metadata" : {
+  "campaign_id": "mycampaign-msys",
+  "return_path": "you@bounce.fromyou.com",
+  "header_from": "Single Recipient",
+  "metadata": {
     "key": "value"
   },
-  "recipients" : [
+  "recipients": [
     {
-      "address" : {
+      "address": {
         "email": "to@thisperson.com"
       },
-      "tags" : [
-        "greeting", "prehistoric", "fred", "flintstone"
-        ],
-      "header_to" : "Wilma Flintstone",
-      "metadata" : {
-        "place" : "Bedrock",
-        "host" : "google.com"
+      "tags": [
+        "greeting",
+        "prehistoric",
+        "fred",
+        "flintstone"
+      ],
+      "header_to": "Wilma Flintstone",
+      "metadata": {
+        "place": "Bedrock",
+        "host": "google.com"
       }
     }
   ],
   "substitution_data": {
-  	"cc_data": "cc@thatperson.com"
+    "cc_data": "cc@thatperson.com"
   },
-  "content" : {
-   	"template_id": "cc_template_3"
+  "content": {
+    "template_id": "cc_template_3"
   }
 }
 ```
