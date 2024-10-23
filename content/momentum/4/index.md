@@ -1,7 +1,7 @@
 ---
-lastUpdated: "06/30/2024"
+lastUpdated: "09/30/2024"
 title: "Momentum 4.x"
-description: "Message Systems Inc Copyright 2014-2024 Message Systems Inc Confidential Proprietary Abstract This book documents Momentum 4 Document generated on 2024 Jun 30 Table of Contents Preface 1 Typographical Conventions Used in This Document I Introduction to Momentum 1 Components 2 Life of A Message 3 Roles and Behaviors 4 Licensed..."
+description: "Message Systems Inc Copyright 2014-2024 Message Systems Inc Confidential Proprietary Abstract This book documents Momentum 4 Document generated on 2024 Sep 30 Table of Contents Preface 1 Typographical Conventions Used in This Document I Introduction to Momentum 1 Components 2 Life of A Message 3 Roles and Behaviors 4 Licensed..."
 ---
 
 ### Message Systems, Inc.
@@ -16,7 +16,7 @@ Confidential & Proprietary.
 
 This book documents Momentum 4.
 
-Document generated on: 2024-Jun-30
+Document generated on: 2024-Sep-30
 
 ---
 
