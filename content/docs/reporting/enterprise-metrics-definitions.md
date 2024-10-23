@@ -62,20 +62,20 @@ Some of numbers in the reports are simple calculations involving 2 of the API me
 Here are the definitions for each of these calculated metrics, including the formulas used to calculate them:
 
 
-| Metric                    | Formula                                        | Definition |
-|---------------------------|------------------------------------------------|------------|
-| Accepted Rate             | Percentage (Accepted / Sent)                   | Percentage of Sent emails that were Accepted. |
-| Avg Latency 1st Attempt   | Average (1st Attempt Time)                     | Average delivery time in milliseconds (latency) for emails delivered on the first attempt. |
-| Avg Latency 2nd+ Attempt  | Average (2nd+ Attempt Time)                    | Average delivery time in milliseconds (latency) for emails delivered that required more than one attempt. |
-| Avg Delivery Message Size | Average (Delivered Message Size)               | Average size of delivered emails, including attachments, in bytes. |
-| Delayed Rate              | Percentage (Delayed First Attempt / Accepted)  | Percentage of Accepted emails that were delayed on the first delivery attempt. |
-| Rejection Rate            | Percentage (Rejected / Targeted)               | Percentage of Targeted emails that were rejected. |
-| Admin Bounce Rate         | Percentage (Admin Bounces / Targeted)          | Percentage of Targeted emails that Admin Bounced. |
-| Soft Bounce Rate          | Percentage (Soft Bounces / Sent)               | Percentage of Sent emails that Soft Bounced. |
-| Hard Bounce Rate          | Percentage (Hard Bounces / Sent)               | Percentage of Sent emails that Hard Bounced. |
-| Block Bounce Rate         | Percentage (Block Bounces / Sent)              | Percentage of Sent emails that Block Bounced. |
-| Undetermined Bounce Rate  | Percentage (Undetermined Bounces / Sent)       | Percentage of Sent emails that Undertermined Bounced. |
-| Click-through Rate        | Percentage (Unique Clicks / Accepted)          | Approximate percentage of Accepted emails that had at least one link selected. |
-| Open Rate                 | Percentage (Unique Confirmed Opens / Accepted) | Approximate Percentage of Accepted emails that were either rendered or had at least one link selected. |
-| Spam Complaint Rate       | Percentage (Spam Complaints / Accepted)        | Percentage of Spam Complaints. |
-| Unsubscribe Rate          | Percentage (Unsubscribes / Accepted)           | Percentage of Accepted emails that resulted in unsubscribes. |
+| Metric                    | Formula                                                     | Definition |
+|---------------------------|-------------------------------------------------------------|------------|
+| Accepted Rate             | Percentage (Accepted / Sent)                                | Percentage of Sent emails that were Accepted. |
+| Avg Latency 1st Attempt   | Average (1st Attempt Time)                                  | Average delivery time in milliseconds (latency) for emails delivered on the first attempt. |
+| Avg Latency 2nd+ Attempt  | Average (2nd+ Attempt Time)                                 | Average delivery time in milliseconds (latency) for emails delivered that required more than one attempt. |
+| Avg Delivery Message Size | Average (Delivered Message Size)                            | Average size of delivered emails, including attachments, in bytes. |
+| Delayed Rate              | Percentage (Delayed First Attempt / Accepted)               | Percentage of Accepted emails that were delayed on the first delivery attempt. |
+| Rejection Rate            | Percentage (Rejected / Targeted)                            | Percentage of Targeted emails that were rejected. |
+| Admin Bounce Rate         | Percentage (Admin Bounces / Targeted)                       | Percentage of Targeted emails that Admin Bounced. |
+| Soft Bounce Rate          | Percentage (Soft Bounces / Sent)                            | Percentage of Sent emails that Soft Bounced. |
+| Hard Bounce Rate          | Percentage (Hard Bounces / Sent)                            | Percentage of Sent emails that Hard Bounced. |
+| Block Bounce Rate         | Percentage (Block Bounces / Sent)                           | Percentage of Sent emails that Block Bounced. |
+| Undetermined Bounce Rate  | Percentage (Undetermined Bounces / Sent)                    | Percentage of Sent emails that Undertermined Bounced. |
+| Click-through Rate        | Percentage (Unique Clicks / Accepted)                       | Approximate percentage of Accepted emails that had at least one link selected. |
+| Open Rate                 | Percentage (Unique Confirmed Non-prefetch Opens / Accepted) | Approximate Percentage of Accepted emails that were either rendered or had at least one link selected. |
+| Spam Complaint Rate       | Percentage (Spam Complaints / Accepted)                     | Percentage of Spam Complaints. |
+| Unsubscribe Rate          | Percentage (Unsubscribes / Accepted)                        | Percentage of Accepted emails that resulted in unsubscribes. |
