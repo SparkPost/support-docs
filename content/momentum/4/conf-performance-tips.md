@@ -1,5 +1,5 @@
 ---
-lastUpdated: "05/21/2024"
+lastUpdated: "11/04/2024"
 title: "Performance Tips"
 description: "This chapter provides you with some tips to optimize the Momentum performance ratings"
 ---
@@ -10,11 +10,12 @@ Momentum is an exceptionally powerful all-in-one email infrastructure solution. 
 
 With [Supercharger](/momentum/4/licensed-features-supercharger) licensed feature, Momentum runs on top of several [event loop](/momentum/4/multi-event-loops) schedulers and uses multicore CPUs with improved efficiency. In this model, it is also possible to assign dedicated event loops to listeners (e.g. the HTTP one) with desired concurrency. On the other hand, the default configuration is based solely on the thread pools to offload specific tasks, therefore Momentum keeps running on top of the original master event loop only, and it can be occasionally bottlenecked.
 
-The Supercharger's *"75% of CPU cores"* formula works fine on systems largely SMTP-driven. For systems with larger [message generation](momentum/4/message-gen) flows (i.e., REST injections), the number of event loops can be limited to 4 or 5, with higher concurrency values assigned to the `msg_gen` thread pools (see `gen_transactional_threads` configuration [here](momentum/4/modules/msg-gen)). For instance:
+The Supercharger's *"75% of CPU cores"* formula works fine on systems largely SMTP-driven. For systems with larger [message generation](/momentum/4/message-gen) flows (i.e., REST injections), the number of event loops can be limited to 4 or 5, with higher concurrency values assigned to the `msg_gen` thread pools (see `gen_count` and `gen_transactional_threads` configurations [here](/momentum/4/modules/msg-gen)). For instance:
 
 ```
 msg_gen  {
   (...)
+  gen_count = 4
   gen_transactional_threads = 4
 }
 ```
@@ -23,7 +24,7 @@ Also, the CPU thread pool is expected to be used for a lot of functions in the R
 
 ```
 ThreadPool "CPU" {
-  concurrency = 8
+  Concurrency = 8
 }
 ```
 
@@ -50,15 +51,15 @@ Momentum has some built-in caches that can be tuned to improve performance. The 
 This cache is used for parameters that are not in a binding/domain scope.  So anything that's global, or module configuration, exist in the generic getter cache. This cache gets a lot of traffic, so setting it in `ecelerity.conf` to something like few million entries is reasonable:
 
 ```
-generic_getter_cache_size = 4000000
+generic_getter_cache_size = 4194304
 ```
 
 ### <a name="conf.tips.caches.match"></a> Regex Match
 
-The match cache saves results of queries against regular expression domain stanzas. This cache is enabled by default, but its [size](momentum/4/config/ref-match-cache-size) is very small by default (16384 entries). Making it larger is a great idea, especially if user is using any regular expression domain stanzas:
+The match cache saves results of queries against regular expression domain stanzas. This cache is enabled by default, but its [size](/momentum/4/config/ref-match-cache-size) is very small by default (16384 entries). Making it larger is a great idea, especially if user is using any regular expression domain stanzas:
 
 ```
-match_cache_size = 2000000
+match_cache_size = 2097152
 ```
 
 ## <a name="conf.tips.jemalloc"></a> Boosting `jemalloc` Performance
@@ -81,20 +82,21 @@ Lua has a garbage collector that can be tuned to improve performance. The follow
 In the `ecelerity.conf` file:
 
 ```
-ThreadPool "gc" {
-    concurrency = 10
+ThreadPool gc {
+    concurrency = 4
 }
 (...)
 scriptlet "scriptlet" {
     (...)
     gc_every = 20
     gc_step_on_recycle = true
+    gc_step_on_trash_state = false
     gc_stepmul = 300
-    gc_threadpool = “gc”
-    gc_trace_thresh = 1000
-    gc_trace_xref_thresh = 1000
+    gc_threadpool = gc
+    gc_trace_thresh = 2147483647
     global_trace_interval = 13
     max_uses_per_thread = 5000
+    pin_thread_for_completion_in_event_loop = false
     reap_interval = 13
     use_reusable_thread = true
 }
@@ -118,19 +120,17 @@ export LUA_NON_SIGNAL_COLLECTOR
 These are `ecelerity.conf` settings that are known to improve performance on different tasks of Momentum. Before applying them, however, review their documentation and make sure they fit to your environment and use cases:
 
 ```
-fully_resolve_before_smtp = false
-growbuf_size = 32768
-inline_transfail_processing = 0
+growbuf_size = 262144
 initial_hash_buckets = 64
 keep_message_dicts_in_memory = true
-large_message_threshold = 262144
-max_resident_active_queue = 1000
-max_resident_messages = 100000
+max_resident_active_queue = 5000
+max_resident_messages = 50000
 ```
 
 ## <a name="conf.tips.misc"></a> Miscellaneous Tips
 
-- Don't forget to [adjust `sysctl` settings](momentum/4/byb-sysctl-conf) for best TCP connections performance;
-- Prefer [chunk_logger](momentum/4/modules/chunk-logger) over logging to `paniclog`. The reasons are taken from the `chunk_logger` page:
+- Don't forget to [adjust `sysctl` settings](/momentum/4/byb-sysctl-conf) for best TCP connections performance;
+- Avoid using `ec_console` commands `summary` and `mailq` for monitoring purposes. Prefer their [HTTP API](/momentum/4/http-api-stats) counterparts, which are less intrusive and more efficient;
+- Prefer [chunk_logger](/momentum/4/modules/chunk-logger) over logging to `paniclog`. The reasons are taken from the `chunk_logger` page:
 
 > _Logging to the_ `paniclog` _in the scheduler thread (the main thread) can limit throughput and cause watchdog kills. (...) [It] involves disk I/O, and writing to the_ `paniclog` _in the scheduler thread may block its execution for a long time, thereby holding up other tasks in the scheduler thread and decreasing throughput._
