@@ -1,5 +1,5 @@
 ---
-lastUpdated: "05/08/2023"
+lastUpdated: "11/05/2024"
 title: "summary"
 description: "summary show global metrics summary with mobile Perhaps the most common and useful command for the console summary will produce global metrics such as queue sizes message counts and throughput rates since startup or the last reset of statistics If you have configured your control listener to listen on the..."
 ---
@@ -26,12 +26,20 @@ Summary Statistics
         Active Domains:   35711
         Active Queue Size:   8793
         Delayed Queue Size: 263175
-        Destaged Queue Size:      0
         Total Queue Size: 272334
+	DNS Resolver: ares
         DNS A Queries: 565284
+        DNS A Timeouts: 11
+        DNS AAAA Queries: 0
+        DNS AAAA Timeouts: 0
         DNS MX Queries: 243281
+        DNS MX Timeouts: 6
+        DNS TXT Queries: 39841
+        DNS TXT Timeouts: 0
         Pending DNS Queries: 116
         Query Rate:   9.08 queries/second
+        DNS Response Time Peak:  469 ms
+        DNS Response Time Average:  0.302 ms
         Successfully Delivered Messages: 2102439
         Failed Messages: 2508439
         Rejected Messages:      1
@@ -88,14 +96,6 @@ The number of messages in the system that have been delayed. A message is delaye
 
 </dd>
 
-<dt>Destaged Queue Size</dt>
-
-<dd>
-
-The number of messages that have been destaged from the system.
-
-</dd>
-
 <dt>Total Queue Size</dt>
 
 <dd>
@@ -104,11 +104,47 @@ The sum of all queues.
 
 </dd>
 
+<dt>DNS Resolver</dt>
+
+<dd>
+
+The library used to resolve DNS queries.
+
+</dd>
+
 <dt>DNS A Queries</dt>
 
 <dd>
 
-The total number of A/AAAA type queries issued since startup or last summary reset.
+The total number of A type queries issued since startup or last summary reset.
+
+</dd>
+
+<dt>DNS A Timeouts</dt>
+
+<dd>
+
+_Introduced in Momentum 4.8._
+
+The total number of A type queries that resulted expired since startup or last summary reset.
+
+</dd>
+
+<dt>DNS AAAA Queries</dt>
+
+<dd>
+
+The total number of AAAA type queries issued since startup or last summary reset.
+
+</dd>
+
+<dt>DNS AAAA Timeouts</dt>
+
+<dd>
+
+_Introduced in Momentum 4.8._
+
+The total number of AAAA type queries that resulted expired since startup or last summary reset.
 
 </dd>
 
@@ -116,7 +152,35 @@ The total number of A/AAAA type queries issued since startup or last summary res
 
 <dd>
 
-The total number of MX type DNS queries issued since startup or last summary reset.
+The total number of MX type queries issued since startup or last summary reset.
+
+</dd>
+
+<dt>DNS MX Timeouts</dt>
+
+<dd>
+
+_Introduced in Momentum 4.8._
+
+The total number of MX type queries that resulted expired since startup or last summary reset.
+
+<dt>DNS TXT Queries</dt>
+
+<dd>
+
+_Introduced in Momentum 4.8._
+
+The total number of TXT type queries issued since startup or last summary reset.
+
+</dd>
+
+<dt>DNS TXT Timeouts</dt>
+
+<dd>
+
+_Introduced in Momentum 4.8._
+
+The total number of TXT type queries that resulted expired since startup or last summary reset.
 
 </dd>
 
@@ -133,6 +197,26 @@ The total number of DNS queries that are not completed yet.
 <dd>
 
 The average number of DNS queries/second performed since startup or last summary reset.
+
+</dd>
+
+<dt>DNS Response Time Peak</dt>
+
+<dd>
+
+_Introduced in Momentum 4.8._
+
+The peak of all answers response times since startup or last summary reset, in milliseconds.
+
+</dd>
+
+<dt>DNS Response Time Average</dt>
+
+<dd>
+
+_Introduced in Momentum 4.8._
+
+The average of all answers response times since startup or last summary reset, in milliseconds.
 
 </dd>
 

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "05/08/2023"
+lastUpdated: "11/05/2024"
 title: "Summary"
 description: "stats summary show global metrics Perhaps the most common API command stats summary will produce global metrics such as queue sizes message counts and throughput rates since startup or the last reset of statistics"
 ---
@@ -31,9 +31,16 @@ Sample output is shown below:
   "TotalQueueSize": 47,
   "DNSResolver": "ares",
   "DNSAQueries": 6307067,
+  "DNSATimeouts": 34,
   "DNSAAAAQueries": 0,
+  "DNSAAAATimeouts": 0,
   "DNSMXQueries": 5361180,
+  "DNSMXTimeouts": 22,
+  "DNSTXTQueries": 114992,
+  "DNSTXTTimeouts": 57,
   "DNSQueryRate": 2.25,
+  "DNSResponseTimePeak": 291,
+  "DNSResponseTimeAverage": 1.04,
   "ResidentMessages": 120,
   "DiskQueueProgress": "    29/    29",
   "DeliveredMessages": 516030153,
@@ -118,11 +125,31 @@ The total number of A type queries issued since startup or last summary reset.
 
 </dd>
 
+<dt>DNSATimeouts</dt>
+
+<dd>
+
+_Introduced in Momentum 4.8._
+
+The total number of A type queries that resulted expired since startup or last summary reset.
+
+</dd>
+
 <dt>DNSAAAAQueries</dt>
 
 <dd>
 
 The total number of AAAA type queries issued since startup or last summary reset.
+
+</dd>
+
+<dt>DNSAAAATimeouts</dt>
+
+<dd>
+
+_Introduced in Momentum 4.8._
+
+The total number of AAAA type queries that resulted expired since startup or last summary reset.
 
 </dd>
 
@@ -134,11 +161,59 @@ The total number of MX type DNS queries issued since startup or last summary res
 
 </dd>
 
+<dt>DNSMXTimeouts</dt>
+
+<dd>
+
+_Introduced in Momentum 4.8._
+
+The total number of MX type queries that resulted expired since startup or last summary reset.
+
+<dt>DNSTXTQueries</dt>
+
+<dd>
+
+_Introduced in Momentum 4.8._
+
+The total number of TXT type queries issued since startup or last summary reset.
+
+</dd>
+
+<dt>DNSTXTTimeouts</dt>
+
+<dd>
+
+_Introduced in Momentum 4.8._
+
+The total number of TXT type queries that resulted expired since startup or last summary reset.
+
+</dd>
+
 <dt>DNSQueryRate</dt>
 
 <dd>
 
 The average number of DNS queries/second performed since startup or last summary reset.
+
+</dd>
+
+<dt>DNSResponseTimePeak</dt>
+
+<dd>
+
+_Introduced in Momentum 4.8._
+
+The peak of all answers response times since startup or last summary reset, in milliseconds.
+
+</dd>
+
+<dt>DNSResponseTimeAverage</dt>
+
+<dd>
+
+_Introduced in Momentum 4.8._
+
+The average of all answers response times since startup or last summary reset, in milliseconds.
 
 </dd>
 
@@ -254,4 +329,4 @@ The number of seconds that Momentum has been running continuously.
 
 ## Note
 
-This command was implemented in Momentum 4.4.1.
+This command was first implemented in Momentum 4.4.1.
