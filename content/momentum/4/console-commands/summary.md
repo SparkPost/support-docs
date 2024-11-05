@@ -27,7 +27,7 @@ Summary Statistics
         Active Queue Size:   8793
         Delayed Queue Size: 263175
         Total Queue Size: 272334
-	DNS Resolver: ares
+        DNS Resolver: ares
         DNS A Queries: 565284
         DNS A Timeouts: 11
         DNS AAAA Queries: 0
