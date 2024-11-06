@@ -6,7 +6,7 @@ description: 'This document provides the 2018 version of the formal end-of-life 
 
 ## DATE: MAY 25, 2018
 
-This document provides the previous version of the formal end-of-life policy for releases of software from Message Systems. The end-of-life policy was updated on November 6, 2024 and is available [here](./eol-policy.md).
+This document provides the previous version of the formal end-of-life policy for releases of software from Message Systems. The end-of-life policy was updated on November 6, 2024 and is available [here](/momentum/4/eol-policy.md).
 
 Unless contrary to a fully executed agreement between Message Systems and a relevant end-user, this policy shall govern the support and maintenance policies of Message Systems relating to superseded versions of its software.
 
@@ -51,4 +51,4 @@ Momentum version 4 became GA on April 15, 2014. Therefore:
 | Momentum 4.1.0              | 10/3/14 | 8/2/16       | 8/2/17         |
 | Momentum 4.2.0              | 8/3/15  | 6/30/20      | TBD            |
 
-[Previous version (December 10, 2012)](./eol-policy-2012).
+[Previous version (December 10, 2012)](/momentum/4/eol-policy-2012).

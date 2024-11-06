@@ -52,4 +52,4 @@ The same as Upgrade releases, except that any additional releases will only cons
 | **Momentum 4.7.0**        | 12/19/23 | 10/16/25     | TBD            |
 | **Momentum 4.8.0**        | 10/17/24 | TBD          | TBD            |
 
-[Previous version (May 25, 2018)](./eol-policy-2018).
+[Previous version (May 25, 2018)](/momentum/4/eol-policy-2018).
