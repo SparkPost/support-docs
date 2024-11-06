@@ -1,6 +1,6 @@
 ---
 lastUpdated: '11/06/2024'
-title: 'End of Life Policy'
+title: 'End of Life Policy 2018'
 description: 'This document provides the 2018 version of the formal end-of-life policy for releases of software from Message Systems.'
 ---
 
