@@ -4,7 +4,7 @@ title: 'End of Life Policy'
 description: 'This document provides the latest version of the formal end-of-life policy for releases of software from Message Systems.'
 ---
 
-## DATE: NOVEMBER 6, 2024
+## DATE: MAY 25, 2018
 
 This document provides the latest version of the formal end-of-life policy for releases of software from Message Systems.
 
@@ -14,9 +14,9 @@ Unless contrary to a fully executed agreement between Message Systems and a rele
 
 Message Systems defines an “Upgrade” as a major release, intended to provide significant additional features or utility to the software, which is typically identified by an ascending integer to the left of a decimal point, e.g. Momentum version 4.0 is an Upgrade to Momentum version 3.x.
 
-Similarly, Message Systems defines an “Update” as a minor release, intended to enhance current features and/or fix bugs, which is typically identified by an ascending integer to the right of a decimal point, e.g. Momentum version 4.8 is an Update to Momentum version 4.7.
+Similarly, Message Systems defines an “Update” as a minor release, intended to enhance current features and/or fix bugs, which is typically identified by an ascending integer to the right of a decimal point, e.g. Momentum version 4.3 is an Update to Momentum version 4.2.
 
-Message Systems also defines “Maintenance” as a release, intended only to correct defects, which is typically identified by an ascending integer to the right of the second decimal point, e.g. Momentum version 4.3.1 is a Maintenance release of Momentum version 4.3.0.
+Message Systems also defines “Maintenance” as a release, intended only to correct defects, which is typically identified by an ascending integer to the right of the second decimal point, e.g. Momentum version 4.3.1 is a Maintenance release of Momentum version 4.3.0
 
 ## EOL POLICY FOR A GIVEN UPGRADE RELEASE
 
@@ -36,20 +36,32 @@ End of Support is defined as the time at which technical support is no longer av
 
 The same as Upgrade releases, except that any additional releases will only consist of Maintenance Releases of the most recent Update release.
 
+## MOMENTUM 3 END-OF-LIFE DATE
+
+Momentum version 4 became GA on April 15, 2014. Therefore:
+
+- Maintenance for all versions of Momentum 3 ended on December 31, 2018.
+- Support for all versions of Momentum 3 ended on December 31, 2018.
+
 ## MOMENTUM 4 GA DATES
 
-> Given the EOL of CentOS 7 operating system on June 30, 2024, all GA and Maintenance releases of Momentum 4 supporting that platform will be supported until December 31, 2024.
 
-| Update and Maint Versions | GA       | End of Maint | End of Support |
-| ------------------------- | -------- | ------------ | -------------- |
-| Momentum 4.2.0            | 8/3/15   | 6/30/20      | 12/31/24       |
-| Momentum 4.2.38           | 1/5/18   | 6/30/20      | 12/31/24       |
-| Momentum 4.3.0            | 3/5/19   | 9/2/22       | 12/31/24       |
-| Momentum 4.3.1            | 1/3/20   | 9/2/22       | 12/31/24       |
-| Momentum 4.4.0            | 9/3/21   | 10/19/24     | 12/31/24       |
-| Momentum 4.4.1            | 5/4/23   | 10/19/24     | 12/31/24       |
-| Momentum 4.6.0            | 10/20/23 | 12/18/24     | 12/31/24       |
-| **Momentum 4.7.0**        | 12/19/23 | 10/16/25     | TBD            |
-| **Momentum 4.8.0**        | 10/17/24 | TBD          | TBD            |
+| Update and Maintenance Versions | GA         | End of Maintenance | End of Support |
+| ------------------------------- | ---------- | ------------------ | -------------- |
+| Momentum 4.0.0                  | 2014/4/30  | 2015/10/3          | 2016/10/3      |
+| Momentum 4.1.0                  | 2014/10/3  | 2016/8/3           | 2017/8/3       |
+| Momentum 4.2.x                  | 2015/8/3   | 2020/6/30          | 2021/6/30      |
+| Momentum 4.3.x                  | 2019/3/5   | 2022/9/3           | 2023/9/3       |
+| Momentum 4.4.x                  | 2021/9/3   | 2024/10/20¹        | 2024/12/31³    |
+| Momentum 4.5.0                  | 2023/10/5  | 2024/12/19²        | TBD            |
+| Momentum 4.6.0                  | 2023/10/20 | 2024/12/19         | 2024/12/31³    |
+| Momentum 4.7.0                  | 2023/12/19 | 2025/10/17         | TBD            |
+| Momentum 4.8.0                  | 2024/10/17 | TBD                | TBD            |
 
-[Previous version (May 25, 2018)](/momentum/4/eol-policy-2018).
+> ¹ Momentum 4.4.x was superseded by 4.6, which was the last version supporting CentOS 7.
+>
+> ² Momentum 4.5 was the first version supporting RHEL 8, and was superseded by 4.7.
+>
+> ³ Given the EOL of CentOS 7 operating system on June 30, 2024, all GA and Maintenance releases of Momentum 4 supporting that platform will be supported until **December 31, 2024**.
+
+[Previous version (December 10, 2012)](/momentum/4/eol-policy-2012).
