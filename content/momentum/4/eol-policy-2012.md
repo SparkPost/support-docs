@@ -6,7 +6,7 @@ description: 'This document provides the 2012 version of the formal end-of-life 
 
 ## DATE: December 10, 2012
 
-This document provides the previous version of the formal end-of-life policy for releases of software from Message Systems. The end-of-life policy was updated on May 25, 2018 and is available here.
+This document provides the previous version of the formal end-of-life policy for releases of software from Message Systems. The end-of-life policy was updated on May 25, 2018 and is available [here](/momentum/4/eol-policy).
 
 Unless contrary to a fully executed agreement between Message Systems and a relevant end-user, this policy shall govern the support and maintenance policies of Message Systems relating to superseded versions of its software.
 
