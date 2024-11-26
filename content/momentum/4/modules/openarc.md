@@ -13,7 +13,8 @@ ARC validation on a received email, and ARC siging and sealing on an outgoing em
 When the module is enabled, ARC validation and signing/sealing can be achieved through calling these APIs from hook policies.
 
 
-### <a name="modules.openarc.configuration"></a> Configuration
+<a name="modules.openarc.configuration"></a>
+### Configuration
 
 You need to enable the openarc module in the ecelerity configuration file to use the feature:
 
@@ -41,4 +42,4 @@ spool. No any message modification expected after this stage. To avoid undefined
 multiple implementations of the same hook, you shall only have up to one implementation for this
 hook. And it's the best place to call `msys.validate.opendarc.sign`.
 
-See API examples for hook usages. 
+See API examples for hook usages.
