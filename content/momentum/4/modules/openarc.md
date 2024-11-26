@@ -36,6 +36,6 @@ The `msys.validate.opendarc.sign` does verification first. You should only invok
 It's recommended to invoke `msys.validate.opendarc.verify` in `validate_data_spool` or
 [`validate_data_spool_each_rcpt`](/momentum/3/3-api/hooks-core-validate-data-spool-each-rcpt) hook.
 `msys.validate.opendarc.sign` shall be invoked in the last validation phase, in
-[`post_final_validation`](/momentum/4/hooks/core-post-final-validate) hook.
+[`post_final_validation`](/momentum/4/hooks/core-post-final-validation) hook.
 
 See API examples for hook usages.
