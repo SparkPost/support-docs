@@ -41,11 +41,11 @@ which would not block Momentum's main tasks, e.g. from the `validate_data_spool`
 ```
 require("msys.core");
 require("msys.extended.message");
-local openarc = require("msys.validate.openarc");
+require("msys.validate.openarc");
 local mod = {};
 
-function mod:mod:validate_data_spool(msg, ac, vctx)
-  openarc.verify(msg)
+function mod:validate_data_spool(msg, ac, vctx)
+  msys.validate.openarc.verify(msg)
   local cv = msg:context_get(msys.core.ECMESS_CTX_MESS, "arc_cv")
   if cv then
     print("ARC validation result: ", cv)

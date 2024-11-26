@@ -14,21 +14,13 @@ post_final_validation — This hook is invoked after the normal
 
 `#include "hooks/core/final_validation.h"`
 
-| `int **core_post_final_validation** (` | <var class="pdparam">closure</var>, |   |
-|   | <var class="pdparam">msg</var>, |   |
-|   | <var class="pdparam">ac</var>, |   |
-|   | <var class="pdparam">ctx</var>`)`; |   |
-
-`void * <var class="pdparam">closure</var>`;
-`ec_message * <var class="pdparam">msg</var>`;<a name="idp19138336"></a>
-`accept_construct * <var class="pdparam">ac</var>`;
-`validate_context * <var class="pdparam">ctx</var>`;<a name="idp45851968"></a>
+`int core_post_final_validation(void closure, ec_message *msg, accept_construct *ac, valiate_context *ctx)`
 
 
 ## Description
 
 This hook is invoked right after the
-[final_validation](/momentum/3/3-api/hooks-core-final-validation) hook is called. Its return value
+[final_validation](/momentum/3/3-api/hooks-core-final-validation) hook. Its return value
 does not have significance for now.
 This hook is added as the absolute last point before writing the message into spool.
 It guarantees that operations implemented in this hook will happen after the operations done in
@@ -81,7 +73,7 @@ The `validate_context` struct. For documentation of this data structure see [“
 
 **Return Values**
 
-This hook returns `int`, but for now has no significance, i.e. the return value is not checked in
+This hook returns `int`, but for now the return value has no significance, i.e. it is not checked in
 the caller.
 
 **Threading**
