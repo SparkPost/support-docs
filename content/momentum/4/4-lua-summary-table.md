@@ -174,6 +174,8 @@ This section contains tables of Lua functions. Click the function name for detai
 | [msys.unlock](/momentum/4/lua/ref-msys-unlock) – Releases a lock obtained via msys.lock | mutexname | msys | 4.0 | any |
 | [msys.validate.dk.get_responsible_domain](/momentum/4/lua/ref-msys-validate-dk-get-responsible-domain) – This function requires module "dk_validate". "msg" is a mail message. "ctx" is the validation context. It returns the responsible domain for the current message | msg, ctx | msys.validate.dk | 4.0 | data, data_spool, data_spool_each_rcpt |
 | [msys.validate.dk.sign](/momentum/4/lua/ref-msys-validate-dk-sign) – Sign a message using a Domain Key | msg, ctx, options | msys.validate.dk | 4.0 | core_data_validation |
+| [msys.validate.openarc.sign](/momentum/4/lua/ref-msys-validate-openarc-sign) – Sign a message using OpenARC | msg, options, [ar] | msys.validate.openarc | 5.0 | core_post_final_validation |
+| [msys.validate.openarc.verify](/momentum/4/lua/ref-msys-validate-openarc-verify) – Verify ARC sets | m | msys.validate.openarc | 5.0 | data_spool, data_spool_each_rcpt |
 | [msys.validate.opendkim.get_num_sigs](/momentum/4/lua/ref-msys-validate-opendkim-get-num-sigs) – Return the number of DKIM signatures | dkim | msys.validate.opendkim | 4.0 | data, data_spool, data_spool_each_rcpt |
 | [msys.validate.opendkim.get_sig](/momentum/4/lua/ref-msys-validate-opendkim-get-sig) – Get a signature from a DKIM object | dkim, [num] | msys.validate.opendkim | 4.0 | data, data_spool, data_spool_each_rcpt |
 | [msys.validate.opendkim.get_sig_canons](/momentum/4/lua/ref-msys-validate-opendkim-get-sig-canons) – Fetch the canonicalizers used for a DKIM signature | dkim_sig | msys.validate.opendkim | 4.0 | data, data_spool, data_spool_each_rcpt |

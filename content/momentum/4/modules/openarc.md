@@ -33,13 +33,9 @@ openarc {}
 
 The `msys.validate.opendarc.sign` does verification first. You should only invoke one of the APIs,
     either `verify` or `sign` but not both.
-It's recommended to invoke `msys.validate.opendarc.verify` in `validate_data_spool` hook.
+It's recommended to invoke `msys.validate.opendarc.verify` in `validate_data_spool` or
+[`validate_data_spool_each_rcpt`](/momentum/3/3-api/hooks-core-validate-data-spool-each-rcpt) hook.
 `msys.validate.opendarc.sign` shall be invoked in the last validation phase, in
-`post_final_validation` hook.
-
-The `post_final_validation` hook is added as the absolute last point before writing the message into
-spool. No any message modification expected after this stage. To avoid undefined race between
-multiple implementations of the same hook, you shall only have up to one implementation for this
-hook. And it's the best place to call `msys.validate.opendarc.sign`.
+[`post_final_validation`](/momentum/4/hooks/core-post-final-validate) hook.
 
 See API examples for hook usages.
