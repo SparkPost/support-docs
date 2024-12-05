@@ -22,13 +22,13 @@ post_final_validation — This hook is invoked after the normal
 This hook is invoked right after the
 [final_validation](/momentum/3/3-api/hooks-core-final-validation) hook. Its return value
 does not have significance for now.
-This hook is added as the absolute last point before writing the message into spool.
+This hook is added as the absolute last point before writing the message to spool for delivery.
 It guarantees that operations implemented in this hook will happen after the operations done in
-`final_validtion`.
-No any message modification expected after this stage.
-To avoid undefined race between multiple implementations of the same hook, you shall only have up
-to one implementation for this hook.
-It's the recommended hook point for ARC signing/sealing.
+`final_validation`.
+No message modification is expected after this stage.
+To avoid undefined ordering between multiple implementations of the same hook, you shall have at most
+ one implementation for this hook.
+> It's the recommended hook point for ARC signing/sealing.
 
 
 **Parameters**

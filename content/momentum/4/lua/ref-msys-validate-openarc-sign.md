@@ -13,12 +13,14 @@ msys.validate.openarc.seal - synonym of `msys.validation.openarc.sign`.
 
 ## Synopsis
 
-`msys.validate.openarc.verify(msg, options, ar)`
+`msys.validate.openarc.sign(msg, options, ar)`
+
+`msys.validate.openarc.seal(msg, options, ar)`
 
 ```
 msg: userdata, ec_message type
 options: table
-ar: string, optional. It's the message's authentication assessment to be enshrined into the AAR header.
+ar: string, optional. It's the message's authentication assessment to be copied as-is into the AAR header.
 
 ```
 
@@ -47,19 +49,19 @@ This function takes the following parameters:
     *   `authservid` – authentication service identifier, as
         [authserv-id](https://datatracker.ietf.org/doc/html/rfc8601#section-2.5) defined in RFC.
 
-        If not set, will be default to the hostname.
+        If not set, will be defaulted to the hostname.
 
     *   `header_canon` – header canonicalization setting.
 
-        Supported values are `relaxed`, `simple`. Default to `relaxed`.
+        Supported values are `relaxed`, `simple`. Defaults to `relaxed`.
 
     *   `body_canon` – body canonicalization setting
 
-        Supported values are `relaxed`, `simple`. Default to `relaxed`.
+        Supported values are `relaxed`, `simple`. Defaults to `relaxed`.
 
     *   `digest` – signing algorithm digest setting.
 
-        Supported values are `rsa-sha1` and `rsa-sha256`. Default to `rsa-sha256`.
+        Supported values are `rsa-sha1` and `rsa-sha256`. Defaults to `rsa-sha256`.
 
     *   `keyfile` – signing key file
 
@@ -72,32 +74,32 @@ This function takes the following parameters:
 
         If not defined, will be built from the `keyfile`.
 
-    *   `headerlist` – "`;`" separated list of headers to sign
+    *   `headerlist` – colon-separated list of headers to sign
 
-    *   `oversign_headerlist` – "`;`" seperated list of headers for over signing
+    *   `oversign_headerlist` – colon-separated list of headers for over signing
 
     *   `skip_ar_header_update` – if set, no update to the AR (Authentication-Results) header.
 
         If not set, Momentum will append the ARC verification result (e.g. `arc=pass`) to
         the existing AR header or create one if it does not exist.
 
-*   `ar` - authentication assessment to be enshrined into the AAR (ARC-Authentication-Results) header.
+*   `ar` - authentication assessment to be copied as-is into the AAR (ARC-Authentication-Results) header.
 
     If not provided, Momentum will take the value from the existing `Authentication-Results` header.
-    Momentum appends this value with the ARC verification result (e.g. `arc=pass`) and use it to
+    Momentum appends this value with the ARC verification result (e.g. `arc=pass`) and uses it to
     build the AAR header.
 
 
 ### Note
 
-Since ARC sealing should happen after all potential modification of a message is done, this function
-shall be invoked in the `post_final_validation` stage after all the other validation phases.
+Since ARC sealing  must not happen until all potential modification of a message is done, this function
+ should be invoked in the `post_final_validation` stage after all the other validation phases.
 
-If for any reason the ARC signing/sealing failed, the context variable `arc_cv` of the `ec_message`
+If for any reason the ARC signing/sealing failed, the context variable `arc_seal` of the `ec_message`
 will not be set, and the error reason is logged into paniclog.
 
 
-<a name="lua.ref.msys.validate.opendarc.sign.example"></a>
+<a name="lua.ref.msys.validate.openarc.sign.example"></a>
 ### Example
 
 
@@ -115,6 +117,14 @@ function mod:core_post_final_validation(msg, accept, vctx)
   sealer.oversign_headerlist = "From:To:Subject"
 
   msys.validate.openarc.sign(msg, sealer)
+
+  -- check sign/seal result
+  local ok = msg:context_get(msys.core.ECMESS_CTX_MESS, "arc_seal")
+  if ok == nil or ok == '' then
+    print("ARC seal failed. No ARC set add! Check paniclog for reasons.")
+  else
+    print("ARC seal ok. ARC set added!")
+  end
 end
 
 msys.registerModule("openarc_sign", mod);
@@ -122,4 +132,4 @@ msys.registerModule("openarc_sign", mod);
 
 ## See Also
 
-[msys.validate.opendarc.verify](/momentum/4/lua/ref-msys-validate-openarc-verify)
+[msys.validate.openarc.verify](/momentum/4/lua/ref-msys-validate-openarc-verify)

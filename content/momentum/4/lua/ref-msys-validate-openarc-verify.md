@@ -7,7 +7,7 @@ description: "msys validate openarc verify Verify ARC sets headers"
 <a name="lua.ref.msys.validate.openarc.verify"></a>
 ## Name
 
-msys.validate.openarc.verify — Verifies ARC set headers in an email, stores the verification results
+msys.validate.openarc.verify — Verifies ARC set headers in an email, and stores the verification results
 (`none/pass/fail`) into the email's context variable.
 
 ## Synopsis
@@ -29,12 +29,12 @@ Enable this function with the statement `require('msys.validate.openarc')`.
 ### Note
 
 If the `ec_message` context variable `arc_cv` is not set after this function call, errors happened
-and logged into paniclog.
+and were logged into paniclog.
 
 This function invokes dns lookup for signature validation. It's recommended to invoke it from a hook
 which would not block Momentum's main tasks, e.g. from the `validate_data_spool` hook.
 
-<a name="lua.ref.msys.validate.opendarc.verify.example"></a>
+<a name="lua.ref.msys.validate.openarc.verify.example"></a>
 ### Example
 
 
@@ -59,4 +59,4 @@ msys.registerModule("openarc_verify", mod);
 
 ## See Also
 
-[msys.validate.opendarc.sign](/momentum/4/lua/ref-msys-validate-openarc-sign)
+[msys.validate.openarc.sign](/momentum/4/lua/ref-msys-validate-openarc-sign)

@@ -9,7 +9,7 @@ ARC is an acronym for Authenticated Received Chain. It’s a technology protocol
 custody" for a message, allowing each entity that handles the message to see what entities handled
 it before and what the message's authentication assessment was at each step in the handling flow.
 
-The openarc module add ARC capability to Momentum. It provides Lua APIs for
+The openarc module adds ARC capability to Momentum. It provides Lua and C APIs for
 ARC validation on a received email, and ARC siging and sealing on an outgoing email.
 When the module is enabled, ARC validation and signing/sealing can be achieved through calling these APIs from hook policies.
 
@@ -24,18 +24,25 @@ openarc {}
 
 ### Lua APIs and examples
 
-[msys.validate.opendarc.verify](/momentum/4/lua/ref-msys-validate-openarc-verify)
+[msys.validate.openarc.verify](/momentum/4/lua/ref-msys-validate-openarc-verify)
 
-[msys.validate.opendarc.sign](/momentum/4/lua/ref-msys-validate-openarc-sign)
+[msys.validate.openarc.sign](/momentum/4/lua/ref-msys-validate-openarc-sign)
+
+
+### C APIs
+
+All the related C structures and C API functions are defined in the header file
+ `validate/openarc.h`. Please refer to the header file for the usage of the C structures and
+ functions. Please contact support if further assistance is needed.
 
 
 ### Hook points to invoke the APIs
 
-The `msys.validate.opendarc.sign` does verification first. You should only invoke one of the APIs,
+The `msys.validate.openarc.sign` does verification first. You should only invoke one of the APIs,
     either `verify` or `sign` but not both.
-It's recommended to invoke `msys.validate.opendarc.verify` in `validate_data_spool` or
+It's recommended to invoke `msys.validate.openarc.verify` in `validate_data_spool` or
 [`validate_data_spool_each_rcpt`](/momentum/3/3-api/hooks-core-validate-data-spool-each-rcpt) hook.
-`msys.validate.opendarc.sign` shall be invoked in the last validation phase, in
+`msys.validate.openarc.sign` shall be invoked in the last validation phase, in
 [`post_final_validation`](/momentum/4/hooks/core-post-final-validation) hook.
 
 See API examples for hook usages.

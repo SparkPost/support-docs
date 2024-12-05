@@ -1,5 +1,5 @@
 ---
-lastUpdated: "10/05/2021"
+lastUpdated: "12/01/2024"
 title: "Category File"
 type: "custom"
 name: "Lua Functions Reference"
@@ -191,8 +191,8 @@ description: "This section details all Lua functions Functions are ordered alpha
 | [msys.tls_params.set](/momentum/4/lua/ref-msys-tls-params-set) | Set a tls parameter string on a per connection basis |
 | [msys.validate.dk.get_responsible_domain](/momentum/4/lua/ref-msys-validate-dk-get-responsible-domain) | Return the domain responsible for the current message |
 | [msys.validate.dk.sign](/momentum/4/lua/ref-msys-validate-dk-sign) | Sign a message using a Domain Key |
-| [msys.validate.opendarc.sign](/momentum/4/lua/ref-msys-validate-opendarc-sign) | Sign a message using OpenARC |
-| [msys.validate.opendarc.verify](/momentum/4/lua/ref-msys-validate-opendarc-verify) | Verify ARC sets |
+| [msys.validate.openarc.sign](/momentum/4/lua/ref-msys-validate-openarc-sign) | Sign a message using OpenARC |
+| [msys.validate.openarc.verify](/momentum/4/lua/ref-msys-validate-openarc-verify) | Verify ARC sets |
 | [msys.validate.opendkim.get_num_sigs](/momentum/4/lua/ref-msys-validate-opendkim-get-num-sigs) | Return the number of DKIM signatures |
 | [msys.validate.opendkim.get_sig](/momentum/4/lua/ref-msys-validate-opendkim-get-sig) | Get a signature from a DKIM object |
 | [msys.validate.opendkim.get_sig_canons](/momentum/4/lua/ref-msys-validate-opendkim-get-sig-canons) | Fetch the canonicalizers used for a signature |
