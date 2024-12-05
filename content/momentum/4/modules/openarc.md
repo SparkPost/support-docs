@@ -32,7 +32,7 @@ openarc {}
 ### C APIs
 
 All the related C structures and C API functions are defined in the header file
- `validate/openarc.h`. Please refer to the header file for the usage of the C structures and
+ `validate/ec_openarc.h`. Please refer to the header file for the usage of the C structures and
  functions. Please contact support if further assistance is needed.
 
 
