@@ -1,4 +1,4 @@
-cache@v4name: Lighthouse Audit
+name: Lighthouse Audit
 on:
   pull_request:
     branches:
