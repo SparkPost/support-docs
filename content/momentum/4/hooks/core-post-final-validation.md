@@ -25,7 +25,6 @@ does not have significance for now.
 This hook is added as the absolute last point before writing the message to spool for delivery.
 It guarantees that operations implemented in this hook will happen after the operations done in
 `final_validation`.
-No message modification is expected after this stage.
 To avoid undefined ordering between multiple implementations of the same hook, you shall have at most
  one implementation for this hook.
 > It's the recommended hook point for ARC signing/sealing.
