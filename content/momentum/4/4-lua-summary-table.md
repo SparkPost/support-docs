@@ -1,5 +1,5 @@
 ---
-lastUpdated: "10/05/2021"
+lastUpdated: "12/01/2024"
 title: "Lua Functions Summary"
 description: "This section contains tables of Lua functions Click the function name for details Table 64 1 Lua functions all Function Description Params Package Version Phases ac esmtp capability add Add a capability to the EHLO response name msys extended ac 4 0 connect ehlo ac esmtp capability remove Removes a..."
 ---
@@ -174,6 +174,8 @@ This section contains tables of Lua functions. Click the function name for detai
 | [msys.unlock](/momentum/4/lua/ref-msys-unlock) – Releases a lock obtained via msys.lock | mutexname | msys | 4.0 | any |
 | [msys.validate.dk.get_responsible_domain](/momentum/4/lua/ref-msys-validate-dk-get-responsible-domain) – This function requires module "dk_validate". "msg" is a mail message. "ctx" is the validation context. It returns the responsible domain for the current message | msg, ctx | msys.validate.dk | 4.0 | data, data_spool, data_spool_each_rcpt |
 | [msys.validate.dk.sign](/momentum/4/lua/ref-msys-validate-dk-sign) – Sign a message using a Domain Key | msg, ctx, options | msys.validate.dk | 4.0 | core_data_validation |
+| [msys.validate.openarc.sign](/momentum/4/lua/ref-msys-validate-openarc-sign) – Sign a message using OpenARC | msg, options, [ar] | msys.validate.openarc | 5.0 | core_post_final_validation |
+| [msys.validate.openarc.verify](/momentum/4/lua/ref-msys-validate-openarc-verify) – Verify ARC sets | msg | msys.validate.openarc | 5.0 | data_spool, data_spool_each_rcpt |
 | [msys.validate.opendkim.get_num_sigs](/momentum/4/lua/ref-msys-validate-opendkim-get-num-sigs) – Return the number of DKIM signatures | dkim | msys.validate.opendkim | 4.0 | data, data_spool, data_spool_each_rcpt |
 | [msys.validate.opendkim.get_sig](/momentum/4/lua/ref-msys-validate-opendkim-get-sig) – Get a signature from a DKIM object | dkim, [num] | msys.validate.opendkim | 4.0 | data, data_spool, data_spool_each_rcpt |
 | [msys.validate.opendkim.get_sig_canons](/momentum/4/lua/ref-msys-validate-opendkim-get-sig-canons) – Fetch the canonicalizers used for a DKIM signature | dkim_sig | msys.validate.opendkim | 4.0 | data, data_spool, data_spool_each_rcpt |
@@ -186,7 +188,7 @@ This section contains tables of Lua functions. Click the function name for detai
 | [msys.validate.opendkim.get_sig_selector](/momentum/4/lua/ref-msys-validate-opendkim-get-sig-selector) – Fetch the selector associated with a DKIM signature | dkim_sig | msys.validate.opendkim | 4.0 | data, data_spool, data_spool_each_rcpt |
 | [msys.validate.opendkim.get_sig_signalg](/momentum/4/lua/ref-msys-validate-opendkim-get-sig-signalg) – Return the signing algorithm as a string | dkim_sig | msys.validate.opendkim | 4.0 | data, data_spool, data_spool_each_rcpt |
 | [msys.validate.opendkim.sign](/momentum/4/lua/ref-msys-validate-opendkim-sign) – Sign a message using OpenDKIM | msg, vctx, [options] | msys.validate.opendkim | 4.0 | core_final_validation |
-| [msys.validate.opendkim.verify](/momentum/4/lua/ref-msys-validate-opendkim-verify) – Verify an DKIM signature | m | msys.validate.opendkim | 4.0 | data, data_spool, data_spool_each_rcpt |
+| [msys.validate.opendkim.verify](/momentum/4/lua/ref-msys-validate-opendkim-verify) – Verify an DKIM signature | msg | msys.validate.opendkim | 4.0 | data, data_spool, data_spool_each_rcpt |
 | [sess:request_add_header](/momentum/4/lua/ref-sess-request-add-header) – Set the header of an HTTP session | header, value, replace | msys.httpclnt | 4.0 | http_request_eval |
 | [sess:request_delete_header](/momentum/4/lua/ref-sess-request-delete-header) – Delete a header from an HTTP session | header | msys.httpclnt | 4.0 | http_request_eval |
 | [sess:request_finalize](/momentum/4/lua/ref-sess-request-finalize) – Finalize changes to an HTTP request | update | msys.httpclnt | 4.0 | http_request_eval |

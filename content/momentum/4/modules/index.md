@@ -1,5 +1,5 @@
 ---
-lastUpdated: "10/05/2021"
+lastUpdated: "12/01/2024"
 title: "Category File"
 type: "custom"
 name: "Modules Reference"
@@ -60,6 +60,7 @@ description: "Table of Contents 71 1 Introduction 71 2 ac auth Authentication Ha
 | [msgc](/momentum/4/modules/msgc) | Message Systems Group Communication |
 | [msg_gen](/momentum/4/modules/msg-gen) | Message Generation |
 | [mxip](/momentum/4/modules/mxip) | IP Addresses In MX Records |
+| [openarc](/momentum/4/modules/openarc) | Open Source ARC |
 | [opendkim](/momentum/4/modules/opendkim) | Open Source DKIM |
 | [outbound_audit](/momentum/4/modules/outbound-audit) | Outbound traffic analytics |
 | [outbound_smtp_auth(modules.outbound_smtp_auth.php) |
