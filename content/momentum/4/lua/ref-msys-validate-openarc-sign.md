@@ -26,11 +26,14 @@ ar: string, optional. It's the message's authentication assessment to be copied 
 
 ## Description
 
-This function does ARC validation first, then combine the validation result with authentication
-assessments from other methods (e.g. SPF, DKIM, etc) defined by the `ar` and put it into the AAR
-(ARC-Authentication-Results) header;
- then sign and seal the message by adding the AMS (ARC-Message-Signature) and AS
-(ARC-Seal) headers, using the signing mechanism defined in the `options` table.
+This function acquires ARC chain status (i.e. `cv`) from `ec_message` context variable `arc_cv`. The `cv`
+ will be used in the AS (ARC-Seal) header, and combined with authentication assessments from other
+ methods (e.g. SPF, DKIM, etc) defined by the `ar` and put into the AAR (ARC-Authentication-Results)
+ header. This function signs and seals the message by adding the AMS (ARC-Message-Signature) and AS
+ (ARC-Seal) headers, using the signing mechanism defined in the `options` table.
+
+If `ec_message` context variable `arc_cv` is not set when the function is called, the function will do an
+ internal ARC validation (to set the `arc_cv`), followed by the regular `cv` based signing.
 
 This function requires the [`openarc`](/momentum/4/modules/openarc) module.
 
@@ -92,11 +95,20 @@ This function takes the following parameters:
 
 ### Note
 
-Since ARC sealing  must not happen until all potential modification of a message is done, this function
- should be invoked in the `post_final_validation` stage after all the other validation phases.
+Since ARC sealing  must not happen until all potential modification of a message is done, if you
+ already have implementations in some other validation phases/hooks, this function
+ should be invoked in the `post_final_validation` stage to guarantee that it is called
+ after all the other hook implementations.
 
-If for any reason the ARC signing/sealing failed, the context variable `arc_seal` of the `ec_message`
-will not be set, and the error reason is logged into paniclog.
+The function would cause the `ec_message` context variable `arc_seal` to be set:
+
+`ok`: ARC signing/sealing is done, and ARC set headers are added
+
+`skip`: ARC signing/sealing is skipped, because the ARC chain already fails before reaching the
+ current MTA.
+
+If the context variable `arc_seal` of the `ec_message` is not set, it indicates an unexpected ARC
+ signing/sealing failure, e.g. due to mis-configuration. The error reason is logged in paniclog.
 
 
 <a name="lua.ref.msys.validate.openarc.sign.example"></a>
@@ -122,6 +134,8 @@ function mod:core_post_final_validation(msg, accept, vctx)
   local ok = msg:context_get(msys.core.ECMESS_CTX_MESS, "arc_seal")
   if ok == nil or ok == '' then
     print("ARC seal failed. No ARC set add! Check paniclog for reasons.")
+  elseif ok == "skip" then
+    print("ARC seal skipped. No ARC set add: ARC chain failed before reaching me.")
   else
     print("ARC seal ok. ARC set added!")
   end

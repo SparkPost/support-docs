@@ -28,11 +28,12 @@ Enable this function with the statement `require('msys.validate.openarc')`.
 
 ### Note
 
-If the `ec_message` context variable `arc_cv` is not set after this function call, errors happened
-and were logged into paniclog.
+After being called, this function always sets the `ec_message` context variable `arc_cv` to one of
+ the values: `none`, `pass`, `fail`. Unexpected `fail` cases are logged into paniclog.
 
 This function invokes dns lookup for signature validation. It's recommended to invoke it from a hook
-which would not block Momentum's main tasks, e.g. from the `validate_data_spool` hook.
+which would not block Momentum's main tasks, e.g. from the `validate_data_spool` or the
+ `validate_data_spool_each_rcpt` hook.
 
 <a name="lua.ref.msys.validate.openarc.verify.example"></a>
 ### Example
@@ -44,7 +45,7 @@ require("msys.extended.message");
 require("msys.validate.openarc");
 local mod = {};
 
-function mod:validate_data_spool(msg, ac, vctx)
+function mod:validate_data_spool_each_rcpt(msg, ac, vctx)
   msys.validate.openarc.verify(msg)
   local cv = msg:context_get(msys.core.ECMESS_CTX_MESS, "arc_cv")
   if cv then
