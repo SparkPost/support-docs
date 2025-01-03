@@ -117,7 +117,7 @@ function mod:core_post_final_validation(msg, accept, vctx)
   sealer.signing_domain = "sparkpost.com"
   sealer.selector = "dkim-s1024"
   sealer.keyfile = "path-to-keyfile"
-  sealer.headerlist = "From:Subject:Date:To:MIME-Version:Content-Type"
+  sealer.headerlist = "From:Subject:Date:To:MIME-Version:Content-Type:DKIM-Signature"
   sealer.oversign_headerlist = "From:To:Subject"
 
   msys.validate.openarc.sign(msg, sealer)
