@@ -65,9 +65,11 @@ If there is absolutely no message modification, e.g. for a passthrough MTA which
 message other than ARC signing, calling `msys.validate.openarc.sign` alone can have some performance
 benefits: the message will be scanned once for both ARC verification and signing.
 
-### Example 1: an intermediate MTA does ARC signing, which can potentially modify the email, e.g.
- through DKIM signing, engagement tracking insertion and modification, etc. In such case, ARC verify
- needs to happen first, and ARC sign later.
+### Example 1:
+The following policies define an intermediate MTA which does ARC signing and can potentially
+ modify the email, e.g. through DKIM signing, engagement tracking insertion and modification, etc.
+ In such case, ARC verify needs to happen first, followed by the logic to alter the message (e.g.
+ DKIM signing in the example), and then finally ARC sign at the last.
 
 ```
 require("msys.core");
@@ -134,7 +136,8 @@ end
 msys.registerModule("arc_sign", mod);
 ```
 
-### Example 2: an intermediate MTA relay which does not modify the message other than ARC signing.
+### Example 2:
+The following policy defines an intermediate MTA relay which does not modify the message other than ARC signing.
  In such case, ARC verify and ARC sign can be done at the same time, in any hook in DATA phase
  which does not block the main tasks.
 

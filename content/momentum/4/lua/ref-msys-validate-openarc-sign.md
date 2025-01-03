@@ -102,7 +102,7 @@ Since ARC sealing  must not happen until all potential modification of a message
 
 The function would cause the `ec_message` context variable `arc_seal` to be set:
 
-`ok`: ARC signing/sealing is done, and ARC set headers are added
+`ok`: ARC signing/sealing is done, and ARC set headers are added.
 
 `skip`: ARC signing/sealing is skipped, because the ARC chain already fails before reaching the
  current MTA.
