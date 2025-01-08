@@ -1,5 +1,5 @@
 ---
-lastUpdated: "09/27/2023"
+lastUpdated: "01/09/2025"
 title: "Enabling HTTPS Engagement Tracking on SparkPost"
 description: "SparkPost supports HTTPS engagement tracking for customers via self-service for all SparkPost customers. To enable SSL engagement tracking for a domain, additional configuration for SSL keys is required."
 ---
@@ -131,6 +131,8 @@ _Updated for Cloudflare web UI as of June 2023._
 
    More information on CloudFlare SSL options can be found in [this article](https://developers.cloudflare.com/ssl/origin-configuration/ssl-modes#available-encryption-modes).
 
+    > **Note:** Server Name Indication (SNI) is required when connecting to SparkPost's endpoints to ensure the correct TLS certificate is served. CloudFlare automatically sends SNI information during the TLS handshake with origin servers by including the hostname in the TLS ClientHello message. This is handled transparently by CloudFlare's infrastructure, so no additional configuration is required. You can verify this using CloudFlare's SSL/TLS logs in the dashboard if you need to troubleshoot certificate issues.
+
    After a few minutes, you can verify that the routing is correct using `ping` to your tracking domain. See also [troubleshooting tips](#troubleshooting-tips).
 
    Cloudflare does not offer control of cache "time to live" (TTL) on free accounts. This may mask repeat opens/clicks, as described [here](#cache-time-to-live-ttl-settings). If you have a paid account, under **Caching** on the left side menu, check and set your TTL value.
@@ -180,6 +182,8 @@ For up to date information on creating a distribution via CloudFront, please ref
    ![](media/enabling-https-engagement-tracking-on-sparkpost/cloudfront_origin1.png)
 
    * Optionally, change the name (you can leave this at default).
+
+   > **Note:** Server Name Indication (SNI) is essential for establishing secure connections with SparkPost's multi-tenant endpoints. AWS CloudFront automatically includes SNI during TLS handshakes with origins by sending the origin domain name in the TLS ClientHello message. This behavior is built into CloudFront's SSL/TLS implementation and cannot be disabled. You can monitor the SSL handshake details in CloudWatch Logs if you enable detailed logging for your distribution.
 
    * Under "Add custom header", click "Add header". Enter `X-Forwarded-Host` as the header name and your custom tracking domain as the header value.
 
@@ -369,6 +373,10 @@ Sign up for [Fastly](https://www.fastly.com/) or log in to an existing account.
 
     ![](media/enabling-https-engagement-tracking-on-sparkpost/fastly-2023-host-added.png)
 
+    Under the host settings, ensure "Enable TLS" is selected and "Use SNI" is enabled (this is the default).
+
+    > **Note:** Server Name Indication (SNI) must be properly configured to ensure secure connections with SparkPost's endpoints. When enabled, Fastly will include the backend hostname in the TLS ClientHello message, allowing SparkPost to serve the correct certificate for your account. If you disable SNI, the TLS handshake may fail as SparkPost's endpoints require SNI to select the appropriate certificate. You can verify the SNI configuration by checking Fastly's real-time logs if you have logging enabled.
+
     Fastly default settings pass the `User-Agent` and `X-Forwarded-For` HTTP headers through to SparkPost engagement tracking as expected.
 
 1. Click **Settings** in the left-side menu, and scroll down to the **Fallback TTL** section. Click on the "pencil" icon to set the Fallback TTL to **10** seconds.
@@ -494,6 +502,8 @@ GCP organizes resources under named projects.
 
         For *Protocol*, choose **HTTPS**. Leave *Named port* and *Timeout* at defaults.
 
+        > **Note:** Server Name Indication (SNI) is crucial for establishing secure connections with SparkPost's endpoints. Google Cloud Load Balancer automatically includes SNI information when connecting to backend services by sending the backend hostname in the TLS ClientHello message. This is handled at the infrastructure level and cannot be disabled. For troubleshooting purposes, you can enable detailed backend service logging in Cloud Logging to verify the SSL/TLS handshake details.
+
     * In the *New backend* dialog, choose **Create Internet network endpoint group**. This will open a new browser tab.
 
         ![](media/enabling-https-engagement-tracking-on-sparkpost/gcp-2023-create-backend-service.png)
@@ -614,6 +624,8 @@ The steps below are based on [this guide](https://docs.microsoft.com/en-us/azure
     * Leave the Health probe inactive, as there is only one backend.
 
     * This will forward the `Host` and `User-Agent` HTTP headers to SparkPost properly, which is necessary for Engagement Tracking to work as expected.
+
+    > **Note:** Server Name Indication (SNI) is required for proper certificate handling when connecting to SparkPost's endpoints. Azure Front Door automatically sends SNI information during TLS handshakes by including the backend hostname in the TLS ClientHello message. You can verify the SNI behavior by enabling diagnostic logging for your Front Door instance and examining the backend health probe logs.
 
 1. On "Routing rules", select `+`. Give your rule a name.
 
