@@ -127,7 +127,7 @@ function mod:core_post_final_validation(msg, accept, vctx)
   if ok == nil or ok == '' then
     print("ARC seal failed. No ARC set add! Check paniclog for reasons.")
   elseif ok == "skip" then
-  	print("ARC seal skipped. No ARC set add: ARC chain failed before reaching me.")
+    print("ARC seal skipped. No ARC set add: ARC chain failed before reaching me.")
   else
     print("ARC seal ok. ARC set added!")
   end
@@ -162,7 +162,7 @@ function mod:core_final_validation(msg, accept, vctx)
   if ok == nil or ok == '' then
     print("ARC seal failed. No ARC set add! Check paniclog for reasons.")
   elseif ok == "skip" then
-  	print("ARC seal skipped. No ARC set add: ARC chain failed before reaching me.")
+    print("ARC seal skipped. No ARC set add: ARC chain failed before reaching me.")
   else
     print("ARC seal ok. ARC set added!")
   end
