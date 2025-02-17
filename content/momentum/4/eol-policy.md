@@ -1,5 +1,5 @@
 ---
-lastUpdated: '11/06/2024'
+lastUpdated: '03/01/2025'
 title: 'End of Life Policy'
 description: 'This document provides the latest version of the formal end-of-life policy for releases of software from Message Systems.'
 ---
@@ -43,8 +43,14 @@ Momentum version 4 became GA on April 15, 2014. Therefore:
 - Maintenance for all versions of Momentum 3 ended on December 31, 2018.
 - Support for all versions of Momentum 3 ended on December 31, 2018.
 
-## MOMENTUM 4 GA DATES
+## MOMENTUM 4 END-OF-LIFE DATE
 
+Momentum version 5 became GA on March 1, 2025. Therefore:
+
+- Maintenance for all versions of Momentum 4 will end on March 1, 2026.
+- Support for all versions of Momentum 4 will end on March 1, 2027.
+
+## MOMENTUM 4 AND MOMENTUM 5 GA DATES
 
 | Update and Maintenance Versions | GA         | End of Maintenance | End of Support |
 | ------------------------------- | ---------- | ------------------ | -------------- |
@@ -53,15 +59,16 @@ Momentum version 4 became GA on April 15, 2014. Therefore:
 | Momentum 4.2.x                  | 2015/8/3   | 2020/6/30          | 2021/6/30      |
 | Momentum 4.3.x                  | 2019/3/5   | 2022/9/3           | 2023/9/3       |
 | Momentum 4.4.x                  | 2021/9/3   | 2024/10/20¹        | 2024/12/31³    |
-| Momentum 4.5.0                  | 2023/10/5  | 2024/12/19²        | TBD            |
+| Momentum 4.5.0                  | 2023/10/5  | 2024/12/19²        | 2027/3/1       |
 | Momentum 4.6.0                  | 2023/10/20 | 2024/12/19         | 2024/12/31³    |
-| Momentum 4.7.0                  | 2023/12/19 | 2025/10/17         | TBD            |
-| Momentum 4.8.0                  | 2024/10/17 | TBD                | TBD            |
+| Momentum 4.7.0                  | 2023/12/19 | 2025/10/17         | 2027/3/1       |
+| Momentum 4.8.0                  | 2024/10/17 | 2026/3/1           | 2027/3/1       |
+| **Momentum 5.0.0**              | 2025/3/1   | TBD                | TBD            |
 
 > ¹ Momentum 4.4.x was superseded by 4.6, which was the last version supporting CentOS 7.
 >
 > ² Momentum 4.5 was the first version supporting RHEL 8, and was superseded by 4.7.
 >
-> ³ Given the EOL of CentOS 7 operating system on June 30, 2024, all GA and Maintenance releases of Momentum 4 supporting that platform will be supported until **December 31, 2024**.
+> ³ Given the EOL of CentOS 7 operating system on June 30, 2024, maintenance and support for all GA and Maintenance releases of Momentum 4 supporting that platform ended on **December 31, 2024**.
 
 [Previous version (December 10, 2012)](/momentum/4/eol-policy-2012).

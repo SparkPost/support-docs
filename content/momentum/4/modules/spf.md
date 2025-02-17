@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/26/2020"
+lastUpdated: "02/01/2025"
 title: "spf Modules – spf_macros, spf_v1, and senderid (SPF v2)"
 description: "Sender Policy Framework SPF is an emerging standard for sender based authentication which provides a framework for administrators through DNS TXT records to specify authorized senders for the domains they control SP Fv 1 performs validation on the domain found in the envelope sender sometimes defined as the MAIL FROM..."
 ---
@@ -95,6 +95,16 @@ Set the default rule for a domain not implementing SenderID. The default behavio
 <dd>
 
 Set the default rule for a domain not implementing SPF. The default behavior is to use `?all`, as indicated by the SPF specification.
+
+</dd>
+
+<dt>`delay_check = false`</dt>
+
+<dd>
+
+_Introduced in Momentum 5.0._
+
+Postpones the SPF check until the `RCPTTO` phase. This might be useful when the received message is accepted by a relay webhook that does not perform a SPF validation.
 
 </dd>
 
