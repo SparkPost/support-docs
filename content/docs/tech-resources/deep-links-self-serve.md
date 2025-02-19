@@ -1083,7 +1083,7 @@ AppsFlyer supports [deep links](https://www.appsflyer.com/product/one-link-deep-
 
 - Include the [AppsFlyer SDK](https://support.appsflyer.com/hc/en-us/categories/201114756-SDK-integration-) into your app. Your source of help during this process is the AppsFlyer online documentation and support system.
 
-- For email integration, follow these [step by step instructions](https://support.appsflyer.com/hc/en-us/articles/360014381317) for SparkPost. AppsFlyer supports [Braze+SparkPost](https://support.appsflyer.com/hc/en-us/articles/360001437497-Braze) in the same way.
+- For email integration, follow these [step by step instructions](https://support.appsflyer.com/hc/en-us/articles/26967438815377--Closed-beta-special-access-Set-up-your-ESP-integration-with-AppsFlyer) for SparkPost. AppsFlyer supports [Braze+SparkPost](https://support.appsflyer.com/hc/en-us/articles/26967438815377--Closed-beta-special-access-Set-up-your-ESP-integration-with-AppsFlyer) in the same way.
 
 Complete the steps [here](./enabling-https-engagement-tracking-on-sparkpost/#switch-tracking-domain-to-secure-and-validate) to set your tracking domain in SparkPost to Secure mode and verify, if not verified already.
 
