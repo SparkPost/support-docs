@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/26/2020"
+lastUpdated: "03/01/2025"
 title: "Modules Summary"
 description: "All modules are listed alphabetically with a brief description Singleton modules are also identified The Version column indicates when the module was introduced into the system Note all modules listed as 4 0 modules were actually introduced in prior versions of Momentum The Auto column indicates whether a module is..."
 ---
@@ -70,6 +70,7 @@ All modules are listed alphabetically with a brief description. Singleton module
 | [msgc_client](/momentum/4/modules/msgc) (*singleton*) | 4.0 | The client component of MSGC |   |  ✓ |   |   |
 | [msgc_server](/momentum/4/modules/msgc) (*singleton*) | 4.0 | The server component of MSGC |   |  ✓ |   |   |
 | [“mxip - IP Addresses In MX Records”](/momentum/4/modules/mxip) | 4.2 | Enable Momentum to deliver to domains with a textual IP address |   |   |   |   |
+| [“openarc – Open Source ARC”](/momentum/4/modules/openarc) | 5.0 | Validate/sign mail using ARC |   |   |  ✓ |   |
 | [“opendkim – Open Source DKIM”](/momentum/4/modules/opendkim) | 4.0 | Validate/sign mail using DKIM signatures |   |   |  ✓ |   |
 | [“outbound_audit – Outbound traffic analytics”](/momentum/4/modules/outbound-audit) | 4.0 | Provides time-series analytics on the behavior of receiving domains |   |  ✓ |   |   |
 | [“outbound_smtp_auth”](/momentum/4/modules/outbound-smtp-auth) | 4.2 | Enables users to specify authentication parameters for a given set of messages |   |   |   |   |

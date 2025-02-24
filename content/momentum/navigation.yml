@@ -1966,6 +1966,11 @@
 - link: /momentum/changelog
   title: Changelog
   items:
+    - link: /momentum/changelog/5
+      title: Momentum 5.x Changelog
+      items:
+        - link: /momentum/changelog/5/5-0
+          title: Momentum 5.0 Changelog
     - link: /momentum/changelog/4
       title: Momentum 4.x Changelog
       items: 
