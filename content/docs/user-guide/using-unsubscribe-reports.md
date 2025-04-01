@@ -18,7 +18,7 @@ To use the link unsubscribe, simply add a link in your email in the following fo
    title="USEFUL_NAME">UNSUBSCRIBE_LINK_DISPLAY_NAME</a>
 ```
 
-That's it. When users click on this link to unsubscribe, your webhook consumer will receive a `link_unsubscribe` event.
+That's it. When users click on this link to unsubscribe, your webhook consumer will receive a `link_unsubscribe` event. SparkPost will automatically add the recipient's email address to your suppression list.
 
 ### List Unsubscribe Example:
 

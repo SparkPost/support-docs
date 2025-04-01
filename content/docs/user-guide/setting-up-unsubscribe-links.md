@@ -24,7 +24,7 @@ For the plain text part, use the following format:
 http://www.yourdomain.com[[data-msys-unsubscribe="1"]]
 ```
 
-That's it. When users click on this link to unsubscribe, your webhook consumer will receive a `link_unsubscribe` event.
+That's it. When users click on this link to unsubscribe, your webhook consumer will receive a `link_unsubscribe` event. SparkPost will automatically add the recipient's email address to your suppression list.
 
 ### List Unsubscribe Example
 
