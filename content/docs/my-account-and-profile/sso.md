@@ -1,5 +1,5 @@
 ---
-lastUpdated: "07/17/2023"
+lastUpdated: "04/25/2025s"
 title: "Single Sign-On (SSO)"
 description: "How to enable Single Sign-On (SSO) in SparkPost."
 ---
@@ -102,3 +102,6 @@ No. Users can only use either MFA or SSO.
 
 ### Is automatic provisioning of users supported?
 SCIM provisioning is supported for [OKTA](https://support.sparkpost.com/docs/my-account-and-profile/scim/).
+
+### Do I need to re-invite users after rotating the SAML certificate?
+Yes, in case the SAML certificate expires and needs to be replaced, you must re-invite the users. However, re-inviting users is not necessary when using SCIM provisioning.
