@@ -1,5 +1,5 @@
 ---
-lastUpdated: "04/25/2025s"
+lastUpdated: "04/25/2025"
 title: "Single Sign-On (SSO)"
 description: "How to enable Single Sign-On (SSO) in SparkPost."
 ---
