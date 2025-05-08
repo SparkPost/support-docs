@@ -17,6 +17,7 @@ description: "This chapter includes hook point and C function reference material
 | [ec_httpsrv_request_local_address](/momentum/4/apis-ec-httpsrv-request-local-address) | Returns the local IP address from the current session                         |
 | [ec_httpsrv_request_peer_address](/momentum/4/apis-ec-httpsrv-request-peer-address)   | Returns the remote peer address from the current session                      |
 | [inbound_smtp_tls_post_accept](/momentum/4/hooks/inbound-smtp-tls-post-accept)         | Modify the message state after the tls handshake in esmtp_tls_accept (available in 4.4.0 or higher)      |
+| [smtp_tls_reporting](/momentum/4/hooks/smtp-tls-reporting)         | Report TLS events for TLSRPT (TLS reporting)     |
 
 This chapter includes hook point and C function reference material that is specific to Momentum 4.
 
