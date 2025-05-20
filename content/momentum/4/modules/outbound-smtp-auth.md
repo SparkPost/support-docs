@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/26/2020"
+lastUpdated: "05/30/2025"
 title: "outbound_smtp_auth"
 description: "This module enables users to specify authentication parameters for a given set of messages so that Momentum will authenticate against the peer server when it sends outbound mail It currently supports the AUTH LOGIN, AUTH PLAIN and AUTH XOAUTH2 methods of authentication You can specify the parameters in configuration or in lua..."
 ---
@@ -15,7 +15,7 @@ supports the `AUTH LOGIN`, `AUTH PLAIN` and `AUTH XOAUTH2` methods of authentica
 
 This module makes heavy use of message contexts to facilitate authentication. If it is enabled, you risk having extra I/O unless `keep_message_dicts_in_memory` is on.
 
-** Configuration Change ** This module is refactored in Momentum 5.1, but this feature is available in Momentum 4.2 and later.
+**Configuration Change** This module is refactored in Momentum 5.1, but this feature is available in Momentum 4.2 and later.
 
 ### <a name="modules.outbound_smtp_auth.configuration"></a> Configuration
 
@@ -29,13 +29,13 @@ Configuration variables are listed below. These values can all be changed and ov
 
 <dd>
 
-The password or auth token (e.g. for `AUTH XOAUTH2`)that will be passed to the remote server. The default value is not set.
+The password or auth token (e.g. for `AUTH XOAUTH2`) that will be passed to the remote server. The default value is not set.
 
 ### Note
 
 Setting the password in configuration will leave it as plaintext.
- To set the password more securely, dynamically retrieve it from a data store in lua and
- set it in the context variable that corresponds to this option.
+ To set the password more securely, it's recommended to dynamically retrieve it from a data store
+ in lua and set it in the context variable that corresponds to this option.
 
 </dd>
 
@@ -43,8 +43,8 @@ Setting the password in configuration will leave it as plaintext.
 
 <dd>
 
-Determines what authentication protocol should be used. The only supported values are 'PLAIN',
-           'LOGIN' and 'XOAUTH2'. The default value is not set.
+Determines what authentication protocol should be used. The only supported values are `PLAIN`,
+ `LOGIN` and `XOAUTH2`. The default value is not set.
 
 </dd>
 
@@ -62,7 +62,8 @@ The username that will be passed to the remote server. The default value is not 
 
 Basic examples of usage are provided below.
 
-The following example shows how you can extend the new hook and set the username and password in lua.
+The following example shows how you can extend the new hook and set the username and password in lua
+ for each message.
 
 <a name="modules.outbound_smtp_auth.example.set_username_pw"></a>
 

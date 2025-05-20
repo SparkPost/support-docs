@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/01/2025"
+lastUpdated: "05/30/2025"
 title: "Category File"
 type: "custom"
 name: "Modules Reference"
@@ -63,7 +63,7 @@ description: "Table of Contents 71 1 Introduction 71 2 ac auth Authentication Ha
 | [openarc](/momentum/4/modules/openarc) | Open Source ARC |
 | [opendkim](/momentum/4/modules/opendkim) | Open Source DKIM |
 | [outbound_audit](/momentum/4/modules/outbound-audit) | Outbound traffic analytics |
-| [outbound_smtp_auth(modules.outbound_smtp_auth.php) |
+| [outbound_smtp_auth](/momentum/4/modules/outbound-smtp-auth) | Outbound authentication |
 | [persist_io](/momentum/4/modules/persistio) | Persistent IO Wrapper |
 | [pipe_io](/momentum/4/modules/pipeio) | Pipe IO Wrapper |
 | [pipe_transport](/momentum/4/modules/pipe-transport) | Module |
