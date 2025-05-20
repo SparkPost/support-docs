@@ -60,6 +60,11 @@ The username that will be passed to the remote server. The default value is not 
 
 ### <a name="modules.outbound_smtp_auth.usage"></a> Usage
 
+A hook `outbound_smtp_auth_config(msg)` is added by this module to allow per message auth settings.
+ The settings in `ec_message` context will override the configuration values.
+ This hook is called in delivery/scheduler thread before sending SMTP `AUTH` command.
+ Please avoid blocking or lengthy operations when implementing this hook.
+
 Basic examples of usage are provided below.
 
 The following example shows how you can extend the new hook and set the username and password in lua
@@ -69,7 +74,7 @@ The following example shows how you can extend the new hook and set the username
 
 
 ```
-function mod:outbound_smtp_auth_config(msg, ac, vctx)
+function mod:outbound_smtp_auth_config(msg)
   --print('NOTICE: outbound_smtp_auth_config Lua hook called');
   msg:context_set(VCTX_MESS, 'outbound_smtp_auth_type', 'XOAUTH2')
   -- credential taken from example here:
