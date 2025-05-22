@@ -6,7 +6,8 @@ description: "This module enables users to specify authentication parameters for
 
 <a name="idp22419360"></a>
 
-** This module is deprecated and replaced by the `outbound_smtp_auth` module since 5.1. **
+** This module is deprecated and replaced by the new
+[outbound_smtp_auth](/momentum/4/modules/outbound-smtp-auth) module since 5.1. **
 
 This module enables users to specify authentication parameters for a given set of messages so that Momentum will authenticate against the peer server when it sends outbound mail. It currently supports the 'AUTH LOGIN' and 'AUTH PLAIN' methods of authentication. You can specify the parameters in configuration or in lua, or use a combination of both.
 

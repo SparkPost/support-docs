@@ -15,7 +15,8 @@ supports the `AUTH LOGIN`, `AUTH PLAIN` and `AUTH XOAUTH2` methods of authentica
 
 This module makes heavy use of message contexts to facilitate authentication. If it is enabled, you risk having extra I/O unless `keep_message_dicts_in_memory` is on.
 
-**Configuration Change** This module is refactored in Momentum 5.1, but this feature is available in Momentum 4.2 and later.
+**Configuration Change** This module is refactored in Momentum 5.1, but this feature is available in
+ Momentum 4.2 and later. `AUTH XOAUTH2` support is added in 5.1.
 
 ### <a name="modules.outbound_smtp_auth.configuration"></a> Configuration
 
@@ -29,7 +30,8 @@ Configuration variables are listed below. These values can all be changed and ov
 
 <dd>
 
-The password or auth token (e.g. for `AUTH XOAUTH2`) that will be passed to the remote server. The default value is not set.
+The password or auth token (e.g. for `AUTH XOAUTH2`) that will be passed to the remote server.
+ It has no default value.
 
 ### Note
 
@@ -44,7 +46,7 @@ Setting the password in configuration will leave it as plaintext.
 <dd>
 
 Determines what authentication protocol should be used. The only supported values are `PLAIN`,
- `LOGIN` and `XOAUTH2`. The default value is not set.
+ `LOGIN` and `XOAUTH2`. It has no default value.
 
 </dd>
 
@@ -52,7 +54,7 @@ Determines what authentication protocol should be used. The only supported value
 
 <dd>
 
-The username that will be passed to the remote server. The default value is not set.
+The username that will be passed to the remote server. It has no default value.
 
 </dd>
 
