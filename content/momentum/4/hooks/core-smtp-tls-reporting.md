@@ -30,7 +30,7 @@ The JSON fields and values are defined in `tlsrpt.h`, with most of the field nam
 in the RFC: https://datatracker.ietf.org/doc/html/rfc8460.
 
 The following JSON fields are not defined in the RFC:
-*   `epoch` - timestamp in epoch of when the hook is invoked
+*   `epoch` - epoch time of when the hook is invoked
 *   `type`  - whether the data is for a successful TLS connection or a failure.
               `0` - failure; `1` - success
 
