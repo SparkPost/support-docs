@@ -26,8 +26,8 @@ This hook is called upon:
 - TLS negotiation failures or successes during outbound delivery when MTA-STS or TLSA/DANE is enabled.
   **Currently, only enabled on domains with successfully fetched MTA-STS policies**.
 
-The JSON fields and values are defined in `tlsrpt.h`, with most of the field names same as defined
-in the RFC: https://datatracker.ietf.org/doc/html/rfc8460.
+The JSON fields and values are defined in `tlsrpt.h`, with most of the field names the same as
+ defined in the RFC: https://datatracker.ietf.org/doc/html/rfc8460.
 
 The following JSON fields are not defined in the RFC:
 *   `epoch` - epoch time of when the hook is invoked
@@ -84,12 +84,12 @@ The following JSON fields are not defined in the RFC:
 
 **Return Values**
 
-This hook returns `int`, but for now the return value has no significance, i.e. it is not checked in
-the caller.
+This hook returns `int`, but for now the return value has no significance.
+
 
 **Threading**
 
-This hook could be called in any thread. Please avoid to do time consuming tasks in the hook's
+This hook could be called in any thread. Please avoid doing time consuming tasks in the hook's
  implementation.
 
 
