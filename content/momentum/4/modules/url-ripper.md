@@ -62,7 +62,7 @@ Explicitly specifies headers from which emails (and in turn mailbox domains) sho
 
 <dd>
 
-Describes the base domain under which prospects should be resolved.
+Describes the base domain under which prospects should be resolved. To utilize the IPv6 support added in Momentum 5.1, select a DNSBL server that supports IPv6 addresses.
 
 </dd>
 
