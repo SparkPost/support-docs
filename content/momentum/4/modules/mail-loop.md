@@ -8,7 +8,7 @@ description: "The mail loop module provides automatic suppression of potential m
 
 The mail_loop module provides automatic suppression of potential mail loops with two standard mechanisms:
 
-*   Suppression of delivery attempts to any configured IP interfaces on the machine.
+*   Suppression of delivery attempts to any configured IP interfaces on the machine, including IPv6.
 
 *   Suppression of messages with more than a specified number of Received headers.
 
