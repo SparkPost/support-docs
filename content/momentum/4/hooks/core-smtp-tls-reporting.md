@@ -22,9 +22,8 @@ smtp_tls_reporting - This hook is added in 5.1 and allows you inspect a SMTP TLS
 This hook is called upon:
 - any TLSRPT (rfc8460) defined failures, before a TLS connection is attempted,
   normally during TLS policy (including MTA-STS, TLSA/DANE) fetching stage.
-  **Currently, only failures to fetch MTA-STS policies are supported/reported**.
 - TLS negotiation failures or successes during outbound delivery when MTA-STS or TLSA/DANE is enabled.
-  **Currently, only enabled on domains with successfully fetched MTA-STS policies**.
+  **Currently, only enabled on domains with successfully fetched MTA-STS policies or DANE TLSA records **.
 
 The JSON fields and values are defined in `tlsrpt.h`, with most of the field names the same as
  defined in the RFC: https://datatracker.ietf.org/doc/html/rfc8460.
