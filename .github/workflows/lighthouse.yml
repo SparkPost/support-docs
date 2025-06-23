@@ -15,7 +15,7 @@ jobs:
         node-version: [16.x]
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - uses: actions/cache@v4
         with:
           path: ~/.npm
@@ -23,7 +23,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
       - name: Install dependencies
@@ -34,14 +34,14 @@ jobs:
           CYPRESS_SAMPLE_SIZE: 10
         run: npm run build
       - name: Wait for the Netlify Preview
-        uses: jakepartusch/wait-for-netlify-action@v1
+        uses: jakepartusch/wait-for-netlify-action@v1.4
         id: netlify
         with:
           site_name: 'support-docs'
           # Unfortunately our build time is ~20min, so I'm setting the timeout to 22min.
           max_timeout: 1320
       - name: Audit URLs using Lighthouse
-        uses: treosh/lighthouse-ci-action@v8
+        uses: treosh/lighthouse-ci-action@v12
         with:
           urls: |
             ${{ steps.netlify.outputs.url }}
