@@ -28,6 +28,7 @@ const content = [
       url: '/momentum/4/p-reference',
       level: 3,
     },
+    { label: 'Running in a Container', url: '/momentum/4/p-container', level: 3 },
   ],
   [
     { label: 'Momentum 3.x Documentation', level: 1 },

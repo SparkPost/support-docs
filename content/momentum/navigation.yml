@@ -583,6 +583,18 @@
               title: Connection Context Variables
             - link: /momentum/4/4-policy-context-mess
               title: Message Context Variables
+    - link: /momentum/4/p-container
+      title: Running in a Container
+      items:
+        - link: '/momentum/4/4-container'
+          title: Running Momentum in a Container
+          items:
+            - link: /momentum/4/4-container-building
+              title: Building an Image
+            - link: /momentum/4/4-container-running
+              title: Running and Accessing the Container
+            - link: /momentum/4/4-container-compose
+              title: Using Docker Compose
     - link: /momentum/4/p-reference
       title: Reference
       items:
