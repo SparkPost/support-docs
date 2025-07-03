@@ -87,11 +87,6 @@ const help = {
   content: [
     { text: 'Submit a ticket', url: '/submit-a-ticket', Icon: Feedback },
     { text: 'FAQs', url: '/docs/faq/', Icon: HelpOutline },
-    {
-      text: 'Slack Community',
-      url: 'http://slack.sparkpost.com/?_ga=2.81558740.237172531.1637112870-1549692369.1636156807',
-      Icon: QuestionAnswer,
-    },
   ],
 };
 
