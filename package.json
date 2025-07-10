@@ -3,7 +3,7 @@
   "version": "0.2.0",
   "private": true,
   "engines": {
-    "node": "=18.14"
+    "node": "^16"
   },
   "scripts": {
     "predev": "npm run build:images",
