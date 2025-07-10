@@ -104,7 +104,8 @@ Set the default rule for a domain not implementing SPF. The default behavior is 
 
 _Introduced in Momentum 5.0._
 
-Postpones the SPF check until the `RCPTTO` phase. This might be useful when the received message is accepted by a relay webhook that does not perform a SPF validation.
+Postpones the SPF check until the `RCPTTO` phase. This might be useful to allow SPF validation based
+on `RCPTTO` address.
 
 </dd>
 
