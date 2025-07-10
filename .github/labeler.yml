@@ -1,7 +1,7 @@
 ':eyes: needs review':
   - changed-files:
-    - '**/*'
+    - needs-review: '**/*'
 
 'type: content change':
   - changed-files:
-    - 'content/**/*'
+    - content-change: 'content/**/*'
