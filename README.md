@@ -153,7 +153,7 @@ _**This is not a required step in contributing to the documentation**_
 
 ### Node Version
 
-22.16.x
+18.14.x
 
 ### Installation
 
