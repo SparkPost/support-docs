@@ -63,7 +63,7 @@ mxip.example.		86400	IN	NS	localhost.
 
 The mxip module implements a dns_get_As hook in order to augment the DNS resolution behaviour. If your integration or deployment also implements a dns_get_As hook, then you may not be able to use the mxip module.
 
-The mxip module only supports IPv4 addresses in the hostname field of MX records. IPv6 addresses are explicitly not supported by the mxip module.
+The mxip module supports IPv4 (and IPv6 as of Momentum 5.1) addresses in the hostname field of MX records.
 
 The mxip module can be configured as follows:
 
