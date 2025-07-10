@@ -32,7 +32,7 @@ function mod:http_request_eval(sess)
     DzyjAI8maYIogujSPtq-jSUG0WybCQ0mT1eGOZsgy0"
   local request = "{ \"registration_ids\": [ \"" .. reg_id .. "\" ], \"dry_run\": true, »
     \"data\": { \"message\": \"Push message to send over GCM\" } }"
-  local auth_key = "AIzaSyA09R1jflwVV4T79OIuLtTxQyXKFlOVQfs"
+  local auth_key = "REDACTED"
 
   -- print new json request to paniclog.ec for ref
   print ("new json request = ", request)
