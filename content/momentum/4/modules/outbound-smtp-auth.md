@@ -15,10 +15,10 @@ supports the `AUTH LOGIN`, `AUTH PLAIN` and `AUTH XOAUTH2` methods of authentica
 
 This module makes heavy use of message contexts to facilitate authentication. If it is enabled, you risk having extra I/O unless `keep_message_dicts_in_memory` is on.
 
-**Configuration Change** This module is refactored in Momentum 5.1, but this feature is available in
- Momentum 4.2 and later. `AUTH XOAUTH2` support is added in 5.1.
-
 ### <a name="modules.outbound_smtp_auth.configuration"></a> Configuration
+
+> This module is refactored in Momentum 5.1, but this feature is available in
+ Momentum 4.2 and later. `AUTH XOAUTH2` support is added in 5.1.
 
 Configuration variables are listed below. These values can all be changed and overridden by setting
  message context variables with the same name as the options in lua.
