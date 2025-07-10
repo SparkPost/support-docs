@@ -70,7 +70,7 @@ Here is a quick table with the similar terms between the two services:
 Where To Get Help
 -----------------
 
-If you're ready for the gritty details, check out our [DevHub](https://developers.sparkpost.com/), [API docs](https://developers.sparkpost.com/api) and [pricing](https://www.sparkpost.com/pricing/). If you have general questions, take a walk through our [support articles](https://support.sparkpost.com/), or if you just want to chat, [join our community on Slack](http://slack.sparkpost.com/). You can also [open a ticket](https://www.sparkpost.com/submit-a-ticket/) with our support team.
+If you're ready for the gritty details, check out our [DevHub](https://developers.sparkpost.com/), [API docs](https://developers.sparkpost.com/api) and [pricing](https://www.sparkpost.com/pricing/). If you have general questions, take a walk through our [support articles](https://support.sparkpost.com/). You can also [open a ticket](https://www.sparkpost.com/submit-a-ticket/) with our support team.
 
 Signing Up
 ----------

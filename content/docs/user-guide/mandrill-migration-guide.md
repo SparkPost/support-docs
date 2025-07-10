@@ -93,7 +93,7 @@ SparkPost API calls are authenticated by passing a valid API key through the [H
 Where To Get Help
 -----------------
 
-If you're in a hurry, don't have time to read this Mandrill Migration Guide and just want the gritty details, check out our [Developer Site](https://developers.sparkpost.com/), [API reference](https://developers.sparkpost.com/api/) and [pricing](https://www.sparkpost.com/pricing/). If you have general questions, [take a look through our support articles](https://support.sparkpost.com/) or if you just want to chat, [join our community on Slack](http://slack.sparkpost.com/).
+If you're in a hurry, don't have time to read this Mandrill Migration Guide and just want the gritty details, check out our [Developer Site](https://developers.sparkpost.com/), [API reference](https://developers.sparkpost.com/api/) and [pricing](https://www.sparkpost.com/pricing/). If you have general questions, [take a look through our support articles](https://support.sparkpost.com/).
 
 Signing Up
 ----------
