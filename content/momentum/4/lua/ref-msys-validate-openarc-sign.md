@@ -56,7 +56,7 @@ This function takes the following parameters:
 
     *   `header_canon` – header canonicalization setting.
 
-        Supported values are `relaxed`, `simple`. Defaults to `relaxed`.
+        The only supported value is `relaxed`.
 
     *   `body_canon` – body canonicalization setting
 

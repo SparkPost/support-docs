@@ -1,5 +1,5 @@
 - link: /momentum/4
-  title: Momentum 4.x
+  title: Momentum 4.x and later
   items:
     - link: /momentum/4/4-preface
       title: Preface
@@ -1981,6 +1981,8 @@
     - link: /momentum/changelog/5
       title: Momentum 5.x Changelog
       items:
+        - link: /momentum/changelog/5/5-1
+          title: Momentum 5.1 Changelog
         - link: /momentum/changelog/5/5-0
           title: Momentum 5.0 Changelog
     - link: /momentum/changelog/4

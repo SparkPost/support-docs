@@ -16,15 +16,15 @@ The following example demonstrates how to configure Momentum to pass LOGIN crede
 ```
 # Configure the RADIUS client
 auth_radius {
-  NAS-IP-Address = 10.0.0.1 # the IP address of this SMTP server
+  NAS-IP-Address = fd01:345::1 # the IP address of this SMTP server
   server "one" {
     host = "radius-1.example.com"
     secret = "secret1"
     max_tries = "1"
     timeout = "30"
   }
-  server "two" {
-    host = "radius-2.example.com"
+  server "ipv6wport" {
+    host = "[2001:fd3::1]:2812"
     secret = "secret2"
     max_tries = "2"
     timeout = "30"
@@ -85,7 +85,7 @@ RADIUS servers can be defined using the dictionary syntax shown above; the dicti
 
 <dd>
 
-The hostname or IP address of the RADIUS server. If a colon is present in the string then the left side of the string will be used as the hostname/IP address and the right hand side will be used as the port number on the server. If left unspecified, the RADIUS standard port number of 1812 will be used.
+The hostname or IP address of the RADIUS server. The hostname/IP address can be followed by a colon and the port number on the server. If left unspecified, the RADIUS standard port number of 1812 will be used.  An IPv6 address must be enclosed in brackets if a port was added.
 
 </dd>
 
