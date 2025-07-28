@@ -73,8 +73,8 @@ description: Are you familiar with the Validity platform? Here are the naming eq
       <td><p class="no-margin">Inbox Preview</p></td>
       <td>
         <p class="no-margin">
-          With Design Tracker, utilize your existing Litmus account to access
-          results directly within a single UI.
+          With Design Tracker, preview how your email looks inside of multiple
+          clients within a single UI.
         </p>
       </td>
     </tr>
