@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/26/2020"
+lastUpdated: "08/06/2025"
 title: "max_request_size"
 description: "max request size maximum size of an HTTP request Max Recipients Per Connection 102400 This option limits the size of an HTTP request If this option is not set there is no limit max request size is valid in the http listener listen pathway pathway group and peer scopes..."
 ---
@@ -11,7 +11,7 @@ max_request_size — maximum size of an HTTP request
 
 ## Synopsis
 
-`Max_Recipients_Per_Connection = 102400`
+`Max_Request_Size = 50000`
 
 <a name="idp25273664"></a> 
 ## Description
