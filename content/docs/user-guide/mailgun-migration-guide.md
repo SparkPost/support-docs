@@ -83,7 +83,7 @@ We'll start with a comparison of terms:
 Where to get help
 -----------------
 
-If you're in a hurry, don't have time to read this guide and just want the details, check out our [DevHub](https://developers.sparkpost.com/), [API docs](https://developers.sparkpost.com/api) and [pricing](https://www.sparkpost.com/pricing/). If you have general questions, [take a walk through our support articles](https://www.sparkpost.com/docs/). If you need help, you can open a support ticket [directly from the SparkPost app](https://www.sparkpost.com/docs/faq/submit-a-ticket/). If you want to chat to other developers using SparkPost, [join our community on Slack](http://slack.sparkpost.com/).
+If you're in a hurry, don't have time to read this guide and just want the details, check out our [DevHub](https://developers.sparkpost.com/), [API docs](https://developers.sparkpost.com/api) and [pricing](https://www.sparkpost.com/pricing/). If you have general questions, [take a walk through our support articles](https://www.sparkpost.com/docs/). If you need help, you can open a support ticket [directly from the SparkPost app](https://www.sparkpost.com/docs/faq/submit-a-ticket/).
 
 Signing Up
 ----------
@@ -310,4 +310,4 @@ Mailgun paid accounts provide "inbox placement" monitoring that you can schedule
 What next?
 ----------
 
-If you have general questions not addressed in this Mailgun Migration Guide, feedback or want to chat about your particular situation, come [find us on Slack](http://slack.sparkpost.com/)! If you have an issue with your SparkPost account, you can [check out our support articles here](https://www.sparkpost.com/docs/) and [contact our Support team directly from your app dashboard](https://app.sparkpost.com/dashboard).
+If you have an issue with your SparkPost account, you can [check out our support articles here](https://www.sparkpost.com/docs/) and [contact our Support team directly from your app dashboard](https://app.sparkpost.com/dashboard).
