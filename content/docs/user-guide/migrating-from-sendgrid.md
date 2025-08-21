@@ -68,7 +68,7 @@ First here's a quick primer on the main terminology differences between the two 
 Where To Get Help
 -----------------
 
-If you're in a hurry, don't have time to read this SendGrid Migration Guide and just want the gritty details, check out our [DevHub](https://developers.sparkpost.com/), [API docs](https://developers.sparkpost.com/api/) and [pricing](https://www.sparkpost.com/pricing/). If you have general questions, [take a look through our support articles](https://support.sparkpost.com/) or if you just want to chat, [join our community on Slack](http://slack.sparkpost.com/).
+If you're in a hurry, don't have time to read this SendGrid Migration Guide and just want the gritty details, check out our [DevHub](https://developers.sparkpost.com/), [API docs](https://developers.sparkpost.com/api/) and [pricing](https://www.sparkpost.com/pricing/). If you have general questions, [take a look through our support articles](https://support.sparkpost.com/).
 
 Signing Up
 ----------

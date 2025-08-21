@@ -29,17 +29,6 @@ const Navigation = (props: NavigationProps): JSX.Element | null => {
           </StyledLink>
         </Link>
 
-        <Link href="http://slack.sparkpost.com" passHref>
-          <StyledLink target="_blank" rel="noreferrer">
-            <Box px="500">
-              <Forum size={20} />
-              <Box as="span" pl="300">
-                Community
-              </Box>
-            </Box>
-          </StyledLink>
-        </Link>
-
         <Link href="https://www.sparkpost.com/case-studies/" passHref>
           <StyledLink target="_blank" rel="noreferrer">
             <Box px="500">

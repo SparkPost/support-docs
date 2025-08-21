@@ -236,5 +236,3 @@ SparkPost can receive email on your behalf and forward to your own HTTP endpoint
 For general questions, you might find a ready-made answer by searching SparkPost's [support articles](https://www.sparkpost.com/docs/).
 
 If you run into an issue with your account you can contact our support team by clicking on the question mark on the top right of [your dashboard](https://app.sparkpost.com/dashboard) and submitting a ticket. You can also follow the [SparkPost Status](https://status.sparkpost.com/) page for service updates.
-
-If you're interested in chatting with other SparkPost users, discussing your integration and getting involved with our developer community, join our [Community Slack team](https://slack.sparkpost.com/).
