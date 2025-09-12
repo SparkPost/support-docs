@@ -1,5 +1,5 @@
 import React from 'react';
-import { Feedback, HelpOutline, QuestionAnswer } from '@sparkpost/matchbox-icons';
+import { Feedback, HelpOutline } from '@sparkpost/matchbox-icons';
 import Link from 'next/link';
 import { Elixir, PHP, Java, NodeMailer, Python, Node, Go } from './icons';
 import BaseHomePageContent, { SimpleStyledLink } from './baseHomePageContent';
