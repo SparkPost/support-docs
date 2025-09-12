@@ -2,7 +2,6 @@ import React from 'react';
 import Link from 'next/link';
 import { Box } from '@sparkpost/matchbox';
 import {
-  Forum,
   PeopleOutline,
   Code,
   DeviceHub,
