@@ -2,10 +2,7 @@ import React from 'react';
 import { getWindow } from 'utils/ssr';
 import Link from 'next/link';
 import { Box, BoxProps, ScreenReaderOnly, styles } from '@sparkpost/matchbox';
-import {
-  KeyboardArrowDown,
-  KeyboardArrowUp,
-} from '@sparkpost/matchbox-icons';
+import { KeyboardArrowDown, KeyboardArrowUp } from '@sparkpost/matchbox-icons';
 import styled from 'styled-components';
 import css from '@styled-system/css';
 import { tokens } from '@sparkpost/design-tokens';
@@ -36,22 +33,22 @@ export const StyledLink = styled.a<{ $active?: boolean; $level?: number }>`
   &:active {
     text-decoration: none;
     ${({ $active, $level }) =>
-    css({
-      py: '200',
-      pr: '700',
-      pl: `calc(${tokens.spacing_500} + ${tokens.spacing_200} * ${$level})`,
-      bg: $active ? 'blue.700' : 'transparent',
-      color: $active ? 'white' : 'gray.900',
-    })}
+      css({
+        py: '200',
+        pr: '700',
+        pl: `calc(${tokens.spacing_500} + ${tokens.spacing_200} * ${$level})`,
+        bg: $active ? 'blue.700' : 'transparent',
+        color: $active ? 'white' : 'gray.900',
+      })}
   }
 
   &:hover {
     ${({ $active }) => {
-    return css({
-      bg: $active ? 'blue.700' : 'gray.200',
-      color: $active ? 'white' : 'gray.900',
-    });
-  }}
+      return css({
+        bg: $active ? 'blue.700' : 'gray.200',
+        color: $active ? 'white' : 'gray.900',
+      });
+    }}
   }
 `;
 
@@ -116,15 +113,15 @@ const Chevron = (props: { expanded: boolean }): JSX.Element => {
   return expanded ? <KeyboardArrowUp size={18} /> : <KeyboardArrowDown size={18} />;
 };
 
-const StyledChevronWrapper = styled(Box) <BoxProps & { $active?: boolean }>`
+const StyledChevronWrapper = styled(Box)<BoxProps & { $active?: boolean }>`
   ${styles.buttonReset}
   cursor: pointer;
   &:hover {
     ${({ $active }) => {
-    return css({
-      color: $active ? 'white' : 'blue.700',
-    });
-  }}
+      return css({
+        color: $active ? 'white' : 'blue.700',
+      });
+    }}
   }
   ${({ $active }) => {
     return css({
