@@ -44,8 +44,6 @@ Our Support teams work **Monday to Friday 09:00 til 20:00 Eastern Time (UTC-5)**
 
 ## Integration Support
 
-For **ALL** integration questions, chat with our engineers and other developers using SparkPost. Whether you are using a third party front-end application or service, using an existing Library or building your own, you will find help and advice in the community.
-
 For common front end integrations we have basic guides in the **[Integrations Section](https://www.sparkpost.com/docs/integrations/)** of the support center or click on the particular guide you require:
 
 - [PowerMTA](https://www.sparkpost.com/docs/integrations/power-mta/)
