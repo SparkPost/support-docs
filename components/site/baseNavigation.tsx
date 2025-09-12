@@ -148,7 +148,7 @@ const Item = (props: NavigationItemProps): JSX.Element => {
 
     setExpanded(isExpanded);
     setActive(isActive);
-  }, [link, activeUrl]);
+  }, [link, activeUrl, hasActiveChild]);
 
   return (
     <Box fontSize="200" lineHeight="200" position="relative">
