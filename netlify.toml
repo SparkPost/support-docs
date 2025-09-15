@@ -832,11 +832,6 @@ package = "@netlify/plugin-nextjs"
   status = 301
 
 [[redirects]]
-  from = "/customer/portal/articles/2521756"
-  to = "/docs/deliverability/spf-and-ip4-mechanisms/"
-  status = 301
-
-[[redirects]]
   from = "/customer/portal/articles/2124161"
   to = "/docs/faq/abuse-sparkpost-com-is-not-returning-my-emails/"
   status = 301
