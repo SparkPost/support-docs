@@ -44,7 +44,7 @@ All modules are listed alphabetically with a brief description. Singleton module
 | [dk_validate](/momentum/4/modules/domainkeys) | 4.0 | Validate inbound mail checking domain keys signatures |   |   |  ✓ |   |
 | [dkim_sign](/momentum/4/modules/opendkim) | 4.0 | Attach DKIM signatures to outbound mail |   |   |  ✓ |   |
 | [dkim_validate](/momentum/4/modules/opendkim) | 4.0 | Validate inbound mail checking DKIM signatures |   |   |  ✓ |   |
-| [“dnsbuf – Dynamically Set the DNS UDP Buffer Size”](/momentum/4/modules/dnsbuf) | 4.2 | Manipulate DNS buffer sizes on demand |   |   |   |   |
+| [“dnsbuf – Configure the DNS UDP Buffer Sizes”](/momentum/4/modules/dnsbuf-new) | 4.8 | Set UDP buffer sizes for DNS |   |   |   | [“dnsbuf – Dynamically Set the DNS UDP Buffer Size”](/momentum/4/modules/dnsbuf) **(DEPRECATED)** |
 | [“ds_core - Datasource Query Core”](/momentum/4/modules/ds-core) (*singleton*) | 4.0 | Provide modular data access and caching for use by other modules |  ✓ |   |   |   |
 | [“EC_logger – Momentum-Style Logging”](/momentum/4/modules/ec-logger) | 4.0 | Log the status of messages |   |   |   |   |
 | [“eleven – Eleven eXpurgate Content Scanning”](/momentum/4/modules/eleven) (*singleton*) | 4.0 | This module implements the eleven spam filter and categorization service |   |   |  ✓ |   |

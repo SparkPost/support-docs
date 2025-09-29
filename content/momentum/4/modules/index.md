@@ -36,7 +36,7 @@ description: "Table of Contents 71 1 Introduction 71 2 ac auth Authentication Ha
 | [custom_logger](/momentum/4/modules/custom-logger) | User-defined Logging |
 | [dane](/momentum/4/modules/dane) | DANE related DNS Lookups and TLS Verifications |
 | [delay_dsn](/momentum/4/modules/delay-dsn) | Delay DSN Generation |
-| [dnsbuf](/momentum/4/modules/dnsbuf) | Dynamically Set the DNS UDP Buffer Size |
+| [dnsbuf](/momentum/4/modules/dnsbuf-new) | Configure the DNS UDP Buffer Sizes |
 | [domainkeys](/momentum/4/modules/domainkeys) | Yahoo! DomainKeys |
 | [ds_core](/momentum/4/modules/ds-core) | Datasource Query Core |
 | [EC_logger](/momentum/4/modules/ec-logger) | Momentum-Style Logging |
