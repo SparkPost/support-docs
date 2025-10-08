@@ -12,7 +12,7 @@ Some plan levels include a free dedicated IP address. If your plan includes an I
 
 ## Purchasing Additional Dedicated IPs
 
-You can provision additional dedicated IPs directly to your Account via the UI.  For Enterpise customers, please contact your Account Manager for purchasing of dedicated IPs.
+You can provision additional dedicated IPs directly to your Account via the UI.  For Enterprise customers, please contact your Account Manager for purchasing of dedicated IPs.
 
 1. Select **Billing** in top navigation and then press the orange "Purchase Sending IPs" Button.
 2. You will then be prompted to choose:
