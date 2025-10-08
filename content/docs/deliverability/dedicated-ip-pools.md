@@ -12,7 +12,7 @@ Some plan levels include a free dedicated IP address. If your plan includes an I
 
 ## Purchasing Additional Dedicated IPs
 
-You can provision additional dedicated IPs directly to your Account via the UI.  For Enterpise customers, please contact your designated TAM for purchasing of dedicated IPs.
+You can provision additional dedicated IPs directly to your Account via the UI.  For Enterpise customers, please contact your Account Manager for purchasing of dedicated IPs.
 
 1. Select **Billing** in top navigation and then press the orange "Purchase Sending IPs" Button.
 2. You will then be prompted to choose:
@@ -22,9 +22,7 @@ You can provision additional dedicated IPs directly to your Account via the UI. 
 3. Once finished, click the "Confirm Purchases" button to purchase your dedicated IPs.
 4. The Billing page will then reflect your new purchase and your monthly invoice will be updated to reflect the charge for the dedicated IP(s). The dedicated IP(s) charge will be prorated by month.
 
-***NOTE:** Each SparkPost Account is limited to a maximum of 4 dedicated IPs at any one time.* 
-
-***NOTE:** SparkPost Enterprise Accounts have no limit dedicated IPs.*                                                                          
+***NOTE:** Each SparkPost Account is limited to a maximum of 4 dedicated IPs at any one time.*
 
 ## Managing Dedicated IP Pools
 
