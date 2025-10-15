@@ -18,8 +18,8 @@ The `dnsbuf` module is configured as follows:
 
 ```
 dnsbuf {
-    sndbuf_size = "65536" # Default value is 131072
-    rcvbuf_size = "65536" # Default value is 131072
+    sndbuf_size = "65536" # In Linux this is set to 131072
+    rcvbuf_size = "65536" # In Linux this is set to 131072
 }
 ```
 
@@ -64,6 +64,8 @@ To determine whether the DNS responses are being dropped because the DNS UDP soc
 while sleep 1; do (netstat --udp -s | grep error; echo summary |
     /opt/msys/ecelerity/bin/ec_console | grep DNS); echo; done
 ```
+
+> **NOTE:** Whenever possible, prefer to use the [HTTP-API statistics](/momentum/4/http-api-stats/summary) instead of the `summary` command for performance reasons.
 
 The following is an example in which Momentum started with ~30,000 unresolvable domains in the queue. Notice that the "packet receive errors" number has increased, and there are a high number of pending DNS queries.
 
