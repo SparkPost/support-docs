@@ -84,6 +84,10 @@ This table lists all console commands alphabetically giving a brief description.
 | [dns_cache refcnts](/momentum/4/console-commands/dns-cache) – Show the references in the DNS cache | 4.0 |   | dns |
 | [dns_cache stats](/momentum/4/console-commands/dns-cache) – Show summary stats for the DNS cache | 4.0 |   | dns |
 | [dns_cache submit](/momentum/4/console-commands/dns-cache) – Submit a DNS query | 4.0 |   | dns |
+| [dnsbuf interval](/momentum/4/modules/dnsbuf#modules.dnsbuf.console) – Change how often setsockopt() operations are performed | 4.2 | dnsbuf | module |
+| [dnsbuf rcvbuf_size](/momentum/4/modules/dnsbuf#modules.dnsbuf.console) – Change the rcvbuf_size value on the fly | 4.2 | dnsbuf | module |
+| [dnsbuf sndbuf_size](/momentum/4/modules/dnsbuf#modules.dnsbuf.console) – Change the sndbuf_size value on the fly | 4.2 | dnsbuf | module |
+| [dnsbuf verify](/momentum/4/modules/dnsbuf#modules.dnsbuf.console) – Query active sockets for current buffer sizes and report the results | 4.2 | dnsbuf | module |
 | [domain all](/momentum/4/console-commands/domain-all) – Show statistics for all domains | 4.0 |   | stats |
 | [domain](/momentum/4/console-commands/domain) – Show domain statistics | 4.0 |   | stats |
 | [ds_core flush cache_name](/momentum/4/modules/ds-core#modules.ds_core.console) – Flush a specific cache | 4.0 | ds_core | module |

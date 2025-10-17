@@ -1,5 +1,5 @@
 ---
-lastUpdated: "09/30/2025"
+lastUpdated: "03/26/2020"
 title: "dnsbuf – Dynamically Set the DNS UDP Buffer Size"
 description: "Configuration Change This feature is available as beta in Momentum 3 6 5 Momentum does not manipulate the size of UDP sockets it creates and uses for DNS queries instead it will use the default sizes configured by the Operating System This can create problems for clients with too many..."
 ---
@@ -8,7 +8,7 @@ description: "Configuration Change This feature is available as beta in Momentum
 
 **Configuration Change.** This feature is available as beta in Momentum 3.6.5.
 
-> **NOTE: This feature was DEPRECATED in Momentum 4.8. Please refer to the [updated](/momentum/4/modules/dnsbuf-new) module for changes in the functionality.**
+> **NOTE: This feature was DEPRECATED in Momentum 4.8 and is not supported anymore.**
 
 Momentum does not manipulate the size of UDP sockets it creates and uses for DNS queries; instead, it will use the default sizes configured by the Operating System. This can create problems for clients with too many domains (e.g., tens of thousands) in the system. Responses may be dropped, causing unnecessary DNS failures and retries, thus further increasing the DNS query volume. The `dnsbuf` module enables the client to manipulate the DNS buffer sizes on demand, on the fly.
 
