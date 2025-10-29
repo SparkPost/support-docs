@@ -83,4 +83,4 @@ With this configuration, the time interval for counting repeated debug messages 
 <a name="conf.ref.debug_throttle.scope"></a> 
 # Scope
 
-debug_flags is valid in the global scope.
+Debug throttling options are valid in the global scope.
