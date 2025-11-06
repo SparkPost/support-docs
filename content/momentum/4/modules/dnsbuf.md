@@ -6,7 +6,9 @@ description: "Configuration Change This feature is available in Momentum 4 2 and
 
 <a name="idp21140416"></a> 
 
-**Configuration Change. ** This feature is available in Momentum 4.2 and later.
+**Configuration Change.** This feature is available from Momentum 4.2 through 4.7.
+
+> **NOTE: This feature was DEPRECATED in Momentum 4.8 and is no longer supported.**
 
 Momentum does not manipulate the size of UDP sockets it creates and uses for DNS queries; instead, it will use the default sizes configured by the Operating System. This can create problems for clients with too many domains (e.g., tens of thousands) in the system. Responses may be dropped, causing unnecessary DNS failures and retries, thus further increasing the DNS query volume. The `dnsbuf` module enables the client to manipulate the DNS buffer sizes on demand, on the fly.
 
@@ -19,8 +21,8 @@ The `dnsbuf` module is configured as follows:
 
 ```
 dnsbuf {
-    sndbuf_size = "65536" # Default value is 131072
-    rcvbuf_size = "65536" # Default value is 131072
+    sndbuf_size = "65536" # In Linux this is set to 131072
+    rcvbuf_size = "65536" # In Linux this is set to 131072
     interval = "30"       # Default value is 60 seconds
 }
 ```
@@ -129,6 +131,8 @@ To determine whether the DNS responses are being dropped because the DNS UDP soc
 while sleep 1; do (netstat --udp -s | grep error; echo summary |
     /opt/msys/ecelerity/bin/ec_console | grep DNS); echo; done
 ```
+
+> **NOTE:** Whenever possible, prefer to use the [HTTP-API statistics](/momentum/4/http-api-stats/summary) instead of the `summary` command for performance reasons.
 
 The following is an example in which Momentum started with ~30,000 unresolvable domains in the queue. Notice that the "packet receive errors" number has increased, and there are a high number of pending DNS queries.
 
