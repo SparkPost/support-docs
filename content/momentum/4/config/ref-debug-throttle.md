@@ -28,7 +28,7 @@ if the source of the message is something like this:
 
 then all messages that match this pattern will be considered the same for throttling purposes, regardless of the actual
 values of `<timestamp>` and `<mailfrom>`. This happens because the default logging module is based on `printf`-style
-formatting, which allows variable content in log messages, and it is the formatting that determines message sameness.
+format strings, which allows variable content in log messages, and it is the format string that determines message sameness.
 
 <a name="conf.ref.debug_throttle"></a>
 # Configuration options
