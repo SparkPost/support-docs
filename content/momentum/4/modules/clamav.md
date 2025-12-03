@@ -8,7 +8,7 @@ description: "The clamav module is an open source antivirus engine that is part 
 
 The clamav module allows integration with the open source ClamAV antivirus engine.
 
-> **NOTE:** Since version 5.2, the `msys-clamav` package is not shipped anymore with the Momentum installation bundle. To use this module, the ClamAV software must be installed and maintained separately by following the official ClamAV [documentation](https://docs.clamav.net/).
+> **NOTE:** Since version 5.2, the `msys-clamav` package, which contained the ClamAV engine, is no longer shipped with the Momentum installation bundle. To use this clamav module, the engine must be installed using the general available ClamAV packages (e.g., `clamav` and `clamd` RPMs), then configured and maintained separately by following the official ClamAV [documentation](https://docs.clamav.net/).
 
 ### <a name="idp20203168"></a> Configuration
 
