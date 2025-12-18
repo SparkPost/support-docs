@@ -1,5 +1,5 @@
 ---
-lastUpdated: "09/20/2023"
+lastUpdated: "12/31/2025"
 title: "Configuration Options Summary"
 description: "This chapter lists all configuration options visible in the following scopes global domain host binding binding group security pathway pathway group listener listen peer threadpool debug flags and cluster as well as in the listener specific scope Module specific options are documented in the module documentation and options specific to..."
 ---
@@ -111,6 +111,8 @@ The `Version` column indicated the version(s) of Momentum that support the optio
 | [debug](/momentum/4/config/ref-debug-flags) – Set the debug level | na |   | 4.0 and later | debug_flags |
 | [debug_flags](/momentum/4/config/ref-debug-flags) *(scope)* – Configure debug verbosity | na |   | 4.0 and later | global |
 | [debug_level](/momentum/4/4-module-config) – Set the module debug level (applicable to all modules) (cluster-specific) | na | error | 4.0 and later | cluster |
+| [debug_throttle_max_num_same_message](/momentum/4/config/ref-debug-throttle) – Maximum number of identical debug messages to log within an interval | na | 0 | 5.2 and later | global |
+| [debug_throttle_period_secs](/momentum/4/config/ref-debug-throttle) – Time interval for debug message throttling, in seconds | na | 1 | 5.2 and later | global |
 | [default_binding](/momentum/4/config/ref-default-binding) – Control the default binding | sending | normal | 4.0 and later | global |
 | [default_charset](/momentum/4/config/ref-default-charset) – Control the character set | both | us-ascii | 4.0 and later | global, pathway, pathway_group |
 | [delay_dsn_max_retry_interval](/momentum/4/config/ref-delay-dsn-max-retry-interval) – Maximum interval for sending DSNs to the sender of a message that has not yet been delivered | sending | 43200 | 4.0 and later | binding, binding_group, domain, global |
