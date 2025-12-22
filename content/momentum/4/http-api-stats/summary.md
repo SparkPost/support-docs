@@ -1,5 +1,5 @@
 ---
-lastUpdated: "11/05/2024"
+lastUpdated: "12/31/2025"
 title: "Summary"
 description: "stats summary show global metrics Perhaps the most common API command stats summary will produce global metrics such as queue sizes message counts and throughput rates since startup or the last reset of statistics"
 ---
@@ -7,15 +7,19 @@ description: "stats summary show global metrics Perhaps the most common API comm
 <a name="http_api_stats.summary"></a>
 ## Name
 
-`/stats/summary` — show global metrics
+`/stats/summary` — global metrics
 
 ## Synopsis
 
 `GET /stats/summary`
 
+`DELETE /stats/summary`
+
 ## Description
 
-Perhaps the most common API command, `/stats/summary` will produce global metrics such as queue sizes, message counts and throughput rates since startup or the last reset of statistics.
+### Gather Global Metrics
+
+Perhaps the most common API command, `GET /stats/summary` will produce global metrics such as queue sizes, message counts and throughput rates since startup or the last reset of statistics.
 
 The data is formatted as a JSON object and you might want to use the `curl` command to do the request (e.g. `curl -sS localhost:2081/stats/summary`).
 
@@ -323,10 +327,23 @@ The number of seconds that Momentum has been running continuously.
 
 </dl>
 
+### Reset Statistics
+
+You can reset the statistics used to generate this report by issuing a `DELETE` request to the same URL: `DELETE /stats/summary`. This will reset all the cumulative counters to zero and the time-based metrics will be calculated from that point forward. The output of a successful reset operation is as follows:
+
+```json
+{
+  "message": "statistics cleared"
+}
+```
+
 ## See Also
 
+[summary](/momentum/4/console-commands/summary),
 [summary reset](/momentum/4/console-commands/summary-reset)
 
 ## Note
 
-This command was first implemented in Momentum 4.4.1.
+`GET /stats/summary` was first implemented in Momentum 4.4.1.
+
+`DELETE /stats/summary` was first implemented in Momentum 5.2.
