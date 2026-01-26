@@ -61,8 +61,8 @@ throttling is applied to the logging of repeated debug messages.
 debug_throttle_max_num_same_message = 5
 ```
 
-With this configuration, only five lines of the same debug message will be logged during the time interval specified by
-`debug_throttle_period_secs`.
+With this configuration, if the same debug message occurs 20 times within the time interval specified by `debug_throttle_period_secs`,
+only the first 5 instances will be logged. The remaining 15 messages are suppressed.
 
 <a name="conf.ref.debug_throttle_period_secs"></a> 
 ## Time interval of throttling
@@ -74,8 +74,8 @@ With this configuration, only five lines of the same debug message will be logge
 <a name="conf.ref.debug_throttle_period_secs.description"></a>
 ### Description
 
-Sets the time interval in seconds during which repeated debug messages are counted for throttling purposes. The default is
-`1` second, with a maximum of `60` seconds.
+Sets the time interval in seconds during which repeated debug messages are counted for throttling purposes.
+The counters are reset when starting a new interval. The default is `1` second, with a maximum of `60` seconds.
 
 <a name="conf.ref.debug_throttle_period_secs.example"></a>
 ### Example
@@ -83,8 +83,8 @@ Sets the time interval in seconds during which repeated debug messages are count
 debug_throttle_period_secs = 30
 ```
 With this configuration, the time interval for counting repeated debug messages is set to 30 seconds. Combined with the
-previous example for `debug_throttle_max_num_same_message`, only five lines of the same debug message will be logged every
-30 seconds.
+previous example for `debug_throttle_max_num_same_message`, up to 5 lines of the same debug message will be logged every
+30 seconds. After that, the counter resets and other 5 instances can be logged during the next 30-second window.
 
 <a name="conf.ref.debug_throttle.scope"></a> 
 # Scope
