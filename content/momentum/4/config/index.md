@@ -66,6 +66,8 @@ description: "This chapter provides the definitions of the configuration options
 | [dns_expire_interval](/momentum/4/config/ref-dns-expire-interval) | how often to check for domains with expired DNS information |
 | [dns_failures_to_purge](/momentum/4/config/ref-dns-failures-to-purge) | configure the maximum number of DNS lookups |
 | [dns_fallback_to_tcp](/momentum/4/config/ref-dns-fallback-to-tcp) | whether or not to fail over to TCP in place of UDP |
+| [dns_udp_rcvbuf_size](/momentum/4/config/ref-dns-udp-buffer-size) | set the size of the UDP socket receiving buffer used by DNS lookups |
+| [dns_udp_sndbuf_size](/momentum/4/config/ref-dns-udp-buffer-size) | set the size of the UDP socket sending buffer used by DNS lookups |
 | [domain_for_unqualified_recipient_addresses](/momentum/4/config/ref-domain-for-unqualified-recipient-addresses) | configure a domain which will be used to resolve delivery for unqualified addresses |
 | [domain_for_unqualified_sender_address](/momentum/4/config/ref-domain-for-unqualified-sender-address) | configure a domain which will be used to substitute for unqualified sender addresses |
 | [domain](/momentum/4/config/ref-domain) | configure domain specific options |
