@@ -87,6 +87,7 @@ description: "This section details all Lua functions Functions are ordered alpha
 | [msg.conn_id](/momentum/4/lua/ref-msg-conn-id) | Return the human-readable ec_message.conn_id |
 | [msg.id](/momentum/4/lua/ref-msg-id) | Return the human-readable ec_message.id |
 | [msg:address_header](/momentum/4/lua/ref-msg-address-header) | Returns address components as an array |
+| [msg:attempted_ip](/momentum/4/lua/ref-msg-attempted-ip) | Gets the attempted IP address for a failed outbound connection |
 | [msg:binding](/momentum/4/lua/ref-msg-binding) | Set or get the message binding |
 | [msg:binding_group](/momentum/4/lua/ref-msg-binding-group) | Sets the binding_group to the named binding, if one is provided. |
 | [msg:body](/momentum/4/lua/ref-msg-body) | Set the message body (minus headers) if provided |
