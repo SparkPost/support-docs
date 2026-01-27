@@ -126,7 +126,7 @@ struct _ec_message {
   string _routing_domain;
 
   /** @since 5.2 */
-  /* TASK-115992: make sure an attempted IP can be logged in case of temp/perm failures */
+  /* Make sure an attempted IP can be logged in case of temp/perm failures */
   address attempted_ip;
 };
 ```
