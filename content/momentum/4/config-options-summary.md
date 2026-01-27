@@ -130,6 +130,7 @@ The `Version` column indicated the version(s) of Momentum that support the optio
 | [dns_expire_interval](/momentum/4/config/ref-dns-expire-interval) – How often to check for domains with expired DNS information | sending | 10 | 4.0 and later | global |
 | [dns_failures_to_purge](/momentum/4/config/ref-dns-failures-to-purge) – Configure the maximum number of DNS lookups | sending | 10 | 4.0 and later | domain, global |
 | [dns_fallback_to_tcp](/momentum/4/config/ref-dns-fallback-to-tcp) – Whether or not to fail over to TCP in place of UDP | both | false | 4.0 and later | global |
+| [dns_max_udp_queries_per_port](/momentum/4/config/ref-dns-max-udp-queries-per-port) - Limit the number of DNS queries sent using the same UDP source port | sending | 0 | 5.2 and later | global |
 | [domain](/momentum/4/config/ref-domain) *(scope)* – Configure domain-specific options | sending |   | 4.0 and later | binding, binding_group, global |
 | [domain_for_unqualified_recipient_addresses](/momentum/4/config/ref-domain-for-unqualified-recipient-addresses) – Configure a domain which will be used to resolve delivery for unqualified addresses | receiving |   | 4.0 and later | esmtp_listener, global, listen, pathway, pathway_group, peer |
 | [domain_for_unqualified_sender_address](/momentum/4/config/ref-domain-for-unqualified-sender-address) – Configure a domain which will be used to substitute for unqualified sender addresses | receiving |   | 4.0 and later | esmtp_listener, global, listen, pathway, pathway_group, peer |
