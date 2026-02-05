@@ -17,6 +17,7 @@ description: "stats summary show global metrics Perhaps the most common API comm
 
 ## Description
 
+<a name="http_api_stats.summary.get"></a>
 ### Gather Global Metrics
 
 Perhaps the most common API command, `GET /stats/summary` will produce global metrics such as queue sizes, message counts and throughput rates since startup or the last reset of statistics.
@@ -327,6 +328,7 @@ The number of seconds that Momentum has been running continuously.
 
 </dl>
 
+<a name="http_api_stats.summary.delete"></a>
 ### Reset Statistics
 
 You can reset the statistics used to generate this report by issuing a `DELETE` request to the same URL: `DELETE /stats/summary`. This will reset all the cumulative counters to zero and the time-based metrics will be calculated from that point forward. The output of a successful reset operation is as follows:
