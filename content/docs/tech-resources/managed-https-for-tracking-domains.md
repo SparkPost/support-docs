@@ -12,7 +12,7 @@ This is the recommended method for most senders. It requires no certificate mana
 
 **Managed HTTPS is enabled by default for all new tracking domains** created after December, 2025. Existing tracking domains can opt in by updating their CNAME record and enabling managed HTTPS in the SparkPost UI.
 
-> Alternative: To configure HTTPS using a CDN or reverse proxy with your own certificates, see [this article](./enabling-https-engagement-tracking-on-sparkpost) or [this guide](./using-proxy-https-tracking-domain).
+> **Alternative**: To configure HTTPS using a CDN or reverse proxy with your own certificates, see [this article](./enabling-https-engagement-tracking-on-sparkpost) or [this guide](./using-proxy-https-tracking-domain).
 
 ## How It Works
 
@@ -28,37 +28,20 @@ Certificate issuance typically completes within 15 minutes. SparkPost handles al
 
 ## When to Use Managed HTTPS
 
-Managed HTTPS is suitable for most use cases. Consider a CDN or reverse proxy instead if you:
+Managed HTTPS is the recommended option for most senders because:
+
+- No certificate management required: SparkPost handles issuance and renewal automatically
+- Minimal setup: Only the standard CNAME delegation is required. No infrastructure to maintain
+- Trusted certificates: Certificates issued by Let's Encrypt, trusted by all major browsers and email clients
+
+Consider using a CDN or reverse proxy for HTTPS instead if you:
 
 - Need to use a specific Certificate Authority
-- Require Extended Validation (EV) certificates
+- Require Extended Validation (EV) certificate
 - Have compliance requirements for certificate handling
 - Already have certificate management infrastructure in place
 
-## Tracking Endpoints
-
-SparkPost provides two types of tracking endpoints:
-
-| Endpoint Type | US Endpoint | EU Endpoint | Managed HTTPS Support |
-|---------------|-------------|-------------|----------------------|
-| Standard | `spgo.io` | `eu.spgo.io` | No |
-| V2 (Recommended) | `v2.spgo.io` | `eu.v2.spgo.io` | Yes |
-
-**To use managed HTTPS, your tracking domain must use a V2 endpoint.** New tracking domains created after December, 2025, automatically use V2 endpoints. Existing domains using standard endpoints need to update their CNAME record to the V2 endpoint before enabling managed HTTPS.
-
-## Prerequisites
-
-Before enabling managed HTTPS, ensure:
-
-1. Your tracking domain is verified in SparkPost
-2. A CNAME record points to a V2 tracking endpoint:
-   - US: `v2.spgo.io`
-   - EU: `eu.v2.spgo.io`
-   - Enterprise: your account-specific V2 endpoint (contact your TAM)
-3. DNS propagation has completed (typically 5-60 minutes)
-4. If using CAA records, Let's Encrypt is permitted (see [CAA Configuration](#caa-configuration))
-
-> **Important:** Managed HTTPS requires V2 endpoints. If your tracking domain currently uses a standard endpoint (`spgo.io` or `eu.spgo.io`), update your CNAME record to the V2 endpoint before proceeding.
+**Important:** Some domains cannot use managed HTTPS due to Let's Encrypt internal policies. If your domain is ineligible, you will see an error during setup and must use a CDN or reverse proxy instead.
 
 ## Enabling Managed HTTPS
 
@@ -66,40 +49,36 @@ Before enabling managed HTTPS, ensure:
 
 1. Create a tracking domain
 
-   Navigate to [Domains > Create](https://app.sparkpost.com/domains/create) ([EU](https://app.eu.sparkpost.com/domains/create)) and select Tracking Domain. Enter your subdomain (e.g., `track.yourdomain.com`).
-   In the **HTTPS Configuration** field, make sure the default option _SparkPost manages HTTPS_ is enabled.
+   * Navigate to [Domains > Create](https://app.sparkpost.com/domains/create) ([EU](https://app.eu.sparkpost.com/domains/create)) and select Tracking Domain. Enter your subdomain (e.g., `track.yourdomain.com`).
+   In the _HTTPS Configuration_ field, make sure the default option _SparkPost manages HTTPS_ is enabled.
 
    ![](media/managed-https-for-tracking-domains/domain_creation_https_configuration.png)
 
-   Click on _Save and Continue_.
+   * Click on _Save and Continue_.
 
-   Note: Tracking domains must be subdomains, not root domains. New tracking domains are automatically configured to use V2 endpoints and have managed HTTPS enabled by default.
+   > **Note**: Tracking domains must be subdomains, not root domains. New tracking domains are automatically configured to use V2 endpoints and have managed HTTPS enabled by default.
 
-2. Verify the domain
+   * Follow the instructions in the page to add a CNAME record in your DNS provider pointing to the engagement tracking service. Click on _Verify Domain_ after the DNS changes to proceed.
 
-   Follow the instructions in the page to add a CNAME record in your DNS provider pointing to the engagement tracking service. Click on _Verify Domain_ after the DNS changes to proceed.
+2. Check the certificate status
 
-3. Check the certificate status
+   * Once the domain is verified successfully, go to the domain details page and check the HTTPS section, where the certificate status will be displayed along with the next renewal date.
 
-   Once the domain is verified successfully, go to the domain details page and check the HTTPS section, where the certificate status will be displayed along with the next renewal date.
-
-   ![](media/managed-https-for-tracking-domains/domain_creation_https_configuration.png)
+   ![](media/managed-https-for-tracking-domains/domain_creation_certificate_valid.png)
 
 ### Enabling on Existing Insecure Domain
 
-If you currently use insecure tracking with a direct CNAME to SparkPost:
-
-1. Navigate to the details page of your insecure domain. In the **HTTPS** section, you will see _HTTPS Disabled_ as the current status.
+1. Navigate to the details page of your insecure domain. In the _HTTPS_ section, you will see _HTTPS Disabled_ as the current status.
 
    ![](media/managed-https-for-tracking-domains/insecure_domain_enable.png)
 
-   Under **Choose how to enable HTTPS**, make sure the default option _SparkPost manages TLS certificate_ is selected. Click on _Enable HTTPS_ to proceed.
+   Under _Choose how to enable HTTPS_, make sure the default option _SparkPost manages TLS certificate_ is selected. Click on _Enable HTTPS_ to proceed.
 
 2. Follow the wizard instructions to verify if the domain supports managed HTTPS.
 
    ![](media/managed-https-for-tracking-domains/insecure_domain_enable_modal_1.png)
 
-> If this step fails, managed HTTPS is unavailable for your domain due to Let's Encrypt policies. See [this article](./enabling-https-engagement-tracking-on-sparkpost) or [this guide](./using-proxy-https-tracking-domain) to setup HTTPS using a CDN or proxy server.
+   > **Note**: If this step fails, managed HTTPS is unavailable for your domain due to Let's Encrypt policies. See [this article](./enabling-https-engagement-tracking-on-sparkpost) or [this guide](./using-proxy-https-tracking-domain) to setup HTTPS using a CDN or proxy server.
 
 3. Make the necessary DNS changes to verify the domain and click on _Confirm_.
 
