@@ -55,15 +55,15 @@ Certificate issuance typically completes within 15 minutes. SparkPost handles al
 
 SparkPost provides different types of tracking endpoints:
 
-| Service | Endpoint | Supports Managed HTTPS | Supports HTTPS through CDN/Proxy
+| Service | Endpoint | Supports Managed HTTPS | Supports HTTPS through CDN/Proxy |
 |------|----------|------------------------|----------------|
-| SparkPost US | `spgo.io` | No | Yes
-| SparkPost EU | `eu.spgo.io` | No | Yes
-| SparkPost Enterprise | `<tenant>.et.e.sparkpost.com` | No | Yes
-| SparkPost US V2 | `v2.spgo.io` | Yes | Yes
-| SparkPost EU V2 | `eu.v2.spgo.io` | Yes | Yes
+| SparkPost US | `spgo.io` | No | Yes |
+| SparkPost EU | `eu.spgo.io` | No | Yes |
+| SparkPost Enterprise | `<tenant>.et.e.sparkpost.com` | No | Yes |
+| SparkPost US V2 | `v2.spgo.io` | Yes | Yes |
+| SparkPost EU V2 | `eu.v2.spgo.io` | Yes | Yes |
 
-**To use managed HTTPS, your tracking domain must use a V2 endpoint.** (`v2.spgo.io` for US accounts or `eu.v2.spgo.io` for EU accounts). New tracking domains created after December, 2025, automatically use V2 endpoints.
+**To use managed HTTPS, your tracking domain must use a [V2 endpoint](#tracking-endpoints).** (`v2.spgo.io` for US accounts or `eu.v2.spgo.io` for EU accounts). New tracking domains created after December, 2025, automatically use V2 endpoints.
 
 ## Enabling Managed HTTPS
 
@@ -159,7 +159,7 @@ View certificate status and expiration date in your domain's details page.
 
 ## Certificate Renewal
 
-Let's Encrypt certificates are valid for 90 days and SparkPost will renew automatically days before expiration. Renewal happens in the background without service interruption. No action is required.
+Let's Encrypt certificates are valid for 90 days and SparkPost will renew automatically 15 days before expiration. Renewal happens in the background without service interruption. No action is required.
 
 ## Troubleshooting
 
@@ -177,7 +177,14 @@ If your certificate remains in Pending status for more than 30 minutes:
 
 Common causes:
 
-1. **Domain verification failed** - Re-verify your tracking domain
+1. **Domain verification failed** - Domain ownership could not be verified by Let's Encrypt. Re-verify your tracking domain
+2. **CNAME not found** - Check your DNS configuration
+
+### Certificate status shows _Expired_
+
+Although the certificate was issued successfully in a previous attempt, the last renewal process could not be completed due to possible DNS misconfigurations. Common causes:
+
+1. **Domain verification failed** - Domain ownership could not be verified by Let's Encrypt. Re-verify your tracking domain
 2. **CNAME not found** - Check your DNS configuration
 
 ### Certificate status shows Unavailable
@@ -200,7 +207,7 @@ If issuance fails repeatedly, verify that your CNAME record points to a [V2 endp
 dig CNAME track.yourdomain.com
 ```
 
-The response should show `v2.spgo.io` or `eu.v2.spgo.io`. If it shows `spgo.io` or `eu.spgo.io`, update your CNAME record to use the V2 endpoint.
+The response should show `v2.spgo.io` or `eu.v2.spgo.io`. If it shows `spgo.io` or `eu.spgo.io`, update your CNAME record to use the [V2 endpoint](#tracking-endpoints).
 
 ## Multiple Tracking Domains
 
