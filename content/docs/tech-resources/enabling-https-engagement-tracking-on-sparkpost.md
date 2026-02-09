@@ -1,5 +1,5 @@
 ---
-lastUpdated: "01/09/2025"
+lastUpdated: "02/10/2026"
 title: "Enabling HTTPS Engagement Tracking on SparkPost"
 description: "SparkPost supports HTTPS engagement tracking for customers via self-service for all SparkPost customers. To enable SSL engagement tracking for a domain, additional configuration for SSL keys is required."
 ---
@@ -7,6 +7,12 @@ description: "SparkPost supports HTTPS engagement tracking for customers via sel
 ## Overview
 
 SparkPost supports HTTPS engagement tracking for all self-service customers. This article describes how to use a Content Delivery Network (CDN) to enable SSL engagement tracking for your domain. After completing the steps below, your email recipients will see HTTPS links in the email you send. When they visit a tracked link, your CDN will handle the SSL connection, then pass the HTTP request on to SparkPost. SparkPost will record the click event and redirect the recipient to the original URL.
+
+> **Recommended alternative: Managed HTTPS**
+>
+> SparkPost can automatically issue and manage TLS certificates for your tracking domains using Let's Encrypt.
+>
+> See [Managed HTTPS for Tracking Domains](/docs/tech-resources/managed-https-for-tracking-domains)
 
 > Alternative: to configure HTTPS engagement tracking using your own proxy, see [this article](https://www.sparkpost.com/docs/tech-resources/using-proxy-https-tracking-domain/).
 
@@ -366,7 +372,7 @@ Sign up for [Fastly](https://www.fastly.com/) or log in to an existing account.
     ![](media/enabling-https-engagement-tracking-on-sparkpost/fastly-2023-add-domain.png)
 
 1. Select **Origins** in the left-side menu. In the **Hosts** section, add the correct tracking endpoint for your service (also known as hostname), see possible values [here](#sparkpost-tracking-endpoints).
-     
+
     ![](media/enabling-https-engagement-tracking-on-sparkpost/fastly-2023-add-host.png)
 
     Fastly detects that SparkPost supports TLS, and shows the host entry like below. Optionally you can use the "pencil" edit icon to set a meaningful name.
@@ -479,10 +485,10 @@ GCP organizes resources under named projects.
 
         ![](media/enabling-https-engagement-tracking-on-sparkpost/gcp-2023-lb-frontend.png)
 
-    * Select the **Certificate** field and click on **Create new certificate**. Choose a name to identify your certificate. If you have an existing certificate for your tracking domain, you can upload it via this dialog. 
-    
+    * Select the **Certificate** field and click on **Create new certificate**. Choose a name to identify your certificate. If you have an existing certificate for your tracking domain, you can upload it via this dialog.
+
         ![](media/enabling-https-engagement-tracking-on-sparkpost/gcp-2023-lb-frontend-cert.png)
-    
+
         Otherwise choose the **Create Google-managed certificate** option. This has the advantage that GCP will handle your renewals. Under *Domains*, enter your tracking domain and select **Create**.
 
         ![](media/enabling-https-engagement-tracking-on-sparkpost/gcp-2023-lb-create-cert.png)
@@ -493,9 +499,9 @@ GCP organizes resources under named projects.
 
 
     * Choose **Backend services & backend buckets** / **Create a backend service**.
-    
+
         ![](media/enabling-https-engagement-tracking-on-sparkpost/gcp-2023-lb-backend.png)
-    
+
         Give the backend service a name, e.g. "sparkpost-engagement-tracking".
 
         For *Backend type*, choose **Internet network endpoint group**.
@@ -523,7 +529,7 @@ GCP organizes resources under named projects.
         ![](media/enabling-https-engagement-tracking-on-sparkpost/gcp-2023-network-endpoint-group-exists.png)
 
     * Close this tab, and **return to your previous tab**.
-    
+
         Unfortunately this does not auto-refresh; however, start typing the name of the Network Endpoint Group you just created, and it will appear. Click on **Done**.
 
         ![](media/enabling-https-engagement-tracking-on-sparkpost/gcp-2023-choose-backend-group.png)
