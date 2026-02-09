@@ -1,12 +1,12 @@
 ---
-lastUpdated: "02/05/2026"
+lastUpdated: "02/10/2026"
 title: "Managed HTTPS for Tracking Domains"
 description: "SparkPost can automatically issue and manage TLS certificates for your tracking domains using Let's Encrypt. This is the recommended method for enabling HTTPS engagement tracking."
 ---
 
 ## Overview
 
-SparkPost supports HTTPS engagement tracking through managed TLS certificates. With this option, SparkPost automatically issues and renews certificates for your tracking domains using [Let's Encrypt](https://letsencrypt.org/), a free certificate authority trusted by all major browsers.
+SparkPost supports HTTPS engagement tracking through managed TLS certificates. With this option, SparkPost automatically issues and renews certificates for your tracking domains using [Let's Encrypt](https://letsencrypt.org/about/), a free certificate authority trusted by all major browsers.
 
 This is the recommended method for most senders. It requires no certificate management and works with standard CNAME delegation to SparkPost's tracking endpoints.
 
@@ -14,17 +14,13 @@ This is the recommended method for most senders. It requires no certificate mana
 
 > **Alternative**: To configure HTTPS using a CDN or reverse proxy with your own certificates, see [this article](./enabling-https-engagement-tracking-on-sparkpost) or [this guide](./using-proxy-https-tracking-domain).
 
-## How It Works
+## Why HTTPS matters for Engagement Tracking
 
-When managed HTTPS is enabled for a tracking domain:
+HTTPS has become essential for the web as cybersecurity standards evolve. Major browsers now [display warnings for insecure connections](https://security.googleblog.com/2025/10/https-by-default.html), which can negatively impact click-through rates and reduce recipient trust in your links. These security warnings may cause recipients to abandon your link destinations, affecting campaigns and your ability to measure engagement accurately.
 
-1. SparkPost validates your domain ownership through the existing CNAME record
-2. SparkPost requests a certificate from Let's Encrypt
-3. Let's Encrypt performs HTTP-01 validation to confirm SparkPost controls your tracking domain
-4. SparkPost installs the certificate and begins serving HTTPS traffic
-5. The certificate automatically renews before expiration
+The industry is also moving toward [shorter certificate lifetimes](https://letsencrypt.org/2025/12/02/from-90-to-45). The maximum validity of TLS certificates will shrink to 47 days by 2029, making manual certificate management increasingly difficult and error-prone. Automation will no longer be optional.
 
-Certificate issuance typically completes within 15 minutes. SparkPost handles all certificate management, including renewals.
+**Managed HTTPS for Tracking Domains** addresses these challenges through automated certificate issuance and renewal, helping you maintain email deliverability, security, and user experience without requiring complex infrastructure or ongoing certificate management work.
 
 ## When to Use Managed HTTPS
 
@@ -34,18 +30,44 @@ Managed HTTPS is the recommended option for most senders because:
 - Minimal setup: Only the standard CNAME delegation is required. No infrastructure to maintain
 - Trusted certificates: Certificates issued by Let's Encrypt, trusted by all major browsers and email clients
 
-Consider using a CDN or reverse proxy for HTTPS instead if you:
+If you currently use a CDN or reverse proxy to serve TLS certificates for your tracking domain, migrating to SparkPost-managed HTTPS can help reduce infrastructure and maintenance costs while still providing the same level of security for your engagement tracking links.
 
-- Need to use a specific Certificate Authority
-- Require Extended Validation (EV) certificate
-- Have compliance requirements for certificate handling
-- Already have certificate management infrastructure in place
+Consider using a CDN or reverse proxy for HTTPS instead if:
 
-**Important:** Some domains cannot use managed HTTPS due to Let's Encrypt internal policies. If your domain is ineligible, you will see an error during setup and must use a CDN or reverse proxy instead.
+- You need to use a specific Certificate Authority other than Let's Encrypt
+- You require an Extended Validation (EV) certificate
+- Your business has stricter compliance requirements for certificate handling
+- Your domain does not support managed HTTPS due to Let's Encrypt internal policies ([read more](#certificate-status-shows-unavailable))
+
+## How It Works
+
+When managed HTTPS is enabled for a tracking domain:
+
+1. SparkPost validates your domain ownership through the existing CNAME record
+2. SparkPost requests a certificate from Let's Encrypt
+3. Let's Encrypt performs [HTTP-01](https://letsencrypt.org/docs/challenge-types/#http-01-challenge) validation to confirm SparkPost controls your tracking domain
+4. SparkPost installs the certificate and begins serving HTTPS traffic
+5. The certificate automatically renews before expiration
+
+Certificate issuance typically completes within 15 minutes. SparkPost handles all certificate management, including renewals.
+
+## Tracking Endpoints
+
+SparkPost provides different types of tracking endpoints:
+
+| Service | Endpoint | Supports Managed HTTPS | Supports HTTPS through CDN/Proxy
+|------|----------|------------------------|----------------|
+| SparkPost US | `spgo.io` | No | Yes
+| SparkPost EU | `eu.spgo.io` | No | Yes
+| SparkPost Enterprise | `<tenant>.et.e.sparkpost.com` | No | Yes
+| SparkPost US V2 | `v2.spgo.io` | Yes | Yes
+| SparkPost EU V2 | `eu.v2.spgo.io` | Yes | Yes
+
+**To use managed HTTPS, your tracking domain must use a V2 endpoint.** (`v2.spgo.io` for US accounts or `eu.v2.spgo.io` for EU accounts). New tracking domains created after December, 2025, automatically use V2 endpoints.
 
 ## Enabling Managed HTTPS
 
-### For New Tracking Domains
+### Enabling for New Domains
 
 1. Create a tracking domain
 
@@ -56,7 +78,7 @@ Consider using a CDN or reverse proxy for HTTPS instead if you:
 
    * Click on _Save and Continue_.
 
-   > **Note**: Tracking domains must be subdomains, not root domains. New tracking domains are automatically configured to use V2 endpoints and have managed HTTPS enabled by default.
+   > **Note**: Tracking domains must be subdomains, not root domains. New tracking domains are automatically configured to use [V2 endpoints](#tracking-endpoints) and have managed HTTPS enabled by default.
 
    * Follow the instructions in the page to add a CNAME record in your DNS provider pointing to the engagement tracking service. Click on _Verify Domain_ after the DNS changes to proceed.
 
@@ -66,7 +88,11 @@ Consider using a CDN or reverse proxy for HTTPS instead if you:
 
    ![](media/managed-https-for-tracking-domains/domain_creation_certificate_valid.png)
 
-### Enabling on Existing Insecure Domain
+### Enabling for Existing Insecure Domains
+
+If a tracking domain was not yet configured to use HTTPS, it's possible to do so with managed HTTPS:
+
+> **Note**: Links in previously-sent emails continue to work, as SparkPost serves HTTP and HTTPS traffic on both endpoint types.
 
 1. Navigate to the details page of your insecure domain. In the _HTTPS_ section, you will see _HTTPS Disabled_ as the current status.
 
@@ -84,33 +110,37 @@ Consider using a CDN or reverse proxy for HTTPS instead if you:
 
    ![](media/managed-https-for-tracking-domains/insecure_domain_enable_modal_2.png)
 
-   Once the domain is verified successfully, certificate provisioning will be handled in the background. Links in previously-sent emails continue to work, as SparkPost serves both HTTP and HTTPS traffic on both endpoint types.
+   Once the domain is verified successfully, certificate provisioning will be handled in the background.
 
 ### Migrating from CDN or Reverse Proxy
 
-If your domain has been set up previously to use a CDN
+If you have previously set up a [CDN](./enabling-https-engagement-tracking-on-sparkpost) or [reverse proxy](./using-proxy-https-tracking-domain) to enable HTTPS for your domain, it's possible to migrate to SparkPost-managed certificates.
 
-Migration requires DNS changes that may affect links in previously-sent emails.
+> **Note**: Existing links currently served through your CDN/proxy will continue to work after the migration.
 
-**Option 1: Keep your existing setup**
+1. Navigate to the details page of your domain. In the _HTTPS_ section, you will see _HTTPS Enabled via self-managed infrastructure_ as the current status.
 
-If your CDN or proxy is working correctly, you can continue using it. Managed HTTPS is optional.
+   ![](media/managed-https-for-tracking-domains/switch_button.png)
 
-**Option 2: Migrate to managed HTTPS**
+   Click on the _Switch to Managed HTTPS_ button.
 
-For testing, set up a new tracking domain (e.g., `track2.example.com`) with managed HTTPS before migrating your production domain.
+2. Follow the wizard instructions to verify if the domain supports managed HTTPS.
 
-To migrate:
+   ![](media/managed-https-for-tracking-domains/switch_modal_1.png)
 
-1. Update your CNAME to point to a V2 endpoint (`v2.spgo.io` or `eu.v2.spgo.io`)
-2. Wait for DNS propagation
-3. Enable managed HTTPS in SparkPost
-4. Remove or deactivate your CDN/proxy configuration
+   > **Note**: If this step fails, managed HTTPS is unavailable for your domain due to Let's Encrypt internal policies. See [this article](./enabling-https-engagement-tracking-on-sparkpost) or [this guide](./using-proxy-https-tracking-domain) to setup HTTPS using a CDN or proxy server.
 
-Consider the timing:
-- Links in emails sent through your CDN/proxy will continue to work only if that infrastructure remains active
-- Plan the migration during low email volume to minimize impact
-- Engagement tracking links typically have a short lifespan, so impact is usually limited
+3. Make the required DNS changes and click on _Confirm_. Notice that switching from the standard endpoint to a [V2 endpoint](#tracking-endpoints) is required for tracking links to use the new certificate.
+
+   ![](media/managed-https-for-tracking-domains/switch_modal_2.png)
+
+   Certificate provisioning will be handled in the background. Links in previously-sent emails continue to work with the new certificate.
+
+   ![](media/managed-https-for-tracking-domains/switch_modal_3.png)
+
+   > **Important**: It may take up to 48 hours for the DNS changes to fully propagate and new connections to be served using the new certificate.
+
+
 
 ## TLS Certificate Status
 
@@ -118,16 +148,14 @@ Tracking domains can have the following HTTPS statuses:
 
 | Status | Description |
 |--------|-------------|
-| Inactive | Managed HTTPS is not enabled |
-| Pending | Certificate issuance in progress (typically 5-10 minutes) |
+| Inactive | Domain is not verified |
+| Pending | Certificate issuance in progress |
 | Valid | Certificate is active |
-| Expired | Certificate expired (renewal failed) |
+| Expired | Renewal failed |
 | Failed | Certificate issuance failed |
-| Unavailable | Domain is not eligible for managed certificates |
+| Unavailable | Domain does not support managed HTTPS |
 
 View certificate status and expiration date in your domain's details page.
-
-[TODO: Add screenshot of certificate status display]
 
 ## Certificate Renewal
 
@@ -135,40 +163,38 @@ Let's Encrypt certificates are valid for 90 days and SparkPost will renew automa
 
 ## Troubleshooting
 
-### Certificate stuck in Pending status
+### Certificate stuck in _Pending_ status
 
 If your certificate remains in Pending status for more than 30 minutes:
 
-- Verify the CNAME record points to the correct SparkPost endpoint
-- Confirm the tracking domain is verified
-- Check for CAA records blocking Let's Encrypt
-- Ensure DNS has fully propagated globally
-- Contact support if the issue persists
+1. Verify the CNAME record points to the correct SparkPost [V2 endpoint](#tracking-endpoints)
+2. Confirm the tracking domain is verified
+3. Check for CAA records blocking Let's Encrypt
+4. Ensure DNS has fully propagated
+5. Contact support if the issue persists
 
-### Certificate status shows Failed
+### Certificate status shows _Failed_
 
 Common causes:
 
 1. **Domain verification failed** - Re-verify your tracking domain
 2. **CNAME not found** - Check your DNS configuration
-3. **CAA records blocking Let's Encrypt** - Update CAA records (see below)
-4. **Domain not eligible** - Some domains cannot use Let's Encrypt due to policy restrictions
 
 ### Certificate status shows Unavailable
 
-Some domains cannot use managed HTTPS due to Let's Encrypt policies. Use [CDN](./enabling-https-engagement-tracking-on-sparkpost) or [reverse proxy](./using-proxy-https-tracking-domain) instead.
+Some domains cannot use managed HTTPS due to Let's Encrypt policies. Use a [CDN](./enabling-https-engagement-tracking-on-sparkpost) or [reverse proxy](./using-proxy-https-tracking-domain) instead.
 
 ### Links still use HTTP
 
-If tracking links use HTTP instead of HTTPS:
+If new tracking links use HTTP instead of HTTPS:
 
-1. Verify certificate status is "Valid"
+1. Verify certificate status is _Valid_
 2. Confirm the tracking domain is associated with your sending domain
-3. Send a new test email (not a resend)
+3. Send a new test email with click tracking enabled
 
 ### Cannot enable managed HTTPS
 
-If you cannot enable managed HTTPS for your tracking domain, verify that your CNAME record points to a V2 endpoint:
+If issuance fails repeatedly, verify that your CNAME record points to a [V2 endpoint](#tracking-endpoints):
 
 ```bash
 dig CNAME track.yourdomain.com
@@ -176,83 +202,19 @@ dig CNAME track.yourdomain.com
 
 The response should show `v2.spgo.io` or `eu.v2.spgo.io`. If it shows `spgo.io` or `eu.spgo.io`, update your CNAME record to use the V2 endpoint.
 
-## CAA Configuration
-
-Certificate Authority Authorization (CAA) records control which CAs can issue certificates for your domain. If your domain uses CAA records, you must permit Let's Encrypt.
-
-Add this CAA record at your organizational domain:
-
-```
-example.com.    CAA    0 issue "letsencrypt.org"
-```
-
-Or for wildcard subdomains:
-
-```
-example.com.    CAA    0 issuewild "letsencrypt.org"
-```
-
-Check for existing CAA records:
-
-```bash
-dig CAA example.com
-```
-
-## CNAME Delegation and Validation
-
-When you create a CNAME record pointing to a SparkPost V2 endpoint:
-
-- All HTTP and HTTPS traffic for your tracking domain routes to SparkPost
-- Let's Encrypt validation requests are handled automatically
-- CAA record checks follow the CNAME chain to your organizational domain
-- No DNS credentials are required from you
-
-Standard endpoints (`spgo.io` and `eu.spgo.io`) do not support managed certificates and cannot handle Let's Encrypt validation.
-
 ## Multiple Tracking Domains
 
 You can enable managed HTTPS for multiple tracking domains. Each domain receives its own certificate. Certificates renew independently.
 
 See [Custom Tracking Domains](./enabling-multiple-custom-tracking-domains) for information on setting up multiple domains.
 
-## API Usage
-
-Enable managed HTTPS via the [Tracking Domains API](https://developers.sparkpost.com/api/tracking-domains/):
-
-```bash
-PUT /api/v1/tracking-domains/track.example.com
-
-{
-  "secure": true
-}
-```
-
-Check certificate status:
-
-```bash
-GET /api/v1/tracking-domains/track.example.com
-```
-
-The response includes certificate status and expiration date.
-
 ## Security
 
-SparkPost generates certificate private keys securely within its infrastructure. Private keys are encrypted at rest using AES-256-GCM and never leave SparkPost systems.
+SparkPost generates certificate private keys securely within its infrastructure. Private keys are encrypted and never leave SparkPost systems.
 
-Certificates are issued via Let's Encrypt's ACME protocol. The process uses public validation methods and does not require access to your DNS credentials.
+Certificates are issued via Let's Encrypt's ACME protocol using the [HTTP-01](https://letsencrypt.org/docs/challenge-types/#http-01-challenge) challenge. The process uses public validation methods and does not require access to your DNS credentials.
 
-All TLS certificates are logged in public Certificate Transparency logs, an industry-standard security practice that does not expose sensitive information about your emails.
-
-## Comparison with Self-Managed Options
-
-| Feature | Managed HTTPS | CDN | Reverse Proxy |
-|---------|---------------|-----|---------------|
-| Setup | Simple | Moderate | Complex |
-| Certificate management | Automatic | Varies | Manual |
-| Renewal | Automatic | Varies | Manual |
-| Maintenance | None | Some | Ongoing |
-| Certificate Authority | Let's Encrypt | Configurable | Configurable |
-| Custom CA | No | Yes | Yes |
+All TLS certificate issuances managed by SparkPost through Let's Encrypt are logged in public [Certificate Transparency logs](https://certificate.transparency.dev/).
 
 ## Related Articles
 
