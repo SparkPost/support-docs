@@ -96,9 +96,9 @@ If a tracking domain was not yet configured to use HTTPS, it's possible to do so
 
 1. Navigate to the details page of your insecure domain. In the _HTTPS_ section, you will see _HTTPS Disabled_ as the current status.
 
-   ![](media/managed-https-for-tracking-domains/insecure_domain_enable.png)
+   ![](media/managed-https-for-tracking-domains/enable_https_managed.png)
 
-   Under _Choose how to enable HTTPS_, make sure the default option _SparkPost manages TLS certificate_ is selected. Click on _Enable HTTPS_ to proceed.
+   Under _Choose how to enable HTTPS_, make sure the default option _Certificate managed by SparkPost (Recommended)_ is selected. Click on _Enable HTTPS_ to proceed.
 
 2. Follow the wizard instructions to verify if the domain supports managed HTTPS.
 

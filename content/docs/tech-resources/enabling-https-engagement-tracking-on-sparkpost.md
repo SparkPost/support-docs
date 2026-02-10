@@ -713,19 +713,17 @@ To enable SparkPost to record human-driven repeat opens/clicks, while screening 
 
 ## Switch tracking domain to secure, and validate
 
-If you have previously created a tracking domain (whether verified or unverified), and wish to switch it from insecure (the default) to secure, use the [Update a Tracking Domain API](https://developers.sparkpost.com/api/tracking-domains/#tracking-domains-put-update-a-tracking-domain) `PUT` call, to update the tracking domain with the `"secure": true` string.
+If you have previously created a tracking domain (whether verified or unverified), and wish to switch it from insecure (the default) to secure, follow the steps below:
 
-1. Run the PUT call with the following data:
+1. Navigate to the details page of your domain. In the _HTTPS_ section, you will see _HTTPS Disabled_ as the current status.
 
-    ```
-    {
-        "secure"  : true
-    }
-    ```
+   ![](media/enabling-https-engagement-tracking-on-sparkpost/enable_https_cdn.png)
 
-    Note: If you would like this tracking domain to be the default, please add `"default": true` to the JSON object above, before updating the domain.
+   Under _Choose how to enable HTTPS_, select the option _Certificate managed by CDN or reverse proxy (Advanced)_ and then click on _Enable HTTPS_ to proceed. After a page refresh, the section will now show _HTTPS Enabled via self-managed infrastructure_.
 
-    Detailed information on this operation can be found in our API documentation [here](https://developers.sparkpost.com/api/tracking-domains.html#tracking-domains-retrieve,-update,-and-delete-put).
+   ![](media/enabling-https-engagement-tracking-on-sparkpost/https_enabled_cdn.png)
+
+   Now, the tracking domain is secure.
 
 1. Navigate to the Tracking Domains section in the UI and click the  "test" verification button.
 
