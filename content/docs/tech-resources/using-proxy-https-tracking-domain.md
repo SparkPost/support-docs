@@ -1,16 +1,23 @@
 ---
-lastUpdated: "09/29/2023"
+lastUpdated: "02/10/2026"
 title: "Using a Reverse Proxy for HTTPS Tracking Domain"
-description: "SparkPost supports HTTPS engagement tracking for customers via self-service for all SparkPost customers. To enable SSL engagement tracking for a domain, additional configuration for SSL keys is required.  This resource outlines the use of a reverse proxy to host SSL certificates"
+description: "Guide for enabling HTTPS engagement tracking using a reverse proxy to host TLS certificates"
 ---
 
 ## Overview
 
-SparkPost supports secure tracking domains through the use of content delivery networks (CDNs), reverse proxies, or any method where the customer can host the necessary SSL/TLS certificates.  It is recommended that our customers use SSL as it provides secure transport for engagement data. It's also necessary to support SparkPost engagement tracking with Google’s AMP for Email.
+SparkPost supports HTTPS engagement tracking for all customers through [Managed HTTPS for Tracking Domains](./managed-https-for-tracking-domains), which automatically issues and renews certificates through Let's Encrypt. This is the recommended and simplest way to enable secure engagement tracking with no infrastructure or maintenance required.
 
-> Alternative: to configure HTTPS engagement tracking using a CDN, see [this article](./enabling-https-engagement-tracking-on-sparkpost).
+This article describes an alternative approach using a reverse proxy to enable HTTPS engagement tracking with your own certificates. Consider using a reverse proxy if you:
 
-This post covers how to configure a SparkPost tracking domain, provision an SSL certificate, and be able to use it immediately at SparkPost using a simple reverse proxy.
+- Need to use a specific Certificate Authority other than Let's Encrypt
+- Require Extended Validation (EV) certificates
+- Have compliance requirements for certificate handling
+- Your domain does not support Managed HTTPS due to Let's Encrypt policies
+
+With this approach, your email recipients will see HTTPS links in the emails you send. When they visit a tracked link, your reverse proxy will handle the TLS connection, then pass the HTTP request on to SparkPost. SparkPost will record the click event and redirect the recipient to the original URL.
+
+> **Alternative:** To configure HTTPS engagement tracking using a CDN instead of a reverse proxy, see [this article](./enabling-https-engagement-tracking-on-sparkpost).
 
 ## Prerequisites
 
@@ -42,7 +49,7 @@ If you want to end up with your proxy serving the original domain:
 
 ## Configuring nginx
 
-This section uses [nginx](https://www.nginx.com/).  It is easy to get installed and configured as a reverse proxy and Let’s Encrypt for SSL certificates has support for it.  To install nginx, follow the guidelines for your Linux distribution.
+This section uses [nginx](https://www.nginx.com/). It is easy to get installed and configured as a reverse proxy and Let's Encrypt for TLS certificates has support for it. To install nginx, follow the guidelines for your Linux distribution.
 
 Let's Encrypt recommends the use of [**Certbot**](https://letsencrypt.org/getting-started/) to automatically obtain and renew your certificates.
 
@@ -148,11 +155,11 @@ Note: Unnecessary use of -X or --request, GET is already inferred.
 
 ```
 
-## Get SSL certificate
+## Get TLS certificate
 
-The next step is to get the necessary SSL certificate in place so that you can enable HTTPS on your configured tracking domain.  Let’s Encrypt can be use to provision free SSL certificates.  These steps are very well outlined by nginx in [this article](https://www.nginx.com/blog/using-free-ssltls-certificates-from-lets-encrypt-with-nginx/).
+The next step is to get the necessary TLS certificate in place so that you can enable HTTPS on your configured tracking domain. Let's Encrypt can be used to provision free TLS certificates. These steps are very well outlined by nginx in [this article](https://www.nginx.com/blog/using-free-ssltls-certificates-from-lets-encrypt-with-nginx/).
 
-After completing this, you will have free SSL certificates installed on your nginx server for the desired tracking defined in the `server.conf`.
+After completing this, you will have free TLS certificates installed on your nginx server for the desired tracking defined in the `server.conf`.
 
 After the certificate is created, you will be asked if you wish to redirect **http** to **https**.  It is recommended that you do not redirect, as you may wish to change your tracking domain back to **http** in the future if it becomes necessary.
 
@@ -282,7 +289,7 @@ Add the following configuration (putting your own tracking domain into the `Serv
 
 * [Verify](#verify-tracking-domain-send-test-email) tracking domain, and send test email.
 
-* Get SSL certificate. Letsencrypt certificates can be issued using "certbot", which automates the process - see [here](https://certbot.eff.org/all-instructions) for detailed steps on many platforms.
+* Get TLS certificate. Let's Encrypt certificates can be issued using "certbot", which automates the process - see [here](https://certbot.eff.org/all-instructions) for detailed steps on many platforms.
 
 ## Add HTTPS proxy configuration
 
@@ -354,4 +361,3 @@ Both proxies set the `X-Forwarded-For` header, which enables SparkPost to report
 * Set up engagement tracking with the [SMTP API](https://www.sparkpost.com/docs/tech-resources/smtp-engagement-tracking/) for your SMTP traffic to SparkPost.
 
 * If you have a mobile app, and want to enable it to open when a recipient clicks an email link, see [this article](./deep-links-self-serve).
-
