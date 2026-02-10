@@ -63,7 +63,7 @@ SparkPost provides different types of tracking endpoints:
 | SparkPost US V2 | `v2.spgo.io` | Yes | Yes |
 | SparkPost EU V2 | `eu.v2.spgo.io` | Yes | Yes |
 
-**To use managed HTTPS, your tracking domain must use a [V2 endpoint](#tracking-endpoints).** (`v2.spgo.io` for US accounts or `eu.v2.spgo.io` for EU accounts). New tracking domains created after December, 2025, automatically use V2 endpoints.
+**To use managed HTTPS, your tracking domain must use a V2 endpoint** (`v2.spgo.io` for US accounts or `eu.v2.spgo.io` for EU accounts). New tracking domains created after December, 2025, automatically use V2 endpoints.
 
 ## Enabling Managed HTTPS
 
@@ -96,9 +96,9 @@ If a tracking domain was not yet configured to use HTTPS, it's possible to do so
 
 1. Navigate to the details page of your insecure domain. In the _HTTPS_ section, you will see _HTTPS Disabled_ as the current status.
 
-   ![](media/managed-https-for-tracking-domains/insecure_domain_enable.png)
+   ![](media/managed-https-for-tracking-domains/enable_https_managed.png)
 
-   Under _Choose how to enable HTTPS_, make sure the default option _SparkPost manages TLS certificate_ is selected. Click on _Enable HTTPS_ to proceed.
+   Under _Choose how to enable HTTPS_, make sure the default option _Certificate managed by SparkPost (Recommended)_ is selected. Click on _Enable HTTPS_ to proceed.
 
 2. Follow the wizard instructions to verify if the domain supports managed HTTPS.
 
@@ -162,6 +162,27 @@ View certificate status and expiration date in your domain's details page.
 Let's Encrypt certificates are valid for 90 days and SparkPost will renew automatically 15 days before expiration. Renewal happens in the background without service interruption. No action is required.
 
 ## Troubleshooting
+
+### Testing the managed certificate
+
+You can test that your tracking domain is being secured by a Let's Encrypt certificate with the following command:
+
+```sh
+curl -v https://track.yourdomain.com/f/a/b/c/d
+```
+
+The output will show the TLS negotiation including info on the certificate served by SparkPost for your domain. Example:
+
+```
+*  subject: CN=tracking.myboxdemo.space
+*  start date: Jan 27 19:09:17 2026 GMT
+*  expire date: Apr 27 19:09:16 2026 GMT
+*  subjectAltName: host "tracking.myboxdemo.space" matched cert's "tracking.myboxdemo.space"
+*  issuer: C=US; O=Let's Encrypt; CN=E8
+*  SSL certificate verify ok.
+```
+
+Note: If DNS changes have not fully propagated, this command can instead show the previously used certificate. Try again later.
 
 ### Certificate stuck in _Pending_ status
 
