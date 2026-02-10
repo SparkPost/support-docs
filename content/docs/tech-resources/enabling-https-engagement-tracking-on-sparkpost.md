@@ -1,20 +1,23 @@
 ---
 lastUpdated: "02/10/2026"
-title: "Enabling HTTPS Engagement Tracking on SparkPost"
-description: "SparkPost supports HTTPS engagement tracking for customers via self-service for all SparkPost customers. To enable SSL engagement tracking for a domain, additional configuration for SSL keys is required."
+title: "Enabling HTTPS Engagement Tracking with a CDN"
+description: "Guide for enabling HTTPS engagement tracking using a CDN"
 ---
 
 ## Overview
 
-SparkPost supports HTTPS engagement tracking for all self-service customers. This article describes how to use a Content Delivery Network (CDN) to enable SSL engagement tracking for your domain. After completing the steps below, your email recipients will see HTTPS links in the email you send. When they visit a tracked link, your CDN will handle the SSL connection, then pass the HTTP request on to SparkPost. SparkPost will record the click event and redirect the recipient to the original URL.
+SparkPost supports HTTPS engagement tracking for all customers through [Managed HTTPS for Tracking Domains](./managed-https-for-tracking-domains), which automatically issues and renews certificates through Let's Encrypt. This is the recommended and simplest way to enable secure engagement tracking with no infrastructure or maintenance required.
 
-> **Recommended alternative: Managed HTTPS**
->
-> SparkPost can automatically issue and manage TLS certificates for your tracking domains using Let's Encrypt.
->
-> See [Managed HTTPS for Tracking Domains](/docs/tech-resources/managed-https-for-tracking-domains)
+This article describes an alternative approach using a Content Delivery Network (CDN) to enable HTTPS engagement tracking with your own certificates. Consider using a CDN if you:
 
-> Alternative: to configure HTTPS engagement tracking using your own proxy, see [this article](https://www.sparkpost.com/docs/tech-resources/using-proxy-https-tracking-domain/).
+- Need to use a specific Certificate Authority other than Let's Encrypt
+- Require Extended Validation (EV) certificates
+- Have compliance requirements for certificate handling
+- Your domain does not support managed HTTPS due to Let's Encrypt policies
+
+With this approach, your email recipients will see HTTPS links in the email you send. When they visit a tracked link, your CDN will handle the TLS connection, then pass the HTTP request on to SparkPost. SparkPost will record the click event and redirect the recipient to the original URL.
+
+> **Alternative:** To configure HTTPS engagement tracking using your own reverse proxy instead of a CDN, see [this article](./using-proxy-https-tracking-domain).
 
 ## Migration planning
 
@@ -30,9 +33,9 @@ If you want to end up with your CDN serving the original domain:
 
 ## Configuring SSL Certificates
 
-In order for HTTPS engagement tracking to be enabled on SparkPost, our service needs to present a valid certificate that will be trusted by the email recipient’s browser. SparkPost does not manage certificates for customer engagement tracking domains, as we are not the record owner for our customers’ domains.
+In order for HTTPS engagement tracking to be enabled on SparkPost, our service needs to present a valid certificate that will be trusted by the email recipient's browser.
 
-Use a CDN such as [Cloudflare](http://www.cloudflare.com), [Fastly](http://www.fastly.com) or [AWS Cloudfront](https://aws.amazon.com/cloudfront/) to manage certificates and keys for any custom engagement tracking domains. These services forward requests onward to SparkPost so that HTTPS tracking can be performed.
+For this CDN approach, you will use a service such as [Cloudflare](http://www.cloudflare.com), [Fastly](http://www.fastly.com) or [AWS Cloudfront](https://aws.amazon.com/cloudfront/) to manage certificates and keys for your custom engagement tracking domains. These services forward requests onward to SparkPost so that HTTPS tracking can be performed.
 
 ## Step by Step guides
 
