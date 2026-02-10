@@ -6,7 +6,7 @@ description: "SparkPost can automatically issue and manage TLS certificates for 
 
 ## Overview
 
-SparkPost supports HTTPS engagement tracking through managed TLS certificates. With this option, SparkPost automatically issues and renews certificates for your tracking domains using [Let's Encrypt](https://letsencrypt.org/about/), a free certificate authority trusted by all major browsers.
+SparkPost supports HTTPS engagement tracking through managed TLS certificates. With this option, SparkPost automatically issues and renews certificates for your tracking domains using [Let's Encrypt](https://letsencrypt.org/about/), a free certificate authority trusted by all major browsers. As a result, your email recipients will see HTTPS links in the emails you send.
 
 This is the recommended method for most senders. It requires no certificate management and works with standard CNAME delegation to SparkPost's tracking endpoints.
 
@@ -225,7 +225,7 @@ All TLS certificate issuances managed by SparkPost through Let's Encrypt are log
 
 ## Related Articles
 
-- [Getting Started with Engagement Tracking](../getting-started/engagement-tracking)
+- [Getting Started with Engagement Tracking](../docs/getting-started/engagement-tracking)
 - [Custom Tracking Domains](./enabling-multiple-custom-tracking-domains)
 - [Enabling HTTPS with a CDN](./enabling-https-engagement-tracking-on-sparkpost)
 - [Using a Reverse Proxy for HTTPS](./using-proxy-https-tracking-domain)
