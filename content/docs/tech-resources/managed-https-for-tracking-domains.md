@@ -16,9 +16,9 @@ This is the recommended method for most senders. It requires no certificate mana
 
 ## Why HTTPS matters for Engagement Tracking
 
-HTTPS has become essential for the web as cybersecurity standards evolve. Major browsers now [display warnings for insecure connections](https://security.googleblog.com/2025/10/https-by-default.html), which can negatively impact click-through rates and reduce recipient trust in your links. These security warnings may cause recipients to abandon your link destinations, affecting campaigns and your ability to measure engagement accurately.
+HTTPS has become essential for the web as cybersecurity standards evolve. Major browsers now [display warnings for insecure connections](https://security.googleblog.com/2025/10/https-by-default.html), which reduce recipient trust in HTTP-only links. These security warnings may cause recipients to abandon your link destinations, negatively impacting click-through rates.
 
-The industry is also moving toward [shorter certificate lifetimes](https://letsencrypt.org/2025/12/02/from-90-to-45). The maximum validity of TLS certificates will shrink to 47 days by 2029, making manual certificate management increasingly difficult and error-prone. Automation will no longer be optional.
+The industry is also moving toward [shorter certificate lifetimes](https://www.digicert.com/blog/tls-certificate-lifetimes-will-officially-reduce-to-47-days). The maximum validity of TLS certificates will shrink to 47 days by 2029, making manual certificate management increasingly difficult and error-prone. Automation will no longer be optional.
 
 **Managed HTTPS for Tracking Domains** addresses these challenges through automated certificate issuance and renewal, helping you maintain email deliverability, security, and user experience without requiring complex infrastructure or ongoing certificate management work.
 
