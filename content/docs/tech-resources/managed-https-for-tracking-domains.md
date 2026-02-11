@@ -190,8 +190,8 @@ If your certificate remains in Pending status for more than 30 minutes:
 
 1. Verify the CNAME record points to the correct SparkPost [V2 endpoint](#tracking-endpoints)
 2. Confirm the tracking domain is verified
-4. Ensure DNS has fully propagated
-5. Contact support if the issue persists
+3. Ensure DNS has fully propagated
+4. Contact support if the issue persists
 
 ### Certificate status shows _Failed_
 
