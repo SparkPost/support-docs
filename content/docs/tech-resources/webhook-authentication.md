@@ -1,7 +1,7 @@
 ---
 lastUpdated: "10/01/2021"
 title: "Event Webhook Authentication and Security"
-description: "Spark Post offers optional but highly recommended security measures that can be implemented when setting up a webhook namely, SSL, OAuth 2.0, mTLS, and Basic Authentication These measures increase the security of your webhook event data and ensure that the data delivered originates from Spark Post OAuth 2..."
+description: "Spark Post offers optional but highly recommended security measures that can be implemented when setting up a webhook namely, SSL, OAuth 2.0, and Basic Authentication These measures increase the security of your webhook event data and ensure that the data delivered originates from Spark Post OAuth 2..."
 ---
 
 SparkPost [Event Webhooks](https://developers.sparkpost.com/api/webhooks/) offers some optional (but highly recommended) security measures that can be implemented when setting up a webhook. These measures increase the security of your webhook event data and ensure that the data delivered originates from SparkPost.
@@ -11,9 +11,6 @@ SparkPost [Event Webhooks](https://developers.sparkpost.com/api/webhooks/) offer
 **SSL (TLS)**
 
 Secure Socket Layer (SSL), also known as Transport Layer Security (TLS), are cryptographic protocols that provide communications security over a computer network.  If your Target endpoint supports SSL then you can prefix your endpoint URL with "https://".  The default port is 443, in which case you do not need to specify the port in the URL e.g. https://yourdomain.com/yourendpoint.  If your Target endpoint has SSL enabled on a different port then you may specifcy it in your URL.  E.g. "https://yourdomain.com:81/yourendpoint"
-
-**mTLS**
-Event webhooks supports [mTLS](https://en.wikipedia.org/wiki/Mutual_authentication) for transport layer authentication. mTLS is not a separate authentication schema, it is simply a change in how the TLS connection handshake happens.  SparkPost = CLIENT, your app = SERVER.
 
 **IP Whitelisting**
 For those customers that require inbound traffic to be whitelisted in a firewall we do maintain the hostname wh.egress.sparkpost.com which lists the egress IPs under the host’s A record. Please let your TAM know that you are whitelisting IPs and SparkPost will notify you if this list changes, with some advance notice.
