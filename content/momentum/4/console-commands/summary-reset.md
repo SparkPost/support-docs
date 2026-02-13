@@ -21,7 +21,9 @@ summary reset — reset summary statistics
 statistics cleared.
 ```
 
-The **summary reset**       command resets the statistics counters of the running instance. It is useful for determining the current performance levels of a long-running Momentum instance, particularly with respect to metrics that are averages, such as Delivery Rate and Reception Rate.
+The **summary reset** command resets the statistics counters of the running instance. It is useful for determining the current performance levels of a long-running Momentum instance, particularly with respect to metrics that are averages, such as Delivery Rate and Reception Rate.
+
+**NOTE:** Since Momentum 5.2, reset of statistics is available through the HTTP API as well. See the [summary](/momentum/4/http-api-stats/summary) documentation for details.
 
 <a name="idp10810640"></a> 
 ## See Also

@@ -28,6 +28,7 @@ This section contains tables of Lua functions. Click the function name for detai
 | [msg.batch_id](/momentum/4/lua/ref-msg-batch-id) – Returns the human-readable ec_message.batch_id |   | msys.extended.message | 4.0 | data, data_spool, data_spool_each_rcpt, set_binding |
 | [msg.conn_id](/momentum/4/lua/ref-msg-conn-id) – Returns the human-readable ec_message.conn_id |   | msys.extended.message | 4.0 | data, data_spool, data_spool_each_rcpt, set_binding |
 | [msg.id](/momentum/4/lua/ref-msg-id) – Returns the human-readable ec_message.id |   | msys.extended.message | 4.0 | data, data_spool, data_spool_each_rcpt, set_binding |
+| [msg:attempted_ip](/momentum/4/lua/ref-attempted-ip) – Gets the IP address (if any) that was attempted for a failed outbound connection |   | msys.extended.message | 5.2 | core_log_delivery_v1, core_log_transient_failure_v1, core_log_permanent_failure_v1 |
 | [msg:binding](/momentum/4/lua/ref-msg-binding) – Sets the binding to the named binding, if one is provided | [value] | msys.extended.message | 4.0 | set_binding |
 | [msg:binding_group](/momentum/4/lua/ref-msg-binding-group) – Sets the binding_group to the named binding, if one is provided | [value] | msys.extended.message | 4.0 | set_binding |
 | [msg:body](/momentum/4/lua/ref-msg-body) – Set or get the message body (minus headers) | [...] | msys.extended.message | 4.0 | data, data_spool, data_spool_each_rcpt, set_binding |
