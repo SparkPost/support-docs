@@ -1,5 +1,5 @@
 ---
-lastUpdated: "07/01/2025"
+lastUpdated: "01/31/2026"
 title: "Building an Image"
 description: "Instructions for building a Docker container image for Momentum."
 ---
@@ -20,13 +20,13 @@ RUN dnf update -y && \
     dnf clean all && rm -rf /var/cache/dnf
 
 # Copy and unpack the bundle into the container
-ARG version=5.0.0.xxxxx
+ARG version=M.m.p.bbbbb
 ADD momentum-mta-bundle-${version}.rhel9.x86_64.tar.gz /var/tmp/
 
 # Install as per the Momentum Installation Guide
 RUN cd /var/tmp/momentum-mta-${version} && \
     ./setrepodir && \
-    dnf install -y --config momentum.repo --enablerepo=momentum msys-role-mta msys-ecelerity-mobility msys-ecelerity-engagement-proxy && \
+    dnf install -y --config momentum.repo --enablerepo=momentum msys-role-mta && \
     dnf clean all && rm -rf /var/cache/dnf && \
     rm -rf /var/tmp/momentum-mta-bundle-${version}.rhel9.x86_64.tar.gz momentum-mta-${version}
 

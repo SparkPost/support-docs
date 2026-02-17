@@ -1,5 +1,5 @@
 ---
-lastUpdated: "09/20/2023"
+lastUpdated: "12/31/2025"
 title: "Configuration Options Summary"
 description: "This chapter lists all configuration options visible in the following scopes global domain host binding binding group security pathway pathway group listener listen peer threadpool debug flags and cluster as well as in the listener specific scope Module specific options are documented in the module documentation and options specific to..."
 ---
@@ -111,6 +111,8 @@ The `Version` column indicated the version(s) of Momentum that support the optio
 | [debug](/momentum/4/config/ref-debug-flags) – Set the debug level | na |   | 4.0 and later | debug_flags |
 | [debug_flags](/momentum/4/config/ref-debug-flags) *(scope)* – Configure debug verbosity | na |   | 4.0 and later | global |
 | [debug_level](/momentum/4/4-module-config) – Set the module debug level (applicable to all modules) (cluster-specific) | na | error | 4.0 and later | cluster |
+| [debug_throttle_max_num_same_message](/momentum/4/config/ref-debug-throttle) – Maximum number of identical debug messages to log within an interval | na | 0 | 5.2 and later | global |
+| [debug_throttle_period_secs](/momentum/4/config/ref-debug-throttle) – Time interval for debug message throttling, in seconds | na | 1 | 5.2 and later | global |
 | [default_binding](/momentum/4/config/ref-default-binding) – Control the default binding | sending | normal | 4.0 and later | global |
 | [default_charset](/momentum/4/config/ref-default-charset) – Control the character set | both | us-ascii | 4.0 and later | global, pathway, pathway_group |
 | [delay_dsn_max_retry_interval](/momentum/4/config/ref-delay-dsn-max-retry-interval) – Maximum interval for sending DSNs to the sender of a message that has not yet been delivered | sending | 43200 | 4.0 and later | binding, binding_group, domain, global |
@@ -128,6 +130,9 @@ The `Version` column indicated the version(s) of Momentum that support the optio
 | [dns_expire_interval](/momentum/4/config/ref-dns-expire-interval) – How often to check for domains with expired DNS information | sending | 10 | 4.0 and later | global |
 | [dns_failures_to_purge](/momentum/4/config/ref-dns-failures-to-purge) – Configure the maximum number of DNS lookups | sending | 10 | 4.0 and later | domain, global |
 | [dns_fallback_to_tcp](/momentum/4/config/ref-dns-fallback-to-tcp) – Whether or not to fail over to TCP in place of UDP | both | false | 4.0 and later | global |
+| [dns_max_udp_queries_per_port](/momentum/4/config/ref-dns-max-udp-queries-per-port) - Limit the number of DNS queries sent using the same UDP source port | sending | 0 | 5.2 and later | global |
+| [dns_udp_rcvbuf_size](/momentum/4/config/ref-dns-udp-buffer-size) - Set the size of the UDP socket receiving buffer used by DNS lookups | both | 0 | 5.2 and later | global |
+| [dns_udp_sndbuf_size](/momentum/4/config/ref-dns-udp-buffer-size) - Set the size of the UDP socket sending buffer used by DNS lookups | both | 0 | 5.2 and later | global |
 | [domain](/momentum/4/config/ref-domain) *(scope)* – Configure domain-specific options | sending |   | 4.0 and later | binding, binding_group, global |
 | [domain_for_unqualified_recipient_addresses](/momentum/4/config/ref-domain-for-unqualified-recipient-addresses) – Configure a domain which will be used to resolve delivery for unqualified addresses | receiving |   | 4.0 and later | esmtp_listener, global, listen, pathway, pathway_group, peer |
 | [domain_for_unqualified_sender_address](/momentum/4/config/ref-domain-for-unqualified-sender-address) – Configure a domain which will be used to substitute for unqualified sender addresses | receiving |   | 4.0 and later | esmtp_listener, global, listen, pathway, pathway_group, peer |
