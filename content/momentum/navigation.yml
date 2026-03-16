@@ -1981,19 +1981,31 @@
     - link: /momentum/changelog/5
       title: Momentum 5.x Changelog
       items:
-        - link: /momentum/changelog/5/5-1
-          title: Momentum 5.1 Changelog
-        - link: /momentum/changelog/5/5-0
-          title: Momentum 5.0 Changelog
+        - link: /momentum/changelog/5/5-2-1
+          title: Momentum 5.2.1 Changelog
+        - link: /momentum/changelog/5/5-2-0
+          title: Momentum 5.2.0 Changelog
+        - link: /momentum/changelog/5/5-1-1
+          title: Momentum 5.1.1 Changelog
+        - link: /momentum/changelog/5/5-1-0
+          title: Momentum 5.1.0 Changelog
+        - link: /momentum/changelog/5/5-0-1
+          title: Momentum 5.0.1 Changelog
+        - link: /momentum/changelog/5/5-0-0
+          title: Momentum 5.0.0 Changelog
     - link: /momentum/changelog/4
       title: Momentum 4.x Changelog
       items: 
-        - link: /momentum/changelog/4/4-8
-          title: Momentum 4.8 Changelog
-        - link: /momentum/changelog/4/4-7
-          title: Momentum 4.7 Changelog
-        - link: /momentum/changelog/4/4-6
-          title: Momentum 4.6 Changelog
+        - link: /momentum/changelog/4/4-8-1
+          title: Momentum 4.8.1 Changelog
+        - link: /momentum/changelog/4/4-8-0
+          title: Momentum 4.8.0 Changelog
+        - link: /momentum/changelog/4/4-7-1
+          title: Momentum 4.7.1 Changelog
+        - link: /momentum/changelog/4/4-7-0
+          title: Momentum 4.7.0 Changelog
+        - link: /momentum/changelog/4/4-6-0
+          title: Momentum 4.6.0 Changelog
         - link: /momentum/changelog/4/4-4-1
           title: Momentum 4.4.1 Changelog
         - link: /momentum/changelog/4/4-4-0
