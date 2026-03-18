@@ -1,5 +1,5 @@
 ---
-lastUpdated: "04/25/2025"
+lastUpdated: "03/18/2026"
 title: "Single Sign-On (SSO)"
 description: "How to enable Single Sign-On (SSO) in SparkPost."
 ---
@@ -88,11 +88,18 @@ No, you must enable SSO for one user at a time. If you have a large number of us
 ### After I enable SSO for my company, will SSO be enabled automatically for any new users added after that point?
 Yes, after you enable SSO for your company, newly added users will automatically have SSO enabled. If you do not want a new user to have SSO enabled, you must create the new user and then disable SSO.
 
+*Note: When inviting a subaccount user, you can now check the "Allow password-based authentication" option on the invite form to let that user sign in with a password instead of SSO, without needing the create-then-disable workaround.*
+
 ### Is there a default user role for new SSO users?
 No, there is no default user role - role is decided by the admin user when adding each new user.
 
 ### Can the user role be changed after a SSO user has been created?
 Yes, an admin user can change the user role for any user (including SSO users) at any time.
+
+### Can subaccount users use password-based authentication on an SSO-enabled account?
+Yes. When inviting a subaccount user on an SSO-enabled account, you can check the "Allow password-based authentication" option on the invite form. This allows the user to sign in with a password instead of Single Sign-On (SSO).
+
+![](media/sso/allow_password_auth_checkbox.png)
 
 ### Is there a way to bypass SSO once it's enabled?
 An admin can disable SSO by following the steps in the "Disable Single Sign-On" section above.
