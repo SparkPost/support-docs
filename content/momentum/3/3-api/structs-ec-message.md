@@ -124,10 +124,6 @@ struct _ec_message {
      used in ec_message_get_routing_domain.
      This field will not be written to spool */
   string _routing_domain;
-
-  /** @since 5.2 */
-  /* Make sure an attempted IP can be logged in case of temp/perm failures */
-  address attempted_ip;
 };
 ```
 
