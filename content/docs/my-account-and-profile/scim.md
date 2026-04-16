@@ -1,5 +1,5 @@
 ---
-lastUpdated: "09/09/2021"
+lastUpdated: "04/16/2026"
 title: "SCIM User Provisioning Through Okta"
 description: "Learn how to enable SCIM user provisioning through Okta for your SparkPost account."
 ---
@@ -60,6 +60,66 @@ description: "Learn how to enable SCIM user provisioning through Okta for your S
 
 1. Verify users exist in SparkPost application.
 ![](media/scim/sparkpost_users.png)
+
+## Managing User Roles with Okta Groups
+
+You can use Okta groups to automatically assign SparkPost roles to users provisioned via SCIM. Instead of setting each user's role individually, you create Okta groups that map to SparkPost roles and assign users to those groups. Role changes are pushed to SparkPost automatically when group membership changes.
+
+### Supported Roles
+
+| Role | Description |
+|------|-------------|
+| `admin` | Full account access |
+| `developer` | API key and webhook management |
+| `templates` | Template and A/B test management |
+| `reporting` | View-only access to reports and analytics |
+
+If no role is specified, users default to `reporting`.
+
+### Step 1: Create Okta Groups
+
+Create one Okta group per SparkPost role you want to manage. For example:
+
+- SparkPost - Admin
+- SparkPost - Developer
+- SparkPost - Templates
+- SparkPost - Reporting
+
+Go to **Directory > Groups > Add Group** to create each one.
+
+### Step 2: Assign Groups to the SparkPost Application
+
+1. In the Okta admin console, go to **Applications > SparkPost** and select the **Assignments** tab.
+1. Click **Assign > Assign to Groups**.
+![](media/scim/assign_to_groups.png)
+
+1. In the dialog, click **Assign** next to each SparkPost group you created.
+![](media/scim/assign_sparkpost_to_groups.png)
+
+1. For each group, set the `role` field to the corresponding SparkPost role (e.g., `admin` for the "SparkPost - Admin" group). Click **Save and Go Back**.
+![](media/scim/assign_group_role.png)
+
+1. Repeat for each group, then click **Done**.
+
+### Step 3: Add Users to Groups
+
+Add users to the appropriate Okta group under **Directory > Groups**. When provisioned, they will receive the corresponding SparkPost role.
+
+### Changing a User's Role
+
+Move the user from one SparkPost group to another in Okta. The role change is pushed to SparkPost automatically via SCIM on the next sync.
+
+### Managing Group Priority
+
+If a user belongs to multiple groups assigned to the SparkPost application, Okta uses **group priority** to determine which role is sent. The group with the highest priority (lowest number) wins.
+
+To manage group priority:
+
+1. Go to **Applications > SparkPost > Assignments** and click on the **Groups** filter.
+1. Drag and drop the groups to reorder them. The group at the top (priority 1) takes precedence.
+![](media/scim/group_priority.png)
+
+For example, if a user belongs to both "SparkPost - Admin" (priority 1) and "SparkPost - Reporting" (priority 3), they will be assigned the `admin` role.
 
 ## Known Issues / Troubleshooting
 - If you have questions or difficulties with your SparkPost/Okta SCIM integration, please [submit a support ticket](https://www.sparkpost.com/submit-a-ticket).
