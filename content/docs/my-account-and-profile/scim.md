@@ -85,7 +85,8 @@ Create one Okta group per SparkPost role you want to manage. For example:
 - SparkPost - Templates
 - SparkPost - Reporting
 
-Go to **Directory > Groups > Add Group** to create each one.
+Go to **Directory > Groups** and click **Add Group** to create each one.
+![](media/scim/add_group.png)
 
 ### Step 2: Assign Groups to the SparkPost Application
 
@@ -103,7 +104,8 @@ Go to **Directory > Groups > Add Group** to create each one.
 
 ### Step 3: Add Users to Groups
 
-Add users to the appropriate Okta group under **Directory > Groups**. When provisioned, they will receive the corresponding SparkPost role.
+Add users to the appropriate Okta group. Go to **Directory > Groups**, select a group, and click **Assign people**. When provisioned, they will receive the corresponding SparkPost role.
+![](media/scim/add_users_to_group.png)
 
 ### Changing a User's Role
 
