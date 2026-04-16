@@ -69,10 +69,10 @@ You can use Okta groups to automatically assign SparkPost roles to users provisi
 
 | Role | Description |
 |------|-------------|
-| `admin` | Full account access |
-| `developer` | API key and webhook management |
-| `templates` | Template and A/B test management |
-| `reporting` | View-only access to reports and analytics |
+| `admin` | Full access. Admins have all permissions and are the only users that can manage users, security, and billing settings. |
+| `developer` | Setup and development. Can create and edit API Keys and access all email-related account settings. |
+| `templates` | Content and campaign management. Can manage Templates, AB Tests, Recipient Lists, and Suppressions. View-only access to Domains, Subaccounts, IP Pools, and all reporting and analytics features. |
+| `reporting` | Data analytics. Access to all reporting features and view-only access to Domains, Subaccounts, and IP Pools. Cannot edit account or feature settings. Can optionally be scoped to a specific subaccount. |
 
 If no role is specified, users default to `reporting`.
 
