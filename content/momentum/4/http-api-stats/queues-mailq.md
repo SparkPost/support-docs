@@ -1,7 +1,7 @@
 ---
 lastUpdated: "04/15/2026"
 title: "Mail Queue"
-description: "GET /stats/queues/mailq returns mail queue statistics as JSON Optional query parameters domain binding ip and limit filter or tune how many binding domain pairs are ranked like ec console mailq"
+description: "GET /stats/queues/mailq returns mail queue statistics as JSON Optional query parameters domain binding ip and limit filter or tune how many binding domain pairs are ranked like ec_console mailq"
 ---
 
 <a name="http_api_stats.queues_mailq"></a>
