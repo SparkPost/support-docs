@@ -1,7 +1,7 @@
 ---
-lastUpdated: "05/08/2023"
+lastUpdated: "04/15/2026"
 title: "Mail Queue"
-description: "/stats/queues/mailq show the status of the mail queues When issued with no arguments this command shows counts for the active queue and the delayed queues sorted by binding groups and bindings This request shall be done to the port 2081 using any..."
+description: "GET /stats/queues/mailq returns mail queue statistics as JSON Optional query parameters domain binding ip and limit filter or tune how many binding domain pairs are ranked like ec console mailq"
 ---
 
 <a name="http_api_stats.queues_mailq"></a>
@@ -17,11 +17,26 @@ description: "/stats/queues/mailq show the status of the mail queues When issued
 
 `GET /stats/queues/mailq?binding=ip_1.2.3.4`
 
+`GET /stats/queues/mailq?limit=50`
+
+`GET /stats/queues/mailq?domain=example.com&binding=default&limit=100`
+
 ## Description
 
-When issued with no arguments this command shows counts for the active queue and the delayed queues sorted by binding groups and bindings.
+When issued with no query parameters, this endpoint shows counts for the active queue and the delayed queues sorted by binding groups and bindings.
 
 The data is formatted as a JSON object and you might want to use the `curl` command to do the request (e.g. `curl -sS localhost:2081/stats/queues/mailq`).
+
+### Query parameters
+
+| Parameter | Meaning |
+| --------- | ------- |
+| `domain` | Restrict results to a specific domain (case is normalized to lower case). |
+| `binding` | Restrict results to a specific binding name (for example `default` or `ip_1.2.3.4`). |
+| `ip` | Alternative to `binding` for SparkPost-style IP bindings: `ip=1.2.3.4` is treated like `binding=ip_1.2.3.4`. If both `binding` and `ip` are present, `binding` wins. |
+| `limit` | Positive integer passed through to the same logic as the ec_console `mailq` **`--limit` / `-l`** option: it sets how many binding/domain pairs are ranked and retained in the summary. If `limit` is omitted, zero, or not a valid positive number, the default (**20**) is used. There is no hard maximum in the product; larger values cause each maintainer thread to allocate larger internal structures, so use the smallest value that still meets your needs. |
+
+You can combine `domain`, `binding` (or `ip`), and `limit` in one request.
 
 Sample output is shown below:
 
@@ -54,9 +69,7 @@ Sample output is shown below:
 }
 ```
 
-The `group` and `binding` fields shows the group and the binding that a domain belongs to. `aq` shows the items in the active queue and `aq` shows the items in the delayed queue. The number of receptions, permanent failures, transient failures, and deliveries are shown in the `receptions`, `permfails`, `transfails`, and `deliveries` fields respectively.
-
-Use this request with the `domain=a.specific.domain` argument to show the statistics for a specific domain, and the `binding=name` can be used in the same way to show a specific binding. The output cannot be limited or split into multiple pages.
+The `group` and `binding` fields show the group and the binding that a domain belongs to. `aq` shows the items in the active queue and `dq` shows the items in the delayed queue. The number of receptions, permanent failures, transient failures, and deliveries are shown in the `receptions`, `permfails`, `transfails`, and `deliveries` fields respectively.
 
 Examples of using the optional arguments:
 
@@ -66,6 +79,12 @@ curl -sS "localhost:2081/stats/queues/mailq?domain=gmail.com"
 
 # Check the queue for the "gmail.com" domain related to the IP 1.2.3.4
 curl -sS "localhost:2081/stats/queues/mailq?domain=gmail.com&binding=ip_1.2.3.4"
+
+# Same binding selection using ip= (SparkPost-style binding name)
+curl -sS "localhost:2081/stats/queues/mailq?domain=gmail.com&ip=1.2.3.4"
+
+# Rank and return up to 100 binding/domain pairs (default is 20 if limit is omitted)
+curl -sS "localhost:2081/stats/queues/mailq?limit=100"
 ```
 
 The output might be a somewhat large JSON array, so to make it easier to read, you can try using `jq` and `column` to convert it to a table:
