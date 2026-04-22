@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/26/2020"
+lastUpdated: "04/15/2026"
 title: "Console Commands Summary"
 description: "This table lists all console commands alphabetically giving a brief description Click the command name to see detailed information A module name appears in the Module column for commands that are module specific For module specific commands to work you must have the module loaded Table 67 1 All console..."
 ---
@@ -96,6 +96,8 @@ This table lists all console commands alphabetically giving a brief description.
 | [ds_ldap show connection cache stats](/momentum/4/modules/ds-core#modules.ds_ldap.console) – Output statistics relating to the connection cache | 4.0 | ds_ldap | module |
 | [ec_logger:instance_name help](/momentum/4/modules/ec-logger#modules.ec_logger.console) – Display the available commands | 4.0 | ec_logger | module |
 | [ec_logger:instance_name reopen logs](/momentum/4/modules/ec-logger#modules.ec_logger.console) – Close and reopen the logs | 4.0 | ec_logger | module |
+| [fail all quiet](/momentum/4/console-commands/fail-all-quiet) – Fail matching queued messages globally without generating bounces (filter required) | 5.3 |   | queue admin |
+| [fail all](/momentum/4/console-commands/fail-all) – Fail matching queued messages globally with a bounce message (filter required) | 5.3 |   | queue admin |
 | [fail domain quiet](/momentum/4/console-commands/fail-domain-quiet) – Fail messages for a domain without generating bounces | 4.0 |   | misc |
 | [fail domain](/momentum/4/console-commands/fail-domain) – Fail messages for a domain with a bounce message | 4.0 |   | misc |
 | [fingerprint cache summary](/momentum/4/console-commands/fingerprint-cache-summary) – Display the current cache size | 4.0 | fingerprint | policy |
