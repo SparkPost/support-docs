@@ -25,7 +25,7 @@ For example, the following command could be used to fail all message for the dom
 unresolvableproblems.com purged. 62415 messages failed.
 ```
 
-Usually, the command is immediately proceded or followed by "blackholing" the domain by issuing a command such as:
+Usually, the command is immediately preceded or followed by "blackholing" the domain by issuing a command such as:
 
 `10:47:35 /tmp/2025> config set domain unresolvableproblems.com blackhole inline`
 
