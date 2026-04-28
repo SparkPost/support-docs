@@ -26,6 +26,7 @@ This table lists all executable commands alphabetically giving a brief descripti
 | [ec_rotate](/momentum/4/executable/ec-rotate) – Rotate Momentum logfiles | misc |
 | [ec_sendmail](/momentum/4/executable/ec-sendmail) – A sendmail compatibility interface | misc |
 | [ec_show](/momentum/4/executable/ec-show) – Show spool or message information | messages |
+| [ec_spool_check](/momentum/4/executable/ec-spool-check) – Verify spool directory integrity (read-only scan) | messages |
 | [eccfg](/momentum/4/executable/eccfg) – Subversion repository management | config |
 | [eccmgr](/momentum/4/executable/eccmgr) – Momentum Cluster Manager | service |
 | [eccmgr_ctl](/momentum/4/executable/eccmgr-ctl) – Start, stop, or restart the Momentum Cluster Manager | service |

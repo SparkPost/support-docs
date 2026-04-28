@@ -29,6 +29,7 @@ This table lists all executable commands alphabetically giving a brief descripti
 | [ec_rotate](/momentum/3/3-reference/executable-ec-rotate) – Rotate Momentum ec_logger log files | logs |
 | [ec_sendmail](/momentum/3/3-reference/executable-ec-sendmail) – A sendmail(1) compatibility interface | misc |
 | [ec_show](/momentum/3/3-reference/executable-ec-show) – Show spool or message information | messages |
+| [ec_spool_check](/momentum/4/executable/ec-spool-check) – Verify spool directory integrity (read-only scan) | messages |
 | [ec_spp](/momentum/3/3-reference/executable-ec-spp) – Use this command to invoke a Sieve script | sieve |
 | [ec_uipasswd](/momentum/3/3-reference/executable-ec-uipasswd) – Manage users and groups for authentication | security |
 | [eccfg](/momentum/3/3-reference/executable-eccfg) – Subversion repository management | config |

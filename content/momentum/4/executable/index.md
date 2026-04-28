@@ -24,6 +24,7 @@ description: "Table of Contents ad summary summarize the adaptive module actions
 | [ec_rotate](/momentum/4/executable/ec-rotate) | rotate Momentum logfiles |
 | [ec_sendmail](/momentum/4/executable/ec-sendmail) | a sendmail compatibility interface |
 | [ec_show](/momentum/4/executable/ec-show) | show spool or message information |
+| [ec_spool_check](/momentum/4/executable/ec-spool-check) | verify spool directory integrity (read-only scan) |
 | [eccfg](/momentum/4/executable/eccfg) | Subversion repository management |
 | [eccmgr](/momentum/4/executable/eccmgr) | Momentum Cluster Manager |
 | [eccmgr_ctl](/momentum/4/executable/eccmgr-ctl) | start, stop, or restart the Momentum Cluster Manager |
