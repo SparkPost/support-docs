@@ -65,8 +65,6 @@ package = "@netlify/plugin-nextjs"
       'self';
     worker-src
       'none';
-    report-uri
-      https://o113111.ingest.sentry.io/api/4504084278607872/security/?sentry_key=2d95367da3ea460dbd19301aed1d6de9;
     '''
 
 # A redirect rule with many of the supported properties
