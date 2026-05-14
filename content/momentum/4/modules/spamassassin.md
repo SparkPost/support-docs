@@ -116,15 +116,90 @@ The comma-separated list of SpamAssassin rule symbols that matched the message, 
 
 ### <a name="modules.spamassassin.api"></a> Programmatic Use
 
-The module exposes a single C entry point declared in `modules/generic/ec_spamassassin.h`:
+Scanning is **not** automatic. The spamassassin module does not register any validation hooks of its own; nothing happens until something explicitly calls the scan entry point on a message. That call is most commonly made from a Lua policy hook that runs after the message body has been spooled.
+
+#### <a name="modules.spamassassin.lua"></a> Lua
+
+The scan entry point is exposed to Lua under the legacy `msys.spamc` namespace (kept for compatibility with policy written against the older Sieve-based `spamc` module):
+
+```
+msys.spamc.spamc_scan(msg)
+```
+
+The call is synchronous and blocking with respect to the `spamd` exchange; invoke it from a hook that runs in an async/IO context, such as `validate_data_spool`, where the message body has been spooled and a blocking call is safe. After it returns, read the `spamc_*` variables off the message context and act on them.
+
+<a name="example.spamassassin.lua"></a>
+
+The following scriptlet is adapted from `tests/perl-tests/generic/spamc/basic_lua.t` and shows the canonical pattern — call the scan, branch on `spamc_status`, then on `spamc_spam`, and use `spamc_score`, `spamc_thresh`, and `spamc_symbols` to shape the SMTP response or downstream policy:
+
+```lua
+require("msys.core");
+require("msys.extended.message");
+require("msys.spamc");
+
+local mod = {};
+
+function mod:validate_data_spool(msg, ac, vctx)
+  msys.spamc.spamc_scan(msg)
+
+  local status  = msg:context_get(msys.core.ECMESS_CTX_MESS, "spamc_status")
+  local is_spam = msg:context_get(msys.core.ECMESS_CTX_MESS, "spamc_spam")
+  local score   = msg:context_get(msys.core.ECMESS_CTX_MESS, "spamc_score")
+  local thresh  = msg:context_get(msys.core.ECMESS_CTX_MESS, "spamc_thresh")
+  local symbols = msg:context_get(msys.core.ECMESS_CTX_MESS, "spamc_symbols")
+
+  if status == "failed" then
+    -- spamd was unreachable or returned an unparseable response;
+    -- the underlying error is already in the paniclog.
+    vctx:set_code(451, "spamc error")
+  elseif is_spam == "true" then
+    vctx:set_code(550,
+      string.format("spam %s %s %s", score, thresh, symbols))
+  else
+    vctx:set_code(250,
+      string.format("ham %s %s %s", score, thresh, symbols))
+  end
+
+  return msys.core.VALIDATE_CONT
+end
+
+msys.registerModule("spamc_scan", mod);
+```
+
+To activate the scriptlet, load it through the [scriptlet](/momentum/4/modules/scriptlet) module alongside the spamassassin configuration in [“spamassassin Configuration”](/momentum/4/modules/spamassassin#example.spamassassin.config):
+
+```
+scriptlet "scriptlet" {
+  script "spamc_scan" { source = "/etc/ecelerity/scriptlets/spamc_scan.lua" }
+}
+```
+
+Instead of writing the SMTP code, an integration may prefer to tag the message and let a later hook deliver it. The relay-webhook integration uses this pattern (see `modules/cloud/scriptlets/msys/sparkpost/relay_webhook.lua`), writing the verdict into a custom header so that downstream consumers can act on it:
+
+```lua
+local spam_header = "X-MSYS-Spam-Status"
+if status == "ok" then
+  if is_spam == "true" then
+    msg:header(spam_header, string.format("Yes, score=%s required=%s tests=%s",
+                                          score, thresh, symbols))
+  else
+    msg:header(spam_header, string.format("No, score=%s required=%s tests=%s",
+                                          score, thresh, symbols))
+  end
+else
+  msg:header(spam_header, "failed")
+end
+```
+
+#### <a name="modules.spamassassin.capi"></a> C
+
+The Lua binding is a thin wrapper over the C entry point declared in `modules/generic/ec_spamassassin.h`:
 
 ```
 SPAMC_EXPORT(void) spamc_scan(ec_message *m);
 ```
 
-`spamc_scan` opens a TCP connection to the configured daemon, streams up to `max_size` bytes of the message body to it, reads back the response, and populates the message context variables described above. The call performs blocking socket I/O and **must be invoked from an async thread** (for example, from `sp_async_thread_pool_run` or an equivalent scheduling primitive) so that the main scheduler is not blocked while spamd processes the message.
-
-The spamassassin module does not register a Lua binding of its own. To invoke it from a scriptlet, wire `spamc_scan` into an async callout from your own integration code, then read the `spamc_*` context variables in a subsequent validation hook.
+The same blocking-I/O contract applies — call it from an async thread (for example, via `sp_async_thread_pool_run`) so the main scheduler is not held up while `spamd` processes the message.
 
 ### <a name="modules.spamassassin.notes"></a> Notes
 
