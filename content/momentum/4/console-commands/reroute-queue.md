@@ -28,7 +28,7 @@ You may substitute `all` for *`domain_name1`* to move messages out of **every** 
 <a name="reroute_queue_selective"></a>
 ### Selective reroute (optional filter)
 
-Optional **`--meta`** / **`--header`** filtering uses the same matching rules as [**fail domain quiet**](/momentum/4/console-commands/fail-domain-quiet#fail_domain_quiet_selective). **`--header`** compares **physical header lines** only — see [**folded headers**](/momentum/4/console-commands/fail-domain-quiet#header_filter_physical_lines). Place **at most one** clause immediately after `reroute queue` and **before** the source domain. With a filter, only matching messages are moved; non-matching messages stay in the source domain's queues. Without a filter, every queued message for the source domain is moved (original behavior).
+Optional **`--meta`** / **`--header`** filtering uses the same matching rules as the `fail` family of commands. **`--header`** compares **physical header lines** only — see [**folded headers**](/momentum/4/console-commands/fail-domain-quiet#header_filter_physical_lines). Place **at most one** clause immediately after `reroute queue` and **before** the source domain. With a filter, only matching messages are moved; non-matching messages stay in the source domain's queues. Without a filter, every queued message for the source domain is moved (original behavior).
 
 You cannot combine `--meta` and `--header` in the same command.
 
