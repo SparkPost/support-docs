@@ -22,3 +22,8 @@ Sets the timestamp format used by Momentum when logging to `stderr`. This output
 ## Scope
 
 `timestampformat` is valid in the global scope.
+
+<a name="idp26795000"></a>
+## See Also
+
+When [LogHiresTimestamp](/momentum/4/config/ref-log-hires-timestamp) is enabled (Momentum 5.3 and later), every `%S` or `%T` conversion in the configured format is automatically followed by a `.NNNNNN` six-digit microsecond fraction, so the default value renders as `[Mon 20 May 2026 14:32:17.482915] `.

@@ -10,6 +10,10 @@ Every event is written to the `mainlog` file as a single line. Fixed position co
 
 The following sections define the format for each event type.
 
+> **Note**
+>
+> When [LogHiresTimestamp](/momentum/4/config/ref-log-hires-timestamp) is enabled (Momentum 5.3 and later), the timestamp field at offset `0` of every record is emitted as a 16-digit microseconds-since-epoch value (for example `1064868656123456`) instead of a 10-digit seconds-since-epoch value. The field remains a single integer with no separator.
+
 ### <a name="idp4862592"></a> Reception Records
 
 A reception line is written to the `mainlog` for every reception that Momentum performs. The log entry is an `@` delimited string, such as the following:

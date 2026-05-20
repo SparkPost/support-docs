@@ -6,6 +6,10 @@ description: "The rejectlog stores records of inbound messages that are rejected
 
 The `rejectlog` stores records of inbound messages that are rejected by Momentum, either due to policy or protocol deviations. It lists the full context for all rejected messages, as well as a summary of why the message was rejected, and it is configured in the [ec_logger](/momentum/4/modules/ec-logger).
 
+> **Note**
+>
+> When [LogHiresTimestamp](/momentum/4/config/ref-log-hires-timestamp) is enabled (Momentum 5.3 and later), the leading timestamp of every record (the value preceding the `:` separator) is emitted as a 16-digit microseconds-since-epoch value (for example `1236672125123456:`) instead of a 10-digit seconds-since-epoch value. The value remains a single integer with no internal separator.
+
 ### <a name="idp5073872"></a> Rejection Records
 
 A rejection line is written to the `rejectlog` for every rejection that Momentum performs. The fields in the log entry are delimited by spaces, such as the following:
