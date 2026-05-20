@@ -6,6 +6,7 @@ name: "Momentum 5.x Changelogs"
 description: "Momentum 5.x Changelogs"
 ---
 
+* [Momentum 5.3.0 Changelogs](/momentum/changelog/5/5-3-0)
 * [Momentum 5.2.1 Changelogs](/momentum/changelog/5/5-2-1)
 * [Momentum 5.2.0 Changelogs](/momentum/changelog/5/5-2-0)
 * [Momentum 5.1.1 Changelogs](/momentum/changelog/5/5-1-1)
