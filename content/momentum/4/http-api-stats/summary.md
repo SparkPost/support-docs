@@ -46,6 +46,7 @@ Sample output is shown below:
   "DNSQueryRate": 2.25,
   "DNSResponseTimePeak": 291,
   "DNSResponseTimeAverage": 1.04,
+  "DNSRateLimiterEnabled": false,
   "ResidentMessages": 120,
   "DiskQueueProgress": "    29/    29",
   "DeliveredMessages": 516030153,
@@ -219,6 +220,84 @@ The peak of all answers response times since startup or last summary reset, in m
 _Introduced in Momentum 4.8._
 
 The average of all answers response times since startup or last summary reset, in milliseconds.
+
+</dd>
+
+<dt>DNSRateLimiterEnabled</dt>
+
+<dd>
+
+_Introduced in Momentum 5.3._
+
+Whether the [DNS rate limiter](/momentum/4/config/ref-dns-rate-limit) is enabled (`true`) or disabled (`false`). When the rate limiter is enabled, the following additional fields are also reported:
+
+<dl class="variablelist">
+
+<dt>DNSRateLimitMXQueries</dt>
+
+<dd>
+
+The current value of [`dns_rate_limit_mx_queries`](/momentum/4/config/ref-dns-rate-limit) — the maximum number of MX DNS queries dispatched per `DNSRateLimitPeriod`.
+
+</dd>
+
+<dt>DNSRateLimitPeriod</dt>
+
+<dd>
+
+The current value of [`dns_rate_limit_period`](/momentum/4/config/ref-dns-rate-limit) — the period, in seconds, over which the MX query budget is enforced.
+
+</dd>
+
+<dt>DNSRateLimiterQueueSize</dt>
+
+<dd>
+
+The current number of domains waiting in the rate limiter queue for a token.
+
+</dd>
+
+<dt>DNSRateLimiterQueueMax</dt>
+
+<dd>
+
+The maximum number of domains that may be held in the rate limiter queue, as configured by [`dns_rate_limit_max_queue`](/momentum/4/config/ref-dns-rate-limit).
+
+</dd>
+
+<dt>DNSRateLimiterImmediate</dt>
+
+<dd>
+
+The total number of MX lookups dispatched without queueing — i.e. lookups that fit within the per-period budget — since startup or last summary reset.
+
+</dd>
+
+<dt>DNSRateLimiterQueued</dt>
+
+<dd>
+
+The total number of MX lookups that had to be queued to wait for a token since startup or last summary reset.
+
+</dd>
+
+<dt>DNSRateLimiterDrained</dt>
+
+<dd>
+
+The total number of MX lookups dispatched from the queue since startup or last summary reset.
+
+</dd>
+
+<dt>DNSRateLimiterOverflow</dt>
+
+<dd>
+
+The total number of MX lookups that bypassed the rate limiter because the queue was full since startup or last summary reset. A non-zero value indicates that [`dns_rate_limit_max_queue`](/momentum/4/config/ref-dns-rate-limit) may be too small for the workload.
+
+</dd>
+
+</dl>
 
 </dd>
 
