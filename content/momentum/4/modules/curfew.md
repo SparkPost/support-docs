@@ -35,8 +35,8 @@ That is enough to enable the feature: [`Timezone`](#modules.curfew.timezone) and
 ```
 curfew {
   Schedule_File = "/etc/ecelerity/curfew.schedule"
-  Timezone      = "local"
-  Fuzz_Seconds  = 60
+  Timezone      = "UTC"
+  Fuzz_Seconds  = 120
 }
 ```
 
@@ -259,7 +259,6 @@ The following ecelerity.conf fragment configures the curfew module against the s
 ```
 curfew {
   Schedule_File = "/etc/ecelerity/curfew.schedule"
-  Timezone      = "local"
   Fuzz_Seconds  = 30
 }
 ```
