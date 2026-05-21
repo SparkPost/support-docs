@@ -356,6 +356,7 @@ The `Version` column indicated the version(s) of Momentum that support the optio
 | [tlsv13_ciphersuites](/momentum/4/config/tlsv13-ciphersuites) – Specify allowable TLSv1.3 ciphersuites for TLS inbound and outbound sessions | receiving and sending |   | 4.6 and later | binding, binding_group, domain, esmtp_listener, global, http_listener, listen, pathway, pathway_group, peer |
 | [tls_client_ca](/momentum/4/config/tls-client-ca) – Specify certificate authority for inbound mail | receiving |   | 4.0 and later | ecstream_listener, esmtp_listener, global, http_listener, listen, pathway, pathway_group, peer, xmpp_listener |
 | [tls_dhparams_file](/momentum/4/config/ref-tls-dhparams-file) – Specifies DHE parameters that add per-session randomness to the encryption | both |   | 4.0 and later | global |
+| [tls_ec_curve_names](/momentum/4/config/tls-ec-curve-names) – Select the elliptic curves or TLS groups used for ECDHE key exchange in inbound and outbound TLS sessions | both |   | 4.2 and later | global |
 | [tls_enable_dhe_ciphers](/momentum/4/config/ref-tls-enable-dhe-ciphers) – Controls whether or not DHE ciphers are available | both | true | 4.0 and later | global |
 | [tls_engine](/momentum/4/config/tls-engine) – Specify the TLS library to use (OpenSSL or GNUTLS) | sending | openssl | 4.0 and later | global |
 | [tls_ifavailable_fallback](/momentum/4/config/tls-ifavailable-fallback) – Determine the behavior if TLS negotiation fails | sending | true | 4.1 and later | binding, binding_group, domain, global |
