@@ -217,6 +217,7 @@ The `Version` column indicated the version(s) of Momentum that support the optio
 | [local_changes_only](/momentum/4/config/ref-local-changes-only) – Whether there is a file for writing local configuration change | na | false | 4.0 and later | global |
 | [log_active_interval](/momentum/4/modules/4-modules-cluster#option.log_active_interval) – Used to tune centralized logging (cluster-specific) | na | 1 | 4.0 and later | cluster |
 | [log_group](/momentum/4/modules/4-modules-cluster#option.log_group) – Whether or not panic log messages are broadcast over spread (cluster-specific) | na |   | 4.0 and later | cluster |
+| [log_hires_timestamp](/momentum/4/config/ref-log-hires-timestamp) – Enable microsecond resolution for log timestamps | na | false | 5.3 and later | global |
 | [log_idle_interval](/momentum/4/modules/4-modules-cluster#option.log_idle_interval) – Amount of time to sleep before looking for another segment (cluster-specific) | na | 10 | 4.0 and later | cluster |
 | [log_requests_to_paniclog](/momentum/3/3-rest/rest-http-listener) – Whether to log REST injection requests | sending | false | 4.0 and later | http_listener, listen, pathway, pathway_group, peer |
 | [Logfile](/momentum/4/config/ref-eccluster-conf#eccluster.conf.logs.logfile) – Describe the full path to the log file | na |   | 4.0 and later | logs |
