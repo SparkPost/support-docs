@@ -29,13 +29,29 @@ The list must be normalized: no leading or trailing whitespace, no spaces around
 
 This option has no meaning for GNUTLS.
 
-### Note
+### FIPS considerations
 
 When Momentum is built or deployed against a *FIPS-validated cryptographic library* (for example OpenSSL with the FIPS provider, or a drop-in FIPS-validated replacement like SafeLogic), the set of curves the library will actually use is restricted to those approved by the active FIPS module — typically a subset of the NIST P-curves, with `prime256v1`, `secp384r1`, and `secp521r1` being the safe baseline across modules. Curves outside that subset are likely to be rejected by OpenSSL at config-set time with the `invalid curve or group list` error, even if `openssl ecparam -list_curves` shows them as known to the binary.
 
 The exact accepted set varies by OpenSSL version, FIPS module version, and (on Linux distributions that ship one, like Red Hat Enterprise Linux) the system-wide crypto policy, which layers on top of the FIPS module's own restrictions. FIPS 140 itself — currently FIPS 140-3, with FIPS 140-2 modules still common in production through the transition — governs the *module*: its cryptographic boundary, self-tests, and key handling. *Which* curves that module is permitted to expose is defined separately, by NIST Special Publications: SP 800-186 (finalized February 2023) for ECDH curves, and FIPS 186-5 (also 2023) for ECDSA. A module certified against earlier revisions of those publications will reject curves added later — for example, `x25519` is recognized by OpenSSL 3 and listed by `openssl ecparam -list_curves`, but FIPS modules certified before SP 800-186 (including most FIPS 140-2 modules) refuse it, so setting `tls_ec_curve_names = "x25519"` against such a module fails validation. Non-certified FIPS-style libraries add yet another axis of variation: they may approximate the restrictions of a certified module but do not necessarily track the latest Special Publication updates.
 
 **Operators targeting a FIPS-enabled environment should validate their `tls_ec_curve_names` value** against the curves enabled on the host before relying on it. As a practical safeguard, prefer building the list around the universally-FIPS-approved baseline (`prime256v1`, `secp384r1`, `secp521r1`); when targeting a host whose FIPS module's accepted set is unknown or heterogeneous across a fleet, a baseline-only value such as `TLS_EC_Curve_Names = "secp384r1:prime256v1"` is accepted across all FIPS modules and avoids the risk that the whole list is rejected because of a single curve the active provider does not register.
+
+### Post-quantum key exchange
+
+OpenSSL 3.5 (April 2025) accepts the TLS 1.3 *group* identifiers registered for post-quantum key encapsulation, so they are valid tokens in `tls_ec_curve_names`. The names recognized by OpenSSL 3.5+ are:
+
+- **Standalone ML-KEM**: `MLKEM512`, `MLKEM768`, `MLKEM1024`.
+- **Hybrid ECDHE + ML-KEM**: `X25519MLKEM768`, `X448MLKEM1024`, `SecP256r1MLKEM768`, `SecP384r1MLKEM1024`.
+
+#### FIPS status
+
+ML-KEM became FIPS-approved when FIPS 203 was published in August 2024. The practical consequences for `tls_ec_curve_names`:
+
+- FIPS 140-2 modules — and, more generally, any module certified before late 2024 — do not include ML-KEM and will reject every name listed above. Deployments that need post-quantum key exchange under FIPS must use a FIPS 140-3 module whose scope explicitly includes ML-KEM.
+- For hybrids, both halves must be in the module's certified scope. `SecP256r1MLKEM768` and `SecP384r1MLKEM1024` are the safest choices for FIPS portability, because their classical halves draw on the universally-FIPS-approved NIST P-curve baseline. Hybrids that include `x25519` or `x448` carry the same module-vintage caveat as standalone `x25519` / `x448` — they were added to the approved curve list only with NIST SP 800-186 in February 2023, and older FIPS 140-3 modules may not register them.
+
+A reasonable PQC-preferred configuration that still negotiates cleanly with peers that have not yet adopted ML-KEM is `TLS_EC_Curve_Names = "SecP384r1MLKEM1024:SecP256r1MLKEM768:secp384r1:prime256v1"`. As with any multi-token value, every name in the list must be registered by the active provider on the host or the whole value is rejected at `config set` time, so validate against the target OpenSSL build and FIPS module before deploying.
 
 ## Scope
 
