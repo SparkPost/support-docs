@@ -40,6 +40,7 @@ Summary Statistics
         Query Rate:   9.08 queries/second
         DNS Response Time Peak:  469 ms
         DNS Response Time Average:  0.302 ms
+        DNS Rate Limiter: disabled
         Successfully Delivered Messages: 2102439
         Failed Messages: 2508439
         Rejected Messages:      1
@@ -217,6 +218,27 @@ The peak of all answers response times since startup or last summary reset, in m
 _Introduced in Momentum 4.8._
 
 The average of all answers response times since startup or last summary reset, in milliseconds.
+
+</dd>
+
+<dt>DNS Rate Limiter</dt>
+
+<dd>
+
+_Introduced in Momentum 5.3._
+
+Whether the [DNS rate limiter](/momentum/4/config/ref-dns-rate-limit) is `enabled` or `disabled`. When the console session is in debug mode and the rate limiter is enabled, additional fields are reported:
+
+```
+        DNS Rate Limit: 500 MX queries per 1 seconds
+        DNS Rate Limiter Queue: 42 / 50000
+        DNS Rate Limiter Immediate: 18340
+        DNS Rate Limiter Queued: 4120
+        DNS Rate Limiter Drained: 4078
+        DNS Rate Limiter Overflow: 0
+```
+
+`Immediate` counts MX lookups dispatched without queueing (within the per-period budget); `Queued` counts lookups that had to wait in the queue; `Drained` counts lookups dispatched from the queue; `Overflow` counts lookups that bypassed the rate limiter because the queue was full.
 
 </dd>
 
