@@ -7,8 +7,7 @@ description: "The bouncelog records both in band and out of band bounces It is c
 The `bouncelog` records both in-band and out-of-band bounces. It is configured in the [bounce_logger](/momentum/4/modules/bounce-logger) module.
 
 > **Note**
->
-> When [LogHiresTimestamp](/momentum/4/config/ref-log-hires-timestamp) is enabled (Momentum 5.3 and later), the timestamp field at offset `0` of every record is emitted as a 16-digit microseconds-since-epoch value (for example `1064868656123456`) instead of a 10-digit seconds-since-epoch value. The field remains a single integer with no separator.
+> When [log_hires_timestamp](/momentum/4/config/ref-log-hires-timestamp) is enabled (Momentum 5.3 and later), the timestamp field at offset `0` of every record is emitted as a 16-digit microseconds-since-epoch value (for example `1064868656123456`) instead of a 10-digit seconds-since-epoch value. The field remains a single integer with no separator.
 
 ### <a name="idp4696736"></a> Bounce Records
 

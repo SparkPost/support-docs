@@ -1,22 +1,22 @@
 ---
 lastUpdated: "07/01/2026"
-title: "LogHiresTimestamp"
-description: "LogHiresTimestamp enables microsecond resolution for log timestamps written by Momentum across the mainlog, bouncelog, rejectlog, paniclog, custom logs, and other logging modules"
+title: "log_hires_timestamp"
+description: "log_hires_timestamp enables microsecond resolution for log timestamps written by Momentum across the mainlog, bouncelog, rejectlog, paniclog, custom logs, and other logging modules"
 ---
 
 <a name="conf.ref.log_hires_timestamp"></a>
 ## Name
 
-LogHiresTimestamp — enable microsecond resolution for log timestamps
+log_hires_timestamp — enable microsecond resolution for log timestamps
 
 ## Synopsis
 
-`LogHiresTimestamp = true`
+`log_hires_timestamp = true`
 
 <a name="idp.log_hires_timestamp"></a>
 ## Description
 
-When `LogHiresTimestamp` is set to `true`, Momentum writes log timestamps with microsecond (1 µs) resolution instead of the default 1-second resolution.
+When `log_hires_timestamp` is set to `true`, Momentum writes log timestamps with microsecond (1 µs) resolution instead of the default 1-second resolution.
 
 ### Rationale
 
@@ -48,7 +48,7 @@ The effect on each timestamp depends on how it is rendered:
 
 *   **Formatted (`strftime`) timestamps.** Timestamps rendered through a `strftime(3)` format string — such as the `timestamp_format` of [chunk_logger](/momentum/4/modules/chunk-logger), the `%t{...}` macro of [custom_logger](/momentum/4/modules/custom-logger), or [timestampformat](/momentum/4/config/ref-timestampformat) — keep the configured format, but every `%S` or `%T` conversion is followed by a `.NNNNNN` six-digit microsecond fraction. For example, the default `[%a %d %b %Y %H:%M:%S] ` becomes `[%a %d %b %Y %H:%M:%S.NNNNNN] ` and renders as `[Mon 20 May 2026 14:32:17.482915] `.
 
-When `LogHiresTimestamp` is `false` (the default), timestamps are emitted exactly as in previous releases of Momentum, with 1-second resolution and no `.NNNNNN` fraction.
+When `log_hires_timestamp` is `false` (the default), timestamps are emitted exactly as in previous releases of Momentum, with 1-second resolution and no `.NNNNNN` fraction.
 
 ## Compatibility
 
@@ -57,12 +57,12 @@ Tools that parse the numeric epoch field must accept either 10 or 16 decimal dig
 <a name="idp.log_hires_timestamp.online"></a>
 ## Online Modification
 
-`LogHiresTimestamp` is not online-tunable. Changing the option requires a Momentum restart.
+`log_hires_timestamp` is not online-tunable. Changing the option requires a Momentum restart.
 
 <a name="idp.log_hires_timestamp.scope"></a>
 ## Scope
 
-`LogHiresTimestamp` is valid in the global scope.
+`log_hires_timestamp` is valid in the global scope.
 
 ## See Also
 
