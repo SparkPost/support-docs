@@ -216,6 +216,7 @@ The `Version` column indicated the version(s) of Momentum that support the optio
 | [log_idle_interval](/momentum/4/modules/4-modules-cluster#option.log_idle_interval) – Amount of time to sleep before looking for another segment (cluster-specific) | na | 10 | 4.0 and later | cluster |
 | [log_requests_to_paniclog](/momentum/3/3-rest/rest-http-listener) – Whether to log REST injection requests | sending | false | 4.0 and later | http_listener, listen, pathway, pathway_group, peer |
 | [Logfile](/momentum/4/config/ref-eccluster-conf#eccluster.conf.logs.logfile) – Describe the full path to the log file | na |   | 4.0 and later | logs |
+| [LogHiresTimestamp](/momentum/4/config/ref-log-hires-timestamp) – Enable microsecond resolution for log timestamps | na | false | 5.3 and later | global |
 | [logs](/momentum/4/config/ref-ecelerity-cluster-conf) – Define the location of the cluster manager logs (cluster-specific) | na |   | 4.0 and later | cluster |
 | [logs](/momentum/4/config/ref-eccluster-conf) *(scope)* – Configure centralized log files on the cluster manager | na |   | 4.0 and later | global |
 | [low_action](/momentum/4/modules/4-adaptive#modules.adaptive.low_action) – Action when the high threshold is not met but the low threshold is met | sending | "throttle" "down" | 4.0 and later | adaptive_sweep_rule |

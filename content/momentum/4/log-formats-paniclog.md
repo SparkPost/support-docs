@@ -10,6 +10,10 @@ Under normal circumstances, Debug_Flags should be empty or should be omitted fro
 
 In addition, Momentum logs entries to the `paniclog` when the `log_requests_to_paniclog` option is enabled in the HTTP_Listener and its nested scopes.
 
+> **Note**
+>
+> When [LogHiresTimestamp](/momentum/4/config/ref-log-hires-timestamp) is enabled (Momentum 5.3 and later), the leading timestamp of every record (the value preceding the `:` separator) is emitted as a 16-digit microseconds-since-epoch value (for example `1307461172123456:`) instead of a 10-digit seconds-since-epoch value. The value remains a single integer with no internal separator.
+
 ### <a name="idp5044896"></a> Panic Records
 
 A line is written to the `paniclog` for every system event, when enabled in the configuration. The fields in the log entry are delimited by spaces.
