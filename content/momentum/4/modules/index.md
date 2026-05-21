@@ -32,6 +32,7 @@ description: "Table of Contents 71 1 Introduction 71 2 ac auth Authentication Ha
 | [compress_spool](/momentum/4/modules/compress-spool) | Dynamic Spool Compression |
 | [conntrol](/momentum/4/modules/conntrol) | Fine-Grained Connection Control |
 | [csapi](/momentum/4/modules/csapi) | Symantec CSAPI Antivirus Support |
+| [curfew](/momentum/4/modules/curfew) | Scheduled Delivery Suspension |
 | [custom_bounce_logger](/momentum/4/modules/custom-bounce-logger) | Custom Bounce Logging |
 | [custom_logger](/momentum/4/modules/custom-logger) | User-defined Logging |
 | [dane](/momentum/4/modules/dane) | DANE related DNS Lookups and TLS Verifications |

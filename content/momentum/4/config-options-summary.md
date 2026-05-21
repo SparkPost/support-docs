@@ -108,6 +108,7 @@ The `Version` column indicated the version(s) of Momentum that support the optio
 | [critical](/momentum/4/config/ref-debug-flags) – Set the debug level | na | ALL | 4.0 and later | debug_flags |
 | [crypto_engine](/momentum/4/config/ref-crypto-engine) – Enable hardware cryptography acceleration | both |   | 4.0 and later | global |
 | [crypto_lock_method](/momentum/4/config/crypto-lock-method) – Set the locking method used by the TLS layer | receiving and sending | EC_SSL_DEFAULTLOCK (*non-dynamic*) | 4.0 and later | global |
+| [curfew](/momentum/4/modules/curfew#modules.curfew.configuration) *(scope)* – Configure the curfew (scheduled delivery suspension) module | sending |   | 5.3 and later | global |
 | [debug](/momentum/4/config/ref-debug-flags) – Set the debug level | na |   | 4.0 and later | debug_flags |
 | [debug_flags](/momentum/4/config/ref-debug-flags) *(scope)* – Configure debug verbosity | na |   | 4.0 and later | global |
 | [debug_level](/momentum/4/4-module-config) – Set the module debug level (applicable to all modules) (cluster-specific) | na | error | 4.0 and later | cluster |
@@ -172,6 +173,7 @@ The `Version` column indicated the version(s) of Momentum that support the optio
 | [file_mode](/momentum/4/config/ref-eccluster-conf#eccluster.conf.logs.logfile) – Octal representation of the file permissions (cluster logs) | na |   | 4.0 and later | logs |
 | [force_fsync](/momentum/4/config/ref-force-fsync) – Ensure that data is synced to disk on reception | receiving | false | 4.0 and later | global |
 | [fully_resolve_before_smtp](/momentum/4/config/ref-fully-resolve-before-smtp) – Resolve all MX and A records before attempting delivery | sending | true | 4.0 and later | binding, binding_group, domain, global |
+| [Fuzz_Seconds](/momentum/4/modules/curfew#modules.curfew.fuzz_seconds) – Spread the curfew "thundering herd" after a window closes | sending | 60 | 5.3 and later | curfew |
 | [gateway](/momentum/4/config/ref-gateway) – Configure a static SMTP route for mail | sending |   | 4.0 and later | binding, binding_group, domain, global |
 | [gcm_application_id](/momentum/3/3-push/push-gcm-gcm-application-id) – Define the package name of the Android application allowed to received notifications | sending |   | 4.0 and later | binding, binding_group, domain, global |
 | [gcm_authorization_token_id](/momentum/3/3-push/push-gcm-gcm-authorization-token-id) – Authorization token that permits sending Google push notifications | sending |   | 4.0 and later | binding, binding_group, domain, global |
@@ -314,6 +316,7 @@ The `Version` column indicated the version(s) of Momentum that support the optio
 | [replicate](/momentum/4/config/ref-authorization) *(scope)* – Define a role within an authorization stanza | na |   | 4.0 and later | authorization |
 | [routes](/momentum/4/config/ref-routes) – Configure message routing | sending |   | 4.0 and later | domain, global |
 | [rset_timeout](/momentum/4/config/ref-rset-timeout) – Set the timeout after RSET | sending | 30 | 4.0 and later | binding, binding_group, domain, global |
+| [Schedule_File](/momentum/4/modules/curfew#modules.curfew.schedule_file) – Path to the curfew schedule file | sending |   | 5.3 and later | curfew |
 | [scheduler](/momentum/4/config/ref-scheduler) – Override the default IO scheduler | na | (*non-dynamic*) | 4.0 and later | global |
 | [scope_max_outbound_connections](/momentum/4/config/ref-scope-max-outbound-connections) – Provide traffic shaping for outbound connections | sending |   | 4.0 and later | binding, binding_group, domain, global |
 | [security](/momentum/4/config/ref-security) *(scope)* – Scope for defining which permissions are retained by which user | na | (*non-dynamic*) | 4.0 and later | global |
@@ -348,6 +351,7 @@ The `Version` column indicated the version(s) of Momentum that support the optio
 | [threadpool](/momentum/4/config/ref-threadpool) *(scope)* – Configure thread pool specific options | na |   | 4.0 and later | global |
 | [timeout](/momentum/4/control-listener#control_listener.config) – Timeout for idle control connections on Control_Listeners | receiving | 60 | 4.0 and later | control_listener |
 | [timestampformat](/momentum/4/config/ref-timestampformat) – Set the timestamp format used when logging to stderr | na | [%a %d %b %Y %H:%M:%S] | 4.0 and later | global |
+| [Timezone](/momentum/4/modules/curfew#modules.curfew.timezone) – Timezone in which curfew cron fields are interpreted | sending | local | 5.3 and later | curfew |
 | [tls](/momentum/4/config/ref-tls) – Determine whether to use a TLS connection for outbound mail | sending | no | 4.0 and later | binding, binding_group, domain, global |
 | [tls_allow_renegotiation](/momentum/4/config/tls-allow-renegotiation) – Determine whether to enable TLS renegotiation | receiving and sending | true | 4.0 and later | ecstream_listener, esmtp_listener, http_listener, listen, listen, pathway, pathway_group, peer, xmpp_listener |
 | [tls_ca](/momentum/4/config/tls-ca) – Specify certificate authority for outbound mail | sending |   | 4.0 and later | binding, binding_group, domain, global |

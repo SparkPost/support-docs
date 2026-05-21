@@ -36,6 +36,7 @@ All modules are listed alphabetically with a brief description. Singleton module
 | [“compress_spool – Dynamic Spool Compression”](/momentum/4/modules/compress-spool) (*singleton*) | 4.0 | Compress large messages before writing them to disk |  ✓ |   |   |   |
 | [“conntrol – Fine-Grained Connection Control”](/momentum/4/modules/conntrol) | 4.0 | Control how inbound connections are established |   |   |  ✓ |   |
 | [“csapi – Symantec CSAPI Antivirus Support”](/momentum/4/modules/csapi) | 4.0 | Integration for Symantec content scanners |   |   |  ✓ |   |
+| [“curfew – Scheduled Delivery Suspension”](/momentum/4/modules/curfew) (*singleton*) | 5.3 | Schedule recurring delivery quiet hours for bindings, binding groups, and domains |  ✓ |   |   | [suspend_delivery](/momentum/4/config/ref-suspend-delivery) |
 | [“custom_bounce_logger – Custom Bounce Logging”](/momentum/4/modules/custom-bounce-logger) | 4.2 | Append a "User_String" to the end of each bounce record |  ✓ |   |   | [“bounce_logger – Momentum-Style Bounce Logging”](/momentum/4/modules/bounce-logger) |
 | [“custom_logger – User-defined Logging”](/momentum/4/modules/custom-logger) | 4.0 | Create custom logs |   |   |   |   |
 | ["dane - DNS-based Authentication of Named Entities"](/momentum/4/modules/dane) | 4.8 | Support for DANE |   |   |   |   |
