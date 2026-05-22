@@ -1,5 +1,5 @@
 ---
-lastUpdated: "06/01/2024"
+lastUpdated: "04/15/2026"
 title: "Category File"
 type: "custom"
 name: "Non-Module-Specific Console Commands"
@@ -29,6 +29,8 @@ description: "This section documents all the non module specific console command
 | [dns_cache](/momentum/4/console-commands/dns-cache)                                         | manage Momentum's DNS cache                                                       |
 | [domain](/momentum/4/console-commands/domain)                                               | show domain statistics                                                            |
 | [domain all](/momentum/4/console-commands/domain-all)                                       | show statistics for all domains                                                   |
+| [fail all](/momentum/4/console-commands/fail-all)                                           | fail matching queued messages globally (filter required) with a bounce message    |
+| [fail all quiet](/momentum/4/console-commands/fail-all-quiet)                               | fail matching queued messages globally (filter required) without generating bounces |
 | [fail domain](/momentum/4/console-commands/fail-domain)                                     | fail messages for a domain with a bounce message                                  |
 | [fail domain quiet](/momentum/4/console-commands/fail-domain-quiet)                         | fail messages for a domain without generating bounces                             |
 | [fingerprint cache summary](/momentum/4/console-commands/fingerprint-cache-summary)         | display the current cache size                                                    |

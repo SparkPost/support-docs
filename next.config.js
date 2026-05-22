@@ -1,27 +1,10 @@
 /** @type {import('next').NextConfig} */
-const SentryPlugin = require('@sentry/webpack-plugin');
-
 module.exports = {
   reactStrictMode: true,
   swcMinify: true,
   trailingSlash: false,
 
-  // Sourcemaps are enabled to be uploaded to Sentry
-  // Warning: Can significantly increase build times
-  // and memory usage while being generated.
-  productionBrowserSourceMaps: true,
-
   webpack: (config, { dev, isServer }) => {
-    // This uploads sourcemaps to Sentry
-    if (!dev && !isServer && !process.env.NODE_ENV === 'test') {
-      config.plugins.push(
-        new SentryPlugin({
-          release: process.env.RELEASE,
-          include: './out',
-        }),
-      );
-    }
-
     config.module.rules.push({
       test: /\.ya?ml$/,
       type: 'json',

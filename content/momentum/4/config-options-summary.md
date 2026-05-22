@@ -131,6 +131,10 @@ The `Version` column indicated the version(s) of Momentum that support the optio
 | [dns_failures_to_purge](/momentum/4/config/ref-dns-failures-to-purge) – Configure the maximum number of DNS lookups | sending | 10 | 4.0 and later | domain, global |
 | [dns_fallback_to_tcp](/momentum/4/config/ref-dns-fallback-to-tcp) – Whether or not to fail over to TCP in place of UDP | both | false | 4.0 and later | global |
 | [dns_max_udp_queries_per_port](/momentum/4/config/ref-dns-max-udp-queries-per-port) - Limit the number of DNS queries sent using the same UDP source port | sending | 0 | 5.2 and later | global |
+| [dns_rate_limit_enabled](/momentum/4/config/ref-dns-rate-limit) - Enable or disable the DNS rate limiter | sending | false | 5.3 and later | global |
+| [dns_rate_limit_max_queue](/momentum/4/config/ref-dns-rate-limit) - Maximum number of domains the rate limiter will hold while waiting for a token | sending | 100000 | 5.3 and later | global |
+| [dns_rate_limit_mx_queries](/momentum/4/config/ref-dns-rate-limit) - Maximum number of MX DNS queries dispatched per period | sending | 100 | 5.3 and later | global |
+| [dns_rate_limit_period](/momentum/4/config/ref-dns-rate-limit) - The period, in seconds, used by the DNS rate limiter | sending | 1 | 5.3 and later | global |
 | [dns_udp_rcvbuf_size](/momentum/4/config/ref-dns-udp-buffer-size) - Set the size of the UDP socket receiving buffer used by DNS lookups | both | 0 | 5.2 and later | global |
 | [dns_udp_sndbuf_size](/momentum/4/config/ref-dns-udp-buffer-size) - Set the size of the UDP socket sending buffer used by DNS lookups | both | 0 | 5.2 and later | global |
 | [domain](/momentum/4/config/ref-domain) *(scope)* – Configure domain-specific options | sending |   | 4.0 and later | binding, binding_group, global |
@@ -213,6 +217,7 @@ The `Version` column indicated the version(s) of Momentum that support the optio
 | [local_changes_only](/momentum/4/config/ref-local-changes-only) – Whether there is a file for writing local configuration change | na | false | 4.0 and later | global |
 | [log_active_interval](/momentum/4/modules/4-modules-cluster#option.log_active_interval) – Used to tune centralized logging (cluster-specific) | na | 1 | 4.0 and later | cluster |
 | [log_group](/momentum/4/modules/4-modules-cluster#option.log_group) – Whether or not panic log messages are broadcast over spread (cluster-specific) | na |   | 4.0 and later | cluster |
+| [log_hires_timestamp](/momentum/4/config/ref-log-hires-timestamp) – Enable microsecond resolution for log timestamps | na | false | 5.3 and later | global |
 | [log_idle_interval](/momentum/4/modules/4-modules-cluster#option.log_idle_interval) – Amount of time to sleep before looking for another segment (cluster-specific) | na | 10 | 4.0 and later | cluster |
 | [log_requests_to_paniclog](/momentum/3/3-rest/rest-http-listener) – Whether to log REST injection requests | sending | false | 4.0 and later | http_listener, listen, pathway, pathway_group, peer |
 | [Logfile](/momentum/4/config/ref-eccluster-conf#eccluster.conf.logs.logfile) – Describe the full path to the log file | na |   | 4.0 and later | logs |
@@ -351,6 +356,7 @@ The `Version` column indicated the version(s) of Momentum that support the optio
 | [tlsv13_ciphersuites](/momentum/4/config/tlsv13-ciphersuites) – Specify allowable TLSv1.3 ciphersuites for TLS inbound and outbound sessions | receiving and sending |   | 4.6 and later | binding, binding_group, domain, esmtp_listener, global, http_listener, listen, pathway, pathway_group, peer |
 | [tls_client_ca](/momentum/4/config/tls-client-ca) – Specify certificate authority for inbound mail | receiving |   | 4.0 and later | ecstream_listener, esmtp_listener, global, http_listener, listen, pathway, pathway_group, peer, xmpp_listener |
 | [tls_dhparams_file](/momentum/4/config/ref-tls-dhparams-file) – Specifies DHE parameters that add per-session randomness to the encryption | both |   | 4.0 and later | global |
+| [tls_ec_curve_names](/momentum/4/config/tls-ec-curve-names) – Select the elliptic curves or TLS groups used for ECDHE key exchange in inbound and outbound TLS sessions | both |   | 4.2 and later | global |
 | [tls_enable_dhe_ciphers](/momentum/4/config/ref-tls-enable-dhe-ciphers) – Controls whether or not DHE ciphers are available | both | true | 4.0 and later | global |
 | [tls_engine](/momentum/4/config/tls-engine) – Specify the TLS library to use (OpenSSL or GNUTLS) | sending | openssl | 4.0 and later | global |
 | [tls_ifavailable_fallback](/momentum/4/config/tls-ifavailable-fallback) – Determine the behavior if TLS negotiation fails | sending | true | 4.1 and later | binding, binding_group, domain, global |

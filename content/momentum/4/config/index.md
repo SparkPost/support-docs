@@ -67,6 +67,10 @@ description: "This chapter provides the definitions of the configuration options
 | [dns_failures_to_purge](/momentum/4/config/ref-dns-failures-to-purge) | configure the maximum number of DNS lookups |
 | [dns_fallback_to_tcp](/momentum/4/config/ref-dns-fallback-to-tcp) | whether or not to fail over to TCP in place of UDP |
 | [dns_max_udp_queries_per_port](/momentum/4/config/ref-dns-max-udp-queries-per-port) | limit the number of DNS queries sent using the same UDP source port |
+| [dns_rate_limit_enabled](/momentum/4/config/ref-dns-rate-limit) | enable or disable the DNS rate limiter |
+| [dns_rate_limit_max_queue](/momentum/4/config/ref-dns-rate-limit) | maximum number of domains the rate limiter will hold while waiting for a token |
+| [dns_rate_limit_mx_queries](/momentum/4/config/ref-dns-rate-limit) | maximum number of MX DNS queries dispatched per period |
+| [dns_rate_limit_period](/momentum/4/config/ref-dns-rate-limit) | the period, in seconds, used by the DNS rate limiter |
 | [dns_udp_rcvbuf_size](/momentum/4/config/ref-dns-udp-buffer-size) | set the size of the UDP socket receiving buffer used by DNS lookups |
 | [dns_udp_sndbuf_size](/momentum/4/config/ref-dns-udp-buffer-size) | set the size of the UDP socket sending buffer used by DNS lookups |
 | [domain_for_unqualified_recipient_addresses](/momentum/4/config/ref-domain-for-unqualified-recipient-addresses) | configure a domain which will be used to resolve delivery for unqualified addresses |
@@ -216,6 +220,7 @@ description: "This chapter provides the definitions of the configuration options
 | [tlsv13_ciphersuites](/momentum/4/config/tlsv13-ciphersuites) | specify allowable TLSv1.3 ciphersuites for TLS inbound and outbound sessions |
 | [tls_client_ca](/momentum/4/config/tls-client-ca) | certificate authority for inbound mail |
 | [tls_dhparams_file](/momentum/4/config/ref-tls-dhparams-file) | specifies the file of Diffie Hellman (DHE) parameters that add per-session randomness to the encryption. Default parameters are built in the product if none are specified. |
+| [tls_ec_curve_names](/momentum/4/config/tls-ec-curve-names) | select the elliptic curves or TLS groups used for ECDHE key exchange in inbound and outbound TLS sessions |
 | [tls_enable_dhe_ciphers](/momentum/4/config/ref-tls-enable-dhe-ciphers) | controls whether or not Diffie Hellman (DHE) ciphers are available |
 | [tls_engine](/momentum/4/config/tls-engine) | specify the TLS library to use |
 | [tls_ifavailable_fallback](/momentum/4/config/tls-ifavailable-fallback) | determine the behavior if TLS negotiation fails |
