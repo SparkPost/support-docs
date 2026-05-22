@@ -79,6 +79,7 @@ description: "Table of Contents 71 1 Introduction 71 2 ac auth Authentication Ha
 | [smtp_cbv](/momentum/4/modules/smtp-cbv) | SMTP Callback Verification |
 | [smtp_rcptto_proxy](/momentum/4/modules/smtp-rcptto-proxy) | SMTP Recipient-To Proxy |
 | [smtpapi](/momentum/4/modules/smtpapi) | SMTP Engagement Tracking |
+| [spamassassin](/momentum/4/modules/spamassassin) | SpamAssassin Client |
 | [spf Modules](/momentum/4/modules/spf) | spf_macros, spf_v1, and senderid (SPF v2) |
 | [static-routes](/momentum/4/modules/static-routes) | Static Routes |
 | [suppress_spool](/momentum/4/modules/suppress-spool) | Deferred Message Spooling |
