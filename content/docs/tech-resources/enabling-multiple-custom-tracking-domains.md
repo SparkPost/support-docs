@@ -1,5 +1,5 @@
 ---
-lastUpdated: "01/22/2021"
+lastUpdated: "02/10/2026"
 title: "Custom Tracking Domains"
 description: "A tracking domain is the domain that a tracked link will redirect through before reaching the final URL path of the original link. It is also used as the path for the tracking pixel to track message opens."
 ---
@@ -8,7 +8,7 @@ A tracking domain (also referred to as an "engagement tracking domain") is the d
 
 The system default tracking domains are "spgo.io" for US "eu.spgo.io" for EU. When you set up a customer tracking domain you can set it as the default to be used for all of your emails. When you set up multiple tracking domains, you can associate each one with a sending domain and set one as the default for any domains that don't have a tracking domain associated with it.
 
-## Set Up a Tracking Domain 
+## Set Up a Tracking Domain
 
 Start from [Domains create](https://app.sparkpost.com/domains/create) ([EU](https://app.eu.sparkpost.com/domains/create)) page and select the Tracking Domain option as you add your domain.
 
@@ -18,11 +18,13 @@ The tracking domain must be a subdomain and not a root domain.
 
 Then add the CNAME record to your domain's DNS settings and verify the domain.
 
+After the domain verification, SparkPost will automatically issue and manage a TLS certificate for your domain using Let's Encrypt. As a result, your email recipients will see HTTPS links in the emails you send, with no additional configuration required. Read more about managed HTTPS for tracking domains in [this article](./managed-https-for-tracking-domains).
+
 You can also set the tracking domain as default to be used for all of your emails. Otherwise, you can link the tracking domain to a specific sending domain.
 
-## Link Tracking domains to to Sending Domains      
+## Link Tracking Domains to Sending Domains      
 
-Once your tracking domains is verified, you can link it to specific sending domains.
+Once your tracking domain is verified, you can link it to specific sending domains.
 
 1. Find the sending domain you want from the [Domains](https://app.sparkpost.com/domains/list) ([EU](https://app.eu.sparkpost.com/domains/list)) page.
 2. Select the tracking domain you want to link from the Link Tracking Domain section

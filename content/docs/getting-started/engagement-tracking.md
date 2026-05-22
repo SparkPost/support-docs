@@ -7,7 +7,7 @@ description: "This guide outlines some of the different ways you can do engageme
 With SparkPost, there are a multitude of ways to configure engagement tracking with our customers.  This guide will outline some of the initial options, and provide references to other guides for configuring custom tracking domains and different ways to use **HTTPS** with your custom tracking domains.
 
 ## Getting Started
-Customers can view their engagement through the use of SparkPosts Events.  These events can be searched and viewed in many different ways.  They can be viewed within [SparkPost Signals](https://www.sparkpost.com/docs/reporting/signals-analytics/), queried and searched via the [Events API](https://developers.sparkpost.com/api/events/) or sent to your own environments through the use of [Event Webhooks](https://developers.sparkpost.com/api/webhooks/) to name a few.
+Customers can view their engagement through the use of SparkPosts Events.  These events can be searched and viewed in many different ways.  They can be viewed within [SparkPost Signals®](https://www.sparkpost.com/docs/reporting/signals-analytics/), queried and searched via the [Events API](https://developers.sparkpost.com/api/events/) or sent to your own environments through the use of [Event Webhooks](https://developers.sparkpost.com/api/webhooks/) to name a few.
 
 ### Notes on Click Tracking
 For a link to be click tracked, it must start with a protocol of either `http://` or `https://`.  If neither of these are present, the link will not be click tracked by SparkPost. 

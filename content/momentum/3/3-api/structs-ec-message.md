@@ -118,6 +118,12 @@ struct _ec_message {
   /** @internal */
   const char *pathway;
   ec_message_resource_t *resources;
+
+  /** @since 4.3.2 */
+  /* set through ec_message_set_routing_domain, then
+     used in ec_message_get_routing_domain.
+     This field will not be written to spool */
+  string _routing_domain;
 };
 ```
 

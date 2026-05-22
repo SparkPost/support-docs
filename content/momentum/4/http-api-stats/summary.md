@@ -1,5 +1,5 @@
 ---
-lastUpdated: "11/05/2024"
+lastUpdated: "12/31/2025"
 title: "Summary"
 description: "stats summary show global metrics Perhaps the most common API command stats summary will produce global metrics such as queue sizes message counts and throughput rates since startup or the last reset of statistics"
 ---
@@ -7,15 +7,20 @@ description: "stats summary show global metrics Perhaps the most common API comm
 <a name="http_api_stats.summary"></a>
 ## Name
 
-`/stats/summary` — show global metrics
+`/stats/summary` — global metrics
 
 ## Synopsis
 
 `GET /stats/summary`
 
+`DELETE /stats/summary`
+
 ## Description
 
-Perhaps the most common API command, `/stats/summary` will produce global metrics such as queue sizes, message counts and throughput rates since startup or the last reset of statistics.
+<a name="http_api_stats.summary.get"></a>
+### Gather Global Metrics
+
+Perhaps the most common API command, `GET /stats/summary` will produce global metrics such as queue sizes, message counts and throughput rates since startup or the last reset of statistics.
 
 The data is formatted as a JSON object and you might want to use the `curl` command to do the request (e.g. `curl -sS localhost:2081/stats/summary`).
 
@@ -41,6 +46,7 @@ Sample output is shown below:
   "DNSQueryRate": 2.25,
   "DNSResponseTimePeak": 291,
   "DNSResponseTimeAverage": 1.04,
+  "DNSRateLimiterEnabled": false,
   "ResidentMessages": 120,
   "DiskQueueProgress": "    29/    29",
   "DeliveredMessages": 516030153,
@@ -217,6 +223,84 @@ The average of all answers response times since startup or last summary reset, i
 
 </dd>
 
+<dt>DNSRateLimiterEnabled</dt>
+
+<dd>
+
+_Introduced in Momentum 5.3._
+
+Whether the [DNS rate limiter](/momentum/4/config/ref-dns-rate-limit) is enabled (`true`) or disabled (`false`). When the rate limiter is enabled, the following additional fields are also reported:
+
+<dl class="variablelist">
+
+<dt>DNSRateLimitMXQueries</dt>
+
+<dd>
+
+The current value of [`dns_rate_limit_mx_queries`](/momentum/4/config/ref-dns-rate-limit) — the maximum number of MX DNS queries dispatched per `DNSRateLimitPeriod`.
+
+</dd>
+
+<dt>DNSRateLimitPeriod</dt>
+
+<dd>
+
+The current value of [`dns_rate_limit_period`](/momentum/4/config/ref-dns-rate-limit) — the period, in seconds, over which the MX query budget is enforced.
+
+</dd>
+
+<dt>DNSRateLimiterQueueSize</dt>
+
+<dd>
+
+The current number of domains waiting in the rate limiter queue for a token.
+
+</dd>
+
+<dt>DNSRateLimiterQueueMax</dt>
+
+<dd>
+
+The maximum number of domains that may be held in the rate limiter queue, as configured by [`dns_rate_limit_max_queue`](/momentum/4/config/ref-dns-rate-limit).
+
+</dd>
+
+<dt>DNSRateLimiterImmediate</dt>
+
+<dd>
+
+The total number of MX lookups dispatched without queueing — i.e. lookups that fit within the per-period budget — since startup or last summary reset.
+
+</dd>
+
+<dt>DNSRateLimiterQueued</dt>
+
+<dd>
+
+The total number of MX lookups that had to be queued to wait for a token since startup or last summary reset.
+
+</dd>
+
+<dt>DNSRateLimiterDrained</dt>
+
+<dd>
+
+The total number of MX lookups dispatched from the queue since startup or last summary reset.
+
+</dd>
+
+<dt>DNSRateLimiterOverflow</dt>
+
+<dd>
+
+The total number of MX lookups that bypassed the rate limiter because the queue was full since startup or last summary reset. A non-zero value indicates that [`dns_rate_limit_max_queue`](/momentum/4/config/ref-dns-rate-limit) may be too small for the workload.
+
+</dd>
+
+</dl>
+
+</dd>
+
 <dt>ResidentMessages</dt>
 
 <dd>
@@ -323,10 +407,24 @@ The number of seconds that Momentum has been running continuously.
 
 </dl>
 
+<a name="http_api_stats.summary.delete"></a>
+### Reset Statistics
+
+You can reset the statistics used to generate this report by issuing a `DELETE` request to the same URL: `DELETE /stats/summary`. This will reset all the cumulative counters to zero and the time-based metrics will be calculated from that point forward. The output of a successful reset operation is as follows:
+
+```json
+{
+  "message": "statistics cleared"
+}
+```
+
 ## See Also
 
+[summary](/momentum/4/console-commands/summary),
 [summary reset](/momentum/4/console-commands/summary-reset)
 
 ## Note
 
-This command was first implemented in Momentum 4.4.1.
+`GET /stats/summary` was first implemented in Momentum 4.4.1.
+
+`DELETE /stats/summary` was first implemented in Momentum 5.2.

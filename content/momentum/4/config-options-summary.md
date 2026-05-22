@@ -1,5 +1,5 @@
 ---
-lastUpdated: "09/20/2023"
+lastUpdated: "12/31/2025"
 title: "Configuration Options Summary"
 description: "This chapter lists all configuration options visible in the following scopes global domain host binding binding group security pathway pathway group listener listen peer threadpool debug flags and cluster as well as in the listener specific scope Module specific options are documented in the module documentation and options specific to..."
 ---
@@ -111,6 +111,8 @@ The `Version` column indicated the version(s) of Momentum that support the optio
 | [debug](/momentum/4/config/ref-debug-flags) – Set the debug level | na |   | 4.0 and later | debug_flags |
 | [debug_flags](/momentum/4/config/ref-debug-flags) *(scope)* – Configure debug verbosity | na |   | 4.0 and later | global |
 | [debug_level](/momentum/4/4-module-config) – Set the module debug level (applicable to all modules) (cluster-specific) | na | error | 4.0 and later | cluster |
+| [debug_throttle_max_num_same_message](/momentum/4/config/ref-debug-throttle) – Maximum number of identical debug messages to log within an interval | na | 0 | 5.2 and later | global |
+| [debug_throttle_period_secs](/momentum/4/config/ref-debug-throttle) – Time interval for debug message throttling, in seconds | na | 1 | 5.2 and later | global |
 | [default_binding](/momentum/4/config/ref-default-binding) – Control the default binding | sending | normal | 4.0 and later | global |
 | [default_charset](/momentum/4/config/ref-default-charset) – Control the character set | both | us-ascii | 4.0 and later | global, pathway, pathway_group |
 | [delay_dsn_max_retry_interval](/momentum/4/config/ref-delay-dsn-max-retry-interval) – Maximum interval for sending DSNs to the sender of a message that has not yet been delivered | sending | 43200 | 4.0 and later | binding, binding_group, domain, global |
@@ -128,6 +130,13 @@ The `Version` column indicated the version(s) of Momentum that support the optio
 | [dns_expire_interval](/momentum/4/config/ref-dns-expire-interval) – How often to check for domains with expired DNS information | sending | 10 | 4.0 and later | global |
 | [dns_failures_to_purge](/momentum/4/config/ref-dns-failures-to-purge) – Configure the maximum number of DNS lookups | sending | 10 | 4.0 and later | domain, global |
 | [dns_fallback_to_tcp](/momentum/4/config/ref-dns-fallback-to-tcp) – Whether or not to fail over to TCP in place of UDP | both | false | 4.0 and later | global |
+| [dns_max_udp_queries_per_port](/momentum/4/config/ref-dns-max-udp-queries-per-port) - Limit the number of DNS queries sent using the same UDP source port | sending | 0 | 5.2 and later | global |
+| [dns_rate_limit_enabled](/momentum/4/config/ref-dns-rate-limit) - Enable or disable the DNS rate limiter | sending | false | 5.3 and later | global |
+| [dns_rate_limit_max_queue](/momentum/4/config/ref-dns-rate-limit) - Maximum number of domains the rate limiter will hold while waiting for a token | sending | 100000 | 5.3 and later | global |
+| [dns_rate_limit_mx_queries](/momentum/4/config/ref-dns-rate-limit) - Maximum number of MX DNS queries dispatched per period | sending | 100 | 5.3 and later | global |
+| [dns_rate_limit_period](/momentum/4/config/ref-dns-rate-limit) - The period, in seconds, used by the DNS rate limiter | sending | 1 | 5.3 and later | global |
+| [dns_udp_rcvbuf_size](/momentum/4/config/ref-dns-udp-buffer-size) - Set the size of the UDP socket receiving buffer used by DNS lookups | both | 0 | 5.2 and later | global |
+| [dns_udp_sndbuf_size](/momentum/4/config/ref-dns-udp-buffer-size) - Set the size of the UDP socket sending buffer used by DNS lookups | both | 0 | 5.2 and later | global |
 | [domain](/momentum/4/config/ref-domain) *(scope)* – Configure domain-specific options | sending |   | 4.0 and later | binding, binding_group, global |
 | [domain_for_unqualified_recipient_addresses](/momentum/4/config/ref-domain-for-unqualified-recipient-addresses) – Configure a domain which will be used to resolve delivery for unqualified addresses | receiving |   | 4.0 and later | esmtp_listener, global, listen, pathway, pathway_group, peer |
 | [domain_for_unqualified_sender_address](/momentum/4/config/ref-domain-for-unqualified-sender-address) – Configure a domain which will be used to substitute for unqualified sender addresses | receiving |   | 4.0 and later | esmtp_listener, global, listen, pathway, pathway_group, peer |
@@ -208,6 +217,7 @@ The `Version` column indicated the version(s) of Momentum that support the optio
 | [local_changes_only](/momentum/4/config/ref-local-changes-only) – Whether there is a file for writing local configuration change | na | false | 4.0 and later | global |
 | [log_active_interval](/momentum/4/modules/4-modules-cluster#option.log_active_interval) – Used to tune centralized logging (cluster-specific) | na | 1 | 4.0 and later | cluster |
 | [log_group](/momentum/4/modules/4-modules-cluster#option.log_group) – Whether or not panic log messages are broadcast over spread (cluster-specific) | na |   | 4.0 and later | cluster |
+| [log_hires_timestamp](/momentum/4/config/ref-log-hires-timestamp) – Enable microsecond resolution for log timestamps | na | false | 5.3 and later | global |
 | [log_idle_interval](/momentum/4/modules/4-modules-cluster#option.log_idle_interval) – Amount of time to sleep before looking for another segment (cluster-specific) | na | 10 | 4.0 and later | cluster |
 | [log_requests_to_paniclog](/momentum/3/3-rest/rest-http-listener) – Whether to log REST injection requests | sending | false | 4.0 and later | http_listener, listen, pathway, pathway_group, peer |
 | [Logfile](/momentum/4/config/ref-eccluster-conf#eccluster.conf.logs.logfile) – Describe the full path to the log file | na |   | 4.0 and later | logs |
@@ -346,6 +356,7 @@ The `Version` column indicated the version(s) of Momentum that support the optio
 | [tlsv13_ciphersuites](/momentum/4/config/tlsv13-ciphersuites) – Specify allowable TLSv1.3 ciphersuites for TLS inbound and outbound sessions | receiving and sending |   | 4.6 and later | binding, binding_group, domain, esmtp_listener, global, http_listener, listen, pathway, pathway_group, peer |
 | [tls_client_ca](/momentum/4/config/tls-client-ca) – Specify certificate authority for inbound mail | receiving |   | 4.0 and later | ecstream_listener, esmtp_listener, global, http_listener, listen, pathway, pathway_group, peer, xmpp_listener |
 | [tls_dhparams_file](/momentum/4/config/ref-tls-dhparams-file) – Specifies DHE parameters that add per-session randomness to the encryption | both |   | 4.0 and later | global |
+| [tls_ec_curve_names](/momentum/4/config/tls-ec-curve-names) – Select the elliptic curves or TLS groups used for ECDHE key exchange in inbound and outbound TLS sessions | both |   | 4.2 and later | global |
 | [tls_enable_dhe_ciphers](/momentum/4/config/ref-tls-enable-dhe-ciphers) – Controls whether or not DHE ciphers are available | both | true | 4.0 and later | global |
 | [tls_engine](/momentum/4/config/tls-engine) – Specify the TLS library to use (OpenSSL or GNUTLS) | sending | openssl | 4.0 and later | global |
 | [tls_ifavailable_fallback](/momentum/4/config/tls-ifavailable-fallback) – Determine the behavior if TLS negotiation fails | sending | true | 4.1 and later | binding, binding_group, domain, global |

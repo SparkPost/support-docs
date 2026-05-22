@@ -1,14 +1,23 @@
 ---
-lastUpdated: "01/09/2025"
-title: "Enabling HTTPS Engagement Tracking on SparkPost"
-description: "SparkPost supports HTTPS engagement tracking for customers via self-service for all SparkPost customers. To enable SSL engagement tracking for a domain, additional configuration for SSL keys is required."
+lastUpdated: "02/10/2026"
+title: "Enabling HTTPS Engagement Tracking with a CDN"
+description: "Guide for enabling HTTPS engagement tracking using a CDN"
 ---
 
 ## Overview
 
-SparkPost supports HTTPS engagement tracking for all self-service customers. This article describes how to use a Content Delivery Network (CDN) to enable SSL engagement tracking for your domain. After completing the steps below, your email recipients will see HTTPS links in the email you send. When they visit a tracked link, your CDN will handle the SSL connection, then pass the HTTP request on to SparkPost. SparkPost will record the click event and redirect the recipient to the original URL.
+SparkPost supports HTTPS engagement tracking for all customers through [Managed HTTPS for Tracking Domains](./managed-https-for-tracking-domains), which automatically issues and renews certificates through Let's Encrypt. This is the recommended and simplest way to enable secure engagement tracking with no infrastructure or maintenance required.
 
-> Alternative: to configure HTTPS engagement tracking using your own proxy, see [this article](https://www.sparkpost.com/docs/tech-resources/using-proxy-https-tracking-domain/).
+This article describes an alternative approach using a Content Delivery Network (CDN) to enable HTTPS engagement tracking with your own certificates. Consider using a CDN if you:
+
+- Need to use a specific Certificate Authority other than Let's Encrypt
+- Require Extended Validation (EV) certificates
+- Have compliance requirements for certificate handling
+- Your domain does not support managed HTTPS due to Let's Encrypt policies
+
+With this approach, your email recipients will see HTTPS links in the email you send. When they visit a tracked link, your CDN will handle the TLS connection, then pass the HTTP request on to SparkPost. SparkPost will record the click event and redirect the recipient to the original URL.
+
+> **Alternative:** To configure HTTPS engagement tracking using your own reverse proxy instead of a CDN, see [this article](./using-proxy-https-tracking-domain).
 
 ## Migration planning
 
@@ -24,9 +33,9 @@ If you want to end up with your CDN serving the original domain:
 
 ## Configuring SSL Certificates
 
-In order for HTTPS engagement tracking to be enabled on SparkPost, our service needs to present a valid certificate that will be trusted by the email recipient’s browser. SparkPost does not manage certificates for customer engagement tracking domains, as we are not the record owner for our customers’ domains.
+In order for HTTPS engagement tracking to be enabled on SparkPost, our service needs to present a valid certificate that will be trusted by the email recipient's browser.
 
-Use a CDN such as [Cloudflare](http://www.cloudflare.com), [Fastly](http://www.fastly.com) or [AWS Cloudfront](https://aws.amazon.com/cloudfront/) to manage certificates and keys for any custom engagement tracking domains. These services forward requests onward to SparkPost so that HTTPS tracking can be performed.
+For this CDN approach, you will use a service such as [Cloudflare](http://www.cloudflare.com), [Fastly](http://www.fastly.com) or [AWS Cloudfront](https://aws.amazon.com/cloudfront/) to manage certificates and keys for your custom engagement tracking domains. These services forward requests onward to SparkPost so that HTTPS tracking can be performed.
 
 ## Step by Step guides
 
@@ -366,7 +375,7 @@ Sign up for [Fastly](https://www.fastly.com/) or log in to an existing account.
     ![](media/enabling-https-engagement-tracking-on-sparkpost/fastly-2023-add-domain.png)
 
 1. Select **Origins** in the left-side menu. In the **Hosts** section, add the correct tracking endpoint for your service (also known as hostname), see possible values [here](#sparkpost-tracking-endpoints).
-     
+
     ![](media/enabling-https-engagement-tracking-on-sparkpost/fastly-2023-add-host.png)
 
     Fastly detects that SparkPost supports TLS, and shows the host entry like below. Optionally you can use the "pencil" edit icon to set a meaningful name.
@@ -479,10 +488,10 @@ GCP organizes resources under named projects.
 
         ![](media/enabling-https-engagement-tracking-on-sparkpost/gcp-2023-lb-frontend.png)
 
-    * Select the **Certificate** field and click on **Create new certificate**. Choose a name to identify your certificate. If you have an existing certificate for your tracking domain, you can upload it via this dialog. 
-    
+    * Select the **Certificate** field and click on **Create new certificate**. Choose a name to identify your certificate. If you have an existing certificate for your tracking domain, you can upload it via this dialog.
+
         ![](media/enabling-https-engagement-tracking-on-sparkpost/gcp-2023-lb-frontend-cert.png)
-    
+
         Otherwise choose the **Create Google-managed certificate** option. This has the advantage that GCP will handle your renewals. Under *Domains*, enter your tracking domain and select **Create**.
 
         ![](media/enabling-https-engagement-tracking-on-sparkpost/gcp-2023-lb-create-cert.png)
@@ -493,9 +502,9 @@ GCP organizes resources under named projects.
 
 
     * Choose **Backend services & backend buckets** / **Create a backend service**.
-    
+
         ![](media/enabling-https-engagement-tracking-on-sparkpost/gcp-2023-lb-backend.png)
-    
+
         Give the backend service a name, e.g. "sparkpost-engagement-tracking".
 
         For *Backend type*, choose **Internet network endpoint group**.
@@ -523,7 +532,7 @@ GCP organizes resources under named projects.
         ![](media/enabling-https-engagement-tracking-on-sparkpost/gcp-2023-network-endpoint-group-exists.png)
 
     * Close this tab, and **return to your previous tab**.
-    
+
         Unfortunately this does not auto-refresh; however, start typing the name of the Network Endpoint Group you just created, and it will appear. Click on **Done**.
 
         ![](media/enabling-https-engagement-tracking-on-sparkpost/gcp-2023-choose-backend-group.png)
@@ -704,19 +713,17 @@ To enable SparkPost to record human-driven repeat opens/clicks, while screening 
 
 ## Switch tracking domain to secure, and validate
 
-If you have previously created a tracking domain (whether verified or unverified), and wish to switch it from insecure (the default) to secure, use the [Update a Tracking Domain API](https://developers.sparkpost.com/api/tracking-domains/#tracking-domains-put-update-a-tracking-domain) `PUT` call, to update the tracking domain with the `"secure": true` string.
+If you have previously created a tracking domain (whether verified or unverified), and wish to switch it from insecure (the default) to secure, follow the steps below:
 
-1. Run the PUT call with the following data:
+1. Navigate to the details page of your domain. In the _HTTPS_ section, you will see _HTTPS Disabled_ as the current status.
 
-    ```
-    {
-        "secure"  : true
-    }
-    ```
+   ![](media/enabling-https-engagement-tracking-on-sparkpost/enable_https_cdn.png)
 
-    Note: If you would like this tracking domain to be the default, please add `"default": true` to the JSON object above, before updating the domain.
+   Under _Choose how to enable HTTPS_, select the option _Certificate managed by CDN or reverse proxy (Advanced)_ and then click on _Enable HTTPS_ to proceed. After a page refresh, the section will now show _HTTPS Enabled via self-managed infrastructure_.
 
-    Detailed information on this operation can be found in our API documentation [here](https://developers.sparkpost.com/api/tracking-domains.html#tracking-domains-retrieve,-update,-and-delete-put).
+   ![](media/enabling-https-engagement-tracking-on-sparkpost/https_enabled_cdn.png)
+
+   Now, the tracking domain is secure.
 
 1. Navigate to the Tracking Domains section in the UI and click the  "test" verification button.
 
