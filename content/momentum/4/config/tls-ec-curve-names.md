@@ -1,7 +1,7 @@
 ---
 lastUpdated: "05/21/2026"
 title: "tls_ec_curve_names"
-description: "tls_ec_curve_names selects the OpenSSL elliptic curves or TLS groups used for ECDHE key exchange in inbound and outbound TLS sessions. Specify a single curve short name (e.g. secp384r1) or, in newer versions, a colon-separated list in preference order (e.g. secp384r1:prime256v1)."
+description: "tls_ec_curve_names selects the OpenSSL elliptic curves or TLS groups used for ECDHE key exchange in inbound and outbound TLS sessions. Specify a single curve short name (e.g. secp384r1) or, in newer versions of Momentum 5.3 and later, a colon-separated list in preference order (e.g. secp384r1:prime256v1)."
 ---
 
 <a name="config.tls_ec_curve_names"></a>
