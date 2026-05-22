@@ -220,6 +220,7 @@ description: "This chapter provides the definitions of the configuration options
 | [tlsv13_ciphersuites](/momentum/4/config/tlsv13-ciphersuites) | specify allowable TLSv1.3 ciphersuites for TLS inbound and outbound sessions |
 | [tls_client_ca](/momentum/4/config/tls-client-ca) | certificate authority for inbound mail |
 | [tls_dhparams_file](/momentum/4/config/ref-tls-dhparams-file) | specifies the file of Diffie Hellman (DHE) parameters that add per-session randomness to the encryption. Default parameters are built in the product if none are specified. |
+| [tls_ec_curve_names](/momentum/4/config/tls-ec-curve-names) | select the elliptic curves or TLS groups used for ECDHE key exchange in inbound and outbound TLS sessions |
 | [tls_enable_dhe_ciphers](/momentum/4/config/ref-tls-enable-dhe-ciphers) | controls whether or not Diffie Hellman (DHE) ciphers are available |
 | [tls_engine](/momentum/4/config/tls-engine) | specify the TLS library to use |
 | [tls_ifavailable_fallback](/momentum/4/config/tls-ifavailable-fallback) | determine the behavior if TLS negotiation fails |
