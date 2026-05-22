@@ -14,6 +14,8 @@ Curfew replaces *ad-hoc* operator workflows that toggle [`suspend_delivery`](/mo
 
 Curfew does **not** fail or bounce messages. While a rule is matching, the affected (binding, domain) pairs return suspended verdicts; queued mail simply waits in the messages queue and is retried as soon as the window closes.
 
+However, the global [`message_expiration`](/momentum/4/config/ref-message-expiration) (and the configured [`max_retries`](/momentum/4/config/ref-max-retries)) keeps running while a message waits under curfew. A message whose TTL elapses *during* a quiet hour is treated by Momentum exactly as if it had expired for any other reason: when it reaches the front of the queue after the window lifts, it either makes one final attempt or is failed immediately with "Delivery not attempted (message expired)" — see [`never_attempt_expired_messages`](/momentum/4/config/ref-never-attempt-expired-messages). This is the same outcome a message would get from a long run of transient delivery failures or from an operator-set [`suspend_delivery = true`](/momentum/4/config/ref-suspend-delivery) that outlasts the message's TTL: it is **not** a curfew-specific behaviour, but it is worth sizing quiet hours so that they remain well under the binding/domain's `message_expiration`.
+
 ### <a name="modules.curfew.configuration"></a> Configuration
 
 The `curfew` module is a singleton and is loaded automatically when any of its configuration options is set or its console command is invoked. The minimum configuration is a single option — the path to the schedule file:
