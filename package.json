@@ -35,9 +35,6 @@
   },
   "dependencies": {
     "@segment/snippet": "^4.15.3",
-    "@sentry/react": "^6.13.3",
-    "@sentry/tracing": "^6.13.3",
-    "@sentry/webpack-plugin": "^1.18.2",
     "@sparkpost/design-tokens": "^6.1.0",
     "@sparkpost/matchbox": "^6.1.0",
     "@sparkpost/matchbox-icons": "^6.1.0",
@@ -65,7 +62,6 @@
   },
   "devDependencies": {
     "@netlify/plugin-nextjs": "^4.26.0",
-    "@sentry/types": "^6.13.3",
     "@types/glob": "^7.2.0",
     "@types/gtag.js": "^0.0.7",
     "@types/js-cookie": "^3.0.0",
