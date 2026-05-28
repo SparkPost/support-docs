@@ -106,12 +106,55 @@ Domain "/(?:^|[.])example[.](/momentum/4/com-co-uk)$/" {
 
 outbound_throttle_messages set in the regex domain shown in the preceding example will impact all domains together, in the same way that a throttle set in a binding_group impacts all bindings.
 
+<a name="conf.ref.outbound_throttle_messages.host_scope"></a>
+### `Outbound_Throttle_Messages` in the `host` Scope
+
+`Outbound_Throttle_Messages` may also be declared inside a `host` stanza to limit the message-delivery rate to a particular MX host — a dimension that the binding/binding_group/domain/global form cannot express on its own, since multiple domains can share a single MX host and a single domain can be served by several MX hosts. The `host` scope identifies the resolved MX hostname for a delivery, so the throttle is consulted once the connection has been bound to a specific MX host, and is enforced alongside any binding/binding_group/domain/global throttle already in effect (see [Layering on top of the binding/domain/global throttle](#conf.ref.outbound_throttle_messages.host_scope) below).
+
+#### Layering on top of the binding/domain/global throttle
+
+The host-scoped throttle is **additive**: it is consulted **in addition to** any `Outbound_Throttle_Messages` value already in effect for the binding/binding_group/domain/global fallback chain. A delivery proceeds only when none of the applicable throttles is saturated; if either the per-binding/domain throttle **or** the per-host throttle is exceeded, the delivery is deferred.
+
+#### `host` scope fallback chain
+
+The `host`-scoped throttle walks its own dedicated fallback chain — separate from the binding/binding_group/domain/global chain — when looking up the most specific value for a given `(binding_group, binding, host)` triple:
+
+```
+binding_group::binding::host  >  binding_group::host  >  binding::host  >  host
+```
+
+The most specific declaration wins. If no `host` stanza along the chain sets `Outbound_Throttle_Messages`, the host-scoped throttle is not enforced; only the binding/domain/global throttle applies. Note that, as with [max_outbound_connections](/momentum/4/config/ref-max-outbound-connections) in the `host` scope, there is no fallback from a `host`-scope lookup to the binding/domain/global value of `Outbound_Throttle_Messages` — the two chains are independent.
+
+#### Usage Example
+
+```
+host "smtp.example.com" {
+  Outbound_Throttle_Messages = "10/5"
+}
+
+Binding "vip" {
+  host "smtp.example.com" {
+    Outbound_Throttle_Messages = "100"
+  }
+}
+```
+
+With the configuration above, deliveries to the resolved MX host `smtp.example.com` are capped at 10 messages per 5 seconds by default, but messages going out from the `vip` binding to the same host may run at 100 per second.
+
+#### Throttles-by-reference semantics still apply
+
+As with the binding/domain/global form (see [the section called “Throttles and Fallback”](#conf.ref.outbound_throttle_messages.fallback)), the host-scoped throttle object is shared by reference across more specific scopes that fall back to it. For example, deliveries from `binding_a::host smtp.example.com` and `binding_b::host smtp.example.com` that both fall back to the plain `host "smtp.example.com"` declaration share the **same** token bucket and are rate-limited cumulatively. Declare an explicit `Outbound_Throttle_Messages` inside each binding's `host` stanza if you want each binding to have its own independent rate to the host.
+
+#### Note on cluster enforcement
+
+The `host`-scoped form of `Outbound_Throttle_Messages` is enforced **locally** on each Momentum node. The cluster module does **not** replicate this throttle across nodes; for cluster-wide rate limiting, use [cluster_outbound_throttle_messages](/momentum/4/config/ref-cluster-outbound-throttle-messages), which operates in the binding_group, domain, and global scopes.
+
 <a name="idp25685888"></a> 
 ## Scope
 
-outbound_throttle_messages is valid in the binding, binding_group, domain, and global scopes.
+outbound_throttle_messages is valid in the binding, binding_group, domain, global, and host scopes. In the `host` scope it walks a dedicated fallback chain (binding_group::binding::host, binding_group::host, binding::host, host).
 
 <a name="idp25687776"></a> 
 ## See Also
 
-[“Configuration Scopes and Fallback”](/momentum/4/4-ecelerity-conf-fallback)
+[“Configuration Scopes and Fallback”](/momentum/4/4-ecelerity-conf-fallback), [outbound_throttle_connections](/momentum/4/config/ref-outbound-throttle-connections), [host](/momentum/4/config/ref-host), [max_outbound_connections](/momentum/4/config/ref-max-outbound-connections), [cluster_outbound_throttle_messages](/momentum/4/config/ref-cluster-outbound-throttle-messages)
