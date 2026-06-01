@@ -145,6 +145,18 @@ With the configuration above, deliveries to the resolved MX host `smtp.example.c
 
 As with the binding/domain/global form (see [the section called “Throttles and Fallback”](#conf.ref.outbound_throttle_messages.fallback)), the host-scoped throttle object is shared by reference across more specific scopes that fall back to it. For example, deliveries from `binding_a::host smtp.example.com` and `binding_b::host smtp.example.com` that both fall back to the plain `host "smtp.example.com"` declaration share the **same** token bucket and are rate-limited cumulatively. Declare an explicit `Outbound_Throttle_Messages` inside each binding's `host` stanza if you want each binding to have its own independent rate to the host.
 
+#### Regex `host` stanzas share one bucket across all matching hostnames
+
+Just as a regex `Domain` stanza creates one shared throttle bucket across every domain the pattern matches, a regex `Host` stanza creates **one shared bucket** across every MX hostname the pattern matches — not a separate bucket per matching host.
+
+```
+Host "/sink-[ab]\.test/" {
+  Outbound_Throttle_Messages = "8/3600"
+}
+```
+
+In the configuration above, deliveries to `sink-a.test` and `sink-b.test` are **combined** against a single 8-messages-per-hour bucket. Eight messages may be sent in total across both hosts in the window, not eight per host. If you need a separate bucket per hostname, declare each host with its own non-regex `Host` stanza.
+
 #### Note on cluster enforcement
 
 The `host`-scoped form of `Outbound_Throttle_Messages` is enforced **locally** on each Momentum node. The cluster module does **not** replicate this throttle across nodes; for cluster-wide rate limiting, use [cluster_outbound_throttle_messages](/momentum/4/config/ref-cluster-outbound-throttle-messages), which operates in the binding_group, domain, and global scopes.
