@@ -37,6 +37,20 @@ This option can also be used to throttle *ecstream* connections.
 
 The host-scoped throttle is **additive**: it is consulted **in addition to** any `Outbound_Throttle_Connections` value already in effect for the binding/binding_group/domain/global fallback chain. A new outbound TCP connection to a host proceeds only when none of the applicable throttles is saturated.
 
+#### MX-preference fallback when a host throttle is saturated
+
+When a destination domain has multiple MX records, a saturated host-scoped throttle does **not** immediately defer the delivery attempt. Instead, the candidate-host selection during MX resolution treats a saturated host the same way it treats a host that has hit its `Max_Outbound_Connections` cap: the host is zero-weighted, and the weighted random pick spills over to a healthy sibling — falling back across preference levels as needed within the **same** delivery attempt.
+
+The fallback proceeds in this order:
+
+1.  **Same preference level (spillover).** If two or more MX records share the most-preferred preference value and at least one of their hosts is not throttled, Momentum picks one of the unthrottled hosts. The saturated host is skipped silently for this attempt.
+
+2.  **Next preference level (level walk).** If every host at the current preference level is throttled (or otherwise unavailable), the selection logic advances to the next preference level and repeats the same weighted-random pick over that group's hosts.
+
+3.  **All preferences saturated (defer with recovery-window scheduling).** If every host at every preference level is throttled, the attempt is aborted and **the message stays in the active queue**. The retry is scheduled at the shortest throttle-recovery window seen across the throttled candidates, **not** at the default `retry_interval` (which would otherwise push the retry out by ~20 minutes). When the recovery window elapses, the next maintainer pass re-runs the MX-selection logic from scratch — potentially picking a host that has since recovered, or hitting the throttle again and rescheduling for the new shortest window.
+
+This matches the spillover behavior an operator already expects from [max_outbound_connections](/momentum/4/config/ref-max-outbound-connections) on multi-MX domains: a saturated host transparently yields to a healthy sibling within one attempt; only when the entire MX set is unavailable does the attempt defer.
+
 #### `host` scope fallback chain
 
 The `host`-scoped throttle walks its own dedicated fallback chain — separate from the binding/binding_group/domain/global chain — when looking up the most specific value for a given `(binding_group, binding, host)` triple:
