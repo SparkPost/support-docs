@@ -100,6 +100,7 @@ replay protection.
 ### Minimum signer
 
 ```lua
+require("msys.core")
 require("msys.validate.dkim2")
 
 local mod = {}
@@ -200,6 +201,7 @@ DKIM2 verification is driven from Lua via `msys.validate.dkim2.verify`.
 Typical inbound policy:
 
 ```lua
+require("msys.core")
 require("msys.validate.dkim2")
 
 local mod = {}
@@ -209,8 +211,11 @@ function mod:validate_data_spool_each_rcpt(msg, ac, vctx)
     authservid = "mta-1.example.com",
   })
   if not result then
-    -- Internal error during verification (alloc failure, etc.).
-    -- Different from a per-sig fail, which lands in result.signatures.
+    -- Internal error during verification (alloc failure, etc.) —
+    -- distinct from a per-sig fail, which lands in result.signatures.
+    -- Defer rather than silently accepting: the message has not been
+    -- verified and should not be treated as if it were.
+    vctx:set_code(451, "4.7.5 DKIM2 verification unavailable; please retry")
     return msys.core.VALIDATE_CONT
   end
 
@@ -223,11 +228,10 @@ function mod:validate_data_spool_each_rcpt(msg, ac, vctx)
   --   "none"          no DKIM2-Signature headers on the message
 
   if result.overall == "temperror" then
-    -- Transient DNS failure: defer so the sender can retry once the
-    -- resolver recovers.  msys.core.VALIDATE_ERROR triggers a 4xx
-    -- temporary rejection back to the sending MTA.
+    -- Transient DNS failure: set a 4xx code so Momentum issues a
+    -- temporary rejection after the validation pipeline completes,
+    -- allowing the sender to retry once the resolver recovers.
     vctx:set_code(451, "4.7.5 DKIM2 key lookup failed; please retry")
-    return msys.core.VALIDATE_ERROR
   end
 
   if result.overall == "chain_broken" or result.overall == "fail" then
