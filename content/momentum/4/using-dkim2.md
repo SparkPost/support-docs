@@ -81,21 +81,32 @@ Sending domains keep their existing DKIM1 keys: DKIM2 uses the same
 provisioning step to start signing DKIM2.
 
 
+## <a name="dkim2_config"></a> Enabling the module
+
+Add the following stanza to your Momentum configuration before using any
+DKIM2 Lua API:
+
+```
+dkim2 {}
+```
+
+The `debug_level` option is documented in the
+[Debugging](/momentum/4/using-dkim2#dkim2_debugging) section.
+
 ## <a name="dkim2_signing"></a> DKIM2 Signing
 
 DKIM2 signing in Momentum is driven from Lua policy via
-`msys.validate.dkim2.sign`. There is no per-binding `dkim2_sign` configuration
-flag (the equivalent of DKIM1's `opendkim_sign`); enabling DKIM2 means
-calling `sign()` from your validation hook.
+`msys.validate.dkim2.sign`; enabling DKIM2 means calling `sign()` from
+your validation hook.
 
 ### Warning
 
 Always call DKIM2 signing from the **per-recipient** validation hook
 (`validate_data_spool_each_rcpt`), not from `validate_data_spool`. The
-latter fires once on the parent message before the cowref split, and the
-resulting signature would commit to a single recipient binding and then be
-cloned across every delivered copy — defeating DKIM2's per-recipient
-replay protection.
+latter fires once on the shared parent message before per-recipient copies
+are split off, and the resulting signature would commit to a single
+recipient binding and then be cloned across every delivered copy —
+defeating DKIM2's per-recipient replay protection.
 
 ### Minimum signer
 
@@ -114,8 +125,7 @@ function mod:validate_data_spool_each_rcpt(msg, ac, vctx)
   if not ok then
     -- err is a static-literal string describing the failure. See the
     -- "Debugging" section below for the full set.
-    msg:logf(msys.core.log_err,
-             "dkim2 sign failed: %s", tostring(err))
+    print("dkim2 sign failed: " .. tostring(err))
   end
   return msys.core.VALIDATE_CONT
 end
@@ -192,10 +202,10 @@ edits) omit `recipe` entirely.
 Always call DKIM2 verification from the **per-recipient** validation hook
 (`validate_data_spool_each_rcpt`), not from `validate_data_spool`. The
 `rt=` binding check compares the signed recipient against the actual
-envelope RCPT TO. If `verify()` runs on the parent message before the
-cowref split, `ec_message_get_rcptto` returns only the first recipient
-and all other copies pass or fail based on that single address — defeating
-the per-recipient replay protection.
+envelope RCPT TO. If `verify()` runs on the shared parent message before per-recipient
+copies are split off, the envelope RCPT TO resolves to only the first
+recipient and all other copies pass or fail based on that single address
+— defeating the per-recipient replay protection.
 
 DKIM2 verification is driven from Lua via `msys.validate.dkim2.verify`.
 Typical inbound policy:
@@ -244,9 +254,13 @@ end
 msys.registerModule("my_dkim2_verifier", mod)
 ```
 
-When `authservid` is supplied, the wrapper stamps an
-`Authentication-Results:` header summarizing the per-signature verdicts
-with one `dkim2=…` clause per signature.
+The wrapper automatically updates the `Authentication-Results:` header
+with one `dkim2=…` clause per directly-verified signature. If an AR
+header already exists on the message (stamped by an earlier verifier
+such as SPF or DKIM1), the dkim2 results are appended to it. If no AR
+header exists, a new one is created — but only when `authservid` is
+supplied, since a well-formed AR header requires an authentication
+service identifier.
 
 ### Verify options
 
@@ -254,8 +268,8 @@ with one `dkim2=…` clause per signature.
 |---|---|
 | `pubkey_pem` | A PEM-encoded public key. When set, the same key is used for every signature on the message (typically used in tests and policies that already have the key). When absent, each signature's `(d, s)` pair is resolved from DNS at `<selector>._domainkey.<domain>`. |
 | `rcpt` | Override the actual envelope RCPT TO for the `rt=` binding check. Defaults to the bare address from `ec_message_get_rcptto`. |
-| `authservid` | If set, the wrapper stamps an `Authentication-Results:` header naming this authentication-services identity. |
-| `skip_ar_header_update` | If `true` (and `authservid` is set), suppress the AR stamp. Use this when the policy stamps AR itself. |
+| `authservid` | If set and no `Authentication-Results:` header already exists, a new one is created with this value as the authentication service identifier. Not required when an AR header is already present — the dkim2 results are appended to it automatically. |
+| `skip_ar_header_update` | If `true`, suppress all AR output. Use this when the policy stamps AR itself. |
 | `skip_recipe_chain` | If `true`, skip the `-02` §10.6 recipe-chain check. The per-signature crypto + envelope checks and the §8.3 chain-of-custody check still run. Default `false` (chain check ON). |
 
 ### Result table
@@ -368,9 +382,10 @@ check before acting on the value.
 
 ### Authentication-Results output
 
-When `authservid` is supplied to `verify()`, the wrapper stamps an
-`Authentication-Results:` header summarizing the per-signature verdicts
-per RFC 8601:
+`verify()` appends its results to the existing `Authentication-Results:`
+header when one is already present (e.g. stamped by SPF or DKIM1
+earlier in the pipeline), or creates a new one if `authservid` is
+supplied and none exists yet:
 
 ```
 Authentication-Results: <authservid>;
