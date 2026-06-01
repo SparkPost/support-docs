@@ -46,7 +46,8 @@ DKIM2 addresses both:
     `mf=`.
 
 *   The chain of signatures forms an explicit **chain of custody**: each
-    hop's `mf=` must match the previous hop's `rt=`, so the verifier can
+    hop's `mf=` must appear in the previous hop's `rt=` list (which may
+    encode more than one recipient, comma-separated), so the verifier can
     confirm the path was a real forward, not a detour.
 
 *   Modifying hops **record their modifications** as a JSON "recipe" on a
@@ -153,8 +154,8 @@ A forwarder that **re-routes** a message (different envelope) signs with
 explicit overrides so the §8.3 chain-of-custody check downstream succeeds:
 
 ```lua
--- Hop 2 (forwarder) — its mf= is the upstream rt=, and its rt= is the
--- new downstream recipient.
+-- Hop 2 (forwarder) — its mf= must appear in the upstream rt= list,
+-- and its rt= is the new downstream recipient.
 msys.validate.dkim2.sign(msg, vctx, {
   domain   = "forwarder.example.net",
   selector = "fwd-2026",
@@ -185,6 +186,16 @@ edits) omit `recipe` entirely.
 
 ## <a name="dkim2_verifying"></a> DKIM2 Verifying
 
+### Warning
+
+Always call DKIM2 verification from the **per-recipient** validation hook
+(`validate_data_spool_each_rcpt`), not from `validate_data_spool`. The
+`rt=` binding check compares the signed recipient against the actual
+envelope RCPT TO. If `verify()` runs on the parent message before the
+cowref split, `ec_message_get_rcptto` returns only the first recipient
+and all other copies pass or fail based on that single address — defeating
+the per-recipient replay protection.
+
 DKIM2 verification is driven from Lua via `msys.validate.dkim2.verify`.
 Typical inbound policy:
 
@@ -208,8 +219,16 @@ function mod:validate_data_spool_each_rcpt(msg, ac, vctx)
   --   "fail"          at least one sig failed (see signatures[i].reason)
   --   "chain_broken"  i= gap, or §8.3 mf=/rt= bridge broken, or §10.6
   --                   recipe-chain reconstruction didn't match MI[1]
-  --   "temperror"     resolver-side transient failure; treat as defer
+  --   "temperror"     resolver-side transient failure (SERVFAIL, timeout)
   --   "none"          no DKIM2-Signature headers on the message
+
+  if result.overall == "temperror" then
+    -- Transient DNS failure: defer so the sender can retry once the
+    -- resolver recovers.  msys.core.VALIDATE_ERROR triggers a 4xx
+    -- temporary rejection back to the sending MTA.
+    vctx:set_code(451, "4.7.5 DKIM2 key lookup failed; please retry")
+    return msys.core.VALIDATE_ERROR
+  end
 
   if result.overall == "chain_broken" or result.overall == "fail" then
     -- Local policy: reject, quarantine, lower reputation, etc.
@@ -332,6 +351,13 @@ local overall = msg:context_get(msys.core.ECMESS_CTX_MESS, "dkim2_overall")
 local n_sigs  = msg:context_get(msys.core.ECMESS_CTX_MESS, "dkim2_n_sigs")
 ```
 
+Both fields are written by `msys.validate.dkim2.verify()` at the moment
+it runs. **They are empty strings until `verify()` has been called on
+that message.** Hooks that execute before verification, or on messages
+where `verify()` was never called, will receive `""` from
+`msg:context_get` — not a verdict string. Always guard with a nil / empty
+check before acting on the value.
+
 `dkim2_overall` is one of the five verdict strings above.
 `dkim2_n_sigs` is the count of `DKIM2-Signature` headers verified
 (string; parse with `tonumber()`).
@@ -346,18 +372,16 @@ per RFC 8601:
 Authentication-Results: <authservid>;
   dkim2=pass header.d=example.com header.s=sel-1:rsa-sha256:<sig>
         header.i=1 header.mf=<sender@example.com>
-        header.rt=<rcpt@a.com>;
-  dkim2=fail reason=sig_invalid header.d=example.com
-        header.s=sel-1:rsa-sha256:<sig> header.i=2 …
+        header.rt=<rcpt@a.com>
 ```
 
-One `dkim2=` clause per directly-verified signature. Deferred earlier-hop
-signatures (`status="chain_verified"`) are intentionally omitted — they
-carry an internal state value that is not a valid RFC 8601 result token,
-and the `chain_broken` / `pass` overall verdict already conveys the
-chain-integrity outcome to downstream consumers. The `reason=` field
-appears only on failures and uses the per-sig reason codes from the table
-above.
+One `dkim2=` clause per **directly-verified** signature. Per `-02` §10.5,
+only the most-recently-applied signature (highest `i=`) receives full
+cryptographic verification; earlier hops are deferred to the §10.6
+recipe-chain check and omitted from the AR header entirely. A two-hop
+message therefore produces exactly one `dkim2=` clause (for the i=N sig),
+not two. The `reason=` field appears only on failures and uses the per-sig
+reason codes from the table above.
 
 
 ## <a name="dkim2_key_management"></a> Key management
