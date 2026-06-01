@@ -245,7 +245,7 @@ function mod:validate_data_spool_each_rcpt(msg, ac, vctx)
   end
 
   if result.overall == "chain_broken" or result.overall == "fail" then
-    -- Local policy: reject, quarantine, lower reputation, etc.
+    vctx:set_code(550, "5.7.1 DKIM2 verification failed")
   end
 
   return msys.core.VALIDATE_CONT
@@ -415,7 +415,7 @@ selector for DKIM2 without any DNS change. To generate fresh keys for
 DKIM2 specifically, follow the standard openssl recipe in
 [Generating DKIM Keys](/momentum/4/using-dkim#using_dkim.generating).
 
-### Warning
+### Note
 
 DKIM2 signatures and DKIM1 signatures **coexist on the wire**: they are
 distinct headers (`DKIM2-Signature:` vs. `DKIM-Signature:`) and use
@@ -426,21 +426,16 @@ DKIM2 will simply ignore the new header — they will continue to verify
 the DKIM1 signature normally.
 
 
-## <a name="dkim2_caveats"></a> Known limitations of the prototype
+### Note
 
-DKIM2 in Momentum currently differs from the `-02` draft in a few ways.
-These don't affect signature validity within Momentum's own sign / verify
-loop (the signer and verifier are symmetric, so DKIM2-signed traffic
-between two Momentum nodes verifies correctly today), but they may
-matter for byte-level interop with strict-`-02` verifiers in other
-implementations:
+The full DKIM2 logical flow is implemented and exercised end-to-end:
 
-*   **Multi-value `s=`** (the `s=set1,set2` shape sketched in `-02`
-    §7.8 for future signature-set evolution) is not handled; single
-    sig-set only.
+*   Per-signature envelope binding (`mf=` / `rt=`)
+*   `-02` §8.3 chain-of-custody check
+*   `-02` §10.5 most-recent-only cryptographic verification
+*   `-02` §10.6 recipe-chain reconstruction
 
-These are the only known wire-level deltas. The full DKIM2 logical
-flow — per-signature envelope binding, `-02` §8.3 chain-of-custody,
-`-02` §10.6 recipe-chain reconstruction with `-02` §10.5's
-most-recent-only crypto verification — is implemented and exercised
-end-to-end.
+**Multi-value `s=`** (`s=sel1:rsa-sha256:<sig1>,sel2:ed25519-sha256:<sig2>`,
+sketched in `-02` §7.8) is not implemented. Momentum emits one sig-set
+per signature. No practical use case for the multi-value form is known
+and its semantics are not yet finalised in the standard draft.
