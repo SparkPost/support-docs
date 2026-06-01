@@ -152,7 +152,7 @@ scenarios (see *Forwarder / modifier signing* below).
 | `nonce_random` | no | If `true` AND `nonce` is not set, the signer fills `n=` with a 22-character base64 random nonce. |
 | `flags` | no | Lua array of flag tokens for `f=` (`-02` §8.9). Recognized values: `"exploded"`, `"donotexplode"`, `"donotmodify"`, `"feedback"`. Joined into the on-wire comma-separated form by the glue layer. |
 | `recipe` | no | Raw JSON string conforming to `-02` §4. Attached to the `Message-Instance` header as the base64-encoded `r=` tag. Validated against the schema at sign time; malformed recipes fail the sign call with `recipe_invalid: <reason>`. |
-| `allow_recipe_z` | no | If `true`, accept the `b: {"z": true}` (truncated-body) recipe at parse time. Default `false`. The truncated-body recipe is in a state of flux in `-02` (the changelog removes it but §11.1 still references it), so it is opt-in until the WG resolves the inconsistency. |
+| `allow_recipe_z` | no | If `true`, accept the `b: {"z": true}` (truncated-body) recipe at sign time. Default `false`. The `-02` spec is internally inconsistent on this recipe shape — the changelog removes it but §11.1 still references it — so the signer refuses to emit it without an explicit opt-in. Set this only if you are interoperating with a verifier that requires the truncated-body recipe and you accept that the shape may be removed from the final spec. |
 
 `sign()` returns `(true, header_value_string)` on success and `(nil,
 error_string)` on failure. Always check the return; on failure the message
@@ -435,16 +435,6 @@ between two Momentum nodes verifies correctly today), but they may
 matter for byte-level interop with strict-`-02` verifiers in other
 implementations:
 
-*   **Header canonicalization** uses Momentum's existing relaxed-canon
-    rather than `-02` §5.2's slightly tighter "collapse runs of WSP to
-    single SP" rule.
-*   **Signed-input canonicalization** uses the same relaxed-canon rather
-    than §8.5's "delete all WSP characters" rule.
-*   **The truncated-body recipe** (`b: {"z": true}` per `-02` §4.2) is
-    gated behind the `allow_recipe_z` sign opt and defaults to off. The
-    spec is internally inconsistent on this recipe shape — the changelog
-    removes it but §11.1 still references it — so the prototype
-    refuses to emit it without an explicit opt-in.
 *   **Multi-value `s=`** (the `s=set1,set2` shape sketched in `-02`
     §7.8 for future signature-set evolution) is not handled; single
     sig-set only.
