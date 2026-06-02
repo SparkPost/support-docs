@@ -8,7 +8,7 @@ description: "The curfew module schedules quiet hours blackout windows during wh
 
 The `curfew` module schedules *quiet hours* (blackout windows) during which Momentum will not attempt deliveries for selected bindings, binding groups, or domains. The schedule is expressed in crontab-style syntax and is read from a plain-text file.
 
-Curfew replaces *ad-hoc* operator workflows that toggle [`suspend_delivery`](/momentum/4/config/ref-suspend-delivery), e.g., from external cron jobs. Driving suspension state from outside the MTA is fragile: a missed cron firing can leave messages stuck on the spool, and a race between the cron job and a configuration commit can leave the binding suspended forever. Curfew evaluates its rules from inside the suspension decision path on every delivery attempt, so quiet hours engage and lift on schedule without operator intervention and without persistent state changes to the binding/domain scope.
+Curfew can replace *ad-hoc* operator workflows that toggle [`suspend_delivery`](/momentum/4/config/ref-suspend-delivery), e.g., from external cron jobs. Curfew evaluates its rules from inside the suspension decision path on every delivery attempt, so quiet hours engage and lift on schedule without operator intervention and without persistent state changes to the binding/domain scope.
 
 ### Note
 
