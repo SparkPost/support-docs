@@ -15,7 +15,7 @@ outbound traffic without staging it first, and do not rely on the current
 wire format being byte-compatible with any future Momentum release.
 
 Known prototype-versus-draft gaps are listed under
-[Known limitations](/momentum/4/using-dkim2#dkim2_caveats) at the end of
+[Known limitations](/momentum/4/dkim2#dkim2_caveats) at the end of
 this page.
 
 
@@ -61,7 +61,7 @@ specifics live in the [IETF
 draft](https://datatracker.ietf.org/doc/html/draft-ietf-dkim-dkim2-spec-02);
 the operationally-relevant signal codes (per-signature reasons, overall
 verdicts, paniclog lines) are inventoried in the
-[Debugging](/momentum/4/using-dkim2#dkim2_debugging) section below.
+[Debugging](/momentum/4/dkim2#dkim2_debugging) section below.
 
 
 ## <a name="dkim2_atglance"></a> How it differs from DKIM1 at a glance
@@ -91,7 +91,7 @@ dkim2 {}
 ```
 
 The `debug_level` option is documented in the
-[Debugging](/momentum/4/using-dkim2#dkim2_debugging) section.
+[Debugging](/momentum/4/dkim2#dkim2_debugging) section.
 
 ## <a name="dkim2_signing"></a> DKIM2 Signing
 
