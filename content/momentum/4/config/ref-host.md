@@ -33,6 +33,10 @@ The following options can be specified in a `host` stanza:
 
 *   [max_outbound_connections](/momentum/4/config/ref-max-outbound-connections)
 
+*   [outbound_throttle_connections](/momentum/4/config/ref-outbound-throttle-connections)
+
+*   [outbound_throttle_messages](/momentum/4/config/ref-outbound-throttle-messages)
+
 **Configuration Change. ** As of version 4.2, Regex is supported in the `Host` stanza.
 
 In addition to specifying a host by host name, you may use Perl-compatible regular expression (PCRE) syntax to define a "Regex Host". Using regex hosts you can define common rules for hosts that have similar configurations, without needing to specify the rules for every possible matching host.
