@@ -139,12 +139,44 @@ scenarios (see *Forwarder / modifier signing* below).
 
 ### Sign options
 
+`sign()` accepts either a single options table or a multi-algorithm
+form using an explicit `sig_sets` key (§7.8 algorithm agility):
+
+```lua
+-- Single sig-set (most common):
+msys.validate.dkim2.sign(msg, vctx, {
+  domain   = "example.com",
+  selector = "sel-2048",
+  keyfile  = "/etc/dkim2/rsa.key",
+})
+
+-- Multi-algorithm (RSA + Ed25519 in one DKIM2-Signature):
+msys.validate.dkim2.sign(msg, vctx, {
+  domain   = "example.com",
+  sig_sets = {
+    { selector = "sel-rsa",     keyfile = "/etc/dkim2/rsa.key" },
+    { selector = "sel-ed25519", keyfile = "/etc/dkim2/ed25519.key",
+      algorithm = "ed25519-sha256" },
+  },
+})
+```
+
+When `sig_sets` is present, all entries sign the same canonical
+signed-input and are combined into a single `s=sel1:alg1:sig1,sel2:alg2:sig2`
+value on one `DKIM2-Signature` header. The verifier tries each sig-set
+in order and passes on the first that validates (OR semantics), so a
+receiver that only supports RSA will still verify cleanly. The
+`selector`, `keyfile`, and `algorithm` fields belong to each sig-set
+entry; all other options below are header-level and go at the top level
+of the options table.
+
 | Option | Required? | Meaning |
 |---|---|---|
-| `domain` | yes | `d=` tag — the signing domain. Combined with `selector` to locate the public key in DNS at `<selector>._domainkey.<domain>`. |
-| `selector` | yes | First component of `s=<selector>:<sig-name>:<base64-sig>`. |
-| `keyfile` | yes | Path to the PEM-encoded private key on disk. |
-| `algorithm` | no | `"rsa-sha256"` (default) or `"ed25519"` / `"ed25519-sha256"`. |
+| `domain` | yes | `d=` tag — the signing domain. |
+| `selector` | yes (single) | Selector component of `s=<selector>:<alg>:<base64-sig>`. When `sig_sets` is used, set per entry inside `sig_sets` instead. |
+| `keyfile` | yes (single) | Path to the PEM-encoded private key. When `sig_sets` is used, set per entry inside `sig_sets` instead. |
+| `algorithm` | no | `"rsa-sha256"` (default) or `"ed25519-sha256"`. When `sig_sets` is used, set per entry inside `sig_sets` instead. |
+| `sig_sets` | no | Array of `{selector, keyfile, algorithm}` tables for multi-algorithm signing (§7.8). When present, `selector`/`keyfile`/`algorithm` at the top level are ignored. |
 | `mailfrom` | no | Override the envelope MAIL FROM for the `mf=` tag. Use this when signing as a forwarder. |
 | `rcpt` | no | Override the envelope RCPT TO for the `rt=` tag. |
 | `timestamp` | no | `t=` value. Defaults to the current UNIX time. |
@@ -426,7 +458,7 @@ DKIM2 will simply ignore the new header — they will continue to verify
 the DKIM1 signature normally.
 
 
-### Note
+### Interoperability
 
 The full DKIM2 logical flow is implemented and exercised end-to-end:
 
@@ -435,7 +467,3 @@ The full DKIM2 logical flow is implemented and exercised end-to-end:
 *   `-02` §10.5 most-recent-only cryptographic verification
 *   `-02` §10.6 recipe-chain reconstruction
 
-**Multi-value `s=`** (`s=sel1:rsa-sha256:<sig1>,sel2:ed25519-sha256:<sig2>`,
-sketched in `-02` §7.8) is not implemented. Momentum emits one sig-set
-per signature. No practical use case for the multi-value form is known
-and its semantics are not yet finalised in the standard draft.
