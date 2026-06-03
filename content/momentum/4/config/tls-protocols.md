@@ -1,5 +1,5 @@
 ---
-lastUpdated: "09/20/2023"
+lastUpdated: "06/03/2026"
 title: "tls_protocols"
 description: "tls protocols allowable ciphers for TLS inbound and outbound sessions tls protocols baseprotocol additional protocols Configuration Change This option is available as of version 4 1 0 2 tls protocols specifies the allowable protocols for an Open SSL TLS session The available protocols are ALL SS Lv 2 SS Lv..."
 ---
@@ -30,7 +30,7 @@ The default value is “+ALL”.
 
 ### Note
 
-In Centos/RHEL 5, which are typically shipped with OpenSSL 0.98, TLSv1.1, TLSv1.2 and TLSv1.3 are not available.
+The supported OpenSSL range is 1.1.1 or later — from 1.1.1 (as shipped with RHEL 8) through the 3.5.x series — so `TLSv1.1`, `TLSv1.2` and `TLSv1.3` are always available and can be enabled or disabled freely.
 
 <a name="idp26999712"></a> 
 ## Scope

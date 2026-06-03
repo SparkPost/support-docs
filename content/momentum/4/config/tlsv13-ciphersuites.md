@@ -1,5 +1,5 @@
 ---
-lastUpdated: "09/20/2023"
+lastUpdated: "06/03/2026"
 title: "tlsv13_ciphersuites"
 description: "specify allowable ciphersuites for TLS inbound and outbound sessions when TLSv1.3 protocol is negotiated and used"
 ---
@@ -24,7 +24,7 @@ allowable ciphersuites must be a subset of the available TLSv1.3 ciphersuites on
 
 When TLS_Engine is set to `openssl`, `TLSv13_Ciphersuites` specifies a "ciphersuite list", which is a
 colon (":") separated list of the supported TLSv1.3 ciphersuite names in order of preference.
-There are 5 valid TLSv1.3 ciphersuites that are supported by OpenSSL 1.1.1:
+There are 5 valid TLSv1.3 ciphersuites, supported across the full OpenSSL range used by Momentum (1.1.1 — as on RHEL 8 — through the 3.5.x series):
 ```
     TLS_AES_256_GCM_SHA384
     TLS_CHACHA20_POLY1305_SHA256
@@ -33,14 +33,14 @@ There are 5 valid TLSv1.3 ciphersuites that are supported by OpenSSL 1.1.1:
     TLS_AES_128_CCM_SHA256
 ```
 By default (if not explicitly specified through this configuration option), only the first three are enabled.
-On the host machine, `openssl11 ciphers -s -tls1_3` can show the default TLSv1.3 ciphersuites;
-`openssl11 ciphers -tls1_3 -v -s -ciphersuites TLS_AES_128_CCM_8_SHA256:TLS_AES_128_CCM_SHA256` can
+On the host machine, `openssl ciphers -s -tls1_3` can show the default TLSv1.3 ciphersuites;
+`openssl ciphers -tls1_3 -v -s -ciphersuites TLS_AES_128_CCM_8_SHA256:TLS_AES_128_CCM_SHA256` can
 check whether the last two ciphersuites are supported if enabled.
 For more information about the TLSv1.3 ciphersuites, see
 [https://wiki.openssl.org/index.php/TLS1.3#Ciphersuites](https://wiki.openssl.org/index.php/TLS1.3#Ciphersuites).
 
 
-* To set the option to all the 5 TLSv1.3 ciphersuites supported by OpenSSL 1.1.1:
+* To set the option to all 5 supported TLSv1.3 ciphersuites:
 
 ```
 TLSv13_Ciphersuites = "TLS_AES_256_GCM_SHA384:TLS_CHACHA20_POLY1305_SHA256:TLS_AES_128_GCM_SHA256:TLS_AES_128_CCM_8_SHA256:TLS_AES_128_CCM_SHA256"

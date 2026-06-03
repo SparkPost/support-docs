@@ -158,7 +158,7 @@ This table lists all console commands alphabetically giving a brief description.
 | [threads io queue](/momentum/4/console-commands/threads) – Display summary statistics for the IO thread pools | 4.0 |   | stats |
 | [threads stats](/momentum/4/console-commands/threads) – Display summary statistics for thread pools | 4.0 |   | stats |
 | [tls flush cache](/momentum/4/console-commands/tls) – Flush the TLS cache | 4.0 |   | tls |
-| [tls rekey](/momentum/4/console-commands/tls) – Remove the temporary RSA key | 4.0 |   | tls |
+| [tls rekey](/momentum/4/console-commands/tls) – Remove the temporary RSA key | 4.0 through 5.2 |   | tls |
 | [tls show cache](/momentum/4/console-commands/tls) – Show the TLS cache | 4.0 |   | tls |
 | [trace smtp add](/momentum/4/console-commands/trace-smtp) – Add an SMTP trace | 4.0 |   | misc |
 | [trace smtp list](/momentum/4/console-commands/trace-smtp) – List smtp traces | 4.0 |   | misc |
