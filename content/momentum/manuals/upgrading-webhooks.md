@@ -192,7 +192,7 @@ sudo alternatives --install /usr/bin/npx npx /usr/bin/npx-24 100
       /var/tmp/
     ```
 
-    where **\<ver\>** is **8** or **9**, and **\<arch\>** is **x86_64** or **aarch64** (RHEL 9 only).
+    where **\<ver\>** is **8**, **9**, or **10**, and **\<arch\>** is **x86_64** or **aarch64** (RHEL 9 only).
 
 3.  Unpack the tarball on each node and set the repository directory.
 
