@@ -86,11 +86,15 @@ $endif$
   set par(leading: 0.65em * linestretch, justify: true)
   set heading(numbering: sectionnumbering)
 
-  // Heading styles
-  show heading.where(level: 1): it => block(above: 1.6em, below: 0.8em)[
-    #set text(fill: brand-color, weight: "bold", size: 1.5em)
-    #it
-  ]
+  // Heading styles. Each level-1 (main) section starts on a new page; the
+  // weak break is skipped when the page is already empty, so no blank pages.
+  show heading.where(level: 1): it => {
+    pagebreak(weak: true)
+    block(below: 0.8em)[
+      #set text(fill: brand-color, weight: "bold", size: 1.5em)
+      #it
+    ]
+  }
   show heading.where(level: 2): set text(fill: accent-color, weight: "bold")
 
   // Links + monospace code
@@ -99,6 +103,38 @@ $endif$
   show raw.where(block: true): it => block(
     fill: luma(245), inset: 8pt, radius: 3pt, width: 100%, breakable: true,
   )[#it]
+
+  // Notes/callouts: Markdown blockquotes become a branded box -- light blue
+  // tint, brand-blue left accent bar, blue label (the leading **Note:**), and
+  // italic body to set them apart from the running text.
+  show quote.where(block: true): it => block(
+    width: 100%,
+    fill: rgb("#eef3ff"),
+    inset: (x: 12pt, y: 9pt),
+    radius: 3pt,
+    stroke: (left: 3pt + accent-color),
+  )[
+    #set text(style: "italic")
+    #show strong: set text(fill: accent-color, style: "normal")
+    #it.body
+  ]
+
+  // Let tables (which Pandoc wraps in a figure) break across pages instead of
+  // overflowing when they are taller than one page.
+  show figure: set block(breakable: true)
+
+  // Wide tables: if a table's natural (unwrapped) width exceeds the portrait
+  // text area, place it on its own landscape page; content flows back to
+  // portrait afterwards. Narrower tables stay inline.
+  let margin-x = if type(margin) == dictionary and "x" in margin { margin.x } else { 2.5cm }
+  let portrait-text-width = 21cm - 2 * margin-x  // assumes A4 width (21cm)
+  show figure.where(kind: table): it => context {
+    if measure(it).width > portrait-text-width {
+      page(flipped: true, it)
+    } else {
+      it
+    }
+  }
 
   // ---- Cover page: full-bleed dark, reversed-out logo ----------------------
   // Provide the dark (white-on-black) stacked lockup as `logo` so it blends
@@ -113,9 +149,15 @@ $endif$
     #set text(fill: white)
     #v(1fr)
     #if logo != none [ #image(logo, width: 6cm) #v(1.5cm) ]
-    #text(size: 30pt, weight: "bold")[#title]
-    #if subtitle != none [ #v(0.4cm) #text(size: 16pt, fill: accent-color.lighten(35%))[#subtitle] ]
-    #if version != none [ #v(0.3cm) #text(size: 14pt, fill: luma(210))[Version #version] ]
+    #if subtitle != none [
+      // Product name is the subject of the manual -> headline.
+      #text(size: 40pt, weight: "bold", tracking: 0.5pt)[#subtitle]
+      #v(0.45cm)
+      #text(size: 19pt, fill: accent-color.lighten(35%))[#title]
+    ] else [
+      #text(size: 30pt, weight: "bold")[#title]
+    ]
+    #if version != none [ #v(0.35cm) #text(size: 13pt, fill: luma(210))[Version #version] ]
     #v(1fr)
     #if date != none [ #text(size: 11pt, fill: luma(210))[#date] #linebreak() ]
     #if confidential != none [ #text(size: 9pt, fill: luma(160))[#confidential] #linebreak() ]
@@ -130,12 +172,23 @@ $endif$
     numbering: pagenumbering,
     header: context {
       set text(size: 8pt, fill: luma(130))
-      if header-logo != none { image(header-logo, height: 1.8em) } else if title != none [ #title ]
-      h(1fr)
-      if title != none [ #title ]
-      if title != none and version != none [ #h(0.5em)·#h(0.5em) ]
-      if version != none [ #version ]
-      v(-0.4em)
+      let info = {
+        if title != none [ #title ]
+        if title != none and version != none [ #h(0.5em)·#h(0.5em) ]
+        if version != none [ #version ]
+      }
+      // Logo (left) and title·version (right) share one row, bottom-aligned.
+      if header-logo != none {
+        grid(
+          columns: (auto, 1fr),
+          align: (left + bottom, right + bottom),
+          image(header-logo, height: 1.8em),
+          info,
+        )
+      } else {
+        align(right, info)
+      }
+      v(0.15em)
       line(length: 100%, stroke: 0.5pt + luma(210))
     },
     footer: context {

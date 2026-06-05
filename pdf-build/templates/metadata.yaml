@@ -20,7 +20,7 @@ margin:
 
 # --- Bird brand -------------------------------------------------------------
 copyright: "© 2014–2026 Bird B.V. All rights reserved."
-confidential: "Confidential & Proprietary"
+confidential: "CONFIDENTIAL - FOR BIRD CUSTOMERS ONLY - NOT FOR DISTRIBUTION"
 
 # Bird logos. Paths are resolved relative to the pdf-build/ directory.
 # The cover page is dark, so `logo` uses the white-on-black (dark) stacked

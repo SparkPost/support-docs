@@ -35,6 +35,12 @@ make clean      # remove generated PDFs
 
 Generated PDFs land in `build/` (git-ignored).
 
+The build is incremental: `make` rebuilds a manual when its `.md` changes, and
+rebuilds **all** manuals when a shared input changes (the template,
+`metadata.yaml`, a logo/font in `assets/`, or this `Makefile`). You only need
+`make clean` to force a rebuild of unchanged content — e.g. after upgrading
+`pandoc` or `typst`.
+
 ## Layout
 
 | Path | Purpose |
@@ -71,10 +77,21 @@ date: "June 2026"
    `content/momentum/manuals/<name>.md` with the frontmatter above. Put
    extracted images in `content/momentum/manuals/images/` and reference them as
    `images/<file>` (so they work both online and in the PDF).
+   - **Numbered headings**: number headings hierarchically in the text itself
+     (`# 1. Introduction`, `## 2.1. …`, `### 2.3.1. …`) so the numbers show
+     identically online and in the PDF.
    - **Code blocks**: don't reproduce the source's box colors. Use standard
      fenced blocks tagged by language (` ```bash `, ` ```c `, ` ```python `, …)
      for code/commands, and a plain fenced block (no language) for config-file
      contents and console output — let the renderer handle highlighting.
+   - **Notes**: a standalone Markdown blockquote (`> **Note:** …`) becomes a
+     branded callout box.
+   - **Tables**: a table whose natural width exceeds the portrait text area is
+     automatically placed on its own **landscape** page; narrower tables stay
+     inline in portrait. For this to work a wide table must be **top-level** —
+     not nested inside a list item or blockquote (Typst cannot start a new page
+     inside a container, and the build will error). If a wide table belongs
+     under a step, lift it out to its own paragraph.
 2. Add the page to the menu: a sub-item under the **Online manuals** node in
    `content/momentum/navigation.yml`, and a link in
    `content/momentum/manuals/index.md`.

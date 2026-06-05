@@ -29,18 +29,35 @@ export TYPST_FONT_PATHS := $(FONT_DIR)
 SOURCES := $(filter-out $(SRC_DIR)/index.md,$(wildcard $(SRC_DIR)/*.md))
 PDFS    := $(patsubst $(SRC_DIR)/%.md,$(BUILD_DIR)/%.pdf,$(SOURCES))
 
+# Shared inputs every PDF depends on. Listing the logos, fonts, and the Makefile
+# itself means `make` rebuilds when any of them change -- no manual `clean`.
+ASSETS  := $(wildcard assets/*.svg) $(wildcard $(FONT_DIR)/*.ttf)
+DEPS    := $(TEMPLATE) $(SHARED_META) $(ASSETS) $(MAKEFILE_LIST)
+
 .PHONY: all list clean
 all: $(PDFS)
 
-$(BUILD_DIR)/%.pdf: $(SRC_DIR)/%.md $(TEMPLATE) $(SHARED_META) | $(BUILD_DIR)
+# Two-step build: Pandoc -> Typst source, then compile with the typst CLI.
+# The intermediate .typ is emitted here in pdf-build/ (not build/) so the
+# template's relative `assets/...` logo paths resolve. It is removed after.
+#
+# `-tex_math_dollars`: disable $...$ math parsing so literal shell/config vars
+# like $NGINX_ROOT or $PATH in prose and tables are never treated as math.
+$(BUILD_DIR)/%.pdf: $(SRC_DIR)/%.md $(DEPS) | $(BUILD_DIR)
 	$(PANDOC) "$<" \
-	  --from=markdown \
-	  --pdf-engine=typst \
+	  --from=markdown-tex_math_dollars \
+	  --to=typst \
 	  --template=$(TEMPLATE) \
 	  --metadata-file=$(SHARED_META) \
 	  --toc --toc-depth=3 \
 	  --resource-path=".:$(SRC_DIR)" \
-	  --output="$@"
+	  --output="$*.typ"
+	@# Pandoc gives tables fixed percentage column widths (always full-width);
+	@# rewrite them to auto so the template can detect a table's natural width
+	@# and rotate genuinely wide ones onto their own landscape page.
+	sed -E -i '' '/^[[:space:]]*columns: \(/ s/[0-9.]+%/auto/g' "$*.typ"
+	typst compile --font-path "$(FONT_DIR)" "$*.typ" "$@"
+	@rm -f "$*.typ"
 	@echo "Built $@"
 
 $(BUILD_DIR):

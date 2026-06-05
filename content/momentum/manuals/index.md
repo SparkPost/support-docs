@@ -12,4 +12,8 @@ customers — installation guides, upgrade guides, and release notes — for
 
 ## Available manuals
 
-- [Installation Manual](/momentum/manuals/installation-manual) — Momentum 5.3
+- [Installation Manual](/momentum/manuals/installation-manual)
+- [Upgrade Manual](/momentum/manuals/upgrade-manual) — MTA-only
+- [Enabling APIs & Message Generation](/momentum/manuals/enabling-apis-message-generation) — Transmissions API, SMTPAPI, Message Generation
+- [Enabling Webhooks](/momentum/manuals/enabling-webhooks)
+- [Upgrading Webhooks](/momentum/manuals/upgrading-webhooks)
