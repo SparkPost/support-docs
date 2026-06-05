@@ -130,8 +130,10 @@ $endif$
     numbering: pagenumbering,
     header: context {
       set text(size: 8pt, fill: luma(130))
-      if header-logo != none { image(header-logo, height: 1.5em) } else if title != none [ #title ]
+      if header-logo != none { image(header-logo, height: 1.8em) } else if title != none [ #title ]
       h(1fr)
+      if title != none [ #title ]
+      if title != none and version != none [ #h(0.5em)·#h(0.5em) ]
       if version != none [ #version ]
       v(-0.4em)
       line(length: 100%, stroke: 0.5pt + luma(210))

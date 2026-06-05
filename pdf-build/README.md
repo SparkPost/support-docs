@@ -66,10 +66,15 @@ date: "June 2026"
 
 ## Adding a manual (conversion workflow)
 
-1. Convert the source PDF to Markdown (e.g. with `pandoc`/`pdftotext`), clean it
-   up, and save it as `content/momentum/manuals/<name>.md` with the frontmatter
-   above. Put extracted images in `content/momentum/manuals/images/` and
-   reference them as `images/<file>` (so they work both online and in the PDF).
+1. Convert the source (prefer **DOCX** over PDF — it keeps headings, lists,
+   tables, and images) with `pandoc`, clean it up, and save it as
+   `content/momentum/manuals/<name>.md` with the frontmatter above. Put
+   extracted images in `content/momentum/manuals/images/` and reference them as
+   `images/<file>` (so they work both online and in the PDF).
+   - **Code blocks**: don't reproduce the source's box colors. Use standard
+     fenced blocks tagged by language (` ```bash `, ` ```c `, ` ```python `, …)
+     for code/commands, and a plain fenced block (no language) for config-file
+     contents and console output — let the renderer handle highlighting.
 2. Add the page to the menu: a sub-item under the **Online manuals** node in
    `content/momentum/navigation.yml`, and a link in
    `content/momentum/manuals/index.md`.
@@ -88,7 +93,3 @@ date: "June 2026"
 - **Logos** in `assets/`: `bird-logo-stacked{,-dark}.svg` and
   `bird-logo-horizontal{,-dark}.svg` (light = black-on-white, dark =
   white-on-black). `metadata.yaml` selects which variant each placement uses.
-
-**Still to confirm before customer release**: the legal copyright wording in
-`metadata.yaml`, and whether Poppins + these hex values are the final official
-brand spec.

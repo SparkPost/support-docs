@@ -1,2 +1,3 @@
 # Generated PDFs are build artifacts, not source. Regenerate with `make`.
+*.docx
 build/*.pdf

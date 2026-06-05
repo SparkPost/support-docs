@@ -1,5 +1,8 @@
 - link: /momentum/manuals
   title: Online manuals
+  items:
+    - link: /momentum/manuals/installation-manual
+      title: Installation Manual (5.3)
 - link: /momentum/4
   title: Momentum 4.x and later
   items:

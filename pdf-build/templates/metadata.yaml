@@ -19,7 +19,6 @@ margin:
   y: 2.5cm
 
 # --- Bird brand -------------------------------------------------------------
-# TODO: confirm the official wording with Legal/Brand before customer release.
 copyright: "© 2014–2026 Bird B.V. All rights reserved."
 confidential: "Confidential & Proprietary"
 
@@ -28,4 +27,4 @@ confidential: "Confidential & Proprietary"
 # lockup; the running header is on white pages, so it uses the black (light)
 # horizontal lockup. Light/dark counterparts of each also live in assets/.
 logo: "assets/bird-logo-stacked-dark.svg"
-header-logo: "assets/bird-logo-horizontal.svg"
+header-logo: "assets/bird-logo-horizontal-header.svg"

@@ -9,7 +9,8 @@ Four Bird lockups, referenced from
 | --- | --- | --- | --- |
 | `bird-logo-stacked.svg` | stacked | black-on-white | (light cover, if used) |
 | `bird-logo-stacked-dark.svg` | stacked | white-on-black | **cover page** (dark) |
-| `bird-logo-horizontal.svg` | horizontal | black-on-white | **running header** (white pages) |
+| `bird-logo-horizontal.svg` | horizontal | black-on-white | official full-clear-space asset |
+| `bird-logo-horizontal-header.svg` | horizontal | black, transparent | **running header** — viewBox cropped to content so it's legible when sized small |
 | `bird-logo-horizontal-dark.svg` | horizontal | white-on-black | dark header, if ever used |
 
 SVG is used for crisp print at any size. To change which variant a placement
