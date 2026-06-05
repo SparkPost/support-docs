@@ -1,0 +1,31 @@
+# Shared brand/layout defaults applied to every generated Momentum manual PDF.
+#
+# Per-manual values (title, subtitle, version, date) come from each Markdown
+# file's own YAML frontmatter and OVERRIDE anything set here. Keep brand-wide,
+# manual-independent settings in this file.
+
+papersize: a4
+fontsize: 10pt
+linestretch: 1.2
+toc-title: "Table of Contents"
+
+# Body/heading font. Poppins is vendored in assets/fonts/ and made available to
+# Typst via TYPST_FONT_PATHS in the Makefile, so builds are reproducible without
+# any system font install. (Code spans use Typst's bundled DejaVu Sans Mono.)
+mainfont: "Poppins"
+
+margin:
+  x: 2.5cm
+  y: 2.5cm
+
+# --- Bird brand -------------------------------------------------------------
+# TODO: confirm the official wording with Legal/Brand before customer release.
+copyright: "© 2014–2026 Bird B.V. All rights reserved."
+confidential: "Confidential & Proprietary"
+
+# Bird logos. Paths are resolved relative to the pdf-build/ directory.
+# The cover page is dark, so `logo` uses the white-on-black (dark) stacked
+# lockup; the running header is on white pages, so it uses the black (light)
+# horizontal lockup. Light/dark counterparts of each also live in assets/.
+logo: "assets/bird-logo-stacked-dark.svg"
+header-logo: "assets/bird-logo-horizontal.svg"
