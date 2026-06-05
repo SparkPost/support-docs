@@ -55,7 +55,8 @@ $(BUILD_DIR)/%.pdf: $(SRC_DIR)/%.md $(DEPS) | $(BUILD_DIR)
 	@# Pandoc gives tables fixed percentage column widths (always full-width);
 	@# rewrite them to auto so the template can detect a table's natural width
 	@# and rotate genuinely wide ones onto their own landscape page.
-	sed -E -i '' '/^[[:space:]]*columns: \(/ s/[0-9.]+%/auto/g' "$*.typ"
+	@# Use a temp file + mv (not `sed -i`, whose syntax differs on BSD vs GNU).
+	sed -E '/^[[:space:]]*columns: \(/ s/[0-9.]+%/auto/g' "$*.typ" > "$*.typ.cols" && mv "$*.typ.cols" "$*.typ"
 	typst compile --font-path "$(FONT_DIR)" "$*.typ" "$@"
 	@rm -f "$*.typ"
 	@echo "Built $@"

@@ -1,3 +1,8 @@
 # Generated PDFs are build artifacts, not source. Regenerate with `make`.
 *.docx
 build/*.pdf
+
+# Transient intermediate Typst files (removed after each successful build;
+# may linger only if a build is interrupted). Not the template in templates/.
+/*.typ
+/*.typ.cols
