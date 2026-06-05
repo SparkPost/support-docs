@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/26/2020"
+lastUpdated: "06/05/2026"
 title: "New Installation - All Configurations"
 description: "The installation and upgrade instructions in Chapters 8 through 11 are only applicable in their entirety for Momentum 4 x releases prior to 4 2 28 For release 4 2 28 and beyond please refer to the installation and upgrade PDF documents available under the desired release's folder on the..."
 ---
@@ -7,7 +7,7 @@ description: "The installation and upgrade instructions in Chapters 8 through 11
 
 | **WARNING** |
 | -- |
-| **The installation and upgrade instructions in this section are only applicable in their entirety for Momentum 4.x releases prior to 4.2.28.** For release 4.2.28 and beyond, please refer to the installation and upgrade PDF documents available under the desired release's folder on the Message Systems Support website's [Downloads page](https://support.messagesystems.com/start.php/). If you are uncertain as to which document is applicable to your situation, please contact your technical support representative.|
+| **The installation and upgrade instructions in this section are only applicable in their entirety for Momentum 4.x releases prior to 4.2.28.** For Momentum 4.x release 4.2.28 and beyond, please refer to the installation and upgrade PDF documents available under the desired release's folder on the Message Systems Support website's [Downloads page](https://support.messagesystems.com/start.php/). **For Momentum 5.x and later, use the [Online Manuals](/momentum/manuals)** — Installation, Upgrade, and feature-enablement guides, also available as downloadable PDFs in the same website. If you are uncertain as to which document is applicable to your situation, please contact your technical support representative.|
 
 
 This section documents the installation procedures for use in either a local or Amazon Web Services (AWS) environment. This installation can be scaled for a variety of installation configurations, including singlenode, a cluster with three combined Platform and Analytics nodes, and two-tiered topologies that have multiple Platform and multiple, separate Analytics nodes.
