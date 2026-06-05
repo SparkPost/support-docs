@@ -286,13 +286,11 @@ end
 msys.registerModule("my_dkim2_verifier", mod)
 ```
 
-The wrapper automatically updates the `Authentication-Results:` header
-with one `dkim2=…` clause per directly-verified signature. If an AR
-header already exists on the message (stamped by an earlier verifier
-such as SPF or DKIM1), the dkim2 results are appended to it. If no AR
-header exists, a new one is created — but only when `authservid` is
-supplied, since a well-formed AR header requires an authentication
-service identifier.
+The wrapper stamps a new `Authentication-Results:` header with one
+`dkim2=…` clause per directly-verified signature. RFC 8601 §5 states
+that an MTA **MUST NOT** add a result to an existing header field, so
+`verify()` always prepends a fresh AR header. `authservid` is required;
+nothing is emitted when it is absent.
 
 ### Verify options
 
@@ -303,6 +301,7 @@ service identifier.
 | `authservid` | If set and no `Authentication-Results:` header already exists, a new one is created with this value as the authentication service identifier. Not required when an AR header is already present — the dkim2 results are appended to it automatically. |
 | `skip_ar_header_update` | If `true`, suppress all AR output. Use this when the policy stamps AR itself. |
 | `skip_recipe_chain` | If `true`, skip the `-02` §10.6 recipe-chain check. The per-signature crypto + envelope checks and the §8.3 chain-of-custody check still run. Default `false` (chain check ON). |
+| `emit_debug_headers` | If `true`, stamp `X-MSYS-DKIM2-Verify-Overall` and `X-MSYS-DKIM2-Verify-Sig` headers on the message for test and debug inspection. Default `false`. |
 
 ### Result table
 
@@ -347,10 +346,13 @@ dkim2 {
 
 `error` (the default) surfaces only failures and resolver problems.
 `warning` adds DNS issues and SHOULD-violation warnings. `info` adds one
-line per sign / verify with the signature i= value, the resolved key
-source, and the overall verdict. `debug` adds raw TXT-record bytes from
-the resolver and per-step trace lines — too noisy for steady-state
-production but useful when chasing a specific record.
+DNS resolution line per verified signature plus any verification failure
+with its cause (`bh_mismatch` with expected vs. actual hash, `sig_invalid`
+with selector, algorithm, signed-input length, and OpenSSL detail).
+`debug` adds raw TXT-record bytes from the resolver, a per-crypto-check
+trace line, and the raw signed-input bytes on failure — too noisy for
+steady-state production but useful when chasing a specific sign/verify
+mismatch.
 
 ### Per-signature `reason` codes
 
@@ -361,7 +363,8 @@ Every signature on a verified message gets a `reason` string in
 |---|---|
 | `ok` | Signature verified cleanly. Paired with `status="pass"`. |
 | `deferred` | Earlier signature (i&lt;N) — not directly verified per `-02` §10.5; the recipe-chain check is the authoritative integrity signal for it. Paired with `status="chain_verified"`. |
-| `sig_invalid` | Cryptographic verification failed — signed bytes don't hash to the value in `s=`. Almost always means a hop modified a signed header or the body without recording it. |
+| `hh_mismatch` | The freshly-computed header hash doesn't match the value recorded in the upstream `Message-Instance:`. A content header (Subject, From, etc.) was modified after signing without a corresponding new MI. |
+| `sig_invalid` | Cryptographic verification failed — the signed-input bytes (MI headers + prior DKIM2-Signatures + partial current sig) don't hash to the value in `s=`. Almost always means the `Message-Instance:` or a prior `DKIM2-Signature:` was altered after signing. Enable `debug_level = info` to see the selector, algorithm, and signed-input length. |
 | `bh_mismatch` | The body the verifier sees doesn't hash to the body-hash recorded in the upstream Message-Instance. The body was modified without a corresponding new Message-Instance. |
 | `parse_error` | The `DKIM2-Signature:` header didn't parse as a valid tag-value list. Corrupt header or a broken signer. |
 | `missing_required_tags` | The signature is missing the required `s=` tag. |
