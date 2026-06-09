@@ -1,22 +1,23 @@
 ---
-lastUpdated: "05/23/2026"
+lastUpdated: "06/09/2026"
 title: "Using DKIM2 (DomainKeys Identified Mail v2) Signatures"
-description: "DKIM2 is the successor to DKIM that adds replay protection (per-message envelope binding), an explicit chain of custody across forwarders, and a structured way for modifying hops to record what they changed. Momentum ships a prototype DKIM2 implementation that targets draft-ietf-dkim-dkim2-spec-02."
+description: "DKIM2 is the successor to DKIM that adds replay protection (per-message envelope binding), an explicit chain of custody across forwarders, and a structured way for modifying hops to record what they changed. Momentum implements DKIM2 targeting draft-ietf-dkim-dkim2-spec-02."
 ---
 
 
 ### Warning
 
-DKIM2 is a **prototype** implementation that targets the in-progress IETF draft
+DKIM2 targets the in-progress IETF draft
 [`draft-ietf-dkim-dkim2-spec-02`](https://datatracker.ietf.org/doc/html/draft-ietf-dkim-dkim2-spec-02)
-(May 2026, expires November 2026). The wire format is **not stable** — the
-working group can and will revise it. Do not enable DKIM2 on production
-outbound traffic without staging it first, and do not rely on the current
-wire format being byte-compatible with any future Momentum release.
+(May 2026). The wire format is **not yet final** — the working group may revise
+it before publication. Do not enable DKIM2 on production outbound traffic
+without staging it first. If the spec changes, a future Momentum release may
+not verify messages signed by an earlier release.
 
-Known prototype-versus-draft gaps are listed under
-[Known limitations](/momentum/4/dkim2#dkim2_caveats) at the end of
-this page.
+> **What this means in practice:** Stage DKIM2 on a limited outbound mail
+> stream first. If you later upgrade Momentum and the spec has changed, messages
+> signed by the old release will fail verification at receivers that have also
+> upgraded. Messages signed by DKIM1 are unaffected.
 
 
 ## <a name="dkim2_intro"></a> What DKIM2 is, and why
@@ -184,7 +185,9 @@ of the options table.
 | `nonce_random` | no | If `true` AND `nonce` is not set, the signer fills `n=` with a 22-character base64 random nonce. |
 | `flags` | no | Lua array of flag tokens for `f=` (`-02` §8.9). Recognized values: `"exploded"`, `"donotexplode"`, `"donotmodify"`, `"feedback"`. Joined into the on-wire comma-separated form by the glue layer. |
 | `recipe` | no | Raw JSON string conforming to `-02` §4. Attached to the `Message-Instance` header as the base64-encoded `r=` tag. Validated against the schema at sign time; malformed recipes fail the sign call with `recipe_invalid: <reason>`. |
+| `relax_d_mf_check` | no | §7.7 requires `d=` to match the rightmost labels of the `mf=` (MAIL FROM) domain. Default `false` — `sign()` returns an error on mismatch. Set to `true` to downgrade to a `DWARNING` log and proceed, for configurations where the signing domain intentionally differs from the envelope domain. |
 | `allow_recipe_z` | no | If `true`, accept the `b: {"z": true}` (truncated-body) recipe at sign time. Default `false`. The `-02` spec is internally inconsistent on this recipe shape — the changelog removes it but §11.1 still references it — so the signer refuses to emit it without an explicit opt-in. Set this only if you are interoperating with a verifier that requires the truncated-body recipe and you accept that the shape may be removed from the final spec. |
+| `mi_hash_algorithms` | no | Lua array of hash algorithms for the `Message-Instance` `h=` body and header hashes (§5). Default `{"sha256"}`. Multiple algorithms produce comma-separated entries in `h=`, e.g. `{"sha256","sha512"}` → `h=sha256:HH:BH,sha512:HH:BH`. A plain string `mi_hash_algorithm="sha512"` is also accepted as a single-algorithm alias. The verifier automatically detects and uses whatever algorithm is present in the received MI `h=` tag. |
 
 `sign()` returns `(true, header_value_string)` on success and `(nil,
 error_string)` on failure. Always check the return; on failure the message
@@ -297,27 +300,42 @@ nothing is emitted when it is absent.
 | Option | Meaning |
 |---|---|
 | `pubkey_pem` | A PEM-encoded public key. When set, the same key is used for every signature on the message (typically used in tests and policies that already have the key). When absent, each signature's `(d, s)` pair is resolved from DNS at `<selector>._domainkey.<domain>`. |
-| `rcpt` | Override the actual envelope RCPT TO for the `rt=` binding check. Defaults to the bare address from `ec_message_get_rcptto`. |
+| `mailfrom` | Override the envelope MAIL FROM used for the `mf=` binding check. Defaults to the bare address from `ec_message_get_mailfrom`. **For testing only** — mirrors sign()'s `mailfrom=` option; useful for simulating specific envelope conditions without real SMTP transit. |
+| `rcpt` | Override the actual envelope RCPT TO for the `rt=` binding check. Defaults to the bare address from `ec_message_get_rcptto`. **For testing only** — in production the envelope RCPT TO is always read from the message automatically and this option should not be set. |
 | `authservid` | If set and no `Authentication-Results:` header already exists, a new one is created with this value as the authentication service identifier. Not required when an AR header is already present — the dkim2 results are appended to it automatically. |
 | `skip_ar_header_update` | If `true`, suppress all AR output. Use this when the policy stamps AR itself. |
+| `relax_d_mf_check` | If `true`, downgrade the §7.7 `d=`/`mf=` domain alignment check from a hard failure to a warning. Default `false` (strict — mismatched signing domain fails verification). |
 | `skip_recipe_chain` | If `true`, skip the `-02` §10.6 recipe-chain check. The per-signature crypto + envelope checks and the §8.3 chain-of-custody check still run. Default `false` (chain check ON). |
-| `emit_debug_headers` | If `true`, stamp `X-MSYS-DKIM2-Verify-Overall` and `X-MSYS-DKIM2-Verify-Sig` headers on the message for test and debug inspection. Default `false`. |
+| `strict_s_selectors` | If `true`, treat duplicate selectors within a single `s=` tag as `reason=parse_error`. Default `false` (relax — §7.8 places the MUST only on signers; verifiers may accept duplicates). |
+| `max_sig_age_days` | §10.3: reject signatures whose `t=` timestamp is older than this many days. Default `14`. Values `<= 0` disable the age check. |
+| `max_sig_future_secs` | §7.4: reject signatures whose `t=` timestamp is more than this many seconds in the future. Default `300` (5-minute clock-skew tolerance). Values `<= 0` disable the check. |
+| `emit_debug_headers` | If `true`, stamp `X-MSYS-DKIM2-Verify-Overall` and `X-MSYS-DKIM2-Verify-Sig` headers on the message. Useful for staging and debugging; **do not enable in production** as these headers expose internal verification detail and inflate message size. Default `false`. |
 
 ### Result table
 
 ```
 result = {
-  overall = "pass" | "fail" | "chain_broken" | "temperror" | "none",
+  overall = "pass"         -- all verifiable signatures passed
+          | "permfail"     -- all signatures failed (crypto or structural)
+          | "fail"         -- policy-level failure (d=/mf= mismatch, donotmodify, etc.)
+          | "chain_broken" -- chain-of-custody or MI integrity failure
+          | "temperror"    -- transient key-fetch failure (DNS timeout / SERVFAIL)
+          | "none",        -- no DKIM2 signatures present
   signatures = {
-    { seq      = <integer i= value, 0 if absent>,
-      status   = "pass" | "fail" | "chain_verified",
-      reason   = "ok" | "deferred" | <failure code>,
-      d        = "<signing domain>",
-      s        = "<selector>:<sig-name>:<base64-sig>",
-      mf       = "<envelope MAIL FROM>",
-      rt       = "<envelope RCPT TO>",
-      n        = "<nonce>",          -- if present
-      f        = "<flags string>",   -- if present
+    { seq    = <integer i= value, 1-based; 0 if absent>,
+      status = "pass"           -- signature verified
+             | "fail"           -- signature failed; see reason
+             | "chain_verified" -- earlier hop (i<N), deferred to recipe-chain check
+             | "none",          -- all sig-sets used unsupported algorithms
+      reason = "ok"             -- paired with status="pass"
+             | "deferred"       -- paired with status="chain_verified"
+             | <failure code>,  -- see Per-signature reason codes table below
+      d  = "<signing domain>",
+      s  = "<selector>:<alg>:<base64-sig>",  -- raw s= value
+      mf = "<bare MAIL FROM>",               -- decoded from base64
+      rt = "<bare RCPT TO>",                 -- decoded from base64; first entry only
+      n  = "<nonce>",                        -- if present
+      f  = "<flags string>",                 -- if present; comma-separated
     },
     ...
   }
@@ -362,18 +380,24 @@ Every signature on a verified message gets a `reason` string in
 | Reason | Meaning |
 |---|---|
 | `ok` | Signature verified cleanly. Paired with `status="pass"`. |
-| `deferred` | Earlier signature (i&lt;N) — not directly verified per `-02` §10.5; the recipe-chain check is the authoritative integrity signal for it. Paired with `status="chain_verified"`. |
-| `hh_mismatch` | The freshly-computed header hash doesn't match the value recorded in the upstream `Message-Instance:`. A content header (Subject, From, etc.) was modified after signing without a corresponding new MI. |
-| `sig_invalid` | Cryptographic verification failed — the signed-input bytes (MI headers + prior DKIM2-Signatures + partial current sig) don't hash to the value in `s=`. Almost always means the `Message-Instance:` or a prior `DKIM2-Signature:` was altered after signing. Enable `debug_level = info` to see the selector, algorithm, and signed-input length. |
-| `bh_mismatch` | The body the verifier sees doesn't hash to the body-hash recorded in the upstream Message-Instance. The body was modified without a corresponding new Message-Instance. |
-| `parse_error` | The `DKIM2-Signature:` header didn't parse as a valid tag-value list. Corrupt header or a broken signer. |
-| `missing_required_tags` | The signature is missing the required `s=` tag. |
-| `nonce_too_long` | The `n=` nonce exceeded the 64-character ceiling (per `-02` §8.3 the verifier rejects oversize nonces). |
-| `mailfrom_mismatch` | The signed `mf=` doesn't match the actual envelope MAIL FROM. Classic replay-to-different-sender symptom. |
-| `rcpt_mismatch` | The signed `rt=` doesn't match the actual envelope RCPT TO. Classic replay-to-different-recipient symptom. |
-| `key_unavailable` | DNS resolver returned a transient failure (SERVFAIL, timeout, REFUSED). |
-| `no_key` | DNS returned NXDOMAIN, or the TXT record had `p=` empty (key revocation per RFC 6376 §3.6.1). |
-| `key_k_unknown` | DNS returned a record but its `k=` algorithm tag names an algorithm the verifier doesn't support. |
+| `deferred` | Earlier signature (i&lt;N) — not directly verified (§10.5); the §10.6 recipe-chain check is the authoritative integrity signal for it. Paired with `status="chain_verified"`. |
+| `hh_mismatch` | Header hash mismatch — a content header (Subject, From, etc.) was modified after signing without a new `Message-Instance:` recording the change. |
+| `bh_mismatch` | Body hash mismatch — the message body was modified after signing without a new `Message-Instance:` recording the change. |
+| `sig_invalid` | Cryptographic verification failed — the signed-input bytes don't match the value in `s=`. Enable `debug_level = info` for selector, algorithm, and signed-input length detail. |
+| `parse_error` | The `DKIM2-Signature:` header couldn't be parsed. Corrupt header or a broken upstream signer. |
+| `missing_required_tags` | One or more of the seven required tags (`i=`, `m=`, `t=`, `mf=`, `rt=`, `d=`, `s=`) is absent from the signature. |
+| `signature_expired` | The `t=` timestamp is older than `max_sig_age_days` (default 14). |
+| `signature_future` | The `t=` timestamp is more than `max_sig_future_secs` (default 300 s) in the future. |
+| `nonce_too_long` | The `n=` nonce exceeded the 64-character ceiling (§8.3). |
+| `mailfrom_mismatch` | The signed `mf=` doesn't match the actual envelope MAIL FROM — replay-to-different-sender. |
+| `rcpt_mismatch` | The signed `rt=` doesn't match the actual envelope RCPT TO — replay-to-different-recipient. |
+| `d_mf_mismatch` | The signing domain `d=` does not match the rightmost labels of the `mf=` domain (§7.7). Only set when `relax_d_mf_check` is not enabled. |
+| `key_unavailable` | DNS resolver returned a transient failure (SERVFAIL, timeout, REFUSED). Rolls up to `overall="temperror"`. |
+| `no_key` | DNS returned NXDOMAIN — no TXT record exists for the selector. |
+| `key_revoked` | The DNS TXT record exists but `p=` is empty, signalling deliberate key revocation. |
+| `key_b64_decode` | The `p=` value in the DNS record is not valid base64. Malformed DNS record. |
+| `key_der_parse` | The `p=` base64 decoded successfully but the DER structure is not a valid public key. |
+| `key_k_unknown` | The DNS record's `k=` tag names an algorithm Momentum doesn't support. |
 
 ### `recipe_chain:` detail strings (paniclog only)
 
@@ -387,7 +411,7 @@ only place this detail surfaces.
 | Detail | Meaning |
 |---|---|
 | `no_mi_1` | The message had ≥ 2 signatures but no `Message-Instance` with `m=1`. The chain has no anchor. |
-| `parse_h` | `Message-Instance` `m=1`'s `h=` tag didn't parse as `sha256:<header-hash>:<body-hash>`. The originator's MI is malformed. |
+| `parse_h` | `Message-Instance` `h=` tag didn't parse as `<algorithm>:<header-hash>:<body-hash>`. The MI is malformed. |
 | `recipe_decode` | A hop's `r=` value didn't base64-decode. Wire-format corruption or a broken signer. |
 | `recipe_invalid` | A hop's recipe failed schema validation at verify time. Should not occur with conforming signers (sign-time validation prevents emission of bad recipes); appearing here means the signer is broken. |
 | `irreversible` | A hop's recipe declared `"h": null`, `"b": null`, or `"b": {"z": true}`. The verifier can't reverse-reconstruct past this hop. Local policy may accept irreversibility from trusted forwarders. |
@@ -438,6 +462,53 @@ not two. The `reason=` field appears only on failures and uses the per-sig
 reason codes from the table above.
 
 
+## <a name="dkim2_smtp_codes"></a> SMTP response codes (§9.4 guidance)
+
+Momentum leaves the decision of whether to accept, reject, or defer a
+message — and which SMTP reply code to use — entirely to the operator's
+Lua hook.  The `overall` field of the verify result maps to the following
+SMTP behaviour as required by §9.4 of the DKIM2 spec:
+
+| `overall` | Meaning | §9.4 guidance | Suggested action |
+|---|---|---|---|
+| `pass` | All verifiable signatures passed | — | Accept |
+| `none` | No DKIM2 signatures present | — | Local policy |
+| `fail` | Policy-level failure (e.g. d=/mf= mismatch, donotmodify violated) | SHOULD 550/5.7.x if rejecting | Reject or accept per policy |
+| `permfail` | All signatures failed crypto or structural checks | SHOULD 550/5.7.x; **MUST NOT 4xx** | Reject (permanent) |
+| `chain_broken` | Chain-of-custody or MI integrity failure | SHOULD 550/5.7.x | Reject (permanent) |
+| `temperror` | Transient key-fetch failure (DNS timeout / SERVFAIL) | MAY 451/4.7.5 | Defer (temporary) |
+
+**Key rule from §9.4**: cryptographic and structural failures (`permfail`,
+`chain_broken`) **MUST NOT** result in a 4xx (temporary) SMTP reply.  Only
+`temperror` warrants a temporary failure code.
+
+Example hook skeleton:
+
+```lua
+local result = msys.validate.dkim2.verify(msg, vctx, { ... })
+local overall = result and result.overall or "none"
+
+if overall == "permfail" or overall == "chain_broken" then
+  -- §9.4 SHOULD 550/5.7.x for permanent failures
+  vctx:set_code(550, "5.7.1", "DKIM2 verification failed")
+  return msys.core.SMFIS_REJECT
+
+elseif overall == "temperror" then
+  -- §9.4 MAY 451/4.7.5 for transient key-fetch failures
+  vctx:set_code(451, "4.7.5", "DKIM2 key server temporarily unavailable")
+  return msys.core.SMFIS_TEMPFAIL
+
+else
+  -- pass / none / fail: local policy
+  return msys.core.VALIDATE_CONT
+end
+```
+
+> **Note**: Whether to reject on `fail`, `chain_broken`, or `none` is a
+> local policy decision.  The spec only mandates the reply-code *type*
+> (4xx vs 5xx) for the cases shown above.
+
+
 ## <a name="dkim2_key_management"></a> Key management
 
 DKIM2 reuses the DKIM1 key infrastructure. Keys are PEM-encoded RSA or
@@ -466,7 +537,26 @@ the DKIM1 signature normally.
 The full DKIM2 logical flow is implemented and exercised end-to-end:
 
 *   Per-signature envelope binding (`mf=` / `rt=`)
-*   `-02` §8.3 chain-of-custody check
-*   `-02` §10.5 most-recent-only cryptographic verification
-*   `-02` §10.6 recipe-chain reconstruction
+*   §8.3 chain-of-custody check
+*   §10.5 most-recent-only cryptographic verification
+*   §10.6 recipe-chain reconstruction
+
+
+## <a name="dkim2_caveats"></a> Known limitations
+
+The following features are not yet implemented and may be addressed in a
+future release:
+
+*   **§11 DSN routing**: When generating a Delivery Status Notification,
+    Momentum does not yet address it to the `mf=` address from the
+    highest-numbered DKIM2-Signature of the original message, nor does it
+    suppress DSN generation when the original sender was `<>` (null sender).
+    Inbound DSN authentication (§11.1.2) is also not implemented.
+
+*   **§8.2 Forwarder auto-detection**: The `sign()` API fully supports
+    co-signing (call it twice to add a forwarder signature), but Momentum
+    does not auto-detect chain-of-custody breaks. Operators must explicitly
+    call `sign()` when forwarding changes the MAIL FROM. Full automation
+    requires the Recipe Accumulator API (planned; not yet available).
+
 
