@@ -590,16 +590,6 @@ and the DKIM2 module operate independently — enabling one does not affect
 the other. Receivers that support both will evaluate each chain separately.
 
 
-### Interoperability
-
-The full DKIM2 logical flow is implemented and exercised end-to-end:
-
-*   Per-signature envelope binding (`mf=` / `rt=`)
-*   §8.3 chain-of-custody check
-*   §10.5 most-recent-only cryptographic verification
-*   §10.6 recipe-chain reconstruction
-
-
 ## <a name="dkim2_caveats"></a> Known limitations
 
 The following features are not yet implemented and may be addressed in a
