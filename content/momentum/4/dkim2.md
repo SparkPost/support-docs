@@ -164,12 +164,13 @@ msys.validate.dkim2.sign(msg, vctx, {
 
 When `sig_sets` is present, all entries sign the same canonical
 signed-input and are combined into a single `s=sel1:alg1:sig1,sel2:alg2:sig2`
-value on one `DKIM2-Signature` header. The verifier tries each sig-set
-in order and passes on the first that validates (OR semantics), so a
-receiver that only supports RSA will still verify cleanly. The
-`selector`, `keyfile`, and `algorithm` fields belong to each sig-set
-entry; all other options below are header-level and go at the top level
-of the options table.
+value on one `DKIM2-Signature` header.  Per §7.2 the verifier checks
+every sig-set; overall passes if any one validates, so a receiver that
+only supports RSA will still verify cleanly.  Any sig-set that fails
+alongside a passing one is reported as a DWARNING in paniclog
+(partial-sig-failure condition).  The `selector`, `keyfile`, and
+`algorithm` fields belong to each sig-set entry; all other options below
+are header-level and go at the top level of the options table.
 
 | Option | Required? | Meaning |
 |---|---|---|
@@ -266,7 +267,10 @@ function mod:validate_data_spool_each_rcpt(msg, ac, vctx)
 
   -- result.overall is one of:
   --   "pass"          all sigs verified, chain intact
-  --   "fail"          at least one sig failed (see signatures[i].reason)
+  --   "fail"          verified but wrong: hash/sig mismatch or policy
+  --                   violation (d=/mf= mismatch, donotmodify, etc.)
+  --   "permerror"     could not verify: key missing/invalid/revoked,
+  --                   signature syntax error
   --   "chain_broken"  i= gap, or §8.3 mf=/rt= bridge broken, or §10.6
   --                   recipe-chain reconstruction didn't match MI[1]
   --   "temperror"     resolver-side transient failure (SERVFAIL, timeout)
@@ -279,7 +283,9 @@ function mod:validate_data_spool_each_rcpt(msg, ac, vctx)
     vctx:set_code(451, "4.7.5 DKIM2 key lookup failed; please retry")
   end
 
-  if result.overall == "chain_broken" or result.overall == "fail" then
+  if result.overall == "chain_broken" or
+     result.overall == "fail"     or
+     result.overall == "permerror" then
     vctx:set_code(550, "5.7.1 DKIM2 verification failed")
   end
 
@@ -306,7 +312,7 @@ nothing is emitted when it is absent.
 | `skip_ar_header_update` | If `true`, suppress all AR output. Use this when the policy stamps AR itself. |
 | `relax_d_mf_check` | If `true`, downgrade the §7.7 `d=`/`mf=` domain alignment check from a hard failure to a warning. Default `false` (strict — mismatched signing domain fails verification). |
 | `skip_recipe_chain` | If `true`, skip the `-02` §10.6 recipe-chain check. The per-signature crypto + envelope checks and the §8.3 chain-of-custody check still run. Default `false` (chain check ON). |
-| `strict_s_selectors` | If `true`, treat duplicate selectors within a single `s=` tag as `reason=parse_error`. Default `false` (relax — §7.8 places the MUST only on signers; verifiers may accept duplicates). |
+| `relax_s_selectors` | If `true`, accept duplicate selectors within a single `s=` tag (for interop with non-spec-compliant signers). Default `false` — duplicates produce `reason=parse_error` per §7.8. |
 | `max_sig_age_days` | §10.3: reject signatures whose `t=` timestamp is older than this many days. Default `14`. Values `<= 0` disable the age check. |
 | `max_sig_future_secs` | §7.4: reject signatures whose `t=` timestamp is more than this many seconds in the future. Default `300` (5-minute clock-skew tolerance). Values `<= 0` disable the check. |
 | `emit_debug_headers` | If `true`, stamp `X-MSYS-DKIM2-Verify-Overall` and `X-MSYS-DKIM2-Verify-Sig` headers on the message. Useful for staging and debugging; **do not enable in production** as these headers expose internal verification detail and inflate message size. Default `false`. |
@@ -316,17 +322,23 @@ nothing is emitted when it is absent.
 ```
 result = {
   overall = "pass"         -- all verifiable signatures passed
-          | "permfail"     -- all signatures failed (crypto or structural)
-          | "fail"         -- policy-level failure (d=/mf= mismatch, donotmodify, etc.)
+          | "fail"         -- verified but wrong: hash/sig mismatch, or
+          |                --   policy violation (d=/mf= mismatch, donotmodify, etc.)
+          | "permerror"    -- could not verify: key missing/revoked/invalid,
+          |                --   or signature syntax error (§10.1 PERMERROR)
           | "chain_broken" -- chain-of-custody or MI integrity failure
           | "temperror"    -- transient key-fetch failure (DNS timeout / SERVFAIL)
           | "none",        -- no DKIM2 signatures present
+  overall_reason = nil              -- nil unless overall="fail" due to a
+                 | "d_mf_mismatch"  --   policy downgrade after crypto pass:
+                 | "donotmodify_violated"   -- §7.7 domain alignment failed
+                 | "donotexplode_violated", -- §10.8 flag violation
   signatures = {
     { seq    = <integer i= value, 1-based; 0 if absent>,
       status = "pass"           -- signature verified
              | "fail"           -- signature failed; see reason
              | "chain_verified" -- earlier hop (i<N), deferred to recipe-chain check
-             | "none",          -- all sig-sets used unsupported algorithms
+             | "none",          -- all sig-sets used unsupported algorithms (reason="unsupported_algorithm")
       reason = "ok"             -- paired with status="pass"
              | "deferred"       -- paired with status="chain_verified"
              | <failure code>,  -- see Per-signature reason codes table below
@@ -398,6 +410,8 @@ Every signature on a verified message gets a `reason` string in
 | `key_b64_decode` | The `p=` value in the DNS record is not valid base64. Malformed DNS record. |
 | `key_der_parse` | The `p=` base64 decoded successfully but the DER structure is not a valid public key. |
 | `key_k_unknown` | The DNS record's `k=` tag names an algorithm Momentum doesn't support. |
+| `sig_parse_failed` | The signature value inside the `s=` tag could not be parsed or stripped for canonical-input construction. Indicates a malformed signature from the signer. |
+| `unsupported_algorithm` | Every sig-set in `s=` uses an algorithm Momentum does not implement. Per §3.4 these are ignored rather than failed; paired with `status="none"`. |
 
 ### `recipe_chain:` detail strings (paniclog only)
 
@@ -435,7 +449,7 @@ where `verify()` was never called, will receive `""` from
 `msg:context_get` — not a verdict string. Always guard with a nil / empty
 check before acting on the value.
 
-`dkim2_overall` is one of the five verdict strings above.
+`dkim2_overall` is one of the six verdict strings above.
 `dkim2_n_sigs` is the count of `DKIM2-Signature` headers verified
 (string; parse with `tonumber()`).
 
@@ -473,14 +487,14 @@ SMTP behaviour as required by §9.4 of the DKIM2 spec:
 |---|---|---|---|
 | `pass` | All verifiable signatures passed | — | Accept |
 | `none` | No DKIM2 signatures present | — | Local policy |
-| `fail` | Policy-level failure (e.g. d=/mf= mismatch, donotmodify violated) | SHOULD 550/5.7.x if rejecting | Reject or accept per policy |
-| `permfail` | All signatures failed crypto or structural checks | SHOULD 550/5.7.x; **MUST NOT 4xx** | Reject (permanent) |
+| `fail` | Verified but wrong: hash/sig mismatch or policy violation (d=/mf= mismatch, donotmodify, etc.) | SHOULD 550/5.7.x if rejecting | Reject or accept per policy |
+| `permerror` | Could not verify: key missing, revoked, or invalid; signature syntax error (§10.1 PERMERROR) | SHOULD 550/5.7.x; **MUST NOT 4xx** | Reject (permanent) |
 | `chain_broken` | Chain-of-custody or MI integrity failure | SHOULD 550/5.7.x | Reject (permanent) |
 | `temperror` | Transient key-fetch failure (DNS timeout / SERVFAIL) | MAY 451/4.7.5 | Defer (temporary) |
 
-**Key rule from §9.4**: cryptographic and structural failures (`permfail`,
-`chain_broken`) **MUST NOT** result in a 4xx (temporary) SMTP reply.  Only
-`temperror` warrants a temporary failure code.
+**Key rule from §9.4**: permanent failures (`permerror`, `chain_broken`)
+**MUST NOT** result in a 4xx (temporary) SMTP reply.  Only `temperror`
+warrants a temporary failure code.
 
 Example hook skeleton:
 
@@ -488,8 +502,10 @@ Example hook skeleton:
 local result = msys.validate.dkim2.verify(msg, vctx, { ... })
 local overall = result and result.overall or "none"
 
-if overall == "permfail" or overall == "chain_broken" then
-  -- §9.4 SHOULD 550/5.7.x for permanent failures
+if overall == "permerror" or overall == "chain_broken" or
+   overall == "fail" then
+  -- §9.4 SHOULD 550/5.7.x for permanent failures.
+  -- Note: "permerror" and "chain_broken" MUST NOT use 4xx.
   vctx:set_code(550, "5.7.1", "DKIM2 verification failed")
   return msys.core.SMFIS_REJECT
 
@@ -499,14 +515,14 @@ elseif overall == "temperror" then
   return msys.core.SMFIS_TEMPFAIL
 
 else
-  -- pass / none / fail: local policy
+  -- pass / none: local policy
   return msys.core.VALIDATE_CONT
 end
 ```
 
-> **Note**: Whether to reject on `fail`, `chain_broken`, or `none` is a
-> local policy decision.  The spec only mandates the reply-code *type*
-> (4xx vs 5xx) for the cases shown above.
+> **Note**: Whether to reject on `fail` or `none` is a local policy
+> decision.  The spec only mandates the reply-code *type* (4xx vs 5xx)
+> for the cases shown above.
 
 
 ## <a name="dkim2_key_management"></a> Key management
