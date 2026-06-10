@@ -331,8 +331,7 @@ header.
 | `pubkey_pem` | A PEM-encoded public key. When set, the same key is used for every signature on the message (typically used in tests and policies that already have the key). When absent, each signature's `(d, s)` pair is resolved from DNS at `<selector>._domainkey.<domain>`. |
 | `mailfrom` | Override the envelope MAIL FROM used for the `mf=` binding check. Defaults to the bare address from `ec_message_get_mailfrom`. **For testing only** — mirrors sign()'s `mailfrom=` option; useful for simulating specific envelope conditions without real SMTP transit. |
 | `rcpt` | Override the actual envelope RCPT TO for the `rt=` binding check. Defaults to the bare address from `ec_message_get_rcptto`. **For testing only** — in production the envelope RCPT TO is always read from the message automatically and this option should not be set. |
-| `authservid` | If set and no `Authentication-Results:` header already exists, a new one is created with this value as the authentication service identifier. Not required when an AR header is already present — the dkim2 results are appended to it automatically. |
-| `skip_ar_header_update` | If `true`, suppress all AR output. Use this when the policy stamps AR itself. |
+| `authservid` | When set, a new `Authentication-Results:` header is always prepended with this value as the authentication service identifier. Per RFC 8601 §5, existing AR headers are never modified. When absent, no AR header is emitted. |
 | `relax_d_mf_check` | If `true`, downgrade the §7.7 `d=`/`mf=` domain alignment check from a hard failure to a warning. Default `false` (strict — mismatched signing domain fails verification). |
 | `skip_recipe_chain` | If `true`, skip the `-02` §10.6 recipe-chain check. The per-signature crypto + envelope checks and the §8.3 chain-of-custody check still run. Default `false` (chain check ON). |
 | `relax_s_selectors` | If `true`, accept duplicate selectors within a single `s=` tag (for interop with non-spec-compliant signers). Default `false` — duplicates produce `reason=parse_error` per §7.8. |
@@ -357,7 +356,7 @@ result = {
                  | "donotmodify_violated"   -- §7.7 domain alignment failed
                  | "donotexplode_violated", -- §10.8 flag violation
   signatures = {
-    { seq    = <integer i= value, 1-based; 0 if absent>,
+    { seq    = <i= chain sequence: 1 for originator, 2 for first forwarder, …>,
       status = "pass"           -- signature verified
              | "fail"           -- signature failed; see reason
              | "chain_verified" -- earlier hop (i<N), deferred to recipe-chain check
@@ -386,6 +385,55 @@ own cryptographic verify (which would naturally fail for any modified
 message).
 
 
+## <a name="dkim2_smtp_codes"></a> SMTP response codes (§9.4 guidance)
+
+Momentum leaves the decision of whether to accept, reject, or defer a
+message — and which SMTP reply code to use — entirely to the operator's
+Lua hook.  The `overall` field of the verify result maps to the following
+SMTP behaviour as required by §9.4 of the DKIM2 spec:
+
+| `overall` | Meaning | §9.4 guidance | Suggested action |
+|---|---|---|---|
+| `pass` | All verifiable signatures passed | — | Accept |
+| `none` | No DKIM2 signatures present | — | Local policy |
+| `fail` | Verified but wrong: hash/sig mismatch or policy violation (d=/mf= mismatch, donotmodify, etc.) | SHOULD 550/5.7.x if rejecting | Reject or accept per policy |
+| `permerror` | Could not verify: key missing, revoked, or invalid; signature syntax error (§10.1 PERMERROR) | SHOULD 550/5.7.x; **MUST NOT 4xx** | Reject (permanent) |
+| `chain_broken` | Chain-of-custody or MI integrity failure | SHOULD 550/5.7.x | Reject (permanent) |
+| `temperror` | Transient key-fetch failure (DNS timeout / SERVFAIL) | MAY 451/4.7.5 | Defer (temporary) |
+
+**Key rule from §9.4**: permanent failures (`permerror`, `chain_broken`)
+**MUST NOT** result in a 4xx (temporary) SMTP reply.  Only `temperror`
+warrants a temporary failure code.
+
+Example hook skeleton:
+
+```lua
+local result = msys.validate.dkim2.verify(msg, vctx, { ... })
+local overall = result and result.overall or "none"
+
+if overall == "permerror" or overall == "chain_broken" or
+   overall == "fail" then
+  -- §9.4 SHOULD 550/5.7.x for permanent failures.
+  -- Note: "permerror" and "chain_broken" MUST NOT use 4xx.
+  vctx:set_code(550, "5.7.1 DKIM2 verification failed")
+  return msys.core.VALIDATE_DONE
+
+elseif overall == "temperror" then
+  -- §9.4 MAY 451/4.7.5 for transient key-fetch failures
+  vctx:set_code(451, "4.7.5 DKIM2 key server temporarily unavailable")
+  return msys.core.VALIDATE_DONE
+
+else
+  -- pass / none: local policy
+  return msys.core.VALIDATE_CONT
+end
+```
+
+> **Note**: Whether to reject on `fail` or `none` is a local policy
+> decision.  The spec only mandates the reply-code *type* (4xx vs 5xx)
+> for the cases shown above.
+
+
 ## <a name="dkim2_debugging"></a> Debugging
 
 Setting `debug_level` on the `dkim2` configuration stanza routes sign and
@@ -397,15 +445,12 @@ dkim2 {
 }
 ```
 
-`error` (the default) surfaces only failures and resolver problems.
-`warning` adds DNS issues and SHOULD-violation warnings. `info` adds one
-DNS resolution line per verified signature plus any verification failure
-with its cause (`bh_mismatch` with expected vs. actual hash, `sig_invalid`
-with selector, algorithm, signed-input length, and OpenSSL detail).
-`debug` adds raw TXT-record bytes from the resolver, a per-crypto-check
-trace line, and the raw signed-input bytes on failure — too noisy for
-steady-state production but useful when chasing a specific sign/verify
-mismatch.
+| Level | What surfaces |
+|---|---|
+| `error` | Failures and resolver problems only. **Default.** |
+| `warning` | Adds DNS issues and SHOULD-violation warnings. |
+| `info` | Adds one DNS resolution line per verified signature plus verification failures with their cause (`bh_mismatch` with expected vs. actual hash; `sig_invalid` with selector, algorithm, signed-input length, and OpenSSL detail). |
+| `debug` | Adds raw TXT-record bytes from the resolver, a per-crypto-check trace line, and the raw signed-input bytes on failure. Too noisy for steady-state production; useful when chasing a specific sign/verify mismatch. |
 
 ### Per-signature `reason` codes
 
@@ -480,10 +525,10 @@ check before acting on the value.
 
 ### Authentication-Results output
 
-`verify()` appends its results to the existing `Authentication-Results:`
-header when one is already present (e.g. stamped by SPF or DKIM1
-earlier in the pipeline), or creates a new one if `authservid` is
-supplied and none exists yet:
+`verify()` always prepends a **new** `Authentication-Results:` header
+when `authservid` is supplied. Per RFC 8601 §5, an MTA MUST NOT add
+results to an existing header field, so any prior AR headers (e.g. from
+SPF or DKIM1) are left untouched.
 
 ```
 Authentication-Results: <authservid>;
@@ -492,62 +537,27 @@ Authentication-Results: <authservid>;
         header.rt=<rcpt@a.com>
 ```
 
-One `dkim2=` clause per **directly-verified** signature. Per `-02` §10.5,
-only the most-recently-applied signature (highest `i=`) receives full
-cryptographic verification; earlier hops are deferred to the §10.6
-recipe-chain check and omitted from the AR header entirely. A two-hop
-message therefore produces exactly one `dkim2=` clause (for the i=N sig),
-not two. The `reason=` field appears only on failures and uses the per-sig
-reason codes from the table above.
+One `dkim2=` clause per directly-verified signature (deferred hops are
+omitted). The `reason=` field appears only on failures. When the overall
+verdict is `chain_broken` or a policy downgrade (`d=/mf=` mismatch,
+`donotmodify`, etc.) occurs after a crypto pass, an additional overall
+clause is appended so the real verdict is always visible to AR consumers.
 
+Chain-broken example (crypto passed but recipe-chain check failed):
 
-## <a name="dkim2_smtp_codes"></a> SMTP response codes (§9.4 guidance)
-
-Momentum leaves the decision of whether to accept, reject, or defer a
-message — and which SMTP reply code to use — entirely to the operator's
-Lua hook.  The `overall` field of the verify result maps to the following
-SMTP behaviour as required by §9.4 of the DKIM2 spec:
-
-| `overall` | Meaning | §9.4 guidance | Suggested action |
-|---|---|---|---|
-| `pass` | All verifiable signatures passed | — | Accept |
-| `none` | No DKIM2 signatures present | — | Local policy |
-| `fail` | Verified but wrong: hash/sig mismatch or policy violation (d=/mf= mismatch, donotmodify, etc.) | SHOULD 550/5.7.x if rejecting | Reject or accept per policy |
-| `permerror` | Could not verify: key missing, revoked, or invalid; signature syntax error (§10.1 PERMERROR) | SHOULD 550/5.7.x; **MUST NOT 4xx** | Reject (permanent) |
-| `chain_broken` | Chain-of-custody or MI integrity failure | SHOULD 550/5.7.x | Reject (permanent) |
-| `temperror` | Transient key-fetch failure (DNS timeout / SERVFAIL) | MAY 451/4.7.5 | Defer (temporary) |
-
-**Key rule from §9.4**: permanent failures (`permerror`, `chain_broken`)
-**MUST NOT** result in a 4xx (temporary) SMTP reply.  Only `temperror`
-warrants a temporary failure code.
-
-Example hook skeleton:
-
-```lua
-local result = msys.validate.dkim2.verify(msg, vctx, { ... })
-local overall = result and result.overall or "none"
-
-if overall == "permerror" or overall == "chain_broken" or
-   overall == "fail" then
-  -- §9.4 SHOULD 550/5.7.x for permanent failures.
-  -- Note: "permerror" and "chain_broken" MUST NOT use 4xx.
-  vctx:set_code(550, "5.7.1 DKIM2 verification failed")
-  return msys.core.VALIDATE_DONE
-
-elseif overall == "temperror" then
-  -- §9.4 MAY 451/4.7.5 for transient key-fetch failures
-  vctx:set_code(451, "4.7.5 DKIM2 key server temporarily unavailable")
-  return msys.core.VALIDATE_DONE
-
-else
-  -- pass / none: local policy
-  return msys.core.VALIDATE_CONT
-end
+```
+Authentication-Results: mta-1.example.com;
+  dkim2=pass header.d=example.com header.i=2;
+  dkim2=permerror reason="chain of custody broken"
 ```
 
-> **Note**: Whether to reject on `fail` or `none` is a local policy
-> decision.  The spec only mandates the reply-code *type* (4xx vs 5xx)
-> for the cases shown above.
+Policy-downgrade example (`d=` does not match the `mf=` domain):
+
+```
+Authentication-Results: mta-1.example.com;
+  dkim2=pass header.d=example.com header.i=1;
+  dkim2=fail reason="MAIL FROM and d= do not match"
+```
 
 
 ## <a name="dkim2_key_management"></a> Key management
