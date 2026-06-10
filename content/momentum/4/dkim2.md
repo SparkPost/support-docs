@@ -27,11 +27,13 @@ cryptographic signature that lets a receiver confirm "this message came from
 that domain, and the body + signed headers haven't been altered since
 signing". It is widely deployed, but it has two known limitations:
 
-1.  **Replay.** Nothing in a DKIM1 signature is bound to *who the message is
-    for*. An attacker who captures a DKIM1-signed message can re-inject it
-    to a different recipient and the signature still verifies. Receivers
-    have no way to tell, from the signature alone, that the message
-    bypassed the original delivery path.
+1.  **Replay.** DKIM1 can sign the `To:` header field, but nothing in a
+    DKIM1 signature is bound to the *SMTP envelope RCPT TO* — the address
+    that controls actual delivery. An attacker who captures a DKIM1-signed
+    message can change the envelope recipient and re-inject it; the `To:`
+    header and the signature remain intact and valid. Receivers have no way
+    to tell, from the signature alone, that the message was delivered to
+    someone other than the originally intended recipient.
 
 2.  **Indirect mail flows.** Forwarders and mailing lists routinely modify
     messages — rewriting the Subject, adding a footer, expanding the
@@ -298,8 +300,12 @@ msys.registerModule("my_dkim2_verifier", mod)
 The wrapper stamps a new `Authentication-Results:` header with one
 `dkim2=…` clause per directly-verified signature. RFC 8601 §5 states
 that an MTA **MUST NOT** add a result to an existing header field, so
-`verify()` always prepends a fresh AR header. `authservid` is required;
-nothing is emitted when it is absent.
+`verify()` always prepends a fresh AR header. AR emission is opt-in:
+nothing is emitted unless `authservid` is supplied. Alternatively, a
+policy hook can omit `authservid` and build a combined
+`Authentication-Results:` header later, merging DKIM2 results with those
+from other authentication methods (SPF, DKIM1, ARC, etc.) into a single
+header.
 
 ### Verify options
 
@@ -451,7 +457,7 @@ where `verify()` was never called, will receive `""` from
 `msg:context_get` — not a verdict string. Always guard with a nil / empty
 check before acting on the value.
 
-`dkim2_overall` is one of the six verdict strings above.
+`dkim2_overall` is one of the verdict strings above.
 `dkim2_n_sigs` is the count of `DKIM2-Signature` headers verified
 (string; parse with `tonumber()`).
 
@@ -508,13 +514,13 @@ if overall == "permerror" or overall == "chain_broken" or
    overall == "fail" then
   -- §9.4 SHOULD 550/5.7.x for permanent failures.
   -- Note: "permerror" and "chain_broken" MUST NOT use 4xx.
-  vctx:set_code(550, "5.7.1", "DKIM2 verification failed")
-  return msys.core.SMFIS_REJECT
+  vctx:set_code(550, "5.7.1 DKIM2 verification failed")
+  return msys.core.VALIDATE_DONE
 
 elseif overall == "temperror" then
   -- §9.4 MAY 451/4.7.5 for transient key-fetch failures
-  vctx:set_code(451, "4.7.5", "DKIM2 key server temporarily unavailable")
-  return msys.core.SMFIS_TEMPFAIL
+  vctx:set_code(451, "4.7.5 DKIM2 key server temporarily unavailable")
+  return msys.core.VALIDATE_DONE
 
 else
   -- pass / none: local policy
@@ -548,6 +554,13 @@ pass independently. If you enable DKIM2 signing for a domain that
 already does DKIM1 signing, downstream verifiers that don't know about
 DKIM2 will simply ignore the new header — they will continue to verify
 the DKIM1 signature normally.
+
+ARC also coexists with DKIM2 without conflict: ARC uses its own header
+set (`ARC-Seal:`, `ARC-Message-Signature:`, `ARC-Authentication-Results:`)
+and an independent chain model. A message can carry DKIM1, DKIM2, and ARC
+headers simultaneously. Momentum's ARC module (`msys.validate.openarc`)
+and the DKIM2 module operate independently — enabling one does not affect
+the other. Receivers that support both will evaluate each chain separately.
 
 
 ### Interoperability
