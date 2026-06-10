@@ -257,17 +257,12 @@ edits) omit `recipe` entirely.
 
 ## <a name="dkim2_verifying"></a> DKIM2 Verifying
 
-### Warning
-
-Always call DKIM2 verification from the **per-recipient** validation hook
-(`validate_data_spool_each_rcpt`), not from `validate_data_spool`. The
-`rt=` binding check compares the signed recipient against the actual
-envelope RCPT TO. If `verify()` runs on the shared parent message before per-recipient
-copies are split off, the envelope RCPT TO resolves to only the first
-recipient and all other copies pass or fail based on that single address
-— defeating the per-recipient replay protection.
-
 DKIM2 verification is driven from Lua via `msys.validate.dkim2.verify`.
+`verify()` can be called from either `validate_data_spool` or
+`validate_data_spool_each_rcpt`. The `rt=` binding check compares the
+actual envelope RCPT TO against the signed `rt=` list — a match passes,
+no match fails. Either hook correctly rejects a replay to an address not
+in the original `rt=` list.
 Typical inbound policy:
 
 ```lua
