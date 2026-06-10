@@ -408,6 +408,7 @@ Every signature on a verified message gets a `reason` string in
 | `no_key` | DNS returned NXDOMAIN — no TXT record exists for the selector. |
 | `key_revoked` | The DNS TXT record exists but `p=` is empty, signalling deliberate key revocation. |
 | `key_b64_decode` | The `p=` value in the DNS record is not valid base64. Malformed DNS record. |
+| `key_invalid` | DNS returned more than one TXT record for the selector (§10.5 MUST treat as PERMERROR), or the record was structurally unusable. DNS misconfiguration on the sender side. |
 | `key_der_parse` | The `p=` base64 decoded successfully but the DER structure is not a valid public key. |
 | `key_k_unknown` | The DNS record's `k=` tag names an algorithm Momentum doesn't support. |
 | `sig_parse_failed` | The signature value inside the `s=` tag could not be parsed or stripped for canonical-input construction. Indicates a malformed signature from the signer. |
@@ -575,5 +576,17 @@ future release:
     does not auto-detect chain-of-custody breaks. Operators must explicitly
     call `sign()` when forwarding changes the MAIL FROM. Full automation
     requires the Recipe Accumulator API (planned; not yet available).
+
+### Warning
+
+**§12 Bare CR/LF normalization**: §12 requires signing the message as it
+will be received by the verifier. Momentum's
+[`rfc2822_lone_lf_in_body`](/momentum/4/config/ref-rfc-2822-lone-lf-in-body)
+and
+[`rfc2822_lone_lf_in_headers`](/momentum/4/config/ref-rfc-2822-lone-lf-in-headers)
+options control bare LF handling. If either is set to `ignore`, DKIM2
+signs bare-LF content as-is; a downstream SMTP hop that normalizes it to
+CRLF will silently break the signature. **Set both options to `fix` when
+DKIM2 signing is in use.**
 
 
