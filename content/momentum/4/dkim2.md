@@ -345,7 +345,7 @@ result = {
       d  = "<signing domain>",
       s  = "<selector>:<alg>:<base64-sig>",  -- raw s= value
       mf = "<bare MAIL FROM>",               -- decoded from base64
-      rt = "<bare RCPT TO>",                 -- decoded from base64; first entry only
+      rt = "<bare RCPT TO>[,<bare RCPT TO>...]", -- all entries decoded from base64
       n  = "<nonce>",                        -- if present
       f  = "<flags string>",                 -- if present; comma-separated
     },
