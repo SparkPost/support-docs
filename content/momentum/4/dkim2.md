@@ -200,9 +200,10 @@ are header-level and go at the top level of the options table.
 |---|---|---|
 | `domain` | yes | `d=` tag — the signing domain. |
 | `selector` | yes (single) | Selector component of `s=<selector>:<alg>:<base64-sig>`. When `sig_sets` is used, set per entry inside `sig_sets` instead. |
-| `keyfile` | yes (single) | Path to the PEM-encoded private key. When `sig_sets` is used, set per entry inside `sig_sets` instead. |
+| `keyfile` | yes (single) | Path to the PEM-encoded private key on disk. Mutually exclusive with `keybuf`; one of the two is required. When `sig_sets` is used, set per entry inside `sig_sets` instead. |
+| `keybuf` | yes (single) | PEM-encoded private key as a string in memory. Alternative to `keyfile` for cases where the key is held in a secrets manager or generated at runtime. |
 | `algorithm` | no | `"rsa-sha256"` (default) or `"ed25519-sha256"`. When `sig_sets` is used, set per entry inside `sig_sets` instead. |
-| `sig_sets` | no | Array of `{selector, keyfile, algorithm}` tables for multi-algorithm signing (§7.8). When present, `selector`/`keyfile`/`algorithm` at the top level are ignored. |
+| `sig_sets` | no | Array of `{selector, keyfile, keybuf, algorithm}` tables for multi-algorithm signing (§7.8). When present, `selector`/`keyfile`/`keybuf`/`algorithm` at the top level are ignored. |
 | `mailfrom` | no | Override the envelope MAIL FROM for the `mf=` tag. Use this when signing as a forwarder. |
 | `rcpt` | no | Override the envelope RCPT TO for the `rt=` tag. |
 | `timestamp` | no | `t=` value. Defaults to the current UNIX time. |
