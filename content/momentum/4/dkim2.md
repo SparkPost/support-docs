@@ -603,10 +603,13 @@ future release:
     Inbound DSN authentication (§11.1.2) is also not implemented.
 
 *   **§8.2 Forwarder auto-detection**: The `sign()` API fully supports
-    co-signing (call it twice to add a forwarder signature), but Momentum
-    does not auto-detect chain-of-custody breaks. Operators must explicitly
-    call `sign()` when forwarding changes the MAIL FROM. Full automation
-    requires the Recipe Accumulator API (planned; not yet available).
+    co-signing, but Momentum has no built-in trigger that automatically
+    calls `sign()` when a message is being forwarded. The operator's policy
+    hook must call `sign()` explicitly to add the forwarder's chain link.
+    Without it, the chain-of-custody bridge is missing — the receiver sees
+    a signature from the original sender with no subsequent hop vouching
+    for the delivery path. Full automation requires the Recipe Accumulator
+    API (planned; not yet available).
 
 ### Warning
 
