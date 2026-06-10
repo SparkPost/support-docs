@@ -99,17 +99,39 @@ The `debug_level` option is documented in the
 ## <a name="dkim2_signing"></a> DKIM2 Signing
 
 DKIM2 signing in Momentum is driven from Lua policy via
-`msys.validate.dkim2.sign`; enabling DKIM2 means calling `sign()` from
+`msys.validate.dkim2.sign`; enabling DKIM2 signing means calling `sign()` from
 your validation hook.
+
+### Signing hook: shared vs. per-recipient
+
+`sign()` can be called from either the shared hook (`validate_data_spool`)
+or the per-recipient hook (`validate_data_spool_each_rcpt`). Both are valid;
+the difference is how the `rt=` envelope-recipient list is populated:
+
+- **`validate_data_spool_each_rcpt`** — fires once per recipient on each
+  per-recipient copy (cowref). `sign()` with no `rcpt` option produces a
+  signature whose `rt=` contains that single recipient. Each delivered copy
+  carries an independent signature bound to its own recipient. This is the
+  most restrictive form of replay protection.
+
+- **`validate_data_spool`** — fires once on the shared parent message before
+  the cowref split. `sign()` with no `rcpt` option enumerates **all**
+  envelope recipients and produces a signature whose `rt=` is a
+  comma-separated list of every intended recipient. The same signed message
+  is then cloned to every cowref. A replay to any address not in the original
+  list still fails; delivering to a subset of the original recipients is
+  legitimate and verifies correctly.
+
+Both approaches comply with §7.6. Choose `validate_data_spool_each_rcpt`
+when you need each signature to be exclusive to one recipient;
+`validate_data_spool` is simpler and sufficient for most deployments.
 
 ### Warning
 
-Always call DKIM2 signing from the **per-recipient** validation hook
-(`validate_data_spool_each_rcpt`), not from `validate_data_spool`. The
-latter fires once on the shared parent message before per-recipient copies
-are split off, and the resulting signature would commit to a single
-recipient binding and then be cloned across every delivered copy —
-defeating DKIM2's per-recipient replay protection.
+Passing an explicit `rcpt` option overrides the automatic recipient
+enumeration. If you supply a single address, the signature commits only to
+that address and will not cover any other recipients. Omit `rcpt` to get
+guaranteed spec-compliant `rt=`.
 
 ### Minimum signer
 
