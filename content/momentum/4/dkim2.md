@@ -104,41 +104,24 @@ your validation hook.
 
 ### Signing hook: shared vs. per-recipient
 
-`sign()` can be called from either the shared hook (`validate_data_spool`)
-or the per-recipient hook (`validate_data_spool_each_rcpt`). Both are valid;
-the difference is how the `rt=` envelope-recipient list is populated:
+`sign()` can be called from either hook. The choice affects how `rt=` is
+populated and whether BCC addresses are exposed.
 
-- **`validate_data_spool_each_rcpt`** — fires once per recipient on each
-  per-recipient copy (cowref). `sign()` with no `rcpt` option produces a
-  signature whose `rt=` contains that single recipient. Each delivered copy
-  carries an independent signature bound to its own recipient. This is the
-  most restrictive form of replay protection.
+| | `validate_data_spool` | `validate_data_spool_each_rcpt` |
+|---|---|---|
+| **Fires** | Once on shared parent message | Once per recipient (cowref) |
+| **`rt=` default** | All envelope recipients (comma-separated list) | Single cowref recipient |
+| **Replay protection** | Rejects delivery to any address not in the original list | Each copy bound exclusively to its own recipient |
+| **BCC privacy** | ⚠️ BCC addresses appear in `rt=` on every copy, visible to TO/CC recipients | ✅ Each copy carries only its own recipient; no address leaks to others |
+| **Complexity** | Simpler — one `sign()` call per message | One `sign()` call per recipient |
 
-- **`validate_data_spool`** — fires once on the shared parent message before
-  the cowref split. `sign()` with no `rcpt` option enumerates **all**
-  envelope recipients and produces a signature whose `rt=` is a
-  comma-separated list of every intended recipient. The same signed message
-  is then cloned to every cowref. A replay to any address not in the original
-  list still fails; delivering to a subset of the original recipients is
-  legitimate and verifies correctly.
-
-Both approaches comply with §7.6. Choose `validate_data_spool_each_rcpt`
-when you need each signature to be exclusive to one recipient;
-`validate_data_spool` is simpler and sufficient for most deployments.
-
-### Warning
-
-**BCC privacy (§7.6)**: when signing from `validate_data_spool`, the `rt=`
-list includes **all** envelope recipients. BCC addresses would appear in the
-`DKIM2-Signature:` header on every delivered copy, exposing them to TO and
-CC recipients. If your deployment uses BCC, sign from
-`validate_data_spool_each_rcpt` instead — each cowref carries only its own
-recipient in `rt=`, so no address is ever visible to another recipient.
+Use `validate_data_spool_each_rcpt` when your deployment uses BCC or when
+you need each signature to be exclusive to one recipient. `validate_data_spool`
+is sufficient for TO/CC-only delivery.
 
 Passing an explicit `rcpt` option overrides the automatic recipient
 enumeration. If you supply a single address, the signature commits only to
-that address and will not cover any other recipients. Omit `rcpt` to get
-guaranteed spec-compliant `rt=`.
+that address and will not cover any other recipients.
 
 ### Minimum signer
 
