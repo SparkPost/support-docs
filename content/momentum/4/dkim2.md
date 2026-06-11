@@ -484,6 +484,7 @@ Every signature on a verified message gets a `reason` string in
 | `key_revoked` | The DNS TXT record exists but `p=` is empty, signalling deliberate key revocation. |
 | `key_b64_decode` | The `p=` value in the DNS record is not valid base64. Malformed DNS record. |
 | `key_multiple_records` | DNS returned more than one TXT record for the selector (§10.5 MUST treat as PERMERROR). DNS admin misconfiguration on the sender side — only one TXT record is allowed. |
+| `key_service_mismatch` | The DNS TXT record's `s=` service list does not include `email` or `*` (RFC 6376 §3.6.1). The key is published for a different service. |
 | `key_invalid` | The DNS TXT record was present but structurally unusable (empty content, internal resolver error, or selector/domain too long to query). |
 | `key_der_parse` | The `p=` base64 decoded successfully but the DER structure is not a valid public key. |
 | `key_k_unknown` | The DNS record's `k=` tag names an algorithm Momentum doesn't support. |
