@@ -128,6 +128,13 @@ when you need each signature to be exclusive to one recipient;
 
 ### Warning
 
+**BCC privacy (§7.6)**: when signing from `validate_data_spool`, the `rt=`
+list includes **all** envelope recipients. BCC addresses would appear in the
+`DKIM2-Signature:` header on every delivered copy, exposing them to TO and
+CC recipients. If your deployment uses BCC, sign from
+`validate_data_spool_each_rcpt` instead — each cowref carries only its own
+recipient in `rt=`, so no address is ever visible to another recipient.
+
 Passing an explicit `rcpt` option overrides the automatic recipient
 enumeration. If you supply a single address, the signature commits only to
 that address and will not cover any other recipients. Omit `rcpt` to get
