@@ -12,7 +12,7 @@ description: "DKIM2 is the successor to DKIM that adds replay protection (per-me
 - [DKIM2 Signing](#dkim2-signing)
   - [Signing hook: shared vs. per-recipient](#signing-hook-shared-vs-per-recipient)
   - [Sign options](#sign-options)
-  - [Forwarder / modifier signing](#forwarder--modifier-signing)
+  - [Forwarder and modifier signing](#forwarder-and-modifier-signing)
 - [DKIM2 Verifying](#dkim2-verifying)
   - [Verify options](#verify-options)
   - [Result table](#result-table)
@@ -20,7 +20,7 @@ description: "DKIM2 is the successor to DKIM that adds replay protection (per-me
 - [Authentication-Results output](#authentication-results-output)
 - [Debugging](#debugging)
   - [Per-signature reason codes](#per-signature-reason-codes)
-  - [recipe_chain: detail strings](#recipe_chain-detail-strings-paniclog-only)
+  - [recipe_chain detail strings](#recipe_chain-detail-strings-paniclog-only)
   - [ec_message context fields](#ec_message-context-fields)
 - [Key management](#key-management)
 - [Known limitations](#known-limitations)
@@ -233,7 +233,7 @@ error_string)` on failure. Always check the return; on failure the message
 is left unmodified (no `DKIM2-Signature:` or `Message-Instance:` is
 attached) and an error line is also logged to paniclog at level `error`.
 
-### Forwarder / modifier signing
+### Forwarder and modifier signing
 
 A forwarder that **re-routes** a message (different envelope) signs with
 explicit overrides so the §8.3 chain-of-custody check downstream succeeds:
@@ -471,7 +471,7 @@ dkim2 {
 | `info` | Adds one DNS resolution line per verified signature plus verification failures with their cause (`bh_mismatch` with expected vs. actual hash; `sig_invalid` with selector, algorithm, signed-input length, and OpenSSL detail). |
 | `debug` | Adds raw TXT-record bytes from the resolver, a per-crypto-check trace line, and the raw signed-input bytes on failure. Too noisy for steady-state production; useful when chasing a specific sign/verify mismatch. |
 
-### Per-signature `reason` codes
+### Per-signature reason codes
 
 Every signature on a verified message gets a `reason` string in
 `result.signatures[i].reason`. These codes are Momentum-internal tokens —
@@ -507,7 +507,7 @@ They appear in `result.signatures[i].reason`, in the
 | `sig_parse_failed` | The signature value inside the `s=` tag could not be parsed or stripped for canonical-input construction. Indicates a malformed signature from the signer. |
 | `unsupported_algorithm` | Every sig-set in `s=` uses an algorithm Momentum does not implement. Per §3.4 these are ignored rather than failed; paired with `status="none"`. |
 
-### `recipe_chain:` detail strings (paniclog only)
+### recipe_chain detail strings (paniclog only)
 
 When the recipe-chain check fails, the overall verdict is `permerror`
 with `overall_reason="chain_broken"`, and the underlying cause is logged at `error` level in
@@ -527,7 +527,7 @@ only place this detail surfaces.
 | `no_recipe` | One or more non-first `Message-Instance` headers had no `r=` tag (treated as no-modification hops), yet the final reconstructed hashes didn't match `MI[1]`. A hop likely modified the message without recording a recipe. The signer should emit `r={"h":null,"b":null}` to declare irreversibility rather than omitting `r=` entirely. |
 | `hash_mismatch` | After walking all recipes in reverse, the reconstructed instance-1 hashes didn't match `Message-Instance` `m=1`'s recorded `h=`. Every non-first MI had a recipe, so the mismatch indicates a hop's recipe was wrong or a hop modified the message after signing. |
 
-### `ec_message` context fields
+### ec_message context fields
 
 `verify()` writes the following context variables so downstream hooks can
 read the outcome without re-verifying or parsing `Authentication-Results:`:
