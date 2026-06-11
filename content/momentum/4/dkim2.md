@@ -20,7 +20,7 @@ description: "DKIM2 is the successor to DKIM that adds replay protection (per-me
 - [Authentication-Results output](#authentication-results-output)
 - [Debugging](#debugging)
   - [Per-signature reason codes](#per-signature-reason-codes)
-  - [recipe_chain detail strings](#recipe-chain-detail-strings)
+  - [recipe_chain detail strings](#recipe-chain-detail-strings-paniclog-only)
   - [ec_message context fields](#ec-message-context-fields)
 - [Key management](#key-management)
 - [Known limitations](#known-limitations)
@@ -507,8 +507,6 @@ They appear in `result.signatures[i].reason`, in the
 | `sig_parse_failed` | The signature value inside the `s=` tag could not be parsed or stripped for canonical-input construction. Indicates a malformed signature from the signer. |
 | `unsupported_algorithm` | Every sig-set in `s=` uses an algorithm Momentum does not implement. Per §3.4 these are ignored rather than failed; paired with `status="none"`. |
 
-<a name="recipe-chain-detail-strings"></a>
-
 ### recipe_chain detail strings (paniclog only)
 
 When the recipe-chain check fails, the overall verdict is `permerror`
@@ -528,8 +526,6 @@ only place this detail surfaces.
 | `apply_failed` | A recipe references a header or body line that doesn't exist in the current message. The recipe is inconsistent with the modification it claims to describe — likely a downstream hop modified the message AGAIN without recording it. |
 | `no_recipe` | One or more non-first `Message-Instance` headers had no `r=` tag (treated as no-modification hops), yet the final reconstructed hashes didn't match `MI[1]`. A hop likely modified the message without recording a recipe. The signer should emit `r={"h":null,"b":null}` to declare irreversibility rather than omitting `r=` entirely. |
 | `hash_mismatch` | After walking all recipes in reverse, the reconstructed instance-1 hashes didn't match `Message-Instance` `m=1`'s recorded `h=`. Every non-first MI had a recipe, so the mismatch indicates a hop's recipe was wrong or a hop modified the message after signing. |
-
-<a name="ec-message-context-fields"></a>
 
 ### ec_message context fields
 
