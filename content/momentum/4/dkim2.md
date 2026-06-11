@@ -220,7 +220,7 @@ are header-level and go at the top level of the options table.
 | `mailfrom` | no | Override the envelope MAIL FROM for the `mf=` tag. Use this when signing as a forwarder. |
 | `rcpt` | no | Override the envelope RCPT TO for the `rt=` tag. |
 | `timestamp` | no | `t=` value. Defaults to the current UNIX time. |
-| `nonce` | no | `n=` value (`-02` §8.3). Caller-supplied ASCII string, ≤ 64 chars, no `;`. Typically a DSN-correlation key or replay-cache key. |
+| `nonce` | no | `n=` value (`-02` §7.3). Caller-supplied ASCII string, ≤ 64 chars, no `;`. Typically a DSN-correlation key or replay-cache key. |
 | `nonce_random` | no | If `true` AND `nonce` is not set, the signer fills `n=` with a 22-character base64 random nonce. |
 | `flags` | no | Lua array of flag tokens for `f=` (`-02` §7.9): `"exploded"`, `"donotexplode"`, `"donotmodify"`, `"feedback"`. See §7.9 for semantics. Joined into the on-wire comma-separated form by the glue layer. When `rt=` carries multiple recipients, `"exploded"` is added automatically unless already present. |
 | `recipe` | no | Raw JSON string conforming to `-02` §4. Attached to the `Message-Instance` header as the base64-encoded `r=` tag. Validated against the schema at sign time; malformed recipes fail the sign call with `recipe_invalid: <reason>`. |
@@ -361,17 +361,19 @@ result = {
           | "fail"         -- verified but wrong: hash/sig mismatch, or
           |                --   policy violation (d=/mf= mismatch, donotmodify, etc.)
           | "permerror"    -- could not verify: key missing/revoked/invalid,
-          |                --   or signature syntax error (§10.1 PERMERROR)
-          | "chain_broken" -- overall_reason when permerror is due to chain integrity
+          |                --   signature syntax error, or chain integrity failure
+          |                --   (§10.1 PERMERROR)
           | "temperror"    -- transient key-fetch failure (DNS timeout / SERVFAIL)
           | "none",        -- no DKIM2 signatures present
-  overall_reason = nil                    -- nil unless overall="fail" due to a
-                                          --   policy downgrade after crypto pass:
-                 | "d_mf_mismatch"          -- d= doesn't match mf= domain (§7.7)
-                 | "donotmodify_violated"  -- f=donotmodify sig followed by a hop
-                                           --   that modified the message (§10.8)
-                 | "donotexplode_violated", -- f=donotexplode sig followed by a
-                                           --   sig with f=exploded (§10.8)
+  overall_reason = nil                      -- nil in most cases; set when:
+                 | "chain_broken"           --   overall="permerror": chain integrity
+                                            --   failure (MI gap, recipe mismatch, etc.)
+                 | "d_mf_mismatch"          --   overall="fail": d= doesn't match
+                                            --   mf= domain after crypto pass (§7.7)
+                 | "donotmodify_violated"   --   overall="fail": f=donotmodify sig
+                                            --   followed by a modifying hop (§10.8)
+                 | "donotexplode_violated", --   overall="fail": f=donotexplode sig
+                                            --   followed by f=exploded (§10.8)
   signatures = {
     { seq    = <i= chain sequence: 1 for originator, 2 for first forwarder, …>,
       m      = <m= Message-Instance revision referenced by this signature, 0 if absent>,
@@ -491,7 +493,7 @@ They appear in `result.signatures[i].reason`, in the
 | `missing_required_tags` | One or more of the seven required tags (`i=`, `m=`, `t=`, `mf=`, `rt=`, `d=`, `s=`) is absent from the signature. |
 | `signature_expired` | The `t=` timestamp is older than `max_sig_age_days` (default 14). |
 | `signature_future` | The `t=` timestamp is more than `max_sig_future_secs` (default 300 s) in the future. |
-| `nonce_too_long` | The `n=` nonce exceeded the 64-character ceiling (§8.3). |
+| `nonce_too_long` | The `n=` nonce exceeded the 64-character ceiling (§7.3). |
 | `mailfrom_mismatch` | The signed `mf=` doesn't match the actual envelope MAIL FROM — replay-to-different-sender. |
 | `rcpt_mismatch` | The signed `rt=` doesn't match the actual envelope RCPT TO — replay-to-different-recipient. |
 | `d_mf_mismatch` | The signing domain `d=` does not match the rightmost labels of the `mf=` domain (§7.7). Only set when `relax_d_mf_check` is not enabled. |
@@ -552,6 +554,12 @@ Authentication-Results: mta-1.example.com;
   dkim2=pass header.d=example.com header.s=sel-1 header.i=1 header.m=1
         header.mf=<sender@example.com> header.rt=<rcpt@a.com>
 ```
+
+> **Note on `header.s=`:** RFC 8601 expects the selector name only (e.g. `sel-1`).
+> In DKIM2 the `s=` tag encodes selector, algorithm, and signature together
+> (`sel-1:rsa-sha256:<base64>`), so Momentum's `header.s=` carries that full
+> value rather than the bare selector. AR consumers that key on `header.s=` for
+> DKIM1-style selector lookups will see the combined string.
 
 Failure with reason (simplified string per §10.1 — ordinals come from `header.i=` / `header.m=`):
 
