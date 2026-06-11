@@ -20,8 +20,8 @@ description: "DKIM2 is the successor to DKIM that adds replay protection (per-me
 - [Authentication-Results output](#authentication-results-output)
 - [Debugging](#debugging)
   - [Per-signature reason codes](#per-signature-reason-codes)
-  - [recipe_chain detail strings](#recipe_chain-detail-strings-paniclog-only)
-  - [ec_message context fields](#ec_message-context-fields)
+  - [recipe_chain detail strings](#recipechain-detail-strings-paniclog-only)
+  - [ec_message context fields](#ecmessage-context-fields)
 - [Key management](#key-management)
 - [Known limitations](#known-limitations)
 
