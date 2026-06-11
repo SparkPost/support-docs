@@ -276,10 +276,17 @@ edits) omit `recipe` entirely.
 
 DKIM2 verification is driven from Lua via `msys.validate.dkim2.verify`.
 `verify()` can be called from either `validate_data_spool` or
-`validate_data_spool_each_rcpt`. The `rt=` binding check compares the
-actual envelope RCPT TO against the signed `rt=` list — a match passes,
-no match fails. Either hook correctly rejects a replay to an address not
-in the original `rt=` list.
+`validate_data_spool_each_rcpt`. The choice affects how the §10.4 `rt=`
+binding check is performed:
+
+| | `validate_data_spool` | `validate_data_spool_each_rcpt` |
+|---|---|---|
+| **Fires** | Once on shared parent message | Once per recipient (cowref) |
+| **`rt=` check** | All envelope recipients checked against `rt=` (§10.4 MUST) | Single cowref recipient checked |
+| **BCC support** | No — Bcc recipients will not be in `rt=` and will fail the check | Yes — each cowref is checked independently |
+| **Complexity** | Simpler — one `verify()` call per message | One `verify()` call per recipient |
+
+Use `validate_data_spool_each_rcpt` when your deployment uses BCC.
 Typical inbound policy:
 
 ```lua
