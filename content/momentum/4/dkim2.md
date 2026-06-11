@@ -6,24 +6,24 @@ description: "DKIM2 is the successor to DKIM that adds replay protection (per-me
 
 ## On This Page
 
-- [What DKIM2 is, and why](#dkim2_intro)
-- [How it differs from DKIM1 at a glance](#dkim2_atglance)
-- [Enabling the module](#dkim2_config)
-- [DKIM2 Signing](#dkim2_signing)
+- [What DKIM2 is, and why](#what-dkim2-is-and-why)
+- [How it differs from DKIM1 at a glance](#how-it-differs-from-dkim1-at-a-glance)
+- [Enabling the module](#enabling-the-module)
+- [DKIM2 Signing](#dkim2-signing)
   - [Signing hook: shared vs. per-recipient](#signing-hook-shared-vs-per-recipient)
   - [Sign options](#sign-options)
   - [Forwarder / modifier signing](#forwarder--modifier-signing)
-- [DKIM2 Verifying](#dkim2_verifying)
+- [DKIM2 Verifying](#dkim2-verifying)
   - [Verify options](#verify-options)
   - [Result table](#result-table)
   - [SMTP response codes](#smtp-response-codes-94-guidance)
 - [Authentication-Results output](#authentication-results-output)
-- [Debugging](#dkim2_debugging)
+- [Debugging](#debugging)
   - [Per-signature reason codes](#per-signature-reason-codes)
   - [recipe_chain: detail strings](#recipe_chain-detail-strings-paniclog-only)
   - [ec_message context fields](#ec_message-context-fields)
-- [Key management](#dkim2_key_management)
-- [Known limitations](#dkim2_caveats)
+- [Key management](#key-management)
+- [Known limitations](#known-limitations)
 
 ---
 
@@ -42,7 +42,7 @@ not verify messages signed by an earlier release.
 > upgraded. Messages signed by DKIM1 are unaffected.
 
 
-## <a name="dkim2_intro"></a> What DKIM2 is, and why
+## What DKIM2 is, and why
 
 [DKIM1](/momentum/4/using-dkim) (RFC 6376) lets a sending domain attach a
 cryptographic signature that lets a receiver confirm "this message came from
@@ -89,7 +89,7 @@ verdicts, paniclog lines) are inventoried in the
 [Debugging](/momentum/4/dkim2#dkim2_debugging) section below.
 
 
-## <a name="dkim2_atglance"></a> How it differs from DKIM1 at a glance
+## How it differs from DKIM1 at a glance
 
 | Concern | DKIM1 (RFC 6376) | DKIM2 (draft `-02`) |
 |---|---|---|
@@ -106,7 +106,7 @@ Sending domains keep their existing DKIM1 keys: DKIM2 uses the same
 provisioning step to start signing DKIM2.
 
 
-## <a name="dkim2_config"></a> Enabling the module
+## Enabling the module
 
 Add the following stanza to your Momentum configuration before using any
 DKIM2 Lua API:
@@ -118,7 +118,7 @@ dkim2 {}
 The `debug_level` option is documented in the
 [Debugging](/momentum/4/dkim2#dkim2_debugging) section.
 
-## <a name="dkim2_signing"></a> DKIM2 Signing
+## DKIM2 Signing
 
 DKIM2 signing in Momentum is driven from Lua policy via
 `msys.validate.dkim2.sign`; enabling DKIM2 signing means calling `sign()` from
@@ -272,7 +272,7 @@ when the hop modifies content; non-modifying hops (pure-forwarding without
 edits) omit `recipe` entirely.
 
 
-## <a name="dkim2_verifying"></a> DKIM2 Verifying
+## DKIM2 Verifying
 
 DKIM2 verification is driven from Lua via `msys.validate.dkim2.verify`.
 `verify()` can be called from either `validate_data_spool` or
@@ -407,7 +407,7 @@ recording it, or a recipe was incorrect), `overall` is `permerror` with
 in policy code — `overall="pass"` means the entire history checked out.
 
 
-### <a name="dkim2_smtp_codes"></a> SMTP response codes (§9.4 guidance)
+### SMTP response codes (§9.4 guidance)
 
 Momentum leaves the decision of whether to accept, reject, or defer a
 message — and which SMTP reply code to use — entirely to the operator's
@@ -453,7 +453,7 @@ end
 > for the cases shown above.
 
 
-## <a name="dkim2_debugging"></a> Debugging
+## Debugging
 
 Setting `debug_level` on the `dkim2` configuration stanza routes sign and
 verify activity to `paniclog`:
@@ -579,7 +579,7 @@ Authentication-Results: mta-1.example.com;
 ```
 
 
-## <a name="dkim2_key_management"></a> Key management
+## Key management
 
 DKIM2 reuses the DKIM1 key infrastructure. Keys are PEM-encoded RSA or
 Ed25519 private keys, supplied either as a file path (`keyfile`) or as
@@ -610,7 +610,7 @@ and the DKIM2 module operate independently — enabling one does not affect
 the other. Receivers that support both will evaluate each chain separately.
 
 
-## <a name="dkim2_caveats"></a> Known limitations
+## Known limitations
 
 The following are known gaps or operational considerations to be aware of:
 
