@@ -16,7 +16,7 @@ description: "DKIM2 is the successor to DKIM that adds replay protection (per-me
 - [DKIM2 Verifying](#dkim2_verifying)
   - [Verify options](#verify-options)
   - [Result table](#result-table)
-  - [SMTP response codes](#dkim2_smtp_codes)
+  - [SMTP response codes](#smtp-response-codes-94-guidance)
 - [Authentication-Results output](#authentication-results-output)
 - [Debugging](#dkim2_debugging)
   - [Per-signature reason codes](#per-signature-reason-codes)
@@ -612,8 +612,7 @@ the other. Receivers that support both will evaluate each chain separately.
 
 ## <a name="dkim2_caveats"></a> Known limitations
 
-The following features are not yet implemented and may be addressed in a
-future release:
+The following are known gaps or operational considerations to be aware of:
 
 *   **§11 DSN routing**: When generating a Delivery Status Notification,
     Momentum does not yet address it to the `mf=` address from the
@@ -634,16 +633,17 @@ future release:
 *   **Content modifier recipe composition**: When a Momentum pipeline
     stage modifies message content — for example, the engagement tracker
     rewriting URLs, a content filter adding a footer, or a list processor
-    changing headers — the `sign()` call requires a `recipe=` JSON string
-    describing exactly what changed so that downstream verifiers can
-    reconstruct the original message state. Currently the operator must
-    construct this JSON manually and pass it to `sign()`, which is
-    impractical at scale when multiple stages may modify the message
-    independently. A planned Recipe Accumulator API will let pipeline
-    stages record their changes without any DKIM2 knowledge, and `sign()`
-    will assemble the recipe automatically. Until then, operators must
-    build the recipe explicitly or use `{"b":null}` to declare the body
-    irreversible (see the *Forwarder / modifier signing* section).
+    changing headers — Momentum automatically detects the change and
+    requires a `recipe=` to proceed without a failure. The practical workaround is to pass
+    `recipe='{"b":null}'` (declaring the body change irreversible) when
+    the full diff is not available, or a precise recipe when it is. This
+    allows signing to succeed; downstream verifiers will accept the
+    message while understanding that body reconstruction through this hop
+    is not possible. See the *Forwarder / modifier signing* section for
+    examples. The missing automation is having pipeline stages record
+    their changes automatically — a planned Recipe Accumulator API will
+    do this, letting `sign()` assemble the recipe without operator
+    involvement.
 
     Both this limitation and the forwarder auto-detection above are blocked
     on the same Recipe Accumulator API (planned; not yet available).
