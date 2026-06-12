@@ -17,7 +17,7 @@ description: "DKIM2 is the successor to DKIM that adds replay protection (per-me
   - [Verify options](#verify-options)
   - [Result table](#result-table)
   - [SMTP response codes](#smtp-response-codes-94-guidance)
-- [Authentication-Results output](#authentication-results-output)
+- [ar_clauses() — Authentication-Results output](#ar_clauses----authentication-results-output)
 - [Debugging](#debugging)
   - [Per-signature reason codes](#per-signature-reason-codes)
   - [recipe_chain detail strings](#recipe-chain-detail-strings-paniclog-only)
@@ -217,7 +217,7 @@ are header-level and go at the top level of the options table.
 | `keybuf` | yes (single) | PEM-encoded private key as a string in memory. Alternative to `keyfile` for cases where the key is held in a secrets manager or generated at runtime. |
 | `algorithm` | no | `"rsa-sha256"` (default) or `"ed25519-sha256"`. When `sig_sets` is used, set per entry inside `sig_sets` instead. |
 | `sig_sets` | no | Array of `{selector, keyfile, keybuf, algorithm}` tables for multi-algorithm signing (§7.8). When present, `selector`/`keyfile`/`keybuf`/`algorithm` at the top level are ignored. |
-| `mailfrom` | no | Override the envelope MAIL FROM for the `mf=` tag. Use this when signing as a forwarder. |
+| `mailfrom` | no | Override the envelope MAIL FROM for the `mf=` tag. Use this when signing as a forwarder (e.g. the forwarder's own address rather than the original sender's). Pass `mailfrom=""` (empty string) for null-sender DSN/bounce messages (`MAIL FROM:<>`), since the envelope API returns nil for null senders. |
 | `rcptto` | no | Override the envelope RCPT TO(s) for the `rt=` tag. Accepts a string (single bare address) or a Lua table of bare addresses (multiple). When not set, the wrapper enumerates all envelope recipients automatically via `ctx:iterate_rcpt()`. |
 | `timestamp` | no | `t=` value. Defaults to the current UNIX time. |
 | `nonce` | no | `n=` value (`-02` §7.3). Caller-supplied ASCII string, ≤ 64 chars, no `;`. Typically a DSN-correlation key or replay-cache key. |
@@ -296,14 +296,14 @@ require("msys.validate.dkim2")
 local mod = {}
 
 function mod:validate_data_spool_each_rcpt(msg, ac, vctx)
-  local result = msys.validate.dkim2.verify(msg, vctx, {
+  local result, err = msys.validate.dkim2.verify(msg, vctx, {
     authservid = "mta-1.example.com",
   })
   if not result then
-    -- Internal error during verification (alloc failure, etc.) —
-    -- distinct from a per-sig fail, which lands in result.signatures.
-    -- Defer rather than silently accepting: the message has not been
-    -- verified and should not be treated as if it were.
+    -- Internal error (alloc failure, crypto init error, etc.) — err carries
+    -- the reason string.  Distinct from a per-sig fail, which lands in
+    -- result.signatures.  Defer rather than silently accepting.
+    msys.log(msys.core.DWARNING, "DKIM2 verify failed internally: " .. tostring(err))
     vctx:set_code(451, "4.7.5 DKIM2 verification unavailable; please retry")
     return msys.core.VALIDATE_CONT
   end
@@ -351,7 +351,7 @@ header.
 | Option | Meaning |
 |---|---|
 | `pubkey_pem` | A PEM-encoded public key. When set, the same key is used for every signature on the message (typically used in tests and policies that already have the key). When absent, each signature's `(d, s)` pair is resolved from DNS at `<selector>._domainkey.<domain>`. |
-| `mailfrom` | Override the envelope MAIL FROM used for the `mf=` binding check. Defaults to the bare address from `ec_message_get_mailfrom`. **For testing only** — mirrors sign()'s `mailfrom=` option; useful for simulating specific envelope conditions without real SMTP transit. |
+| `mailfrom` | Override the envelope MAIL FROM used for the `mf=` binding check. Defaults to the bare address from `ec_message_get_mailfrom`. Pass `mailfrom=""` (empty string) when verifying a DSN/bounce message (`MAIL FROM:<>`), since the envelope API returns nil for null senders. Useful for testing to simulate specific envelope conditions without real SMTP transit. |
 | `rcptto` | Override the envelope RCPT TO(s) for the `rt=` binding check. Accepts a string (single bare address) or a Lua table of bare addresses (multiple). ALL listed addresses must be present in `rt=` for the signature to pass (§10.4). When not set, the wrapper enumerates all envelope recipients automatically. |
 | `authservid` | When set, a new `Authentication-Results:` header is always prepended with this value as the authentication service identifier. Existing AR headers are never modified. When absent, no AR header is emitted. |
 | `relax_d_mf_check` | If `true`, downgrade the §7.7 `d=`/`mf=` domain alignment check from a hard failure to a warning. Default `false` (spec-compliant). **Setting to `true` is non-spec-compliant**; recommended only for testing. |
@@ -360,6 +360,16 @@ header.
 | `max_sig_age_days` | §10.3: reject signatures whose `t=` timestamp is older than this many days. Default `14`. Values `<= 0` disable the age check. |
 | `max_sig_future_secs` | §7.4: reject signatures whose `t=` timestamp is more than this many seconds in the future. Default `300` (5-minute clock-skew tolerance). Values `<= 0` disable the check. |
 | `emit_debug_headers` | If `true`, stamp `X-MSYS-DKIM2-Verify-Overall` and `X-MSYS-DKIM2-Verify-Sig` headers on the message. Useful for staging and debugging; **do not enable in production** as these headers expose internal verification detail and inflate message size. Default `false`. |
+
+`verify()` returns `(result, err)`:
+- **Normal execution** (including messages with no DKIM2 signatures): `result` is
+  the result table below, `err` is `nil`. A message with no signatures returns
+  `result.overall = "none"` — `result` is never `nil` in this case.
+- **Internal failure** (alloc or crypto init error): `result` is `nil`, `err` is a
+  non-nil string describing the cause.
+
+Always capture both return values so internal failures can be logged and acted on
+separately from signature verdicts.
 
 ### Result table
 
@@ -449,7 +459,7 @@ SMTP reply.  Only `temperror` warrants a temporary failure code.
 Example hook skeleton:
 
 ```lua
-local result = msys.validate.dkim2.verify(msg, vctx, { ... })
+local result, err = msys.validate.dkim2.verify(msg, vctx, { ... })
 local overall = result and result.overall or "none"
 
 if overall == "permerror" or overall == "fail" then
@@ -501,6 +511,11 @@ They appear in `result.signatures[i].reason`, in the
 `X-MSYS-DKIM2-Verify-Sig` debug header, and in `Authentication-Results:`
 `reason=` output. Policy code can safely branch on them. The full set:
 
+> **Note:** `d_mf_mismatch`, `donotmodify_violated`, and `donotexplode_violated` are
+> **not** per-signature reason codes. They are set on `result.overall_reason` when a
+> policy check downgrades the overall verdict after crypto passes. See the Result table
+> above for details.
+
 | Reason | Meaning |
 |---|---|
 | `ok` | Signature verified cleanly. Paired with `status="pass"`. |
@@ -510,12 +525,11 @@ They appear in `result.signatures[i].reason`, in the
 | `sig_invalid` | Cryptographic verification failed — the signed-input bytes don't match the value in `s=`. Enable `debug_level = info` for selector, algorithm, and signed-input length detail. |
 | `parse_error` | The `DKIM2-Signature:` header couldn't be parsed. Corrupt header or a broken upstream signer. |
 | `missing_required_tags` | One or more of the seven required tags (`i=`, `m=`, `t=`, `mf=`, `rt=`, `d=`, `s=`) is absent from the signature. |
-| `signature_expired` | The `t=` timestamp is older than `max_sig_age_days` (default 14). |
-| `signature_future` | The `t=` timestamp is more than `max_sig_future_secs` (default 300 s) in the future. |
+| `signature_expired` | The `t=` timestamp is older than `max_sig_age_days` (default 14). §10.3 classifies this as PERMERROR — Momentum treats it as permanently unverifiable and does not attempt cryptographic verification. Maps to `dkim2=permerror` in AR output. |
+| `signature_future` | The `t=` timestamp is more than `max_sig_future_secs` (default 300 s) in the future. Treated as a soft policy failure (`dkim2=fail`): the timestamp was evaluated and rejected, but it is not a permanent infrastructure error — the spec (§7.4 MAY) does not define a verdict for this case. |
 | `nonce_too_long` | The `n=` nonce exceeded the 64-character ceiling (§7.3). |
 | `mailfrom_mismatch` | The signed `mf=` doesn't match the actual envelope MAIL FROM — replay-to-different-sender. |
 | `rcpt_mismatch` | The signed `rt=` doesn't match the actual envelope RCPT TO — replay-to-different-recipient. |
-| `d_mf_mismatch` | The signing domain `d=` does not match the rightmost labels of the `mf=` domain (§7.7). Only set when `relax_d_mf_check` is not enabled. |
 | `key_unavailable` | DNS resolver returned a transient failure (SERVFAIL, timeout, REFUSED). Rolls up to `overall="temperror"`. |
 | `no_key` | DNS returned NXDOMAIN — no TXT record exists for the selector. |
 | `key_revoked` | The DNS TXT record exists but `p=` is empty, signalling deliberate key revocation. |
@@ -527,6 +541,7 @@ They appear in `result.signatures[i].reason`, in the
 | `key_k_unknown` | The DNS record's `k=` tag names an algorithm Momentum doesn't support. |
 | `sig_parse_failed` | The signature value inside the `s=` tag could not be parsed or stripped for canonical-input construction. Indicates a malformed signature from the signer. |
 | `mi_hash_missing` | The body hash could not be retrieved from the `Message-Instance:` `h=` tag: either no MI with a matching sequence number (`m=`) was present, or the MI's `h=` tag was malformed or lacked a hash entry for the algorithm named in its own `h=` prefix. |
+| `verify_internal` | An internal error occurred during signature verification (memory allocation failure or cryptographic library error). The signature could not be evaluated. Maps to `dkim2=permerror` in AR output. |
 | `unsupported_algorithm` | Every sig-set in `s=` uses an algorithm Momentum does not implement. Per §3.4 these are ignored rather than failed; paired with `status="none"`. |
 
 **Authentication-Results mapping (§10.1):** Most `status="fail"` reasons produce `dkim2=fail` in the AR header. Exceptions, per the §10.1 FAIL / PERMERROR / TEMPERROR distinction:
@@ -567,11 +582,55 @@ read the outcome without re-verifying or parsing `Authentication-Results:`:
 
 These keys are not set until `verify()` runs.
 
-### Authentication-Results output
+## ar_clauses() — Authentication-Results output
 
-`verify()` always prepends a **new** `Authentication-Results:` header
-when `authservid` is supplied; any prior AR headers (e.g. from SPF or
-DKIM1) are left untouched (see RFC 8601 §5 note above).
+```
+msys.validate.dkim2.ar_clauses(result) → clauses | nil
+```
+
+Returns a Lua array of DKIM2 `Authentication-Results:` clause strings for a
+given verify result, or `nil` when the result carries no signatures or when
+`result` itself is `nil` (e.g. `verify()` returned an internal error).
+
+Each entry is a complete, ready-to-use clause string (e.g.
+`"dkim2=pass header.d=example.com header.s=sel-1:rsa-sha256 ..."`).
+The array contains one entry per directly-verified signature plus any extra
+overall clauses for chain failures or policy downgrades. Deferred signatures
+(`status="chain_verified"`) are excluded — they have no valid RFC 8601 token.
+
+When `authservid` is supplied to `verify()`, Momentum calls `ar_clauses()`
+internally and prepends the result as a fresh `Authentication-Results:`
+header (RFC 8601 §5 — an MTA MUST NOT add to an existing AR header). Use
+`ar_clauses()` directly when you need to merge DKIM2 results with other
+authentication methods (SPF, DKIM1, ARC) into a single combined header.
+
+### Usage examples
+
+```lua
+-- Simple: replicate what verify() does when authservid is set
+local clauses = msys.validate.dkim2.ar_clauses(result)
+if clauses then
+  msg:header("Authentication-Results",
+             "mta-1.example.com; " .. table.concat(clauses, "; "),
+             "prepend")
+end
+
+-- Combined: merge DKIM2 clauses with SPF into one AR header
+local dkim2_clauses = msys.validate.dkim2.ar_clauses(result) or {}
+local spf_clause    = build_spf_clause()   -- caller-supplied
+local all_clauses   = { spf_clause }
+for _, c in ipairs(dkim2_clauses) do all_clauses[#all_clauses + 1] = c end
+msg:header("Authentication-Results",
+           "mta-1.example.com; " .. table.concat(all_clauses, "; "),
+           "prepend")
+```
+
+### Output format
+
+> **Note on `header.s=`:** RFC 8601 expects the selector name only. In DKIM2 the
+> `s=` tag encodes selector, algorithm, and signature together, but Momentum emits
+> only the selector and algorithm (e.g. `sel-1:rsa-sha256`) in `header.s=`,
+> omitting the bulk base64 signature bytes.
 
 Normal pass:
 
@@ -580,11 +639,6 @@ Authentication-Results: mta-1.example.com;
   dkim2=pass header.d=example.com header.s=sel-1:rsa-sha256 header.i=1 header.m=1
         header.mf=<sender@example.com> header.rt=<rcpt@a.com>
 ```
-
-> **Note on `header.s=`:** RFC 8601 expects the selector name only. In DKIM2 the
-> `s=` tag encodes selector, algorithm, and signature together, but Momentum emits
-> only the selector and algorithm (e.g. `sel-1:rsa-sha256`) in `header.s=`,
-> omitting the bulk base64 signature bytes.
 
 Transient DNS failure (`key_unavailable` → `dkim2=temperror`):
 
@@ -600,7 +654,8 @@ Authentication-Results: mta-1.example.com;
   dkim2=fail reason="body hash mismatch" header.d=example.com header.i=1
 ```
 
-When the overall verdict is worse than the per-sig result — chain failure or policy downgrade after a crypto pass — an extra overall clause is appended:
+When the overall verdict is worse than the per-sig result — chain failure or
+policy downgrade after a crypto pass — an extra overall clause is appended:
 
 Chain-broken example (crypto passed but recipe-chain check failed):
 
