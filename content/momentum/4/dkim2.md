@@ -17,7 +17,7 @@ description: "DKIM2 is the successor to DKIM that adds replay protection (per-me
   - [Verify options](#verify-options)
   - [Result table](#result-table)
   - [SMTP response codes](#smtp-response-codes-94-guidance)
-- [ar_clauses() — Authentication-Results output](#ar_clauses----authentication-results-output)
+- [Authentication-Results Output](#authentication-results-output)
 - [Debugging](#debugging)
   - [Per-signature reason codes](#per-signature-reason-codes)
   - [recipe_chain detail strings](#recipe-chain-detail-strings-paniclog-only)
@@ -86,7 +86,7 @@ specifics live in the [IETF
 draft](https://datatracker.ietf.org/doc/html/draft-ietf-dkim-dkim2-spec-02);
 the operationally-relevant signal codes (per-signature reasons, overall
 verdicts, paniclog lines) are inventoried in the
-[Debugging](/momentum/4/dkim2#dkim2_debugging) section below.
+[Debugging](/momentum/4/dkim2#debugging) section below.
 
 
 ## How it differs from DKIM1 at a glance
@@ -116,7 +116,7 @@ dkim2 {}
 ```
 
 The `debug_level` option is documented in the
-[Debugging](/momentum/4/dkim2#dkim2_debugging) section.
+[Debugging](/momentum/4/dkim2#debugging) section.
 
 ## DKIM2 Signing
 
@@ -203,9 +203,9 @@ When `sig_sets` is present, all entries sign the same canonical
 signed-input and are combined into a single `s=sel1:alg1:sig1,sel2:alg2:sig2`
 value on one `DKIM2-Signature` header.  Per §7.2 the verifier checks
 every sig-set; overall passes if any one validates, so a receiver that
-only supports RSA will still verify cleanly.  Any sig-set that fails
-alongside a passing one is reported as a DWARNING in paniclog
-(partial-sig-failure condition).  The `selector`, `keyfile`, and
+only supports RSA will still verify cleanly.  On the verifier side, any
+sig-set that fails alongside a passing one is reported as a DWARNING in
+paniclog (partial-sig-failure condition, §7.2).  The `selector`, `keyfile`, and
 `algorithm` fields belong to each sig-set entry; all other options below
 are header-level and go at the top level of the options table.
 
@@ -216,7 +216,7 @@ are header-level and go at the top level of the options table.
 | `keyfile` | yes (single) | Path to the PEM-encoded private key on disk. Mutually exclusive with `keybuf`; one of the two is required. When `sig_sets` is used, set per entry inside `sig_sets` instead. |
 | `keybuf` | yes (single) | PEM-encoded private key as a string in memory. Alternative to `keyfile` for cases where the key is held in a secrets manager or generated at runtime. |
 | `algorithm` | no | `"rsa-sha256"` (default) or `"ed25519-sha256"`. When `sig_sets` is used, set per entry inside `sig_sets` instead. |
-| `sig_sets` | no | Array of `{selector, keyfile, keybuf, algorithm}` tables for multi-algorithm signing (§7.8). When present, `selector`/`keyfile`/`keybuf`/`algorithm` at the top level are ignored. |
+| `sig_sets` | no | Array of `{selector, keyfile, keybuf, algorithm}` tables for multi-algorithm signing (§7.8). When present, fields supplied in `sig_sets[1]` override the corresponding top-level fields; any field omitted from `sig_sets[1]` falls back to the top-level value. |
 | `mailfrom` | no | Override the envelope MAIL FROM for the `mf=` tag. Use this when signing as a forwarder (e.g. the forwarder's own address rather than the original sender's). Pass `mailfrom=""` (empty string) for null-sender DSN/bounce messages (`MAIL FROM:<>`), since the envelope API returns nil for null senders. |
 | `rcptto` | no | Override the envelope RCPT TO(s) for the `rt=` tag. Accepts a string (single bare address) or a Lua table of bare addresses (multiple). When not set, the primary envelope recipient (`msg:rcptto()`) is used automatically. For multi-recipient rt= covering all addresses, pass the full list explicitly. |
 | `timestamp` | no | `t=` value. Defaults to the current UNIX time. |
@@ -231,7 +231,9 @@ are header-level and go at the top level of the options table.
 `sign()` returns `(true, header_value_string)` on success and `(nil,
 error_string)` on failure. Always check the return; on failure the message
 is left unmodified (no `DKIM2-Signature:` or `Message-Instance:` is
-attached) and an error line is also logged to paniclog at level `error`.
+attached). Recipe validation failure and content-changed-without-recipe
+also log to paniclog at level `error`; most other failure paths return
+only the error string to the caller without logging.
 
 ### Forwarder and modifier signing
 
@@ -319,7 +321,8 @@ function mod:validate_data_spool_each_rcpt(msg, ac, vctx)
   --                   (overall_reason="chain_broken" for chain failures;
   --                   nil for key/syntax errors — check signatures[i].reason)
   --   "temperror"     resolver-side transient failure (SERVFAIL, timeout)
-  --   "none"          no DKIM2-Signature headers on the message
+  --   "none"          no DKIM2-Signature headers, or all use unsupported
+  --                   algorithms (§3.4 — ignored rather than failed)
 
   if result.overall == "temperror" then
     -- Transient DNS failure: set a 4xx code so Momentum issues a
@@ -338,15 +341,8 @@ end
 msys.registerModule("my_dkim2_verifier", mod)
 ```
 
-The wrapper stamps a new `Authentication-Results:` header with one
-`dkim2=…` clause per directly-verified signature. RFC 8601 §5 states
-that an MTA **MUST NOT** add a result to an existing header field, so
-`verify()` always prepends a fresh AR header. AR emission is opt-in:
-nothing is emitted unless `authservid` is supplied. Alternatively, a
-policy hook can omit `authservid` and build a combined
-`Authentication-Results:` header later, merging DKIM2 results with those
-from other authentication methods (SPF, DKIM1, ARC, etc.) into a single
-header.
+See [Authentication-Results Output](#authentication-results-output) for the AR
+header format, `ar_clauses()` API, and examples of building combined headers.
 
 ### Verify options
 
@@ -384,7 +380,8 @@ result = {
           |                --   signature syntax error, or chain integrity failure
           |                --   (§10.1 PERMERROR)
           | "temperror"    -- transient key-fetch failure (DNS timeout / SERVFAIL)
-          | "none",        -- no DKIM2 signatures present
+          | "none",        -- no DKIM2-Signature headers present, or all
+          |                --   use unsupported algorithms (§3.4)
   overall_reason = nil                      -- nil when overall="pass", "temperror",
                                             --   or when overall is non-pass due to
                                             --   per-sig failures (key errors, bad
@@ -450,7 +447,7 @@ SMTP behaviour as required by §9.4 of the DKIM2 spec:
 | `overall` | Meaning | §9.4 guidance | Suggested action |
 |---|---|---|---|
 | `pass` | All verifiable signatures passed | — | Accept |
-| `none` | No DKIM2 signatures present | — | Local policy |
+| `none` | No DKIM2 signatures present, or all use unsupported algorithms (§3.4) | — | Local policy |
 | `fail` | Verified but wrong: hash/sig mismatch or policy violation (d=/mf= mismatch, donotmodify, etc.) | SHOULD 550/5.7.x if rejecting | Reject or accept per policy |
 | `permerror` | Could not verify: key missing/revoked/invalid, syntax error, or chain integrity failure (`overall_reason="chain_broken"`) (§10.1 PERMERROR) | SHOULD 550/5.7.x; **MUST NOT 4xx** | Reject (permanent) |
 | `temperror` | Transient key-fetch failure (DNS timeout / SERVFAIL) | MAY 451/4.7.5 | Defer (temporary) |
@@ -484,6 +481,98 @@ end
 > **Note**: Whether to reject on `fail` or `none` is a local policy
 > decision.  The spec only mandates the reply-code *type* (4xx vs 5xx)
 > for the cases shown above.
+
+
+## Authentication-Results Output
+
+```
+msys.validate.dkim2.ar_clauses(result) → clauses | nil
+```
+
+Returns a Lua array of DKIM2 `Authentication-Results:` clause strings for a
+given verify result, or `nil` when the result carries no signatures or when
+`result` itself is `nil` (e.g. `verify()` returned an internal error).
+
+Each entry is a complete, ready-to-use clause string (e.g.
+`"dkim2=pass header.d=example.com header.s=sel-1:rsa-sha256 ..."`).
+The array contains one entry per directly-verified signature plus any extra
+overall clauses for chain failures or policy downgrades. Deferred signatures
+(`status="chain_verified"`) are excluded — they have no valid RFC 8601 token.
+
+When `authservid` is supplied to `verify()`, Momentum calls `ar_clauses()`
+internally and prepends the result as a fresh `Authentication-Results:`
+header (RFC 8601 §5 — an MTA MUST NOT add to an existing AR header). Use
+`ar_clauses()` directly when you need to merge DKIM2 results with other
+authentication methods (SPF, DKIM1, ARC) into a single combined header.
+
+### Usage examples
+
+```lua
+-- Simple: replicate what verify() does when authservid is set
+local clauses = msys.validate.dkim2.ar_clauses(result)
+if clauses then
+  msg:header("Authentication-Results",
+             "mta-1.example.com; " .. table.concat(clauses, "; "),
+             "prepend")
+end
+
+-- Combined: merge DKIM2 clauses with SPF into one AR header
+local dkim2_clauses = msys.validate.dkim2.ar_clauses(result) or {}
+local spf_clause    = build_spf_clause()   -- caller-supplied
+local all_clauses   = { spf_clause }
+for _, c in ipairs(dkim2_clauses) do all_clauses[#all_clauses + 1] = c end
+msg:header("Authentication-Results",
+           "mta-1.example.com; " .. table.concat(all_clauses, "; "),
+           "prepend")
+```
+
+### Output format
+
+> **Note on `header.s=`:** RFC 8601 expects the selector name only. In DKIM2 the
+> `s=` tag encodes selector, algorithm, and signature together, but Momentum emits
+> only the selector and algorithm (e.g. `sel-1:rsa-sha256`) in `header.s=`,
+> omitting the bulk base64 signature bytes.
+
+Normal pass:
+
+```
+Authentication-Results: mta-1.example.com;
+  dkim2=pass header.d=example.com header.s=sel-1:rsa-sha256 header.i=1 header.m=1
+        header.mf=sender@example.com header.rt=rcpt@a.com
+```
+
+Transient DNS failure (`key_unavailable` → `dkim2=temperror`):
+
+```
+Authentication-Results: mta-1.example.com;
+  dkim2=temperror reason="public key could not be fetched" header.d=example.com header.s=sel-1:rsa-sha256 header.i=1
+```
+
+Failure with reason (simplified string per §10.1 — ordinals come from `header.i=` / `header.m=`):
+
+```
+Authentication-Results: mta-1.example.com;
+  dkim2=fail reason="body hash mismatch" header.d=example.com header.i=1
+```
+
+When the overall verdict is worse than the per-sig result — chain failure or
+policy downgrade after a crypto pass — an extra overall clause is appended:
+
+Chain-broken example (crypto passed but recipe-chain check failed):
+
+```
+Authentication-Results: mta-1.example.com;
+  dkim2=pass header.d=example.com header.i=2;
+  dkim2=permerror reason="chain of custody broken"
+```
+
+Policy-downgrade example (`d=` does not match the `mf=` domain):
+
+```
+Authentication-Results: mta-1.example.com;
+  dkim2=pass header.d=example.com header.i=1;
+  dkim2=fail reason="MAIL FROM and d= do not match"
+```
 
 
 ## Debugging
@@ -583,97 +672,6 @@ read the outcome without re-verifying or parsing `Authentication-Results:`:
 | `dkim2_n_sigs` | string | Number of `DKIM2-Signature` headers found on the message. Parse with `tonumber()`. |
 
 These keys are not set until `verify()` runs.
-
-## ar_clauses() — Authentication-Results output
-
-```
-msys.validate.dkim2.ar_clauses(result) → clauses | nil
-```
-
-Returns a Lua array of DKIM2 `Authentication-Results:` clause strings for a
-given verify result, or `nil` when the result carries no signatures or when
-`result` itself is `nil` (e.g. `verify()` returned an internal error).
-
-Each entry is a complete, ready-to-use clause string (e.g.
-`"dkim2=pass header.d=example.com header.s=sel-1:rsa-sha256 ..."`).
-The array contains one entry per directly-verified signature plus any extra
-overall clauses for chain failures or policy downgrades. Deferred signatures
-(`status="chain_verified"`) are excluded — they have no valid RFC 8601 token.
-
-When `authservid` is supplied to `verify()`, Momentum calls `ar_clauses()`
-internally and prepends the result as a fresh `Authentication-Results:`
-header (RFC 8601 §5 — an MTA MUST NOT add to an existing AR header). Use
-`ar_clauses()` directly when you need to merge DKIM2 results with other
-authentication methods (SPF, DKIM1, ARC) into a single combined header.
-
-### Usage examples
-
-```lua
--- Simple: replicate what verify() does when authservid is set
-local clauses = msys.validate.dkim2.ar_clauses(result)
-if clauses then
-  msg:header("Authentication-Results",
-             "mta-1.example.com; " .. table.concat(clauses, "; "),
-             "prepend")
-end
-
--- Combined: merge DKIM2 clauses with SPF into one AR header
-local dkim2_clauses = msys.validate.dkim2.ar_clauses(result) or {}
-local spf_clause    = build_spf_clause()   -- caller-supplied
-local all_clauses   = { spf_clause }
-for _, c in ipairs(dkim2_clauses) do all_clauses[#all_clauses + 1] = c end
-msg:header("Authentication-Results",
-           "mta-1.example.com; " .. table.concat(all_clauses, "; "),
-           "prepend")
-```
-
-### Output format
-
-> **Note on `header.s=`:** RFC 8601 expects the selector name only. In DKIM2 the
-> `s=` tag encodes selector, algorithm, and signature together, but Momentum emits
-> only the selector and algorithm (e.g. `sel-1:rsa-sha256`) in `header.s=`,
-> omitting the bulk base64 signature bytes.
-
-Normal pass:
-
-```
-Authentication-Results: mta-1.example.com;
-  dkim2=pass header.d=example.com header.s=sel-1:rsa-sha256 header.i=1 header.m=1
-        header.mf=<sender@example.com> header.rt=<rcpt@a.com>
-```
-
-Transient DNS failure (`key_unavailable` → `dkim2=temperror`):
-
-```
-Authentication-Results: mta-1.example.com;
-  dkim2=temperror reason="public key could not be fetched" header.d=example.com header.s=sel-1:rsa-sha256 header.i=1
-```
-
-Failure with reason (simplified string per §10.1 — ordinals come from `header.i=` / `header.m=`):
-
-```
-Authentication-Results: mta-1.example.com;
-  dkim2=fail reason="body hash mismatch" header.d=example.com header.i=1
-```
-
-When the overall verdict is worse than the per-sig result — chain failure or
-policy downgrade after a crypto pass — an extra overall clause is appended:
-
-Chain-broken example (crypto passed but recipe-chain check failed):
-
-```
-Authentication-Results: mta-1.example.com;
-  dkim2=pass header.d=example.com header.i=2;
-  dkim2=permerror reason="chain of custody broken"
-```
-
-Policy-downgrade example (`d=` does not match the `mf=` domain):
-
-```
-Authentication-Results: mta-1.example.com;
-  dkim2=pass header.d=example.com header.i=1;
-  dkim2=fail reason="MAIL FROM and d= do not match"
-```
 
 
 ## Key management
