@@ -135,11 +135,11 @@ and whether BCC addresses are exposed.
 | **Fires** | Once on the shared parent message | Once per recipient (cowref) |
 | **`rt=` auto-populate** | Primary recipient only (`msg:rcptto()`) — extra recipients are inaccessible in this hook | Single cowref recipient |
 | **Multi-recipient rt=** | Must pass explicit `rcptto = {r1, r2, ...}` — collect the full list in an earlier hook (e.g. `validate_rcptto`) | Each cowref signs for its own single address automatically |
-| **BCC privacy** | ⚠️ Operator must exclude BCC from the explicit `rcptto` list | ⚠️ Operator must check `mo_rcpt_type == "bcc"` and skip `sign()` for BCC cowrefs; auto-populate suppresses the BCC address from `rt=` if `sign()` is called anyway, but the signature still proceeds without any `rt=` binding |
-| **Complexity** | Requires explicit recipient collection for multi-recipient | One `sign()` call per cowref; requires explicit BCC check |
+| **BCC privacy** | ⚠️ Operator must exclude BCC from the explicit `rcptto` list — a shared signature exposing a BCC address is visible to all recipients | ✅ No concern — each cowref is private to that recipient; `rt=` is bound to their address only |
+| **Complexity** | Requires explicit recipient collection for multi-recipient | One `sign()` call per cowref; correct by default |
 
 Use `validate_data_spool_each_rcpt` for most deployments — it handles
-per-recipient signing automatically. Check `mo_rcpt_type` to handle BCC privacy. Use `validate_data_spool`
+per-recipient signing automatically. Use `validate_data_spool`
 only when you need a single signature covering all recipients and are willing
 to manage the recipient list and BCC exclusion yourself.
 
@@ -286,7 +286,7 @@ binding check is performed:
 | **Fires** | Once on shared parent message | Once per recipient (cowref) |
 | **`rt=` auto-check** | First accessible recipient only (`msg:rcptto()`) — **all other recipients bypass the §10.4 check** unless explicitly listed in `rcptto` | Single cowref recipient checked; §10.4 satisfied per-delivery |
 | **Multi-recipient §10.4** | ⚠️ Must pass explicit `rcptto = {r1, r2, ...}` — omitting any recipient silently skips its binding check | ✅ Every recipient verified automatically in its own cowref |
-| **BCC support** | Policy's responsibility — exclude BCC from explicit `rcptto` | ✅ Each cowref checked independently; skip BCC cowrefs with `mo_rcpt_type` check |
+| **BCC support** | ⚠️ Operator must exclude BCC from explicit `rcptto` — omitting a BCC address skips its §10.4 binding check | ✅ Each cowref checked independently; no special handling needed |
 | **Complexity** | Requires explicit recipient collection for complete §10.4 compliance | One `verify()` call per cowref; correct by default |
 
 Use `validate_data_spool_each_rcpt` for most deployments — it satisfies §10.4
@@ -351,7 +351,7 @@ header format, `ar_clauses()` API, and examples of building combined headers.
 | `pubkey_pem` | A PEM-encoded public key. When set, the same key is used for every signature on the message (typically used in tests and policies that already have the key). When absent, each signature's `(d, s)` pair is resolved from DNS at `<selector>._domainkey.<domain>`. |
 | `mailfrom` | Override the envelope MAIL FROM used for the `mf=` binding check. Defaults to the bare address from `ec_message_get_mailfrom`. Pass `mailfrom=""` (empty string) when verifying a DSN/bounce message (`MAIL FROM:<>`), since the envelope API returns nil for null senders. Useful for testing to simulate specific envelope conditions without real SMTP transit. |
 | `rcptto` | Override the envelope RCPT TO(s) for the `rt=` binding check. Accepts a string (single bare address) or a Lua table of bare addresses (multiple). ALL listed addresses must be present in `rt=` for the signature to pass (§10.4). When not set, the primary envelope recipient (`msg:rcptto()`) is used automatically. Pass an explicit list for multi-recipient §10.4 checking. |
-| `authservid` | When set, a new `Authentication-Results:` header is always prepended with this value as the authentication service identifier. Existing AR headers are never modified. When absent, no AR header is emitted. |
+| `authservid` | When set, a new `Authentication-Results:` header is prepended (when the result contains at least one actionable clause) with this value as the authentication service identifier. Existing AR headers are never modified. When absent, no AR header is emitted. |
 | `relax_d_mf_check` | If `true`, downgrade the §7.7 `d=`/`mf=` domain alignment check from a hard failure to a warning. Default `false` (spec-compliant). **Setting to `true` is non-spec-compliant**; recommended only for testing. |
 | `skip_recipe_chain` | If `true`, skip the `-02` §10.6 recipe-chain check. The per-signature crypto + envelope checks and the §8.3 chain-of-custody check still run. Default `false` (chain check ON). **Setting this to `true` makes the verifier non-spec-compliant** — §10.6 is a SHOULD requirement. Use only for debugging or when interoperating with a signer whose recipe implementation is known to be broken. |
 | `relax_s_selectors` | If `true`, accept duplicate selectors within a single `s=` tag. Default `false` — duplicates produce `reason=parse_error` per §7.8. **Setting this to `true` makes the verifier non-spec-compliant** — §7.8 places a MUST requirement on distinct selectors. Use only for interop with known non-compliant signers. |
@@ -485,37 +485,37 @@ end
 
 ## Authentication-Results Output
 
+When `authservid` is supplied to `verify()`, Momentum automatically builds
+and prepends a fresh `Authentication-Results:` header (RFC 8601 §5 — an MTA
+MUST NOT add to an existing AR header):
+
+```lua
+msys.validate.dkim2.verify(msg, vctx, {
+  authservid = "mta-1.example.com",
+})
+```
+
+For full control — or to merge DKIM2 results with other authentication methods
+(SPF, DKIM1, ARC) into a single combined header — use `ar_clauses()` directly:
+
 ```
 msys.validate.dkim2.ar_clauses(result) → clauses | nil
 ```
 
 Returns a Lua array of DKIM2 `Authentication-Results:` clause strings for a
-given verify result, or `nil` when the result carries no signatures or when
-`result` itself is `nil` (e.g. `verify()` returned an internal error).
+given verify result, or `nil` when `result` is `nil`, `result.signatures` is
+absent, or `result.signatures` is empty.
 
 Each entry is a complete, ready-to-use clause string (e.g.
 `"dkim2=pass header.d=example.com header.s=sel-1:rsa-sha256 ..."`).
-The array contains one entry per directly-verified signature plus any extra
-overall clauses for chain failures or policy downgrades. Deferred signatures
+The array contains one entry per non-deferred signature (each signature with
+`status` other than `"chain_verified"`) plus any extra overall clauses for
+chain failures or policy downgrades. Deferred signatures
 (`status="chain_verified"`) are excluded — they have no valid RFC 8601 token.
-
-When `authservid` is supplied to `verify()`, Momentum calls `ar_clauses()`
-internally and prepends the result as a fresh `Authentication-Results:`
-header (RFC 8601 §5 — an MTA MUST NOT add to an existing AR header). Use
-`ar_clauses()` directly when you need to merge DKIM2 results with other
-authentication methods (SPF, DKIM1, ARC) into a single combined header.
 
 ### Usage examples
 
 ```lua
--- Simple: replicate what verify() does when authservid is set
-local clauses = msys.validate.dkim2.ar_clauses(result)
-if clauses then
-  msg:header("Authentication-Results",
-             "mta-1.example.com; " .. table.concat(clauses, "; "),
-             "prepend")
-end
-
 -- Combined: merge DKIM2 clauses with SPF into one AR header
 local dkim2_clauses = msys.validate.dkim2.ar_clauses(result) or {}
 local spf_clause    = build_spf_clause()   -- caller-supplied
@@ -548,17 +548,24 @@ Authentication-Results: mta-1.example.com;
   dkim2=temperror reason="public key could not be fetched" header.d=example.com header.s=sel-1:rsa-sha256 header.i=1
 ```
 
+Permanent error — key does not exist in DNS (`no_key` → `dkim2=permerror`):
+
+```
+Authentication-Results: mta-1.example.com;
+  dkim2=permerror reason="public key does not exist" header.d=example.com header.s=sel-1:rsa-sha256 header.i=1
+```
+
 Failure with reason (simplified string per §10.1 — ordinals come from `header.i=` / `header.m=`):
 
 ```
 Authentication-Results: mta-1.example.com;
-  dkim2=fail reason="body hash mismatch" header.d=example.com header.i=1
+  dkim2=fail reason="body hash mismatch" header.d=example.com header.s=sel-1:rsa-sha256 header.i=1
 ```
 
 When the overall verdict is worse than the per-sig result — chain failure or
 policy downgrade after a crypto pass — an extra overall clause is appended:
 
-Chain-broken example (crypto passed but recipe-chain check failed):
+Chain-broken example (2-hop message: crypto passed but recipe-chain check failed):
 
 ```
 Authentication-Results: mta-1.example.com;
@@ -600,7 +607,14 @@ Every signature on a verified message gets a `reason` string in
 not defined by the DKIM2 spec — but are exposed through the `verify()` API.
 They appear in `result.signatures[i].reason`, in the
 `X-MSYS-DKIM2-Verify-Sig` debug header, and in `Authentication-Results:`
-`reason=` output. Policy code can safely branch on them. The full set:
+`reason=` output. Policy code can safely branch on them.
+
+The per-signature AR verdict is derived from `status` and `reason` together:
+`status="pass"` → `dkim2=pass`; `status="fail"` → `dkim2=fail` by default,
+promoted to `dkim2=temperror` or `dkim2=permerror` for specific reason codes
+(noted in the table below); `status="chain_verified"` is excluded from AR output.
+
+The full set:
 
 > **Note:** `d_mf_mismatch`, `donotmodify_violated`, and `donotexplode_violated` are
 > **not** per-signature reason codes. They are set on `result.overall_reason` when a
@@ -618,7 +632,7 @@ They appear in `result.signatures[i].reason`, in the
 | `missing_required_tags` | One or more of the seven required tags (`i=`, `m=`, `t=`, `mf=`, `rt=`, `d=`, `s=`) is absent from the signature. |
 | `signature_expired` | The `t=` timestamp is older than `max_sig_age_days` (default 14). §10.3 classifies this as PERMERROR — Momentum treats it as permanently unverifiable and does not attempt cryptographic verification. Maps to `dkim2=permerror` in AR output. |
 | `signature_future` | The `t=` timestamp is more than `max_sig_future_secs` (default 300 s) in the future. Treated as a soft policy failure (`dkim2=fail`): the timestamp was evaluated and rejected, but it is not a permanent infrastructure error — the spec (§7.4 MAY) does not define a verdict for this case. |
-| `nonce_too_long` | The `n=` nonce exceeded the 64-character ceiling (§7.3). |
+| `nonce_too_long` | The `n=` nonce exceeded the 64-character ceiling (§7.3 SHOULD). Treated as `dkim2=fail` — the constraint is a SHOULD, not a structural permanent error. |
 | `mailfrom_mismatch` | The signed `mf=` doesn't match the actual envelope MAIL FROM — replay-to-different-sender. |
 | `rcpt_mismatch` | The signed `rt=` doesn't match the actual envelope RCPT TO — replay-to-different-recipient. |
 | `key_unavailable` | DNS resolver returned a transient failure (SERVFAIL, timeout, REFUSED). Rolls up to `overall="temperror"`. |
