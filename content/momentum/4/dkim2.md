@@ -142,9 +142,9 @@ Use `validate_data_spool_each_rcpt` when your deployment uses BCC or when
 you need each signature to be exclusive to one recipient. `validate_data_spool`
 is sufficient for TO/CC-only delivery.
 
-Passing an explicit `rcpt` option overrides the automatic recipient
-enumeration. If you supply a single address, the signature commits only to
-that address and will not cover any other recipients.
+Passing an explicit `rcptto` option overrides the automatic recipient
+enumeration. If you supply a single address (string), the signature commits
+only to that address and will not cover any other recipients.
 
 ### Minimum signer
 
@@ -218,7 +218,7 @@ are header-level and go at the top level of the options table.
 | `algorithm` | no | `"rsa-sha256"` (default) or `"ed25519-sha256"`. When `sig_sets` is used, set per entry inside `sig_sets` instead. |
 | `sig_sets` | no | Array of `{selector, keyfile, keybuf, algorithm}` tables for multi-algorithm signing (§7.8). When present, `selector`/`keyfile`/`keybuf`/`algorithm` at the top level are ignored. |
 | `mailfrom` | no | Override the envelope MAIL FROM for the `mf=` tag. Use this when signing as a forwarder. |
-| `rcpt` | no | Override the envelope RCPT TO for the `rt=` tag. |
+| `rcptto` | no | Override the envelope RCPT TO(s) for the `rt=` tag. Accepts a string (single bare address) or a Lua table of bare addresses (multiple). When not set, the wrapper enumerates all envelope recipients automatically via `ctx:iterate_rcpt()`. |
 | `timestamp` | no | `t=` value. Defaults to the current UNIX time. |
 | `nonce` | no | `n=` value (`-02` §7.3). Caller-supplied ASCII string, ≤ 64 chars, no `;`. Typically a DSN-correlation key or replay-cache key. |
 | `nonce_random` | no | If `true` AND `nonce` is not set, the signer fills `n=` with a 22-character base64 random nonce. |
@@ -249,7 +249,7 @@ msys.validate.dkim2.sign(msg, vctx, {
   selector = "fwd-2026",
   keyfile  = "/etc/dkim2/forwarder.example.net/fwd-2026.key",
   mailfrom = "list-bounce@forwarder.example.net",
-  rcpt     = "subscriber@downstream.example.org",
+  rcptto   = "subscriber@downstream.example.org",
 })
 ```
 
@@ -282,7 +282,7 @@ binding check is performed:
 | | `validate_data_spool` | `validate_data_spool_each_rcpt` |
 |---|---|---|
 | **Fires** | Once on shared parent message | Once per recipient (cowref) |
-| **`rt=` check** | All envelope recipients checked against `rt=` (§10.4 MUST) | Single cowref recipient checked |
+| **`rt=` check** | All envelope recipients enumerated into `rcptto` and checked against `rt=` (§10.4 MUST) | Single cowref recipient enumerated into `rcptto` and checked |
 | **BCC support** | No — Bcc recipients will not be in `rt=` and will fail the check | Yes — each cowref is checked independently |
 | **Complexity** | Simpler — one `verify()` call per message | One `verify()` call per recipient |
 
@@ -314,7 +314,8 @@ function mod:validate_data_spool_each_rcpt(msg, ac, vctx)
   --                   violation (d=/mf= mismatch, donotmodify, etc.)
   --   "permerror"     could not verify: key missing/invalid/revoked,
   --                   signature syntax error, or chain integrity failure
-  --                   (result.overall_reason == "chain_broken")
+  --                   (overall_reason="chain_broken" for chain failures;
+  --                   nil for key/syntax errors — check signatures[i].reason)
   --   "temperror"     resolver-side transient failure (SERVFAIL, timeout)
   --   "none"          no DKIM2-Signature headers on the message
 
@@ -351,7 +352,7 @@ header.
 |---|---|
 | `pubkey_pem` | A PEM-encoded public key. When set, the same key is used for every signature on the message (typically used in tests and policies that already have the key). When absent, each signature's `(d, s)` pair is resolved from DNS at `<selector>._domainkey.<domain>`. |
 | `mailfrom` | Override the envelope MAIL FROM used for the `mf=` binding check. Defaults to the bare address from `ec_message_get_mailfrom`. **For testing only** — mirrors sign()'s `mailfrom=` option; useful for simulating specific envelope conditions without real SMTP transit. |
-| `rcpt` | Override the actual envelope RCPT TO for the `rt=` binding check. Defaults to the bare address from `ec_message_get_rcptto`. **For testing only** — in production the envelope RCPT TO is always read from the message automatically and this option should not be set. |
+| `rcptto` | Override the envelope RCPT TO(s) for the `rt=` binding check. Accepts a string (single bare address) or a Lua table of bare addresses (multiple). ALL listed addresses must be present in `rt=` for the signature to pass (§10.4). When not set, the wrapper enumerates all envelope recipients automatically. |
 | `authservid` | When set, a new `Authentication-Results:` header is always prepended with this value as the authentication service identifier. Existing AR headers are never modified. When absent, no AR header is emitted. |
 | `relax_d_mf_check` | If `true`, downgrade the §7.7 `d=`/`mf=` domain alignment check from a hard failure to a warning. Default `false` (spec-compliant). **Setting to `true` is non-spec-compliant**; recommended only for testing. |
 | `skip_recipe_chain` | If `true`, skip the `-02` §10.6 recipe-chain check. The per-signature crypto + envelope checks and the §8.3 chain-of-custody check still run. Default `false` (chain check ON). **Setting this to `true` makes the verifier non-spec-compliant** — §10.6 is a SHOULD requirement. Use only for debugging or when interoperating with a signer whose recipe implementation is known to be broken. |
@@ -372,10 +373,10 @@ result = {
           |                --   (§10.1 PERMERROR)
           | "temperror"    -- transient key-fetch failure (DNS timeout / SERVFAIL)
           | "none",        -- no DKIM2 signatures present
-  overall_reason = nil                      -- nil when overall="pass", or when
-                                            --   overall is non-pass due to per-sig
-                                            --   failures (key errors, bad crypto,
-                                            --   syntax errors) — in that case check
+  overall_reason = nil                      -- nil when overall="pass", "temperror",
+                                            --   or when overall is non-pass due to
+                                            --   per-sig failures (key errors, bad
+                                            --   crypto, syntax errors) — check
                                             --   result.signatures[i].reason for detail.
                                             -- Non-nil only for structural conditions
                                             --   that apply to the chain as a whole:
@@ -403,6 +404,10 @@ result = {
       rt = "<bare RCPT TO>[,<bare RCPT TO>...]", -- all entries decoded from base64
       n  = "<nonce>",                        -- if present
       f  = "<flags string>",                 -- if present; comma-separated
+      key_testing = true,                    -- if present: signing key has t=y
+                                             --   (RFC 6376 §3.6.1 testing mode).
+                                             --   Per spec, failures SHOULD NOT be
+                                             --   treated as definitive when set.
     },
     ...
   }
@@ -520,7 +525,14 @@ They appear in `result.signatures[i].reason`, in the
 | `key_der_parse` | The `p=` base64 decoded successfully but the DER structure is not a valid public key. |
 | `key_k_unknown` | The DNS record's `k=` tag names an algorithm Momentum doesn't support. |
 | `sig_parse_failed` | The signature value inside the `s=` tag could not be parsed or stripped for canonical-input construction. Indicates a malformed signature from the signer. |
+| `mi_hash_missing` | The body hash could not be retrieved from the `Message-Instance:` `h=` tag: either no MI with a matching sequence number (`m=`) was present, or the MI's `h=` tag was malformed or lacked a hash entry for the algorithm named in its own `h=` prefix. |
 | `unsupported_algorithm` | Every sig-set in `s=` uses an algorithm Momentum does not implement. Per §3.4 these are ignored rather than failed; paired with `status="none"`. |
+
+**Authentication-Results mapping (§10.1):** Most `status="fail"` reasons produce `dkim2=fail` in the AR header. Exceptions, per the §10.1 FAIL / PERMERROR / TEMPERROR distinction:
+- `key_unavailable` → `dkim2=temperror` (transient DNS failure)
+- The following produce `dkim2=permerror` (unrecoverable errors): `no_key`, `key_invalid`, `key_multiple_records`, `key_service_mismatch`, `key_k_unknown`, `key_revoked`, `key_b64_decode`, `key_der_parse`, `missing_required_tags`, `parse_error`, `sig_parse_failed`, `mi_hash_missing`, `signature_expired`, `verify_internal`
+
+`reason=` is only included in failure clauses (`dkim2=fail`, `dkim2=permerror`, `dkim2=temperror`). Pass clauses (`dkim2=pass`) do not carry `reason=`.
 
 ### recipe_chain detail strings (paniclog only)
 
@@ -573,6 +585,13 @@ Authentication-Results: mta-1.example.com;
 > (`sel-1:rsa-sha256:<base64>`), so Momentum's `header.s=` carries that full
 > value rather than the bare selector. AR consumers that key on `header.s=` for
 > DKIM1-style selector lookups will see the combined string.
+
+Transient DNS failure (`key_unavailable` → `dkim2=temperror`):
+
+```
+Authentication-Results: mta-1.example.com;
+  dkim2=temperror reason="public key could not be fetched" header.d=example.com header.s=sel-1:rsa-sha256: header.i=1
+```
 
 Failure with reason (simplified string per §10.1 — ordinals come from `header.i=` / `header.m=`):
 
