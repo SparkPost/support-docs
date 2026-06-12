@@ -496,27 +496,28 @@ msys.validate.dkim2.verify(msg, vctx, {
 ```
 
 For full control — or to merge DKIM2 results with other authentication methods
-(SPF, DKIM1, ARC) into a single combined header — use `ar_clauses()` directly:
+(SPF, DKIM1, ARC) into a single combined header — use
+`msys.validate.dkim2.ar_clauses(result)`.
 
-```
-msys.validate.dkim2.ar_clauses(result) → clauses | nil
-```
+`ar_clauses()` returns an array of DKIM2 `Authentication-Results:` clause
+strings for the given verify result. It returns `nil` when `result` is `nil`, or `result.signatures` is absent or
+empty. It also returns `nil` when all per-signature entries are non-actionable
+(`status="chain_verified"` or `status="none"`) and `result.overall` is `"none"`.
 
-Returns a Lua array of DKIM2 `Authentication-Results:` clause strings for a
-given verify result, or `nil` when `result` is `nil`, `result.signatures` is
-absent, or `result.signatures` is empty.
-
-Each entry is a complete, ready-to-use clause string (e.g.
+Each entry is a complete clause string (e.g.
 `"dkim2=pass header.d=example.com header.s=sel-1:rsa-sha256 ..."`).
-The array contains one entry per non-deferred signature (each signature with
-`status` other than `"chain_verified"`) plus any extra overall clauses for
-chain failures or policy downgrades. Deferred signatures
-(`status="chain_verified"`) are excluded — they have no valid RFC 8601 token.
+The array contains one entry per actionable signature — signatures with
+`status="chain_verified"` (deferred, no RFC 8601 equivalent) and
+`status="none"` (unsupported algorithm, §3.4 — no `dkim2=none` token exists)
+are excluded. Extra overall clauses for chain failures or policy downgrades
+are appended when applicable.
 
 ### Usage examples
 
 ```lua
--- Combined: merge DKIM2 clauses with SPF into one AR header
+-- Omit authservid so no DKIM2-only AR header is auto-prepended; build
+-- the combined header below.
+local result, err = msys.validate.dkim2.verify(msg, vctx)
 local dkim2_clauses = msys.validate.dkim2.ar_clauses(result) or {}
 local spf_clause    = build_spf_clause()   -- caller-supplied
 local all_clauses   = { spf_clause }
@@ -528,10 +529,10 @@ msg:header("Authentication-Results",
 
 ### Output format
 
-> **Note on `header.s=`:** RFC 8601 expects the selector name only. In DKIM2 the
-> `s=` tag encodes selector, algorithm, and signature together, but Momentum emits
-> only the selector and algorithm (e.g. `sel-1:rsa-sha256`) in `header.s=`,
-> omitting the bulk base64 signature bytes.
+> **Note on `header.s=`:** In DKIM1, `header.s=` carries just the selector name.
+> In DKIM2 the `s=` wire tag encodes selector, algorithm, and signature together;
+> Momentum emits only the selector and algorithm (e.g. `sel-1:rsa-sha256`) in
+> `header.s=`, omitting the bulk base64 signature bytes.
 
 Normal pass:
 
@@ -545,21 +546,24 @@ Transient DNS failure (`key_unavailable` → `dkim2=temperror`):
 
 ```
 Authentication-Results: mta-1.example.com;
-  dkim2=temperror reason="public key could not be fetched" header.d=example.com header.s=sel-1:rsa-sha256 header.i=1
+  dkim2=temperror reason="public key could not be fetched" header.d=example.com header.s=sel-1:rsa-sha256 header.i=1 header.m=1
+        header.mf=sender@example.com header.rt=rcpt@a.com
 ```
 
 Permanent error — key does not exist in DNS (`no_key` → `dkim2=permerror`):
 
 ```
 Authentication-Results: mta-1.example.com;
-  dkim2=permerror reason="public key does not exist" header.d=example.com header.s=sel-1:rsa-sha256 header.i=1
+  dkim2=permerror reason="public key does not exist" header.d=example.com header.s=sel-1:rsa-sha256 header.i=1 header.m=1
+        header.mf=sender@example.com header.rt=rcpt@a.com
 ```
 
 Failure with reason (simplified string per §10.1 — ordinals come from `header.i=` / `header.m=`):
 
 ```
 Authentication-Results: mta-1.example.com;
-  dkim2=fail reason="body hash mismatch" header.d=example.com header.s=sel-1:rsa-sha256 header.i=1
+  dkim2=fail reason="body hash mismatch" header.d=example.com header.s=sel-1:rsa-sha256 header.i=1 header.m=1
+        header.mf=sender@example.com header.rt=rcpt@a.com
 ```
 
 When the overall verdict is worse than the per-sig result — chain failure or
@@ -569,7 +573,8 @@ Chain-broken example (2-hop message: crypto passed but recipe-chain check failed
 
 ```
 Authentication-Results: mta-1.example.com;
-  dkim2=pass header.d=example.com header.i=2;
+  dkim2=pass header.d=example.com header.s=sel-2:rsa-sha256 header.i=2 header.m=2
+        header.mf=bounce@forwarder.example.net header.rt=rcpt@a.com;
   dkim2=permerror reason="chain of custody broken"
 ```
 
@@ -577,7 +582,8 @@ Policy-downgrade example (`d=` does not match the `mf=` domain):
 
 ```
 Authentication-Results: mta-1.example.com;
-  dkim2=pass header.d=example.com header.i=1;
+  dkim2=pass header.d=example.com header.s=sel-1:rsa-sha256 header.i=1 header.m=1
+        header.mf=sender@example.com header.rt=rcpt@a.com;
   dkim2=fail reason="MAIL FROM and d= do not match"
 ```
 
@@ -612,7 +618,7 @@ They appear in `result.signatures[i].reason`, in the
 The per-signature AR verdict is derived from `status` and `reason` together:
 `status="pass"` → `dkim2=pass`; `status="fail"` → `dkim2=fail` by default,
 promoted to `dkim2=temperror` or `dkim2=permerror` for specific reason codes
-(noted in the table below); `status="chain_verified"` is excluded from AR output.
+(noted in the table below); `status="chain_verified"` and `status="none"` are excluded from AR output.
 
 The full set:
 
@@ -653,7 +659,7 @@ The full set:
 - `key_unavailable` → `dkim2=temperror` (transient DNS failure)
 - The following produce `dkim2=permerror` (unrecoverable errors): `no_key`, `key_invalid`, `key_multiple_records`, `key_service_mismatch`, `key_k_unknown`, `key_revoked`, `key_b64_decode`, `key_der_parse`, `missing_required_tags`, `parse_error`, `sig_parse_failed`, `mi_hash_missing`, `signature_expired`, `verify_internal`
 
-`reason=` is only included in failure clauses (`dkim2=fail`, `dkim2=permerror`, `dkim2=temperror`). Pass clauses (`dkim2=pass`) do not carry `reason=`.
+`reason=` is included in all failure clauses (`dkim2=fail`, `dkim2=permerror`, `dkim2=temperror`) and absent from pass clauses (`dkim2=pass`).
 
 ### recipe_chain detail strings (paniclog only)
 
