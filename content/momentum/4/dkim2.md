@@ -372,7 +372,13 @@ result = {
           |                --   (§10.1 PERMERROR)
           | "temperror"    -- transient key-fetch failure (DNS timeout / SERVFAIL)
           | "none",        -- no DKIM2 signatures present
-  overall_reason = nil                      -- nil in most cases; set when:
+  overall_reason = nil                      -- nil when overall="pass", or when
+                                            --   overall is non-pass due to per-sig
+                                            --   failures (key errors, bad crypto,
+                                            --   syntax errors) — in that case check
+                                            --   result.signatures[i].reason for detail.
+                                            -- Non-nil only for structural conditions
+                                            --   that apply to the chain as a whole:
                  | "chain_broken"           --   overall="permerror": chain integrity
                                             --   failure (MI gap, recipe mismatch, etc.)
                  | "d_mf_mismatch"          --   overall="fail": d= doesn't match
