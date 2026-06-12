@@ -399,7 +399,8 @@ result = {
              | "deferred"       -- paired with status="chain_verified"
              | <failure code>,  -- see Per-signature reason codes table below
       d  = "<signing domain>",
-      s  = "<selector>:<alg>:<base64-sig>",  -- raw s= value
+      s  = "<selector>:<alg>:<base64-sig>",  -- raw s= value; AR header.s= carries
+                                             --   only "<selector>:<alg>" (base64 stripped)
       mf = "<bare MAIL FROM>",               -- decoded from base64
       rt = "<bare RCPT TO>[,<bare RCPT TO>...]", -- all entries decoded from base64
       n  = "<nonce>",                        -- if present
@@ -576,21 +577,20 @@ Normal pass:
 
 ```
 Authentication-Results: mta-1.example.com;
-  dkim2=pass header.d=example.com header.s=sel-1 header.i=1 header.m=1
+  dkim2=pass header.d=example.com header.s=sel-1:rsa-sha256 header.i=1 header.m=1
         header.mf=<sender@example.com> header.rt=<rcpt@a.com>
 ```
 
-> **Note on `header.s=`:** RFC 8601 expects the selector name only (e.g. `sel-1`).
-> In DKIM2 the `s=` tag encodes selector, algorithm, and signature together
-> (`sel-1:rsa-sha256:<base64>`), so Momentum's `header.s=` carries that full
-> value rather than the bare selector. AR consumers that key on `header.s=` for
-> DKIM1-style selector lookups will see the combined string.
+> **Note on `header.s=`:** RFC 8601 expects the selector name only. In DKIM2 the
+> `s=` tag encodes selector, algorithm, and signature together, but Momentum emits
+> only the selector and algorithm (e.g. `sel-1:rsa-sha256`) in `header.s=`,
+> omitting the bulk base64 signature bytes.
 
 Transient DNS failure (`key_unavailable` → `dkim2=temperror`):
 
 ```
 Authentication-Results: mta-1.example.com;
-  dkim2=temperror reason="public key could not be fetched" header.d=example.com header.s=sel-1:rsa-sha256: header.i=1
+  dkim2=temperror reason="public key could not be fetched" header.d=example.com header.s=sel-1:rsa-sha256 header.i=1
 ```
 
 Failure with reason (simplified string per §10.1 — ordinals come from `header.i=` / `header.m=`):
