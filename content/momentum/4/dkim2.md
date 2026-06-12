@@ -135,11 +135,11 @@ and whether BCC addresses are exposed.
 | **Fires** | Once on the shared parent message | Once per recipient (cowref) |
 | **`rt=` auto-populate** | Primary recipient only (`msg:rcptto()`) — extra recipients are inaccessible in this hook | Single cowref recipient |
 | **Multi-recipient rt=** | Must pass explicit `rcptto = {r1, r2, ...}` — collect the full list in an earlier hook (e.g. `validate_rcptto`) | Each cowref signs for its own single address automatically |
-| **BCC privacy** | ⚠️ Policy's responsibility — operator must exclude BCC from the explicit `rcptto` list | ✅ Check `mo_rcpt_type == "bcc"` and skip; each copy carries only its own address |
-| **Complexity** | Requires explicit recipient collection for multi-recipient | One `sign()` call per cowref; BCC detection built-in |
+| **BCC privacy** | ⚠️ Operator must exclude BCC from the explicit `rcptto` list | ⚠️ Operator must check `mo_rcpt_type == "bcc"` and skip `sign()` for BCC cowrefs; auto-populate suppresses the BCC address from `rt=` if `sign()` is called anyway, but the signature still proceeds without any `rt=` binding |
+| **Complexity** | Requires explicit recipient collection for multi-recipient | One `sign()` call per cowref; requires explicit BCC check |
 
 Use `validate_data_spool_each_rcpt` for most deployments — it handles
-per-recipient signing and BCC privacy automatically. Use `validate_data_spool`
+per-recipient signing automatically. Check `mo_rcpt_type` to handle BCC privacy. Use `validate_data_spool`
 only when you need a single signature covering all recipients and are willing
 to manage the recipient list and BCC exclusion yourself.
 
