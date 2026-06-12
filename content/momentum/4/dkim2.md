@@ -132,19 +132,19 @@ and whether BCC addresses are exposed.
 
 | | `validate_data_spool` | `validate_data_spool_each_rcpt` |
 |---|---|---|
-| **Fires** | Once on shared parent message | Once per recipient (cowref) |
-| **`rt=` default** | All envelope recipients (comma-separated list) | Single cowref recipient |
-| **Replay protection** | Rejects delivery to any address not in the original list | Each copy bound exclusively to its own recipient |
-| **BCC privacy** | ⚠️ BCC addresses appear in `rt=` on every copy, visible to TO/CC recipients | ✅ Each copy carries only its own recipient; no address leaks to others |
-| **Complexity** | Simpler — one `sign()` call per message | One `sign()` call per recipient |
+| **Fires** | Once on the shared parent message | Once per recipient (cowref) |
+| **`rt=` auto-populate** | Primary recipient only (`msg:rcptto()`) — extra recipients are inaccessible in this hook | Single cowref recipient |
+| **Multi-recipient rt=** | Must pass explicit `rcptto = {r1, r2, ...}` — collect the full list in an earlier hook (e.g. `validate_rcptto`) | Each cowref signs for its own single address automatically |
+| **BCC privacy** | ⚠️ Policy's responsibility — operator must exclude BCC from the explicit `rcptto` list | ✅ Check `mo_rcpt_type == "bcc"` and skip; each copy carries only its own address |
+| **Complexity** | Requires explicit recipient collection for multi-recipient | One `sign()` call per cowref; BCC detection built-in |
 
-Use `validate_data_spool_each_rcpt` when your deployment uses BCC or when
-you need each signature to be exclusive to one recipient. `validate_data_spool`
-is sufficient for TO/CC-only delivery.
+Use `validate_data_spool_each_rcpt` for most deployments — it handles
+per-recipient signing and BCC privacy automatically. Use `validate_data_spool`
+only when you need a single signature covering all recipients and are willing
+to manage the recipient list and BCC exclusion yourself.
 
-Passing an explicit `rcptto` option overrides the automatic recipient
-enumeration. If you supply a single address (string), the signature commits
-only to that address and will not cover any other recipients.
+Passing an explicit `rcptto` option overrides the auto-populated primary recipient.
+Accepts a string (single address) or a Lua table of bare addresses.
 
 ### Minimum signer
 
@@ -218,7 +218,7 @@ are header-level and go at the top level of the options table.
 | `algorithm` | no | `"rsa-sha256"` (default) or `"ed25519-sha256"`. When `sig_sets` is used, set per entry inside `sig_sets` instead. |
 | `sig_sets` | no | Array of `{selector, keyfile, keybuf, algorithm}` tables for multi-algorithm signing (§7.8). When present, `selector`/`keyfile`/`keybuf`/`algorithm` at the top level are ignored. |
 | `mailfrom` | no | Override the envelope MAIL FROM for the `mf=` tag. Use this when signing as a forwarder (e.g. the forwarder's own address rather than the original sender's). Pass `mailfrom=""` (empty string) for null-sender DSN/bounce messages (`MAIL FROM:<>`), since the envelope API returns nil for null senders. |
-| `rcptto` | no | Override the envelope RCPT TO(s) for the `rt=` tag. Accepts a string (single bare address) or a Lua table of bare addresses (multiple). When not set, the wrapper enumerates all envelope recipients automatically via `ctx:iterate_rcpt()`. |
+| `rcptto` | no | Override the envelope RCPT TO(s) for the `rt=` tag. Accepts a string (single bare address) or a Lua table of bare addresses (multiple). When not set, the primary envelope recipient (`msg:rcptto()`) is used automatically. For multi-recipient rt= covering all addresses, pass the full list explicitly. |
 | `timestamp` | no | `t=` value. Defaults to the current UNIX time. |
 | `nonce` | no | `n=` value (`-02` §7.3). Caller-supplied ASCII string, ≤ 64 chars, no `;`. Typically a DSN-correlation key or replay-cache key. |
 | `nonce_random` | no | If `true` AND `nonce` is not set, the signer fills `n=` with a 22-character base64 random nonce. |
@@ -282,11 +282,13 @@ binding check is performed:
 | | `validate_data_spool` | `validate_data_spool_each_rcpt` |
 |---|---|---|
 | **Fires** | Once on shared parent message | Once per recipient (cowref) |
-| **`rt=` check** | All envelope recipients enumerated into `rcptto` and checked against `rt=` (§10.4 MUST) | Single cowref recipient enumerated into `rcptto` and checked |
-| **BCC support** | No — Bcc recipients will not be in `rt=` and will fail the check | Yes — each cowref is checked independently |
-| **Complexity** | Simpler — one `verify()` call per message | One `verify()` call per recipient |
+| **`rt=` auto-check** | First accessible recipient only (`msg:rcptto()`) — **all other recipients bypass the §10.4 check** unless explicitly listed in `rcptto` | Single cowref recipient checked; §10.4 satisfied per-delivery |
+| **Multi-recipient §10.4** | ⚠️ Must pass explicit `rcptto = {r1, r2, ...}` — omitting any recipient silently skips its binding check | ✅ Every recipient verified automatically in its own cowref |
+| **BCC support** | Policy's responsibility — exclude BCC from explicit `rcptto` | ✅ Each cowref checked independently; skip BCC cowrefs with `mo_rcpt_type` check |
+| **Complexity** | Requires explicit recipient collection for complete §10.4 compliance | One `verify()` call per cowref; correct by default |
 
-Use `validate_data_spool_each_rcpt` when your deployment uses BCC.
+Use `validate_data_spool_each_rcpt` for most deployments — it satisfies §10.4
+for every recipient automatically without additional setup.
 Typical inbound policy:
 
 ```lua
@@ -352,7 +354,7 @@ header.
 |---|---|
 | `pubkey_pem` | A PEM-encoded public key. When set, the same key is used for every signature on the message (typically used in tests and policies that already have the key). When absent, each signature's `(d, s)` pair is resolved from DNS at `<selector>._domainkey.<domain>`. |
 | `mailfrom` | Override the envelope MAIL FROM used for the `mf=` binding check. Defaults to the bare address from `ec_message_get_mailfrom`. Pass `mailfrom=""` (empty string) when verifying a DSN/bounce message (`MAIL FROM:<>`), since the envelope API returns nil for null senders. Useful for testing to simulate specific envelope conditions without real SMTP transit. |
-| `rcptto` | Override the envelope RCPT TO(s) for the `rt=` binding check. Accepts a string (single bare address) or a Lua table of bare addresses (multiple). ALL listed addresses must be present in `rt=` for the signature to pass (§10.4). When not set, the wrapper enumerates all envelope recipients automatically. |
+| `rcptto` | Override the envelope RCPT TO(s) for the `rt=` binding check. Accepts a string (single bare address) or a Lua table of bare addresses (multiple). ALL listed addresses must be present in `rt=` for the signature to pass (§10.4). When not set, the primary envelope recipient (`msg:rcptto()`) is used automatically. Pass an explicit list for multi-recipient §10.4 checking. |
 | `authservid` | When set, a new `Authentication-Results:` header is always prepended with this value as the authentication service identifier. Existing AR headers are never modified. When absent, no AR header is emitted. |
 | `relax_d_mf_check` | If `true`, downgrade the §7.7 `d=`/`mf=` domain alignment check from a hard failure to a warning. Default `false` (spec-compliant). **Setting to `true` is non-spec-compliant**; recommended only for testing. |
 | `skip_recipe_chain` | If `true`, skip the `-02` §10.6 recipe-chain check. The per-signature crypto + envelope checks and the §8.3 chain-of-custody check still run. Default `false` (chain check ON). **Setting this to `true` makes the verifier non-spec-compliant** — §10.6 is a SHOULD requirement. Use only for debugging or when interoperating with a signer whose recipe implementation is known to be broken. |
