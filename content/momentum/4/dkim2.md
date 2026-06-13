@@ -448,12 +448,13 @@ SMTP behaviour as required by §9.4 of the DKIM2 spec:
 |---|---|---|---|
 | `pass` | All verifiable signatures passed | — | Accept |
 | `none` | No DKIM2 signatures present, or all use unsupported algorithms (§3.4) | — | Local policy |
-| `fail` | Verified but wrong: hash/sig mismatch or policy violation (d=/mf= mismatch, donotmodify, etc.) | SHOULD 550/5.7.x if rejecting | Reject or accept per policy |
+| `fail` | Verified but wrong: hash/sig mismatch or policy violation (d=/mf= mismatch, donotmodify, etc.) | SHOULD 550/5.7.x; **MUST NOT 4xx** | Reject or accept per policy |
 | `permerror` | Could not verify: key missing/revoked/invalid, syntax error, or chain integrity failure (`overall_reason="chain_broken"`) (§10.1 PERMERROR) | SHOULD 550/5.7.x; **MUST NOT 4xx** | Reject (permanent) |
 | `temperror` | Transient key-fetch failure (DNS timeout / SERVFAIL) | MAY 451/4.7.5 | Defer (temporary) |
 
-**Key rule from §9.4**: `permerror` **MUST NOT** result in a 4xx (temporary)
-SMTP reply.  Only `temperror` warrants a temporary failure code.
+**Key rules from §9.4**:
+- `fail` and `permerror` **MUST NOT** use a 4xx reply code.
+- Only `temperror` warrants a temporary (4xx) failure code.
 
 Example hook skeleton:
 
@@ -729,8 +730,11 @@ the other. Receivers that support both will evaluate each chain separately.
 
 The following are known gaps or operational considerations to be aware of:
 
-*   **§11 DSN routing**: When generating a Delivery Status Notification,
-    Momentum does not yet address it to the `mf=` address from the
+*   **§9.1 / §11 DSN**: The spec requires that when DKIM2 verification
+    fails the MTA MUST NOT generate a DSN — reject with 5xx instead.
+    This is not automatically enforced; policy must explicitly reject
+    rather than bounce on verify failure. When generating a DSN, Momentum
+    does not yet address it to the `mf=` address from the
     highest-numbered DKIM2-Signature of the original message, nor does it
     suppress DSN generation when the original sender was `<>` (null sender).
     Inbound DSN authentication (§11.1.2) is also not implemented.
@@ -774,13 +778,13 @@ The following are known gaps or operational considerations to be aware of:
     `header.s=`) repeat them in the AR clause. This is a §10.1 SHOULD —
     not a MUST — so verification behaviour is unaffected.
 
-*   **§12 Bare CR/LF normalization**: Momentum's
+*   **§12 Bare CR/LF normalization**: The spec (§12) requires signing the
+    message with all line endings in CRLF form. **Set
     [`rfc2822_lone_lf_in_body`](/momentum/4/config/ref-rfc-2822-lone-lf-in-body)
     and
     [`rfc2822_lone_lf_in_headers`](/momentum/4/config/ref-rfc-2822-lone-lf-in-headers)
-    options control bare LF handling. If either is set to `ignore`, DKIM2
-    signs bare-LF content as-is; a downstream SMTP hop that normalizes it
-    to CRLF will silently break the signature. **Set both options to `fix`
-    when DKIM2 signing is in use.**
+    to `fix` when DKIM2 signing is in use** — `ignore` causes DKIM2 to
+    sign non-CRLF content as-is, breaking the signature at any downstream
+    hop that normalizes line endings.
 
 
