@@ -1,10 +1,10 @@
 ---
-lastUpdated: "02/08/2020"
+lastUpdated: "03/11/2022"
 title: "SMTP Injection with STARTTLS using swaks"
 description: "One of our customers recently ran into issues attempting to send a test email via SMTP injection using STARTTLS while working with the openssl client Our resolution is to utilize the swaks Swiss Army Knife for SMTP This command line utility makes it easy to send a test email via..."
 ---
 
-One of our customers recently ran into issues attempting to send a test email via SMTP injection using STARTTLS while working with the openssl client. Our resolution is to utilize the "swaks" ([Swiss Army Knife for SMTP](http://www.jetmore.org/john/code/swaks/)). This command line utility makes it easy to send a test email via SMPTP and provides verbose output so you're able to view the commands and responses issued by the utility and received from the server.
+One of our customers recently ran into issues trying to send a test email through SMTP injection using STARTTLS while working with the openssl client. Our solution is to use the "swaks" ([Swiss Army Knife for SMTP](http://www.jetmore.org/john/code/swaks/)). This command line utility makes it easy to send a test email using SMPTP. It has detailed output so you can see the commands from the utility and the responses from the server.
 
 Prerequisites:
 
@@ -13,7 +13,7 @@ Prerequisites:
 
 ## Sending a Test Email Using swaks
 
-Once you have swaks downloaded (optionally available in your PATH), you can send a test email using SparkPost SMTP injection by running the following command in a terminal window:
+Once you have swaks downloaded (optionally available in your PATH), you can send a test email using SparkPost SMTP injection by running this command in a terminal window:
 
 ```
 swaks -server smtp.sparkpostmail.com:587 -tls --auth-user SMTP_Injection --auth-password <**API_KEY>** --to <**TO_EMAIL>** --from <**FROM_EMAIL>**
