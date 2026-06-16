@@ -217,8 +217,10 @@ are header-level and go at the top level of the options table.
 | `keybuf` | yes (single) | PEM-encoded private key as a string in memory. Alternative to `keyfile` for cases where the key is held in a secrets manager or generated at runtime. |
 | `algorithm` | no | `"rsa-sha256"` (default) or `"ed25519-sha256"`. When `sig_sets` is used, set per entry inside `sig_sets` instead. |
 | `sig_sets` | no | Array of `{selector, keyfile, keybuf, algorithm}` tables for multi-algorithm signing (§7.8). When present, fields supplied in `sig_sets[1]` override the corresponding top-level fields; any field omitted from `sig_sets[1]` falls back to the top-level value. |
-| `mailfrom` | no | Override the envelope MAIL FROM for the `mf=` tag. Use this when signing as a forwarder (e.g. the forwarder's own address rather than the original sender's). Pass `mailfrom=""` (empty string) for null-sender DSN/bounce messages (`MAIL FROM:<>`), since the envelope API returns nil for null senders. |
-| `rcptto` | no | Override the envelope RCPT TO(s) for the `rt=` tag. Accepts a string (single bare address) or a Lua table of bare addresses (multiple). When not set, the primary envelope recipient (`msg:rcptto()`) is used automatically. For multi-recipient rt= covering all addresses, pass the full list explicitly. |
+| `mailfrom` | no | **Normally omitted** — Momentum reads the live envelope MAIL FROM automatically. Two production exceptions: (1) null-sender DSN/bounce messages where `mailfrom=""` is required since the envelope API returns nil for `MAIL FROM:<>`; (2) testing/simulation of specific envelope conditions without real SMTP transit. |
+| `rcptto` | no | **Normally omitted** — Momentum auto-populates from the active envelope recipient. One production exception: in `validate_data_spool` (shared hook), pass the full recipient list explicitly to cover all recipients in a single `rt=`. In `validate_data_spool_each_rcpt` (recommended), each cowref auto-populates correctly. Accepts a string or a Lua table of bare addresses. |
+| `bridge_mailfrom` | no | The `mf=` for an auto-generated bridging signature when the new `mf=` is not in the previous signature's `rt=` (§8.2). Required when the prior `rt=` has multiple entries; inferred automatically when it has exactly one. |
+| `on_chain_break` | no | Action when a §8.2 chain break is detected: `"bridge"` (default when `bridge_mailfrom` set), `"skip"` (default otherwise), `"warn"`, or `"error"`. See the Forwarder signing section for details. |
 | `timestamp` | no | `t=` value. Defaults to the current UNIX time. |
 | `nonce` | no | `n=` value (`-02` §7.3). Caller-supplied ASCII string, ≤ 64 chars, no `;`. Typically a DSN-correlation key or replay-cache key. |
 | `nonce_random` | no | If `true` AND `nonce` is not set, the signer fills `n=` with a 22-character base64 random nonce. |
@@ -237,23 +239,62 @@ only the error string to the caller without logging.
 
 ### Forwarder and modifier signing
 
-A forwarder that **re-routes** a message (different envelope) signs with
-explicit overrides so the §8.3 chain-of-custody check downstream succeeds:
+When a forwarder changes the envelope MAIL FROM to an address not present
+in the previous signature's `rt=` list, §8.2 requires an extra bridging
+`DKIM2-Signature` before the primary — one whose `mf=` matches the previous
+`rt=` and whose own `rt=` contains the new outgoing MAIL FROM. Momentum
+automates this: supply `bridge_mailfrom` with the address this hop received
+the message at, and `sign()` detects the chain break and prepends the bridge
+automatically.
+
+The most common case is a **mailing list**: the original sender's signature
+has `rt=list@mailing-list.com`; the list re-sends with
+`MAIL FROM: bounce@mailing-list.com`, which is not in the prior `rt=` —
+a chain break that requires a bridge:
 
 ```lua
--- Hop 2 (forwarder): mf= is the forwarder's own bounce address (must
--- match the rt= in hop 1's signature that listed this forwarder as a
--- recipient); rt= is the new downstream recipient.  Using the forwarder's
--- own envelope values here does not break the chain — it builds the next
--- link correctly.
-msys.validate.dkim2.sign(msg, vctx, {
-  domain   = "forwarder.example.net",
-  selector = "fwd-2026",
-  keyfile  = "/etc/dkim2/forwarder.example.net/fwd-2026.key",
-  mailfrom = "list-bounce@forwarder.example.net",
-  rcptto   = "subscriber@downstream.example.org",
+-- Mailing list scenario:
+--   i=1 (originator):  mf=alice@sender.com        rt=list@mailing-list.com
+--   i=2 (auto-bridge): mf=list@mailing-list.com   rt=bounce@mailing-list.com
+--   i=3 (primary):     mf=bounce@mailing-list.com rt=subscriber@recipient.com
+local ok, val, info = msys.validate.dkim2.sign(msg, vctx, {
+  domain          = "mailing-list.com",
+  selector        = "list-2026",
+  keyfile         = "/etc/dkim2/mailing-list.com/list-2026.key",
+  mailfrom        = "bounce@mailing-list.com",
+  rcptto          = "subscriber@recipient.com",
+  bridge_mailfrom = "list@mailing-list.com",  -- the address the list received at
+  -- on_chain_break defaults to "bridge" since bridge_mailfrom is provided
 })
+if not ok then
+  -- sign() failed (key error, bridge error, etc.)
+  vctx:set_code(550, "5.7.1 DKIM2 signing failed: " .. tostring(val))
+  return msys.core.VALIDATE_DONE
+end
+-- info.chain_break=true, info.bridged=true when bridge was auto-generated
 ```
+
+When the forwarding address is unambiguous (prior `rt=` has a single entry),
+`bridge_mailfrom` can be omitted — Momentum infers it automatically. When the
+prior `rt=` has multiple entries, `bridge_mailfrom` is required to identify
+which entry this hop received at.
+
+The `on_chain_break` option controls what happens when a chain break is
+detected but cannot be bridged:
+
+| `on_chain_break` | Behavior | Third return value |
+|---|---|---|
+| `"bridge"` (default with `bridge_mailfrom`) | Auto-bridge; error if ambiguous | `{chain_break=true, bridged=true}` |
+| `"skip"` (default without `bridge_mailfrom`) | Skip signing | `{chain_break=true, bridged=false}` |
+| `"warn"` | Sign without bridge | `{chain_break=true, bridged=false}` |
+| `"error"` | Return `(nil, errmsg)` | — |
+
+The third return value gives policy full control: inspect `info.chain_break`
+and `info.bridged` to decide whether to accept, reject, or log — regardless
+of which `on_chain_break` value was used.
+
+A forwarder that does not change the MAIL FROM (pure relay) signs with
+the envelope values directly — no bridge needed since the chain is intact:
 
 A modifier that **rewrites** the message (Subject change, body footer,
 attachment strip, etc.) additionally attaches a `recipe`:
@@ -349,8 +390,8 @@ header format, `ar_clauses()` API, and examples of building combined headers.
 | Option | Meaning |
 |---|---|
 | `pubkey_pem` | A PEM-encoded public key. When set, the same key is used for every signature on the message (typically used in tests and policies that already have the key). When absent, each signature's `(d, s)` pair is resolved from DNS at `<selector>._domainkey.<domain>`. |
-| `mailfrom` | Override the envelope MAIL FROM used for the `mf=` binding check. Defaults to the bare address from `ec_message_get_mailfrom`. Pass `mailfrom=""` (empty string) when verifying a DSN/bounce message (`MAIL FROM:<>`), since the envelope API returns nil for null senders. Useful for testing to simulate specific envelope conditions without real SMTP transit. |
-| `rcptto` | Override the envelope RCPT TO(s) for the `rt=` binding check. Accepts a string (single bare address) or a Lua table of bare addresses (multiple). ALL listed addresses must be present in `rt=` for the signature to pass (§10.4). When not set, the primary envelope recipient (`msg:rcptto()`) is used automatically. Pass an explicit list for multi-recipient §10.4 checking. |
+| `mailfrom` | **Normally omitted** — Momentum reads the live envelope MAIL FROM automatically. Production exception: null-sender DSN/bounce messages where `mailfrom=""` is required since the envelope API returns nil for `MAIL FROM:<>`. Otherwise test/simulation use only. |
+| `rcptto` | **Normally omitted** — Momentum auto-populates from the active envelope recipient. Production exception: in `validate_data_spool` (shared hook), pass the full recipient list explicitly for complete §10.4 multi-recipient checking. In `validate_data_spool_each_rcpt` (recommended), auto-populates correctly per cowref. Accepts a string or a Lua table of bare addresses. ALL listed addresses must be present in `rt=` for the signature to pass. |
 | `authservid` | When set, a new `Authentication-Results:` header is prepended (when the result contains at least one actionable clause) with this value as the authentication service identifier. Existing AR headers are never modified. When absent, no AR header is emitted. |
 | `relax_d_mf_check` | If `true`, downgrade the §7.7 `d=`/`mf=` domain alignment check from a hard failure to a warning. Default `false` (spec-compliant). **Setting to `true` is non-spec-compliant**; recommended only for testing. |
 | `skip_recipe_chain` | If `true`, skip the `-02` §10.6 recipe-chain check. The per-signature crypto + envelope checks and the §8.3 chain-of-custody check still run. Default `false` (chain check ON). **Setting this to `true` makes the verifier non-spec-compliant** — §10.6 is a SHOULD requirement. Use only for debugging or when interoperating with a signer whose recipe implementation is known to be broken. |
