@@ -1,5 +1,5 @@
 ---
-lastUpdated: "04/28/2023"
+lastUpdated: "08/23/2023"
 title: How to Use Design Tracker
 description: Design Tracker lets you see what your email looks like in common inboxes and devices. Use this to find rendering issues before you send your email.
 ---
@@ -8,7 +8,7 @@ Design Tracker lets you see what your HTML email looks like in common email clie
 
 Available with all Inbox Tracker accounts. Watch this short video on [how to use Design Tracker](https://www.veed.io/view/3efe7959-d835-4a00-948c-93e4a0394871?panel=share) to test your emails.
 
-**Note**: This feature is currently in **Beta**. Not all accounts have access to it yet. 
+**Note**: This feature is currently in **Beta** and available to all Inbox Tracker accounts. 
 
 ## Test a new email campaign
 
