@@ -220,10 +220,12 @@ are header-level and go at the top level of the options table.
 | `mailfrom` | no | **Normally omitted** — Momentum reads the live envelope MAIL FROM automatically. Two production exceptions: (1) null-sender DSN/bounce messages where `mailfrom=""` is required since the envelope API returns nil for `MAIL FROM:<>`; (2) testing/simulation of specific envelope conditions without real SMTP transit. |
 | `rcptto` | no | **Normally omitted** — Momentum auto-populates from the active envelope recipient. One production exception: in `validate_data_spool` (shared hook), pass the full recipient list explicitly to cover all recipients in a single `rt=`. In `validate_data_spool_each_rcpt` (recommended), each cowref auto-populates correctly. Accepts a string or a Lua table of bare addresses. |
 | `bridge_mailfrom` | no | The `mf=` for an auto-generated bridging signature when the new `mf=` is not in the previous signature's `rt=` (§8.2). Required when the prior `rt=` has multiple entries; inferred automatically when it has exactly one. |
+| `bridge_flags` | no | Flag tokens (same format as `flags`) to set on the auto-generated bridge signature only. The primary signature is unaffected. A non-table value always returns an error regardless of whether a bridge fires. A valid table value (or nil) is silently ignored when no bridge is generated — either because `on_chain_break` is not `"bridge"`, or because `on_chain_break` is `"bridge"` but no chain break is detected. Example: `bridge_flags={"donotmodify"}` to prevent further modifications after the bridge hop. |
 | `on_chain_break` | no | Action when a §8.2 chain break is detected: `"bridge"` (default when `bridge_mailfrom` set), `"skip"` (default otherwise), `"warn"`, or `"error"`. See the Forwarder signing section for details. |
+| `on_donotmodify` | no | Action when any prior `DKIM2-Signature` on the message carries `f=donotmodify` (§7.9 / §10.8). The check is unconditional — it does not detect whether content was actually modified. Values: `"error"` (default — refuse to sign), `"warn"` (proceed; caller is responsible for logging/auditing), `"skip"` (return `(true, nil, {donotmodify=true})` without signing), `"ignore"` (proceed silently). |
 | `timestamp` | no | `t=` value. Defaults to the current UNIX time. |
 | `nonce` | no | `n=` value (`-02` §7.3). Caller-supplied ASCII string, ≤ 64 chars, no `;`. Typically a DSN-correlation key or replay-cache key. |
-| `nonce_random` | no | If `true` AND `nonce` is not set, the signer fills `n=` with a 22-character base64 random nonce. |
+| `nonce_random` | no | If `true` AND `nonce` is not set, the signer fills `n=` with a 22-character base64 random nonce. Inherited by auto-bridge signatures so every signature in the chain gets its own fresh nonce. |
 | `flags` | no | Lua array of flag tokens for `f=` (`-02` §7.9): `"exploded"`, `"donotexplode"`, `"donotmodify"`, `"feedback"`. See §7.9 for semantics. Joined into the on-wire comma-separated form by the glue layer. When `rt=` carries multiple recipients, `"exploded"` is added automatically unless already present. **Note:** the auto-`exploded` heuristic is based solely on recipient count — it triggers when `rt=` contains more than one address. Mailing lists with a single subscriber will not have `"exploded"` added automatically; pass `flags = {"exploded"}` explicitly in that case. |
 | `recipe` | no | Raw JSON string conforming to `-02` §4. Attached to the `Message-Instance` header as the base64-encoded `r=` tag. Validated against the schema at sign time; malformed recipes fail the sign call with `recipe_invalid: <reason>`. |
 | `mi_hash_algorithms` | no | Lua array of hash algorithms for the `Message-Instance` `h=` body and header hashes (§5). Default `{"sha256"}`. Multiple algorithms produce comma-separated entries in `h=`, e.g. `{"sha256","sha512"}` → `h=sha256:HH:BH,sha512:HH:BH`. A plain string `mi_hash_algorithm="sha512"` is also accepted as a single-algorithm alias. The verifier automatically detects and uses whatever algorithm is present in the received MI `h=` tag. |
@@ -313,6 +315,24 @@ msys.validate.dkim2.sign(msg, vctx, {
 The recipe schema is documented in `-02` §4. Recipes are mandatory only
 when the hop modifies content; non-modifying hops (pure-forwarding without
 edits) omit `recipe` entirely.
+
+When `on_chain_break="bridge"` is used and the message was modified,
+supply `recipe` (and `allow_recipe_z` if needed) on the outer `sign()`
+call — Momentum forwards them automatically to the auto-generated bridge
+signature. The bridge needs the recipe to document the content change in
+its `Message-Instance` header so the §10.6 chain walk can reconstruct the
+original state.
+
+**Note**: auto-bridge signatures do not inherit `flags`. Use `bridge_flags`
+to set flags on the bridge signature independently of the primary. For
+example, `bridge_flags={"donotmodify"}` marks the bridge hop as
+non-modifiable while leaving the primary signature's `flags` unchanged.
+
+`nonce_random` is inherited by the bridge so that when it is set, each
+signature gets its own fresh nonce. An explicit `nonce=` value is NOT
+inherited — the bridge's `n=` tag is absent (unless `nonce_random` was
+set) to avoid two signatures sharing the same nonce value, which would
+defeat anti-replay protection.
 
 
 ## DKIM2 Verifying
