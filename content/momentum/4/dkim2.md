@@ -793,7 +793,8 @@ The following are known gaps or operational considerations to be aware of:
     compliance for lower hops would require reconstructing each hop's
     message state by reverse-applying subsequent recipes and
     EVP-verifying each lower-hop signature against that state — a
-    significant architectural change planned for a future release.
+    significant architectural change that can be planned in a future
+    release if desirable.
 
 *   **§9.1 / §11 DSN**: The spec requires that when DKIM2 verification
     fails the MTA MUST NOT generate a DSN — reject with 5xx instead.
