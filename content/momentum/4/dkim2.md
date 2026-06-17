@@ -474,8 +474,10 @@ intermediate hop correctly recorded what it changed, and that those
 changes are consistent all the way back to the original sender. If
 anything in that chain is wrong (a hop modified the message without
 recording it, or a recipe was incorrect), `overall` is `permerror` with
-`overall_reason="chain_broken"`. You do not need to do anything special
-in policy code — `overall="pass"` means the entire history checked out.
+`overall_reason="chain_broken"`. `overall="pass"` means the content
+chain is intact; note that public-key (§10.5) cryptographic verification
+is only performed for the most recent hop — see Known Limitations for
+details.
 
 
 ### SMTP response codes (§9.4 guidance)
@@ -549,7 +551,8 @@ empty. It also returns `nil` when all per-signature entries are non-actionable
 Each entry is a complete clause string (e.g.
 `"dkim2=pass header.d=example.com header.s=sel-1:rsa-sha256 ..."`).
 The array contains one entry per actionable signature — signatures with
-`status="chain_verified"` (deferred, no RFC 8601 equivalent) and
+`status="chain_verified"` (lower-hop: public-key verification not
+performed, so no `dkim2=pass` claim can be asserted for them) and
 `status="none"` (unsupported algorithm, §3.4 — no `dkim2=none` token exists)
 are excluded. Extra overall clauses for chain failures or policy downgrades
 are appended when applicable.
@@ -672,7 +675,7 @@ The full set:
 | Reason | Meaning |
 |---|---|
 | `ok` | Signature verified cleanly. Paired with `status="pass"`. |
-| `deferred` | An earlier hop's signature in a multi-hop message. Momentum validates the full chain of custody end-to-end rather than re-running that hop's cryptographic check directly (the content was legitimately modified by later hops, so a direct crypto check would always fail). If the chain is intact, `overall="pass"`. Paired with `status="chain_verified"`. |
+| `deferred` | An earlier hop's signature in a multi-hop message. Momentum validates the full chain of custody end-to-end via the §10.6 recipe chain rather than performing a full §10.5 per-signature key lookup and cryptographic check for each lower hop. If the chain is intact, `overall="pass"`. See Known Limitations for what this means for key provenance. Paired with `status="chain_verified"`. |
 | `hh_mismatch` | Header hash mismatch — a content header (Subject, From, etc.) was modified after signing without a new `Message-Instance:` recording the change. |
 | `bh_mismatch` | Body hash mismatch — the message body was modified after signing without a new `Message-Instance:` recording the change. |
 | `sig_invalid` | Cryptographic verification failed — the signed-input bytes don't match the value in `s=`. Enable `debug_level = info` for selector, algorithm, and signed-input length detail. |
@@ -774,6 +777,23 @@ the other. Receivers that support both will evaluate each chain separately.
 ## Known limitations
 
 The following are known gaps or operational considerations to be aware of:
+
+*   **§10.5/§10.6 Lower-hop signatures not cryptographically verified**:
+    §10.5 covers the full per-signature verification procedure (key
+    lookup, record validation, and EVP cryptographic verification) for all
+    signatures; §10.6 requires that the recipe chain be checked for every
+    hop. Momentum satisfies §10.6 for all hops, and applies the full §10.5
+    procedure only to the highest-i signature (the most recent hop). For
+    earlier hop signatures (`i < max_i`), only the §10.6 recipe-chain hash
+    comparison is performed — no key lookup and no EVP crypto. These
+    appear as `status="chain_verified"`. The recipe chain confirms
+    end-to-end content integrity (the fully reconstructed original-state
+    hashes match the recorded MI[1] values) but does not verify that each
+    lower-hop signature was made with the claimed signing key. Full §10.5
+    compliance for lower hops would require reconstructing each hop's
+    message state by reverse-applying subsequent recipes and
+    EVP-verifying each lower-hop signature against that state — a
+    significant architectural change planned for a future release.
 
 *   **§9.1 / §11 DSN**: The spec requires that when DKIM2 verification
     fails the MTA MUST NOT generate a DSN — reject with 5xx instead.
