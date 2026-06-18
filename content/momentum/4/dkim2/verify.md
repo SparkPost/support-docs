@@ -35,34 +35,32 @@ function mod:validate_data_spool_each_rcpt(msg, ac, vctx)
   })
   if not result then
     -- Internal error (alloc failure, crypto init error, etc.) — err carries
-    -- the reason string.  Distinct from a per-sig fail, which lands in
-    -- result.signatures.  Defer rather than silently accepting.
-    msys.log(msys.core.DWARNING, "DKIM2 verify failed internally: " .. tostring(err))
+    -- the reason string.  Defer rather than silently accepting.
+    msys.log(msys.core.LOG_WARNING, "DKIM2 verify failed internally: " .. (err or "unknown"))
     vctx:set_code(451, "4.7.5 DKIM2 verification unavailable; please retry")
-    return msys.core.VALIDATE_CONT
+    return msys.core.VALIDATE_DONE
   end
 
   -- result.overall is one of:
-  --   "pass"          all sigs verified, chain intact
+  --   "pass"          chain intact and most-recent sig cryptographically verified
+  --                   (lower-hop sigs confirmed via §10.6 recipe chain only)
   --   "fail"          verified but wrong: hash/sig mismatch or policy
   --                   violation (d=/mf= mismatch, donotmodify, etc.)
   --   "permerror"     could not verify: key missing/invalid/revoked,
   --                   signature syntax error, or chain integrity failure
-  --                   (overall_reason="chain_broken" for chain failures;
-  --                   nil for key/syntax errors — check signatures[i].reason)
+  --                   (overall_reason="chain_broken" for chain failures)
   --   "temperror"     resolver-side transient failure (SERVFAIL, timeout)
   --   "none"          no DKIM2-Signature headers, or all use unsupported
   --                   algorithms (§3.4 — ignored rather than failed)
 
   if result.overall == "temperror" then
-    -- Transient DNS failure: set a 4xx code so Momentum issues a
-    -- temporary rejection after the validation pipeline completes,
-    -- allowing the sender to retry once the resolver recovers.
     vctx:set_code(451, "4.7.5 DKIM2 key lookup failed; please retry")
+    return msys.core.VALIDATE_DONE
   end
 
   if result.overall == "fail" or result.overall == "permerror" then
     vctx:set_code(550, "5.7.1 DKIM2 verification failed")
+    return msys.core.VALIDATE_DONE
   end
 
   return msys.core.VALIDATE_CONT
@@ -192,7 +190,13 @@ Example hook skeleton:
 
 ```lua
 local result, err = msys.validate.dkim2.verify(msg, vctx, { ... })
-local overall = result and result.overall or "none"
+if not result then
+  -- internal error (e.g. OOM); defer rather than silently accepting
+  msys.log(msys.core.LOG_WARNING, "dkim2 verify error: " .. (err or "unknown"))
+  vctx:set_code(451, "4.7.5 DKIM2 verification unavailable; please retry")
+  return msys.core.VALIDATE_DONE
+end
+local overall = result.overall
 
 if overall == "permerror" or overall == "fail" then
   -- §9.4 SHOULD 550/5.7.x for permanent failures.

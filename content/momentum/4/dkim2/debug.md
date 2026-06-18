@@ -36,7 +36,7 @@ The per-signature AR verdict is derived from `status` and `reason` together:
 promoted to `dkim2=temperror` or `dkim2=permerror` for specific reason codes
 (noted in the table below); `status="chain_verified"` and `status="none"` are excluded from AR output.
 
-The full set:
+The full set. Unless otherwise noted, each reason code below pairs with `status="fail"` in `result.signatures[i].status`.
 
 > **Note:** `d_mf_mismatch`, `donotmodify_violated`, and `donotexplode_violated` are
 > **not** per-signature reason codes. They are set on `result.overall_reason` when a

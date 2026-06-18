@@ -167,7 +167,17 @@ function mod:validate_data_spool_each_rcpt(msg, ac, vctx)
     vctx:set_code(451, "4.7.5 DKIM2 verification error; please retry")
     return msys.core.VALIDATE_DONE
   end
-  -- result.overall: "pass" | "fail" | "permerror" | "temperror" | "none"
+  -- Apply local policy based on result.overall.
+  -- See /momentum/4/dkim2/verify for the full skeleton with all cases.
+  if result.overall == "temperror" then
+    vctx:set_code(451, "4.7.5 DKIM2 key lookup failed; please retry")
+    return msys.core.VALIDATE_DONE
+  end
+  if result.overall == "fail" or result.overall == "permerror" then
+    vctx:set_code(550, "5.7.1 DKIM2 verification failed")
+    return msys.core.VALIDATE_DONE
+  end
+  -- "pass" or "none": accept per local policy
   return msys.core.VALIDATE_CONT
 end
 

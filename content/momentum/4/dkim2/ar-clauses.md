@@ -37,16 +37,40 @@ are appended when applicable.
 ### Usage examples
 
 ```lua
--- Omit authservid so no DKIM2-only AR header is auto-prepended; build
--- the combined header below.
-local result, err = msys.validate.dkim2.verify(msg, vctx)
-local dkim2_clauses = msys.validate.dkim2.ar_clauses(result) or {}
-local spf_clause    = build_spf_clause()   -- caller-supplied
-local all_clauses   = { spf_clause }
-for _, c in ipairs(dkim2_clauses) do all_clauses[#all_clauses + 1] = c end
-msg:header("Authentication-Results",
-           "mta-1.example.com; " .. table.concat(all_clauses, "; "),
-           "prepend")
+require("msys.core")
+require("msys.validate.dkim2")
+
+local mod = {}
+
+function mod:validate_data_spool_each_rcpt(msg, ac, vctx)
+  -- Pass an empty options table (no authservid) so verify() does not
+  -- auto-prepend a DKIM2-only AR header; build the combined header below.
+  local result, err = msys.validate.dkim2.verify(msg, vctx, {})
+  if not result then
+    msys.log(msys.core.LOG_WARNING, "dkim2 verify error: " .. (err or "unknown"))
+    vctx:set_code(451, "4.7.5 DKIM2 verification unavailable; please retry")
+    return msys.core.VALIDATE_DONE
+  end
+
+  local dkim2_clauses = msys.validate.dkim2.ar_clauses(result) or {}
+  local spf_clause    = build_spf_clause()   -- caller-supplied; returns nil when absent
+  local all_clauses   = {}
+  if spf_clause then all_clauses[#all_clauses + 1] = spf_clause end
+  for _, c in ipairs(dkim2_clauses) do all_clauses[#all_clauses + 1] = c end
+  if #all_clauses > 0 then
+    msg:header("Authentication-Results",
+               "mta-1.example.com; " .. table.concat(all_clauses, "; "),
+               "prepend")
+  end
+
+  -- NOTE: This example only shows AR header construction.
+  -- You must still enforce SMTP policy based on result.overall —
+  -- see the full skeleton in /momentum/4/dkim2/verify for the
+  -- set_code / VALIDATE_DONE pattern for fail, permerror, and temperror.
+  return msys.core.VALIDATE_CONT
+end
+
+msys.registerModule("my_combined_ar_policy", mod)
 ```
 
 ### Output format
