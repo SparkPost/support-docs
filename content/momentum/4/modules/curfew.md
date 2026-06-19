@@ -1,5 +1,5 @@
 ---
-lastUpdated: "05/21/2026"
+lastUpdated: "06/19/2026"
 title: "curfew – Scheduled Delivery Suspension"
 description: "The curfew module schedules quiet hours blackout windows during which Momentum will not attempt deliveries for selected bindings binding groups or domains The schedule is expressed in crontab style syntax and is read from a plain text file Curfew replaces ad hoc operator workflows that toggle suspend_delivery from cron jobs..."
 ---
@@ -29,7 +29,7 @@ curfew {
 }
 ```
 
-That is enough to enable the feature: [`Timezone`](#modules.curfew.timezone) and [`Fuzz_Seconds`](#modules.curfew.fuzz_seconds) both have built-in defaults (`local` and `60` respectively), so they only need to appear when the operator wants to override them. A fully spelled-out configuration looks like this:
+That is enough to enable the feature: [`Timezone`](#modules.curfew.timezone) and [`Fuzz_Seconds`](#modules.curfew.fuzz_seconds) both have built-in defaults (`UTC` and `0` respectively), so they only need to appear when the operator wants to override them. A fully spelled-out configuration looks like this:
 
 <a name="example.curfew.configuration"></a> 
 
@@ -139,7 +139,7 @@ If `Schedule_File` is set but the file cannot be opened, the previously loaded s
 
 <dd>
 
-The timezone in which the cron fields of every rule are interpreted. Accepted values are `local` and `UTC` (case-insensitive). Default value is `local`, which matches standard crontab semantics. Any unrecognized value is treated as `local`, with a warning written to the paniclog.
+The timezone in which the cron fields of every rule are interpreted. Accepted values are `local` and `UTC` (case-insensitive). Default value is `UTC`, which is deterministic across hosts and immune to the server's local `TZ` setting; `local` interprets rules in the host's local time, matching standard crontab semantics. Any unrecognized value is treated as `UTC`, with a warning written to the paniclog.
 
 </dd>
 
@@ -147,11 +147,9 @@ The timezone in which the cron fields of every rule are interpreted. Accepted va
 
 <dd>
 
-The maximum random delay, in seconds, applied to the next per-domain mail-queue maintainer firing for any domain currently matched by a *wildcard-binding* rule. Default value is `60`. Set to `0` to disable lift-fuzz entirely.
+The maximum random delay, in seconds, applied to each per-domain mail-queue maintainer firing. Default value is `0`, which disables the spread entirely; operators opt in explicitly by setting it greater than `0`.
 
-This option exists to spread out the "thundering herd" of delivery attempts that would otherwise fire in lock-step on every domain affected by the same window once it closes. While the curfew is engaged, each affected per-domain maintainer is rescheduled to a uniform random offset in `[0, Fuzz_Seconds]` seconds from its next normal tick; over the duration of the window the per-domain cycles drift independently, so deliveries resume gradually after lift instead of all at once.
-
-Only rules whose binding column is `*` participate in lift-fuzz, because the per-domain maintainer is shared across every binding for a given domain — fuzzing it for a binding-specific rule would unnecessarily slow down deliveries on the bindings that are *not* under curfew.
+This option exists to spread out the cross-domain "thundering herd" of delivery attempts that would otherwise fire in lock-step on every [`delayed_queue_scan_interval`](/momentum/4/config/ref-delayed-queue-scan-interval)-aligned tick. This cascade is most visible at curfew-window close — when every domain held by the same window resumes at once. When `Fuzz_Seconds` is greater than `0`, each per-domain maintainer firing is rescheduled to a uniform random offset in `[0, Fuzz_Seconds]` seconds from now, so the per-domain cycles drift independently and deliveries spread out instead of all firing together.
 
 The effective spread is capped by the configured [`delayed_queue_scan_interval`](/momentum/4/config/ref-delayed-queue-scan-interval): the mail-queue maintainer refuses to push its next firing further out than the interval that was just scheduled. If `Fuzz_Seconds` is larger than the scan interval, the module logs a warning to make this cap visible to the operator.
 
@@ -221,7 +219,7 @@ Dumps every compiled rule in load order, showing the binding/domain matchers and
 Example output:
 
 ```
-curfew: 2 rule(s), tz=local
+curfew: 2 rule(s), tz=UTC
   [0] binding=* domain=gmail.com minute=* hour=18-23 mday=* month=* wday=1-5
   [1] binding=marketing domain=* minute=* hour=* mday=* month=* wday=0,6
 ```
@@ -236,11 +234,18 @@ One-line summary: the number of currently loaded rules, the configured timezone,
 
 </dd>
 
-<dt>curfew fuzz `domain`</dt>
+<dt>curfew check `binding` `domain`</dt>
 
 <dd>
 
-Diagnostic: reports the lift-fuzz value (in seconds) that would currently apply to the named domain. Returns `0` when no wildcard-binding rule is engaged for that domain or when [`Fuzz_Seconds`](#modules.curfew.fuzz_seconds) is set to `0`. Use this to confirm that an expected rule is actually in effect and that lift-fuzz is configured as intended.
+Diagnostic: runs the suspension hook synchronously for the given binding and domain and reports the resulting verdict — `suspended=yes` or `suspended=no` — without injecting any traffic. Use this to confirm whether a given *(binding, domain)* pair is under curfew **right now**. Reports an error if the named binding is unknown.
+
+Example output:
+
+```
+> curfew check marketing example.com
+curfew: binding=marketing domain=example.com suspended=yes
+```
 
 </dd>
 
@@ -256,7 +261,7 @@ Forces an immediate journal sweep. Any rule whose match verdict has flipped sinc
 
 ### <a name="modules.curfew.example"></a> Example: Configured Quiet Hours
 
-The following ecelerity.conf fragment configures the curfew module against the schedule file shown in the previous section, in the local timezone, with a 30-second lift-fuzz spread:
+The following ecelerity.conf fragment configures the curfew module against the schedule file shown in the previous section, in the default UTC timezone, with a 30-second fuzz spread:
 
 ```
 curfew {
@@ -269,5 +274,5 @@ After `config reload`, a follow-up `curfew status` from the console will confirm
 
 ```
 > curfew status
-curfew: 3 rule(s) active; tz=local; fuzz=30s
+curfew: 3 rule(s) active; tz=UTC; fuzz=30s
 ```

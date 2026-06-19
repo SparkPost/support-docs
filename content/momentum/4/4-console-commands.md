@@ -75,7 +75,7 @@ This table lists all console commands alphabetically giving a brief description.
 | [counter list](/momentum/4/console-commands/counter) – List all counters counter | 4.0 |   | policy |
 | [counter reset](/momentum/4/console-commands/counter) – Reset a counter to zero | 4.0 |   | policy |
 | [counter unlink](/momentum/4/console-commands/counter) – Unlink a counter | 4.0 |   | policy |
-| [curfew fuzz](/momentum/4/modules/curfew#modules.curfew.console) – Report the lift-fuzz value that would currently apply to a domain | 5.3 | curfew | module |
+| [curfew check](/momentum/4/modules/curfew#modules.curfew.console) – Report whether a binding/domain pair is under curfew right now | 5.3 | curfew | module |
 | [curfew journal](/momentum/4/modules/curfew#modules.curfew.console) – Force an immediate journal sweep of curfew rule transitions | 5.3 | curfew | module |
 | [curfew reload](/momentum/4/modules/curfew#modules.curfew.console) – Re-read the curfew schedule file | 5.3 | curfew | module |
 | [curfew show](/momentum/4/modules/curfew#modules.curfew.console) – Dump every loaded curfew rule | 5.3 | curfew | module |
