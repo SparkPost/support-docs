@@ -52,7 +52,7 @@ The full set. Unless otherwise noted, each reason code below pairs with `status=
 | `sig_invalid` | Cryptographic verification failed — the signed-input bytes don't match the value in `s=`. Enable `debug_level = info` for selector, algorithm, and signed-input length detail. |
 | `parse_error` | The `DKIM2-Signature:` header couldn't be parsed. Corrupt header or a broken upstream signer. |
 | `missing_required_tags` | One or more of the seven required tags (`i=`, `m=`, `t=`, `mf=`, `rt=`, `d=`, `s=`) is absent from the signature. |
-| `signature_expired` | The `t=` timestamp is older than `max_sig_age_days` (default 14). §10.3 classifies this as PERMERROR — Momentum treats it as permanently unverifiable and does not attempt cryptographic verification. Maps to `dkim2=permerror` in AR output. |
+| `signature_expired` | The `t=` timestamp is older than `max_sig_age_days` (default 14). §10.3 says verifiers SHOULD reject such signatures; Momentum's implementation choice is to treat this as PERMERROR (permanently unverifiable — no cryptographic verification is attempted). Maps to `dkim2=permerror` in AR output. |
 | `signature_future` | The `t=` timestamp is more than `max_sig_future_secs` (default 300 s) in the future. Treated as a soft policy failure (`dkim2=fail`): the timestamp was evaluated and rejected, but it is not a permanent infrastructure error — the spec (§7.4 MAY) does not define a verdict for this case. |
 | `nonce_too_long` | The `n=` nonce exceeded the 64-character ceiling (§7.3 SHOULD). Treated as `dkim2=fail` — the constraint is a SHOULD, not a structural permanent error. |
 | `mailfrom_mismatch` | The signed `mf=` doesn't match the actual envelope MAIL FROM — replay-to-different-sender. |
