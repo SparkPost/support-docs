@@ -152,6 +152,17 @@ result = {
 }
 ```
 
+**Key testing mode (`key_testing`)**: When a signing key is published with `t=y` in its DNS TXT record, the signer is testing that key in production. RFC 6376 §3.6.1 (inherited by DKIM2) says verifiers SHOULD NOT treat failures as definitive in this case. Momentum surfaces the flag as `key_testing=true` on the affected per-sig entry and logs a `DWARNING`, but leaves the policy decision to operator code. To follow the SHOULD recommendation:
+
+```lua
+for _, sig in ipairs(result.signatures or {}) do
+  if sig.key_testing and sig.status ~= "pass" then
+    -- key is in testing mode; treat this sig's failure as non-definitive
+    -- (e.g. override result.overall to "none" or log and accept)
+  end
+end
+```
+
 For messages that passed through multiple signing hops, Momentum verifies
 the **most recent signature** cryptographically (§10.5) and confirms the
 **full chain of custody** end-to-end (§10.6). Earlier signatures in a

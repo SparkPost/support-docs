@@ -91,9 +91,14 @@ value on one `DKIM2-Signature` header.  Per §7.2 the verifier checks
 every sig-set; overall passes if any one validates, so a receiver that
 only supports RSA will still verify cleanly.  On the verifier side, any
 sig-set that fails alongside a passing one is reported as a DWARNING in
-paniclog (partial-sig-failure condition, §7.2).  The `selector`, `keyfile`, and
-`algorithm` fields belong to each sig-set entry; all other options below
-are header-level and go at the top level of the options table.
+paniclog (partial-sig-failure condition, §7.2).
+
+**If any sig-set fails**, the entire `sign()` call returns
+`(nil, error_string)` — no partial signature is produced.
+
+The `selector`, `keyfile`, and `algorithm` fields belong to each sig-set
+entry; all other options below are header-level and go at the top level
+of the options table.
 
 | Option | Required? | Meaning |
 |---|---|---|
