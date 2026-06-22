@@ -173,7 +173,6 @@ The `Version` column indicated the version(s) of Momentum that support the optio
 | [file_mode](/momentum/4/config/ref-eccluster-conf#eccluster.conf.logs.logfile) – Octal representation of the file permissions (cluster logs) | na |   | 4.0 and later | logs |
 | [force_fsync](/momentum/4/config/ref-force-fsync) – Ensure that data is synced to disk on reception | receiving | false | 4.0 and later | global |
 | [fully_resolve_before_smtp](/momentum/4/config/ref-fully-resolve-before-smtp) – Resolve all MX and A records before attempting delivery | sending | true | 4.0 and later | binding, binding_group, domain, global |
-| [Fuzz_Seconds](/momentum/4/modules/curfew#modules.curfew.fuzz_seconds) – Spread the curfew "thundering herd" after a window closes (opt-in; `0` disables) | sending | 0 | 5.3 and later | curfew |
 | [gateway](/momentum/4/config/ref-gateway) – Configure a static SMTP route for mail | sending |   | 4.0 and later | binding, binding_group, domain, global |
 | [gcm_application_id](/momentum/3/3-push/push-gcm-gcm-application-id) – Define the package name of the Android application allowed to received notifications | sending |   | 4.0 and later | binding, binding_group, domain, global |
 | [gcm_authorization_token_id](/momentum/3/3-push/push-gcm-gcm-authorization-token-id) – Authorization token that permits sending Google push notifications | sending |   | 4.0 and later | binding, binding_group, domain, global |

@@ -29,7 +29,7 @@ curfew {
 }
 ```
 
-That is enough to enable the feature: [`Timezone`](#modules.curfew.timezone) and [`Fuzz_Seconds`](#modules.curfew.fuzz_seconds) both have built-in defaults (`UTC` and `0` respectively), so they only need to appear when the operator wants to override them. A fully spelled-out configuration looks like this:
+That is enough to enable the feature: [`Timezone`](#modules.curfew.timezone) has a built-in default (`UTC`), so it only needs to appear when the operator wants to override it. A fully spelled-out configuration looks like this:
 
 <a name="example.curfew.configuration"></a> 
 
@@ -38,11 +38,10 @@ That is enough to enable the feature: [`Timezone`](#modules.curfew.timezone) and
 curfew {
   Schedule_File = "/etc/ecelerity/curfew.schedule"
   Timezone      = "UTC"
-  Fuzz_Seconds  = 120
 }
 ```
 
-Any change to `Schedule_File`, `Timezone`, or `Fuzz_Seconds` is picked up automatically by the next `config reload` (or any other operation that triggers a configuration commit). The schedule file itself can also be reloaded on demand from the console — see [Console Commands](#modules.curfew.console) below.
+Any change to `Schedule_File` or `Timezone` is picked up automatically by the next `config reload` (or any other operation that triggers a configuration commit). The schedule file itself can also be reloaded on demand from the console — see [Console Commands](#modules.curfew.console) below.
 
 ### <a name="modules.curfew.schedule"></a> Schedule File Format
 
@@ -143,18 +142,6 @@ The timezone in which the cron fields of every rule are interpreted. Accepted va
 
 </dd>
 
-<dt><a name="modules.curfew.fuzz_seconds"></a> Fuzz_Seconds</dt>
-
-<dd>
-
-The maximum random delay, in seconds, applied to each per-domain mail-queue maintainer firing. Default value is `0`, which disables the spread entirely; operators opt in explicitly by setting it greater than `0`.
-
-This option exists to spread out the cross-domain "thundering herd" of delivery attempts that would otherwise fire in lock-step on every [`delayed_queue_scan_interval`](/momentum/4/config/ref-delayed-queue-scan-interval)-aligned tick. This cascade is most visible at curfew-window close — when every domain held by the same window resumes at once. When `Fuzz_Seconds` is greater than `0`, each per-domain maintainer firing is rescheduled to a uniform random offset in `[0, Fuzz_Seconds]` seconds from now, so the per-domain cycles drift independently and deliveries spread out instead of all firing together.
-
-The effective spread is capped by the configured [`delayed_queue_scan_interval`](/momentum/4/config/ref-delayed-queue-scan-interval): the mail-queue maintainer refuses to push its next firing further out than the interval that was just scheduled. If `Fuzz_Seconds` is larger than the scan interval, the module logs a warning to make this cap visible to the operator.
-
-</dd>
-
 </dl>
 
 ### <a name="modules.curfew.precedence"></a> Interaction With Other Suspension Mechanisms
@@ -230,7 +217,7 @@ curfew: 2 rule(s), tz=UTC
 
 <dd>
 
-One-line summary: the number of currently loaded rules, the configured timezone, and the effective `Fuzz_Seconds` value. Useful as a smoke test from monitoring scripts.
+One-line summary: the number of currently loaded rules and the configured timezone. Useful as a smoke test from monitoring scripts.
 
 </dd>
 
@@ -261,12 +248,11 @@ Forces an immediate journal sweep. Any rule whose match verdict has flipped sinc
 
 ### <a name="modules.curfew.example"></a> Example: Configured Quiet Hours
 
-The following ecelerity.conf fragment configures the curfew module against the schedule file shown in the previous section, in the default UTC timezone, with a 30-second fuzz spread:
+The following ecelerity.conf fragment configures the curfew module against the schedule file shown in the previous section, in the default UTC timezone:
 
 ```
 curfew {
   Schedule_File = "/etc/ecelerity/curfew.schedule"
-  Fuzz_Seconds  = 30
 }
 ```
 
@@ -274,5 +260,5 @@ After `config reload`, a follow-up `curfew status` from the console will confirm
 
 ```
 > curfew status
-curfew: 3 rule(s) active; tz=UTC; fuzz=30s
+curfew: 3 rule(s) active; tz=UTC
 ```
