@@ -1,7 +1,7 @@
 ---
-lastUpdated: "04/15/2026"
+lastUpdated: "06/24/2026"
 title: "fail all"
-description: "fail all ec_console globally fail queued messages matching --meta or --header filter bounce optional note"
+description: "fail all ec_console globally fail queued messages matching --meta or --header filter bounce optional note --dry-run preview"
 ---
 
 <a name="console_commands.fail_all"></a>
@@ -12,7 +12,7 @@ fail all — fail matching messages everywhere with bounce behavior
 
 ## Synopsis
 
-`fail all` `--meta` *`key`* *`value`* \| `--header` *`header_name`* *`header_line`* [ *`note`* … ]
+`fail all` [ `--dry-run` ] `--meta` *`key`* *`value`* \| `--header` *`header_name`* *`header_line`* [ *`note`* … ]
 
 ## Description
 
@@ -41,6 +41,21 @@ ecelerity> fail all --header X-Ecconsole-Purge yes
 ```
 ecelerity> fail all --meta tenant_id churned 554 Tenant removed — mail purged
 ```
+
+<a name="fail_all_dry_run"></a>
+### Preview without failing (`--dry-run`)
+
+Because **fail all** acts across **every** domain, add **`--dry-run`** to preview its reach **without failing any messages**. The matching messages are listed (capped) and followed by a global summary count:
+
+```
+ecelerity> fail all --dry-run --meta tenant_id churned
+  3A/0F-04217-1A3F9C2B  domain=relay.com from=<news@sender.com> to=<user@relay.com>
+  7C/1B-04217-2B4E0D8A  domain=mail.example.net from=<promo@sender.com> to=<admin@example.net>
+  ...
+[dry-run] all domains: 742 messages would be failed. (Showing first 25; 717 more not listed.)
+```
+
+See [**fail domain quiet** → preview](/momentum/4/console-commands/fail-domain-quiet#fail_domain_quiet_dry_run) for the full description of the listing, the 25-message cap, and placement. The required `--meta` / `--header` filter still applies in dry-run mode.
 
 ## See Also
 
