@@ -199,7 +199,7 @@ RFC 6376 §3.6.1 format (`v=DKIM1; k=rsa; p=<base64-SPKI>`).
 If you already publish DKIM1 keys at a selector, you can reuse the same
 selector for DKIM2 without any DNS change. To generate fresh keys for
 DKIM2 specifically, follow the standard openssl recipe in
-[Generating DKIM Keys](/momentum/4/using-dkim#using_dkim.generating).
+[Generating DKIM Keys](/momentum/4/using-dkim#generating-dkim-keys).
 
 ### Note
 
@@ -223,32 +223,35 @@ the other. Receivers that support both will evaluate each chain separately.
 
 The following are known gaps or operational considerations to be aware of:
 
-*   **§10.5/§10.6 Lower-hop signatures not cryptographically verified**:
-    §10.5 covers the full per-signature verification procedure (key
-    lookup, record validation, and EVP cryptographic verification) for all
-    signatures; §10.6 requires that the recipe chain be checked for every
-    hop. Momentum satisfies §10.6 for all hops, and applies the full §10.5
-    procedure only to the highest-i signature (the most recent hop). For
-    earlier hop signatures (`i < max_i`), only the §10.6 recipe-chain hash
-    comparison is performed — no key lookup and no EVP crypto. These
-    appear as `status="chain_verified"`. The recipe chain confirms
-    end-to-end content integrity (the fully reconstructed original-state
-    hashes match the recorded MI[1] values) but does not verify that each
-    lower-hop signature was made with the claimed signing key. Full §10.5
-    compliance for lower hops would require reconstructing each hop's
-    message state by reverse-applying subsequent recipes and
-    EVP-verifying each lower-hop signature against that state — a
-    significant architectural change that can be planned in a future
-    release if desirable.
+*   **Lower-hop signatures not cryptographically verified (§9.1 / §9.2 / §10.5–10.6)**:
+    Momentum runs the full cryptographic procedure — key fetch (§10.5) and
+    EVP signature verification (§10.6) — only on the highest-`i` signature,
+    which §9.1 makes a SHOULD. Earlier hops (`i < max_i`) get no key lookup
+    and no crypto (`s`tatus="chain_verified"); their integrity rests on the
+    §8.3/§10.4 chain-of-custody check and the §9.2/§10 recipe reconstruction,
+    which reverse-applies each hop's recipe to rebuild the original message
+    and confirms the reconstructed instance-1 hashes match MI[1]'s `h=`. This
+    proves end-to-end content integrity but does not authenticate each lower
+    hop's signing key, so earlier-hop signer identities should not be used
+    for Reviser reputation. The spec does not yet clearly mandate per-hop
+    crypto (§9.1 is SHOULD; §9.3 implies it for reputation purposes but defers
+    to a TBA doc, and §15 is TBA). Full per-hop verification — reverse-applying
+    subsequent recipes to rebuild each hop's state and EVP-verifying each
+    signature — would close this and is deferred to a future release.
 
-*   **§9.1 / §11 DSN**: The spec requires that when DKIM2 verification
-    fails the MTA MUST NOT generate a DSN — reject with 5xx instead.
-    This is not automatically enforced; policy must explicitly reject
-    rather than bounce on verify failure. When generating a DSN, Momentum
-    does not yet address it to the `mf=` address from the
-    highest-numbered DKIM2-Signature of the original message, nor does it
-    suppress DSN generation when the original sender was `<>` (null sender).
-    Inbound DSN authentication (§11.1.2) is also not implemented.
+*   **§9.1 / §11 DSN**: Per §9.1, after a failed DKIM2 verification the
+    MTA MUST NOT generate a DSN; the spec recommends rejecting with a 5xx
+    during the SMTP conversation as the best alternative. This is not
+    automatically enforced — `verify()` only reports a verdict, so policy
+    must explicitly reject rather than bounce on verify failure. On the
+    generation side (§11), Momentum does not yet address a DSN to the `mf=`
+    of the highest-numbered DKIM2-Signature of the original message, nor
+    suppress DSN generation when that highest-numbered `mf=` is `<>` (null
+    sender). Inbound DSN authentication (§11.1.2, a SHOULD) is also not
+    implemented: the reject/propagate decision is scriptable via the inbound
+    hooks, but verifying the embedded returned message's signatures — and
+    checking signing-domain alignment against its highest-`i= rt=` — has no
+    exposed API, since `verify()` operates only on the live message.  
 
 *   **§8.2 Forwarder auto-detection**: When Momentum acts as a forwarder
     or mailing list (changing the envelope MAIL FROM and re-delivering),
@@ -257,23 +260,29 @@ The following are known gaps or operational considerations to be aware of:
     forward is happening and call `sign()` on its own. Without this
     explicit call, the receiver only sees the original sender's signature —
     it has no way to verify that the forwarder handled the message
-    correctly. See the [Forwarder and modifier signing](/momentum/4/dkim2/sign#forwarder-and-modifier-signing) section for how to
-    do this.
+    correctly. See the [Forwarder and modifier signing](/momentum/4/dkim2/sign#forwarder-and-modifier-signing)
+    section for how to do this.
 
-*   **Content modifier recipe composition**: When a Momentum pipeline
-    stage modifies message content — for example, the engagement tracker
-    rewriting URLs, a content filter adding a footer, or a list processor
-    changing headers — Momentum automatically detects the change and
-    requires a `recipe=` to proceed without a failure. The practical workaround is to pass
-    `recipe='{"b":null}'` (declaring the body change irreversible) when
-    the full diff is not available, or a precise recipe when it is. This
-    allows signing to succeed; downstream verifiers will accept the
-    message while understanding that body reconstruction through this hop
-    is not possible. See the [Forwarder and modifier signing](/momentum/4/dkim2/sign#forwarder-and-modifier-signing) section for
-    examples. The missing automation is having pipeline stages record
-    their changes automatically — a planned Recipe Accumulator API will
-    do this, letting `sign()` assemble the recipe without operator
-    involvement.
+*   **Content modifier recipe composition**: When an upstream-signed
+    message passes through a Momentum stage that modifies it — the
+    engagement tracker rewriting URLs, a footer filter, a list processor
+    changing headers — `sign()` automatically detects the change (its
+    freshly computed header/body hashes no longer match the prior
+    Message-Instance) and requires a `recipe=` describing how to reverse
+    the hop; without one the sign call fails. When the full diff isn't
+    available, the workaround is a null recipe declaring the change
+    irreversible: `recipe='{"b":null}'` for a body change,
+    `recipe='{"h":null}'` for header changes (a precise recipe when the
+    diff is available). This lets signing succeed and this hop's
+    signature verifies downstream — but earlier signatures' content can
+    no longer be reconstructed past this hop, so the inner chain is
+    broken for that field and acceptance depends on the verifier's
+    policy toward a broken chain. (Originated mail needs no recipe —
+    there's no prior instance to diff against.) See the
+    [Forwarder and modifier signing](/momentum/4/dkim2/sign#forwarder-and-modifier-signing) section for
+    examples. Automatic change-recording by pipeline stages is not yet
+    built; a planned Recipe Accumulator API would let `sign()` assemble
+    the recipe without operator involvement.
 
     Both this limitation and the forwarder auto-detection above are blocked
     on the same Recipe Accumulator API (planned; not yet available).
