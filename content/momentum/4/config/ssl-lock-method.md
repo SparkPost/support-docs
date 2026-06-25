@@ -9,7 +9,7 @@ description: "ssl lock method the SSL lock method SSL Lock Method mutex spinlock
 
 ssl_lock_method — the SSL lock method
 
-> **NOTE: This option was REMOVED in Momentum 5.3.0 and is no longer supported.** OpenSSL 1.1.1 and later (the supported range, from 1.1.1 on RHEL 8 through the 3.5.x series) is internally thread-safe and no longer uses the application-supplied crypto locking callbacks that this option controlled. The option is silently ignored; remove it from `ecelerity.conf`. This page is retained for reference on releases prior to 5.3.0. See also [crypto_lock_method](/momentum/4/config/crypto-lock-method).
+> **NOTE: This option is DEPRECATED as of Momentum 5.3.0 and has no effect.** OpenSSL 1.1.1 and later (the supported range, from 1.1.1 on RHEL 8 through the 3.5.x series) is internally thread-safe and no longer uses the application-supplied crypto locking callbacks that this option controlled. The option is still accepted so existing configurations continue to load, but it is ignored and logs a deprecation warning when set; remove it from `ecelerity.conf` to silence the warning. This page is retained for reference on releases prior to 5.3.0. See also [crypto_lock_method](/momentum/4/config/crypto-lock-method).
 
 ## Synopsis
 
