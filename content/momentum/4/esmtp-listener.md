@@ -49,6 +49,16 @@ The `Pool_Name` option associates the `accept-pool` ThreadPool with the listener
 
 When using threaded accepts for listeners, you must provision the thread pool you intend to use via the ThreadPool directive. If the thread pool you name is not found or is unspecified, the IO pool will be used and a critical message will appear in your log.
 
+### <a name="esmtp_listener.concurrency"></a> Limiting Inbound Concurrency
+
+You can cap the number of concurrent inbound sessions with two options:
+
+*   [Listener_Sessions](/momentum/4/config/ref-listener-sessions) – the maximum concurrent sessions for *this* listener.
+
+*   [Service_Sessions](/momentum/4/config/ref-service-sessions) – the maximum concurrent sessions across *all* listeners for the service (for example, all ESMTP sockets).
+
+Both default to `0` (no limit). When a cap is reached, new connections receive a clean, retryable `421 4.4.5 Service unavailable, concurrency limit reached.` and are closed. The caps are a *per-scope aggregate*, not a per-IP limit: set them outside a `Peer` scope for a single shared budget, or inside `Peer` (CIDR) scopes to give each source block its own budget. Use [Idle_Time](/momentum/4/config/ref-idle-time) to reap idle session slots. See the linked reference pages for the full behavior and caveats.
+
 For details about the non-module specific configuration options that are valid in the ESMTP_Listener and its nested scopes, refer to [*Configuration Options Summary*](/momentum/4/config-options-summary) .
 
 Modules and their configuration options are discussed in the [*Modules Reference*](/momentum/4/modules/) .
