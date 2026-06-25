@@ -1,7 +1,7 @@
 ---
-lastUpdated: "04/15/2026"
+lastUpdated: "06/24/2026"
 title: "binding fail domain quiet"
-description: "binding fail domain quiet ec_console selective purge --meta --header filter by binding"
+description: "binding fail domain quiet ec_console selective purge --meta --header filter by binding --dry-run preview"
 ---
 
 <a name="console_commands.binding_fail_domain_quiet"></a> 
@@ -11,7 +11,7 @@ binding fail domain quiet — fail messages for a domain on a binding without ge
 
 ## Synopsis
 
-`binding fail domain quiet` [ `--meta` *`key`* *`value`* | `--header` *`header_name`* *`header_line`* ] { *`binding_name`* } { *`domain_name`* | `all` } [ *`note`* … ]
+`binding fail domain quiet` [ `--dry-run` ] [ `--meta` *`key`* *`value`* | `--header` *`header_name`* *`header_line`* ] { *`binding_name`* } { *`domain_name`* | `all` } [ *`note`* … ]
 
 <a name="idp11133632"></a> 
 ## Description
@@ -41,6 +41,22 @@ For a binding-agnostic global purge by filter only, see [**fail all quiet**](/mo
 ecelerity> binding fail domain quiet --header X-Priority high BINDING1 unresolvableproblems.com
 unresolvableproblems.com purged. 3 messages failed.
 ```
+
+<a name="binding_fail_domain_quiet_dry_run"></a>
+### Preview without failing (`--dry-run`)
+
+Add **`--dry-run`** to preview the command **without failing any messages**. The queue is left untouched; the messages that would be failed are listed (capped) and followed by a summary count:
+
+```
+ecelerity> binding fail domain quiet --dry-run BINDING1 unresolvableproblems.com
+  3A/0F-04217-1A3F9C2B  domain=unresolvableproblems.com from=<news@sender.com> to=<user@unresolvableproblems.com>
+  7C/1B-04217-2B4E0D8A  domain=unresolvableproblems.com from=<promo@sender.com> to=<admin@unresolvableproblems.com>
+  ...
+[dry-run] unresolvableproblems.com: 62415 messages would be failed. (Showing first 25; 62390 more not listed.)
+```
+
+When the domain is `all`, the summary reports `[dry-run] all domains: …`. See [**fail domain quiet** → preview](/momentum/4/console-commands/fail-domain-quiet#fail_domain_quiet_dry_run) for the full description of the listing, the 25-message cap, and placement. **`--dry-run`** combines with the optional `--meta` / `--header` filter and is never consumed as part of the *note*.
+
 <a name="idp11138544"></a> 
 ## See Also
 
