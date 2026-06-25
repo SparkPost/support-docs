@@ -197,7 +197,7 @@ The `Version` column indicated the version(s) of Momentum that support the optio
 | [http_method](/momentum/4/config/ref-http-method) – Define the HTTP method to use | sending | POST | 4.0 and later | binding, binding_group, domain, global |
 | [http_uri](/momentum/4/config/ref-http-uri) – Define the HTTP URI that you wish to connect to | sending |   | 4.0 and later | binding, binding_group, domain, global |
 | [http_version](/momentum/4/config/ref-http-version) – Define the HTTP version to use | sending | 1.1 | 4.0 and later | binding, binding_group, domain, global |
-| **idle_time** – Number of seconds of inactivity before a client is disconnected | receiving | 300 | 4.0 and later | esmtp_listener, http_listener, listen, pathway, pathway_group, peer, xmpp_listener |
+| [idle_time](/momentum/4/config/ref-idle-time) – Number of seconds of inactivity before a client is disconnected | receiving | 300 | 4.0 and later | esmtp_listener, http_listener, listen, pathway, pathway_group, peer, xmpp_listener |
 | [idle_timeout](/momentum/4/config/ref-idle-timeout) – Time to maintain idle outbound connections | sending | 5 | 4.0 and later | binding, binding_group, domain, global |
 | [if_check_interval](/momentum/4/modules/4-modules-cluster#option.if_check_interval) – How often to run through a maintenance cycle (cluster-specific) | na | 30 | 4.0 and later | cluster |
 | [if_down_limit](/momentum/4/modules/4-modules-cluster#option.if_down_limit) – How long to wait before deciding to bring an IP online (cluster-specific) | na | 4 | 4.0 and later | cluster |
@@ -211,7 +211,7 @@ The `Version` column indicated the version(s) of Momentum that support the optio
 | [license](/momentum/4/config/ref-license) – Specify an alternate license location | na | /opt/msys/ecelerity/etc (*non-dynamic*) | 4.0 and later | global |
 | [listen](/momentum/4/listeners#listeners.enable.option) *(scope)* – Specify the socket that a listener listens on | receiving |   | 4.0 and later | control_listener, ecstream_listener, esmtp_listener, http_listener, msgcserver_listener, xmpp_listener |
 | **listen_backlog** – Listen backlog | receiving | 500 (*3.0*) | 4.0 and later | control_listener, eccluster_listener, ecstream_listener, esmtp_listener, http_listener, listen, xmpp_listener |
-| **listener_sessions** – Specifies the maximum number of concurrent sessions that can be established to this listener | receiving | 0 | 4.0 and later | esmtp_listener, listen, pathway, pathway_group, peer |
+| [listener_sessions](/momentum/4/config/ref-listener-sessions) – Specifies the maximum number of concurrent sessions that can be established to this listener | receiving | 0 | 4.0 and later | esmtp_listener, listen, pathway, pathway_group, peer |
 | [lmtp_port](/momentum/4/config/ref-lmtp-port) – Configure the port for LMTP deliveries | sending | 2003 | 4.0 and later | binding, binding_group, domain, global |
 | [local_changes_file](/momentum/4/config/ref-local-changes-file) – File for writing local configuration changes | na | /opt/msys/ecelerity/etc/local_changes.conf | 4.0 and later | global |
 | [local_changes_only](/momentum/4/config/ref-local-changes-only) – Whether there is a file for writing local configuration change | na | false | 4.0 and later | global |
@@ -321,7 +321,7 @@ The `Version` column indicated the version(s) of Momentum that support the optio
 | [server_max_file_descriptors](/momentum/4/config/ref-server-max-file-descriptors) – Sets the maximum number of file descriptors usable by the system | na | 3000000 | 4.0 and later | global |
 | [server_max_outbound_connections](/momentum/4/config/ref-server-max-outbound-connections) – Sets the maximum number of outbound connections | sending | 20000 | 4.0 and later | binding, binding_group, global |
 | [server_reserve_outbound_connections](/momentum/4/config/ref-server-reserve-outbound-connections) – Sets the server-wide connection limit reserve | sending | 200 | 4.0 and later | global |
-| **service_sessions** – Specifies the maximum number of concurrent sessions that can be established to all listeners for this service (e.g., ESMTP, ECStream) | receiving | 0 | 4.0 and later | esmtp_listener, listen, pathway, pathway_group, peer |
+| [service_sessions](/momentum/4/config/ref-service-sessions) – Specifies the maximum number of concurrent sessions that can be established to all listeners for this service (e.g., ESMTP, ECStream) | receiving | 0 | 4.0 and later | esmtp_listener, listen, pathway, pathway_group, peer |
 | [signing_stats](/momentum/4/config/ref-signing-stats) – Control how signing statistics are recorded | sending | all | 4.0 and later | global |
 | [siv_throttle_cache_size](/momentum/4/config/ref-siv-throttle-cache-size) – Set the maximum number of named throttles | both | 100, 1000 (*3.0.24*) | 4.0 and later | global |
 | [skip_hosts](/momentum/4/config/ref-skip-hosts) – Skip the specified host, but consider other hosts in the domain | sending |   | 4.2.1.6 and later | global |
