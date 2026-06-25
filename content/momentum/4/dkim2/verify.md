@@ -256,6 +256,18 @@ only place this detail surfaces.
 | `no_recipe` | One or more non-first `Message-Instance` headers had no `r=` tag (treated as no-modification hops), yet the final reconstructed hashes didn't match `MI[1]`. A hop likely modified the message without recording a recipe. The signer should emit `r={"h":null,"b":null}` to declare irreversibility rather than omitting `r=` entirely. |
 | `hash_mismatch` | After walking all recipes in reverse, the reconstructed instance-1 hashes didn't match `Message-Instance` `m=1`'s recorded `h=`. Every non-first MI had a recipe, so the mismatch indicates a hop's recipe was wrong or a hop modified the message after signing. |
 
+### ec_message context fields
+
+`verify()` writes the following context variables so downstream hooks can
+read the outcome without re-verifying or parsing `Authentication-Results:`:
+
+| Context key | Type | Value |
+|---|---|---|
+| `dkim2_overall` | string | Verdict: `"pass"`, `"fail"`, `"permerror"`, `"temperror"`, or `"none"`. See the [SMTP response codes](/momentum/4/dkim2/verify#smtp-response-codes-94-guidance) table. |
+| `dkim2_n_sigs` | string | Number of `DKIM2-Signature` headers found on the message. Parse with `tonumber()`. |
+
+These keys are not set until `verify()` runs.
+
 ### SMTP response codes (§9.4 guidance)
 
 Momentum leaves the decision of whether to accept, reject, or defer a
