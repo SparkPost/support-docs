@@ -17,7 +17,7 @@ const SEO = (props: SeoProps): JSX.Element => {
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="canonical" href={router.asPath}></link>
       <link rel="shortcut icon" type="image/png" href="/favicon.png" />
-      <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+      <meta name="robots" content="noindex, nofollow" />
       {title && (
         <>
           <title>{title}</title>
