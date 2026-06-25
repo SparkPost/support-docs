@@ -94,6 +94,7 @@ All modules are listed alphabetically with a brief description. Singleton module
 | [“smtp_auth_proxy - SMTP Authentication Proxy”](/momentum/4/modules/smtp-auth-proxy) | 4.2 | Allow edge SMTP servers to forward SMTP AUTH requests to SMTP servers |  ✓ |   |   |   |
 | [“smtp_cbv – SMTP Callback Verification”](/momentum/4/modules/smtp-cbv) | 4.0 | Perform SMTP Callback Verification |   |   |  ✓ |   |
 | [“smtp_rcptto_proxy - SMTP Recipient-To Proxy”](/momentum/4/modules/smtp-rcptto-proxy) | 4.2 | Validate a Lua recipient by doing an SMTP call-forward |   |   |   |   |
+| [“spamassassin – SpamAssassin Client”](/momentum/4/modules/spamassassin) (*singleton*) | 5.0 | SpamAssassin client; scans messages via an external `spamd` daemon and stores the verdict, score, threshold, and matched symbols in message context variables. Replaces the deprecated `spamc` Sieve-based module. |   |   |   |   |
 | [spf_macros](/momentum/4/modules/spf) (*singleton*) | 4.0 | Generic macro service for SPF |  ✓ |   |   |   |
 | [spf_v1](/momentum/4/modules/spf) | 4.0 | Use Sender Policy Framework |   |   |   | [“scriptlet - Lua Policy Scripts”](/momentum/4/modules/scriptlet) |
 | [“static-routes - Static Routes”](/momentum/4/modules/static-routes) | 4.2 | Route traffic to a given server by IP address and port |  ✓ |   |   |   |
