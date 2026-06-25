@@ -16,8 +16,6 @@ tls_protocols — allowable ciphers for TLS inbound and outbound sessions
 <a name="idp26990416"></a> 
 ## Description
 
-**Configuration Change. ** This option is available as of version 4.1.0.2\.
-
 `tls_protocols` specifies the allowable protocols for an OpenSSL TLS session. Momentum parses the
 tokens `ALL`, `SSLv2`, `SSLv3`, `TLSv1.0`, `TLSv1.1`, `TLSv1.2` and `TLSv1.3` (the last since Momentum
 4.6). Each is enabled or disabled by prefixing its name with a “+” or “-“ respectively. The following example disables the older protocols, leaving TLS 1.2 and TLS 1.3:
