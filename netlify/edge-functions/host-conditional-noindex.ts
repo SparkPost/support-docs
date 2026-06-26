@@ -81,9 +81,12 @@ export default async (request: Request, context: Context): Promise<Response | vo
   }
 
   // Rebuild the response with the mutated body. content-length is dropped so
-  // Netlify can recompute it for the modified body.
+  // Netlify recomputes it. content-encoding is dropped because response.text()
+  // already decoded any gzip/brotli the origin sent — leaving the header on
+  // would tell the client to decompress a now-plain-text body and fail.
   const headers = new Headers(response.headers);
   headers.delete('content-length');
+  headers.delete('content-encoding');
   return new Response(body, {
     status: response.status,
     statusText: response.statusText,
