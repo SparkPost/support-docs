@@ -1,7 +1,7 @@
 ---
-lastUpdated: "06/09/2026"
+lastUpdated: "06/25/2026"
 title: "Using DKIM2 — Overview"
-description: "DKIM2 is the successor to DKIM that adds replay protection (per-message envelope binding), an explicit chain of custody across forwarders, and a structured way for modifying hops to record what they changed. Momentum implements DKIM2 targeting draft-ietf-dkim-dkim2-spec-02."
+description: "DKIM2 is the successor to DKIM that adds replay protection (per-message envelope binding), an explicit chain of custody across forwarders, and a structured way for modifying hops to record what they changed. Momentum implements DKIM2 targeting draft-ietf-dkim-dkim2-spec-03."
 ---
 
 ## On This Page
@@ -24,8 +24,8 @@ description: "DKIM2 is the successor to DKIM that adds replay protection (per-me
 ### Warning
 
 DKIM2 targets the in-progress IETF draft
-[`draft-ietf-dkim-dkim2-spec-02`](https://datatracker.ietf.org/doc/html/draft-ietf-dkim-dkim2-spec-02)
-(May 2026). The wire format is **not yet final** — the working group may revise
+[`draft-ietf-dkim-dkim2-spec-03`](https://datatracker.ietf.org/doc/html/draft-ietf-dkim-dkim2-spec-03)
+(24 June 2026). The wire format is **not yet final** — the working group may revise
 it before publication. Do not enable DKIM2 on production outbound traffic
 without staging it first. If the spec changes, a future Momentum release may
 not verify messages signed by an earlier release.
@@ -77,7 +77,7 @@ DKIM2 addresses both:
 This page covers everything an operator needs to enable, observe, and
 debug DKIM2 signing and verification on Momentum. The wire-format
 specifics live in the [IETF
-draft](https://datatracker.ietf.org/doc/html/draft-ietf-dkim-dkim2-spec-02);
+draft](https://datatracker.ietf.org/doc/html/draft-ietf-dkim-dkim2-spec-03);
 the operationally-relevant signal codes (per-signature reasons, overall
 verdicts, paniclog lines) are inventoried in the
 [Debugging](/momentum/4/dkim2/debug) reference page.
@@ -85,7 +85,7 @@ verdicts, paniclog lines) are inventoried in the
 
 ## How it differs from DKIM1 at a glance
 
-| Concern | DKIM1 (RFC 6376) | DKIM2 (draft `-02`) |
+| Concern | DKIM1 (RFC 6376) | DKIM2 (draft `-03`) |
 |---|---|---|
 | Header name | `DKIM-Signature:` | `DKIM2-Signature:` |
 | Hashes carried in | The signature header itself (`bh=` + `b=`) | A separate `Message-Instance:` header (`h=sha256:<hh>:<bh>`) referenced via `m=` |
@@ -223,9 +223,9 @@ the other. Receivers that support both will evaluate each chain separately.
 
 The following are known gaps or operational considerations to be aware of:
 
-*   **Lower-hop signatures not cryptographically verified (§9.1 / §9.2 / §10.5–10.6)**:
-    Momentum runs the full cryptographic procedure — key fetch (§10.5) and
-    EVP signature verification (§10.6) — only on the highest-`i` signature,
+*   **Lower-hop signatures not cryptographically verified (§9.1 / §9.2 / §11.5–11.6)**:
+    Momentum runs the full cryptographic procedure — key fetch (§11.5) and
+    EVP signature verification (§11.6) — only on the highest-`i` signature,
     which §9.1 makes a SHOULD. Earlier hops (`i < max_i`) get no key lookup
     and no crypto (`s`tatus="chain_verified"); their integrity rests on the
     §8.3/§10.4 chain-of-custody check and the §9.2/§10 recipe reconstruction,
@@ -239,21 +239,25 @@ The following are known gaps or operational considerations to be aware of:
     subsequent recipes to rebuild each hop's state and EVP-verifying each
     signature — would close this and is deferred to a future release.
 
-*   **§9.1 / §11 DSN**: Per §9.1, after a failed DKIM2 verification the
+*   **§9.1 / §12 DSN**: Per §9.1, after a failed DKIM2 verification the
     MTA MUST NOT generate a DSN; the spec recommends rejecting with a 5xx
     during the SMTP conversation as the best alternative. This is not
     automatically enforced — `verify()` only reports a verdict, so policy
     must explicitly reject rather than bounce on verify failure. On the
-    generation side (§11), Momentum does not yet address a DSN to the `mf=`
+    generation side (§12), Momentum does not yet address a DSN to the `mf=`
     of the highest-numbered DKIM2-Signature of the original message, nor
     suppress DSN generation when that highest-numbered `mf=` is `<>` (null
-    sender). Inbound DSN authentication (§11.1.2, a SHOULD) is also not
+    sender). Inbound DSN authentication (§12.1.2, a SHOULD) is also not
     implemented: the reject/propagate decision is scriptable via the inbound
     hooks, but verifying the embedded returned message's signatures — and
     checking signing-domain alignment against its highest-`i= rt=` — has no
-    exposed API, since `verify()` operates only on the live message.  
+    exposed API, since `verify()` operates only on the live message. Note
+    also the -03 rule (§12.1.1): a DSN always contains the message headers
+    up to the point at which the DSN creator saw the message on the outward
+    journey, and the DSN is rebuilt to reflect the state the message was in
+    when it was forwarded.  
 
-*   **§8.2 Forwarder auto-detection**: When Momentum acts as a forwarder
+*   **§9.2 Forwarder auto-detection**: When Momentum acts as a forwarder
     or mailing list (changing the envelope MAIL FROM and re-delivering),
     the policy hook must explicitly call `sign()` to add the forwarder's
     own DKIM2 signature. Momentum does not automatically detect that a
@@ -269,17 +273,18 @@ The following are known gaps or operational considerations to be aware of:
     changing headers — `sign()` automatically detects the change (its
     freshly computed header/body hashes no longer match the prior
     Message-Instance) and requires a `recipe=` describing how to reverse
-    the hop; without one the sign call fails. When the full diff isn't
-    available, the workaround is a null recipe declaring the change
-    irreversible: `recipe='{"b":null}'` for a body change,
-    `recipe='{"h":null}'` for header changes (a precise recipe when the
-    diff is available). This lets signing succeed and this hop's
-    signature verifies downstream — but earlier signatures' content can
-    no longer be reconstructed past this hop, so the inner chain is
-    broken for that field and acceptance depends on the verifier's
-    policy toward a broken chain. (Originated mail needs no recipe —
-    there's no prior instance to diff against.) See the
-    [Forwarder and modifier signing](/momentum/4/dkim2/sign#forwarder-and-modifier-signing) section for
+    the hop; without one the sign call fails. Header changes MUST be
+    reversible: a recipe MUST be provided for any changed header
+    field, and there is no null-header form. To remove all instances of a
+    header field, give that field name an empty step array (`[]`). When
+    the full body diff isn't available, a null **body** recipe declaring
+    the change irreversible is permitted: `recipe='{"b":null}'` for a body
+    change. This lets signing succeed and this hop's signature verifies
+    downstream — but earlier signatures' content can no longer be
+    reconstructed past this hop, so the inner chain is broken for that
+    field and acceptance depends on the verifier's policy toward a broken
+    chain. (Originated mail needs no recipe — there's no prior instance to
+    diff against.) See the [Forwarder and modifier signing](/momentum/4/dkim2/sign#forwarder-and-modifier-signing) section for
     examples. Automatic change-recording by pipeline stages is not yet
     built; a planned Recipe Accumulator API would let `sign()` assemble
     the recipe without operator involvement.
@@ -298,7 +303,7 @@ The following are known gaps or operational considerations to be aware of:
     `header.s=`) repeat them in the AR clause. This is a §10.1 SHOULD —
     not a MUST — so verification behaviour is unaffected.
 
-*   **§12 Bare CR/LF normalization**: The spec (§12) requires signing the
+*   **§13 Bare CR/LF normalization**: The spec (§13) requires signing the
     message with all line endings in CRLF form. **Set
     [`rfc2822_lone_lf_in_body`](/momentum/4/config/ref-rfc-2822-lone-lf-in-body)
     and
