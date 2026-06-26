@@ -45,10 +45,11 @@ function mod:validate_data_spool_each_rcpt(msg, ac, vctx)
   --   "pass"          chain intact and most-recent sig cryptographically verified
   --                   (lower-hop sigs confirmed via §11.4 recipe chain only)
   --   "fail"          verified but wrong: hash/sig mismatch or policy
-  --                   violation (d=/mf= mismatch, donotmodify, etc.)
+  --                   violation (donotmodify/donotexplode, etc.)
   --   "permerror"     could not verify: key missing/invalid/revoked,
-  --                   signature syntax error, or chain integrity failure
-  --                   (overall_reason="chain_broken" for chain failures)
+  --                   signature syntax error, chain integrity failure
+  --                   (overall_reason="chain_broken"), or d=/mf= domain
+  --                   mismatch (§11.4 PERMERROR, overall_reason="d_mf_mismatch")
   --   "temperror"     resolver-side transient failure (SERVFAIL, timeout)
   --   "none"          no DKIM2-Signature headers, or all use unsupported
   --                   algorithms (§3.4 — ignored rather than failed)
@@ -80,7 +81,7 @@ header format, `ar_clauses()` API, and examples of building combined headers.
 | `mailfrom` | **Normally omitted** — Momentum reads the live envelope MAIL FROM automatically. Production exception: null-sender DSN/bounce messages where `mailfrom=""` is required since the envelope API returns nil for `MAIL FROM:<>`. Otherwise test/simulation use only. |
 | `rcptto` | **Normally omitted** — Momentum auto-populates from the active envelope recipient. Production exception: in `validate_data_spool` (shared hook), pass the full recipient list explicitly for complete §11.4 multi-recipient checking. In `validate_data_spool_each_rcpt` (recommended), auto-populates correctly per cowref. Accepts a string or a Lua table of bare addresses. ALL listed addresses must be present in `rt=` for the signature to pass. |
 | `authservid` | When set, a new `Authentication-Results:` header is prepended (when the result contains at least one actionable clause) with this value as the authentication service identifier. Existing AR headers are never modified. When absent, no AR header is emitted. |
-| `relax_d_mf_check` | If `true`, downgrade the §8.8 `d=`/`mf=` domain alignment check from a hard failure to a warning. Default `false` (spec-compliant). **Setting to `true` is non-spec-compliant**; recommended only for testing. |
+| `relax_d_mf_check` | If `true`, downgrade the §9.4 / §11.4 `d=`/`mf=` domain alignment check from a hard failure to a warning. Default `false`: a mismatch on the most-recently-applied signature downgrades `pass` → `permerror` (§11.4 enumerates this as a PERMERROR output state). **Setting to `true` is non-spec-compliant**; recommended only for testing. |
 | `skip_recipe_chain` | If `true`, skip the `-03` §11.4 recipe-chain check. The per-signature crypto + envelope checks and the §9.2 chain-of-custody check still run. Default `false` (chain check ON). **Setting this to `true` makes the verifier non-spec-compliant** — §11.4 is a SHOULD requirement. Use only for debugging or when interoperating with a signer whose recipe implementation is known to be broken. |
 | `relax_s_selectors` | If `true`, accept duplicate selectors within a single `s=` tag. Default `false` — duplicates produce `reason=parse_error` per §8.9. **Setting this to `true` makes the verifier non-spec-compliant** — §8.9 places a MUST requirement on distinct selectors. Use only for interop with known non-compliant signers. |
 | `max_sig_age_days` | §11.3: reject signatures whose `t=` timestamp is older than this many days. Default `14`. Values `<= 0` disable the age check. |
@@ -103,10 +104,10 @@ separately from signature verdicts.
 result = {
   overall = "pass"         -- all verifiable signatures passed
           | "fail"         -- verified but wrong: hash/sig mismatch, or
-          |                --   policy violation (d=/mf= mismatch, donotmodify, etc.)
+          |                --   policy violation (donotmodify/donotexplode, etc.)
           | "permerror"    -- could not verify: key missing/revoked/invalid,
-          |                --   signature syntax error, or chain integrity failure
-          |                --   (§11.1 PERMERROR)
+          |                --   signature syntax error, chain integrity failure,
+          |                --   or d=/mf= domain mismatch (§11.1 / §11.4 PERMERROR)
           | "temperror"    -- transient key-fetch failure (DNS timeout / SERVFAIL)
           | "none",        -- no DKIM2-Signature headers present, or all
           |                --   use unsupported algorithms (§3.4)
@@ -119,8 +120,9 @@ result = {
                                             --   that apply to the chain as a whole:
                  | "chain_broken"           --   overall="permerror": chain integrity
                                             --   failure (MI gap, recipe mismatch, etc.)
-                 | "d_mf_mismatch"          --   overall="fail": d= doesn't match
-                                            --   mf= domain after crypto pass (§8.8)
+                 | "d_mf_mismatch"          --   overall="permerror": d= doesn't match
+                                            --   mf= domain of the most-recent sig after
+                                            --   crypto pass (§9.4 / §11.4)
                  | "donotmodify_violated"   --   overall="fail": f=donotmodify sig
                                             --   followed by a modifying hop (§11.8)
                  | "donotexplode_violated", --   overall="fail": f=donotexplode sig
@@ -294,8 +296,8 @@ SMTP behaviour as required by §11.1 of the DKIM2 spec:
 |---|---|---|---|
 | `pass` | All verifiable signatures passed | — | Accept |
 | `none` | No DKIM2 signatures present, or all use unsupported algorithms (§3.4) | — | Local policy |
-| `fail` | Verified but wrong: hash/sig mismatch or policy violation (d=/mf= mismatch, donotmodify, etc.) | SHOULD 550/5.7.x; **MUST NOT 4xx** | Reject or accept per policy |
-| `permerror` | Could not verify: key missing/revoked/invalid, syntax error, or chain integrity failure (`overall_reason="chain_broken"`) (§11.1 PERMERROR) | SHOULD 550/5.7.x; **MUST NOT 4xx** | Reject (permanent) |
+| `fail` | Verified but wrong: hash/sig mismatch or policy violation (`donotmodify`/`donotexplode`, etc.) | SHOULD 550/5.7.x; **MUST NOT 4xx** | Reject or accept per policy |
+| `permerror` | Could not verify: key missing/revoked/invalid, syntax error, chain integrity failure (`overall_reason="chain_broken"`), or `d=`/`mf=` domain mismatch (`overall_reason="d_mf_mismatch"`) (§11.1 / §11.4 PERMERROR) | SHOULD 550/5.7.x; **MUST NOT 4xx** | Reject (permanent) |
 | `temperror` | Transient key-fetch failure (DNS timeout / SERVFAIL) | MAY 451/4.7.5 | Defer (temporary) |
 
 **Key rules from §11.1**:

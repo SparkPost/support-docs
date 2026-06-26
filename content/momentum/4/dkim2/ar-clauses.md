@@ -124,11 +124,12 @@ Authentication-Results: mta-1.example.com;
   dkim2=permerror reason="chain of custody broken"
 ```
 
-Policy-downgrade example (`d=` does not match the `mf=` domain):
+Policy-downgrade example (`d=` does not match the `mf=` domain — §11.4
+enumerates this as a PERMERROR output state):
 
 ```
 Authentication-Results: mta-1.example.com;
   dkim2=pass header.d=example.com header.s=sel-1:rsa-sha256 header.i=1 header.m=1
         header.mf=sender@example.com header.rt=rcpt@a.com;
-  dkim2=fail reason="MAIL FROM and d= do not match"
+  dkim2=permerror reason="MAIL FROM and d= do not match"
 ```
