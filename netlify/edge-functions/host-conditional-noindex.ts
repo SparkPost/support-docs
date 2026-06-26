@@ -14,8 +14,9 @@
 // that would otherwise transfer to bird.com via the CloudFront redirects.
 //
 // This function differentiates by Host header:
-//   - support.sparkpost.com: strip X-Robots-Tag, strip the noindex <meta> from
-//     HTML responses, and override /robots.txt with a permissive version.
+//   - support.sparkpost.com: override X-Robots-Tag with "all", strip the noindex
+//     <meta> from HTML responses, and override /robots.txt with a permissive
+//     version.
 //   - archive.sparkpost.com or any other host (deploy previews, *.netlify.app):
 //     pass through unmodified.
 //
@@ -60,8 +61,12 @@ export default async (request: Request, context: Context): Promise<Response | vo
   // For everything else, fetch the response normally, then mutate it.
   const response = await context.next();
 
-  // Strip the noindex HTTP header (set globally in netlify.toml).
-  response.headers.delete('X-Robots-Tag');
+  // Override the X-Robots-Tag set in netlify.toml. `delete()` on this header is
+  // silently ignored — Netlify re-applies the netlify.toml [[headers]] block
+  // after the edge function returns, but it respects values WE set. So we
+  // overwrite with "all" (canonical "ignore any prior noindex; index normally"),
+  // which Google treats as equivalent to no header at all.
+  response.headers.set('X-Robots-Tag', 'all');
 
   // Only HTML responses can carry the noindex <meta> tag. Skip non-HTML
   // (images, JS, CSS, JSON) to avoid pointlessly buffering large bodies.
