@@ -9,7 +9,7 @@ description: "crypto lock method set the locking method used by the TLS layer Cr
 
 crypto_lock_method — set the locking method used by the TLS layer
 
-> **NOTE: This option is DEPRECATED as of Momentum 5.3.0 and has no effect.** OpenSSL 1.1.1 and later (the supported range, from 1.1.1 on RHEL 8 through the 3.5.x series) is internally thread-safe; the `CRYPTO_set_locking_callback()`-based locking that this option configured was retired from OpenSSL itself. The option is still accepted so existing configurations continue to load, but it is ignored and logs a deprecation warning when set; remove it from `ecelerity.conf` to silence the warning. This page is retained for reference on releases prior to 5.3.0. See also [ssl_lock_method](/momentum/4/config/ssl-lock-method).
+> **NOTE: This option is DEPRECATED as of Momentum 5.3.0 and has no effect.** OpenSSL 1.1.1 and later (the supported range, from 1.1.1 on RHEL 8 through the 3.x series) is internally thread-safe; the `CRYPTO_set_locking_callback()`-based locking that this option configured was retired from OpenSSL itself. The option is still accepted so existing configurations continue to load, but it is ignored and logs a deprecation warning when set; remove it from `ecelerity.conf` to silence the warning. This page is retained for reference on releases prior to 5.3.0. See also [ssl_lock_method](/momentum/4/config/ssl-lock-method).
 
 ## Synopsis
 

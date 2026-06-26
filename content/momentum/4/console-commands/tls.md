@@ -9,7 +9,7 @@ description: "tls show cache tls flush cache tls rekey manage TLS cache used by 
 
 tls show cache, tls flush cache, tls rekey — manage TLS cache used by Momentum
 
-> **NOTE: The `tls rekey` subcommand was REMOVED in Momentum 5.3.0 and is no longer a valid command.** It managed a temporary RSA key used for export-grade cipher suites; that mechanism was retired from OpenSSL (the `SSL_CTX_set_tmp_rsa_callback()` API) and from Momentum as part of the OpenSSL 1.1.1+/3.5.x modernization. On 5.3.0 and later, `tls show cache` no longer prints a "Temp RSA key" line. The `tls rekey` description below is retained for reference on releases prior to 5.3.0.
+> **NOTE: The `tls rekey` subcommand was REMOVED in Momentum 5.3.0 and is no longer a valid command.** It managed a temporary RSA key used for export-grade cipher suites; that mechanism was retired from OpenSSL (the `SSL_CTX_set_tmp_rsa_callback()` API) and from Momentum as part of the OpenSSL 1.1.1+/3.x modernization. On 5.3.0 and later, `tls show cache` no longer prints a "Temp RSA key" line. The `tls rekey` description below is retained for reference on releases prior to 5.3.0.
 
 ## Synopsis
 

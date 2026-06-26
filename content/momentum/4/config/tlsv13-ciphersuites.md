@@ -24,7 +24,7 @@ allowable ciphersuites must be a subset of the available TLSv1.3 ciphersuites on
 
 When TLS_Engine is set to `openssl`, `TLSv13_Ciphersuites` specifies a "ciphersuite list", which is a
 colon (":") separated list of the supported TLSv1.3 ciphersuite names in order of preference.
-There are 5 valid TLSv1.3 ciphersuites, supported across the full OpenSSL range used by Momentum (1.1.1 — as on RHEL 8 — through the 3.5.x series):
+There are 5 valid TLSv1.3 ciphersuites, supported across the full OpenSSL range used by Momentum (1.1.1 — as on RHEL 8 — through the 3.x series):
 ```
     TLS_AES_256_GCM_SHA384
     TLS_CHACHA20_POLY1305_SHA256

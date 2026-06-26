@@ -28,7 +28,7 @@ The default value is “+ALL”.
 
 ### Note
 
-The tokens above are still accepted for backward compatibility, but which protocols can **actually** be negotiated is determined by the OpenSSL build (1.1.1, as on RHEL 8, through the 3.5.x series) and — on distributions that ship one — the system-wide crypto policy:
+The tokens above are still accepted for backward compatibility, but which protocols can **actually** be negotiated is determined by the OpenSSL build (1.1.1, as on RHEL 8, through the 3.x series) and — on distributions that ship one — the system-wide crypto policy:
 
 *   **SSLv2** — removed from OpenSSL as of 1.1.0 and never negotiated. Momentum builds its contexts with `TLS_method()`, so the `SSLv2` token has no effect.
 
