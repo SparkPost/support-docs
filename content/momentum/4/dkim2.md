@@ -223,23 +223,24 @@ the other. Receivers that support both will evaluate each chain separately.
 
 The following are known gaps or operational considerations to be aware of:
 
-*   **Lower-hop signatures not cryptographically verified (§9.1 / §9.2 / §11.5–11.6)**:
+*   **Lower-hop signatures not cryptographically verified (§10.1 / §9.2 / §11.5–11.6)**:
     Momentum runs the full cryptographic procedure — key fetch (§11.5) and
     EVP signature verification (§11.6) — only on the highest-`i` signature,
-    which §9.1 makes a SHOULD. Earlier hops (`i < max_i`) get no key lookup
+    which §10.1 makes a SHOULD. Earlier hops (`i < max_i`) get no key lookup
     and no crypto (`s`tatus="chain_verified"); their integrity rests on the
-    §8.3/§10.4 chain-of-custody check and the §9.2/§10 recipe reconstruction,
+    §9.2/§9.4 chain-of-custody check and the §11.4 recipe reconstruction,
     which reverse-applies each hop's recipe to rebuild the original message
     and confirms the reconstructed instance-1 hashes match MI[1]'s `h=`. This
     proves end-to-end content integrity but does not authenticate each lower
     hop's signing key, so earlier-hop signer identities should not be used
     for Reviser reputation. The spec does not yet clearly mandate per-hop
-    crypto (§9.1 is SHOULD; §9.3 implies it for reputation purposes but defers
-    to a TBA doc, and §15 is TBA). Full per-hop verification — reverse-applying
-    subsequent recipes to rebuild each hop's state and EVP-verifying each
-    signature — would close this and is deferred to a future release.
+    cryptographic verification, and reputation of intermediate signers is not
+    yet specified — the draft mentions it only in passing in its introduction
+    (§1). Full per-hop verification — reverse-applying subsequent recipes to
+    rebuild each hop's state and EVP-verifying each signature — would close
+    this and is deferred to a future release.
 
-*   **§9.1 / §12 DSN**: Per §9.1, after a failed DKIM2 verification the
+*   **§10.1 / §12 DSN**: Per §10.1, after a failed DKIM2 verification the
     MTA MUST NOT generate a DSN; the spec recommends rejecting with a 5xx
     during the SMTP conversation as the best alternative. This is not
     automatically enforced — `verify()` only reports a verdict, so policy
@@ -292,7 +293,7 @@ The following are known gaps or operational considerations to be aware of:
     Both this limitation and the forwarder auto-detection above are blocked
     on the same Recipe Accumulator API (planned; not yet available).
 
-*   **§10.1 AR reason strings use simplified form**: The spec defines
+*   **§11.1 AR reason strings use simplified form**: The spec defines
     error string templates with interpolated values, e.g.
     `"FAIL: Message Instance m=<x> body hash <value> mismatch"`. Momentum
     emits simplified strings without the ordinals or hash values, e.g.
@@ -300,7 +301,7 @@ The following are known gaps or operational considerations to be aware of:
     from the message itself — ordinals and key values are in the
     `DKIM2-Signature:` and `Message-Instance:` headers, and the structured
     AR property tokens (`header.i=`, `header.m=`, `header.d=`,
-    `header.s=`) repeat them in the AR clause. This is a §10.1 SHOULD —
+    `header.s=`) repeat them in the AR clause. This is a §11.1 SHOULD —
     not a MUST — so verification behaviour is unaffected.
 
 *   **§13 Bare CR/LF normalization**: The spec (§13) requires signing the

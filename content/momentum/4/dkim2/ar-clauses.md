@@ -104,7 +104,7 @@ Authentication-Results: mta-1.example.com;
         header.mf=sender@example.com header.rt=rcpt@a.com
 ```
 
-Failure with reason (simplified string per §10.1 — ordinals come from `header.i=` / `header.m=`):
+Failure with reason (simplified string per §11.1 — ordinals come from `header.i=` / `header.m=`):
 
 ```
 Authentication-Results: mta-1.example.com;

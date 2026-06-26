@@ -106,7 +106,7 @@ result = {
           |                --   policy violation (d=/mf= mismatch, donotmodify, etc.)
           | "permerror"    -- could not verify: key missing/revoked/invalid,
           |                --   signature syntax error, or chain integrity failure
-          |                --   (§10.1 PERMERROR)
+          |                --   (§11.1 PERMERROR)
           | "temperror"    -- transient key-fetch failure (DNS timeout / SERVFAIL)
           | "none",        -- no DKIM2-Signature headers present, or all
           |                --   use unsupported algorithms (§3.4)
@@ -245,7 +245,7 @@ The full set. Unless otherwise noted, each reason code below pairs with `status=
 | `verify_internal` | An internal error occurred during signature verification (memory allocation failure or cryptographic library error). The signature could not be evaluated. Maps to `dkim2=permerror` in AR output. |
 | `unsupported_algorithm` | Every sig-set in `s=` uses an algorithm Momentum does not implement. Per §3.4 these are ignored rather than failed; paired with `status="none"`. |
 
-**Authentication-Results mapping (§10.1):** Most `status="fail"` reasons produce `dkim2=fail` in the AR header. Exceptions, per the §10.1 FAIL / PERMERROR / TEMPERROR distinction:
+**Authentication-Results mapping (§11.1):** Most `status="fail"` reasons produce `dkim2=fail` in the AR header. Exceptions, per the §11.1 FAIL / PERMERROR / TEMPERROR distinction:
 - `key_unavailable` → `dkim2=temperror` (transient DNS failure)
 - The following produce `dkim2=permerror` (unrecoverable errors): `no_key`, `key_invalid`, `key_multiple_records`, `key_service_mismatch`, `key_k_unknown`, `key_revoked`, `key_b64_decode`, `key_der_parse`, `key_v_mismatch`, `key_p_missing`, `key_size_invalid`, `key_e_invalid`, `missing_required_tags`, `parse_error`, `sig_parse_failed`, `mi_hash_missing`, `signature_expired`, `verify_internal`
 
@@ -295,7 +295,7 @@ SMTP behaviour as required by §11.1 of the DKIM2 spec:
 | `pass` | All verifiable signatures passed | — | Accept |
 | `none` | No DKIM2 signatures present, or all use unsupported algorithms (§3.4) | — | Local policy |
 | `fail` | Verified but wrong: hash/sig mismatch or policy violation (d=/mf= mismatch, donotmodify, etc.) | SHOULD 550/5.7.x; **MUST NOT 4xx** | Reject or accept per policy |
-| `permerror` | Could not verify: key missing/revoked/invalid, syntax error, or chain integrity failure (`overall_reason="chain_broken"`) (§10.1 PERMERROR) | SHOULD 550/5.7.x; **MUST NOT 4xx** | Reject (permanent) |
+| `permerror` | Could not verify: key missing/revoked/invalid, syntax error, or chain integrity failure (`overall_reason="chain_broken"`) (§11.1 PERMERROR) | SHOULD 550/5.7.x; **MUST NOT 4xx** | Reject (permanent) |
 | `temperror` | Transient key-fetch failure (DNS timeout / SERVFAIL) | MAY 451/4.7.5 | Defer (temporary) |
 
 **Key rules from §11.1**:
