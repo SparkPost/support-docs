@@ -1,5 +1,5 @@
 ---
-lastUpdated: "06/25/2026"
+lastUpdated: "06/29/2026"
 title: "DKIM2 Verifying — verify()"
 description: "Reference for the msys.validate.dkim2.verify() Lua API: verify options, result table, and SMTP response codes."
 ---
@@ -47,9 +47,13 @@ function mod:validate_data_spool_each_rcpt(msg, ac, vctx)
   --   "fail"          verified but wrong: hash/sig mismatch or policy
   --                   violation (donotmodify/donotexplode, etc.)
   --   "permerror"     could not verify: key missing/invalid/revoked,
-  --                   signature syntax error, chain integrity failure
-  --                   (overall_reason="chain_broken"), or d=/mf= domain
-  --                   mismatch (§11.4 PERMERROR, overall_reason="d_mf_mismatch")
+  --                   key/algorithm mismatch (overall_reason=
+  --                   "key_alg_mismatch"), signature syntax error, chain
+  --                   integrity failure (overall_reason names the cause:
+  --                   mi_syntax / mi_missing_tag / mi_revision_ahead /
+  --                   mi_revision_gap / mi_unsigned / i_sequence_broken /
+  --                   custody_break / recipe_chain_mismatch), or d=/mf=
+  --                   domain mismatch (§11.4, overall_reason="d_mf_mismatch")
   --   "temperror"     resolver-side transient failure (SERVFAIL, timeout)
   --   "none"          no DKIM2-Signature headers, or all use unsupported
   --                   algorithms (§3.4 — ignored rather than failed)
@@ -188,7 +192,10 @@ intermediate hop correctly recorded what it changed, and that those
 changes are consistent all the way back to the original sender. If
 anything in that chain is wrong (a hop modified the message without
 recording it, or a recipe was incorrect), `overall` is `permerror` with
-`overall_reason="chain_broken"`. `overall="pass"` means the content
+an `overall_reason` naming the specific cause — one of `mi_syntax`,
+`mi_missing_tag`, `mi_revision_ahead`, `mi_revision_gap`, `mi_unsigned`,
+`i_sequence_broken`, `custody_break`, or `recipe_chain_mismatch` (the
+generic `chain_broken` remains as a fallback). `overall="pass"` means the content
 chain is intact; note that public-key (§11.5) cryptographic verification
 is only performed for the most recent hop. This is correct for the §10.1
 acceptance decision, but §10.3 use cases that need each lower hop's
@@ -205,7 +212,7 @@ and its `nd=` value must exactly match the `d=` of the next signature in `i=`
 order (§11.4). Momentum additionally checks that the bridge's own signing
 domain (`d=`) relaxed-matches a recipient domain in the prior hop's `rt=`
 (§9.3 — the bridge must be signed by a domain that received the message). Any
-of these failing surfaces as `overall="permerror"`, `overall_reason="chain_broken"`,
+of these failing surfaces as `overall="permerror"`, `overall_reason="custody_break"`,
 with the specific cause (`nd= does not match`, `nd= with mf=/rt=`, etc.) logged
 at `info` level. The bridge signature itself appears in `result.signatures`
 with `status="chain_verified"` and its `nd` field populated.
@@ -254,6 +261,7 @@ The full set. Unless otherwise noted, each reason code below pairs with `status=
 | `key_invalid` | The DNS TXT record was present but structurally unusable (empty content, internal resolver error, or selector/domain too long to query). |
 | `key_der_parse` | The `p=` base64 decoded successfully but the DER structure is not a valid public key. |
 | `key_k_unknown` | The DNS record's `k=` tag names an algorithm Momentum doesn't support. |
+| `key_alg_mismatch` | The resolved public key's type doesn't match the signature's named algorithm — e.g. an `rsa-sha256` sig-set verified against a `k=ed25519` key (or vice versa), a DNS record whose `k=` tag disagrees with the actual `p=` key, or an RSA-PSS public key; maps to `dkim2=permerror`. |
 | `key_v_mismatch` | The DNS TXT record's `v=` tag does not match the expected value. Malformed or wrong-version key record. Maps to `dkim2=permerror`. |
 | `key_p_missing` | The DNS TXT record has no `p=` tag (distinct from empty `p=` which is revocation). Malformed key record. Maps to `dkim2=permerror`. |
 | `key_size_invalid` | The RSA public key is smaller than the 1024-bit minimum required by §3.2. Maps to `dkim2=permerror`. |
@@ -265,14 +273,14 @@ The full set. Unless otherwise noted, each reason code below pairs with `status=
 
 **Authentication-Results mapping (§11.1):** Most `status="fail"` reasons produce `dkim2=fail` in the AR header. Exceptions, per the §11.1 FAIL / PERMERROR / TEMPERROR distinction:
 - `key_unavailable` → `dkim2=temperror` (transient DNS failure)
-- The following produce `dkim2=permerror` (unrecoverable errors): `no_key`, `key_invalid`, `key_multiple_records`, `key_service_mismatch`, `key_k_unknown`, `key_revoked`, `key_b64_decode`, `key_der_parse`, `key_v_mismatch`, `key_p_missing`, `key_size_invalid`, `key_e_invalid`, `missing_required_tags`, `parse_error`, `sig_parse_failed`, `mi_hash_missing`, `signature_expired`, `verify_internal`
+- The following produce `dkim2=permerror` (unrecoverable errors): `no_key`, `key_invalid`, `key_multiple_records`, `key_service_mismatch`, `key_k_unknown`, `key_alg_mismatch`, `key_revoked`, `key_b64_decode`, `key_der_parse`, `key_v_mismatch`, `key_p_missing`, `key_size_invalid`, `key_e_invalid`, `missing_required_tags`, `parse_error`, `sig_parse_failed`, `mi_hash_missing`, `signature_expired`, `verify_internal`
 
 `reason=` is included in all failure clauses (`dkim2=fail`, `dkim2=permerror`, `dkim2=temperror`) and absent from pass clauses (`dkim2=pass`).
 
 ### recipe_chain detail strings (paniclog only)
 
 When the recipe-chain check fails, the overall verdict is `permerror`
-with `overall_reason="chain_broken"`, and the underlying cause is logged at `error` level in
+with `overall_reason="recipe_chain_mismatch"`, and the underlying cause is logged at `error` level in
 paniclog as `recipe-chain check failed: recipe_chain: <detail>`. The
 chain-check failure does NOT appear in the per-signature result struct —
 it's a cross-hop verdict, not a per-signature outcome — so paniclog is the
@@ -314,7 +322,7 @@ SMTP behaviour as required by §11.1 of the DKIM2 spec:
 | `pass` | All verifiable signatures passed | — | Accept |
 | `none` | No DKIM2 signatures present, or all use unsupported algorithms (§3.4) | — | Local policy |
 | `fail` | Verified but wrong: hash/sig mismatch or policy violation (`donotmodify`/`donotexplode`, etc.) | SHOULD 550/5.7.x; **MUST NOT 4xx** | Reject or accept per policy |
-| `permerror` | Could not verify: key missing/revoked/invalid, syntax error, chain integrity failure (`overall_reason="chain_broken"`), or `d=`/`mf=` domain mismatch (`overall_reason="d_mf_mismatch"`) (§11.1 / §11.4 PERMERROR) | SHOULD 550/5.7.x; **MUST NOT 4xx** | Reject (permanent) |
+| `permerror` | Could not verify: key missing/revoked/invalid, key/algorithm mismatch (`overall_reason="key_alg_mismatch"`), syntax error, chain integrity failure (`overall_reason` is one of `mi_syntax`/`mi_missing_tag`/`mi_revision_ahead`/`mi_revision_gap`/`mi_unsigned`/`i_sequence_broken`/`custody_break`/`recipe_chain_mismatch`, or the generic `chain_broken`), or `d=`/`mf=` domain mismatch (`overall_reason="d_mf_mismatch"`) (§11.1 / §11.4 PERMERROR) | SHOULD 550/5.7.x; **MUST NOT 4xx** | Reject (permanent) |
 | `temperror` | Transient key-fetch failure (DNS timeout / SERVFAIL) | MAY 451/4.7.5 | Defer (temporary) |
 
 **Key rules from §11.1**:

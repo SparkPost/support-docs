@@ -1,5 +1,5 @@
 ---
-lastUpdated: "06/09/2026"
+lastUpdated: "06/29/2026"
 title: "DKIM2 Authentication-Results — ar_clauses()"
 description: "Reference for the msys.validate.dkim2.ar_clauses() Lua API: usage examples and Authentication-Results output format."
 ---
@@ -121,8 +121,18 @@ Chain-broken example (2-hop message: crypto passed but recipe-chain check failed
 Authentication-Results: mta-1.example.com;
   dkim2=pass header.d=example.com header.s=sel-2:rsa-sha256 header.i=2 header.m=2
         header.mf=bounce@forwarder.example.net header.rt=rcpt@a.com;
-  dkim2=permerror reason="chain of custody broken"
+  dkim2=permerror reason="recipe chain hash mismatch"
 ```
+
+The `reason=` string names the specific chain failure rather than a single
+blanket message. Possible chain reasons: `"recipe chain hash mismatch"`,
+`"chain of custody broken"` (a §9.2 `mf=`/`rt=` link or `nd=` bridge break),
+`"signature i= sequence broken"`, `"Message-Instance syntax error"`,
+`"Message-Instance missing a required tag"`, `"Message-Instance revision
+sequence broken"`, `"Message-Instance revision ahead of signatures"`, and
+`"signature references a missing Message-Instance"`. A body/header hash
+mismatch against a non-default Message-Instance hash algorithm names that
+algorithm, e.g. `reason="body hash mismatch (sha512)"`.
 
 Policy-downgrade example (`d=` does not match the `mf=` domain — §11.4
 enumerates this as a PERMERROR output state):
