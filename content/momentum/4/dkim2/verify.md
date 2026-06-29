@@ -264,10 +264,10 @@ The full set. Unless otherwise noted, each reason code below pairs with `status=
 | `key_alg_mismatch` | The resolved public key's type doesn't match the signature's named algorithm — e.g. an `rsa-sha256` sig-set verified against a `k=ed25519` key (or vice versa), a DNS record whose `k=` tag disagrees with the actual `p=` key, or an RSA-PSS public key; maps to `dkim2=permerror`. |
 | `key_v_mismatch` | The DNS TXT record's `v=` tag does not match the expected value. Malformed or wrong-version key record. Maps to `dkim2=permerror`. |
 | `key_p_missing` | The DNS TXT record has no `p=` tag (distinct from empty `p=` which is revocation). Malformed key record. Maps to `dkim2=permerror`. |
-| `key_size_invalid` | The RSA public key is smaller than the 1024-bit minimum required by §3.2. Maps to `dkim2=permerror`. |
+| `key_size_invalid` | The RSA public key is outside the accepted size range — smaller than the 1024-bit minimum required, or larger than 16384 bits. The upper bound bounds DoS-via-huge-key (an oversized modulus makes verification expensive). Maps to `dkim2=permerror`. |
 | `key_e_invalid` | The RSA public key exponent is not 65537 as required by §3.2. Maps to `dkim2=permerror`. |
 | `sig_parse_failed` | The signature value inside the `s=` tag could not be parsed or stripped for canonical-input construction. Indicates a malformed signature from the signer. |
-| `mi_hash_missing` | The body hash could not be retrieved from the `Message-Instance:` `h=` tag: either no MI with a matching sequence number (`m=`) was present, or the MI's `h=` tag was malformed or lacked a hash entry for the algorithm named in its own `h=` prefix. |
+| `mi_hash_missing` | The body hash could not be retrieved from the `Message-Instance:` `h=` tag: either no MI with a matching sequence number (`m=`) was present, the MI's `h=` tag was malformed, or it carried no entry for a hash algorithm Momentum implements. Momentum allow-lists `sha256` / `sha512`; it ignores any other algorithm (e.g. `md5`, `sha1`) rather than computing it, so an `h=` that names only an unsupported algorithm yields this reason instead of a downgraded hash check. |
 | `verify_internal` | An internal error occurred during signature verification (memory allocation failure or cryptographic library error). The signature could not be evaluated. Maps to `dkim2=permerror` in AR output. |
 | `unsupported_algorithm` | Every sig-set in `s=` uses an algorithm Momentum does not implement. Per §3.4 these are ignored rather than failed; paired with `status="none"`. |
 

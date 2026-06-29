@@ -88,6 +88,17 @@ Authentication-Results: mta-1.example.com;
         header.mf=sender@example.com header.rt=rcpt@a.com
 ```
 
+Partial sig-set failure (§11.6) — a signature carries multiple sig-sets in
+`s=` (algorithm agility); one verifies so the signature passes, but another
+failed. The pass clause carries a `reason=` noting the partial failure:
+
+```
+Authentication-Results: mta-1.example.com;
+  dkim2=pass reason="rsa-sha256 signature passed; 1 other sig-set(s) failed"
+        header.d=example.com header.s=sel-1:rsa-sha256 header.i=1 header.m=1
+        header.mf=sender@example.com header.rt=rcpt@a.com
+```
+
 Transient DNS failure (`key_unavailable` → `dkim2=temperror`):
 
 ```
