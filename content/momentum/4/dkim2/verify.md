@@ -109,8 +109,10 @@ result = {
           |                --   signature syntax error, chain integrity failure,
           |                --   or d=/mf= domain mismatch (§11.1 / §11.4 PERMERROR)
           | "temperror"    -- transient key-fetch failure (DNS timeout / SERVFAIL)
-          | "none",        -- no DKIM2-Signature headers present, or all
-          |                --   use unsupported algorithms (§3.4)
+          | "none",        -- no DKIM2-Signature headers, or a lone signature
+          |                --   using an unsupported algorithm (§3.4). NB: an
+          |                --   unsupported *highest* sig in a multi-hop chain is
+          |                --   permerror (highest_sig_unsupported), not none.
   overall_reason = nil                      -- nil when overall="pass", "temperror",
                                             --   or when overall is non-pass due to
                                             --   per-sig failures (key errors, bad
@@ -125,8 +127,13 @@ result = {
                                             --   crypto pass (§9.4 / §11.4)
                  | "donotmodify_violated"   --   overall="fail": f=donotmodify sig
                                             --   followed by a modifying hop (§11.8)
-                 | "donotexplode_violated", --   overall="fail": f=donotexplode sig
+                 | "donotexplode_violated"  --   overall="fail": f=donotexplode sig
                                             --   followed by f=exploded (§11.8)
+                 | "highest_sig_unsupported",-- overall="permerror": the highest-i
+                                            --   sig uses an unsupported algorithm in a
+                                            --   multi-hop chain, so the most-recent hop
+                                            --   can't be authenticated — not "none"
+                                            --   (§3.4 / §11.5)
   signatures = {
     { seq    = <i= chain sequence: 1 for originator, 2 for first forwarder, …>,
       m      = <m= Message-Instance revision referenced by this signature, 0 if absent>,
@@ -152,7 +159,11 @@ result = {
                                                  --   treated as definitive when set.
     },
     ...
-  }
+  },
+  highest_i  = <i= of the highest-numbered signature; 0 if none>,
+  highest_mf = "<bare MAIL FROM of the highest-i hop>",  -- §11 DSN target;
+                 -- "<>" for the null sender (a DSN MUST NOT be sent);
+                 -- absent when no signature carried an mf=
 }
 ```
 
@@ -282,6 +293,7 @@ read the outcome without re-verifying or parsing `Authentication-Results:`:
 |---|---|---|
 | `dkim2_overall` | string | Verdict: `"pass"`, `"fail"`, `"permerror"`, `"temperror"`, or `"none"`. See the [SMTP response codes](/momentum/4/dkim2/verify#smtp-response-codes-111-guidance) table. |
 | `dkim2_n_sigs` | string | Number of `DKIM2-Signature` headers found on the message. Parse with `tonumber()`. |
+| `dkim2_highest_mf` | string | §11 DSN target: the `mf=` (bare MAIL FROM) of the highest-`i=` signature — the address a bounce would be addressed to. `"<>"` for the null sender, for which §11 says a DSN MUST NOT be sent. Not set when no signature carried an `mf=`. |
 
 These keys are not set until `verify()` runs.
 
