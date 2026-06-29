@@ -95,11 +95,11 @@ msys.validate.dkim2.sign(msg, vctx, {
 
 When `sig_sets` is present, all entries sign the same canonical
 signed-input and are combined into a single `s=sel1:alg1:sig1,sel2:alg2:sig2`
-value on one `DKIM2-Signature` header.  Per §8.2 the verifier checks
+value on one `DKIM2-Signature` header.  Per §11.6 the verifier checks
 every sig-set; overall passes if any one validates, so a receiver that
 only supports RSA will still verify cleanly.  On the verifier side, any
 sig-set that fails alongside a passing one is reported as a DWARNING in
-paniclog (partial-sig-failure condition, §8.2).
+paniclog (partial-sig-failure condition, §11.6).
 
 **If any sig-set fails**, the entire `sign()` call returns
 `(nil, error_string)` — no partial signature is produced.
