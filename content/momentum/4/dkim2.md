@@ -233,7 +233,7 @@ The following are known gaps or operational considerations to be aware of:
     EVP signature verification (§11.6) — only on the highest-`i` signature,
     which §10.1 makes a SHOULD. Earlier hops (`i < max_i`) get no key lookup
     and no crypto (`status="chain_verified"`); their integrity rests on the
-    §9.2/§9.4 chain-of-custody check and the §11.4 recipe reconstruction,
+    §9.2/§9.4 chain-of-custody check and the §10.2 recipe reconstruction,
     which reverse-applies each hop's recipe to rebuild the original message
     and confirms the reconstructed instance-1 hashes match MI[1]'s `h=`. This
     proves end-to-end content integrity but does not authenticate each lower

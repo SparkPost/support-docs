@@ -43,7 +43,7 @@ function mod:validate_data_spool_each_rcpt(msg, ac, vctx)
 
   -- result.overall is one of:
   --   "pass"          chain intact and most-recent sig cryptographically verified
-  --                   (lower-hop sigs confirmed via §11.4 recipe chain only)
+  --                   (lower-hop sigs confirmed via §10.2 recipe chain only)
   --   "fail"          verified but wrong: hash/sig mismatch or policy
   --                   violation (donotmodify/donotexplode, etc.)
   --   "permerror"     could not verify: key missing/invalid/revoked,
@@ -82,7 +82,7 @@ header format, `ar_clauses()` API, and examples of building combined headers.
 | `rcptto` | **Normally omitted** — Momentum auto-populates from the active envelope recipient. Production exception: in `validate_data_spool` (shared hook), pass the full recipient list explicitly for complete §11.4 multi-recipient checking. In `validate_data_spool_each_rcpt` (recommended), auto-populates correctly per cowref. Accepts a string or a Lua table of bare addresses. ALL listed addresses must be present in `rt=` for the signature to pass. |
 | `authservid` | When set, a new `Authentication-Results:` header is prepended (when the result contains at least one actionable clause) with this value as the authentication service identifier. Existing AR headers are never modified. When absent, no AR header is emitted. |
 | `relax_d_mf_check` | If `true`, downgrade the §9.4 / §11.4 `d=`/`mf=` domain alignment check from a hard failure to a warning. Default `false`: a mismatch on the most-recently-applied signature downgrades `pass` → `permerror` (§11.4 enumerates this as a PERMERROR output state). **Setting to `true` is non-spec-compliant**; recommended only for testing. |
-| `skip_recipe_chain` | If `true`, skip the `-03` §11.4 recipe-chain check. The per-signature crypto + envelope checks and the §9.2 chain-of-custody check still run. Default `false` (chain check ON). **Setting this to `true` makes the verifier non-spec-compliant** — §11.4 is a SHOULD requirement. Use only for debugging or when interoperating with a signer whose recipe implementation is known to be broken. |
+| `skip_recipe_chain` | If `true`, skip the `-03` §10.2 recipe-chain check. The per-signature crypto + envelope checks and the §9.2 chain-of-custody check still run. Default `false` (chain check ON). **Setting this to `true` makes the verifier non-spec-compliant** — §10.2 is a SHOULD requirement. Use only for debugging or when interoperating with a signer whose recipe implementation is known to be broken. |
 | `relax_s_selectors` | If `true`, accept duplicate selectors within a single `s=` tag. Default `false` — duplicates produce `reason=parse_error` per §8.9. **Setting this to `true` makes the verifier non-spec-compliant** — §8.9 places a MUST requirement on distinct selectors. Use only for interop with known non-compliant signers. |
 | `max_sig_age_days` | §11.3: reject signatures whose `t=` timestamp is older than this many days. Default `14`. Values `<= 0` disable the age check. |
 | `max_sig_future_secs` | §8.4: reject signatures whose `t=` timestamp is more than this many seconds in the future. Default `300` (5-minute clock-skew tolerance). Values `<= 0` disable the check. |
@@ -180,7 +180,8 @@ end
 
 For messages that passed through multiple signing hops, Momentum verifies
 the **most recent signature** cryptographically (§11.5) and confirms the
-**full chain of custody** end-to-end (§11.4). Earlier signatures in a
+**full chain of custody** end-to-end — the §11.4 envelope `mf=`/`rt=` linkage
+plus the §10.2 Message-Instance recipe reconstruction. Earlier signatures in a
 multi-hop message appear in `result.signatures` with
 `status="chain_verified"` — this means Momentum validated that each
 intermediate hop correctly recorded what it changed, and that those
@@ -233,7 +234,7 @@ The full set. Unless otherwise noted, each reason code below pairs with `status=
 | Reason | Meaning |
 |---|---|
 | `ok` | Signature verified cleanly. Paired with `status="pass"`. |
-| `deferred` | An earlier hop's signature in a multi-hop message. Momentum validates the full chain of custody end-to-end via the §11.4 recipe chain rather than performing a full §11.5 per-signature key lookup and cryptographic check for each lower hop. If the chain is intact, `overall="pass"`. See [Known Limitations](/momentum/4/dkim2#known-limitations) for what this means for key provenance. Paired with `status="chain_verified"`. |
+| `deferred` | An earlier hop's signature in a multi-hop message. Momentum validates the full chain of custody end-to-end via the §10.2 recipe chain rather than performing a full §11.5 per-signature key lookup and cryptographic check for each lower hop. If the chain is intact, `overall="pass"`. See [Known Limitations](/momentum/4/dkim2#known-limitations) for what this means for key provenance. Paired with `status="chain_verified"`. |
 | `hh_mismatch` | Header hash mismatch — a content header (Subject, From, etc.) was modified after signing without a new `Message-Instance:` recording the change. |
 | `bh_mismatch` | Body hash mismatch — the message body was modified after signing without a new `Message-Instance:` recording the change. |
 | `sig_invalid` | Cryptographic verification failed — the signed-input bytes don't match the value in `s=`. Enable `debug_level = info` for selector, algorithm, and signed-input length detail. |

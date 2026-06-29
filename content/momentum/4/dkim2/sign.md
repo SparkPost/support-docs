@@ -131,7 +131,7 @@ of the options table.
 | `recipe` | no | Raw JSON string conforming to `-03` §5. Attached to the `Message-Instance` header as the base64-encoded `r=` tag. Validated against the schema at sign time; malformed recipes fail the sign call with `recipe_invalid: <reason>`. |
 | `mi_hash_algorithms` | no | Lua array of hash algorithms for the `Message-Instance` `h=` body and header hashes (§6). Default `{"sha256"}`. Multiple algorithms produce comma-separated entries in `h=`, e.g. `{"sha256","sha512"}` → `h=sha256:HH:BH,sha512:HH:BH`. A plain string `mi_hash_algorithm="sha512"` is also accepted as a single-algorithm alias. The verifier automatically detects and uses whatever algorithm is present in the received MI `h=` tag. |
 | `relax_d_mf_check` | no | §9.4 / §11.4 expect `d=` to relaxed-domain-match the `mf=` (MAIL FROM) domain; a §11.4 verifier reports PERMERROR on a mismatch. Default `false` — `sign()` refuses to emit a non-aligned signature and returns an error. **Setting to `true` is non-spec-compliant**; it downgrades the check to a `DWARNING` and proceeds. Recommended only for testing or debugging cross-domain signing configurations. |
-| `allow_missing_recipe` | no | If `true`, permit signing when content has changed since the prior `Message-Instance` but no `recipe` is supplied (§8.1 SHOULD). Default `false` (strict — sign call fails). When set, signing succeeds but the downstream §11.4 chain-walk cannot complete for this hop (no recipe to reconstruct prior state) and will produce `permerror`/`chain_broken` at verifiers. Use only when you accept that chain auditability is broken for this hop. |
+| `allow_missing_recipe` | no | If `true`, permit signing when content has changed since the prior `Message-Instance` but no `recipe` is supplied (§8.1 SHOULD). Default `false` (strict — sign call fails). When set, signing succeeds but the downstream §10.2 chain-walk cannot complete for this hop (no recipe to reconstruct prior state) and will produce `permerror`/`chain_broken` at verifiers. Use only when you accept that chain auditability is broken for this hop. |
 
 `sign()` return values:
 
@@ -271,7 +271,7 @@ When `on_chain_break="bridge"` is used and the message was modified,
 supply `recipe` on the outer `sign()` call — Momentum forwards it
 automatically to the auto-generated bridge signature. The bridge needs
 the recipe to document the content change in its `Message-Instance`
-header so the §11.4 chain walk can reconstruct the original state.
+header so the §10.2 chain walk can reconstruct the original state.
 
 **Note**: auto-bridge signatures do not inherit `flags`. Use `bridge_flags`
 to set flags on the bridge signature independently of the primary. For
