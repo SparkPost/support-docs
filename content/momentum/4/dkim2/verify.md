@@ -161,7 +161,7 @@ result = {
     ...
   },
   highest_i  = <i= of the highest-numbered signature; 0 if none>,
-  highest_mf = "<bare MAIL FROM of the highest-i hop>",  -- §11 DSN target;
+  highest_mf = "<bare MAIL FROM of the highest-i hop>",  -- §12 DSN target;
                  -- "<>" for the null sender (a DSN MUST NOT be sent);
                  -- absent when no signature carried an mf=
 }
@@ -189,7 +189,11 @@ anything in that chain is wrong (a hop modified the message without
 recording it, or a recipe was incorrect), `overall` is `permerror` with
 `overall_reason="chain_broken"`. `overall="pass"` means the content
 chain is intact; note that public-key (§11.5) cryptographic verification
-is only performed for the most recent hop — see [Known Limitations](/momentum/4/dkim2#known-limitations) for
+is only performed for the most recent hop. This is correct for the §10.1
+acceptance decision, but §10.3 use cases that need each lower hop's
+signature individually verified — Reviser reputation, `feedback` handling,
+explosion assessment — are not supported (there is no option to crypto-verify
+every hop); see [Known Limitations](/momentum/4/dkim2#known-limitations) for
 details.
 
 **`nd=` "imaginary hop" bridges (§8.7 / §9.3).** A forwarder that changes
@@ -279,7 +283,7 @@ only place this detail surfaces.
 | `parse_h` | `Message-Instance` `h=` tag didn't parse as `<algorithm>:<header-hash>:<body-hash>`. The MI is malformed. |
 | `recipe_decode` | A hop's `r=` value didn't base64-decode. Wire-format corruption or a broken signer. |
 | `recipe_invalid` | A hop's recipe failed schema validation at verify time. Should not occur with conforming signers (sign-time validation prevents emission of bad recipes); appearing here means the signer is broken. |
-| `irreversible` | A hop's recipe declared `"b": null` or `"b": {"z": true}`. The verifier can't reverse-reconstruct past this hop. Local policy may accept irreversibility from trusted forwarders. |
+| `irreversible` | A hop's recipe declared `"b": null` (an unrecoverable body). The verifier can't reverse-reconstruct past this hop. Local policy may accept irreversibility from trusted forwarders. |
 | `apply_failed` | A recipe references a header or body line that doesn't exist in the current message. The recipe is inconsistent with the modification it claims to describe — likely a downstream hop modified the message AGAIN without recording it. |
 | `no_recipe` | One or more non-first `Message-Instance` headers had no `r=` tag (treated as no-modification hops), yet the final reconstructed hashes didn't match `MI[1]`. A hop likely modified the message without recording a recipe. The signer should always emit an `r=` recipe rather than omitting it: provide a header recipe for any changed header field (an empty step array `[]` removes all instances of a field); the body may be declared irreversible with `"b":null`. |
 | `hash_mismatch` | After walking all recipes in reverse, the reconstructed instance-1 hashes didn't match `Message-Instance` `m=1`'s recorded `h=`. Every non-first MI had a recipe, so the mismatch indicates a hop's recipe was wrong or a hop modified the message after signing. |
@@ -293,7 +297,7 @@ read the outcome without re-verifying or parsing `Authentication-Results:`:
 |---|---|---|
 | `dkim2_overall` | string | Verdict: `"pass"`, `"fail"`, `"permerror"`, `"temperror"`, or `"none"`. See the [SMTP response codes](/momentum/4/dkim2/verify#smtp-response-codes-111-guidance) table. |
 | `dkim2_n_sigs` | string | Number of `DKIM2-Signature` headers found on the message. Parse with `tonumber()`. |
-| `dkim2_highest_mf` | string | §11 DSN target: the `mf=` (bare MAIL FROM) of the highest-`i=` signature — the address a bounce would be addressed to. `"<>"` for the null sender, for which §11 says a DSN MUST NOT be sent. Not set when no signature carried an `mf=`. |
+| `dkim2_highest_mf` | string | §12 DSN target: the `mf=` (bare MAIL FROM) of the highest-`i=` signature — the address a bounce would be addressed to. `"<>"` for the null sender, for which §12 says a DSN MUST NOT be sent. Not set when no signature carried an `mf=`. |
 
 These keys are not set until `verify()` runs.
 

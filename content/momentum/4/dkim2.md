@@ -65,9 +65,14 @@ DKIM2 addresses both:
     `mf=`.
 
 *   The chain of signatures forms an explicit **chain of custody**: each
-    hop's `mf=` must appear in the previous hop's `rt=` list (which may
-    encode more than one recipient, comma-separated), so the verifier can
-    confirm the path was a real forward, not a detour.
+    hop's `mf=` must match the previous hop's `rt=` list (which may encode
+    more than one recipient, comma-separated), so the verifier can confirm
+    the path was a real forward, not a detour. This inter-signature match is
+    **relaxed and domain-only** (§9.4) — the local part is ignored and a
+    bounce subdomain (`bounce@mail.example.com`) links to a prior
+    `rt=user@example.com` — so a bridge is only needed on a real domain
+    change. (The separate **delivery binding** of the most-recent signature
+    against the live envelope, §11.4, stays exact and local-part-aware.)
 
 *   Modifying hops **record their modifications** as a JSON "recipe" on a
     new `Message-Instance:` header. The verifier can reverse-apply the
@@ -90,7 +95,7 @@ verdicts, paniclog lines) are inventoried in the
 | Header name | `DKIM-Signature:` | `DKIM2-Signature:` |
 | Hashes carried in | The signature header itself (`bh=` + `b=`) | A separate `Message-Instance:` header (`h=sha256:<hh>:<bh>`) referenced via `m=` |
 | Envelope binding | None | `mf=<MAIL FROM>` / `rt=<RCPT TO>`, base64-encoded |
-| Chain | Implicit (multiple sigs, no required ordering) | Explicit (`i=N` 1..N, `i=N`'s `mf=` must appear in `i=N-1`'s `rt=`) |
+| Chain | Implicit (multiple sigs, no required ordering) | Explicit (`i=N` 1..N, `i=N`'s `mf=` domain relaxed-matches an `i=N-1` `rt=` domain, §9.4) |
 | Modifications | Break the upstream signature | Recorded as a JSON recipe on the modifier's MI; reverse-applicable |
 | Key record | DNS TXT at `<selector>._domainkey.<domain>` | Same — DKIM2 reuses the DKIM1 key-publishing format |
 | Algorithm | `rsa-sha256`, `ed25519-sha256` | `rsa-sha256`, `ed25519-sha256` |
@@ -227,36 +232,46 @@ The following are known gaps or operational considerations to be aware of:
     Momentum runs the full cryptographic procedure — key fetch (§11.5) and
     EVP signature verification (§11.6) — only on the highest-`i` signature,
     which §10.1 makes a SHOULD. Earlier hops (`i < max_i`) get no key lookup
-    and no crypto (`s`tatus="chain_verified"); their integrity rests on the
+    and no crypto (`status="chain_verified"`); their integrity rests on the
     §9.2/§9.4 chain-of-custody check and the §11.4 recipe reconstruction,
     which reverse-applies each hop's recipe to rebuild the original message
     and confirms the reconstructed instance-1 hashes match MI[1]'s `h=`. This
     proves end-to-end content integrity but does not authenticate each lower
     hop's signing key, so earlier-hop signer identities should not be used
-    for Reviser reputation. The spec does not yet clearly mandate per-hop
-    cryptographic verification, and reputation of intermediate signers is not
-    yet specified — the draft mentions it only in passing in its introduction
-    (§1). Full per-hop verification — reverse-applying subsequent recipes to
-    rebuild each hop's state and EVP-verifying each signature — would close
-    this and is deferred to a future release.
+    for Reviser reputation. §10.3 ("Checking the DKIM2-Signature Header
+    Fields") names exactly the use cases that need more — assessing whether a
+    message was exploded, honoring `feedback` requests, and assigning
+    reputation to Revisers — and says that for those, *all* of the
+    DKIM2-Signature header fields "will have to be checked for validity." It
+    frames this as a functional necessity for those uses, not a MUST, and the
+    spec-correct **acceptance** decision (§10.1) needs only the most-recent
+    hop. Momentum exposes every hop's `d=`/`s=`/`mf=`/`rt=`/`f=` in
+    `result.signatures` so policy can inspect the chain, but offers **no
+    option today to cryptographically verify each lower hop** — that full
+    per-hop verification (fetch each hop's key and EVP-verify its hop-relative
+    signed input; the recipe chain already confirms each hop's hashes) is
+    deferred to a future release.
 
 *   **§10.1 / §12 DSN**: Per §10.1, after a failed DKIM2 verification the
     MTA MUST NOT generate a DSN; the spec recommends rejecting with a 5xx
     during the SMTP conversation as the best alternative. This is not
     automatically enforced — `verify()` only reports a verdict, so policy
     must explicitly reject rather than bounce on verify failure. On the
-    generation side (§12), Momentum does not yet address a DSN to the `mf=`
-    of the highest-numbered DKIM2-Signature of the original message, nor
-    suppress DSN generation when that highest-numbered `mf=` is `<>` (null
-    sender). Inbound DSN authentication (§12.1.2, a SHOULD) is also not
-    implemented: the reject/propagate decision is scriptable via the inbound
-    hooks, but verifying the embedded returned message's signatures — and
-    checking signing-domain alignment against its highest-`i= rt=` — has no
-    exposed API, since `verify()` operates only on the live message. Note
-    also the -03 rule (§12.1.1): a DSN always contains the message headers
-    up to the point at which the DSN creator saw the message on the outward
-    journey, and the DSN is rebuilt to reflect the state the message was in
-    when it was forwarded.  
+    generation side (§12), Momentum **exposes the DSN target** — the `mf=`
+    of the highest-numbered DKIM2-Signature, and a `<>` (null-sender)
+    indicator — as `result.highest_mf` and the `dkim2_highest_mf` message-
+    context variable, so a generation hook can address the DSN or suppress it
+    when the value is `<>`. What is not yet built is the automatic wiring in
+    the bounce-generation path (`soft_bounce.c`) to consume it. Inbound DSN
+    authentication (§12.1.2, a SHOULD) is also not implemented: the
+    reject/propagate decision is scriptable via the inbound hooks, but
+    verifying the embedded returned message's signatures — and checking
+    signing-domain alignment against its highest-`i=` `rt=` — has no exposed
+    API, since `verify()` operates only on the live message. Note also the
+    -03 rule (§12.1.1): a DSN always contains the message headers up to the
+    point at which the DSN creator saw the message on the outward journey,
+    and the DSN is rebuilt to reflect the state the message was in when it
+    was forwarded.  
 
 *   **§9.2 Forwarder auto-detection**: When Momentum acts as a forwarder
     or mailing list (changing the envelope MAIL FROM and re-delivering),
@@ -267,6 +282,21 @@ The following are known gaps or operational considerations to be aware of:
     it has no way to verify that the forwarder handled the message
     correctly. See the [Forwarder and modifier signing](/momentum/4/dkim2/sign#forwarder-and-modifier-signing)
     section for how to do this.
+
+*   **§8.6 BCC privacy is a signer policy obligation**: §8.6 requires that a
+    signer MUST NOT reveal `bcc:` recipients to any other recipient. Because
+    `rt=` lives in the `DKIM2-Signature:` header that every recipient of a
+    copy can read, a single `rt=` listing a blind-copied address would leak
+    it. Momentum's per-cowref signing (`validate_data_spool_each_rcpt`)
+    satisfies §8.6 by construction — each delivery's `rt=` carries only that
+    recipient's address. Momentum does **not** attempt to auto-detect BCC at
+    sign time (there is no envelope-level BCC marker — a BCC recipient is
+    simply an envelope RCPT TO absent from `To:`/`Cc:`, which is only a
+    heuristic), so when a policy writer instead signs once with an explicit
+    multi-recipient `rcptto`/`rt=` in the shared hook, excluding BCC recipients
+    is the policy writer's responsibility. Prefer per-recipient signing
+    (or separate copies) for any mail that may carry blind copies. See
+    [Signing hook: shared vs. per-recipient](/momentum/4/dkim2/sign#signing-hook-shared-vs-per-recipient).
 
 *   **Content modifier recipe composition**: When an upstream-signed
     message passes through a Momentum stage that modifies it — the
