@@ -24,6 +24,7 @@ description: "This section documents all the non module specific console command
 | [config](/momentum/4/console-commands/config)                                               | online configuration tuning for Momentum                                          |
 | [count](/momentum/4/console-commands/count)                                                 | count open connections                                                            |
 | [counter](/momentum/4/console-commands/counter)                                             | manage counters                                                                   |
+| [delay](/momentum/4/console-commands/delay)                                                 | defer active-queue messages into the delayed queue                       |
 | [delayed](/momentum/4/console-commands/delayed)                                             | show domains with delayed queue size bigger than threshold                        |
 | [dig](/momentum/4/console-commands/dig)                                                     | submit a domain for DNS MX query                                                  |
 | [dns_cache](/momentum/4/console-commands/dns-cache)                                         | manage Momentum's DNS cache                                                       |
