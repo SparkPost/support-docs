@@ -262,7 +262,7 @@ The following are known gaps or operational considerations to be aware of:
     indicator — as `result.highest_mf` and the `dkim2_highest_mf` message-
     context variable, so a generation hook can address the DSN or suppress it
     when the value is `<>`. What is not yet built is the automatic wiring in
-    the bounce-generation path (`soft_bounce.c`) to consume it. Inbound DSN
+    the bounce-generation path to consume it. Inbound DSN
     authentication (§12.1.2, a SHOULD) is also not implemented: the
     reject/propagate decision is scriptable via the inbound hooks, but
     verifying the embedded returned message's signatures — and checking
