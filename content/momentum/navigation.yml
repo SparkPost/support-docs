@@ -291,6 +291,13 @@
               title: DKIM Signing
             - link: /momentum/4/using-dkim-validation
               title: DKIM Validation
+        - link: /momentum/4/dkim2
+          title: Using DKIM2 (DomainKeys Identified Mail v2) Signatures
+          items:
+            - link: '/momentum/4/dkim2#dkim2_signing'
+              title: DKIM2 Signing
+            - link: '/momentum/4/dkim2#dkim2_verifying'
+              title: DKIM2 Verifying
         - link: /momentum/4/multi-event-loops
           title: Configuring Multiple Event Loops
         - link: /momentum/4/outbound-mail
