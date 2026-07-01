@@ -275,8 +275,8 @@ The `Version` column indicated the version(s) of Momentum that support the optio
 | [open_tracking_scheme](/momentum/4/config/open-tracking-scheme) – Set the hyperlink scheme to use for open tracking links in SMTP injections | string | http | 4.1-HF4 (beta) | esmtp_listener, listen, pathway, pathway_group, peer |
 | [open_relay](/momentum/4/config/ref-open-relay) – Whether the MTA is an open relay or not | receiving | false | 4.0 and later | esmtp_listener, listen, pathway, pathway_group, peer |
 | [opendkim_sign](/momentum/4/config/ref-opendkim-sign) – Whether or not to enable OpenDKIM signing | sending | true (*non-dynamic*) | 4.0 and later | binding, binding_group, domain, global |
-| [outbound_throttle_connections](/momentum/4/config/ref-outbound-throttle-connections) – Limit the rate at which connections are established | sending |   | 4.0 and later | binding, binding_group, domain, global |
-| [outbound_throttle_messages](/momentum/4/config/ref-outbound-throttle-messages) – Limit the rate at which messages are delivered | sending |   | 4.0 and later | binding, binding_group, domain, global |
+| [outbound_throttle_connections](/momentum/4/config/ref-outbound-throttle-connections) – Limit the rate at which connections are established | sending |   | 4.0 and later | binding, binding_group, domain, global, host |
+| [outbound_throttle_messages](/momentum/4/config/ref-outbound-throttle-messages) – Limit the rate at which messages are delivered | sending |   | 4.0 and later | binding, binding_group, domain, global, host |
 | [pathway](/momentum/4/config/ref-pathway) *(scope)* – Grouping of inbound configuration options | receiving |   | 4.0 and later | global, pathway_group |
 | [pathway](/momentum/4/config/ref-pathway) – Means for associating a Listener with a pathway scope | receiving |   | 4.0 and later | ecstream_listener, esmtp_listener, listen, peer |
 | [pathway_group](/momentum/4/config/ref-pathway-group) *(scope)* – Container for pathway scopes | receiving |   | 4.0 and later | global |
