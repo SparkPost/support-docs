@@ -9,6 +9,8 @@ description: "crypto engine enable hardware cryptography acceleration crypto eng
 
 crypto_engine — enable hardware cryptography acceleration
 
+> **NOTE: This option depends on the OpenSSL ENGINE API, which was removed in OpenSSL 3.0 in favor of the provider model.** On builds running OpenSSL 3.x, `crypto_engine` has no effect and is silently ignored; it remains functional only on OpenSSL 1.1.1 builds (for example, RHEL 8).
+
 ## Synopsis
 
 crypto_engine = "*`engine_name`*"
