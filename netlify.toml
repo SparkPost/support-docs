@@ -9,6 +9,13 @@ package = "@netlify/plugin-nextjs"
   for = "/*"
 
   [headers.values]
+    # Applies to every host this deploy serves. The host-conditional-noindex
+    # edge function strips this header (and the noindex <meta> tag) for
+    # support.sparkpost.com requests during the CloudFront migration gap, so
+    # only archive.sparkpost.com (and deploy previews) actually receive it.
+    # See netlify/edge-functions/host-conditional-noindex.ts.
+    X-Robots-Tag = "noindex, nofollow"
+
     Strict-Transport-Security = '''
     max-age=31536000;
     includeSubDomains;'''
@@ -47,7 +54,7 @@ package = "@netlify/plugin-nextjs"
       'self'
       data:
       fonts.gstatic.com
-      support.sparkpost.com;
+      archive.sparkpost.com;
     connect-src
       *
       data:

@@ -75,6 +75,11 @@ This table lists all console commands alphabetically giving a brief description.
 | [counter list](/momentum/4/console-commands/counter) – List all counters counter | 4.0 |   | policy |
 | [counter reset](/momentum/4/console-commands/counter) – Reset a counter to zero | 4.0 |   | policy |
 | [counter unlink](/momentum/4/console-commands/counter) – Unlink a counter | 4.0 |   | policy |
+| [curfew check](/momentum/4/modules/curfew#modules.curfew.console) – Report whether a binding/domain pair is under curfew right now | 5.3 | curfew | module |
+| [curfew journal](/momentum/4/modules/curfew#modules.curfew.console) – Force an immediate journal sweep of curfew rule transitions | 5.3 | curfew | module |
+| [curfew reload](/momentum/4/modules/curfew#modules.curfew.console) – Re-read the curfew schedule file | 5.3 | curfew | module |
+| [curfew show](/momentum/4/modules/curfew#modules.curfew.console) – Dump every loaded curfew rule | 5.3 | curfew | module |
+| [curfew status](/momentum/4/modules/curfew#modules.curfew.console) – Show a one-line curfew module summary | 5.3 | curfew | module |
 | [delay_dsn:instance_name show pending events](/momentum/4/modules/delay-dsn#modules.delay_dsn.console) – List all pending events | 4.0 | delay_dsn | module |
 | [delayed](/momentum/4/console-commands/delayed) – Show domains with delayed queue size bigger than threshold | 4.0 |   | queue admin |
 | [dig](/momentum/4/console-commands/dig) – Submit a domain for dns MX query | 4.0 |   | dns |

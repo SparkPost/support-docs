@@ -24,5 +24,5 @@
     "@context/*": ["context/*"]
   },
   "include": ["next-env.d.ts", "yaml.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "netlify"]
 }
