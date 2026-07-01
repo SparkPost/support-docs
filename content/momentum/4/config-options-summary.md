@@ -107,7 +107,7 @@ The `Version` column indicated the version(s) of Momentum that support the optio
 | [control_listener](/momentum/4/control-listener#control_listener.config) *(scope)* – Listener for incoming control connections | na |   | 4.0 and later | global |
 | [critical](/momentum/4/config/ref-debug-flags) – Set the debug level | na | ALL | 4.0 and later | debug_flags |
 | [crypto_engine](/momentum/4/config/ref-crypto-engine) – Enable hardware cryptography acceleration | both |   | 4.0 and later | global |
-| [crypto_lock_method](/momentum/4/config/crypto-lock-method) – Set the locking method used by the TLS layer | receiving and sending | EC_SSL_DEFAULTLOCK (*non-dynamic*) | 4.0 and later | global |
+| [crypto_lock_method](/momentum/4/config/crypto-lock-method) – Set the locking method used by the TLS layer | receiving and sending | EC_SSL_DEFAULTLOCK (*non-dynamic*) | 4.0 through 5.2 | global |
 | [curfew](/momentum/4/modules/curfew#modules.curfew.configuration) *(scope)* – Configure the curfew (scheduled delivery suspension) module | sending |   | 5.3 and later | global |
 | [debug](/momentum/4/config/ref-debug-flags) – Set the debug level | na |   | 4.0 and later | debug_flags |
 | [debug_flags](/momentum/4/config/ref-debug-flags) *(scope)* – Configure debug verbosity | na |   | 4.0 and later | global |
@@ -333,7 +333,7 @@ The `Version` column indicated the version(s) of Momentum that support the optio
 | [soft_bounce_drain_rate](/momentum/4/config/ref-soft-bounce-drain-rate) – How many soft bounces to place into the mail queues in a single scheduler iteration | sending | 100 | 4.0 and later | global |
 | [spool_mode](/momentum/4/config/ref-spool-mode) – Set the file mode for newly created spool files | na | 0640 (*non-dynamic*) | 4.0 and later | global |
 | [spoolbase](/momentum/4/config/ref-spoolbase) – Set the base directory for the spool | na | /var/spool/ecelerity (*non-dynamic*) | 4.0 and later | global |
-| [ssl_lock_method](/momentum/4/config/ssl-lock-method) – Specify the SSL lock method | na | mutex (*non-dynamic*) | 4.0 and later | global |
+| [ssl_lock_method](/momentum/4/config/ssl-lock-method) – Specify the SSL lock method | na | mutex (*non-dynamic*) | 4.0 through 5.2 | global |
 | [stack_size](/momentum/4/config/ref-threadpool) – Stack space for a threadpool | na | 0 (*non-dynamic*) | 4.0 and later | threadpool |
 | [starttls_injection_policy](/momentum/4/config/starttls-injection-policy) – Protect against SMTP injections prior to TLS | receiving | reject | 4.0 and later | esmtp_listener, listen, pathway, pathway_group, peer |
 | [state](/momentum/4/config/ref-snmp) – Whether to enable the SNMP agent | na | 1 (*non-dynamic*) | 4.0 and later | snmp |
