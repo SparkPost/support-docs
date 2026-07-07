@@ -121,7 +121,7 @@ The `debug_level` option is documented in the
 entirely from Lua policy. The module does nothing automatically — you
 must call the APIs explicitly from a validation hook. For **signing**,
 the recommended hook is `core_final_validation2`: it runs once per
-recipient (giving sign() the per-recipient envelope address for `rt=`
+recipient (giving `sign()` the per-recipient envelope address for `rt=`
 binding) and fires on **every injection path** — SMTP *and*
 HTTP/transmissions. For **verification** (inbound), use a per-recipient
 validate hook such as `validate_data_spool_each_rcpt`, which runs before

@@ -93,15 +93,10 @@ Two variants of this hook exist at the same point:
 
 *Both variants are invoked* at the same point; `core_final_validation2` is called **first**, and if it returns `EC_HOOK_DONE`/`EC_HOOK_RETRY` the message is rejected/deferred before `core_final_validation` runs. Existing `void` signers registered on `core_final_validation` continue to work unchanged. The [`post_final_validation`](/momentum/4/hooks/core-post-final-validation) hook runs after both.
 
-## Synopsis (final_validation2)
-
-`#include "hooks/core/final_validation.h"`
-
-The parameters are identical to `core_final_validation` (documented below).
-
 **<a name="idp45865632"></a> Threading**
 
 This hook will be called in any thread.
 
 <a name="idp45866720"></a> 
+
 ## See Also
