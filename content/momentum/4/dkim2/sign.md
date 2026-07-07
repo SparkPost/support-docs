@@ -167,10 +167,10 @@ of the options table.
 | `next_domain` | no | Low-level `nd=` passthrough (§8.7): emit **this** signature as an `nd=` bridge carrying `nd=<next_domain>` and **no** `mf=`/`rt=`. The call's `domain`/`selector`/key must belong to a domain in the prior `rt=`, and `next_domain` MUST equal the `d=` of the next signature in the chain. Chain-break detection is skipped for such a call. Prefer `on_chain_break="nd"` for the common auto-bridge case. |
 | `on_donotmodify` | no | Action when any prior `DKIM2-Signature` on the message carries `f=donotmodify` (§8.10 / §11.8). The check is unconditional — it does not detect whether content was actually modified. Values: `"error"` (default — refuse to sign), `"warn"` (proceed; caller is responsible for logging/auditing), `"skip"` (return `(true, nil, {donotmodify=true})` without signing — no headers added to the message), `"ignore"` (proceed silently). |
 | `timestamp` | no | `t=` value. Defaults to the current UNIX time. |
-| `nonce` | no | `n=` value (`-03` §8.3). Caller-supplied ASCII string, ≤ 64 chars, no `;`. Typically a DSN-correlation key or replay-cache key. |
+| `nonce` | no | `n=` value (`-04` §8.3). Caller-supplied ASCII string, ≤ 64 chars, no `;`. Typically a DSN-correlation key or replay-cache key. |
 | `nonce_random` | no | If `true` AND `nonce` is not set, the signer fills `n=` with a 22-character base64 random nonce. Inherited by auto-bridge signatures so every signature in the chain gets its own fresh nonce. |
-| `flags` | no | Lua **array** (table) of flag tokens for `f=` (`-03` §8.10): `"exploded"`, `"donotexplode"`, `"donotmodify"`, `"feedback"`, `"feedhere"`. `"feedhere"` (spec-03 §8.10) means this Signer requests that any feedback about how this message is handled during delivery and thereafter is relayed via this hop. A plain string is not accepted — pass a one-element array, e.g. `flags = {"donotmodify"}`. See §8.10 for semantics. Joined into the on-wire comma-separated form by the glue layer. When `rt=` carries multiple recipients, `"exploded"` is added automatically unless already present. **Note:** the auto-`exploded` heuristic is based solely on recipient count — it triggers when `rt=` contains more than one address. Mailing lists with a single subscriber will not have `"exploded"` added automatically; pass `flags = {"exploded"}` explicitly in that case. |
-| `recipe` | no | Raw JSON string conforming to `-03` §5. Attached to the `Message-Instance` header as the base64-encoded `r=` tag. Validated against the schema at sign time; malformed recipes fail the sign call with `recipe_invalid: <reason>`. |
+| `flags` | no | Lua **array** (table) of flag tokens for `f=` (`-04` §8.10): `"exploded"`, `"donotexplode"`, `"donotmodify"`, `"feedback"`, `"feedhere"`. `"feedhere"` (spec-04 §8.10) means this Signer requests that any feedback about how this message is handled during delivery and thereafter is relayed via this hop. A plain string is not accepted — pass a one-element array, e.g. `flags = {"donotmodify"}`. See §8.10 for semantics. Joined into the on-wire comma-separated form by the glue layer. When `rt=` carries multiple recipients, `"exploded"` is added automatically unless already present. **Note:** the auto-`exploded` heuristic is based solely on recipient count — it triggers when `rt=` contains more than one address. Mailing lists with a single subscriber will not have `"exploded"` added automatically; pass `flags = {"exploded"}` explicitly in that case. |
+| `recipe` | no | Raw JSON string conforming to `-04` §5. Attached to the `Message-Instance` header as the base64-encoded `r=` tag. Validated against the schema at sign time; malformed recipes fail the sign call with `recipe_invalid: <reason>`. |
 | `mi_hash_algorithms` | no | Lua array of hash algorithms for the `Message-Instance` `h=` body and header hashes (§6). Default `{"sha256"}`. Multiple algorithms produce comma-separated entries in `h=`, e.g. `{"sha256","sha512"}` → `h=sha256:HH:BH,sha512:HH:BH`. A plain string `mi_hash_algorithm="sha512"` is also accepted as a single-algorithm alias. The verifier automatically detects and uses whatever algorithm is present in the received MI `h=` tag. |
 | `relax_d_mf_check` | no | §9.4 / §11.4 expect `d=` to relaxed-domain-match the `mf=` (MAIL FROM) domain; a §11.4 verifier reports PERMERROR on a mismatch. Default `false` — `sign()` refuses to emit a non-aligned signature and returns an error. **Setting to `true` is non-spec-compliant**; it downgrades the check to a `DWARNING` and proceeds. Recommended only for testing or debugging cross-domain signing configurations. |
 | `allow_missing_recipe` | no | If `true`, permit signing when content has changed since the prior `Message-Instance` but no `recipe` is supplied (§8.1 SHOULD). Default `false` (strict — sign call fails). When set, signing succeeds but the downstream §10.2 chain-walk cannot complete for this hop (no recipe to reconstruct prior state) and will produce `permerror`/`chain_broken` at verifiers. Use only when you accept that chain auditability is broken for this hop. |
@@ -233,15 +233,23 @@ When the forwarding address is unambiguous (prior `rt=` has a single entry),
 prior `rt=` has multiple entries, `bridge_mailfrom` is required to identify
 which entry this hop received at.
 
-#### `nd=` "imaginary hop" bridge (spec-03 §8.7 / §9.3)
+#### `nd=` "imaginary hop" bridge (spec-04 §8.7 / §9.3)
 
-Spec-03 added an alternative to the fabricated bridge above: the `nd=`
+The spec provides an alternative to the fabricated bridge above: the `nd=`
 ("next domain") tag. Instead of inventing `mf=`/`rt=` values for the imaginary
 transfer, the bridge signature carries `nd=<next signing domain>` and **omits**
 `mf=`/`rt=` entirely; a verifier checks that `nd=` exactly matches the `d=` of
 the next signature in the chain. Per §9.3 the bridge MUST be signed by a domain
 that actually received the message — i.e. a domain present in the prior `rt=` —
 so the bridge uses a **different signing identity** from the forwarder's own.
+
+Normally an `nd=` signature is never the highest-numbered one — the chain
+MUST end with a signature carrying `mf=`/`rt=`. Draft-04 §8.7 added one
+**special case**: where out-of-band arrangements exist, the *highest*
+signature MAY carry `nd=` (an "imaginary final hop"). Such a message cannot
+have its `MAIL FROM`/`RCPT TO` validated by the receiver, so a verifier
+rejects it by default; acceptance is opt-in via the `allow_nd_highest` verify
+option (see [verify](verify)).
 
 Momentum both **emits** `nd=` (`on_chain_break="nd"`, or the low-level
 `next_domain` passthrough) and **verifies** it. To auto-generate an `nd=`
@@ -305,7 +313,7 @@ if not ok then
 end
 ```
 
-The recipe schema is documented in `-03` §5. Recipes are mandatory only
+The recipe schema is documented in `-04` §5. Recipes are mandatory only
 when the hop modifies content; non-modifying hops (pure-forwarding without
 edits) omit `recipe` entirely.
 
