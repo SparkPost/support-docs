@@ -223,7 +223,7 @@ local ok, val, info = msys.validate.dkim2.sign(msg, vctx, {
 if not ok then
   -- sign() failed (key error, bridge error, etc.)
   vctx:set_code(550, "5.7.1 DKIM2 signing failed: " .. tostring(val))
-  return msys.core.VALIDATE_DONE
+  return msys.core.EC_HOOK_DONE   -- reject
 end
 -- info.chain_break=true, info.bridged=true when bridge was auto-generated
 ```
