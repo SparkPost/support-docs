@@ -1,5 +1,5 @@
 ---
-lastUpdated: "07/01/2026"
+lastUpdated: "07/07/2026"
 title: "DKIM2 Signing — sign()"
 description: "Reference for the msys.validate.dkim2.sign() Lua API: hook selection, sign options, forwarder and modifier signing."
 ---
@@ -10,35 +10,74 @@ DKIM2 signing in Momentum is driven from Lua policy via
 `msys.validate.dkim2.sign`; enabling DKIM2 signing means calling `sign()` from
 your validation hook.
 
-### Signing hook: shared vs. per-recipient
+### Signing hook
 
-`sign()` can be called from either `validate_data_spool` or
-`validate_data_spool_each_rcpt`. The choice affects how `rt=` is populated
-and whether BCC addresses are exposed. Per **§8.6 the signer MUST NOT reveal
-`bcc:` recipients to any other recipient** (RFC 5322 §3.6.3); since `rt=` is
-carried in the `DKIM2-Signature:` header that every recipient of a given copy
-can read, the `rt=` of a copy delivered to one recipient must not list another
-recipient who was blind-copied.
+Call `sign()` from **`core_final_validation2`** — the recommended hook for DKIM2
+signing. It fires **once per recipient** (per cowref on the SMTP/relay swap-out
+path; once per generated message on the HTTP/`msg_gen` transmissions path, where
+each recipient is already generated as its own message), so `rt=` auto-populates
+to a single address and the signature is **BCC-safe by construction**. Crucially
+it fires on **every injection path** — SMTP *and* HTTP/transmissions — unlike the
+`validate_data_spool*` hooks (see the warning below).
 
-| | `validate_data_spool` | `validate_data_spool_each_rcpt` |
-|---|---|---|
-| **Fires** | Once on the shared parent message | Once per recipient (cowref) |
-| **`rt=` auto-populate** | Primary recipient only (`msg:rcptto()`) — extra recipients are inaccessible in this hook | Single cowref recipient |
-| **Multi-recipient rt=** | Must pass explicit `rcptto = {r1, r2, ...}` — collect the full list in an earlier hook (e.g. `validate_rcptto`) | Each cowref signs for its own single address automatically |
-| **BCC privacy (§8.6)** | ⚠️ Operator MUST exclude BCC from the explicit `rcptto` list — a shared signature whose `rt=` lists a BCC address reveals it to all recipients | ✅ Satisfied by construction — each cowref is private to its recipient; `rt=` is bound to their address only |
-| **Complexity** | Requires explicit recipient collection for multi-recipient | One `sign()` call per cowref; correct by default |
+`core_final_validation2` returns a status: return `msys.core.EC_HOOK_CONT` to
+continue — including after a signing failure you choose to tolerate, in which
+case the message is delivered unsigned — or `EC_HOOK_DONE` / `EC_HOOK_RETRY` to
+reject or defer the message on a signing error. See the
+[final_validation / final_validation2](/momentum/3/3-api/hooks-core-final-validation)
+hook reference.
 
-Use `validate_data_spool_each_rcpt` for most deployments — it handles
-per-recipient signing automatically and is BCC-safe by construction. Use
-`validate_data_spool` only when you need a single signature covering all
-recipients and are willing to manage the recipient list and §8.6 BCC exclusion
-yourself: Momentum cannot detect which envelope recipients are blind copies
-(there is no envelope-level BCC marker), so when you pass an explicit
-multi-recipient `rcptto` the §8.6 MUST NOT is **your** obligation — exclude any
-BCC address, or fall back to per-recipient signing / separate copies.
+> **⚠️ The `validate_data_spool*` hooks do not fire on transmissions.**
+> `validate_data_spool` and `validate_data_spool_each_rcpt` are driven only by
+> the SMTP swap-out engine. They fire on SMTP/relay injection but **never on the
+> HTTP/`msg_gen` (transmissions) path** — a signer registered on them leaves
+> transmission-injected messages **unsigned**. Use `core_final_validation2`
+> unless you are certain all traffic is SMTP-injected.
 
-Passing an explicit `rcptto` option overrides the auto-populated primary recipient.
+The three hooks compared:
+
+| | `core_final_validation2` (recommended) | `validate_data_spool_each_rcpt` | `validate_data_spool` |
+|---|---|---|---|
+| **Injection paths** | SMTP **and** HTTP/transmissions | SMTP only | SMTP only |
+| **Fires** | Once per recipient | Once per recipient (cowref) | Once on the shared parent message |
+| **`rt=` auto-populate** | Single recipient | Single cowref recipient | Primary recipient only (`msg:rcptto()`) — extra recipients inaccessible |
+| **Multi-recipient `rt=`** | Each recipient signs for its own address automatically | Each cowref signs for its own single address automatically | Must pass explicit `rcptto = {r1, r2, ...}` — collect the full list in an earlier hook (e.g. `validate_rcptto`) |
+| **BCC privacy (§8.6)** | ✅ Satisfied by construction | ✅ Satisfied by construction | ⚠️ Operator MUST exclude BCC from the explicit `rcptto` list |
+| **Return** | `EC_HOOK_CONT` / `EC_HOOK_DONE` / `EC_HOOK_RETRY` | `VALIDATE_CONT` / `VALIDATE_DONE` / `VALIDATE_AGAIN` | `VALIDATE_CONT` / `VALIDATE_DONE` / `VALIDATE_AGAIN` |
+
+All three hooks return similar statuses so a signer on any of them can let the message
+through unsigned (`…CONT`), reject it (`…DONE`), or tempfail it (`…AGAIN`/`…RETRY`)
+on a signing error.
+
+Per **§8.6 the signer MUST NOT reveal `bcc:` recipients to any other recipient**
+(RFC 5322 §3.6.3): since `rt=` is carried in the `DKIM2-Signature:` header that
+every recipient of a copy can read, the `rt=` of a copy delivered to one
+recipient must not list another recipient who was blind-copied. The
+per-recipient hooks (`core_final_validation2`, `validate_data_spool_each_rcpt`)
+satisfy this by construction — each copy's `rt=` is bound to its own single
+address. Only `validate_data_spool` puts this obligation on you: Momentum cannot
+detect which envelope recipients are blind copies (there is no envelope-level BCC
+marker), so when you pass an explicit multi-recipient `rcptto` the §8.6 MUST NOT
+is **your** obligation — exclude any BCC address, or fall back to per-recipient
+signing / separate copies. Note that this shared single-signature mode is in any
+case unavailable on the HTTP/transmissions path, which never presents a shared
+multi-recipient message to a signing hook.
+
+Passing an explicit `rcptto` option overrides the auto-populated recipient.
 Accepts a string (single address) or a Lua table of bare addresses.
+
+### Signing order: DKIM2, DKIM v1, and ARC
+
+When more than one signing scheme is active they run in a fixed order at the
+final validation steps, because each later stage must sign or seal over the
+output of the earlier ones:
+
+1. **DKIM2** (`core_final_validation2`) runs first.
+2. **DKIM v1** / OpenDKIM (`core_final_validation`) runs next — `core_final_validation2`
+   is always invoked before `core_final_validation` at this point.
+3. **ARC** sealing runs last, in
+   [`post_final_validation`](/momentum/4/hooks/core-post-final-validation), so the
+   ARC seal covers the completed DKIM2 and DKIM v1 signatures.
 
 ### Minimum signer
 
@@ -48,7 +87,7 @@ require("msys.validate.dkim2")
 
 local mod = {}
 
-function mod:validate_data_spool_each_rcpt(msg, ac, vctx)
+function mod:core_final_validation2(msg, ac, vctx)
   local ok, err = msys.validate.dkim2.sign(msg, vctx, {
     domain   = "example.com",
     selector = "dkim2048",
@@ -59,7 +98,10 @@ function mod:validate_data_spool_each_rcpt(msg, ac, vctx)
     -- /momentum/4/dkim2/debug for the full set.
     msys.log(msys.core.LOG_WARNING, "dkim2 sign failed: " .. (err or "unknown"))
   end
-  return msys.core.VALIDATE_CONT
+  -- Return EC_HOOK_CONT to continue even on a sign failure (message is
+  -- delivered unsigned). Return EC_HOOK_DONE / EC_HOOK_RETRY instead to
+  -- reject / defer the message when signing must not be skipped.
+  return msys.core.EC_HOOK_CONT
 end
 
 msys.registerModule("my_dkim2_signer", mod)
@@ -117,7 +159,7 @@ of the options table.
 | `algorithm` | no | `"rsa-sha256"` (default) or `"ed25519-sha256"`. When `sig_sets` is used, set per entry inside `sig_sets` instead. |
 | `sig_sets` | no | Array of `{selector, keyfile, keybuf, algorithm}` tables for multi-algorithm signing (§8.9). When `sig_sets` is used, `selector`/`keyfile`/`keybuf`/`algorithm` are set per entry inside `sig_sets` — do not set them at the top level. All other options (`domain`, `mailfrom`, `rcptto`, `flags`, `recipe`, etc.) remain at the top level and apply to all entries. |
 | `mailfrom` | no | **Normally omitted** — Momentum reads the live envelope MAIL FROM automatically. Production exception: null-sender DSN/bounce messages where `mailfrom=""` is required since the envelope API returns nil for `MAIL FROM:<>`. Otherwise testing/simulation of specific envelope conditions without real SMTP transit. An explicit value may be given bare (`user@example.com`) or envelope-decorated (`<user@example.com>`, `MAIL FROM:<user@example.com>`, or `msg:mailfrom()`) — it is normalized to the bare address before being written into `mf=`, the same as `rcptto`. `""` (null sender) is preserved. |
-| `rcptto` | no | **Normally omitted** — Momentum auto-populates from the active envelope recipient. One production exception: in `validate_data_spool` (shared hook), pass the full recipient list explicitly to cover all recipients in a single `rt=` — but you MUST exclude any `bcc:` recipient (§8.6), since the multi-recipient `rt=` is visible to every recipient of that copy. In `validate_data_spool_each_rcpt` (recommended), each cowref auto-populates correctly and is BCC-safe. Accepts a string or a Lua table of bare addresses. |
+| `rcptto` | no | **Normally omitted** — Momentum auto-populates from the active envelope recipient. In the recommended `core_final_validation2` hook (and in `validate_data_spool_each_rcpt`), each recipient/cowref auto-populates correctly and is BCC-safe. One exception applies only to the shared `validate_data_spool` hook: pass the full recipient list explicitly to cover all recipients in a single `rt=` — but you MUST exclude any `bcc:` recipient (§8.6), since the multi-recipient `rt=` is visible to every recipient of that copy. Accepts a string or a Lua table of bare addresses. |
 | `bridge_mailfrom` | no | The `mf=` for an auto-generated **fabricated** bridging signature when the new `mf=` domain does not relaxed-domain-match (§9.4, domain-only) any address in the previous signature's `rt=` (§9.2). Required when the prior `rt=` has multiple entries; inferred automatically when it has exactly one. |
 | `bridge_flags` | no | Flag tokens (same format as `flags`) to set on the auto-generated bridge signature only. The primary signature is unaffected. A non-table value always returns an error regardless of whether a bridge fires. A valid table value (or nil) is silently ignored when no bridge is generated — either because `on_chain_break` is not `"bridge"`/`"nd"`, or because no chain break is detected. Example: `bridge_flags={"donotmodify"}` to prevent further modifications after the bridge hop. |
 | `on_chain_break` | no | Action when a §9.2 chain break is detected: `"bridge"` (fabricated `mf=`/`rt=` bridge; default when `bridge_mailfrom` set), `"nd"` (emit an `nd=` "imaginary hop" bridge — §8.7/§9.3), `"skip"` (default otherwise), `"warn"`, or `"error"`. See the Forwarder signing section for details. |

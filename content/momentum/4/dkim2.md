@@ -1,5 +1,5 @@
 ---
-lastUpdated: "06/25/2026"
+lastUpdated: "07/07/2026"
 title: "Using DKIM2 — Overview"
 description: "DKIM2 is the successor to DKIM that adds replay protection (per-message envelope binding), an explicit chain of custody across forwarders, and a structured way for modifying hops to record what they changed. Momentum implements DKIM2 targeting draft-ietf-dkim-dkim2-spec-03."
 ---
@@ -119,10 +119,16 @@ The `debug_level` option is documented in the
 
 **Step 2 — Policy hook**: DKIM2 signing and verification are driven
 entirely from Lua policy. The module does nothing automatically — you
-must call the APIs explicitly from a validation hook. The recommended
-hook is `validate_data_spool_each_rcpt`, which runs once per recipient
-and gives sign() access to the per-recipient envelope address for
-`rt=` binding:
+must call the APIs explicitly from a validation hook. For **signing**,
+the recommended hook is `core_final_validation2`: it runs once per
+recipient (giving sign() the per-recipient envelope address for `rt=`
+binding) and fires on **every injection path** — SMTP *and*
+HTTP/transmissions. For **verification** (inbound), use a per-recipient
+validate hook such as `validate_data_spool_each_rcpt`, which runs before
+the message is spooled so policy can act on the result. See
+[Signing](/momentum/4/dkim2/sign) for the full hook comparison
+and the important caveat that the `validate_data_spool*` hooks do **not**
+fire on the transmissions path.
 
 Signing and verification are separate concerns — typically signing is done
 on outbound messages and verification on inbound. The examples below show
@@ -136,7 +142,7 @@ require("msys.validate.dkim2")
 
 local mod = {}
 
-function mod:validate_data_spool_each_rcpt(msg, ac, vctx)
+function mod:core_final_validation2(msg, ac, vctx)
   local ok, err = msys.validate.dkim2.sign(msg, vctx, {
     domain   = "example.com",
     selector = "dkim2-2026",
@@ -147,7 +153,7 @@ function mod:validate_data_spool_each_rcpt(msg, ac, vctx)
              "dkim2 sign failed: " .. (err or "unknown"))
     -- message continues unsigned; adjust policy as needed
   end
-  return msys.core.VALIDATE_CONT
+  return msys.core.EC_HOOK_CONT
 end
 
 msys.registerModule("my_dkim2_signer", mod)
@@ -287,16 +293,16 @@ The following are known gaps or operational considerations to be aware of:
     signer MUST NOT reveal `bcc:` recipients to any other recipient. Because
     `rt=` lives in the `DKIM2-Signature:` header that every recipient of a
     copy can read, a single `rt=` listing a blind-copied address would leak
-    it. Momentum's per-cowref signing (`validate_data_spool_each_rcpt`)
-    satisfies §8.6 by construction — each delivery's `rt=` carries only that
-    recipient's address. Momentum does **not** attempt to auto-detect BCC at
-    sign time (there is no envelope-level BCC marker — a BCC recipient is
-    simply an envelope RCPT TO absent from `To:`/`Cc:`, which is only a
-    heuristic), so when a policy writer instead signs once with an explicit
-    multi-recipient `rcptto`/`rt=` in the shared hook, excluding BCC recipients
-    is the policy writer's responsibility. Prefer per-recipient signing
-    (or separate copies) for any mail that may carry blind copies. See
-    [Signing hook: shared vs. per-recipient](/momentum/4/dkim2/sign#signing-hook-shared-vs-per-recipient).
+    it. Momentum's per-recipient signing (`core_final_validation2`, or
+    `validate_data_spool_each_rcpt` on the SMTP path) satisfies §8.6 by
+    construction — each delivery's `rt=` carries only that recipient's address.
+    Momentum does **not** attempt to auto-detect BCC at sign time (there is
+    no envelope-level BCC marker — a BCC recipient is simply an envelope RCPT TO
+    absent from `To:`/`Cc:`, which is only a heuristic), so when a policy writer
+    instead signs once with an explicit multi-recipient `rcptto`/`rt=` in the
+    shared hook, excluding BCC recipients is the policy writer's responsibility.
+    Prefer per-recipient signing (or separate copies) for any mail that may
+    carry blind copies. See [Signing hook](/momentum/4/dkim2/sign#signing-hook).
 
 *   **Content modifier recipe composition**: When an upstream-signed
     message passes through a Momentum stage that modifies it — the
