@@ -9,11 +9,11 @@ package = "@netlify/plugin-nextjs"
   for = "/*"
 
   [headers.values]
-    # Applies to every host this deploy serves. The host-conditional-noindex
-    # edge function strips this header (and the noindex <meta> tag) for
-    # support.sparkpost.com requests during the CloudFront migration gap, so
-    # only archive.sparkpost.com (and deploy previews) actually receive it.
-    # See netlify/edge-functions/host-conditional-noindex.ts.
+    # Applies to every host this deploy serves (docs.sparkpost.com, the
+    # archive.sparkpost.com host before it 301s away, and deploy previews).
+    # The docs site is intentionally kept out of search so it doesn't compete
+    # with bird.com — belt-and-braces with the noindex <meta> (seo.tsx) and
+    # robots.txt Disallow: / (next-sitemap.js).
     X-Robots-Tag = "noindex, nofollow"
 
     Strict-Transport-Security = '''
@@ -54,7 +54,7 @@ package = "@netlify/plugin-nextjs"
       'self'
       data:
       fonts.gstatic.com
-      archive.sparkpost.com;
+      docs.sparkpost.com;
     connect-src
       *
       data:
@@ -73,6 +73,17 @@ package = "@netlify/plugin-nextjs"
     worker-src
       'none';
     '''
+
+# Permanently redirect the old archived host to its new home. This deploy
+# serves both hostnames; matching on the full archive.sparkpost.com URL sends
+# every archive request (path + query preserved via :splat) to the equivalent
+# docs.sparkpost.com path. Listed first and forced so it wins over the
+# path-based rules below, which then apply once the request is on docs.
+[[redirects]]
+  from = "https://archive.sparkpost.com/*"
+  to = "https://docs.sparkpost.com/:splat"
+  status = 301
+  force = true
 
 # A redirect rule with many of the supported properties
 [[redirects]]

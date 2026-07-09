@@ -106,12 +106,93 @@ Domain "/(?:^|[.])example[.](/momentum/4/com-co-uk)$/" {
 
 outbound_throttle_messages set in the regex domain shown in the preceding example will impact all domains together, in the same way that a throttle set in a binding_group impacts all bindings.
 
+<a name="conf.ref.outbound_throttle_messages.host_scope"></a>
+### `Outbound_Throttle_Messages` in the `host` Scope
+
+`Outbound_Throttle_Messages` may also be declared inside a `host` stanza to limit the message-delivery rate to a particular MX host — a dimension that the binding/binding_group/domain/global form cannot express on its own, since multiple domains can share a single MX host and a single domain can be served by several MX hosts. The `host` scope identifies the resolved MX hostname for a delivery, so the throttle is consulted once the connection has been bound to a specific MX host, and is enforced alongside any binding/binding_group/domain/global throttle already in effect (see [Layering on top of the binding/domain/global throttle](#conf.ref.outbound_throttle_messages.host_scope) below).
+
+#### Layering on top of the binding/domain/global throttle
+
+The host-scoped throttle is **additive**: it is consulted **in addition to** any `Outbound_Throttle_Messages` value already in effect for the binding/binding_group/domain/global fallback chain. A delivery proceeds only when none of the applicable throttles is saturated; if either the per-binding/domain throttle **or** the per-host throttle is exceeded, the delivery is deferred.
+
+#### MX-preference fallback when a host throttle is saturated
+
+When a destination domain has multiple MX records, a saturated host-scoped throttle does **not** immediately defer the delivery attempt. Instead, the candidate-host selection during MX resolution treats a saturated host the same way it treats a host that has hit its `Max_Outbound_Connections` cap: the host is zero-weighted, and the weighted random pick spills over to a healthy sibling — falling back across preference levels as needed within the **same** delivery attempt.
+
+The fallback proceeds in this order:
+
+1.  **Same preference level (spillover).** If two or more MX records share the most-preferred preference value and at least one of their hosts is not throttled, Momentum picks one of the unthrottled hosts. The saturated host is skipped silently for this attempt.
+
+2.  **Next preference level (level walk).** If every host at the current preference level is throttled (or otherwise unavailable), the selection logic advances to the next preference level and repeats the same weighted-random pick over that group's hosts.
+
+3.  **All preferences saturated (defer with recovery-window scheduling).** If every host at every preference level is throttled, the attempt is aborted and **the message stays in the active queue**. The retry is scheduled at the shortest throttle-recovery window seen across the throttled candidates, **not** at the default `retry_interval` (which would otherwise push the retry out by ~20 minutes). When the recovery window elapses, the next maintainer pass re-runs the MX-selection logic from scratch — potentially picking a host that has since recovered, or hitting the throttle again and rescheduling for the new shortest window.
+
+This matches the spillover behavior an operator already expects from [max_outbound_connections](/momentum/4/config/ref-max-outbound-connections) on multi-MX domains: a saturated host transparently yields to a healthy sibling within one attempt; only when the entire MX set is unavailable does the attempt defer.
+
+#### Mid-session saturation: in-session re-check on each message
+
+Because the message throttle is consumed per-message rather than per-connection, the host-scoped throttle may saturate **mid-session** — that is, after one or more messages have already been delivered over an open TCP connection to the host. Momentum re-checks the host throttle before sending every additional message on a still-open connection, so the message-rate cap is enforced continuously rather than only at connection-establishment time.
+
+On a mid-session hit:
+
+*   The current message **is not** sent. The connection is closed cleanly with `QUIT`.
+*   The undelivered message and any remaining queued messages are left in the active queue.
+*   The maintainer fire for the affected (binding, domain) pair is pushed forward by the throttle's recovery window. When that fires, MX selection re-runs from scratch (which may pick a different host per the spillover rules above, or — if the still-saturated host is the only choice — re-defer).
+
+The first message on a newly-opened TCP connection is exempt from this in-session re-check, matching the existing semantics of the binding/binding_group/domain/global `Outbound_Throttle_Messages` form: the weight-time peek already gated the decision to open the connection, and a second check before the first send would just be redundant work on the success path.
+
+#### `host` scope fallback chain
+
+The `host`-scoped throttle walks its own dedicated fallback chain — separate from the binding/binding_group/domain/global chain — when looking up the most specific value for a given `(binding_group, binding, host)` triple:
+
+```
+binding_group::binding::host  >  binding_group::host  >  binding::host  >  host
+```
+
+The most specific declaration wins. If no `host` stanza along the chain sets `Outbound_Throttle_Messages`, the host-scoped throttle is not enforced; only the binding/domain/global throttle applies. Note that, as with [max_outbound_connections](/momentum/4/config/ref-max-outbound-connections) in the `host` scope, there is no fallback from a `host`-scope lookup to the binding/domain/global value of `Outbound_Throttle_Messages` — the two chains are independent.
+
+#### Usage Example
+
+```
+host "smtp.example.com" {
+  Outbound_Throttle_Messages = "10/5"
+}
+
+Binding "vip" {
+  host "smtp.example.com" {
+    Outbound_Throttle_Messages = "100"
+  }
+}
+```
+
+With the configuration above, deliveries to the resolved MX host `smtp.example.com` are capped at 10 messages per 5 seconds by default, but messages going out from the `vip` binding to the same host may run at 100 per second.
+
+#### Throttles-by-reference semantics still apply
+
+As with the binding/domain/global form (see [the section called “Throttles and Fallback”](#conf.ref.outbound_throttle_messages.fallback)), the host-scoped throttle object is shared by reference across more specific scopes that fall back to it. For example, deliveries from `binding_a::host smtp.example.com` and `binding_b::host smtp.example.com` that both fall back to the plain `host "smtp.example.com"` declaration share the **same** token bucket and are rate-limited cumulatively. Declare an explicit `Outbound_Throttle_Messages` inside each binding's `host` stanza if you want each binding to have its own independent rate to the host.
+
+#### Regex `host` stanzas share one bucket across all matching hostnames
+
+Just as a regex `Domain` stanza creates one shared throttle bucket across every domain the pattern matches, a regex `Host` stanza creates **one shared bucket** across every MX hostname the pattern matches — not a separate bucket per matching host.
+
+```
+Host "/sink-[ab]\.test/" {
+  Outbound_Throttle_Messages = "8/3600"
+}
+```
+
+In the configuration above, deliveries to `sink-a.test` and `sink-b.test` are **combined** against a single 8-messages-per-hour bucket. Eight messages may be sent in total across both hosts in the window, not eight per host. If you need a separate bucket per hostname, declare each host with its own non-regex `Host` stanza.
+
+#### Note on cluster enforcement
+
+The `host`-scoped form of `Outbound_Throttle_Messages` is enforced **locally** on each Momentum node. The cluster module does **not** replicate this throttle across nodes; for cluster-wide rate limiting, use [cluster_outbound_throttle_messages](/momentum/4/config/ref-cluster-outbound-throttle-messages), which operates in the binding_group, domain, and global scopes.
+
 <a name="idp25685888"></a> 
 ## Scope
 
-outbound_throttle_messages is valid in the binding, binding_group, domain, and global scopes.
+outbound_throttle_messages is valid in the binding, binding_group, domain, global, and host scopes. In the `host` scope it walks a dedicated fallback chain (binding_group::binding::host, binding_group::host, binding::host, host).
 
 <a name="idp25687776"></a> 
 ## See Also
 
-[“Configuration Scopes and Fallback”](/momentum/4/4-ecelerity-conf-fallback)
+[“Configuration Scopes and Fallback”](/momentum/4/4-ecelerity-conf-fallback), [outbound_throttle_connections](/momentum/4/config/ref-outbound-throttle-connections), [host](/momentum/4/config/ref-host), [max_outbound_connections](/momentum/4/config/ref-max-outbound-connections), [cluster_outbound_throttle_messages](/momentum/4/config/ref-cluster-outbound-throttle-messages)
