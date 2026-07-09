@@ -4,7 +4,7 @@ title: "Requirements For Sending and Bounce Domains"
 description: "To protect the sending reputation of all of our customers, SparkPost sending and bounce domains must be officially verified and validated."
 ---
 
-At SparkPost we strive to ensure that all of our customers are **Responsible Senders**.  We do this by providing guidance on [deliverability best practices for inbox placement](https://www.sparkpost.com/docs/deliverability/optimizing-deliverability-and-inbox-placement/), providing real-time feedback on your sends and by enforcing policies that protect our sending reputation and the reputation of our customers.
+At SparkPost we strive to ensure that all of our customers are **Responsible Senders**.  We do this by providing guidance on [deliverability best practices for inbox placement](https://docs.sparkpost.com/docs/deliverability/optimizing-deliverability-and-inbox-placement/), providing real-time feedback on your sends and by enforcing policies that protect our sending reputation and the reputation of our customers.
 
 The gold standard for a **Responsible Sender** is one who sends only to those recipients who want and expect the content, and one who practices good list hygiene as follows:
 
@@ -38,7 +38,7 @@ If your domain's status is "Blocked", it's generally because your domain is alre
 
 ### Domain Requirements
 
-* You must own or have administrative access to your domain -- that is confirmed when you complete the [Sending Domain Verification Steps](https://www.sparkpost.com/docs/getting-started/getting-started-sparkpost/#step-2-verifying-domain-ownership)
+* You must own or have administrative access to your domain -- that is confirmed when you complete the [Sending Domain Verification Steps](https://docs.sparkpost.com/docs/getting-started/getting-started-sparkpost/#step-2-verifying-domain-ownership)
 * An A record or MX record in DNS must exist for your domain
 * The organizational domain cannot be used across more than one SparkPost account (for example, you cannot have mail.acme.com associated with one account while alert.acme.com belongs to another account)
 
@@ -57,5 +57,5 @@ If you make changes to your blocked sending domain and would like us to re-eva
 
 ## Additional Resources:
 
-* Having trouble setting up your sending domain? See our article on how to [Create a Sending Domain](https://www.sparkpost.com/docs/getting-started/getting-started-sparkpost/#preparing-your-from-address)
-* A step by step guide to setting up your account for success with our [New User Guide](https://www.sparkpost.com/docs/getting-started/getting-started-sparkpost/)
+* Having trouble setting up your sending domain? See our article on how to [Create a Sending Domain](https://docs.sparkpost.com/docs/getting-started/getting-started-sparkpost/#preparing-your-from-address)
+* A step by step guide to setting up your account for success with our [New User Guide](https://docs.sparkpost.com/docs/getting-started/getting-started-sparkpost/)

@@ -79,7 +79,7 @@ The seed list is updated periodically, as we regularly expand our panel coverage
 
 ### Getting Started with Panel Data
 
-Panel data associated with a sending domain in your SparkPost account will start flowing into your account immediately. If you already have a sending domain added and verified, no further action is needed! If you do not yet have a sending domain in your SparkPost account, please follow these [Getting Started steps](https://www.sparkpost.com/docs/getting-started/getting-started-sparkpost/) to set one up and verify it.
+Panel data associated with a sending domain in your SparkPost account will start flowing into your account immediately. If you already have a sending domain added and verified, no further action is needed! If you do not yet have a sending domain in your SparkPost account, please follow these [Getting Started steps](https://docs.sparkpost.com/docs/getting-started/getting-started-sparkpost/) to set one up and verify it.
 
 Note: You do *not* need to send emails to the consumer panel *through SparkPost* in order to see the data - we will show you panel data sent through any method. We do require a verified domain in order to display the results to the correct account.
 
@@ -111,7 +111,7 @@ SparkPost also provides the following deliverability metrics in the [SparkPost a
 | Moved to Spam Count  | Number of panel messages delivered to the inbox but then moved to the spam folder.            | `count_moved_to_spam` 
 | Moved to Spam Rate   | Percentage of panel messages delivered to the inbox folder but then moved to the spam folder. | `count_moved_to_spam` / (`count_inbox_panel` + `count_inbox_seed`) |
 
-To view the deliverability metrics in the UI, first click “Signals Analytics” in the top menu to be taken to the “Analytics Report”. Click “Add Metrics” and scroll to the “Deliverability Metrics” section to add your desired metrics. All [user roles](https://www.sparkpost.com/docs/user-guide/managing-users/) can view deliverability metrics in the UI.
+To view the deliverability metrics in the UI, first click “Signals Analytics” in the top menu to be taken to the “Analytics Report”. Click “Add Metrics” and scroll to the “Deliverability Metrics” section to add your desired metrics. All [user roles](https://docs.sparkpost.com/docs/user-guide/managing-users/) can view deliverability metrics in the UI.
 
 ![](media/deliverability-analytics/02-deliverability-metrics.png)
 

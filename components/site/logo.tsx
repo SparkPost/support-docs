@@ -27,7 +27,7 @@ const Logo = () => {
         </svg>
       </Box>
       <Box mx="300" height="70%" width="1px" bg="gray.500" />
-      <Box as="a" display="block" height="80%" href="https://www.sparkpost.com/docs">
+      <Box as="a" display="block" height="80%" href="https://docs.sparkpost.com/docs">
         <svg
           height="100%"
           xmlns="http://www.w3.org/2000/svg"
