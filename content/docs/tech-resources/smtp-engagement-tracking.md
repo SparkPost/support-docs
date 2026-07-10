@@ -16,7 +16,7 @@ If you have tracking disabled, then you won’t see “open” and “click” e
 
 What this is actually controlling is whether SparkPost will ‘wrap’ the links in your messages with a Tracking Domain URL, so that your recipients’ browsers will redirect - briefly - via our servers before the final destination.  This allows us to count your recipients’ clicks.
 
-Since 2<sup>nd</sup> December 2015, the system default is “disabled” for messages injected via SMTP – see [Change Log](https://docs.sparkpost.com/docs/tech-resources/change-log-sparkpost/)
+Since 2<sup>nd</sup> December 2015, the system default is “disabled” for messages injected via SMTP.
 
 ## Related Articles
 

@@ -26,7 +26,7 @@ The pull method available for you to retrieve bounce info is the Events API, and
 
 The Events API, however, contains many more filtering options for obtaining or searching for message events. More information about what searchable filters you can use with a Events API call, please see our documentation on that [here](https://developers.sparkpost.com/api/events/).
 
-It is important to note that there are minor differences present between the data posted by a webhook and information pulled from the  Events API, though both sets of event data are otherwise exactly the same. More detailed information on the minor differences are detailed in [this article](https://docs.sparkpost.com/docs/user-guide/comparing-data/).
+It is important to note that there are minor differences present between the data posted by a webhook and information pulled from the  Events API, though both sets of event data are otherwise exactly the same.
 
 **Note**: Message Events data is only stored for a maximum of 10 days in a rolling window. If you wish to pull data from the Events API or app, only the last 10 days will be displayed.
 
