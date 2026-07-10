@@ -22,7 +22,7 @@ Our support team ran the gamut with our customers (thank you for being so very p
 
 1. Each customer had a [new Sparkpost.com account](https://app.sparkpost.com/join?_ga=1.238584512.1501089354.1437574465)
 1. In each case, the customer had [created a Sending Domain in Sparkpost](https://docs.sparkpost.com/docs/getting-started/getting-started-sparkpost/#preparing-your-from-address) properly
-1. All of their DNS records were configured properly by [setting up DKIM to verify their sending domain for use with Sparkpost](https://docs.sparkpost.com/docs/getting-started/getting-started-sparkpost/#step-2-verifying-domain-ownership)
+1. All of their DNS records were configured properly by [setting up DKIM to verify their sending domain for use with Sparkpost](https://docs.sparkpost.com/docs/getting-started/getting-started-sparkpost/#step-2-verify-domain)
 1. We tested they had [created a valid Sparkpost API Key](https://docs.sparkpost.com/docs/getting-started/create-api-keys/) with the **Send via SMTP**          permission enabled
 1. We worked with each customer ensuring they had set up SMTP for use Sparkpost Email Service
 

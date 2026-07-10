@@ -57,8 +57,8 @@ Creating a template using the SparkPost app is simple. To get started, let's go 
 1. **Choose transactional message options:** Choose whether to mark this template as a transactional message. Orange is enabled, grey is disabled (and therefore "non_transactional".) Appropriately categorizing your templates is important because both "transactional" and "non-transactional" templates have separate suppression lists. For more information on suppression lists, see this article [here](https://docs.sparkpost.com/docs/user-guide/using-suppression-lists/).
 
 1. **Define the content of the template:**
-    * **[Creating HTML Content](https://docs.sparkpost.com/docs/getting-started/creating-template/#authoring-html-content-for-your-templates)**
-    * **[Creating Text Content](https://docs.sparkpost.com/docs/getting-started/creating-template/#authoring-text-content-for-your-templates)**
+    * **[Creating HTML Content](https://docs.sparkpost.com/docs/getting-started/creating-template/#authoring-html-content-for-your-templates-in-the-sparkpost-app)**
+    * **[Creating Text Content](https://docs.sparkpost.com/docs/getting-started/creating-template/#authoring-text-content-for-your-templates-in-the-sparkpost-app)**
     * **[How to Use The Template Language](https://developers.sparkpost.com/api/template-language/)**
 
 At this point, we are *technically* done with our template and we could "Save" or "Save and Publish", but let's take a few minutes to test this template and make sure it is behaving as we expect.

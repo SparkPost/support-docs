@@ -38,7 +38,7 @@ If your domain's status is "Blocked", it's generally because your domain is alre
 
 ### Domain Requirements
 
-* You must own or have administrative access to your domain -- that is confirmed when you complete the [Sending Domain Verification Steps](https://docs.sparkpost.com/docs/getting-started/getting-started-sparkpost/#step-2-verifying-domain-ownership)
+* You must own or have administrative access to your domain -- that is confirmed when you complete the [Sending Domain Verification Steps](https://docs.sparkpost.com/docs/getting-started/getting-started-sparkpost/#step-2-verify-domain)
 * An A record or MX record in DNS must exist for your domain
 * The organizational domain cannot be used across more than one SparkPost account (for example, you cannot have mail.acme.com associated with one account while alert.acme.com belongs to another account)
 
