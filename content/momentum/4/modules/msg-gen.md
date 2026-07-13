@@ -1,5 +1,5 @@
 ---
-lastUpdated: "10/05/2021"
+lastUpdated: "07/13/2026"
 title: "msg_gen – Message Generation"
 description: "The msg gen module handles message generation which is triggered by injecting messages using HTTP The module accepts the components of a transmission including recipient list template and message content and constructs a personalized message for each recipient The generated message is then queued for delivery Each transmission is handled..."
 ---
@@ -174,10 +174,12 @@ To enable this functionality the `scheduled_send` and [`keep_message_dicts_in_me
 
 The precedence for engagement tracking options, from highest to lowest is as follows:
 
+*   recipient level (inline recipients only)
+
 *   transmission level
 
 *   template level
 
 *   msg_gen level
 
-For example, if click_tracking is not specified at the transmission level, the value at the template level is used. If the template level is also not specified, the setting of the configuration option in the msg_gen module is used.
+For example, if click_tracking is not specified at the recipient level, the value at the transmission level is used. If the transmission level is also not specified, the value at the template level is used, and if that is not specified either, the setting of the configuration option in the msg_gen module is used. A recipient-level flag (`open_tracking`, `click_tracking`, or `initial_open` in an inline recipient's `options` object) overrides the transmission-level flag for that recipient only; see [“Tracking Engagement for HTTP”](/momentum/4/engagement-tracking-http).
