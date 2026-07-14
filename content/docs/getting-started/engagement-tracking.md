@@ -7,7 +7,7 @@ description: "This guide outlines some of the different ways you can do engageme
 With SparkPost, there are a multitude of ways to configure engagement tracking with our customers.  This guide will outline some of the initial options, and provide references to other guides for configuring custom tracking domains and different ways to use **HTTPS** with your custom tracking domains.
 
 ## Getting Started
-Customers can view their engagement through the use of SparkPosts Events.  These events can be searched and viewed in many different ways.  They can be viewed within [SparkPost Signals®](https://docs.sparkpost.com/docs/reporting/signals-analytics/), queried and searched via the [Events API](https://developers.sparkpost.com/api/events/) or sent to your own environments through the use of [Event Webhooks](https://developers.sparkpost.com/api/webhooks/) to name a few.
+Customers can view their engagement through the use of SparkPosts Events.  These events can be searched and viewed in many different ways.  They can be viewed within [SparkPost Signals®](/docs/reporting/signals-analytics/), queried and searched via the [Events API](https://developers.sparkpost.com/api/events/) or sent to your own environments through the use of [Event Webhooks](https://developers.sparkpost.com/api/webhooks/) to name a few.
 
 ### Notes on Click Tracking
 For a link to be click tracked, it must start with a protocol of either `http://` or `https://`.  If neither of these are present, the link will not be click tracked by SparkPost. 
@@ -43,7 +43,7 @@ SparkPost templates also have the option to set open and click tracking so that 
 If for some reason, you cannot or do not wish to set your tracking configuration with Transmissions API or Template level options, you can request different default settings for your account.  Please contact support through the SparkPost app, or your Technical Account Manager.
 
 ## SMTP Engagement Tracking
-The SparkPost SMTP engagement tracking is turned off by default for new accounts.  This can be turned on account wide by following this [Guide](https://docs.sparkpost.com/docs/tech-resources/smtp-engagement-tracking/).
+The SparkPost SMTP engagement tracking is turned off by default for new accounts.  This can be turned on account wide by following this [Guide](/docs/tech-resources/smtp-engagement-tracking/).
 
 To enable click and open tracking in SMTP messages, add the X-MSYS-API header as follows:
 
@@ -51,7 +51,7 @@ To enable click and open tracking in SMTP messages, add the X-MSYS-API header as
 X-MSYS-API: { "options" : { "open_tracking" : true, "click_tracking" : true } }
 ```
 
-For more information on SMTP Engagement Tracking, check out this [Guide](https://docs.sparkpost.com/docs/tech-resources/smtp-engagement-tracking/) to configure your account settings or leverage the [SMTP API](https://developers.sparkpost.com/api/smtp/) to control your engagement tracking. 
+For more information on SMTP Engagement Tracking, check out this [Guide](/docs/tech-resources/smtp-engagement-tracking/) to configure your account settings or leverage the [SMTP API](https://developers.sparkpost.com/api/smtp/) to control your engagement tracking. 
 
 ### Rate Limiting
 If Sparkpost detects excessive click requests over a short period, it will return http `403 Forbidden` errors.
@@ -59,4 +59,4 @@ If Sparkpost detects excessive click requests over a short period, it will retur
 If you're a developer running the same tests frequently, you may run into it. The solution is to wait a while, or cycle through various recipient addresses.
 
 ## Next Steps
-Look at setting up a [Custom Tracking Domain](https://docs.sparkpost.com/docs/tech-resources/enabling-multiple-custom-tracking-domains/) for your SparkPost mail, which can provide features like [Mobile Universal and App Links](https://docs.sparkpost.com/docs/tech-resources/deep-links-self-serve/) and **HTTPS** tracking links through [CDN Hosting](https://docs.sparkpost.com/docs/tech-resources/enabling-https-engagement-tracking-on-sparkpost/) or the use of a [Reverse Proxy](https://docs.sparkpost.com/docs/tech-resources/using-proxy-https-tracking-domain/).
+Look at setting up a [Custom Tracking Domain](/docs/tech-resources/enabling-multiple-custom-tracking-domains/) for your SparkPost mail, which can provide features like [Mobile Universal and App Links](/docs/tech-resources/deep-links-self-serve/) and **HTTPS** tracking links through [CDN Hosting](/docs/tech-resources/enabling-https-engagement-tracking-on-sparkpost/) or the use of a [Reverse Proxy](/docs/tech-resources/using-proxy-https-tracking-domain/).

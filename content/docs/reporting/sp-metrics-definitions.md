@@ -4,7 +4,7 @@ title: "Metrics Definitions"
 description: "Definitions for the metrics available to SparkPost accounts."
 ---
 
-For Enterprise Metrics see [Enterprise Metric Definitions](https://docs.sparkpost.com/docs/reporting/enterprise-metrics-definitions/).
+For Enterprise Metrics see [Enterprise Metric Definitions](/docs/reporting/enterprise-metrics-definitions/).
 
 # API Metrics Definitions
 

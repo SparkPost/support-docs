@@ -16,7 +16,7 @@ EMAIL_HOST_PASSWORD = 'YOUR API KEY'
 EMAIL_USE_TLS = True
 ```
 
-Remember to replace `YOUR API KEY` with an API key that has “Send via SMTP” permission. Follow the [create API keys](https://docs.sparkpost.com/docs/getting-started/create-api-keys/) guide for detailed instructions.
+Remember to replace `YOUR API KEY` with an API key that has “Send via SMTP” permission. Follow the [create API keys](/docs/getting-started/create-api-keys/) guide for detailed instructions.
 
 Now send your email through Django using SparkPost:
 

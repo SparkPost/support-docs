@@ -8,7 +8,7 @@ Every non-transactional message sent through your account will carry a list-unsu
 
 Select mail providers, namely Gmail and Hotmail, will recognize the presence of the header and present a 1-click option for recipients to act upon.  Inclusion of the header is an established email best practice meant to redirect intent of spam complainants (eg. hit the spam button).
 
-Your account is configured to add these recipients to a suppression list.  Subsequent attempts to these recipients will fail. Find more on suppression lists [here](https://docs.sparkpost.com/docs/user-guide/using-suppression-lists/). 
+Your account is configured to add these recipients to a suppression list.  Subsequent attempts to these recipients will fail. Find more on suppression lists [here](/docs/user-guide/using-suppression-lists/). 
 
 Often, the receiving party (Gmail, Hotmail) won't show the list-unsubscribe header treatment until you've established sending reputation.
 

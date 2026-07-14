@@ -12,7 +12,7 @@ description: "Learn how to enable SCIM user provisioning through Okta for your S
 
 ## Requirements
 - You must be a premier or enterprise customer. See our [pricing page](https://www.sparkpost.com/pricing/) for more details. Test accounts can also evaluate SCIM Provisioning.
-- SAML SSO must be configured and enabled for your account. See instructions [here](https://docs.sparkpost.com/docs/my-account-and-profile/sso/).
+- SAML SSO must be configured and enabled for your account. See instructions [here](/docs/my-account-and-profile/sso/).
 - Only admin users can generate SCIM access tokens.
 
 ## Configuration in SparkPost

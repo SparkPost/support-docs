@@ -14,11 +14,11 @@ The push mechanism that SparkPost has for providing message event data is called
 * Target URL
 * Type of Authentication (None, Basic Auth and OAuth2 are available options 
 
-Your webhook will need to specify which types of events should be pushed to your endpoint. [This article](https://docs.sparkpost.com/docs/tech-resources/webhook-event-reference/) illustrates the available event types, their JSON keys for use with the Webhooks API, and also provides all *key:value* pairs that will appear for each event type in the posted payload. In the app, the question marks next to all of the options will detail the definitions of the events for you. There will likely be some events that are not applicable to you, so add and remove event types to best suit your needs.
+Your webhook will need to specify which types of events should be pushed to your endpoint. [This article](/docs/tech-resources/webhook-event-reference/) illustrates the available event types, their JSON keys for use with the Webhooks API, and also provides all *key:value* pairs that will appear for each event type in the posted payload. In the app, the question marks next to all of the options will detail the definitions of the events for you. There will likely be some events that are not applicable to you, so add and remove event types to best suit your needs.
 
 Once you set up a webhook, you should click the "test" button in the app (or the "validate" call in the Webhooks API) and then use the option to post an example batch to your endpoint. After a successful test, the webhook will then start to stream production event data to your endpoint from that point forward. If a given connection is not successful in delivering a payload to the endpoint, an error message will be displayed in the app, detailing the time the last successful batch was posted. Please note that the error message will remain in the app if any previous posted batch ever experiences a problem, even though the webhook may be accepting posted payloads of data. The time of last batch successful will likely be very recent if this is the case.
 
-Additional information about webhook best practices and retry logic should be read prior to setting up a webhook endpoint. That article can be found [here](https://docs.sparkpost.com/docs/tech-resources/managing-webhook-data/).
+Additional information about webhook best practices and retry logic should be read prior to setting up a webhook endpoint. That article can be found [here](/docs/tech-resources/managing-webhook-data/).
 
 ### Pull Mechanism - Events API
 
@@ -36,7 +36,7 @@ It is important to also know which bounce and event types you should suppress fr
 
 * “Bounce” events that are hard bounces - “bounce_class” = 10, 30, 90
 
-   **Note**: The three bounce classes above are **permanent** failures and should **not** be retried. [Link](https://docs.sparkpost.com/docs/deliverability/bounce-classification-codes/) to all bounce classifications
+   **Note**: The three bounce classes above are **permanent** failures and should **not** be retried. [Link](/docs/deliverability/bounce-classification-codes/) to all bounce classifications
 * “Out of Band” events that are hard bounces - “bounce_class” = 10, 30, 90​
 
    ​**Note**: The three bounce classes above are **permanent** failures and should **not** be retried.
