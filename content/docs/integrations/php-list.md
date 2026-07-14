@@ -6,8 +6,8 @@ description: "PHP List ships with PHP Mailer hence it’s very easy to configure
 
 [PHPList](http://phplist.org) ships with [PHPMailer](https://github.com/PHPMailer/PHPMailer) hence it’s very easy to configure it to send emails through SparkPost SMTP. Follow these instructions to configure PHPList:
 
-* [Add a Sending Domain](https://docs.sparkpost.com/docs/getting-started/getting-started-sparkpost/#preparing-your-from-address) to SparkPost
-* [Create an API Key](https://docs.sparkpost.com/docs/getting-started/create-api-keys/) with “Send via SMTP” permission
+* [Add a Sending Domain](/docs/getting-started/getting-started-sparkpost/#preparing-your-from-address) to SparkPost
+* [Create an API Key](/docs/getting-started/create-api-keys/) with “Send via SMTP” permission
 * In your PHPList installation, open *config/config.php*
 * Add the following configuration
 

@@ -8,7 +8,7 @@ Mailbox providers now focus primarily on engagement and read rates when assignin
 
 Here are some steps for how to improve your reputation with a mailbox provider.
 
-1. If you’re warming up a new IP/domain combo slow down sending, following our [warm up guide](https://docs.sparkpost.com/docs/deliverability/ip-warm-up-overview/).
+1. If you’re warming up a new IP/domain combo slow down sending, following our [warm up guide](/docs/deliverability/ip-warm-up-overview/).
 1. Tighten up the [list hygiene process](/docs/signals/list-hygiene/) for this domain until issue is resolved.
     1. Once you see improvement, you should wait another 14 days. After that you can start slowly increasing your engagement window to include more subscribers for the problem domain. If the blocks return you will need to back off a bit again and that will be your engagement window going forward.
     1. If there is no improvement in 14 days, then mitigation may be required. <br /> **NOTE:** Each mailbox provider has different processes to request mitigation to reset your reputation with them. SparkPost can guide you on what steps to take.  Open a support case for guidance.

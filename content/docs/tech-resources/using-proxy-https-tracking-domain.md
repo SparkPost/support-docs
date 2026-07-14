@@ -354,10 +354,10 @@ Both proxies set the `X-Forwarded-For` header, which enables SparkPost to report
 
 ## Related Articles
 
-* Now that you have **https** tracking domains, you are ready to begin using SparkPost engagement tracking with your [AMP emails](https://docs.sparkpost.com/docs/user-guide/amp-for-email/).
+* Now that you have **https** tracking domains, you are ready to begin using SparkPost engagement tracking with your [AMP emails](/docs/user-guide/amp-for-email/).
 
-* You can use a [CDN with SparkPost tracking domains](https://docs.sparkpost.com/docs/tech-resources/enabling-multiple-custom-tracking-domains/) as an alternative to a reverse proxy.
+* You can use a [CDN with SparkPost tracking domains](/docs/tech-resources/enabling-multiple-custom-tracking-domains/) as an alternative to a reverse proxy.
 
-* Set up engagement tracking with the [SMTP API](https://docs.sparkpost.com/docs/tech-resources/smtp-engagement-tracking/) for your SMTP traffic to SparkPost.
+* Set up engagement tracking with the [SMTP API](/docs/tech-resources/smtp-engagement-tracking/) for your SMTP traffic to SparkPost.
 
 * If you have a mobile app, and want to enable it to open when a recipient clicks an email link, see [this article](./deep-links-self-serve).

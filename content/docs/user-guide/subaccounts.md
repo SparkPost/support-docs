@@ -52,7 +52,7 @@ In addition, your subaccount users will be able to:
 * View and manage the suppression list via the API​
 * Create their own webhook via the API
 * Create, edit, view, and use templates via the API
-* Access [Signals Analytics](https://docs.sparkpost.com/docs/reporting/signals-analytics/) via the UI
+* Access [Signals Analytics](/docs/reporting/signals-analytics/) via the UI
 
 ### Use Cases
 
@@ -107,7 +107,7 @@ After creating a subaccount, the primary account has the option of assigning a d
 
 Primary account Admin and Developer users can create subaccounts. Primary account Templates and Reporting users can see information about all subaccounts. Reporting Users can optionally be assigned to a specific subaccount instead of the primary account - more information on this below in "Subaccount UI Access".
 
-Learn more about user roles [here](https://docs.sparkpost.com/docs/user-guide/managing-users/).
+Learn more about user roles [here](/docs/user-guide/managing-users/).
 
 **Subaccount Statuses**
 

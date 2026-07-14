@@ -22,4 +22,4 @@ Since 2<sup>nd</sup> December 2015, the system default is “disabled” for mes
 
 You can also control event tracking from your upstream message source, via our “SMTP API”, as [described here](https://developers.sparkpost.com/api/smtp-api).
 
-You can register [Custom Tracking Domains](https://docs.sparkpost.com/docs/tech-resources/enabling-multiple-custom-tracking-domains/) for better message alignment that can improve deliverability.
+You can register [Custom Tracking Domains](/docs/tech-resources/enabling-multiple-custom-tracking-domains/) for better message alignment that can improve deliverability.

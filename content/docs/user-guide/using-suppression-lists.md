@@ -21,7 +21,7 @@ When a message is injected either using SMTP or HTTP, SparkPost will check the e
 * **Suppression List API:** Using the REST API, you can insert/update a single entry or multiple entries in your suppression list, check the suppression status for a specific recipient, or remove a recipient from your suppression list. For more information, see the [SparkPost Suppression List API](https://www.sparkpost.com/api#/reference/suppression-list "SparkPost Suppression List API").
 * **Suppression list UI:** Using the User Interface (UI), select Recipients and then Suppressions.
 
-**If you want to learn how your application can be notified of list pruning events, read our [using unsubscribe events](https://docs.sparkpost.com/docs/user-guide/using-unsubscribe-reports/) guide.**
+**If you want to learn how your application can be notified of list pruning events, read our [using unsubscribe events](/docs/user-guide/using-unsubscribe-reports/) guide.**
 
 ## Managing Suppression Lists with the SparkPost API
 

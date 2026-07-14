@@ -14,7 +14,7 @@ The following example code is used to illustrate our preview and test send funct
 * **ID:** my-preview-test-template
 * **From Name:** This is the "human friendly" name that is shown to recipients in their email client
 * **From Email (sender):** Your user on the valid sending domain
-* **From Email (@domain):** Must be one of your **valid** sending domains. [Learn how to configure a sending domain in SparkPost](https://docs.sparkpost.com/docs/getting-started/getting-started-sparkpost/#preparing-your-from-address)
+* **From Email (@domain):** Must be one of your **valid** sending domains. [Learn how to configure a sending domain in SparkPost](/docs/getting-started/getting-started-sparkpost/#preparing-your-from-address)
 * **Subject:** Test Email, Please do not respond
 * **Description:** This is a simple test template used to test SparkPost's Preview Functionality
 * **Engagement Tracking:** Turn on Track Opens and Track Clicks

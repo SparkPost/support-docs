@@ -20,4 +20,4 @@ Changing the from address to sales@autos.example.com will correct the error, bec
 
 ## Additional Information
 
-Refer to [this Knowledge Base Article](https://docs.sparkpost.com/docs/getting-started/getting-started-sparkpost/#preparing-your-from-address) to learn more about how to configure Sending Domains.
+Refer to [this Knowledge Base Article](/docs/getting-started/getting-started-sparkpost/#preparing-your-from-address) to learn more about how to configure Sending Domains.

@@ -4,7 +4,7 @@ title: "Using CC and BCC with the REST API"
 description: "Before getting started please read What are the differences between CC BCC and archive recipients Note to use CC BCC and Archiving with SMTP check out our SMTP API reference documentation Note Please be advised that CC and BCC messages count towards your usage What is CC CC is a..."
 ---
 
-Before getting started please read [What are the differences between CC, BCC, and archive recipients?](https://docs.sparkpost.com/docs/faq/cc-bcc-archive-recipients/)
+Before getting started please read [What are the differences between CC, BCC, and archive recipients?](/docs/faq/cc-bcc-archive-recipients/)
 
 Note: to use CC, BCC, and Archiving with SMTP, check out our [SMTP API reference documentation](https://developers.sparkpost.com/api/#/reference/smtp-api).
 Note: Please be advised that CC and BCC  messages count towards your usage.

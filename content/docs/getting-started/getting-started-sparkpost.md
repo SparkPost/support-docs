@@ -41,7 +41,7 @@ If you do not have a domain name, you'll need to purchase one to use with SparkP
 
 To set up your sending domain, add the domain to your SparkPost account, verify that you own it and wait a moment while our Compliance team runs a few quick checks. Follow the detailed steps below to get it done.
 
-Note: SparkPost expects to see a [legitimate web presence](https://docs.sparkpost.com/docs/getting-started/requirements-for-sending-domains/#website-requirements) on each sending domain, so please ensure your website is accessible before adding a domain to your SparkPost account. If you use a subdomain, a legitimate web presence is only needed on the top-level domain.
+Note: SparkPost expects to see a [legitimate web presence](/docs/getting-started/requirements-for-sending-domains/#website-requirements) on each sending domain, so please ensure your website is accessible before adding a domain to your SparkPost account. If you use a subdomain, a legitimate web presence is only needed on the top-level domain.
 
 ## Domain Setup
 ### Step 1: Add the Domain
@@ -62,7 +62,7 @@ Unfortunately, some DNS records take longer to update than others, even up to 24
 
 Some providers are particular about how the hostname is entered, so please check with your domain provider to see if there are any special requirements for entering your DNS TXT record.
 
-You're almost done! While you've been verifying ownership of your domain, the addition of this DKIM DNS record will [also help your reputation as an email sender](https://docs.sparkpost.com/docs/faq/why-configure-dkim/). DKIM is a widely-used email standard that most email services will use to verify that your emails were in fact sent by you and weren't intercepted or changed along the way.
+You're almost done! While you've been verifying ownership of your domain, the addition of this DKIM DNS record will [also help your reputation as an email sender](/docs/faq/why-configure-dkim/). DKIM is a widely-used email standard that most email services will use to verify that your emails were in fact sent by you and weren't intercepted or changed along the way.
 
 *Note:* If you don't have access to update your DNS records for this domain, you can verify ownership further down in the page by sending an email to a mailbox you control on your domain. Then click on the link in the received email to verify. This will allow you to send email from this domain, but SparkPost will not be able to DKIM-sign the mail it sends on your behalf, which could cause deliverability issues. We recommend using DNS verification whenever possible for this reason.
 
@@ -75,7 +75,7 @@ Here are some how-to documents for editing DNS records with common DNS providers
 
 ### Step 3: Final Review
 
-Once your DNS record has been found, your domain's status will change to "Pending". This means the domain is in our final review process which will verify that the domain meets [our best practice requirements](https://docs.sparkpost.com/docs/getting-started/requirements-for-sending-domains/). This usually takes just a few minutes, but can sometimes take up to an hour. Once the review is complete, the domain will be ready to send.
+Once your DNS record has been found, your domain's status will change to "Pending". This means the domain is in our final review process which will verify that the domain meets [our best practice requirements](/docs/getting-started/requirements-for-sending-domains/). This usually takes just a few minutes, but can sometimes take up to an hour. Once the review is complete, the domain will be ready to send.
 
 ![Ready to send](media/getting-started-sparkpost/status-section.png)
 
@@ -233,6 +233,6 @@ SparkPost can receive email on your behalf and forward to your own HTTP endpoint
 
 ## How To Get Help
 
-For general questions, you might find a ready-made answer by searching SparkPost's [support articles](https://docs.sparkpost.com/docs/).
+For general questions, you might find a ready-made answer by searching SparkPost's [support articles](/docs/).
 
 If you run into an issue with your account you can contact our support team by clicking on the question mark on the top right of [your dashboard](https://app.sparkpost.com/dashboard) and submitting a ticket. You can also follow the [SparkPost Status](https://status.sparkpost.com/) page for service updates.

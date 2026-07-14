@@ -23,4 +23,4 @@ Billing suspensions will be issued if we fail to collect payment. If this occurs
 
 If you’re transitioning to SparkPost from another Email Service Provider, one possible cause for suspension is that your previous provider built a suppression list out of your bounces and FBL complaints, which prevents you from sending to addresses which can damage your reputation. When you switch over to us, that list doesn’t come with you automatically - you’ll need to either remove those suppressions from your current customer lists, or copy the suppression list and upload it to SparkPost. Otherwise, you’ll be sending to everyone who had bounced or complained over the years, which is likely to cause your account to be suspended.
 
-You can learn about SparkPost [suppression lists](https://docs.sparkpost.com/docs/user-guide/using-suppression-lists/) here.
+You can learn about SparkPost [suppression lists](/docs/user-guide/using-suppression-lists/) here.
