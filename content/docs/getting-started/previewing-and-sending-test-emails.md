@@ -27,7 +27,7 @@ The following example code is used to illustrate our preview and test send funct
 
 {{if product.name}}
 <p>
-Thank you for your interest in [{{product.name}}](/docs/product.url "product.description")
+Thank you for your interest in [{{product.name}}](https://docs.sparkpost.com/docs/product.url "product.description")
 </p>
 {{end}}
 
