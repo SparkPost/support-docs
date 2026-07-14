@@ -29,7 +29,7 @@ DKIM signing domain (`d=`) = `mysendingdomain.com`
 
 _Note_: This is the result regardless of the IP pool being used.
 
-More information on how to create sending domains via the API can be found [here](https://developers.sparkpost.com/api/sending-domains.html). The associated [knowledge base article](https://www.sparkpost.com/docs/getting-started/getting-started-sparkpost/#sending-domain-step-2-verifying-domain-ownership) on creating sending domains can be referenced for detailed instructions as well.
+More information on how to create sending domains via the API can be found [here](https://developers.sparkpost.com/api/sending-domains.html). The associated [knowledge base article](https://docs.sparkpost.com/docs/getting-started/getting-started-sparkpost/#step-2-verify-domain) on creating sending domains can be referenced for detailed instructions as well.
 <br>
 <br>
 

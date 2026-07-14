@@ -22,7 +22,7 @@ It is possible to specify a list of one or more recipients who will receive a co
 ### Notes
 
 *   The “rcpt_type” field present in webhook/Message Events API data is used to specify whether the recipient is a CC, BCC or Archive recipient.
-	* If the [REST API is used to send cc or bcc messages](https://www.sparkpost.com/docs/faq/cc-bcc-with-rest-api/) (please note that archive is **not** supported via the REST API), the "rcpt_type" field **does not appear** in the webhook or Message Events API data. We recommend that you include recipient-level metadata for tracking which type each recipient address belongs to.
+	* If the [REST API is used to send cc or bcc messages](https://docs.sparkpost.com/docs/faq/cc-bcc-with-rest-api/) (please note that archive is **not** supported via the REST API), the "rcpt_type" field **does not appear** in the webhook or Message Events API data. We recommend that you include recipient-level metadata for tracking which type each recipient address belongs to.
 *   Each Archive, CC, and BCC recipient is counted in the standard targeted and accepted metrics.
 *   Archive messages do not include a BCC header.
 *   The total number of CC, BCC and archive recipients cannot exceed 1000.

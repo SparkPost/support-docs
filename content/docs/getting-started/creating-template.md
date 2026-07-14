@@ -6,12 +6,12 @@ description: "Create a Template Once you understand how to send an email transmi
 
 ## Create a template
 
-Once you understand how to [send an email (transmission)](https://www.sparkpost.com/docs/getting-started/getting-started-sparkpost/#sending-email), you'll want to know how to create templates in SparkPost if you do not wish to use inline content in your transmissions API call.
+Once you understand how to [send an email (transmission)](https://docs.sparkpost.com/docs/getting-started/getting-started-sparkpost/#sending-email), you'll want to know how to create templates in SparkPost if you do not wish to use inline content in your transmissions API call.
 
 Currently there are two ways you can create templates in SparkPost:
 
-* [Create templates in SparkPost using the app](https://www.sparkpost.com/docs/getting-started/creating-template/#creating-templates-with-the-app)
-* [Create templates in SparkPost using the API](https://www.sparkpost.com/docs/getting-started/creating-template/#creating-templates-with-the-api)
+* [Create templates in SparkPost using the app](https://docs.sparkpost.com/docs/getting-started/creating-template/#creating-templates-with-the-app)
+* [Create templates in SparkPost using the API](https://docs.sparkpost.com/docs/getting-started/creating-template/#creating-templates-with-the-api)
 
 ## Why create templates in SparkPost?
 
@@ -38,7 +38,7 @@ Creating a template using the SparkPost app is simple. To get started, let's go 
     
 1. **Define subaccount usage of the template:** Choose whether or not to share this template with subaccounts by clicking the checkbox titled "Share with all subaccounts". If a primary account creates a template and does not elect to share it with subaccounts, only the primary account may use that template. If the template is shared with all subaccounts, every subaccount has access to use the template, but only the primary account has edit permissions. If the primary account creates a template on behalf of a subaccount and assigns it to a single subaccount, both the primary account and subaccount can use and edit that template.
 
-    Read more about using subaccounts in SparkPost [here](https://www.sparkpost.com/docs/user-guide/subaccounts/).
+    Read more about using subaccounts in SparkPost [here](https://docs.sparkpost.com/docs/user-guide/subaccounts/).
 
 1. **Define the subject of the template:** Input the subject line of the template that will appear in your recipient's mail client.
 
@@ -54,11 +54,11 @@ Creating a template using the SparkPost app is simple. To get started, let's go 
 
 1. **Choose engagement tracking options:** If you would like this template to have open and click tracking enabled, click on either of these buttons. Orange is enabled, and grey is disabled.
     
-1. **Choose transactional message options:** Choose whether to mark this template as a transactional message. Orange is enabled, grey is disabled (and therefore "non_transactional".) Appropriately categorizing your templates is important because both "transactional" and "non-transactional" templates have separate suppression lists. For more information on suppression lists, see this article [here](https://www.sparkpost.com/docs/user-guide/using-suppression-lists/).
+1. **Choose transactional message options:** Choose whether to mark this template as a transactional message. Orange is enabled, grey is disabled (and therefore "non_transactional".) Appropriately categorizing your templates is important because both "transactional" and "non-transactional" templates have separate suppression lists. For more information on suppression lists, see this article [here](https://docs.sparkpost.com/docs/user-guide/using-suppression-lists/).
 
 1. **Define the content of the template:**
-    * **[Creating HTML Content](https://www.sparkpost.com/docs/getting-started/creating-template/#authoring-html-content-for-your-templates)**
-    * **[Creating Text Content](https://www.sparkpost.com/docs/getting-started/creating-template/#authoring-text-content-for-your-templates)**
+    * **[Creating HTML Content](https://docs.sparkpost.com/docs/getting-started/creating-template/#authoring-html-content-for-your-templates-in-the-sparkpost-app)**
+    * **[Creating Text Content](https://docs.sparkpost.com/docs/getting-started/creating-template/#authoring-text-content-for-your-templates-in-the-sparkpost-app)**
     * **[How to Use The Template Language](https://developers.sparkpost.com/api/template-language/)**
 
 At this point, we are *technically* done with our template and we could "Save" or "Save and Publish", but let's take a few minutes to test this template and make sure it is behaving as we expect.
@@ -79,7 +79,7 @@ If you are using substitution data in your emails, there are additional steps yo
 
 ### Prerequisites
 
-* **SparkPost API Key:** You will need to have a SparkPost API Key with all the appropriate data-access permissions for Templates API management. [How to create a SparkPost API Key](https://www.sparkpost.com/docs/getting-started/create-api-keys/)
+* **SparkPost API Key:** You will need to have a SparkPost API Key with all the appropriate data-access permissions for Templates API management. [How to create a SparkPost API Key](https://docs.sparkpost.com/docs/getting-started/create-api-keys/)
 * **HTTP Request Knowledge:** You will need to understand how to make HTTP(S) requests.
 * **Tools:** You will need to have a REST Client, or access to a terminal which supports cURL.
 

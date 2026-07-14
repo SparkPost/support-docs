@@ -22,8 +22,8 @@ In order to get the best deliverability and inbox placement rates, you need to e
     * Hide the unsubscribe link or ignore unsubscribe requests
     * Buy email lists - especially those from untrustworthy sources
     * Sell your list to a third party without permission
-8.  Set up [custom bounce domain(s)](https://www.sparkpost.com/docs/tech-resources/custom-bounce-domain/)
-9.  Set up [custom tracking domain(s)](https://www.sparkpost.com/docs/tech-resources/enabling-multiple-custom-tracking-domains/)
+8.  Set up [custom bounce domain(s)](https://docs.sparkpost.com/docs/tech-resources/custom-bounce-domain/)
+9.  Set up [custom tracking domain(s)](https://docs.sparkpost.com/docs/tech-resources/enabling-multiple-custom-tracking-domains/)
 
 For more detailed information on this topic, please review [MAAWG Sender Best Common Practices](https://www.m3aawg.org/documents/en/m3aawg-sender-best-common-practices-version-30).
 

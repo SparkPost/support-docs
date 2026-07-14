@@ -10,4 +10,4 @@ Gmail pulls the 'mailing list' information from the list_unsubscribe header that
 
 ## How do I remove this? 
 
-Unfortunately since the header is auto-generated it cannot be changed or removed. For more information about the list_unsubscribe header please see [this article](https://www.sparkpost.com/docs/user-guide/remove-list-unsubscribe-header/).
+Unfortunately since the header is auto-generated it cannot be changed or removed. For more information about the list_unsubscribe header please see [this article](https://docs.sparkpost.com/docs/user-guide/remove-list-unsubscribe-header/).

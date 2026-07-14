@@ -25,7 +25,7 @@ You can use the API key to view who was on your account's Suppression List, but 
 
 You can edit that by visiting this URL and clicking the Edit button for that particular API key and adding the Suppression Lists Read/Write permission: [https://app.sparkpost.com/#/account/credentials](https://app.sparkpost.com/#/account/credentials)
 
-More information regarding the suppression list can be found here:  https://www.sparkpost.com/docs/user-guide/using-suppression-lists/
+More information regarding the suppression list can be found here:  https://docs.sparkpost.com/docs/user-guide/using-suppression-lists/
 
 Some workarounds for this situation are:
 

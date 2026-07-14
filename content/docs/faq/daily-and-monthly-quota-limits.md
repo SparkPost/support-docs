@@ -34,4 +34,4 @@ Daily limits can take up to a week to fully update after you upgrade your plan. 
 
 If you need to send more than 50,000 email a day on average throughout a calendar month, SparkPost requires that you have one or more dedicated IPs and custom bounce and tracking domains set up. Please set these up before requesting a limit rise.
 
-**Note:**  Please follow our [IP Warm up Guide](https://www.sparkpost.com/docs/deliverability/ip-warm-up-overview/) to warm up any new IP and correctly establish your sending reputation.
+**Note:**  Please follow our [IP Warm up Guide](https://docs.sparkpost.com/docs/deliverability/ip-warm-up-overview/) to warm up any new IP and correctly establish your sending reputation.
