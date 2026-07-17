@@ -4,7 +4,7 @@ title: "Dedicated IP Pools"
 description: "Dedicated IP addresses are available for any account with the exception of the FREE plan with no credit card details on file Any new dedicated IP address added to your account will have a neutral initial reputation which means that you will be responsible for properly warming up your new..."
 ---
 
-Dedicated IP addresses are available for any account with the exception of Starter and Test plans. Any new dedicated IP address added to your account will have a neutral initial reputation, which means that you will be responsible for properly warming up your new IP. You can refer to our [IP Warmup Overview](https://www.sparkpost.com/docs/deliverability/ip-warm-up-overview/) for a comprehensive guide to warming up your new IP.
+Dedicated IP addresses are available for any account with the exception of Starter and Test plans. Any new dedicated IP address added to your account will have a neutral initial reputation, which means that you will be responsible for properly warming up your new IP. You can refer to our [IP Warmup Overview](/docs/deliverability/ip-warm-up-overview/) for a comprehensive guide to warming up your new IP.
 
 ## Plans with an Included IP
 
@@ -28,7 +28,7 @@ You can provision additional dedicated IPs directly to your Account via the UI. 
 
 You can view and manage your dedicated IPs and their associated IP Pools in the UI by selecting **Configuration** > **IP Pools**
 
-From here, you can create, delete, or edit IP Pools. You can also move dedicated IPs between pools. Read this article to understand more about __[managing your existing dedicated IP pools](https://www.sparkpost.com/docs/deliverability/managing-dedicated-ip-pools/)__.
+From here, you can create, delete, or edit IP Pools. You can also move dedicated IPs between pools. Read this article to understand more about __[managing your existing dedicated IP pools](/docs/deliverability/managing-dedicated-ip-pools/)__.
 
 ## Using Your Dedicated IPs
 

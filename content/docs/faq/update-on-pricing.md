@@ -8,12 +8,12 @@ On **July 15, 2019**, we notified SparkPost customers on the old SparkPost “Fr
 
 ## Why did we change our pricing?
 
-Over the last four years, we have delivered significant expansions to our product such as [A/B testing](https://www.sparkpost.com/docs/tech-resources/a-b-testing-sparkpost/), [Recipient Validation](https://www.sparkpost.com/recipient-validation/), and our predictive email analytics platform [Signals](https://www.sparkpost.com/platform/signals/). And we’re shipping new features faster than ever. We believe that the new pricing is fair and in line with what is being offered in the market.
+Over the last four years, we have delivered significant expansions to our product such as [A/B testing](/docs/tech-resources/a-b-testing-sparkpost/), [Recipient Validation](https://www.sparkpost.com/recipient-validation/), and our predictive email analytics platform [Signals](https://www.sparkpost.com/platform/signals/). And we’re shipping new features faster than ever. We believe that the new pricing is fair and in line with what is being offered in the market.
 
 ## What are the differences between Starter and Premier plans?
 
 The **Starter** plans are low-cost plans that make it easy for new or low-volume senders to get started. They include many of SparkPost’s great features, but some features are limited in order to keep costs low.
-The **Premier** plans are robust email packages for high-volume senders that include additional features to facilitate and manage sending large volumes of email. Feature breakdown of these plans can be found [here](https://www.sparkpost.com/docs/faq/difference-between-starter-and-premier/). 
+The **Premier** plans are robust email packages for high-volume senders that include additional features to facilitate and manage sending large volumes of email. Feature breakdown of these plans can be found [here](/docs/faq/difference-between-starter-and-premier/). 
 
 ## If I cancel my plan and reactivate, can I go back to the old pricing? 
 
@@ -29,4 +29,4 @@ On or before September 15, 2019, you will need to login to your SparkPost accoun
 
 ## Will you be increasing prices for other SparkPost features and services?
 
-Pricing and plan changes only apply to sending volume. Pricing of features or additional services such as [Recipient Validation](https://www.sparkpost.com/docs/tech-resources/recipient-validation-sparkpost/) and [Dedicated IPs](https://www.sparkpost.com/docs/deliverability/dedicated-ip-pools/) are not affected by this change. However, please do note that these features are not available with all messaging plans. Feature breakdown of the different plan tiers can be found [here](https://www.sparkpost.com/docs/faq/difference-between-starter-and-premier/). 
+Pricing and plan changes only apply to sending volume. Pricing of features or additional services such as [Recipient Validation](/docs/tech-resources/recipient-validation-sparkpost/) and [Dedicated IPs](/docs/deliverability/dedicated-ip-pools/) are not affected by this change. However, please do note that these features are not available with all messaging plans. Feature breakdown of the different plan tiers can be found [here](/docs/faq/difference-between-starter-and-premier/). 

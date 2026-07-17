@@ -4,7 +4,7 @@ title: "Best Practices for Managing Webhook Data Streams"
 description: "Spark Post and Spark Post Enterprise provide data streams of raw event data via webhooks There are several points of consideration to take into account in order to ensure you correctly receive the event data This article details how our webhooks function so you can successfully set up your endpoint..."
 ---
 
-SparkPost provides data streams of raw event data via webhooks. There are several points of consideration to take into account in order to ensure you correctly receive the event data. This article details how our webhooks function so you can successfully set up your endpoint to consume streamed event data. For more details on authentication and security see [Webhook Authentication]( https://www.sparkpost.com/docs/tech-resources/webhook-authentication/)
+SparkPost provides data streams of raw event data via webhooks. There are several points of consideration to take into account in order to ensure you correctly receive the event data. This article details how our webhooks function so you can successfully set up your endpoint to consume streamed event data. For more details on authentication and security see [Webhook Authentication]( /docs/tech-resources/webhook-authentication/)
 
 # Webhook Batch Sizes and Projections
 
@@ -26,7 +26,7 @@ Generally speaking, four events are recorded for each message: injection, delive
     * `event_id` - a data element within each set of event data that uniquely identifies a given event.  The format of this field is not consistent across events -- for some event types this may be a large integer, while for others it may be a UUID. 
 *   It is recommended that you do not set a maximum batch size your endpoint will accept, or that if you do, that it is not excessively small, in order to prevent truncation of data on any attempted batch.
 *   From time to time as SparkPost releases new features additional fields or event types will be added to webhooks payloads. Webhooks consumers should be flexible enough to accept additive changes to the payload. Changes to the structure of the payload, removal of fields or events, and changes to datatypes are considered breaking changes and SparkPost will provide reasonable notice to customers.
-*   Utilize separate processing & storage for different [Event Types](https://www.sparkpost.com/docs/tech-resources/webhook-event-reference/#event-types).  Message structure & data types are consistent within a given Event Type, but not between Event Types. 
+*   Utilize separate processing & storage for different [Event Types](/docs/tech-resources/webhook-event-reference/#event-types).  Message structure & data types are consistent within a given Event Type, but not between Event Types. 
 
 # Monitoring Webhooks
 

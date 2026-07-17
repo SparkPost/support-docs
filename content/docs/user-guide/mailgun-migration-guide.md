@@ -83,12 +83,12 @@ We'll start with a comparison of terms:
 Where to get help
 -----------------
 
-If you're in a hurry, don't have time to read this guide and just want the details, check out our [DevHub](https://developers.sparkpost.com/), [API docs](https://developers.sparkpost.com/api) and [pricing](https://www.sparkpost.com/pricing/). If you have general questions, [take a walk through our support articles](https://www.sparkpost.com/docs/). If you need help, you can open a support ticket [directly from the SparkPost app](https://www.sparkpost.com/docs/faq/submit-a-ticket/).
+If you're in a hurry, don't have time to read this guide and just want the details, check out our [DevHub](https://developers.sparkpost.com/), [API docs](https://developers.sparkpost.com/api) and [pricing](https://www.sparkpost.com/pricing/). If you have general questions, [take a walk through our support articles](/docs/). If you need help, you can open a support ticket [directly from the SparkPost app](/docs/faq/submit-a-ticket/).
 
 Signing Up
 ----------
 
-Sign up for your SparkPost account [here.](https://app.sparkpost.com/join) You can choose the default US-hosted service, or select the EU-hosted service ([more info here](https://www.sparkpost.com/docs/faq/sparkpost-eu-faq/)). On sign-up, your free developer account has a monthly email allowance. You can open both account types if you wish.
+Sign up for your SparkPost account [here.](https://app.sparkpost.com/join) You can choose the default US-hosted service, or select the EU-hosted service ([more info here](/docs/faq/sparkpost-eu-faq/)). On sign-up, your free developer account has a monthly email allowance. You can open both account types if you wish.
 
 If you need separate environments or to send on behalf of multiple clients, you can use subaccounts under a single primary account. This is explained in more detail below.
 
@@ -114,7 +114,7 @@ Setting Up A Sending Domain
 
 To begin sending mail from your own domain, you must tell SparkPost about it by adding a sending domain on your account. SparkPost will then check that you own it. You create and manage this from the [Domains](https://app.sparkpost.com/domains/list/sending) menu.
 
-Mailgun's "Custom Domains" group sending, tracking and receiving domain configuration together. SparkPost also provides [sending](https://developers.sparkpost.com/api/sending-domains.html), [bounce](https://developers.sparkpost.com/api/sending-domains/#header-using-a-sending-domain-as-a-bounce-domain), [tracking](https://developers.sparkpost.com/api/tracking-domains.html), and [inbound](https://developers.sparkpost.com/api/inbound-domains.html) domains; our [Getting Started guide](https://www.sparkpost.com/docs/getting-started/getting-started-sparkpost/) walks you through setting these up via the app.
+Mailgun's "Custom Domains" group sending, tracking and receiving domain configuration together. SparkPost also provides [sending](https://developers.sparkpost.com/api/sending-domains.html), [bounce](https://developers.sparkpost.com/api/sending-domains/#header-using-a-sending-domain-as-a-bounce-domain), [tracking](https://developers.sparkpost.com/api/tracking-domains.html), and [inbound](https://developers.sparkpost.com/api/inbound-domains.html) domains; our [Getting Started guide](/docs/getting-started/getting-started-sparkpost/) walks you through setting these up via the app.
 
 To verify a sending domain, you publish a DKIM DNS record. If this is not possible, you can opt to receive an email to the abuse@ or postmaster@ account for your domain.
 
@@ -146,7 +146,7 @@ As a side note, while many Mailgun API endpoints are scoped by sending domain, S
 
 You can call the SparkPost API directly using tools like [Postman](https://developers.sparkpost.com/api/#header-postman), [cURL](https://curl.haxx.se/) or [HTTPie](https://httpie.org/) but it's more common to make HTTPS requests from your own programming language -- see our [developer hub](https://developers.sparkpost.com/) for example code and libraries. If you're not writing your own code, see our [Marketing Campaign partner solutions](https://www.sparkpost.com/partner-category/marketing-campaigns/).
 
-Whichever tools you choose, you will need to [issue yourself an API key](https://www.sparkpost.com/docs/getting-started/create-api-keys/) to start using the SparkPost API. Unlike Mailgun's credential per domain policy, you can create as many API keys as you need, each with their own privileges so you can compartmentalize access rights across your software stack and organization.
+Whichever tools you choose, you will need to [issue yourself an API key](/docs/getting-started/create-api-keys/) to start using the SparkPost API. Unlike Mailgun's credential per domain policy, you can create as many API keys as you need, each with their own privileges so you can compartmentalize access rights across your software stack and organization.
 
 Sending Mail Over SMTP
 ----------------------
@@ -169,18 +169,18 @@ It's worth remembering that SparkPost wraps substitution variables with double b
 
 To explore further, you can create, edit and preview your templates (using test substitution data) [within SparkPost](https://app.sparkpost.com/templates) and also using the [templates API endpoint](https://developers.sparkpost.com/api/templates.html).
 
-As well as the usual HTML content, [SparkPost templates](https://www.sparkpost.com/docs/getting-started/creating-template/) can have optional plain-text and [AMP HTML](https://www.sparkpost.com/docs/user-guide/amp-for-email/) parts. The substitution variables work on these parts too.
+As well as the usual HTML content, [SparkPost templates](/docs/getting-started/creating-template/) can have optional plain-text and [AMP HTML](/docs/user-guide/amp-for-email/) parts. The substitution variables work on these parts too.
 
 SparkPost has template [snippets](https://www.sparkpost.com/blog/get-started-snippets-sparkpost-email-templates/). Snippets are modular, reusable content that, once created, can be imported into the HTML, Text, or AMP part of any email template using a `render_snippet` macro call.
 
-SparkPost also supports [A/B testing](https://www.sparkpost.com/docs/tech-resources/a-b-testing-sparkpost/), a common method of comparing templates to see which one performs better. SparkPost provides the means to create automated A/B tests and view completed results.
+SparkPost also supports [A/B testing](/docs/tech-resources/a-b-testing-sparkpost/), a common method of comparing templates to see which one performs better. SparkPost provides the means to create automated A/B tests and view completed results.
 
 Tracking Your Email Activity
 ----------------------------
 
 SparkPost offers two levels of tracking information. The Analytics Report is a richer and more complete form of Mailgun stats -- rolled up, time windowed summaries of your mailing and recipient activity. over 40 metrics are [viewable as customizable time series graphs](https://app.sparkpost.com/signals/analytics) and also available programmatically using our [metrics API endpoint](https://developers.sparkpost.com/api/metrics.html).
 
-The second level of tracking information exposes fine-grained individual activity. This individual activity is also available three ways -- through our [Events Search](https://www.sparkpost.com/docs/reporting/message-events/) interface,  by making use of the [events API endpoint](https://developers.sparkpost.com/api/events/), or by creating a [webhook](https://www.sparkpost.com/docs/tech-resources/webhook-data-streams/) which pushes event data to your own systems.
+The second level of tracking information exposes fine-grained individual activity. This individual activity is also available three ways -- through our [Events Search](/docs/reporting/message-events/) interface,  by making use of the [events API endpoint](https://developers.sparkpost.com/api/events/), or by creating a [webhook](/docs/tech-resources/webhook-data-streams/) which pushes event data to your own systems.
 
 ### Analytics Report
 
@@ -190,11 +190,11 @@ All SparkPost aggregate metrics are stored on your account for 6 months.
 
 #### Message Events and Webhooks
 
-SparkPost's events API endpoint provides similar functionality (and then some!) to Mailgun's logs/events capability: [Events Search](https://www.sparkpost.com/docs/reporting/message-events/) provides a view of the last 10 days of events on your account. Those events are available in pull fashion by querying the [events API endpoint](https://developers.sparkpost.com/api/events/) directly and in push fashion if you use [webhooks](https://www.sparkpost.com/docs/tech-resources/webhook-data-streams/).
+SparkPost's events API endpoint provides similar functionality (and then some!) to Mailgun's logs/events capability: [Events Search](/docs/reporting/message-events/) provides a view of the last 10 days of events on your account. Those events are available in pull fashion by querying the [events API endpoint](https://developers.sparkpost.com/api/events/) directly and in push fashion if you use [webhooks](/docs/tech-resources/webhook-data-streams/).
 
 SparkPost retains events for ten days; Mailgun starter accounts retain events for five days.
 
-Mailgun supports a single webhook per domain and event type. On SparkPost, you may create multiple webhooks, each filtered to receive one or more types of events. You can also create webhooks to [push the events relating to individual subaccounts](https://www.sparkpost.com/docs/user-guide/subaccounts/#summary-of-subaccount-features).
+Mailgun supports a single webhook per domain and event type. On SparkPost, you may create multiple webhooks, each filtered to receive one or more types of events. You can also create webhooks to [push the events relating to individual subaccounts](/docs/user-guide/subaccounts/#summary-of-subaccount-features).
 
 Here's a mapping of each Mailgun event to its SparkPost message event equivalent(s):
 
@@ -269,7 +269,7 @@ SparkPost's relay webhooks process and forward email addressed to an HTTP endpoi
 Subaccounts
 -----------
 
-On SparkPost [plans](https://www.sparkpost.com/docs/faq/difference-between-starter-and-premier/) above "starter" level, you can create [subaccounts](https://www.sparkpost.com/docs/user-guide/subaccounts/) to support separate business units, mail streams or individual customers. Each subaccount has its own suppression list, and can have its own API keys, sending domains, templates etc. You can run reports / analytics by subaccount, get raw message event data by subaccount, get aggregated statistics, create webhooks per subaccount and so on.
+On SparkPost [plans](/docs/faq/difference-between-starter-and-premier/) above "starter" level, you can create [subaccounts](/docs/user-guide/subaccounts/) to support separate business units, mail streams or individual customers. Each subaccount has its own suppression list, and can have its own API keys, sending domains, templates etc. You can run reports / analytics by subaccount, get raw message event data by subaccount, get aggregated statistics, create webhooks per subaccount and so on.
 
 In addition you can enable your subaccount users to have permission to inject messages for delivery via their individual subaccount, and to use [the API](https://developers.sparkpost.com/api/subaccounts/) to access subaccount-specific resources.
 
@@ -281,7 +281,7 @@ Mailgun and SparkPost both enable you to create users with specific roles. The S
 Alerts
 ------
 
-Your Mailgun account alerts you by email when approaching your account sending limit. In SparkPost, you can [set up alerts](https://www.sparkpost.com/docs/user-guide/alerts/) to track the following metrics:
+Your Mailgun account alerts you by email when approaching your account sending limit. In SparkPost, you can [set up alerts](/docs/user-guide/alerts/) to track the following metrics:
 
 -   Block Bounce Rate
 -   Hard Bounce Rate
@@ -294,20 +294,20 @@ Alerts can send notifications via email, Slack, and webhooks.
 Dedicated IPs, IP Pools, and auto-warmup
 ----------------------------------------
 
-SparkPost enables you to deliver email via IP addresses dedicated to your account (or subaccount). Similar to Mailgun, addresses are managed via [IP Pools](https://www.sparkpost.com/docs/deliverability/managing-dedicated-ip-pools/). Addresses can be set to [automatically warm up](https://support.sparkpost.com/docs/user-guide/automated-ip-warmup) over time, which is helpful in building a clean sender reputation as you migrate messages across.
+SparkPost enables you to deliver email via IP addresses dedicated to your account (or subaccount). Similar to Mailgun, addresses are managed via [IP Pools](/docs/deliverability/managing-dedicated-ip-pools/). Addresses can be set to [automatically warm up](https://support.sparkpost.com/docs/user-guide/automated-ip-warmup) over time, which is helpful in building a clean sender reputation as you migrate messages across.
 
 Health Score and other SparkPost Analytics features
 ---------------------------------------------------
 
 These advanced analytics features are available in your SparkPost account, and don't have a direct equivalent in the Mailgun dashboard.
 
--   [Health Score](https://www.sparkpost.com/docs/reporting/health-score/)
--   [Spam Trap Monitoring](https://www.sparkpost.com/docs/reporting/spam-trap-monitoring/)
--   [Engagement Recency](https://www.sparkpost.com/docs/reporting/engagement-recency/)
+-   [Health Score](/docs/reporting/health-score/)
+-   [Spam Trap Monitoring](/docs/reporting/spam-trap-monitoring/)
+-   [Engagement Recency](/docs/reporting/engagement-recency/)
 
 Mailgun paid accounts provide "inbox placement" monitoring that you can schedule at additional cost, using seed tests.
 
 What next?
 ----------
 
-If you have an issue with your SparkPost account, you can [check out our support articles here](https://www.sparkpost.com/docs/) and [contact our Support team directly from your app dashboard](https://app.sparkpost.com/dashboard).
+If you have an issue with your SparkPost account, you can [check out our support articles here](/docs/) and [contact our Support team directly from your app dashboard](https://app.sparkpost.com/dashboard).

@@ -16,14 +16,14 @@ NOTE: If you are interested in using something similar to Interspire but has a f
 
 ## What issue was experienced?
 
-More than a handful of customers were reporting that during setup of SMTP server in Interspire to use Sparkpost SMTP servers they were receiving a ["Relaying Denied"](https://www.sparkpost.com/docs/faq/relaying-denied-error/) or other similar SMTP setup error messages while trying to do something as simple as send a test email using Interspire.
+More than a handful of customers were reporting that during setup of SMTP server in Interspire to use Sparkpost SMTP servers they were receiving a ["Relaying Denied"](/docs/faq/relaying-denied-error/) or other similar SMTP setup error messages while trying to do something as simple as send a test email using Interspire.
 
 Our support team ran the gamut with our customers (thank you for being so very patient) trying to resolve this error. In each case, the customers had followed all the proper steps and configured everything as expected, but were still unable to get things to work:
 
 1. Each customer had a [new Sparkpost.com account](https://app.sparkpost.com/join?_ga=1.238584512.1501089354.1437574465)
-1. In each case, the customer had [created a Sending Domain in Sparkpost](https://www.sparkpost.com/docs/getting-started/getting-started-sparkpost/#preparing-your-from-address) properly
-1. All of their DNS records were configured properly by [setting up DKIM to verify their sending domain for use with Sparkpost](https://www.sparkpost.com/docs/getting-started/getting-started-sparkpost/#step-2-verifying-domain-ownership)
-1. We tested they had [created a valid Sparkpost API Key](https://www.sparkpost.com/docs/getting-started/create-api-keys/) with the **Send via SMTP**          permission enabled
+1. In each case, the customer had [created a Sending Domain in Sparkpost](/docs/getting-started/getting-started-sparkpost/#preparing-your-from-address) properly
+1. All of their DNS records were configured properly by [setting up DKIM to verify their sending domain for use with Sparkpost](/docs/getting-started/getting-started-sparkpost/#step-2-verify-domain)
+1. We tested they had [created a valid Sparkpost API Key](/docs/getting-started/create-api-keys/) with the **Send via SMTP**          permission enabled
 1. We worked with each customer ensuring they had set up SMTP for use Sparkpost Email Service
 
 Interspire is PHP software running on customer-deployed LAMP (Linux, Apache, MySQL, PHP) stacks, and after several failed attempts to get in contact with Interspire to debug the issue, we decided the best course of action was to purchase a license and find out for ourselves.

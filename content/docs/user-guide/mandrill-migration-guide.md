@@ -7,7 +7,7 @@ description: "This Mandrill Migration Guide explains how quick and painless migr
 Mandrill Migration Guide Overview
 ---------------------------------
 
-Mailchimp recommends SparkPost as a Mandrill alternative for developers looking for a transactional email provider. To support your move, we've created this Mandrill migration guide to streamline the process. We also recommend reading through our full [getting started guide](https://www.sparkpost.com/docs/getting-started/getting-started-sparkpost/) for an overview of SparkPost.
+Mailchimp recommends SparkPost as a Mandrill alternative for developers looking for a transactional email provider. To support your move, we've created this Mandrill migration guide to streamline the process. We also recommend reading through our full [getting started guide](/docs/getting-started/getting-started-sparkpost/) for an overview of SparkPost.
 
 Terminology
 -----------
@@ -209,12 +209,12 @@ Migrating your Traffic
 
 *For high volume and non-transactional senders, please take note of this section.*
 
-We recommend signing up for a SparkPost account and segmenting your traffic between SparkPost and Mandrill, to build your reputation with our service and warm up your dedicated IPs properly. Be sure to follow our best practices guides for [warming up your IPs](https://www.sparkpost.com/docs/deliverability/ip-warm-up-overview/) and [optimizing deliverability and get the best inbox placement rates](https://www.sparkpost.com/docs/deliverability/optimizing-deliverability-and-inbox-placement/).
+We recommend signing up for a SparkPost account and segmenting your traffic between SparkPost and Mandrill, to build your reputation with our service and warm up your dedicated IPs properly. Be sure to follow our best practices guides for [warming up your IPs](/docs/deliverability/ip-warm-up-overview/) and [optimizing deliverability and get the best inbox placement rates](/docs/deliverability/optimizing-deliverability-and-inbox-placement/).
 
 Subaccounts
 -----------
 
-If you send on behalf of your customers, it's a good idea to use [SparkPost's subaccounts](https://www.sparkpost.com/docs/user-guide/subaccounts/) to segment their data. Similar to Mandrill, you are able to see analytics for each subaccount in your [reports](https://app.sparkpost.com/reports/summary). SparkPost also allows you to assign most account assets, like Sending Domains or Templates, to an individual subaccount. Once assigned, only that subaccount and the master account can access the resource.
+If you send on behalf of your customers, it's a good idea to use [SparkPost's subaccounts](/docs/user-guide/subaccounts/) to segment their data. Similar to Mandrill, you are able to see analytics for each subaccount in your [reports](https://app.sparkpost.com/reports/summary). SparkPost also allows you to assign most account assets, like Sending Domains or Templates, to an individual subaccount. Once assigned, only that subaccount and the master account can access the resource.
 
 Inbound Email
 -------------

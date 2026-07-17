@@ -30,7 +30,7 @@ SparkPost will no longer perform synchronous template validation and message gen
 
 This means that the Transmissions API will no longer return an HTTP response of `4xx` if there is a problem with the template syntax or substitution data.
 
-Instead, the API will return a `200` response, and then a subsequent “Generation Failure” [webhook event](https://www.sparkpost.com/docs/tech-resources/webhook-event-reference/) that will provide details on the failure. These events will be available via [webhooks](https://www.sparkpost.com/docs/tech-resources/webhook-event-reference/), the [Message Events API](https://www.sparkpost.com/docs/tech-resources/webhook-event-reference/), and as [Message Events in the SparkPost app](https://app.sparkpost.com/reports/message-events)([EU](https://app.eu.sparkpost.com/reports/message-events)). This behavior for single recipient transmissions will be the same as the current behavior for multi-recipient transmissions.
+Instead, the API will return a `200` response, and then a subsequent “Generation Failure” [webhook event](/docs/tech-resources/webhook-event-reference/) that will provide details on the failure. These events will be available via [webhooks](/docs/tech-resources/webhook-event-reference/), the [Message Events API](/docs/tech-resources/webhook-event-reference/), and as [Message Events in the SparkPost app](https://app.sparkpost.com/reports/message-events)([EU](https://app.eu.sparkpost.com/reports/message-events)). This behavior for single recipient transmissions will be the same as the current behavior for multi-recipient transmissions.
 
 ## Making Inline Content Syntax Validation Asynchronous
 
@@ -38,7 +38,7 @@ The second change to the Transmissions API endpoint is that inline content synta
 
 For both single and multi-recipient transmissions, the syntax validation will be done asynchronously, with an HTTP response of `4xx` no longer returned for syntax error on inline content.
 
-Instead, the API will return a `200` response, and then a subsequent "Generation Failure" [webhook event](https://www.sparkpost.com/docs/tech-resources/webhook-event-reference/) that will provide details on the failure. It is recommended that developers utilize the [preview endpoint of the Templates API](https://developers.sparkpost.com/api/templates/#templates-post-preview-a-template) before injecting with an inline content.
+Instead, the API will return a `200` response, and then a subsequent "Generation Failure" [webhook event](/docs/tech-resources/webhook-event-reference/) that will provide details on the failure. It is recommended that developers utilize the [preview endpoint of the Templates API](https://developers.sparkpost.com/api/templates/#templates-post-preview-a-template) before injecting with an inline content.
 
 ## Removal of Description Field
 

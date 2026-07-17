@@ -4,7 +4,7 @@ title: "Getting Started with our Automated IP Warmup Feature"
 description: "A guide to knowing when Automated IP Warmup is right for you and how to use it"
 ---
 
-IP warming is the process of methodically adding campaign volume week-over-week to a new IP Address to establish a positive sending reputation with Internet Services Providers (ISPs). Our Automated IP Warmup feature provides a stage-based approach to limit sending volumes while you're building a reputation for your new IP. For a great introduction into the theory behind IP Warm-up as well as an expanded article on best practices, visit the [original IP Warm-up Knowledge Article](https://www.sparkpost.com/docs/deliverability/ip-warm-up-overview/).
+IP warming is the process of methodically adding campaign volume week-over-week to a new IP Address to establish a positive sending reputation with Internet Services Providers (ISPs). Our Automated IP Warmup feature provides a stage-based approach to limit sending volumes while you're building a reputation for your new IP. For a great introduction into the theory behind IP Warm-up as well as an expanded article on best practices, visit the [original IP Warm-up Knowledge Article](/docs/deliverability/ip-warm-up-overview/).
 
 
 ## Why Automate the Warm-up Process?
@@ -27,7 +27,7 @@ Maybe you’re in the process of changing your sending architecture or you’re 
 Consistent sending throughout each day is the best way to ensure your warm-up process maintains high deliverability and you build a positive sending reputation. If your sending is sporadic (one or two campaigns per week) or your subscriber base is relatively unengaged, you may not be able to warm up your new IP automatically as effectively as you could with an alternative strategy. We recommend sending to clean lists of engaged subscribers to build trust and establish a positive sending relationship on new IPs. 
 
 ### If Automating isn’t Right, What is? 
-If you fall into the fourth category mentioned above or have other specific needs and concerns that aren’t covered here - that’s ok! Our incredibly dedicated Customer Success Team or your personal Technical Account Manager can advise on the best course of action. Do some initial homework by visiting the [original IP Warm-up Knowledge Article](https://www.sparkpost.com/docs/deliverability/ip-warm-up-overview/) and get in touch!
+If you fall into the fourth category mentioned above or have other specific needs and concerns that aren’t covered here - that’s ok! Our incredibly dedicated Customer Success Team or your personal Technical Account Manager can advise on the best course of action. Do some initial homework by visiting the [original IP Warm-up Knowledge Article](/docs/deliverability/ip-warm-up-overview/) and get in touch!
 
 
 ## Nuts and Bolts

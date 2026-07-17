@@ -3,9 +3,9 @@ lastUpdated: "02/08/2020"
 title: "Dedicated IPs - full-circle reverse DNS and EHLO hostnames on SparkPost"
 description: "Dedicated IP addresses issued from SparkPost address ranges automatically have Full Circle Reverse DNS"
 ---
-You may have noticed that recently allocated [dedicated IP addresses](https://www.sparkpost.com/docs/deliverability/managing-dedicated-ip-pools/) in your SparkPost account come from specific address ranges. 
+You may have noticed that recently allocated [dedicated IP addresses](/docs/deliverability/managing-dedicated-ip-pools/) in your SparkPost account come from specific address ranges. 
 
-Unless you are using our [Bring your Own IP](https://www.sparkpost.com/docs/tech-resources/bring-your-own-ip/) feature, your dedicated IPs come from a range registered to SparkPost.
+Unless you are using our [Bring your Own IP](/docs/tech-resources/bring-your-own-ip/) feature, your dedicated IPs come from a range registered to SparkPost.
 
 ```
 whois 147.253.215.24

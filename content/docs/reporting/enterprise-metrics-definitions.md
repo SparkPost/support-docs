@@ -4,7 +4,7 @@ title: "Enterprise Metrics Definitions"
 description: "Metrics definitions for Enterprise accounts"
 ---
 
-This page defines Metrics for Enterprise accounts. For other accounts see [Metric Definitions](https://www.sparkpost.com/docs/reporting/metrics-definitions/).
+This page defines Metrics for Enterprise accounts. For other accounts see [Metric Definitions](/docs/reporting/sp-metrics-definitions/).
 
 # API Metrics Enterprise Definitions
 

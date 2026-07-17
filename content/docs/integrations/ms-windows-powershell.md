@@ -6,7 +6,7 @@ description: "To send email Microsoft Windows PowerShell through SparkPost, ther
 
 This article helps you develop and test SMTP injection scripts under Microsoft Windows. Here we concentrate on the basic (but usable) Windows PowerShell built-in features for sending via SMTP. 
 
-If you need more options, check out cross-platform tools such as [swaks ("Swiss Army Knife for SMTP")](https://www.sparkpost.com/docs/tech-resources/smtp-injection-with-starttls-using-swaks/).
+If you need more options, check out cross-platform tools such as [swaks ("Swiss Army Knife for SMTP")](/docs/tech-resources/smtp-injection-with-starttls-using-swaks/).
 
 ## Pre-requisites
 There are a few things you need:
@@ -14,7 +14,7 @@ There are a few things you need:
 
 - [Create an API key](https://app.sparkpost.com/account/credentials) with the "Send via SMTP" permission.
 
-- [Create and verify](https://app.sparkpost.com/account/sending-domains) the domain you want to use for sending. The setup process should take about 5-10 minutes if you have access to your DNS server. See [Verify Sending Domains](https://www.sparkpost.com/docs/getting-started/getting-started-sparkpost/#step-2-verifying-domain-ownership) for more information.
+- [Create and verify](https://app.sparkpost.com/account/sending-domains) the domain you want to use for sending. The setup process should take about 5-10 minutes if you have access to your DNS server. See [Verify Sending Domains](/docs/getting-started/getting-started-sparkpost/#step-2-verify-domain) for more information.
 
 ## Create PowerShell script
 

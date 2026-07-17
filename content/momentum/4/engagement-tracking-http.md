@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/26/2020"
+lastUpdated: "07/13/2026"
 title: "Tracking Engagement for HTTP"
 description: "Introduction Understanding how your messaging is or isn't performing is a critical factor in creating a successful campaign Just knowing that your messages are being delivered is not enough You need to know how your customers interact with your message content Are your customers opening your messages Are they clicking..."
 ---
@@ -8,7 +8,7 @@ description: "Introduction Understanding how your messaging is or isn't performi
 
 Understanding how your messaging is or isn't performing is a critical factor in creating a successful campaign. Just knowing that your messages are being delivered is not enough. You need to know how your customers interact with your message content. Are your customers opening your messages? Are they clicking the links you provide? Momentum provides real-time event tracking data, enabling you to track campaigns as they are being sent and to make modifications to improve customer engagement.
 
-Engagement describes how a recipient interacts with your message. An engagement event occurs when the recipient opens an email or clicks a link within an email. By default, open tracking and click tracking are enabled in Momentum's configuration, if Message Generation is selected during installation. You can override the configuration option for a specific stored template by specifying the attributes in the template or for a specific transmission by specifying the attributes in the transmission. For details about these attributes, see the Transmissions and Templates API documentation available at [Momentum 4 REST API](https://support.messagesystems.com/docs/web-rest/v1_index.html).
+Engagement describes how a recipient interacts with your message. An engagement event occurs when the recipient opens an email or clicks a link within an email. By default, open tracking and click tracking are enabled in Momentum's configuration, if Message Generation is selected during installation. You can override the configuration option for a specific stored template by specifying the attributes in the template, for a specific transmission by specifying the attributes in the transmission, or for an individual inline recipient by specifying the attributes in that recipient's `options` object. For details about these attributes, see the Transmissions and Templates API documentation available at [Momentum 4 REST API](https://support.messagesystems.com/docs/web-rest/v1_index.html).
 
 ### Note
 
@@ -85,15 +85,37 @@ Follow these steps to create a transmission with a link in the message body:
 
     The precedence for engagement tracking options, from highest to lowest is as follows:
 
+    *   recipient level
+
     *   transmission level
 
     *   template level
 
     *   msg_gen level
 
-    For example, if click tracking is not specified at the transmission level, the "click_tracking" attribute at the template level is used. If the template level is also not specified, the setting of the configuration option in the msg_gen module is used.
+    For example, if click tracking is not specified at the recipient level, the "click_tracking" attribute at the transmission level is used. If the transmission level is also not specified, the "click_tracking" attribute at the template level is used, and if that is not specified either, the setting of the configuration option in the msg_gen module is used.
 
     By default, open tracking and click tracking are enabled in Momentum's configuration, if Message Generation is selected during installation.
+
+    **Per-recipient overrides.** For **inline** recipients, you can set `open_tracking`, `click_tracking`, and `initial_open` in an `options` object on an individual recipient. When present, a recipient's flag overrides the transmission-level flag for that recipient only; when a flag is omitted, that recipient inherits the transmission-level behavior. This lets you mix tracked and untracked recipients in a single transmission — for example, disabling tracking for transactional recipients while leaving it enabled for everyone else. Per-recipient overrides apply to inline recipients on the REST Transmissions API only (not stored recipient lists or the SMTP `X-MSYS-API` path).
+
+    In the following example, recipient A disables open and click tracking for itself, while recipient B inherits the transmission-level settings (both enabled):
+
+    ```
+    "options":{
+      "open_tracking":true,
+      "click_tracking":true
+    },
+    "recipients":[
+      {
+        "address":{ "email":"a@example.com" },
+        "options":{ "open_tracking":false, "click_tracking":false }
+      },
+      {
+        "address":{ "email":"b@example.com" }
+      }
+    ]
+    ```
 
 2.  Inject your message into Momentum.
 
