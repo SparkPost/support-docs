@@ -1,6 +1,8 @@
 - link: /momentum/manuals
   title: Online manuals
   items:
+    - link: /momentum/manuals/release-notes
+      title: Release Notes
     - link: /momentum/manuals/installation-manual
       title: Installation Manual
     - link: /momentum/manuals/upgrade-manual
