@@ -286,7 +286,7 @@ The following directories and files that were installed in **/opt/msys/3rdParty/
 
 1.  Copy over the config (e.g., contents of **/opt/msys/ecelerity/etc/conf**).
 
-2.  If there are still spooled messages on the old server, they can be imported into the new server. After copying the directories containing the spool files (e.g., **/var/spool/ecelerity**) to the new server, use the spool import command — [https://support.sparkpost.com/momentum/4/console-commands/spool-import](https://support.sparkpost.com/momentum/4/console-commands/spool-import).
+2.  If there are still spooled messages on the old server, they can be imported into the new server. After copying the directories containing the spool files (e.g., **/var/spool/ecelerity**) to the new server, use the spool import command — [https://docs.sparkpost.com/momentum/4/console-commands/spool-import](https://docs.sparkpost.com/momentum/4/console-commands/spool-import).
 
 3.  If desired and applicable, copy the PostgreSQL database by following the instructions above.
 

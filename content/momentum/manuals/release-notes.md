@@ -11,7 +11,7 @@ lastUpdated: "07/20/2026"
 
 The Momentum 5.3 release in July 2026 is available for Red Hat Enterprise Linux (RHEL) 8, 9, and 10. If you still need to run Momentum on RHEL 7 (and its CentOS equivalent), which reached its EOL in 2024, the latest release for that was Momentum 4.6.
 
-The Momentum 5.3 [changelog](https://support.sparkpost.com/momentum/changelog/5/5-3-0) provides details of all changes since the previous major release, organized in the list by "Feature", "Fix", or "Security Fix".
+The Momentum 5.3 [changelog](https://docs.sparkpost.com/momentum/changelog/5/5-3-0) provides details of all changes since the previous major release, organized in the list by "Feature", "Fix", or "Security Fix".
 
 # 2. New Features
 
