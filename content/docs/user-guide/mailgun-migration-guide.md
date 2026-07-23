@@ -276,7 +276,7 @@ In addition you can enable your subaccount users to have permission to inject me
 User Roles
 ----------
 
-Mailgun and SparkPost both enable you to create users with specific roles. The SparkPost roles are: Admin, Developer, Templates, and Reporting, described [here](https://support.sparkpost.com/docs/user-guide/managing-users).
+Mailgun and SparkPost both enable you to create users with specific roles. The SparkPost roles are: Admin, Developer, Templates, and Reporting, described [here](https://docs.sparkpost.com/docs/user-guide/managing-users).
 
 Alerts
 ------
@@ -294,7 +294,7 @@ Alerts can send notifications via email, Slack, and webhooks.
 Dedicated IPs, IP Pools, and auto-warmup
 ----------------------------------------
 
-SparkPost enables you to deliver email via IP addresses dedicated to your account (or subaccount). Similar to Mailgun, addresses are managed via [IP Pools](/docs/deliverability/managing-dedicated-ip-pools/). Addresses can be set to [automatically warm up](https://support.sparkpost.com/docs/user-guide/automated-ip-warmup) over time, which is helpful in building a clean sender reputation as you migrate messages across.
+SparkPost enables you to deliver email via IP addresses dedicated to your account (or subaccount). Similar to Mailgun, addresses are managed via [IP Pools](/docs/deliverability/managing-dedicated-ip-pools/). Addresses can be set to [automatically warm up](https://docs.sparkpost.com/docs/user-guide/automated-ip-warmup) over time, which is helpful in building a clean sender reputation as you migrate messages across.
 
 Health Score and other SparkPost Analytics features
 ---------------------------------------------------

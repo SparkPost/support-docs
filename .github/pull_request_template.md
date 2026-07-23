@@ -37,7 +37,7 @@ If you are submitting a feature addition, enhancement, or bug fix, your checklis
 - [ ] Check that your article looks correct in the preview here or in a [Netlify deploy preview](https://app.netlify.com/sites/support-docs/deploys).
 - [ ] Check the links in your article.
 - [ ] Check the images in your article (if there are any)
-- [ ] Check to make sure you are using markdown appropriately as outlined in `examples/article.md` in the root of the project directory and on the momentum doc's [preface article](https://support.sparkpost.com/momentum/4/4-preface)
+- [ ] Check to make sure you are using markdown appropriately as outlined in `examples/article.md` in the root of the project directory and on the momentum doc's [preface article](https://docs.sparkpost.com/momentum/4/4-preface)
 - [ ] Check to make sure the [Copy and Tone Guidelines are followed](https://docs.google.com/document/d/1dej9J7N9M8lcbJXnT9kxyNB_EFBPHIBLZBbHaxRWqhQ/edit).
 
 #### Development Changes Checklist (some checks are automatic github actions and will not be listed here. ie. "all tests pass")

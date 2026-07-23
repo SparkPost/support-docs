@@ -2,7 +2,7 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/0a6e71ac-b00b-45eb-a5f0-b534634f51e0/deploy-status)](https://app.netlify.com/sites/support-docs/deploys)
 
-This repo contains the SparkPost and Momentum documentation published at https://support.sparkpost.com/docs and https://support.sparkpost.com/momentum.
+This repo contains the SparkPost and Momentum documentation published at https://docs.sparkpost.com/docs and https://docs.sparkpost.com/momentum.
 
 SparkPost documentation is located in the `content/docs/` directory.
 
@@ -109,7 +109,7 @@ _While this folder structure is encouraged for organizational purposes, any medi
 
 Both the Momentum articles and SparkPost support articles are organized into categories. The category is defined by the containing folder.
 
-Categories can be nested to create nested URL structures. For example in the following folder structure, the file `my-article.md` will be deployed to `https://support.sparkpost.com/docs/category/subcategory/my-article`
+Categories can be nested to create nested URL structures. For example in the following folder structure, the file `my-article.md` will be deployed to `https://docs.sparkpost.com/docs/category/subcategory/my-article`
 
 ```
 support
@@ -129,9 +129,9 @@ description: 'Description of the category here'
 
 ### Navigation
 
-For each article page hosted on the support.sparkpost.com website, there is a sidebar menu. The top-level menu is configured through next.js. To edit this, speak to the SparkPost FE team.
+For each article page hosted on the `docs.sparkpost.com` website, there is a sidebar menu. The top-level menu is configured through next.js. To edit this, speak to the SparkPost FE team.
 
-For large sets of organized documentation it is important that there is a clear navigation and hierarchy. The subnavigation is set through the `content/<category name>` directory folder structure (so `content/momentum/` and `content/docs/`). This is used to generate the Momentum 4.x, Momentum 3.x, and Momentum Mobile navigation in the sidebar seen in the [Momentum documentation](https://support.sparkpost.com/momentum) or Help & API, Guides and Deliverability navigation in the sidebar seen in the [support docs documentation](https://support.sparkpost.com/docs/)
+For large sets of organized documentation it is important that there is a clear navigation and hierarchy. The subnavigation is set through the `content/<category name>` directory folder structure (so `content/momentum/` and `content/docs/`). This is used to generate the Momentum 4.x, Momentum 3.x, and Momentum Mobile navigation in the sidebar seen in the [Momentum documentation](https://docs.sparkpost.com/momentum) or Help & API, Guides and Deliverability navigation in the sidebar seen in the [support docs documentation](https://docs.sparkpost.com/docs/)
 
 ## Deployment
 
@@ -147,7 +147,7 @@ Deployment of support articles is handled automatically through [Netlify](https:
 
 ## Development
 
-The following instructions walk you through how to sync your local version of this repository to your local version of the support.sparkpost.com website. This is only needed when you are debugging the sync scripts or adding new functionality.
+The following instructions walk you through how to sync your local version of this repository to your local version of the `docs.sparkpost.com` website. This is only needed when you are debugging the sync scripts or adding new functionality.
 
 _**This is not a required step in contributing to the documentation**_
 

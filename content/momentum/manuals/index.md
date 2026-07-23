@@ -12,6 +12,7 @@ customers — installation guides, upgrade guides, and release notes — for
 
 ## Available manuals
 
+- [Release Notes](/momentum/manuals/release-notes)
 - [Installation Manual](/momentum/manuals/installation-manual)
 - [Upgrade Manual](/momentum/manuals/upgrade-manual) — MTA-only
 - [Enabling APIs & Message Generation](/momentum/manuals/enabling-apis-message-generation) — Transmissions API, SMTPAPI, Message Generation
