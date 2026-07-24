@@ -13,6 +13,10 @@ content/momentum/manuals/*.md   ──► online pages (Next.js site)
 One manual = one Markdown file = one online page = one PDF. There is a single
 source of truth; the PDF is a build artifact.
 
+Exception: manuals under `private/` in this directory are **PDF-only** — they
+get a branded PDF like any other manual but are never rendered online (the
+site only serves pages under `content/`).
+
 ## Toolchain
 
 Pandoc (≥ 3.x) and the Typst CLI. These are not npm packages — install once per
@@ -29,11 +33,33 @@ brew install pandoc typst        # macOS
 cd pdf-build
 make            # build every manual into build/
 make list       # show what would be built
-make build/installation-manual.pdf   # build a single manual
+make build/Momentum_5.3_Installation.pdf   # build a single manual
 make clean      # remove generated PDFs
 ```
 
 Generated PDFs land in `build/` (git-ignored).
+
+### PDF naming
+
+PDFs are named `Momentum_<version>_<Suffix>.pdf` — the pattern of the original
+5.3 DOCX exports the manuals were converted from. The DOCX files are no longer
+part of the flow (from 5.4 on, changes are made directly in the `.md` sources),
+so the `PDF_SUFFIX_*` table in the `Makefile` is the durable record of each
+manual's historical suffix:
+
+| `.md` slug | PDF suffix |
+| --- | --- |
+| `installation-manual` | `Installation` |
+| `upgrade-manual` | `Upgrade` |
+| `enabling-apis-message-generation` | `Enabling_TransAPI-MsgGen` |
+| `enabling-webhooks` | `Enabling_Webhooks` |
+| `upgrading-webhooks` | `Upgrading_Webhooks` |
+| `release-notes` | `Release_Notes` |
+| `rocky9-installation-manual` | `Rocky9_Installation` |
+
+The `<version>` part is read from each manual's `version:` frontmatter, so
+bumping the version in the `.md` automatically renames the PDF for the next
+release. A slug with no table entry falls back to `<slug>.pdf`.
 
 The build is incremental: `make` rebuilds a manual when its `.md` changes, and
 rebuilds **all** manuals when a shared input changes (the template,
@@ -46,6 +72,7 @@ rebuilds **all** manuals when a shared input changes (the template,
 | Path | Purpose |
 | --- | --- |
 | `../content/momentum/manuals/*.md` | Manual sources (also served online) |
+| `private/*.md` | PDF-only manual sources (never served online) |
 | `templates/bird-manual.typ` | Pandoc→Typst template with the Bird-branded cover, header/footer, and styling |
 | `templates/metadata.yaml` | Brand/layout defaults shared by every manual |
 | `assets/` | Logo and (optional) brand fonts |
@@ -92,10 +119,14 @@ date: "June 2026"
      not nested inside a list item or blockquote (Typst cannot start a new page
      inside a container, and the build will error). If a wide table belongs
      under a step, lift it out to its own paragraph.
+   - **PDF-only manuals**: save the `.md` under `pdf-build/private/` instead
+     of `content/momentum/manuals/`, and skip step 2.
 2. Add the page to the menu: a sub-item under the **Online manuals** node in
    `content/momentum/navigation.yml`, and a link in
    `content/momentum/manuals/index.md`.
-3. `make build/<name>.pdf` and review the output.
+3. Add the manual's slug → suffix entry to the `PDF_SUFFIX_*` table in the
+   `Makefile` (see [PDF naming](#pdf-naming)), then `make` and review the
+   output.
 
 ## Branding
 
