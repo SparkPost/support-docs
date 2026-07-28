@@ -65,7 +65,8 @@ Momentum version 5 became GA on March 1, 2025. Therefore:
 | Momentum 4.8.x                  | 2024/10/17 | 2026/3/1           | 2027/3/1       |
 | Momentum 5.0.x                  | 2025/3/1   | 2026/7/1           | TBD            |
 | Momentum 5.1.x                  | 2025/7/1   | 2027/1/31          | TBD            |
-| **Momentum 5.2.x**              | 2026/1/31  | TBD                | TBD            |
+| Momentum 5.2.x.                 | 2026/1/31  | 2027/7/28          | TBD            |
+| **Momentum 5.3.x**              | 2026/7/28  | TBD                | TBD            |
 
 > ¹ Momentum 4.4.x was superseded by 4.6, which was the last version supporting CentOS 7.
 >
