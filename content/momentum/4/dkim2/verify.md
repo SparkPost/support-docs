@@ -1,5 +1,5 @@
 ---
-lastUpdated: "07/01/2026"
+lastUpdated: "07/27/2026"
 title: "DKIM2 Verifying — verify()"
 description: "Reference for the msys.validate.dkim2.verify() Lua API: verify options, result table, and SMTP response codes."
 ---
@@ -307,30 +307,32 @@ read the outcome without re-verifying or parsing `Authentication-Results:`:
 
 | Context key | Type | Value |
 |---|---|---|
-| `dkim2_overall` | string | Verdict: `"pass"`, `"fail"`, `"permerror"`, `"temperror"`, or `"none"`. See the [SMTP response codes](/momentum/4/dkim2/verify#smtp-response-codes-111-guidance) table. |
+| `dkim2_overall` | string | Verdict: `"pass"`, `"fail"`, `"permerror"`, `"temperror"`, or `"none"`. See the [SMTP response codes](/momentum/4/dkim2/verify#smtp-response-codes-104-guidance) table. |
 | `dkim2_n_sigs` | string | Number of `DKIM2-Signature` headers found on the message. Parse with `tonumber()`. |
 | `dkim2_highest_mf` | string | §12 DSN target: the `mf=` (bare MAIL FROM) of the highest-`i=` signature — the address a bounce would be addressed to. `"<>"` for the null sender, for which §12 says a DSN MUST NOT be sent. Not set when no signature carried an `mf=`. |
 
 These keys are not set until `verify()` runs.
 
-### SMTP response codes (§11.1 guidance)
+### SMTP response codes (§10.4 guidance)
 
 Momentum leaves the decision of whether to accept, reject, or defer a
 message — and which SMTP reply code to use — entirely to the operator's
 Lua hook.  The `overall` field of the verify result maps to the following
-SMTP behaviour as required by §11.1 of the DKIM2 spec:
+SMTP behaviour as required by §10.4 of the DKIM2 spec:
 
-| `overall` | Meaning | §11.1 guidance | Suggested action |
+| `overall` | Meaning | §10.4 guidance | Suggested action |
 |---|---|---|---|
 | `pass` | All verifiable signatures passed | — | Accept |
 | `none` | No DKIM2 signatures present, or all use unsupported algorithms (§3.4) | — | Local policy |
 | `fail` | Verified but wrong: hash/sig mismatch or policy violation (`donotmodify`/`donotexplode`, etc.) | SHOULD 550/5.7.x; **MUST NOT 4xx** | Reject or accept per policy |
-| `permerror` | Could not verify: key missing/revoked/invalid, key/algorithm mismatch (`overall_reason="key_alg_mismatch"`), syntax error, chain integrity failure (`overall_reason` is one of `mi_syntax`/`mi_missing_tag`/`mi_revision_ahead`/`mi_revision_gap`/`mi_unsigned`/`i_sequence_broken`/`custody_break`/`recipe_chain_mismatch`, or the generic `chain_broken`), or `d=`/`mf=` domain mismatch (`overall_reason="d_mf_mismatch"`) (§11.1 / §11.4 PERMERROR) | SHOULD 550/5.7.x; **MUST NOT 4xx** | Reject (permanent) |
+| `permerror` | Could not verify: key missing/revoked/invalid, key/algorithm mismatch (`overall_reason="key_alg_mismatch"`), syntax error, chain integrity failure (`overall_reason` is one of `mi_syntax`/`mi_missing_tag`/`mi_revision_ahead`/`mi_revision_gap`/`mi_unsigned`/`i_sequence_broken`/`custody_break`/`recipe_chain_mismatch`, or the generic `chain_broken`), or `d=`/`mf=` domain mismatch (`overall_reason="d_mf_mismatch"`) (§11.1 / §11.4 PERMERROR) | SHOULD 550/5.7.x | Reject (permanent) |
 | `temperror` | Transient key-fetch failure (DNS timeout / SERVFAIL) | MAY 451/4.7.5 | Defer (temporary) |
 
-**Key rules from §11.1**:
-- `fail` and `permerror` **MUST NOT** use a 4xx reply code.
-- Only `temperror` warrants a temporary (4xx) failure code.
+**Key rules from §10.4**:
+- `fail` (cryptographic signature verification failure) **MUST NOT** use a
+  4xx reply code; other permanent errors (`permerror`) SHOULD also use 5xx.
+- Only `temperror` (a temporary failure such as key-server unavailability)
+  warrants a temporary (4xx) failure code.
 
 Example hook skeleton:
 
@@ -345,13 +347,13 @@ end
 local overall = result.overall
 
 if overall == "permerror" or overall == "fail" then
-  -- §11.1 SHOULD 550/5.7.x for permanent failures.
-  -- Note: "permerror" MUST NOT use 4xx.
+  -- §10.4 SHOULD 550/5.7.x for permanent failures;
+  -- "fail" (crypto failure) MUST NOT use 4xx.
   vctx:set_code(550, "5.7.1 DKIM2 verification failed")
   return msys.core.VALIDATE_DONE
 
 elseif overall == "temperror" then
-  -- §11.1 MAY 451/4.7.5 for transient key-fetch failures
+  -- §10.4 MAY 451/4.7.5 for transient key-fetch failures
   vctx:set_code(451, "4.7.5 DKIM2 key server temporarily unavailable")
   return msys.core.VALIDATE_DONE
 
