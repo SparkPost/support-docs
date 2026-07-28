@@ -1,5 +1,5 @@
 ---
-lastUpdated: "07/07/2026"
+lastUpdated: "07/27/2026"
 title: "DKIM2 Signing — sign()"
 description: "Reference for the msys.validate.dkim2.sign() Lua API: hook selection, sign options, forwarder and modifier signing."
 ---
@@ -136,12 +136,14 @@ msys.validate.dkim2.sign(msg, vctx, {
 ```
 
 When `sig_sets` is present, all entries sign the same canonical
-signed-input and are combined into a single `s=sel1:alg1:sig1,sel2:alg2:sig2`
-value on one `DKIM2-Signature` header.  Per §11.6 the verifier checks
-every sig-set; overall passes if any one validates, so a receiver that
-only supports RSA will still verify cleanly.  On the verifier side, any
-sig-set that fails alongside a passing one is reported as a DWARNING in
-paniclog (partial-sig-failure condition, §11.6).
+signed-input and are combined into a single
+`s=sel1:alg1:sig1,sel2:alg2:sig2` value on one `DKIM2-Signature`
+header.  Per §11.6 the verifier checks
+every sig-set; Momentum's overall verdict passes if any one validates,
+so a receiver that only supports RSA will still verify cleanly.  On the
+verifier side, any sig-set that fails alongside a passing one is
+reported as a DWARNING in paniclog (partial-sig-failure condition,
+§11.6).
 
 **If any sig-set fails**, the entire `sign()` call returns
 `(nil, error_string)` — no partial signature is produced.
