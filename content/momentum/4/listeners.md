@@ -129,7 +129,9 @@ For a detailed discussion of IPv6 syntax see [“Listeners and IPv6 Addresses”
 
 ### <a name="listeners.proxy_protocol"></a> Listeners Behind a Proxy or Load Balancer
 
-When a listener sits behind a proxy or load balancer, every connection appears to come from the proxy rather than from the originating client. Enable [Proxy_Protocol](/momentum/4/config/ref-proxy-protocol) on that endpoint to read the client address from the PROXY protocol header the proxy prepends, so that policy, SPF and logging all see the real client. Both the version 1 text format and the version 2 binary format are accepted and detected automatically.
+When a listener sits behind a proxy or load balancer, every connection appears to come from the proxy rather than from the originating client. Enable [Proxy_Protocol](/momentum/4/config/ref-proxy-protocol) on that endpoint to read the client address from the PROXY protocol header the proxy prepends, so that policy, SPF and logging all see the real client.
+
+The version 1 text header has been accepted since Momentum 4.2.11; the version 2 binary header is accepted **since Momentum 5.4** and is rejected on earlier releases.
 
 The header is mandatory once the option is enabled, so keep proxied and direct traffic on separate `Listen` endpoints, and see [Proxy_Protocol_Timeout](/momentum/4/config/ref-proxy-protocol-timeout) for how long an incomplete header is tolerated.
 

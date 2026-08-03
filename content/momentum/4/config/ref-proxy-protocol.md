@@ -1,7 +1,7 @@
 ---
 lastUpdated: "08/03/2026"
 title: "Proxy_Protocol"
-description: "proxy protocol makes a listener read a PROXY protocol header from each incoming connection and use the client address it reports instead of the address of the proxy or load balancer that connected. Both the version 1 text format and the version 2 binary format are accepted and detected automatically."
+description: "proxy protocol makes a listener read a PROXY protocol header from each incoming connection and use the client address it reports instead of the address of the proxy or load balancer that connected. The version 1 text format has been accepted since 4.2.11; the version 2 binary format is accepted since Momentum 5.4."
 ---
 
 <a name="conf.ref.proxy_protocol"></a>
@@ -16,6 +16,8 @@ Proxy_Protocol — read the originating client address from a PROXY protocol hea
 <a name="idp.proxy_protocol"></a>
 ## Description
 
+> **NOTE: version 2 headers require Momentum 5.4.** The option itself dates from Momentum 4.2.11, but until 5.4 it accepted only the version 1 text header. Momentum 5.4 is the next on-prem release; on 5.3 and earlier, a version 2 header is rejected and the connection is closed. See “Versions and automatic detection” below.
+
 When a listener sits behind a proxy or load balancer, every connection appears to come from the proxy. `Proxy_Protocol` makes the listener read a [PROXY protocol](http://www.haproxy.org/download/1.5/doc/proxy-protocol.txt) header at the start of each connection and adopt the client address it reports.
 
 That address is then the one Momentum uses everywhere it refers to the connecting client, including:
@@ -29,10 +31,12 @@ The default value is `false`.
 
 ### Versions and automatic detection
 
-Both header formats are accepted, and the listener tells them apart from the first byte of the connection. Nothing needs to be configured to select one:
+The protocol has two header formats, and support for them arrived at different times:
 
-*   **Version 1** is a line of text, as sent by older load balancers and by AWS Classic Load Balancers.
-*   **Version 2** is a binary header, and is what current HAProxy (`send-proxy-v2`), AWS Network Load Balancers and Envoy send.
+*   **Version 1** is a line of text, as sent by older load balancers and by AWS Classic Load Balancers. It has been accepted since the option was introduced in Momentum 4.2.11.
+*   **Version 2** is a binary header, and is what current HAProxy (`send-proxy-v2`), AWS Network Load Balancers and Envoy send. It is accepted **since Momentum 5.4**. On earlier releases a version 2 header is not recognised, and such a connection is closed without a banner — the symptom of pointing a version 2 sender at a listener running 5.3 or earlier.
+
+From 5.4 on, both formats are accepted on the same endpoint and the listener tells them apart from the first byte of the connection. Nothing needs to be configured to select one, and no configuration change is needed when an upstream proxy is switched from version 1 to version 2.
 
 Version 2 headers may carry extra type-length-value fields after the addresses — for example the AWS VPC endpoint identifier. These are read and discarded; their contents are not available to policy.
 
