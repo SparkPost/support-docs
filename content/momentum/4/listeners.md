@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/26/2020"
+lastUpdated: "08/03/2026"
 title: "Listeners"
 description: "Momentum is built around a powerful event based scheduling engine A key part of that engine is responding to events that occur on inbound sockets known as listeners These listeners are configured in Momentum's configuration files The following is an example of a basic listener syntax In this example the..."
 ---
@@ -126,6 +126,12 @@ Listens on port 25 of the IPv6 address.
 </dl>
 
 For a detailed discussion of IPv6 syntax see [“Listeners and IPv6 Addresses”](/momentum/4/listeners#listeners.ipv6).
+
+### <a name="listeners.proxy_protocol"></a> Listeners Behind a Proxy or Load Balancer
+
+When a listener sits behind a proxy or load balancer, every connection appears to come from the proxy rather than from the originating client. Enable [Proxy_Protocol](/momentum/4/config/ref-proxy-protocol) on that endpoint to read the client address from the PROXY protocol header the proxy prepends, so that policy, SPF and logging all see the real client. Both the version 1 text format and the version 2 binary format are accepted and detected automatically.
+
+The header is mandatory once the option is enabled, so keep proxied and direct traffic on separate `Listen` endpoints, and see [Proxy_Protocol_Timeout](/momentum/4/config/ref-proxy-protocol-timeout) for how long an incomplete header is tolerated.
 
 ### <a name="listeners.unix.domain.listener.syntax"></a> Unix Domain Listener Address Syntax
 
