@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/08/2020"
+lastUpdated: "05/12/2026"
 title: "Enterprise Metrics Definitions"
 description: "Metrics definitions for Enterprise accounts"
 ---
@@ -44,6 +44,7 @@ The metrics available are:
 | Unique Clicks Approximate           | `count_unique_clicked_approx`          | Number of emails that had at least one link clicked. Approximated with a 5% error threshold. |
 | Unique Confirmed Opens              | `count_unique_confirmed_opened`        | Number of emails that were displayed or had at a link clicked. May take longer to update. |
 | Unique Confirmed Opens Approximate  | `count_unique_confirmed_opened_approx` | Number of emails that were displayed or had at a link clicked. Approximated with a 5% error threshold. |
+| Unique Confirmed Non-prefetch Opens | `count_nonprefetched_unique_confirmed_opened` | Number of emails that were displayed or had a link clicked, excluding opens triggered by prefetch/bot activity. May take longer to update. |
 | Rendered                            | `count_rendered`                       | Number of times emails were displayed. Applies only to HTML emails. |
 | Unique Renders                      | `count_unique_rendered`                | Number of emails that were displayed at least once. Applies only to HTML emails. May take longer to update. |
 | Unique Renders Approximate          | `count_unique_rendered_approx`         | Number of emails that were displayed at least once. Applies only to HTML emails. Approximated with a 5% error threshold. |
@@ -76,6 +77,7 @@ Here are the definitions for each of these calculated metrics, including the for
 | Block Bounce Rate         | Percentage (Block Bounces / Sent)                           | Percentage of Sent emails that Block Bounced. |
 | Undetermined Bounce Rate  | Percentage (Undetermined Bounces / Sent)                    | Percentage of Sent emails that Undertermined Bounced. |
 | Click-through Rate        | Percentage (Unique Clicks / Accepted)                       | Approximate percentage of Accepted emails that had at least one link selected. |
-| Open Rate                 | Percentage (Unique Confirmed Non-prefetch Opens / Accepted) | Approximate Percentage of Accepted emails that were either rendered or had at least one link selected. |
+| Open Rate (Include Prefetched Opens) | Percentage (Unique Confirmed Opens / Accepted)              | Approximate percentage of Accepted emails that had any tracking pixel rendered or at least one link clicked. Includes opens triggered by prefetch/bot activity. |
+| Open Rate (Exclude Prefetched Opens) | Percentage (Unique Confirmed Non-prefetch Opens / (Accepted − Prefetched-only Openers)) | Approximate percentage of Accepted emails that had a non-prefetched open or link click. The denominator excludes recipients whose only observed activity was a prefetched open, so the rate is computed only over recipients with a determinable engagement signal. *Prefetched-only Openers = Unique Confirmed Opens − Unique Confirmed Non-prefetch Opens.* |
 | Spam Complaint Rate       | Percentage (Spam Complaints / Accepted)                     | Percentage of Spam Complaints. |
 | Unsubscribe Rate          | Percentage (Unsubscribes / Accepted)                        | Percentage of Accepted emails that resulted in unsubscribes. |
