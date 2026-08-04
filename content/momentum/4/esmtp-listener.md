@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/26/2020"
+lastUpdated: "08/03/2026"
 title: "Configuring Inbound Mail Service Using SMTP"
 description: "The ESMTP Listener is the listener that enables you to inject message using SMTP Momentum can listen on any number of Unix domain sockets and or IP port addresses for TCP IP service The ESMTP Listener supports all of the extended properties and extensions described below The ESMTP Listener is..."
 ---
@@ -48,6 +48,24 @@ Listen stanzas map 1:1 to an underlying socket, this means that `:25` (which is 
 The `Pool_Name` option associates the `accept-pool` ThreadPool with the listener. `Concurrency` should have a value that is equal to or less than the concurrency defined in the ThreadPool.
 
 When using threaded accepts for listeners, you must provision the thread pool you intend to use via the ThreadPool directive. If the thread pool you name is not found or is unspecified, the IO pool will be used and a critical message will appear in your log.
+
+### <a name="esmtp_listener.proxy_protocol"></a> Accepting Connections Through a Proxy or Load Balancer
+
+If the listener is fronted by a proxy or load balancer, set [Proxy_Protocol](/momentum/4/config/ref-proxy-protocol) on that endpoint so the originating client address is taken from the PROXY protocol header instead of showing the proxy for every connection.
+
+The version 1 (text) header has been accepted since Momentum 4.2.11. The version 2 (binary) header, which current HAProxy, AWS Network Load Balancers and Envoy send, is accepted **since Momentum 5.4**; on earlier releases such a connection is closed without a banner. From 5.4 on both formats are detected automatically, so no additional option selects between them.
+
+Once enabled the header is required on every connection to that endpoint, so serve direct clients from a separate `Listen` stanza. [Proxy_Protocol_Timeout](/momentum/4/config/ref-proxy-protocol-timeout) bounds how long an incomplete header is waited for.
+
+```
+ESMTP_Listener {
+  Listen "10.0.0.5:25" {
+    Proxy_Protocol = true
+    Proxy_Protocol_Timeout = 10
+  }
+  Listen "127.0.0.1:587" {}
+}
+```
 
 ### <a name="esmtp_listener.concurrency"></a> Limiting Inbound Concurrency
 
