@@ -32,7 +32,7 @@ The following is a description of the fields:
 | 0 | 1064868656 | Date of reception in Unix timestamp format (seconds since 00:00:00 Jan 1, 1970) |
 | 1 | 00/00-25004-31B987F3 | Message's unique message-id |
 | 2 | 00/00-03736-F4101B54 | Batch ID |
-| 3 | 00/00-04532-A3456B54 | Connection ID |
+| 3 | 00/00-04532-A3456B54 | Connection ID: the inbound connection the message was received over |
 | 4 | R | `R` indicating a reception |
 | 5 | bob | Localpart of the recipient |
 | 6 | example.fict | Domain of the recipient |
@@ -63,7 +63,7 @@ The following is a description of the fields:
 | 0 | 1064871280 | Date of delivery in Unix timestamp format (seconds since 00:00:00 Jan 1, 1970) |
 | 1 | 20/00-25593-945A87F3 | Message's unique message-id |
 | 2 | 00/00-03736-F4101B54 | Batch ID |
-| 3 | 00/00-04532-A3456B54 | Connection ID |
+| 3 | 00/00-04532-A3456B54 | Connection ID: the outbound connection delivery was attempted over. Each attempt uses a new connection, so retries log different values. |
 | 4 | D | `D` indicating a successful delivery or `X` indicating a transfer between nodes, in a cluster configuration.<br> `X` entries appear in the delivery log on the transferring node indicating that the message left for another cluster node, while `R` entries appear in the reception log on the node receiving the message with `xfer` in its protocol field. |
 | 5 | postalengine.com | Destination domain |
 | 6 | 266 | Size in bytes of the delivered message |
@@ -92,7 +92,7 @@ The following is a description of the fields:
 | 0 | 1064869327 | Date of transient failure in Unix timestamp format (seconds since 00:00:00 Jan 1, 1970) |
 | 1 | 00/00-25004-31B987F3 | Message's unique message-id |
 | 2 | 00/00-03736-F4101B54 | Batch ID |
-| 3 | 00/00-04532-A3456B54 | Connection ID |
+| 3 | 00/00-04532-A3456B54 | Connection ID: the outbound connection delivery was attempted over. Each attempt uses a new connection, so retries log different values. |
 | 4 | T | `T` indicating a transient failure |
 | 5 | example.fict | Destination domain |
 | 6 | 0 | Number of bytes of data transferred before the failure occurred. A value of 0 indicates no connection could be made. |
@@ -123,7 +123,7 @@ The following is a description of the fields:
 | 0 | 1064870847 | Date of permanent failure in Unix timestamp format (seconds since 00:00:00 Jan 1, 1970) |
 | 1 | 10/00-25593-393A87F3 | Message's unique message-id |
 | 2 | 00/00-03736-F4101B54 | Batch ID |
-| 3 | 00/00-04532-A3456B54 | Connection ID |
+| 3 | 00/00-04532-A3456B54 | Connection ID: the outbound connection delivery was attempted over. Each attempt uses a new connection, so retries log different values. |
 | 4 | P | `P` indicating a permanent failure, such as an in-band bounce |
 | 5 | postalengine.com | Destination domain |
 | 6 | 31 | Number of bytes of data transferred before the failure occurred. In this example, 31 bytes were transferred before the remote server returned its error. |

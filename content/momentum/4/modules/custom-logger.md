@@ -572,7 +572,7 @@ Number of the heuristic classification of the message from the DSN received from
 
 <dd>
 
-Connection ID
+Inbound connection ID: the connection over which the message was received. This is what the mainlog carries in its connection field on reception records; for the connection a delivery was attempted over, see `%OC`.
 
 </dd>
 
@@ -655,6 +655,14 @@ The text of the DSN returned by the remote server at any phase—delivery, trans
 <dd>
 
 Number of times the message has been tried
+
+</dd>
+
+<dt>%OC</dt>
+
+<dd>
+
+Outbound connection ID: the connection over which delivery was attempted. Each attempt uses a new connection, so retries of the same message log different values. This is the value the mainlog carries in its connection field on delivery, transient failure and permanent failure records. Expands empty on receptions, which have no outbound connection.
 
 </dd>
 
