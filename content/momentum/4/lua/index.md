@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/01/2025"
+lastUpdated: "08/11/2026"
 title: "Category File"
 type: "custom"
 name: "Lua Functions Reference"
