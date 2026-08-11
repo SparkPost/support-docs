@@ -202,8 +202,10 @@ description: "This section details all Lua functions Functions are ordered alpha
 | [msys.validate.opendkim.get_sig_hdrsigned](/momentum/4/lua/ref-msys-validate-opendkim-get-sig-hdrsigned) | Determine whether a given header was signed |
 | [msys.validate.opendkim.get_sig_identity](/momentum/4/lua/ref-msys-validate-opendkim-get-sig-identity) | Fetch the identity associated with a DKIM signature |
 | [msys.validate.opendkim.get_sig_keysize](/momentum/4/lua/ref-msys-validate-opendkim-get-sig-keysize) | Fetch the size of the key used to generate a signature |
+| [msys.validate.opendkim.get_sig_result](/momentum/4/lua/ref-msys-validate-opendkim-get-sig-result) | Derive the Authentication-Results verdict for a DKIM signature |
 | [msys.validate.opendkim.get_sig_selector](/momentum/4/lua/ref-msys-validate-opendkim-get-sig-selector) | Fetch the selector associated with a DKIM signature |
 | [msys.validate.opendkim.get_sig_signalg](/momentum/4/lua/ref-msys-validate-opendkim-get-sig-signalg) | Return the signing algorithm as a string |
+| [msys.validate.opendkim.get_stat_result](/momentum/4/lua/ref-msys-validate-opendkim-get-stat-result) | Map a DKIM verification status with no per-signature verdict to an Authentication-Results result |
 | [msys.validate.opendkim.sign](/momentum/4/lua/ref-msys-validate-opendkim-sign) | Sign a message using OpenDKIM |
 | [msys.validate.opendkim.verify](/momentum/4/lua/ref-msys-validate-opendkim-verify) | Verify a DKIM signature |
 | [thread.mutex](/momentum/4/lua/ref-thread-mutex) | create a new mutex |
