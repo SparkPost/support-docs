@@ -25,7 +25,7 @@ Enable this function with the statement `require('msys.validate.opendkim');`.
 
 This function returns the error string associated with the DKIM signature (if it exists) and the DKIM status `DKIM_STAT`.
 
-Do not use this function to decide whether a signature verified: for a valid signature it returns the literal string `"no signature error"`, never nil. To derive a pass/fail verdict, use [msys.validate.opendkim.get_sig_result](/momentum/4/lua/ref-msys-validate-opendkim-get-sig-result).
+Be cautious when using this function to decide whether a signature is verified: for a valid signature, it returns the literal string `"no signature error"`, never nil. To derive a pass/fail verdict, better to use [msys.validate.opendkim.get_sig_result](/momentum/4/lua/ref-msys-validate-opendkim-get-sig-result).
 
 The DKIM status `DKIM_STAT` can be one of the following values:
 
