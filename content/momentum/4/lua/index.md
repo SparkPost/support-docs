@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/01/2025"
+lastUpdated: "08/11/2026"
 title: "Category File"
 type: "custom"
 name: "Lua Functions Reference"
@@ -195,6 +195,7 @@ description: "This section details all Lua functions Functions are ordered alpha
 | [msys.validate.openarc.verify](/momentum/4/lua/ref-msys-validate-openarc-verify) | Verify ARC sets |
 | [msys.validate.opendkim.get_num_sigs](/momentum/4/lua/ref-msys-validate-opendkim-get-num-sigs) | Return the number of DKIM signatures |
 | [msys.validate.opendkim.get_sig](/momentum/4/lua/ref-msys-validate-opendkim-get-sig) | Get a signature from a DKIM object |
+| [msys.validate.opendkim.get_sig_ar_verdict](/momentum/4/lua/ref-msys-validate-opendkim-get-sig-ar-verdict) | Derive the Authentication-Results verdict for a DKIM signature |
 | [msys.validate.opendkim.get_sig_canons](/momentum/4/lua/ref-msys-validate-opendkim-get-sig-canons) | Fetch the canonicalizers used for a signature |
 | [msys.validate.opendkim.get_sig_domain](/momentum/4/lua/ref-msys-validate-opendkim-get-sig-domain) | Fetch the signing domain from a DKIM_SIGINFO object |
 | [msys.validate.opendkim.get_sig_errorstr](/momentum/4/lua/ref-msys-validate-opendkim-get-sig-errorstr) | Fetch the error associated with a DKIM signature |
@@ -204,6 +205,7 @@ description: "This section details all Lua functions Functions are ordered alpha
 | [msys.validate.opendkim.get_sig_keysize](/momentum/4/lua/ref-msys-validate-opendkim-get-sig-keysize) | Fetch the size of the key used to generate a signature |
 | [msys.validate.opendkim.get_sig_selector](/momentum/4/lua/ref-msys-validate-opendkim-get-sig-selector) | Fetch the selector associated with a DKIM signature |
 | [msys.validate.opendkim.get_sig_signalg](/momentum/4/lua/ref-msys-validate-opendkim-get-sig-signalg) | Return the signing algorithm as a string |
+| [msys.validate.opendkim.get_stat_ar_verdict](/momentum/4/lua/ref-msys-validate-opendkim-get-stat-ar-verdict) | Map a DKIM verification status with no per-signature verdict to an Authentication-Results result |
 | [msys.validate.opendkim.sign](/momentum/4/lua/ref-msys-validate-opendkim-sign) | Sign a message using OpenDKIM |
 | [msys.validate.opendkim.verify](/momentum/4/lua/ref-msys-validate-opendkim-verify) | Verify a DKIM signature |
 | [thread.mutex](/momentum/4/lua/ref-thread-mutex) | create a new mutex |
