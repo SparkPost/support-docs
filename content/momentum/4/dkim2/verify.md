@@ -1,5 +1,5 @@
 ---
-lastUpdated: "07/27/2026"
+lastUpdated: "08/16/2026"
 title: "DKIM2 Verifying — verify()"
 description: "Reference for the msys.validate.dkim2.verify() Lua API: verify options, result table, and SMTP response codes."
 ---
@@ -262,7 +262,7 @@ The full set. Unless otherwise noted, each reason code below pairs with `status=
 | `key_multiple_records` | DNS returned more than one TXT record for the selector (§11.5). DNS admin misconfiguration on the sender side — only one TXT record is allowed per selector. |
 | `key_service_mismatch` | The DNS TXT record's `s=` service list does not include `email` or `*` (RFC 6376 §3.6.1). The key is published for a different service. |
 | `key_invalid` | The DNS TXT record was present but structurally unusable (empty content, internal resolver error, or selector/domain too long to query). |
-| `key_der_parse` | The `p=` base64 decoded successfully but the DER structure is not a valid public key. |
+| `key_der_parse` | The `p=` base64 decoded successfully but the bytes are not a usable public key for the record's `k=`. For `k=rsa` that means they are not a valid DER SubjectPublicKeyInfo. For `k=ed25519` it means they are neither the bare 32-byte key the spec requires nor a SubjectPublicKeyInfo — see [Publishing the public key](/momentum/4/dkim2/sign#publishing-the-public-key). |
 | `key_k_unknown` | The DNS record's `k=` tag names an algorithm Momentum doesn't support. |
 | `key_alg_mismatch` | The resolved public key's type doesn't match the signature's named algorithm — e.g. an `rsa-sha256` sig-set verified against a `k=ed25519` key (or vice versa), a DNS record whose `k=` tag disagrees with the actual `p=` key, or an RSA-PSS public key; maps to `dkim2=permerror`. |
 | `key_v_mismatch` | The DNS TXT record's `v=` tag does not match the expected value. Malformed or wrong-version key record. Maps to `dkim2=permerror`. |
@@ -279,6 +279,21 @@ The full set. Unless otherwise noted, each reason code below pairs with `status=
 - The following produce `dkim2=permerror` (unrecoverable errors): `no_key`, `key_invalid`, `key_multiple_records`, `key_service_mismatch`, `key_k_unknown`, `key_alg_mismatch`, `key_revoked`, `key_b64_decode`, `key_der_parse`, `key_v_mismatch`, `key_p_missing`, `key_size_invalid`, `key_e_invalid`, `missing_required_tags`, `parse_error`, `sig_parse_failed`, `mi_hash_missing`, `signature_expired`, `verify_internal`
 
 `reason=` is included in all failure clauses (`dkim2=fail`, `dkim2=permerror`, `dkim2=temperror`) and absent from pass clauses (`dkim2=pass`).
+
+**Non-conformant Ed25519 key records**: a `k=ed25519` record must carry
+the bare 32-byte public key in `p=` (RFC 8463 §4.2,
+draft-chuang-dkim2-dns-04 §3.4.1), not a DER SubjectPublicKeyInfo.
+Momentum 5.3 builds before this fix instead expected a
+SubjectPublicKeyInfo, so a sender running such a build against its own
+mail may have published that form. Momentum accepts both — the
+signature still verifies — and at `debug_level = "warning"` or a more
+verbose level logs a `DWARNING` naming the selector whenever it
+resolves the SubjectPublicKeyInfo form, since that record fails at
+other verifiers and only the publishing sender can correct it. The
+default level is `error`, at which the warning is not emitted — see
+`debug_level` in [Debugging](/momentum/4/dkim2/debug). See
+[Publishing the public key](/momentum/4/dkim2/sign#publishing-the-public-key)
+for which form to publish.
 
 ### recipe_chain detail strings (paniclog only)
 

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "07/27/2026"
+lastUpdated: "08/16/2026"
 title: "DKIM2 Signing — sign()"
 description: "Reference for the msys.validate.dkim2.sign() Lua API: hook selection, sign options, forwarder and modifier signing."
 ---
@@ -186,6 +186,101 @@ of the options table.
 - `(nil, error_string)` — failure; the message is left unmodified.
 
 Always check the first return value. On `nil`, no headers were modified. Recipe validation failure and content-changed-without-recipe also log to paniclog at level `error`.
+
+### Publishing the public key
+
+Publish one TXT record per sig-set. A verifier does one lookup per
+sig-set, at `<selector>._domainkey.<domain>` — the selector from that
+sig-set's entry in `s=`, the domain from the signature's `d=` — and
+reads the public key from the record's `p=` tag. A multi-algorithm
+`DKIM2-Signature` therefore needs one record per selector it names.
+DKIM2 reuses a subset of the DKIM v1 key-record format (RFC 6376
+§3.6.1), so the record's `v=` stays `DKIM1` — for compatibility with
+existing key deployment (draft-chuang-dkim2-dns-04 §3.4.1). The
+`DKIM2-Signature` header carries no version tag of its own; the
+generation is identified by the field name
+(draft-ietf-dkim-dkim2-spec-04 §8).
+
+**The `p=` encoding is not the same for both algorithms.** Publish the
+form shown below for each. For `k=ed25519` that form is exactly what
+the specs require; for `k=rsa` it is deployed practice rather than the
+RFC's normative text, as explained below. The one form Momentum accepts
+that other verifiers will not is covered under
+[Upgrading from an earlier 5.3 build](#upgrading-from-an-earlier-53-build).
+
+For `rsa-sha256`, `p=` is the base64 of a SubjectPublicKeyInfo — the
+body of the PEM with the `-----BEGIN/END-----` lines and all whitespace
+removed. (RFC 6376 §3.6.1, and draft-chuang-dkim2-dns-04 §3.4.1 to the
+same effect, call for a bare `RSAPublicKey` instead — but RFC
+6376's own Appendix C recipe emits a SubjectPublicKeyInfo, and so does
+every deployed signer; errata 6674 and 7001 record the discrepancy in
+RFC 6376. Publish the SPKI form below.)
+
+```bash
+openssl rsa -in /etc/dkim2/rsa.key -pubout | sed '/-----/d' | tr -d '\n'
+```
+
+```
+sel-rsa._domainkey.example.com. IN TXT (
+  "v=DKIM1; k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA..."
+  "...the rest of the base64, continued in as many further quoted"
+  "...strings as it takes, none exceeding 255 octets..." )
+```
+
+A DNS character-string holds at most 255 octets (RFC 1035 §3.3), and
+an RSA `p=` easily runs past that on its own — 392 base64 characters
+plus the `v=DKIM1; k=rsa; p=` prefix is 410 octets at 2048 bits, more
+at larger key sizes — so it must be split across as many adjacent
+quoted strings as needed, none over the limit. Verifiers concatenate
+them, Momentum included. Ed25519 records never need this — 44
+characters fit in one string.
+
+For `ed25519-sha256`, `p=` is the base64 of the **bare 32-byte public
+key** — no ASN.1 wrapper of any kind, so always 44 characters. This
+comes from draft-chuang-dkim2-dns-04 §3.4.1, which
+draft-ietf-dkim-dkim2-spec-04 §3.6 defers to for the key-record format,
+and identically from RFC 8463 §4.2.
+
+`openssl` has no output format for the bare key — `-outform` is
+PEM or DER only — but an Ed25519 SubjectPublicKeyInfo is a fixed
+12-byte prefix followed by the key, so the last 32 bytes of the DER
+form are exactly it:
+
+```bash
+openssl pkey -in /etc/dkim2/ed25519.key -pubout -outform DER | tail -c 32 | base64
+```
+
+```
+sel-ed25519._domainkey.example.com. IN TXT (
+  "v=DKIM1; k=ed25519; p=11qYAYKxCrfVS/7TyWQHOg7hcvPapiMlrwIaaPcHURo=" )
+```
+
+An empty `p=` signals deliberate key revocation.
+
+#### Upgrading from an earlier 5.3 build
+
+Momentum 5.3 builds before this fix read every `p=` as a
+SubjectPublicKeyInfo, including for `k=ed25519`. A deployment that
+published an Ed25519 key in that form to make such a build verify its
+own mail has a record that conformant verifiers reject. Momentum still
+accepts it, but the record should be republished in the raw 32-byte
+form above. Nothing needs to change for `k=rsa`.
+
+The quickest check is the record itself: a conformant Ed25519 `p=` is
+44 base64 characters, the SubjectPublicKeyInfo form 60.
+
+Momentum can also report it, but only from the **verifying** side —
+the warning fires when a key record is resolved during verification,
+so a deployment that only signs will never see it. On a Momentum that
+verifies mail carrying the selector, set `debug_level = "warning"` on
+the `dkim2` stanza and it logs a `DWARNING` naming the selector each
+time it resolves one. The shipped default is `error`, at which this
+warning does **not** appear — see
+[Debugging](/momentum/4/dkim2/debug).
+
+Replace the record; do not publish both forms side by side. Two TXT
+records at one selector is a §11.5 PERMERROR, so a verifier that would
+have accepted either accepts neither.
 
 ### Forwarder and modifier signing
 
