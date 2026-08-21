@@ -1,5 +1,5 @@
 ---
-lastUpdated: "07/07/2026"
+lastUpdated: "08/16/2026"
 title: "Using DKIM2 — Overview"
 description: "DKIM2 is the successor to DKIM that adds replay protection (per-message envelope binding), an explicit chain of custody across forwarders, and a structured way for modifying hops to record what they changed. Momentum implements DKIM2 targeting draft-ietf-dkim-dkim2-spec-04."
 ---
@@ -203,14 +203,21 @@ reference and more complete policy examples.
 
 DKIM2 reuses the DKIM1 key infrastructure. Keys are PEM-encoded RSA or
 Ed25519 private keys, supplied either as a file path (`keyfile`) or as
-raw PEM bytes in memory (`keybuf`). The matching public key is published in DNS
-at `<selector>._domainkey.<domain>` as a TXT record with the standard
-RFC 6376 §3.6.1 format (`v=DKIM1; k=rsa; p=<base64-SPKI>`).
+raw PEM bytes in memory (`keybuf`). The matching public key is
+published in DNS at `<selector>._domainkey.<domain>` as a TXT record —
+`v=DKIM1; k=rsa; p=<base64-SPKI>` for RSA, `v=DKIM1; k=ed25519;
+p=<base64-raw-key>` for Ed25519. The two `p=` encodings are not
+interchangeable; see
+[Publishing the public key](/momentum/4/dkim2/sign#publishing-the-public-key).
 
 If you already publish DKIM1 keys at a selector, you can reuse the same
-selector for DKIM2 without any DNS change. To generate fresh keys for
-DKIM2 specifically, follow the standard openssl recipe in
-[Generating DKIM Keys](/momentum/4/using-dkim#generating-dkim-keys).
+selector for DKIM2 without any DNS change. To generate a fresh RSA key
+pair, follow the recipe in
+[Generating DKIM Keys](/momentum/4/using-dkim#generating-dkim-keys) —
+it predates DKIM2's Ed25519 support and does not cover that case. For
+Ed25519, generate the key pair with `openssl genpkey -algorithm ED25519
+-out /etc/dkim2/ed25519.key`, then publish the public half following
+[Publishing the public key](/momentum/4/dkim2/sign#publishing-the-public-key).
 
 ### Note
 
