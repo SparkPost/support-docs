@@ -30,4 +30,4 @@ description: Identify the sending domains that you are directly competing agains
 
  Feel free to contact your TAM or our Support Team with any further questions!
 
-[Contact our Support Team](mailto:support@edatasource.com?subject=Question%20About%20Overlap%20Analysis) 
+[Contact our Support Team](mailto:support@bird.com?subject=Question%20About%20Overlap%20Analysis) 

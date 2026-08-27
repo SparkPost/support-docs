@@ -59,7 +59,7 @@ const help = {
     </>
   ),
   content: [
-    { text: 'Submit a ticket', url: 'mailto:support@edatasource.com', Icon: Feedback },
+    { text: 'Submit a ticket', url: 'mailto:support@bird.com', Icon: Feedback },
   ],
 };
 

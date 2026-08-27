@@ -69,4 +69,4 @@ description: What insights can I learn from the Sending Domain page of Competiti
 
  Feel free to contact your TAM or our Support Team with any further questions!
 
-[Contact our Support Team](mailto:support@edatasource.com?subject=Question%20About%20Sending%20Domain) 
+[Contact our Support Team](mailto:support@bird.com?subject=Question%20About%20Sending%20Domain) 

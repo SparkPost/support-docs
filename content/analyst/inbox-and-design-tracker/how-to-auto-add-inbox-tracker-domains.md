@@ -16,4 +16,4 @@ description: Domain Auto-Association allows you to add domains directly to Inbox
 
 **3. The domain will be added upon checking valid SPF and DKIM records. You will need to add the domain to an Inbox Tracker profile.** 
 
- Please contact us by mailing [csteam@edatasource.com](mailto:csteam@edatasource.com) if you are experiencing issues or are interested in enabling this feature on your account.
+ Please contact us by mailing [support@bird.com](mailto:support@bird.com) if you are experiencing issues or are interested in enabling this feature on your account.

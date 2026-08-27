@@ -54,4 +54,4 @@ description: Read on for help with Cloudmark reputation and troubleshooting pote
 
  After you have scrubbed the email's content and formatting, you can resend the campaign and see if any issues were detected.  If they are cleared they will be shown as gray numbers vs. red, and you will know your efforts have helped.
 
- If these steps have not resolved your Cloudmark issues, please reach out to the SparkPost team by sending an email to [support@edatasource.com.](mailto:support@edatasource.com) We will review your specific case and the steps you have taken toward a resolution to determine where to go next.
+ If these steps have not resolved your Cloudmark issues, please reach out to the SparkPost team by sending an email to [support@bird.com.](mailto:support@bird.com) We will review your specific case and the steps you have taken toward a resolution to determine where to go next.

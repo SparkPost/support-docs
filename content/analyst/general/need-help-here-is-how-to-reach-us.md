@@ -21,6 +21,6 @@ description: New to the platform or just need a refresher? Check out our trainin
 
 ## Message us directly:
 
- If you have a question that can be quickly answered by our Support team, click the chat icon in the bottom, right-hand corner to message us directly. We are available during normal business hours. If you prefer to connect via email instead, send us a message at [support@edatasource.com.](mailto:support@edatasource.com) 
+ If you have a question that can be quickly answered by our Support team, click the chat icon in the bottom, right-hand corner to message us directly. We are available during normal business hours. If you prefer to connect via email instead, send us a message at [support@bird.com.](mailto:support@bird.com) 
 
 

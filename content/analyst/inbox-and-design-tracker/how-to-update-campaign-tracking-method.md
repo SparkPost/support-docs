@@ -69,4 +69,4 @@ description: Campaigns are organized by Subject Line/Date. Update your tracking 
 
  Our final option is x-mailer and is only used by a small subset of our senders.
 
- Please send an email to [support@edatasource.com](mailto:support@edatasource.com) 
+ Please send an email to [support@bird.com](mailto:support@bird.com) 

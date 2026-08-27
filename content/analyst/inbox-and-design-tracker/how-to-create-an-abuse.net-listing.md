@@ -23,4 +23,4 @@ description: Don't have an Abuse.net listing? Here's how to create one
 
 ![](media/how_to_create_an_abusenet_listing/image_1.png)
 
- For further inquiries, reach out to [csteam@edatasource.com](mailto:csteam@edatasource.com).
+ For further inquiries, reach out to [support@bird.com](mailto:support@bird.com).

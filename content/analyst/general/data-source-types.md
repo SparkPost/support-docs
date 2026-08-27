@@ -27,7 +27,7 @@ The IntelliSeed™ List allows clients to [deploy virtual users](/analyst/inbox-
 
 Note: IntelliSeed™ results are not considered in engagement metrics.
 
-Please contact your TAM or [support@edatasource.com](mailto:support@edatasource.com) if you're interested in learning about Public IntelliSeeds™ options, which can be used across all platform products.
+Please contact your TAM or [support@bird.com](mailto:support@bird.com) if you're interested in learning about Public IntelliSeeds™ options, which can be used across all platform products.
 
 * * *
 
@@ -41,5 +41,5 @@ Note: A seed address will never engage with an email message, which makes it loo
 
 Feel free to contact your TAM or our Support Team with any further questions!
 
-[Contact our Support Team](mailto:support@edatasource.com?subject=Question%20About%20Data%20Sources)
+[Contact our Support Team](mailto:support@bird.com?subject=Question%20About%20Data%20Sources)
 
