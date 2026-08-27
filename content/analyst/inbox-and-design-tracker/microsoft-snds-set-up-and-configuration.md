@@ -41,7 +41,9 @@ description: Everything you need to know about setting up Outlook SNDS and synci
 
  For example, if you notice low deliverability rates to Outlook within Inbox Tracker, you should first check how much panel coverage the campaign(s) have. From there, SNDS can be used as a confirmation of whether a send was or was not well received.
 
- SNDS configuration also unlocks two additional metrics within the platform: The number of Outlook spam complaints (Dashboard) and SNDS trap hits (Spam Trap Monitor).
+ SNDS configuration also unlocks an additional metric within the platform: the number of Outlook spam complaints (Dashboard).
+
+*Microsoft stopped including spam trap hit counts in the SNDS Data Report on July 22, 2026, and offers no replacement for that data. SNDS trap hits are no longer shown in Spam Trap Monitor. Everything else SNDS reports — filter results, send volume, complaint rate and IP status — is unaffected.*
 
 ![](media/microsoft_snds_set_up_and_configuration/image_1.png)
 
