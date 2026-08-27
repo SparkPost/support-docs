@@ -6,7 +6,7 @@ description: Find out how different subject line emotions and lengths affect eng
 
 ## Analyze past Subject Line performance with Subject Line Advisor, powered by Persado. Optimize future Subject Lines prior to deployment with Subject Predict.
 
-**Navigate to Subject Line Advisor within Inbox Tracker.** Not seeing it? Contact us at [support@edatasource.com](mailto:support@edatasource.com) for details.
+**Navigate to Subject Line Advisor within Inbox Tracker.** Not seeing it? Contact us at [support@bird.com](mailto:support@bird.com) for details.
 
 ![](media/analyze_and_optimize_subject_line_performance/image_0.png)
 

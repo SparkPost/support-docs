@@ -96,4 +96,4 @@ description: An all-encompassing guide that covers everything you need to know a
 * If your email segmentation is mainly based on engagement, another way you can approach the IntelliSeeds is to take each segment (or a few segments), and take them through your welcome series as if they were a new subscriber. That way the IntelliSeeds will naturally fall into your different engagement buckets to represent each portion of your engaged (or on-engaged) audience.
 * If your mailing list requires some type of identifying information (such as zip code or past purchases), manually assign those same required attributes to IntelliSeeds™. Creativity is an asset when it comes to seeding strategy!
 
- You can reach out to our support team by mailing [support@edatasource.com](mailto:support@edatasource.com) .
+ You can reach out to our support team by mailing [support@bird.com](mailto:support@bird.com) .

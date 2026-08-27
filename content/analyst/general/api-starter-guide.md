@@ -14,7 +14,7 @@ description: This article provides a brief description of Inbox Tracker API endp
 
 ### Requesting an API Key
 
- API keys are typically included in most Inbox Tracker subscriptions. You can request a key through either your Customer Success Manager, Product Support Specialist, or through support channels (via Intercom chat or by mailing [support@edatsource.com](mailto:support@edatsource.com)).
+ API keys are typically included in most Inbox Tracker subscriptions. You can request a key through either your Customer Success Manager, Product Support Specialist, or through support channels (via the in-app Support Request form or by mailing [support@bird.com](mailto:support@bird.com)).
 
  Once you send a request, we'll quickly check your contract to make sure we can provide a key. From there, an encrypted email will be sent containing the key.
 
@@ -47,7 +47,7 @@ description: This article provides a brief description of Inbox Tracker API endp
 
 ### API Questions and Support
 
- API-related questions can be answered by our support team through in-app chat or by emailing [support@edatasource.com](mailto:support@edatasource.com).
+ API-related questions can be answered by our support team through the in-app Support Request form or by emailing [support@bird.com](mailto:support@bird.com).
  
 
 

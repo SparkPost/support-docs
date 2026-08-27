@@ -16,7 +16,7 @@ description: Command Center provides an IP-centric view of deliverability for se
 
 ![](media/command_center/image_0.png)
 
- If you'd like more information on Command Center, please reach out to your Account Manager or email us at [support@edatasource.com](mailto:support@edatasource.com).
+ If you'd like more information on Command Center, please reach out to your Account Manager or email us at [support@bird.com](mailto:support@bird.com).
  
 
 

@@ -40,4 +40,4 @@ description: Everything you need to know about what we do when your account reac
 
  The platform will **automatically prevent** you from running any additional design tracker tests when you reach your Design Tracker limits.
 
- If you have any additional questions on event usage and limits, please reach out to your Account Manager or email us at [support@edatasource.com](mailto:support@edatasource.com).
+ If you have any additional questions on event usage and limits, please reach out to your Account Manager or email us at [support@bird.com](mailto:support@bird.com).

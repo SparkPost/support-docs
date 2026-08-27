@@ -37,11 +37,11 @@ These missing percentages count towards spam placement on the dashboard pie char
 
 If you are seeing a regular _Missing_ percentage on all your seed sends, we recommend spot checking the delivery status to a specific seed address that is reporting the missing percentage.
 
-In the example above, since "Free.fr" is showing that all six seeds did not receive the campaign. One of those six addresses is "[lalaith.rian@free.fr](mailto:lalaith.rian@free.fr)"; check your ESP to see if they are suppressing the address for any reason and if you can override that suppression to the free.fr ISP. If the seeds are bouncing, please notify our team at [support@edatasource.com](mailto:support@edatasource.com).
+In the example above, since "Free.fr" is showing that all six seeds did not receive the campaign. One of those six addresses is "[lalaith.rian@free.fr](mailto:lalaith.rian@free.fr)"; check your ESP to see if they are suppressing the address for any reason and if you can override that suppression to the free.fr ISP. If the seeds are bouncing, please notify our team at [support@bird.com](mailto:support@bird.com).
 
 **2\. The traditional seeds should be deployed on a weekly basis.** Again, these seeds do not engage, so including these addresses on frequent sends will cause the ISPs to quickly place your emails into the spam folder. Weekly sends are a safe way to have additional data without damaging your reputation to the seed addresses. Think of a campaign in your program that deploys weekly, and simply include the traditional seeds (in their entirety) on that send for best results.
 
 **3\. Strive to include the traditional seeds in a live send for optimal results.** If you can't include them in a live send, have the send be exactly the same as it is to your regular audience. Avoid using the words _"_seed" or "test" in the subject line; ISP algorithms detect these words and they may alter the results of the send.
 
-Want help with developing a seeding strategy? Reach out to our support team by mailing [support@edatasource.com](mailto:support@edatasource.com).
+Want help with developing a seeding strategy? Reach out to our support team by mailing [support@bird.com](mailto:support@bird.com).
 
