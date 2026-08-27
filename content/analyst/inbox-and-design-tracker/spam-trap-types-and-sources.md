@@ -25,8 +25,6 @@ description: Spam trap type and source overview
 
 ***Cloudmark*** - a trusted leader in intelligent threat protection against known and future attacks, safeguarding 12 percent of the world's inboxes and 20 percent of mobile accounts from wide-scale and targeted email threats.
 
-***SNDS*** - The Outlook.com Smart Network Data Services (SNDS) gives you the data you need to understand and improve your reputation at Outlook.com.
-
 ***Global Trap Network (GTN) - Passive -*** The passive network, uses proprietary data science techniques to detect the domains on other providers’ active networks. It can identify when senders using the SparkPost platform are sending to those networks without the customer needing a relationship with those other providers.
 
 ***Global Trap Network (GTN) - Active*** - Proprietary spam trap network maintained by Sparkpost. These traps will not affect your reputation but can be used to gauge the effectiveness of your list management and hygiene practices.
