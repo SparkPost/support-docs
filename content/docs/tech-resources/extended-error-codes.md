@@ -1,5 +1,5 @@
 ---
-lastUpdated: "01/28/2022"
+lastUpdated: "06/08/2026"
 title: "Extended Error Codes"
 description: "When developing to the REST api you should be prepared to handle failed requests understand their meaning and what actions are needed to resolve them The following table is a complete list of extended error code responses organized by the four elements included in the response array Component The related..."
 ---
@@ -56,6 +56,10 @@ The following table is a complete list of extended error code responses, organiz
 |                       | 2006        | Transmission record in invalid state             | 409              |                                              |
 |                       | 2007        | Metadata size too large                          | 422              |                                              |
 |                       | 2008        | No local part specified in sender address        | 400              | check if provided email is correct           |
+|                       | 2009        | Unconfigured tracking domain                     | 400              | create/use a tracking domain configured for this account or subaccount, then retry |
+|                       | 2010        | Unverified tracking domain                       | 400              | add the required CNAME, verify the domain (POST /api/v1/tracking-domains/{domain}/verify), then retry |
+|                       | 2011        | Compliance pending for tracking domain           | 400              | wait for compliance review to complete; contact Support if it does not clear |
+|                       | 2012        | Blocked tracking domain                          | 400              | use a different verified, compliant tracking domain, or contact Support |
 |                       | 2101        | Exceed Sending Limit (hourly)                    | 420              |                                              |
 |                       | 2102        | Exceed Sending Limit (daily)                     | 420              |                                              |
 |                       | 2103        | Exceed Sending Limit (sandbox)                   | 420              |                                              |
