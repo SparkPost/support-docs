@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/26/2020"
+lastUpdated: "09/14/2026"
 title: "tcp_buffer_size"
 description: "tcp buffer size maximum tcp buffer size for outbound connections tcp buffer size 32768 Momentum uses an auto scaling algorithm to ensure that the tcp buffer size is set optimally This option allows you to set an upper bound on the tcp buffer size selected The default is 32768 bytes..."
 ---
@@ -20,6 +20,8 @@ Momentum uses an auto-scaling algorithm to ensure that the tcp buffer size is se
 
 The default is 32768 bytes.
 
+This option applies to outbound connections only. The receive buffer of an inbound connection is governed by [tcp_recv_buffer_size](/momentum/4/config/ref-tcp-recv-buffer-size) on the listener.
+
 ### Warning
 
 This is an advanced option. Setting the value too high can cause memory exhaustion. Thorough testing is recommended before deployment in a production environment.
@@ -32,4 +34,4 @@ tcp_buffer_size is valid in the global scope.
 <a name="idp26736160"></a> 
 ## See Also
 
-[use_mmap](/momentum/4/config/ref-use-mmap)
+[tcp_recv_buffer_size](/momentum/4/config/ref-tcp-recv-buffer-size), [use_mmap](/momentum/4/config/ref-use-mmap)
