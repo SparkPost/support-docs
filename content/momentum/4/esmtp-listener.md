@@ -1,5 +1,5 @@
 ---
-lastUpdated: "08/03/2026"
+lastUpdated: "09/14/2026"
 title: "Configuring Inbound Mail Service Using SMTP"
 description: "The ESMTP Listener is the listener that enables you to inject message using SMTP Momentum can listen on any number of Unix domain sockets and or IP port addresses for TCP IP service The ESMTP Listener supports all of the extended properties and extensions described below The ESMTP Listener is..."
 ---
@@ -45,6 +45,8 @@ ThreadPool accept-pool {
 
 Listen stanzas map 1:1 to an underlying socket, this means that `:25` (which is the same as *:25) binds to IPv4 (and perhaps IPv6, depending on the kernel); for explicit IPv6, use `[*]:25` instead.
 
+The buffer sizes shown above are the defaults. Before keeping `TCP_Recv_Buffer_Size` at 4096 on an endpoint that receives mail over a high-latency path, see [“Receive Buffers on High-Latency Links”](#esmtp_listener.recv_buffer) below.
+
 The `Pool_Name` option associates the `accept-pool` ThreadPool with the listener. `Concurrency` should have a value that is equal to or less than the concurrency defined in the ThreadPool.
 
 When using threaded accepts for listeners, you must provision the thread pool you intend to use via the ThreadPool directive. If the thread pool you name is not found or is unspecified, the IO pool will be used and a critical message will appear in your log.
@@ -66,6 +68,36 @@ ESMTP_Listener {
   Listen "127.0.0.1:587" {}
 }
 ```
+
+### <a name="esmtp_listener.recv_buffer"></a> Receive Buffers on High-Latency Links
+
+[TCP_Recv_Buffer_Size](/momentum/4/config/ref-tcp-recv-buffer-size) sets the receive buffer of each inbound connection, and through it the TCP receive window, which bounds how fast a single message can be received: throughput is the receive window divided by the round-trip time.
+
+The default of 4096 bytes is a legacy of the era before window scaling. It is harmless on a low-latency path, but it throttles a long one. A sending MTA typically gives up first: Momentum's own [body_timeout](/momentum/4/config/ref-body-timeout) is 600 seconds, after which it abandons the transaction and retries, even though the receiver went on to accept the message. The symptom on the sending side is a transient failure while reading the confirmation, and the same message being delivered more than once.
+
+If a listener accepts mail across a WAN, a region-to-region relay hop or any path with a round-trip time in the tens or hundreds of milliseconds, either leave the buffer to the operating system:
+
+```
+ESMTP_Listener {
+  Listen ":25" {
+      TCP_Recv_Buffer_Size = 0    # let the OS autotune the receive window
+  }
+}
+```
+
+or size it from the bandwidth-delay product of the path:
+
+```
+ESMTP_Listener {
+  Listen ":25" {
+      TCP_Recv_Buffer_Size = 262144
+  }
+}
+```
+
+Check the operating system ceilings at the same time, since they cap what is actually granted — `net.core.rmem_max` for an explicitly requested buffer, and `net.ipv4.tcp_rmem` for autotuning.
+
+Two caveats are worth knowing. A non-zero value disables receive window autotuning for the connection, so it is a ceiling for every client of that listener, not just the slow ones.
 
 ### <a name="esmtp_listener.concurrency"></a> Limiting Inbound Concurrency
 
