@@ -1,5 +1,5 @@
 ---
-lastUpdated: "08/11/2026"
+lastUpdated: "09/15/2026"
 title: "Lua Functions Summary"
 description: "This section contains tables of Lua functions Click the function name for details Table 64 1 Lua functions all Function Description Params Package Version Phases ac esmtp capability add Add a capability to the EHLO response name msys extended ac 4 0 connect ehlo ac esmtp capability remove Removes a..."
 ---
@@ -172,6 +172,7 @@ This section contains tables of Lua functions. Click the function name for detai
 | [msys.tls_params.set](/momentum/4/lua/ref-msys-tls-params-set) - Set a tls parameter string on a per connection basis | tls_params, param, val | msys.tls_params | 4.4 | any |
 | [msys.type](/momentum/4/lua/ref-msys-type) – Return the type name of the supplied parameter | parameter | msys | 4.0 | any |
 | [msys.unlock](/momentum/4/lua/ref-msys-unlock) – Releases a lock obtained via msys.lock | mutexname | msys | 4.0 | any |
+| [msys.validate.authentication_results.remove](/momentum/4/lua/ref-msys-validate-authentication-results-remove) - Remove incoming authentication results claiming a local identity | msg, [authservid] | msys.validate.authentication_results | 5.4 | data, data_spool, data_spool_each_rcpt |
 | [msys.validate.dk.get_responsible_domain](/momentum/4/lua/ref-msys-validate-dk-get-responsible-domain) – This function requires module "dk_validate". "msg" is a mail message. "ctx" is the validation context. It returns the responsible domain for the current message | msg, ctx | msys.validate.dk | 4.0 | data, data_spool, data_spool_each_rcpt |
 | [msys.validate.dk.sign](/momentum/4/lua/ref-msys-validate-dk-sign) – Sign a message using a Domain Key | msg, ctx, options | msys.validate.dk | 4.0 | core_data_validation |
 | [msys.validate.openarc.sign](/momentum/4/lua/ref-msys-validate-openarc-sign) – Sign a message using OpenARC | msg, options, [ar] | msys.validate.openarc | 5.0 | core_post_final_validation |

@@ -1,5 +1,5 @@
 ---
-lastUpdated: "03/26/2020"
+lastUpdated: "09/15/2026"
 title: "ESMTP_Listener Authentication"
 description: "Momentum can be configured to perform authentication on SMTP connections It provides out of the box support for authenticating remote users against a flat file using CRAM MD 5 DIGEST MD 5 and LOGIN authentication extensions to SMTP Additional authentication back ends can be plugged into Momentum in the form..."
 ---
@@ -17,6 +17,8 @@ Upon successful authentication, the following are stored in the connection valid
 In addition, the SMTP session will be marked as relayable, setting the connection context variable [can_relay](/momentum/4/4-policy-context-variables#predefined-context-conn-global) to "true".
 
 These results of the authentication attempt will be used to generate an `Authentication-Results:` header in the mail before it is delivered from Momentum.
+
+A sender can supply its own `Authentication-Results` fields. Before publishing local results, an inbound Lua policy should remove fields that claim the local authentication service identity. See [Removing incoming authentication results](/momentum/4/using-dkim-validation#removing-incoming-authentication-results) for policy ordering and trusted relay handling.
 
 ### Note
 
