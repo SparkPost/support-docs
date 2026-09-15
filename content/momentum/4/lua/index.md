@@ -1,5 +1,5 @@
 ---
-lastUpdated: "08/11/2026"
+lastUpdated: "09/15/2026"
 title: "Category File"
 type: "custom"
 name: "Lua Functions Reference"
@@ -189,6 +189,7 @@ description: "This section details all Lua functions Functions are ordered alpha
 | [msys.timer.at](/momentum/4/lua/ref-msys-timer-at) | execute closure at a given time |
 | [msys.timer.every](/momentum/4/lua/ref-msys-timer-every) | execute closure every interval |
 | [msys.tls_params.set](/momentum/4/lua/ref-msys-tls-params-set) | Set a tls parameter string on a per connection basis |
+| [msys.validate.authentication_results.remove](/momentum/4/lua/ref-msys-validate-authentication-results-remove) | Remove incoming authentication results claiming a local identity |
 | [msys.validate.dk.get_responsible_domain](/momentum/4/lua/ref-msys-validate-dk-get-responsible-domain) | Return the domain responsible for the current message |
 | [msys.validate.dk.sign](/momentum/4/lua/ref-msys-validate-dk-sign) | Sign a message using a Domain Key |
 | [msys.validate.openarc.sign](/momentum/4/lua/ref-msys-validate-openarc-sign) | Sign a message using OpenARC |
