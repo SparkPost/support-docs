@@ -1,5 +1,5 @@
 ---
-lastUpdated: "08/16/2026"
+lastUpdated: "09/29/2026"
 title: "DKIM2 Signing — sign()"
 description: "Reference for the msys.validate.dkim2.sign() Lua API: hook selection, sign options, forwarder and modifier signing."
 ---
@@ -159,7 +159,7 @@ of the options table.
 | `keyfile` | yes (single) | Path to the PEM-encoded private key on disk. Mutually exclusive with `keybuf`; one of the two is required. When `sig_sets` is used, set per entry inside `sig_sets` instead. |
 | `keybuf` | yes (single) | PEM-encoded private key as a string in memory. Alternative to `keyfile` for cases where the key is held in a secrets manager or generated at runtime. When `sig_sets` is used, set per entry inside `sig_sets` instead. |
 | `algorithm` | no | `"rsa-sha256"` (default) or `"ed25519-sha256"`. When `sig_sets` is used, set per entry inside `sig_sets` instead. |
-| `sig_sets` | no | Array of `{selector, keyfile, keybuf, algorithm}` tables for multi-algorithm signing (§8.9). When `sig_sets` is used, `selector`/`keyfile`/`keybuf`/`algorithm` are set per entry inside `sig_sets` — do not set them at the top level. All other options (`domain`, `mailfrom`, `rcptto`, `flags`, `recipe`, etc.) remain at the top level and apply to all entries. |
+| `sig_sets` | no | Array of `{selector, keyfile, keybuf, algorithm}` tables for multi-algorithm signing (§8.9). When `sig_sets` is used, `selector`/`keyfile`/`keybuf`/`algorithm` are set per entry inside `sig_sets` — do not set them at the top level. All other options (`domain`, `mailfrom`, `rcptto`, `flags`, `recipe`, etc.) remain at the top level and apply to all entries. At most two entries may use the same algorithm (§8.9); a third fails the sign call. |
 | `mailfrom` | no | **Normally omitted** — Momentum reads the live envelope MAIL FROM automatically. Production exception: null-sender DSN/bounce messages where `mailfrom=""` is required since the envelope API returns nil for `MAIL FROM:<>`. Otherwise testing/simulation of specific envelope conditions without real SMTP transit. An explicit value may be given bare (`user@example.com`) or envelope-decorated (`<user@example.com>`, `MAIL FROM:<user@example.com>`, or `msg:mailfrom()`) — it is normalized to the bare address before being written into `mf=`, the same as `rcptto`. `""` (null sender) is preserved. |
 | `rcptto` | no | **Normally omitted** — Momentum auto-populates from the active envelope recipient. In the recommended `core_final_validation2` hook (and in `validate_data_spool_each_rcpt`), each recipient/cowref auto-populates correctly and is BCC-safe. One exception applies only to the shared `validate_data_spool` hook: pass the full recipient list explicitly to cover all recipients in a single `rt=` — but you MUST exclude any `bcc:` recipient (§8.6), since the multi-recipient `rt=` is visible to every recipient of that copy. Accepts a string or a Lua table of bare addresses. |
 | `bridge_mailfrom` | no | The `mf=` for an auto-generated **fabricated** bridging signature when the new `mf=` domain does not relaxed-domain-match (§9.4, domain-only) any address in the previous signature's `rt=` (§9.2). Required when the prior `rt=` has multiple entries; inferred automatically when it has exactly one. |
@@ -169,13 +169,15 @@ of the options table.
 | `next_domain` | no | Low-level `nd=` passthrough (§8.7): emit **this** signature as an `nd=` bridge carrying `nd=<next_domain>` and **no** `mf=`/`rt=`. The call's `domain`/`selector`/key must belong to a domain in the prior `rt=`, and `next_domain` MUST equal the `d=` of the next signature in the chain. Chain-break detection is skipped for such a call. Prefer `on_chain_break="nd"` for the common auto-bridge case. |
 | `on_donotmodify` | no | Action when any prior `DKIM2-Signature` on the message carries `f=donotmodify` (§8.10 / §11.8). The check is unconditional — it does not detect whether content was actually modified. Values: `"error"` (default — refuse to sign), `"warn"` (proceed; caller is responsible for logging/auditing), `"skip"` (return `(true, nil, {donotmodify=true})` without signing — no headers added to the message), `"ignore"` (proceed silently). |
 | `timestamp` | no | `t=` value. Defaults to the current UNIX time. |
-| `nonce` | no | `n=` value (`-04` §8.3). Caller-supplied ASCII string, ≤ 64 chars, no `;`. Typically a DSN-correlation key or replay-cache key. |
+| `nonce` | no | `n=` value (`-06` §8.3). Caller-supplied ASCII string, ≤ 64 chars, no `;`. Typically a DSN-correlation key or replay-cache key. |
 | `nonce_random` | no | If `true` AND `nonce` is not set, the signer fills `n=` with a 22-character base64 random nonce. Inherited by auto-bridge signatures so every signature in the chain gets its own fresh nonce. |
-| `flags` | no | Lua **array** (table) of flag tokens for `f=` (`-04` §8.10): `"exploded"`, `"donotexplode"`, `"donotmodify"`, `"feedback"`, `"feedhere"`. `"feedhere"` (spec-04 §8.10) means this Signer requests that any feedback about how this message is handled during delivery and thereafter is relayed via this hop. A plain string is not accepted — pass a one-element array, e.g. `flags = {"donotmodify"}`. See §8.10 for semantics. Joined into the on-wire comma-separated form by the glue layer. When `rt=` carries multiple recipients, `"exploded"` is added automatically unless already present. **Note:** the auto-`exploded` heuristic is based solely on recipient count — it triggers when `rt=` contains more than one address. Mailing lists with a single subscriber will not have `"exploded"` added automatically; pass `flags = {"exploded"}` explicitly in that case. |
-| `recipe` | no | Raw JSON string conforming to `-04` §5. Attached to the `Message-Instance` header as the base64-encoded `r=` tag. Validated against the schema at sign time; malformed recipes fail the sign call with `recipe_invalid: <reason>`. |
-| `mi_hash_algorithms` | no | Lua array of hash algorithms for the `Message-Instance` `h=` body and header hashes (§6). Default `{"sha256"}`. Multiple algorithms produce comma-separated entries in `h=`, e.g. `{"sha256","sha512"}` → `h=sha256:HH:BH,sha512:HH:BH`. A plain string `mi_hash_algorithm="sha512"` is also accepted as a single-algorithm alias. The verifier automatically detects and uses whatever algorithm is present in the received MI `h=` tag. |
+| `flags` | no | Lua **array** (table) of flag tokens for `f=` (`-06` §8.10): `"exploded"`, `"donotexplode"`, `"donotmodify"`, `"feedback"`, `"feedhere"`. `"feedhere"` means this Signer requests that any feedback about how this message is handled during delivery and thereafter is relayed via this hop. A plain string is not accepted — pass a one-element array, e.g. `flags = {"donotmodify"}`. See §8.10 for semantics. Joined into the on-wire comma-separated form by the glue layer. When `rt=` carries multiple recipients, `"exploded"` is added automatically unless already present. **Note:** the auto-`exploded` heuristic is based solely on recipient count — it triggers when `rt=` contains more than one address. Mailing lists with a single subscriber will not have `"exploded"` added automatically; pass `flags = {"exploded"}` explicitly in that case. |
+| `recipe` | no | Raw JSON string conforming to `-06` §5. Attached to the `Message-Instance` header as the base64-encoded `r=` tag. Validated against the schema at sign time; malformed recipes fail the sign call with `recipe_invalid: <reason>`. For header-field keys that are not lower case, see `on_recipe_key_case`. |
+| `mi_hash_algorithms` | no | Lua array of hash algorithms for the `Message-Instance` `h=` body and header hashes (§6). Default `{"sha256"}`. Multiple algorithms produce comma-separated entries in `h=`, e.g. `{"sha256","sha512"}` → `h=sha256:HH:BH,sha512:HH:BH`. A plain string `mi_hash_algorithm="sha512"` is also accepted as a single-algorithm alias. For an unsupported or repeated algorithm, see `on_bad_hash_algorithm`. |
 | `relax_d_mf_check` | no | §9.4 / §11.4 expect `d=` to relaxed-domain-match the `mf=` (MAIL FROM) domain; a §11.4 verifier reports PERMERROR on a mismatch. Default `false` — `sign()` refuses to emit a non-aligned signature and returns an error. **Setting to `true` is non-spec-compliant**; it downgrades the check to a `DWARNING` and proceeds. Recommended only for testing or debugging cross-domain signing configurations. |
 | `allow_missing_recipe` | no | If `true`, permit signing when content has changed since the prior `Message-Instance` but no `recipe` is supplied (§8.1 SHOULD). Default `false` (strict — sign call fails). When set, signing succeeds but the downstream §10.2 chain-walk cannot complete for this hop (no recipe to reconstruct prior state) and will produce `permerror`/`chain_broken` at verifiers. Use only when you accept that chain auditability is broken for this hop. |
+| `on_recipe_key_case` | no | What to do with a `recipe` whose header-field keys are not lower case (§5.1): `"error"` (default) fails the sign call; `"lowercase"` lower-cases the keys and signs. |
+| `on_bad_hash_algorithm` | no | What to do when `mi_hash_algorithms` names something other than `sha256` or `sha512`, or names one twice (§7.3): `"error"` (default) fails the sign call; `"drop"` signs with the valid algorithms, each once, and fails only if none is left. |
 
 `sign()` return values:
 
@@ -183,9 +185,9 @@ of the options table.
 - `(true, header_value_string, info)` — success with chain-break info; `info.chain_break=true`, `info.bridged=true/false`. Returned when `on_chain_break="warn"` fires or a bridge was auto-generated.
 - `(true, nil, {donotmodify=true})` — when `on_donotmodify="skip"`: no signature was added, no `DKIM2-Signature` or `Message-Instance` header was written.
 - `(true, nil, {chain_break=true, bridged=false})` — when `on_chain_break="skip"`: signing skipped due to chain break.
-- `(nil, error_string)` — failure; the message is left unmodified.
+- `(nil, error_string)` — failure; the message is left unmodified, except that a bridge added for `on_chain_break` (its `DKIM2-Signature`, and any `Message-Instance` it added) stays on it.
 
-Always check the first return value. On `nil`, no headers were modified. Recipe validation failure and content-changed-without-recipe also log to paniclog at level `error`.
+Always check the first return value. Recipe validation failure and content-changed-without-recipe also log to paniclog at level `error`.
 
 ### Publishing the public key
 
@@ -199,7 +201,7 @@ DKIM2 reuses a subset of the DKIM v1 key-record format (RFC 6376
 existing key deployment (draft-chuang-dkim2-dns-04 §3.4.1). The
 `DKIM2-Signature` header carries no version tag of its own; the
 generation is identified by the field name
-(draft-ietf-dkim-dkim2-spec-04 §8).
+(draft-ietf-dkim-dkim2-spec-06 §8).
 
 **The `p=` encoding is not the same for both algorithms.** Publish the
 form shown below for each. For `k=ed25519` that form is exactly what
@@ -238,7 +240,7 @@ characters fit in one string.
 For `ed25519-sha256`, `p=` is the base64 of the **bare 32-byte public
 key** — no ASN.1 wrapper of any kind, so always 44 characters. This
 comes from draft-chuang-dkim2-dns-04 §3.4.1, which
-draft-ietf-dkim-dkim2-spec-04 §3.6 defers to for the key-record format,
+draft-ietf-dkim-dkim2-spec-06 §3.6 defers to for the key-record format,
 and identically from RFC 8463 §4.2.
 
 `openssl` has no output format for the bare key — `-outform` is
@@ -330,7 +332,7 @@ When the forwarding address is unambiguous (prior `rt=` has a single entry),
 prior `rt=` has multiple entries, `bridge_mailfrom` is required to identify
 which entry this hop received at.
 
-#### `nd=` "imaginary hop" bridge (spec-04 §8.7 / §9.3)
+#### `nd=` "imaginary hop" bridge (spec-06 §8.7 / §9.3)
 
 The spec provides an alternative to the fabricated bridge above: the `nd=`
 ("next domain") tag. Instead of inventing `mf=`/`rt=` values for the imaginary
@@ -403,14 +405,14 @@ local ok, err = msys.validate.dkim2.sign(msg, vctx, {
   domain   = "list.example.org",
   selector = "list-2026",
   keyfile  = "/etc/dkim2/list.example.org/list-2026.key",
-  recipe   = [[{"h":{"Subject":[{"d":["Original subject"]}]}}]],
+  recipe   = [[{"h":{"subject":[{"d":["Original subject"]}]}}]],
 })
 if not ok then
   msys.log(msys.core.LOG_WARNING, "dkim2 modifier sign failed: " .. (err or "unknown"))
 end
 ```
 
-The recipe schema is documented in `-04` §5. Recipes are mandatory only
+The recipe schema is documented in `-06` §5. Recipes are mandatory only
 when the hop modifies content; non-modifying hops (pure-forwarding without
 edits) omit `recipe` entirely.
 

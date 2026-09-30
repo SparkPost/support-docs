@@ -1,5 +1,5 @@
 ---
-lastUpdated: "08/16/2026"
+lastUpdated: "09/29/2026"
 title: "DKIM2 Verifying — verify()"
 description: "Reference for the msys.validate.dkim2.verify() Lua API: verify options, result table, and SMTP response codes."
 ---
@@ -50,10 +50,11 @@ function mod:validate_data_spool_each_rcpt(msg, ac, vctx)
   --                   key/algorithm mismatch (overall_reason=
   --                   "key_alg_mismatch"), signature syntax error, chain
   --                   integrity failure (overall_reason names the cause:
-  --                   mi_syntax / mi_missing_tag / mi_revision_ahead /
-  --                   mi_revision_gap / mi_unsigned / i_sequence_broken /
-  --                   custody_break / recipe_chain_mismatch /
-  --                   nd_highest_no_oob / body_redacted), or d=/mf=
+  --                   mi_syntax / mi_missing_tag / mi_duplicate_hash_alg /
+  --                   mi_revision_ahead / mi_revision_gap / mi_unsigned /
+  --                   i_sequence_broken / custody_break / recipe_invalid /
+  --                   recipe_chain_mismatch / nd_highest_no_oob /
+  --                   body_redacted), or d=/mf=
   --                   domain mismatch (§11.4, overall_reason="d_mf_mismatch")
   --   "temperror"     resolver-side transient failure (SERVFAIL, timeout)
   --   "none"          no DKIM2-Signature headers, or all use unsupported
@@ -87,10 +88,12 @@ header format, `ar_clauses()` API, and examples of building combined headers.
 | `rcptto` | **Normally omitted** — Momentum auto-populates from the active envelope recipient. Production exception: in `validate_data_spool` (shared hook), pass the full recipient list explicitly for complete §11.4 multi-recipient checking. In `validate_data_spool_each_rcpt` (recommended), auto-populates correctly per cowref. Accepts a string or a Lua table of bare addresses. ALL listed addresses must be present in `rt=` for the signature to pass. |
 | `authservid` | When set, a new `Authentication-Results:` header is prepended (when the result contains at least one actionable clause) with this value as the authentication service identifier. Existing AR headers are never modified. When absent, no AR header is emitted. |
 | `relax_d_mf_check` | If `true`, downgrade the §9.4 / §11.4 `d=`/`mf=` domain alignment check from a hard failure to a warning. Default `false`: a mismatch on the most-recently-applied signature downgrades `pass` → `permerror` (§11.4 enumerates this as a PERMERROR output state). **Setting to `true` is non-spec-compliant**; recommended only for testing. |
-| `skip_recipe_chain` | If `true`, skip the `-04` §10.2 recipe-chain check. The per-signature crypto + envelope checks and the §9.2 chain-of-custody check still run. Default `false` (chain check ON). **Setting this to `true` makes the verifier non-spec-compliant** — §10.2 is a SHOULD requirement. Use only for debugging or when interoperating with a signer whose recipe implementation is known to be broken. |
+| `skip_recipe_chain` | If `true`, skip the `-06` §10.2 recipe-chain check. The per-signature crypto + envelope checks and the §9.2 chain-of-custody check still run. Default `false` (chain check ON). **Setting this to `true` makes the verifier non-spec-compliant** — §10.2 is a SHOULD requirement. Use only for debugging or when interoperating with a signer whose recipe implementation is known to be broken. |
 | `relax_s_selectors` | If `true`, accept duplicate selectors within a single `s=` tag. Default `false` — duplicates produce `reason=parse_error` per §8.9. **Setting this to `true` makes the verifier non-spec-compliant** — §8.9 places a MUST requirement on distinct selectors. Use only for interop with known non-compliant signers. |
 | `allow_nd_highest` | §8.7 special case: accept a message whose **highest-numbered** DKIM2-Signature carries an `nd=` tag (and therefore no `mf=`/`rt=`) — the "imaginary final hop". The receiver cannot validate `MAIL FROM`/`RCPT TO` and must "rely on out-of-band information" to accept it. Default `false`: such a message is rejected with `overall="permerror"`, `overall_reason="nd_highest_no_oob"` (distinct from a generic `custody_break` — the signature is well-formed, there is simply no arrangement to skip envelope validation). Set to `true` **only** when such an out-of-band arrangement exists; the §11.4 delivery-envelope binding is then skipped for that hop and the message verifies normally. Lua policy can gate acceptance further by inspecting the surfaced `nd=`/`d=`. |
 | `allow_body_redaction` | §5.2 irreversible body: accept a message whose recipe chain contains a `"b": null` body recipe — a hop that redacted the body and declared the prior body cannot be recreated. Default `false`: the **header** chain is still verified, but the message is rejected with `overall="permerror"`, `overall_reason="body_redacted"` (distinct from a content tamper, which is `recipe_chain_mismatch`). Set to `true` to accept the redaction (§5.2 "acceptable to them", e.g. a contractually-trusted forwarder): the body hash is not walked back past the redaction; the header chain and the most-recent signature verify normally. Lua policy can gate acceptance on the redacting `d=`. |
+| `on_recipe_key_case` | What to do with a recipe whose header-field keys are not lower case (§5.1): `"error"` (default) rejects the message with `overall="permerror"`, `overall_reason="recipe_invalid"`; `"lowercase"` applies the recipe as if its keys were lower case. |
+| `on_bad_hash_algorithm` | What to do with a `Message-Instance` that names a hash algorithm twice (§7.3): `"error"` (default) rejects the message with `overall="permerror"`, `overall_reason="mi_duplicate_hash_alg"`; `"drop"` uses the first hash-set for that algorithm. A repeated algorithm Momentum does not implement is ignored either way (§3.4). |
 | `max_sig_age_days` | §11.3: reject signatures whose `t=` timestamp is older than this many days. Default `14`. Values `<= 0` disable the age check. |
 | `max_sig_future_secs` | §8.4: reject signatures whose `t=` timestamp is more than this many seconds in the future. Default `300` (5-minute clock-skew tolerance). Values `<= 0` disable the check. |
 | `emit_debug_headers` | If `true`, stamp `X-MSYS-DKIM2-Verify-Overall` and `X-MSYS-DKIM2-Verify-Sig` headers on the message. Useful for staging and debugging; **do not enable in production** as these headers expose internal verification detail and inflate message size. Default `false`. |
@@ -196,9 +199,10 @@ changes are consistent all the way back to the original sender. If
 anything in that chain is wrong (a hop modified the message without
 recording it, or a recipe was incorrect), `overall` is `permerror` with
 an `overall_reason` naming the specific cause — one of `mi_syntax`,
-`mi_missing_tag`, `mi_revision_ahead`, `mi_revision_gap`, `mi_unsigned`,
-`i_sequence_broken`, `custody_break`, or `recipe_chain_mismatch` (the
-generic `chain_broken` remains as a fallback). `overall="pass"` means the content
+`mi_missing_tag`, `mi_duplicate_hash_alg`, `mi_revision_ahead`,
+`mi_revision_gap`, `mi_unsigned`, `i_sequence_broken`, `custody_break`,
+`recipe_invalid`, or `recipe_chain_mismatch` (the generic `chain_broken`
+remains as a fallback). `overall="pass"` means the content
 chain is intact; note that public-key (§11.5) cryptographic verification
 is only performed for the most recent hop. This is correct for the §10.1
 acceptance decision, but §10.3 use cases that need each lower hop's
@@ -241,6 +245,9 @@ The full set. Unless otherwise noted, each reason code below pairs with `status=
 > policy check downgrades the overall verdict after crypto passes. See the [Result table](/momentum/4/dkim2/verify#result-table)
 > for details.
 
+A `Message-Instance:` may carry both `sha256` and `sha512` hash-sets; every
+one is compared, and one mismatch fails the signature (§11.7).
+
 | Reason | Meaning |
 |---|---|
 | `ok` | Signature verified cleanly. Paired with `status="pass"`. |
@@ -273,10 +280,11 @@ The full set. Unless otherwise noted, each reason code below pairs with `status=
 | `mi_hash_missing` | The body hash could not be retrieved from the `Message-Instance:` `h=` tag: either no MI with a matching sequence number (`m=`) was present, the MI's `h=` tag was malformed, or it carried no entry for a hash algorithm Momentum implements. Momentum allow-lists `sha256` / `sha512`; it ignores any other algorithm (e.g. `md5`, `sha1`) rather than computing it, so an `h=` that names only an unsupported algorithm yields this reason instead of a downgraded hash check. |
 | `verify_internal` | An internal error occurred during signature verification (memory allocation failure or cryptographic library error). The signature could not be evaluated. Maps to `dkim2=permerror` in AR output. |
 | `unsupported_algorithm` | Every sig-set in `s=` uses an algorithm Momentum does not implement. Per §3.4 these are ignored rather than failed; paired with `status="none"`. |
+| `too_many_sig_sets` | The `s=` tag carries more than two sig-sets for one signature algorithm (§8.9), counting algorithms Momentum does not implement. |
 
 **Authentication-Results mapping (§11.1):** Most `status="fail"` reasons produce `dkim2=fail` in the AR header. Exceptions, per the §11.1 FAIL / PERMERROR / TEMPERROR distinction:
 - `key_unavailable` → `dkim2=temperror` (transient DNS failure)
-- The following produce `dkim2=permerror` (unrecoverable errors): `no_key`, `key_invalid`, `key_multiple_records`, `key_service_mismatch`, `key_k_unknown`, `key_alg_mismatch`, `key_revoked`, `key_b64_decode`, `key_der_parse`, `key_v_mismatch`, `key_p_missing`, `key_size_invalid`, `key_e_invalid`, `missing_required_tags`, `parse_error`, `sig_parse_failed`, `mi_hash_missing`, `signature_expired`, `verify_internal`
+- The following produce `dkim2=permerror` (unrecoverable errors): `no_key`, `key_invalid`, `key_multiple_records`, `key_service_mismatch`, `key_k_unknown`, `key_alg_mismatch`, `key_revoked`, `key_b64_decode`, `key_der_parse`, `key_v_mismatch`, `key_p_missing`, `key_size_invalid`, `key_e_invalid`, `missing_required_tags`, `parse_error`, `sig_parse_failed`, `mi_hash_missing`, `signature_expired`, `verify_internal`, `too_many_sig_sets`
 
 `reason=` is included in all failure clauses (`dkim2=fail`, `dkim2=permerror`, `dkim2=temperror`) and absent from pass clauses (`dkim2=pass`).
 
@@ -297,8 +305,9 @@ for which form to publish.
 
 ### recipe_chain detail strings (paniclog only)
 
-When the recipe-chain check fails, the overall verdict is `permerror`
-with `overall_reason="recipe_chain_mismatch"`, and the underlying cause is logged at `error` level in
+When the recipe-chain check fails, the overall verdict is `permerror`,
+and `overall_reason` names the cause, such as `recipe_chain_mismatch`.
+The underlying cause is logged at `error` level in
 paniclog as `recipe-chain check failed: recipe_chain: <detail>`. The
 chain-check failure does NOT appear in the per-signature result struct —
 it's a cross-hop verdict, not a per-signature outcome — so paniclog is the
@@ -309,7 +318,7 @@ only place this detail surfaces.
 | `no_mi_1` | The message had ≥ 2 signatures but no `Message-Instance` with `m=1`. The chain has no anchor. |
 | `parse_h` | `Message-Instance` `h=` tag didn't parse as `<algorithm>:<header-hash>:<body-hash>`. The MI is malformed. |
 | `recipe_decode` | A hop's `r=` value didn't base64-decode. Wire-format corruption or a broken signer. |
-| `recipe_invalid` | A hop's recipe failed schema validation at verify time. Should not occur with conforming signers (sign-time validation prevents emission of bad recipes); appearing here means the signer is broken. |
+| `recipe_invalid` | A hop's recipe failed schema validation at verify time, for example a header-field key that is not lower case (see `on_recipe_key_case`). The signer produced an invalid recipe. |
 | `body_redacted` | A hop's recipe declared `"b": null` (§5.2) — an irreversibly redacted body that cannot be reverse-reconstructed. The **header** chain and the most-recent signature still verify; only the body hash can't be walked back to `MI[1]`. Rejected by default (a §5.2-permitted strict posture), distinct from a content tamper (`recipe_chain_mismatch`). Set the `allow_body_redaction` verify option to accept the redaction from a trusted forwarder. |
 | `apply_failed` | A recipe references a header or body line that doesn't exist in the current message. The recipe is inconsistent with the modification it claims to describe — likely a downstream hop modified the message AGAIN without recording it. |
 | `no_recipe` | One or more non-first `Message-Instance` headers had no `r=` tag (treated as no-modification hops), yet the final reconstructed hashes didn't match `MI[1]`. A hop likely modified the message without recording a recipe. The signer should always emit an `r=` recipe rather than omitting it: provide a header recipe for any changed header field (an empty step array `[]` removes all instances of a field); the body may be declared irreversible with `"b":null`. |
@@ -340,7 +349,7 @@ SMTP behaviour as required by §10.4 of the DKIM2 spec:
 | `pass` | All verifiable signatures passed | — | Accept |
 | `none` | No DKIM2 signatures present, or all use unsupported algorithms (§3.4) | — | Local policy |
 | `fail` | Verified but wrong: hash/sig mismatch or policy violation (`donotmodify`/`donotexplode`, etc.) | SHOULD 550/5.7.x; **MUST NOT 4xx** | Reject or accept per policy |
-| `permerror` | Could not verify: key missing/revoked/invalid, key/algorithm mismatch (`overall_reason="key_alg_mismatch"`), syntax error, chain integrity failure (`overall_reason` is one of `mi_syntax`/`mi_missing_tag`/`mi_revision_ahead`/`mi_revision_gap`/`mi_unsigned`/`i_sequence_broken`/`custody_break`/`recipe_chain_mismatch`, or the generic `chain_broken`), or `d=`/`mf=` domain mismatch (`overall_reason="d_mf_mismatch"`) (§11.1 / §11.4 PERMERROR) | SHOULD 550/5.7.x | Reject (permanent) |
+| `permerror` | Could not verify: key missing/revoked/invalid, key/algorithm mismatch (`overall_reason="key_alg_mismatch"`), syntax error, chain integrity failure (`overall_reason` is one of `mi_syntax`/`mi_missing_tag`/`mi_duplicate_hash_alg`/`mi_revision_ahead`/`mi_revision_gap`/`mi_unsigned`/`i_sequence_broken`/`custody_break`/`recipe_invalid`/`recipe_chain_mismatch`, or the generic `chain_broken`), or `d=`/`mf=` domain mismatch (`overall_reason="d_mf_mismatch"`) (§11.1 / §11.4 PERMERROR) | SHOULD 550/5.7.x | Reject (permanent) |
 | `temperror` | Transient key-fetch failure (DNS timeout / SERVFAIL) | MAY 451/4.7.5 | Defer (temporary) |
 
 **Key rules from §10.4**:

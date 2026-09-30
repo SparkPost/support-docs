@@ -1,7 +1,7 @@
 ---
-lastUpdated: "08/16/2026"
+lastUpdated: "09/29/2026"
 title: "Using DKIM2 — Overview"
-description: "DKIM2 is the successor to DKIM that adds replay protection (per-message envelope binding), an explicit chain of custody across forwarders, and a structured way for modifying hops to record what they changed. Momentum implements DKIM2 targeting draft-ietf-dkim-dkim2-spec-04."
+description: "DKIM2 is the successor to DKIM that adds replay protection (per-message envelope binding), an explicit chain of custody across forwarders, and a structured way for modifying hops to record what they changed. Momentum implements DKIM2 targeting draft-ietf-dkim-dkim2-spec-06."
 ---
 
 ## On This Page
@@ -24,11 +24,11 @@ description: "DKIM2 is the successor to DKIM that adds replay protection (per-me
 ### Warning
 
 DKIM2 targets the in-progress IETF draft
-[`draft-ietf-dkim-dkim2-spec-04`](https://datatracker.ietf.org/doc/html/draft-ietf-dkim-dkim2-spec-04)
-(5 July 2026). The wire format is **not yet final** — the working group may revise
-it before publication. Do not enable DKIM2 on production outbound traffic
-without staging it first. If the spec changes, a future Momentum release may
-not verify messages signed by an earlier release.
+[`draft-ietf-dkim-dkim2-spec-06`](https://datatracker.ietf.org/doc/html/draft-ietf-dkim-dkim2-spec-06)
+(28 August 2026). The wire format is **not yet final** — the working group
+may revise it before publication. Do not enable DKIM2 on production
+outbound traffic without staging it first. If the spec changes, a future
+Momentum release may not verify messages signed by an earlier release.
 
 > **What this means in practice:** Stage DKIM2 on a limited outbound mail
 > stream first. If you later upgrade Momentum and the spec has changed, messages
@@ -82,7 +82,7 @@ DKIM2 addresses both:
 This page covers everything an operator needs to enable, observe, and
 debug DKIM2 signing and verification on Momentum. The wire-format
 specifics live in the [IETF
-draft](https://datatracker.ietf.org/doc/html/draft-ietf-dkim-dkim2-spec-04);
+draft](https://datatracker.ietf.org/doc/html/draft-ietf-dkim-dkim2-spec-06);
 the operationally-relevant signal codes (per-signature reasons, overall
 verdicts, paniclog lines) are inventoried in the
 [Debugging](/momentum/4/dkim2/debug) reference page.
@@ -90,7 +90,7 @@ verdicts, paniclog lines) are inventoried in the
 
 ## How it differs from DKIM1 at a glance
 
-| Concern | DKIM1 (RFC 6376) | DKIM2 (draft `-04`) |
+| Concern | DKIM1 (RFC 6376) | DKIM2 (draft `-06`) |
 |---|---|---|
 | Header name | `DKIM-Signature:` | `DKIM2-Signature:` |
 | Hashes carried in | The signature header itself (`bh=` + `b=`) | A separate `Message-Instance:` header (`h=sha256:<hh>:<bh>`) referenced via `m=` |
@@ -240,8 +240,6 @@ the other. Receivers that support both will evaluate each chain separately.
 ## Known limitations
 
 The following are known gaps or operational considerations to be aware of:
-
-*   **Inbound verification breaks if the receiving MTA adds a header outside the §4 "unsigned" set (notably `Received-SPF`)**: DKIM2's Message-Instance header hash covers *every* header except the §4 unsigned set — the exact trace names `Received` / `Return-Path` / `Delivered-To`, plus `Authentication-Results`, `DKIM-Signature`, and any `ARC-*` or `X-*` field. The trace-header exclusion is the exact name `Received`, **not** a `Received-*` prefix, and `Received-SPF` (RFC 7208) is not listed anywhere in §4 — so it *is* covered by the header hash. A receiving MTA that stamps `Received-SPF` on delivery (**Google / Gmail does this**) therefore changes the hashed header set and DKIM2 verification **fails on otherwise-valid mail**. This is behaviour mandated by draft-04 §4 (the §4.1 summary set), not a Momentum-specific choice — Momentum's exclusion set matches the DKIM2 reference implementations exactly (the Perl and Python signers/verifiers in the IETF interop project use the same list and likewise do not exempt `Received-SPF`), so a reference verifier fails the same message. The [dkim2.com](https://dkim2.com/validate) validator will report a *pass* for such a message, but only as a flagged, non-strict diagnostic — it detects the trace header, removes it, and notes that it did so; its strict verdict is the same failure. Until a future draft widens §4 (e.g. to a `Received-*` prefix), expect DKIM2 verification failures for mail delivered through such receivers, and prefer testing verification on a path that does not rewrite the header set.
 
 *   **Lower-hop signatures not cryptographically verified (§10.1 / §9.2 / §11.5–11.6)**:
     Momentum runs the full cryptographic procedure — key fetch (§11.5) and
