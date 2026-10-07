@@ -1,7 +1,7 @@
 ---
-lastUpdated: "08/16/2026"
+lastUpdated: "10/03/2026"
 title: "DKIM2 Debugging Reference"
-description: "Per-signature reason codes, recipe_chain detail strings, and ec_message context fields for DKIM2 sign and verify operations."
+description: "What each debug_level of the dkim2 configuration stanza writes to paniclog for DKIM2 sign and verify."
 ---
 
 ## Debugging
@@ -17,7 +17,7 @@ dkim2 {
 
 | Level | What surfaces |
 |---|---|
-| `error` | Failures and resolver problems only. **Default.** |
-| `warning` | Adds DNS issues (including non-conformant key records Momentum tolerates for compatibility) and SHOULD-violation warnings. |
-| `info` | Adds one DNS resolution line per verified signature plus verification failures with their cause (`bh_mismatch` with expected vs. actual hash; `sig_invalid` with selector, algorithm, signed-input length, and OpenSSL detail). |
-| `debug` | Adds raw TXT-record bytes from the resolver, a per-crypto-check trace line, and the raw signed-input bytes on failure. Too noisy for steady-state production; useful when chasing a specific sign/verify mismatch. |
+| `error` | Errors, such as a `sign()` whose key cannot be read. **Default.** |
+| `warning` | Adds a key lookup that fails or returns a resolver error other than NXDOMAIN; a verification that stops at a limit; a `sign()` that signs with `f=exploded` although an earlier signature asked for `f=donotexplode`; and a `sign()` that signs over two fields claiming the same `i=` or the same `m=`. |
+| `info` | Adds, for each key looked up in DNS, a line naming the TXT record and a line with the answer; the verdict of each `verify()` with its reason (for example `body_hash_mismatch`); a line for each `sign()` that adds fields; and each refusal by `sign()`, including one it then signs over, bridges or skips. |
+| `debug` | Nothing beyond `info`. |

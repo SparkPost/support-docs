@@ -1,5 +1,5 @@
 ---
-lastUpdated: "09/29/2026"
+lastUpdated: "10/03/2026"
 title: "Using DKIM2 — Overview"
 description: "DKIM2 is the successor to DKIM that adds replay protection (per-message envelope binding), an explicit chain of custody across forwarders, and a structured way for modifying hops to record what they changed. Momentum implements DKIM2 targeting draft-ietf-dkim-dkim2-spec-06."
 ---
@@ -83,9 +83,9 @@ This page covers everything an operator needs to enable, observe, and
 debug DKIM2 signing and verification on Momentum. The wire-format
 specifics live in the [IETF
 draft](https://datatracker.ietf.org/doc/html/draft-ietf-dkim-dkim2-spec-06);
-the operationally-relevant signal codes (per-signature reasons, overall
-verdicts, paniclog lines) are inventoried in the
-[Debugging](/momentum/4/dkim2/debug) reference page.
+the per-signature reasons and overall verdicts are listed under
+[Reason codes](/momentum/4/dkim2/verify#reason-codes), and the paniclog
+lines on the [Debugging](/momentum/4/dkim2/debug) page.
 
 
 ## How it differs from DKIM1 at a glance
@@ -241,30 +241,6 @@ the other. Receivers that support both will evaluate each chain separately.
 
 The following are known gaps or operational considerations to be aware of:
 
-*   **Lower-hop signatures not cryptographically verified (§10.1 / §9.2 / §11.5–11.6)**:
-    Momentum runs the full cryptographic procedure — key fetch (§11.5) and
-    EVP signature verification (§11.6) — only on the highest-`i` signature,
-    which §10.1 makes a SHOULD. Earlier hops (`i < max_i`) get no key lookup
-    and no crypto (`status="chain_verified"`); their integrity rests on the
-    §9.2/§9.4 chain-of-custody check and the §10.2 recipe reconstruction,
-    which reverse-applies each hop's recipe to rebuild the original message
-    and confirms the reconstructed instance-1 hashes match MI[1]'s `h=`. This
-    proves end-to-end content integrity but does not authenticate each lower
-    hop's signing key, so earlier-hop signer identities should not be used
-    for Reviser reputation. §10.3 ("Checking the DKIM2-Signature Header
-    Fields") names exactly the use cases that need more — assessing whether a
-    message was exploded, honoring `feedback` requests, and assigning
-    reputation to Revisers — and says that for those, *all* of the
-    DKIM2-Signature header fields "will have to be checked for validity." It
-    frames this as a functional necessity for those uses, not a MUST, and the
-    spec-correct **acceptance** decision (§10.1) needs only the most-recent
-    hop. Momentum exposes every hop's `d=`/`s=`/`mf=`/`rt=`/`f=` in
-    `result.signatures` so policy can inspect the chain, but offers **no
-    option today to cryptographically verify each lower hop** — that full
-    per-hop verification (fetch each hop's key and EVP-verify its hop-relative
-    signed input; the recipe chain already confirms each hop's hashes) is
-    deferred to a future release.
-
 *   **§10.1 / §12 DSN**: Per §10.1, after a failed DKIM2 verification the
     MTA MUST NOT generate a DSN; the spec recommends rejecting with a 5xx
     during the SMTP conversation as the best alternative. This is not
@@ -274,14 +250,15 @@ The following are known gaps or operational considerations to be aware of:
     of the highest-numbered DKIM2-Signature, and a `<>` (null-sender)
     indicator — as `result.highest_mf` and the `dkim2_highest_mf` message-
     context variable, so a generation hook can address the DSN or suppress it
-    when the value is `<>`. What is not yet built is the automatic wiring in
-    the bounce-generation path to consume it. Inbound DSN
-    authentication (§12.1.2, a SHOULD) is also not implemented: the
-    reject/propagate decision is scriptable via the inbound hooks, but
+    when the value is `<>`; `result.dsn_prohibited` says whether the
+    verification result forbids a DSN. What is not yet built is the
+    automatic wiring in the bounce-generation path to consume these values.
+    Inbound DSN authentication (§12.1.2, a SHOULD) is also not implemented:
+    the reject/propagate decision is scriptable via the inbound hooks, but
     verifying the embedded returned message's signatures — and checking
     signing-domain alignment against its highest-`i=` `rt=` — has no exposed
-    API, since `verify()` operates only on the live message. *(Draft-04
-    clarified §12.1.2: the embedded `message/rfc822` part is authenticated by
+    API, since `verify()` operates only on the live message. *(Under
+    §12.1.2, the embedded `message/rfc822` part is authenticated by
     checking its header hashes — and body hash, if the body is present —
     against the highest-numbered `Message-Instance` header field; that is the
     piece Momentum does not yet expose.)* Note also the §12.1.1 rule: a DSN
@@ -314,47 +291,20 @@ The following are known gaps or operational considerations to be aware of:
     Prefer per-recipient signing (or separate copies) for any mail that may
     carry blind copies. See [Signing hook](/momentum/4/dkim2/sign#signing-hook).
 
-*   **Content modifier recipe composition**: When an upstream-signed
-    message passes through a Momentum stage that modifies it — the
-    engagement tracker rewriting URLs, a footer filter, a list processor
-    changing headers — `sign()` automatically detects the change (its
-    freshly computed header/body hashes no longer match the prior
-    Message-Instance) and requires a `recipe=` describing how to reverse
-    the hop; without one the sign call fails. Header changes MUST be
-    reversible: a recipe MUST be provided for any changed header
-    field, and there is no null-header form. To remove all instances of a
-    header field, give that field name an empty step array (`[]`). When
-    the full body diff isn't available, a null **body** recipe declaring
-    the change irreversible is permitted: `recipe='{"b":null}'` for a body
-    change. This lets signing succeed and this hop's signature verifies
-    downstream — but earlier signatures' content can no longer be
-    reconstructed past this hop, so the inner chain is broken for that
-    field and acceptance depends on the verifier's policy toward a broken
-    chain. (Originated mail needs no recipe — there's no prior instance to
-    diff against.) See the [Forwarder and modifier signing](/momentum/4/dkim2/sign#forwarder-and-modifier-signing) section for
-    examples. Automatic change-recording by pipeline stages is not yet
-    built; a planned Recipe Accumulator API would let `sign()` assemble
-    the recipe without operator involvement.
-
-    Both this limitation and the forwarder auto-detection above are blocked
-    on the same Recipe Accumulator API (planned; not yet available).
-
-*   **§11.1 AR reason strings use simplified form**: The spec defines
-    error string templates with interpolated values, e.g.
-    `"FAIL: Message Instance m=<x> body hash <value> mismatch"`. Momentum
-    emits simplified strings without the ordinals or hash values, e.g.
-    `reason="body hash mismatch"`. The full detail is always available
-    from the message itself — ordinals and key values are in the
-    `DKIM2-Signature:` and `Message-Instance:` headers, and the structured
-    AR property tokens (`header.i=`, `header.m=`, `header.d=`,
-    `header.s=`) repeat them in the AR clause. This is a §11.1 SHOULD —
-    not a MUST — so verification behaviour is unaffected.
+*   **Content modifier recipe composition**: When a Momentum stage
+    modifies an upstream-signed message — the engagement tracker rewriting
+    URLs, a footer filter, a list processor changing headers — Momentum does
+    not record the change; the policy passes a `recipe` to `sign()`
+    describing it. Without a recipe, `sign()` records `{"b":null}`, which
+    declares the earlier body unrecoverable. A changed header field still
+    needs a recipe, or it fails the header hash of the instances below. See
+    [Forwarder and modifier signing](/momentum/4/dkim2/sign#forwarder-and-modifier-signing).
 
 *   **§13 Bare CR/LF normalization**: The spec (§13) requires signing the
     message with all line endings in CRLF form. **Set
     [`rfc2822_lone_lf_in_body`](/momentum/4/config/ref-rfc-2822-lone-lf-in-body)
     and
     [`rfc2822_lone_lf_in_headers`](/momentum/4/config/ref-rfc-2822-lone-lf-in-headers)
-    to `fix` when DKIM2 signing is in use** — `ignore` causes DKIM2 to
-    sign non-CRLF content as-is, breaking the signature at any downstream
-    hop that normalizes line endings.
+    to `fix` when DKIM2 signing is in use** — `ignore` leaves a lone CR or
+    LF in the message. DKIM2 hashes each as CRLF, so the signature breaks at
+    any downstream hop that does not read it that way.
