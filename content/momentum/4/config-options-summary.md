@@ -127,6 +127,7 @@ The `Version` column indicated the version(s) of Momentum that support the optio
 | [disable_chunked](/momentum/mobile/mobile-reference/mobility-mm-7-listener) – Option used with aggregators who do not support chunked transfer-coding (Mobile Momentum) | both | false | 4.0 and later | http_listener, listen, pathway, pathway_group, peer |
 | [disable_nagle_algorithm](/momentum/4/config/ref-disable-nagle-algorithm) – Disable nagle algorithm on sockets | both | false | 4.0 and later | control_listener, eccluster_listener, ecstream_listener, esmtp_listener, global, http_listener, listen, xmpp_listener |
 | [disk_queue_drain_rate](/momentum/4/config/ref-disk-queue-drain-rate) – Control the rate at which messages are spooled in on start-up | both | 100 | 4.0 and later | global |
+| [dns_cache_negative_ttl](/momentum/4/config/ref-dns-cache-negative-ttl) – How long the DNS response cache keeps a failed lookup | sending | 300 | 5.3.1 and later | global |
 | [dns_cache_purge_interval](/momentum/4/config/ref-dns-cache-purge-interval) – How often the DNS response cache is scanned for stale entries | sending | 60 | 4.0 and later | global |
 | [dns_expire_interval](/momentum/4/config/ref-dns-expire-interval) – How often to check for domains with expired DNS information | sending | 10 | 4.0 and later | global |
 | [dns_failures_to_purge](/momentum/4/config/ref-dns-failures-to-purge) – Configure the maximum number of DNS lookups | sending | 10 | 4.0 and later | domain, global |

@@ -62,6 +62,7 @@ description: "This chapter provides the definitions of the configuration options
 | [delivery_response_timeout](/momentum/4/config/ref-delivery-response-timeout) | time to wait for a response to an outbound request |
 | [disable_nagle_algorithm](/momentum/4/config/ref-disable-nagle-algorithm) | disable nagle algorithm on sockets |
 | [disk_queue_drain_rate](/momentum/4/config/ref-disk-queue-drain-rate) | control the rate at which messages are spooled in on start-up |
+| [dns_cache_negative_ttl](/momentum/4/config/ref-dns-cache-negative-ttl) | how long the DNS response cache keeps a failed lookup |
 | [dns_cache_purge_interval](/momentum/4/config/ref-dns-cache-purge-interval) | how often the DNS response cache is scanned for stale entries |
 | [dns_expire_interval](/momentum/4/config/ref-dns-expire-interval) | how often to check for domains with expired DNS information |
 | [dns_failures_to_purge](/momentum/4/config/ref-dns-failures-to-purge) | configure the maximum number of DNS lookups |
