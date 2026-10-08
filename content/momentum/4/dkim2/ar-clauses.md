@@ -1,5 +1,5 @@
 ---
-lastUpdated: "06/29/2026"
+lastUpdated: "10/03/2026"
 title: "DKIM2 Authentication-Results — ar_clauses()"
 description: "Reference for the msys.validate.dkim2.ar_clauses() Lua API: usage examples and Authentication-Results output format."
 ---
@@ -21,18 +21,13 @@ For full control — or to merge DKIM2 results with other authentication methods
 `msys.validate.dkim2.ar_clauses(result)`.
 
 `ar_clauses()` returns an array of DKIM2 `Authentication-Results:` clause
-strings for the given verify result. It returns `nil` when `result` is `nil`, or `result.signatures` is absent or
-empty. It also returns `nil` when all per-signature entries are non-actionable
-(`status="chain_verified"` or `status="none"`) and `result.overall` is `"none"`.
+strings for the given verify result, one for each entry of `result.ar`. An
+entry whose result is `none` — an unsigned message, or a signature set aside
+under §3.4 or for a key in testing mode — gives no clause. `ar_clauses()`
+returns `nil` when `result` is `nil` or no entry gives a clause.
 
-Each entry is a complete clause string (e.g.
-`"dkim2=pass header.d=example.com header.s=sel-1:rsa-sha256 ..."`).
-The array contains one entry per actionable signature — signatures with
-`status="chain_verified"` (lower-hop: public-key verification not
-performed, so no `dkim2=pass` claim can be asserted for them) and
-`status="none"` (unsupported algorithm, §3.4 — no `dkim2=none` token exists)
-are excluded. Extra overall clauses for chain failures or policy downgrades
-are appended when applicable.
+Each entry is a complete clause string, for example
+``dkim2=pass header.d=example.com header.s="sel-1:rsa-sha256" ...``.
 
 ### Usage examples
 
@@ -75,82 +70,85 @@ msys.registerModule("my_combined_ar_policy", mod)
 
 ### Output format
 
+There is one clause for each signature that was checked, in ascending `i=`
+order, followed by one for each problem that no signature accounts for, such
+as a `Message-Instance` that no signature covers. Each clause has the form:
+
+```
+dkim2=<result> [reason=<text>] [header.d=<domain>] [header.s=<selector>:<algorithm>]
+  [header.i=<i>] [header.m=<m>] [header.mf=<address>] [header.rt=<addresses>]
+```
+
+`result` is `pass`, `fail`, `permerror` or `temperror`. `reason=` is the
+problem's text, in the draft's wording where it has one, with its values
+filled in, for example `Message Instance m=1 header hash sha256 mismatch`;
+it is present on every clause except a plain pass, and ends with the
+problem's detail in parentheses when it has one. Every value is written as
+it stands when it is a plain token, and otherwise as an RFC 8601
+quoted-string. A value with a colon, an at sign or a comma is quoted, so
+`header.s`, `header.mf` and `header.rt` are usually quoted and `header.d` is
+not. A control character other than tab, or a byte that is not ASCII,
+becomes `?`. `header.i=` (the signature's `i=`) and `header.m=` (its `m=`)
+link the clause to its signature.
+
+A `header.rt` too long for one line keeps its first entries and the number
+of the rest, for example
+`header.rt="a@example.com,b@example.com,c@example.com,...(+97 more)"`. When
+the field `verify()` adds would pass 8 KiB, Momentum shortens its clauses,
+and a comment counts any clauses it leaves out.
+
 > **Note on `header.s=`:** In DKIM1, `header.s=` carries just the selector name.
 > In DKIM2 the `s=` wire tag encodes selector, algorithm, and signature together;
-> Momentum emits only the selector and algorithm (e.g. `sel-1:rsa-sha256`) in
-> `header.s=`, omitting the bulk base64 signature bytes.
+> Momentum emits only the selector and algorithm of the first sig-set (e.g.
+> `"sel-1:rsa-sha256"`) in `header.s=`, omitting the bulk base64 signature bytes.
 
 Normal pass:
 
 ```
-Authentication-Results: mta-1.example.com;
-  dkim2=pass header.d=example.com header.s=sel-1:rsa-sha256 header.i=1 header.m=1
-        header.mf=sender@example.com header.rt=rcpt@a.com
+Authentication-Results: mta-1.example.com; dkim2=pass header.d=example.com
+	header.s="sel-1:rsa-sha256" header.i=1 header.m=1
+	header.mf="sender@example.com" header.rt="rcpt@a.com"
 ```
 
-Partial sig-set failure (§11.6) — a signature carries multiple sig-sets in
-`s=` (algorithm agility); one verifies so the signature passes, but another
-failed. The pass clause carries a `reason=` noting the partial failure:
+A signature below a `{"b":null}` recipe passes with a `reason=` saying that
+its body was not verified.
+
+Transient DNS failure (`key_unavailable`):
 
 ```
-Authentication-Results: mta-1.example.com;
-  dkim2=pass reason="rsa-sha256 signature passed; 1 other sig-set(s) failed"
-        header.d=example.com header.s=sel-1:rsa-sha256 header.i=1 header.m=1
-        header.mf=sender@example.com header.rt=rcpt@a.com
+Authentication-Results: mta-1.example.com; dkim2=temperror
+	reason="DKIM2-Signature i=1 public key sel-1 could not be fetched (DNS lookup failed for sel-1._domainkey.example.com)"
+	header.d=example.com header.s="sel-1:rsa-sha256" header.i=1 header.m=1
+	header.mf="sender@example.com" header.rt="rcpt@a.com"
 ```
 
-Transient DNS failure (`key_unavailable` → `dkim2=temperror`):
+Hash mismatch (`header_hash_mismatch`):
 
 ```
-Authentication-Results: mta-1.example.com;
-  dkim2=temperror reason="public key could not be fetched" header.d=example.com header.s=sel-1:rsa-sha256 header.i=1 header.m=1
-        header.mf=sender@example.com header.rt=rcpt@a.com
+Authentication-Results: mta-1.example.com; dkim2=fail
+	reason="Message Instance m=1 header hash sha256 mismatch"
+	header.d=example.com header.s="sel-1:rsa-sha256" header.i=1 header.m=1
+	header.mf="sender@example.com" header.rt="rcpt@a.com"
 ```
 
-Permanent error — key does not exist in DNS (`no_key` → `dkim2=permerror`):
+A multi-hop message gives one clause for each signature, and a failure in
+a lower hop is reported on that hop's clause:
 
 ```
-Authentication-Results: mta-1.example.com;
-  dkim2=permerror reason="public key does not exist" header.d=example.com header.s=sel-1:rsa-sha256 header.i=1 header.m=1
-        header.mf=sender@example.com header.rt=rcpt@a.com
+Authentication-Results: mta-1.example.com; dkim2=fail
+	reason="Message Instance m=1 body hash sha256 mismatch (hash_mismatch)"
+	header.d=sender.example header.s="sel-1:rsa-sha256" header.i=1 header.m=1
+	header.mf="alice@sender.example" header.rt="list@forwarder.example.net";
+	dkim2=pass header.d=forwarder.example.net header.s="sel-2:rsa-sha256"
+	header.i=2 header.m=2 header.mf="bounce@forwarder.example.net"
+	header.rt="rcpt@a.com"
 ```
 
-Failure with reason (simplified string per §11.1 — ordinals come from `header.i=` / `header.m=`):
+An entry in `result.ar` that names no signature gets a clause without
+`header.i=`. This is the case when verification stops at a limit, such as
+a signature field larger than the limit allows:
 
 ```
-Authentication-Results: mta-1.example.com;
-  dkim2=fail reason="body hash mismatch" header.d=example.com header.s=sel-1:rsa-sha256 header.i=1 header.m=1
-        header.mf=sender@example.com header.rt=rcpt@a.com
-```
-
-When the overall verdict is worse than the per-sig result — chain failure or
-policy downgrade after a crypto pass — an extra overall clause is appended:
-
-Chain-broken example (2-hop message: crypto passed but recipe-chain check failed):
-
-```
-Authentication-Results: mta-1.example.com;
-  dkim2=pass header.d=example.com header.s=sel-2:rsa-sha256 header.i=2 header.m=2
-        header.mf=bounce@forwarder.example.net header.rt=rcpt@a.com;
-  dkim2=permerror reason="recipe chain hash mismatch"
-```
-
-The `reason=` string names the specific chain failure rather than a single
-blanket message. Possible chain reasons: `"recipe chain hash mismatch"`,
-`"chain of custody broken"` (a §9.2 `mf=`/`rt=` link or `nd=` bridge break),
-`"signature i= sequence broken"`, `"Message-Instance syntax error"`,
-`"Message-Instance missing a required tag"`, `"Message-Instance revision
-sequence broken"`, `"Message-Instance revision ahead of signatures"`, and
-`"signature references a missing Message-Instance"`. A body/header hash
-mismatch against a non-default Message-Instance hash algorithm names that
-algorithm, e.g. `reason="body hash mismatch (sha512)"`.
-
-Policy-downgrade example (`d=` does not match the `mf=` domain — §11.4
-enumerates this as a PERMERROR output state):
-
-```
-Authentication-Results: mta-1.example.com;
-  dkim2=pass header.d=example.com header.s=sel-1:rsa-sha256 header.i=1 header.m=1
-        header.mf=sender@example.com header.rt=rcpt@a.com;
-  dkim2=permerror reason="MAIL FROM and d= do not match"
+Authentication-Results: mta-1.example.com; dkim2=permerror
+	reason="DKIM2 verification failed: a limit was exceeded"
 ```
