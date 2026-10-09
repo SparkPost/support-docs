@@ -55,7 +55,7 @@ The elements of the responses table are as follows:
 
 *   `trigger` – The trigger threshold
 
-    If this element is set to `1`, the action is triggered on the first occurrence of the code. You can also set this to the number of occurrences per given period. For example, `10/1` triggers the action when 10 or more occurrences of this code are detected within one second.
+    If this element is set to `1`, the action is triggered on the first occurrence of the code. You can also set this to the number of occurrences per given period. For example, `10/1` triggers the action when 10 or more occurrences of this code are detected within one second. A count of 1 per period (for example, `1/60`) triggers on every occurrence, like `1`.
 
 *   `action` – The action to take when a rule is triggered. Valid actions are as follows:
 
