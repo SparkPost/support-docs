@@ -1,5 +1,5 @@
 ---
-lastUpdated: "08/03/2026"
+lastUpdated: "10/09/2026"
 title: "Listeners"
 description: "Momentum is built around a powerful event based scheduling engine A key part of that engine is responding to events that occur on inbound sockets known as listeners These listeners are configured in Momentum's configuration files The following is an example of a basic listener syntax In this example the..."
 ---
@@ -51,7 +51,7 @@ ESMTP_Listener {
   Listen ":25" {
     Peer "10.0.0.1" {
       # options for 10.0.0.1 here
-      SMTP_Extensions = ( "ENHANCEDSTATUSCODES" "AUTH LOGIN" )
+      SMTP_Extensions = ( "ENHANCEDSTATUSCODES" "AUTH LOGIN" "CHUNKING" )
     }
   }
 }
