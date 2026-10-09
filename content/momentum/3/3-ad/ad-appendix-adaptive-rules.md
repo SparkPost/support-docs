@@ -50,7 +50,8 @@ received during a delivery attempt.
   trigger: triggering threshold 
            if set to 1, trigger on the first occurrence
            if set to "C/S", where C is a count and S is a number of seconds,
-           (e.g. 10/1 for 10 per second) trigger when the rate is crossed
+           trigger on the Cth occurrence within S seconds (e.g. 10/1: the
+           10th occurrence within one second)
   action:  the action to take when the rule is triggered.
            {"suspend", "4 hours"} -- causes suspension for 4 hours
            {"blackhole", "4 hours"} -- blackhole domain for 4 hours
