@@ -1,8 +1,34 @@
 ---
-lastUpdated: "03/26/2020"
+lastUpdated: "10/09/2026"
 title: "SMTP Extensions"
 description: "Implements the receiving side of an XCLIENT capable interaction XCLIENT allows trusted senders to alter the connecting IP address and other connection level identifiers to appear to be someone they are not This is used for internally trusted re mailing More information on XCLIENT can be found at http www..."
 ---
+
+### <a name="esmtp.listener.extensions.chunking"></a> CHUNKING Extension for SMTP
+
+Advertises the CHUNKING extension defined in [RFC 3030](https://www.rfc-editor.org/rfc/rfc3030) and accepts the `BDAT` command, which a sending server uses instead of `DATA` to transmit a message as one or more chunks of announced size. Microsoft 365, Exchange and Gmail send with `BDAT` whenever the receiving server advertises CHUNKING.
+
+CHUNKING is not advertised by default. To enable it, add it to the `SMTP_Extensions` list of a listener, `Listen` or `Peer` scope:
+
+```
+ESMTP_Listener {
+  Listen ":25" {
+    SMTP_Extensions = ( "ENHANCEDSTATUSCODES" "CHUNKING" )
+  }
+}
+```
+
+A message received with `BDAT` is handled exactly like one received with `DATA`: policy runs once per message, the same limits apply (including `Max_Message_Size` and the idle timeout), and the message is stored, logged and delivered the same way. Momentum always delivers with `DATA`, whether or not the next hop supports CHUNKING.
+
+* `DATA` remains available on a listener that advertises CHUNKING, but one transaction cannot mix the two. `DATA` or `RCPT TO` after a `BDAT` chunk is answered with `503`; send `RSET` to start over.
+
+* When a chunk cannot be accepted, for example `BDAT` before `MAIL FROM` or `RCPT TO`, or after `RSET`, Momentum reads and discards the chunk before replying, as RFC 3030 requires. A chunk that takes the message over `Max_Message_Size` is read and discarded, and the message is rejected with `552 5.3.4`.
+
+* A `BDAT` command announcing more than `Max_Message_Size` or 64 MiB, whichever is larger (2 GiB when there is no size limit), is rejected with `552` and the connection is closed without reading the chunk.
+
+* If the last chunk does not end with a line break, Momentum adds one.
+
+* The BINARYMIME extension, also defined in RFC 3030, is not supported. Sending servers only use `BODY=BINARYMIME` when the receiving server advertises it.
 
 ### <a name="idp2679232"></a> XCLIENT Extension for SMTP
 
