@@ -1,0 +1,3 @@
+[submodule "content/momentum"]
+	path = content/momentum
+	url = git@github.com:SparkPost/momentum-docs.git

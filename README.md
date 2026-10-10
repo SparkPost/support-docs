@@ -6,7 +6,11 @@ This repo contains the SparkPost and Momentum documentation published at https:/
 
 SparkPost documentation is located in the `content/docs/` directory.
 
-Momentum documentation is located in the `content/momentum/` directory.
+Momentum documentation is maintained in the private repository
+[SparkPost/momentum-docs](https://github.com/SparkPost/momentum-docs) and included here as a git
+submodule at `content/momentum/`. The submodule commit is what docs.sparkpost.com/momentum publishes.
+Edit Momentum docs there; to publish a release, move the submodule to that release's tag in this
+repository.
 
 All content is formatted in [Markdown](https://daringfireball.net/projects/markdown/syntax) and version control is managed by Github.
 
@@ -157,9 +161,12 @@ _**This is not a required step in contributing to the documentation**_
 
 ### Installation
 
-Navigate in your terminal to the root directory (`support-docs/` or whatever you named it) and install all dependencies:
+Navigate in your terminal to the root directory (`support-docs/` or whatever you named it), fetch the
+Momentum docs submodule (this needs read access to SparkPost/momentum-docs; the site does not build
+without it) and install all dependencies:
 
 ```
+git submodule update --init
 npm install
 ```
 
