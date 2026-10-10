@@ -23,6 +23,9 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: Checkout repository
         uses: actions/checkout@v4
+      - uses: ./.github/actions/momentum-docs
+        with:
+          ssh-key: ${{ secrets.MOMENTUM_DOCS_SSH_KEY }}
       - name: Cypress run
         uses: cypress-io/github-action@v6
         with:
