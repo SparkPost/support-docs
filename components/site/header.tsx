@@ -5,6 +5,7 @@ import { Menu } from '@sparkpost/matchbox-icons';
 import Logo from 'components/site/logo';
 import Search from 'components/site/algolia/search';
 import HeaderButtons from 'components/site/headerButtons';
+import { momentumIndexName } from 'lib/algoliaIndexes';
 import styled from 'styled-components';
 
 const StyledButton = styled.button`
@@ -22,7 +23,7 @@ const Header = (props: HeaderProps) => {
   const category = asPath.split('/')[1];
   let searchBox = (<Search indexName="next_support_documentation" />);
   if (category === 'momentum') {
-    searchBox = (<Search indexName="next_momentum_documentation" />);
+    searchBox = (<Search indexName={momentumIndexName()} />);
   } else if (category === 'analyst') {
     searchBox = (<Search indexName="next_analyst_documentation" />);
   }

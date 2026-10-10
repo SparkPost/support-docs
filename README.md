@@ -207,6 +207,10 @@ NEXT_PUBLIC_ALGOLIA_APP_ID=
 NEXT_PUBLIC_ALGOLIA_SEARCH_API_KEY=
 ALGOLIA_SEARCH_ADMIN_KEY=
 
+# Optional. Searches, and with build:index:momentum rebuilds from scratch, this Momentum index
+# instead of next_momentum_documentation. The momentum-docs preview builds set it.
+NEXT_PUBLIC_ALGOLIA_MOMENTUM_INDEX=
+
 # According to https://github.com/vercel/next.js/issues/3605#issuecomment-370250206, nextjs only
 # supports 'production' and 'development' envs out of the box, so we have to create a ENV
 # variable if we want a 'test' specific environment

@@ -5,6 +5,9 @@ import path from 'path';
 import glob from 'glob';
 import matter from 'gray-matter';
 import { buildIndex } from './algoliaIndex.mjs';
+import algoliaIndexes from '../lib/algoliaIndexes.js';
+
+const { DEFAULT_MOMENTUM_INDEX, momentumIndexName } = algoliaIndexes;
 
 const getAllMomentumPosts = () => {
   return glob.sync(`content/momentum/**/*.md`).map((file) => {
@@ -25,5 +28,10 @@ const getAllMomentumPosts = () => {
 };
 
 (async function () {
-  buildIndex('next_momentum_documentation', getAllMomentumPosts);
+  const indexName = momentumIndexName();
+  // Production adds to its index; a deploy of unreleased docs rebuilds its own.
+  buildIndex(indexName, getAllMomentumPosts, {
+    replace: indexName !== DEFAULT_MOMENTUM_INDEX,
+    settingsFrom: DEFAULT_MOMENTUM_INDEX,
+  });
 })();
