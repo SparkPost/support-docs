@@ -1,4 +1,4 @@
-import ReactMarkdown from 'react-markdown';
+import ReactMarkdown, { uriTransformer } from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw';
 import { Table as MBTable } from '@sparkpost/matchbox';
@@ -44,6 +44,12 @@ const components = {
   th: (props: MarkdownComponentProps) => <MBTable.HeaderCell {...props} />,
 };
 
+// One-click MCP install links (Cursor, VS Code) use app schemes that the default transformer blanks out.
+const INSTALL_LINK = /^(cursor|vscode|vscode-insiders):/i;
+
+const transformLinkUri = (uri: string): string =>
+  INSTALL_LINK.test(uri) ? uri : uriTransformer(uri);
+
 type MarkdownProps = {
   children: string;
 };
@@ -55,6 +61,7 @@ const Markdown = (props: MarkdownProps): JSX.Element => {
         components={components}
         rehypePlugins={[rehypeRaw]}
         remarkPlugins={[remarkGfm, remarkCode]}
+        transformLinkUri={transformLinkUri}
       >
         {props.children}
       </ReactMarkdown>

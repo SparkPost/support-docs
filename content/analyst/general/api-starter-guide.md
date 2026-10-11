@@ -1,5 +1,5 @@
 ---
-lastUpdated: "02/23/2023"
+lastUpdated: "10/10/2026"
 title: API Starter Guide
 description: This article provides a brief description of Inbox Tracker API endpoints available for integration into your platform
 ---
@@ -9,6 +9,7 @@ description: This article provides a brief description of Inbox Tracker API endp
 
 * [Requesting an API Key](general/api-starter-guide/#requesting-an-api-key)
 * [Accessing API Endpoints](general/api-starter-guide/#accessing-api-endpoints)
+* [Using Inbox Tracker from an AI Assistant](general/api-starter-guide/#using-inbox-tracker-from-an-ai-assistant)
 * [API Questions and Support](general/api-starter-guide/#api-questions-and-support)
 
 
@@ -43,6 +44,11 @@ description: This article provides a brief description of Inbox Tracker API endp
 * Domain Campaign Hit (Rollup + Details)
 
 * IP Campaign Hit (Rollup + Details)
+
+
+### Using Inbox Tracker from an AI Assistant
+
+ To ask questions of your Inbox Tracker data in Claude, ChatGPT, Cursor or another AI assistant, connect the Inbox Tracker & Competitive Tracker MCP server. It signs in with your Inbox Tracker login, so you don't need an API key. See [Connect an AI Assistant to Inbox Tracker](/analyst/ai-assistants/connect-an-ai-assistant/).
 
 
 ### API Questions and Support
