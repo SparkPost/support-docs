@@ -33,6 +33,12 @@ const gettingStarted = {
       linkText: 'Learn More',
     },
     {
+      url: '/analyst/ai-assistants/',
+      title: 'AI Assistants',
+      desc: 'Connect Claude, ChatGPT, Cursor and other AI assistants to your Inbox Tracker data',
+      linkText: 'Learn More',
+    },
+    {
       url: '/analyst/privacy-gdpr/',
       title: 'Privacy & GDPR',
       desc: 'We’re committed to keeping your private information private, your data protected and secure and being transparent about our practices',
