@@ -32,6 +32,14 @@ export TYPST_FONT_PATHS := $(FONT_DIR)
 SOURCES      := $(filter-out $(SRC_DIR)/index.md,$(wildcard $(SRC_DIR)/*.md))
 PRIV_SOURCES := $(wildcard $(PRIV_DIR)/*.md)
 
+# Without the momentum-docs submodule, SRC_DIR holds no manuals and only the
+# PDF-only manuals would build. `make clean` still works.
+ifeq ($(SOURCES),)
+ifneq ($(filter-out clean,$(or $(MAKECMDGOALS),all)),)
+$(error No manuals in $(SRC_DIR): run git submodule update --init first)
+endif
+endif
+
 # ---------------------------------------------------------------------------
 # PDF naming: Momentum_<version>_<Suffix>.pdf
 #

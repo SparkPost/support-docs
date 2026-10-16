@@ -1,0 +1,27 @@
+name: Check out the Momentum docs
+description: Fetches the private SparkPost/momentum-docs submodule at content/momentum, which every site build needs.
+
+inputs:
+  ssh-key:
+    description: Private half of a read-only deploy key on SparkPost/momentum-docs.
+    required: true
+
+runs:
+  using: composite
+  steps:
+    # A separate step rather than actions/checkout's ssh-key input, which
+    # would also use the momentum-docs key to fetch this repository.
+    - shell: bash
+      env:
+        SSH_KEY: ${{ inputs.ssh-key }}
+      run: |
+        # Pull requests from forks get no secrets.
+        if [ -z "$SSH_KEY" ]; then
+          echo "::error::MOMENTUM_DOCS_SSH_KEY is not available, so content/momentum cannot be fetched"
+          exit 1
+        fi
+        key="$RUNNER_TEMP/momentum-docs-key"
+        trap 'rm -f "$key"' EXIT
+        (umask 077 && printf '%s\n' "$SSH_KEY" > "$key")
+        GIT_SSH_COMMAND="ssh -i '$key' -o IdentitiesOnly=yes -o StrictHostKeyChecking=accept-new" \
+          git submodule update --init content/momentum

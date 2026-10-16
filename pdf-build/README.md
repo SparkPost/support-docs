@@ -2,7 +2,12 @@
 
 Branded PDF editions of the on-premises Momentum manuals (installation,
 upgrade, release notes, …), generated from the **same Markdown** that powers
-the online [Online Manuals](../content/momentum/manuals/) section.
+the online [Online Manuals](https://docs.sparkpost.com/momentum/manuals) section.
+
+`content/momentum/` is the SparkPost/momentum-docs submodule. Changes to the
+online manuals (`content/momentum/manuals/`) and `navigation.yml` are made in
+that repository, and the submodule must be fetched (`git submodule update --init`)
+before `make`.
 
 ```
 content/momentum/manuals/*.md   ──► online pages (Next.js site)

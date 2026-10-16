@@ -16,6 +16,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+      - uses: ./.github/actions/momentum-docs
+        with:
+          ssh-key: ${{ secrets.MOMENTUM_DOCS_SSH_KEY }}
       - uses: actions/cache@v4
         with:
           path: ~/.npm
