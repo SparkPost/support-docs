@@ -118,7 +118,7 @@ There are no limits on the number of metrics you can select.
 
 #### Filter Limitations
 
-You can apply up to 10 filters on a report.
+Each filter accepts up to 50 values with “is equal to” or “is not equal to”, and up to 10 values with “contains” or “does not contain”.
 
 #### Comparison Limitations
 
