@@ -13,6 +13,8 @@ These instructions are for the new Templates page, which shows a **New Templates
 1. Open the [Templates page](https://app.sparkpost.com/templates) ([EU](https://app.eu.sparkpost.com/templates)).
 1. In the search box above the table, type a word, part of a name, or part of an ID.
 
+![The search box holding payment, with three matching templates in the table](media/searching-templates/templates-search-results.png)
+
 The table updates a moment after you stop typing. A word finds every template that holds it in its name, ID or description, and a primary account also searches subaccount IDs. Searches are not case-sensitive, and a word matches inside longer text, so `welc` finds `Welcome Email` and `prewelcome-v2`.
 
 If the search box cannot read what you typed, a message under the box says what to fix. For example, `welcome AND` shows `AND needs a term after it`.
@@ -22,13 +24,17 @@ If the search box cannot read what you typed, a message under the box says what 
 1. Above the table, click **Status**.
 1. Tick **Draft**, **Published**, **Unpublished changes**, or any mix of them.
 
+![The Status filter open with Published ticked, and status:published added to the search box](media/searching-templates/templates-status-filter.png)
+
 Ticking a box writes the matching search into the search box, such as `status:draft,published`, so you can see and edit it. A status search you type in the box ticks the matching boxes. When the box holds a status search the checkboxes cannot show, such as `welcome OR status:draft`, the button reads **Status: Custom**.
 
 ## Sort and page through results
 
+![The table sorted by Last Updated, with the paging controls, per-page buttons and Save as CSV below it](media/searching-templates/templates-search-controls.png)
+
 * **Last Updated** sorts the table by the date each template was last changed. The newest template is first. Click **Last Updated** to reverse the order.
 * The footer shows where you are, such as **1–25 of 4,321 results**. Above 10,000 matches, it shows **10,000+ results**.
-* **Next** and **Previous** move one page at a time, and **Return to First Page** goes back to the start. To reach the oldest templates, reverse the sort.
+* The arrows below the table go to the next page, the previous page, or back to the first page. To reach the oldest templates, reverse the sort.
 * The per-page buttons show 10, 25, 50 or 100 templates on a page.
 * **Save as CSV** downloads your account's templates, up to 50,000, whatever the search box holds.
 * **Recent Activity**, above the table, always shows your four most recently updated templates.
