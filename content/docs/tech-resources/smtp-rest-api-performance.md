@@ -1,5 +1,5 @@
 ---
-lastUpdated: "06/09/2021"
+lastUpdated: "11/18/2026"
 title: "SMTP and REST API Injection Best Practices for Improved Performance"
 description: "SparkPost wants to make sure all of our customers have the best sending experience through our service We have a few recommendations to ensure you are injecting in the most efficient manner and to optimize overall message throughput Sending via the Transmission REST API We recommend that you send..."
 ---
@@ -23,6 +23,18 @@ We recommend that you send via the Transmission REST API, if possible. Overall 
 * Use a connection for up to a maximum of 15 minutes, before closing it and creating a new connection.
 * Respect the DNS TTLs for the API endpoint's hostnames.  We use load balancers.  The load balancers do not have a fixed set of IP addresses.  IP addresses can be added and removed automatically during scale out / scale in.  We recommend that your applications look up the hostname in DNS every time a new connnection is made.
 * Limit the concurrent connections to a maximum of 10\.  (For SparkPost Enterprise customers, please contact your TAM for guidance on the number of concurrent connections.)
+
+### Using HTTP/2
+
+The REST API supports HTTP/2 over HTTPS. HTTP/1.1 remains fully supported. The recommendations above still apply, with these additions:
+
+* Send at most 100 concurrent requests per connection. The server allows 128 streams per connection. Requests above that are refused, and repeatedly exceeding the limit closes the connection, including requests in progress.
+* The limit of 10 concurrent connections above still applies. Each HTTP/2 connection carries up to 100 requests at once, so you need fewer connections than with HTTP/1.1. Spread them across the addresses DNS returns.
+* Recycle connections after 15 minutes, as above. The limit of 10,000 transmissions per connection applies to HTTP/1.1 only.
+* Close connections that have been idle for 45 seconds. HTTP/2 PING frames don't keep a connection open.
+* When the server sends `GOAWAY`, for example after a connection has been open for an hour, let requests in progress finish and open a new connection. Requests refused with `REFUSED_STREAM`, or above the `GOAWAY` frame's last stream ID, weren't processed and can be resent right away.
+* For other failures, retry as described above, and send an [`Idempotency-Key`](https://developers.sparkpost.com/api/transmissions/#header-idempotent-requests) with each transmission so a retry can't send it twice.
+* Send `Content-Length` with each request. `Expect: 100-continue` isn't supported over HTTP/2.
 
 ## Sending via SMTP
 
