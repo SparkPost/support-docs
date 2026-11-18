@@ -29,7 +29,7 @@ We recommend that you send via the Transmission REST API, if possible. Overall 
 The REST API supports HTTP/2 over HTTPS. HTTP/1.1 remains fully supported. The recommendations above still apply, with these additions:
 
 * Send at most 100 concurrent requests per connection. The server allows 128 streams per connection. Requests above that are refused, and repeatedly exceeding the limit closes the connection, including requests in progress.
-* The limit of 10 concurrent connections above still applies. Each HTTP/2 connection carries up to 100 requests at once, so you need fewer connections than with HTTP/1.1. Spread them across the addresses DNS returns.
+* Size your connection pool by the number of requests in progress: use at least 2 connections, plus one for every 100 requests in progress at your peak. Spread the connections across the addresses DNS returns.
 * Recycle connections after 15 minutes, as above. The limit of 10,000 transmissions per connection applies to HTTP/1.1 only.
 * Close connections that have been idle for 45 seconds. HTTP/2 PING frames don't keep a connection open.
 * When the server sends `GOAWAY`, for example after a connection has been open for an hour, let requests in progress finish and open a new connection. Requests refused with `REFUSED_STREAM`, or above the `GOAWAY` frame's last stream ID, weren't processed and can be resent right away.
